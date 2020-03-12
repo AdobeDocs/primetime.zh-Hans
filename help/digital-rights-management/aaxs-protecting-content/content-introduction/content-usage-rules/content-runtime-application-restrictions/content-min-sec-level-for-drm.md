@@ -1,0 +1,15 @@
+---
+seo-title: DRM和运行时的最低安全级别
+title: DRM和运行时的最低安全级别
+uuid: b5f52ea4-b417-4643-9b3e-0d20e631df9b
+translation-type: tm+mt
+source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+
+---
+
+
+# DRM和运行时的最低安全级别 {#minimum-security-level-for-drm-and-runtimes}
+
+指定访问内容所需的安全级别。 由每个组件的各个安全级别指定。 DRM/运行时模块的默认安全级别为10000。
+
+示例用例：某些类型的内容（例如高清视频）可能需要比其他类型更高的安全级别。
