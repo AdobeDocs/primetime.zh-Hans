@@ -1,0 +1,22 @@
+---
+description: 'null'
+seo-description: 'null'
+seo-title: 命令行工具要求
+title: 命令行工具要求
+uuid: 62f6e7ef-f593-4184-b217-2d086fead733
+translation-type: tm+mt
+source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
+
+---
+
+
+# 命令行工具要求 {#command-line-tools-requirements}
+
+* Java 1.5或更高版本。
+* 由Adobe颁发的包装程序、传输和许可证服务器凭据（证书和密码）。
+
+   这些凭据用于加密和签署视频文件、签署策略更新和撤销列表以及预生成许可证。
+
+>[!NOTE] {class=&quot;- topic/note &quot;}
+>
+>由于Java错误，您在命令行中键入的任何参数（如文件名、DRM策略名或描述）只能使用操作系统默认字符集中的字符。
