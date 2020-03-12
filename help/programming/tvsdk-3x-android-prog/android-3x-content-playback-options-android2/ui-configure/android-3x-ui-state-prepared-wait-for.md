@@ -1,0 +1,23 @@
+---
+description: 在使用大多数TVSDK播放器方法之前，播放器必须处于有效状态。
+seo-description: 在使用大多数TVSDK播放器方法之前，播放器必须处于有效状态。
+seo-title: 等待有效状态
+title: 等待有效状态
+uuid: 7a86b4cf-f7a0-4d90-9ff2-401640a395c5
+translation-type: tm+mt
+source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+
+---
+
+
+# 等待有效状态 {#wait-for-a-valid-status}
+
+通过TVSDK，您可以控制实时和视频点播(VOD)的基本播放体验。 TVSDK在播放器实例上提供可用于配置播放器用户界面的方法和属性。
+
+在使用大多数TVSDK播放器方法之前，播放器必须处于有效状态。
+
+等待播放器处于正确状态可确保媒体资源已成功加载。 如果播放器不至少处于所需状态，将引发许多播放器方法 `MediaPlayerException`。
+
+所需的状态通常为PREPARED。 发生这种情况时，将执行回调例 `StatusChangeEventListener.onStatusChanged()` 程。
+
+要确认状态为，请 `PREPARED`选中 `MediaPlayer.MediaPlayerStatus`。
