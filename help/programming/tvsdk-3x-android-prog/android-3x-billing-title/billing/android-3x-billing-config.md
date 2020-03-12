@@ -1,0 +1,38 @@
+---
+description: 如果您使用默认配置，则无需执行任何其他操作即可启用或配置计费。 如果您从Adobe Enablement Representative获得了不同的配置参数，请在初始化媒体播放器之前使用BillingMetricsConfiguration类设置这些参数。
+seo-description: 如果您使用默认配置，则无需执行任何其他操作即可启用或配置计费。 如果您从Adobe Enablement Representative获得了不同的配置参数，请在初始化媒体播放器之前使用BillingMetricsConfiguration类设置这些参数。
+seo-title: 配置计费指标
+title: 配置计费指标
+uuid: 340439bf-185b-4761-a481-010908842811
+translation-type: tm+mt
+source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+
+---
+
+
+# 配置计费指标 {#configure-billing-metrics}
+
+如果您使用默认配置，则无需执行任何其他操作即可启用或配置计费。 如果您从Adobe Enablement Representative获得了不同的配置参数，请在初始化媒体播放器之前使用BillingMetricsConfiguration类设置这些参数。
+
+>[!TIP]
+>
+>大多数客户应使用默认配置。
+
+>[!IMPORTANT]
+>
+>您设置的配置在媒体播放器的生命周期中保持有效。 初始化媒体播放器后，便无法更改配置。
+
+要配置计费指标，请执行以下操作：
+
+输入以下代码示例。
+
+```java
+MediaPlayerItemConfig config = new MediaPlayerItemConfig(); 
+BillingMetricsConfiguration billingConfig = new BillingMetricsConfiguration(); 
+billingConfig.setEnabled(true); 
+billingConfig.setProVODBillableDurationMinutes(60); 
+billingConfig.setStdVODBillableDurationMinutes(30); 
+billingConfig.setLiveBillableDurationMinutes(15); 
+config.setBillingMetricsConfiguration(billingConfig); 
+mediaPlayer.replaceCurrentResource(mediaResource, config);
+```
