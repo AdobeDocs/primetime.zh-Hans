@@ -4,7 +4,7 @@ seo-title: Adobe Primetime发行说明
 description: 'null'
 seo-description: 'null'
 translation-type: tm+mt
-source-git-commit: c6036a6777e9158861850b60dd1e0749c30fa280
+source-git-commit: 2b1ce2cfea7db0a644507ffdb9d18569b55c84da
 
 ---
 
@@ -13,9 +13,9 @@ source-git-commit: c6036a6777e9158861850b60dd1e0749c30fa280
 
 欢迎阅读Adobe Primetime发行说明。 左侧导航中列出的文档提供特定于发行版的信息、系统要求、限制、已修复问题和已知问题。
 
-## TVSDK 3.10 iOS发行说明中的增强和修复
+## TVSDK 3.11 iOS发行说明中的增强和修复
 
-该版本侧重于解决主要客户问题和更新个性化传输证书。
+该版本侧重于解决主要客户问题。
 
 有关iOS的当前发布版本的更多信 [息](../release-notes/tvsdk-3x-ios.md)。
 
