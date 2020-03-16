@@ -1,29 +1,33 @@
 ---
-title: TVSDK 3.10 for iOS发行说明
-description: TVSDK 3.10 for iOS发行说明描述了TVSDK iOS 3.10中的新增功能或更改功能、已解决和已知问题以及设备问题。
+title: TVSDK 3.11 for iOS发行说明
+description: TVSDK 3.11 for iOS发行说明描述了TVSDK iOS 3.11中的新增功能或更改功能、已解决和已知问题以及设备问题。
 translation-type: tm+mt
-source-git-commit: c6036a6777e9158861850b60dd1e0749c30fa280
+source-git-commit: 2b1ce2cfea7db0a644507ffdb9d18569b55c84da
 
 ---
 
 
-# TVSDK 3.10 for iOS发行说明 {#tvsdk-for-ios-release-notes}
+# TVSDK 3.11 for iOS发行说明 {#tvsdk-for-ios-release-notes}
 
-TVSDK 3.10 for iOS发行说明描述了TVSDK iOS 3.10中的新增功能或更改功能、已解决和已知问题以及设备问题。
+TVSDK 3.11 for iOS发行说明描述了TVSDK iOS 3.11中的新增功能或更改功能、已解决和已知问题以及设备问题。
 
 ## 系统和软件要求 {#system-software-requirements}
 
-在下载iOS 3.10之前，请确保硬件、操作系统和应用程序版本满足以下要求：
+在下载iOS 3.11之前，请确保硬件、操作系统和应用程序版本满足以下要求：
 
 操作系统：iOS 8.0或更高版本。
 
-## iOS TVSDK 3.10
+## iOS TVSDK 3.11
 
-修复了当网络不可用时TVSDK播放器不触发PTMediaPlayerStatusError通知的问题。
+为导致应用程序崩溃的客 `isFallbackOnInvalidCreativeEnabled` 户问题 `customParams` 提供了修复。
 
 有关当前版本中的修复，请参 [阅已修复的客户问题](#resolved-issues) ，有关限制，请参 [阅已知问题和限制部分](#known-issues-and-limitations) 。
 
 ### 先前发行版中的新增功能和修复 {#whats-new-previous}
+
+**iOS TVSDK 3.10**
+
+* 修复了当网络不可用时TVSDK播放器不 `PTMediaPlayerStatusError` 会触发通知的问题。
 
 **iOS TVSDK 3.9**
 
@@ -290,11 +294,17 @@ Comment Type: draft
 </note>
  -->
 
+**iOS TVSDK 3.11**
+
+* (ZD#40998)- `isFallbackOnInvalidCreativeEnabled` 导致应用程序崩溃。
+
+* (ZD#41289)-使用 `NSInvalidArgumentException` 导致应用程序崩溃 `customParams` 的方法进行观察。
+
+### 已解决先前版本中的问题 {#resolved-issues-previous}
+
 **iOS TVSDK 3.10**
 
 (ZD#40943)-当网络不可用时，TVSDK播放器不会触发PTMediaPlayerStatusError通知。
-
-### 已解决先前版本中的问题 {#resolved-issues-previous}
 
 **iOS TVSDK 3.9**
 
@@ -310,94 +320,81 @@ Comment Type: draft
 
 **iOS TVSDK 3.7**
 
-* (ZD#38961)-当将多个内容配置为在PiP中播放时，在一个内容完成播放后，内容无法在画中画(PiP)窗口中播放。
+(ZD#38961)-当将多个内容配置为在PiP中播放时，在一个内容完成播放后，内容无法在画中画(PiP)窗口中播放。
 
 **iOS TVSDK 3.6**
 
-* 此版本中没有新问题。
+此版本中没有新问题。
 
 **iOS TVSDK 3.5**
 
-* 此版本中没有新问题。
+此版本中没有新问题。
 
 **版本3.3**
 
-* (ZD#37820)-为自定义标题HS-Id、HS-SSAI-TAG添加了白名单。
+(ZD#37820)-为自定义标题HS-Id、HS-SSAI-TAG添加了白名单。
 
 **版本3.2**
 
-**Ticket#36588** —— 调用MediaPlayer STOP方法时，会观察到播放器崩溃。
-
+* **Ticket#36588** —— 调用MediaPlayer STOP方法时，会观察到播放器崩溃。
 修复了在对带字幕的少数流调用STOP方法时观察到的间歇性崩溃。
 
-**Ticket#37080** - Manifest调用发现重复请求。
-
+* **Ticket#37080** - Manifest调用发现重复请求。
 修复了在播放期间对清单URL发出的重复请求。 TVSDK现在对每个清单发出一个呼叫。
 
-**Ticket#37** - CRS标准化规则失败，且EQ匹配类型
-
-修复了在遇到具有“eq”匹配类型的主机名的上次标准化规则集时播放器会崩溃的情况。
+* **Ticket#37** - CRS标准化规则失败，且匹配类型为eq。修复了在为具有“eq”匹配类型的主机名设置上次标准化规则时，播放器曾崩溃的情况。
 
 **版本3.1**
 
-**票证#36313** —— 线性广告中断期间的间歇性不可预测结果
-
-修复了实时流中线性广告中断期间的间歇播放。
+**票证#36313** —— 线性广告中断期间的间歇性不可预测结果修复了实时流中线性广告中断期间的间歇性播放。
 
 **版本3.0.1**
 
-**Ticket36948** - CRS - iOS 12上的资产选择顺序不一致
-
-为CRS选择的资产并不总是在VAST或VMAP响应中返回的最高质量变体。
+**Ticket36948** - CRS —— 资产选择顺序在iOS 12上不一致为CRS选择的资产并不总是在VAST或VMAP响应中返回的最高质量变体。
 
 **3.0版**
 
-**Ticket35311** —— 在电话呼叫中断期间，播放器状态未变为“暂停”
+* **Ticket35311** —— 在电话呼叫中断期间，播放器状态不会变为“暂停”添加的中断处理程序可阻止播放器中断。 中断时，播放器状态变为“暂停”，然后单击播放按钮后继续播放。
 
-添加了中断处理程序以阻止播放器中断。 中断时，播放器状态变为“暂停”，然后单击播放按钮后继续播放。
+* **Ticket36685** —— 实时资产——时间与播放器时间进度和SCTE标记时间不匹配为实时点之前的SCTE标记计算正确的时间。
 
-**Ticket36685** —— 实时资产——时间与播放器时间进度和SCTE标记时间不匹配
-
-将为处于实时点之前的SCTE标记计算正确的时间。
-
-**Ticket36492** - `currentTime` 在 `localTime` 暂停状态期间搜索新位置时不更新
-
-当播放器处于暂停状态时，播放器的当前时间现在可以设置为零；以前，仅在播放状态中将当前时间设置为零。
+* **Ticket36492** - `currentTime``localTime` 在暂停状态期间，当搜索到新位置时，Ticket不会更新。现在，当播放器处于暂停状态时，播放器的当前时间可以设置为零；以前，仅在播放状态中将当前时间设置为零。
 
 **版本1.4.45**
 
-**Ticket36294** - iOS TVSDK在Xcode 10中无法正常使用
+* **Ticket36294** - iOS TVSDK在Xcode 10中无法工作修复了XCode 10上TVSDK的编译问题。 由于XCode 10要求，从iOS 1.4.45版的TVSDK上构建的应用程序要求最低部署目标（如iOS 7.0）
 
-修复了XCode 10上的TVSDK的编译问题。 由于XCode 10要求，从iOS 1.4.45版的TVSDK上构建的应用程序要求最低部署目标（如iOS 7.0）
+* **Ticket36321** —— 在“播放”状态中，在可搜索 `PTMediaPlayer` 范围 `AVPlayer` 与实例之间观察到的差异。
 
-**Ticket36321** —— 在“播放”状态中，在可搜索 `PTMediaPlayer` 范围 `AVPlayer` 与实例之间观察到的差异。
-**Ticket36493** - `libstdc++` iOS 12支持
-
-修复了iOS 12上TVSDK的编译问题。 从iOS 1.4.45版到TVSDK上构建的应用程序要求最低部署目标（如iOS 7.0）
+* **Ticket36493** - `libstdc++` iOS 12上的支持修复了iOS 12上TVSDK的编译问题。 从iOS 1.4.45版到TVSDK上构建的应用程序要求最低部署目标（如iOS 7.0）
 
 **版本1.4.44**
 
-**Ticket34683** —— 广告播放进度时间呈负数
+* **Ticket34683** —— 广告播放进度时间呈负数
 
 当广告服务器报告的持续时间与实际广告内容之间不匹配时，将进行其他检查以处理这种情况。
 
-**Ticket34801** —— 当在暂停状态期间搜索到新位置时，currentTime和localTime未更新
+* **Ticket34801** - currentTime和localTime在暂停状态期间搜索到新位置时未更新。如果播放器处于暂停状态，播放器的当前时间现在可以设置为零；以前，仅在播放状态中将当前时间设置为零。
 
-当播放器处于暂停状态时，播放器的当前时间现在可以设置为零；以前，仅在播放状态中将当前时间设置为零。
-
-**Ticket35037** —— 从基于信号的广告插入返回时，播放会停止，并且URL不正确。
-
+* **Ticket35037** —— 从基于信号的广告插入返回时，播放会停止，并且URL不正确。
 改进了针对1.4.42版中已解决问题#34385的修复。 添加了isCancelled检查和异常处理代码，使操作队列更加健壮。
 
 **版本1.4.43**
 
 * (ZD#32990)- iOS:内容播放而不是某些提示点上的广告。 `selectedMediaOptionInMediaSelectionGroup` 作为AVPlayerItem接口一部分的API现在在iOS 11中移到AVMediaSelection下。 使用此新API解决了该问题。
+
 * (ZD#33683)从元数据字符串中删除了TVSDK ==后缀。 解析逻辑中修复了该问题。
+
 * (ZD#33905)-iOS TVSDK使用两个用户代理调用清单文件。 用户代理问题已在第一次m3u8呼叫（新安装案例）中得到修复。 M3u8现在为所有呼叫拥有相同的用户代理。
+
 * (ZD#34293)-在iOS11上无法正确播放在线性流上插入的预卷。 预卷广告的问题已修复。
+
 * (ZD#34684)-应用广告跳过策略时，将显示前滚广告帧数秒。 新的API enableVodPreroll现已引入，可在vod播放中禁用预卷播放。 此API的默认值为“是”。 API可确保跳过主内容中的广告内容拼接。
+
 * (ZD#34765)-调用stop()后，仍可下载少数传输流区段。 增强了Stop()API以避免下载额外的区段。
+
 * (ZD#34865)-在iOS上，实时流的前置广告会被截断。 与iOS11相关，并添加一个额外的检查以确认流是前置内容还是主内容，可解决此问题。
+
 * (ZD#35093)-修复了在启动时，如果流的主变体失败（返回404），则播放不切换到备份流的故障切换场景。
 
 **1.4.42 (1.4.42.118)**
@@ -405,10 +402,13 @@ Comment Type: draft
 * (ZD#34385)-从基于信号的广告插入返回时，播放会停止，并且URL不正确。
 
    增加最大并发计数 `CustomAVAssetLoaderOperations`，以便清单读取可继续执行。
+
 * (ZD#34373)-当禁止流录制时，最终用户无法流化到连接HDMI的设备。
+
 * (ZD#32678)- TVSDK在iOS上不收集正确的广告ID。
 
    在VHL ping中，如果出现VAST/VMAP重定向，最终广告创意的广告ID现在会被拾取。
+
 * (ZD#33904)- TVSDK未注册AVFoundation通知 `AVAudioSessionMediaServicesWereLostNotification` 和 `AVAudioSessionMediaServicesWereResetNotification`。
 
    `PTMediaServicesWereLostNotification` 现在， `PTMediaServicesWereResetNotification` 可以在播放器应用程序上注册，以在媒体服务重置或丢失时获取通知。
@@ -1165,7 +1165,7 @@ TVSDK中不 **支持** 以下功能：
 * 错误通知按广告解决时间记录，而非按广告序列记录。
 * HEVC支持在此版本中有以下限制
    * 不支持DRM
-   * CC(CEA 608/708)支持不可用，因为CMAF不支持它。
+   * CC(CEA 608/708)支持不可用，因为CMAF中不支持它。
    * 4K支持尚未提供。
    * ID3标记不支持，因为CMAF不支持它。
    * 未验证未混合的实时HEVC流。
