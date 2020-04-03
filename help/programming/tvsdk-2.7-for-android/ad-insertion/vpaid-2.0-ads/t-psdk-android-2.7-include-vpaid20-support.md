@@ -43,26 +43,20 @@ source-git-commit: 812d04037c3b18f8d8cdd0d18430c686c3eee1ff
    >此外，您只应当在播放器处于PREPARED状态时创建自定义广告视图，
    >
    >
-   >仅在调用重置时处理自定义广告视图。 例如：   >
+   >仅在调用重置时处理自定义广告视图。 例如：
    >
-   >
-   ```>
+   >```
    >// on reset 
    >if (_mediaPlayer != null) { 
    >       _mediaPlayer.disposeCustomAdView(); 
    >       ... 
    >} 
    >
+   >```
    >
-   ```   >
+   >最后，在处理自定义广告视图之前，必须将其从中删除 `FrameLayout`。 例如：
    >
-
-
-
-   >最后，在处理自定义广告视图之前，必须将其从中删除 `FrameLayout`。 例如：   >
-   >
-   >
-   ```>
-   if (_playerFrame != null) 
-      _playerFrame.removeAllViews(); 
-   ```
+   >```
+   >if (_playerFrame != null) 
+   >   _playerFrame.removeAllViews(); 
+   >```
