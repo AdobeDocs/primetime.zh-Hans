@@ -5,7 +5,7 @@ seo-title: 播放前的DRM身份验证
 title: 播放前的DRM身份验证
 uuid: 6b4fbcfb-95fd-4591-bbb2-a17afd783383
 translation-type: tm+mt
-source-git-commit: 812d04037c3b18f8d8cdd0d18430c686c3eee1ff
+source-git-commit: 16b88f07468811f2c84decb1324b0c5bd2372131
 
 ---
 
@@ -48,26 +48,25 @@ source-git-commit: 812d04037c3b18f8d8cdd0d18430c686c3eee1ff
 
 1. 在中实施回呼 `DRMLoadMetadataListener`。
 
-       “loadDRMMetadata”调用这些事件处理函数。
-       
- &quot;java     
- public interface DRMLoadMetadataListener {     
-    
-    public void onLoadMetadataUrlStart();
-      
-    /**
- * @param auth是否需要     
-    * DRM身份验证。
-       * @param drmMetadata
-    *获取的已解析的DRMMetadata。    */
-    public void onLoadMetadataUrlComplete(boolean authNeeded, DRMMetadata drmMetadata);
-  public void     onLoadMetadataUrlError();
-      }
-    
-    &quot;以下是有
-    
-    关处理函数的其他详细信息：
+   调用 `loadDRMMetadata` 这些事件处理程序。
+
+   ```java
+   public interface DRMLoadMetadataListener { 
    
+       public void onLoadMetadataUrlStart(); 
+   
+       /** 
+       * @param authNeeded 
+       * whether DRM authentication is needed. 
+       * @param drmMetadata 
+       * the parsed DRMMetadata obtained.    */ 
+       public void onLoadMetadataUrlComplete(boolean authNeeded, DRMMetadata drmMetadata); 
+       public void onLoadMetadataUrlError(); 
+   } 
+   ```
+
+   以下是有关处理函数的其他详细信息：
+
    * `onLoadMetadataUrlStart` 检测元数据URL加载何时开始。
    * `onLoadMetadataUrlComplete` 检测元数据URL何时完成加载。
    * `onLoadMetadataUrlError` 表示元数据加载失败。
