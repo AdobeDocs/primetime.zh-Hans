@@ -48,26 +48,26 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
 
 1. 在中实施回呼 `DRMLoadMetadataListener`。
 
-       “loadDRMMetadata”调用这些事件处理函数。
-       
- &quot;java     
- public interface DRMLoadMetadataListener {     
+   `loadDRMMetadata`调用这些事件处理函数。
+
+   ```java
+   public interface DRMLoadMetadataListener { 
     
-    public void onLoadMetadataUrlStart();
-      
-    /**
- * @param auth是否需要     
-    * DRM身份验证。
-       * @param drmMetadata
-    *获取的已解析的DRMMetadata。    */
-    public void onLoadMetadataUrlComplete(boolean authNeeded, DRMMetadata drmMetadata);
-  public void     onLoadMetadataUrlError();
-      }
+       public void onLoadMetadataUrlStart(); 
     
-    &quot;以下是有
-    
-    关处理函数的其他详细信息：
+       /** 
+       * @param authNeeded 
+       * whether DRM authentication is needed. 
+       * @param drmMetadata 
+       * the parsed DRMMetadata obtained.    */ 
+       public void onLoadMetadataUrlComplete(boolean authNeeded, DRMMetadata drmMetadata); 
+       public void onLoadMetadataUrlError(); 
+   } 
    
+   ```
+
+   关处理函数的其他详细信息：
+
    * `onLoadMetadataUrlStart` 检测元数据URL加载何时开始。
    * `onLoadMetadataUrlComplete` 检测元数据URL何时完成加载。
    * `onLoadMetadataUrlError` 表示元数据加载失败。
