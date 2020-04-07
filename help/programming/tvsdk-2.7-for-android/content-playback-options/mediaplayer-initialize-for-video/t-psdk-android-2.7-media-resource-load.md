@@ -5,7 +5,7 @@ seo-title: 在媒体播放器中加载媒体资源
 title: 在媒体播放器中加载媒体资源
 uuid: 0334fa69-1d92-44d8-8891-2bc90a1ea498
 translation-type: tm+mt
-source-git-commit: 21d1eae53cea303221de00765724e787cf6e84ef
+source-git-commit: 67975894814fbed8cfc49764a54b80d123032a49
 
 ---
 
@@ -18,45 +18,46 @@ source-git-commit: 21d1eae53cea303221de00765724e787cf6e84ef
 
    通过调用并传递现有实例来替 `MediaPlayer.replaceCurrentResource()` 换当前可播放的 `MediaResource` 项。
 
-   这将启动资源加载过程。
+   这将开始资源加载过程。
 
-1. 向实 `MediaPlayerEvent.STATUS_CHANGED` 例注册事 `MediaPlayer` 件。 在回调中，至少检查以下状态值：
+1. 向实 `MediaPlayerEvent.STATUS_CHANGED` 例注册事件 `MediaPlayer` 。 在回调中，至少检查以下状态值：
 
    * `MediaPlayerStatus.PREPARED`
    * `MediaPlayerStatus.INITIALIZED`
    * `MediaPlayerStatus.ERROR`
-   通过这些事件，对 `MediaPlayer` 象会在成功加载媒体资源时通知您的应用程序。
+   通过这些事件，对 `MediaPlayer` 象在成功加载媒体资源时通知您的应用程序。
 1. 当媒体播放器的状态更改为时， `INITIALIZED`您可以调用 `MediaPlayer.prepareToPlay()`。
 
-   此状态表示媒体已成功加载。 新的播 `MediaPlayerItem` 放已准备就绪。 呼叫 `prepareToPlay()` 启动广告解决和投放流程（如果有）。
+   此状态表示媒体已成功加载。 新的播 `MediaPlayerItem` 放已准备就绪。 致电 `prepareToPlay()` 开始解决广告问题和投放流程（如果有）。
 
 如果出现故障，媒体播放器会切换到状 `ERROR` 态。
 
 以下简化的示例代码说明了加载媒体资源的过程：
->```java>
->// mediaResource is a properly configured MediaResource instance 
+
+```java
+// mediaResource is a properly configured MediaResource instance 
 // mediaPlayer is a MediaPlayer instance 
 // register a PlaybackEventListener implementation with the MediaPlayer instance 
 mediaPlayer.addEventListener(MediaPlayerEvent.STATUS_CHANGED,  
- new StatusChangeEventListener() { 
-   @Override 
-   public void onStatusChanged(MediaPlayerStatus status) { 
-       if(event.getStatus() == MediaPlayerStatus.PREPARED) { 
-           // The resource is successfully loaded and available. The  
-           // MediaPlayer is ready to start the playback and can 
-           // provide a reference to the current playable item 
-           MediaPlayerItem playerItem = mediaPlayer.getCurrentItem(); 
-           if (playerItem != null) { 
-               // We can look at the properties of the loaded stream 
-           } 
-       } 
-       else if (event.getStatus() == MediaPlayerStatus.ERROR) { 
-           //Something bad happened - the resource cannot be loaded. 
-           // The Metadata object in the event provides details. 
-       } 
-       else if (status == MediaPlayerStatus.INITIALIZED) { 
-           mediaPlayer.prepareToPlay(); 
-       } 
-   } 
+  new StatusChangeEventListener() { 
+    @Override 
+    public void onStatusChanged(MediaPlayerStatus status) { 
+        if(event.getStatus() == MediaPlayerStatus.PREPARED) { 
+            // The resource is successfully loaded and available. The  
+            // MediaPlayer is ready to start the playback and can 
+            // provide a reference to the current playable item 
+            MediaPlayerItem playerItem = mediaPlayer.getCurrentItem(); 
+            if (playerItem != null) { 
+                // We can look at the properties of the loaded stream 
+            } 
+        } 
+        else if (event.getStatus() == MediaPlayerStatus.ERROR) { 
+            //Something bad happened - the resource cannot be loaded. 
+            // The Metadata object in the event provides details. 
+        } 
+        else if (status == MediaPlayerStatus.INITIALIZED) { 
+            mediaPlayer.prepareToPlay(); 
+        } 
+    } 
 } 
 ```
