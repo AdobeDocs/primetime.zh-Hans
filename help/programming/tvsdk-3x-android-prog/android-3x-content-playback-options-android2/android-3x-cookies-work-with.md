@@ -5,7 +5,7 @@ seo-title: 使用Cookie
 title: 使用Cookie
 uuid: 618bc59a-032d-445e-a867-ed2bf260570d
 translation-type: tm+mt
-source-git-commit: ad58732842eb651514a47dd565e31e3d98a84c46
+source-git-commit: 5ada8632a7a5e3cb5d795dc42110844244656095
 
 ---
 
@@ -16,7 +16,7 @@ source-git-commit: ad58732842eb651514a47dd565e31e3d98a84c46
 
 下面是对密钥服务器进行身份验证的示例请求：
 
-1. 您的客户在浏览器中登录到您的网站，其登录表明允许此客户查看内容。
+1. 客户在浏览器中登录您的网站，其登录表明允许此客户视图内容。
 1. 根据许可证服务器期望的内容，您的应用程序生成一个身份验证令牌。
 
    此值将传递给TVSDK。
@@ -45,7 +45,7 @@ source-git-commit: ad58732842eb651514a47dd565e31e3d98a84c46
    >
    >启用302重定向后，广告请求可被重定向到不同于cookie所属域的域。
 
-   TVSDK在运行 `cookieManager` 时查询该URL，检查是否有任何与URL关联的Cookie，并自动使用这些Cookie。
+   TVSDK在运行 `cookieManager` 时查询它，检查是否有任何与URL关联的Cookie，并自动使用这些Cookie。
 
    如果在播放过程中需要在应用程序中更新Cookie，请不要使用 `networkConfiguration.setCookieHeaders` API，因为JAVA Cookie存储中会发生更新。
 
@@ -64,8 +64,9 @@ source-git-commit: ad58732842eb651514a47dd565e31e3d98a84c46
    `config.setNetworkConfiguration(networkConfiguration)`
 
    >[!NOTE]
-   将此“setReadSetCookieHeader”设置为false后，使用JAVA cookie管理器为密钥请求设置Cookie。
    >
+   >将此“setReadSetCookieHeader”设置为false后，使用JAVA cookie管理器为密钥请求设置Cookie。
+
    `onCookiesUpdated(CookiesUpdatedEvent cookiesUpdatedEvent)`
 只要C++ Cookies（来自http响应的cookie）中有更新，将触发此回调API。 应用程序需要侦听此回调并可相应更新其JAVA CookieStore，以便其JAVA网络调用可以如下利用Cookie:
 
