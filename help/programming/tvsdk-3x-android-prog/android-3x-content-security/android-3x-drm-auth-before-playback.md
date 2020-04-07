@@ -5,7 +5,7 @@ seo-title: 播放前的DRM身份验证
 title: 播放前的DRM身份验证
 uuid: be319b04-a506-4278-8275-db32cd3f18aa
 translation-type: tm+mt
-source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+source-git-commit: e300238be5a2bddc7c6b9bd26682dcb4401959b1
 
 ---
 
@@ -48,13 +48,13 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
 
 1. 在中实施回呼 `DRMLoadMetadataListener`。
 
-   `loadDRMMetadata`调用这些事件处理函数。
+   调用 `loadDRMMetadata` 这些事件处理程序。
 
    ```java
    public interface DRMLoadMetadataListener { 
-    
+   
        public void onLoadMetadataUrlStart(); 
-    
+   
        /** 
        * @param authNeeded 
        * whether DRM authentication is needed. 
@@ -63,10 +63,9 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
        public void onLoadMetadataUrlComplete(boolean authNeeded, DRMMetadata drmMetadata); 
        public void onLoadMetadataUrlError(); 
    } 
-   
    ```
 
-   关处理函数的其他详细信息：
+   以下是有关处理函数的其他详细信息：
 
    * `onLoadMetadataUrlStart` 检测元数据URL加载何时开始。
    * `onLoadMetadataUrlComplete` 检测元数据URL何时完成加载。
