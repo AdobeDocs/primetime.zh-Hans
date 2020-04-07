@@ -3,7 +3,7 @@ seo-title: HSM配置
 title: HSM配置
 uuid: da4d7118-65a8-460d-a796-b7bf5c28b208
 translation-type: tm+mt
-source-git-commit: 47b2ed65ff0ea4f54a210cf7627ed535782296b9
+source-git-commit: ac75f63f98060e1937570476362bb5d4458d1f85
 
 ---
 
@@ -21,6 +21,6 @@ keytool -keystore NONE -storetype PKCS11 -providerClass sun.security.pkcs11.SunP
 
 如果您在列表中看到凭据，则HSM配置正确，许可证服务器将能够访问凭据。
 
-> [!NOTE]
-> 用于受保护流的Adobe Access Server当前不支持64位Windows OS上的HSM。
-
+>[!NOTE]
+>
+>用于受保护流的Adobe Access Server当前不支持64位Windows OS上的HSM。
