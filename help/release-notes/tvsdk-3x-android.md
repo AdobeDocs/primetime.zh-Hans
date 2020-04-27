@@ -1,21 +1,21 @@
 ---
-title: TVSDK 3.10 for Android发行说明
-seo-title: TVSDK 3.10 for Android发行说明
-description: TVSDK 3.10 for Android发行说明描述了TVSDK Android 3.10中的新增功能或更改功能、已解决和已知问题以及设备问题
-seo-description: TVSDK 3.10 for Android发行说明描述了TVSDK Android 3.10中的新增功能或更改功能、已解决和已知问题以及设备问题
+title: TVSDK 3.11 for Android发行说明
+seo-title: TVSDK 3.11 for Android发行说明
+description: TVSDK 3.11 for Android发行说明描述了TVSDK Android 3.10中的新增功能或更改功能、已解决和已知问题以及设备问题
+seo-description: TVSDK 3.11 for Android发行说明描述了TVSDK Android 3.11中的新增功能或更改功能、已解决和已知问题以及设备问题
 uuid: 685d46f5-5a02-4741-af5c-91e91babd6f7
 products: SG_PRIMETIME
 topic-tags: release-notes
 discoiquuid: 3a27379f-3cef-4ea3-bcae-21382dc1e9fd
 translation-type: tm+mt
-source-git-commit: c4d5b2d5c942a96eadb8f40203ce25a29fe3e1ae
+source-git-commit: 33abc0364a7dbe123ef1e6e444ad8578b5596f63
 
 ---
 
 
-# TVSDK 3.10 for Android发行说明 {#tvsdk-for-android-release-notes}
+# TVSDK 3.11 for Android发行说明 {#tvsdk-for-android-release-notes}
 
-TVSDK 3.10 for Android发行说明描述了TVSDK Android 3.10中的新增功能或更改功能、已解决和已知问题以及设备问题。
+TVSDK 3.11 for Android发行说明描述了TVSDK Android 3.11中的新增功能或更改功能、已解决和已知问题以及设备问题。
 
 Android参考播放器随Android TVSDK一起提供，位于您的分发示例／目录中。 随附的README.md文件介绍了如何构建参考播放器。
 
@@ -35,17 +35,26 @@ Android参考播放器随Android TVSDK一起提供，位于您的分发示例／
 
 <!-- ## New features {#new-features} -->
 
-## Android TVSDK 3.10
+## Android TVSDK 3.11
 
-当前版本侧重于解决已解决的问题部分中提到的 [主要客户问题](#resolved-issues) 。
+**允许保护系统特定的标题(PSSH)包装盒获取**
+
+TVSDK现在允许获取与当前加载的媒体资源关联的保护系统特定标题框。 新API `getPSSH()` 已添加到 `com.adobe.mediacore.drm.DRMManager`。
+有关详细信息，请参 [阅Widevine DRM](../programming/tvsdk-3x-android-prog/android-3x-content-security/android-3x-drm-widevine.md)。
+
+已解决的问题部分介绍了当前版本中修复的 [主要客户问题](#resolved-issues) 。
 
 ### 先前发行版中的新增功能和增强功能
 
+**Android TVSDK 3.10**
+
+此版本侧重于解决已解决的问题部分中提到的 [主要客户问题](#resolved-issues) 。
+
 **Android TVSDK 3.9**
 
-* **通过HTTPS的安全交付** - Android TVSDK 3.9通过HTTPS引入了安全交付功能，以无与伦比的规模和性能安全地交付内容。
+* **通过HTTPS进行安全投放** - Android TVSDK 3.9通过HTTPS引入了安全投放功能，可以以无与伦比的规模和性能安全地交付内容。
 
-   为了通过HTTPS实现安全交付，类中引入了新的 `NetworkConfiguration` API。
+   为了支持通过HTTPS进行安全投放，类中引入了新的 `NetworkConfiguration` API。
 
    `public void setForceHTTPS (boolean value)`
 
@@ -83,7 +92,7 @@ Android参考播放器随Android TVSDK一起提供，位于您的分发示例／
 * **API更改**
 
    * 新增了一个API，用于 `NetworkConfiguration::setNumOfTimesManifestRetryBeforeError(n)*` 处理网络错误和超时。
-      * 其中(n)是重试次数。
+      * 其中(n)是重试数。
 
 **版本3.2**
 
@@ -117,7 +126,7 @@ Android参考播放器随Android TVSDK一起提供，位于您的分发示例／
 
 * **及时——在更靠近广告标记的位置解析广告**
 
-   延迟广告解析现在可独立解决每个广告中断。 以前，广告解决是一个分两阶段的方法：在播放开始之前已解决预卷问题，在播放开始之后所有中间／后端滚动槽都已合并。 利用此增强功能，现在可以在广告提示点之前的特定时间解决每个广告中断问题。
+   延迟广告解析现在可独立解决每个广告中断。 以前，广告解决是一个分两阶段的方法：在播放开始之前解决了预卷问题，在播放开始后，所有中间／后端辊槽都组合在一起。 利用此增强功能，现在可以在广告提示点之前的特定时间解决每个广告中断问题。
 
    **请注意：现在，延迟广告解析已更改为默认关闭，并且显式需要启用。**
 
@@ -125,7 +134,7 @@ Android参考播放器随Android TVSDK一起提供，位于您的分发示例／
    搜索现在将在准备完成后立即允许，搜索广告中断将导致在搜索完成之前立即解决。\
    支持信令模式SERVER_MAP和MANIFEST_CAIS。
 
-   有关详细信息，请参阅TVSDK 3.0 for Android程序员指南（有关API和活动更改）。
+   有关详细信息，请参阅TVSDK 3.0 for Android程序员指南(有关API和事件更改)。
 
 * **更新 `targetSdkVersion` 至最新版本\
    **从19 `targetSdkVersion` 更新到27，以顺利运行。
@@ -173,7 +182,7 @@ TVSDK现在可取消当前区段的下载（如果需要），并动态切换至
 
 **版本2.5.4**
 
-Android TVSDK v2.5.4提供以下更新和API更改：
+Android TVSDK v2.5.4优惠以下更新和API更改：
 
 * WebViewDebuging默认值的更改
 
@@ -189,7 +198,7 @@ Android TVSDK v2.5.4提供以下更新和API更改：
 
 **版本2.5.3**
 
-Android TVSDK v2.5.3提供以下更新和API更改。
+Android TVSDK v2.5.3优惠以下更新和API更改。
 
 * 鼓励所有使用CRS的TVSDK客户使用TVSDK 2.5.3.85或最新版Android升级其应用程序。 这将取代现有应用程序实施。 TVSDK升级后，在代理工具中检查CRS创意URL请求(例如：并确认路径中的主机名和版本反映如下示例URL结构中。
 
@@ -204,17 +213,22 @@ Android TVSDK v2.5.3提供以下更新和API更改。
 * API更改：
 
    * 添加了新的事件CookiesUpdatedEvent。 它在更新其cookie时由媒体播放器调度。
+
    * NetworkConfiguration::set/getCustomUserAgent()中新增了一个API以使用自定义用户代理。
+
    * NetworkConfiguration::set/getEncodedUrlForTracking中新增了一个API，用于强制对不安全字符进行编码。
+
    * 向NetworkConfiguration::getNetworkDownVerificationUrl()添加了一个新API，用于在故障转移时设置网络验证URL。
+
    * TextFormat::treatSpaceAsAlphaNum中添加了一个新属性，该属性定义在显示字幕时是否将空间视为字母数字。
 
 * SizeAvailableEvent中的更改：以前，2.5.2中SizeAvailableEvent的getHeight()和getWidth()方法用于返回帧高度和帧宽度（由媒体格式返回）。 现在它分别返回解码器返回的输出高度和输出宽度。
+
 * “缓冲”行为中的更改：缓冲行为已更改。 它留给App开发人员在缓冲区为空时要做什么。 2.5.3在缓冲区空的情况下使用播放缓冲区大小。
 
 **版本2.5.2**
 
-Android TVSDK v2.5.2提供了重要的错误修复和一些API更改。
+Android TVSDK v2.5.2优惠了重要的错误修复和一些API更改。
 
 **版本2.5.1**
 
@@ -222,22 +236,34 @@ Android 2.5.1中发布的重要新功能。
 
 * **性能**&#x200B;改进新的TVSDK 2.5.1体系架构带来了许多性能改进。 根据第三方基准测试研究的统计数据，新架构的启动时间缩短了5倍，丢弃的帧数比行业平均数减少了3.8倍：
 
-   * **VOD和实时的即时启动-** 当您启用即时启动时，TVSDK会在播放开始前初始化和缓冲媒体。 由于您可以在后台同时启动多个MediaPlayerItemLoader实例，因此可以缓冲多个流。 当用户更改频道且流已正确缓冲时，新频道上的播放会立即开始。 TVSDK 2.5.1还支持实时流的即 **时开** 启。 当实时窗口移动时，实时流会重新缓冲。
+   * **VOD和实时的即时启用-** 当您启用即时启用时，TVSDK会在播放开始之前初始化和缓冲媒体。 由于您可以在后台同时启动多个MediaPlayerItemLoader实例，因此可以缓冲多个流。 当用户更改渠道，且流已正确缓冲时，立即在新渠道开始上回放。 TVSDK 2.5.1还支持实时流的即 **时开** 启。 当实时窗口移动时，实时流会重新缓冲。
+
    * **改进的ABR逻辑** -新的ABR逻辑基于缓冲区长度、缓冲区长度变化速率和测量带宽。 这确保了ABR在带宽波动时选择正确的比特率，并且还通过监视缓冲长度变化的速率来优化比特率切换的实际发生的次数。
+
    * **部分区段下载／子分段-** TVSDK进一步缩小了每个片段的大小，以便尽快开始播放。 其片段必须每两秒有一个关键帧。
-   * **延迟广告分辨率** - TVSDK在开始播放之前不等待非预卷广告的分辨率，从而缩短启动时间。 搜索和技巧播放等API在所有广告都解决之前仍不允许。 这适用于与CSAI一起使用的VOD流。 搜索和快进等操作在广告解决完成之前不允许。 对于实时流，在实时活动期间无法启用此功能以获得广告分辨率。
+
+   * **延迟广告分辨率** - TVSDK在开始播放之前不等待非预卷广告的分辨率，从而缩短启动时间。 搜索和技巧播放等API在所有广告都解决之前仍不允许。 这适用于与CSAI一起使用的VOD流。 搜索和快进等操作在广告解决完成之前不允许。 对于实时流，在实时事件中无法启用此功能以获得广告分辨率。
+
    * **永久网络连接** -此功能允许TVSDK创建和存储永久网络连接的内部列表。 这些连接被重用于多个请求，而不是为每个网络请求打开新连接，然后销毁它。 这提高了网络代码的效率并减少了延迟，从而提高了播放性能。
 当TVSDK打开连接时，它要求服务器 *保持连接* 。 某些服务器可能不支持此类连接，在这种情况下，TVSDK将返回给再次为每个请求建立连接。 此外，尽管永久连接在默认情况下处于打开状态，TVSDK现在有一个配置选项，以便应用程序可以根据需要关闭永久连接。
+
    * **并行下载-** “并行下载视频和音频”（而非串行下载）可减少启动延迟。 此功能允许播放HLS Live和VOD文件，优化来自服务器的可用带宽使用，降低在运行不足的情况下进入缓冲区的可能性，并最小化下载和回放之间的延迟。
+
    * **并行广告下载-** TVSDK在点击广告中断前预取与内容播放平行的广告，从而实现广告和内容的无缝播放。
 
 * **播放**
 
    * **MP4内容播放-** MP4短片无需重新编码即可在TVSDK中播放。
-注意：MP4回放不支持ABR切换、特技播放、广告插入、后期音频绑定和子分段。
-   * **使用自适应比特率(ABR)进行特技播放** -此功能允许TVSDK在特技播放模式下在iFrame流之间切换。 您可以使用非iFrame配置文件以更低的速度进行特技播放。
+      > [!NOTE]
+      >
+      > MP4回放不支持ABR切换、特技播放、广告插入、后期音频绑定和子分段。
+
+   * **使用自适应比特率(ABR)进行特技播放** -此功能允许TVSDK在特技播放模式下在iFrame流之间切换。 您可以使用非iFrame用户档案以较低的速度进行特技播放。
+
    * **更流畅的技巧播放** -这些改进增强了用户体验：
-      * 在特技播放期间，基于带宽和缓冲区配置文件的自适应比特率和帧速率选择
+
+      * 在特技播放期间基于带宽和缓冲用户档案的自适应比特率和帧速率选择
+
       * 使用主流（而非IDR流）可实现高达30 fps的快速回放。
 
 * **内容保护**
@@ -247,15 +273,16 @@ Android 2.5.1中发布的重要新功能。
 * **工作流支持**
 
    * **直接计费集成** -这会将计费指标发送到Adobe Analytics后端，Adobe Primetime已对客户使用的流进行验证。
-
-      TVSDK会自动收集指标，遵守客户销售合同，以生成计费所需的定期使用情况报告。 在每个流开始事件中，TVSDK都使用Adobe Analytics数据插入API将付费指标（如内容类型、启用广告插入的标记和基于收费流持续时间的启用drm的标记）发送到Adobe Analytics Primetime拥有的报表包。 这不会干扰或包含在客户自己的Adobe Analytics报表包或服务器调用中。 根据要求，此计费使用情况报告会定期发送给客户。 这是付费功能的第一阶段，仅支持使用付费。 可以使用文档中描述的API根据销售合同进行配置。 默认情况下，此功能处于启用状态。 要关闭此功能，请参阅参考播放器范例。
+   TVSDK会自动收集指标，遵守客户销售合同，以生成计费所需的定期使用情况报告。 在每个流开始事件中，TVSDK都使用Adobe Analytics数据插入API向Adobe Analytics Primetime拥有的报表包发送收费指标，如内容类型、启用广告插入的标记和基于收费流持续时间的启用drm的标记。 这不会干扰或包含在客户自己的Adobe Analytics报表包或服务器调用中。 根据要求，此计费使用情况报告会定期发送给客户。 这是付费功能的第一阶段，仅支持使用付费。 可以使用文档中描述的API根据销售合同进行配置。 默认情况下，此功能处于启用状态。 要关闭此功能，请参阅参考播放器范例。
 
    * **改进了故障转移支持** -实施了其他策略以在主机服务器、播放列表文件和区段出现故障的情况下继续不间断地播放。
+
 
 * **广告**
 
    * **Moat集成** -支持从Moat中测量广告可见性。
-   * **配套横幅** -配套横幅显示在线性广告旁边，并且通常在广告结束后继续显示在视图上。 这些横幅的类型可以是html（HTML片断）或iframe（iframe页面的URL）。
+
+   * **配套横幅** -配套横幅显示在线性广告旁边，通常在广告结束后继续显示在视图上。 这些横幅的类型可以是html（HTML片断）或iframe（iframe页面的URL）。
 
 * **分析**
 
@@ -265,21 +292,22 @@ Android 2.5.1中发布的重要新功能。
 
    * 现在，SizeAvailableEvent的getHeight()和getWidth()方法将分别以高度和宽度返回输出。 显示长宽比可以按如下方式计算：
 
-      SizeAvailableEvent e;
+   ```java
+   SizeAvailableEvent e;
+   DAR = e.getWidth()/ e.getHeight();
+   ```
 
-      DAR = e.getWidth()/ e.getHeight();
+   存储长宽比（以Sar宽度和Sar高度计算）也可用于计算帧宽度和帧高度：
 
-      存储长宽比（以Sar宽度和Sar高度计算）也可用于计算帧宽度和帧高度：
-
-      SAR = e.getSarWidth()/e.getSarHeight();
-
-      frameHeight = e.getHeight();
-
-      frameWidth = e.getWidth()/SAR;
+   ```java
+   SAR = e.getSarWidth()/e.getSarHeight();
+   frameHeight = e.getHeight();
+   frameWidth = e.getWidth()/SAR;
+   ```
 
 * **Cookie**
 
-   * Android TVSDK现在支持访问存储在Android应用程序CookieStore中的JAVA cookie。 当新Cookie作为“Set-Cookie”响应头的一部分出现时，会提供回调API(onCookiesUpdated)以进行记录。 通过使用CookieStore在特定URI/域中设置这些Cookie值，这些Cookie可作为用于不同URI/域的HttpCookie列表使用。 同样，TVSDK中的cookie值也会使用CookieStore添加API进行更新。
+   * Android TVSDK现在支持访问存储在Android应用程序CookieStore中的JAVA cookie。 当新Cookie作为“Set-Cookie”响应头的一部分出现时，会提供回调API(onCookiesUpdated)以进行记录。 通过使用CookieStore在特定URI/域中设置这些Cookie值，这些Cookie可用作用于不同URI/域的HttpCookie的列表。 同样，TVSDK中的cookie值也会使用CookieStore添加API进行更新。
 
 ## 功能矩阵 {#feature-matrix}
 
@@ -291,7 +319,7 @@ Android 2.5.1中发布的重要新功能。
 |---|---|---|
 | 常规播放（播放、暂停、搜索） | VOD +实时 | Y |
 | FER —— 常规播放（播放、暂停、搜索） | FER VOD | Y |
-| 广告播放时搜索 | VOD +实时 | 不支持 |
+| 广告播放时搜索 | 实时 | 不支持 |
 | AC3 | VOD +实时 | 不支持 |
 | MP3 | VOD | 不支持 |
 | MP4内容播放 | VOD | Y |
@@ -357,7 +385,7 @@ Android 2.5.1中发布的重要新功能。
 | DRM | VOD +实时 | 仅限Primetime DRM(未来：Widevine) |
 | 外部播放(RBOP) | VOD +实时 | 仅限Primetime DRM |
 | 许可证轮换 | VOD +实时 | 仅限Primetime DRM |
-| 键旋转 | VOD +实时 | 仅限Primetime DRM |
+| 键旋转 | VOD +实时 | Primetime DRM和Widevine DRM |
 
 | 功能 | 内容类型 | HLS |
 |---|---|---|
@@ -368,13 +396,17 @@ Android 2.5.1中发布的重要新功能。
 
 如果分辨率与报告的问题相关联，则显示Zendesk引用，例如ZD#xxxxx。
 
-**Android TVSDK 3.10**
+**Android TVSDK 3.11**
 
-本节概述了TVSDK 3.10 Android版本中解决的问题。
+本节概述了TVSDK 3.11 Android版本中解决的问题。
 
-* ZD#40340 —— 在将所有TS(TypeScript)文件列入黑名单后，在尝试播放时，应用程序会因“App Not Responding”（应用程序无响应）错误而崩溃。
+* ZD# —— 在Android TVSDK参考应用程序中，韩文字符显示为WebVTT导致的HLS清单的缺失字形符号。
 
 ### 已解决先前版本中的问题
+
+**Android TVSDK 3.10**
+
+* ZD#40340 —— 在将所有TS(TypeScript)文件列入黑名单后，在尝试播放时，应用程序会因“App Not Responding”（应用程序无响应）错误而崩溃。
 
 **Android TVSDK 3.8**
 
@@ -402,7 +434,7 @@ Android 2.5.1中发布的重要新功能。
 **版本3.3**
 
 * ZD#37394 - CMAF资产快速前进会在速度更改后产生伪影。
-   * 修复了在特技播放期间配置文件发生更改的问题。
+   * 修复了在特技播放期间用户档案发生更改的问题。
 * ZD#37396 —— 某些中间和后滚动广告缺少广告跟踪事件。
    * 修复了广告跟踪事件的特定情况。
 * ZD#37491 - HTTP状态代码中不存在错误元。
@@ -428,7 +460,7 @@ Android 2.5.1中发布的重要新功能。
 
 * ZD#36442 —— 每个新的播放都会断开远程调试会话的连接，因此无法进行调试。
 
-   * 默认情况下，Web视图上不能进行调试，因为默认情况下不启用调试。 应用程序应根据需要对从MediaPlayer.getCustomAdView()返回的对象调用setWebContentsDebuggingEnabled(true)以启用调试。
+   * 默认情况下，Web视图无法进行调试，因为默认情况下未启用调试。 应用程序应根据需要对从MediaPlayer.getCustomAdView()返回的对象调用setWebContentsDebuggingEnabled(true)以启用调试。
 
 * ZD#33688 —— 支持及时升级和解决
 
@@ -450,7 +482,7 @@ Android 2.5.1中发布的重要新功能。
 
 * ZD #34149 —— 播放器即使遇到错误也会继续实现请求。
 
-   * 修复了即使所有配置文件都关闭时TVSDK仍进行重复调用的情况（404错误）。
+   * 修复了TVSDK进行重复调用的情况，即使所有用户档案都关闭（404错误）。
 
 * ZD #31533 —— 在应用程序发送到后台后在Android上播放音频。
 
@@ -512,7 +544,7 @@ Android 2.5.1中发布的重要新功能。
 
 * ZD #35086 —— 在特定VMAP响应的情况下，不从播放器获取完整的扩展数据。
 
-   * 问题特定于扩展xml，因为如果扩展xml在属性值中有双引号，则XML解析不起作用。 修复了该问题。
+   * 问题特定于扩展xml，因为如果扩展xml的属性值中包含多次引号，则XML解析不起作用。 修复了该问题。
 
 **Android TVSDK 2.5.4**
 
@@ -530,7 +562,7 @@ Android 2.5.1中发布的重要新功能。
 
 * ZenDesk#33192 —— 当通过AudioUpdatedEventListener::onAudioUpdated检索音轨时，AudioTrack的名称为空。
 
-   在FireTV Stick上的几种情况下，当没有实际音频更新时，onAudioUpdate事件将被触发。 此问题现已修复。
+   在FireTV Stick上的几种情况下，当没有实际音频更新时，onAudioUpdate事件会被触发。 此问题现已修复。
 
 **Android TVSDK 2.5.3**
 
@@ -594,7 +626,7 @@ Android 2.5.1中发布的重要新功能。
 
 * 特定于设备(Samsung Galaxy Tab 4)的崩溃；带有Auditude的VOD DRM LBA，然后单击广告。
 * VHL —— 在从偏移启动内容时发送的心跳调用不正确。
-* 播放VPAID广告时，VHL心跳调用event:type:play广告丢失。
+* 播放VPAID广告时，VHL心跳调用的事件:type:play广告丢失。
 * 进入“完成”状态后，播放器将返回SKIP adBreakPolicy的“播放”状态，用于后滚广告。
 * Cookie未附加到传出广告回呼。
 * 广告提示点不可见。
@@ -603,11 +635,15 @@ Android 2.5.1中发布的重要新功能。
 
 ## 已知问题和限制 {#known-issues-and-limitations}
 
-**Android TVSDK 3.10**
+**Android TVSDK 3.11**
 
 * 未添加任何新限制。
 
 ### 先前发行版中的已知问题和限制
+
+**Android TVSDK 3.10**
+
+* 未添加任何新限制。
 
 **Android TVSDK 3.8**
 
@@ -652,7 +688,7 @@ Android 2.5.1中发布的重要新功能。
    * ID3标记支持未验证
 
 * 对于广告进度事件，时间轴栏可能不反映100%准确的广告播放时间。 作为一种解决方法，您可 `adcompleteevent` 以使用来了解广告播放完成情况并更新UI以用于各种用途，如更新时间轴栏、删除广告相关UI等。
-* 从VMAP返回的广泛广告呼叫不接受“及时查找”位置。
+* 从VMAP返回的广泛广告呼叫不接受“及时查看”位置。
 
 **Android TVSDK 2.5.6**
 
@@ -691,7 +727,7 @@ Android 2.5.1中发布的重要新功能。
 * [系统要求](https://docs.adobe.com/content/help/en/primetime/programming/tvsdk-3x-android-prog/introduction/android-3x-requirements.html)
 * [TVSDK 3.10 for Android程序员指南](https://docs.adobe.com/content/help/en/primetime/programming/tvsdk-3x-android-prog/introduction/android-3x-overview-prod-audience-guide.html)
 * [TVSDK Android Javadoc for API参考](https://help.adobe.com/en_US/primetime/api/psdk/javadoc3.5/index.html)
-* [TVSDK Android C++ API文档](https://help.adobe.com/en_US/primetime/api/psdk/cpp_3.5/namespaces.html) -每个Java类都有相应的C++类，且C++文档包含比Javadoc更多的说明性材料，因此请参阅C++文档以更深入地了解Java API。
+* [TVSDK Android C++ API文档](https://help.adobe.com/en_US/primetime/api/psdk/cpp_3.5/namespaces.html) -每个Java类都有相应的C++类，而C++文档包含的说明性材料比Javadoc更多，因此请参阅C++文档以更深入地了解Java API。
 * [TVSDK 1.4到2.5 for Android(Java)迁移指南](https://helpx.adobe.com/primetime/migration-guides/tvsdk-14-25-android.html)
 * 要处理屏幕开启／关闭场景，请参 `Application_Changes_for_Screen_On_Off.pdf` 阅构建中包含的文件。
 * 请参阅 [Adobe Primetime学习和支持页面上的完整帮助文档](https://helpx.adobe.com/support/primetime.html) 。
