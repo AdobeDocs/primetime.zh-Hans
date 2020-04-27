@@ -8,7 +8,7 @@ products: SG_PRIMETIME
 topic-tags: release-notes
 discoiquuid: 3a27379f-3cef-4ea3-bcae-21382dc1e9fd
 translation-type: tm+mt
-source-git-commit: e41213acf027e4dc4d016ef31c2d3d1665f54dfc
+source-git-commit: 3e5078c25a1426c3991669809426eefab0386ac9
 
 ---
 
@@ -290,20 +290,13 @@ Android 2.5.1中发布的重要新功能。
 
 * **SizeAvaliableEventListener**
 
-   * 现在，SizeAvailableEvent的getHeight()和getWidth()方法将分别以高度和宽度返回输出。 显示长宽比可以按如下方式计算：
+   * `getHeight()` 现在， `getWidth()` 将分 `SizeAvailableEvent` 别以高度和宽度返回输出。 显示长宽比可以按如下方式计算：
 
-   ```java
-   SizeAvailableEvent e;
-   DAR = e.getWidth()/ e.getHeight();
-   ```
+      SizeAvailableEvent e;DAR = e.getWidth()/ e.getHeight();
 
-   存储长宽比（以Sar宽度和Sar高度计算）也可用于计算帧宽度和帧高度：
+      存储长宽比（以Sar宽度和Sar高度计算）也可用于计算帧宽度和帧高度：
 
-   ```java
-   SAR = e.getSarWidth()/e.getSarHeight();
-   frameHeight = e.getHeight();
-   frameWidth = e.getWidth()/SAR;
-   ```
+      SAR = e.getSarWidth()/e.getSarHeight();frameHeight = e.getHeight();frameWidth = e.getWidth()/SAR;
 
 * **Cookie**
 
