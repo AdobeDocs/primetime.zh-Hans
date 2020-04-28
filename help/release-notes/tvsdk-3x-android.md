@@ -8,7 +8,7 @@ products: SG_PRIMETIME
 topic-tags: release-notes
 discoiquuid: 3a27379f-3cef-4ea3-bcae-21382dc1e9fd
 translation-type: tm+mt
-source-git-commit: 3e5078c25a1426c3991669809426eefab0386ac9
+source-git-commit: 5cf340119147799cd7b2c40a2a312595eebaa737
 
 ---
 
@@ -393,7 +393,7 @@ Android 2.5.1中发布的重要新功能。
 
 本节概述了TVSDK 3.11 Android版本中解决的问题。
 
-* ZD# —— 在Android TVSDK参考应用程序中，韩文字符显示为WebVTT导致的HLS清单的缺失字形符号。
+* 在Android TVSDK参考应用程序中，韩文字符显示为WebVTT导致的HLS清单缺少字形符号。
 
 ### 已解决先前版本中的问题
 
