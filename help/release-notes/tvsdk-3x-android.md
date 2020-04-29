@@ -1,5 +1,5 @@
 ---
-title: TVSDK 3.10 for Android发行说明
+title: TVSDK 3.11 for Android发行说明
 seo-title: TVSDK 3.11 for Android发行说明
 description: TVSDK 3.11 for Android发行说明描述了TVSDK Android 3.10中的新增功能或更改功能、已解决和已知问题以及设备问题
 seo-description: TVSDK 3.11 for Android发行说明描述了TVSDK Android 3.11中的新增功能或更改功能、已解决和已知问题以及设备问题
@@ -8,14 +8,14 @@ products: SG_PRIMETIME
 topic-tags: release-notes
 discoiquuid: 3a27379f-3cef-4ea3-bcae-21382dc1e9fd
 translation-type: tm+mt
-source-git-commit: 1f03dd8975fed27836a34159a403ba4aeec199c1
+source-git-commit: 26b0622f807405eaec9cfe162799111ed340e02c
 
 ---
 
 
-# TVSDK 3.10 for Android发行说明 {#tvsdk-for-android-release-notes}
+# TVSDK 3.11 for Android发行说明 {#tvsdk-for-android-release-notes}
 
-TVSDK 3.10 for Android发行说明描述了TVSDK Android 3.10中的新增功能或更改功能、已解决和已知问题以及设备问题。
+TVSDK 3.11 for Android发行说明描述了TVSDK Android 3.11中的新增功能或更改功能、已解决和已知问题以及设备问题。
 
 Android参考播放器随Android TVSDK一起提供，位于您的分发示例／目录中。 随附的README.md文件介绍了如何构建参考播放器。
 
@@ -33,20 +33,20 @@ Android参考播放器随Android TVSDK一起提供，位于您的分发示例／
 
 发行说明的“功能列表”部分介绍了支持和不支 [持的全面功能](#feature-matrix) 。
 
+## Android TVSDK 3.11
+
+**允许保护系统特定的标题(PSSH)包装盒获取**
+
+TVSDK现在允许获取与当前加载的媒体资源关联的保护系统特定标题框。 新API `getPSSH()` 已添加到 `com.adobe.mediacore.drm.DRMManager`。
+有关详细信息，请参 [阅Widevine DRM](../programming/tvsdk-3x-android-prog/android-3x-content-security/android-3x-drm-widevine.md)。
+
+已解决的问题部分介绍了当前版本中修复的 [主要客户问题](#resolved-issues) 。
+
+### 先前发行版中的新增功能和增强功能
+
 **Android TVSDK 3.10**
 
 此版本侧重于解决已解决的问题部分中提到的 [主要客户问题](#resolved-issues) 。
-
-<!-- ## New features {#new-features} -->
-
-<!--
-## Android TVSDK 3.11
-**Protection System Specific Header (PSSH) Box fetching allowed**
-TVSDK now allows fetching of Protection System Specific Header Box associated with current loaded Media Resource. New API `getPSSH()` has been added to `com.adobe.mediacore.drm.DRMManager`.
-For more information, see [Widevine DRM](../programming/tvsdk-3x-android-prog/android-3x-content-security/android-3x-drm-widevine.md).
-Top customer issues fixed in the current release are mentioned in [resolved issues](#resolved-issues) section. -->
-
-## 先前发行版中的新增功能和增强功能
 
 **Android TVSDK 3.9**
 
@@ -388,15 +388,17 @@ Android 2.5.1中发布的重要新功能。
 
 如果分辨率与报告的问题相关联，则显示Zendesk引用，例如ZD#xxxxx。
 
+**Android TVSDK 3.11**
+
+本节概述了TVSDK 3.11 Android版本中解决的问题。
+
+* ZD#41252 —— 在Android TVSDK参考应用程序中，韩文字符显示为HLS清单中WebVTT缺失的字形符号。
+
+### 已解决先前版本中的问题
+
 **Android TVSDK 3.10**
 
 * ZD#40340 —— 在将所有TS(TypeScript)文件列入黑名单后，在尝试播放时，应用程序会因“App Not Responding”（应用程序无响应）错误而崩溃。
-
-<!-- **Android TVSDK 3.11**
-This section provides a summary of the issue resolved in TVSDK 3.11 Android release.
-* ZD#41252 - Korean characters are displayed as missing glyph symbols for HLS manifests with WebVTT in Android TVSDK reference app. -->
-
-### 已解决先前版本中的问题
 
 **Android TVSDK 3.8**
 
