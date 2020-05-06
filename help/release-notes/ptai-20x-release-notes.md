@@ -1,39 +1,64 @@
 ---
 title: PTAI 20.3.3发行说明
-description: PTAI 20.3.3发行说明描述了2020年Primetime动态广告插入中的新增功能或变更功能、已解决和已知问题。
+description: PTAI 20.5.1发行说明描述了2020年Primetime动态广告插入中的新增或变更、已解决和已知问题。
 translation-type: tm+mt
-source-git-commit: ededb36a0b460fff4644a3716b36971ff9454c37
+source-git-commit: 2a5866be64895ba13994720bf943dc676c2595bf
+workflow-type: tm+mt
+source-wordcount: '356'
+ht-degree: 0%
 
 ---
 
 
-# Primetime动态广告插入20.3.3发行说明
+# Primetime动态广告插入20.5.1发行说明
 
-动态广告插入20.3.3发行说明描述了2020年Primetime动态广告插入中的新增功能或变更功能、已解决的问题和已知问题。
+动态广告插入20.5.1发行说明描述了2020年Primetime动态广告插入中的新增或更改内容、已解决的问题和已知问题。
 
-## PTAI 20.3.3的新增功能
+## PTAI 20.5.1的新增功能
 
-**时间：** 2020年3月26日星期四东部时间凌晨3时至4时
+**时间：** 2020年5月5日，星期二，东部时间凌晨04时至5时
 
-* SSAI 4XX和5XX响应现在可以正确提供与CORS相关的标题，从而允许跨域javascript/webview客户端成功读取错误响应。
+* 修复了一个问题，以确保在发送If-Modified-Sine标头时提供正确的CORS标头。
 
-* 修复了X-Forwarded-For头的一个问题，该问题导致IPv6地址在传递到广告服务器时未正确进行URL编码。
+* CRS仪表板的错误修复。
 
-* 修复了CMAF/已消除混音音频流的一个问题，该问题在某些情况下，EXT-X-MEDIA-SEQUENCE编号增量不正确
+* 维护更新。
 
 ## 先前版本中的更改
 
-### 版本
+### 版本20.3.4
 
-**时间：**
+**时间：** 2020年4月1日，星期三，东部时间凌晨03时至4时
 
-### 版本
+* 修复了在VOD/WebVTT中插入广告后导致字幕不同步的问题。
 
-**时间：**
+* 安全更新。
+
+### 版本20.3.3
+
+**时间：** 2020年3月26日，星期四，东部时间凌晨03时至4时
+
+* SSAI 4XX和5XX响应现在可以正确提供与CORS相关的标头，从而允许跨域javascript/webview客户端成功读取错误响应。
+
+* 修复了X-Forwarded-For头的问题，该问题导致IPv6地址在传递到广告服务器时未正确进行URL编码。
+
+* 修复了CMAF/已消除混音音频流的问题，该问题导致在某些情况下，EXT-X-MEDIA-SEQUENCE编号增量不正确。
+
+### 版本20.1.3
+
+**时间：** 2020年1月28日星期二凌晨2时至3时
+
+* **当使用ptcueformat=nbc且流是包含清单内提示和烘焙广告的** VOD流时，VMAP支持“nbc” CueFormat将FER流的提示转换为FW时间线覆盖参数。
+
+* 在转发到第三方广告提供商/CDN之前，先清理HTTP头中的用户代理字段。
+
+* 在发送到Auditude和其他广告提供商CDN之前，从“用户代理”HTTP头中过滤掉控制／不可打印字符（ascii代码&lt; 32）。 用于失败此类无效标头的Auditude Ad-Call。
+
+* 从NetStorage组中清除旧的V1对象，使对象计数保持在Akamai的安全限制内。
 
 ## 已解决的问题
 
-如果解决方案与报告的问题相关联，则显示Zendesk引用。 例如ZD#xxxxx。
+如果解决方案与报告的问题相关，则显示Zendesk引用。 例如ZD#xxxxx。
 
 **PTAI 20.3.3**
 
