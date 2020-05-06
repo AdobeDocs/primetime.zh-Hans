@@ -1,10 +1,10 @@
 ---
-title: PTAI 20.3.3发行说明
+title: PTAI 20.5.1发行说明
 description: PTAI 20.5.1发行说明描述了2020年Primetime动态广告插入中的新增或变更、已解决和已知问题。
 translation-type: tm+mt
-source-git-commit: 2a5866be64895ba13994720bf943dc676c2595bf
+source-git-commit: 266b884707e9160d539a06fd089732ef8ade21ba
 workflow-type: tm+mt
-source-wordcount: '356'
+source-wordcount: '353'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ ht-degree: 0%
 
 **时间：** 2020年3月26日，星期四，东部时间凌晨03时至4时
 
-* SSAI 4XX和5XX响应现在可以正确提供与CORS相关的标头，从而允许跨域javascript/webview客户端成功读取错误响应。
+* SSAI 4XX和5XX响应现在可以正确提供与CORS相关的标头，从而允许跨域javascript/Web视图客户端成功读取错误响应。
 
 * 修复了X-Forwarded-For头的问题，该问题导致IPv6地址在传递到广告服务器时未正确进行URL编码。
 
@@ -48,17 +48,19 @@ ht-degree: 0%
 
 **时间：** 2020年1月28日星期二凌晨2时至3时
 
-* **当使用ptcueformat=nbc且流是包含清单内提示和烘焙广告的** VOD流时，VMAP支持“nbc” CueFormat将FER流的提示转换为FW时间线覆盖参数。
+* **VMAP，支持NBC CueFormat的FER**
 
-* 在转发到第三方广告提供商/CDN之前，先清理HTTP头中的用户代理字段。
+   当使用FER流时，将提示转换为FW时 `ptcueformat=nbc` 间线覆盖参数，该流是包含清单内提示和烘焙广告的VOD流。
 
-* 在发送到Auditude和其他广告提供商CDN之前，从“用户代理”HTTP头中过滤掉控制／不可打印字符（ascii代码&lt; 32）。 用于失败此类无效标头的Auditude Ad-Call。
+* 在转发给第三方广告提供商/CDN之前，清理HTTP头中的用户代理字段。
+
+* 在发送到Auditude和其他广告提供商CDN之前，从用户代理HTTP头中过滤掉控制／不可打印字符（ASCII代码&lt; 32）。 用于失败此类无效标头的Auditude Ad-Call。
 
 * 从NetStorage组中清除旧的V1对象，使对象计数保持在Akamai的安全限制内。
 
 ## 已解决的问题
 
-如果解决方案与报告的问题相关，则显示Zendesk引用。 例如ZD#xxxxx。
+如果解决方案与报告的问题相关，则显示Zendesk引用。 例如，ZD#xxxxx。
 
 **PTAI 20.3.3**
 
