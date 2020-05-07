@@ -2,9 +2,9 @@
 title: PTAI 20.5.1发行说明
 description: PTAI 20.5.1发行说明描述了2020年Primetime动态广告插入中的新增或变更、已解决和已知问题。
 translation-type: tm+mt
-source-git-commit: 90f75f263e96ea37dd93a91f4392077ea2c70f32
+source-git-commit: 4f97591b819d705891a053961eccd50a3cd05aa2
 workflow-type: tm+mt
-source-wordcount: '440'
+source-wordcount: '518'
 ht-degree: 0%
 
 ---
@@ -43,6 +43,26 @@ ht-degree: 0%
 * 修复了X-Forwarded-For头的问题，该问题导致IPv6地址在传递到广告服务器时未正确进行URL编码。
 
 * 修复了CMAF/已消除混音音频流的问题，该问题导致在某些情况下，EXT-X-MEDIA-SEQUENCE编号增量不正确。
+
+### 版本20.3.2
+
+**时间：** 2020年3月11日星期三东部时间上午05点30分至07点
+
+* 对SCTE35信号处理的改进。
+
+* 维护更新。
+
+### 版本20.3.1
+
+**时间：** 2020年3月05日星期四东部时间凌晨02点30分至04点30分
+
+* 性能改进：
+
+   * 增加了对主／媒体m3u8清单的缓存支持。 这些清单现在对缓存控制做出响应： 公共和最大年龄头，通常可以提高视频开始性能。
+
+   * 增加了强制通过http获取https创意的支持，这也可以提高视频开始性能。
+
+* 安全性和维护修复。
 
 ### 版本20.2.1
 
