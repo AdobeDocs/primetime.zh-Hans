@@ -2,9 +2,9 @@
 title: PTAI 20.5.1发行说明
 description: PTAI 20.5.1发行说明描述了2020年Primetime动态广告插入中的新增或变更、已解决和已知问题。
 translation-type: tm+mt
-source-git-commit: 4f97591b819d705891a053961eccd50a3cd05aa2
+source-git-commit: 9c117678a049e34bfcf960e992a4ce7361968f3e
 workflow-type: tm+mt
-source-wordcount: '518'
+source-wordcount: '548'
 ht-degree: 0%
 
 ---
@@ -104,6 +104,16 @@ ht-degree: 0%
 ## 已解决的问题
 
 如果解决方案与报告的问题相关，则显示Zendesk引用。 例如，ZD#xxxxx。
+
+**PTAI 20.5.1**
+
+* 发送If-Modified-Sine标头时CORS标头的问题。
+
+* CRS仪表板中的问题。
+
+**PTAI 20.3.4**
+
+* 在VOD/WebVTT中插入广告后导致字幕不同步的问题。
 
 **PTAI 20.3.3**
 
