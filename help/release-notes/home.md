@@ -4,7 +4,10 @@ seo-title: Adobe Primetime发行说明
 description: 'null'
 seo-description: 'null'
 translation-type: tm+mt
-source-git-commit: caf6ca93bb4a02ba9e54a1a0be4f9790d6ce2ac2
+source-git-commit: 8e19c638caf2f9ea37dbf2ec7373ae9f470b93fe
+workflow-type: tm+mt
+source-wordcount: '290'
+ht-degree: 0%
 
 ---
 
@@ -13,34 +16,34 @@ source-git-commit: caf6ca93bb4a02ba9e54a1a0be4f9790d6ce2ac2
 
 欢迎阅读Adobe Primetime发行说明。 左侧导航中列出的文档提供特定于发行版的信息、系统要求、限制、已修复问题和已知问题。
 
+## PTAI 20.5.1中的增强和修复
+
+专注于解决客户的主要问题。
+
 ## TVSDK 3.11 Android中的修复
 
 该版本增强了对Widevine DRM的支持，并解决了主要客户问题。
-有关 [Android当前发布版本的更多信息](../release-notes/tvsdk-3x-android.md)。
+有关Android的当前已发布版本的更多信 [息](../release-notes/tvsdk-3x-android.md)。
 
 ## TVSDK 3.11 iOS发行说明中的增强和修复
 
-该版本侧重于解决主要客户问题。
+该版本侧重于解决客户的主要问题。
 
-有关iOS的当前发布版本的更多信 [息](../release-notes/tvsdk-3x-ios.md)。
+有关iOS的当前已发布版本的更多 [信息](../release-notes/tvsdk-3x-ios.md)。
 
-## PTAI 20.3.3中的增强和修复
-
-专注于解决客户问题。
-
-有关当前已发布的动态广告插入版本的详细信息，请参阅 [PTAI发行说明](ptai-19x-release-notes.md)。
+有关当前已发布的动态广告插入版本的详细信息，请参 [阅PTAI发行说明](ptai-19x-release-notes.md)。
 
 ## 另请参阅
 
 | 用户指南 | 说明 |
 |--- |--- |
-| [Primetime编程帮助](/help/programming/home.md) | 允许您学习在Android设备上使用Java和iOS设备上使用Objective-C开发应用程序和视频播放器。 |
+| [Primetime编程帮助](/help/programming/home.md) | 允许您学习在Android设备上使用Java以及在iOS设备上使用Objective-C开发应用程序和视频播放器。 |
 | [Primetime迁移和转化帮助](/help/migration-guides/home.md) | 解释从现有Primetime TVSDK Suite到下一代套件的转换和迁移过程。 |
-| [参考实施](/help/android-reference-implementation/home.md) | 帮助您了解TVSDK并修改功能管理器以自定义您的个人播放器。 |
-| [Primetime API参考](/help/reference/api-references.md) | 提供有关TVSDK函数、数据结构和其他编程构造的详细信息。 |
-| [数字版权管理](/help/digital-rights-management/home.md) | 帮助您进一步了解Digital Rights Management(DRM)中的各种用户场景 |
-| [动态广告插入帮助](/help/dynamic-ad-insertion/home.md) | 介绍如何通过在服务器上插入针对用户的动态广告来实现内容货币化，并通过个性化广告吸引受众。 |
-| [存档](https://helpx.adobe.com/primetime/archives.html) | 下载存档文档的PDF。 |
+| [参考实施](/help/android-reference-implementation/home.md) | 帮助理解TVSDK并修改功能管理器以自定义您的个人播放器。 |
+| [Primetime API参考](/help/reference/api-references.md) | 提供有关TVSDK函数、数据结构和其他编程结构的详细信息。 |
+| [数字版权管理](/help/digital-rights-management/home.md) | 帮助您进一步了解数字版权管理(DRM)中的各种用户场景 |
+| [动态广告插入帮助](/help/dynamic-ad-insertion/home.md) | 解释如何通过在服务器上插入针对用户的动态广告来实现内容货币化，以及如何通过个性化广告吸引受众。 |
+| [存档](https://helpx.adobe.com/primetime/archives.html) | 下载归档文档的PDF。 |
 
 ## 实用资源
 
