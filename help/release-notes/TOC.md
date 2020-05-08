@@ -4,7 +4,7 @@ product: adobe primetime
 audience: end-user
 user-guide-title: Primetime发行说明
 translation-type: tm+mt
-source-git-commit: 7dd4dced32253a3d94e753a49a4b52a60bbba4b1
+source-git-commit: 1ec9411ac897ac6e7328aef9a6ddd614f533f1d0
 workflow-type: tm+mt
 source-wordcount: '101'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
    + [PTAI 20.5.1发行说明](ptai-20x-release-notes.md)
    + [PTAI 19.11.1发行说明](ptai-19x-release-notes.md)
 + iOS版TVSDK {#tvsdk-ios}
-   + [TVSDK 3.11 for iOS发行说明](tvsdk-3x-ios.md)
+   + [适用于iOS的TVSDK 3.12发行说明](tvsdk-3x-ios.md)
    + [TVSDK 1.4 for iOS发行说明](tvsdk-1-4-ios.md)
 + 适用于Android的TVSDK {#tvsdk-android}
    + [适用于Android的TVSDK 3.11发行说明](tvsdk-3x-android.md)
