@@ -4,7 +4,7 @@ seo-title: Adobe Primetime发行说明
 description: 'null'
 seo-description: 'null'
 translation-type: tm+mt
-source-git-commit: 8e19c638caf2f9ea37dbf2ec7373ae9f470b93fe
+source-git-commit: bc9f03647d0b6114b6030ded058eb452e2b80887
 workflow-type: tm+mt
 source-wordcount: '290'
 ht-degree: 0%
@@ -14,24 +14,25 @@ ht-degree: 0%
 
 # Primetime发行说明
 
-欢迎阅读Adobe Primetime发行说明。 左侧导航中列出的文档提供特定于发行版的信息、系统要求、限制、已修复问题和已知问题。
+欢迎阅读Adobe Primetime发行说明。 左侧导航中列出的文档提供特定于发行版的信息、系统要求、限制、已修复问题和已知问题
 
-## PTAI 20.5.1中的增强和修复
-
-专注于解决客户的主要问题。
-
-## TVSDK 3.11 Android中的修复
-
-该版本增强了对Widevine DRM的支持，并解决了主要客户问题。
-有关Android的当前已发布版本的更多信 [息](../release-notes/tvsdk-3x-android.md)。
-
-## TVSDK 3.11 iOS发行说明中的增强和修复
+## TVSDK 3.12 iOS发行说明中的增强和修复
 
 该版本侧重于解决客户的主要问题。
 
 有关iOS的当前已发布版本的更多 [信息](../release-notes/tvsdk-3x-ios.md)。
 
-有关当前已发布的动态广告插入版本的详细信息，请参 [阅PTAI发行说明](ptai-19x-release-notes.md)。
+## PTAI 20.5.1中的增强和修复
+
+专注于解决客户的主要问题。
+
+有关当前已发布的动态广告插入版本的详细信息，请参 [阅PTAI发行说明](ptai-20x-release-notes.md)。
+
+## TVSDK 3.11 Android中的修复
+
+该版本增强了对Widevine DRM的支持，并解决了主要客户问题。
+
+有关Android的当前已发布版本的更多信 [息](../release-notes/tvsdk-3x-android.md)。
 
 ## 另请参阅
 
