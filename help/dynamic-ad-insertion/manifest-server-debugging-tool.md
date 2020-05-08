@@ -306,7 +306,7 @@ Auditude 308008 0 cecebae72a919de350b9ac52602623f3 0 NA
 
 ### TRACE_WEBVTT_RESPONSE记录 {#trace-webvtt-response-records}
 
-将记录 ``of ``日志日志 ``type ``记录到服务 ``responses ``器中，以 ``manifest ``便将 ``sends ``此标题记 ``clients ``录 `` `answer` ````requests ```for```WEBVTT ``到此标题中。 TRACE_WEBVTT_RESPONSE &#39;&#39;之外的字段按表中显示的顺序(以分隔的选项卡 `by`显示)。
+Records of this type log responses the manifest server sends to clients in answer to requests for WEBVTT captions. Fields beyond TRACE_WEBVTT_RESPONSE appear in the order shown in the table, separated by tabs.
 
 | 字段 | 类型 | 说明 |
 |--- |--- |--- |
