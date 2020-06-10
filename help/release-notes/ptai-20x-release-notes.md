@@ -2,9 +2,9 @@
 title: PTAI 20.6.1发行说明
 description: PTAI 20.6.1发行说明描述了2020年Primetime动态广告插入中的新增或变更、已解决和已知问题。
 translation-type: tm+mt
-source-git-commit: fc09f185489ff7e3decb7c77b495825e4c9c7c09
+source-git-commit: 5dd5015c01565964b53ef82659308190ee350a89
 workflow-type: tm+mt
-source-wordcount: '671'
+source-wordcount: '666'
 ht-degree: 0%
 
 ---
@@ -31,8 +31,6 @@ ht-degree: 0%
 * 修复了无论请求的原始协议如何，始终在http协议下请求WebVTT片段的问题。
 
 * 修复了在从广告切换回内容时，从播放列表顶部删除EXT-X-DINESCUTION标记的问题。 联系Adobe支持以启用此修复。
-
-## 先前版本中的更改
 
 ### 版本20.5.1
 
