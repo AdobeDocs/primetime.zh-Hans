@@ -1,24 +1,24 @@
 ---
-title: 适用于Android的TVSDK 3.11发行说明
-seo-title: 适用于Android的TVSDK 3.11发行说明
-description: TVSDK 3.11 for Android发行说明描述了TVSDK Android 3.11中的新增或更改功能、已解决和已知问题以及设备问题
-seo-description: TVSDK 3.11 for Android发行说明描述了TVSDK Android 3.11中的新增或更改功能、已解决和已知问题以及设备问题
+title: 适用于Android的TVSDK 3.12发行说明
+seo-title: 适用于Android的TVSDK 3.12发行说明
+description: TVSDK 3.12 for Android发行说明描述了TVSDK Android 3.12中的新增或更改功能、已解决和已知问题以及设备问题
+seo-description: TVSDK 3.12 for Android发行说明描述了TVSDK Android 3.12中的新增或更改功能、已解决和已知问题以及设备问题
 uuid: 685d46f5-5a02-4741-af5c-91e91babd6f7
 products: SG_PRIMETIME
 topic-tags: release-notes
 discoiquuid: 3a27379f-3cef-4ea3-bcae-21382dc1e9fd
 translation-type: tm+mt
-source-git-commit: 5dd5015c01565964b53ef82659308190ee350a89
+source-git-commit: db3f488e29468fc29ea8bf033877124a9abdecd0
 workflow-type: tm+mt
-source-wordcount: '5490'
+source-wordcount: '5531'
 ht-degree: 0%
 
 ---
 
 
-# 适用于Android的TVSDK 3.11发行说明 {#tvsdk-for-android-release-notes}
+# 适用于Android的TVSDK 3.12发行说明 {#tvsdk-for-android-release-notes}
 
-TVSDK 3.11 for Android发行说明描述了TVSDK Android 3.11中的新增或更改功能、已解决和已知问题以及设备问题。
+TVSDK 3.12 for Android发行说明描述了TVSDK Android 3.12中的新增或更改功能、已解决和已知问题以及设备问题。
 
 Android TVSDK随Android参考播放器提供在您的分发示例／目录中。 随附的README.md文件介绍如何构建参考播放器。
 
@@ -36,26 +36,31 @@ Android TVSDK随Android参考播放器提供在您的分发示例／目录中。
 
 发行说明的“功能列表”部分介绍了所 [支持和不支持](#feature-matrix) 的全套功能。
 
-## Android TVSDK 3.11
+## Android TVSDK 3.12
 
-**允许保护系统特定标头(PSSH)框获取**
+Primetime Reference应用程序的Gradle版本现已更新至5.6.4版。
 
-TVSDK现在允许获取与当前加载的媒体资源关联的保护系统特定标题框。 新API `getPSSH()` 已添加到 `com.adobe.mediacore.drm.DRMManager`。
-有关详细信息，请 [参阅Widevine DRM](../programming/tvsdk-3x-android-prog/android-3x-content-security/android-3x-drm-widevine.md)。
+要使用Android Studio设置和运行引用应用程序，请按照TVSDK zip提供的自述文件中的说明操 `TVSDK_Android_x.x.x.x/samples/PrimetimeReference/src/README.md`作。
 
 “已解决的问题”部分介绍了当前版本中修复的 [主要客户](#resolved-issues) 问题。
 
 ### 先前发行版中的新增功能和增强功能
 
+**Android TVSDK 3.11**
+
+* **允许获取保护系统特定标头(PSSH)框** - TVSDK允许获取与当前加载的媒体资源关联的保护系统特定标头框。 新增 `getPSSH()` 的API `com.adobe.mediacore.drm.DRMManager`。
+
+有关详细信息，请 [参阅Widevine DRM](../programming/tvsdk-3x-android-prog/android-3x-content-security/android-3x-drm-widevine.md)。
+
 **Android TVSDK 3.10**
 
-此版本侧重于解决已解决问题部分中所述的主 [要客户问](#resolved-issues) 题。
+该版本侧重于解决问题部分中所述的主要客 [户问题](#resolved-issues) 。
 
 **Android TVSDK 3.9**
 
-* **通过HTTPS进行安全投放** - Android TVSDK 3.9通过HTTPS引入安全投放功能，以无与伦比的规模和性能安全地交付内容。
+* **通过HTTPS进行安全投放** - Android TVSDK 3.9通过HTTPS引入了安全投放功能，以无可比拟的规模和性能安全地交付内容。
 
-   为了实现通过HTTPS的安全投放，类中引入了新的 `NetworkConfiguration` API。
+   要启用HTTPS上的安全投放，类中引入了新 `NetworkConfiguration` API。
 
    `public void setForceHTTPS (boolean value)`
 
@@ -65,7 +70,7 @@ TVSDK现在允许获取与当前加载的媒体资源关联的保护系统特定
 
 * **具有部分广告中断功能的预转广告支持** -借助此增强功能，TVSDK 3.8支持具有部分广告中断功能(PABI)的预转广告。
 
-   如果有预卷广告，则播放该广告，然后从实况点播放该内容，以模拟直播电视的体验。
+如果有预卷广告，则播放该广告，然后从实况点播放该内容，以模拟直播电视的体验。
 
 **Android TVSDK 3.7**
 
@@ -82,6 +87,7 @@ TVSDK现在允许获取与当前加载的媒体资源关联的保护系统特定
 **版本3.5**
 
 * **Just In Time Ad Resolution** - TVSDK 3.5从时间轴中删除对已播放广告的支持。
+
 * **支持脱机播放** -借助脱机播放，用户现在可以将视频内容下载到设备并在未连接时观看。 有关详细信息，请参阅“[Offline Playback with Android](https://helpx.adobe.com/content/dam/help/en/primetime/programming-guides/psdk_android_3.5.pdf)”。
 
 **版本3.4**
@@ -437,13 +443,17 @@ Android 2.5.1中发布的重要新增功能。
 
 如果分辨率与报告的问题相关联，则显示Zendesk引用，例如ZD#xxxxx。
 
-**Android TVSDK 3.11**
+**Android TVSDK 3.12**
 
-本节概述TVSDK 3.11 Android版本中解决的问题。
+本节概述TVSDK 3.12 Android版本中解决的问题。
 
-* ZD#41252 - WebVTT中的韩文字符在Android 7.1后断开。
+* ZD#40584 - Primetime Reference应用程序不使用最新的Gradle版本构建。
 
 ### 已解决先前版本中的问题
+
+**Android TVSDK 3.11**
+
+* ZD#41252 - WebVTT中的韩文字符在Android 7.1后断开。
 
 **Android TVSDK 3.10**
 
@@ -557,7 +567,7 @@ Android 2.5.1中发布的重要新增功能。
 
 * ZD #32256 —— 许可证轮换和密钥轮换问题- Adobe Access
 
-   * 修复了SampleAES内容的DRM元数据的段初始化。 适用于AES128内容。
+   * 修复了SampleAES内容的DRM元数据的区段初始化。 适用于AES128内容。
 
 * ZD #33619 —— 快速转发正在增长的播放列表内容，该内容在实况点附近卡在缓冲状态中。
 
