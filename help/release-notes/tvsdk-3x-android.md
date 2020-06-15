@@ -8,9 +8,9 @@ products: SG_PRIMETIME
 topic-tags: release-notes
 discoiquuid: 3a27379f-3cef-4ea3-bcae-21382dc1e9fd
 translation-type: tm+mt
-source-git-commit: db3f488e29468fc29ea8bf033877124a9abdecd0
+source-git-commit: d1881d1fe97d416ee0f69f62828aef46c5ad21bb
 workflow-type: tm+mt
-source-wordcount: '5531'
+source-wordcount: '5415'
 ht-degree: 0%
 
 ---
@@ -371,28 +371,6 @@ Android 2.5.1中发布的重要新增功能。
 | 广告封锁 | VOD + Live | 不支持 |
 | 即时启动 | VOD + Live | 不支持 |
 | 不连续标记支持 | VOD + Live | Y |
-| 302重定向粘性 | VOD + Live | Y |
-
-| 功能 | 内容类型 | HLS |
-|---|---|---|
-| 常规播放，支持广告 | VOD + Live | Y |
-| 支持广告的FER内容 | VOD | Y |
-| 默认广告行为 | VOD + Live | Y |
-| VAST 2.0/3.0 | VOD + Live | Y |
-| VMAP 1.0 | VOD + Live | Y |
-| MP4广告 | VOD + Live | Y（来自CRS） |
-| 支持广告的技巧播放 | VOD + Live | Y |
-| 仅广告 | VOD | Y |
-| 定位参数 | VOD + Live | Y |
-| 自定义参数 | VOD + Live | Y |
-| 自定义广告行为 | VOD + Live | Y |
-| 自定义广告标记 | 实时 | Y |
-| 自定义广告解析器 | VOD + Live | Y |
-| 自由轮自定义广告解析程序 | VOD | Y |
-| C3 | VOD + Live | 不支持 |
-| 延迟广告解决 | VOD | Y |
-| 不连续标记支持- SSAI | VOD + Live | Y |
-| 配套广告、横幅广告和可点击广告 | VOD + Live | Y |
 | 302重定向粘性 | VOD + Live | Y |
 
 | 功能 | 内容类型 | HLS |
