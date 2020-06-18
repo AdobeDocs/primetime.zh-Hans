@@ -2,7 +2,7 @@
 title: 适用于iOS的TVSDK 3.12发行说明
 description: TVSDK 3.12 for iOS发行说明描述了TVSDK iOS 3.12中的新增或更改功能、已解决和已知问题以及设备问题。
 translation-type: tm+mt
-source-git-commit: f6a0fbaec3d164dd0c15d2738b58c7486bbc6e57
+source-git-commit: 9c6a6f0b5ecff78796e37daf9d7bdb9fa686ee0c
 workflow-type: tm+mt
 source-wordcount: '7665'
 ht-degree: 0%
@@ -173,7 +173,7 @@ API更改：
 
 **网络广告信息**
 
-TVSDK API现在提供有关第三方VAST响应的其他信息。 广告ID、广告系统和VAST广告扩展在可通过广告资 `PTNetworkAdInfo` 产的属性访 `networkAdInfo` 问的类中提供。 此信息可用于与Moat Analytics等其他广告分析平台 **集成**。
+TVSDK API现在提供有关第三方VAST响应的其他信息。 广告ID、广告系统和VAST广告扩展在可通过广告资 `PTNetworkAdInfo` 产的属性访 `networkAdInfo` 问的类中提供。 此信息可用于与MoatAnalytics等其他广告Analytics平台 **集成**。
 
 **版本1.4.31**
 
@@ -187,7 +187,7 @@ TVSDK API现在提供有关第三方VAST响应的其他信息。 广告ID、广�
 
 在类 `PTSDKConfig` 中，已添加forceHTTPS API。
 
-该 `PTSDKConfig` 类提供对向Adobe Primetime广告决策、DRM和视频分析服务器发出的请求实施SSL的方法。 有关详细信息，请参 `forceHTTPS` 阅此 `isForcingHTTPS` 类的和方法。 如果清单是通过HTTPS加载的，TVSDK将保留HTTPS的内容使用，并在从该清单加载任何相对URL时遵守此用法。
+该 `PTSDKConfig` 类提供对向Adobe Primetime广告决策、DRM和视频Analytics服务器发出的请求实施SSL的方法。 有关详细信息，请参 `forceHTTPS` 阅此 `isForcingHTTPS` 类的和方法。 如果清单是通过HTTPS加载的，TVSDK将保留HTTPS的内容使用，并在从该清单加载任何相对URL时遵守此用法。
 
 >[!NOTE] 对第三方域（如广告跟踪像素、内容和广告URL）的请求以及类似请求不会进行修改，内容提供商和广告服务器有责任提供通过HTTPS支持的URL。
 
@@ -257,7 +257,7 @@ DRM策略现在可指定允许的最高分辨率，具体取决于设备的“�
 
 * **视频心率库(VHL)更新至版本1.4.1.1**
 
-   * 添加了将来自其他SDK或播放器的不同分析用例与Adobe Analytics Video Essentials捆绑在一起的功能。
+   * 添加了将来自其他SDK或播放器的不同分析用例与AdobeAnalytics视频基础捆绑的功能。
    * 广告跟踪已通过删除和方法 `trackAdBreakStart` 进行 `trackAdBreakComplete` 优化。 广告中断从和方法调 `trackAdStart` 用 `trackAdComplete` 中推断出。
    * 跟踪 `playhead` 广告时不再需要该属性。
    * 添加了对Marketing Cloud访客ID的支持。
@@ -340,11 +340,12 @@ Comment Type: draft
 
 **版本3.3**
 
-(ZD#37820)-为自定义头HS-Id、HS-SSAI-TAG添加了白名单。
+(ZD#37820)-为自定义头HS-Id、HS-SSAI-TAG添加了允许列表。
 
 **版本3.2**
 
 * **Ticket#36588** —— 调用MediaPlayer STOP方法时，会观察到播放器崩溃。
+
 修复了为带字幕的少数流调用STOP方法时观察到的间歇性崩溃。
 
 * **Ticket#37080** —— 已看到清单呼叫的重复请求。
@@ -438,24 +439,29 @@ Comment Type: draft
    修复了尝试在Apple TV上播放内容时出错的问题，该错误会完全阻止播放
 * (ZD #32146)-阻止iOS `PTMediaPlayerStatusError` 11开发测试版上的HLS Live内容未收到
 
-   使用 `PTMediaPlayerStatusError` Charles（丢弃连接和403）阻止时，未收到HLS Live和VOD内容
-* (ZD #29242)-启用广告时播放视频播放失败
+   在使 `PTMediaPlayerStatusError` 用Charles（丢弃连接和403）进行阻止时，未收到HLS Live和VOD内容。
 
-   启用广告并启用AirPlay开始播放视频时，视频播放从不开始，不会显示错误
-* (ZD#33341)-触发 `DRMInterface.h` 器在Xcode 9中生成警告
+* (ZD #29242)-启用广告时播放视频播放失败。
 
-   修复了两个块原 `DRMInterface.h` 型，其参数列表中缺少“void”一词
-* (ZD#31979)-对于iPhone 7/iPhone7+，如果iOS 10或更高版本，则不编译／运行
+   启用广告并启用AirPlay开始播放视频时，视频播放从不开始，不会显示错误。
 
-   不再支持针对iOS 7之前的IB文档的固定编译
-* (ZD#32920)-广告中断内的空白屏幕，无广告中断完成
+* (ZD#33341)-触发 `DRMInterface.h` 器在Xcode 9中生成警告。
 
-   当广告中断显示广告实例时，在广告实例完成后，将显示白屏
-* (ZD#32509)-停用iOS 11屏幕记录停用iOS 11上的屏幕记录
+   修复了两个块原 `DRMInterface.h` 型，它们的参数列表中缺少“void”一词。
 
-* (ZD#33179)- iOS11上的间歇性事件故障
+* (ZD#31979)-对于iPhone 7/iPhone7+，如果iOS 10或更高版本，则不编译／运行。
 
-   修复了iOS 11上的事件故障
+   不再支持为早于iOS 7编译IB文档。
+
+* (ZD#32920)-广告中断内的空白屏幕，无广告中断完成。
+
+   当广告中断显示广告实例时，在广告实例完成后，将显示空白屏幕。
+
+* (ZD#32509)-禁用iOS 11屏幕录制在iOS 11上禁用屏幕录制。
+
+* (ZD#33179)- iOS11上的间歇性事件故障。
+
+   修复了iOS 11上的事件故障。
 
 **版本1.4.40** (1.4.40.72)
 
@@ -625,9 +631,9 @@ EXT-X-CUE-OUT Midroll广告正在播放。
 
 此版本中的TVSDK解决了以下问题：
 
-* (ZD# 24180)向白色列表添加自定义头
+* (ZD# 24180)添加一个自定义头以允许列表。
 
-TVSDK白列表中已添加新的自定义头。
+新的自定义头已添加到TVSDK允许列表。
 
 * (ZD# 25016)当设置ABR控制参数时，会随机选择故障转移流
 
@@ -647,19 +653,19 @@ TVSDK白列表中已添加新的自定义头。
 
 * 视频心跳库(VHL)已更新至版本1.5.9以解决以下问题：
 
-* (ZD #22351)VHL —— 分析： 实时视频资产持续时间
+* (ZD #22351)VHL -Analytics: 实时视频资产持续时间
 
 通过向PTVideoAnalyticsTrackingMetadata添加assetDuration API来更新实时／线性流的资产持续时间并提供检查实时流的逻辑，解决了此问题。
 
-* (ZD# 22675)VHL —— 分析： 更新实时视频资产持续时间
+* (ZD# 22675)VHL -Analytics: 更新实时视频资产持续时间
 
 此问题与ZD #22351相同。
 
-* (ZD #25908)VHL —— 分析： Adobe心跳事件崩溃
+* (ZD #25908)VHL -Analytics: Adobe心跳事件崩溃
 
 通过更新实施以使用最新版iOS版VHL 1.5.9来提高稳定性和性能，解决了此问题。
 
-* (ZD #25956)VHL —— 分析： 重复播放视频时崩溃
+* (ZD #25956)VHL -Analytics: 重复播放视频时崩溃
 
 此问题与ZD #25908相同。
 
@@ -745,7 +751,7 @@ VideoAnalytics中缺失视频长度的问题已修复。
 
 此问题与(ZD #21590)相同。
 
-* (ZD #2280)-分析视频长度设置为0
+* (ZD #2280)-Analytics视频长度设置为0
 
 此问题与(ZD #21590)相同。
 
@@ -771,7 +777,7 @@ Apple不建议与IPv6兼容的符号已被删除。
 
 通过更新VideoAnalyticsTracker，在章节和非章节边界之间转换时正确检测章节开始/完成，解决了此问题。
 
-* (ZD #20784)-分析： 实时视频过渡完成触发内容
+* (ZD #20784)-Analytics: 实时视频过渡完成触发内容
 
 通过添加逻辑来在视频跟踪会话期间手动触发内容完成，解决了此问题。
 
@@ -1044,7 +1050,7 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 
 在iOS 8.2设备上定期播放，drmFramework中的固定内存泄漏
 
-* (ZD #3988)在首次播放后重新搜索时跳过预卷
+* (ZD #3988)在首次播放后重新搜索预卷时，将跳过预卷
 
 修复了一个错误，以便能够正确禁用广告策略。
 
@@ -1086,7 +1092,7 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 
 **版本1.4.5** (1.4.5.283)
 
-* (ZD #2141)TreeHouse应用程序的分析实施，添加 `AdobeAnalyticsPlugin.a` 了用于构建包的库。
+* (ZD #2141)AnalyticsTreeHouse应用程序实施，为构建 `AdobeAnalyticsPlugin.a` 包添加了库。
 * 视频心率库更新到1.4.1.2
 * [PTPALY-4226] [与ZD #2423相关)执行DRM重置可导致删除应用程序文档数据。
 
@@ -1163,7 +1169,7 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 * 它可能会体验到许可证旋转视频在iOS 11上不播放，并且在iOS 9.x和iOS 10.x上播放正常。
 * 在VPAID 2.0支持中，如果在AirPlay上播放活动，则跳过VPAID广告。
 * 当最小目标设置为iOS7（或更高版本）时，drmNativeInterface.framework无法正确链接。
-解决方法： 显式指定libstdc++.6.dylib库，如下所示： 转到“目标”->“构建阶段”->“将二进制文件与库链接”，并添加libstdc++.6.dylib。
+解决方法： 显式指定libstdc++.6.dylib库，如下所示： 转到“Target”->“构建阶段”->“将二进制文件与库链接”，并添加libstdc++.6.dylib。
 * 插入后期广告以替换API。
 * 在广告分时段进行搜索（不退出）会发布重复广告开始和广告分时段通知
 * 设置currentTimeUpdateInterval没有任何效果。
