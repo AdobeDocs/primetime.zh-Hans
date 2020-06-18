@@ -5,7 +5,10 @@ seo-title: 字幕
 title: 字幕
 uuid: 4dedcedc-50e5-4983-bb09-3f316337117e
 translation-type: tm+mt
-source-git-commit: 7e8df034035fe465fbe403949ef828e7811ced2e
+source-git-commit: 9c6a6f0b5ecff78796e37daf9d7bdb9fa686ee0c
+workflow-type: tm+mt
+source-wordcount: '64'
+ht-degree: 3%
 
 ---
 
@@ -14,7 +17,7 @@ source-git-commit: 7e8df034035fe465fbe403949ef828e7811ced2e
 
 播放视频内容时，可以显示字幕。
 
-要处理字幕，必须添加事件监 `AdobePSDK.PSDKEventType.CAPTIONS_UPDATED` 听器：
+要处理字幕，必须添加 `AdobePSDK.PSDKEventType.CAPTIONS_UPDATED` 事件监听器：
 
 ```js
 ... 
@@ -34,7 +37,7 @@ function onCaptionsUpdateEvent (event) {
 </ph>
 ```
 
-UI框架提供默认的字幕行为实现，可修改该实现。 还可以通过扩展默认的隐藏式字幕行为来修改隐藏式字幕行为。 例如：
+UI框架提供默认字幕行为实现，可以修改这些行为。 还可以通过扩展默认隐藏字幕行为来修改隐藏字幕行为。 例如：
 
 ```js
 // Using UI Framework 
@@ -56,4 +59,3 @@ player:{
  
 }); 
 ```
-
