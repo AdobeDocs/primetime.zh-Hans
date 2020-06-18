@@ -8,9 +8,9 @@ products: SG_PRIMETIME
 topic-tags: release-notes
 discoiquuid: 3a27379f-3cef-4ea3-bcae-21382dc1e9fd
 translation-type: tm+mt
-source-git-commit: d1881d1fe97d416ee0f69f62828aef46c5ad21bb
+source-git-commit: 9c6a6f0b5ecff78796e37daf9d7bdb9fa686ee0c
 workflow-type: tm+mt
-source-wordcount: '5415'
+source-wordcount: '5417'
 ht-degree: 0%
 
 ---
@@ -295,8 +295,8 @@ Android 2.5.1中发布的重要新增功能。
 
 * **工作流支持**
 
-   * **直接计费集成** -这会将计费指标发送到Adobe Analytics后端，Adobe Primetime已对客户使用的流进行认证。
-   TVSDK会自动收集指标，遵守客户销售合同，生成计费所需的定期使用情况报告。 在每个流开始事件中，TVSDK都使用Adobe Analytics数据插入API将付费指标（如内容类型、启用广告插入的标记和基于可收费流持续时间的启用drm的标记）发送到Adobe Analytics Primetime拥有的报表包。 这不会干扰或包含在客户自己的Adobe Analytics报表包或服务器调用中。 此计费使用情况报告会按要求定期发送给客户。 这是付费功能的第一阶段，仅支持使用付费。 可以使用文档中描述的API根据销售合同进行配置。 此功能默认处于启用状态。 要关闭此功能，请参阅参考播放器范例。
+   * **直接计费集成** -这会将计费指标发送到AdobeAnalytics后端，Adobe Primetime已针对客户使用的流进行认证。
+   TVSDK会自动收集指标，遵守客户销售合同，生成计费所需的定期使用情况报告。 在每个流开始事件中，TVSDK都使用AdobeAnalytics数据插入API将付费指标（如内容类型、启用广告插入的标记和基于可收费流持续时间的启用drm的标记）发送到AdobeAnalytics黄金时段拥有的报表包。 这不会干扰或包含在客户自己的AdobeAnalytics报表包或服务器调用中。 此计费使用情况报告会按要求定期发送给客户。 这是付费功能的第一阶段，仅支持使用付费。 可以使用文档中描述的API根据销售合同进行配置。 此功能默认处于启用状态。 要关闭此功能，请参阅参考播放器范例。
 
    * **改进的故障转移支持** -实施了其他策略，以便在主机服务器、播放列表文件和区段出现故障的情况下继续不间断地播放。
 
@@ -307,9 +307,9 @@ Android 2.5.1中发布的重要新增功能。
 
    * **配套横幅** -配套横幅显示在线性广告旁边，广告结束后通常继续显示在视图上。 这些横幅的类型可以是html（HTML片段）或iframe（iframe页面的URL）。
 
-* **分析**
+* **Analytics**
 
-   * **VHL 2.0 —— 这是** Adobe Analytics自动收集使用数据的最新优化视频心跳库(VHL)集成。 为了简化实施，API的复杂性已降低。 下载适用于Android [的VHL库v2.0.0](https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases) ，并解压libs文件夹中的JAR文件。
+   * **VHL 2.0 —— 这是** Adobe Analytics为自动收集使用数据而优化的最新视频心跳库(VHL)集成。 为了简化实施，API的复杂性已降低。 下载适用于Android [的VHL库v2.0.0](https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases) ，并解压libs文件夹中的JAR文件。
 
 * **SizeAvaliableEventListener**
 
@@ -357,7 +357,7 @@ Android 2.5.1中发布的重要新增功能。
 | 高级故障转移 | VOD + Live | Y |
 | QoS和播放器通知 | VOD + Live | Y |
 | 支持Cookie头 | VOD + Live | Y |
-| 支持自定义HTTP头 | VOD + Live | Y（需要白名单） |
+| 支持自定义HTTP头 | VOD + Live | Y（需要允许列表） |
 | 设置缓冲区控制参数 | VOD + Live | Y |
 | 设置自适应比特率控件 | VOD + Live | Y |
 | 自定义清单标记 | VOD + Live | Y |
@@ -414,7 +414,7 @@ Android 2.5.1中发布的重要新增功能。
 
 | 功能 | 内容类型 | HLS |
 |---|---|---|
-| Adobe Analytics VHL集成 | VOD + Live | Y |
+| AdobeAnalyticsVHL集成 | VOD + Live | Y |
 | 计费 | VOD + Live | Y |
 
 ## 已解决的问题 {#resolved-issues}
@@ -468,7 +468,7 @@ Android 2.5.1中发布的重要新增功能。
    * 修复了广告跟踪事件的特定案例。
 * ZD#37491 - HTTP状态代码中不存在错误元。
    * 在堆栈中传播网络错误时工作过。
-* ZD#37808 —— 白名单新自定义标题。
+* ZD#37808 —— 允许列出新的自定义标题。
    * 作为此修复的一部分添加了SSAI_TAG支持。
 * ZD#37622 - URI从特定广告窗格同步错误。
    * 修复了在向客户的Android应用程序提供包含未编码%的广告时，流播放崩溃的问题
