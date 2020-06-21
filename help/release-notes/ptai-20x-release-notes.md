@@ -2,9 +2,9 @@
 title: PTAI 20.6.1发行说明
 description: PTAI 20.6.1发行说明描述了2020年Primetime动态广告插入中的新增或变更、已解决和已知问题。
 translation-type: tm+mt
-source-git-commit: 5dd5015c01565964b53ef82659308190ee350a89
+source-git-commit: 9d2e046ae259c05fb4c278f464c9a26795e554fc
 workflow-type: tm+mt
-source-wordcount: '666'
+source-wordcount: '667'
 ht-degree: 0%
 
 ---
@@ -111,7 +111,7 @@ ht-degree: 0%
 
 **时间：** 2020年1月15日星期三东部时间凌晨04时至05时
 
-* Creative Repackaging Service现在自动将格式错误的创意列入黑名单，从而加快广告插入速度。
+* Creative Repackaging Service现在可自动阻止列出格式错误的创意，从而更快地插入广告。
 
 * 增加了在服务器端广告插入中支持新的SCTE 35提示格式的阶段1。
 
