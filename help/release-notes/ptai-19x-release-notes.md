@@ -2,7 +2,7 @@
 title: PTAI 19.11.1发行说明
 description: PTAI 19.11.1发行说明描述了2019年Primetime动态广告插入中的新增或变更、已解决和已知问题。
 translation-type: tm+mt
-source-git-commit: 0a58cce0d80ade581e32b5dd9376d336e02fac8b
+source-git-commit: 9d2e046ae259c05fb4c278f464c9a26795e554fc
 workflow-type: tm+mt
 source-wordcount: '1968'
 ht-degree: 0%
@@ -137,7 +137,7 @@ ht-degree: 0%
    * 新行为： 向SSAI引导URL添加了一个新参数vtdisc，其接受的值为true和false
       * vttdisc=true: EXT-X-DINSTRUCTION标签将插入WebVTT清单中，在每个插入广告之前和插入广告中断的最后一段之后，与音频／视频和纯音频清单的行为相匹配
       * vttdisc=false（与以前的行为相同）: 仅在WebVTT清单中，删除将在每个插入广告之前和插入广告中断的最后一段之后插入的EXT-X-DINRECTION标签
-      * 如果vtdisc参数被省略或具有非true/false的值，则vttdisc将默认为true
+      * 如果vtdisc参数被省略或其值不是true/false，则vttdisc将默认为true
 * SSAI: 安全更新和软件版本更新
    * Java: 更新了Java版本以支持通过TLS 1.2(HTTPS)触发的广告调用的其他密码套件
 
@@ -174,13 +174,13 @@ ht-degree: 0%
    * 旧的查找键结构： 区域、广告系统、广告ID、创意ID、创意URL和格式参数(目标持续时间、输出格式、目标CDN)
    * 将更新现有CRS资产的查找键以匹配生产版本之前的新结构，但请注意，在查找键更新和生产版本之间转换的新资产可能会丢失。 如果是，他们将在发布后下次遇到新的CRS请求时启动它们
 
-* CRS: 添加了将来自特定广告系统、广告ID、创意ID、创意URL和／或创意格式的CRS请求列入黑名单／白名单的功能
+* CRS: 添加了阻止来自特定广告系统、广告ID、创意ID、创意URL和／或创意格式的CRS请求的功能
 
    >注释
    >
-   >当找到具有同一广告的动态值（例如，URL中的动态参数）的广告提供者时，Adobe将添加黑名单规则。 在动态组件解析后，将禁用此类黑名单规则，无论是由提供者解决还是通过标准化规则解决。
+   >当找到具有同一广告的动态值（例如，URL中的动态参数）的广告提供者时，Adobe将添加块列表规则。 在动态组件解析后（由提供者或通过标准化规则）将禁用此类块列表规则。
 
-   * 如果您想为您所在的区域添加黑名单或白名单规则，请与您的技术客户经理联系以寻求帮助。
+   * 如果要为您的区域添加区块列表或允许列表规则，请与技术客户经理联系以获得帮助。
 
 ### 版本19.1.1
 
