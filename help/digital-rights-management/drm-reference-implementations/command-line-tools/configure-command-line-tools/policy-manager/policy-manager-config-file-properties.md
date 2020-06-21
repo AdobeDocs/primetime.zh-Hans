@@ -6,18 +6,21 @@ seo-title: 配置属性
 title: 配置属性
 uuid: 216921d1-a9c1-4650-9dce-c025836986e5
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 9d2e046ae259c05fb4c278f464c9a26795e554fc
+workflow-type: tm+mt
+source-wordcount: '1216'
+ht-degree: 0%
 
 ---
 
 
-# 配置属性{#configuration-properties}
+# 配置属性 {#configuration-properties}
 
 <!--<a id="section_20A96CDCC5C340DEAF455C6E300E5712"></a>-->
 
 >[!NOTE]
 >
->对于包含的属 `.n`性名称， `n` 表示一个以1开头的整数，并且对于属性的每个实例增加。 For example: `policy.license.customProp.n`.
+>对于包含的属 `.n`性名 `n` 称，表示一个整数，它以1开始，并为属性的每个实例增加。 For example: `policy.license.customProp.n`.
 
 <table class="+ topic/table " id="table_p3x_54y_n4"> 
  <thead class="- topic/thead "> 
@@ -28,14 +31,14 @@ source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
  </thead>
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="codeph"> policy.name</span> <p class="- topic/p "><span class="codeph"> -n</span><i class="+ topic/ph hi-d/i ">policyname</i> </p> </td> 
-   <td colname="2" class="- topic/entry "> 可读的DRM策略名称。 </td> 
+   <td colname="1" class="- topic/entry "><span class="codeph"> policy.name</span> <p class="- topic/p "><span class="codeph"> -n策略</span><i class="+ topic/ph hi-d/i ">名称</i> </p> </td> 
+   <td colname="2" class="- topic/entry "> 人可读的DRM策略名称。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="codeph"> policy.requireKeyServer</span> <p class="- topic/p "><span class="codeph"> -keyServer</span><i class="+ topic/ph hi-d/i ">boolean</i> </p> </td> 
+   <td colname="1" class="- topic/entry "><span class="codeph"> policy.requireKeyServer</span> <p class="- topic/p "><span class="codeph"> -keyServer</span> <i class="+ topic/ph hi-d/i ">boolean</i> </p> </td> 
    <td colname="2" class="- topic/entry ">适用以下条件： 
     <ul id="ul_AF4EBD6C19DC4DFAAB4756EF24BAC57D"> 
-     <li id="li_6CC48ABF78EC426E9FC51458BD946BC9">如果为true，则向iOS交付密钥时需要HTTPS密钥服务器。 </li> 
+     <li id="li_6CC48ABF78EC426E9FC51458BD946BC9">如果为true，则需要HTTPS密钥服务器才能将密钥投放到iOS。 </li> 
      <li id="li_63046A4ED7354C1E9E823B475E4AEFF7">如果未指定，则默认值为false。 </li> 
     </ul> </td> 
   </tr> 
@@ -53,23 +56,23 @@ source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.chaining.ansymmetric.certfile</span> </td> 
-   <td colname="2" class="- topic/entry ">其公钥用于加密增强的许可证链的根加密密钥的许可证服 <a href="https://help.adobe.com/en_US/primetime/drm/5.3/protecting_content/index.html#DRM-concept-Enhanced_License_Chaining" class="- topic/xref " format="http" scope="external"> 务器证书</a>。 此属性指定仅包含证书的文件。 <p>注意： 支持PEM或DER格式。 </p> </td> 
+   <td colname="2" class="- topic/entry ">许可证服务器证书，其公钥用于加密增强的许可证链的根 <a href="https://help.adobe.com/en_US/primetime/drm/5.3/protecting_content/index.html#DRM-concept-Enhanced_License_Chaining" class="- topic/xref " format="http" scope="external"> 加密密钥</a>。 此属性指定仅包含证书的文件。 <p>注意：  支持PEM或DER格式。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.chaining.rootKey</span> <p class="- topic/p "><span class="codeph"> -rootKey</span> <i class="+ topic/ph hi-d/i ">root-key</i> </p> </td> 
-   <td colname="2" class="- topic/entry "> <p>为“增强的许可证链接”指定 <a href="https://help.adobe.com/en_US/primetime/drm/5.3/protecting_content/index.html#DRM-concept-Enhanced_License_Chaining" class="- topic/xref " format="http" scope="external"> 根加密密钥</a>。 如果未指定密钥并且已启用“增强许可证链接”，则会自动生成随机密钥。 </p> <p>键长必须为16字节，并指定为十六进制值。 十六进制值之间的空格是可选的。 对于更新，命令行选项不可用，并且忽略该属性。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>指定增强的许可证链的 <a href="https://help.adobe.com/en_US/primetime/drm/5.3/protecting_content/index.html#DRM-concept-Enhanced_License_Chaining" class="- topic/xref " format="http" scope="external"> 根加密密钥</a>。 如果未指定密钥并且启用了增强许可证链接，则会自动生成随机密钥。 </p> <p>密钥长度必须为16字节，并指定为十六进制值。 十六进制值之间的空格是可选的。 对于更新，命令行选项不可用，属性被忽略。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.domain.url</span> <p class="- topic/p "><span class="codeph"> -domainURL</span> <i class="+ topic/ph hi-d/i ">url</i> </p> </td> 
-   <td colname="2" class="- topic/entry ">如果需要域注册， <i>url</i> 将指定域服务器的URL。 对于更新，命令行选项不可用，并且忽略该属性。 </td> 
+   <td colname="2" class="- topic/entry ">如果需要域注册， <i>url</i> 将指定域服务器的URL。 对于更新，命令行选项不可用，属性被忽略。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.domain.anonymous</span> <p class="- topic/p "><span class="codeph"> -domainAnon</span> </p> </td> 
-   <td colname="2" class="- topic/entry ">指定是否允许匿名域注册。 将属性设置为true或包含此命令行选项以允许匿名访问。 <p>注意：此选项不能与 <span class="codeph"> -domainAuthNS一起使用</span>。 </p> </td> 
+   <td colname="2" class="- topic/entry ">指定是否允许匿名域注册。 将属性设置为true或包含此命令行选项以允许匿名访问。 <p>注意： 此选项不能与-domainAuthNS <span class="codeph"> 一起使用</span>。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="codeph"> policy.domain.authNamespace</span> <p class="- topic/p "><span class="codeph"> -domainAuthNS命名空</span><i class="+ topic/ph hi-d/i ">间</i> </p> </td> 
-   <td colname="2" class="- topic/entry "> <p>域注册的身份验证命名空间。 如果指定，则客户端需要使用由指定机构颁发的用户名和密码进行身份验证。 </p> <p>对于更新，命令行选项不可用，并且忽略该属性。 </p> <p>注意：此选项不能与-domainAnon <span class="codeph"> 一起使用</span>。 </p> </td> 
+   <td colname="1" class="- topic/entry "><span class="codeph"> policy.domain.authNamespace</span> <p class="- topic/p "><span class="codeph"> -domainAuthNS</span><i class="+ topic/ph hi-d/i ">命名空间</i> </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>域注册的身份验证命名空间。 如果指定，则客户端需要使用指定颁发机构颁发的用户名和密码进行身份验证。 </p> <p>对于更新，命令行选项不可用，属性被忽略。 </p> <p>注意： 此选项不能与-domainAnon <span class="codeph"> 一起使用</span>。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.outputProtection.analog</span> <p class="- topic/p "><span class="codeph"> -opAnalog</span> <i class="+ topic/ph hi-d/i ">AnalogOption</i> </p> </td> 
@@ -80,30 +83,30 @@ source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
      <li class="- topic/li " id="li_207D2D6256D6423FBDABA7A8627A9B7D"><span class="+ topic/ph pr-d/codeph codeph"> USE_IF_AVAILABLE_ACP</span> </li> 
      <li class="- topic/li " id="li_E17D944BED5F403FAE94708EE6AE4BBE"><span class="+ topic/ph pr-d/codeph codeph"> USE_IF_AVAILABLE_CGMSA</span> </li> 
      <li class="- topic/li " id="li_66D5A0C8FE154445A522D91EFB05B7ED"><span class="+ topic/ph pr-d/codeph codeph"> 必需</span> </li> 
-     <li class="- topic/li " id="li_AF2024F212A249ED99AEECCF3E844A11"><span class="+ topic/ph pr-d/codeph codeph"> REQUIRED_ACP</span> </li> 
+     <li class="- topic/li " id="li_AF2024F212A249ED99AEECCF3E844A11"><span class="+ topic/ph pr-d/codeph codeph"> 必需_ACP</span> </li> 
      <li class="- topic/li " id="li_FFF9B7DAE77740EE895EC35D1606A527"><span class="+ topic/ph pr-d/codeph codeph"> REQUIRED_CGMSA</span> </li> 
      <li class="- topic/li " id="li_52DED572F3AE495EB6A6450C611B440E"><span class="+ topic/ph pr-d/codeph codeph"> NO_PLAYBACK</span> </li> 
     </ul> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="codeph"> policy.drmVersionBlacklist.n</span> <p class="- topic/p "><span class="codeph"> -drmBlacklist</span> <i class="+ topic/ph hi-d/i ">name/value-pairs</i> </p> </td> 
-   <td colname="2" class="- topic/entry "> <p>限制访问受保护内容的DRM客户端。 此选项指定不能使用的DRM模块版本列表（黑名单）。 </p> <p>该值由以下格式的逗 <span class="codeph"> 号分隔的name=value</span> 对组成： </p> <p class="- topic/p "><span class="+ topic/ph pr-d/codeph codeph"> os|release|arch|model|vendor|env|screen|value</span> </p> <p class="- topic/p ">其他名称／值对必须以逗号分隔。 例如， <span class="codeph"> os=Win,release=2.0,arch=32</span>。 </p> </td> 
+   <td colname="1" class="- topic/entry "><span class="codeph"> policy.drmVersionBlacklist.n</span> <p class="- topic/p "><span class="codeph"> -drmBlacklist</span><i class="+ topic/ph hi-d/i ">名称／值对</i> </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>限制访问受保护内容的DRM客户端。 此选项指定不能使用的DRM模块的列表（块列表）。 </p> <p>该值由逗号分隔的 <span class="codeph"> name=value</span> 对组成，格式如下： </p> <p class="- topic/p "><span class="+ topic/ph pr-d/codeph codeph"> os|release|arch|model|vendor|env|screen|value</span> </p> <p class="- topic/p ">其他名称／值对必须以逗号分隔。 例如， <span class="codeph"> os=Win,release=2.0,arch=32</span>。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.runtimeVersionBlacklist.n</span> <p class="- topic/p "><span class="codeph"> -runtimeBlacklist</span> <i class="+ topic/ph hi-d/i ">name/value-pairs</i> </p> </td> 
-   <td colname="2" class="- topic/entry "> <p>应用程序运行时不能访问受保护的内容。 此选项指定不能使用的运行时模块版本列表（黑名单）。 </p> <p>该值由以逗号分隔的 <span class="codeph"> name=value对组成</span> ，格式如下： </p> <p class="- topic/p "><span class="+ topic/ph pr-d/codeph codeph"> os|release|application|arch|model|vendor|env|screen|value</span> </p> <p class="- topic/p ">其他名称／值对必须以逗号分隔。 例如， <span class="codeph"> os=Win,application=AIR</span>。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>应用程序运行时被限制访问受保护的内容。 此选项指定不能使用的运行时模块的列表（块列表）。 </p> <p>该值由以逗号分隔的 <span class="codeph"> name=value</span> 对组成，格式如下： </p> <p class="- topic/p "><span class="+ topic/ph pr-d/codeph codeph"> os|release|application|arch|model|vendor|env|screen|value</span> </p> <p class="- topic/p ">其他名称／值对必须以逗号分隔。 例如， <span class="codeph"> os=Win,application=AIR</span>。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="codeph"> policy.v1DeviceCapabilities</span> <p class="- topic/p "><span class="codeph"> -devCapabilitiesV1</span> <i class="+ topic/ph hi-d/i ">name/value-pairs</i> </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">指定访问受保护内容所需的设备功能。 该值由以下格式的逗 <span class="codeph"> 号分隔的name=value</span> 对组成： </p> <p class="- topic/p "><span class="+ topic/ph pr-d/codeph codeph"> nonUserAccessibleBus|hardwareRootOfTrust=true|false</span> </p> <p class="- topic/p ">例如， <span class="codeph"> nonUserAccessibleBus=false,hardwareRootOfTrust=true</span>。 </p> <p>在更新过程中，您需要应用 <span class="codeph"> -devCapabilitiesV1</span> ，而不需要删除设备功能限制的其余参数。 </p> </td> 
+   <td colname="1" class="- topic/entry "><span class="codeph"> policy.v1DeviceCapabilities</span> <p class="- topic/p "><span class="codeph"> -devCapabilitiesV1</span><i class="+ topic/ph hi-d/i ">名称／值对</i> </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">指定访问受保护内容所需的设备功能。 该值由逗号分隔的 <span class="codeph"> name=value</span> 对组成，格式如下： </p> <p class="- topic/p "><span class="+ topic/ph pr-d/codeph codeph"> nonUserAccessibleBus|hardwareRootOfTrust=true|false</span> </p> <p class="- topic/p ">例如， <span class="codeph"> nonUserAccessibleBus=false,hardwareRootOfTrust=true</span>。 </p> <p>在更新过程中，您需要应用- <span class="codeph"> devCapabilitiesV1</span> ，而不需要应用其余参数来删除设备功能限制。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.syncFrequency</span> <p class="- topic/p "><span class="codeph"> -sync</span> <i class="+ topic/ph hi-d/i ">name/value-pairs</i> </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">指定客户端向服务器发送同步消息的频率。 </p> <p>如果未设置该属性，则客户端在播放使用DRM策略保护的内容时不会发送同步消息。 该值由以逗号分隔的 <span class="codeph"> name=value对组成</span> ，格式如下： </p> <p class="- topic/p "><span class="+ topic/ph pr-d/codeph codeph"> start|force=numberValue</span> </p> <p class="- topic/p ">以下列表提供了有关这些选项的其他信息： 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">指定客户端向服务器发送同步消息的频率。 </p> <p>如果未设置该属性，则客户端在播放使用DRM策略保护的内容时不会发送同步消息。 该值由以逗号分隔的 <span class="codeph"> name=value</span> 对组成，格式如下： </p> <p class="- topic/p "><span class="+ topic/ph pr-d/codeph codeph"> 开始|force=numberValue</span> </p> <p class="- topic/p ">以下列表提供了有关这些选项的其他信息： 
      <ul id="ul_a5j_q4t_44"> 
-      <li id="li_FD2C0C6DA19E455AA1917A56E09A7F84">（必需） <span class="codeph"> start</span> 指定客户端需要在上次同步后的指定分钟内开始与服务器同步。 </li> 
-      <li id="li_9DEBC57385A442C3929AE3D0E3FA8992">（可选） <span class="codeph"> force是</span> (0-100)客户端在播放期间需要强制执行同步消息的概率。 </li> 
-     </ul>在更新过程中， <span class="codeph"> 使用</span> -sync（不含其余参数）来删除同步要求。 </p> </td> 
+      <li id="li_FD2C0C6DA19E455AA1917A56E09A7F84">（必需） <span class="codeph"> 开始</span> ，指定客户端需要在自上次同步以来的指定分钟内与服务器同步。 </li> 
+      <li id="li_9DEBC57385A442C3929AE3D0E3FA8992">（可选） <span class="codeph"> force</span> 是客户端在播放期间需要强制同步消息的概率(0-100)。 </li> 
+     </ul>在更新过程中 <span class="codeph"> ，使用</span> -sync（不含其余参数）来删除同步要求。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.useRootLicense</span> </td> 
@@ -111,27 +114,27 @@ source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.startDate</span> </td> 
-   <td colname="2" class="- topic/entry ">内容生效后的日期。 您可以应用以下格式之一： 
+   <td colname="2" class="- topic/entry ">内容生效的日期。 您可以应用以下格式之一： 
     <ul id="ul_6610B44D0C16485098F6F45DE3F151D7"> 
-     <li id="li_986707D4C6164C44B3CCBE2EEB4C09B6"><span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd</span> <p>例如， <span class="codeph"> 2009-01-31表示</span> 1月31日凌晨12:00。 </p> </li> 
-     <li id="li_E15B782716124F6EAEFB04D16E5280DB"><span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd-h24:min:sec</span> <p>例如， <span class="codeph"> 2009-01-31-14:30:00表示1月31日下午2:30</span> 。 </p> </li> 
+     <li id="li_986707D4C6164C44B3CCBE2EEB4C09B6"><span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd</span> <p>例如， <span class="codeph"> 2009-01-31表示</span> 1月31日凌晨12点。 </p> </li> 
+     <li id="li_E15B782716124F6EAEFB04D16E5280DB"><span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd-h24:min:sec</span> <p>例如， <span class="codeph"> 2009-01-31-14:30:00表示1月</span> 31日下午2:30。 </p> </li> 
     </ul> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.expiration.endDate</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">内容变为无效的日期。 </p> <p>注意：不能同 <span class="codeph"> 时指定policy.expiration.endDate</span><span class="codeph"> 和policy.expiration.duration</span> 。 </p> <p>例如，2009-01-31-14:30:00表示内容将于1月31日下午2:30过期。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">内容变为无效的日期。 </p> <p>注意： 不能同 <span class="codeph"> 时指定policy.expiration</span> .endDate <span class="codeph"> 和policy.expiration.duration</span> 。 </p> <p>例如，2009-01-31-14:30:00表示内容将于1月31日下午2:30过期。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.expiration.duration</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">内容变为无效的时间（以分钟为单位）。 打包内容时开始的时间。 </p> <p>注意：不能同 <span class="codeph"> 时指定policy.expiration.endDate</span><span class="codeph"> 和policy.expiration.duration</span> 。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">内容变为无效的时间（以分钟为单位）。 打包内容的时间开始。 </p> <p>注意： 不能同 <span class="codeph"> 时指定policy.expiration</span> .endDate <span class="codeph"> 和policy.expiration.duration</span> 。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.licenseCaching.duration</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">在客户端上缓存许可证的时间（以分钟为单位）。 您可以将此属性设置为0以阻止许可证缓存。 该值必须为0或更高。 </p> <p>注意：不能同时 <span class="codeph"> 指定policy.licenseCaching.duration</span><span class="codeph"> 和policy.licenseCaching.endDate</span> 。 </p> <p class="- topic/p ">此DRM策略设置仅应用于磁盘上的许可证缓存，并且不控制内存缓存的许可证持续时间。 即使您未指定持续时间为零的DRM策略，许可证也可以在内存中缓存。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">在客户端上缓存许可证的时间（以分钟为单位）。 您可以将此属性设置为0以阻止许可证缓存。 值必须为0或更高。 </p> <p>注意： 不能同 <span class="codeph"> 时指定policy.licenseCaching</span> . <span class="codeph"> duration和policy.licenseCaching.endDate</span> 。 </p> <p class="- topic/p ">此DRM策略设置仅应用于磁盘上的许可证缓存，并且不控制内存缓存的许可证持续时间。 即使未指定持续时间为零的DRM策略，许可证也可以在内存中缓存。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.licenseCaching.endDate</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">在此日期之后，您无法再缓存许可证。 </p> <p>注意：不能同时 <span class="codeph"> 指定policy.licenseCaching.duration</span><span class="codeph"> 和policy.licenseCaching.endDate</span> 。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">在此日期之后，您不能再缓存许可证。 </p> <p>注意： 不能同 <span class="codeph"> 时指定policy.licenseCaching</span> . <span class="codeph"> duration和policy.licenseCaching.endDate</span> 。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.anonymous</span> </td> 
@@ -139,15 +142,15 @@ source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.authNamespace</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">如果需要用户名和密码，此属性为用户名指定可选的名称限定符。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">如果需要用户名和密码，则此属性为用户名指定可选的名称限定符。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">policy.customProp.n</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">在获取许可证期间由服务器使用的自定义名称／值对。 您可以应用以下格式来指定属性： <span class="+ topic/ph pr-d/codeph codeph">policy.customProp.n</span>=<span class="+ topic/ph pr-d/codeph codeph">name</span>=<span class="+ topic/ph pr-d/codeph codeph">value</span> </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">服务器在获取许可证期间使用的自定义名称／值对。 您可以应用以下格式来指定属性： <span class="+ topic/ph pr-d/codeph codeph">policy.customProp.n</span>=<span class="+ topic/ph pr-d/codeph codeph">name</span>=<span class="+ topic/ph pr-d/codeph codeph">value</span> </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.playbackWindow </span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">指定回放窗口（以分钟为单位）。 此值表示在首次播放受保护的内容后许可证的有效时间。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">以分钟为单位指定播放窗口。 此值表示在首次播放受保护的内容后许可证的有效时间。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.outputProtection.digital</span> </td> 
@@ -161,7 +164,7 @@ source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
   </tr> 
   <tr> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.outputProtection.ota</span> </td> 
-   <td colname="2" class="- topic/entry ">指定应列入白名单的无线(OTA)连接类型。 有效的连接类型包括： 
+   <td colname="2" class="- topic/entry ">指定应允许列出的无线(OTA)连接类型。 有效的连接类型包括： 
     <ul id="ul_iz5_4fp_fs"> 
      <li id="li_FB07519EFEFE4B95B3B1F5BFD4DE6591"><span class="codeph"> MIRACAST</span> </li> 
      <li id="li_51E7DE83679F4630B01264407DAD0E84"><span class="codeph"> AIRPLAY</span> </li> 
@@ -183,16 +186,16 @@ source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">policy.allowedAIRApplication.n</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">非Flash应用程序（Adobe AIR、iOS、Android等）的白名单允许播放受保护内容。 该属性必须使用以下格式： <span class="+ topic/ph pr-d/codeph codeph">pubId</span>[:<span class="+ topic/ph pr-d/codeph codeph">appId</span>[:[<span class="+ topic/ph pr-d/codeph codeph">min</span><span class="+ topic/ph pr-d/codeph codeph"></span>:[maxId]]] </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">允许列出非Flash应用程序（Adobe AIR、iOS、Android等） 允许播放受保护的内容。 该属性必须使用以下格式： <span class="+ topic/ph pr-d/codeph codeph">PubId</span>[:<span class="+ topic/ph pr-d/codeph codeph">appId</span>[:[<span class="+ topic/ph pr-d/codeph codeph">min</span>]:[<span class="+ topic/ph pr-d/codeph codeph">max</span>]] </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">policy.allowedSWFApplication.n</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">允许播放受保护内容的SWF应用程序的白名单。 该属性必须使用以下格式： </p> <p class="- topic/p "> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">允许播放受保护内容的SWF应用程序列表。 该属性必须使用以下格式： </p> <p class="- topic/p "> 
      <ul id="ul_EC20F52AD95C4BE3B7F703048A43CDF0"> 
       <li id="li_3E4A47D925C24834A2C25BC5943279D4"><span class="+ topic/ph pr-d/codeph codeph">URL</span> </li> 
       <li id="li_9A7CAF081C5F488FB5CDA6D38C5552F6"><span class="+ topic/ph pr-d/codeph codeph">file=swf_file</span> </li> 
       <li id="li_E10EA4223137489CBE4015DE999F7154"><span class="codeph">time=max_time_to_verify</span> </li> 
-     </ul> <i class="+ topic/ph hi-d/i ">swf_file</i> 是用于计算哈希的SWF文件， <i class="+ topic/ph hi-d/i ">max_time_to_verify</i> 是下载和验证SWF完成时允许的最长时间（以秒为单位）。 </p> </td> 
+     </ul> <i class="+ topic/ph hi-d/i ">swf_file</i> 是用于计算哈希的SWF文件， <i class="+ topic/ph hi-d/i ">max_time_to_verify</i> 是允许下载和验证SWF以完成的最长时间（秒）。 </p> </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">policy.license.customProp.n</span> </td> 
