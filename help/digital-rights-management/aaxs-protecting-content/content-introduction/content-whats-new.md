@@ -5,7 +5,7 @@ seo-title: 概述
 title: 概述
 uuid: 874c175b-8207-49fa-aad4-204ccbee9c2c
 translation-type: tm+mt
-source-git-commit: 9d2e046ae259c05fb4c278f464c9a26795e554fc
+source-git-commit: 58bb3bedc5b0ac63afd96eb6101d9ad779e6deed
 workflow-type: tm+mt
 source-wordcount: '482'
 ht-degree: 0%
@@ -43,4 +43,4 @@ SDK提供一个Java API来完成这些任务，包括许可证服务器的参考
 
 指定自定义使用规则。 自定义数据可以包含在许可证服务器颁发的许可证中。 对此数据的解释／处理完全取决于客户端应用程序和许可证服务器的实现。
 
-示例用例： 通过允许将其他业务规则作为策略和／或内容许可证的一部分安全地传达，实现使用规则的可扩展性。 出于安全原因，因为这些使用规则是在自定义客户端应用程序代码中强制实施的，因此应将此选项与AIR应用程序或Flash Player SWF允许列表选项结合使用。 有关详细信息，请参阅“[运行时和应用程序限](../../aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-allowlist-air.md)制”。
+示例用例： 通过允许将其他业务规则作为策略和／或内容许可证的一部分安全地传达，实现使用规则的可扩展性。 出于安全原因，因为这些使用规则是在自定义客户端应用程序代码中强制实施的，因此应将此选项与AIR应用程序或Flash Player SWF允许列表选项结合使用。 有关详细信息，请参阅 [运行时和应用程序限制](../../aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-allowlist-air.md)。
