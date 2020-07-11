@@ -4,9 +4,9 @@ product: adobe primetime
 audience: end-user
 user-guide-title: Primetime数字版权管理帮助
 translation-type: tm+mt
-source-git-commit: 9d2e046ae259c05fb4c278f464c9a26795e554fc
+source-git-commit: 58bb3bedc5b0ac63afd96eb6101d9ad779e6deed
 workflow-type: tm+mt
-source-wordcount: '2197'
+source-wordcount: '2202'
 ht-degree: 0%
 
 ---
@@ -189,10 +189,10 @@ ht-degree: 0%
       + [基于时间的规则](protecting-content/introduction/usage-rules/authentication/time-based-rules.md)
       + [同步要求](protecting-content/introduction/usage-rules/authentication/synchronization.md)
    + 运行时和应用程序限制 {#runtime-application-restrictions}
-      + [允许Primetime DRM应用程序播放受保护内容的允许列表……](protecting-content/introduction/usage-rules/runtime-application-restrictions/allowlist-air.md)
-      + [Adobe® Flash® Player SWF的允许列表](protecting-content/introduction/usage-rules/runtime-application-restrictions/allowlist-flash.md)
-      + [限制访问受保护内容的DRM客户端的块列表](protecting-content/introduction/usage-rules/runtime-application-restrictions/blocklist-drm-clients.md)
-      + [应用程序运行时的块列表](protecting-content/introduction/usage-rules/runtime-application-restrictions/blocklist-app-runtimes.md)
+      + [Primetime DRM应用程序的允许列表允许播放受保护的内容……](protecting-content/introduction/usage-rules/runtime-application-restrictions/allowlist-air.md)
+      + [允许列表Adobe® Flash® Player SWF](protecting-content/introduction/usage-rules/runtime-application-restrictions/allowlist-flash.md)
+      + [阻止列表DRM客户端无法访问受保护的内容](protecting-content/introduction/usage-rules/runtime-application-restrictions/blocklist-drm-clients.md)
+      + [阻止列表应用程序运行时](protecting-content/introduction/usage-rules/runtime-application-restrictions/blocklist-app-runtimes.md)
       + [DRM和运行时的最低安全级别](protecting-content/introduction/usage-rules/runtime-application-restrictions/min-sec-level-for-drm.md)
       + [播放受保护的内容需要设备功能](protecting-content/introduction/usage-rules/runtime-application-restrictions/device-capabilities.md)
       + [越狱执行（需要Adobe Primetime DRM）](protecting-content/introduction/usage-rules/runtime-application-restrictions/jailbreak-enforcement.md)
@@ -401,7 +401,7 @@ ht-degree: 0%
       + [回滚检测](aaxs-secure-deployment-guidelines/issuing-licenses/protect-license-server-rollback-detection.md)
       + [颁发许可证时的计算机计数](aaxs-secure-deployment-guidelines/issuing-licenses/protect-license-server-rollback-detection-machine-count.md)
       + [重放保护](aaxs-secure-deployment-guidelines/issuing-licenses/protect-license-server-replay-detection.md)
-      + [维护受信任内容打包程序的允许列表](aaxs-secure-deployment-guidelines/issuing-licenses/protect-license-server-maintain-allowlist.md)
+      + [维护可信内容包装程序的允许列表](aaxs-secure-deployment-guidelines/issuing-licenses/protect-license-server-maintain-allowlist.md)
       + [身份验证令牌超时](aaxs-secure-deployment-guidelines/issuing-licenses/protect-license-server-timeout-for-authn-tokens.md)
       + [覆盖策略选项](aaxs-secure-deployment-guidelines/issuing-licenses/protect-license-server-override-policy-options.md)
       + [预生成许可证](aaxs-secure-deployment-guidelines/issuing-licenses/pre-gen-licenses.md)
@@ -424,10 +424,10 @@ ht-degree: 0%
    + [用户身份验证](aaxs-protecting-content/content-introduction/content-usage-rules/content-authentication/content-user-authentication.md)
    + [基于时间的规则](aaxs-protecting-content/content-introduction/content-usage-rules/content-time-based-rules/content-time-based-rules-defining.md)
    + 运行时和应用程序限制 {#runtime-and-application-restrictions}
-      + [允许Adobe® Primetime应用程序列表播放受保护的内容](aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-allowlist-air.md)
-      + [允许Adobe® Flash® Player SWF列表播放受保护的内容](aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-allowlist-flash.md)
-      + [限制访问受保护内容的DRM客户端的块列表](aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-blocklist-drm-clients.md)
-      + [阻止限制访问受保护内容的应用程序运行时列表](aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-blocklist-app-runtimes.md)
+      + [允许Adobe® Primetime应用程序播放受保护内容的允许列表](aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-allowlist-air.md)
+      + [允许Adobe® Flash® Player SWF播放受保护内容的允许列表](aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-allowlist-flash.md)
+      + [阻止列表DRM客户端无法访问受保护的内容](aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-blocklist-drm-clients.md)
+      + [阻止列表应用程序运行时无法访问受保护的内容](aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-blocklist-app-runtimes.md)
       + [DRM和运行时的最低安全级别](aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-min-sec-level-for-drm.md)
       + [播放受保护的内容需要设备功能](aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-device-capabilities.md)
       + [越狱执行（需要Adobe Primetime）](aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-jailbreak-enforcement.md)
