@@ -6,9 +6,9 @@ seo-title: 配置属性
 title: 配置属性
 uuid: 216921d1-a9c1-4650-9dce-c025836986e5
 translation-type: tm+mt
-source-git-commit: 9d2e046ae259c05fb4c278f464c9a26795e554fc
+source-git-commit: 58bb3bedc5b0ac63afd96eb6101d9ad779e6deed
 workflow-type: tm+mt
-source-wordcount: '1216'
+source-wordcount: '1218'
 ht-degree: 0%
 
 ---
@@ -90,11 +90,11 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.drmVersionBlacklist.n</span> <p class="- topic/p "><span class="codeph"> -drmBlacklist</span><i class="+ topic/ph hi-d/i ">名称／值对</i> </p> </td> 
-   <td colname="2" class="- topic/entry "> <p>限制访问受保护内容的DRM客户端。 此选项指定不能使用的DRM模块的列表（块列表）。 </p> <p>该值由逗号分隔的 <span class="codeph"> name=value</span> 对组成，格式如下： </p> <p class="- topic/p "><span class="+ topic/ph pr-d/codeph codeph"> os|release|arch|model|vendor|env|screen|value</span> </p> <p class="- topic/p ">其他名称／值对必须以逗号分隔。 例如， <span class="codeph"> os=Win,release=2.0,arch=32</span>。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>限制访问受保护内容的DRM客户端。 此选项指定不能使用的DRM模块的列表(阻止列表)。 </p> <p>该值由逗号分隔的 <span class="codeph"> name=value</span> 对组成，格式如下： </p> <p class="- topic/p "><span class="+ topic/ph pr-d/codeph codeph"> os|release|arch|model|vendor|env|screen|value</span> </p> <p class="- topic/p ">其他名称／值对必须以逗号分隔。 例如， <span class="codeph"> os=Win,release=2.0,arch=32</span>。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.runtimeVersionBlacklist.n</span> <p class="- topic/p "><span class="codeph"> -runtimeBlacklist</span> <i class="+ topic/ph hi-d/i ">name/value-pairs</i> </p> </td> 
-   <td colname="2" class="- topic/entry "> <p>应用程序运行时被限制访问受保护的内容。 此选项指定不能使用的运行时模块的列表（块列表）。 </p> <p>该值由以逗号分隔的 <span class="codeph"> name=value</span> 对组成，格式如下： </p> <p class="- topic/p "><span class="+ topic/ph pr-d/codeph codeph"> os|release|application|arch|model|vendor|env|screen|value</span> </p> <p class="- topic/p ">其他名称／值对必须以逗号分隔。 例如， <span class="codeph"> os=Win,application=AIR</span>。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>应用程序运行时被限制访问受保护的内容。 此选项指定不能使用的运行时模块的列表(阻止列表)。 </p> <p>该值由以逗号分隔的 <span class="codeph"> name=value</span> 对组成，格式如下： </p> <p class="- topic/p "><span class="+ topic/ph pr-d/codeph codeph"> os|release|application|arch|model|vendor|env|screen|value</span> </p> <p class="- topic/p ">其他名称／值对必须以逗号分隔。 例如， <span class="codeph"> os=Win,application=AIR</span>。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> policy.v1DeviceCapabilities</span> <p class="- topic/p "><span class="codeph"> -devCapabilitiesV1</span><i class="+ topic/ph hi-d/i ">名称／值对</i> </p> </td> 
@@ -186,11 +186,11 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">policy.allowedAIRApplication.n</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">允许列出非Flash应用程序（Adobe AIR、iOS、Android等） 允许播放受保护的内容。 该属性必须使用以下格式： <span class="+ topic/ph pr-d/codeph codeph">PubId</span>[:<span class="+ topic/ph pr-d/codeph codeph">appId</span>[:[<span class="+ topic/ph pr-d/codeph codeph">min</span>]:[<span class="+ topic/ph pr-d/codeph codeph">max</span>]] </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">一允许列表非Flash应用程序（Adobe AIR、iOS、Android等） 允许播放受保护的内容。 该属性必须使用以下格式： <span class="+ topic/ph pr-d/codeph codeph">PubId</span>[:<span class="+ topic/ph pr-d/codeph codeph">appId</span>[:[<span class="+ topic/ph pr-d/codeph codeph">min</span>]:[<span class="+ topic/ph pr-d/codeph codeph">max</span>]] </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">policy.allowedSWFApplication.n</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">允许播放受保护内容的SWF应用程序列表。 该属性必须使用以下格式： </p> <p class="- topic/p "> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">允许播放受保护内容的SWF应用程序允许列表。 该属性必须使用以下格式： </p> <p class="- topic/p "> 
      <ul id="ul_EC20F52AD95C4BE3B7F703048A43CDF0"> 
       <li id="li_3E4A47D925C24834A2C25BC5943279D4"><span class="+ topic/ph pr-d/codeph codeph">URL</span> </li> 
       <li id="li_9A7CAF081C5F488FB5CDA6D38C5552F6"><span class="+ topic/ph pr-d/codeph codeph">file=swf_file</span> </li> 
@@ -203,4 +203,3 @@ ht-degree: 0%
   </tr> 
  </tbody> 
 </table>
-
