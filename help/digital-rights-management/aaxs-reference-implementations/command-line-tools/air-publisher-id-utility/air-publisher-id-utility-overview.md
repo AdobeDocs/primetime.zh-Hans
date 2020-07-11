@@ -3,9 +3,9 @@ seo-title: AIR Publisher ID实用程序概述
 title: AIR Publisher ID实用程序概述
 uuid: 31aecc0e-ad9b-43ad-ba58-77d2c999f4a4
 translation-type: tm+mt
-source-git-commit: 9d2e046ae259c05fb4c278f464c9a26795e554fc
+source-git-commit: 58bb3bedc5b0ac63afd96eb6101d9ad779e6deed
 workflow-type: tm+mt
-source-wordcount: '144'
+source-wordcount: '146'
 ht-degree: 0%
 
 ---
@@ -17,5 +17,4 @@ ht-degree: 0%
 
 >[!NOTE] {class=&quot;-主题／注释&quot;
 >
->用于AIR allowlist实施的发布者ID与应用程序文件中应用程序发布者指定的发布者ID不同。 [!DNL application.xml]
-
+>用于AIR允许列表实施的发布者ID与应用程序文件中应用程序发布者指定的发布者ID不同。 [!DNL application.xml]
