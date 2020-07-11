@@ -3,9 +3,9 @@ seo-title: 命令行使用
 title: 命令行使用
 uuid: e549a98e-b027-4472-8860-6aa1d56d4a8b
 translation-type: tm+mt
-source-git-commit: 9d2e046ae259c05fb4c278f464c9a26795e554fc
+source-git-commit: 58bb3bedc5b0ac63afd96eb6101d9ad779e6deed
 workflow-type: tm+mt
-source-wordcount: '1024'
+source-wordcount: '1026'
 ht-degree: 0%
 
 ---
@@ -72,7 +72,7 @@ java -jar AdobePolicyManager.jar
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -w分钟 </span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">播放窗口（从第一次播放开始，内容可以查看的分钟数）。 如果未指定此选项，或者 <span class="codeph"> 如果 </span> 使用-w而不指定分钟数，则不存在播放窗口限制。 值必须为非负。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">播放窗口（从第一次播放开始，内容可以查看的分钟数）。 如果未指定此选项，或 <span class="codeph"> 如果 </span> 使用-w而不指定分钟数，则不存在播放窗口限制。 值必须为非负。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -l分钟 </span> </td> 
@@ -92,7 +92,7 @@ java -jar AdobePolicyManager.jar
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -air pubId </span>[: <span class="+ topic/ph pr-d/codeph codeph"> appId </span>[:[ <span class="+ topic/ph pr-d/codeph codeph"> 最 </span>小]:[最 <span class="+ topic/ph pr-d/codeph codeph"> 大] </span>]] </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">允许播放受保护内容的AIR应用程序的允许列表。 使用它来限制哪些发布者、应用程序和版本可以访问使用此策略保护的内容。 </p> <p class="- topic/p ">如 <i class="+ topic/ph hi-d/i ">果未指</i> 定appId <i class="+ topic/ph hi-d/i ">，则允许发布者pubId的所</i> 有应用程序。 </p> <p class="- topic/p "><i class="+ topic/ph hi-d/i ">最低</i> 和最 <i class="+ topic/ph hi-d/i ">高版本</i> 号是可选的。 </p> <p class="- topic/p ">可以 <span class="codeph"> 指定多 </span> 个-air选项以允许多个应用程序。 如果未指定AIR或SWF应用程序，则所有应用程序都可以访问此内容。 在更新过程中，使用-air（不含其余参数）从列表中删除所有条目。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">允许播放受保护内容的AIR应用程序允许列表。 使用它来限制哪些发布者、应用程序和版本可以访问使用此策略保护的内容。 </p> <p class="- topic/p ">如 <i class="+ topic/ph hi-d/i ">果未指</i> 定appId <i class="+ topic/ph hi-d/i ">，则允许发布者pubId的所</i> 有应用程序。 </p> <p class="- topic/p "><i class="+ topic/ph hi-d/i ">最低</i> 和最 <i class="+ topic/ph hi-d/i ">高版本</i> 号是可选的。 </p> <p class="- topic/p ">可以 <span class="codeph"> 指定多 </span> 个-air选项以允许多个应用程序。 如果未指定AIR或SWF应用程序，则所有应用程序都可以访问此内容。 在更新过程中，使用-air（不含其余参数）从列表中删除所有条目。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -drm黑名单名 </span> 称/ <i class="+ topic/ph hi-d/i ">值</i> 对 <span class="+ topic/ph pr-d/codeph codeph"></span><i class="+ topic/ph hi-d/i "></i><span class="+ topic/ph pr-d/codeph codeph"> 名称 </span> </td> 
@@ -120,7 +120,7 @@ java -jar AdobePolicyManager.jar
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <p class="- topic/p "> <span class="+ topic/ph pr-d/codeph codeph"> -swf url </span> </p> <p class="- topic/p "> <span class="+ topic/ph pr-d/codeph codeph"> -swf文件=swf_file </span>, <span class="+ topic/ph pr-d/codeph codeph"> time= max_time_to_verify </span> </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">允许播放受保护内容的SWF应用程序的允许列表。 可以指定多个-swf选项以允许多个应用程序。 如果未指定AIR或SWF应用程序，则所有应用程序都可以访问此内容。 在更新过程中，使用-swf（不含其余参数）从列表中删除所有条目。 要通过SWF的哈希值来标识SWF，请指定要计算其哈希的SWF文件，以及允许完成SWF验证的最长时间（以秒为单位）。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">允许播放受保护内容的允许列表SWF应用程序。 可以指定多个-swf选项以允许多个应用程序。 如果未指定AIR或SWF应用程序，则所有应用程序都可以访问此内容。 在更新过程中，使用-swf（不含其余参数）从列表中删除所有条目。 要通过SWF的哈希值来标识SWF，请指定要计算其哈希的SWF文件，以及允许完成SWF验证的最长时间（以秒为单位）。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -k name=值 </span> </td> 
