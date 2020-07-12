@@ -4,9 +4,9 @@ seo-title: Adobe Primetime发行说明
 description: 'null'
 seo-description: 'null'
 translation-type: tm+mt
-source-git-commit: 8f8b9d167d7456968879edac847c51e6c9e1da3c
+source-git-commit: 7c8b9778f9b63151617e57bc2318ba77e0b630bc
 workflow-type: tm+mt
-source-wordcount: '314'
+source-wordcount: '306'
 ht-degree: 0%
 
 ---
@@ -22,9 +22,9 @@ ht-degree: 0%
 
 有关Android的当前已发布版本的更多信 [息](../release-notes/tvsdk-3x-android.md)。
 
-## PTAI 20.6.1中的增强和修复
+## PTAI 20.7.1中的增强和修复
 
-该版本侧重于清单操作和改进API等功能，以通过长形式的VOD资源保持会话保持活动。 该版本还包含针对主要客户问题的修复。
+该版本侧重于SCTE35增强，在X-ADBE-AI-X1 HTTP响应头中添加了更多信息，改进了指标聚合和“会话状态”面板。
 
 有关当前已发布的动态广告插入版本的详细信息，请参 [阅PTAI发行说明](ptai-20x-release-notes.md)。
 
