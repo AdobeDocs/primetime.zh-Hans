@@ -1,20 +1,30 @@
 ---
-title: PTAI 20.7.1发行说明
-description: PTAI 20.7.1发行说明描述了2020年Primetime动态广告插入中的新增或变更、已解决和已知问题。
+title: PTAI 20.8.1发行说明
+description: PTAI 20.8.1发行说明描述了2020年Primetime动态Ad Insertion中的新增或变更、已解决和已知问题。
 translation-type: tm+mt
-source-git-commit: 7c8b9778f9b63151617e57bc2318ba77e0b630bc
+source-git-commit: 6b2aaa96f8604af27810cceee5a8a98c4feebd6f
 workflow-type: tm+mt
-source-wordcount: '793'
+source-wordcount: '808'
 ht-degree: 0%
 
 ---
 
 
-# Primetime动态广告插入20.7.1发行说明
+# Primetime动态Ad Insertion20.8.1发行说明
 
-动态广告插入20.7.1发行说明描述了2020年Primetime动态广告插入中的新增或更改内容、已解决的问题和已知问题。
+动态Ad Insertion20.8.1发行说明描述了Primetime动态Ad Insertion2020年的新增或更改内容、已解决的问题和已知问题。
 
-## PTAI 20.7.1的新增功能
+## PTAI 20.8.1的新增功能
+
+**时间：** 2020年8月4日星期二东部时间凌晨3时至6时
+
+**增强和修复**
+
+维护更新。
+
+### 先前发行版中的增强和修复
+
+#### 版本20.7.1
 
 **时间：** 2020年7月9日星期四东部时间凌晨03时至05时
 
@@ -26,9 +36,7 @@ ht-degree: 0%
 
 * 增强的指标聚合。
 
-* 增强的“会话状态”面板的SSAI控制台仪表板。
-
-### 先前发行版中的增强和修复
+* “会话状态”面板的增强的SSAI控制台仪表板
 
 #### 版本20.6.2
 
@@ -36,7 +44,7 @@ ht-degree: 0%
 
 **增强功能**
 
-针对需要毫秒精度的视频客户端的改进的流同步。 联系Adobe支持以实现毫秒精确 `#EXT-X-PROGRAM-DATE-TIME tags`度。
+针对需要毫秒精度的视频客户端的改进的流同步。 联系Adobe支持，以实现毫秒级的精 `#EXT-X-PROGRAM-DATE-TIME tags`度。
 
 #### 版本20.6.1
 
@@ -44,7 +52,7 @@ ht-degree: 0%
 
 **新增功能**
 
-通过服务器端配置，与Adobe支持部门联系以启用以下新功能：
+联系Adobe支持，通过服务器端配置启用以下新功能：
 
 * 清单操作： HLS段和资源URL现在可在HTTP和HTTPS之间进行转换，通过减少后端请求的TLS握手来提高性能。 它还可用于将广告／内容片段统一到同一CDN上。
 
