@@ -4,7 +4,7 @@ product: adobe primetime
 audience: end-user
 user-guide-title: Primetime发行说明
 translation-type: tm+mt
-source-git-commit: 7c8b9778f9b63151617e57bc2318ba77e0b630bc
+source-git-commit: 6b2aaa96f8604af27810cceee5a8a98c4feebd6f
 workflow-type: tm+mt
 source-wordcount: '101'
 ht-degree: 0%
@@ -15,8 +15,8 @@ ht-degree: 0%
 # Primetime发行说明 {#release-notes}
 
 + [发行说明概述](home.md)
-+ Primetime动态广告插入 {#ptai}
-   + [PTAI 20.7.1发行说明](ptai-20x-release-notes.md)
++ Primetime动态Ad Insertion {#ptai}
+   + [PTAI 20.8.1发行说明](ptai-20x-release-notes.md)
    + [PTAI 19.11.1发行说明](ptai-19x-release-notes.md)
 + iOS版TVSDK {#tvsdk-ios}
    + [适用于iOS的TVSDK 3.12发行说明](tvsdk-3x-ios.md)
@@ -36,5 +36,5 @@ ht-degree: 0%
    + [Primetime Streaming Server 1版](primetime-streaming-server-1x.md)
 + 适用于Playstation 4的TVSDK {#tvsdk-playstation}
    + [TVSDK 2.1 PlayStation 4发行说明](tvsdk-21-ps4.md)
-+ 数字版权管理 {#drm}
++ Digital Rights Management {#drm}
    + [DRM 5.3.1发行说明](drm-531-release-notes.md)
