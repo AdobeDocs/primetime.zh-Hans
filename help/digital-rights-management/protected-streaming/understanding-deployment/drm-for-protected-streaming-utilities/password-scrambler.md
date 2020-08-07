@@ -1,18 +1,21 @@
 ---
-description: Password Scrambler实用程序为Adobe Primetime DRM Server的受保护流配置文件加密密码。
-seo-description: Password Scrambler实用程序为Adobe Primetime DRM Server的受保护流配置文件加密密码。
+description: 密码扰码器实用程序加密Adobe PrimetimeDRM服务器的受保护流配置文件的密码。
+seo-description: 密码扰码器实用程序加密Adobe PrimetimeDRM服务器的受保护流配置文件的密码。
 seo-title: 密码剪贴器
 title: 密码剪贴器
 uuid: 56df0f49-f3fd-464d-b4ba-25e1b497158a
 translation-type: tm+mt
-source-git-commit: 105dedcfe47a5f454a067e66a95827e638290742
+source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
+workflow-type: tm+mt
+source-wordcount: '112'
+ht-degree: 0%
 
 ---
 
 
 # 密码剪贴器 {#password-scrambler}
 
-Password Scrambler实用程序为Adobe Primetime DRM Server的受保护流配置文件加密密码。
+密码扰码器实用程序加密Adobe PrimetimeDRM服务器的受保护流配置文件的密码。
 
 要运行剪贴机，请键入：
 
@@ -41,8 +44,8 @@ Encrypted password:
 </i class="+ topic>
 ```
 
-您在和文件中指定的所 [!DNL flashaccess-global.xml] 有密 [!DNL flashaccess-tenant.xml] 码都必须加密。
+您在和文件中指定的所 [!DNL flashaccess-global.xml] 有口 [!DNL flashaccess-tenant.xml] 令必须加密。
 
->[!NOTE] {class=&quot;- topic/note &quot;}
+>[!NOTE]
 >
->Primetime DRM Server中用于受保护流的密码扰码器实用程序不能与随参考实施许可服务器提供的扰码器互换。
+>Primetime DRM Server中用于受保护流的密码扰码器实用程序不能与随参考实施许可证服务器提供的扰码器互换。
