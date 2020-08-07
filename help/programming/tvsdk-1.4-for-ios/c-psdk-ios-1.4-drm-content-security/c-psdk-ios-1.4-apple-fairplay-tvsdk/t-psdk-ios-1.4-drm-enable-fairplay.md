@@ -5,7 +5,10 @@ seo-title: 在TVSDK应用程序中启用Apple FairPlay
 title: 在TVSDK应用程序中启用Apple FairPlay
 uuid: fafffdb9-09f9-45fb-9957-3c6e95ed55f9
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
+workflow-type: tm+mt
+source-wordcount: '193'
+ht-degree: 0%
 
 ---
 
@@ -20,15 +23,15 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
 
    >[!NOTE]
    >
-   >确保按照《 *FairPlay流播放计划指南》(* FairPlayStreaming_PG.pdf *)中的说明进行操作，该指南包含在用于开发FPS感知型应用程序的*[](https://developer.apple.com/services-account/download?path=/Developer_Tools/FairPlay_Streaming_SDK/FairPlay_Streaming_Server_SDK.zip)FairPlay Server SDK中。
+   >确保您遵循FairPlay流项目 *指南* (FairPlayStreaming_PG.pdf *)中的说明，该指南包含在*&#x200B;用于开发FPS感知型应用程序的FairPlay Server SDK中 [](https://developer.apple.com/services-account/download?path=/Developer_Tools/FairPlay_Streaming_SDK/FairPlay_Streaming_Server_SDK.zip)。
 
-   该方 `resourceLoader:shouldWaitForLoadingOfRequestedResource` 法等效于中的内容 `AVAssetResourceLoaderDelegate`。
+   该 `resourceLoader:shouldWaitForLoadingOfRequestedResource` 方法等效于中的内容 `AVAssetResourceLoaderDelegate`。
 
-   >[!IMPORTANT] {importance=&quot;high&quot;}
+   >[!IMPORTANT]
    >
-   >在ExpressPlay许可证服务器场景中，要播放内容，请将ExpressPlay FairPlay服务器许可证请求URL中的URL方案从 `skd://` 更改 `https://` 为(或 `https://`)。
+   >在ExpressPlay许可证服务器场景中，要播放内容，请将ExpressPlay FairPlay服务器许可证请求URL中的URL方案 `skd://` 从更 `https://` 改为 `https://`（或）。
 
-1. 在中注 *册FairPlay* Customer Resource Loader `registerPTAVAssetResourceLoader`。
+1. 在中注 *册* FairPlay客户资源加载 `registerPTAVAssetResourceLoader`器。
 
    ```
    PTFairPlayResourceLoader *resourceLoader =  
