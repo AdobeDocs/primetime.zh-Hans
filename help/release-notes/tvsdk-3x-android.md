@@ -8,7 +8,7 @@ products: SG_PRIMETIME
 topic-tags: release-notes
 discoiquuid: 3a27379f-3cef-4ea3-bcae-21382dc1e9fd
 translation-type: tm+mt
-source-git-commit: 9d2e046ae259c05fb4c278f464c9a26795e554fc
+source-git-commit: e467153067bb10107054a5d4166b1d9c2ac646ab
 workflow-type: tm+mt
 source-wordcount: '5418'
 ht-degree: 0%
@@ -28,8 +28,6 @@ Android TVSDK随Android参考播放器提供在您的分发示例／目录中。
 >
 >1. 从https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases下载VideoHeartbeat [](https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases) .jar（适用于Android v2.0.0的VideoHeartbeat库）
 >1. 将VideoHeartbeat.jar解压到libs/文件夹中。
->
-
 
 
 适用于Android的TVSDK比先前版本提供了许多性能改进。 它提供高质量的查看体验并提供版本1.4的所有功能，但多CDN支持除外。
@@ -143,11 +141,11 @@ Primetime Reference应用程序的Gradle版本现已更新至5.6.4版。
 
 * **TVSDK 3.0支持高效视频编码(HEVC)流。**
 
-* **及时——解析更接近广告标志符的广告懒惰**&#x200B;广告解析现在可独立解决每个广告中断。 以前，广告解决是分两阶段进行的： 在播放开始之前解决了预卷，在播放开始后所有中／后滚动槽都组合在一起。 利用此增强功能，现在可以在广告提示点之前的特定时间解决每个广告中断。
+* **及时——解析更接近广告标志符的广告懒惰**&#x200B;广告解析现在可独立解决每个广告中断。 以前，广告解决是分两阶段进行的：在播放开始之前解决了预卷，在播放开始后所有中／后滚动槽都组合在一起。 利用此增强功能，现在可以在广告提示点之前的特定时间解决每个广告中断。
 
-> [!NOTE]
+>[!NOTE]
 >
-> 现在，懒惰广告解析已更改为默认关闭，并且显式需要启用。
+>现在，懒惰广告解析已更改为默认关闭，并且显式需要启用。
 
 新增了一个API，以 `AdvertisingMetadata::setDelayAdLoadingTolerance` 获得与此广告元数据相关的延迟广告加载容限。\
 搜索现在在准备后立即允许，搜索广告中断将导致在搜索完成之前立即解决。\
@@ -185,7 +183,7 @@ TVSDK现在可取消当前区段的下载（如果需要），并动态切换到
 * **部分广告中断插入**
 
    加入广告中间而无需为部分观看的广告触发跟踪的电视体验。\
-   示例： 用户在包含3个30秒广告的90秒广告时段中间（40秒）加入。 这是休息时第二个广告的10秒。
+   示例：用户在包含3个30秒广告的90秒广告时段中间（40秒）加入。 这是休息时第二个广告的10秒。
 
    * 第二个广告在剩余持续时间（20秒）内播放，然后是第三个广告。
 
@@ -193,7 +191,7 @@ TVSDK现在可取消当前区段的下载（如果需要），并动态切换到
 
 * **通过HTTPS安全加载广告**
 
-   Adobe Primetime提供一个选项，可通过https请求对primetime广告服务器和CRS的首次调用。
+   Adobe Primetime提供了通过https请求对primetime广告服务器和CRS进行首次呼叫的选项。
 
 * **添加到CRS请求的AdSystem和Creative Id**
 
@@ -221,16 +219,16 @@ Android TVSDK v2.5.4优惠以下更新和API更改：
 
 Android TVSDK v2.5.3优惠以下更新和API更改。
 
-* 鼓励所有使用CRS的TVSDK客户使用TVSDK 2.5.3.85或最新版Android升级其应用程序。 这将替换现有应用程序实施的插件。 TVSDK升级后，在代理工具中检查CRS创意URL请求(例如： 并确认路径中的主机名和版本反映如下示例URL结构中。
+* 鼓励所有使用CRS的TVSDK客户使用TVSDK 2.5.3.85或最新版Android升级其应用程序。 这将替换现有应用程序实施的插件。 TVSDK升级后，在代理工具中检查CRS创意URL请求(例如：并确认路径中的主机名和版本反映如下示例URL结构中。
 
    `https://primetime-a.akamaihd.net/assets/3p/v3.1/222000/167/d77/167d775d00cbf7fd224b112sf5a4bc7d_0e34cd3ca5177fbc74d66d784 bf3586d.m3u8`
 
-* TVSDK的用户代理可自定义： 我们添加了一些新的API来自定义用户代理。
+* TVSDK的用户代理可自定义：我们添加了一些新的API来自定义用户代理。
 
    * `setCustomUserAgent(String value)`
    * `getCustomUserAgent()`
 
-* 在Android应用程序和TVSDK之间共享Cookie: Android TVSDK现在支持在JAVA层（存储在Android应用程序的CookieStore中）和C++ TVSDK层之间访问cookie。 现在，可以在本机C++层设置和／或修改cookie，因为它们将暴露在Java Cookie商店中。
+* 在Android应用程序和TVSDK之间共享Cookie:Android TVSDK现在支持在JAVA层（存储在Android应用程序的CookieStore中）和C++ TVSDK层之间访问cookie。 现在，可以在本机C++层设置和／或修改cookie，因为它们将暴露在Java Cookie商店中。
 
 * API更改：
 
@@ -246,7 +244,7 @@ Android TVSDK v2.5.3优惠以下更新和API更改。
 
 * 更改 `SizeAvailableEvent`。 以前 `getHeight()` , `getWidth()` 使用 `SizeAvailableEvent` 2.5.2中的方法返回帧高和帧宽，由媒体格式返回。 现在，它分别返回由解码器返回的输出高度和输出宽度。
 
-* 缓冲行为中的更改： 缓冲行为已更改。 它留给App开发人员在缓冲区为空时要做什么。 2.5.3在缓冲区空的情况下使用播放缓冲区大小。
+* 缓冲行为中的更改：缓冲行为已更改。 它留给App开发人员在缓冲区为空时要做什么。 2.5.3在缓冲区空的情况下使用播放缓冲区大小。
 
 **版本2.5.2**
 
@@ -269,7 +267,7 @@ Android 2.5.1中发布的重要新增功能。
 * **永久网络连接** -此功能允许TVSDK创建和存储永久网络连接的内部列表。 这些连接被重用于多个请求，而不是为每个网络请求打开新连接，然后销毁它。 这提高了网络代码的效率并减少了延迟，从而提高了播放性能。
 当TVSDK打开连接时，它要求服务器 *保持连接* 。 某些服务器可能不支持此类连接，在这种情况下，TVSDK将返回给再次为每个请求建立连接。 此外，尽管永久连接在默认情况下处于打开状态，TVSDK现在有一个配置选项，以便应用程序可以根据需要关闭永久连接。
 
-* **并行下载** -以并行而非串联方式下载视频和音频可减少启动延迟。 此功能允许播放HLS Live和VOD文件，优化服务器的可用带宽使用，降低在运行不足的情况下进入缓冲区的可能性，并最小化下载和回放之间的延迟。
+* **并行下载** -以并行而非串联方式下载视频和音频可减少启动延迟。 此功能允许播放HLS Live和VOD文件，优化服务器的可用带宽使用，降低在运行不足的情况下进入缓冲区的可能性，并最小化下载和播放之间的延迟。
 
 * **并行广告下载** - TVSDK在点击广告中断前预取与内容播放平行的广告，从而实现广告和内容的无缝播放。
 
@@ -277,9 +275,9 @@ Android 2.5.1中发布的重要新增功能。
 
 * **MP4内容播放** - MP4短片无需重新转码即可在TVSDK中播放。
 
-   > [!NOTE]
+   >[!NOTE]
    >
-   > MP4播放不支持ABR切换、特技播放、广告插入、后期音频绑定和子分段。
+   >MP4播放不支持ABR切换、特技播放、广告插入、后期音频绑定和子分段。
 
 * **使用自适应比特率(ABR)进行特技播放** -此功能允许TVSDK在特技播放模式下在iFrame流之间切换。 您可以使用非iFrame用户档案以较低的速度进行特技播放。
 
@@ -295,8 +293,9 @@ Android 2.5.1中发布的重要新增功能。
 
 * **工作流支持**
 
-   * **直接计费集成** -这会将计费指标发送到AdobeAnalytics后端，Adobe Primetime已针对客户使用的流进行认证。
-   TVSDK会自动收集指标，遵守客户销售合同，生成计费所需的定期使用情况报告。 在每个流开始事件中，TVSDK都使用AdobeAnalytics数据插入API将付费指标（如内容类型、启用广告插入的标记和基于可收费流持续时间的启用drm的标记）发送到AdobeAnalytics黄金时段拥有的报表包。 这不会干扰或包含在客户自己的AdobeAnalytics报表包或服务器调用中。 此计费使用情况报告会按要求定期发送给客户。 这是付费功能的第一阶段，仅支持使用付费。 可以使用文档中描述的API根据销售合同进行配置。 此功能默认处于启用状态。 要关闭此功能，请参阅参考播放器范例。
+   * **直接计费集成** -这会将计费指标发送到Adobe Analytics后端，后端由Adobe Primetime认证为客户使用的流。
+
+   TVSDK会自动收集指标，遵守客户销售合同，生成计费所需的定期使用情况报告。 在每个流开始事件中，TVSDK使用Adobe Analytics数据插入API将付费指标(如内容类型、启用广告插入的标记和启用drm的标记（基于可收费流的持续时间）发送到Adobe Analytics黄金时段拥有的报表包。 这不会干扰或包含在客户自己的Adobe Analytics报告套件或服务器调用中。 此计费使用情况报告会按要求定期发送给客户。 这是付费功能的第一阶段，仅支持使用付费。 可以使用文档中描述的API根据销售合同进行配置。 此功能默认处于启用状态。 要关闭此功能，请参阅参考播放器范例。
 
    * **改进的故障转移支持** -实施了其他策略，以便在主机服务器、播放列表文件和区段出现故障的情况下继续不间断地播放。
 
@@ -307,9 +306,9 @@ Android 2.5.1中发布的重要新增功能。
 
    * **配套横幅** -配套横幅显示在线性广告旁边，广告结束后通常继续显示在视图上。 这些横幅的类型可以是html（HTML片段）或iframe（iframe页面的URL）。
 
-* **Analytics**
+* **分析**
 
-   * **VHL 2.0 —— 这是** Adobe Analytics为自动收集使用数据而优化的最新视频心跳库(VHL)集成。 为了简化实施，API的复杂性已降低。 下载适用于Android [的VHL库v2.0.0](https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases) ，并解压libs文件夹中的JAR文件。
+   * **VHL 2.0 —— 这是最新** 的优化视频心跳库(VHL)集成，可自动收集Adobe Analytics的使用数据。 为了简化实施，API的复杂性已降低。 下载适用于Android [的VHL库v2.0.0](https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases) ，并解压libs文件夹中的JAR文件。
 
 * **SizeAvaliableEventListener**
 
@@ -414,7 +413,7 @@ Android 2.5.1中发布的重要新增功能。
 
 | 功能 | 内容类型 | HLS |
 |---|---|---|
-| AdobeAnalyticsVHL集成 | VOD + Live | Y |
+| Adobe AnalyticsVHL集成 | VOD + Live | Y |
 | 计费 | VOD + Live | Y |
 
 ## 已解决的问题 {#resolved-issues}
@@ -468,11 +467,11 @@ Android 2.5.1中发布的重要新增功能。
    * 修复了广告跟踪事件的特定案例。
 * ZD#37491 - HTTP状态代码中不存在错误元。
    * 在堆栈中传播网络错误时工作过。
-* ZD#37808 —— 允许列出新的自定义标题。
+* ZD#37808 -允许列表新的自定义标题。
    * 作为此修复的一部分添加了SSAI_TAG支持。
 * ZD#37622 - URI从特定广告窗格同步错误。
    * 修复了在向客户的Android应用程序提供包含未编码%的广告时，流播放崩溃的问题
-* ZD#37631 —— 适用于Android TVSDK的主清单重试机制。
+* ZD#37631 —— 针对Android TVSDK的主控清单重试机制。
    * 在网络配置中添加了新的API以处理此增强。 如果未使用此API，则不重试清单。 如果使用清单，则将重试清单以处理网络错误和超时。
 
 **版本3.2**
@@ -527,7 +526,7 @@ Android 2.5.1中发布的重要新增功能。
 
    * 通过处理XML分析中的情况增强了以前的修复，当“空格”在“等号”（如&lt;VAST version =&quot;2.0&quot;>）之前时，问题可重现
 
-* ZD #29296 - Android: 向CRS请求添加AdSystem和Creative ID。
+* ZD #29296 - Android:向CRS请求添加AdSystem和Creative ID。
 
    * 现在，在1401和1403请求中将“AdSystem”和“CreativeId”作为新参数。
 
@@ -543,7 +542,7 @@ Android 2.5.1中发布的重要新增功能。
 
    * 修复了方案以避免崩溃。
 
-* ZD #32256 —— 许可证轮换和密钥轮换问题- Adobe Access
+* ZD #32256 —— 许可证轮换和密钥轮换问题-Adobe访问
 
    * 修复了SampleAES内容的DRM元数据的区段初始化。 适用于AES128内容。
 
@@ -604,7 +603,7 @@ Android 2.5.1中发布的重要新增功能。
 * Zendesk#32369 —— 隐藏式字幕显示不同的颜色垃圾或伪像。
 
    CC故障问题已在最新版本中得到修复
-* Zendesk#25590 —— 增强： TVSDK cookie store（C++到JAVA）
+* Zendesk#25590 —— 增强：TVSDK cookie store（C++到JAVA）
 
    Android TVSDK现在支持在JAVA层（存储在Android应用程序的CookieStore中）和C++ TVSDK层之间访问cookie。
 * Zendesk#32252 - TVSDK_Android_2.5.2.12似乎没有PTPLAY-20269的修复
@@ -622,7 +621,7 @@ Android 2.5.1中发布的重要新增功能。
 * Zendesk#32794- 1080P分辨率流未在Android上播放
 
    我们更改了2.5中SizeAvailableEvent和Previsol、getHeight()和getWidth()方法，它们用于返回帧高和帧宽（由媒体格式返回）。 现在，它分别返回由解码器返回的输出高度和输出宽度。
-* Zendesk #19359由于设置级清单中#EXT-X-FAXS-CM属性的位置，Flash Player崩溃。
+* Zendesk #19359Flash Player因设置级清单中#EXT-X-FAXS-CM属性的位置而崩溃。
 
    #EXT-X-FAXS-CM标签必须始终出现在顶部播放列表中，然后在播放列表中显示单个比特率或段。
 
@@ -640,7 +639,7 @@ Android 2.5.1中发布的重要新增功能。
 
    用户代理字符串在128个字符后不再被截断。
 
-   Adobe Primetime版本字符串已添加到系统用户代理。
+   Adobe Primetime版本字符串添加到系统用户代理。
 
 * Zendesk #30809缺少SEEK_END事件可阻止应用程序转换到播放状态。
 * Zendesk #30415 Closed Caption的“青色”颜色与Primetime TVSDK以前的版本相比现在为蓝色（绿松石）的较深色调。
@@ -653,7 +652,7 @@ Android 2.5.1中发布的重要新增功能。
 
 **Android TVSDK 2.5.1**
 
-* 设备特定的(Samsung Galaxy Tab 4)崩溃； 带Auditude的VOD DRM LBA并单击广告。
+* 设备特定的(Samsung Galaxy Tab 4)崩溃；带Auditude的VOD DRM LBA并单击广告。
 * VHL —— 从偏移启动内容时发送的心跳调用不正确。
 * 播放VPAID广告时，VHL心跳信号中缺少事件:type:play广告。
 * 进入“完成”状态后，播放器使用SKIP adBreakPolicy返回到后滚广告的“播放”状态。
@@ -730,7 +729,7 @@ Android 2.5.1中发布的重要新增功能。
 * 实时视频播放在低端设备上可能存在音频——视频同步问题，或网络状况不佳。
 * 对于FER流，virtualTime和localTime可能不同。 同时，带偏移的FER不起作用。
 * 搜索“延迟绑定音频”内容时，播放可能会卡住。
-* 对于实时内容，webVTT字幕可能会间歇性地变得不同步。
+* 对于实时内容，webVTT字幕可能间歇性地变得不同步。
 * 从广告中断出来后，可间歇性地快速播放几帧。
 * 有时，即使播放广告，三步包装广告分段也会引发303错误。
 
