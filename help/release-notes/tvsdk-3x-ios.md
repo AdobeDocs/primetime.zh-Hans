@@ -2,7 +2,7 @@
 title: 适用于iOS的TVSDK 3.12发行说明
 description: TVSDK 3.12 for iOS发行说明描述了TVSDK iOS 3.12中的新增或更改功能、已解决和已知问题以及设备问题。
 translation-type: tm+mt
-source-git-commit: 9c6a6f0b5ecff78796e37daf9d7bdb9fa686ee0c
+source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
 workflow-type: tm+mt
 source-wordcount: '7665'
 ht-degree: 0%
@@ -18,7 +18,7 @@ TVSDK 3.12 for iOS发行说明描述了TVSDK iOS 3.12中的新增或更改功能
 
 在下载iOS 3.12之前，请确保硬件、操作系统和应用程序版本满足以下要求：
 
-操作系统： iOS 8.0或更高版本。
+操作系统：iOS 8.0或更高版本。
 
 ## iOS TVSDK 3.12
 
@@ -78,9 +78,9 @@ vastXML属性设置不正确，返回零值。
 
 * 使用TVSDK 3.4，用户现在可以为整体广告分辨率和清单下载设置超时值。 如果在给定的超时时间内某些广告无法解析，则TVSDK将播放剩余的广告。
 
-* PTAd元数据： adRequestTimeout API已弃用，将被删除。 默认值已设置为35秒。
+* PTAd元数据：adRequestTimeout API已弃用，将被删除。 默认值已设置为35秒。
 
-* PTAdMetadataClass中引入了两个新的备用API: adResolutionTimeout —— 针对广告分辨率调用的超时adManifestTimeout —— 广告清单下载的超时。
+* PTAdMetadataClass中引入了两个新的备用API:adResolutionTimeout —— 针对广告分辨率调用的超时adManifestTimeout —— 广告清单下载的超时。
 
 **收入优化**
 
@@ -133,7 +133,7 @@ TVSDK 3.3现在符合iOS 11 SDK的要求。 所有已弃用的API都已替换为
 **版本1.4.43**
 
 * 一种类似电视的体验，能够加入广告中间而不触发部分广告跟踪。\
-   示例： 用户在包含3个30秒广告的90秒广告时段中间（40秒）加入。 这是休息时第二个广告的10秒。
+   示例：用户在包含3个30秒广告的90秒广告时段中间（40秒）加入。 这是休息时第二个广告的10秒。
 
    * 第二个广告在剩余持续时间（20秒）内播放，然后是第三个广告。
    * 不会触发已播放的部分广告（第二个广告）的广告跟踪器。 只触发第三个广告的跟踪器。
@@ -149,9 +149,9 @@ TVSDK 3.3现在符合iOS 11 SDK的要求。 所有已弃用的API都已替换为
 
 API更改：
 
-* **isSecure**: 引入了新的API isSecure以保护播放器不录制和引发错误。 默认值为true。
+* **isSecure**:引入了新的API isSecure以保护播放器不录制和引发错误。 默认值为true。
 
-* **allowExternalRecording**: 引入了新的API以允许对安全内容进行播放镜像。 Airplay镜像视为录制，因 `allowExternalRecording` 此必须将值设 `True`置为，以允许airplay镜像，或设置为 `False` 停止airplay镜像以保护内容。 默认情 `value` 况为true。
+* **allowExternalRecording**:引入了新的API以允许对安全内容进行播放镜像。 Airplay镜像视为录制，因 `allowExternalRecording` 此必须将值设 `True`置为，以允许airplay镜像，或设置为 `False` 停止airplay镜像以保护内容。 默认情 `value` 况为true。
 
 **版本1.4.40**
 
@@ -167,29 +167,31 @@ API更改：
 
 **版本1.4.36**
 
-在iOS TVSDK中集成和验证VHL 2.0: 通过降低API的 `VideoHeartbeatsLibrary` 复杂性，减少实施中的障碍。
+在iOS TVSDK中集成和验证VHL 2.0:通过降低API的 `VideoHeartbeatsLibrary` 复杂性，减少实施中的障碍。
 
 **版本1.4.34**
 
 **网络广告信息**
 
-TVSDK API现在提供有关第三方VAST响应的其他信息。 广告ID、广告系统和VAST广告扩展在可通过广告资 `PTNetworkAdInfo` 产的属性访 `networkAdInfo` 问的类中提供。 此信息可用于与MoatAnalytics等其他广告Analytics平台 **集成**。
+TVSDK API现在提供有关第三方VAST响应的其他信息。 广告ID、广告系统和VAST广告扩展在可通过广告资 `PTNetworkAdInfo` 产的属性访 `networkAdInfo` 问的类中提供。 此信息可用于与Moat Analytics等其他广告分析平台 **集成**。
 
 **版本1.4.31**
 
 * **计费指标** 为了迎合那些希望只支付其使用费用而不是固定费用的客户，Adobe会收集使用情况指标并使用这些指标来确定向客户收取的费用。
 
-   每次TVSDK生成流开始事件时，播放器都会开始定期向Adobe的付费系统发送HTTP消息。 对于标准VOD、专业VOD（启用中间广告）和实时内容，期间（称为付费持续时间）可以不同。 每种内容类型的默认持续时间为30分钟，但您与Adobe的合同将决定实际值。
+   每次TVSDK生成流开始事件时，播放器开始会定期向Adobe的计费系统发送HTTP消息。 对于标准VOD、专业VOD（启用中间广告）和实时内容，期间（称为付费持续时间）可以不同。 每种内容类型的默认持续时间为30分钟，但您与Adobe的合同将决定实际值。
 
-* **针对CRS Ads的多CDN支持** TVSDK现在支持针对CRS广告的多CDN。 通过为CRS广告提供FTP详细信息，您可以指定CDN位置，而非默认的Adobe拥有的CDN（如Akamai）。
+* **针对CRS Ads的多CDN支持** TVSDK现在支持针对CRS广告的多CDN。 通过为CRS广告提供FTP详细信息，您可以指定CDN位置，而不是默认的Adobe拥有的CDN（如Akamai）。
 
 **版本1.4.29**
 
 在类 `PTSDKConfig` 中，已添加forceHTTPS API。
 
-该 `PTSDKConfig` 类提供对向Adobe Primetime广告决策、DRM和视频Analytics服务器发出的请求实施SSL的方法。 有关详细信息，请参 `forceHTTPS` 阅此 `isForcingHTTPS` 类的和方法。 如果清单是通过HTTPS加载的，TVSDK将保留HTTPS的内容使用，并在从该清单加载任何相对URL时遵守此用法。
+该 `PTSDKConfig` 类提供对向Adobe Primetime广告决策、DRM和视频分析服务器发出的请求实施SSL的方法。 有关详细信息，请参 `forceHTTPS` 阅此 `isForcingHTTPS` 类的和方法。 如果清单是通过HTTPS加载的，TVSDK将保留HTTPS的内容使用，并在从该清单加载任何相对URL时遵守此用法。
 
->[!NOTE] 对第三方域（如广告跟踪像素、内容和广告URL）的请求以及类似请求不会进行修改，内容提供商和广告服务器有责任提供通过HTTPS支持的URL。
+>[!NOTE]
+>
+>对第三方域（如广告跟踪像素、内容和广告URL）的请求以及类似请求不会进行修改，内容提供商和广告服务器有责任提供通过HTTPS支持的URL。
 
 **版本1.4.18**
 
@@ -217,13 +219,15 @@ Primetime iOS TVSDK现在支持VPAID 2.0 Javascript创意，以实现丰富的�
 
 * 当前不支持以下功能：
 
-   * 数字版权管理(DRM)
+   * Digital Rights Management(DRM)
    * 广告横幅
    * 电视标记语言(TVML)
 
 **版本1.4.13**
 
->[!NOTE] Nielsen模块已从TVSDK版本中删除，TVSDK将在不久的将来用新的Nielsen集成模块进行更新。
+>[!NOTE]
+>
+>Nielsen模块已从TVSDK版本中删除，TVSDK将在不久的将来用新的Nielsen集成模块进行更新。
 
 **广告回退，广告选择逻辑中的菊花链(Zendesk #3103)**
 
@@ -247,7 +251,7 @@ Primetime iOS TVSDK现在支持VPAID 2.0 Javascript创意，以实现丰富的�
 
 * **预置个性化支持**
 
-支持Adobe个性化服务器的预置安装，以自定义客户端的个性化请求以转到其他端点。
+支持Adobe个性化服务器的本地安装，以自定义客户端的个性化请求以转到其他端点。
 
 * **基于分辨率的输出保护**
 
@@ -257,10 +261,10 @@ DRM策略现在可指定允许的最高分辨率，具体取决于设备的“�
 
 * **视频心率库(VHL)更新至版本1.4.1.1**
 
-   * 添加了将来自其他SDK或播放器的不同分析用例与AdobeAnalytics视频基础捆绑的功能。
+   * 添加了将来自其他SDK或播放器的不同分析用例与Adobe Analytics视频基础捆绑的功能。
    * 广告跟踪已通过删除和方法 `trackAdBreakStart` 进行 `trackAdBreakComplete` 优化。 广告中断从和方法调 `trackAdStart` 用 `trackAdComplete` 中推断出。
    * 跟踪 `playhead` 广告时不再需要该属性。
-   * 添加了对Marketing Cloud访客ID的支持。
+   * 增加了对Marketing Cloud访客ID的支持。
 
 * **Nielsen SDK集成**
 
@@ -367,7 +371,7 @@ Comment Type: draft
 
 * **Ticket36685** - Live assets - Time mismatch with player time progress and SCTE marker time为处于实时点之前的SCTE标记计算正确的时间。
 
-* **Ticket36492** - `currentTime` 在暂停 `localTime` 状态期间搜索到新位置时未更新在播放器处于暂停状态时，播放器的当前时间现在可设置为零； 较早时，仅在播放状态中将当前时间设置为零。
+* **Ticket36492** - `currentTime` 在暂停 `localTime` 状态期间搜索到新位置时未更新在播放器处于暂停状态时，播放器的当前时间现在可设置为零；较早时，仅在播放状态中将当前时间设置为零。
 
 **版本1.4.45**
 
@@ -383,14 +387,14 @@ Comment Type: draft
 
 当广告服务器报告的持续时间与实际广告内容不匹配时，将增加额外的检查以处理这种情况。
 
-* **Ticket34801** - currentTime和localTime在暂停状态期间搜索到新位置时未更新。如果播放器处于暂停状态，播放器的当前时间现在可以设置为零； 较早时，仅在播放状态中将当前时间设置为零。
+* **Ticket34801** - currentTime和localTime在暂停状态期间搜索到新位置时未更新。如果播放器处于暂停状态，播放器的当前时间现在可以设置为零；较早时，仅在播放状态中将当前时间设置为零。
 
 * **Ticket35037** —— 从基于信号的广告插入返回时，播放停顿，URL不正确。
 改进了针对1.4.42版本中已解决问题#34385的修复。 添加了isCancelled检查和异常处理代码，使操作队列更加健壮。
 
 **版本1.4.43**
 
-* (ZD#32990)- iOS: 内容播放而非某些提示点上的广告。 `selectedMediaOptionInMediaSelectionGroup` 作为AVPlayerItem接口一部分的API现在已移到iOS 11中的AVMediaSelection下。 使用此新API解决了此问题。
+* (ZD#32990)- iOS:内容播放而非某些提示点上的广告。 `selectedMediaOptionInMediaSelectionGroup` 作为AVPlayerItem接口一部分的API现在已移到iOS 11中的AVMediaSelection下。 使用此新API解决了此问题。
 
 * (ZD#33683)TVSDK已删除==从元数据字符串中添加后缀。 解析逻辑中修复了该问题。
 
@@ -467,7 +471,7 @@ Comment Type: draft
 
 * (ZD #32465)-播放器无法处理合并的播放列表。
 
-   呼 `finishLoadingWithError`叫(使用： AV基础尝试替代流／触发故障转移时出错)。
+   呼 `finishLoadingWithError`叫(使用：AV基础尝试替代流／触发故障转移时出错)。
 
 * (ZD #31951)-许可证轮替期间TVSDK错误。
 
@@ -511,7 +515,7 @@ Comment Type: draft
 
 **版本1.4.38** (1.4.38.860)
 
-* (ZD #29281)- iOS: 向CRS请求添加AdSystem和Creative Id
+* (ZD #29281)- iOS:向CRS请求添加AdSystem和Creative Id
 
 基于CRS规范规则的CRS请求中创意ID和AdSystem的使用
 
@@ -533,7 +537,7 @@ Comment Type: draft
 
 流中的# EXT-X-PLAYLIST-TYPE标签设置为事件而不是VOD时的播放问题
 
-* (ZD #29281)- iOS: 向CRS请求添加AdSystem和Creative Id
+* (ZD #29281)- iOS:向CRS请求添加AdSystem和Creative Id
 
 在基于CRS标准化规则的CRS请求中使用创意ID和AdSystem。
 
@@ -587,9 +591,9 @@ EXT-X-CUE-OUT Midroll广告正在播放。
 
 通过更新资源加载以从所有可用的包中查看，解决了此问题。
 
-* (ZD# 27460)Midroll首次广告电话- POST将返回 `cdn.auditude.com` 403。
+* (ZD# 27460)Midroll首次广告电话-POST将 `cdn.auditude.com` 返回403。
 
-新CDN帐户无法处理POST CDN请求。 通过更新代码，将广告请 `cdn.auditude.com` 求设为GET而非POST，解决了此问题。
+新的CDN帐户无法处理POSTCDN请求。 通过更新代码将广告请求变为 `cdn.auditude.com` GET而不是POST，解决了此问题。
 
 **版本1.4.32** （适用于iOS 6.0+的1.4.32.792）
 
@@ -631,7 +635,7 @@ EXT-X-CUE-OUT Midroll广告正在播放。
 
 此版本中的TVSDK解决了以下问题：
 
-* (ZD# 24180)添加一个自定义头以允许列表。
+* (ZD# 24180)向允许列表添加自定义头。
 
 新的自定义头已添加到TVSDK允许列表。
 
@@ -653,19 +657,19 @@ EXT-X-CUE-OUT Midroll广告正在播放。
 
 * 视频心跳库(VHL)已更新至版本1.5.9以解决以下问题：
 
-* (ZD #22351)VHL -Analytics: 实时视频资产持续时间
+* (ZD #22351)VHL —— 分析：实时视频资产持续时间
 
 通过向PTVideoAnalyticsTrackingMetadata添加assetDuration API来更新实时／线性流的资产持续时间并提供检查实时流的逻辑，解决了此问题。
 
-* (ZD# 22675)VHL -Analytics: 更新实时视频资产持续时间
+* (ZD# 22675)VHL —— 分析：更新实时视频资产持续时间
 
 此问题与ZD #22351相同。
 
-* (ZD #25908)VHL -Analytics: Adobe心跳事件崩溃
+* (ZD #25908)VHL —— 分析：Adobe心跳事件崩溃
 
 通过更新实施以使用最新版iOS版VHL 1.5.9来提高稳定性和性能，解决了此问题。
 
-* (ZD #25956)VHL -Analytics: 重复播放视频时崩溃
+* (ZD #25956)VHL —— 分析：重复播放视频时崩溃
 
 此问题与ZD #25908相同。
 
@@ -751,7 +755,7 @@ VideoAnalytics中缺失视频长度的问题已修复。
 
 此问题与(ZD #21590)相同。
 
-* (ZD #2280)-Analytics视频长度设置为0
+* (ZD #2280)-分析视频长度设置为0
 
 此问题与(ZD #21590)相同。
 
@@ -777,7 +781,7 @@ Apple不建议与IPv6兼容的符号已被删除。
 
 通过更新VideoAnalyticsTracker，在章节和非章节边界之间转换时正确检测章节开始/完成，解决了此问题。
 
-* (ZD #20784)-Analytics: 实时视频过渡完成触发内容
+* (ZD #20784)-分析：实时视频过渡完成触发内容
 
 通过添加逻辑来在视频跟踪会话期间手动触发内容完成，解决了此问题。
 
@@ -816,7 +820,7 @@ Apple不建议与IPv6兼容的符号已被删除。
 
 * (ZD #21782)- iOS错误代码10100
 
-TVSDK在Adobe Access DRM流上开始播放时返回101000错误的问题已修复。
+TVSDK在Adobe访问DRM流上开始播放时返回101000错误的问题已修复。
 
 * (ZD #21889)-在线广告和脱机内容回放失败
 
@@ -828,13 +832,13 @@ TVSDK在Adobe Access DRM流上开始播放时返回101000错误的问题已修�
 
 * (ZD #2257)- TVSDK无法回放DRM流
 
-已修复在Adobe Access DRM流上开始播放时返回101000错误的TVSDK的问题。
+在Adobe访问DRM流上开始播放时返回101000错误的TVSDK已修复的问题。
 
 **适用于iOS 6** .0+的1.4.22(1.4.22.627)版
 
 * (ZD #18709)-在iOS的TVSDK中崩溃
 
-已修复某些Adobe Access DRM保护的流上发生崩溃的问题。
+已修复某些Adobe访问DRM保护流上发生崩溃的问题。
 
 * (ZD #18850)-根据CRS规则更新创意选择逻辑
 
@@ -870,7 +874,7 @@ TVSDK在Adobe Access DRM流上开始播放时返回101000错误的问题已修�
 
 **适用于iOS** 6.0+的1.4.21(1.4.21.605)版
 
-* (ZD #20749)-回退将跳过非空VAST响应； 额外广告跟踪URL起火
+* (ZD #20749)-回退将跳过非空VAST响应；额外广告跟踪URL起火
 
 已解决回退广告上的重复ping问题。
 
@@ -919,7 +923,7 @@ TVSDK在Adobe Access DRM流上开始播放时返回101000错误的问题已修�
 
 JavaScript mime类型并不始终包含或视为有效的mime类型。 通过将JavaScript作为有效的MIME类型来解决此问题。
 
-* (ZD #20749)-回退将跳过非空VAST响应； 额外广告跟踪URL起火
+* (ZD #20749)-回退将跳过非空VAST响应；额外广告跟踪URL起火
 
 某些创意未重新打包的问题已解决。
 
@@ -969,7 +973,7 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 
 所有警告都已解决。
 
-**注意**: 已为TVSDK添加与tvOS兼容的库。
+**注意**:已为TVSDK添加与tvOS兼容的库。
 
 **版本1.4.16** (1.4.16.1454)
 
@@ -991,7 +995,7 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 
 * (Zendesk #18072)- Android M —— 应用程序崩溃
 
-检查是否支持用户档案和级别时，调用MediaCodecList和MediaCodecInfo API时发生此崩溃。 Adobe正寻求Google的支持以获得更多洞察。 通过提前加载所有编解码器信息，以避免仅在需要编解码器信息时调用这些API，解决了此问题。
+检查是否支持用户档案和级别时，调用MediaCodecList和MediaCodecInfo API时发生此崩溃。 Adobe正寻求谷歌的支持，以获得更多的洞察。 通过提前加载所有编解码器信息，以避免仅在需要编解码器信息时调用这些API，解决了此问题。
 
 * (Zendesk #18074)-在Nexus和Android 6.0上不能使用阿拉伯语字幕
 
@@ -999,13 +1003,13 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 
 **适用于iOS** 6.0+的1.4.15(1.4.15.512)版
 
-**注意**: Nielsen模块已从TVSDK版本中删除，但TVSDK将在不久的将来用新的Nielsen集成模块进行更新。
+**注意**:Nielsen模块已从TVSDK版本中删除，但TVSDK将在不久的将来用新的Nielsen集成模块进行更新。
 
 * (ZD #2228)-从获取MediaPlayerNotification中不可用的清单返回错误
 
 添加了元数据，以在发生通知M3U8_PARSER_ERROR时显示内容。
 
-* (ZD #4437)- Adobe Primetime SDK内部崩溃
+* (ZD #4437)-Adobe PrimetimeSDK内部崩溃
 
 修复了准备字幕／替代音频时报告的崩溃问题。
 
@@ -1040,9 +1044,9 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 
 修复了3P URL中错误的反向MD5。
 
-**适用于iOS** 6.0+的1.4.12(1.4.12.463)版
+**适用于iOS** 6.0+的版本1.4.12(1.4.12.463)
 
-* (ZD #2751)CSAI和CRS/增强： 处理某些媒体文件URL中的动态元素。
+* (ZD #2751)CSAI和CRS/增强：处理某些媒体文件URL中的动态元素。
 
 更新了Creative Repackaging Service，可通过动态创意URL正确处理广告。
 
@@ -1092,7 +1096,7 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 
 **版本1.4.5** (1.4.5.283)
 
-* (ZD #2141)AnalyticsTreeHouse应用程序实施，为构建 `AdobeAnalyticsPlugin.a` 包添加了库。
+* (ZD #2141)TreeHouse应用程序的分析实施，添加 `AdobeAnalyticsPlugin.a` 了用于构建包的库。
 * 视频心率库更新到1.4.1.2
 * [PTPALY-4226] [与ZD #2423相关)执行DRM重置可导致删除应用程序文档数据。
 
@@ -1102,7 +1106,7 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 
 * (ZD #2435)有关分析需要更新的TV SDK文档
 
-**版本1.4.2** (1.4.2.210: iOS 6.0+)
+**版本1.4.2** (1.4.2.210:iOS 6.0+)
 
 * (ZD #1129)返 `_player.currentItem.audioOptions` 回空
 * (ZD #2109)Primetime PSDK 1.4.1.125不适用于Xcode 5.1.1
@@ -1141,7 +1145,7 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 
 * TVSDK 1.4.28已通过iOS 10 Beta 7的认证。
 * 通过添加和API强制使用 `forceHTTPS` HTTPS的 `isForcingHTTPS` DRM支持。
-* 将VHL库更新为1.5.8，将Adobe Mobile库更新为4.8.4，将记录器实用程序库更新为版本7.0部署目标。
+* 将VHL库更新为1.5.8，将Mobile库更新为4.8.4，将Logger实用程序库更新为7.0版部署目标。
 
 **版本1.4.19**
 
@@ -1153,9 +1157,9 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 
    此版本的TVSDK包含对tvOS的支持，并已针对未加密的HLS流进行验证。
 
-   **注意**: 请记住以下编译准则：
+   **注意**:请记住以下编译准则：
 
-   * TVSDK tvOs支持仅限于非Adobe DRM加密流。 必须在tvOS构建设置中删除对drmNativeInterface.framework的引用。 仍支持AES加密流。
+   * TVSDK tvOs支持仅限于非AdobeDRM加密流。 必须在tvOS构建设置中删除对drmNativeInterface.framework的引用。 仍支持AES加密流。
    * Apple要求启用所有Apple TV应用程序的位代码，因此必须在项目设置中打开此标志。
 
 ## 已知问题和限制 {#known-issues-and-limitations}
@@ -1169,11 +1173,11 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 * 它可能会体验到许可证旋转视频在iOS 11上不播放，并且在iOS 9.x和iOS 10.x上播放正常。
 * 在VPAID 2.0支持中，如果在AirPlay上播放活动，则跳过VPAID广告。
 * 当最小目标设置为iOS7（或更高版本）时，drmNativeInterface.framework无法正确链接。
-解决方法： 显式指定libstdc++.6.dylib库，如下所示： 转到“Target”->“构建阶段”->“将二进制文件与库链接”，并添加libstdc++.6.dylib。
+解决方法：显式指定libstdc++.6.dylib库，如下所示：转到“目标”->“构建阶段”->“将二进制文件与库链接”，并添加libstdc++.6.dylib。
 * 插入后期广告以替换API。
 * 在广告分时段进行搜索（不退出）会发布重复广告开始和广告分时段通知
 * 设置currentTimeUpdateInterval没有任何效果。
-注意： 在某些iOS版本中，操作系统不会自动加载PSDKLibrary.framework内的资源。 手动将PSDKResources.bundle复制到应用程序的捆绑资源很重要： 转到“构建阶段”并复制捆绑包资源。
+注意：在某些iOS版本中，操作系统不会自动加载PSDKLibrary.framework内的资源。 手动将PSDKResources.bundle复制到应用程序的捆绑资源很重要：转到“构建阶段”并复制捆绑包资源。
 * 无法使用Xcode 8或更低版本构建引用应用程序。 从iOS TVSDK版本1.4.41开始，使用Xcode 9进行编译。
 * VPAID广告不接受delayAdLoadingTolerance值。
 * 24077-对于具有字幕的某些HLS内容，播放器在“停止”或“重置”方法时崩溃。
