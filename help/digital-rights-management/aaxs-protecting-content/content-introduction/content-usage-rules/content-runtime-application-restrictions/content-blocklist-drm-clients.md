@@ -1,30 +1,30 @@
 ---
-seo-title: 限制访问受保护内容的DRM客户端的块列表
-title: 限制访问受保护内容的DRM客户端的块列表
+seo-title: 阻止列表DRM客户端无法访问受保护的内容
+title: 阻止列表DRM客户端无法访问受保护的内容
 uuid: c05aa6f8-32d9-42aa-a9c5-0d0629d49778
 translation-type: tm+mt
-source-git-commit: fbc175f383c850a7286b1e6e89daa027e00b29ef
+source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
 workflow-type: tm+mt
-source-wordcount: '380'
+source-wordcount: '377'
 ht-degree: 0%
 
 ---
 
 
-# 限制访问受保护内容的DRM客户端的块列表 {#blocklist-of-drm-clients-restricted-from-accessing-protected-content}
+# 阻止列表DRM客户端无法访问受保护的内容 {#blocklist-of-drm-clients-restricted-from-accessing-protected-content}
 
-**Adobe Access DRM模块版本限制访问受保护的内容。**
+**Adobe访问DRM模块版本限制访问受保护的内容。**
 
 指定无法访问内容的DRM客户端。 由DRM客户端版本和平台指定。
 
-示例用例： 在安全违规事件中，可将DRM客户端的较新版本指定为许可证获取和内容回放所需的最低版本。 许可证服务器在发出许可证之前检查发出许可证请求的DRM客户端是否满足版本要求。 在播放内容之前，DRM客户端还检查许可证中的DRM版本。 如果许可证可能转移到另一台计算机的域，则需要进行此客户端检查。
+示例用例：在安全违规事件中，可将DRM客户端的较新版本指定为许可证获取和内容回放所需的最低版本。 许可证服务器在发出许可证之前检查发出许可证请求的DRM客户端是否满足版本要求。 在播放内容之前，DRM客户端还检查许可证中的DRM版本。 如果许可证可能转移到另一台计算机的域，则需要进行此客户端检查。
 
 DRM客户端版本可由下表中指定的属性进行标识：
 
 | **属性** | **支持的值** | **匹配条件** | **说明** |
 |---|---|---|---|
 | 环境 | “PC”、“PortingKit” | 精确匹配 | 标识客户端是在桌面上还是任何其他设备上运行。 |
-| 操作系统 | “Win”、“Mac”、“Linux”、“Android”、“iOS”、“ChromeOS” | 精确匹配 | Platform |
+| 操作系统 | “Win”、“Mac”、“Linux”、“Android”、“iOS”、“ChromeOS” | 精确匹配 | 平台 |
 | 架构 | “32”, “64” | 精确匹配 | 32位或64位 |
 | 屏幕类型 | “PC”、“移动”、“电视” | 精确匹配 |  |
 | 运行时版本 | 有效版本号。 例如，“2.0.0”、“3.0”、“4.0”、“11.0”等。 | 如果客户端版本小于或等于指定的版本，则匹配。 | 版本号指定为数字和句点(“”)的组合。 任意长度的。 |
@@ -32,7 +32,7 @@ DRM客户端版本可由下表中指定的属性进行标识：
 | OEM供应商 | OEM供应商字符串 | 精确匹配 | 使用移植工具包的设备的OEM供应商标识字符串。 |
 | 模型 | 模型字符串。 例如，“iOS_Mobile”、“Android_Mobile”、“Chrome”、“ChromeOS_ARM”、“WindowsOnARM”、“AVE” | 精确匹配 | 使用移植工具包的设备的设备模型标识字符串。 |
 
->[!NOTE] {class=&quot;-主题／注释&quot;
+>[!NOTE]
 >
->当在块列表中指定条目时，可以为上表中所述的一个或多个属性设置值。 未指定的任何属性均视为通配符。 如果DRM客户端与块列表条目中指定的所有值匹配，则该客户端可能无法访问受保护的内容。
+>当在阻止列表中指定条目时，可以为上表中所述的一个或多个属性设置值。 未指定的任何属性均视为通配符。 如果DRM客户端与阻止列表条目中指定的所有值匹配，则该客户端可能无法访问受保护的内容。
 
