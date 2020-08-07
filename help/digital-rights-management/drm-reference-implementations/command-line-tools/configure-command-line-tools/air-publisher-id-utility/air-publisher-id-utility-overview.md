@@ -3,9 +3,9 @@ seo-title: 概述
 title: 概述
 uuid: f45c6b58-53c5-41e0-be3d-590231dd214a
 translation-type: tm+mt
-source-git-commit: 9d2e046ae259c05fb4c278f464c9a26795e554fc
+source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
 workflow-type: tm+mt
-source-wordcount: '206'
+source-wordcount: '203'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 发布者ID对于用于构建AIR文件的证书是唯一的。 如果对多个AIR应用程序重用同一证书，则所有AIR应用程序都具有相同的发布者ID。 成功发布1.5.2的AIR版本不会将生成的发布者ID添加到文件。 因此，如果您计划使用AIR应用程序允许列表，请使用此工具确定发布者ID。
 
->[!NOTE] {class=&quot;-主题／注释&quot;
+>[!NOTE]
 >
 >用于AIR允许列表实施的发布者ID与应用程序发布者在应用程序文件中指定的发布者ID不同。 [!DNL application.xml]
 
