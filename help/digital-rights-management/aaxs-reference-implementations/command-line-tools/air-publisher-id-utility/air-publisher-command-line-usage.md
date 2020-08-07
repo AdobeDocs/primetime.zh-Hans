@@ -3,7 +3,10 @@ seo-title: 命令行使用
 title: 命令行使用
 uuid: 54b1e867-c6cc-4355-b8e6-a7ec910bd33d
 translation-type: tm+mt
-source-git-commit: 7e8df034035fe465fbe403949ef828e7811ced2e
+source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
+workflow-type: tm+mt
+source-wordcount: '75'
+ht-degree: 0%
 
 ---
 
@@ -30,7 +33,7 @@ java -jar AdobePublisherIDUtility.jar
 
 * `signingcert` 指定用于对AIR应用程序进行签名的证书
 
->[!NOTE] {class=&quot;- topic/note &quot;}
+>[!NOTE]
 >
->要确定iOS应用程序的发布者ID，请使用该 `-s` 选项并指定用于对iOS应用程序进行签名的证书。 ***需要Adobe Primetime构建可播放受访问保护的内容的iOS应用程序***。
+>要确定iOS应用程序的发布者ID，请使 `-s` 用选项并指定用于对iOS应用程序进行签名的证书。 ***Adobe Primetime需要构建能够播放受访问保护的内容的iOS应用程序***。
 
