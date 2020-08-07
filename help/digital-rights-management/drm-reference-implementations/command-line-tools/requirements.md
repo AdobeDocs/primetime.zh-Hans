@@ -5,7 +5,10 @@ seo-title: 命令行工具要求
 title: 命令行工具要求
 uuid: 62f6e7ef-f593-4184-b217-2d086fead733
 translation-type: tm+mt
-source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
+source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
+workflow-type: tm+mt
+source-wordcount: '81'
+ht-degree: 0%
 
 ---
 
@@ -17,6 +20,6 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
 
    这些凭据用于加密和签署视频文件、签署策略更新和撤销列表以及预生成许可证。
 
->[!NOTE] {class=&quot;- topic/note &quot;}
+>[!NOTE]
 >
->由于Java错误，您在命令行中键入的任何参数（如文件名、DRM策略名或描述）只能使用操作系统默认字符集中的字符。
+>由于Java错误，您在命令行中键入的任何参数（如文件名、DRM策略名称或说明）只能使用操作系统默认字符集中的字符。
