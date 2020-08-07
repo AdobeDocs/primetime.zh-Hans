@@ -1,44 +1,47 @@
 ---
-description: 要在TVSDK应用程序中实施FairPlay流，您需要编写一个Resource Loader，它会向您的FairPlay流服务器发送许可证获取请求。
-seo-description: 要在TVSDK应用程序中实施FairPlay流，您需要编写一个Resource Loader，它会向您的FairPlay流服务器发送许可证获取请求。
+description: 要在TVSDK应用程序中实施FairPlay流，您需要编写一个资源加载器，该加载器会向您的FairPlay流服务器发送许可证获取请求。
+seo-description: 要在TVSDK应用程序中实施FairPlay流，您需要编写一个资源加载器，该加载器会向您的FairPlay流服务器发送许可证获取请求。
 seo-title: TVSDK应用程序中的Apple FairPlay
 title: TVSDK应用程序中的Apple FairPlay
 uuid: 4384d379-37cd-46c5-8c25-0cda16bdebb8
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
+workflow-type: tm+mt
+source-wordcount: '585'
+ht-degree: 0%
 
 ---
 
 
-# TVSDK应用程序中的Apple FairPlay {#apple-fairplay-in-tvsdk-applications}
+# TVSDK应用程序中的Apple FairPlay  {#apple-fairplay-in-tvsdk-applications}
 
-要在TVSDK应用程序中实施FairPlay流，您需要编写一个Resource Loader，它会向您的FairPlay流服务器发送许可证获取请求。
+要在TVSDK应用程序中实施FairPlay流，您需要编写一个资源加载器，该加载器会向您的FairPlay流服务器发送许可证获取请求。
 
-资源加载器代码负责以下任务：
+资源加载器代码负责以下任务:
 
-1. 确定要将许可证获取请求发送到何处。
+1. 确定在何处发送许可证获取请求。
 1. 格式化请求。
-1. 向服务器提供必要的信息，以便服务器能够决定是否应该允许请求。
+1. 向服务器提供必要的信息，以便服务器能够决定是否允许请求。
 
-例如，如果您使用由ExpressPlay提供支持的Adobe Primetime Cloud DRM，则您的资源加载器会将请求发送到：
+例如，如果您使用由ExpressPlay提供支持的Adobe的Primetime Cloud DRM，则您的资源加载器会将请求发送到：
 
 ```
 https://fp-gen.service.expressplay.com
 ```
 
-Resource Loader设置请求的格式并附加一个ExpressPlay令牌，该令牌授权播放到URL。 获取ExpressPlay令牌时，需考虑几个选项。 这些选项取决于您对内容的打包方式。
+资源加载器设置请求的格式并附加一个ExpressPlay令牌，该令牌授权将播放权放到URL。 获取ExpressPlay令牌时，需考虑几个选项。 这些选项取决于您对内容的打包方式。
 
-打包内容时，打包程序会在 `skd:` M3U8清单中插入URL。 在条目 `skd:` 之后，您可以将任何数据放入清单中。 您可以在应用程序代码中使用这些数据来完成上述任务。 例如，您可以使用 `skd:{content_id}` 它，以便您的应用程序能够确定正在播放的内容的ID，并为该特定内容段请求令牌。 例如，您也可以使用， `skd:{entitlement_server_url}?cid={content_id}`这样您的应用程序就不需要硬编码授权服务器URL。
+在打包内容时，打包程序会在 `skd:` M3U8清单中插入URL。 输入 `skd:` 后，可以将任何数据放入清单中。 您可以在应用程序代码中使用此任务完成上面列出的数据。 例如，您可以使用 `skd:{content_id}` 这样，您的应用程序就可以确定正在播放的内容的ID，并为该特定内容请求一个令牌。 例如，您还可以使 `skd:{entitlement_server_url}?cid={content_id}`用，这样您的应用程序就不需要硬编码授权服务器URL。
 
-如果在开始播放时，您已经通过其他渠道了解 `skd:` 内容ID，则可能不需要URL中的任何信息。 第二个示例是测试设置的理想解决方案，但您也可以在生产环境中使用它。
+如果在播放开始时，您已 `skd:` 经通过其他渠道了解内容ID，则可能不需要URL中的任何信息。 第二个示例是测试设置的理想解决方案，但您也可以在生产环境中使用它。
 
 >[!TIP]
 >
 >确定格式 `skd:`。
 
-您的内容是使用协议获取的， `skd:` 但您的许可证请求使用 `https:`。 处理这些协议的最常见选项是：
+您的内容是使用协议获 `skd:` 取的，但您的许可证请求使用 `https:`。 处理这些协议的最常用选项是：
 
-* **端对端回放的初始测试在打包内容时** ，请选择一个 `skd:` URL。 在测试应用程序时，从ExpressPlay手动获取许可证，并在加载器中对许可证( `https:` URL)和内容URL进行硬编码。
+* **端对端回放的初始测试在打包内容** 时，请选择一个 `skd:` URL。 测试应用程序时，请从ExpressPlay手动获取许可证，并在加载器中对许可证( `https:` URL)和内容URL进行硬编码。
 
    例如：
 
@@ -50,7 +53,7 @@ Resource Loader设置请求的格式并附加一个ExpressPlay令牌，该令牌
        ExpressPlayToken={copy_your_token_to_here}";
    ```
 
-* **大多数其他情况** ：打包内容时，请选择 `skd:` 唯一表示内容ID的URL。 在加载器中，解析 `skd:` URL，将其发送到服务器以获取令牌，然后使用生成的令牌作为URL。
+* **大多数其他情况** ：在打包内容时，请选 `skd:` 择唯一表示内容ID的URL。 在加载器中，分析 `skd:` URL，将其发送到服务器以获取令牌，然后使用生成的令牌作为URL。
 
    例如：
 
@@ -158,15 +161,15 @@ Resource Loader设置请求的格式并附加一个ExpressPlay令牌，该令牌
 
    >[!NOTE]
    >
-   >确保按照《 *FairPlay流播放计划指南》(* FairPlayStreaming_PG.pdf *)中的说明进行操作，该指南包含在用于开发FPS感知型应用程序的*[](https://developer.apple.com/services-account/download?path=/Developer_Tools/FairPlay_Streaming_SDK/FairPlay_Streaming_Server_SDK.zip)FairPlay Server SDK中。
+   >确保您遵循FairPlay流项目 *指南* (FairPlayStreaming_PG.pdf *)中的说明，该指南包含在*&#x200B;用于开发FPS感知型应用程序的FairPlay Server SDK中 [](https://developer.apple.com/services-account/download?path=/Developer_Tools/FairPlay_Streaming_SDK/FairPlay_Streaming_Server_SDK.zip)。
 
-   该方 `resourceLoader:shouldWaitForLoadingOfRequestedResource` 法等效于中的内容 `AVAssetResourceLoaderDelegate`。
+   该 `resourceLoader:shouldWaitForLoadingOfRequestedResource` 方法等效于中的内容 `AVAssetResourceLoaderDelegate`。
 
-   >[!IMPORTANT] {importance=&quot;high&quot;}
+   >[!IMPORTANT]
    >
-   >在ExpressPlay许可证服务器场景中，要播放内容，请将ExpressPlay FairPlay服务器许可证请求URL中的URL方案从 `skd://` 更改 `https://` 为(或 `https://`)。
+   >在ExpressPlay许可证服务器场景中，要播放内容，请将ExpressPlay FairPlay服务器许可证请求URL中的URL方案 `skd://` 从更 `https://` 改为 `https://`（或）。
 
-1. 在中注 *册FairPlay* Customer Resource Loader `registerPTAVAssetResourceLoader`。
+1. 在中注 *册* FairPlay客户资源加载 `registerPTAVAssetResourceLoader`器。
 
    ```
    PTFairPlayResourceLoader *resourceLoader =  
