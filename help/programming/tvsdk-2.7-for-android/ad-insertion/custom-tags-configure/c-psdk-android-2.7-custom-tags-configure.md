@@ -5,7 +5,10 @@ seo-title: 自定义标记
 title: 自定义标记
 uuid: a86753ac-23d0-4c5e-9b5c-a6cdb7fcc5f7
 translation-type: tm+mt
-source-git-commit: 0eaf0e7e7e61d596a51d1c9c837ad072d703c6a7
+source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
+workflow-type: tm+mt
+source-wordcount: '371'
+ht-degree: 0%
 
 ---
 
@@ -18,17 +21,17 @@ source-git-commit: 0eaf0e7e7e61d596a51d1c9c837ad072d703c6a7
 
 >[!IMPORTANT]
 >
->此功能不适用于Apple计算机上的Safari，因为TVSDK使用视频标记而不是Flash或MSE播放HLS内容。
+>此功能在Apple计算机上不可用，因为TVSDK使用视频标签(而不是Flash或MSE)播放HLS内容。
 
-TVSDK为特定广告标记提供开箱即用 `#EXT` 支持。 您的应用程序可以使用自定义标记来增强广告工作流程或支持封锁场景。 为支持高级工作流程，TVSDK允许您在清单中指定和订阅其他标记。 当清单文件中出现这些标记时，您会收到通知。
+TVSDK为特定广告标记提供开箱即用 `#EXT` 支持。 您的应用程序可以使用自定义标记来增强广告工作流程或支持封锁场景。 为支持高级工作流,TVSDK允许您指定并订阅清单中的其他标记。 当清单文件中出现这些标记时，会通知您。
 
 >[!TIP]
 >
 >您可以订阅VOD和实时／线性流的自定义标记。
 
->[!NOTE] {othertype=&quot;Limitation&quot;}
+>[!NOTE]
 >
->在Safari中使用视频标记播放HLS时，而不是使用Flash回退，此功能在Safari中将不可用。
+>在Safari中使用视频标记播放HLS，而不是使用Flash回退播放HLS时，此功能在Safari中将不可用。
 
 ## 使用自定义HLS标记 {#section_AD032318AEF5418393D2B1DF36B0BABB}
 
@@ -63,7 +66,7 @@ seg5.ts
 您的应用程序可以设置以下场景：
 
 * 文件中存 `#EXT-X-ASSET` 在标记或您订阅的任何其他自定义标记名称集时的通知。
-* 在流中找到标 `#EXT-X-AD` 记或任何其他自定义标记名称时插入广告。
+* 在流中找到标 `#EXT-X-AD` 签或任何其他自定义标签名称时插入广告。
 
 您可以订阅以下任意标记作为自定义标记：
 
@@ -73,6 +76,6 @@ seg5.ts
 * `EXT-X-CUE`
 * `EXT-X-ENDLIST`
 
-在分析清单文件时，您 `TimedMetadata` 将收到一个事件通知。
+在分析清单文件 `TimedMetadata` 时，将收到事件通知。
 
-您已经订阅了某些广 `EXT-X-CUE`告标签，例如。 这些广告标记也由默认的业务机会生成器使用。 您可以通过设置属性来指定默认业务机会生成器使用的广告 `adTags` 标记。
+您已经订阅了某 `EXT-X-CUE`些广告标记。 这些广告标记也由默认的机会生成器使用。 您可以通过设置属性来指定默认机会生成器使用的广告 `adTags` 标记。
