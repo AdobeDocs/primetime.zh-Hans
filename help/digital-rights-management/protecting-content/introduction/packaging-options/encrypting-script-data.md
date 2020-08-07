@@ -3,16 +3,19 @@ seo-title: 加密脚本数据
 title: 加密脚本数据
 uuid: c91e5568-194e-4f20-858b-65310049901b
 translation-type: tm+mt
-source-git-commit: c78d3c87848943a0be3433b2b6a543822a7e1c15
+source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
+workflow-type: tm+mt
+source-wordcount: '67'
+ht-degree: 0%
 
 ---
 
 
 # 加密脚本数据 {#encrypting-script-data}
 
-此打包选项指定是否加密内容中嵌入的脚本数据。
+此打包选项指定是否加密嵌入在内容中的脚本数据。
 
->[!NOTE] {class=&quot;- topic/note &quot;}
+>[!NOTE]
 >
 >此规则仅适用于FLV文件格式。 对于其他格式的文件，脚本数据始终保持清晰。
 
