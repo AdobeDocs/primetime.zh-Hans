@@ -3,9 +3,9 @@ seo-title: 为受保护的流运行DRM服务器
 title: 为受保护的流运行DRM服务器
 uuid: 9bbe211d-268b-43c2-9e55-7ce62de40d30
 translation-type: tm+mt
-source-git-commit: 9d2e046ae259c05fb4c278f464c9a26795e554fc
+source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
 workflow-type: tm+mt
-source-wordcount: '807'
+source-wordcount: '804'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # 为受保护的流运行DRM服务器 {#running-the-drm-server-for-protected-streaming}
 
-在开始Adobe Primetime DRM Server for Protected Streaming之前，建议您验证配置文件中设置的有效性。
+在开始Adobe PrimetimeDRM服务器进行受保护流之前，建议您验证配置文件中设置的有效性。
 
 您可以使用随许可证服务器提供的实用程序验证设置的有效性。 (请参 *阅本指南* 中的Configuration Validator。
 
@@ -23,9 +23,9 @@ ht-degree: 0%
 
 ## 日志文件 {#log-files}
 
-Adobe Primetime DRM Server为受保护的流应用程序生成的日志文件位于LicenseServer.LogRoot指定的目录中。
+由Adobe PrimetimeDRM服务器为受保护流应用程序生成的日志文件位于LicenseServer.LogRoot指定的目录中。
 
->[!NOTE] {class=&quot;-主题／注释&quot;
+>[!NOTE]
 >
 >如果当前日志文件在服务器运行时被删除或移动，则不能重新创建日志文件。 因此，某些日志信息可能会被删除。
 
@@ -50,7 +50,7 @@ Adobe Primetime DRM Server为受保护的流应用程序生成的日志文件位
 
 ### 全局日志文件 {#section_1CFA90748142439C9F3BE380969539DA}
 
-全局日志文件 [!DNL flashaccess-global.log]位于LicenseServer. *LogRoot中*。 日志可能包括Adobe Primetime DRM Java SDK或日志消息在服务器初始化期间生成的日志消息。
+全局日志文件 [!DNL flashaccess-global.log]位于LicenseServer. *LogRoot中*。 日志可能包括在服务器初始化期间Adobe PrimetimeDRM Java SDK或日志消息可能生成的日志消息。
 
 ### 分区日志文件 {#section_5660137CD6AA40519E72A4315534846B}
 
@@ -84,4 +84,4 @@ Adobe Primetime DRM Server为受保护的流应用程序生成的日志文件位
 
 ### 更新租户配置文件 {#section_71624DB8DF28480F84F34F0FF7FD4365}
 
-可以随时修改文件中指 [!DNL flashaccess-tenant.xml] 定的所有值。 这些更改将在服务器下次重新加载配置文件时生效。 此外，服务器检查所有凭据()文件中是否有任何 [!DNL .pfx]修改，并且打包程序允许列表证书文件在租户配置文件中引用。
+可以随时修改文件中指 [!DNL flashaccess-tenant.xml] 定的所有值。 这些更改将在服务器下次重新加载配置文件时生效。 此外，服务器检查租户配置文件中引 [!DNL .pfx]用的所有凭据()文件和打包程序允许列表证书文件中是否有任何修改。
