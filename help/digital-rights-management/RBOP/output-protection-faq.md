@@ -5,9 +5,9 @@ seo-title: RBOP常见问题解答
 title: RBOP常见问题解答
 uuid: 7dcd337c-369a-474c-8768-409c48b5cee5
 translation-type: tm+mt
-source-git-commit: 9d2e046ae259c05fb4c278f464c9a26795e554fc
+source-git-commit: fa9e89dd63c8b4c9d6eee78258957cfd30c29088
 workflow-type: tm+mt
-source-wordcount: '347'
+source-wordcount: '331'
 ht-degree: 0%
 
 ---
@@ -41,13 +41,14 @@ ht-degree: 0%
 
    * 720P —— 需要HDCP
    * 480P —— 无OP
+
    以下规则将应用于每个变体。
 
    **流：**
 
-   * 240, 480: 都&lt;= 480; 无需OP，流将在HDCP存在或没有HDCP的情况下加载。
-   * 600, 720: 都&lt;= 720; 回放需要HDCP
-   * 1080: > 720; 流是列出的块（返回错误），因为在上述规则中找不到它。
+   * 240, 480:都&lt;= 480;无需OP，流将在HDCP存在或没有HDCP的情况下加载。
+   * 600, 720:都&lt;= 720;回放需要HDCP
+   * 1080:> 720;流是列出的块（返回错误），因为在上述规则中找不到它。
 
 
 * **问** ：在我的某些Android设备上，我定义的像素计数限制并未完全按定义应用。 发生什么了？
@@ -56,18 +57,27 @@ ht-degree: 0%
 
    ```
    { 
-       "maxPixel":  
-   
-<b>800</b>,&quot;pixelConstraints&quot;: [{ &quot;pixelCount&quot;:\
-<b>532</b>,“数字”: [{&quot;output&quot;: “必需”、“hdcp”:{“主要”: 1,&quot;minor&quot;: 0}}],“模拟”: {&quot;output&quot;: &quot;必需&quot;}},...
+       "maxPixel": 800, 
+       "pixelConstraints": [ 
+           { "pixelCount": 532, 
+             "digital": [{"output": "REQUIRED", "hdcp":{"major": 1,"minor": 0}}], 
+             "analog": {"output": "REQUIRED"} 
+           }, 
+   ... 
+   ```
 
-```
-to: 
-```
-{&quot;maxPixel&quot;:\
-<b>820</b>,&quot;pixelConstraints&quot;: [{ &quot;pixelCount&quot;:\
-<b>552</b>,“数字”: [{&quot;output&quot;: “必需”、“hdcp”:{“主要”: 1,&quot;minor&quot;: 0}}],“模拟”: {&quot;output&quot;: &quot;必需&quot;}},...
+   至：
 
-```
-throughout, for all instances of `maxPixel` and `pixelCount`.
+   ```
+   { 
+       "maxPixel": 820, 
+       "pixelConstraints": [ 
+           { "pixelCount": 552, 
+             "digital": [{"output": "REQUIRED", "hdcp":{"major": 1,"minor": 0}}], 
+             "analog": {"output": "REQUIRED"} 
+           }, 
+   ... 
+   ```
+
+   和的所有实 `maxPixel` 例 `pixelCount`。
 
