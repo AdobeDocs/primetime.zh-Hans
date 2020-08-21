@@ -2,7 +2,7 @@
 title: 适用于iOS的TVSDK 3.12发行说明
 description: TVSDK 3.12 for iOS发行说明描述了TVSDK iOS 3.12中的新增或更改功能、已解决和已知问题以及设备问题。
 translation-type: tm+mt
-source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
+source-git-commit: 6da7d597503d98875735c54e9a794f8171ad408b
 workflow-type: tm+mt
 source-wordcount: '7665'
 ht-degree: 0%
@@ -541,7 +541,7 @@ Comment Type: draft
 
 在基于CRS标准化规则的CRS请求中使用创意ID和AdSystem。
 
-* [ZD #29462)- A&amp;E VOD中导致iOS应用程序崩溃的ThuocyHub广告
+* (ZD #29462)- A&amp;E VOD中导致iOS应用程序崩溃的ThuocyHub广告
 
 **版本1.4.36(1.4.36.835)**
 
@@ -1054,7 +1054,7 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 
 在iOS 8.2设备上定期播放，drmFramework中的固定内存泄漏
 
-* (ZD #3988)在首次播放后重新搜索预卷时，将跳过预卷
+* (ZD #3988)在首次播放后重新搜索时跳过预卷
 
 修复了一个错误，以便能够正确禁用广告策略。
 
@@ -1098,7 +1098,7 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 
 * (ZD #2141)TreeHouse应用程序的分析实施，添加 `AdobeAnalyticsPlugin.a` 了用于构建包的库。
 * 视频心率库更新到1.4.1.2
-* [PTPALY-4226] [与ZD #2423相关)执行DRM重置可导致删除应用程序文档数据。
+* (PTPALY-4226)（与ZD #2423相关）执行DRM重置可导致删除应用程序文档数据。
 
 **版本1.4.4** (1.4.4.242)
 
