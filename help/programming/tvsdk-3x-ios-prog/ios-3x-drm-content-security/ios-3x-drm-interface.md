@@ -6,7 +6,7 @@ seo-title: Primetime DRM界面概述
 title: Primetime DRM界面概述
 uuid: 5e794147-cc58-448c-b8ec-065e80ef01fd
 translation-type: tm+mt
-source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
+source-git-commit: 23a48208ac1d3625ae7d925ab6bfba8f2a980766
 workflow-type: tm+mt
 source-wordcount: '464'
 ht-degree: 0%
@@ -46,9 +46,9 @@ TVSDK在DRM `PTMediaPlayerItemDRMMetadataChanged` 元数据更改时发出通知
 
 如果受DRM保护的流是多比特率(MBR)编码的，则用于变型播放列表的DRM元数据应与在所有比特率流中使用的元数据相同。
 
-[!TIP]
-
-在iOS应用程序中引用受DRM保护的资产URL时，查询字符串参 `?faxs=1` 数必须附加到(MBR)设置级别M3U8 URL中。 例如：
+>[!TIP]
+>
+>在iOS应用程序中引用受DRM保护的资产URL时，查询字符串参 `?faxs=1` 数必须附加到(MBR)设置级别M3U8 URL中。 例如：
 
 ```
 https://your.domain.com/hls/[...]/index.m3u8?faxs=1
