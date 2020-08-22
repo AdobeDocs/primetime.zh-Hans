@@ -5,7 +5,10 @@ seo-title: 设置自定义播放
 title: 设置自定义播放
 uuid: 9cbf0bcf-7932-409e-a690-e79f284eaf74
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 23a48208ac1d3625ae7d925ab6bfba8f2a980766
+workflow-type: tm+mt
+source-wordcount: '170'
+ht-degree: 1%
 
 ---
 
@@ -14,15 +17,15 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
 
 您可以通过向TVSDK注册广告策略实例来自定义或覆盖广告行为。
 
-要自定义广告行为，请执行以下操作之一：
+要自定义广告行为，请执行下列操作之一：
 
 * 实现接 `AdPolicySelector` 口及其所有方法。
-如果您需要覆盖所有默认广告行为，则建议使用此选项。
+如果需要覆盖所有默认广告行为，则建议使用此选项。
 
-* 扩展类 `DefaultAdPolicySelector` 并仅为那些需要自定义的行为提供实现。
+* 扩展类 `DefaultAdPolicySelector` 并只为那些需要自定义的行为提供实现。
 如果只需要覆盖某些默认行为，则建议使用此选项。
 
-对于这两个选项，请完成以下任务：
+对于这两个选项，请完成以下任务:
 
 自定义广告行为：
 
@@ -30,9 +33,9 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
 
 1. 指定TVSDK通过广告工厂使用的策略实例。
 
->[!ATTENTION]
+>[!IMPORTANT]
 >
->当MediaPlayer实例>deallocated时，会清除在>playback开始处注册的自定义广告策略。每次创建新的播放会话时，您的应用程序必须注册一个策略>选择器实例。
+>当MediaPlayer实例>deallocated时，会清除在>playback开始处注册的自定义广告策略。每次创建新的播放会话时，您的应用程序必须注册一个策略>selector实例。
 
 例如：
 
