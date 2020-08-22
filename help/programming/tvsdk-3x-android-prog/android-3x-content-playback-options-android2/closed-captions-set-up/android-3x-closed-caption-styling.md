@@ -5,7 +5,10 @@ seo-title: 控制隐藏式字幕样式
 title: 控制隐藏式字幕样式
 uuid: b5d9c783-755f-47a2-acb1-966df9d6116e
 translation-type: tm+mt
-source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+source-git-commit: 23a48208ac1d3625ae7d925ab6bfba8f2a980766
+workflow-type: tm+mt
+source-wordcount: '871'
+ht-degree: 0%
 
 ---
 
@@ -16,16 +19,16 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
 
 此类封装隐藏式字幕样式信息，如字体类型、大小、颜色和背景不透明度。
 
-## 设置隐藏式字幕样式 {#section_C9B5E75C70DD42E59DC4DD0F308C8216}
+## 设置隐藏字幕样式 {#section_C9B5E75C70DD42E59DC4DD0F308C8216}
 
-可以使用TVSDK方法设置隐藏式字幕文本的样式。
+可以使用TVSDK方法设置隐藏字幕文本的样式。
 
-1. 等待媒体播放器至少处于状态 `PREPARED` 。
+1. 等待媒体播放器至少处于该状 `PREPARED` 态。
 1. 创建实 `TextFormatBuilder` 例。
 
-   您可以立即提供所有隐藏式字幕样式参数，也可以稍后设置。
+   您现在可以提供所有隐藏式字幕样式参数，也可以稍后设置。
 
-   TVSDK将隐藏字幕样式信息封装在界面 `TextFormat` 中。 类创 `TextFormatBuilder` 建实现此接口的对象。
+   TVSDK将隐藏字幕样式信息封装在界 `TextFormat` 面中。 类创 `TextFormatBuilder` 建实现此接口的对象。
 
    ```java
    public TextFormatBuilder( 
@@ -52,7 +55,7 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
 
 1. （可选）通过执行下列操作之一来获取当前隐藏式字幕样式设置：
 
-   * 获取所有样式设置， `MediaPlayer.getCCStyle` 其中返回值是界面的一个实 `TextFormat` 例。
+   * 获取所有样式设置， `MediaPlayer.getCCStyle` 其中返回值是界面的一个 `TextFormat` 实例。
 
       ```java
       /** 
@@ -64,7 +67,7 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
       public TextFormat getCCStyle() throws MediaPlayerException;
       ```
 
-   * 通过界面getter方法，一次只获 `TextFormat` 取一个设置。
+   * 通过接口getter方法，一次只获 `TextFormat` 取一个设置。
 
       ```java
       public java.lang.String getFontColor(); 
@@ -82,7 +85,7 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
 
 1. 要更改样式设置，请执行下列操作之一：
 
-   * 使用setter方法 `MediaPlayer.setCCStyle`，传递接口的实 `TextFormat` 例：
+   * 使用setter方 `MediaPlayer.setCCStyle`法，传递接口的实 `TextFormat` 例：
 
       ```java
       /** 
@@ -100,7 +103,7 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
 
    * 使用类 `TextFormatBuilder` ，它定义单个setter方法。
 
-      该接 `TextFormat` 口定义不可变的对象，因此只有getter方法而没有设置器。 您只能使用类设置隐藏式字幕样式 `TextFormatBuilder` 参数：
+      接 `TextFormat` 口定义不可变的对象，因此只有getter方法和没有setter。 您只能使用类设置隐藏字幕样式 `TextFormatBuilder` 参数：
 
       ```java
       // set font type 
@@ -123,25 +126,27 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
       public void setTreatSpaceAsAlphaNum(bool)
       ```
 
-      [!IMPORTANT]
+      >[!IMPORTANT]
+      >
+      >**颜色设置：** 在Android TVSDK 2.X中，对隐藏式字幕的颜色样式进行了增强。 该增强功能允许使用表示RGB颜色值的十六进制字符串设置隐藏字幕颜色。 RGB十六进制颜色表示法是您在诸如Photoshop之类的应用程序中使用的熟悉的6字节字符串：
+      >
+      >* FFFFFF =黑色
+      >* 000000 =白色
+      >* FF0000 =红色
+      >* 00FF00 =绿色
+      >* 0000FF =蓝色
+         >等等。
 
-      **颜色设置：** 在Android TVSDK 2.X中，对隐藏式字幕的颜色样式进行了增强。 该增强功能允许使用表示RGB颜色值的十六进制字符串设置隐藏字幕颜色。 RGB十六进制颜色表示法是您在Photoshop等应用程序中使用的熟悉的6字节字符串：
-
-          * FFFFFF = Black
-          * 00000 = White
-          * FF0000 = Red
-          * 00FF00 = Green
-          * 0000FF = Blue
-      等等。
-
-      在应用程序中，无论何时将颜色样式信息传递 `TextFormatBuilder`给，您仍然会像以前一样使用枚举，但现在必须添加到颜色中 `Color``getValue()` ，才能以字符串形式获得值。 例如：
-
-      `tfb = tfb.setBackgroundColor(TextFormat.Color.RED      <b>.getValue()</b>);`
+      >
+      >在应用程序中，无论何时将颜色样 `TextFormatBuilder`式信息传递给 `Color` ，您仍然像以前一样使用明细列表，但现在必须添加到颜色 `getValue()` 中才能将值作为字符串获得。 例如：
+      >
+      >`tfb = tfb.setBackgroundColor(TextFormat.Color.RED      <b>.getValue()</b>);`
 
 
-设置隐藏式字幕样式是一种异步操作，因此更改可能需要最长几秒钟才能显示在屏幕上。
 
-## 隐藏式字幕样式选项 {#section_6D685EC2D58C42A2BDDD574EDFCCC2A0}
+设置隐藏式字幕样式是一个异步操作，因此更改可能需要几秒钟时间才能显示在屏幕上。
+
+## 隐藏字幕样式选项 {#section_6D685EC2D58C42A2BDDD574EDFCCC2A0}
 
 您可以指定多个题注样式选项，这些选项将覆盖原始题注中的样式选项。
 
@@ -163,7 +168,7 @@ public TextFormatBuilder(
 
 >[!TIP]
 >
->在定义默认值(例如， `DEFAULT`)的选项中，该值引用最初指定题注时的设置。
+>在定义默认值的选项(例 `DEFAULT`如，)中，该值指最初指定字幕时的设置。
 
 <table frame="all" colsep="1" rowsep="1" id="table_87205DEFEE384AF4AF83952B15E18A42"> 
  <thead> 
@@ -175,25 +180,25 @@ public TextFormatBuilder(
  <tbody> 
   <tr rowsep="1"> 
    <td colname="1"> 字体 </td> 
-   <td colname="2"> <p>字体类型。 </p> <p>只能设置为由 <span class="codeph"></span> TextFormat.Font枚举定义的值，并表示（例如，带有或不带序列的等间距）。 </p> <p>提示： 设备上可用的实际字体可能会有所不同，并在必要时使用替换。 带serifs的单空间通常用作替代，尽管这种替代可以是系统特定的。 </p> </td> 
+   <td colname="2"> <p>字体类型。 </p> <p>只能设置为由TextFormat.Font明细列表定 <span class="codeph"> 义并表示 </span> 的值，例如，单隔带或不带序列。 </p> <p>提示： 设备上可用的实际字体可能有所不同，并在必要时使用替换。 带serifs的单空间通常用作替代，尽管这种替代可以是系统特定的。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 大小 </td> 
-   <td colname="2"> <p>题注的大小。 </p> <p> 只能设置为由TextFormat.Size枚举定义的 <span class="codeph"> 值 </span> : 
+   <td colname="2"> <p>题注的大小。 </p> <p> 只能设置为由TextFormat.Size明细列表定 <span class="codeph"> 义的 </span> 值： 
      <ul compact="yes" id="ul_544BFC7A46474A74839477108F1AB1E9"> 
-      <li id="li_A592ED46B8DF4D8FAD7AF3BD931A712B"> <span class="codeph"> 中 </span> 型——标准尺寸 </li> 
-      <li id="li_4F8CEDE54965430EB707DD3D5B2E3F87"> <span class="codeph"> 大- </span> 大约比中大30% </li> 
-      <li id="li_D78D823883F54D869118BAB58257E377"> <span class="codeph"> 小 </span> 型——大约比中型小30% </li> 
+      <li id="li_A592ED46B8DF4D8FAD7AF3BD931A712B"> <span class="codeph"> 中- </span> 标准大小 </li> 
+      <li id="li_4F8CEDE54965430EB707DD3D5B2E3F87"> <span class="codeph"> 大 </span> -比中大约30% </li> 
+      <li id="li_D78D823883F54D869118BAB58257E377"> <span class="codeph"> 小 </span> -比中小约30% </li> 
       <li id="li_9299C13408584A38835F8D91BD048083"> <span class="codeph"> 默 </span> 认——题注的默认大小；与介质相同 </li> 
      </ul> </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 字体边缘 </td> 
-   <td colname="2"> <p>用于字体边缘的效果，如凸起或无。 </p> <p>只能设置为由TextFormat.FontEdge枚举定义的 <span class="codeph"> 值才能 </span> 设置。 </p> </td> 
+   <td colname="2"> <p>用于字体边缘的效果，如凸起或无。 </p> <p>只能设置为由TextFormat.FontEdge明细列表定 <span class="codeph"> 义的 </span> 值。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 字体颜色 </td> 
-   <td colname="2"> <p>字体颜色。 </p> <p>只能设置为由TextFormat.Color枚举定义的 <span class="codeph"> 值 </span> 。 </p> </td> 
+   <td colname="2"> <p>字体颜色。 </p> <p>只能设置为由TextFormat.Color明细列表定 <span class="codeph"> 义的 </span> 值。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 边缘颜色 </td> 
@@ -209,11 +214,11 @@ public TextFormatBuilder(
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 字体不透明度 </td> 
-   <td colname="2"> <p>文本的不透明度。 </p> <p>以0（完全透明）到100（完全不透明）的百分比表示。 <span class="codeph"> 字体的DEFAULT_ </span> OPACITY为100。 </p> </td> 
+   <td colname="2"> <p>文本的不透明度。 </p> <p>以0（完全透明）到100（完全不透明）的百分比表示。 <span class="codeph"> 字体的 </span> DEFAULT_OPACITY为100。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 背景不透明度 </td> 
-   <td colname="2"> <p>背景字符单元格的不透明度。 </p> <p>以0（完全透明）到100（完全不透明）的百分比表示。 <span class="codeph"> 背景的DEFAULT_ </span> OPACITY为100。 </p> </td> 
+   <td colname="2"> <p>背景字符单元格的不透明度。 </p> <p>以0（完全透明）到100（完全不透明）的百分比表示。 <span class="codeph"> 背景的 </span> DEFAULT_OPACITY为100。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 填充不透明度 </td> 
@@ -221,11 +226,11 @@ public TextFormatBuilder(
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 底部插入 </td> 
-   <td colname="2"> <p>字幕窗口底部的垂直距离可避免出现。 </p> <p>表示为题注窗口高度的百分比（例如，“20%”）或像素数（例如，“20”）。 </p> </td> 
+   <td colname="2"> <p>字幕窗口底部的垂直距离可避免出现。 </p> <p>表示为题注窗口高度的百分比（例如“20%”）或像素数（例如“20”）。 </p> </td> 
   </tr> 
   <tr rowsep="0"> 
    <td colname="1"> 安全区域 </td> 
-   <td colname="2"> <p>屏幕边缘周围的一个区域，在该区域，字幕不会显示在0%到25%之间。 </p> <p>默认情况下，WebVTT的安全区域为0%。 此设置允许您的应用程序覆盖该默认值。 如果提供两个值，例如字符串“10%,20%”，则第一个值是水平安全区，第二个值是垂直安全区。 如果提供了一个值，例如字符串“15%”，则垂直轴和水平轴都使用指定的安全区域。 </p> </td> 
+   <td colname="2"> <p>屏幕边缘周围的一个区域，在0%到25%之间不显示字幕。 </p> <p>默认情况下，WebVTT的安全区域为0%。 此设置允许应用程序覆盖该默认值。 如果提供了两个值，例如字符串“10%,20%”，则第一个值是水平安全区，第二个值是垂直安全区。 如果提供一个值，例如字符串“15%”，则垂直轴和水平轴都使用指定的安全区域。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
