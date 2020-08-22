@@ -2,9 +2,13 @@
 cloud: experience-cloud
 product: primetime
 audience: end-user
-user-guide-title: Primetime Reference Implementation Help
+user-guide-title: Primetime参考实施帮助
+user-guide-description: Helps understand the TVSDK and modify the feature managers to customize your personal player.
 translation-type: tm+mt
-source-git-commit: abcbe6991d9a024f62554c3b5ec057f9b3c71c53
+source-git-commit: 23a48208ac1d3625ae7d925ab6bfba8f2a980766
+workflow-type: tm+mt
+source-wordcount: '232'
+ht-degree: 0%
 
 ---
 
@@ -22,27 +26,27 @@ source-git-commit: abcbe6991d9a024f62554c3b5ec057f9b3c71c53
       + [处理事件](ref-implementation/using-feature-managers/handling-events.md)
    + 设置开发环境 {#setup-dev}
       + [设置开发环境](set-up-dev-environment/set-up-dev-environment-overview.md)
-      + [下载和配置入门软件](set-up-dev-environment/download-prereqs-android.md)
+      + [下载和配置必备软件](set-up-dev-environment/download-prereqs-android.md)
       + [构建Primetime参考实施](set-up-dev-environment/install-the-ref-player-project.md)
    + 浏览代码 {#explore-code}
       + [PlayerFragment](set-up-dev-environment/exploring-code/player-fragment.md)
       + [功能管理器](set-up-dev-environment/exploring-code/about-psdk-feature-managers.md)
-      + [ConfigProvider](set-up-dev-environment/exploring-code/config-provider.md)
-      + [SettingsActivity](set-up-dev-environment/exploring-code/settings-activity.md)
+      + [配置提供程序](set-up-dev-environment/exploring-code/config-provider.md)
+      + [设置活动](set-up-dev-environment/exploring-code/settings-activity.md)
       + [目录格式](set-up-dev-environment/exploring-code/catalog-format.md)
-      + [用于Primetime广告的JSON对象](set-up-dev-environment/exploring-code/json-pt-ads.md)
+      + [Primetime广告的JSON对象](set-up-dev-environment/exploring-code/json-pt-ads.md)
       + [用于直接广告中断的JSON对象](set-up-dev-environment/exploring-code/json-direct-ad-breaks.md)
       + [自定义广告标记的JSON对象](set-up-dev-environment/exploring-code/json-custom-ad-markers.md)
       + [授权资源ID的JSON对象](set-up-dev-environment/exploring-code/json-entitlement-resource-id.md)
-      + [JSON源格式示例](set-up-dev-environment/exploring-code/example-json-feed-format.md)
+      + [示例JSON源格式](set-up-dev-environment/exploring-code/example-json-feed-format.md)
    + 实现视频播放 {#implement-video}
       + [视频播放的基本操作](implement-video-playback/video-playback.md)
       + [启用视频回放](implement-video-playback/enable-video-playback.md)
       + [DRM内容保护](implement-video-playback/content-protection.md)
    + [多比特率](implement-video-playback/mbr.md)
    + 设置播放器以通过广告播放DVR {#dvr}
-      + [无需广告插入的DVR](implement-video-playback/dvr/dvr-without-ad-insertion.md)
-      + [带有广告插入的DVR](implement-video-playback/dvr/dvr-with-ad-insertion.md)
+      + [无广告插入的DVR](implement-video-playback/dvr/dvr-without-ad-insertion.md)
+      + [带广告插入的DVR](implement-video-playback/dvr/dvr-with-ad-insertion.md)
       + [为DVR选择自定义起点](implement-video-playback/dvr/dvr-custom-start-point.md)
       + [在参考实现中设置自定义开始时间](implement-video-playback/dvr/set-custom-start-time-dvr.md)
    + [显示QoS回放和设备统计](implement-video-playback/qos-statistics.md)
@@ -51,7 +55,7 @@ source-git-commit: abcbe6991d9a024f62554c3b5ec057f9b3c71c53
       + [广告插入类型](insert-ads/ad-insertion-types.md)
       + [添加广告](insert-ads/add-advertising.md)
       + [相关API文档](insert-ads/aps-callbacks-ad-insertion.md)
-   + 后期绑定音频 {#late-binding-audio}
+   + 延迟绑定音频 {#late-binding-audio}
       + [概述](late-binding-audio/late-binding-audio-overview.md)
       + [集成后期绑定音频](late-binding-audio/aa-enable.md)
       + [选择音轨](late-binding-audio/select-audio-tracks.md)
@@ -60,7 +64,7 @@ source-git-commit: abcbe6991d9a024f62554c3b5ec057f9b3c71c53
       + [概述](paytvpass-entitlement/paytvpass-entitlement-overview.md)
       + [Entitlement Manager概述](paytvpass-entitlement/entitlement-overvivew.md)
       + [集成Primetime身份验证](paytvpass-entitlement/integrate-pass.md)
-      + [配置Adobe Analytics Reporting](paytvpass-entitlement/pass-analytics-setup.md)
+      + [配置Adobe Analytics报告](paytvpass-entitlement/pass-analytics-setup.md)
       + [相关API文档](paytvpass-entitlement/pass-apis-callbacks.md)
    + 视频分析 {#video-analytics}
       + [视频分析](video-analytics/video-analytics-overview.md)
