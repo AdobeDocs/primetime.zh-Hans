@@ -4,9 +4,9 @@ seo-description: '此表提供了有关收入优化通知的详细信息。 '
 seo-title: 收入优化代码
 title: 收入优化代码
 translation-type: tm+mt
-source-git-commit: 6da7d597503d98875735c54e9a794f8171ad408b
+source-git-commit: df3d60874701383325be1afdd1ec5fe036f855f8
 workflow-type: tm+mt
-source-wordcount: '763'
+source-wordcount: '764'
 ht-degree: 0%
 
 ---
@@ -24,9 +24,9 @@ ht-degree: 0%
 >
 >大多数信息性通知都包含相关元数据，例如，无法下载的资源URL。 某些通知包含元数据，用于指定在主视频内容、备用音频内容还是广告中出现问题。
 
-|代码 |名称 |内部通知 |元数据键 |注释 |
-||—||—||—|
-|401001 | REVENUE_OPTIMIZATION_报告 |无 |请参阅下表，了解基于不同事件的元数据键。 |无 |
+| 代码 | 名称 | 内部通知 | 元数据键 | 注释 |
+|---|---|---|---|---|
+| 401001 | REVENUE_OPTIMIZATION_报告 | 无 | 有关基于不同事件的元数据键，请参阅下表。 | 无 |
 
 | 事件详细信息 | ContextMetadata |
 |---|---|
