@@ -2,9 +2,9 @@
 title: PTAI 20.9.1发行说明
 description: PTAI 20.9.1发行说明描述了2020年Primetime动态Ad Insertion中的新增或变更、已解决和已知问题。
 translation-type: tm+mt
-source-git-commit: c23b052f14c6673d4ba2aae6a317a55a2e611e8a
+source-git-commit: 699e6a463bce4f7853406cb7fe529fb09f87ca92
 workflow-type: tm+mt
-source-wordcount: '860'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 **时间：** 2020年9月1日星期二东部时间凌晨3点30分至7点30分
 
-**修复**
+**更改**
 
 * 修复了使用HLS/CMAF的客户的问题，该问题导致EXT-X-MAP有时丢失CDN令牌或EXT-X-MAP标记有时从DVR窗口中错误地滚出。
 
@@ -165,9 +165,13 @@ ht-degree: 0%
 
 * 维护升级。
 
-## 已解决的问题
+## 已解决的问题 {#Resolved-issues}
 
-如果解决方案与报告的问题相关，则显示Zendesk引用。 例如，`ZD#xxxxx`
+如果解决方案与报告的问题相关，则显示Zendesk引用。 For example, `ZD#xxxxx`.
+
+**PTAI 20.9.1**
+
+* 修复了使用HLS/CMAF的客户的问题，该问题导致EXT-X-MAP有时丢失CDN令牌或EXT-X-MAP标记有时从DVR窗口中错误地滚出。
 
 **PTAI 20.6.1**
 
