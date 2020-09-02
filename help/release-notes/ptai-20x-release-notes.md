@@ -1,28 +1,44 @@
 ---
-title: PTAI 20.8.1发行说明
-description: PTAI 20.8.1发行说明描述了2020年Primetime动态Ad Insertion中的新增或变更、已解决和已知问题。
+title: PTAI 20.9.1发行说明
+description: PTAI 20.9.1发行说明描述了2020年Primetime动态Ad Insertion中的新增或变更、已解决和已知问题。
 translation-type: tm+mt
-source-git-commit: 6b2aaa96f8604af27810cceee5a8a98c4feebd6f
+source-git-commit: f17a9fdf2a7c22d1d7b0833c7eac8f1202cebe87
 workflow-type: tm+mt
-source-wordcount: '808'
+source-wordcount: '860'
 ht-degree: 0%
 
 ---
 
 
-# Primetime动态Ad Insertion20.8.1发行说明
+# Primetime动态Ad Insertion20.9.1发行说明
 
-动态Ad Insertion20.8.1发行说明描述了Primetime动态Ad Insertion2020年的新增或更改内容、已解决的问题和已知问题。
+动态Ad Insertion20.9.1发行说明描述了Primetime动态Ad Insertion2020年的新增或更改内容、已解决的问题和已知问题。
 
-## PTAI 20.8.1的新增功能
+## PTAI 20.9.1的新增功能
+
+**时间：** 2020年9月1日星期二东部时间凌晨3点30分至7点30分
+
+**修复**
+
+·修复了使用HLS/CMAF的客户的问题，该问题导致EXT-X-MAP有时丢失CDN令牌或EXT-X-MAP标记有时从DVR窗口中错误地滚出。
+
+### 先前发行版中的增强和修复
+
+#### 版本20.8.4
+
+**时间：** 2020年8月19日星期三东部时间凌晨03点30分至07点30分
+
+**增强和修复**
+
+维护更新。
+
+#### 版本20.8.1
 
 **时间：** 2020年8月4日星期二东部时间凌晨3时至6时
 
 **增强和修复**
 
 维护更新。
-
-### 先前发行版中的增强和修复
 
 #### 版本20.7.1
 
@@ -54,9 +70,9 @@ ht-degree: 0%
 
 联系Adobe支持，通过服务器端配置启用以下新功能：
 
-* 清单操作： HLS段和资源URL现在可在HTTP和HTTPS之间进行转换，通过减少后端请求的TLS握手来提高性能。 它还可用于将广告／内容片段统一到同一CDN上。
+* 清单操作：HLS段和资源URL现在可在HTTP和HTTPS之间进行转换，通过减少后端请求的TLS握手来提高性能。 它还可用于将广告／内容片段统一到同一CDN上。
 
-* 长格式VOD: 改进了API，使长形式VOD资源能够保持会话保持活动状态。
+* 长格式VOD:改进了API，使长形式VOD资源能够保持会话保持活动状态。
 
 **错误修复**
 
@@ -106,7 +122,7 @@ ht-degree: 0%
 
 * 性能改进：
 
-   * 增加了对主控/媒体m3u8清单的缓存支持。 这些清单现在对缓存控制做出响应： 公共和最大年龄头，通常可以提高视频开始性能。
+   * 增加了对主控/媒体m3u8清单的缓存支持。 这些清单现在对缓存控制做出响应：公共和最大年龄头，通常可以提高视频开始性能。
 
    * 增加了强制通过http获取https创意的支持，这也可以提高视频开始性能。
 
