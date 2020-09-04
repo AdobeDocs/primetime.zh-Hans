@@ -8,7 +8,7 @@ products: SG_PRIMETIME
 topic-tags: release-notes
 discoiquuid: 452f8699-7857-49ab-9caa-22204b19fe4a
 translation-type: tm+mt
-source-git-commit: 6da7d597503d98875735c54e9a794f8171ad408b
+source-git-commit: d2b8cb67c54fadb8e0e7d2bdc15e393fdce8550e
 workflow-type: tm+mt
 source-wordcount: '6578'
 ht-degree: 0%
@@ -221,10 +221,10 @@ DRM策略现在可指定允许的最高分辨率，具体取决于设备的“�
 
 Comment Type: draft
 
-<note type="note"> 
+`<note type="note">` 
  <p>All TVSDK customers who use CRS are strongly encouraged to upgrade to TVSDK 1.4.39 or latest on iOS and Android. This upgrade is a drop-in replacement to the existing app implementation. After the upgrade, check for the CRS creative URL requests in a proxy tool (for example, Charles) to verify that the version in the path reflects version 3.1. For example:</p> 
  <p><span class="code">https://primetime-a.akamaihd.net/assets/3p/v3.1/222000/167/d77/ 167d775d00cbf7fd224b112sf5a4bc7d_0e34cd3ca5177fbc74d66d784bf3586d.m3u8</span></p> 
-</note>
+`</note>`
 
  -->
 
@@ -232,9 +232,9 @@ Comment Type: draft
 
 Comment Type: draft
 
-<note type="note"> 
+`<note type="note"> `
  <p>TVSDK versions earlier than version 1.4.28 sometimes exhibit a long delay in the startup time when ad-enabled content is played on devices that are running on iOS 10. To resolve this issue, upgrade to version 1.4.28 or later. Version 1.4.28 was released on August 31, 2016, and iOS 10 was released on September 13, 2016.</p> 
-</note>
+`</note>`
 
  -->
 
@@ -583,7 +583,7 @@ For more information, see [Multiple CDN support for CRS Ad Delivery](http://help
 
 * (ZD #24575)-在32位设备上的TVSDK中，当enableDebugLog=true时崩溃
 
-已修复在启用日志记录时导致32位设备崩溃的日志格式问题。
+日志格式中在启用日志记录时导致32位设备崩溃的问题已得到修复。
 
 **适用于iOS** 6.0+的1.4.26(1.4.26.702)版
 
@@ -779,7 +779,7 @@ TVSDK在Adobe访问DRM流上开始播放时返回101000错误的问题已修复�
 
 * (ZD #20180)-偶尔会跳过VPAID广告
 
-JavaScript mime类型并不始终包含或视为有效的mime类型。 通过将JavaScript作为有效的MIME类型来解决此问题。
+JavaScript mime类型并不始终包含或视为有效的mime类型。 通过将JavaScript作为有效MIME类型来解决此问题。
 
 * (ZD #20749)-回退将跳过非空VAST响应；额外广告跟踪URL起火
 
@@ -797,7 +797,7 @@ JavaScript mime类型并不始终包含或视为有效的mime类型。 通过将
 
 **适用于iOS** 6.0+的1.4.18(1.4.18.557)版
 
-* (ZD #18844)在iOS播放器中跟踪实时内容的播放头。
+* (ZD #18844)跟踪iOS播放器中实时内容的播放头。
 
 通过允许应用程序设置自己的播放头值，解决了此问题。
 
@@ -861,7 +861,7 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 
 **适用于iOS** 6.0+的1.4.15(1.4.15.512)版
 
-**注意**:Nielsen模块已从TVSDK版本中删除，但TVSDK将在不久的将来用新的Nielsen集成模块进行更新。
+**注意**:尼尔森模块已从TVSDK版本中删除，但TVSDK将在不久的将来用新的尼尔森集成模块进行更新。
 
 * (ZD #2228)-从获取MediaPlayerNotification中不可用的清单返回错误
 
