@@ -3,9 +3,9 @@ seo-title: 部署Primetime DRM Key Server概述
 title: 部署Primetime DRM Key Server概述
 uuid: 86630675-c15d-4f32-8212-d7343f4f92e0
 translation-type: tm+mt
-source-git-commit: 9d2e046ae259c05fb4c278f464c9a26795e554fc
+source-git-commit: d2b8cb67c54fadb8e0e7d2bdc15e393fdce8550e
 workflow-type: tm+mt
-source-wordcount: '1077'
+source-wordcount: '1075'
 ht-degree: 0%
 
 ---
@@ -77,7 +77,7 @@ Generate Certificate:
 
 * `XboxKeyServer.LogRoot` -这是一个日志目录，其中包含Xbox Key Server应用程序日志。 如果未设置，则默认值与相同 `KeyServer.ConfigRoot`。
 
-如果您使用或 [!DNL catalina.bat] 开始 [!DNL catalina.sh] Tomcat，则可以使用环境变量轻松设置这些系统 `JAVA_OPTS` 属性。 启动Tomcat时，将使用此处设置的任何Java选项。 例如，设置：
+如果您使用或 [!DNL catalina.bat] 开始 [!DNL catalina.sh] Tomcat，可以使用环境变量轻松设置这些系统 `JAVA_OPTS` 属性。 启动Tomcat时，将使用此处设置的任何Java选项。 例如，设置：
 
 ```
 JAVA_OPTS=-DKeyServer.ConfigRoot=”absolute-path-to-config-folder” 
@@ -86,13 +86,13 @@ JAVA_OPTS=-DKeyServer.ConfigRoot=”absolute-path-to-config-folder”
 
 ## Primetime DRM凭据 {#primetime-drm-credentials}
 
-要处理来自Primetime DRM iOS和Xbox 360客户端的密钥请求，Primetime DRM密钥服务器必须配置有由Adobe颁发的一组凭据。 这些凭据可以存储在PKCS#12() [!DNL .pfx]文件中或存储在HSM中。
+要处理来自Primetime DRM iOS和Xbox 360客户端的密钥请求，必须使用由Adobe发出的一组凭据配置Primetime DRM密钥服务器。 这些凭据可以存储在PKCS#12() [!DNL .pfx]文件中或存储在HSM中。
 
-文 [!DNL .pfx] 件可以位于任何位置，但为了便于配置，Adobe建议将文 [!DNL .pfx] 件放在租户的配置目录中。 有关详细信息，请参 [阅密钥服务器配置文件](#key-server-configuration-files)。
+文 [!DNL .pfx] 件可以位于任何位置，但为了便于配置，Adobe建议将 [!DNL .pfx] 文件放在租户的配置目录中。 有关详细信息，请参 [阅密钥服务器配置文件](#key-server-configuration-files)。
 
 ### HSM配置 {#section_13A19E3E32934C5FA00AEF621F369877}
 
-如果选择使用HSM存储服务器凭据，则必须将私钥和证书加载到HSM上并创建 *pkcs11.cfg* 配置文件。 此文件必须位于 *KeyServer.ConfigRoot目录* 。 请参阅 [!DNL <Primetime DRM Key Server>/configs目录] （示例PKCS 11配置文件）。 有关格式的信息，请 [!DNL pkcs11.cfg]参阅Sun PKCS11提供程序文档。
+如果选择使用HSM存储服务器凭据，则必须将私钥和证书加载到HSM上并创建 *pkcs11.cfg* 配置文件。 此文件必须位于 *KeyServer.ConfigRoot目录* 。 请参阅 `<Primetime DRM Key Server>/configs` 示例PKCS 11配置文件的目录。 有关格式的信息，请 [!DNL pkcs11.cfg]参阅Sun PKCS11提供程序文档。
 
 要验证HSM和Sun PKCS11配置文件配置是否正确，可以从文件所在的目录(随Java JRE和JDK [!DNL pkcs11.cfg] 一起安 [!DNL keytool] 装)中使用以下命令：
 
@@ -112,7 +112,7 @@ Primetime DRM密钥服务器需要两种类型的配置文件：
 
 如果对配置文件进行了更改，则必须重新启动服务器才能使更改生效。
 
-为避免在配置文件中以明文形式提供口令，必须对全局配置文件和租户配置文件中指定的所有口令进行加密。 有关加密密码的更多信息，请 [*参阅使用&#x200B;** Primetime DRM Server for Protected Streaming中的密码剪贴器&#x200B;*](../protected-streaming/understanding-deployment/drm-for-protected-streaming-utilities/password-scrambler.md)。
+为避免在配置文件中以明文形式提供口令，必须对全局配置文件和租户配置文件中指定的所有口令进行加密。 有关加密密码的更多信息，请 [*参阅使用**Primetime DRM Server for Protected Streaming中的密码剪贴器*](../protected-streaming/understanding-deployment/drm-for-protected-streaming-utilities/password-scrambler.md)。
 
 ## 配置目录结构 {#configuration-directory-structure}
 
@@ -136,7 +136,7 @@ KeyServer.ConfigRoot/
 * 日志记录——指定日志记录级别和滚动日志文件的频率。
 * HSM密码——仅当使用HSM存储服务器凭据时才需要。
 
-请参阅示例全局配置文件中的注释，该示例全局配置文件位于 [!DNL <Primetime DRM Key Server>/configs] ，了解更多详细信息。
+有关详细信息，请参阅中示例全局配置文件 `<Primetime DRM Key Server>/configs` 中的注释。
 
 ## 租户配置文件 {#tenant-configuration-files}
 
@@ -156,7 +156,7 @@ Xbox **360租户** 配置文件包括：
 
 * XSTS凭据——指定用于解密XSTS令牌的应用程序开发人员凭据
 * XSTS签名证书——指定用于验证XSTS令牌上签名的证书。
-* Packager允许列表——密钥服务器信任的Packager证书。 如果列表中不包含打包程序证书，则所有打包程序证书都将受信任。
+* Packager允许列表-密钥服务器信任的Packager证书。 如果列表中不包含打包程序证书，则所有打包程序证书都将受信任。
 
 ## 日志文件 {#log-files}
 
