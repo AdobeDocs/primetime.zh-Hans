@@ -2,7 +2,7 @@
 title: 适用于iOS的TVSDK 3.12发行说明
 description: TVSDK 3.12 for iOS发行说明描述了TVSDK iOS 3.12中的新增或更改功能、已解决和已知问题以及设备问题。
 translation-type: tm+mt
-source-git-commit: 6da7d597503d98875735c54e9a794f8171ad408b
+source-git-commit: d2b8cb67c54fadb8e0e7d2bdc15e393fdce8550e
 workflow-type: tm+mt
 source-wordcount: '7665'
 ht-degree: 0%
@@ -48,7 +48,7 @@ TVSDK 3.12 for iOS发行说明描述了TVSDK iOS 3.12中的新增或更改功能
 
 **iOS TVSDK 3.8**
 
-iOS 13合规性和已处理iOS 13 UIWebView API的停用。
+iOS 13合规性和已处理iOS 13 UIWebView API弃用。
 
 **iOS TVSDK 3.7**
 
@@ -104,9 +104,9 @@ TVSDK 3.3现在符合iOS 11 SDK的要求。 所有已弃用的API都已替换为
 
 **版本3.1**
 
-* **附加日志记录**&#x200B;支持在广告播放失败时增加对描述性通知的支持。
+* **附加日志**&#x200B;支持在广告播放失败时增加对描述性通知的支持。
 
-* **增加了Fairplay加密CMAF流支持** Fairplay加密CMAF流，现在支持AVC编解码器回放。
+* **增加了Fairplay加密CMAF流支**&#x200B;持Fairplay加密CMAF流和AVC编解码器回放。
 
 **版本3.0.1**
 
@@ -268,7 +268,7 @@ DRM策略现在可指定允许的最高分辨率，具体取决于设备的“�
 
 * **Nielsen SDK集成**
 
-TVSDK现在支持将mTVR和MDPR ID3信标发送到Nielsen SDK，而无需任何自定义集成。 要开始，请下载3.1.2.19 Nielsen iOS App SDK，然后按照此处的“iOS Programmers Guide”中的说明操作。
+TVSDK现在支持将mTVR和MDPR ID3信标发送到Nielsen SDK，而无需任何自定义集成。 要开始，请下载3.1.2.19 Nielsen iOS App SDK，然后按照iOS Programmers Guide中此处的说明操作。
 
 **版本1.4.0**
 
@@ -288,19 +288,19 @@ TVSDK现在支持将mTVR和MDPR ID3信标发送到Nielsen SDK，而无需任何�
 
 Comment Type: draft
 
-<note type="note"> 
+`<note type="note"> `
  <p>All TVSDK customers who use CRS are strongly encouraged to upgrade to TVSDK 1.4.39 or latest on iOS and Android. This upgrade is a drop-in replacement to the existing app implementation. After the upgrade, check for the CRS creative URL requests in a proxy tool (for example, Charles) to verify that the version in the path reflects version 3.1. For example:</p> 
  <p><span class="code">https://primetime-a.akamaihd.net/assets/3p/v3.1/222000/167/d77/ 167d775d00cbf7fd224b112sf5a4bc7d_0e34cd3ca5177fbc74d66d784bf3586d.m3u8</span></p> 
-</note>
+`</note>`
 
  -->
 
 <!--
 Comment Type: draft
 
-<note type="note"> 
+`<note type="note"> `
  <p>TVSDK versions earlier than version 1.4.28 sometimes exhibit a long delay in the startup time when ad-enabled content is played on devices that are running on iOS 10. To resolve this issue, upgrade to version 1.4.28 or later. Version 1.4.28 was released on August 31, 2016, and iOS 10 was released on September 13, 2016.</p> 
-</note>
+`</note>`
  -->
 **iOS TVSDK 3.12**
 
@@ -725,7 +725,7 @@ EXT-X-CUE-OUT Midroll广告正在播放。
 
 * (ZD #24575)-在32位设备上的TVSDK中，当enableDebugLog=true时崩溃
 
-已修复在启用日志记录时导致32位设备崩溃的日志格式问题。
+日志格式中在启用日志记录时导致32位设备崩溃的问题已得到修复。
 
 **适用于iOS** 6.0+的1.4.26(1.4.26.702)版
 
@@ -921,7 +921,7 @@ TVSDK在Adobe访问DRM流上开始播放时返回101000错误的问题已修复�
 
 * (ZD #20180)-偶尔会跳过VPAID广告
 
-JavaScript mime类型并不始终包含或视为有效的mime类型。 通过将JavaScript作为有效的MIME类型来解决此问题。
+JavaScript mime类型并不始终包含或视为有效的mime类型。 通过将JavaScript作为有效MIME类型来解决此问题。
 
 * (ZD #20749)-回退将跳过非空VAST响应；额外广告跟踪URL起火
 
@@ -939,7 +939,7 @@ JavaScript mime类型并不始终包含或视为有效的mime类型。 通过将
 
 **适用于iOS** 6.0+的1.4.18(1.4.18.557)版
 
-* (ZD #18844)在iOS播放器中跟踪实时内容的播放头。
+* (ZD #18844)跟踪iOS播放器中实时内容的播放头。
 
 通过允许应用程序设置自己的播放头值，解决了此问题。
 
@@ -1003,7 +1003,7 @@ Akamai标记流要求在段请求时发送cookie，这在iOS 7及更早版本上
 
 **适用于iOS** 6.0+的1.4.15(1.4.15.512)版
 
-**注意**:Nielsen模块已从TVSDK版本中删除，但TVSDK将在不久的将来用新的Nielsen集成模块进行更新。
+**注意**:尼尔森模块已从TVSDK版本中删除，但TVSDK将在不久的将来用新的尼尔森集成模块进行更新。
 
 * (ZD #2228)-从获取MediaPlayerNotification中不可用的清单返回错误
 
