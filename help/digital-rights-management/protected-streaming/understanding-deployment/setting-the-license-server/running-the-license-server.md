@@ -3,9 +3,9 @@ seo-title: 为受保护的流运行DRM服务器
 title: 为受保护的流运行DRM服务器
 uuid: 9bbe211d-268b-43c2-9e55-7ce62de40d30
 translation-type: tm+mt
-source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
+source-git-commit: 51b3713e04fcb4adeaa7a8d1b700372b1dba7cf6
 workflow-type: tm+mt
-source-wordcount: '804'
+source-wordcount: '795'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 如果要开始Tomcat和许可证服务器，则需要运行或 [!DNL catalina.bat start] 从 [!DNL catalina.sh start] Tomcat的目录 [!DNL bin] 运行。
 
-服务器启动后，您需要通过打开ense-server-host:port>/flashaccessserver/ [!DNL https://<lic<span></span>来验证是否已正确配置服务器<tenant-name>/flashaccess/license] /v1。 如果租户配置已成功加载，则会显示确认消息。
+服务器启动后，您需要通过在浏览器窗口中打开来验证是否已正确 `https://<lic<span></span>ense-server-host:port>/flashaccessserver/<tenant-name>/flashaccess/license/v1` 配置它。 如果租户配置已成功加载，则会显示确认消息。
 
 ## 日志文件 {#log-files}
 
@@ -54,11 +54,11 @@ ht-degree: 0%
 
 ### 分区日志文件 {#section_5660137CD6AA40519E72A4315534846B}
 
-分区日志文 [!DNL flashaccess-partition.log]件位于目录 [!DNL <LicenseServer.LogRoot>/flashaccesserver] 中。 它包括在处理许可证请求期间生成的日志消息。
+分区日志文 [!DNL flashaccess-partition.log]件位于目录 `<LicenseServer.LogRoot>/flashaccesserver` 中。 它包括在处理许可证请求期间生成的日志消息。
 
 ### 租户日志文件 {#section_F0257CC0831647F18A746B4F02E3E910}
 
-每个租户的租户日志 [!DNL flashaccess-tenant.log]文件位 [!DNL 于&lt;LicenseServer.LogRoot>/flashaccesserver/armoes/<tenantname>]. 租户日志包含审计信息，用于描述为此租户生成的每个许可证。
+每个租户的租户日志 [!DNL flashaccess-tenant.log]文件位于 `<LicenseServer.LogRoot>/flashaccesserver/tenants/<tenantname>`。 租户日志包含审计信息，用于描述为此租户生成的每个许可证。
 
 ## 更新配置文件 {#updating-configuration-files}
 
@@ -74,7 +74,7 @@ ht-degree: 0%
 
 * 如果在服务器尝试读取文件时，将更改保存到配置文件或文件中引 [!DNL flashaccess-tenant.xml] 用的任何证书文件中
 * 如果发现文件的时间戳比当前时间早一秒
-* 如果文件的时间戳将在将来
+* 如果文件的时间戳在将来
 
 如果没有缓存版本，则加载配置失败，并且向客户端返回错误。 然后，服务器在下次收到该租户的请求时再次尝试加载该文件。
 
