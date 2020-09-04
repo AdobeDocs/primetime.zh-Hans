@@ -5,9 +5,9 @@ seo-title: 租户配置文件
 title: 租户配置文件
 uuid: bc9ee4a1-63b6-4362-9929-3e9fe8251075
 translation-type: tm+mt
-source-git-commit: 9d2e046ae259c05fb4c278f464c9a26795e554fc
+source-git-commit: d2b8cb67c54fadb8e0e7d2bdc15e393fdce8550e
 workflow-type: tm+mt
-source-wordcount: '798'
+source-wordcount: '792'
 ht-degree: 0%
 
 ---
@@ -17,25 +17,25 @@ ht-degree: 0%
 
 flashaccess-tenant.xml配置文件包括适用于许可证服务器的特定租户的设置。
 
-每个租户都支持此配置文件的自 [!DNL 己实例，该实例位于&lt;LicenseServer.ConfigRoot>/flashaccessserver/armoes/<tenantname>]. 请参阅 [!DNL configs/flashaccessserver/tenants/sampletenant] 示例租户配置文件的目录。
+每个租户都支持其自己位于中的此配置文件实例 `<LicenseServer.ConfigRoot>/flashaccessserver/tenants/<tenantname>`。 请参阅 `configs/flashaccessserver/tenants/sampletenant` 示例租户配置文件的目录。
 
-可以将租户配置文件中的所有文件路径指定为绝对路径或相对于租户配置目录的路径( [!DNL &lt;LicenseServer.ConfigRoot>/flashaccessserver/armoens/<tenantname>]).
+可以将租户配置文件中的所有文件路径指定为绝对路径或相对于租户配置目录()的路径`<LicenseServer.ConfigRoot>/flashaccessserver/tenants/<tenantname>`。
 
 租户配置文件包括：
 
 * *传输凭证* -指定由Adobe颁发的一个或多个传输凭证（证书和私钥）。 可以指定为文件和口 [!DNL .pfx] 令的路径，或存储在HSM上的凭据的别名。 可以在此处指定多个此类凭据，例如文件路径或密钥别名，或同时指定这些凭据。
 
-   有关 *何时需* 要其他凭 ** 据的更多信息，请参阅使用Adobe Primetime DRM SDK保护内容中的处理证书更新。
+   有关 *何时需要其他凭* 据的详细信息，请参阅使 ** 用Adobe PrimetimeDRM SDK保护内容中的处理证书更新。
 
-* *License Server Credential* —指定Adobe颁发的一个或多个许可证服务器凭据（证书和私钥）。 您可以指定许可证服务器凭据作为文件和密 [!DNL .pfx] 码的路径，或存储在HSM上的凭据的别名。 可以在此处指定多个此类凭据，例如文件路径或密钥别名，或同时指定这些凭据。
+* *License Server Credential* —指定Adobe已颁发的一个或多个许可证服务器凭据（证书和私钥）。 您可以指定许可证服务器凭据作为文件和密 [!DNL .pfx] 码的路径，或存储在HSM上的凭据的别名。 可以在此处指定多个此类凭据，例如文件路径或密钥别名，或同时指定这些凭据。
 
-   有关 *何时需* 要其他凭 ** 据的更多信息，请参阅使用Adobe Primetime DRM SDK保护内容中的处理证书更新。
+   有关 *何时需要其他凭* 据的详细信息，请参阅使 ** 用Adobe PrimetimeDRM SDK保护内容中的处理证书更新。
 
-* *密钥服务器证书* —（可选）指定Adobe颁发的密钥服务器的许可证服务器证书。 您可以指定密钥服务器的许可证服务器证书作为文件 [!DNL .cer] 的路径或存储在HSM上的证书的别名。 必须指定此选项，以为随DRM策略一起打包的内容颁发许可证，该策略要求对iOS设备进行远程密钥投放。
+* *密钥服务器证书* —（可选）指定Adobe已颁发的密钥服务器的许可证服务器证书。 您可以指定密钥服务器的许可证服务器证书作为文件 [!DNL .cer] 的路径或存储在HSM上的证书的别名。 必须指定此选项，以为随DRM策略一起打包的内容颁发许可证，该策略要求对iOS设备进行远程密钥投放。
 
 * *自定义授权者* —可选地指定要为每个许可请求调用的自定义授权者类。 如果指定了多个授权者，则按所列顺序调用它们。
 * *列表授权打包者* —（可选）指定用于标识授权打包此许可证服务器内容的实体的证书。 如果未指定打包程序证书，服务器将为任何打包程序打包的内容颁发许可证。 如果服务器从未授权的包装程序收到许可证请求，则拒绝该请求。
-* *支持的最低客户端版本* ，请参阅使用Adobe Primetime DRM SDK保护内容。
+* *支持的最低客户端版本* 请参阅使用Adobe PrimetimeDRM SDK保护内容。
 
 * *使用规则*
 
@@ -48,19 +48,20 @@ flashaccess-tenant.xml配置文件包括适用于许可证服务器的特定租�
    * *播放权* —必须指定至少一项权限。 如果指定多个权限，则客户端将使用第一个符合所有要求的权限。
 
       * *输出保护* -控制输出到外部渲染设备是否应受保护。
-      * *AIR和SWF应用程序限制* -可选允许播放内容的SWF和AIR应用程序列表（例如，只允许指定的应用程序）。 SWF应用程序由URL或SWF的摘要来标识，并且允许下载和验证摘要的最长时间。
+      * *AIR和SWF应用程序限制* -可播放内容的SWF和AIR应用程序的可选允许列表（例如，只允许指定的应用程序）。 SWF应用程序由URL或SWF的摘要来标识，并且允许下载和验证摘要的最长时间。
 
          有关 *如何计算SWF摘要* ，请参阅SWF哈希计算器。
 
          发布者ID和可选应用程序 ID、最低版本和最高版本标识AIR和iOS应用程序。 如果不指定任何应用程序限制，则任何SWF或AIR应用程序都可以播放内容。
 
-      * *DRM和运行时模块限制* —指定DRM/运行时模块所需的最低安全级别。 可选地包括不允许播放内容的版本的块列表。 模块版本由诸如操作系统和／或版本号等属性来标识。
+      * *DRM和运行时模块限制* —指定DRM/运行时模块所需的最低安全级别。 （可选）包括不允许播放内容的版本阻止列表。 模块版本由诸如操作系统和／或版本号等属性来标识。
 
          DRM模块限制和运行时模块限制现在支持以下附加属性：
 
          * `oemVendor`
          * `model`
          * `screenType`
+
          以下属性现在是可选的：
 
          * `osVersion`
