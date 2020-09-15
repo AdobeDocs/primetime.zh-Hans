@@ -5,7 +5,10 @@ seo-title: 定时元数据类
 title: 定时元数据类
 uuid: 3debfad4-084f-4fb5-b699-ea5e8fd1ed51
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 5df9a8b98baaf1cd1803581d2b60c7ed4261a0e8
+workflow-type: tm+mt
+source-wordcount: '389'
+ht-degree: 0%
 
 ---
 
@@ -36,17 +39,17 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
    <td colname="col2"> 从播放列表／清单自定义标签中处理／提取的信息。 使用 <span class="codeph"> getMetadata </span>。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> name </span> </td> 
+   <td colname="col1"> <span class="codeph"> 名称 </span> </td> 
    <td colname="col02"> 字符串 </td> 
-   <td colname="col2"> 定时元数据的名称。 如果类型为 <span class="codeph"> TAG </span>，则值表示cue/tag名称。 如果类型为 <span class="codeph"> ID3 </span>，则为null。 使用 <span class="codeph"> getName </span>。 </td> 
+   <td colname="col2"> 定时元数据的名称。 如果类型为 <span class="codeph"> TAG </span>，则该值表示提示／标记名称。 如果类型 <span class="codeph"> 为ID3 </span>，则为null。 使用 <span class="codeph"> getName </span>。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 时间 </span> </td> 
    <td colname="col02"> 长 </td> 
-   <td colname="col2"> 相对于主内容开始的时间位置（以毫秒为单位），其中此定时元数据存在于流中。 使用 <span class="codeph"> getTime </span>。 </td> 
+   <td colname="col2"> 相对于主内容开始的时间位置（以毫秒为单位），其中流中存在此定时元数据。 使用 <span class="codeph"> getTime </span>。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> type </span> </td> 
+   <td colname="col1"> <span class="codeph"> 类型 </span> </td> 
    <td colname="col02"> 类型 </td> 
    <td colname="col2"> 定时元数据的类型。 使用 <span class="codeph"> getType </span>。 
     <ul id="ul_70FBFB33E9F846D8B38592560CCE9560"> 
@@ -61,27 +64,24 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
 
 请记住以下事项：
 
-* TVSDK会自动将属性列表提取为键值对，并将属性存储在元数据属性中。
+* TVSDK自动将属性列表提取为键值对，并将属性存储在元数据属性中。
 
    >[!TIP]
    >
-   >清单中自定义标记中的复杂数据（如带有特殊字符的字符串）必须加引号。 例如：  >
+   >清单中自定义标记中的复杂数据（如带有特殊字符的字符串）必须加引号。 例如：
    >
    >
-   ```>
+   ```
    >#EXT-CUSTOM-TAG:type=SpliceOut,ID=1,time=71819.7222,duration=30.0, 
    >url="www.example.com:8090?parameter1=xyz&parameter2=abc"
-   >```  >
-   >
+   >```
 
-
-
-* 如果由于自定义标记格式而提取失败，则元数据属性将为空，并且您的应用程序必须提取实际信息。 在这种情况下不会引发错误。
+* 如果提取因自定义标记格式而失败，则元数据属性将为空，您的应用程序必须提取实际信息。 在这种情况下不会引发错误。
 
 | 元素 | 说明 |
 |---|---|
 | `public enum Type { TAG, ID3}` | 定时元数据的可能类型。 |
-| `public TimedMetadata(Type type, long time, long id, String name, Metadata metadata);` | 默认构造函数（time是本地流时间）。 |
+| `public TimedMetadata(Type type, long time, long id, String name, Metadata metadata);` | 默认构造函数（时间是本地流时间）。 |
 | `public long getTime();` | 相对于主内容开始的时间位置，此元数据已插入流中。 |
 | `public Metadata getMetadata();` | 在流中插入的元数据。 |
 | `public Type getType();` | 返回定时元数据的类型。 |
