@@ -5,7 +5,7 @@ seo-title: 控制隐藏式字幕样式
 title: 控制隐藏式字幕样式
 uuid: fa4f637f-f13c-465d-8eee-5e66a6dd9db2
 translation-type: tm+mt
-source-git-commit: 5df9a8b98baaf1cd1803581d2b60c7ed4261a0e8
+source-git-commit: 4ccc99f1ad6536ceb5e09c898dba3f71fa2de3f3
 workflow-type: tm+mt
 source-wordcount: '882'
 ht-degree: 0%
@@ -143,10 +143,11 @@ ht-degree: 0%
       >等等。
       >
       >在应用程序中，无论何时将颜色样 `TextFormatBuilder`式信息传递给 `Color` ，您仍然像以前一样使用明细列表，但现在必须添加到颜色 `getValue()` 中才能将值作为字符串获得。 例如：
-
+      >
+      >
       ```
-      tfb = tfb.setBackgroundColor(TextFormat.Color.RED <b>.getValue()</b>);
-      ```
+      >tfb = tfb.setBackgroundColor(TextFormat.Color.RED <b>.getValue()</b>);
+      >```
 
 
 
@@ -174,7 +175,8 @@ public TextFormatBuilder(
 ```
 
 >[!TIP]
-在定义默认值的选项(例 `DEFAULT`如，)中，该值指最初指定字幕时的设置。
+>
+>在定义默认值的选项(例 `DEFAULT`如，)中，该值指最初指定字幕时的设置。
 
 <table frame="all" colsep="1" rowsep="1" id="table_87205DEFEE384AF4AF83952B15E18A42"> 
  <thead> 
