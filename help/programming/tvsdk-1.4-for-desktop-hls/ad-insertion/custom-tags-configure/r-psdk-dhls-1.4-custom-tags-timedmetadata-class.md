@@ -5,7 +5,10 @@ seo-title: 定时元数据类
 title: 定时元数据类
 uuid: 827a3bcf-a584-4032-aa19-4fc7730778cc
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 5df9a8b98baaf1cd1803581d2b60c7ed4261a0e8
+workflow-type: tm+mt
+source-wordcount: '423'
+ht-degree: 0%
 
 ---
 
@@ -28,7 +31,7 @@ source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
   <tr> 
    <td colname="col1"><span class="codeph"> 内容</span> </td> 
    <td colname="col02"> 字符串 </td> 
-   <td colname="col2"> 定时元数据的原始内容。 如果类型为TAG，则值表示cue/tag的整个属性列表。 如果类型id ID3为null。 </td> 
+   <td colname="col2"> 定时元数据的原始内容。 如果类型为TAG，则该值表示cue/tag的整个属性列表。 如果类型id ID3为null。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> id</span> </td> 
@@ -41,17 +44,17 @@ source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
    <td colname="col2"> 从播放列表／清单自定义标签中处理／提取的信息。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"><span class="codeph"> name</span> </td> 
+   <td colname="col1"><span class="codeph"> 名称</span> </td> 
    <td colname="col02"> 字符串 </td> 
-   <td colname="col2">定时元数据的名称。 如果类型为 <span class="codeph"> TAG</span>，则值表示cue/tag名称。 如果类型为 <span class="codeph"> ID3</span>，则为null。 </td> 
+   <td colname="col2">定时元数据的名称。 如果类型为 <span class="codeph"> TAG</span>，则值表示提示／标记名称。 如果类型为 <span class="codeph"> ID3</span>，则为null。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> 时间</span> </td> 
    <td colname="col02"> 数字 </td> 
-   <td colname="col2"> 相对于主内容开始的时间位置（以毫秒为单位），其中此定时元数据存在于流中。 </td> 
+   <td colname="col2"> 相对于主内容开始的时间位置（以毫秒为单位），其中流中存在此定时元数据。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"><span class="codeph"> type</span> </td> 
+   <td colname="col1"><span class="codeph"> 类型</span> </td> 
    <td colname="col02"> 字符串 </td> 
    <td colname="col2">定时元数据的类型。 
     <ul id="ul_70FBFB33E9F846D8B38592560CCE9560"> 
@@ -66,27 +69,24 @@ source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
 
 请记住以下事项：
 
-* TVSDK会自动将属性列表提取为键值对，并将属性存储在元数据属性中。
+* TVSDK自动将属性列表提取为键值对，并将属性存储在元数据属性中。
 
    >[!TIP]
    >
-   >清单中自定义标记中的复杂数据（如带有特殊字符的字符串）必须加引号。 例如：  >
+   >清单中自定义标记中的复杂数据（如带有特殊字符的字符串）必须加引号。 例如：
    >
    >
-   ```>
+   ```
    >#EXT-CUSTOM-TAG:type=SpliceOut,ID=1,time=71819.7222,duration=30.0,url=
    >"www.example.com:8090?parameter1=xyz&parameter2=abc"
-   >```  >
-   >
+   >```
 
-
-
-* 如果由于自定义标记格式而提取失败，则元数据属性将为空，并且您的应用程序必须提取实际信息。 在这种情况下不会引发错误。
+* 如果提取因自定义标记格式而失败，则元数据属性将为空，您的应用程序必须提取实际信息。 在这种情况下不会引发错误。
 
 | 元素 | 说明 |
 |---|---|
 | `TAG, ID3 ID3, TAG` | 定时元数据的可能类型。 |
-| `public function TimedMetadata(type:String, time:Number, id:String, name:String, content:String, metadata:Metadata)` | 默认构造函数（time是本地流时间）。 |
+| `public function TimedMetadata(type:String, time:Number, id:String, name:String, content:String, metadata:Metadata)` | 默认构造函数（时间是本地流时间）。 |
 | `content:String` | 此定时元数据的源标记的原始内容。 |
 | `time:Number` | 相对于主内容开始的时间位置，此元数据已插入流中。 |
 | `metadata:Metadata` | 在流中插入的元数据。 |
