@@ -5,7 +5,10 @@ seo-title: 控制隐藏式字幕可见性
 title: 控制隐藏式字幕可见性
 uuid: 42913347-8158-474e-aa3c-ba4d38baba12
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 5df9a8b98baaf1cd1803581d2b60c7ed4261a0e8
+workflow-type: tm+mt
+source-wordcount: '206'
+ht-degree: 0%
 
 ---
 
@@ -16,29 +19,28 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
 
 >[!TIP]
 >
->如果播放器进入搜索模式时显示隐藏字幕文本，则在搜索完成后不再显示文本。 相反，几秒钟后，TVSDK在结束搜索位置之后显示视频中的下一个隐藏字幕文本。
+>如果在播放器进入搜索模式时显示隐藏字幕文本，则在搜索完成后不再显示该文本。 相反，几秒钟后，TVSDK在结束搜索位置后显示视频中的下一个隐藏字幕文本。
 
 >[!NOTE]
 >
->隐藏式字幕的可见性值在中定义 `MediaPlayer.Visibility`。>
+>隐藏式字幕的可见性值在中定义 `MediaPlayer.Visibility`。
 >
-```java>
+>
+```java
 >enum Visibility { 
 >       VISIBLE,  
 >       INVISIBLE 
 >}
->```>
+>```
 
-
-
-1. 等待MediaPlayer至少拥有PREPARED状态(请参 [阅等待有效状态](../../../tvsdk-1.4-for-android/ui-configure/android-1.4-ui-state-prepared-wait-for.md))。
-1. 要获取隐藏式字幕的当前可见性设置，请使用MediaPlayer中的getter方法，该方法返回一个可见性值。
+1. 请等待MediaPlayer至少拥有PREPARED状态(请 [参阅等待有效状态](../../../tvsdk-1.4-for-android/ui-configure/android-1.4-ui-state-prepared-wait-for.md))。
+1. 要获取隐藏式字幕的当前可见性设置，请使用MediaPlayer中的getter方法，它返回一个可见性值。
 
    ```java
    Visibility getCCVisibility() throws IllegalStateException;
    ```
 
-1. 要更改隐藏式字幕的可见性，请使用setter方法，将可见性值从传递 `MediaPlayer.Visibility`。
+1. 要更改隐藏式字幕的可见性，请使用setter方法，将可见性值从中传递 `MediaPlayer.Visibility`。
 
    例如：
 
