@@ -5,7 +5,10 @@ seo-title: 控制隐藏式字幕可见性
 title: 控制隐藏式字幕可见性
 uuid: 360d1158-67d9-40d9-b4b6-8ef46f9d73c0
 translation-type: tm+mt
-source-git-commit: adef0bbd52ba043f625f38db69366c6d873c586d
+source-git-commit: 5df9a8b98baaf1cd1803581d2b60c7ed4261a0e8
+workflow-type: tm+mt
+source-wordcount: '243'
+ht-degree: 0%
 
 ---
 
@@ -16,27 +19,26 @@ source-git-commit: adef0bbd52ba043f625f38db69366c6d873c586d
 
 >[!TIP]
 >
->如果播放器进入搜索模式时显示隐藏字幕文本，则在搜索完成后不再显示文本。 相反，几秒钟后，TVSDK在结束搜索位置之后显示视频中的下一个隐藏字幕文本。
+>如果在播放器进入搜索模式时显示隐藏字幕文本，则在搜索完成后不再显示该文本。 相反，几秒钟后，TVSDK在结束搜索位置后显示视频中的下一个隐藏字幕文本。
 
 >[!NOTE]
 >
->隐藏式字幕的可见性值在中定义 `ClosedCaptionsVisibility`。>
+>隐藏式字幕的可见性值在中定义 `ClosedCaptionsVisibility`。
 >
-```>
+>
+```
 >public static const HIDDEN:String = hidden; 
 >public static const VISIBLE:String = visible;
->```>
+>```
 
-
-
-1. 请等待 `MediaPlayer` 至少拥有PREPARED状态(请参 [阅等待有效状态](../../t-psdk-dhls-1.4-configure/c-psdk-dhls-1.4-ui-configure/t-psdk-dhls-1.4-ui-state-prepared-wait-for.md))。
-1. 要获取隐藏式字幕的当前可见性设置，请使用中的getter方 `MediaPlayer`法，该方法返回可见性值。
+1. 请等待 `MediaPlayer` 至少具有PREPARED状态(请 [参阅等待有效状态](../../t-psdk-dhls-1.4-configure/c-psdk-dhls-1.4-ui-configure/t-psdk-dhls-1.4-ui-state-prepared-wait-for.md))。
+1. 要获取隐藏式字幕的当前可见性设置，请使用中的getter `MediaPlayer`方法，它返回可见性值。
 
    ```
    public function get ccVisibility():String
    ```
 
-1. 要更改隐藏式字幕的可见性，请使用setter方法，将可见性值从传递 `ClosedCaptionsVisibility`。
+1. 要更改隐藏式字幕的可见性，请使用setter方法，将可见性值从中传递 `ClosedCaptionsVisibility`。
 
    例如：
 
@@ -67,7 +69,7 @@ source-git-commit: adef0bbd52ba043f625f38db69366c6d873c586d
    player.addEventListener(MediaPlayerItemEvent.CAPTIONS_UPDATED, onCaptionUpdated);
    ```
 
-   要从破坏代码中删除监听器，请执行以下操作：
+   要从销毁代码中删除监听器，请执行以下操作：
 
    ```
    player.removeEventListener(MediaPlayerItemEvent.ITEM_CREATED, onItemCreated); 
