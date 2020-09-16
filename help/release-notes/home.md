@@ -4,9 +4,9 @@ seo-title: Adobe Primetime发行说明
 description: 'null'
 seo-description: 'null'
 translation-type: tm+mt
-source-git-commit: ca603507f696f75a32b4a4fc8cc35f9e1c14c214
+source-git-commit: e3d2811e40bc34bfdaacdab1529fa9b01e416a98
 workflow-type: tm+mt
-source-wordcount: '307'
+source-wordcount: '313'
 ht-degree: 0%
 
 ---
@@ -16,9 +16,9 @@ ht-degree: 0%
 
 欢迎阅读Adobe Primetime发行说明。 左侧导航中列出的文档提供特定于发行版的信息、系统要求、限制、已修复问题和已知问题。
 
-## PTAI 20.9.1中的增强和修复
+## PTAI 20.9.2中的增强和修复
 
-该版本侧重于解决客户最常遇到的问题，即EXT-X-MAP缺少CDN令牌或EXT-X-MAP标记错误地从DVR窗口滚出。
+该版本侧重于提供支持，以包含使用标签的非线性广告 `EXT-X-MARKER` 类型，以及在提供商响应时间过长时限制整体广告分辨率时间。
 
 有关动态Ad Insertion的当前已发布版本的详细信息，请参 [阅PTAI发行说明](ptai-20x-release-notes.md)。
 
