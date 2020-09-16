@@ -1,28 +1,43 @@
 ---
-title: PTAI 20.9.1发行说明
-description: PTAI 20.9.1发行说明描述了2020年Primetime动态Ad Insertion中的新增或变更、已解决和已知问题。
+title: PTAI 20.9.2发行说明
+description: PTAI 20.9.2发行说明描述了2020年Primetime动态Ad Insertion中的新增或变更、已解决和已知问题。
 translation-type: tm+mt
-source-git-commit: 699e6a463bce4f7853406cb7fe529fb09f87ca92
+source-git-commit: e3d2811e40bc34bfdaacdab1529fa9b01e416a98
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '962'
 ht-degree: 0%
 
 ---
 
 
-# Primetime动态Ad Insertion20.9.1发行说明
+# Primetime动态Ad Insertion20.9.2发行说明
 
-动态Ad Insertion20.9.1发行说明描述了Primetime动态Ad Insertion2020年的新增或更改内容、已解决的问题和已知问题。
+动态Ad Insertion20.9.2发行说明描述了Primetime动态Ad Insertion2020年的新增或更改内容、已解决的问题和已知问题。
 
-## PTAI 20.9.1的新增功能
+## PTAI 20.9.2的新增功能
+
+**时间：** 2020年9月15日星期二东部时间凌晨3点30分至6点30分
+
+**增强功能**
+
+* 支持使用标签包含非线性广告 `EXT-X-MARKER` 类型。
+有关详细信息或要启用此功能，请与技术支持代表联系。
+
+* 提供了在提供商响应时间过长时限制整体广告解决时间的支持。 要启用限制，请将引导API参 `ptadtimeout` 数设置为毫秒值。
+
+   >[!NOTE]
+   >
+   >此超时仅适用于广告请求，而不适用于广告创意请求。
+
+### 先前发行版中的增强和修复
+
+#### 版本20.9.1
 
 **时间：** 2020年9月1日星期二东部时间凌晨3点30分至7点30分
 
 **更改**
 
 * 修复了使用HLS/CMAF的客户的问题，该问题导致EXT-X-MAP有时丢失CDN令牌或EXT-X-MAP标记有时从DVR窗口中错误地滚出。
-
-### 先前发行版中的增强和修复
 
 #### 版本20.8.4
 
