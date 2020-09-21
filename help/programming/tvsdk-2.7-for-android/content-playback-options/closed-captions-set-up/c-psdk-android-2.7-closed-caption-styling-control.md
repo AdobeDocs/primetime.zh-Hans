@@ -5,7 +5,7 @@ seo-title: 控制隐藏式字幕样式
 title: 控制隐藏式字幕样式
 uuid: fa4f637f-f13c-465d-8eee-5e66a6dd9db2
 translation-type: tm+mt
-source-git-commit: 4ccc99f1ad6536ceb5e09c898dba3f71fa2de3f3
+source-git-commit: b02dfafdc78ca209da5ba0ed855342952be4288f
 workflow-type: tm+mt
 source-wordcount: '882'
 ht-degree: 0%
@@ -133,11 +133,11 @@ ht-degree: 0%
       >
       >**颜色设置：** 在Android TVSDK 2.X中，对隐藏式字幕的颜色样式进行了增强。 该增强功能允许使用表示RGB颜色值的十六进制字符串设置隐藏字幕颜色。 RGB十六进制颜色表示法是您在诸如Photoshop之类的应用程序中使用的熟悉的6字节字符串：
       >
-      >    * FFFFFF =黑色
-      >    * 000000 =白色
-      >    * FF0000 =红色
-      >    * 00FF00 =绿色
-      >    * 0000FF =蓝色
+      >* FFFFFF =黑色
+      >* 000000 =白色
+      >* FF0000 =红色
+      >* 00FF00 =绿色
+      >* 0000FF =蓝色
 
       >
       >等等。
