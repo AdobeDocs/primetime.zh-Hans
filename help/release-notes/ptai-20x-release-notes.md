@@ -1,20 +1,30 @@
 ---
-title: PTAI 20.9.2发行说明
-description: PTAI 20.9.2发行说明描述了2020年Primetime动态Ad Insertion中的新增或变更、已解决和已知问题。
+title: PTAI 20.9.3发行说明
+description: PTAI 20.9.3发行说明描述了2020年Primetime动态Ad Insertion中的新增或变更、已解决和已知问题。
 translation-type: tm+mt
-source-git-commit: e3d2811e40bc34bfdaacdab1529fa9b01e416a98
+source-git-commit: 6d25fc11bc4ca91556cae0b944322cd224c89fb5
 workflow-type: tm+mt
-source-wordcount: '962'
+source-wordcount: '1017'
 ht-degree: 0%
 
 ---
 
 
-# Primetime动态Ad Insertion20.9.2发行说明
+# Primetime动态Ad Insertion20.9.3发行说明
 
-动态Ad Insertion20.9.2发行说明描述了Primetime动态Ad Insertion2020年的新增或更改内容、已解决的问题和已知问题。
+动态Ad Insertion20.9.3发行说明描述了Primetime动态Ad Insertion2020年的新增或更改内容、已解决的问题和已知问题。
 
-## PTAI 20.9.2的新增功能
+## PTAI 20.9.3的新增功能
+
+**时间：** 2020年9月30日星期三东部时间凌晨3点30分至6点30分
+
+**更改**
+
+* 添加了BootstrapAPI参 `ptparallelstream`数。 这使拥有请求CMAF解混音音频或视频流的播放器的客户能够并行进行，以确保音频和视频轨道中的广告保持一致。 将参数值设置为true以启用此功能，或忽略以禁用。
+
+### 先前发行版中的增强和修复
+
+#### 版本20.9.2
 
 **时间：** 2020年9月15日星期二东部时间凌晨3点30分至6点30分
 
@@ -28,8 +38,6 @@ ht-degree: 0%
    >[!NOTE]
    >
    >此超时仅适用于广告请求，而不适用于广告创意请求。
-
-### 先前发行版中的增强和修复
 
 #### 版本20.9.1
 
