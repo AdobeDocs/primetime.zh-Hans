@@ -5,9 +5,9 @@ seo-title: 清单服务器查询参数
 title: 清单服务器查询参数
 uuid: 03632da3-ae20-427c-bd24-4794ab627cc8
 translation-type: tm+mt
-source-git-commit: 6da7d597503d98875735c54e9a794f8171ad408b
+source-git-commit: 6d25fc11bc4ca91556cae0b944322cd224c89fb5
 workflow-type: tm+mt
-source-wordcount: '790'
+source-wordcount: '846'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 0%
 
 查询参数告诉清单服务器发送请求的客户端类型以及客户端希望清单服务器执行的操作。 有些是必需的，有些具有特定的可接受格式或值。
 
-完整的URL由基URL后跟问号和参数组成， `parameterName=value` 以和号分隔： `Base URL?name1=value1&name2=value2& . . .&name n=value n`
+完整的URL由基URL后跟问号和参数组成， `parameterName=value` 以和号分隔： `Base URL?name1=value1&name2=value2& . . .&name n=value n`.
 
-## 可识别的参数 {#section_072845B7FA94468C8068E9092983C9E6}
+## 可识别的参数 {#recognized-parameters}
 
 清单服务器识别以下参数。 它处理它们或将它们连同所有无法识别的参数一起传递到广告服务器。
 
@@ -50,3 +50,5 @@ ht-degree: 0%
 | scteTracking | 获取M3U8，然后在JSON V2附加项中获取SCTE跟踪信息。  <br/>此参数向清单服务器指示获取M3U8的播放器需要检索SCTE标记信息。 | 否(默认值： false) | true或false注释： 在JSON附加项中，SCTE-35数据会使用以下查询参数值组合返回： <ul><li>`ptcueformat=turner | elemental | nfl | DPIScte35` </li><li>pttrackingversion=v2 </li><li>scteTracking=true</li></ul> |
 | vetargetmultiplier | 起始点的段数预卷偏移使用以下方式进行配置：  `(  vetargetmultiplier  *  targetduration ) +  vebufferlength`  <br/><br/>**注意**: 仅实时／线性 | 否(默认值： 3.0) | 浮动 |
 | vebufferLength | 从实时点开始的秒数备注： 仅实时／线性 | 否(默认值： 3.0) | 浮动 |
+| ptadtimeout | 如果提供商响应时间过长，则要限制整体广告解决时间。 | 是，要启用 | 毫秒值 |
+| ptparallestream | 允许具有请求CMAF的播放器的客户同时消除音频或视频流的混音，以确保音频和视频轨道中的广告保持一致。 | 是，启用该功能，或忽略禁用。 | 真 |
