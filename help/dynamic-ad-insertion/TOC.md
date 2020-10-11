@@ -2,20 +2,28 @@
 cloud: experience-cloud
 product: adobe primetime
 audience: end-user
-user-guide-title: Primetime动态Ad Insertion帮助
+user-guide-title: Primetime 动态 Ad Insertion 帮助
 user-guide-description: Explains how to monetize content by inserting user-targeted dynamic ads on the server and engage audience with personalized ads.
 translation-type: tm+mt
-source-git-commit: 23a48208ac1d3625ae7d925ab6bfba8f2a980766
+source-git-commit: 7d74e526dbc4c9f623d1ec30e4bc70d9318a89f9
 workflow-type: tm+mt
-source-wordcount: '196'
-ht-degree: 0%
+source-wordcount: '232'
+ht-degree: 2%
 
 ---
 
 
-# 动态Ad Insertion帮助 {#ad-insertion}
+# Dynamic Ad Insertion Help {#ad-insertion}
 
 + [动态Ad Insertion概述](home.md)
++ PrimetimeAd Insertion{#get-started}
+   + [概述](get-started-ptai.md)
+   + [准备使用PrimetimeAd Insertion](setup-ptai.md)
+   + [集成广告服务器](integrate-ad-server.md)
+   + [集成CDN](integrate-cdn.md)
+   + [在实时／线性流中使用广告插入](ad-insertion-live-linear-stream.md)
+   + [将广告插入用于VOD](ad-insertion-vod.md)
+   + [设置广告跟踪](set-up-ad-tracking.md)
 + [动态Ad Insertion发行说明](https://docs.adobe.com/content/help/en/primetime/release-notes/ptai/ptai-19x-release-notes.html)
 + [清单服务器调试工具](manifest-server-debugging-tool.md)
 
