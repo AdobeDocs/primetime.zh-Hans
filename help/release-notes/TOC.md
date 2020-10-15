@@ -3,12 +3,12 @@ cloud: experience-cloud
 product: adobe primetime
 audience: end-user
 user-guide-title: Primetime 发行说明
-user-guide-description: Provides release-specific information, system requirements, limitations, fixed issues, and known issues.
+user-guide-description: 提供特定于发行版的信息、系统要求、限制、已修复问题和已知问题。
 translation-type: tm+mt
-source-git-commit: 7d74e526dbc4c9f623d1ec30e4bc70d9318a89f9
+source-git-commit: fac84687085f289e984c189665bfe775337592b3
 workflow-type: tm+mt
-source-wordcount: '101'
-ht-degree: 5%
+source-wordcount: '111'
+ht-degree: 15%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 5%
 # Primetime 发行说明 {#release-notes}
 
 + [发行说明概述](home.md)
-+ Primetime Dynamic Ad Insertion {#ptai}
++ PrimetimeAd Insertion {#ptai}
    + [PTAI 20.10.1发行说明](ptai-20x-release-notes.md)
    + [PTAI 19.11.1发行说明](ptai-19x-release-notes.md)
 + iOS版TVSDK {#tvsdk-ios}
