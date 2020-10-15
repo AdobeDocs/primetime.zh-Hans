@@ -2,20 +2,20 @@
 cloud: experience-cloud
 product: adobe primetime
 audience: end-user
-user-guide-title: Primetime 动态 Ad Insertion 帮助
-user-guide-description: Explains how to monetize content by inserting user-targeted dynamic ads on the server and engage audience with personalized ads.
+user-guide-title: PrimetimeAd Insertion帮助
+user-guide-description: 解释如何通过在服务器上插入面向用户的动态广告来从内容获利，以及如何通过个性化广告吸引受众。
 translation-type: tm+mt
-source-git-commit: 7d74e526dbc4c9f623d1ec30e4bc70d9318a89f9
+source-git-commit: fac84687085f289e984c189665bfe775337592b3
 workflow-type: tm+mt
-source-wordcount: '232'
-ht-degree: 2%
+source-wordcount: '250'
+ht-degree: 7%
 
 ---
 
 
-# Dynamic Ad Insertion Help {#ad-insertion}
+# Primetime Ad Insertion Help {#ad-insertion}
 
-+ [动态Ad Insertion概述](home.md)
++ [PrimetimeAd Insertion概述](home.md)
 + PrimetimeAd Insertion{#get-started}
    + [概述](get-started-ptai.md)
    + [准备使用PrimetimeAd Insertion](setup-ptai.md)
@@ -24,7 +24,7 @@ ht-degree: 2%
    + [在实时／线性流中使用广告插入](ad-insertion-live-linear-stream.md)
    + [将广告插入用于VOD](ad-insertion-vod.md)
    + [设置广告跟踪](set-up-ad-tracking.md)
-+ [动态Ad Insertion发行说明](https://docs.adobe.com/content/help/en/primetime/release-notes/ptai/ptai-19x-release-notes.html)
++ [PrimetimeAd Insertion发行说明](https://docs.adobe.com/content/help/en/primetime/release-notes/ptai/ptai-19x-release-notes.html)
 + [清单服务器调试工具](manifest-server-debugging-tool.md)
 
 <!-- + [Server Side Ad Insertion debugging dashboard](ssai-debugging-dashboard.md)-->
