@@ -9,7 +9,7 @@ products: SG_PRIMETIME
 topic-tags: release-notes
 discoiquuid: e4437a26-9454-4da1-ae87-0fce664aac3d
 translation-type: tm+mt
-source-git-commit: 6da7d597503d98875735c54e9a794f8171ad408b
+source-git-commit: ba291a4615a8e0713cf610f76f41e328da96ec4d
 workflow-type: tm+mt
 source-wordcount: '5222'
 ht-degree: 0%
@@ -205,7 +205,7 @@ ht-degree: 0%
 
 * Zendesk #24428 —— 使用TVSDK播放DRM HLS时经常出现缓冲问题
 
-通过考虑到没有广告设置时，TVSDK可以通过消除设计用于同步广告插入的时间轴上的滚动广告保留和实时保留保留保留来加快处理速度，从而解决了此问题。
+通过考虑到没有广告设置时，TVSDK可以通过消除设计用于同步广告插入的时间轴上的前置广告保持和实时保留保持来加快处理速度，从而解决了此问题。
 
 * Zendesk #24344 —— 禁用WebVTT文件以缩短开始设置时间。
 
@@ -465,7 +465,7 @@ ht-degree: 0%
 
 * Zendesk #19175 —— 有时，在首次播放流时，前放广告不会显示。
 
-通过向AuditudeSettings添加新API adRequestTimeout以解决此问题，以获得广告请求超时。 用户现在可以覆盖默认的10秒广告请求超时。
+通过向AuditudeSettings添加新的API adRequestTimeout来解决此问题，以获得广告请求超时。 用户现在可以覆盖默认的10秒广告请求超时。
 
 **版本1.4.18** (1.4.18.722)
 
@@ -533,7 +533,7 @@ ht-degree: 0%
 
 **注意**:该决议要求Flash PlayerFP 19.0.0.207或更高版本。
 
-通过处理中间广告插入的未混音音频，解决了此问题。 (分析器切换发生，并且在播放的任何点，内容过渡到中间广告，或在广告播放的中间，依此类推。)
+通过处理中间广告插入的未混音音频，解决了此问题。 (分析器切换发生，并且在播放的任何点，内容过渡都会到中间广告，或者在广告播放的中间，依此类推。)
 
 * Zendesk #18049 -Flash19与Firefox 42测试版崩溃
 
@@ -555,7 +555,7 @@ ht-degree: 0%
 
 **注意**:该修复需要Flash Player19.0.0.200或更高版本。
 
-* Zendesk #17499 —— 如何不在观看后删除中间页，而从外部内容删除前置页
+* Zendesk #17499 —— 我们如何不在观看后删除中间人，而从外部内容中删除前置人
 
 为AdBreakTimelineItem(AdBreakTimelineItem.placementType)添加了一个类型，以便AdPolicySelector可以为前置、中置和后置内容返回不同的策略。
 
@@ -734,9 +734,6 @@ HLS格式的mime类型区分大小写，这不正确，并且已更改，因此�
 * Zendesk #1024 —— 通过清单从流中删除广告的功能
 * Zendesk #1423 - HLS回放失败正在锁定Flash Player（未报告错误）
 * Zendesk #1674 - ClosedCaption未显示，当缺少0x03 ETX代码时，正确的708字幕显示。
-
-</p>
-</details>
 
 ## 已知问题 {#known-issues}
 
