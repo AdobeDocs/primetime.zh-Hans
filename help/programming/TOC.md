@@ -2,18 +2,18 @@
 cloud: experience-cloud
 product: adobe primetime
 audience: end-user
-user-guide-title: Primetime编程帮助
-user-guide-description: Allows you to learn to develop applications and video players using Java on Android devices and Objective-C on iOS devices.
+user-guide-title: Primetime 编程帮助
+user-guide-description: 允许您学习在 Android 设备上使用 Java 以及在 iOS 设备上使用 Objective-C 开发应用程序和视频播放器。
 translation-type: tm+mt
 source-git-commit: 23a48208ac1d3625ae7d925ab6bfba8f2a980766
 workflow-type: tm+mt
-source-wordcount: '4307'
+source-wordcount: '4327'
 ht-degree: 0%
 
 ---
 
 
-# Primetime编程帮助 {#programming}
+# Primetime 编程帮助 {#programming}
 
 + [编程概述](home.md)
 + 适用于Android的TVSDK 3x {#tvsdk-3x-android-prog}
