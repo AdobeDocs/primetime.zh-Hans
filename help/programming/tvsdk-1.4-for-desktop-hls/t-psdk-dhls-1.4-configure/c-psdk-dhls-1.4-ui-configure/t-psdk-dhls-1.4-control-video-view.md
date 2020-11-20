@@ -37,8 +37,7 @@ ht-degree: 0%
    >
    >例如：
    >
-   >
-   ```
+   >```
    >public class CustomScalePolicy implements MediaPlayerViewScalePolicy { 
    >       /** 
    >         * Default constructor. 
