@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# 命令行工具要求 {#command-line-tools-requirements}
+# 命令行工具要求{#command-line-tools-requirements}
 
 * Java 1.5或更高版本。
 * 由Adobe颁发的包装程序、传输和许可证服务器凭据（证书和密码）。
