@@ -17,11 +17,11 @@ ht-degree: 0%
 ---
 
 
-# 桌面HLS的TVSDK 1.4发行说明 {#tvsdk-for-desktop-hls-release-notes}
+# 桌面HLS的TVSDK 1.4发行说明{#tvsdk-for-desktop-hls-release-notes}
 
 桌面HLS的TVSDK发行说明描述了TVSDK DHLS中的新增或更改内容、已解决和已知问题。
 
-## 新增功能 {#new-features}
+## 新增功能{#new-features}
 
 **1.4.31**
 
@@ -30,7 +30,7 @@ ht-degree: 0%
    * 默认情况下，所有转码资源都托管在Akamai上由Adobe拥有的CDN上。 Adobe创意重新打包服务(CRS)提供了将转码创意内容上传到客户指定的多个CDN的功能。
    * 新的API添加到TVSDK以启用在不使用默认URL时指定最终的CRS创作URL。 请参阅文档，了解如何使用这些新API。
 
-### 先前版本的新增功能 {#new-features-previous}
+### 先前版本{#new-features-previous}中的新增功能
 
 **1.4.30**
 
@@ -58,9 +58,9 @@ ht-degree: 0%
 
 **1.4.10**
 
-* **广告回退，广告选择逻辑中的菊花链(Zendesk #3103)** 对于启用回退规则的VAST广告（创意）,TVSDK将MIME类型无效的广告视为空广告，并尝试在其位置使用回退广告。 您可以配置回退行为的某些方面。
+* **广告回退，广告选择逻辑中的菊花链(Zendesk #3103)** 对于启用回退规则的VAST广告（创意）,TVSDK将MIME类型无效的广告视为空广告，并尝试在其位置使用回退广告。您可以配置回退行为的某些方面。
 
-有关详细信息，请参 [阅VAST和VMAP广告的广告回退](../programming/tvsdk-1.4-for-android/ad-insertion/ad-fallback/android-1.4-ad-fallback.md)。
+有关详细信息，请参阅[ VAST和VMAP广告的广告回退](../programming/tvsdk-1.4-for-android/ad-insertion/ad-fallback/android-1.4-ad-fallback.md)。
 
 **1.4.8**
 
@@ -91,11 +91,11 @@ ht-degree: 0%
 
 **1.4.0**
 
-* **使用备用内容替换的封锁信号** 作为1.4 TVSDK更新的一部分，TVSDK现在还支持针对线性内容的区域封锁进入和返回。 TVSDK现在可以并行处理两个清单文件，主文件和备用文件，以监视封锁信号，即使替代原始编程显示替代了替代编程。
+* **使用替代内容替** 换的封锁信号作为1.4 TVSDK更新的一部分，TVSDK现在还支持针对线性内容的区域封锁进入和返回。TVSDK现在可以并行处理两个清单文件，主文件和备用文件，以监视封锁信号，即使替代原始编程显示替代了替代编程。
 
-* **删除／替换C3广告** 现在，无需进行任何额外的准备工作即可将新广告动态插入从C3窗口推出的视频点播(VOD)资产中。 TVSDK现在提供一个API，用于删除自定义内容范围和动态插入新广告。 当直播／线性内容在播出期间播放时，此强大的新功能也很有用，并且会立即作为点播内容下载，而无需适当时间“清理”资产。
+* **删除／替换C3** 广告现在，无需进行任何额外的准备工作即可将新广告动态插入从C3窗口推出的视频点播(VOD)资产中。TVSDK现在提供一个API，用于删除自定义内容范围和动态插入新广告。 当直播／线性内容在播出期间播放时，此强大的新功能也很有用，并且会立即作为点播内容下载，而无需适当时间“清理”资产。
 
-## 已解决的问题 {#resolved-issues}
+## 已解决问题{#resolved-issues}
 
 >[!NOTE]
 >
@@ -109,7 +109,7 @@ ht-degree: 0%
 
    更新DHLS上PMP演示的localhost令牌。
 
-### 已解决先前版本中的问题 {#resolved-issues-previous}
+### 已解决先前版本{#resolved-issues-previous}中的问题
 
 **版本1.4.38** (891)
 
@@ -358,7 +358,7 @@ ht-degree: 0%
 
 **版本1.4.21** (782)
 
-* Zendesk #19580 TVSDK在发送通知之前等待内容解析程序完 `PTTimedMetadataChangedNotification` 成
+* Zendesk #19580 TVSDK在发送`PTTimedMetadataChangedNotification`通知之前等待内容解析程序完成
 
 **注意**:此问题需要Flash播放器21.0.0.182或更高版本。
 
@@ -483,7 +483,7 @@ ht-degree: 0%
 
 **注意**:您必须至少具有Flash PlayerFP 19.0.0.245或更高版本。
 
-有时播放实时内容时，清单中可能有无效的键（例如，对于封锁期），但其他时间范围可能有有效的键并且仍将播放。 以前，当清单中列出的密钥无法下载时，整个清单将失败。 现在，清单仅在无法下载所有列出的密钥时才会失败。 如果某些键有效，但其中某些键无法下载，则内容将播放。 如果我们尝试播放需要我们没有的密钥的区段，则仍会失败。
+有时播放实时内容时，清单中可能有无效的键（例如，对于封锁期），但其他时间范围可能有有效的键并且仍将播放。 以前，当清单中列出的密钥无法下载时，整个清单将失败。 现在，清单仅在无法下载所有列出的密钥时才会失败。 如果某些键有效，但其中某些键无法下载，则内容将播放。 如果我们尝试播放需要我们没有的密钥的区段，我们仍会失败。
 
 * Zendesk #18554 - Stream Integrity在某些情况下修剪Cookie
 
@@ -658,11 +658,11 @@ TrickPlay现在接受高于16x的速率：+/- 32、+/-64和+/- 128。
 
 修复了在Mac上使用Firefox时，当在外部显示器上播放的流切换到较高比特率的流时，偶尔会发生Flash Player崩溃。(需要Flash Player18.0.0.160)
 
-* Zendesk #3268 —— 台式机：视频播放器开始 `+-` 在40/50秒后闪烁，开始在90秒后 `+-` 变黑
+* Zendesk #3268 —— 台式机：视频播放器开始在`+-` 40/50秒后闪烁，开始在`+-` 90秒后变黑
 
 修复了Mac Chrome上的一个问题，该问题导致流开始闪烁并最终变为黑色。 (需要Flash Player18.0.0.161)
 
-* Zendesk #3304 —— 未填充VAST `[ERRORCODE]` 3.0宏
+* Zendesk #3304 —— 未填充VAST 3.0 `[ERRORCODE]`宏
 
    * 如果内联广告的创意不佳，则将显示错误代码400。
    * `[ERRORCODE]` 宏将进行URL编码
@@ -711,8 +711,8 @@ HLS格式的mime类型区分大小写，这不正确，并且已更改，因此�
 
 **版本1.4.4**
 
-* Zendesk #1561 —— 续： `[Adobe Primetime]` 更新：桌面PSDK中基于HLS客户端的项目-DATE-TIME故障转移支持(需要Flash Player版本16.0.0.305或更高版本)
-* Zendesk #2197 —— 跟 `[Ads]` 踪广告错误
+* Zendesk #1561 —— 续：`[Adobe Primetime]`更新：桌面PSDK中基于HLS客户端的项目-DATE-TIME故障转移支持(需要Flash Player版本16.0.0.305或更高版本)
+* Zendesk #2197 - `[Ads]`跟踪广告错误
 * Zendesk #2286 —— 功能请求：提供广告加载状态(VPAID)相关信息
 * Zendesk #2285 —— 功能请求：在指定超时持续时间后跳过广告
 * 错误#3921755 - OpenSSL库在Flash Player中更新至版本1.0.1L(需要Flash Player版本16.0.0.305或更高版本)
@@ -722,8 +722,8 @@ HLS格式的mime类型区分大小写，这不正确，并且已更改，因此�
 * Zendesk #1303 —— 隐藏字幕的垂直偏移(需要Flash Player版本16.0.0.235或更高版本，预期发布日期：2014年12月)
 * Zendesk #1870 - “Closed Caption Tonn &amp; Off(Requires Version 16.0.0.235 or reader)”Flash Player，预期发布日期：2014年12月)
 * Zendesk #2110 —— 在VPAID广告期间尝试进入全屏后，播放卡住(需要Flash Player版本16.0.0.235或更高版本，预期发布日期：2014年12月)
-* Zendesk #2199 —— 在寻 `[VPAID]` 找过去的广告休息时，播放器不响应
-* Zendesk #2358 —— 续： `[Analytics]` 章节数据不正确
+* Zendesk #2199 - `[VPAID]`在搜索过去的广告中断时播放器没有响应
+* Zendesk #2358 —— 续：`[Analytics]`章节数据不正确
 
 **版本1.4.1**
 
@@ -735,12 +735,12 @@ HLS格式的mime类型区分大小写，这不正确，并且已更改，因此�
 * Zendesk #1423 - HLS回放失败正在锁定Flash Player（未报告错误）
 * Zendesk #1674 - ClosedCaption未显示，当缺少0x03 ETX代码时，正确的708字幕显示。
 
-## 已知问题 {#known-issues}
+## 已知问题{#known-issues}
 
 * “隐藏式字幕”无法处理纯音频内容，因为字幕系统需要视频才能正常工作。
 没有视频，就没有视口尺寸，没有视口尺寸，就无法显示任何字幕图形。
 * 由于Chrome沙箱限制，Google Chrome中的流完整性稍慢。
-* 在TVSDK 1.4中，如果禁用自动播放，则播放器至少保持空闲一分钟时，可能会发生DRM错误。 要解决此问题，请在禁用自动播放但预载资源时， `ReferenceCore.as` 通过更改以下内容进行修 `onPlaybackManagerPrepared`改：
+* 在TVSDK 1.4中，如果禁用自动播放，则播放器至少保持空闲一分钟时，可能会发生DRM错误。 要解决此问题，当禁用autoPlay但预载资源时，请通过更改`onPlaybackManagerPrepared`的内容来修改`ReferenceCore.as`:
 
 ```
 if (_playbackManager.autoPlay) {
@@ -753,7 +753,7 @@ _playbackManager.pause();
 
 * **版本1.4.13** PTPLAY-8501 —— 当VMAP返回两个直接的MP4非转码广告时，相同的回落广告会播放两次。
 
-* **版本1.4.2在Flash Player版本** 16中，在播放器进入空缓冲事件后，用ABR“切换”逻辑识别了问题。 该问题可防止在播放器进入缓冲状态后在不良带宽环境下切换比特率。 要解决此问题，请让您的应用 `BufferControlParameters.initialBufferTime` 程序将缓冲状态 `BufferControlParameters.playbackBufferTime` (即在事件上)的临时值设置为相同，然后将其重置回在事件上的设置 `BufferEvent.BUFFERING_BEGIN``BufferEvent.BUFFERING_END` 值。 此问题的修复将在Flash Player版本16的下一个修补程序版本中提供。
+* **版本1.4.2** 在Flash Player版本16中，播放器进入空缓冲事件后，用ABR“切换”逻辑识别了问题。该问题可防止在播放器进入缓冲状态后在不良带宽环境下切换比特率。 要解决此问题，请让应用程序在缓冲状态(即`BufferEvent.BUFFERING_BEGIN`事件上)中将`BufferControlParameters.initialBufferTime`临时设置为与`BufferControlParameters.playbackBufferTime`相同，然后将其重置回`BufferEvent.BUFFERING_END`事件上的设置值。 此问题的修复将在Flash Player版本16的下一个修补程序版本中提供。
 
 * **版本1.4.0**
 
@@ -767,6 +767,6 @@ _playbackManager.pause();
    * 错误#3779889 —— 在视频分析中达到特技播放结束时，不会发出完整的呼叫
    * 错误#VA-779 —— 对于具有心跳支持参考实施的增强视频分析，不发送比特率更改事件心跳——不在范例应用程序中实现技巧播放。
 
-## 实用资源 {#helpful-resources}
+## 帮助资源{#helpful-resources}
 
-* 请参阅Adobe Primetime学习和支 [持页面上的完整帮助](https://helpx.adobe.com/support/primetime.html) 文档。
+* 请参阅[Adobe Primetime学习和支持](https://helpx.adobe.com/support/primetime.html)页面上的完整帮助文档。
