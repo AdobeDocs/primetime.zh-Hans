@@ -17,7 +17,7 @@ ht-degree: 3%
 
 播放视频内容时，可以显示字幕。
 
-要处理字幕，必须添加 `AdobePSDK.PSDKEventType.CAPTIONS_UPDATED` 事件监听器：
+要处理字幕，必须添加`AdobePSDK.PSDKEventType.CAPTIONS_UPDATED`事件监听器：
 
 ```js
 ... 
