@@ -40,10 +40,10 @@ ht-degree: 5%
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 100000 </span> </td> 
-   <td colname="2"><span class="codeph"> DRM_ERROR </span> </td> 
+   <td colname="1"><span class="codeph"> 100000  </span> </td> 
+   <td colname="2"><span class="codeph"> DRM_ERROR  </span> </td> 
    <td colname="3"> </td> 
-   <td colname="4"><span class="codeph"> MAJOR_DRM_CODE </span><span class="codeph"> MINOR_DRM_CODE说 </span><span class="codeph"> 明 </span> </td> 
+   <td colname="4"><span class="codeph"> MAJOR_DRM_CODE  </span><span class="codeph"> MINOR_DRM_CODE说 </span><span class="codeph"> 明  </span> </td> 
    <td colname="5"></td> 
   </tr> 
   <tr rowsep="1"> 
@@ -54,37 +54,37 @@ ht-degree: 5%
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 101000 </span> </td> 
-   <td colname="2"><span class="codeph"> PLAYBACK_ERROR </span> </td> 
+   <td colname="1"><span class="codeph"> 101000  </span> </td> 
+   <td colname="2"><span class="codeph"> PLAYBACK_ERROR  </span> </td> 
    <td colname="3"></td> 
    <td colname="4"></td> 
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 101001 </span> </td> 
-   <td colname="2"><span class="codeph"> NATIVE_PLAYBACK_ERROR </span> </td> 
+   <td colname="1"><span class="codeph"> 101001  </span> </td> 
+   <td colname="2"><span class="codeph"> NATIVE_PLAYBACK_ERROR  </span> </td> 
    <td colname="3"> 无 </td> 
-   <td colname="4"><span class="codeph"> 说明 </span><span class="codeph"> INTERNAL_ERROR </span><span class="codeph"> URL </span> </td> 
+   <td colname="4"><span class="codeph"> 说明 </span><span class="codeph"> INTERNAL_ERROR  </span><span class="codeph"> URL  </span> </td> 
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 101008 </span> </td> 
-   <td colname="2"><span class="codeph"> SEEK_ERROR </span> </td> 
+   <td colname="1"><span class="codeph"> 101008  </span> </td> 
+   <td colname="2"><span class="codeph"> SEEK_ERROR  </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"><span class="codeph"> 说明</span> </td> 
    <td colname="5"> <p>执行搜索操作时出错。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 101009 </span> </td> 
-   <td colname="2"><span class="codeph"> PAUSE_ERROR </span> </td> 
+   <td colname="1"><span class="codeph"> 101009  </span> </td> 
+   <td colname="2"><span class="codeph"> PAUSE_ERROR  </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> <p>无 </p> </td> 
    <td colname="5"> <p>执行暂停操作时出错。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 101101 </span> </td> 
-   <td colname="2"><span class="codeph"> AUDIO_TRACK_CHANGE_FAIL </span> </td> 
-   <td colname="3"><span class="codeph"> PLAYER_NOT_READY </span> </td> 
+   <td colname="1"><span class="codeph"> 101101  </span> </td> 
+   <td colname="2"><span class="codeph"> AUDIO_TRACK_CHANGE_FAIL  </span> </td> 
+   <td colname="3"><span class="codeph"> PLAYER_NOT_READY  </span> </td> 
    <td colname="4"> 无 </td> 
    <td colname="5"> <p>  </p> <p>  </p>
     <!-- workaround for PDF having too much negative kerning in column 2 --> </td> 
@@ -97,8 +97,8 @@ ht-degree: 5%
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 102000 </span> </td> 
-   <td colname="2"><span class="codeph"> INVALID_MEDIA_PLAYER_ITEM </span> </td> 
+   <td colname="1"><span class="codeph"> 102000  </span> </td> 
+   <td colname="2"><span class="codeph"> INVALID_MEDIA_PLAYER_ITEM  </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"> 无 </td> 
    <td colname="5"> </td> 
@@ -111,22 +111,22 @@ ht-degree: 5%
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 104001 </span> </td> 
-   <td colname="2"><span class="codeph"> AD_RESOLVER_METADATA_无效 </span> </td> 
+   <td colname="1"><span class="codeph"> 104001  </span> </td> 
+   <td colname="2"><span class="codeph"> AD_RESOLVER_METADATA_无效  </span> </td> 
    <td colname="3"> <span class="codeph"> AD_NOT_INSERTED</span> </td> 
    <td colname="4"> <p>无 </p> </td> 
    <td colname="5"> <p>由于广告元数据格式无效，广告解析失败。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 104005 </span> </td> 
-   <td colname="2"><span class="codeph"> AD_INSERTION_FAIL </span> </td> 
-   <td colname="3"> <span class="codeph"> AD_NOT_INSERTED </span> </td> 
+   <td colname="1"><span class="codeph"> 104005  </span> </td> 
+   <td colname="2"><span class="codeph"> AD_INSERTION_FAIL  </span> </td> 
+   <td colname="3"> <span class="codeph"> AD_NOT_INSERTED  </span> </td> 
    <td colname="4"> <p>无 </p> </td> 
    <td colname="5"> <p>广告解析阶段失败。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 104006 </span> </td> 
-   <td colname="2"><span class="codeph"> AD_不可到达 </span> </td> 
+   <td colname="1"><span class="codeph"> 104006  </span> </td> 
+   <td colname="2"><span class="codeph"> AD_不可到达  </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> 无 </td> 
    <td colname="5"> </td> 
@@ -139,10 +139,10 @@ ht-degree: 5%
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 106000 </span> </td> 
-   <td colname="2"><span class="codeph"> NATIVE_ERROR </span> </td> 
+   <td colname="1"><span class="codeph"> 106000  </span> </td> 
+   <td colname="2"><span class="codeph"> NATIVE_ERROR  </span> </td> 
    <td colname="3"> 无 </td> 
-   <td colname="4"> <span class="codeph"> INTERNAL_ERROR </span> </td> 
+   <td colname="4"> <span class="codeph"> INTERNAL_ERROR  </span> </td> 
    <td colname="5"> <p>出现低级iOS错误。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
@@ -153,16 +153,16 @@ ht-degree: 5%
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 107002 </span> </td> 
-   <td colname="2"><span class="codeph"> SET_CC_VISIBILITY_ERROR </span> </td> 
+   <td colname="1"><span class="codeph"> 107002  </span> </td> 
+   <td colname="2"><span class="codeph"> SET_CC_VISIBILITY_ERROR  </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> <p>无 </p> </td> 
    <td colname="5"> <p>尝试更改CC轨道的可见性时出错。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 107003 </span> </td> 
-   <td colname="2"><span class="codeph"> SET_CC_STYLING_错误 </span> </td> 
-   <td colname="3"> <span class="codeph"> NATIVE_ERROR </span> </td> 
+   <td colname="1"><span class="codeph"> 107003  </span> </td> 
+   <td colname="2"><span class="codeph"> SET_CC_STYLING_错误  </span> </td> 
+   <td colname="3"> <span class="codeph"> NATIVE_ERROR  </span> </td> 
    <td colname="4"> <p>无 </p> </td> 
    <td colname="5"> <p>尝试更改CC音轨的样式选项时出错。 </p> </td> 
   </tr> 
@@ -174,85 +174,85 @@ ht-degree: 5%
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 170000 </span> </td> 
-   <td colname="2"><span class="codeph"> AD_HLS_VERSION_不兼容 </span> </td> 
+   <td colname="1"><span class="codeph"> 170000  </span> </td> 
+   <td colname="2"><span class="codeph"> AD_HLS_VERSION_不兼容  </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> <span class="codeph"> AD_ASSET</span> </td> 
    <td colname="5"> <p>广告的HLS版本高于内容的HLS版本。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 170001 </span> </td> 
-   <td colname="2"><span class="codeph"> ARGUMENT_ERROR </span> </td> 
+   <td colname="1"><span class="codeph"> 170001  </span> </td> 
+   <td colname="2"><span class="codeph"> ARGUMENT_ERROR  </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> 无 </td> 
    <td colname="5"> <p>参数错误 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 170002 </span> </td> 
-   <td colname="2"><span class="codeph"> M3U8_PARSER_ERROR </span> </td> 
+   <td colname="1"><span class="codeph"> 170002  </span> </td> 
+   <td colname="2"><span class="codeph"> M3U8_PARSER_ERROR  </span> </td> 
    <td colname="3"> 无 </td> 
-   <td colname="4"><span class="codeph"> 说明 </span> </td> 
+   <td colname="4"><span class="codeph"> 说明  </span> </td> 
    <td colname="5"> <p>无法解析m3u8。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 170003 </span> </td> 
-   <td colname="2"><span class="codeph"> WEBVTT_PARSER_ERROR </span> </td> 
+   <td colname="1"><span class="codeph"> 170003  </span> </td> 
+   <td colname="2"><span class="codeph"> WEBVTT_PARSER_ERROR  </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> 无 </td> 
    <td colname="5"> <p>无法解析Webvtt。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 170004 </span> </td> 
-   <td colname="2"><span class="codeph"> HLS_SEGMENT_ERROR </span> </td> 
+   <td colname="1"><span class="codeph"> 170004  </span> </td> 
+   <td colname="2"><span class="codeph"> HLS_SEGMENT_ERROR  </span> </td> 
    <td colname="3"> 无 </td> 
-   <td colname="4"><span class="codeph"> 说明 </span><span class="codeph"> URL </span><span class="codeph"> INTERNAL_ERROR </span> </td> 
+   <td colname="4"><span class="codeph"> 说明 </span><span class="codeph"> URL  </span><span class="codeph"> INTERNAL_ERROR  </span> </td> 
    <td colname="5"> <p>段超出了为变体指定的带宽。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 170005 </span> </td> 
-   <td colname="2"><span class="codeph"> MBR_MEDIASEQUENCE_OFFSYNC </span> </td> 
+   <td colname="1"><span class="codeph"> 170005  </span> </td> 
+   <td colname="2"><span class="codeph"> MBR_MEDIASEQUENCE_OFFSYNC  </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> 无 </td> 
    <td colname="5"> <p>此MBR的所有HLS流上的媒体序列号都未同步。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 170006 </span> </td> 
-   <td colname="2"><span class="codeph"> MISSING_FILE_ERROR </span> </td> 
+   <td colname="1"><span class="codeph"> 170006  </span> </td> 
+   <td colname="2"><span class="codeph"> MISSING_FILE_ERROR  </span> </td> 
    <td colname="3"> 无 </td> 
-   <td colname="4"><span class="codeph"> 说明 </span><span class="codeph"> URL </span><span class="codeph"> INTERNAL_ERROR </span> </td> 
+   <td colname="4"><span class="codeph"> 说明 </span><span class="codeph"> URL  </span><span class="codeph"> INTERNAL_ERROR  </span> </td> 
    <td colname="5"> <p>缺少文件或未响应。 </p> <p>HTTP 404:找不到文件。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 170007 </span> </td> 
-   <td colname="2"><span class="codeph"> AD_EMPTY_RESPONSE </span> </td> 
-   <td colname="3"><span class="codeph"> AD_INSERTION_FAIL </span> </td> 
+   <td colname="1"><span class="codeph"> 170007  </span> </td> 
+   <td colname="2"><span class="codeph"> AD_EMPTY_RESPONSE  </span> </td> 
+   <td colname="3"><span class="codeph"> AD_INSERTION_FAIL  </span> </td> 
    <td colname="4"> 无 </td> 
    <td colname="5"> <p>无法检索广告。 空响应。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 170008 </span> </td> 
-   <td colname="2"><span class="codeph"> AD_TIMEOUT </span> </td> 
-   <td colname="3"><span class="codeph"> AD_INSERTION_FAIL </span> </td> 
+   <td colname="1"><span class="codeph"> 170008  </span> </td> 
+   <td colname="2"><span class="codeph"> AD_TIMEOUT  </span> </td> 
+   <td colname="3"><span class="codeph"> AD_INSERTION_FAIL  </span> </td> 
    <td colname="4"> 无 </td> 
    <td colname="5"> <p>无法检索广告。 超时错误。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 170009 </span> </td> 
-   <td colname="2"><span class="codeph"> SUBTITLES_TRACK_CHANGE_FAIL </span> </td> 
-   <td colname="3"><span class="codeph"> PLAYER_NOT_READY </span> </td> 
+   <td colname="1"><span class="codeph"> 170009  </span> </td> 
+   <td colname="2"><span class="codeph"> SUBTITLES_TRACK_CHANGE_FAIL  </span> </td> 
+   <td colname="3"><span class="codeph"> PLAYER_NOT_READY  </span> </td> 
    <td colname="4"> 无 </td> 
    <td colname="5"> <p>更改字幕轨道时出错。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 170010 </span> </td> 
-   <td colname="2"><span class="codeph"> SITECATALYST_错误 </span> </td> 
+   <td colname="1"><span class="codeph"> 邮政编码170010  </span> </td> 
+   <td colname="2"><span class="codeph"> SITECATALYST_错误  </span> </td> 
    <td colname="3"> 无 </td> 
-   <td colname="4"><span class="codeph"> 说明 </span> </td> 
+   <td colname="4"><span class="codeph"> 说明  </span> </td> 
    <td colname="5"> <p>Site Catalyst错误。 请参阅说明。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 170011 </span> </td> 
-   <td colname="2"><span class="codeph"> AD_目标_DURATION_INCOMPATIBLE </span> </td> 
+   <td colname="1"><span class="codeph"> 邮政编码170011  </span> </td> 
+   <td colname="2"><span class="codeph"> AD_目标_DURATION_INCOMPATIBLE  </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> <span class="codeph"> AD_ASSET</span> </td> 
    <td colname="5"> <p>广告的目标持续时间高于内容的目标持续时间。 </p> </td> 
@@ -262,4 +262,4 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->可以使用键通过通知元数 `PTAdAsset` 据中的广告ID和源( `AD_ASSET` URL)。
+>可以使用`AD_ASSET`键通过通知元数据中的`PTAdAsset`检索adID和源(URL)。
