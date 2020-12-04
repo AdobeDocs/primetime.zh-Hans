@@ -23,5 +23,5 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe访问客户端版本3.0及更高版本支持此使用规则。 旧客户端上的行为取决于许可证服务器支持的最低客户端版本。 请参阅， [最低客户端版本](../../../aaxs-protecting-content/content-implementing-the-license-server/content-handling-license-reqs/content-minimum-client-version.md)。
+>Adobe访问客户端版本3.0及更高版本支持此使用规则。 旧客户端上的行为取决于许可证服务器支持的最低客户端版本。 请参阅[最低客户端版本](../../../aaxs-protecting-content/content-implementing-the-license-server/content-handling-license-reqs/content-minimum-client-version.md)。
 
