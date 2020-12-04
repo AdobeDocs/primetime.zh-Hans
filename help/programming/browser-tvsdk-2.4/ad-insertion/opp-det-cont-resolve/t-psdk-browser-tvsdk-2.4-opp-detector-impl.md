@@ -1,18 +1,21 @@
 ---
-description: 您可以通过扩展OpportunityGenerator界面来实施您自己的机会生成器。
-seo-description: 您可以通过扩展OpportunityGenerator界面来实施您自己的机会生成器。
+description: 您可以通过扩展OpportunityGenerator接口来实施您自己的机会生成器。
+seo-description: 您可以通过扩展OpportunityGenerator接口来实施您自己的机会生成器。
 seo-title: 实施自定义机会生成器
 title: 实施自定义机会生成器
 uuid: b80da2da-32d5-41f7-86ca-936d6f25b015
 translation-type: tm+mt
 source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+workflow-type: tm+mt
+source-wordcount: '95'
+ht-degree: 4%
 
 ---
 
 
-# 实施自定义机会生成器{#implement-a-custom-opportunity-generator}
+# 实现自定义机会生成器{#implement-a-custom-opportunity-generator}
 
-您可以通过扩展OpportunityGenerator界面来实施您自己的机会生成器。
+您可以通过扩展OpportunityGenerator接口来实施您自己的机会生成器。
 
 1. 创建自定义机会生成器。
 
