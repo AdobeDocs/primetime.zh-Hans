@@ -11,7 +11,7 @@ ht-degree: 0%
 ---
 
 
-# 概述——使用引用实现 {#overview-using-the-reference-implementations}
+# 概述——使用引用实现{#overview-using-the-reference-implementations}
 
 Adobe访问产品附带以下组件的参考实施：
 
