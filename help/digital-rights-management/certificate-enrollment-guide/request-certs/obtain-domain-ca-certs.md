@@ -4,22 +4,25 @@ title: 获取域CA证书
 uuid: 41bbe02b-363a-47f4-9cc0-350730b6c787
 translation-type: tm+mt
 source-git-commit: b4b50471ab0ba98329862322a61bf73aa9e471d5
+workflow-type: tm+mt
+source-wordcount: '115'
+ht-degree: 0%
 
 ---
 
 
 # 获取域CA证书{#obtain-domain-ca-certificates}
 
-与许可证服务器、包装程序或传输证书不同，域CA证书不由Adobe颁发。 您可以从证书颁发机构获得此证书，也可以生成用于此目的的自签名证书。
+与许可证服务器、包装程序或传输证书不同，域CA证书不是由Adobe颁发。 您可以从证书颁发机构获得此证书，也可以生成用于此目的的自签名证书。
 
 域CA证书应使用1024位密钥，并包含CA证书中所需的标准属性：
 
-* 将CA标志设置为true时的基本约束扩展
-* 允许使用密钥扩展指定证书签名
+* 基本约束扩展（CA标志设置为true）
+* 允许使用指定证书签名的密钥使用扩展
 
 例如，使用OpenSSL，可以生成自签名的CA证书，如下所示：
 
-1. 创建一个名为的文件，其 [!DNL ca-extensions.txt] 中包含：
+1. 创建名为[!DNL ca-extensions.txt]的文件，其中包含：
 
    ```
    keyUsage=critical,keyCertSign  
