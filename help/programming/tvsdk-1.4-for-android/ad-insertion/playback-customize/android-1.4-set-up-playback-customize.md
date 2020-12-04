@@ -13,16 +13,17 @@ ht-degree: 1%
 ---
 
 
-# 设置自定义播放 {#cset-up-customized-playback}
+# 设置自定义播放{#cset-up-customized-playback}
 
 您可以通过向TVSDK注册广告策略实例来自定义或覆盖广告行为。
 
 要自定义广告行为，请执行下列操作之一：
 
-* 实现接 `AdPolicySelector` 口及其所有方法。
+* 实现`AdPolicySelector`接口及其所有方法。
 如果需要覆盖所有默认广告行为，则建议使用此选项。
 
-* 扩展类 `DefaultAdPolicySelector` 并只为那些需要自定义的行为提供实现。
+* 扩展`DefaultAdPolicySelector`类并仅为那些需要
+自定义。
 如果只需要覆盖某些默认行为，则建议使用此选项。
 
 对于这两个选项，请完成以下任务:
