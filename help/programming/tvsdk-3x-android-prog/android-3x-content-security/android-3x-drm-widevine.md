@@ -1,18 +1,21 @@
 ---
-description: 您可以使用Primetime数字版权管理(DRM)系统的功能来提供对视频内容的安全访问。 或者，您也可以使用第三方DRM解决方案作为Adobe集成解决方案的替代方案。
-seo-description: 您可以使用Primetime数字版权管理(DRM)系统的功能来提供对视频内容的安全访问。 或者，您也可以使用第三方DRM解决方案作为Adobe集成解决方案的替代方案。
+description: 您可以使用PrimetimeDigital Rights Management(DRM)系统的功能提供对视频内容的安全访问。 或者，您也可以使用第三方DRM解决方案作为Adobe集成解决方案的替代方案。
+seo-description: 您可以使用PrimetimeDigital Rights Management(DRM)系统的功能提供对视频内容的安全访问。 或者，您也可以使用第三方DRM解决方案作为Adobe集成解决方案的替代方案。
 seo-title: Widevine DRM
 title: Widevine DRM
 uuid: 3a5fd786-4319-4e92-83b6-0f5328df6a44
 translation-type: tm+mt
 source-git-commit: 0271af21b74e80455ddb2c53571cd75f3a0f56ba
+workflow-type: tm+mt
+source-wordcount: '325'
+ht-degree: 0%
 
 ---
 
 
 # Widevine DRM {#widevine-drm}
 
-您可以使用Primetime数字版权管理(DRM)系统的功能来提供对视频内容的安全访问。 或者，您也可以使用第三方DRM解决方案作为Adobe集成解决方案的替代方案。
+您可以使用PrimetimeDigital Rights Management(DRM)系统的功能提供对视频内容的安全访问。 或者，您也可以使用第三方DRM解决方案作为Adobe集成解决方案的替代方案。
 
 有关第三方DRM解决方案可用性的最新信息，请与Adobe代表联系。
 
@@ -24,11 +27,11 @@ source-git-commit: 0271af21b74e80455ddb2c53571cd75f3a0f56ba
 >
 > Widevine CENC CTR方案要求最低版本为Android 4.4（API级别19）。
 >
-> Widevine CBCS Scheme要求最低版本为Android 7.1(API Level 25)。
+> Widevine CBCS Scheme要求最低版本为Android 7.1（API级别25）。
 
-## 设置许可证服务器详细信息 {#license-server-details}
+## 设置许可证服务器详细信息{#license-server-details}
 
-在加载MediaPlayer资 `com.adobe.mediacore.drm.DRMManager` 源之前调用以下API:
+在加载MediaPlayer资源之前，请调用以下`com.adobe.mediacore.drm.DRMManager` API:
 
 ```java
 public static void setProtectionData(
@@ -37,15 +40,15 @@ String licenseServerURL,
 Map<String, String> requestProperties)
 ```
 
-### 参数 {#arguments-license-server}
+### 参数{#arguments-license-server}
 
-* `drm` - `"com.widevine.alpha"` for widevine.
+* `drm` -  `"com.widevine.alpha"` for widevine.
 
 * `licenseServerURL` -接收许可证请求的Widevine许可证服务器的URL。
 
-* `requestProperties` -包含要包含在传出许可证请求中的额外标题。
+* `requestProperties` -包含要包含在传出许可证请求中的额外标头。
 
-例如，在使用为Expressplay DRM打包的内容时，请在播放前使用以下代码：
+例如，在使用为Expressplay DRM打包的内容时，在播放前使用以下代码：
 
 ```java
 DRMManager.setProtectionData(
@@ -55,24 +58,24 @@ DRMManager.setProtectionData(
   null);
 ```
 
-## 提供自定义回调 {#custom-callback}
+## 提供自定义回调{#custom-callback}
 
-在加载MediaPlayer资 `com.adobe.mediacore.drm.DRMManager` 源之前，调用以下API。
+在加载MediaPlayer资源之前，请调用以下`com.adobe.mediacore.drm.DRMManager` API。
 
 ```java
 public static void setMediaDrmCallback(
 MediaDrmCallback callback)
 ```
 
-### 参数 {#arguments-custom-callback}
+### 参数{#arguments-custom-callback}
 
 * `callback` -自定义MediaDrmCallback实现，以代替默认 `com.adobe.mediacore.drm.WidevineMediaDrmCallback`。
 
-有关详细信息， [请参阅Android TVSDK 3.11 API文档](https://help.adobe.com/en_US/primetime/api/psdk/javadoc3.11/index.html)。
+有关详细信息，请参阅[Android TVSDK 3.11 API文档](https://help.adobe.com/en_US/primetime/api/psdk/javadoc3.11/index.html)。
 
-## 获取当前加载的MediaPlayer资源的PSSH包 {#pssh-box-mediaplayer-resoource}
+## 提取当前加载的MediaPlayer资源{#pssh-box-mediaplayer-resoource}的PSSH框
 
-调用以下 `com.adobe.mediacore.drm.DRMManager` API，最好在自定义回调实现中。
+调用以下`com.adobe.mediacore.drm.DRMManager` API，最好在自定义回调实现中。
 
 ```java
 public static byte[] getPSSH()
@@ -80,8 +83,8 @@ public static byte[] getPSSH()
 
 API返回与加载的Widevine媒体资源关联的保护系统特定标题框。
 
-有效的框在较短的持续时间内可用（在DRM实例创建和键的加载之间）。 `MediaDrmCallback callback executeKeyRequest()` 可以使用它自定义获取许可证密钥。
+有效框在较短的持续时间内可用（在DRM实例创建和键的加载之间）。 `MediaDrmCallback callback executeKeyRequest()` 可以使用它自定义获取许可证密钥。
 
 >[!NOTE]
 >
-> `getPSSH()` API仅支持单播放器实例。 多个播放器或“即时启动”功能应依次初始化以接收正确的框。
+> `getPSSH()` API仅支持单播放器实例。多个播放器或“即时启动”功能应依次初始化，以接收正确的框。
