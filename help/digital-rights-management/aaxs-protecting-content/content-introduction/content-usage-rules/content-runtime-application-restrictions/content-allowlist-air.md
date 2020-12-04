@@ -11,7 +11,7 @@ ht-degree: 0%
 ---
 
 
-# 允许列表Adobe® Primetime应用程序允许播放受保护的内容 {#allowlist-for-adobe-primetime-applications-allowed-to-play-protected-content}
+# 允许列表Adobe® Primetime应用程序允许播放受保护的内容{#allowlist-for-adobe-primetime-applications-allowed-to-play-protected-content}
 
 指定可播放内容的AIR/iOS应用程序。 指定AIR/iOS应用程序 ID、最低版本、最高版本和发布者ID。
 
