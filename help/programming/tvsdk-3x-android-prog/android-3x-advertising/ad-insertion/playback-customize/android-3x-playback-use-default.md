@@ -13,34 +13,34 @@ ht-degree: 0%
 ---
 
 
-# 使用默认播放行为 {#use-the-default-playback-behavior}
+# 使用默认播放行为{#use-the-default-playback-behavior}
 
 您可以选择使用默认广告行为。
 
 1. 要使用默认行为，请完成以下任务之一：
 
-   * 如果实现自己的 `AdvertisingFactory` 类，则返回null `createAdPolicySelector`。
+   * 如果实现自己的`AdvertisingFactory`类，则为`createAdPolicySelector`返回null。
 
-   * 如果您没有类的自定义实现， `AdvertisingFactory` TVSDK将使用默认的广告策略选择器。
+   * 如果您没有`AdvertisingFactory`类的自定义实现，TVSDK将使用默认的广告策略选择器。
 
-## 设置自定义播放 {#set-up-customized-playback}
+## 设置自定义播放{#set-up-customized-playback}
 
 您可以自定义或覆盖广告行为。
 
 在自定义或覆盖广告行为之前，请先注册广告策略实例。
 要自定义广告行为，请执行下列操作之一：
 
-* 实现接 `AdPolicySelector` 口及其所有方法。
+* 实现`AdPolicySelector`接口及其所有方法。
 
-   如果您需要覆盖所有默认广告 **行为** ，建议使用此选项。
+   如果需要覆盖&#x200B;**all**&#x200B;默认广告行为，则建议使用此选项。
 
-* 扩展类 `DefaultAdPolicySelector` 并仅为那些需要自定义的行为提供实现。
+* 扩展`DefaultAdPolicySelector`类并仅为那些需要自定义的行为提供实现。
 
-   如果只需要覆盖部分默认行 **为** ，建议使用此选项。
+   如果只需要覆盖默认行为的&#x200B;**某些**，则建议使用此选项。
 
 自定义广告行为：
 
-1. 实现接 `AdPolicySelector` 口及其所有方法。
+1. 实现`AdPolicySelector`接口及其所有方法。
 1. 指定TVSDK通过广告工厂使用的策略实例。
 
    >[!NOTE]
