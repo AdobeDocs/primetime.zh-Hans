@@ -1,18 +1,21 @@
 ---
-description: AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频播放通知。
-seo-description: AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频播放通知。
+description: AVE的视频编码器接口在NATIVE_ERROR元数据对象中返回这些视频播放通知。
+seo-description: AVE的视频编码器接口在NATIVE_ERROR元数据对象中返回这些视频播放通知。
 seo-title: NATIVE_ERROR视频播放值
 title: NATIVE_ERROR视频播放值
 uuid: 4916f96c-857a-4e15-8d91-9c2f949ce783
 translation-type: tm+mt
 source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+workflow-type: tm+mt
+source-wordcount: '1362'
+ht-degree: 6%
 
 ---
 
 
 # NATIVE_ERROR:视频播放值{#native-error-video-playback-values}
 
-AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频播放通知。
+AVE的视频编码器接口在NATIVE_ERROR元数据对象中返回这些视频播放通知。
 
 <table> 
  <thead> 
@@ -34,7 +37,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
    <td colname="col3"> 操作成功。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 1 </td> 
+   <td colname="col1"> 3 </td> 
    <td colname="col2"> <span class="codeph"> ASYNC_OPERATION_IN_PROGRESS</span> </td> 
    <td colname="col3"> 异步操作。 已发出操作请求。 以后将提供成功／失败信息。 </td> 
   </tr> 
@@ -44,7 +47,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
    <td colname="col3"> 由于文件结束(EOF)条件，无法执行操作。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 3 </td> 
+   <td colname="col1"> 1 </td> 
    <td colname="col2"><span class="codeph"> DECODER_FAILED</span> </td> 
    <td colname="col3"> 解码器在运行时失败。 </td> 
   </tr> 
@@ -55,72 +58,72 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   </tr> 
   <tr> 
    <td colname="col1"> 5 </td> 
-   <td colname="col2"><span class="codeph"> FILE_NOT_FOUND </span> </td> 
+   <td colname="col2"><span class="codeph"> FILE_NOT_FOUND  </span> </td> 
    <td colname="col3"> 找不到资源。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 6 </td> 
-   <td colname="col2"><span class="codeph"> GENERIC_ERROR </span> </td> 
+   <td colname="col2"><span class="codeph"> GENERIC_ERROR  </span> </td> 
    <td colname="col3"> 一般错误。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 7 </td> 
-   <td colname="col2"><span class="codeph"> INVERSOLATED_ERROR </span> </td> 
+   <td colname="col2"><span class="codeph"> INVERALIZED_ERROR  </span> </td> 
    <td colname="col3"> 视频引擎无法从中恢复的错误条件。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 8 </td> 
-   <td colname="col2"><span class="codeph"> LOST_CONNECTION_RESOVERABLE </span> </td> 
+   <td colname="col2"><span class="codeph"> LOST_CONNECTION_RESOLVE  </span> </td> 
    <td colname="col3"> 网络错误，正在尝试恢复。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 9 </td> 
-   <td colname="col2"><span class="codeph"> NO_FIXED_SIZE </span> </td> 
+   <td colname="col2"><span class="codeph"> NO_FIXED_SIZE  </span> </td> 
    <td colname="col3"> 无法确定资源的大小。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 10 </td> 
-   <td colname="col2"><span class="codeph"> NOT_IMPLEMENTED </span> </td> 
+   <td colname="col2"><span class="codeph"> NOT_IMPLEMENTED  </span> </td> 
    <td colname="col3"> 功能未实现。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 11 </td> 
-   <td colname="col2"><span class="codeph"> OUT_OF_MEMORY </span> </td> 
+   <td colname="col2"><span class="codeph"> OUT_OF_MEMORY  </span> </td> 
    <td colname="col3"> 内存不足。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 12 </td> 
-   <td colname="col2"><span class="codeph"> PARSE_ERROR </span> </td> 
+   <td colname="col2"><span class="codeph"> PARSE_ERROR  </span> </td> 
    <td colname="col3"> 解析媒体文件时出错。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 13 </td> 
-   <td colname="col2"><span class="codeph"> SIZE_UNKNOWN </span> </td> 
-   <td colname="col3"> 该资源有一个大小，但未知。 </td> 
+   <td colname="col2"><span class="codeph"> SIZE_UNKNOWN  </span> </td> 
+   <td colname="col3"> 资源有大小，但未知。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 14 </td> 
-   <td colname="col2"><span class="codeph"> UNDER_FLOW </span> </td> 
-   <td colname="col3"> 下溢条件。 </td> 
+   <td colname="col2"><span class="codeph"> UNDER_FLOW  </span> </td> 
+   <td colname="col3"> 下流情况。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 15 </td> 
-   <td colname="col2"><span class="codeph"> UNSUPPORTED_CONFIG </span> </td> 
+   <td colname="col2"><span class="codeph"> UNSUPPORTED_CONFIG  </span> </td> 
    <td colname="col3"> 不支持配置。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 16 </td> 
-   <td colname="col2"><span class="codeph"> UNSUPPORTED_OPERATION </span> </td> 
+   <td colname="col2"><span class="codeph"> UNSUPPORTED_OPERATION  </span> </td> 
    <td colname="col3"> 不支持操作。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 17 </td> 
-   <td colname="col2"><span class="codeph"> WAITING_FOR_INIT </span> </td> 
+   <td colname="col2"><span class="codeph"> WAITING_FOR_INIT  </span> </td> 
    <td colname="col3"> 尚未初始化。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 18 </td> 
-   <td colname="col2"><span class="codeph"> INVALID_PARAMETER </span> </td> 
+   <td colname="col2"><span class="codeph"> INVALID_PARAMETER  </span> </td> 
    <td colname="col3"> 参数无效。 </td> 
   </tr> 
   <tr> 
@@ -131,7 +134,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr> 
    <td colname="col1"> 20 </td> 
    <td colname="col2"><span class="codeph"> OP_ONLY_ALLOWED_IN_PAUSED_STATE</span> </td> 
-   <td colname="col3"> 仅在暂停时允许此操作。 </td> 
+   <td colname="col3"> 操作仅在暂停时才允许。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 21 </td> 
@@ -145,7 +148,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   </tr> 
   <tr> 
    <td colname="col1"> 23 </td> 
-   <td colname="col2"><span class="codeph"> SOURCE_NOT_SPECIFIED </span> </td> 
+   <td colname="col2"><span class="codeph"> SOURCE_NOT_SPECIFIED  </span> </td> 
    <td colname="col3"> 未指定资源。 </td> 
   </tr> 
   <tr> 
@@ -161,7 +164,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr> 
    <td colname="col1"> 26 </td> 
    <td colname="col2"><span class="codeph"> FILE_STRUCTURE_INVALID</span> </td> 
-   <td colname="col3"> 指定的文件不符合预期的语法。 </td> 
+   <td colname="col3"> 指定的文件不符合预期语法。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 27 </td> 
@@ -175,8 +178,8 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   </tr> 
   <tr> 
    <td colname="col1"> 29 </td> 
-   <td colname="col2"><span class="codeph"> CONTAINER_NOT_SUPPORTED </span> </td> 
-   <td colname="col3"> 不支持容器类型。 </td> 
+   <td colname="col2"><span class="codeph"> 容器_NOT_SUPPORTED  </span> </td> 
+   <td colname="col3"> 容器类型不受支持。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 30 </td> 
@@ -205,8 +208,8 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   </tr> 
   <tr> 
    <td colname="col1"> 35 </td> 
-   <td colname="col2"><span class="codeph"> VIDEO_PROFILE_NOT_SUPPORTED</span> </td> 
-   <td colname="col3"> 不支持的视频配置文件。 </td> 
+   <td colname="col2"><span class="codeph"> VIDEO_用户档案_NOT_SUPPORTED</span> </td> 
+   <td colname="col3"> 不支持的视频用户档案。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 36 </td> 
@@ -221,7 +224,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr> 
    <td colname="col1"> 38 </td> 
    <td colname="col2"><span class="codeph"> CALLED_FROM_WRONG_THREAD</span> </td> 
-   <td colname="col3"> 无法从错误线程调用API。 主要适用于仅从主线程调用的API元素。 </td> 
+   <td colname="col3"> 无法从错误线程调用API。 主要适用于应仅从主线程调用的API元素。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 39 </td> 
@@ -231,7 +234,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr> 
    <td colname="col1"> 40 </td> 
    <td colname="col2"><span class="codeph"> 中止</span> </td> 
-   <td colname="col3"> 操作已由显式中止或销毁调用中止。 </td> 
+   <td colname="col3"> 显式中止或销毁调用中止了操作。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 41 </td> 
@@ -250,18 +253,18 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   </tr> 
   <tr> 
    <td colname="col1"> 44 </td> 
-   <td colname="col2"><span class="codeph"> NETWORK_DOWN </span> </td> 
-   <td colname="col3"> 用户的网络连接断开。 播放可随时停止，并将在连接可用时恢复。 </td> 
+   <td colname="col2"><span class="codeph"> NETWORK_DOWN  </span> </td> 
+   <td colname="col3"> 用户的网络连接已关闭。 回放可随时停止，并将在连接可用时恢复。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 45 </td> 
-   <td colname="col2"><span class="codeph"> NO_USABLE_BITRATE_PROFILE</span> </td> 
-   <td colname="col3"> 在流中找不到可用的比特率配置文件。 </td> 
+   <td colname="col2"><span class="codeph"> NO_USABLE_BITRATE_用户档案</span> </td> 
+   <td colname="col3"> 在流中找不到可用比特率用户档案。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 46 </td> 
    <td colname="col2"><span class="codeph"> BAD_MANIFEST_SIGNATURE</span> </td> 
-   <td colname="col3"> 清单的签名不好。 它未通过清单签名测试。 </td> 
+   <td colname="col3"> 清单有不良的签名。 清单签名测试失败。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 47 </td> 
@@ -275,13 +278,13 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   </tr> 
   <tr> 
    <td colname="col1"> 49 </td> 
-   <td colname="col2"><span class="codeph"> SWITCH_TO_ANSYMETRIC_PROFILE</span> </td> 
-   <td colname="col3"> DRM正在切换到非对称配置文件。 所有配置文件预计在持续时间内保持一致。 否则，将引发此警告，并且回放中可能出现跳转。 </td> 
+   <td colname="col2"><span class="codeph"> SWITCH_TO_ANSYMET_用户档案</span> </td> 
+   <td colname="col3"> DRM正在切换到非对称用户档案。 预计所有用户档案在持续时间内保持一致。 否则，将引发此警告，并且回放中可能出现跳转。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 50 </td> 
    <td colname="col2"><span class="codeph"> LIVE_WINDOW_MOVED_BACKWARD</span> </td> 
-   <td colname="col3"> “实时”窗口应仅向前移动。 否则，将引发此警告，并且不读取窗口。 因此，播放中可能会出现跳转（或停止／长暂停）。 </td> 
+   <td colname="col3"> “实时”窗口应仅向前移动。 否则，将引发此警告，并且不会读取窗口。 因此，播放中可能会出现跳转（或停止／长暂停）。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 51 </td> 
@@ -296,22 +299,22 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr> 
    <td colname="col1"> 53 </td> 
    <td colname="col2"><span class="codeph"> PERIOD_HOLD</span> </td> 
-   <td colname="col3"> 媒体阅读器无法进一步阅读，因为它已达到 <span class="codeph"> setHoldAt</span> API设置的时间。 </td> 
+   <td colname="col3"> 媒体读取器无法进一步读取，因为它已达到由<span class="codeph"> setHoldAt</span> API设置的时间。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 54 </td> 
-   <td colname="col2"><span class="codeph"> LIVE_HOLD </span> </td> 
-   <td colname="col3"> 介质阅读器无法加载区段，因为它已到达实时窗口的末尾。 当服务器向实时窗口广告新媒体时，将恢复段加载。 通常，在以下情况下会到达此状态： 
+   <td colname="col2"><span class="codeph"> LIVE_HOLD  </span> </td> 
+   <td colname="col3"> 介质读取器无法加载区段，因为它已到达实时窗口的末尾。 当服务器向实时窗口广告新媒体时，将恢复段加载。 通常，在以下情况下会到达此状态： 
     <ul id="ul_FCFF658EDA4144E59970B317D6DEB624"> 
-     <li id="li_2F6EEEB782D54CD999BC7CC7C0B78B48">bufferTime <span class="codeph"> 太高</span> （等于或高于实时窗口持续时间）。 </li> 
-     <li id="li_25CE97115ED64E44AA89977FB5F0DCF7">一个或多个插入／擦除API的组合替换了比添加的介质多的介质。 </li> 
-     <li id="li_1B14716B2157492AB1859306D1250523">下一个时段是具有待定介质替换的实时时段(由于 <span class="codeph"> InsertBy</span> API调用) </li> 
+     <li id="li_2F6EEEB782D54CD999BC7CC7C0B78B48"><span class="codeph"> bufferTime</span>过高（等于或高于实时窗口持续时间）。 </li> 
+     <li id="li_25CE97115ED64E44AA89977FB5F0DCF7">一个或多个插入／擦除API的组合替换了比它添加的更多媒体。 </li> 
+     <li id="li_1B14716B2157492AB1859306D1250523">下一个时段是具有挂起的介质替换的实时时段（由于<span class="codeph"> InsertBy</span> API调用） </li> 
     </ul> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 55 </td> 
-   <td colname="col2"><span class="codeph"> BAD_MEDIA_INTERLEARG </span> </td> 
-   <td colname="col3"> 媒体中的音频和视频交织没有正确完成。 这是打包错误。 当差值超过两秒时，将调度警告。 </td> 
+   <td colname="col2"><span class="codeph"> BAD_MEDIA_INTERLEARG  </span> </td> 
+   <td colname="col3"> 媒体中的音频和视频交织操作不正确。 这是打包错误。 当差值超过两秒时，将发出警告。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 56 </td> 
@@ -321,12 +324,12 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr> 
    <td colname="col1"> 57 </td> 
    <td colname="col2"><span class="codeph"> PLAYBACK_NOT_AUTHORIZED</span> </td> 
-   <td colname="col3"> Flash Player中尚未启用HLS播放。 请参 <span class="codeph"> 阅AuthorizedFeatures.enableHLSPlayback</span>。 </td> 
+   <td colname="col3"> Flash Player中尚未启用HLS播放。 请参阅<span class="codeph"> AuthorizedFeatures.enableHLSPlayback</span>。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 58 </td> 
    <td colname="col2"><span class="codeph"> BAD_MEDIA_SAMPLE_FOUND</span> </td> 
-   <td colname="col3"> 解码器接收了无法解码的坏样本。 这通常不是致命错误，但表示音频／视频中可能有故障。 此错误的实例过多表示编码错误或文件错误。 </td> 
+   <td colname="col3"> 解码器接收到无法解码的坏样本。 这通常不是致命错误，但表示音频／视频中可能出现故障。 此错误的实例过多表示编码错误或文件错误。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 59 </td> 
@@ -336,17 +339,17 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr> 
    <td colname="col1"> 60 </td> 
    <td colname="col2"><span class="codeph"> POSTROLL_WITH_LIVE_NOT_ALLOWED</span> </td> 
-   <td colname="col3"> 实时介质上不允许进行回滚后插入。 但是，在服务器将媒体标记为完整后，才允许使用它们。 </td> 
+   <td colname="col3"> 实时媒体上不允许进行回滚后插入。 但是，当服务器将媒体标记为完整后，才允许使用这些标记。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 61 </td> 
+   <td colname="col1"> 81 </td> 
    <td colname="col2"><span class="codeph"> INTERNAL_ERROR</span> </td> 
    <td colname="col3"> 这是一个非常罕见的问题，永远不会发生。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 62 </td> 
    <td colname="col2"><span class="codeph"> SPS_PPS_FOUND_OUTSIDE_AVCC</span> </td> 
-   <td colname="col3"> 流不遵循始终将H264 SPS/PPS放入AVCC的打包建议。 可能出现搜索／播放问题。 </td> 
+   <td colname="col3"> 该流不遵循始终将H264 SPS/PPS放入AVCC的打包建议。 可能出现搜索／播放问题。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 63 </td> 
@@ -356,16 +359,16 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr> 
    <td colname="col1"> 64 </td> 
    <td colname="col2"><span class="codeph"> RENDITION_M3U8_ERROR</span> </td> 
-   <td colname="col3"> 播放列表加载时出错。 这仅适用于AVE，而不适用于FlashPlayer。 </td> 
+   <td colname="col3"> 加载再现播放列表时出错。 这只适用于AVE，而不适用于FlashPlayer。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 65 </td> 
    <td colname="col2"><span class="codeph"> NULL_OPERATION</span> </td> 
-   <td colname="col3"> 操作不执行任何操作。 </td> 
+   <td colname="col3"> 操作没有任何作用。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 66 </td> 
-   <td colname="col2"><span class="codeph"> SEGMENT_BLIPPED_ON_FAILURE</span> </td> 
+   <td colname="col2"><span class="codeph"> SEGMENT_BLIPTED_ON_FAILURE</span> </td> 
    <td colname="col3"> 无法播放区段，失败时会跳过区段。 </td> 
   </tr> 
   <tr> 
@@ -375,8 +378,8 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   </tr> 
   <tr> 
    <td colname="col1"> 68 </td> 
-   <td colname="col2"><span class="codeph"> PROTOCOL_NOT_SUPPORTED </span> </td> 
-   <td colname="col3"> 不支持URL中使用的Web协议。 </td> 
+   <td colname="col2"><span class="codeph"> PROTOCOL_NOT_SUPPORTED  </span> </td> 
+   <td colname="col3"> URL中使用的Web协议不受支持。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 69 </td> 
@@ -385,7 +388,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   </tr> 
   <tr> 
    <td colname="col1"> 70 </td> 
-   <td colname="col2"><span class="codeph"> MANIFEST_FILE_UNEXPECTEDLY_CHANGED</span> </td> 
+   <td colname="col2"><span class="codeph"> MANIFEST_FILE_EXPECTEDLY_CHANGED</span> </td> 
    <td colname="col3"> 清单文件发生意外更改。 </td> 
   </tr> 
   <tr> 
@@ -415,8 +418,8 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   </tr> 
   <tr> 
    <td colname="col1"> 76 </td> 
-   <td colname="col2"><span class="codeph"> AUDIO_START_ERROR</span> </td> 
-   <td colname="col3"> 无法启动音频。 </td> 
+   <td colname="col2"><span class="codeph"> AUDIO_开始_ERROR</span> </td> 
+   <td colname="col3"> 无法开始音频。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 77 </td> 
@@ -424,7 +427,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
    <td colname="col3"> 内部数据结构中不存在音频接收器。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 78 </td> 
+   <td colname="col1"> 58 </td> 
    <td colname="col2"><span class="codeph"> FILE_OPEN_ERROR</span> </td> 
    <td colname="col3"> 无法打开文件。 </td> 
   </tr> 
@@ -439,13 +442,13 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
    <td colname="col3"> 无法从文件读取。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 81 </td> 
+   <td colname="col1"> 61 </td> 
    <td colname="col2"><span class="codeph"> ID3PARSE_ERROR</span> </td> 
    <td colname="col3"> 解析ID3数据时出错。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 82 </td> 
-   <td colname="col2"><span class="codeph"> SECURITY_ERROR </span> </td> 
+   <td colname="col2"><span class="codeph"> SECURITY_ERROR  </span> </td> 
    <td colname="col3"> 由于安全限制，加载内容失败。 </td> 
   </tr> 
   <tr> 
@@ -455,17 +458,17 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   </tr> 
   <tr> 
    <td colname="col1"> 84 </td> 
-   <td colname="col2"><span class="codeph"> AUDIO_ONLY_STREAM_START</span> </td> 
+   <td colname="col2"><span class="codeph"> AUDIO_ONLY_STREAM_开始</span> </td> 
    <td colname="col3"> 该流已切换到纯音频流。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 85 </td> 
    <td colname="col2"><span class="codeph"> AUDIO_ONLY_STREAM_END</span> </td> 
-   <td colname="col3"> 该流已从纯音频切换到带有视频的流。 </td> 
+   <td colname="col3"> 该流已从纯音频切换为带视频的流。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 87 </td> 
-   <td colname="col2"><span class="codeph"> KEY_NOT_FOUND </span> </td> 
+   <td colname="col2"><span class="codeph"> KEY_NOT_FOUND  </span> </td> 
    <td colname="col3"> 找不到密钥。 </td> 
   </tr> 
   <tr> 
@@ -485,7 +488,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   </tr> 
   <tr> 
    <td colname="col1"> 91 </td> 
-   <td colname="col2"> <span class="codeph"> UNJERVED_TIME_DINSCURATION_FOUND</span> </td> 
+   <td colname="col2"> <span class="codeph"> UNJERED_TIME_DINVESITION_FOUND</span> </td> 
    <td colname="col3"> 发现未报告的时间不连续性。 </td> 
   </tr> 
  </tbody> 
