@@ -11,13 +11,13 @@ ht-degree: 0%
 ---
 
 
-# 更新现有策略 {#update-an-existing-policy}
+# 更新现有策略{#update-an-existing-policy}
 
-要更新现有策略，请从下拉列表中选择文件名，然后单击 **[!UICONTROL Open]**。 修改任何所需的策略属性。 除与身份验证和许可证链接相关的属性外，可以修改所有属性。
+要更新现有策略，请从下拉列表中选择文件名，然后单击&#x200B;**[!UICONTROL Open]**。 修改任何所需的策略属性。 除与身份验证和许可证链接相关的属性外，可以修改所有属性。
 
-完成后，单击 **[!UICONTROL Save]**。 目录中的策略 [!DNL Resource] 文件将替换为更新的版本。
+完成后，单击&#x200B;**[!UICONTROL Save]**。 [!DNL Resource]目录中的策略文件将替换为更新的版本。
 
 >[!NOTE]
 >
->即使更改了策略名称，也不会修改“目录”中 [!DNL Resource] 文件的名称。
+>即使更改了策略名称，[!DNL Resource]目录中的文件名称也不会被修改。
 
