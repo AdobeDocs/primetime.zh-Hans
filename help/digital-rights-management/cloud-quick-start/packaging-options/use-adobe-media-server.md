@@ -1,16 +1,19 @@
 ---
-seo-title: 使用Adobe Media Server
-title: 使用Adobe Media Server
+seo-title: 使用Adobe媒体服务器
+title: 使用Adobe媒体服务器
 uuid: 272b9919-6ae4-4adb-aab5-28b1f92aa9fe
 translation-type: tm+mt
 source-git-commit: 635e2893439c5459907c54d2c3bd86f58da0eec5
+workflow-type: tm+mt
+source-wordcount: '66'
+ht-degree: 3%
 
 ---
 
 
-# 使用Adobe Media Server {#use-adobe-media-server}
+# 使用Adobe媒体服务器{#use-adobe-media-server}
 
-某些客户可能已使用Adobe Media Server，并希望维护该内容交付模型。 如果出现这种情况，可以从此工具包中包含的任一配置文件中获取所需的Primetime Cloud DRM特定数据，以填充AMS的JIT(Just In Time)XML配置。
+某些客户可能已在使用Adobe媒体服务器，并希望维护该内容投放模型。 如果出现这种情况，可以从此工具包中包含的任何配置文件中获取所需的Primetime Cloud DRM特定数据，以填充AMS的JIT（即时）XML配置。
 
 例如：
 
