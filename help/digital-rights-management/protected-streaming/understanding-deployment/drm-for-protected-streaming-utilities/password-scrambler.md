@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# 密码剪贴器 {#password-scrambler}
+# 密码扰码器{#password-scrambler}
 
 密码扰码器实用程序加密Adobe PrimetimeDRM服务器的受保护流配置文件的密码。
 
@@ -44,7 +44,7 @@ Encrypted password:
 </i class="+ topic>
 ```
 
-您在和文件中指定的所 [!DNL flashaccess-global.xml] 有口 [!DNL flashaccess-tenant.xml] 令必须加密。
+必须在[!DNL flashaccess-global.xml]和[!DNL flashaccess-tenant.xml]文件中指定的所有口令都必须经过加密。
 
 >[!NOTE]
 >
