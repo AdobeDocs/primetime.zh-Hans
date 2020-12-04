@@ -6,6 +6,9 @@ title: 缓冲
 uuid: da9498ee-c736-4093-97a2-250d3ad56d49
 translation-type: tm+mt
 source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+workflow-type: tm+mt
+source-wordcount: '69'
+ht-degree: 2%
 
 ---
 
@@ -14,7 +17,7 @@ source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
 
 您可以配置视觉元素以通知用户内容正在缓冲。
 
-聆听 `AdobePSDK.PSDKEventType.BUFFERING_BEGIN` 和活 `AdobePSDK.PSDKEventType.BUFFERING_END` 动。 例如：
+侦听`AdobePSDK.PSDKEventType.BUFFERING_BEGIN`和`AdobePSDK.PSDKEventType.BUFFERING_END`事件。 例如：
 
 ```js
 player.addEventListener(AdobePSDK.PSDKEventType.BUFFERING_BEGIN,  
@@ -30,7 +33,7 @@ player.addEventListener(AdobePSDK.PSDKEventType.BUFFERING_END,
                         });
 ```
 
-UI框架提供默认缓冲叠加行为实现，该实现可扩展，如下所示：
+UI框架提供默认缓冲叠加行为实现，可进行如下扩展：
 
 ```js
 // Using UI Framework 
