@@ -1,22 +1,25 @@
 ---
-description: Primetime DRM解决方案的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序还包括DRMHelper类，该类可用于使某些DRM操作更易于实现。
-seo-description: Primetime DRM解决方案的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序还包括DRMHelper类，该类可用于使某些DRM操作更易于实现。
+description: Primetime DRM解决方案的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序还包含一个DRMHelper类，该类可用于使某些DRM操作更易于实现。
+seo-description: Primetime DRM解决方案的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序还包含一个DRMHelper类，该类可用于使某些DRM操作更易于实现。
 seo-title: Primetime DRM界面概述
 title: Primetime DRM界面概述
 uuid: d77a98c8-c1f5-4fe3-8d0b-3d21e288f228
 translation-type: tm+mt
 source-git-commit: 812d04037c3b18f8d8cdd0d18430c686c3eee1ff
+workflow-type: tm+mt
+source-wordcount: '301'
+ht-degree: 0%
 
 ---
 
 
-# Primetime DRM界面概述 {#primetime-drm-interface-overview}
+# Primetime DRM接口概述{#primetime-drm-interface-overview}
 
-Primetime DRM解决方案的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序还包括DRMHelper类，该类可用于使某些DRM操作更易于实现。
+Primetime DRM解决方案的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序还包含一个DRMHelper类，该类可用于使某些DRM操作更易于实现。
 
 <!--<a id="section_4DD54E085AB345FE9BE00865E56B28DB"></a>-->
 
-Primetime DRM提供了一个可伸缩、高效的工作流，用于在TVSDK应用程序中实施内容保护。 通过为每个数字媒体文件创建许可证，您可以保护和管理视频内容的权限。
+Primetime DRM提供一个可伸缩、高效的工作流程，用于在TVSDK应用程序中实施内容保护。 通过为每个数字媒体文件创建许可证，您可以保护和管理视频内容的权利。
 
 有关详细信息，请参阅TVSDK包中包含的DRM示例播放器代码。
 
@@ -30,10 +33,10 @@ Primetime DRM提供了一个可伸缩、高效的工作流，用于在TVSDK应�
 
    >[!TIP]
    >
-   >此API仅在触发 `DRMManager` 后返回有效 `MediaPlayerEvent.DRM_METADATA` 对象。 如果在此事 `getDRMManager()` 件触发之前调用，它可能返回NULL。
+   >仅当`MediaPlayerEvent.DRM_METADATA`被触发后，此API才会返回有效的`DRMManager`对象。 如果在此事件触发之前调用`getDRMManager()`，它可能返回NULL。
 
-* 帮 `DRMHelper` 助程序类，在实现DRM工作流时非常有用。
-* 一种 `DRMHelper` 元数据加载器方法，当DRM元数据位于与媒体分离的URL中时，加载该元数据。
+* `DRMHelper`帮助类，在实现DRM工作流时非常有用。
+* `DRMHelper`元数据加载器方法，当DRM元数据位于与媒体分离的URL中时，加载该元数据。
 
    ```java
    public static void loadDRMMetadata(final DRMManager drmManager,  
@@ -41,7 +44,7 @@ Primetime DRM提供了一个可伸缩、高效的工作流，用于在TVSDK应�
       final DRMLoadMetadataListener loadMetadataListener);
    ```
 
-* 一种 `DRMHelper` 检查DRM元数据并确定是否需要身份验证的方法。
+* 一种`DRMHelper`方法，用于检查DRM元数据并确定是否需要身份验证。
 
    ```java
    /** 
@@ -80,8 +83,8 @@ Primetime DRM提供了一个可伸缩、高效的工作流，用于在TVSDK应�
    final DRMAuthenticationListener authenticationListener);
    ```
 
-* 通知应用程序各种DRM活动和状态的事件。
+* 通知您的应用程序各种DRM活动和状态的事件。
 
 <!--<a id="section_F58941D68EB94A5EBD1C7454D2A1B17A"></a>-->
 
-有关DRM的详细信息，请参阅 [DRM文档](https://helpx.adobe.com/primetime/user-guide.html)。
+有关DRM的详细信息，请参阅[DRM文档](https://helpx.adobe.com/primetime/user-guide.html)。
