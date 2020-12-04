@@ -7,6 +7,9 @@ title: 标准化规则
 uuid: e2a11466-41a3-44ba-abec-1a541df6c1a1
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '184'
+ht-degree: 1%
 
 ---
 
@@ -28,16 +31,16 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
  </thead>
  <tbody> 
   <tr> 
-   <td><span class="codeph"> type</span></td> 
+   <td><span class="codeph"> 类型</span></td> 
    <td><span class="codeph"> 字符串</span></td> 
    <td><span class="codeph"> 标准化</span></td> 
-   <td>该值必须始终为标准 <span class="codeph"> 化</span>。</td> 
+   <td>值必须始终为<span class="codeph"> normalize</span>。</td> 
   </tr> 
   <tr> 
-   <td><span class="codeph"> 项目</span></td> 
+   <td><span class="codeph"> 物料</span></td> 
    <td><span class="codeph"> 字符串</span></td> 
    <td><span class="codeph"> 主机</span></td> 
-   <td>当前仅支 <span class="codeph"> 持主机</span> 。 当匹配和定义值属性时 <span class="codeph"> ,</span> 此属性必 <span class="codeph"> 须存在</span> 。</td> 
+   <td>目前仅支持<span class="codeph">主机</span>。 当<span class="codeph">匹配</span>和<span class="codeph">值</span>属性时，此属性必须存在。</td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> matches</span></td> 
@@ -45,31 +48,31 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
    <td></td> 
    <td>可能的值：
     <ul id="ul_tnf_2hx_hz"> 
-     <li><span class="codeph"> eq</span> —— 等于</li> 
-     <li><span class="codeph"> ne</span> —— 不等于</li> 
+     <li><span class="codeph"> eq</span> -等号</li> 
+     <li><span class="codeph"> ne</span> -不等于</li> 
      <li><span class="codeph"> co</span> - contains</li> 
-     <li><span class="codeph"> nc</span> —— 不包含</li> 
-     <li><span class="codeph"> sw</span> —— 开始于</li> 
-     <li><span class="codeph"> ew</span> —— 结束于</li> 
+     <li><span class="codeph"> nc</span> -不包含</li> 
+     <li><span class="codeph"> sw</span> -开始</li> 
+     <li><span class="codeph"> 新</span> 的——结尾为</li> 
     </ul></td> 
   </tr> 
   <tr> 
-   <td><span class="codeph"> values</span></td> 
+   <td><span class="codeph"> 值</span></td> 
    <td><span class="codeph"> 阵列</span></td> 
    <td></td> 
-   <td>TVSDK将使用源创 <span class="codeph"> 作项目上的</span> matches <span class="codeph"> 属性</span> ，并与此数组中定义的值匹配。</td> 
+   <td>TVSDK将使用源创意的<span class="codeph">项</span>上的<span class="codeph">匹配</span>属性，并与此数组中定义的值匹配。</td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> 查找</span></td> 
    <td><span class="codeph"> 正则</span></td> 
    <td></td> 
-   <td> 要在源创意URL上应用以匹配的正则表达式。</td> 
+   <td> 要在源创意URL上应用以匹配的常规表达式。</td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> 替换</span></td> 
    <td><span class="codeph"> 正则</span></td> 
    <td></td> 
-   <td> 要在源创意URL上应用并基于匹配进行替换的正则表达式。</td> 
+   <td> 要基于匹配项应用于源创意URL以替换的常规表达式。</td> 
   </tr> 
  </tbody> 
 </table>
