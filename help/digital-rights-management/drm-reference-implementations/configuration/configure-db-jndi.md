@@ -19,44 +19,44 @@ ht-degree: 0%
 
 1. 调出MySQL命令行。
 
-   **在Windows上——单** 击 **[!UICONTROL Window's Start Menu]** > **[!UICONTROL MySQL]** > **[!UICONTROL MySQL Server 5.1]** > **[!UICONTROL MySQL Command Line Client]**
+   **在Windows上-** 单  **[!UICONTROL Window's Start Menu]** 击>  **[!UICONTROL MySQL]** >  **[!UICONTROL MySQL Server 5.1]** >  **[!UICONTROL MySQL Command Line Client]**
 
    **在Linux等上。** -类型 `MySQL`。
 
 1. 执行以下SQL脚本：
 
-   mysql>源“ `"[DRM SDK DVD]\Reference Implementation\Server\Reference Implementation Server\dbscript\createsampledb.sql" dbscript\createsampledb.sql`”
+   mysql>源&quot;`"[DRM SDK DVD]\Reference Implementation\Server\Reference Implementation Server\dbscript\createsampledb.sql" dbscript\createsampledb.sql`&quot;
 
-   此脚本添加用户帐户 `dbuser`、通过Web应用程序建立连接并创建数据库模式。
-
-   >[!NOTE]
-   >
-   >确保脚本末尾 `;`没有分号()。
-
-1. 编辑 `PopulateSampleDB.sql` 在表中填充示例数据的脚本，以包含测试数据。
-
-   此脚本位于文件 `[DRM SDK DVD]\Reference Implementation\Server\Reference Implementation Server\dbscript\ dbscript\` 夹中。
-1. 执行 [!DNL PopulateSampleDB] 脚本以填充数据，就像在步骤2中一样。
+   此脚本添加用户帐户`dbuser`，通过Web应用程序建立连接，并创建数据库模式。
 
    >[!NOTE]
    >
-   >第一次运行脚本时， [!DNL CreateSampleDB.sql] 会出现以下错误：
+   >确保脚本末尾没有分号(`;`)。
+
+1. 编辑`PopulateSampleDB.sql`脚本，该脚本在表中填充示例数据以包含测试数据。
+
+   此脚本位于`[DRM SDK DVD]\Reference Implementation\Server\Reference Implementation Server\dbscript\ dbscript\`文件夹中。
+1. 执行[!DNL PopulateSampleDB]脚本以填充数据，就像在步骤2中一样。
+
+   >[!NOTE]
+   >
+   >第一次运行[!DNL CreateSampleDB.sql]脚本时，发生以下错误：
 
    您可以安全地忽略此错误。 它仅在您第一次运行此脚本时发生。
 
 您需要配置使用Jakarta-Commons数据库连接池的数据库连接池(DBCP)。 将JNDI数据源TestDB配置为利用此应用程序服务器连接池。 要更改数据库连接以指向不在localhost上的MySQL服务器，请修改以下文件之一：
 
-* 文 [!DNL META-INF\context.xml] 件，指定文件中许可证服务器数据库的位置、用户名和口 [!DNL flashaccess.war] 令。
+* [!DNL META-INF\context.xml]文件，它指定许可证服务器数据库在[!DNL flashaccess.war]文件中的位置、用户名和口令。
 
-* 文 `[DRM SDK DVD]\Reference Implementation\Server\Reference Implementation Server\refimpl\WebContent/META-INF\context.xml` 件。
+* `[DRM SDK DVD]\Reference Implementation\Server\Reference Implementation Server\refimpl\WebContent/META-INF\context.xml`文件。
 
 并使用更新的文件重新创建WAR文件。
 
-要更改这些参数中的任何一个，请 [!DNL context.xml] 编辑目录 [!DNL WebContent] 中的文件，然后使用Ant脚本重新创建WAR文件。 要调整数据库，请更改此文件中的JNDI数据源设置。
+要更改这些参数中的任何一个，请编辑[!DNL WebContent]目录中的[!DNL context.xml]文件，然后使用Ant脚本重新创建WAR文件。 要调整数据库，请更改此文件中的JNDI数据源设置。
 
-如果在Eclipse中调试引用实施项目，请添 `$CATALINA_HOME\lib\tomcat-dbcp.jar` 加到运行／调试配置中。
+如果在Eclipse中调试引用实施项目，请将`$CATALINA_HOME\lib\tomcat-dbcp.jar`添加到运行／调试配置。
 
 >[!NOTE]
 >
->如果在独立 [!DNL flashaccess.war] 的Tomcat 6.0服务器上运行该文件，则不需要执行此步骤。
+>如果在独立的Tomcat 6.0服务器上运行[!DNL flashaccess.war]文件，则不需要执行此步骤。
 
