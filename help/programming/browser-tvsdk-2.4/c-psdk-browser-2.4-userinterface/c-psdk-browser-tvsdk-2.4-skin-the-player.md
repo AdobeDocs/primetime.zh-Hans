@@ -1,22 +1,25 @@
 ---
-description: 您可以使用以下信息帮助您为播放器设置外观。 对于每个可视结构，在默认行为中都会提及相应的行为。
-seo-description: 您可以使用以下信息帮助您为播放器设置外观。 对于每个可视结构，在默认行为中都会提及相应的行为。
+description: 您可以使用以下信息帮助您为播放器设置外观。 对于每个可视结构，在默认行为中会提到相应的行为。
+seo-description: 您可以使用以下信息帮助您为播放器设置外观。 对于每个可视结构，在默认行为中会提到相应的行为。
 seo-title: 设置播放器外观
 title: 设置播放器外观
 uuid: 516ff846-d76d-4062-b64b-3032f7a70470
 translation-type: tm+mt
 source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
+workflow-type: tm+mt
+source-wordcount: '1449'
+ht-degree: 0%
 
 ---
 
 
-# 设置播放器外观 {#skinning-the-player}
+# 设置播放器{#skinning-the-player}的外观
 
-您可以使用以下信息帮助您为播放器设置外观。 对于每个可视结构，在默认行为中都会提及相应的行为。
+您可以使用以下信息帮助您为播放器设置外观。 对于每个可视结构，在默认行为中会提到相应的行为。
 
 >[!IMPORTANT]
 >
->本文档中的外观设置详细信息适用于由UI框架创建的默认UI元素。 如果播放器修改了这些元素，则还需要更改外观元素。
+>此文档中的外观详细信息针对由UI框架创建的默认UI元素。 如果播放器修改了这些元素，则还需要更改外观设置元素。
 
 ## 容器div {#section_99B0D598219D4150B57E97D5381B118F}
 
@@ -24,7 +27,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
 
 >[!TIP]
 >
->文件中列出了这些 `common-styles.css` div。
+>这些div列在`common-styles.css`文件中。
 
 以下是主div的样式：
 
@@ -49,7 +52,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
    <td colname="col2"> <p>在PIP模式处于活动状态时使用。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1">默认行为是videoBehavior <span class="codeph"></span>。 </td> 
+   <td colname="col1">默认行为为<span class="codeph"> videoBehavior</span>。 </td> 
    <td colname="col2"> </td> 
   </tr> 
   <tr> 
@@ -61,35 +64,35 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
    <td colname="col2"> <p>播放PIP视频的div的样式。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"><span class="codeph"> .view-as-main-video</span> </td> 
-   <td colname="col2"> <p>当初始PIP被交换并显示为主视频时，应用于该PIP。 </p> </td> 
+   <td colname="col1"><span class="codeph"> .视图为主视频</span> </td> 
+   <td colname="col2"> <p>当初始PIP被交换并显示为主视频时，应用于初始PIP。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p><b>多视频视图</b> </p> </td> 
    <td colname="col2"> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"><span class="codeph"> .ptp-multi-view-container</span> </td> 
+   <td colname="col1"><span class="codeph"> .ptp-multi-视图-容器</span> </td> 
    <td colname="col2"> <p>用于多视频视图。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"><span class="codeph"> .ptp-multi-view-view</span> </td> 
-   <td colname="col2"> <p>放置在多视图中每个视频上的通用CSS样式。 </p> </td> 
+   <td colname="col1"><span class="codeph"> .ptp-multi-视图-视图</span> </td> 
+   <td colname="col2"> <p>放置在多视图中每个视频上的通用css样式。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> .multiview</span> </td> 
-   <td colname="col2"> <p>在多视图中容纳每个视频的容器处于多视图中时。 </p> </td> 
+   <td colname="col2"> <p>当多视图中存放每个视频的容器处于多视图中时。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-## 各种控件 {#section_E9E4A8E3AEBF4BDC89840B84B3B0E737}
+## 各种控件{#section_E9E4A8E3AEBF4BDC89840B84B3B0E737}
 
 以下是通用播放器控件的样式：
 
 >[!TIP]
 >
->这些样式列在文件 `default-controls.css` 中。
+>这些样式列在`default-controls.css`文件中。
 
 <table id="table_0ACB6BAB5DAD42DBBD18CA7C0385A261"> 
  <thead> 
@@ -101,7 +104,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  <tbody> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-control</span> </td> 
-   <td colname="col2"> <p>适用于除擦洗器和空格外的控件栏上的所有控件 </p> </td> 
+   <td colname="col2"> <p>适用于控制栏上除擦洗器和空格外的所有控件 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-input-slider</span> </td> 
@@ -112,7 +115,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
    <td colname="col2"> <p>面板标题 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"><span class="codeph"> ptp-vertical-list-menu-item</span> </td> 
+   <td colname="col1"><span class="codeph"> ptp-vertical-列表-menu-item</span> </td> 
    <td colname="col2"> <p>垂直样式的菜单列表 </p> </td> 
   </tr> 
   <tr> 
@@ -121,7 +124,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-hr-separator</span> </td> 
-   <td colname="col2"> <p>水平分隔线 </p> </td> 
+   <td colname="col2"> <p>水平规则分隔符 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-panel-title</span> </td> 
@@ -129,7 +132,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-panel-close-btn</span> </td> 
-   <td colname="col2"> <p>用于关闭面板的按钮 </p> </td> 
+   <td colname="col2"> <p>关闭面板的按钮 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-button-background</span> </td> 
@@ -142,9 +145,9 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </tbody> 
 </table>
 
-## 控制栏 {#section_B683B51EC746484B9AA90CB481D637BD}
+## 控制栏{#section_B683B51EC746484B9AA90CB481D637BD}
 
-以下是控件栏的样式：
+下面是控件栏的样式：
 
 <table id="table_681E13F264674F849FAA2523EB65F094"> 
  <thead> 
@@ -161,13 +164,13 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </tbody> 
 </table>
 
-## 功能按钮 {#section_57FFD242FF674EA2867BCF6CA7F6B855}
+## 功能按钮{#section_57FFD242FF674EA2867BCF6CA7F6B855}
 
 >[!NOTE]
 >
 >下表中的字母与本图中的字母相对应。
 
-以下是拖拽栏的样式：
+下面是拖拽栏的样式：
 
 <table id="table_2207AD72E72A47FFA03AC748F06A54FD"> 
  <thead> 
@@ -187,7 +190,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-scrub-bar .ptp-seek-to-bar</span> </td> 
-   <td colname="col2"> <p>用户搜索拖拽栏时的状态 </p> </td> 
+   <td colname="col2"> <p>当用户正在搜索时划动栏的状态 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-scrub-bar .ptp-playback-progress-bar</span> </td> 
@@ -216,7 +219,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
 * `playProgressBarBehavior`
 * `seekToBarBehavior`
 
-## 播放／暂停按钮 {#section_F1F40A948D0049C5A4D8EA5F2A475CAA}
+## 播放／暂停按钮{#section_F1F40A948D0049C5A4D8EA5F2A475CAA}
 
 以下是播放／暂停按钮的样式：
 
@@ -234,18 +237,18 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> ptp-btn-playpause.pause-state</span> </td>
-   <td colname="col2"> <p><span class="codeph"> ptp-btn-playpause</span> in pause state </p> </td>
+   <td colname="col2"> <p><span class="codeph"> 暂停状态</span> 中的ptp-btn-playpaus </p> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> ptp-btn-playpause.pause-state</span> </td> 
-   <td colname="col2"> <p><span class="codeph"> ptp-btn-playpause</span> in play state </p> </td>
+   <td colname="col2"> <p><span class="codeph"> ptp-btn-</span> playpaus处于播放状态 </p> </td>
   </tr>
  </tbody>
 </table>
 
-默认行为为 `playPauseButtonBehavior`。
+默认行为为`playPauseButtonBehavior`。
 
-## 卷 {#section_23E17BD2343948F8A2CEE1C8BEE2F874}
+## 卷{#section_23E17BD2343948F8A2CEE1C8BEE2F874}
 
 以下是配置卷按钮的样式：
 
@@ -260,8 +263,8 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
   <tr>
    <td colname="col1"> <p><span class="codeph"> .ptp-volume-control</span>
      <ul id="ul_B12ADDFB83EA40FD8B4E92AF418AA4B4">
-      <li id="li_7DA8143A69ED4E7D8A560B9FF75D6BA7"><span class="codeph"> .expanded</span> </li>
-      <li id="li_D8CCAD45D81C4850B6903FE261833AE6"><span class="codeph"> .vertical</span> </li>
+      <li id="li_7DA8143A69ED4E7D8A560B9FF75D6BA7"><span class="codeph"> 已扩展</span> </li>
+      <li id="li_D8CCAD45D81C4850B6903FE261833AE6"><span class="codeph"> 垂直</span> </li>
      </ul> </p> </td>
    <td colname="col2"> <p>控制栏上的音量控制
      <ul id="ul_2C60F018FDCB458885738AC378C02F61">
@@ -271,7 +274,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> ptp-btn-volume</span> </td>
-   <td colname="col2"> <p>控制栏上的“音量”按钮 </p> </td>
+   <td colname="col2"> <p>控制栏上的音量按钮 </p> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> ptp-btn-volume.min-volume-state</span> </td>
@@ -284,7 +287,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </tbody>
 </table>
 
-默认行为是 `volumeBehavior` 和 `muteButtonBehavior`。
+默认行为为`volumeBehavior`和`muteButtonBehavior`。
 
 以下是音量滑块的样式：
 
@@ -307,9 +310,9 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </tbody>
 </table>
 
-默认行为为 `volumeSliderBehavior`。
+默认行为为`volumeSliderBehavior`。
 
-## 后退 {#section_06EE608FC54A4CF5B5DF9DC743CFC740}
+## 倒回{#section_06EE608FC54A4CF5B5DF9DC743CFC740}
 
 下面是后退按钮的样式：
 
@@ -328,11 +331,11 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </tbody>
 </table>
 
-默认行为为 `rewindButtonBehavior`。
+默认行为为`rewindButtonBehavior`。
 
-## 时间 {#section_0E6549B3DF6D4C10947D445A5F8EEA7F}
+## 时间{#section_0E6549B3DF6D4C10947D445A5F8EEA7F}
 
-以下样式用于在控件栏上显示剩余时间：
+以下是在控制栏上显示剩余时间的样式：
 
 <table id="table_CEE62BFF5FB04FDCBBE1331E0D727EBA">
  <thead>
@@ -349,9 +352,9 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
 </tbody>
 </table>
 
-默认行为为 `timeRemainingBehavior`。
+默认行为为`timeRemainingBehavior`。
 
-## 快速倒回 {#section_F6E6C65BD3BD493A89915DF9B92933BA}
+## 快速后退{#section_F6E6C65BD3BD493A89915DF9B92933BA}
 
 以下是快速后退按钮的样式：
 
@@ -370,9 +373,9 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </tbody>
 </table>
 
-默认行为为 `fastRewindButtonBehavior`。
+默认行为为`fastRewindButtonBehavior`。
 
-## 慢速倒回 {#section_38A22BB8681B430F8C6808C3BD21FB4E}
+## 慢速后退{#section_38A22BB8681B430F8C6808C3BD21FB4E}
 
 下面是慢速后退按钮的样式：
 
@@ -391,9 +394,9 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </tbody>
 </table>
 
-默认行为为 `slowRewindButtonBehavior`。
+默认行为为`slowRewindButtonBehavior`。
 
-## 慢进 {#section_92ACF092EECC4A5EAF6AA090C05E552E}
+## 慢进{#section_92ACF092EECC4A5EAF6AA090C05E552E}
 
 下面是慢进按钮的样式：
 
@@ -412,11 +415,11 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </tbody>
 </table>
 
-默认行为为 `slowForwardButtonBehavior`。
+默认行为为`slowForwardButtonBehavior`。
 
-## 快进 {#section_F90ED8B3739B49ACAB1F12DF18F0E4D6}
+## 快进{#section_F90ED8B3739B49ACAB1F12DF18F0E4D6}
 
-下面是快进按钮的样式：
+下面是快速前进按钮的样式：
 
 <table id="table_F166BD1E8B934B34AF3690BBBAD894B7">
  <thead>
@@ -433,9 +436,9 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </tbody>
 </table>
 
-默认行为为 `fastForwardButtonBehavior`。
+默认行为为`fastForwardButtonBehavior`。
 
-## 音轨 {#section_1CDF4FA5A1C14DB6B9C96579FFA1057C}
+## 音轨{#section_1CDF4FA5A1C14DB6B9C96579FFA1057C}
 
 以下是配置音轨的样式：
 
@@ -456,7 +459,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
    <td colname="col2"> <p>控制栏上的音轨按钮。 </p> </td>
   </tr>
   <tr>
-   <td colname="col1">默认行为是audioTrackButtonBehavior <span class="codeph"></span>。 </td>
+   <td colname="col1">默认行为为<span class="codeph"> audioTrackButtonBehavior</span>。 </td>
    <td colname="col2"> </td>
 </tr>
   <tr>
@@ -468,7 +471,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
    <td colname="col2"> <p>用于选择音轨的面板。 </p> </td>
   </tr>
   <tr>
-   <td colname="col1">默认行为是audioTrackSelectionPanelBehavior <span class="codeph"></span>。 </td>
+   <td colname="col1">默认行为为<span class="codeph"> audioTrackSelectionPanelBehavior</span>。 </td>
    <td colname="col2"> </td>
 </tr>
   <tr>
@@ -477,20 +480,20 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-audio-track-selection-header</span> </td>
-   <td colname="col2"> <p>ptp-audio-track-selection- <span class="codeph"> panel的标题</span>。 </p> </td>
+   <td colname="col2"> <p><span class="codeph"> ptp-audio-track-selection-panel</span>的标题。 </p> </td>
   </tr>
   <tr>
-   <td colname="col1"> <p><b>“音轨选择”菜单(N)</b> </p> </td>
+   <td colname="col1"> <p><b>音轨选择菜单(N)</b> </p> </td>
    <td colname="col2"> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-audio-track-selection-menu</span> </td>
-   <td colname="col2"> <p>ptp-audio-track-selection- <span class="codeph"> panel中的菜单项</span>。 </p> </td>
+   <td colname="col2"> <p><span class="codeph"> ptp-audio-track-selection-panel</span>中的菜单项。 </p> </td>
   </tr>
  </tbody>
 </table>
 
-## 共享 {#section_B2ADC76E76304A68AD648A00A12B676E}
+## 共享{#section_B2ADC76E76304A68AD648A00A12B676E}
 
 以下是配置共享的样式：
 
@@ -508,10 +511,10 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-btn-share-video</span> </td> 
-   <td colname="col2"> <p>将打开ptp-share-video-panel的控制栏上的社 <span class="codeph"> 交媒体共享按钮</span>。 </p> </td>
+   <td colname="col2"> <p>将打开<span class="codeph"> ptp-share-video-panel</span>的控件栏上的社交媒体共享按钮。 </p> </td>
   </tr>
   <tr>
-   <td colname="col1">默认行为是 <span class="codeph"> shareVideoButtonBehavior</span>。 </td>
+   <td colname="col1">默认行为为<span class="codeph"> shareVideoButtonBehavior</span>。 </td>
    <td colname="col2"> </td>
   </tr>
   <tr>
@@ -522,7 +525,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
    <td colname="col2"> <p>显示社交共享选项的面板。 </p> </td>
   </tr>
   <tr>
-   <td colname="col1">默认行为是 <span class="codeph"> shareVideoPanelBehavior</span>。 </td>
+   <td colname="col1">默认行为为<span class="codeph"> shareVideoPanelBehavior</span>。 </td>
    <td colname="col2"> </td>
   </tr>
   <tr>
@@ -531,15 +534,15 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-audio-track-selection-header</span> </td>
-   <td colname="col2"> <p>ptp-audio-track-selection- <span class="codeph"> panel的标题</span>。 </p> </td>
+   <td colname="col2"> <p><span class="codeph"> ptp-audio-track-selection-panel</span>的标题。 </p> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .share-video-panel-menu</span> </td>
-   <td colname="col2"> <p>ptp-share-video- <span class="codeph"> panel中的菜单</span> ，其中显示用于在社交媒体上共享内容的所有选项。 </p> </td>
+   <td colname="col2"> <p><span class="codeph"> ptp-share-video-panel</span>中的菜单，其中显示在社交媒体上共享内容的所有选项。 </p> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-share-video-panel-menu-item</span> </td>
-   <td colname="col2"> <p>共享——视频——面 <span class="codeph"> 板——菜单中的菜单项</span>。 </p> </td>
+   <td colname="col2"> <p><span class="codeph"> share-video-panel-menu</span>中的菜单项。 </p> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-btn-share-video-facebook</span> </td>
@@ -560,7 +563,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </tbody>
 </table>
 
-## 隐藏式字幕 {#section_A01BA68218564DA0B7D6BF51F045D7AB}
+## 隐藏式字幕{#section_A01BA68218564DA0B7D6BF51F045D7AB}
 
 以下是配置隐藏式字幕的样式：
 
@@ -573,15 +576,15 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </thead>
  <tbody>
   <tr>
-   <td colname="col1"> <p><b>隐藏式字幕按钮(R)</b> </p> </td>
+   <td colname="col1"> <p><b>隐藏字幕按钮(R)</b> </p> </td>
    <td colname="col2"> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-btn-closed-caption</span> </td>
-   <td colname="col2"> <p>控 <span class="uicontrol"> 件栏上的</span> “隐藏字幕”按钮。 </p> </td>
+   <td colname="col2"> <p>控制栏上的<span class="uicontrol">隐藏字幕</span>按钮。 </p> </td>
   </tr>
   <tr>
-   <td colname="col1">默认行为是closedCaptionButtonBehavior <span class="codeph"></span>。 </td>
+   <td colname="col1">默认行为为<span class="codeph"> closedCaptionButtonBehavior</span>。 </td>
    <td colname="col2"> </td>
   </tr>
   <tr>
@@ -594,39 +597,39 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-closed-caption-panel</span> </td>
-   <td colname="col2"> <p>隐藏式字幕面板。 </p> </td>
+   <td colname="col2"> <p>隐藏字幕面板。 </p> </td>
   </tr>
   <tr>
-   <td colname="col1">默认行为是 <span class="codeph"> closedCaptionLanguagePanelBehavior</span>。 </td>
+   <td colname="col1">默认行为为<span class="codeph"> closedCaptionLanguagePanelBehavior</span>。 </td>
    <td colname="col2"> </td>
 </tr>
   <tr>
-   <td colname="col1"> <p><b>隐藏式字幕语言(T)</b> </p> </td>
+   <td colname="col1"> <p><b>隐藏字幕语言(T)</b> </p> </td>
    <td colname="col2"> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-closed-caption-language-panel:</span> </td>
-   <td colname="col2"> <p>ptp-audio-track-selection- <span class="codeph"> panel的标题</span>。 </p> </td>
+   <td colname="col2"> <p><span class="codeph"> ptp-audio-track-selection-panel</span>的标题。 </p> </td>
   </tr>
   <tr>
-   <td colname="col1"><span class="codeph"> .ptp-closed-caption-language-menu: </span> </td>
-   <td colname="col2"> <p>隐藏式字幕面板中的菜单。 </p> </td>
+   <td colname="col1"><span class="codeph"> .ptp-closed-caption-language-menu:  </span> </td>
+   <td colname="col2"> <p>隐藏字幕面板中的菜单。 </p> </td>
   </tr>
   <tr>
-   <td colname="col1"> <p><b>隐藏式字幕选项(U)</b> </p> </td>
+   <td colname="col1"> <p><b>隐藏字幕选项(U)</b> </p> </td>
    <td colname="col2"> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-closed-caption-options-btn</span> </td>
-   <td colname="col2"> <p>隐藏 <span class="uicontrol"> 字幕选项</span> 面板中的“选项”按钮。 </p> </td>
+   <td colname="col2"> <p>隐藏字幕选项面板中的<span class="uicontrol">选项</span>按钮。 </p> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-closed-caption-options-panel</span> </td>
-   <td colname="col2"> <p>隐藏式字幕面板上的“选项”面板。 </p> </td>
+   <td colname="col2"> <p>隐藏字幕面板上的“选项”面板。 </p> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-closed-caption-menu-item</span> </td>
-   <td colname="col2"> <p>隐藏式字幕面板中的菜单项。 </p> </td>
+   <td colname="col2"> <p>隐藏字幕面板中的菜单项。 </p> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> 已选定</span> </td>
@@ -634,7 +637,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-closed-caption-done-btn</span> </td> 
-   <td colname="col2"> <p>隐藏 <span class="uicontrol"></span> 字幕选项面板标题中的“完成”按钮。 </p> </td> 
+   <td colname="col2"> <p>隐藏字幕选项面板标题中的<span class="uicontrol">完成</span>按钮。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ptp-closed-caption-options-menu</span> </td> 
@@ -645,7 +648,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
    <td colname="col2"> <p>隐藏式字幕选项的主菜单。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"><span class="codeph"> ptp-closed-caption-options-sub菜单</span> </td> 
+   <td colname="col1"><span class="codeph"> ptp-closed-caption-options-sub-menu</span> </td> 
    <td colname="col2"> <p>隐藏式字幕选项的子菜单。 </p> </td> 
   </tr> 
   <tr> 
@@ -654,15 +657,15 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-closed-caption-options-menu-separator</span> </td> 
-   <td colname="col2"> <p>隐藏式字幕选项分隔符。 </p> </td> 
+   <td colname="col2"> <p>隐藏字幕选项分隔符。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-closed-caption-options-menu-item</span> </td> 
-   <td colname="col2"> <p>隐藏式题注“ <span class="uicontrol"> 选项</span> ”菜单项。 </p> </td> 
+   <td colname="col2"> <p>隐藏字幕<span class="uicontrol">选项</span>菜单项。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"><span class="codeph"> ptp-closed-caption-preview-panel</span> </td> 
-   <td colname="col2"> <p>隐藏式字幕预览面板。 </p> </td> 
+   <td colname="col1"><span class="codeph"> ptp-closed-caption-预览面板</span> </td> 
+   <td colname="col2"> <p>隐藏字幕预览面板。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-closed-caption-options-footer</span> </td> 
@@ -670,22 +673,22 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-closed-caption-options-reset-button</span> </td> 
-   <td colname="col2"> <p>隐藏 <span class="uicontrol"> 式字幕选项</span> 面板页脚中的“重置”按钮。 </p> </td> 
+   <td colname="col2"> <p>隐藏字幕选项面板页脚中的<span class="uicontrol">重置</span>按钮。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-closed-caption-options-apply-button</span> </td> 
-   <td colname="col2"> <p>隐藏 <span class="uicontrol"> 式字幕选项</span> 面板页脚中的“应用”按钮。 </p> </td> 
+   <td colname="col2"> <p>隐藏字幕选项面板页脚中的<span class="uicontrol">应用</span>按钮。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1">默认行为是closedCaptionOptionsPanelBehavior <span class="codeph"></span>。 </td> 
+   <td colname="col1">默认行为为<span class="codeph"> closedCaptionOptionsPanelBehavior</span>。 </td> 
    <td colname="col2"> </td>
   </tr> 
  </tbody> 
 </table>
 
-## 更多选项(V) {#section_18E25CF8A8964FFD9026A8A833089CE3}
+## 更多选项(V){#section_18E25CF8A8964FFD9026A8A833089CE3}
 
-以下是用于配置其他选项的样式：
+以下是配置其他选项的样式：
 <table id="table_EC6EF88E2EDE4B8EBB1C14F87A6161FA"> 
  <thead> 
   <tr> 
@@ -696,11 +699,11 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  <tbody> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ptp-btn-more-options</span> </td> 
-   <td colname="col2"> <p>“更 <span class="uicontrol"> 多选项</span> ”按钮。 </p> </td> 
+   <td colname="col2"> <p><span class="uicontrol">更多选项</span>按钮。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ptp-btn-more-options.ptp-control-bar-btn</span> </td> 
-   <td colname="col2"> <p>控 <span class="codeph"> 制栏中使用的ptp-btn-more</span> -options。 </p> </td> 
+   <td colname="col2"> <p>控制栏中使用的<span class="codeph"> ptp-btn-more-options</span>。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ptp-more-options-control-panel</span> </td> 
@@ -717,11 +720,11 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </tbody> 
 </table>
 
-默认行为为 `moreOptionsButtonBehavior`。
+默认行为为`moreOptionsButtonBehavior`。
 
-## PIP按钮(W) {#section_1EE039DEA99541D391B30BD1DF72A83E}
+## PIP按钮(W){#section_1EE039DEA99541D391B30BD1DF72A83E}
 
-下面是按钮的样 [!UICONTROL PIP<] 式：
+以下是[!UICONTROL PIP<]按钮的样式：
 
 <table id="table_EE2E882C87E24D39B8D5347686F29E55"> 
  <thead> 
@@ -736,13 +739,13 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
    <td colname="col2"> <p>控制栏上的PIP按钮。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1">默认行为是 <span class="codeph"> pipButtonBehavior</span>。 </td> 
+   <td colname="col1">默认行为为<span class="codeph"> pipButtonBehavior</span>。 </td> 
    <td colname="col2"> </td>
   </tr> 
  </tbody> 
 </table>
 
-## 全屏(X) {#section_158A19DFB30E4432A67E4A74A7CBA563}
+## 全屏(X){#section_158A19DFB30E4432A67E4A74A7CBA563}
 
 以下是配置全屏的样式：
 
@@ -756,14 +759,14 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  <tbody> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ptp-btn-fullscreen</span> </td> 
-   <td colname="col2"> <p>控制 <span class="uicontrol"> 栏上的</span> “全屏”按钮。 </p> </td> 
+   <td colname="col2"> <p>控制栏上的<span class="uicontrol"> Full Screen</span>按钮。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-默认行为为 `fullScreenButtonBehavior`。
+默认行为为`fullScreenButtonBehavior`。
 
-## 技巧播放(Y) {#section_AE6F83BB7EE2497FB13CD94A8316192D}
+## 技巧播放(Y){#section_AE6F83BB7EE2497FB13CD94A8316192D}
 
 以下是配置特技播放的样式：
 
@@ -782,9 +785,9 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </tbody> 
 </table>
 
-默认行为为 `trickPlayRateDisplayBehavior`。
+默认行为为`trickPlayRateDisplayBehavior`。
 
-## 多视图(Z) {#section_58EFAE7263BA45D3A4E2AB7309A9CAA7}
+## 多视图(Z){#section_58EFAE7263BA45D3A4E2AB7309A9CAA7}
 
 以下是配置多视图的样式：
 
@@ -798,16 +801,16 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  <tbody> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ptp-btn-multiview</span> </td> 
-   <td colname="col2"> <p>控制 <span class="uicontrol"> 栏上的</span> “MultiView”按钮和“Multiview”按钮的 <span class="uicontrol"> 初始状态</span> 。 </p> </td> 
+   <td colname="col2"> <p>控制栏上的<span class="uicontrol"> MultiView</span>按钮和<span class="uicontrol"> Multiview</span>按钮的初始状态。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1">默认行为是 <span class="codeph"> multiViewButtonBehavior</span>。 </td> 
+   <td colname="col1">默认行为为<span class="codeph"> multiViewButtonBehavior</span>。 </td> 
    <td colname="col2"> </td> 
   </tr> 
  </tbody> 
 </table>
 
-## 缩略图 {#section_0AFD932975634BB08387EEE7D3BFC438}
+## 缩略图{#section_0AFD932975634BB08387EEE7D3BFC438}
 
 以下是配置缩略图的样式：
 
@@ -820,15 +823,15 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </thead>
  <tbody> 
   <tr> 
-   <td colname="col1"><span class="codeph"> .ptp-progress-bar-缩略图</span> </td> 
+   <td colname="col1"><span class="codeph"> .ptp-progress-bar缩略图</span> </td> 
    <td colname="col2"> <p>缩略图的进度栏。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-默认默认行为为 `thumbnailPreviewBehavior`。
+默认默认行为为`thumbnailPreviewBehavior`。
 
-## 错误消息 {#section_AC9858EE1B5A4FF4947E383C663B6AB5}
+## 错误消息{#section_AC9858EE1B5A4FF4947E383C663B6AB5}
 
 以下是配置错误消息的样式：
 
@@ -846,7 +849,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ptp-error-message-panel-icon</span> </td> 
-   <td colname="col2"> <p>出现错误消息时在面板上显示的图标。 </p> </td> 
+   <td colname="col2"> <p>出现错误消息时面板上显示的图标。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ptp-error-message-panel-message</span> </td> 
@@ -855,9 +858,9 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </tbody> 
 </table>
 
-默认行为为 `errorMessagePanelBehavior`。
+默认行为为`errorMessagePanelBehavior`。
 
-## 缓冲叠加 {#section_2FE8FDE2599E42BAA7411D0D38FA0A88}
+## 缓冲叠加{#section_2FE8FDE2599E42BAA7411D0D38FA0A88}
 
 以下是配置缩略图的样式：
 
@@ -876,11 +879,11 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
  </tbody> 
 </table>
 
-默认叠加为 `bufferingOverlayBehavior`。
+默认叠加为`bufferingOverlayBehavior`。
 
-## 特定选择器 {#section_51F735AEF82E41E890FF59E031A0DB89}
+## 特定选择器{#section_51F735AEF82E41E890FF59E031A0DB89}
 
-下面是快进按钮的样式：
+下面是快速前进按钮的样式：
 
 <table id="table_E77EDC7D227348E79C7E73FB5D46F992"> 
  <thead> 
@@ -900,11 +903,11 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
       <li id="li_FDF2CEDB0A854098907FF9CBCF1A61C1"><span class="codeph"> .ptp-btn-slowforward</span> </li> 
       <li id="li_CD2E14DB3DD64C10A253DA23FBE04A04"><span class="codeph"> .ptp-btn-slowforward</span> </li> 
       <li id="li_A230359E8F7F4571A9EBFF0E4C2462D7"><span class="codeph"> .ptp-btn-slowrewind</span> </li> 
-      <li id="li_5711A315872F4FA59FDDF0EF0AFD03C6"><span class="codeph"> .ptp-btn-more-options </span> </li> 
+      <li id="li_5711A315872F4FA59FDDF0EF0AFD03C6"><span class="codeph"> .ptp-btn-more-options  </span> </li> 
       <li id="li_71C8E76077A84ED590160AB5ABFCC0D7"><span class="codeph"> .ptp-btn-share-video</span> </li> 
-      <li id="li_4A3113C0360F4F708AAA96AB316FA057"><span class="codeph"> .ptp-btn-closed-caption </span> </li> 
+      <li id="li_4A3113C0360F4F708AAA96AB316FA057"><span class="codeph"> .ptp-btn-closed-caption  </span> </li> 
       <li id="li_901A0186D65A48A1B774DC555CEC5367"><span class="codeph"> .ptp-btn-audio-track</span> </li> 
-      <li id="li_2331583C01C2482B8EE72979FBF111DB"><span class="codeph"> .ptp-btn-pip </span> </li> 
+      <li id="li_2331583C01C2482B8EE72979FBF111DB"><span class="codeph"> .ptp-btn-pip  </span> </li> 
       <li id="li_7BB39BDF5E294AEB8FA3DCD9F9A29468"><span class="codeph"> .ptp-btn-rewind</span> </li> 
       <li id="li_E4FEF5A7486A40F6A5FE1119BD63AFEF"><span class="codeph"> .ptp-scrub-bar</span> </li> 
       <li id="li_12153547558A4871842EE0416BCCA8B2"><span class="codeph"> .ptp-seek-to-bar</span> </li> 
@@ -912,7 +915,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> .多视图</span> </td> 
-   <td colname="col2"> <p>处于多视图时控件的状态。 </p> <p>适用于以下各项： 
+   <td colname="col2"> <p>在多视图中时控件的状态。 </p> <p>适用于以下各项： 
      <ul id="ul_A8AC653C30814AC49041F3B58A2106F4"> 
       <li id="li_0407167DA21647A8A6960DFE55A33F42"><span class="codeph"> .ptp-btn-fastforward</span> </li> 
       <li id="li_EA71CAF41CDC41DE859A85CE482BE97C"><span class="codeph"> .ptp-btn-share-video</span> </li> 
@@ -924,7 +927,7 @@ source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
    <td colname="col1"><span class="codeph"> .fullscreen-state</span> </td> 
    <td colname="col2"> <p>播放器处于全屏模式。 </p> <p>适用于以下各项： 
      <ul id="ul_B235C1D339F64B2FAC6BC72F03807616"> 
-      <li id="li_6E050EE74C604FDAB4C9C0447F547A9D"><span class="codeph"> .ptp-control-bar </span> </li> 
+      <li id="li_6E050EE74C604FDAB4C9C0447F547A9D"><span class="codeph"> .ptp-control-bar  </span> </li> 
       <li id="li_67D54B1A41764B2DA544479CDA1C901C"><span class="codeph"> .ptp-btn-fullscreen</span> </li> 
      </ul> </p> </td> 
   </tr> 
