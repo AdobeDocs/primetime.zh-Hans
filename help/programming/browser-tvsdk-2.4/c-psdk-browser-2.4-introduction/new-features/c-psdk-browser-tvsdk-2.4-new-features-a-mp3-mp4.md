@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# 支持的MP3和MP4功能 {#supported-mp-and-mp-features}
+# 支持的MP3和MP4功能{#supported-mp-and-mp-features}
 
 浏览器TVSDK支持许多MP3和MP4功能，您可以通过这些功能为应用程序添加功能。
 * [MP3音频功能——核心回放](#core-playback)
@@ -22,25 +22,25 @@ ht-degree: 0%
 
 >[!TIP]
 >
->在下面的功能矩阵表中， ![支持的图标](assets/supported15.png) 意味着当前版本中支持该功能。
+>在下面的功能矩阵表中，![支持的图标](assets/supported15.png)表示当前版本中支持该功能。
 
-## MP3音频功能 {#section_C900C301291A40529D02EACC3CD4D55A}
+## MP3音频功能{#section_C900C301291A40529D02EACC3CD4D55A}
 
-### 核心播放 {#core-playback}
+### 核心播放{#core-playback}
 
 | 类别 | 内容类型 | 功能 | Flash | HTML5:FF、IE、Chrome、Android Chrome | HTML5:Safari、iOS Safari |
 |--- |--- |--- |--- |--- |--- |
 | 播放 | MP3 VOD | 常规播放（播放、暂停、搜索） | 不支持 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
 
-## MP4音频功能 {#mp4-audio-features}
+## MP4音频功能{#mp4-audio-features}
 
-### 核心播放 {#mp4-core-playback}
+### 核心播放{#mp4-core-playback}
 
 | 类别 | 内容类型 | 功能 | Flash | HTML5:FF、IE、Chrome、Android Chrome | HTML5:Safari、iOS Safari |
 |--- |--- |--- |--- |--- |--- |
 | 播放 | MP4 VOD | 常规播放（播放、暂停、搜索） | 不支持 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
 
-## MP4视频功能 {#section_1A8CBC5AA4FA4477813FD9EFF26AC104}
+## MP4视频功能{#section_1A8CBC5AA4FA4477813FD9EFF26AC104}
 
 ### 核心广告插入
 
