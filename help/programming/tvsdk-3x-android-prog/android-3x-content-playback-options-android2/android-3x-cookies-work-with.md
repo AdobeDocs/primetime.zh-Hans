@@ -1,33 +1,36 @@
 ---
-description: 您可以使用TVSDK在Cookie标头中发送任意数据，以进行会话管理、门访问等。
-seo-description: 您可以使用TVSDK在Cookie标头中发送任意数据，以进行会话管理、门访问等。
+description: 您可以使用TVSDK在Cookie标头中发送任意数据以进行会话管理、进行门访问等。
+seo-description: 您可以使用TVSDK在Cookie标头中发送任意数据以进行会话管理、进行门访问等。
 seo-title: 使用Cookie
 title: 使用Cookie
 uuid: 618bc59a-032d-445e-a867-ed2bf260570d
 translation-type: tm+mt
 source-git-commit: 5ada8632a7a5e3cb5d795dc42110844244656095
+workflow-type: tm+mt
+source-wordcount: '402'
+ht-degree: 0%
 
 ---
 
 
-# 使用Cookie {#work-with-cookies}
+# 使用Cookie{#work-with-cookies}
 
-您可以使用TVSDK在Cookie标头中发送任意数据，以进行会话管理、门访问等。
+您可以使用TVSDK在Cookie标头中发送任意数据以进行会话管理、进行门访问等。
 
-下面是对密钥服务器进行身份验证的示例请求：
+下面是对密钥服务器进行验证的示例请求：
 
 1. 客户在浏览器中登录您的网站，其登录表明允许此客户视图内容。
-1. 根据许可证服务器期望的内容，您的应用程序生成一个身份验证令牌。
+1. 根据许可证服务器的预期，您的应用程序将生成一个身份验证令牌。
 
    此值将传递给TVSDK。
 1. TVSDK在cookie头中设置此值。
-1. 当TVSDK向密钥服务器发出获取密钥以解密内容的请求时，该请求在cookie头中包含身份验证值。
+1. 当TVSDK向密钥服务器请求获取密钥以解密内容时，该请求在cookie头中包含身份验证值。
 
    密钥服务器知道请求有效。
 
-要使用Cookie，请执行以下操作：
+要使用Cookie:
 
-1. 创建 `cookieManager` 并将URI的Cookie添加到cookieStore。
+1. 创建`cookieManager`，并将URI的cookie添加到cookieStore。
 
    例如：
 
@@ -45,19 +48,19 @@ source-git-commit: 5ada8632a7a5e3cb5d795dc42110844244656095
    >
    >启用302重定向后，广告请求可被重定向到不同于cookie所属域的域。
 
-   TVSDK在运行 `cookieManager` 时查询它，检查是否有任何与URL关联的Cookie，并自动使用这些Cookie。
+   TVSDK在运行时查询此`cookieManager`，检查是否有任何与URL关联的cookie，并自动使用这些cookie。
 
-   如果在播放过程中需要在应用程序中更新Cookie，请不要使用 `networkConfiguration.setCookieHeaders` API，因为JAVA Cookie存储中会发生更新。
+   如果在播放过程中需要在应用程序中更新Cookie，请不要使用`networkConfiguration.setCookieHeaders` API，因为更新将在JAVA Cookie存储中发生。
 
    `networkConfiguration.setCookieHeaders` API将cookies设置为TVSDK的C++ CookieStore。
 
-   使用JAVA cookies并在应用程序和TVSDK之间共享它们时，请使用JAVA CookieStore仅管理cookies。
+   当使用JAVA cookies并在应用程序和TVSDK之间共享它们时，请使用JAVA CookieStore仅管理cookies。
 
    在初始化播放之前，如上所述，使用Cookie管理器将cookies设置为CookieStore。
 
-   TVSDK将自动获取存储在CookieStore中的Cookie。
+   TVSDK将自动拾取存储在CookieStore中的Cookie。
 
-   如果稍后在播放过程中需要更新Cookie值，请使用相同的键和新值字段调用CookieStore的相同添加方法。
+   如果稍后在播放过程中需要更新Cookie值，请使用相同的键和新的值字段调用CookieStore的相同添加方法。
 
    还设置
    `networkConfiguration.setReadSetCookieHeader`(false)在调用之前
@@ -65,10 +68,10 @@ source-git-commit: 5ada8632a7a5e3cb5d795dc42110844244656095
 
    >[!NOTE]
    >
-   >将此“setReadSetCookieHeader”设置为false后，使用JAVA cookie管理器为密钥请求设置Cookie。
+   >将此“setReadSetCookieHeader”设置为false后，使用JAVA cookie管理器为密钥请求设置cookie。
 
    `onCookiesUpdated(CookiesUpdatedEvent cookiesUpdatedEvent)`
-只要C++ Cookies（来自http响应的cookie）中有更新，将触发此回调API。 应用程序需要侦听此回调并可相应更新其JAVA CookieStore，以便其JAVA网络调用可以如下利用Cookie:
+只要C++ cookies（来自http响应的cookie）中有更新，将触发此回调API。应用程序需要侦听此回调并可相应更新其JAVA CookieStore，以便其JAVA网络调用可以如下利用Cookie:
 
    ```
    private final CookiesUpdatedEventListener cookiesUpdatedEventListener = new CookiesUpdatedEventListener() {
