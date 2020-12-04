@@ -1,20 +1,23 @@
 ---
-description: 当用户单击广告时，应用程序应暂停播放主视频内容。
-seo-description: 当用户单击广告时，应用程序应暂停播放主视频内容。
-seo-title: 暂停和继续播放
-title: 暂停和继续播放
+description: 当用户单击广告时，您的应用程序应暂停主视频内容的播放。
+seo-description: 当用户单击广告时，您的应用程序应暂停主视频内容的播放。
+seo-title: 暂停和恢复播放
+title: 暂停和恢复播放
 uuid: a8fec392-3a71-4086-abf1-23522d023680
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '67'
+ht-degree: 0%
 
 ---
 
 
-# 暂停和继续播放 {#pause-and-resume-playback}
+# 暂停并恢复播放{#pause-and-resume-playback}
 
-当用户单击广告时，应用程序应暂停播放主视频内容。
+当用户单击广告时，您的应用程序应暂停主视频内容的播放。
 
-覆盖和 `onPause` 从 `onResume` Android活动中覆盖。
+从Android活动覆盖`onPause`和`onResume`。
 
 ```java
 @Override 
