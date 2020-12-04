@@ -6,33 +6,37 @@ title: 在媒体播放器中加载媒体资源
 uuid: 0334fa69-1d92-44d8-8891-2bc90a1ea498
 translation-type: tm+mt
 source-git-commit: 67975894814fbed8cfc49764a54b80d123032a49
+workflow-type: tm+mt
+source-wordcount: '221'
+ht-degree: 0%
 
 ---
 
 
-# 在媒体播放器中加载媒体资源 {#load-a-media-resource-in-the-media-player}
+# 在媒体播放器{#load-a-media-resource-in-the-media-player}中加载媒体资源
 
 通过直接实例化MediaResource并加载要播放的视频内容来加载资源。 这是加载媒体资源的一种方式。
 
 1. 设置媒体播放器以播放新资源。
 
-   通过调用并传递现有实例来替 `MediaPlayer.replaceCurrentResource()` 换当前可播放的 `MediaResource` 项。
+   通过调用`MediaPlayer.replaceCurrentResource()`并传递现有`MediaResource`实例来替换当前可播放项。
 
    这将开始资源加载过程。
 
-1. 向实 `MediaPlayerEvent.STATUS_CHANGED` 例注册事件 `MediaPlayer` 。 在回调中，至少检查以下状态值：
+1. 向`MediaPlayer`实例注册`MediaPlayerEvent.STATUS_CHANGED`事件。 在回调中，至少检查以下状态值：
 
    * `MediaPlayerStatus.PREPARED`
    * `MediaPlayerStatus.INITIALIZED`
    * `MediaPlayerStatus.ERROR`
-   通过这些事件，对 `MediaPlayer` 象在成功加载媒体资源时通知您的应用程序。
-1. 当媒体播放器的状态更改为时， `INITIALIZED`您可以调用 `MediaPlayer.prepareToPlay()`。
 
-   此状态表示媒体已成功加载。 新的播 `MediaPlayerItem` 放已准备就绪。 致电 `prepareToPlay()` 开始解决广告问题和投放流程（如果有）。
+   通过这些事件,`MediaPlayer`对象在成功加载媒体资源时通知您的应用程序。
+1. 当媒体播放器的状态变为`INITIALIZED`时，您可以调用`MediaPlayer.prepareToPlay()`。
 
-如果出现故障，媒体播放器会切换到状 `ERROR` 态。
+   此状态表示媒体已成功加载。 新的`MediaPlayerItem`已准备好播放。 调用`prepareToPlay()`将开始广告解决和投放过程（如果有）。
 
-以下简化的示例代码说明了加载媒体资源的过程：
+如果出现故障，媒体播放器将切换到`ERROR`状态。
+
+以下简化的示例代码说明加载媒体资源的过程：
 
 ```java
 // mediaResource is a properly configured MediaResource instance 
