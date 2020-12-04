@@ -4,6 +4,9 @@ title: 自定义VOD资产的示例
 uuid: 1db76b3f-b57a-428a-b79f-d4657ded8391
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '72'
+ht-degree: 0%
 
 ---
 
@@ -40,6 +43,6 @@ seg5.ts
 
 您的应用程序可以设置以下场景：
 
-* 文件中存 `#EXT-X-ASSET` 在标记或您订阅的任何其他自定义标记名称集时的通知。
-* 在流中找到标 `#EXT-X-AD` 记或任何其他自定义标记名称时插入广告。
+* 当文件中存在`#EXT-X-ASSET`标记或您订阅的任何其他自定义标记名称集时，将显示通知。
+* 在流中找到`#EXT-X-AD`标记或任何其他自定义标记名称时插入广告。
 
