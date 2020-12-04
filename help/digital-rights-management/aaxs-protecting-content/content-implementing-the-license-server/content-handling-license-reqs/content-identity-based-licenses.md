@@ -11,9 +11,9 @@ ht-degree: 0%
 ---
 
 
-# 基于身份的许可证 {#identity-based-licenses}
+# 基于身份的许可证{#identity-based-licenses}
 
-如果使用基于身份的许可，则服务器在颁发许可证之前检查有效的身份验证令牌。 有关处 [理身份验证令牌的详](../../../aaxs-protecting-content/content-introduction/content-usage-rules/content-authentication/content-user-authentication.md) 细信息，请参阅用户身份验证。
+如果使用基于身份的许可，则服务器在颁发许可证之前检查有效的身份验证令牌。 有关处理身份验证令牌的详细信息，请参阅[用户身份验证](../../../aaxs-protecting-content/content-introduction/content-usage-rules/content-authentication/content-user-authentication.md)。
 
 >[!NOTE]
 >
