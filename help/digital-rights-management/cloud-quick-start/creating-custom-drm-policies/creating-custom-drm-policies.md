@@ -19,9 +19,9 @@ Primetime Cloud DRM保护包附带一些预配置策略，可在打包过程中�
 >
 >所有策略都必须使用匿名身份验证（不是用户名密码或自定义）-无论是否使用自定义身份验证／授权工作流。
 
-策略管理器附带的配 [!DNL flashaccesstools.properties] 置文件已修改，仅提供Primetime Cloud DRM服务支持的可配置策略选项。 设置Primetime Cloud DRM服务不支持的策略选项将导致许可证获取错误。 有关使用Primetime DRM策略管理器的信息，请参阅： [Primetime DRM参考实施： 策略管理器](https://help.adobe.com/en_US/primetime/drm/5.3/reference_implementations/index.html#concept-DRM_Policy_Manager)。
+策略管理器中包含[!DNL flashaccesstools.properties]配置文件，该配置文件已修改，仅提供Primetime Cloud DRM服务支持的可配置策略选项。 设置Primetime Cloud DRM服务不支持的策略选项将导致许可证获取错误。 有关使用Primetime DRM策略管理器的信息，请参阅：[Primetime DRM参考实现：策略管理器](https://help.adobe.com/en_US/primetime/drm/5.3/reference_implementations/index.html#concept-DRM_Policy_Manager)。
 
-要创建新策略，请根据需 [!DNL flashaccesstools.properties] 要更新文件，然后使用命令：
+要创建新策略，请根据需要更新[!DNL flashaccesstools.properties]文件，然后使用命令：
 
 ```
 java -jar libs/AdobePolicyManager.jar new myPolicy.pol
@@ -29,9 +29,9 @@ java -jar libs/AdobePolicyManager.jar new myPolicy.pol
 
 ## 为自定义身份验证／授权动态创建策略{#create-policies-dynamically-for-custom-auth-entitlement}
 
-如果您使用Primetime Cloud DRM自定义身份验证／授权，并且希望为每个许可证请求动态创建新的DRM策略（而不是从预生成的池中提取策略）,Adobe建议您直接使用Primetime DRM Java SDK。 直接使用Java SDK比自动将策略文 [!DNL AdobePolicyManager.jar] 件输出到磁盘的工具速度更快，从而产生磁盘I/O开销。
+如果您使用Primetime Cloud DRM自定义身份验证／授权，并且希望为每个许可证请求动态创建新的DRM策略（而不是从预生成的池中提取策略）,Adobe建议您直接使用Primetime DRM Java SDK。 直接使用Java SDK比[!DNL AdobePolicyManager.jar]工具速度更快，后者自动将策略文件输出到磁盘，从而产生磁盘I/O开销。
 
-使用Java SDK的示例代码可在名为和 [!DNL /Primetime DRM PolicyManager/sampleCode/] 的目录中 [!DNL CreatePolicy.java] 找到 [!DNL CreatePolicyWithOutputProtection.java]。 有关Java SDK的Javadoc和文档，请参 [阅Adobe Primetime DRM SDK概述](../../../digital-rights-management/drm-sdk-overview/overview.md)
+使用Java SDK的示例代码可在[!DNL /Primetime DRM PolicyManager/sampleCode/]目录（名为[!DNL CreatePolicy.java]和[!DNL CreatePolicyWithOutputProtection.java]）中找到。 有关Java SDK的Javadoc和文档，请访问[Adobe PrimetimeDRM SDK](../../../digital-rights-management/drm-sdk-overview/overview.md)概述
 
 要构建并运行示例，请将。java文件复制到。./libs/文件夹中并运行：
 
