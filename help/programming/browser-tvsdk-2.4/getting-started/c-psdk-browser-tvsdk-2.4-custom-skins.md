@@ -26,25 +26,25 @@ ht-degree: 0%
 
 * 按钮和文本的前景色
 
-   具有前景的所有控件都使用该 `vid-skin-fgcolor` 类。 要更改所有控件的前景，请使用类遍历所有元素 `vid-skin-fgcolor` 并指定所需的颜色。
+   所有具有前景的控件都使用`vid-skin-fgcolor`类。 要更改所有控件的前景，请使用`vid-skin-fgcolor`类遍历所有元素并指定所需的颜色。
 * 按钮和文本的背景颜色
 
-   具有前景的所有控件都使用该 `vid-skin-bgcolor` 类。 要更改所有控件的前景，请使用类遍历所有元素 `vid-skin-bgcolor` 并指定所需的颜色。
+   所有具有前景的控件都使用`vid-skin-bgcolor`类。 要更改所有控件的前景，请使用`vid-skin-bgcolor`类遍历所有元素并指定所需的颜色。
 * 播放头的形状
 
-   播放头可以是方形或圆形。 要更改播放头，请向元素 `square` 添加 `round` 或类 `playhead` 别。
+   播放头可以是方形或圆形。 要更改播放头，请向`playhead`元素添加`square`或`round`类。
 * 缓冲旋转器的样式
 
    引用播放器提供以下旋转器的样式，可在播放器缓冲内容时显示：
 
-   * 叠加文本( `overlay-text`)
-   * 矩形微调框( `spinner`)
-   * 信号( `signal`)
-   * 竖条( `vertical`)
+   * 叠加文本(`overlay-text`)
+   * 矩形微调框(`spinner`)
+   * 信号(`signal`)
+   * 垂直条(`vertical`)
 
       >[!TIP]
       >
-      >要使用任何缓冲旋转器，必须在buffering-overlay元素中添加类。 例如，要使用 `overlay-text`，请在文件中添加以 `BufferOverlay.js` 下行：
+      >要使用任何缓冲旋转器，必须在buffering-overlay元素中添加类。 例如，要使用`overlay-text`，请在`BufferOverlay.js`文件中添加以下行：
       >
       >
       ```js
