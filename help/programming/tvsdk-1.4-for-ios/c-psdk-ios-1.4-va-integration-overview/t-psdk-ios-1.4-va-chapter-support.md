@@ -6,6 +6,9 @@ title: 实施章节支持
 uuid: 4224cd2e-1e16-4040-972b-92c91506408f
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '97'
+ht-degree: 0%
 
 ---
 
@@ -16,7 +19,7 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
 
 * 默认章节，由TVSDK在内部管理。
 
-   章节定义为每个广告中断之间的时间。 例如，预卷广告中断与第一卷中间卷之间的时间定义为第一章。
+   章节定义为每个广告时段之间的时间。 例如，预卷广告中断与第一中间卷之间的时间被定义为第一章。
 * 自定义章节，由应用程序管理，基于CMS数据或应用程序用于定义章节的其他方式。
 
    定义和跟踪默认或自定义章节。
