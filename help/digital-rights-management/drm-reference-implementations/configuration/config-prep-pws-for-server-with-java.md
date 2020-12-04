@@ -13,11 +13,11 @@ ht-degree: 0%
 ---
 
 
-# 使用Java准备口令{#prepare-passwords-using-java}
+# 使用Java{#prepare-passwords-using-java}准备口令
 
-使用Java `ScrambleUtil.class` 运行：
+使用Java运行`ScrambleUtil.class`:
 
-1. 导航到 `[DRM SDK DVD]\Reference Implementation\Server\Reference Implementation Server\refimpl/scrambler/ refimpl/scrambler/`
+1. 导航到`[DRM SDK DVD]\Reference Implementation\Server\Reference Implementation Server\refimpl/scrambler/ refimpl/scrambler/`
 1. 在命令行中键入：
 
    ```
