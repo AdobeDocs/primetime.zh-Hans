@@ -13,9 +13,9 @@ ht-degree: 0%
 ---
 
 
-# 广告超时 {#ad-timeout}
+# 广告超时{#ad-timeout}
 
-## AV基础要求 {#av-foundation-requirements}
+## AV基础要求{#av-foundation-requirements}
 
 对于VOD内容，播放列表拼接（包括主内容清单加载、广告分辨率和广告清单加载）应在35秒内完成。
 
@@ -40,7 +40,7 @@ PTAuditudeMetadata *adMetadata = [[[PTAuditudeMetadata alloc] init]autorelease];
 adMetadata.adResolutionTimeout = 15 seconds
 ```
 
-之后，请按照以下部分操作： [Primetime广告服务器元数据](../..//tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-primetime-ad-serving-metadata/ios-3x-primetime-ad-serving-metadata.md)。
+之后，请按照以下部分操作：[Primetime广告服务器元数据](../..//tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-primetime-ad-serving-metadata/ios-3x-primetime-ad-serving-metadata.md)。
 
 **与AdManifest超时相关的API**
 
@@ -62,4 +62,4 @@ PTAuditudeMetadata *adMetadata = [[[PTAuditudeMetadata alloc] init]autorelease];
 adMetadata.adManifestTimeout = 5 seconds
 ```
 
-之后，请按照以下部分操作： [Primetime广告服务器元数据](../..//tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-primetime-ad-serving-metadata/ios-3x-primetime-ad-serving-metadata.md)。
+之后，请按照以下部分操作：[Primetime广告服务器元数据](../..//tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-primetime-ad-serving-metadata/ios-3x-primetime-ad-serving-metadata.md)。
