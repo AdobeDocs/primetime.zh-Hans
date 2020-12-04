@@ -1,18 +1,21 @@
 ---
 description: 'null'
 seo-description: 'null'
-seo-title: 远程密钥交付属性(iOS)
-title: 远程密钥交付属性(iOS)
+seo-title: 远程密钥投放属性(iOS)
+title: 远程密钥投放属性(iOS)
 uuid: 17e1b756-d106-47a7-99ae-641190693870
 translation-type: tm+mt
 source-git-commit: 7e8df034035fe465fbe403949ef828e7811ced2e
+workflow-type: tm+mt
+source-wordcount: '115'
+ht-degree: 0%
 
 ---
 
 
-# 远程密钥交付属性(iOS){#remote-key-delivery-properties-ios}
+# 远程密钥投放属性(iOS){#remote-key-delivery-properties-ios}
 
-要支持为在Adobe Primetime DRM中交付到iOS客户端的远程密钥生成许可证，必须在文件中指定密钥服务器证 `flashaccess-refimpl.properties` 书。
+要支持为Adobe PrimetimeDRM中的iOS客户端生成远程密钥投放的许可证，必须在`flashaccess-refimpl.properties`文件中指定密钥服务器证书。
 
 Primetime DRM中已添加以下属性：
 
@@ -30,7 +33,7 @@ Primetime DRM中已添加以下属性：
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> RefImpl.HSM.HandlerConfiguration。\ KeyServerCertificate.Alias</span> </td> 
-   <td colname="2" class="- topic/entry "> <p>存储在HSM上的密钥服务器的Adobe颁发的许可证服务器证书的别名。 </p> <p>启用HSM时，可以应用此属性，而不是 <span class="codeph"> HandlerConfiguration.KeyServerCertificate属性</span> 。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>存储在HSM上的密钥服务器Adobe颁发的许可证服务器证书的别名。 </p> <p>启用HSM时，可以应用此属性，而不是<span class="codeph"> HandlerConfiguration.KeyServerCertificate</span>属性。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
