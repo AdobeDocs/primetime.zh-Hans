@@ -6,39 +6,42 @@ title: 实现事件监听器和回呼
 uuid: 6b7859a4-55f9-48b1-b1f1-7b79bc92610a
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '585'
+ht-degree: 0%
 
 ---
 
 
-# 实现事件监听器和回呼{#implement-event-listeners-and-callbacks}
+# 实现事件监听器和回调{#implement-event-listeners-and-callbacks}
 
 事件处理函数允许TVSDK对事件做出响应。
 
-当发生事件时，TVSDK的事件机制将调用您注册的事件处理函数并将事件信息传递给该处理函数。
+发生事件时，TVSDK的事件机制将调用注册的事件处理程序，并将事件信息传递给该处理程序。
 
-TVSDK将监听器定义为接口中的公共内部 `MediaPlayer` 接口。
+TVSDK将监听器定义为`MediaPlayer`接口中的公共内部接口。
 
-您的应用程序必须为影响您的应用程序的TVSDK事件实施事件监听器。
+您的应用程序必须为影响您的应用程序的TVSDK事件事件实施监听器。
 
 有关视频分析事件的完整列表，请参阅跟踪核心视频播放。
 
-1. 确定应用程序必须侦听的事件。
+1. 确定您的应用程序必须监听哪些事件。
 
-   * **必需活动**:聆听所有播放事件。
+   * **必需事件**:聆听所有播放事件。
 
       >[!IMPORTANT]
       >
-      >播放事件提 `onStateChanged` 供播放器状态，包括错误。 任何状态都可能影响播放器的下一步
+      >播放事件`onStateChanged`提供播放器状态，包括错误。 任何状态都可能影响玩家的下一步
 
-   * **其他活动**:可选，具体取决于您的应用程序。
+   * **其他事件**:可选，具体取决于您的应用程序。
 
       例如，如果在播放中加入广告，则实施AdPlaybackEventListener回调。
 
-1. 为每个事件实现事件监听器。
+1. 为每个事件实施事件监听器。
 
-   TVSDK将参数值返回到事件监听器回调。 这些值提供有关事件的相关信息，您可以在监听器中使用这些事件执行相应的操作。
+   TVSDK将参数值返回给事件监听器回调。 这些值提供有关事件的相关信息，您可以在监听器中使用这些信息来执行适当的操作。
 
-   `MediaPlayer.EventListener` 列出所有回调接口。 每个界面显示每个事件返回的回调名称和参数。
+   `MediaPlayer.EventListener` 列表所有回调接口。每个接口显示为每个事件返回的回调名称和参数。
 
    例如：
 
@@ -47,7 +50,7 @@ TVSDK将监听器定义为接口中的公共内部 `MediaPlayer` 接口。
     MediaPlayer.PlayerState state, MediaPlayerNotification notification)
    ```
 
-1. 使用向对象注册回调 `MediaPlayer` 监听器 `MediaPlayer.addEventListener`。
+1. 使用`MediaPlayer.addEventListener`向`MediaPlayer`对象注册回调监听器。
 
    ```
    mediaPlayer.addEventListener(MediaPlayer.Event.PLAYBACK, 
@@ -59,37 +62,37 @@ TVSDK将监听器定义为接口中的公共内部 `MediaPlayer` 接口。
    }
    ```
 
-## 播放事件的顺序 {#section_6D412C33ACE54E9D90DB1DAA9AA30272}
+## 播放事件的顺序{#section_6D412C33ACE54E9D90DB1DAA9AA30272}
 
-TVSDK按通常预期的序列调度事件／通知。 播放器可以根据预期序列中的事件执行操作。
+TVSDK按通常预期的序列发送事件/通知。 您的播放器可以根据预期序列中的事件执行操作。
 
 以下示例显示了包含播放事件的某些事件的顺序。
 
-* 成功加载媒体资源时， `MediaPlayer.replaceCurrentResource`事件的顺序为：
+* 成功通过`MediaPlayer.replaceCurrentResource`加载媒体资源时，事件的顺序为：
 
-1. `MediaPlayer.PlaybackEventListener.onStateChanged` 状态 `MediaPlayer.PlayerState.INITIALIZING`
+1. `MediaPlayer.PlaybackEventListener.onStateChanged` 状态  `MediaPlayer.PlayerState.INITIALIZING`
 
-1. `MediaPlayer.PlaybackEventListener.onStateChanged` 状态 `MediaPlayer.PlayerState.INITIALIZED`
+1. `MediaPlayer.PlaybackEventListener.onStateChanged` 状态  `MediaPlayer.PlayerState.INITIALIZED`
 
 >[!TIP]
 >
->在主线程上加载媒体资源。 如果在后台线程上加载媒体资源，则此操作或随后的TVSDK操作，或两者都可能引发错误(例如， `IllegalStateException`)并退出。
+>在主线程上加载媒体资源。 如果在后台线程上加载媒体资源，则此操作或后续的TVSDK操作，或两者都可能会引发错误（例如`IllegalStateException`）并退出。
 
-* 在准备播放时， `MediaPlayer.prepareToPlay`事件的顺序为：
+* 通过`MediaPlayer.prepareToPlay`准备回放时，事件的顺序为：
 
-1. `MediaPlayer.PlaybackEventListener.onStateChanged` 状态 `MediaPlayerStatus.PREPARING`
+1. `MediaPlayer.PlaybackEventListener.onStateChanged` 状态  `MediaPlayerStatus.PREPARING`
 
 1. `MediaPlayer.PlaybackEventListener.onTimelineUpdated` 是否插入了广告。
-1. `MediaPlayer.PlaybackEventListener.onStateChanged` 状态 `MediaPlayerStatus.PREPARED`
+1. `MediaPlayer.PlaybackEventListener.onStateChanged` 状态  `MediaPlayerStatus.PREPARED`
 
-* 对于实时／线性流，在播放期间，随着播放窗口的前进和其他机会的解决，事件的顺序是：
+* 对于实时／线性流，在播放期间，随着播放窗口的前进以及其他机会的解决，事件的顺序是：
 
 1. `MediaPlayer.PlaybackEventListener.onUpdated`
-1. `MediaPlayer.PlaybackEventListener.onTimelineUpdated` 如果插入广告
+1. `MediaPlayer.PlaybackEventListener.onTimelineUpdated` 是否插入广告
 1. `MediaPlayerItemEvent.ITEM_UPDATED`
-1. `TimelineEvent.TIMELINE_UPDATED` 如果插入广告
+1. `TimelineEvent.TIMELINE_UPDATED` 是否插入广告
 
-以下示例展示了事件的典型进度：
+以下示例显示了事件的典型进度：
 
 ```java
 mediaPlayer.addEventListener(MediaPlayer.Event.PLAYBACK,  
@@ -110,17 +113,17 @@ mediaPlayer.addEventListener(MediaPlayer.Event.PLAYBACK,
 });
 ```
 
-## 广告活动的顺序 {#section_7B3BE3BD3B6F4CF69D81F9CFAC24CAD5}
+## 广告事件的顺序{#section_7B3BE3BD3B6F4CF69D81F9CFAC24CAD5}
 
-当您的播放包括广告时，TVSDK会按通常预期的序列发送事件／通知。 播放器可以根据预期序列中的事件执行操作。
+当您的播放包括广告时，TVSDK会按通常预期的序列发送事件/通知。 您的播放器可以根据预期序列中的事件执行操作。
 
 播放广告时，事件的顺序是：
 
 * `AdPlaybackEventListener.onAdBreakStart`
-* 为广告中断中的每个广告分派以下内容：
+* 广告分时段中的每则广告都会派发以下内容：
 
    * `AdPlaybackEventListener.onAdStart`
-   * `AdPlaybackEventListener.onAdProgress` （在广告播放期间多次）
+   * `AdPlaybackEventListener.onAdProgress` （在广告播放过程中多次）
    * `AdPlaybackEventListener.onAdClick` （对于每次单击）
    * `AdPlaybackEventListener.onAdStart`
    * `AdPlaybackEventListener.onAdBreakComplete`
@@ -148,10 +151,10 @@ mediaPlayer.addEventListener(MediaPlayer.Event.AD_PLAYBACK,
 播放广告时，事件的顺序是：
 
 * `AdPlaybackEventListener.onAdBreakStart`
-* 为广告中断中的每个广告分派以下内容：
+* 广告分时段中的每则广告都会派发以下内容：
 
    * `AdPlaybackEventListener.onAdStart`
-   * `AdPlaybackEventListener.onAdProgress` （在广告播放期间多次）
+   * `AdPlaybackEventListener.onAdProgress` （在广告播放过程中多次）
    * `AdPlaybackEventListener.onAdClick` （对于每次单击）
    * `AdPlaybackEventListener.onAdStart`
 
@@ -177,11 +180,11 @@ mediaPlayer.addEventListener(MediaPlayer.Event.AD_PLAYBACK,
 });
 ```
 
-## QoS事件 {#section_9BFF3CD7AA1C4BD6960ACF6B9C0B25CC}
+## QoS事件{#section_9BFF3CD7AA1C4BD6960ACF6B9C0B25CC}
 
 TVSDK调度服务质量(QoS)事件，以通知您的应用程序可能影响QoS统计数据计算的事件，如缓冲和搜索事件。
 
-以下示例显示了这些事件的典型进度：
+以下示例显示这些事件的典型进度：
 
 ```java
 mediaPlayer.addEventListener(MediaPlayer.Event.QOS,  
@@ -205,13 +208,13 @@ mediaPlayer.addEventListener(MediaPlayer.Event.QOS,
 });
 ```
 
-## DRM事件 {#section_3FECBF127B3E4EFEAB5AE87E89CCDE7C}
+## DRM事件{#section_3FECBF127B3E4EFEAB5AE87E89CCDE7C}
 
-TVSDK将根据DRM相关操作（如当新的DRM元数据可用时）调度数字版权管理(DRM)事件。 您的播放器可以实施响应这些事件的操作。
+TVSDK响应DRM相关操作（如当新的DRM元数据可用时）发送数字版权管理(DRM)事件。 您的播放器可以实施响应这些事件的操作。
 
-要获得所有与DRM相关的事件的通知，请聆听 `onDRMMetadata(DRMMetadataInfo drmMetadataInfo)`。 TVSDK通过类调度其他DRM `DRMManager` 事件。
+要获得所有与DRM相关的事件的通知，请侦听`onDRMMetadata(DRMMetadataInfo drmMetadataInfo)`。 TVSDK通过`DRMManager`类发送其他DRM事件。
 
-以下示例展示了典型的进度：
+以下示例显示了典型的进度：
 
 ```
 mediaPlayer.addEventListener(MediaPlayer.Event.DRM, 
@@ -221,12 +224,12 @@ mediaPlayer.addEventListener(MediaPlayer.Event.DRM,
 }); 
 ```
 
-## 加载器事件 {#section_5638F8EDACCE422A9425187484D39DCC}
+## 加载器事件{#section_5638F8EDACCE422A9425187484D39DCC}
 
-您的播放器可以基于以下事件执行操作：
+您的播放器可以基于以下事件实施操作：
 
-| 活动 | 意义 |
+| 事件 | 意义 |
 |---|---|
-| `onLoadComplete (mediaPlayerItem playerItem)` | 媒体资源加载成功完成。 |
+| `onLoadComplete (mediaPlayerItem playerItem)` | 媒体资源加载已成功完成。 |
 | `onError` | 加载媒体资源时出现问题。 |
 
