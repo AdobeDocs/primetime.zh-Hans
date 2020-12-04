@@ -11,7 +11,7 @@ ht-degree: 0%
 ---
 
 
-# 播放受保护的内容需要设备功能 {#device-capabilities-required-to-play-protected-content}
+# 播放受保护内容{#device-capabilities-required-to-play-protected-content}需要设备功能
 
 指定访问内容所需的硬件功能。 有关硬件功能的信息可用于使用移植工具包的设备。
 
@@ -42,5 +42,5 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe访问客户端版本2.0.2及更高版本支持此使用规则。 旧客户端上的行为取决于许可证服务器支持的最低客户端版本。 请参阅， [最低客户端版本](../../../../aaxs-protecting-content/content-setting-up-the-sdk/content-setting-up-the-dev-env.md)。
+>Adobe访问客户端版本2.0.2及更高版本支持此使用规则。 旧客户端上的行为取决于许可证服务器支持的最低客户端版本。 请参阅[最低客户端版本](../../../../aaxs-protecting-content/content-setting-up-the-sdk/content-setting-up-the-dev-env.md)。
 
