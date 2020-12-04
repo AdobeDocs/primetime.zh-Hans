@@ -11,13 +11,13 @@ ht-degree: 0%
 ---
 
 
-# 嵌入许可证 {#embedding-licenses}
+# 嵌入许可证{#embedding-licenses}
 
 一旦内容被加密并且许可证被预先生成，许可证就可以嵌入到加密的内容中。
 
-如果要嵌入许可证，则需要获取的实例 `com.adobe.flashaccess.sdk.media.drm.contentupdate.MediaKeyMetaDataUpdater`。 如果您知道加密内容的类型，请使用构造函数 `FLVKeyMetaDataUpdater` 或 `F4VKeyMetaDataUpdater`;否则，请 `MediaProcessorFactory.getMediaProcessor()` 使用根据检测到的文件类型返回实例。 然后，您需要构造并 `KeyMetaDataCallback` 调用 `modifyKeyMetaData()`。 然后，当DRM元数据位于加密内容中时，将调用回调实现。 根据找到的元数据，您可以选择要嵌入的许可证并使用设置许可证 `EmbedLicenseKeyMetaData.setEmbeddedLicenses()`。
+如果要嵌入许可证，则需要获得`com.adobe.flashaccess.sdk.media.drm.contentupdate.MediaKeyMetaDataUpdater`的实例。 如果您知道加密内容的类型，请使用`FLVKeyMetaDataUpdater`或`F4VKeyMetaDataUpdater`的构造函数；否则，使用`MediaProcessorFactory.getMediaProcessor()`根据检测到的文件类型返回实例。 然后，您需要构造`KeyMetaDataCallback`并调用`modifyKeyMetaData()`。 然后，当DRM元数据位于加密内容中时，将调用回调实现。 根据找到的元数据，您可以选择要嵌入的许可证并使用`EmbedLicenseKeyMetaData.setEmbeddedLicenses()`设置许可证。
 
-有关 `com.adobe.flashaccess.samples.licenseembedder.EmbedLicense` 演示嵌入式许可证的示例 [!DNL Samples] 代码，请参阅参考实施命令行工具目录。
+有关演示嵌入式许可证的示例代码，请参见Reference Implementation Command Line Tools [!DNL Samples]目录中的`com.adobe.flashaccess.samples.licenseembedder.EmbedLicense`。
 
 >[!NOTE]
 >
