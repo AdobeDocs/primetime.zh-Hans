@@ -6,20 +6,23 @@ title: 实现自定义内容解析程序
 uuid: 1714fcd9-45e0-48be-97f3-f702265128a4
 translation-type: tm+mt
 source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+workflow-type: tm+mt
+source-wordcount: '186'
+ht-degree: 2%
 
 ---
 
 
-# 实现自定义内容解析程序{#implement-a-custom-content-resolver}
+# 实现自定义内容解析器{#implement-a-custom-content-resolver}
 
 您可以根据默认解析器实现您自己的内容解析器。
 
-当TVSDK检测到新机会时，它会循环访问注册内容解析器，寻找能够使用该方法解决该机会的内 `canResolve` 容解析器。 选择返回true的第一个用于解决该机会。 如果没有内容解析程序功能，则跳过该机会。 由于内容解析过程通常是异步的，因此内容解析程序负责在进程完成时通知TVSDK。
+当TVSDK检测到新机会时，它会重新访问注册的内容解析器，寻找能够使用`canResolve`方法解决该机会的内容解析器。 选择返回true的第一个用于解决该机会。 如果没有内容解析程序功能，则跳过该机会。 由于内容解析过程通常是异步的，因此内容解析程序负责在该过程完成时通知TVSDK。
 
-* 内容解析程序调 `client.place` 用以指定TVSDK需要执行哪些时间轴操作（通常是广告中断放置）。
-* 如果解析过程成 `client.notifyCompleted` 功，或进程失败，则内容解析 `client.notifyFailed` 程序将调用。
+* 内容解析程序调用`client.place`以指定TVSDK需要执行的时间线操作（通常是广告中断放置）。
+* 如果解析进程成功，则内容解析程序将调用`client.notifyCompleted`；如果进程失败，则调用`client.notifyFailed`。
 
-1. 创建自定义业务机会解析程序。
+1. 创建自定义机会解析器。
 
    ```
    public class CustomResolver extends ContentResolver { 
