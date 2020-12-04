@@ -21,9 +21,9 @@ ht-degree: 0%
 ---
 
 
-# 清单服务器调试工具 {#manifest-server-debugging-tool}
+# 清单服务器调试工具{#manifest-server-debugging-tool}
 
-## 调试工具概述 {#overview-of-debugging-tool}
+## 调试工具{#overview-of-debugging-tool}概述
 
 该调试工具使发行商能够通过检查HTTP头中清单服务器实时返回的调试信息来调查可能代价高昂的广告插入问题，或者，当需要更详细的信息时，检查事实后的会话日志。 Adobe合作伙伴（如Akamai）可使用此工具调试与Primetime广告决策的集成。
 
@@ -39,7 +39,7 @@ ht-degree: 0%
 
 <!-- You can also see the [server side event tracking captured in the SSAI dashboard](ssai-debugging-dashboard.md).-->
 
-## 调试工具选项 {#debugging-tool-options}
+## 调试工具选项{#debugging-tool-options}
 
 调用调试工具时，对于清单服务器在HTTP头中返回的信息，您有多个选项。 这些选项不会影响清单服务器在日志文件中的放置。
 
@@ -47,13 +47,13 @@ ht-degree: 0%
 
 在为清单服务器会话启动调试日志记录时，可以将ptdebug参数添加到请求URL，以指定清单服务器在HTTP头中返回的信息的以下选项：
 
-* ptdebug=true除记录外的所 `TRACE_HTTP_HEADER` 有记录 `call/response data` 和大部分 `TRACE_AD_CALL` 记录。
-* ptdebug=AdCall OnlyTRACE_*AD* _type(例如，TRACE_AD_CALL)记录。
+* ptdebug=true除`TRACE_HTTP_HEADER`和`TRACE_AD_CALL`记录中的大多数`call/response data`以外的所有记录。
+* ptdebug=AdCall仅TRACEAD_*type*(例如，TRACEAD_CALL)记录。
 * ptdebug=仅标题TRACE_HTTP_HEADER记录。
 
 这些选项不会影响清单服务器在日志文件中的位置。 您无法控制这一点，但日志文件是文本文件，因此您可以应用各种工具来提取您感兴趣的信息并重新设置其格式。
 
-以下是当时返回的HTTP头的示例 `ptdebug=Header`。 某些十六进制数字的长字符串将替换为 `. . .` 清晰性。
+以下是`ptdebug=Header`时返回的HTTP头的示例。 某些十六进制数字的长字符串被`. . .`替换，以便清晰起见。
 
 ```
 X-ADBE-AI-DBG-1 TRACE_MISC    HTTP request received
@@ -82,7 +82,7 @@ X-ADBE-AI-DBG-16 TRACE_HTTP_HEADER  MAIN  RESPONSE Access-Control-Allow-Origin  
 X-ADBE-AI-DBG-17 TRACE_MISC   Done
 ```
 
-## 日志记录的格式 {#formats-of-log-records}
+## 日志记录的格式{#formats-of-log-records}
 
 每个日志记录都有一个类型和一组字段，其中有些字段可能是可选的。 记录类型之前的所有记录的字段都相同。 它们提供有关会话的时间戳和信息。 记录类型标识所记录事件的类型，后续字段提供有关已记录事件的信息。
 
@@ -99,7 +99,7 @@ X-ADBE-AI-DBG-17 TRACE_MISC   Done
 | record_type | 字符串 | 正在记录的事件类型 |
 | 其他字段 | *** | 取决于事件类型 |
 
-### TRACE_REQUEST_INFO记录 {#trace-request-info-records}
+### TRACE_REQUEST_INFO记录{#trace-request-info-records}
 
 此类型的记录记录HTTP请求的结果。 TRACE_REQUEST_INFO之外的字段按表中显示的顺序显示，以选项卡分隔。
 
@@ -128,7 +128,7 @@ TRACE_REQUEST_INFO 301 GET /auditude/variant/pubAsset/aHR0cDov. . ..m3u8
 ?u=cecebae72a919de350b9ac52602623f3&z=189938&ptcueformat=turner& sid =yk-cnnlive-003 &ptdebug=true 0 0 0 Variant 111.22.3.44 111.22.3.45 127.0.0.1:46383
 ```
 
-### TRACE_HTTP_HEADER记录 {#trace-http-header-records}
+### TRACE_HTTP_HEADER记录{#trace-http-header-records}
 
 在清单服务器与客户端、广告服务器或内容服务器之间的HTTP调用期间交换的此类型日志HTTP头的记录。 TRACE_HTTP_HEADER之外的字段以表中显示的顺序显示，以选项卡分隔。
 
@@ -174,7 +174,7 @@ TRACE_REQUEST_INFO 301 GET /auditude/variant/pubAsset/aHR0cDov. . ..m3u8
     UNKNOWN RESPONSE  Via MS4xIH. . .
 ```
 
-### TRACE_AD_CALL记录 {#trace-ad-call-records}
+### TRACE_AD_CALL记录{#trace-ad-call-records}
 
 此类型的记录记录清单服务器和请求的结果。 TRACEADCALL之外的字段按表中显示的顺序显示，以选项卡分隔。
 
@@ -195,7 +195,7 @@ TRACE_REQUEST_INFO 301 GET /auditude/variant/pubAsset/aHR0cDov. . ..m3u8
 200 8 https://ad.stg2.auditude.com/adserver/a?cip=0.0.0.0&g=1000012&of=1.5 &ptcueformat=turner&ptdebug=true&tl=l,150,30,m&tm=63&u=ceceb. . . Auditude IvpIyC. . . 150 PD94bWw. . .
 ```
 
-### TRACE_AD_INSERT、TRACE_AD_RESOLVE和TRACE_AD_REDIRECT记录 {#trace-ad-insert-trace-ad-resolve-and-trace-ad-redirect-records}
+### TRACE_AD_INSERT、TRACE_AD_RESOLVE和TRACE_AD_REDIRECT记录{#trace-ad-insert-trace-ad-resolve-and-trace-ad-redirect-records}
 
 此类型的记录将记录记录类型指示的广告请求结果。 记录类型以外的字段以表格中显示的顺序显示，以制表符分隔。
 
@@ -237,7 +237,7 @@ Auditude 308008 0 cecebae72a919de350b9ac52602623f3 0 NA
 Auditude 308008 0 cecebae72a919de350b9ac52602623f3 0 NA
 ```
 
-### TRACE_TRACKING_URL记录 {#trace-tracking-url-records}
+### TRACE跟踪URL记录{#trace-tracking-url-records}
 
 此类型的记录记录清单服务器和请求的结果。 TRACE_TRACKING_URL之外的字段按表中显示的顺序显示，以选项卡分隔。
 
@@ -256,15 +256,15 @@ Auditude 308008 0 cecebae72a919de350b9ac52602623f3 0 NA
     sid:3086f5cd . . .;pts:0    200
 ```
 
-### TRACE转码_NO_MEDIA_TO_TRANSCODE记录 {#trace-transcoding-no-media-to-transcode-records}
+### TRACE转码记录{#trace-transcoding-no-media-to-transcode-records}
 
 此类型的记录记录缺少广告创意。 表中出现唯一超出TRACE转码的字段。
 
 | 字段 | 类型 | 说明 |
 |--- |--- |--- |
-| ad_id | 字符串 | 完全限定的 `(FQ_AD_ID: Q_AD_ID[;Q_AD_ID[;Q_AD_ID...]]` 广告ID Q_AD_ID: `PROTOCOL:AD_SYSTEM:AD_ID[:CREATIVE_ID[:MEDIA_ID]]` 协议：AUDITUDE, VAST`)` |
+| ad_id | 字符串 | 完全限定的广告ID `(FQ_AD_ID: Q_AD_ID[;Q_AD_ID[;Q_AD_ID...]]` Q_AD_ID:`PROTOCOL:AD_SYSTEM:AD_ID[:CREATIVE_ID[:MEDIA_ID]]`协议：AUDITUDE,VAST`)` |
 
-### TRACE转码_请求记录 {#trace-transcoding-requested-records}
+### TRACE转码_请求记录{#trace-transcoding-requested-records}
 
 此类型的记录记录清单服务器发送给CRS的转码请求的结果。 超出TRACE_CRONDING_REQUESTED范围的字段按表中显示的顺序显示，以选项卡分隔。
 
@@ -276,7 +276,7 @@ Auditude 308008 0 cecebae72a919de350b9ac52602623f3 0 NA
 | 标志 | 字符串 | ID3指示转码请求是否包括添加ID3标记的请求 |
 | 目标持续时间 | 字符串 | 转码创意的目标持续时间（秒） |
 
-### TRACE_TRACKING_REQUEST记录 {#trace-tracking-request-records}
+### TRACE跟踪请求记录{#trace-tracking-request-records}
 
 此类型的记录表示请求执行服务器端跟踪。 TRACE_TRACKING_REQUEST之外的字段按表中显示的顺序显示，以选项卡分隔。
 
@@ -286,7 +286,7 @@ Auditude 308008 0 cecebae72a919de350b9ac52602623f3 0 NA
 | 开始 | 浮 | PTS片段开始时间（秒，精确到毫秒） |
 | 结束 | 浮 | PTS片段结束时间（秒，精确到毫秒） |
 
-### TRACE_TRACKING_REQUEST_URL记录 {#trace-tracking-request-url-records}
+### TRACE_TRACKING_REQUEST_URL记录{#trace-tracking-request-url-records}
 
 此类型的记录提供用于服务器端跟踪的跟踪URL。 TRACE_TRACKING_REQUEST_URL之外的字段以表中显示的顺序显示，以选项卡分隔。
 
@@ -296,7 +296,7 @@ Auditude 308008 0 cecebae72a919de350b9ac52602623f3 0 NA
 | ad_system | 字符串 | 广告系统（例如，auditude） |
 | url | 字符串 | 要ping的URL |
 
-### TRACE_WEBVTT_REQUEST记录 {#trace-webvtt-request-records}
+### TRACE_WEBVTT_REQUEST记录{#trace-webvtt-request-records}
 
 清单服务器为WEBVTT字幕请求此类型日志的记录。 TRACE_WEBVTT_REQUEST之外的字段以表中显示的顺序显示，以选项卡分隔。
 
@@ -307,16 +307,16 @@ Auditude 308008 0 cecebae72a919de350b9ac52602623f3 0 NA
 | 开始 | 浮 | 开始分时（秒，毫秒精度） |
 | 结束 | 浮 | 分段结束时间（秒，毫秒精度） |
 
-### TRACE_WEBVTT_RESPONSE记录 {#trace-webvtt-response-records}
+### TRACE_WEBVTT_RESPONSE记录{#trace-webvtt-response-records}
 
-记录 ``of ``日志服 ``type ``务器 ``responses ``以 ``manifest ``此 ``sends ``中 ``clients ``记录 `` `answer` ``到 ``requests ```for```WEBVTT ``中的。 TRACE_WEBVTT_RESPONSE“”以外的字段按表中显示的顺序显示，分隔的选 `by`项卡。
+将``of ``此&lt;a1/>日志``type ````responses ``服务器``manifest ``记录到``clients ``中的``sends ```` `answer` ````requests ```for`字幕。 ``WEBVTT ``TRACE_WEBVTT_RESPONSE &quot;之外的字段以表中显示的顺序显示，以分隔的`by`选项卡。
 
 | 字段 | 类型 | 说明 |
 |--- |--- |--- |
 | 状态 | 字符串 | 返回的HTTP状态代码 |
 | 响应 | 字符串 | 发送到客户端的Base64编码响应 |
 
-### TRACE_WEBVTT_SOURCE记录 {#trace-webvtt-source-records}
+### TRACE_WEBVTT_SOURCE记录{#trace-webvtt-source-records}
 
 此类型的记录日志对清单服务器发出的WEBVTT题注请求的响应。 TRACE_WEBVTT_SOURCE之外的字段以表中显示的顺序显示，以选项卡分隔。
 
@@ -326,81 +326,81 @@ Auditude 308008 0 cecebae72a919de350b9ac52602623f3 0 NA
 | 源 | 字符串 | 基于64编码的原始VTT内容 |
 
 
-### TRACE_MISC记录 {#trace-misc-records}
+### TRACE_MISC记录{#trace-misc-records}
 
 此类型的记录使清单服务器能够记录事件和在收集广告时未计划的信息。 TRACE_MISC之外的字段由消息字符串组成。 可能显示的消息包括：
 
 * 已忽略广告：AdPlacement `[adManifestURL=https://cdn2.auditude.com/assets/3p/v2/8c/2b/8c2bb. . . .m3u8, durationSeconds=15.0, ignore=false, redirectAd=false, priority=1]`
-* AdPlacement adManifestURL=*adManifestURL*, durationSeconds=*秒*, ignore=ignore *, redirectAd=* redirectAdManifestURL,***durationPriority=priority*
+* AdPlacement adManifestURL=*adManifestURL*,durationSeconds=*秒*,ignore=*忽略*,redirectAd=*redirectAd*，优先级=a8/**
 * 广告投放返回null。
 * 广告拼接成功。
-* 广告呼叫失败： *错误消息*。
-* 添加用户代理以获取原始清单： *用户代理*。
-* 添加cookie以获取原始清单： [cookie]
-* 请求的URL *错误消息错误*。 （无法解析变体URL）
-* 调用的url:URL获 *得回车：响应代码*。 （实时URL）
-* 调用的url:URL返 *回代码：响应代码*。 (VOD URL)
+* 广告呼叫失败：*错误消息*。
+* 添加用户代理以获取原始清单：*user-agent*。
+* 添加cookie以获取原始清单：[cookie]
+* URL *请求的URL错误消息*。 （无法解析变体URL）
+* 调用的url:URL *已返回：响应代码*。 （实时URL）
+* 调用的url:URL *返回代码：响应代码*。 (VOD URL)
 * 解决广告时发现冲突：中间辊开始或中间辊端之一位于中间辊(VOD)中包含的预辊或预辊内。
-* 检测到处理程序为URI引发的未处理异常： *请求URL*。
+* 检测到处理程序为URI引发的未处理异常：*请求URL*。
 * 已完成生成变型清单。 （变体）
 * 已完成生成变型清单。
-* 处理VAST重定向*重定向URL时出现异常*错误： *错误消息*。
-* 无法获取广告清单URL的 *播放列表*。
+* 处理VAST重定向*重定向URL时出现异常*错误：*错误消息*。
+* 无法获取&#x200B;*广告清单URL*&#x200B;的广告播放列表。
 * 无法生成目标清单。 (HLSManifestResolver)
-* 无法解析第一个广告调用响应： *错误消息*。
-* 无法处理*GET|POST*路径请求： *请求URL*。 （实时/VOD）
-* 无法处理Live Manifest请求： *请求URL*。 （实时）
-* 无法返回变型清单： *错误消息*。
-* 无法验证组ID: *组ID*。
-* 正在获取原始清单： *内容URL*。 （实时）
-* 遵循VAST重定向： *重定向URL*。
+* 无法解析第一个广告调用响应：*错误消息*。
+* 无法处理*GET|POST*路径请求：*请求URL*。 （实时/VOD）
+* 无法处理Live Manifest请求：*请求URL*。 （实时）
+* 无法返回变型清单：*错误消息*。
+* 无法验证组ID:*组ID*。
+* 正在获取原始清单：*内容URL*。 （实时）
+* 遵循VAST重定向：*重定向URL*。
 * 发现空的可用。 (VOD)
 * 找到*数字*广告。 (VOD)
 * 收到HTTP请求。 （第一条消息）
 * 将忽略广告，因为广告响应持续时间（*广告响应持续时间*秒）与实际广告持续时间（*实际持续时间*秒）之间的差异大于限制。 (HLSManifestResolver)
 * 将忽略未提供ID值的可用值。 (GroupAdResolver.java)
 * 忽略提供无效时间值的有用值：*time *for availId = *avail ID*。
-* 忽略提供无效持续时间值的有用值：*持续时间*for availId = *availID*。
+* 忽略提供无效持续时间值的有用值：*uration *for availId = *avail ID*。
 * 初始化新会话。 （变体）
 * HTTP方法无效。 一定是GET。 (VOD)
 * HTTP方法无效。 跟踪请求必须是GET。 （实时）
-* 请求的URL *错误消息无效*。 （变体）
+* URL *请求的URL错误消息*&#x200B;无效。 （变体）
 * 组无效。 (HLSManifestResolver)
 * 请求无效。 题注不是有效的跟踪请求。 (VOD)
 * 请求无效。 必须在会话建立后发出题注请求。 (VOD)
 * 请求无效。 建立会话后必须发出跟踪请求。 (VOD)
-* 超载组ID的服务器实例无效： *组ID*。 （实时）
-* 已达到VAST重定向的限 *制——数*。
-* 进行广告呼叫： *广告呼叫URL*。
-* 未找到以下对象的清单： *内容URL*。 （实时）
-* 找不到可用ID的匹配值： *可用ID*。 (HLSManifestResolver)
+* 超载组ID的服务器实例无效：*组ID*。 （实时）
+* 已达到VAST重定向的限制- *number*。
+* 进行广告呼叫：*广告调用URL*。
+* 未找到以下对象的清单：*内容URL*。 （实时）
+* 找不到可用ID的匹配值：*可用ID*。 (HLSManifestResolver)
 * 找不到播放会话。 (HLSManifestResolver)
-* 正在处理清单内容URL *的VOD请求*。
+* 正在处理清单&#x200B;*内容URL*&#x200B;的VOD请求。
 * 正在处理变体。
-* 正在处理清单内容URL *的题注请求*。
+* 正在处理清单&#x200B;*内容URL*&#x200B;的题注请求。
 * 正在处理跟踪请求。 (VOD)
 * 重定向广告响应为空。 (VASTStAX)
-* 请求： *URL*。
+* 请求：*URL*。
 * 返回GET请求的错误响应，因为未找到播放会话。 (VOD)
 * 由于内部服务器错误，返回GET请求的错误响应。
-* 为指定无效资产的GET请求返回错误响应： *广告请求ID*。 (VOD)
-* 为指定无效或空组ID的GET请求返回错误响应： *组ID*。 (VOD)
+* 为指定无效资产的GET请求返回错误响应：*广告请求ID*。 (VOD)
+* 为指定无效或空组ID的GET请求返回错误响应：*组ID*。 (VOD)
 * 为指定无效跟踪位置值的GET请求返回错误响应。 (VOD)
-* 对语法无效的GET请求返回错误响 *应——请求URL*。 （实时/VOD）
-* 使用不支持的HTTP方法返回请求错误响应： *GET|POST*。 （实时/VOD）
+* 对语法无效的GET请求返回错误响应- *请求URL*。 （实时/VOD）
+* 使用不支持的HTTP方法返回请求错误响应：*GET|POST*。 （实时/VOD）
 * 从缓存返回清单。 (VOD)
 * 服务器过载。 无需广告拼接请求即可继续。 （变体）
 * 开始生成目标清单。 (HLSManifestResolver)
-* 开始从以下位置生成变型清单： *内容URL*。 （变体）
+* 开始从以下位置生成变型清单：*内容URL*。 （变体）
 * 开始将广告拼接到清单中。 (VODHLSResolver)
-* 尝试在HH:MM: *SS处缝合广告*:AdPlacement adManifestURL=*广告清单URL*,Seconds=*秒*，忽略=忽略&#x200B;*,*&#x200B;重定向广告&#x200B;*=重定向广告重定向，优***&#x200B;先级=优先级。 (HLSManifestResolver)
+* 尝试在&#x200B;*HH:MM:SS*&#x200B;处缝合广告：AdPlacement adManifestURL=*广告清单URL*,durationSeconds=*秒*,ignore=*ignore*, redirectAd=*, redirect ad*, prioritiririority=&lt;a10/&lt;a1111/>。 **(HLSManifestResolver)
 * 由于时间轴无效，无法获取广告——返回不带广告的内容。 (VOD)
 * 无法获取广告——返回没有广告的内容。 (VOD)
 * 无法获取广告查询，未提供内容URL。 (VOD)
 * 收到有效的URL。 （VOD/变型）
 * 找不到变体M3U8。 （变体）
 
-### TRACE_TRACKING_URL记录 {#trace-tracking-url-records-1}
+### TRACE跟踪URL记录{#trace-tracking-url-records-1}
 
 清单服务器在服务器端跟踪工作流期间调用跟踪URL后生成此类记录。 TRACE_TRACKING_URL之外的字段按表中显示的顺序显示，以选项卡分隔。
 
@@ -411,7 +411,7 @@ Auditude 308008 0 cecebae72a919de350b9ac52602623f3 0 NA
 | url | 字符串 | URL已pinged |
 | 状态 | 字符串 | HTTP状态代码 |
 
-### TRACE_PLAYBACK_PROGRESS记录 {#trace-playback-progress-records}
+### TRACE播放进度记录{#trace-playback-progress-records}
 
 清单服务器在服务器端跟踪工作流期间接收关于回放进度的信号时生成这种记录。 TRACE_PLAYBACK_PROGRESS之外的字段按表中显示的顺序显示，以选项卡分隔。
 
@@ -431,6 +431,6 @@ Auditude 308008 0 cecebae72a919de350b9ac52602623f3 0 NA
 >
 >最后四个字段为可选字段。
 
-## 实用资源 {#helpful-resources}
+## 帮助资源{#helpful-resources}
 
-* 请参阅Adobe Primetime学习和支 [持页面上的完整帮助](https://helpx.adobe.com/support/primetime.html) 文档。
+* 请参阅[Adobe Primetime学习和支持](https://helpx.adobe.com/support/primetime.html)页面上的完整帮助文档。
