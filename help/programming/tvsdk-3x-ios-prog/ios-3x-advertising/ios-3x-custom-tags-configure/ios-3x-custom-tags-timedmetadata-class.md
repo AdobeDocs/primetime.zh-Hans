@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# 定时元数据类 {#timed-metadata-class}
+# 定时元数据类{#timed-metadata-class}
 
 当TVSDK检测到播放列表／清单中的订阅标记时，播放器自动尝试处理该标记并以PTTimedMetadata对象的形式公开它。
 
@@ -34,9 +34,9 @@ ht-degree: 0%
    <td colname="col2"> 定时元数据的唯一标识符。 此值通常从cue/tag ID属性中提取。 否则，提供唯一随机值。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"><span class="codeph"> 名称</span> </td> 
+   <td colname="col1"><span class="codeph"> name</span> </td> 
    <td colname="col02"><span class="codeph"> NSString</span></td> 
-   <td colname="col2"> 定时元数据的名称。 如果类型为 <span class="codeph"> TAG</span>，则值表示提示／标记名称。 如果类型为 <span class="codeph"> ID3</span>，则为null。 </td> 
+   <td colname="col2"> 定时元数据的名称。 如果类型为<span class="codeph"> TAG</span>，则值表示cue/tag名称。 如果类型为<span class="codeph"> ID3</span>，则为null。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> 时间</span> </td> 
