@@ -11,9 +11,9 @@ ht-degree: 0%
 ---
 
 
-# 防火墙规则 {#firewall-rules}
+# 防火墙规则{#firewall-rules}
 
-## 传入URL {#section-F111526A9DB844CBBF21A3CAE5F50880}
+## 传入的URL {#section-F111526A9DB844CBBF21A3CAE5F50880}
 
 配置外部防火墙，使其仅显示您要向最终用户提供的应用程序功能的URL。 允许外部用户仅通过外部防火墙访问下表中列出的URL:
 
@@ -78,11 +78,11 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="filepath"> /flashaccess/headerconversion/v1/*</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">客户端用于将FMRMS 1.x DRM元数据转换为Adobe访问DRM元数据的URL。 </p> <p class="- topic/p ">注意： <i class="+ topic/ph hi-d/i ">此URL必须使用SSL(HTTPS)</i>。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">客户端用于将FMRMS 1.x DRM元数据转换为Adobe访问DRM元数据的URL。 </p> <p class="- topic/p ">注意：<i class="+ topic/ph hi-d/i ">此URL必须使用SSL(HTTPS)</i>。 </p> </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="filepath"> /edcws/services/urn:EDCLicenseService/*</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">LiveCycle Rights Management ESWeb服务URL。 如果内容是使用FMRMS的较早版本发布的，则此URL允许旧客户端连接到服务器并提示升级到Adobe访问。 </p> <p class="- topic/p ">注意： <i class="+ topic/ph hi-d/i ">此URL必须使用SSL(HTTPS)</i>。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">LiveCycle Rights Management ESWeb服务URL。 如果内容是使用FMRMS的较早版本发布的，则此URL允许旧客户端连接到服务器并提示升级到Adobe访问。 </p> <p class="- topic/p ">注意：<i class="+ topic/ph hi-d/i ">此URL必须使用SSL(HTTPS)</i>。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="1" class="- topic/entry "><span class="filepath"> /flashaccess/lreturn/v5</span> </td> 
@@ -99,7 +99,7 @@ ht-degree: 0%
 
 许可证服务器需要通过防火墙访问以下CRL从Adobe下载：
 
-* <span></span>https://crl2.adobe.com/Adobe/FlashAccessRootCA.crl
-* <span></span>https://crl2.adobe.com/Adobe/FlashAccessIntermediateCA.crl
-* <span></span>https://crl3.adobe.com/AdobeSystemsIncorporatedFlashAccessRuntime/LatestCRL.crl
-* <span></span>https://crl2.adobe.com/Adobe/FlashAccessIndividualizationCA.crl
+* ttps://crl2.adobe.com/Adobe/FlashAccessRootCA.crl<span></span>
+* tps://crl2.adobe.com/Adobe/FlashAccessIntermediateCA.crl<span></span>
+* tps://crl3.adobe.com/AdobeSystemsIncorporatedFlashAccessRuntime/LatestCRL.crl<span></span>
+* tps://crl2.adobe.com/Adobe/FlashAccessIndividualizationCA.crl<span></span>
