@@ -1,27 +1,30 @@
 ---
-description: 对于实时流广告插入，您可能需要退出广告中断，然后才能播放中断中的所有广告，直到完成。
-seo-description: 对于实时流广告插入，您可能需要退出广告中断，然后才能播放中断中的所有广告，直到完成。
+description: 对于实时流广告插入，您可能需要退出广告分段，然后才能播放分段中的所有广告完成。
+seo-description: 对于实时流广告插入，您可能需要退出广告分段，然后才能播放分段中的所有广告完成。
 seo-title: 实施早期广告分时段退货
 title: 实施早期广告分时段退货
 uuid: c67f2158-5df4-458c-a27a-6329c5d26638
 translation-type: tm+mt
 source-git-commit: 0eaf0e7e7e61d596a51d1c9c837ad072d703c6a7
+workflow-type: tm+mt
+source-wordcount: '209'
+ht-degree: 1%
 
 ---
 
 
-# 实施早期广告分时段退货 {#implement-an-early-ad-break-return}
+# 实施早期广告中断返回{#implement-an-early-ad-break-return}
 
-对于实时流广告插入，您可能需要退出广告中断，然后才能播放中断中的所有广告，直到完成。
+对于实时流广告插入，您可能需要退出广告分段，然后才能播放分段中的所有广告完成。
 
-例如，某些体育赛事中的广告中断的持续时间在中断开始之前可能不知道。 TVSDK提供默认持续时间，但如果游戏在中断结束前恢复，则必须退出广告中断。 另一个示例是实时流中广告中断期间的紧急信号。
+例如，某些体育事件的广告中断时间可能在中断开始之前不知道。 TVSDK提供默认持续时间，但如果游戏在中断结束前恢复，则必须退出广告中断。 另一个示例是实时流中广告中断期间的紧急信号。
 
-1. 订阅、 `#EXT-X-CUE-OUT`和 `#EXT-X-CUE-IN`，这 `#EXT-X-CUE`是标记中的剪接／剪接。
+1. 订阅`#EXT-X-CUE-OUT`、`#EXT-X-CUE-IN`和`#EXT-X-CUE`，它们是标记中的splice out/splice。
 
-   有关如何拼接广告标记的更多信息，请参阅 [Opportunity生成器和内容解析器](../../ad-insertion/content-resolver/c-psdk-android-2.7-content-resolver-about.md)。
+   有关如何拼接广告标记的详细信息，请参见[Opportunity生成器和内容解析器](../../ad-insertion/content-resolver/c-psdk-android-2.7-content-resolver-about.md)。
 
-1. 使用自定义 `ContentFactory`。
-1. 在 `retrieveGenerators`中，使用 `SpliceInPlacementOpportunityGenerator`。
+1. 使用自定义`ContentFactory`。
+1. 在`retrieveGenerators`中，使用`SpliceInPlacementOpportunityGenerator`。
 
    例如：
 
@@ -33,9 +36,9 @@ source-git-commit: 0eaf0e7e7e61d596a51d1c9c837ad072d703c6a7
    }
    ```
 
-   有关使用自定义的详细信息，请 `ContentFactory`参阅实施自定义机会 [生成器中的步骤1](../../ad-insertion/content-resolver/t-psdk-android-2.7-opp-detector-impl-android.md)。
+   有关使用自定义`ContentFactory`的详细信息，请参见[实施自定义机会gerenator](../../ad-insertion/content-resolver/t-psdk-android-2.7-opp-detector-impl-android.md)中的步骤1。
 
-1. 在同一个自定义 `ContentFactory`上，实 `retrieveResolvers` 施并包含 `AuditudeResolver` 和 `SpliceInCustomResolver`。
+1. 在同一个自定义`ContentFactory`上，实现`retrieveResolvers`并包括`AuditudeResolver`和`SpliceInCustomResolver`。
 
    例如：
 
