@@ -13,15 +13,15 @@ ht-degree: 0%
 ---
 
 
-# 播放受保护的内容 {#playback-your-protected-content}
+# 播放受保护的内容{#playback-your-protected-content}
 
 要测试DRM解决方案，您需要一个视频应用程序，它可以处理您正在使用的特定DRM解决方案。 此播放器可以是Adobe提供的示例播放器，或您自己的基于TVSDK的视频应用程序。
 
 1. 使用从ExpressPlay服务器返回的令牌响应中的许可证服务器URL来测试是否可以回放受保护的内容。
 
-   * **Widevine** —— 直接使用从ExpressPlay许可证令牌请求接收的Widevine响应。
-   * **PlayReady** —— 从您的许可证令牌请求返回的JSON对象中获取许可证服务器URL和令牌。
-   * **FairPlay** —— 直接在从ExpressPlay许可证令牌请求中收到时使用FairPlay响应。
+   * **Widevine**  —— 直接使用从ExpressPlay许可证令牌请求接收的Widevine响应。
+   * **PlayReady** -从您的许可证令牌请求返回的JSON对象中获取许可证服务器URL和令牌。
+   * **FairPlay**  —— 直接使用从ExpressPlay许可证令牌请求接收的FairPlay响应。
 
 1. 使用您自己的播放器或现有的Adobe范例播放器测试受保护内容的播放。
 
@@ -49,14 +49,14 @@ ht-degree: 0%
    https://drmtest2.adobe.com/TVSDK_HTML5/samples/reference/reference_player.html
    ```
 
-   **测试FairPlay设置时检查播放：** 在您使用ExpressPlay许可证服务器时，FairPlay需要执行一些额外步骤来播放内容。 如果您正在 [!DNL curl] 使用测试连接(如许可 [中所述](../../multi-drm-workflows/quick-start/handle-the-licensing.md))，您需 *要按如下方式编辑M3U8清单* （您的打包内容）:
+   **在测试FairPlay设置时检查播** 放：在您使用ExpressPlay许可证服务器时，FairPlay需要执行一些额外步骤来播放内容。如果您使用[!DNL curl]测试连接（如[Licensing](../../multi-drm-workflows/quick-start/handle-the-licensing.md)中所述），则需要&#x200B;*编辑M3U8清单*（您的打包内容），如下所示：
 
-1. 将您从许可证令牌请求返回的响应添加到清单 `#EXT-X-KEY:` 中的标记中；和
-1. 将该URL的协议从响应（现在在清单中）从更改 `https://` 为 `skd://`。
+1. 将许可证令牌请求返回的响应添加到清单中的`#EXT-X-KEY:`标记；和
+1. 将该URL的协议从响应（现在在清单中），从`https://`更改为`skd://`。
 
    下面是一个用FairPlay测试播放的完整示例，包括许可步骤：
 
-1. 使用FairPlay许可证令牌请求获取您的许可证令牌URL。 (请使用您自己的生产客户验证器，并确保使用与用 `iv` 于打包FairPlay内容相同的CEK。) 运行以下命令以获取示例内容的许可证令牌URL:
+1. 使用FairPlay许可证令牌请求获取您的许可证令牌URL。 （请使用您自己的生产客户验证器，并确保使用用于打包FairPlay内容的相同CEK和`iv`。） 运行以下命令以获取示例内容的许可证令牌URL:
 
    ```
    curl -v "https://fp-gen.service.expressplay.com/hms/fp/token? 
@@ -74,7 +74,7 @@ ht-degree: 0%
    SSwcDq1ZnRtXunFLueTw6LAL52aZllMLasCSzYRMaAVHw 
    ```
 
-1. 将返回的许可证令牌URL响应放入您的M3U8清单中， *并将许可证令牌URL的方案从*`sdk://` 更改为 `https://`。 以下是M3U8清单中#EXT-X-KEY标签的示例：
+1. 将返回的许可证令牌URL响应放入您的M3U8清单中，并将&#x200B;*许可证令牌URL的方案从`https://`更改为* `sdk://`。 以下是M3U8清单中#EXT-X-KEY标签的示例：
 
    ```
    #EXT-X-KEY:METHOD=SAMPLE-AES, 
@@ -87,7 +87,7 @@ ht-degree: 0%
 
    >[!NOTE]
    >
-   >上述信息仅适用于FairPlay设置的测试。 它可能不适用于您的生产设置，具体取决于您配置FairPlay处理程序的方式。 有关详 [细信息，请参阅在iOS应用程序中启用](../../../programming/tvsdk-3x-ios-prog/ios-3x-drm-content-security/ios-3x-apple-fairplay-tvsdk.md) Apple FairPlay。
+   >上述信息仅适用于FairPlay设置的测试。 它可能不适用于您的生产设置，具体取决于您配置FairPlay处理程序的方式。 有关详细信息，请参阅[在iOS应用程序中启用Apple FairPlay](../../../programming/tvsdk-3x-ios-prog/ios-3x-drm-content-security/ios-3x-apple-fairplay-tvsdk.md)。
 
 如果播放视频，您已成功打包并许可您的内容。 如果视频播放不畅，请查看疑难解答页面，找到一些可能的故障解决方案。
 
