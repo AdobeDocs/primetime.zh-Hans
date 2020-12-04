@@ -6,6 +6,9 @@ title: 控制视频视图的位置和大小
 uuid: d09dbc18-1ec0-4336-bf3f-7ff6c265c443
 translation-type: tm+mt
 source-git-commit: 592245f5a7186d18dabbb5a98a468cbed7354aed
+workflow-type: tm+mt
+source-wordcount: '317'
+ht-degree: 0%
 
 ---
 
@@ -14,25 +17,25 @@ source-git-commit: 592245f5a7186d18dabbb5a98a468cbed7354aed
 
 您可以使用MediaPlayerView对象控制视频视图的位置和大小。
 
-默认情况下，当视频的大小或位置因应用程序、配置文件切换、内容切换等所做的更改而发生变化时，浏览器TVSDK会尝试保持视频视图的宽高比。
+默认情况下，当视频的大小或位置因应用程序、视图开关、内容开关等所做的更改而发生变化时，浏览器TVSDK会尝试保持视频用户档案的宽高比。
 
-您可以通过指定其他缩放策略来覆盖默认的宽高比 *行为*。 使用对象的属性指 `MediaPlayerView` 定缩放策 `scalePolicy` 略。 默认的缩放策 `MediaPlayerView` 略是使用类的一个实例设 `MaintainAspectRatioScalePolicy` 置的。 要重置比例策略，请用您自己的策略替换 `MaintainAspectRatioScalePolicy` on的 `MediaPlayerView.scalePolicy` 默认实例。
+可以通过指定不同的&#x200B;*缩放策略*&#x200B;来覆盖默认的宽高比行为。 使用`MediaPlayerView`对象的`scalePolicy`属性指定缩放策略。 使用`MaintainAspectRatioScalePolicy`类的实例设置`MediaPlayerView`的默认缩放策略。 要重置缩放策略，请用您自己的策略替换`MediaPlayerView.scalePolicy`上`MaintainAspectRatioScalePolicy`的默认实例。
 
 >[!IMPORTANT]
 >
->不能将该属 `scalePolicy` 性设置为null值。
+>不能将`scalePolicy`属性设置为null值。
 
-## 非Flash备用方案 {#non-flash-fallback-scenarios}
+## 非Flash回退方案{#non-flash-fallback-scenarios}
 
-在非Flash备用场景中，为了使缩放策略能够正确工作，构造函数中给定的视频div元素应 `View` 为和返回非零 `offsetWidth` 值 `offsetHeight`。 为了给出一个错误函数的示例，有时当视频div元素的宽度和高度未在css中显式设置时，构造函数 `View` 为或返回 `offsetWidth` 零 `offsetHeight`。
+在非Flash回退场景中，要使缩放策略正常工作，`View`构造函数中提供的视频div元素应返回`offsetWidth`和`offsetHeight`的非零值。 要给出一个不正确函数的示例，有时当视频div元素的宽度和高度未在css中显式设置时，`View`构造函数对于`offsetWidth`或`offsetHeight`返回零。
 
 >[!NOTE]
 >
->CustomScalePolicy对一些浏览器（特别是IE、Edge和Safari 9）的支持有限。 对于这些浏览器，无法更改视频的本机长宽比。 但是，视频的位置和尺寸将根据缩放策略实施。
+>CustomScalePolicy对一些浏览器（尤其是IE、Edge和Safari 9）的支持有限。 对于这些浏览器，无法更改视频的本机长宽比。 但是，视频的位置和尺寸将根据缩放策略强制执行。
 
-1. 实现该 `MediaPlayerViewScalePolicy` 接口以创建您自己的缩放策略。
+1. 实施`MediaPlayerViewScalePolicy`接口以创建您自己的缩放策略。
 
-   它有 `MediaPlayerViewScalePolicy` 一种方法：
+   `MediaPlayerViewScalePolicy`有一个方法：
 
    ```js
    /** 
@@ -64,14 +67,14 @@ source-git-commit: 592245f5a7186d18dabbb5a98a468cbed7354aed
    };
    ```
 
-1. 将您的实施分配给该 `MediaPlayerView` 属性。
+1. 将实现分配给`MediaPlayerView`属性。
 
    ```js
    var view = new AdobePSDK.MediaPlayerView(videoDiv); 
    view.scalePolicy= new MediaPlayerViewCustomScalePolicy();
    ```
 
-1. 将您的视图添加到Media Player的属 `view` 性。
+1. 将您的视图添加到媒体播放器的`view`属性。
 
    ```
    mediaplayer.view = view;
