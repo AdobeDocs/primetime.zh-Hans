@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # 日志文件{#log-files}
 
-由Adobe Access Server为受保护流应用程序生成的日志文件将位于由LicenseServer.LogRoot指定 *的目录中*。
+由Adobe Access Server为受保护流应用程序生成的日志文件将位于由&#x200B;*LicenseServer.LogRoot*&#x200B;指定的目录中。
 
 >[!NOTE]
 >
