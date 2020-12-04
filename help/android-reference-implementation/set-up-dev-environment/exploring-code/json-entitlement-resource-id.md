@@ -2,17 +2,20 @@
 seo-title: 授权资源ID的JSON对象
 title: 授权资源ID的JSON对象
 uuid: f5b659da-1732-404c-bf00-d32a0ae39aa1
-description: 当授权资源ID是简单的文本字符串时，以下代码块提供了JSON对象的示例。
-seo-description: 当授权资源ID是简单的文本字符串时，以下代码块提供了JSON对象的示例。
+description: 当授权资源ID是简单文本字符串时，以下代码块提供JSON对象的示例。
+seo-description: 当授权资源ID是简单文本字符串时，以下代码块提供JSON对象的示例。
 translation-type: tm+mt
 source-git-commit: 31b6cad26bcc393d731080a70eff1c59551f1c8e
+workflow-type: tm+mt
+source-wordcount: '122'
+ht-degree: 0%
 
 ---
 
 
-# 授权资源ID的JSON对象 {#json-object-for-entitlement-resource-id}
+# 授权资源ID {#json-object-for-entitlement-resource-id}的JSON对象
 
-当授权资源ID是简单的文本字符串时，以下代码块提供了JSON对象的示例。 在这种情况下，资源ID是字符串“resource”。
+当授权资源ID是简单文本字符串时，以下代码块提供JSON对象的示例。 在这种情况下，资源ID是字符串“resource”。
 
 ```
 "metadata" : { 
