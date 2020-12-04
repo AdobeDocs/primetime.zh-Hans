@@ -1,27 +1,30 @@
 ---
-description: 服务质量(QoS)提供了视频引擎执行情况的详细视图。 浏览器TVSDK提供有关播放、缓冲和设备的详细统计信息。
-seo-description: 服务质量(QoS)提供了视频引擎执行情况的详细视图。 浏览器TVSDK提供有关播放、缓冲和设备的详细统计信息。
+description: 服务质量(QoS)优惠视频引擎的性能的详细视图。 浏览器TVSDK提供有关播放、缓冲和设备的详细统计信息。
+seo-description: 服务质量(QoS)优惠视频引擎的性能的详细视图。 浏览器TVSDK提供有关播放、缓冲和设备的详细统计信息。
 seo-title: 服务质量统计
 title: 服务质量统计
 uuid: e4bb2617-d8a7-4da7-b669-d6ffab2864bb
 translation-type: tm+mt
 source-git-commit: 592245f5a7186d18dabbb5a98a468cbed7354aed
+workflow-type: tm+mt
+source-wordcount: '170'
+ht-degree: 1%
 
 ---
 
 
 # 服务质量统计{#quality-of-service-statistics}
 
-服务质量(QoS)提供了视频引擎执行情况的详细视图。 浏览器TVSDK提供有关播放、缓冲和设备的详细统计信息。
+服务质量(QoS)优惠视频引擎的性能的详细视图。 浏览器TVSDK提供有关播放、缓冲和设备的详细统计信息。
 
-## 读取QOS播放、缓冲和设备统计信息 {#read-qos-playback-buffering-and-device-statistics}
+## 读取QOS播放、缓冲和设备统计数据{#read-qos-playback-buffering-and-device-statistics}
 
-可以从QOSProvider类读取播放、缓冲和设备统计信息。
+您可以从QOSProvider类读取播放、缓冲和设备统计信息。
 
-该 `QOSProvider` 类提供各种统计信息，包括有关缓冲、位速率、帧速率、时间数据等的信息。
+`QOSProvider`类提供各种统计信息，包括有关缓冲、比特率、帧速率、时间数据等的信息。
 
 1. 实例化媒体播放器。
-1. 创建一 `QOSProvider` 个对象并将其附加到媒体播放器。
+1. 创建`QOSProvider`对象，并将其连接到媒体播放器。
 
    ```js
    // Create Media Player.qosProvider =  
@@ -31,7 +34,7 @@ source-git-commit: 592245f5a7186d18dabbb5a98a468cbed7354aed
 
 1. （可选）阅读播放统计信息。
 
-   读取播放统计数据的一个解决方案是具有计时器，该计时器定期从中获取新的QoS值 `QOSProvider`。 例如：
+   读取播放统计信息的一个解决方案是设置计时器，该计时器定期从`QOSProvider`中获取新的QoS值。 例如：
 
    ```js
    var qosTimer = (function () { 
