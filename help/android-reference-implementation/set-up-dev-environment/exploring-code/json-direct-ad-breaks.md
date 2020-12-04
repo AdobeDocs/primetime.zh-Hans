@@ -6,15 +6,18 @@ description: 在类型值为直接和分段时详细描述JSON对象
 seo-description: 在类型值为直接和分段时详细描述JSON对象
 translation-type: tm+mt
 source-git-commit: 31b6cad26bcc393d731080a70eff1c59551f1c8e
+workflow-type: tm+mt
+source-wordcount: '182'
+ht-degree: 0%
 
 ---
 
 
-# 用于直接广告中断的JSON对象{#json-object-for-direct-ad-breaks}
+# 直接广告中断的JSON对象{#json-object-for-direct-ad-breaks}
 
-以下代码块定义当类型值为直接分段时的详细信息JSON对象。
+当类型值为直接广告分段时，以下代码块定义详细信息JSON对象。
 
-返回 `MetadataNode` 的包 `IFeedItemAdapter:getStreamMetadata()` 含一个条目，其中包含类型和值的键， `com.adobe.mediacore.metadata.DefaultMetadataKeys.JSON_METADATA_KEY` 以下是详细JSON对象值的字符串表示形式。
+`IFeedItemAdapter:getStreamMetadata()`返回的`MetadataNode`包含键类型为`com.adobe.mediacore.metadata.DefaultMetadataKeys.JSON_METADATA_KEY`的条目，以及下面详细JSON对象值的字符串表示形式的值。
 
 ```
 “metadata”: { 
@@ -50,12 +53,12 @@ source-git-commit: 31b6cad26bcc393d731080a70eff1c59551f1c8e
 
 | 属性 | 说明 |
 |---|---|
-| `tag` | 映射到中标记字段的字符串 `com.adobe.mediacore.timeline.advertising.AdBreak`。 |
-| `time` | 指示广告中断的开始时间，映射到中的时间字段 `com.adobe.mediacore.timeline.advertising.AdBreak`。 值为0表示预先滚动广告。 |
-| `replace` | 指示广告中断替换持续时间，映射到中 `replaceDuration` 的字段 `com.adobe.mediacore.timeline.advertising.AdBreak`。 |
-| `ad-list` | 给定广告分时段内要播放的广告列表，映射到中 `List<Ad>` 的字段 `com.adobe.mediacore.timeline.advertising.AdBreak`。 |
+| `tag` | 映射到`com.adobe.mediacore.timeline.advertising.AdBreak`中标记字段的字符串。 |
+| `time` | 指示广告中断的开始时间，映射到`com.adobe.mediacore.timeline.advertising.AdBreak`中的时间字段。 值0表示预先投放广告。 |
+| `replace` | 指示广告中断替换持续时间，映射到`com.adobe.mediacore.timeline.advertising.AdBreak`中的`replaceDuration`字段。 |
+| `ad-list` | 在给定广告分时段要播放的广告列表，映射到`com.adobe.mediacore.timeline.advertising.AdBreak`中的`List<Ad>`字段。 |
 
-以下代码块为ads-list数组定义JSON对象。
+以下代码块为广告列表数组定义JSON对象。
 
 ```
 "ad-list": [ 
@@ -74,7 +77,7 @@ source-git-commit: 31b6cad26bcc393d731080a70eff1c59551f1c8e
 
 | 属性 | 说明 |
 |---|---|
-| `url` | 广告内容的URL，映射到中的url字段 `com.adobe.mediacore.timeline.advertising.Ad`。 |
-| `duration` | 广告的持续时间，映射到中的持续时间字段 `com.adobe.mediacore.timeline.advertising.Ad`。 |
+| `url` | 广告内容的URL映射到`com.adobe.mediacore.timeline.advertising.Ad`中的url字段。 |
+| `duration` | 广告的持续时间，映射到`com.adobe.mediacore.timeline.advertising.Ad`中的持续时间字段。 |
 | `tag` | 描述字符串。 |
 
