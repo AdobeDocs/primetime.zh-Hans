@@ -1,18 +1,21 @@
 ---
-description: 某些API可以帮助您使用Adobe Flash Player。
-seo-description: 某些API可以帮助您使用Adobe Flash Player。
-seo-title: Adobe Flash Player的实用API
-title: Adobe Flash Player的实用API
+description: 某些API可以帮助您使用AdobeFlash Player。
+seo-description: 某些API可以帮助您使用AdobeFlash Player。
+seo-title: 有助于AdobeFlash Player的API
+title: 有助于AdobeFlash Player的API
 uuid: eae314c0-fd9e-480f-ae1c-9b5f3eb4db4b
 translation-type: tm+mt
 source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+workflow-type: tm+mt
+source-wordcount: '84'
+ht-degree: 0%
 
 ---
 
 
-# Adobe Flash Player的实用API{#helpful-apis-for-the-adobe-flash-player}
+# AdobeFlash Player的有用API{#helpful-apis-for-the-adobe-flash-player}
 
-某些API可以帮助您使用Adobe Flash Player。
+某些API可以帮助您使用AdobeFlash Player。
 
 ## AdobePSDK.MediaResource {#section_8C339FA1386D4B1A926A1459B2619E5E}
 
@@ -20,7 +23,7 @@ source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
 new MediaResource(url, type, metadata, forceFlash)
 ```
 
-如果支持，您可以使用该参 `forceFlash` 数来覆盖回放技术确定序列并强制实现使用Flash Player。
+如果支持，可以使用`forceFlash`参数覆盖回放技术确定序列并强制实现使用Flash Player。
 
 <!--<a id="section_FEE3205B532446498771F7DD55B5E79F"></a>-->
 
