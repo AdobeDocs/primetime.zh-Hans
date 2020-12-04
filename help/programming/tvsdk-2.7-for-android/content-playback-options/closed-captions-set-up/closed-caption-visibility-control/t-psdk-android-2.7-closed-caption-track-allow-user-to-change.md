@@ -1,20 +1,23 @@
 ---
-description: 此过程是有关如何创建允许用户选择隐藏式字幕轨道的按钮的示例。
-seo-description: 此过程是有关如何创建允许用户选择隐藏式字幕轨道的按钮的示例。
+description: 此过程是有关如何创建按钮的示例，该按钮允许用户选择隐藏字幕轨道。
+seo-description: 此过程是有关如何创建按钮的示例，该按钮允许用户选择隐藏字幕轨道。
 seo-title: 允许用户更改题注轨道
 title: 允许用户更改题注轨道
 uuid: 043dc492-1dd4-4b7f-8541-d60a1d3d7c4a
 translation-type: tm+mt
 source-git-commit: 812d04037c3b18f8d8cdd0d18430c686c3eee1ff
+workflow-type: tm+mt
+source-wordcount: '141'
+ht-degree: 0%
 
 ---
 
 
-# 允许用户更改题注轨道 {#allow-users-to-change-the-caption-track}
+# 允许用户更改题注轨道{#allow-users-to-change-the-caption-track}
 
-此过程是有关如何创建允许用户选择隐藏式字幕轨道的按钮的示例。
+此过程是有关如何创建按钮的示例，该按钮允许用户选择隐藏字幕轨道。
 
-1. 创建用于更改隐藏式字幕轨道的按钮。
+1. 创建按钮以更改隐藏字幕轨道。
 
    ```xml
    <Button 
@@ -28,9 +31,9 @@ source-git-commit: 812d04037c3b18f8d8cdd0d18430c686c3eee1ff
      android:text="CC" /> 
    ```
 
-1. 将可用隐藏字幕轨道列表转换为字符串数组。
+1. 将可用隐藏字幕轨道的列表转换为字符串数组。
 
-   隐藏式字幕跟踪具有活动（即TVSDK已发现数据的频道）被相应地标记。
+   隐藏字幕轨道具有活动，即TVSDK已发现数据的渠道，将相应地进行标记。
 
    ```java
    /** 
@@ -58,7 +61,7 @@ source-git-commit: 812d04037c3b18f8d8cdd0d18430c686c3eee1ff
    } 
    ```
 
-1. 当用户单击该按钮时，显示一个对话框，其中列出所有默认的隐藏字幕轨道。
+1. 当用户单击该按钮时，将显示一个对话框，其中列表所有默认的隐藏字幕轨道。
 
    ```java
    public void selectClosedCaptioningClick(View view) { 
