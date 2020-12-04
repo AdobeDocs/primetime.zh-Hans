@@ -30,20 +30,20 @@ ht-degree: 0%
 
 要运行许可证服务器，您需要安装和配置MySQL:
 
-1. 在DVD上，转到文件夹 [!DNL Third Party\MySQL\Installer\5.1] 并开始安装项目。
+1. 在DVD上，转到[!DNL Third Party\MySQL\Installer\5.1]文件夹并开始安装项目。
 1. 完成MySQL安装。
-1. 选择 **[!UICONTROL Configure MySQL Server Now]** 以开始配置向导。
+1. 选择&#x200B;**[!UICONTROL Configure MySQL Server Now]**&#x200B;以开始配置向导。
 1. 在第五个屏幕之前，请使用默认设置或为测试选择特定设置。
-1. 在第五个屏幕上，选 **[!UICONTROL Online Transaction Processing (OLTP)]** 择或 **[!UICONTROL Manual Setting]** 输入允许的最大连接数。
+1. 在第五个屏幕上，选择&#x200B;**[!UICONTROL Online Transaction Processing (OLTP)]**&#x200B;或&#x200B;**[!UICONTROL Manual Setting]**&#x200B;并输入允许的最大连接数。
 1. 写下根密码。
 1. 要重新安装MySQL，如果您以后需要开始服务器，请完成以下步骤：
-   1. 删除系 *统驱动器：* 文件夹。
+   1. 删除&#x200B;*系统驱动器：*&#x200B;文件夹。
 
-      此文件夹位于 [!DNL \Documents and Settings\All Users\Application Data\MySQL]。
+      此文件夹位于[!DNL \Documents and Settings\All Users\Application Data\MySQL]中。
    1. 删除旧的MySQL安装文件夹。
 
-      例如， *系统驱动*&#x200B;器：，位于 [!DNL \Program Files\MySQL\MySQL Server 5.1]。
-1. 要安装MySQL JDBC驱动程序5.1.7，请将DVD上 [!DNL mysql-connector-java-5.1.7-bin.jar] 的文 [!DNL Third Party\MySQL\Installer\5.1] 件夹中的文件复制到Tomcat服 [!DNL ...\Tomcat6.0\lib] 务器上的目录。
+      例如，*系统驱动器：*，位于[!DNL \Program Files\MySQL\MySQL Server 5.1]中。
+1. 要安装MySQL JDBC驱动程序5.1.7，请将DVD上[!DNL Third Party\MySQL\Installer\5.1]文件夹中的[!DNL mysql-connector-java-5.1.7-bin.jar]文件复制到Tomcat服务器上的[!DNL ...\Tomcat6.0\lib]目录。
 
    >[!NOTE]
    >
