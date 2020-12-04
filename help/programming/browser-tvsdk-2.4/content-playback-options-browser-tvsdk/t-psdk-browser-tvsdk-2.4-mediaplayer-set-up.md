@@ -6,6 +6,9 @@ title: 设置MediaPlayer
 uuid: 2279e388-6fbc-49a2-8560-218d3d31e1d6
 translation-type: tm+mt
 source-git-commit: af9b865bc1627a97bf8957b5460ff9b46052a7dc
+workflow-type: tm+mt
+source-wordcount: '107'
+ht-degree: 0%
 
 ---
 
@@ -14,19 +17,19 @@ source-git-commit: af9b865bc1627a97bf8957b5460ff9b46052a7dc
 
 MediaPlayer对象封装媒体播放器的行为和功能。
 
-1. 使用以 `MediaPlayer` 下方法实例化：
+1. 使用以下方法实例化`MediaPlayer`:
 
    ```js
    var player = new AdobePSDK.MediaPlayer();
    ```
 
-1. 创建实 `MediaPlayerView` 例：
+1. 创建`MediaPlayerView`实例：
 
    ```js
    var view = new AdobePSDK.MediaPlayerView(container);
    ```
 
-   其中 `container` 是包含您 `div` 的目标元素 `HTMLMediaElement`。
+   其中`container`是包含`HTMLMediaElement`的目标`div`元素。
 
    例如，在HTML页面上：
 
@@ -50,13 +53,13 @@ MediaPlayer对象封装媒体播放器的行为和功能。
          document.getElementById("videoDiv"));  
    ```
 
-1. 将您的实 `MediaPlayerView` 例附加到您的 `MediaPlayer` 实例：
+1. 将`MediaPlayerView`实例连接到`MediaPlayer`实例：
 
    ```js
    player.view = view;
    ```
 
-1. 将自定义控件元 `div` 素附加到MediaPlayer实例。
+1. 将自定义控件`div`元素连接到MediaPlayer实例。
 
    例如，在HTML中：
 
@@ -77,4 +80,4 @@ MediaPlayer对象封装媒体播放器的行为和功能。
    }
    ```
 
-该实 `MediaPlayer` 例现已可用，并且已正确配置以在设备屏幕上显示视频内容。
+`MediaPlayer`实例现已可用，并且已正确配置以在设备屏幕上显示视频内容。
