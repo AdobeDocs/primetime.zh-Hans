@@ -7,29 +7,33 @@ title: 更新广告创意选择规则
 uuid: 84cc13d1-21a3-456b-95c8-200bfec7b453
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '276'
+ht-degree: 0%
 
 ---
 
 
-# 概述 {#updating-ad-creative-selection-rules-overview}
+# 概述{#updating-ad-creative-selection-rules-overview}
 
 您可以使用TVSDK配置文件(AdobeTVSDKonfig.json)更新VAST/VMAP响应上广告创意选择的优先级。 您还可以使用此配置文件为广告创意人员定义源URL转换规则。
 
-当视频播放器向广告服务器发出请求时，VAST/VMAP响应通常包括多个广告创意（元素），每个元素都提供指向不同容器编解码器版本的URL。 `MediaFile` 在某些情况下，VAST/VMAP响应中的广告创意人员为广告提供不同的比特率。 如果要为这些广告创意人员指定自己的优先级和转换规则，可以在配置文件中 [!DNL AdobeTVSDKConfig.json] 指定。
+当视频播放器向广告服务器发出请求时，VAST/VMAP响应通常包括多个广告创意（`MediaFile`元素），每个元素都提供指向不同容器编解码器版本的URL。 在某些情况下，VAST/VMAP响应中的广告创意人员为广告提供不同的比特率。 如果要为这些广告创意指定自己的优先级和转换规则，可以在[!DNL AdobeTVSDKConfig.json]配置文件中指定。
 
 >[!IMPORTANT]
 >
->* 请勿更改TVSDK配置文件的名称。 名称必须保留 [!DNL AdobeTVSDKConfig.json]。
->* 此文件必须放在项目 [!DNL assets/] 的文件夹中。
+>* 请勿更改TVSDK配置文件的名称。 名称必须保留[!DNL AdobeTVSDKConfig.json]。
+>* 此文件必须放在项目的[!DNL assets/]文件夹中。
+
 >
 
 
 
-您可以在中指定两种类型的规则 [!DNL AdobeTVSDKConfig.json]:优 *先级规则* 和标准 *化规则* 。
+可以在[!DNL AdobeTVSDKConfig.json]中指定两种类型的规则：*优先级*&#x200B;规则和&#x200B;*标准化*&#x200B;规则。
 
-## 禁用预卷 {#disabling-preroll}
+## 禁用预卷{#disabling-preroll}
 
-要禁用前置调用，您需要更改默认的业务机会生成器，以便不进行前置调用。 默认情况下，TVSDK使用以下机会生成器：
+要禁用前置调用，您需要更改默认的机会生成器，以便不进行前置调用。 默认情况下，TVSDK使用以下机会生成器：
 
 ```
 /** 
