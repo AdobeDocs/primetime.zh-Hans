@@ -6,6 +6,9 @@ title: 注意事项和最佳实践
 uuid: b37a5710-e811-4c3e-be8c-7c34ee5944e5
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '409'
+ht-degree: 0%
 
 ---
 
@@ -14,17 +17,17 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
 
 要最有效地使用TVSDK，您应考虑其操作的某些详细信息并遵循某些最佳实践。
 
-## 注意事项 {#section_tvsdk_considerations}
+## 注意事项{#section_tvsdk_considerations}
 
 使用TVSDK时，请记住以下信息：
 
-* Adobe Primetime不适用于iOS模拟器。
+* Adobe Primetime在iOS模拟器上不工作。
 
-   您必须使用真正的设备进行测试。
+   必须使用真实的设备进行测试。
 * 仅HTTP实时流(HLS)内容支持播放。
 * 主视频内容可以被多路复用，其中视频和音频流位于同一再现中，或者非多路复用，其中视频和音频流位于单独的再现中。
-* TVSDK API是在Objective-C中实现的。
-* 视频播放需要本机Apple AV Foundation框架。 这会影响访问媒体资源（包括隐藏式字幕和时间轴）的方式和时间：
+* TVSDK API在Objective-C中实现。
+* 视频播放需要本机Apple AV Foundation框架。 这会影响访问媒体资源（包括隐藏字幕和时间轴）的方式和时间：
 
    * 在初始设置后无法修改时间轴调整。
 
@@ -36,15 +39,15 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
 
       用户代理字符串的值默认为操作系统分配的值。
 
-## 最佳实践 {#section_tvsdk_best_practices}
+## 最佳实践{#section_tvsdk_best_practices}
 
-以下是TVSDK的建议实践：
+以下是TVSDK的推荐做法：
 
-* 将HLS版本3.0或更高版本用于程序内容。
+* 将HLS 3.0版或更高版本用于项目内容。
 * 使用Apple的mediastreamvalidator工具验证VOD流。
-* 该 `PTSDKConfig` 类提供了对向Primetime广告决策、DRM和视频分析服务器发出的请求实施SSL的方法。
+* `PTSDKConfig`类提供对Primetime广告决策、DRM和视频分析服务器发出的请求实施SSL的方法。
 
-   有关详细信息，请参 `forceHTTPS` 阅此类 `isForcingHTTPS` 中的和方法。
+   有关详细信息，请参阅此类中的`forceHTTPS`和`isForcingHTTPS`方法。
 
    >[!IMPORTANT]
    >
