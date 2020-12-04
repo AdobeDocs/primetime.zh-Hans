@@ -19,7 +19,7 @@ ht-degree: 0%
 
 要使用默认行为：
 
-* 如果您实现自己 `ContentFactory` 的类，则返回实 `DefaultAdPolicySelector` 现中的新实例 `doRetrieveAdPolicySelector`。
+* 如果实现自己的`ContentFactory`类，请在实现`doRetrieveAdPolicySelector`时返回新的`DefaultAdPolicySelector`实例。
 
    ```
    public class CustomContentFactory extends ContentFactory { 
@@ -38,4 +38,4 @@ ht-degree: 0%
    }
    ```
 
-* 如果没有类的自定义实现， `ContentFactory` TVSDK将使用 `DefaultAdPolicySelector`。
+* 如果您没有`ContentFactory`类的自定义实现，TVSDK将使用`DefaultAdPolicySelector`。
