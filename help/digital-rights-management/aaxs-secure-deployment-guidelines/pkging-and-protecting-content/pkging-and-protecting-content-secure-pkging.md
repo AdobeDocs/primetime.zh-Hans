@@ -11,11 +11,11 @@ ht-degree: 0%
 ---
 
 
-# 安全地打包内容 {#securely-packaging-content}
+# 安全地打包内容{#securely-packaging-content}
 
 Adobe访问Media Packager命令行工具的配置文件需要在打包过程中使用的PKCS12凭据。
 
-在“参考实施命令行”工具中，PKCS12凭据文件的口令以明文形式存储在flashaccess.properties文件中。 因此，在保护承载此文件的计算机时应格外小心，并确保它处于安全环境。 (请参 [阅物理安全性和访问](../../aaxs-secure-deployment-guidelines/physical-sec-and-access.md))。
+在“参考实施命令行”工具中，PKCS12凭据文件的口令以明文形式存储在flashaccess.properties文件中。 因此，在保护承载此文件的计算机时应格外小心，并确保它处于安全环境。 （请参阅[物理安全性和访问](../../aaxs-secure-deployment-guidelines/physical-sec-and-access.md)）。
 
 包装程序还使用“许可证服务器”和“许可证服务器传输”证书。 必须保护此信息的完整性和机密性。 仅允许授权实体使用包装程序。 如果您的任何私钥被泄露，请立即通知Adobe Systems Incorporated，以便吊销证书。
 
