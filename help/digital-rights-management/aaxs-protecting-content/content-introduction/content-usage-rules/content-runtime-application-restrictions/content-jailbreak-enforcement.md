@@ -11,9 +11,9 @@ ht-degree: 0%
 ---
 
 
-# 越狱执法(需要Adobe Primetime) {#jailbreak-enforcement-requires-adobe-primetime}
+# 越狱强制(需要Adobe Primetime){#jailbreak-enforcement-requires-adobe-primetime}
 
-在支持越狱检测的平台（如Android和iOS移动设备）上，如果在设备上检测到越狱强制，则 [!DNL jailbreak/root] 不允许播放内容。
+在支持越狱检测的平台（如Android和iOS移动设备）上，如果在设备上检测到[!DNL jailbreak/root]，则启用越狱强制将不允许回放内容。
 
 >[!NOTE]
 >
