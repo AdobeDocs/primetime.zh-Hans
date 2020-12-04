@@ -6,15 +6,18 @@ title: 实施自定义机会生成器
 uuid: 6a6a6aa4-51f8-4e3c-9255-d87b488b820d
 translation-type: tm+mt
 source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+workflow-type: tm+mt
+source-wordcount: '117'
+ht-degree: 3%
 
 ---
 
 
-# 实施自定义机会生成器 {#implement-a-custom-opportunity-generator}
+# 实现自定义机会生成器{#implement-a-custom-opportunity-generator}
 
 您可以通过实施OpportunityGenerator类来实施您自己的机会生成器。
 
-1. 通过实现接 `ContentFactory` 口和覆盖来实 `ContentFactory` 现自定义 `retrieveGenerators`。
+1. 通过实现`ContentFactory`接口并覆盖`retrieveGenerators`，实现您的自定义`ContentFactory`。
 
    例如：
 
@@ -30,7 +33,7 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
    }
    ```
 
-1. 将其注 `ContentFactory` 册到 `MediaPlayer`。
+1. 将`ContentFactory`注册到`MediaPlayer`。
 
    例如：
 
@@ -47,14 +50,14 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
    itemLoader.load(resource, id, config);
    ```
 
-1. 创建实现该类的自定义业务机会生成 `OpportunityGenerator` 器类。
+1. 创建实现`OpportunityGenerator`类的自定义机会生成器类。
 
    ```java
    public class CustomOpportunityGenerator implements OpportunityGenerator  
    {...}
    ```
 
-   1. 在自定义业务机会生成器中， `doConfigure`覆盖 `doUpdate` 和 `doCleanup`:
+   1. 在自定义机会生成器中，覆盖`doConfigure`、`doUpdate`和`doCleanup`:
 
       ```java
       @Override 
@@ -75,7 +78,7 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
       List<TimedMetadata> tList = getItem().getTimedMetadata(); 
       ```
 
-   1. 对于每个 `TimedMetadata` 或一组， `TimedMetadata`请创建具有以下属性的业务机会：
+   1. 对于每个`TimedMetadata`或`TimedMetadata`组，创建具有以下属性的机会：
 
       ```java
       Opportunity( 
@@ -86,11 +89,11 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
       ); 
       ```
 
-   1. 对于创建的每个机会，请 `resolve` 拔打电话 `OpportunityGeneratorClient:getClient().resolve(opportunity);`。
+   1. 对于创建的每个机会，请调用`OpportunityGeneratorClient:getClient().resolve(opportunity);`上的`resolve`。
 
 <!--<a id="example_7A46377EBE79458E87423EB95D0568D4"></a>-->
 
-这是一个示例自定义放置机会检测器：
+这是一个自定义放置机会检测器示例：
 
 ```java
 public class MyOpportunityGenerator implements OpportunityGenerator {
