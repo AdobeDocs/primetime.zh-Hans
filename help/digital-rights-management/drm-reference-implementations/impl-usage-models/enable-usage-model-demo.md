@@ -11,9 +11,9 @@ ht-degree: 0%
 ---
 
 
-# 启用使用模型演示{#enable-the-usage-model-demo}
+# 启用使用模型demo{#enable-the-usage-model-demo}
 
-1. 在打包时指 `RI_UsageModelDemo=true` 定自定义属性。
+1. 在打包时指定自定义属性`RI_UsageModelDemo=true`。
 
    如果您使用Media Packager命令行工具打包内容，请输入：
 
