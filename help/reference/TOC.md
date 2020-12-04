@@ -14,6 +14,6 @@ ht-degree: 78%
 ---
 
 
-# Primetime参考 {#reference}
+# Primetime引用{#reference}
 
 + [API参考](api-references.md)
