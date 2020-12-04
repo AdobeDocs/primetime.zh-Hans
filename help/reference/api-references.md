@@ -1,6 +1,6 @@
 ---
-title: Adobe Primetime API参考
-seo-title: Adobe Primetime API参考
+title: Adobe PrimetimeAPI参考
+seo-title: Adobe PrimetimeAPI参考
 description: 这些API可帮助您快速轻松地创建功能性应用程序或集成。
 seo-description: 这些API可帮助您快速轻松地创建功能性应用程序或集成。
 topic-tags: API-references
@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# Adobe Primetime API参考 {#api-references}
+# Adobe PrimetimeAPI参考{#api-references}
 
 + TVSDK 3.12 {#tvsdk-312}
    + [适用于Android的TVSDK 3.12](https://help.adobe.com/en_US/primetime/api/psdk/javadoc3.12/index.html)
@@ -52,7 +52,7 @@ ht-degree: 0%
    + [iOS的DRM客户端API](https://help.adobe.com/en_US/primetime/api/drm-apis/client/ios/index.html)
    + [DRM SDK Server API](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/)
 
-+ 杂项 {#miscellaneous}
++ 杂项{#miscellaneous}
    + [视频心跳库](https://help.adobe.com/en_US/primetime/api/psdk/vhl_tvsdk_ios/index.html)
    + [DHPK 2.0 C++](https://help.adobe.com/en_US/primetime/api/psdk/psdk_doxygen/index.html)
    + [2.4浏览器TVSDK的UI框架](https://help.adobe.com/en_US/primetime/api/psdk/btvsdk-ui-framework/index.html)
