@@ -23,7 +23,7 @@ SDK支持多种存储凭据（公钥证书及其相关私钥）的方式，包�
 >
 >从Java1.7开始，64位Sun Java for Windows不支持Adobe访问DRM与HSM设备通信所需的PKCS11接口。 如果您计划使用HSM，请使用32位版本的Java，或使用支持完整PKCS11接口的JDK。
 
-您可以在硬件安全模块(HSM)上保留私钥，并使用SDK在您从HSM获得的凭据中传递。 要使用存储在HSM上的凭据，请使用可与HSM通信的JCE提供程序来获取私钥的处理。 然后，将私钥句柄、提供者名称和包含公钥的证书传递给 `ServerCredentialFactory.getServerCredential()`。
+您可以在硬件安全模块(HSM)上保留私钥，并使用SDK在您从HSM获得的凭据中传递。 要使用存储在HSM上的凭据，请使用可与HSM通信的JCE提供程序来获取私钥的处理。 然后，将包含公钥的私钥句柄、提供者名称和证书传递给`ServerCredentialFactory.getServerCredential()`。
 
 SunPKCS11提供程序是JCE提供程序的一个示例，它可用于访问HSM上的私钥（有关使用此提供程序的说明，请参见Sun Java文档）。 某些HSM还附带Java SDK，其中包括JCE提供程序。
 
