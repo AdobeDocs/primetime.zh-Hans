@@ -6,24 +6,27 @@ title: 使用DRMContentData预加载许可证
 uuid: 5cedd077-0613-4677-8fb0-81237d7ac61a
 translation-type: tm+mt
 source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+workflow-type: tm+mt
+source-wordcount: '132'
+ht-degree: 0%
 
 ---
 
 
 # 使用DRMContentData预加载许可证{#using-drmcontentdata-to-pre-load-licenses}
 
-以下步骤介绍了使用对象预加载受保护媒体文件的许可证的工 `DRMContentData` 作流。
+以下步骤描述了使用`DRMContentData`对象预加载受保护媒体文件的许可证的工作流。
 
 1. 获取打包内容的二进制DRM元数据。
 
-   如果使用Primetime DRM Java Reference Implementations Packager，则此元数据文件将自动生成一个扩展 [!DNL .metadata] 名。 例如，您可以使用类下载此元数 `URLLoader` 据。 如果使用HLS或HDS内容，则元数据在内容清单文件( [!DNL .m3u8] 或 [!DNL .f4m])中引用，或作为Base64编码的字符串（在使用之前必须经过Base64解码）包含在清单文件中 ** 。
-1. 创建一 `DRMContentData` 个对象，将元数据传递给构造函数：
+   如果使用Primetime DRM Java Reference Implementations Packager，则此元数据文件将自动生成，扩展名为[!DNL .metadata]。 例如，您可以使用`URLLoader`类下载此元数据。 如果使用HLS或HDS内容，则元数据将被引用在内容清单文件（[!DNL .m3u8]或[!DNL .f4m]）中，或作为Base64编码的字符串（在使用前必须经过Base64解码）包含在清单文件中的&#x200B;*。*
+1. 创建`DRMContentData`对象，将元数据传递给构造函数：
 
    ```
    var drmData:DRMContentData = new DRMContentData( metadata );
    ```
 
-1. 其余步骤与“内容保护进程详细信息”中描述的 *工作流相同*。
+1. 其余步骤与&#x200B;*内容保护进程详细信息*&#x200B;中描述的工作流相同。
 
 <!--<a id="example_EBEDA8E10F6344CABA4DE31DC342B8F8"></a>-->
 
