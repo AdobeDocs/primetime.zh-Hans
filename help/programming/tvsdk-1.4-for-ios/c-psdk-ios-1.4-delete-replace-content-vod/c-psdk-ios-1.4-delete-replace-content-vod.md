@@ -6,46 +6,49 @@ title: 删除和替换VOD流中的广告
 uuid: 8f51c413-a8c9-46c1-aec6-0d536feaaeb7
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '392'
+ht-degree: 0%
 
 ---
 
 
-# 广告删除和替换API更改 {#ad-deletion-and-replacement-api-changes}
+# 广告删除和替换API更改{#ad-deletion-and-replacement-api-changes}
 
 TVSDK支持程序化删除和替换VOD流中的广告内容。
 
-删除和替换功能扩展了自定义广告标记功能。 自定义广告标记将主要内容的部分标记为与广告相关的内容句点。 除了标记这些时间范围之外，您还可以删除和替换时间范围。
+删除和替换功能扩展了自定义广告标记功能。 自定义广告标记将主内容的各个部分标记为与广告相关的内容句点。 除了标记这些时间范围外，您还可以删除和替换时间范围。
 
-TVSDK中的以下更改支持删除和替换。
+TVSDK中的以下更改支持删除和替换广告。
 
 **新API**
 
-* `PTTimeRangeCollection` 是一个公共类，它定义了预定义的一组范围和类型：
+* `PTTimeRangeCollection` 是一个公共类，它定义了预定义的范围集和类型：
 
    * `property PTTimeRangeCollectionType type` 指示时间范围的类型。
    * `property NSArray* ranges` 用于设置时间范围。
 
-      数组中期望的对象类型是 `PTReplacementTimeRange` 或 `CMTimeRange`。
+      数组中预期的对象类型为`PTReplacementTimeRange`或`CMTimeRange`。
 
       >[!TIP]
       >
       >数组中的所有对象都必须是同一类型。
 
-   * `PTTimeRangeCollectionType` 是一个枚举，它定义了在以下位置定义的范围的行为 `PTTimeRangeCollection`:
+   * `PTTimeRangeCollectionType` 是一个枚举，它定义在以下位置定义的范围的行为 `PTTimeRangeCollection`:
 
-      * `PTTimeRangeCollectionTypeMarkRanges`:范围的类型是“标 *记”*。 这些范围用于将内容中的范围标记为“广告”。
+      * `PTTimeRangeCollectionTypeMarkRanges`:范围的类型为“标 *记”*。这些范围用于将内容中的范围标记为“广告”。
 
-      * `PTTimeRangeCollectionTypeDeleteRanges`:范围的类型为“删除”。 在广告插入之前，将从主内容中删除定义的范围。
-      * `PTTimeRangeCollectionTypeReplaceRanges`:范围的类型为“替换”。 定义的范围从主范围替换为广告(广告信令模式设置为 `PTAdSignalingModeCustomTimeRanges`)。
+      * `PTTimeRangeCollectionTypeDeleteRanges`:范围类型为“删除”。在广告插入之前，会从主内容中删除定义的范围。
+      * `PTTimeRangeCollectionTypeReplaceRanges`:范围的类型为“替换”。定义的范围从主区域替换为Ads（Ad信令模式设置为`PTAdSignalingModeCustomTimeRanges`）。
 
-* `PTReplacementTimeRange` -新的公共类，它定义了以下单个范围 `PTTimeRangeCollection`:
+* `PTReplacementTimeRange` -新的公共类，它定义了以下对象的单个范 `PTTimeRangeCollection`围：
 
    * `property CMTimeRange range` -定义范围的开始和持续时间。
-   * `property long replacementDuration` -如果类型为， `TimeRangeCollection` 则 `PTTimeRangeCollectionTypeReplaceRanges`使 `replacementDuration` 用它创建持续时间为的放置机会（广告插入） `replacementDuration`。 如果未 `replacementDuration` 设置，广告服务器将确定该投放机会的广告持续时间和数量。
+   * `property long replacementDuration` -如果类型为 `TimeRangeCollection` , `PTTimeRangeCollectionTypeReplaceRanges`则 `replacementDuration` 使用它创建持续时间为的放置机会（广告插入） `replacementDuration`。如果未设置`replacementDuration`，广告服务器将确定该投放机会的广告持续时间和数量。
 
 * `PTAdSignalingMode`:
 
-   * `PTAdSignalingModeCustomTimeRanges` -添加了新类型 `PTAdSignalingMode`。 此模式与基于替换范围的 `PTTimeRangeCollection` 广告插 `PTTimeRangeCollectionReplace` 入类型结合使用。
+   * `PTAdSignalingModeCustomTimeRanges` -添加了新类型 `PTAdSignalingMode`。此模式与类型为`PTTimeRangeCollectionReplace`的`PTTimeRangeCollection`结合使用，用于根据替换范围进行广告插入。
 
 * `PTAdMetadata`:
 
@@ -67,4 +70,4 @@ TVSDK中的以下更改支持删除和替换。
 
 * `PTAdMetadata`:
 
-   * `property NSArray* externalAdRanges` -此属性以前用于定义C3范围进行标记。 现在已弃用它，因为这些范围是通过设置的 `PTTimeRangeCollection`。
+   * `property NSArray* externalAdRanges` -此属性以前用于定义C3范围进行标记。现在已弃用，因为这些范围是通过`PTTimeRangeCollection`设置的。
