@@ -10,7 +10,7 @@ ht-degree: 0%
 ---
 
 
-# 开始使用Adobe PrimetimeAd Insertion {#ptai-get-started}
+# 开始使用Adobe PrimetimeAd Insertion{#ptai-get-started}
 
 PrimetimeAd Insertion协调提供内容和广告的系统，以创建个性化的流内广告体验，然后跟踪广告商的广告播放。
 
@@ -18,7 +18,7 @@ PrimetimeAd Insertion通过重写视频清单与视频投放客户端应用程�
 
 正确设置系统后，典型的工作流可能如下所示：
 
-1. 客户端应用程序生 [成BootstrapURL](/help/dynamic-ad-insertion/msapi-topics/ms-getting-started/ms-api-query-params.md) ，其中包含有关视频流的信息，并向PrimetimeAd Insertion发送GET请求。
+1. 客户端应用程序生成具有视频流相关信息的[BootstrapURL](/help/dynamic-ad-insertion/msapi-topics/ms-getting-started/ms-api-query-params.md)，并向PrimetimeAd Insertion发送GET请求。
 
 1. PrimetimeAd Insertion通过将内容清单从出版商的CDN发回客户端应用程序来做出响应。
 
@@ -26,12 +26,12 @@ PrimetimeAd Insertion通过重写视频清单与视频投放客户端应用程�
 
 1. PrimetimeAd Insertion从内容CDN获取所请求的流，分析／读取任何提示信息，向广告服务器发出调用，并根据需要替换广告分段。
 
-1. PrimetimeAd Insertion通过重写资源URL并检测广告创意是否需要转码来标准化清单。 <!-- see [Just-in-time ad transcoding](just-in-time-transcoding.md) and [packaging](just-in-time-repackaging.md).-->
+1. PrimetimeAd Insertion通过重写资源URL并检测广告创意是否需要转码来标准化清单。<!-- see [Just-in-time ad transcoding](just-in-time-transcoding.md) and [packaging](just-in-time-repackaging.md).-->
 
 1. PrimetimeAd Insertion获取所需的广告创意，并将适当的片段插入清单。
 
 1. PrimetimeAd Insertion将包括广告在内的最终拼接清单交付给客户端应用程序进行回放。
 
-1. 广告投放和可查看性可通过客户端广告跟踪或服务器端广告跟踪来衡量，请 [参阅设置广告跟踪](set-up-ad-tracking.md)。
+1. 广告投放和可见性可通过客户端广告跟踪或服务器端广告跟踪来衡量，请参阅[设置广告跟踪](set-up-ad-tracking.md)。
 
 PrimetimeAd Insertion支持HLS/DASH的大多数客户端配置。
