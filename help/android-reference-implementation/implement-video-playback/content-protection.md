@@ -1,28 +1,31 @@
 ---
-description: Primetime播放器支持Primetime DRM集成作为自定义DRM工作流。 这意味着您的应用程序必须在播放流之前实现DRM身份验证工作流。
-seo-description: Primetime播放器支持Primetime DRM集成作为自定义DRM工作流。 这意味着您的应用程序必须在播放流之前实现DRM身份验证工作流。
+description: Primetime播放器支持Primetime DRM集成作为自定义DRM工作流。 这意味着您的应用程序必须在播放流之前实施DRM身份验证工作流。
+seo-description: Primetime播放器支持Primetime DRM集成作为自定义DRM工作流。 这意味着您的应用程序必须在播放流之前实施DRM身份验证工作流。
 seo-title: DRM内容保护
 title: DRM内容保护
 uuid: 95c446f6-8304-4d70-9bef-7368b9364025
 translation-type: tm+mt
 source-git-commit: 31b6cad26bcc393d731080a70eff1c59551f1c8e
+workflow-type: tm+mt
+source-wordcount: '395'
+ht-degree: 0%
 
 ---
 
 
-# DRM内容保护 {#drm-content-protection}
+# DRM内容保护{#drm-content-protection}
 
-Primetime播放器支持Primetime DRM集成作为自定义DRM工作流。 这意味着您的应用程序必须在播放流之前实现DRM身份验证工作流。
+Primetime播放器支持Primetime DRM集成作为自定义DRM工作流。 这意味着您的应用程序必须在播放流之前实施DRM身份验证工作流。
 
-要启用此功能，TVSDK会为您提供DRM管理器以进行身份验证。 引用实现提供了以下工作流的示例：
+要启用此功能，TVSDK会为您提供DRM管理器以进行身份验证。 参考实现提供了以下工作流的示例：
 
-* 如何使用Access内容保护加载和播放HLS流，它针对低错误率和快速启动进行了优化。
+* 如何通过Access内容保护加载和播放HLS流，它针对低错误率和快速开始进行了优化。
 * 如何使用AES128内容保护加载和播放HLS流。
-* 如何使用PHLS内容保护加载和播放HLS流，它针对低错误率和快速启动进行了优化。
+* 如何使用PHLS内容保护加载和播放HLS流，它针对低错误率和快速开始进行了优化。
 
 所有受DRM保护的内容都由TVSDK中内置的DRM库自动处理。 但是，您可以使用TVSDK API回调公开错误处理、设备个性化优化和许可证获取。
 
-## 为播放器添加内容保护 {#section_F1FC4322C35C4FE8A3B47FDC0A74221B}
+## 为播放器{#section_F1FC4322C35C4FE8A3B47FDC0A74221B}添加内容保护
 
 您可以通过创建播放管理器或使用管理器工厂为播放器添加内容保护。
 
@@ -30,7 +33,7 @@ Primetime播放器支持Primetime DRM集成作为自定义DRM工作流。 这意
 
 * 初始化DRM系统。
 
-   以下代码示例演示了应用程 `loadDRMServices` 序函数中的调 `onCreate()` 用，以确保在播放开始之前启动DRM系统所需的任何初始化。
+   下面的代码示例显示了在应用程序`onCreate()`函数中调用`loadDRMServices`，以确保在播放开始之前启动DRM系统所需的任何初始化。
 
    ```java
    @Override 
@@ -42,7 +45,7 @@ Primetime播放器支持Primetime DRM集成作为自定义DRM工作流。 这意
 
 * 预载DRM许可证。
 
-   以下代码示例显示内容列 `VideoItems` 表完成加载时的加载。 这将导致从许可证服务器获取DRM许可证并在本地缓存，这样，当播放开始时，内容将以最小延迟加载。
+   以下代码示例显示当内容列表完成加载时加载`VideoItems`。 这将导致从许可证服务器获取DRM许可证并在本地缓存，这样，在播放开始时，内容将以最小延迟加载。
 
    ```java
    DrmManager.preLoadDrmLicenses(item.getUrl(),  
@@ -66,7 +69,7 @@ Primetime播放器支持Primetime DRM集成作为自定义DRM工作流。 这意
    >
    >![](assets/precache-drm-licenses.jpg)
 
-* 要用 `ManagerFactory` 于实现DRM错误处理，请确保文件中包含以下代码 [!DNL PlayerFragment.java] 行：
+* 要使用`ManagerFactory`实现DRM错误处理，请确保在[!DNL PlayerFragment.java]文件中存在以下代码行：
 
    ```java
    drmManager = ManagerFactory.getDrmManager(config, mediaPlayer);
