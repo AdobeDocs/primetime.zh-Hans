@@ -1,30 +1,33 @@
 ---
-description: 自定义广告标记允许您将表示时间线段的一组TimeRange规范传递给TVSDK。
-seo-description: 自定义广告标记允许您将表示时间线段的一组TimeRange规范传递给TVSDK。
+description: 自定义广告标记允许您将表示时间轴区段的一组TimeRange规范传递给TVSDK。
+seo-description: 自定义广告标记允许您将表示时间轴区段的一组TimeRange规范传递给TVSDK。
 seo-title: TimeRange类
 title: TimeRange类
 uuid: adf4f1ad-6b3b-48ac-a388-ee1fd54f770b
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '136'
+ht-degree: 0%
 
 ---
 
 
 # TimeRange类{#timerange-class}
 
-自定义广告标记允许您将表示时间线段的一组TimeRange规范传递给TVSDK。
+自定义广告标记允许您将表示时间轴区段的一组TimeRange规范传递给TVSDK。
 
 <!--<a id="section_42EB6D62627A424ABA250E3246EFEFC3"></a>-->
 
-集中的每个TimeRange规范都表示播放时间线上由TVSDK内部维护的段，且必须相应地标记为广告相关时段。
+集合中的每个TimeRange规范都表示播放时间线上由TVSDK内部维护的段，该段必须相应地标记为与广告相关的段。
 
-类是 `TimeRange` 一个简单的数据结构，它公开时间轴上的开始位置和结束位置。 这两个只读属性抽象了播放时间轴中某个时间范围的概念。
+`TimeRange`类是一个简单的数据结构，它在时间线上显示开始位置和结束位置。 这两个只读属性抽象了播放时间轴中某个时间范围的概念。
 
 >[!TIP]
 >
->这两个值以毫秒表示。
+>这两个值以毫秒为单位表示。
 
-以下是课程的摘 `TimeRange` 要：
+以下是`TimeRange`类的摘要：
 
 ```java
 public final class TimeRange {
