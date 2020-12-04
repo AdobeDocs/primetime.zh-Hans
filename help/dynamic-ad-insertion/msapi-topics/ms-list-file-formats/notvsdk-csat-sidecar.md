@@ -1,22 +1,25 @@
 ---
-description: 如果客户端请求JSON格式的跟踪信息，则清单服务器将以JSON格式之一发送回文件。
-seo-description: 如果客户端请求JSON格式的跟踪信息，则清单服务器将以JSON格式之一发送回文件。
+description: 如果客户端请求JSON格式的跟踪信息，清单服务器会以JSON格式之一发送回文件。
+seo-description: 如果客户端请求JSON格式的跟踪信息，清单服务器会以JSON格式之一发送回文件。
 seo-title: 用于跟踪URL的JSON格式
 title: 用于跟踪URL的JSON格式
 uuid: 4b17639b-c0de-4ef4-931b-aa7c4c036c0a
 translation-type: tm+mt
 source-git-commit: 2c7ac5c1b2d30b7eb819157ee4568739c1bdfb9d
+workflow-type: tm+mt
+source-wordcount: '238'
+ht-degree: 0%
 
 ---
 
 
-# 用于跟踪URL的JSON格式 {#json-formats-for-tracking-urls}
+# 用于跟踪URL的JSON格式{#json-formats-for-tracking-urls}
 
-如果客户端请求JSON格式的跟踪信息，则清单服务器将以JSON格式之一发送回文件。
+如果客户端请求JSON格式的跟踪信息，清单服务器会以JSON格式之一发送回文件。
 
-## 用于跟踪版本1的JSON格式 {#json_v1}
+## 跟踪版本1 {#json_v1}的JSON格式
 
-如果清单服务器具有以下常规格式，则 `pttrackingversion=v1` 发送的JSON文件：
+清单服务器在`pttrackingversion=v1`具有以下一般格式时发送的JSON文件：
 
 ```
 { 
@@ -32,11 +35,11 @@ source-git-commit: 2c7ac5c1b2d30b7eb819157ee4568739c1bdfb9d
 }, ...]}
 ```
 
-## 用于跟踪版本2的JSON格式 {#json_v2}
+## 跟踪版本2 {#json_v2}的JSON格式
 
-清单服务器发送的JSON文件(如 `pttrackingversion=v2` 果具有以下示例的格式)来自典型的JSON块。
+如果`pttrackingversion=v2`的格式为以下示例，则清单服务器发送的JSON文件来自典型的JSON块。
 
-本发明结构简单，避免了不必要的重复，结构更清晰。 省略号（三个点，以空格分隔）表示某些URL中和某些代码块之间省略的信息。 未缩短的URL显示在多行上，但显示在JSON文件的单行上。
+缩短了时间，避免了不必要的重复，使结构更清晰。 省略号（三个点，用空格分隔）表示某些URL中和某些代码块之间省略的信息。 未缩短的URL显示在多行上，但显示在JSON文件的单行上。
 
 ```
 { 
@@ -364,11 +367,11 @@ source-git-commit: 2c7ac5c1b2d30b7eb819157ee4568739c1bdfb9d
 
 >[!NOTE]
 >
->从 `offset` 中提取的属 `scte35` 性的值可 `ad breaks` 以为负。 这是因为JSON V2附加项包含有关部分在当前播放窗口中的广告中断的信息。 因此，该属 `scte35` 性还包含有关此类广告中断的信息。
+>从`ad breaks`提取的`scte35`属性的`offset`值可能为负值。 这是因为JSON V2附加项包含有关当前播放窗口中部分广告分段的信息。 因此，`scte35`属性还包含有关此类广告中断的信息。
 
-## 用于跟踪版本3的JSON格式 {#json_v3}
+## 跟踪版本3 {#json_v3}的JSON格式
 
-如果清单服务器具有以下常规格式，则 `pttrackingversion=v3` 发送的JSON文件：
+清单服务器在`pttrackingversion=v3`具有以下一般格式时发送的JSON文件：
 
 ```
 { 
