@@ -6,17 +6,20 @@ title: 传输付费指标
 uuid: ed2638d2-7894-4840-b31a-51e48e0a3f49
 translation-type: tm+mt
 source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+workflow-type: tm+mt
+source-wordcount: '75'
+ht-degree: 0%
 
 ---
 
 
-# 传输付费指标{#transmit-billing-metrics}
+# 传输计费指标{#transmit-billing-metrics}
 
 浏览器TVSDK以XML格式向Adobe发送计费指标。
 
 <!--<a id="example_13ABDB1CC0B549968A534765378DA3A0"></a>-->
 
-如果您使用网络捕获工具监视浏览器TVSDK传输到Adobe的统计信息，您应看到以下单元：
+如果您使用网络捕获工具监视浏览器TVSDK传输到Adobe的统计信息，您应看到以下单位：
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -40,4 +43,4 @@ source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
 </request>
 ```
 
-布尔属 `drmProtected`性， `adsEnabled`仅在 `midrollEnabled` 为true时才显示。
+布尔属性`drmProtected`、`adsEnabled`和`midrollEnabled`仅在它们为true时才显示。
