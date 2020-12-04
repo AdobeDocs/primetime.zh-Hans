@@ -3,17 +3,20 @@ title: PSDK错误代码
 description: 有关各种错误代码、警告和本机错误代码的信息。
 translation-type: tm+mt
 source-git-commit: eddc327087411a6214cfd8dafef66b850a603f97
+workflow-type: tm+mt
+source-wordcount: '1897'
+ht-degree: 6%
 
 ---
 
 
-# PSDK错误代码 {#psdk-error-codes}
+# PSDK错误代码{#psdk-error-codes}
 
-继续阅读以了解PSDK错误代码、警告和本机错误代码。
+阅读以了解PSDK错误代码、警告和本机错误代码。
 
 ## 错误
 
-下表提供了有关ERROR类型通知的详细信息。 大多数错误都包含相关元数据；例如，下载失败的资源的URL。 某些通知包含元数据，用于指定问题是在主视频内容、备用音频内容中还是在广告中发生。
+下表提供有关ERROR类型通知的详细信息。 大多数错误包含相关元数据；例如，无法下载的资源的URL。 某些通知包含元数据，用于指定在主视频内容、备用音频内容还是广告中出现问题。
 
 <table frame="all" colsep="1" rowsep="1">
   <tr> 
@@ -44,12 +47,12 @@ source-git-commit: eddc327087411a6214cfd8dafef66b850a603f97
   <tr>
     <td>INTERFACE_NOT_FOUND</td>
     <td>4</td>
-    <td>interfaceCast方法在请求的接口未由此实现／继承时引发此错误。</td>
+    <td>当此请求的接口未实现／继承时，interfaceCast方法将引发此错误。</td>
   </tr>
   <tr>  
     <td>CREATION_FAILED</td>
     <td>5</td>
-    <td>创建内部资源之一失败。</td>
+    <td>创建一个内部资源失败。</td>
   </tr>
   <tr>
     <td>UNSUPPORTED_OPERATION</td>
@@ -69,7 +72,7 @@ source-git-commit: eddc327087411a6214cfd8dafef66b850a603f97
   <tr>
     <td>UNSUPPORTED_FEATURE</td>
     <td>9</td>
-    <td>不支持此功能／功能。</td>
+    <td>不支持此功能／函数。</td>
   </tr>
   <tr>
     <td>RANGE_ERROR</td>
@@ -94,7 +97,7 @@ source-git-commit: eddc327087411a6214cfd8dafef66b850a603f97
   <tr>
     <td>GENERIC_ERROR</td>
     <td>14</td>
-    <td>常规错误事件。 实际上并非由TVSDK发布。 这仅是与TVSDK错误事件对应的数字代码范围末尾的标记。</td>
+    <td>常规错误事件。 实际上不是由TVSDK发布的。 这只是对应于TVSDK错误事件的数字代码范围末尾的标记。</td>
   </tr>
   <tr>
     <td>INVALID_SEEK_TIME</td>
@@ -104,12 +107,12 @@ source-git-commit: eddc327087411a6214cfd8dafef66b850a603f97
   <tr>
     <td>AUDIO_TRACK_ERROR</td>
     <td>16</td>
-    <td>发生与音轨相关的错误（替代音频）</td>
+    <td>发生与音轨相关的错误（备用音频）</td>
   </tr>
   <tr>
     <td>ACCESS_FROM_DIFFERENT_THREAD</td>
     <td>17</td>
-    <td>PSDK API是从与初始化PSDK的线程不同的线程中调用的。</td>
+    <td>PSDK API是从与初始化PSDK的线程不同的线程调用的。</td>
   </tr>
   <tr>
     <td>ELEMENT_NOT_FOUND</td>
@@ -134,14 +137,14 @@ source-git-commit: eddc327087411a6214cfd8dafef66b850a603f97
   <tr>
     <td>NETWORK_TIMEOUT</td>
     <td>58</td>
-    <td>网络获取资源／连接服务器时超时。</td>
+    <td>获取资源／连接服务器时网络超时。</td>
   </tr>
 </table>
 
 ## 警告
 
-下表提供了有关WARN类型通知的详细信息。
-大多数警告都包含相关元数据；例如，下载失败的资源的URL。 某些通知包含元数据，用于指定问题是在主视频内容、备用音频内容中还是在广告中发生。
+下表提供有关WARN类型通知的详细信息。
+大多数警告都包含相关元数据；例如，无法下载的资源的URL。 某些通知包含元数据，用于指定在主视频内容、备用音频内容还是广告中出现问题。
 
 <table frame="all" colsep="1" rowsep="1">
   <tr>
@@ -167,12 +170,12 @@ source-git-commit: eddc327087411a6214cfd8dafef66b850a603f97
   <tr>
     <td>AD_MANIFEST_LOAD_FAILED</td>
     <td>203</td>
-    <td>加载广告清单失败。</td>
+    <td>无法加载广告清单。</td>
   </tr>
   <tr>
     <td>AD_RESOLUTION_IN_PROGRESS</td>
     <td>204</td>
-    <td>正在执行“解析广告”操作。</td>
+    <td>正在进行广告解析操作。</td>
   </tr>
   </table>
 
@@ -185,7 +188,7 @@ source-git-commit: eddc327087411a6214cfd8dafef66b850a603f97
     <th><b>说明</b></th>
   </tr>
   <tr>
-    <td>REVENUE_OPTIMIZATION_REPORTING</td>
+    <td>REVENUE_OPTIMIZATION_报告</td>
     <td>300</td>
     <td>TVSDK详细通知，以进一步报告和分析。</td>
   </tr>
@@ -193,7 +196,7 @@ source-git-commit: eddc327087411a6214cfd8dafef66b850a603f97
 
 ## 本机错误代码
 
-AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频播放通知。
+AVE的视频编码器接口在NATIVE_ERROR元数据对象中返回这些视频播放通知。
 
 <table frame="all" colsep="1" rowsep="1">
   <tr>
@@ -242,12 +245,12 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>一般错误。</td>
   </tr>
   <tr>
-    <td>INVERSOLATED_ERROR</td>
+    <td>INVERALIZED_ERROR</td>
     <td>7</td>
     <td>视频引擎无法从中恢复的错误条件。</td>
   </tr>
   <tr>
-    <td>LOST_CONNECTION_RESOVERABLE</td>
+    <td>LOST_CONNECTION_RESOLVE</td>
     <td>8</td>
     <td>网络错误，正在尝试恢复。</td>
   </tr>
@@ -274,12 +277,12 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>  
     <td>SIZE_UNKNOWN</td>
     <td>13</td>
-    <td>该资源有一个大小，但未知。</td>
+    <td>资源有大小，但未知。</td>
   </tr>
   <tr>  
     <td>UNDER_FLOW</td>
     <td>14</td>
-    <td>下溢条件。</td>
+    <td>下流情况。</td>
   </tr>
   <tr> 
     <td>UNSUPPORTED_CONFIG</td>
@@ -309,7 +312,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>
     <td>OP_ONLY_ALLOWED_IN_PAUSED_STATE</td>
     <td>20</td>
-    <td>仅在暂停时允许此操作。</td>
+    <td>操作仅在暂停时才允许。</td>
   </tr>
   <tr> 
     <td>OP_INVALID_WITH_AUDIO_ONLY_FILE</td>
@@ -339,7 +342,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>
     <td>FILE_STRUCTURE_INVALID</td>
     <td>26</td>
-    <td>指定的文件不符合预期的语法。</td>
+    <td>指定的文件不符合预期语法。</td>
   </tr>
   <tr>
     <td>COMPONENT_CREATION_FAILURE</td>
@@ -352,9 +355,9 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>无法创建DRM上下文。</td>
   </tr>
   <tr>
-    <td>CONTAINER_NOT_SUPPORTED</td>
+    <td>容器_NOT_SUPPORTED</td>
     <td>29</td>
-    <td>不支持容器类型。</td>
+    <td>容器类型不受支持。</td>
   </tr>
   <tr>
     <td>SEEK_FAILED</td>
@@ -382,9 +385,9 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>溢出。</td>
   </tr>
   <tr>  
-    <td>VIDEO_PROFILE_NOT_SUPPORTED</td>
+    <td>VIDEO_用户档案_NOT_SUPPORTED</td>
     <td>35</td>
-    <td>不支持的视频配置文件。</td>
+    <td>不支持的视频用户档案。</td>
   </tr>
   <tr>
     <td>PERIOD_NOT_LOADED</td>
@@ -399,7 +402,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>
     <td>CALLED_FROM_WRONG_THREAD</td>
     <td>38</td>
-    <td>无法从错误线程调用API。 主要适用于仅从主线程调用的API元素。</td>
+    <td>无法从错误线程调用API。 主要适用于应仅从主线程调用的API元素。</td>
   </tr>
   <tr>
     <td>FRAGMENT_READ_ERROR</td>
@@ -409,7 +412,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>
     <td>中止</td>
     <td>40</td>
-    <td>操作已由显式中止或销毁调用中止。</td>
+    <td>显式中止或销毁调用中止了操作。</td>
   </tr>
   <tr>
     <td>UNSUPPORTED_HLS_VERSION</td>
@@ -429,17 +432,17 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>
     <td>NETWORK_DOWN</td>
     <td>44</td>
-    <td>用户的网络连接断开。 播放可随时停止，并将在连接可用时恢复。</td>
+    <td>用户的网络连接已关闭。 回放可随时停止，并将在连接可用时恢复。</td>
   </tr>
   <tr>
-    <td>NO_USABLE_BITRATE_PROFILE</td>
+    <td>NO_USABLE_BITRATE_用户档案</td>
     <td>45</td>
-    <td>在流中找不到可用的比特率配置文件。</td>
+    <td>在流中找不到可用比特率用户档案。</td>
   </tr>
   <tr>
     <td>BAD_MANIFEST_SIGNATURE</td>
     <td>46</td>
-    <td>清单的签名不好。 它未通过清单签名测试。</td>
+    <td>清单有不良的签名。 清单签名测试失败。</td>
   </tr>
   <tr>
     <td>CANNOT_LOAD_PLAYLIST</td>
@@ -452,14 +455,14 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>在插入API中指定的替换无法成功。 这意味着插入成功但替换未成功。 如果要替换的清单已从时间轴中删除，则替换可能失败。</td>
   </tr>
   <tr>
-    <td>SWITCH_TO_ANSYMETRIC_PROFILE</td>
+    <td>SWITCH_TO_ANSYMET_用户档案</td>
     <td>49</td>
-    <td>DRM正在切换到非对称配置文件。 所有配置文件预计在持续时间内保持一致。 否则，将引发此警告，并且回放中可能出现跳转。</td>
+    <td>DRM正在切换到非对称用户档案。 预计所有用户档案在持续时间内保持一致。 否则，将引发此警告，并且回放中可能出现跳转。</td>
   </tr>
   <tr>
     <td>LIVE_WINDOW_MOVED_BACKWARD</td>
     <td>50</td>
-    <td>“实时”窗口应仅向前移动。 否则，将引发此警告，并且不读取窗口。 因此，播放中可能会出现跳转（或停止／长暂停）。</td>
+    <td>“实时”窗口应仅向前移动。 否则，将引发此警告，并且不会读取窗口。 因此，播放中可能会出现跳转（或停止／长暂停）。</td>
   </tr>
   <tr>
     <td>CURRENT_PERIOD_EXPIRED</td>
@@ -474,17 +477,17 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>
     <td>PERIOD_HOLD</td>
     <td>53</td>
-    <td>媒体阅读器无法进一步阅读，因为它已到达setHoldAt API设置的时间。</td>
+    <td>媒体阅读器无法进一步阅读，因为它已达到setHoldAt API设置的时间。</td>
   </tr>
   <tr>  
     <td>LIVE_HOLD</td>
     <td>54</td>
-    <td>介质阅读器无法加载区段，因为它已到达实时窗口的末尾。 当服务器向实时窗口广告新媒体时，将恢复段加载。 通常，在以下情况下会到达此状态：<ul><li>bufferTime太高（等于或高于实时窗口持续时间）。</li><li>一个或多个插入／擦除API的组合替换了比添加的介质多的介质。</li><li>下一个时段是具有待定介质替换的实时时段（由于InsertBy API调用）</li></ul></td>
+    <td>介质读取器无法加载区段，因为它已到达实时窗口的末尾。 当服务器向实时窗口广告新媒体时，将恢复段加载。 通常，在以下情况下会到达此状态：<ul><li>bufferTime过高（等于或高于实时窗口持续时间）。</li><li>一个或多个插入／擦除API的组合替换了比添加的多媒体。</li><li>下一个时段是具有待定介质替换的实时时段（由于InsertBy API调用）</li></ul></td>
   </tr>
   <tr>
     <td>BAD_MEDIA_INTERLEARG</td>
     <td>55</td>
-    <td>媒体中的音频和视频交织没有正确完成。 这是打包错误。 当差值超过两秒时，将调度警告。</td>
+    <td>媒体中的音频和视频交织操作不正确。 这是打包错误。 当差值超过两秒时，将发出警告。</td>
   </tr>
   <tr>
     <td>DRM_NOT_AVAILABLE</td>
@@ -499,7 +502,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>
     <td>BAD_MEDIA_SAMPLE_FOUND</td>
     <td>58</td>
-    <td>解码器接收了无法解码的坏样本。 这通常不是致命错误，但表示音频／视频中可能有故障。 此错误的实例过多表示编码错误或文件错误。</td>
+    <td>解码器接收到无法解码的坏样本。 这通常不是致命错误，但表示音频／视频中可能出现故障。 此错误的实例过多表示编码错误或文件错误。</td>
   </tr>
   <tr>
     <td>RANGE_SPANS_READ_HEAD</td>
@@ -509,7 +512,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr> 
     <td>POSTROLL_WITH_LIVE_NOT_ALLOWED</td>
     <td>60</td>
-    <td>实时介质上不允许进行回滚后插入。 但是，在服务器将媒体标记为完整后，才允许使用它们。</td>
+    <td>实时媒体上不允许进行回滚后插入。 但是，当服务器将媒体标记为完整后，才允许使用这些标记。</td>
   </tr>
   <tr>
     <td>INTERNAL_ERROR</td>
@@ -519,7 +522,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>  
     <td>SPS_PPS_FOUND_OUTSIDE_AVCC</td>
     <td>62</td>
-    <td>流不遵循始终将H264 SPS/PPS放入AVCC的打包建议。 可能出现搜索／播放问题。</td>
+    <td>该流不遵循始终将H264 SPS/PPS放入AVCC的打包建议。 可能出现搜索／播放问题。</td>
   </tr>
   <tr>  
     <td>PARTIAL_REPLACEMENT</td>
@@ -529,15 +532,15 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>
     <td>RENDITION_M3U8_ERROR</td>
     <td>64</td>
-    <td>播放列表加载时出错。 这仅适用于AVE，而不适用于FlashPlayer。</td>
+    <td>加载再现播放列表时出错。 这只适用于AVE，而不适用于FlashPlayer。</td>
   </tr>
   <tr>
     <td>NULL_OPERATION</td>
     <td>65</td>
-    <td>操作不执行任何操作。</td>
+    <td>操作没有任何作用。</td>
   </tr>
   <tr>
-    <td>SEGMENT_BLIPPED_ON_FAILURE</td>
+    <td>SEGMENT_BLIPTED_ON_FAILURE</td>
     <td>66</td>
     <td>无法播放区段，失败时会跳过区段。</td>
   </tr>
@@ -549,7 +552,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>
     <td>PROTOCOL_NOT_SUPPORTED</td>
     <td>68</td>
-    <td>不支持URL中使用的Web协议。</td>
+    <td>URL中使用的Web协议不受支持。</td>
   </tr>
   <tr>
     <td>PARSE_ERROR_INCOMPATIBLE_VERSION</td>
@@ -557,7 +560,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>解析媒体文件时出错。</td>
   </tr>
   <tr>  
-    <td>MANIFEST_FILE_UNEXPECTEDLY_CHANGED</td>
+    <td>MANIFEST_FILE_EXPECTEDLY_CHANGED</td>
     <td>70</td>
     <td>清单文件发生意外更改。</td>
   </tr>
@@ -587,9 +590,9 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>在内部数据结构中找不到监听器。</td>
   </tr>
   <tr>
-    <td>AUDIO_START_ERROR</td>
+    <td>AUDIO_开始_ERROR</td>
     <td>76</td>
-    <td>无法启动音频。</td>
+    <td>无法开始音频。</td>
   </tr>
   <tr>
     <td>NO_AUDIO_SINK</td>
@@ -598,7 +601,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   </tr>
   <tr>  
     <td>FILE_OPEN_ERROR</td>
-    <td>78</td>
+    <td>58</td>
     <td>无法打开文件。</td>
   </tr>
   <tr>
@@ -627,14 +630,14 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>时间轴持续时间太短。 如果这是实时流，则可能会发生频繁缓冲。</td>
   </tr>
   <tr>
-    <td>AUDIO_ONLY_STREAM_START</td>
+    <td>AUDIO_ONLY_STREAM_开始</td>
     <td>84</td>
     <td>该流已切换到纯音频流。</td>
   </tr>
   <tr>  
     <td>AUDIO_ONLY_STREAM_END</td>
     <td>85</td>
-    <td>该流已从纯音频切换到带有视频的流。</td>
+    <td>该流已从纯音频切换为带视频的流。</td>
   </tr>
   <tr>
     <td>KEY_NOT_FOUND</td>
@@ -657,23 +660,23 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>无法处理主清单更新。</td>
   </tr>
   <tr>
-    <td>UNJERVED_TIME_DINSCURATION_FOUND</td>
+    <td>UNJERED_TIME_DINVESITION_FOUND</td>
     <td>91</td>
     <td>发现未报告的时间不连续性。</td>
   </tr>
   <tr>
-    <td>UNMATCHED_AV_DINSTRUCTION_FOUND</td>
+    <td>UNMATCHED_AV_DISCENTIVATION_FOUND</td>
     <td>92</td>
     <td>发现音频和视频不连续。</td>
   </tr>
   <tr>
     <td>TRICKPLAY_ENDED_DUE_TO_ERROR</td>
     <td>93</td>
-    <td>在特技播放模式下播放媒体时出错。 特技播放模式结束，流暂停。 调用Play()以在正常模式下播放媒体。</td>
+    <td>在技巧播放模式下播放媒体时出错。 技巧播放模式已结束，流已暂停。 调用Play()以正常模式播放媒体。</td>
   </tr>
   <tr>
     <td>LIVE_WINDOW_MOVED_AHEAD</td>
     <td>95</td>
-    <td>播放器不在实时窗口中，必须向前寻找以赶上。</td>
+    <td>播放器不在实时窗口中，必须前进才能赶上。</td>
   </tr>
 </table>
