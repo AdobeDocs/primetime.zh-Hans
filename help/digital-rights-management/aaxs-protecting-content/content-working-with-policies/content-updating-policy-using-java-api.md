@@ -4,22 +4,25 @@ title: 使用Java API更新策略
 uuid: 23c50f05-799e-4f5a-869b-4b5e29a36ce1
 translation-type: tm+mt
 source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+workflow-type: tm+mt
+source-wordcount: '113'
+ht-degree: 0%
 
 ---
 
 
-# 使用Java API更新策略 {#updating-a-policy-using-the-java-api}
+# 使用Java API {#updating-a-policy-using-the-java-api}更新策略
 
 要使用Java API更新策略，请执行以下步骤：
 
-1. 设置开发环境，并将“设置开发环境”中提 [及的所有JAR文件包含在项目中](../../aaxs-protecting-content/content-setting-up-the-sdk/content-setting-up-the-dev-env.md) 。
-1. 创建一 `Policy` 个实例，并从文件或数据库读取策略。
+1. 设置开发环境并包含[设置项目中的开发环境](../../aaxs-protecting-content/content-setting-up-the-sdk/content-setting-up-the-dev-env.md)中提及的所有JAR文件。
+1. 创建`Policy`实例，并从文件或数据库读取策略。
 
    ```
    Policy policy = new Policy(policyBytes);
    ```
 
-1. 通过设 `Policy` 置对象的属性（如其名称和使用规则）来更新对象。
+1. 通过设置`Policy`对象的属性（如其名称和使用规则）来更新该对象。
 
    ```java
      // Change the policy name.  
@@ -44,7 +47,7 @@ source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
      }
    ```
 
-1. 对更新的对 `Policy` 象进行序列化，并将其存储在文件或数据库中。
+1. 对更新的`Policy`对象进行序列化，并将其存储在文件或数据库中。
 
    ```java
       // Serialize the policy.  
@@ -58,4 +61,4 @@ source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
       out.close(); 
    ```
 
-有关此示例代码的完整源代码，请参 `com.adobe.flashaccess.samples.policy.UpdatePolicy` 阅参考实现命令行工具“samples”目录。
+有关此示例代码的完整源代码，请参见Reference Implementation命令行工具“samples”目录中的`com.adobe.flashaccess.samples.policy.UpdatePolicy`。
