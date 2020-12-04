@@ -13,11 +13,11 @@ ht-degree: 0%
 ---
 
 
-# 防火墙规则 {#firewall-rules}
+# 防火墙规则{#firewall-rules}
 
 在确定防火墙规则时，请考虑以下类型的URL:
 
-## 传入URL {#section_F111526A9DB844CBBF21A3CAE5F50880}
+## 传入的URL {#section_F111526A9DB844CBBF21A3CAE5F50880}
 
 您可以配置外部防火墙，使其仅显示要提供给最终用户的应用程序功能的URL。
 
