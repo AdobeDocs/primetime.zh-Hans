@@ -1,27 +1,30 @@
 ---
-description: 您可以在广告中间、在直播流中加入，从而获得类似电视的体验。
-seo-description: 您可以在广告中间、在直播流中加入，从而获得类似电视的体验。
+description: 您可以在广告中间通过实时流加入，从而获得类似电视的体验。
+seo-description: 您可以在广告中间通过实时流加入，从而获得类似电视的体验。
 seo-title: 部分广告中断插入
 title: 部分广告中断插入
 uuid: 296a9b6a-9e9f-4ca7-ab8a-c8cbc98fb9af
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '349'
+ht-degree: 0%
 
 ---
 
 
-# 部分广告中断插入 {#partial-ad-break-insertion}
+# 部分广告中断插入{#partial-ad-break-insertion}
 
-您可以在广告中间、在直播流中加入，从而获得类似电视的体验。
+您可以在广告中间通过实时流加入，从而获得类似电视的体验。
 
-通过“部分广告中断”功能，您可以模拟类似电视的体验：如果客户端在midroll中启动实时流，它将在该midroll中启动。 它类似于切换到电视频道，广告无缝运行。
+部分广告中断功能可以模拟类似电视的体验，如果客户端开始某个视频流，该视频流就会在该视频流中开始。 它类似于切换到电视渠道，广告无缝运行。
 
-例如，如果用户在90秒广告中断（3个30秒广告）中间加入，在第2个广告中加入10秒（即，在广告中断后40秒），则会发生以下情况：
+例如，如果用户在90秒的广告中断（三则30秒的广告）中间加入，在第二则广告中加入10秒（即，在广告中断开始40秒），则会发生以下情况：
 
-* 在剩余持续时间（20秒）内播放第二个广告，然后播放第三个广告。
-* 不触发部分播放广告（第二个广告）的广告跟踪器。 只触发第三个广告的跟踪器。
+* 第二个广告在剩余的持续时间（20秒）内播放，然后是第三个广告。
+* 不会触发部分播放的广告（第二个广告）的广告跟踪器。 只会触发第三个广告的跟踪器。
 
-默认情况下不启用此行为。 要在应用程序中启用此功能，请执行以下操作：
+默认情况下不启用此行为。 要在应用程序中启用此功能，请执行以下操作。
 
 1. 使用AdvertisingMetadata类的方法setEnableLivePreroll禁用实时预卷。
 
@@ -29,7 +32,7 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
    advertisingMetadata.setEnableLivePreroll(String.valueOf(false))
    ```
 
-1. 打开“部分插入广告中断”首选项。 使用MediaPlayer界面中的新方法setPartialAdBreakPref打开此功能。 使用getPartialAdBreakPref方法查找此首选项的当前状态。
+1. 打开“部分广告中断插入”首选项。 使用MediaPlayer界面中的新方法setPartialAdBreakPref将此功能打开。 使用getPartialAdBreakPref方法查找此首选项的当前状态。
 
    ```
    MediaPlayer mediaPlayer = DefaultMediaPlayer.create(getActivity().getApplicationContext()); 
@@ -37,9 +40,9 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
           mediaPlayer.setPartialAdBreakPref(true); 
    ```
 
-1. 此功能要求您实施自定义广告策略选择器以自定义行为。 如果您尚未自定义AdvertisingFactory类实施，则添加一个新的AdvertisingFactory实施。 覆盖createAdPolicySelector方法。 此方法返回AdPolicySelector实现的新实例。
+1. 此功能要求您实施自定义广告策略选择器以自定义行为。 如果您尚未自定义AdvertisingFactory类实现，请添加新的AdvertisingFactory实现。 覆盖createAdPolicySelector方法。 此方法返回AdPolicySelector实现的新实例。
 
-   下面给出了一个实施示例，供您参考。 可从com.adobe.mediacore包中使用以下示例实施。 但是，它经过简化以便于参考，建议不要按原样使用。
+   下面给出了示例实施，供您参考。 可从com.adobe.mediacore包中使用以下示例实施。 但是，它被简化以便于参考，建议不按原样使用。
 
    1. 示例广告策略选择器
 
