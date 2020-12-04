@@ -1,20 +1,23 @@
 ---
-description: 浏览器TVSDK支持许多HLS功能，您可以通过这些功能向视频应用程序添加功能。
-seo-description: 浏览器TVSDK支持许多HLS功能，您可以通过这些功能向视频应用程序添加功能。
+description: 浏览器TVSDK支持许多HLS功能，您可以实施这些功能来向视频应用程序添加功能。
+seo-description: 浏览器TVSDK支持许多HLS功能，您可以实施这些功能来向视频应用程序添加功能。
 seo-title: 支持的HLS功能
 title: 支持的HLS功能
 uuid: 033d81f8-cea4-4687-b2fb-1524d9164d39
 translation-type: tm+mt
 source-git-commit: 592245f5a7186d18dabbb5a98a468cbed7354aed
+workflow-type: tm+mt
+source-wordcount: '758'
+ht-degree: 0%
 
 ---
 
 
-# 支持的HLS功能 {#supported-hls-features}
+# 支持的HLS功能{#supported-hls-features}
 
-浏览器TVSDK支持许多HLS功能，您可以通过这些功能向视频应用程序添加功能。
+浏览器TVSDK支持许多HLS功能，您可以实施这些功能来向视频应用程序添加功能。
 
-* [HLS核心回放](#hls-core-playback)
+* [HLS核心播放](#hls-core-playback)
 * [HLS高级回放功能](#hls-advanced-playback)
 * [HLS内容保护功能](#hls-content-protection)
 * [HLS核心广告插入功能](#hls-core-ad-insertion)
@@ -23,11 +26,11 @@ source-git-commit: 592245f5a7186d18dabbb5a98a468cbed7354aed
 
 >[!TIP]
 >
->在以下功能矩阵表中，支 ![持的图标](assets/supported15.png) ，表示当前版本支持该功能。
+>在下面的功能矩阵表中，![支持的图标](assets/supported15.png)表示当前版本中支持该功能。
 
 >[!TIP]
 >
->在Safari列中，“平台限制”表示不支持用例，因为该平台不允许实施对它的支持。 在插入时，请使用SSAI。 如果播放限制对您很重要，强制在平台支持广告插入用例之前回退到Safari上的Flash。
+>在Safari列“平台限制”中表示不支持该用例，因为该平台不允许对它提供支持。 插入时，请使用SSAI。 如果播放限制对您很重要，强制退回到Safari上的Flash，直到平台支持广告插入用例。
 
 <!--<a id="section_9FB9193D5763448CB228B96164661738"></a>-->
 
@@ -81,73 +84,73 @@ Removed Nielsen row
 
  -->
 
-## HLS集成 {#hls-integrations}
+## HLS集成{#hls-integrations}
 
 | 类别 | 内容类型 | 功能 | Flash | HTML5:FF、IE、Chrome、Android Chrome | HTML5:Safari、iOS Safari |
 |--- |--- |--- |--- |--- |--- |
-| 集成 | VOD +实时 | Adobe Analytics VHL集成 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
+| 集成 | VOD + Live | Adobe AnalyticsVHL集成 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
 
-## HLS高级广告插入功能(CSAI) {#hls-advanced-ad-insertion}
-
-| 类别 | 内容类型 | 功能 | Flash | HTML5:FF、IE、Chrome、Android Chrome | HTML5:Safari、iOS Safari |
-|--- |--- |--- |--- |--- |--- |
-| 广告插入 | VOD | 仅广告 | 不支持 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 广告插入 | VOD +实时 | 定位参数 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 广告插入 | VOD +实时 | 自定义广告策略 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | 平台限制 |
-| 广告插入 | VOD +实时 | 延迟广告加载 | ![支持图标](assets/supported15.png) | 不支持 | 平台限制 |
-| 广告插入 | VOD | 配套广告、横幅广告和可点击广告 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 广告插入 | VOD | VPAID 2.0 | SWF | JavaScript | JavaScript |
-
-## HLS核心广告插入功能(CSAI) {#hls-core-ad-insertion}
+## HLS高级广告插入功能(CSAI){#hls-advanced-ad-insertion}
 
 | 类别 | 内容类型 | 功能 | Flash | HTML5:FF、IE、Chrome、Android Chrome | HTML5:Safari、iOS Safari |
 |--- |--- |--- |--- |--- |--- |
-| 广告插入 | VOD +实时 | 预卷 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 广告插入 | VOD +实时 | 中间卷 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | 平台限制 |
-| 广告插入 | VOD +实时 | 后卷 | 仅VOD | 仅VOD | 仅VOD |
-| 广告插入 | FER VOD | 广告分辨率和行为 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | 平台限制 |
-| 广告插入 | VOD +实时 | 默认广告策略 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | 平台限制 |
-| 广告插入 | VOD +实时 | VAST 2.0/3.0 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 广告插入 | VOD +实时 | VMAP 1.0 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 广告插入 | VOD +实时 | CRS v3.1 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
+| Ad Insertion | VOD | 仅广告 | 不支持 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| Ad Insertion | VOD + Live | 定位参数 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| Ad Insertion | VOD + Live | 自定义广告策略 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
+| Ad Insertion | VOD + Live | 延迟广告加载 | ![支持的图标](assets/supported15.png) | 不支持 | 平台限制 |
+| Ad Insertion | VOD | 配套广告、横幅广告和可点击广告 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| Ad Insertion | VOD | VPAID 2.0 | SWF | JavaScript | JavaScript |
 
-## HLS内容保护功能 {#hls-content-protection}
+## HLS核心广告插入功能(CSAI){#hls-core-ad-insertion}
 
 | 类别 | 内容类型 | 功能 | Flash | HTML5:FF、IE、Chrome、Android Chrome | HTML5:Safari、iOS Safari |
 |--- |--- |--- |--- |--- |--- |
-| 内容保护 | VOD +实时 | AES-128 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 内容保护 | VOD +实时 | Sample-AES | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 内容保护 | VOD | DRM | Adobe Access | 不支持 | FairPlay |
+| Ad Insertion | VOD + Live | 预卷 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| Ad Insertion | VOD + Live | 中间卷 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
+| Ad Insertion | VOD + Live | 后置 | 仅VOD | 仅VOD | 仅VOD |
+| Ad Insertion | FER VOD | 广告分辨率和行为 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
+| Ad Insertion | VOD + Live | 默认广告策略 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
+| Ad Insertion | VOD + Live | VAST 2.0/3.0 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| Ad Insertion | VOD + Live | VMAP 1.0 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| Ad Insertion | VOD + Live | CRS v3.1 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
 
-## HLS高级回放功能 {#hls-advanced-playback}
-
-| 类别 | 内容类型 | 功能 | Flash | HTML5:FF、IE、Chrome、Android Chrome | HTML5:Safari、iOS Safari |
-|--- |--- |--- |--- |--- |--- |
-| 播放 | VOD | 偏移时回放 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 播放 | VOD | 仅音频回放 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 播放 | VOD | 特技播放 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 播放 | VOD | 流畅的技巧播放 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | 平台限制 |
-| 播放 | VOD +实时 | ID3解析 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | 不支持 |
-| 播放 | VOD +实时 | 不连续标记支持 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 播放 | VOD +实时 | 标记化流 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | 平台限制 |
-| 播放 | VOD +实时 | 计费 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 播放 | VOD +实时 | Browserify | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-
-## HLS核心回放 {#hls-core-playback}
+## HLS内容保护功能{#hls-content-protection}
 
 | 类别 | 内容类型 | 功能 | Flash | HTML5:FF、IE、Chrome、Android Chrome | HTML5:Safari、iOS Safari |
 |--- |--- |--- |--- |--- |--- |
-| 播放 | VOD +实时 | 常规播放（播放、暂停、搜索） | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 播放 | FER VOD | 常规播放（播放、暂停、搜索） | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 播放 | VOD +实时 | 自适应比特率 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 播放 | VOD +实时 | 608/708字幕 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 播放 | VOD +实时 | WebVTT | ![支持图标](assets/supported15.png) | 仅VOD | 仅VOD |
-| 播放 | VOD +实时 | 清单故障转移 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) |
-| 播放 | VOD +实时 | 高级故障切换 | ![支持图标](assets/supported15.png) | 仅VOD | 平台限制 |
-| 播放 | VOD +实时 | QoS和播放器通知 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | 有限的QoS支持 |
-| 播放 | VOD +实时 | 支持Cookie头 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | 平台限制 |
-| 播放 | VOD +实时 | 设置缓冲区控制参数 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | 平台限制 |
-| 播放 | VOD +实时 | 设置自适应比特率控制 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | 平台限制 |
-| 播放 | VOD +实时 | 自定义标记 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | 平台限制 |
-| 播放 | VOD +实时 | 后期绑定音频 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | 平台限制 |
-| 播放 | VOD +实时 | 302重定向 | ![支持图标](assets/supported15.png) | ![支持图标](assets/supported15.png) | 平台限制 |
+| 内容保护 | VOD + Live | AES-128 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| 内容保护 | VOD + Live | Sample-AES | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| 内容保护 | VOD | DRM | Adobe访问 | 不支持 | FairPlay |
+
+## HLS高级回放功能{#hls-advanced-playback}
+
+| 类别 | 内容类型 | 功能 | Flash | HTML5:FF、IE、Chrome、Android Chrome | HTML5:Safari、iOS Safari |
+|--- |--- |--- |--- |--- |--- |
+| 播放 | VOD | 偏移时回放 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| 播放 | VOD | 仅播放音频 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| 播放 | VOD | 技巧游戏 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| 播放 | VOD | 流畅的技巧播放 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
+| 播放 | VOD + Live | ID3解析 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 不支持 |
+| 播放 | VOD + Live | 不连续标记支持 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| 播放 | VOD + Live | 标记化流 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
+| 播放 | VOD + Live | 计费 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| 播放 | VOD + Live | Browserify | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+
+## HLS核心播放{#hls-core-playback}
+
+| 类别 | 内容类型 | 功能 | Flash | HTML5:FF、IE、Chrome、Android Chrome | HTML5:Safari、iOS Safari |
+|--- |--- |--- |--- |--- |--- |
+| 播放 | VOD + Live | 常规播放（播放、暂停、搜索） | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| 播放 | FER VOD | 常规播放（播放、暂停、搜索） | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| 播放 | VOD + Live | 自适应比特率 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| 播放 | VOD + Live | 608/708字幕 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| 播放 | VOD + Live | WebVTT | ![支持的图标](assets/supported15.png) | 仅VOD | 仅VOD |
+| 播放 | VOD + Live | 清单故障转移 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| 播放 | VOD + Live | 高级故障转移 | ![支持的图标](assets/supported15.png) | 仅VOD | 平台限制 |
+| 播放 | VOD + Live | QoS和播放器通知 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 有限QoS支持 |
+| 播放 | VOD + Live | 支持Cookie头 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
+| 播放 | VOD + Live | 设置缓冲区控制参数 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
+| 播放 | VOD + Live | 设置自适应比特率控制 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
+| 播放 | VOD + Live | 自定义标记 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
+| 播放 | VOD + Live | 延迟绑定音频 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
+| 播放 | VOD + Live | 302重定向 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
