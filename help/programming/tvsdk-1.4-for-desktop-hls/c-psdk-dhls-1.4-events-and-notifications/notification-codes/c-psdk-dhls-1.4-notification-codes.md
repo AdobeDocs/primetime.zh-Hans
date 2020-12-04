@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# 概述 {#notification-codes-overview}
+# 概述{#notification-codes-overview}
 
 TVSDK通知系统会生成各种错误、警告和信息性通知，它们提供诊断元数据。
 
@@ -40,20 +40,21 @@ TVSDK通知系统会生成各种错误、警告和信息性通知，它们提供
      <li id="li_6D3EA03845294DC2BAD1ACF507639E51">信息通知事件,30000至399999 </li> 
     </ul> <p>每个顶级范围（如错误）被划分为子范围，如表示播放错误的101000到101999。 </p>
     <pre>
-     明细列表 <span class="codeph"> mediacore.PSDKErrorCode</span> 列表可能的值。
+     明细列表 
+     <span class="codeph"> mediacore.PSDKErrorCode</span>列表可能的值。
     </pre> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> 名称 </td> 
-   <td colname="2">包含代码的可读描述的字符串，如 <span class="codeph"> SEEK_ERROR</span>。 </td> 
+   <td colname="1"> name </td> 
+   <td colname="2">包含代码的可读描述的字符串，如<span class="codeph"> SEEK_ERROR</span>。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 元数据 </td> 
-   <td colname="2">包含有关通知的其他相关信息的键／值对。 例如，名为URL <span class="codeph"> 的键</span> ，将与与通知相关的URL（如导致错误的无效URL）的值配对。 </td> 
+   <td colname="2">包含有关通知的其他相关信息的键／值对。 例如，名为<span class="codeph"> URL</span>的键将与与通知相关的URL成对，如导致错误的无效URL。 </td> 
   </tr> 
   <tr rowsep="0"> 
    <td colname="1"> innerNotification </td> 
-   <td colname="2">对另一个直接影 <span class="codeph"> 响此通知</span> 的MediaPlayerNotification对象的引用。 例如，广告插入失败的通知与时间线插入冲突直接对应。 并非所有通知都提供内部通知。 </td> 
+   <td colname="2">对另一个直接影响此通知的<span class="codeph"> MediaPlayerNotification</span>对象的引用。 例如，广告插入失败的通知与时间线插入冲突直接对应。 并非所有通知都提供内部通知。 </td> 
   </tr> 
  </tbody> 
 </table>
