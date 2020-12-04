@@ -4,6 +4,9 @@ title: SWF哈希计算器
 uuid: c1823208-92d9-47c5-b550-f9cc370b543d
 translation-type: tm+mt
 source-git-commit: 47b2ed65ff0ea4f54a210cf7627ed535782296b9
+workflow-type: tm+mt
+source-wordcount: '52'
+ht-degree: 0%
 
 ---
 
@@ -22,10 +25,10 @@ Hasher.bat filename.swf
 java -jar libs/flashaccess-hasher.jar filename.swf
 ```
 
-实用程序输出以下消息：
+实用程序将输出以下消息：
 
 ```
 SWF Hash: hash-of-swf
 ```
 
-此值可用于指定中的SWF摘要 [!DNL flashaccess-tenant.xml]。
+此值可用于指定[!DNL flashaccess-tenant.xml]中的SWF摘要。
