@@ -11,7 +11,7 @@ ht-degree: 0%
 ---
 
 
-# 增强的许可证链接 {#enhanced-license-chaining}
+# 增强的许可证链{#enhanced-license-chaining}
 
 您可以使用父根许可证批量更新许可证，从而使用增强的许可证链接来更新许可证。
 
