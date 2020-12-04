@@ -11,9 +11,9 @@ ht-degree: 0%
 ---
 
 
-# 设置首选项概述 {#setting-preferences-overview}
+# 设置首选项概述{#setting-preferences-overview}
 
-除Packager Server URL外，下面指定的所有首选项都存储在服务器上的 [!DNL flashaccess-refimpl-packager.properties] 文件中。 所有设置都可以直接在属性文件中或通过AIR应用程序进行修改。 口令存储在服务器的属性文件中时会加密。 在UI中键入未加密的密码，在将其存储到文件中之前，将对其进行加密。
+除Packager Server URL外，下面指定的所有首选项都存储在服务器上的[!DNL flashaccess-refimpl-packager.properties]文件中。 所有设置都可以直接在属性文件中或通过AIR应用程序进行修改。 口令存储在服务器的属性文件中时会加密。 在UI中键入未加密的密码，在将其存储到文件中之前，将对其进行加密。
 
 >[!NOTE]
 >
@@ -33,7 +33,7 @@ ht-degree: 0%
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> Packager服务器URL </td> 
-   <td colname="2" class="- topic/entry "> 运行flashaccess- <span class="filepath"> packager.war的服务器的位置 </span>;例如 <span class="filepath"> https://localhost:8080 </span> </td> 
+   <td colname="2" class="- topic/entry "> 运行<span class="filepath"> flashaccess-packager.war </span>的服务器的位置；例如<span class="filepath"> https://localhost:8080 </span> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 资源目录 </td> 
@@ -41,7 +41,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 许可证服务器URL </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">客户端应从中请求许可证的服务器URL;例如 <span class="filepath"> https://mylicenseserver.com:8080 </span> </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">客户端应从中请求许可证的服务器URL;例如，<span class="filepath"> https://mylicenseserver.com:8080 </span> </p> </td> 
   </tr> 
  </tbody> 
 </table>
