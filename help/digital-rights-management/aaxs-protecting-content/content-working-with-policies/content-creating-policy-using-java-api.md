@@ -4,16 +4,19 @@ title: 使用Java API创建策略
 uuid: c653548d-4abf-46b9-8669-d68b966da359
 translation-type: tm+mt
 source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+workflow-type: tm+mt
+source-wordcount: '103'
+ht-degree: 0%
 
 ---
 
 
-# 使用Java API创建策略 {#creating-a-policy-using-the-java-api}
+# 使用Java API {#creating-a-policy-using-the-java-api}创建策略
 
 要使用Java API创建策略，请执行以下步骤：
 
-1. 设置开发环境，并将“设置开发环境”中提 [及的所有JAR文件包含在项目中](../../aaxs-protecting-content/content-setting-up-the-sdk/content-setting-up-the-dev-env.md) 。
-1. 创建对 `com.adobe.flashaccess.sdk.policy.Policy` 象并指定其属性，如权限、许可证缓存持续时间和策略结束日期。
+1. 设置开发环境并包含[设置项目中的开发环境](../../aaxs-protecting-content/content-setting-up-the-sdk/content-setting-up-the-dev-env.md)中提及的所有JAR文件。
+1. 创建`com.adobe.flashaccess.sdk.policy.Policy`对象并指定其属性，如权限、许可证缓存持续时间和策略结束日期。
 
    ```java
      // Create a new Policy object.  
@@ -49,7 +52,7 @@ source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
      }
    ```
 
-1. 对对象进 `Policy` 行序列化，并将其存储在文件或数据库中。
+1. 对`Policy`对象进行序列化，并将其存储在文件或数据库中。
 
    ```java
      // Serialize the policy  
@@ -63,4 +66,4 @@ source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
      out.close();
    ```
 
-有关此示例代码的完整源代码，请参 *阅“参考实施命令行工具”目录中的* com.adobe.flashaccess.samples.policy.CreatePolicy [!DNL samples]。
+有关此示例代码的完整源代码，请参阅“参考实施命令行工具”[!DNL samples]目录中的&#x200B;*com.adobe.flashaccess.samples.policy.CreatePolicy*。
