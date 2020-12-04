@@ -17,7 +17,7 @@ ht-degree: 1%
 
 使用NotificationEvent，可以跟踪从Adobe视频引擎(AVE)传递的警告。
 
-您的播放器应用程序可以跟踪AVE生成的播放警告和错误，如故障转移或网络关闭事件，这些错误不会停止播放，并且不一定需要您的应用程序执行任何操作。 虽然TVSDK会处理某些AVE错误，但 `NotificationEvent` 它将作为AVE警告的通用传递机制传递给应用程序层。 在收到AVE警告后，您可以选择采取一些措施，如主动停止播放、激活应急计划、记录消息等。
+您的播放器应用程序可以跟踪AVE生成的播放警告和错误，如故障转移或网络关闭事件，这些错误不会停止播放，并且不一定需要您的应用程序执行任何操作。 虽然TVSDK会处理某些AVE错误，但`NotificationEvent`将作为AVE警告的通用传递机制传递给应用程序层。 在收到AVE警告后，您可以选择采取一些措施，如主动停止播放、激活应急计划、记录消息等。
 
 使用以下API元素跟踪播放器中的AVE警告：
 
@@ -102,7 +102,7 @@ private function onWarningAvailable(event:NotificationEvent):void {
 
 <!--<a id="example_C35262605D394718B40C084B569A5052"></a>-->
 
-以下是使用以下方式跟踪的AVE警告示例 `NotificationEvent`:
+以下是使用`NotificationEvent`跟踪的AVE警告示例：
 
 ```
 [WARN ] [psdkdemo::PSDKDemo] #onWarningAvailable metadata [resourceType:HLS] 
