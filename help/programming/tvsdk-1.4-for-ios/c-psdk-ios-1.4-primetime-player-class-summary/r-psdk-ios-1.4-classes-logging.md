@@ -6,6 +6,9 @@ title: 记录类
 uuid: feb4ee77-37de-4260-85fa-4931e059e034
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '92'
+ht-degree: 0%
 
 ---
 
@@ -24,7 +27,7 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
  <tbody> 
   <tr rowsep="1"> 
    <td colname="1" rowsep="0"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTLogEntry.html" format="html" scope="external"> PTLogEntry</a> </td> 
-   <td colname="2" rowsep="0"> 定义条目日志并保存有关日志消息的信息的类。 </td> 
+   <td colname="2" rowsep="0"> 定义条目日志并包含日志消息信息的类。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTLogFactory.html" format="html" scope="external"> PTLogFactory</a> </td> 
@@ -32,7 +35,7 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Protocols/PTLogger.html" format="html" scope="external"> PTLogger</a> </td> 
-   <td colname="2"> 协议。 为TVSDK实现自定义记录器所需的方法。 </td> 
+   <td colname="2"> 协议。 为TVSDK实施自定义记录器所需的方法。 </td> 
   </tr> 
  </tbody> 
 </table>
