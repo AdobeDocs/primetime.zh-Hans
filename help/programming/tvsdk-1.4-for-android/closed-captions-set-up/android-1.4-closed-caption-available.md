@@ -13,13 +13,13 @@ ht-degree: 1%
 ---
 
 
-# 从可用音轨中选择当前字幕轨道{#select-a-current-caption-track-from-among-available-tracks}
+# 从可用音轨{#select-a-current-caption-track-from-among-available-tracks}中选择当前字幕轨道
 
 您可以从当前可用的隐藏式字幕轨道的列表中选择轨道。 这将成为当前轨道，当可见性打开时显示该轨道。 某些音轨最初可能不可用，因此请侦听表示有更多音轨可用的事件。
 
 >[!TIP]
 >
->隐藏式字幕始终处于启用状态。 所有默认的隐藏字幕轨道均被视为存在。 默认音轨（如CC1-CC4、CS1-CS6）在中进行枚举 `ClosedCaptionsTrack.DefaultCCTypes`。 播放开始时，TVSDK会查找这些渠道中的任何一个活动。 如果找到活动，则设置该 `isActive` 跟踪的方法并分派 `MediaPlayer.PlaybackEventListener.onUpdated` 事件。
+>隐藏式字幕始终处于启用状态。 所有默认的隐藏字幕轨道均被视为存在。 默认音轨（如CC1-CC4、CS1-CS6）在`ClosedCaptionsTrack.DefaultCCTypes`中枚举。 播放开始时，TVSDK会查找这些渠道中的任何一个活动。 如果找到活动，则设置该跟踪的`isActive`方法并调度`MediaPlayer.PlaybackEventListener.onUpdated`事件。
 
 1. 等待媒体播放器处于至少PREPARED状态。
 1. 聆听这些事件:
