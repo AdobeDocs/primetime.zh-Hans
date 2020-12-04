@@ -15,18 +15,18 @@ ht-degree: 0%
 
 在部署Adobe PrimetimeDRM Server for Protected Streaming之前，必须已安装Java和Tomcat的版本，如“要求”主题中所列。
 
-用于受保护流的Primetime DRM Server包含 [!DNL flashaccesserver.war]。 如果您：
+用于受保护流的Primetime DRM服务器包包括[!DNL flashaccesserver.war]。 如果您：
 
-* 要部署此WAR文件，您需要将其复制到Tomcat的目 [!DNL webapps] 录。
-* 以前已部署WAR文件，您可能需要删除未打包的WAR目 [!DNL flashaccessserver] 录(在Tomcat的目 [!DNL webapps] 录中)。
+* 要部署此WAR文件，您需要将其复制到Tomcat的[!DNL webapps]目录。
+* 以前已部署WAR文件，您可能需要删除未打包的WAR目录（Tomcat的[!DNL webapps]目录中的[!DNL flashaccessserver]）。
 
-* 要阻止Tomcat解包WAR文件，请在Tomcat的 [!DNL server.xml] 目录中编辑该文 [!DNL conf] 件，并通过将 `unpackWARs` 其设置为来配置该属性 `false`。
+* 要阻止Tomcat解包WAR文件，请编辑Tomcat的[!DNL conf]目录中的[!DNL server.xml]文件，并通过将`unpackWARs`属性设置为`false`来配置该属性。
 
 >[!NOTE]
 >
->如果已将Tomcat配置为 [!DNL commons-logging.jar] 包含在系统类路径中（Primetime DRM Server for Protected Streaming不需要），则必须配置共享日志以使用Log4J。
+>如果已将Tomcat配置为在系统类路径中包含[!DNL commons-logging.jar]（Primetime DRM Server for Protected Streaming不是必需的），则必须配置commons-logging以使用Log4J。
 
-服务器可选地使用特定于平台的库( [!DNL jsafe.dll] 在Microsoft Windows或Linux上 [!DNL libjsafe.so] )以获得最佳性能。 您可以将平台的相应库从平 [!DNL thirdparty/cryptoj/]*台&#x200B;*复制到环境变量或Linux`PATH`上指定`LD_LIBRARY_PATH`的位置。
+服务器可选地使用平台特定库(Microsoft Windows上的[!DNL jsafe.dll]或Linux上的[!DNL libjsafe.so]以获得最佳性能。 您可以将平台的相应库从&#x200B;[!DNL thirdparty/cryptoj/]*platform*&#x200B;复制到由Linux上的`PATH`环境变量或`LD_LIBRARY_PATH`指定的位置。
 
 >[!NOTE]
 >
