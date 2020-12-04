@@ -1,31 +1,34 @@
 ---
-description: MediaPlayer提供了一个notifyClick()函数，该函数在播放可单击的广告时调度与广告相关的事件。 这些事件提供广告和广告中断信息，您的应用程序可以使用这些信息来提供点进功能。
-seo-description: MediaPlayer提供了一个notifyClick()函数，该函数在播放可单击的广告时调度与广告相关的事件。 这些事件提供广告和广告中断信息，您的应用程序可以使用这些信息来提供点进功能。
-seo-title: 处理可点击广告
-title: 处理可点击广告
+description: MediaPlayer提供notifyClick()函数，该函数在播放可单击的广告时调度与广告相关的事件。 这些事件提供您的应用程序可用于提供点进功能的广告和广告中断信息。
+seo-description: MediaPlayer提供notifyClick()函数，该函数在播放可单击的广告时调度与广告相关的事件。 这些事件提供您的应用程序可用于提供点进功能的广告和广告中断信息。
+seo-title: 处理可点击的广告
+title: 处理可点击的广告
 uuid: 5d3c9d36-60d7-4272-a523-7d1fe0e1615f
 translation-type: tm+mt
 source-git-commit: 592245f5a7186d18dabbb5a98a468cbed7354aed
+workflow-type: tm+mt
+source-wordcount: '253'
+ht-degree: 0%
 
 ---
 
 
-# 处理可点击广告 {#handle-clickable-ads}
+# 处理可点击广告{#handle-clickable-ads}
 
-MediaPlayer提供了一个notifyClick()函数，该函数在播放可单击的广告时调度与广告相关的事件。 这些事件提供广告和广告中断信息，您的应用程序可以使用这些信息来提供点进功能。
+MediaPlayer提供notifyClick()函数，该函数在播放可单击的广告时调度与广告相关的事件。 这些事件提供您的应用程序可用于提供点进功能的广告和广告中断信息。
 
-播放可单击广告时，MediaPlayer将触发以下事件：
+播放可单击的广告时，MediaPlayer将触发以下事件:
 
 * `AdobePSDK.PSDKEventType.AD_STARTED`
 * `AdobePSDK.PSDKEventType.AD_CLICKED`
 * `AdobePSDK.PSDKEventType.AD_COMPLETED`
 
-其中 `AdClickedEvent` 包含处理点进功能所需的信息。
+`AdClickedEvent`包含处理点进函数所需的信息。
 
 1. 在播放器中为用户提供单击可点击广告的控件。
 
    这可以是用于捕获用户单击的按钮或任何其他元素。
-1. 为用户的广告点击事件添加事件监听器。
+1. 为用户的广告单击事件添加事件监听器。
 
    例如：
 
@@ -34,9 +37,9 @@ MediaPlayer提供了一个notifyClick()函数，该函数在播放可单击的�
    <i>your_click_control_id</i>]).addEventListener("click", onAdClick);
    ```
 
-1. 为用户的单击事件添加一个处理函数。
+1. 为用户的单击事件添加一个处理程序。
 
-   此处理函数需要提示MediaPlayer触发事 `AdClicked` 件。
+   此处理函数需要提示MediaPlayer触发`AdClicked`事件。
 
    ```
    onAdClick = function (event) { 
@@ -50,7 +53,7 @@ MediaPlayer提供了一个notifyClick()函数，该函数在播放可单击的�
    } 
    ```
 
-1. 为MediaPlayer广告开始、已点击广告和已完成广告通知添加事件监听器。
+1. 为MediaPlayer广告开始添加事件监听器、已点击广告和已完成广告通知。
 
    ```
     <i>your_player</i>().addEventListener(AdobePSDK.PSDKEventType.AD_STARTED, onAdStarted); 
@@ -78,7 +81,7 @@ a.处理广告开始事件。
    ```
 
    b.处理已点击广告的事件。
-在此示例中，我们从活动中获取广告信息，并使用该信息打开一个新的浏览器窗口：
+在此示例中，我们从事件获取广告信息，并使用该信息打开新的浏览器窗口：
 
    ```
    onAdClickedEvent = function (event) { 
