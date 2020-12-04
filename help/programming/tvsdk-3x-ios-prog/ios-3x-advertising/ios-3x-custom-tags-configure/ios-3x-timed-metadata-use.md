@@ -6,17 +6,20 @@ title: 使用定时元数据
 uuid: 1531780f-2502-4235-818c-6c0a6bf3d348
 translation-type: tm+mt
 source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+workflow-type: tm+mt
+source-wordcount: '116'
+ht-degree: 1%
 
 ---
 
 
-# 使用定时元数据 {#use-timed-metadata}
+# 使用定时元数据{#use-timed-metadata}
 
 当当前播放时间与开始时间匹配时，可以使用TimedMetadata。
 
-要在播放期间使 `PTTimedMetadata` 用这些保存的对象，请在调度时从 [Store timed-metadata对象中使用保存的词典](../../../tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-custom-tags-configure/ios-3x-timed-metadata-store.md)。
+要在播放过程中使用这些保存的`PTTimedMetadata`对象，请使用保存的[存储定时元数据对象的字典，因为调度这些对象](../../../tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-custom-tags-configure/ios-3x-timed-metadata-store.md)。
 
-1. 从此通知提取和更新当前播放时间，并查找所有具有与当 `PTTimedMetadata` 前播放时间匹配的开始时间的对象。
+1. 从此通知提取并更新当前播放时间，找到所有开始时间与当前播放时间匹配的`PTTimedMetadata`对象。
 
    您可以使用这些对象完成各种操作。
 
@@ -57,4 +60,4 @@ source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
    }
    ```
 
-1. 定期刷新 `PTTimedMetadata` 列表中的旧实例，以防止内存持续增长。
+1. 定期刷新列表中的陈旧`PTTimedMetadata`实例，以防止内存持续增长。
