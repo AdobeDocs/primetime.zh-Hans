@@ -7,7 +7,7 @@ translation-type: tm+mt
 source-git-commit: fac84687085f289e984c189665bfe775337592b3
 workflow-type: tm+mt
 source-wordcount: '274'
-ht-degree: 33%
+ht-degree: 35%
 
 ---
 
@@ -24,13 +24,13 @@ ht-degree: 33%
 
 该版本侧重于将Primetime Reference应用程序的图形版本更新为5.6.4版。
 
-有关Android的当前已发布版本的更多信 [息](../release-notes/tvsdk-3x-android.md)。
+有关[Android](../release-notes/tvsdk-3x-android.md)的当前发布版本的详细信息，请查看。
 
 ## TVSDK 3.12 iOS发行说明中的增强和修复
 
 该版本侧重于解决客户的主要问题。
 
-有关iOS的当前已发布版本的更多 [信息](../release-notes/tvsdk-3x-ios.md)。
+有关[iOS](../release-notes/tvsdk-3x-ios.md)的当前已发布版本的详细信息，请查看。
 
 ## 另请参阅
 
@@ -41,7 +41,7 @@ ht-degree: 33%
 | [参考实施](/help/android-reference-implementation/home.md) | 帮助理解 TVSDK 并修改功能管理器以自定义您的个人播放器。 |
 | [Primetime API参考](/help/reference/api-references.md) | 提供有关 TVSDK 函数、数据结构和其他编程结构的详细信息。 |
 | [Digital Rights Management](/help/digital-rights-management/home.md) | 帮助您进一步了解Digital Rights Management(DRM)中的各种用户场景 |
-| [PrimetimeAd Insertion帮助](/help/dynamic-ad-insertion/home.md) | 解释如何通过在服务器上插入面向用户的动态广告来从内容获利，以及如何通过个性化广告吸引受众。 |
+| [Primetime Ad Insertion 帮助](/help/dynamic-ad-insertion/home.md) | 解释如何通过在服务器上插入面向用户的动态广告来从内容获利，以及如何通过个性化广告吸引受众。 |
 | [存档](https://helpx.adobe.com/primetime/archives.html) | 下载归档文档的PDF。 |
 
 ## 实用资源
