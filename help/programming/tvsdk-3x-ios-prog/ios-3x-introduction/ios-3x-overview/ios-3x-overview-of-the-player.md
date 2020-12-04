@@ -6,26 +6,29 @@ title: Primetime TVSDK功能
 uuid: 6e26c09c-2858-47d1-80e8-1d7c6a468b86
 translation-type: tm+mt
 source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+workflow-type: tm+mt
+source-wordcount: '246'
+ht-degree: 0%
 
 ---
 
 
-# Primetime TVSDK功能 {#primetime-tvsdk-features}
+# Primetime TVSDK功能{#primetime-tvsdk-features}
 
-适用于iOS的TVSDK包括可在播放器中实现的各种功能。
+适用于iOS的TVSDK包含可在播放器中实现的各种功能。
 
 TVSDK功能：
 
-* **VOD和实时／线性回放**
+* **VOD和实时／线性播放**
 
    * 播放窗口的管理，包括播放、停止、暂停、搜索和检索播放头位置的方法
-   * 支持全场重播
+   * 支持全事件重播
    * 隐藏式字幕(608、708、WebVTT)和替代形式的音频以增强辅助功能
-   * 用于字幕中文本样式的控件
-   * DVR功能、快进和快退(后两者称为特 *技播放模式*)
+   * 字幕中的文本样式控件
+   * DVR功能、快进和快退（后两者称为&#x200B;*技巧播放模式*）
    * 自适应比特率(ABR)逻辑和ABR控件的初始设置
    * 实时清单故障转移支持
-   * 可调节的回放缓冲器
+   * 可调整的播放缓冲器
    * 片段持续时间、大小和下载时间跟踪支持
 
 * **广告**
@@ -34,9 +37,9 @@ TVSDK功能：
    * 客户端广告拼接
 
       * 无缝广告插入，包括对VAST/VMAP的支持
-      * 支持广告的自定义提示标记
+      * 支持广告的自定义提示标签
       * 支持标记、替换和删除C3广告
-      * 包括封锁信令的可自定义内容／广告插入工作流
+      * 包括封锁信号的可自定义内容／广告插入工作流
 
 * **内容保护**
 
