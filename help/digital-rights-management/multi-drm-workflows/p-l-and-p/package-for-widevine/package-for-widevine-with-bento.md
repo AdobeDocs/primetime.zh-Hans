@@ -13,11 +13,11 @@ ht-degree: 0%
 ---
 
 
-# 打包Widevine和PlayReady的内容 {#package-for-widevine}
+# 打包Widevine和PlayReady的内容{#package-for-widevine}
 
 我们使用Bento4包装程序和Adobe脱机包装程序来创作加密的DASH内容。 Bento4将输入未加密的mp4内容。
 
-## 使用Bento4打包您的内容{#package-your-content-with-bento}
+## 使用Bento4{#package-your-content-with-bento}打包您的内容
 
 Bento4包装程序希望输入mp4是预先分段的。 Bento4包装程序分发包含一个用于此的工具。
 
@@ -66,13 +66,13 @@ Bento4包装程序希望输入mp4是预先分段的。 Bento4包装程序分发�
 
 在哪里
 
-标记的 `--encryption-key` 值在表单中 `<base16 encoded key id>:<base16 encoded encryption key>`。
+`--encryption-key`标志的值以`<base16 encoded key id>:<base16 encoded encryption key>`的形式显示。
 
-该标 `--widevine-header=provider:intertrust#content_id:2a` 志告诉打包程序在清单中包含pssh框，TVSDK当前需要该框才能回放。
+`--widevine-header=provider:intertrust#content_id:2a`标志告诉打包程序在清单中包含pssh框，TVSDK当前要求该框进行播放。
 
-其值用于 `-playready-header` PlayReady许可证获取。
+`-playready-header`的值用于PlayReady许可证获取。
 
-## 使用AdobeOffline Packager打包内容 {#package-your-content-with-adobe-offline-packager}
+## 使用Adobe脱机包装程序{#package-your-content-with-adobe-offline-packager}打包您的内容
 
 Adobe脱机包装程序将作为输入未加密的mp4内容。
 
@@ -92,7 +92,7 @@ http://pr.test.expressplay.com/playready/RightsManager.asmx
 -content_id c595f214d84dc7ecf31a8ebf1b7ddda5
 ```
 
-在这种特殊情况下，脱机打包程序将Widevine内容保护和PlayReady内容保护初始化数据添加到输出DASH内容。 值用于 `-key_file_path` 基64编码的键。 其值用于 `-playready_LA_URL` PlayReady许可证获取。
+在这种特殊情况下，脱机打包程序将Widevine内容保护和PlayReady内容保护初始化数据添加到输出DASH内容。 `-key_file_path`的值用于基64编码的密钥。 `-playready_LA_URL`的值用于PlayReady许可证获取。
 
 conf_path参数指向将包含以下内容的配置文件：
 
