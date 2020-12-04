@@ -30,7 +30,7 @@ PrimetimeAd Insertion20.10.1发行说明描述了PrimetimeAd Insertion2020年的
 
 **更改**
 
-* 添加了BootstrapAPI参 `ptparallelstream`数。 这使拥有请求CMAF解混音音频或视频流的播放器的客户能够并行进行，以确保音频和视频轨道中的广告保持一致。 将参数值设置为true以启用此功能，或忽略以禁用。
+* 添加了BootstrapAPI参数`ptparallelstream`。 这使拥有请求CMAF解混音音频或视频流的播放器的客户能够并行进行，以确保音频和视频轨道中的广告保持一致。 将参数值设置为true以启用此功能，或忽略以禁用。
 
 #### 版本20.9.2
 
@@ -38,10 +38,10 @@ PrimetimeAd Insertion20.10.1发行说明描述了PrimetimeAd Insertion2020年的
 
 **增强功能**
 
-* 支持使用标签包含非线性广告 `EXT-X-MARKER` 类型。
+* 支持使用`EXT-X-MARKER`标记包含非线性广告类型。
 有关详细信息或要启用此功能，请与技术支持代表联系。
 
-* 提供了在提供商响应时间过长时限制整体广告解决时间的支持。 要启用限制，请将引导API参 `ptadtimeout` 数设置为毫秒值。
+* 提供了在提供商响应时间过长时限制整体广告解决时间的支持。 要启用限制，请将引导API参数`ptadtimeout`设置为毫秒值。
 
    >[!NOTE]
    >
@@ -73,7 +73,7 @@ PrimetimeAd Insertion20.10.1发行说明描述了PrimetimeAd Insertion2020年的
 
 #### 版本20.7.1
 
-**时间：** 2020年7月9日星期四东部时间凌晨03时至05时
+**时间：** 2020年7月9日星期四东部时间凌晨03时至5时
 
 **新增功能和增强功能**
 
@@ -91,11 +91,11 @@ PrimetimeAd Insertion20.10.1发行说明描述了PrimetimeAd Insertion2020年的
 
 **增强功能**
 
-针对需要毫秒精度的视频客户端的改进的流同步。 联系Adobe支持，以实现毫秒级的精 `#EXT-X-PROGRAM-DATE-TIME tags`度。
+针对需要毫秒精度的视频客户端的改进的流同步。 与Adobe支持联系，为`#EXT-X-PROGRAM-DATE-TIME tags`启用毫秒精度。
 
 #### 版本20.6.1
 
-**时间：** 2020年6月2日星期二东部时间凌晨03时至05时
+**时间：** 2020年6月2日星期二东部时间凌晨03时至5时
 
 **新增功能**
 
@@ -141,7 +141,7 @@ PrimetimeAd Insertion20.10.1发行说明描述了PrimetimeAd Insertion2020年的
 
 #### 版本20.3.2
 
-**时间：** 2020年3月11日星期三东部时间上午05点30分至07点
+**时间：** 2020年3月11日星期三东部时间早上05点30分至07点
 
 * 对SCTE35信号处理的改进。
 
@@ -149,7 +149,7 @@ PrimetimeAd Insertion20.10.1发行说明描述了PrimetimeAd Insertion2020年的
 
 #### 版本20.3.1
 
-**时间：** 2020年3月05日星期四东部时间凌晨02点30分至04点30分
+**时间：2020** 年3月05日星期四东部时间凌晨02点30分至04点30分
 
 * 性能改进：
 
@@ -172,7 +172,7 @@ PrimetimeAd Insertion20.10.1发行说明描述了PrimetimeAd Insertion2020年的
 
 * **VMAP，支持NBC CueFormat的FER**
 
-   当使用FER流时，将提示转换为FW时 `ptcueformat=nbc` 间线覆盖参数，该流是包含清单内提示和烘焙广告的VOD流。
+   当使用`ptcueformat=nbc`且流是包含清单内提示和烘焙广告的VOD流时，将FER流的提示转换为FW时间线覆盖参数。
 
 * 在转发给第三方广告提供商/CDN之前，清理HTTP头中的用户代理字段。
 
@@ -188,7 +188,7 @@ PrimetimeAd Insertion20.10.1发行说明描述了PrimetimeAd Insertion2020年的
 
 #### 版本20.1.1
 
-**时间：** 2020年1月15日星期三东部时间凌晨04时至05时
+**时间：** 2020年1月15日星期三东部时间凌晨04时至5时
 
 * Creative Repackaging Service现在可自动阻止列出格式错误的创意，从而更快地插入广告。
 
@@ -196,9 +196,9 @@ PrimetimeAd Insertion20.10.1发行说明描述了PrimetimeAd Insertion2020年的
 
 * 维护升级。
 
-## 已解决的问题 {#Resolved-issues}
+## 已解决问题{#Resolved-issues}
 
-如果解决方案与报告的问题相关，则显示Zendesk引用。 For example, `ZD#xxxxx`.
+如果解决方案与报告的问题相关，则显示Zendesk引用。 例如，`ZD#xxxxx`。
 
 **PTAI 20.9.1**
 
@@ -208,7 +208,7 @@ PrimetimeAd Insertion20.10.1发行说明描述了PrimetimeAd Insertion2020年的
 
 * `WebVTT` 无论请求的原始协议如何，都始终在http协议下请求片段。
 
-* `EXT-X-DISCONTINUITY` 从广告切换回内容时，将从播放列表顶部删除标记。 联系Adobe支持以启用此修复。
+* `EXT-X-DISCONTINUITY` 从广告切换回内容时，将从播放列表顶部删除标记。联系Adobe支持以启用此修复。
 
 **PTAI 20.5.1**
 
