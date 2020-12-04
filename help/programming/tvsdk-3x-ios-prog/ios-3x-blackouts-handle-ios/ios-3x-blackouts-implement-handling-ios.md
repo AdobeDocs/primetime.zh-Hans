@@ -1,20 +1,23 @@
 ---
 description: TVSDK提供用于处理封锁期的API和示例代码。
 seo-description: TVSDK提供用于处理封锁期的API和示例代码。
-seo-title: 实现封锁处理
-title: 实现封锁处理
+seo-title: 实施封锁处理
+title: 实施封锁处理
 uuid: a447ff24-8386-4cae-878e-0859fb191de2
 translation-type: tm+mt
 source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+workflow-type: tm+mt
+source-wordcount: '143'
+ht-degree: 1%
 
 ---
 
 
-# 实现封锁处理 {#implement-blackout-handling}
+# 实现封锁处理{#implement-blackout-handling}
 
 TVSDK提供用于处理封锁期的API和示例代码。
 
-要在封锁期间实施封锁处理并提供替代内容，请执行以下操作：
+要在封锁期期间实施封锁处理并提供替代内容，请执行以下操作：
 
 1. 设置应用程序以订阅实时流清单中的封锁标记。
 
@@ -27,7 +30,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 为添加通知监听器 `PTTimedMetadataChangedNotification`。
+1. 为`PTTimedMetadataChangedNotification`添加通知监听器。
 
    ```
    - (void)addobservers 
@@ -37,7 +40,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 为前景中的对象实现 `PTTimedMetadata` 监听器方法。
+1. 在前景中为`PTTimedMetadata`对象实现监听器方法。
 
    例如：
 
@@ -61,7 +64,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 在回放 `TimedMetadata` 期间使用持续更新处理对象。
+1. 在播放过程中使用持续更新处理`TimedMetadata`对象。
 
    ```
    - (void)onMediaPlayerTimeChange:(NSNotification *)notification 
@@ -82,7 +85,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 添加处 `PTTimedMetadata` 理函数以切换到替代内容并返回到由对象及其播放时间 `PTTimedMetadata` 指示的主内容。
+1. 添加`PTTimedMetadata`处理函数以切换到替代内容并返回主内容，如`PTTimedMetadata`对象及其播放时间所示。
 
    ```
    - (void)handleCollectionAtTime:(int)currentTime 
@@ -197,7 +200,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 为背景中的对象实 `PTTimedMetadata` 现监听器方法。
+1. 在后台为`PTTimedMetadata`对象实现监听器方法。
 
    ```
    - (void)onSubscribedTagInBackground:(NSNotification *)notification 
@@ -218,7 +221,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 为背景错误实现监听器方法。
+1. 实现背景错误的监听器方法。
 
    ```
    - (void) onBackgroundManifestError:(NSNotification *)notification 
