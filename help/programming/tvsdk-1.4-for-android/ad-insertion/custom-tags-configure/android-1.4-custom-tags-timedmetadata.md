@@ -29,29 +29,29 @@ ht-degree: 0%
  </thead>
  <tbody> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> id </span> </td> 
+   <td colname="col1"> <span class="codeph"> id  </span> </td> 
    <td colname="col02"> 长 </td> 
-   <td colname="col2"> 定时元数据的唯一标识符。 此值通常从cue/tag ID属性中提取。 否则，提供唯一随机值。 使用 <span class="codeph"> getId </span>。 </td> 
+   <td colname="col2"> 定时元数据的唯一标识符。 此值通常从cue/tag ID属性中提取。 否则，提供唯一随机值。 使用<span class="codeph"> getId </span>。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 元数据 </span> </td> 
+   <td colname="col1"> <span class="codeph"> 元数据  </span> </td> 
    <td colname="col02"> 元数据 </td> 
-   <td colname="col2"> 从播放列表／清单自定义标签中处理／提取的信息。 使用 <span class="codeph"> getMetadata </span>。 </td> 
+   <td colname="col2"> 从播放列表／清单自定义标签中处理／提取的信息。 使用<span class="codeph"> getMetadata </span>。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 名称 </span> </td> 
+   <td colname="col1"> <span class="codeph"> name </span> </td> 
    <td colname="col02"> 字符串 </td> 
-   <td colname="col2"> 定时元数据的名称。 如果类型为 <span class="codeph"> TAG </span>，则该值表示提示／标记名称。 如果类型 <span class="codeph"> 为ID3 </span>，则为null。 使用 <span class="codeph"> getName </span>。 </td> 
+   <td colname="col2"> 定时元数据的名称。 如果类型为<span class="codeph"> TAG </span>，则值表示cue/tag名称。 如果类型为<span class="codeph"> ID3 </span>，则为null。 使用<span class="codeph"> getName </span>。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 时间 </span> </td> 
+   <td colname="col1"> <span class="codeph"> 时间  </span> </td> 
    <td colname="col02"> 长 </td> 
-   <td colname="col2"> 相对于主内容开始的时间位置（以毫秒为单位），其中流中存在此定时元数据。 使用 <span class="codeph"> getTime </span>。 </td> 
+   <td colname="col2"> 相对于主内容开始的时间位置（以毫秒为单位），其中流中存在此定时元数据。 使用<span class="codeph"> getTime </span>。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 类型 </span> </td> 
+   <td colname="col1"> <span class="codeph"> 类型  </span> </td> 
    <td colname="col02"> 类型 </td> 
-   <td colname="col2"> 定时元数据的类型。 使用 <span class="codeph"> getType </span>。 
+   <td colname="col2"> 定时元数据的类型。 使用<span class="codeph"> getType </span>。 
     <ul id="ul_70FBFB33E9F846D8B38592560CCE9560"> 
      <li id="li_739D30561BFB4D9B97DF212E4880BA2C">TAG —— 指示定时元数据是从播放列表／清单中的标记创建的。 </li> 
      <li id="li_E785E1DEF1CC4D9DBE7764E5D05EFAFC">ID3 —— 指示定时元数据是从媒体流中的ID3标记创建的。 </li> 
