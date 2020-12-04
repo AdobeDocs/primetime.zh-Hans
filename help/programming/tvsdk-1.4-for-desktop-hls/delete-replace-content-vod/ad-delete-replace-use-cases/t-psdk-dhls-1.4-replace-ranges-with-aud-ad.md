@@ -6,13 +6,16 @@ title: 用Adobe Primetime广告决策广告替换时间范围
 uuid: 101ac42d-5ba5-4487-af95-483a6594808a
 translation-type: tm+mt
 source-git-commit: adef0bbd52ba043f625f38db69366c6d873c586d
+workflow-type: tm+mt
+source-wordcount: '54'
+ht-degree: 0%
 
 ---
 
 
-# 用Adobe Primetime广告决策广告替换时间范围{#replace-time-ranges-with-an-adobe-primetime-ad-decisioning-ad}
+# 用Adobe Primetime广告决策广告{#replace-time-ranges-with-an-adobe-primetime-ad-decisioning-ad}替换时间范围
 
-从时 `TimeRanges` 间轴 `begin` 中 `end` 在和 `localTime` 之间删除。 将其替换为AdBreak `begin` 至 `begin+replaceDuration`。
+从时间轴中删除`begin`和`end`之间的`TimeRanges`。 `localTime`将其替换为`begin`到`begin+replaceDuration`的AdBreak。
 
 用Primetime广告决策广告替换范围。
 
