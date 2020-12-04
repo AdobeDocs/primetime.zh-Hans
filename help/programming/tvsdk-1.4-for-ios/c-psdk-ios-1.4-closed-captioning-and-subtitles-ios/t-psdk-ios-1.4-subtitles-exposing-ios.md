@@ -1,24 +1,27 @@
 ---
-description: TVSDK使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知您的播放器客户端内部AVAset的availableMediaCharatiersWithMediaSelectionOptions的可用性。
-seo-description: TVSDK使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知您的播放器客户端内部AVAset的availableMediaCharatiersWithMediaSelectionOptions的可用性。
+description: TVSDK使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知播放器客户端内部AVAset的availableMediaCharactiesWithMediaSelectionOptions的可用性。
+seo-description: TVSDK使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知播放器客户端内部AVAset的availableMediaCharactiesWithMediaSelectionOptions的可用性。
 seo-title: 显示字幕
 title: 显示字幕
 uuid: 657ab9c7-b205-4d13-81a7-51bc8e7d5ee2
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '110'
+ht-degree: 0%
 
 ---
 
 
-# 显示字幕 {#expose-subtitles}
+# 显示字幕{#expose-subtitles}
 
-TVSDK使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知您的播放器客户端内部AVAset的availableMediaCharatiersWithMediaSelectionOptions的可用性。
+TVSDK使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知播放器客户端内部AVAset的availableMediaCharactiesWithMediaSelectionOptions的可用性。
 
-您可以通过属性访问可用 `PTMediaPlayerItem` 的字幕 `subtitlesOptions`。
+您可以通过`PTMediaPlayerItem`属性的`subtitlesOptions`访问可用的字幕。
 
 显示字幕：
 
-1. 将客户端注册为通知的监听 `PTMediaPlayerMediaSelectionOptionsAvailableNotification` 器。
+1. 将客户端注册为`PTMediaPlayerMediaSelectionOptionsAvailableNotification`通知的监听器。
 
    ```
    [[NSNotificationCenter defaultCenter]  
@@ -26,8 +29,8 @@ TVSDK使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知您的�
      name:PTMediaPlayerMediaSelectionOptionsAvailableNotification object:self.player];
    ```
 
-   当您的客户收到此通知时，将在中显示字幕 `PTMediaPlayerItem`。
-1. 实现与 `onMediaPlayerItemMediaSelectionOptionsAvailable` 以下示例类似的方法：
+   当您的客户端收到此通知时，`PTMediaPlayerItem`中的字幕就绪。
+1. 实现与以下示例类似的`onMediaPlayerItemMediaSelectionOptionsAvailable`方法：
 
    ```
    - (void) onMediaPlayerItemMediaSelectionOptionsAvailable:(NSNotification *) notification { 
@@ -36,4 +39,4 @@ TVSDK使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知您的�
    }
    ```
 
-   有关替代音轨的信息，请参阅 [替代音频](../alternate-audio/c-psdk-ios-1.4-alternate-audio.md)。
+   有关替代音轨的信息，请参阅[替代音频](../alternate-audio/c-psdk-ios-1.4-alternate-audio.md)。
