@@ -4,13 +4,16 @@ title: 许可证服务器概述
 uuid: 8c62376b-b159-4297-9322-75d62947e84e
 translation-type: tm+mt
 source-git-commit: c78d3c87848943a0be3433b2b6a543822a7e1c15
+workflow-type: tm+mt
+source-wordcount: '133'
+ht-degree: 0%
 
 ---
 
 
-# 概述 {#license-server-overview}
+# 概述{#license-server-overview}
 
-在向客户发放许可证之前，您必须部署Adobe Primetime DRM许可证服务器。 许可证服务器使用Primetime DRM SDK执行许多任务。
+在向客户端发放许可证之前，必须先部署Adobe PrimetimeDRM许可证服务器。 许可证服务器使用Primetime DRM SDK执行许多任务。
 
 要实施许可证服务器，请执行以下操作：
 
@@ -18,9 +21,9 @@ source-git-commit: c78d3c87848943a0be3433b2b6a543822a7e1c15
 * 处理许可证请求
 * 处理获取服务器版本请求——所有服务器都必须实现对此类请求的支持。
 * 处理域注册请求——仅当实现域服务器时才需要。
-* 处理域取消注册请求——仅在实现域服务器时需要。
+* 处理域取消注册请求——仅当实现域服务器时才需要。
 * 进程同步——仅当许可证指定同步要求时才需要。
 
-此外，服务器需要提供业务逻辑以对用户进行身份验证，确定用户是否有权查看内容，并可选地跟踪许可证的使用情况。
+此外，服务器需要提供业务逻辑以对用户进行身份验证，确定用户是否有权对内容进行视图，并有选择地跟踪许可证使用情况。
 
-有关 *Java API的详细信息* ，请参阅Adobe Primetime DRM API参考。
+有关Java API的详细信息，请参阅&#x200B;*Adobe PrimetimeDRM API参考*。
