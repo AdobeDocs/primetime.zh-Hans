@@ -1,18 +1,21 @@
 ---
-description: 这提供了有关数字权限管理(DRM)活动的信息。
-seo-description: 这提供了有关数字权限管理(DRM)活动的信息。
-seo-title: 数字版权管理课程
-title: 数字版权管理课程
+description: 这提供有关Digital Rights Management(DRM)活动的信息。
+seo-description: 这提供有关Digital Rights Management(DRM)活动的信息。
+seo-title: Digital Rights Management类
+title: Digital Rights Management类
 uuid: 6ed54e4b-47c7-4e49-8d11-00fc346b43f8
 translation-type: tm+mt
 source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+workflow-type: tm+mt
+source-wordcount: '58'
+ht-degree: 0%
 
 ---
 
 
-# 数字版权管理课程 {#digital-rights-management-classes}
+# Digital Rights Management类{#digital-rights-management-classes}
 
-这提供了有关数字权限管理(DRM)活动的信息。
+这提供有关Digital Rights Management(DRM)活动的信息。
 
 | **类** | **说明** |
 |---|---|
