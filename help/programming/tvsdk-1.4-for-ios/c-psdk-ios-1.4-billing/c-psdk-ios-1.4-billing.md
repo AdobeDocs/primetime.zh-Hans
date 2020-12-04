@@ -1,22 +1,25 @@
 ---
-description: 为了照顾那些希望只支付其使用费用而不是固定费用（无论实际使用如何）的客户，Adobe会收集使用情况指标并使用这些指标确定向客户收取的费用。
-seo-description: 为了照顾那些希望只支付其使用费用而不是固定费用（无论实际使用如何）的客户，Adobe会收集使用情况指标并使用这些指标确定向客户收取的费用。
+description: 为了迎合那些希望只支付其使用费用而不是固定费用的客户，Adobe会收集使用情况指标并使用这些指标来确定向客户收取的费用。
+seo-description: 为了迎合那些希望只支付其使用费用而不是固定费用的客户，Adobe会收集使用情况指标并使用这些指标来确定向客户收取的费用。
 seo-title: 计费指标
 title: 计费指标
 uuid: 658ffbcd-dedc-464c-8ec7-aa3bdfcb1512
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '393'
+ht-degree: 0%
 
 ---
 
 
-# 计费指标 {#billing-metrics}
+# 计费指标{#billing-metrics}
 
-为了照顾那些希望只支付其使用费用而不是固定费用（无论实际使用如何）的客户，Adobe会收集使用情况指标并使用这些指标确定向客户收取的费用。
+为了迎合那些希望只支付其使用费用而不是固定费用的客户，Adobe会收集使用情况指标并使用这些指标来确定向客户收取的费用。
 
-每当播放器生成流启动事件时，TVSDK就会开始定期向Adobe的计费系统发送HTTP消息。 对于标准VOD、专业VOD（启用中间广告）和实时内容，期间（称为可计费持续时间）可以不同。 每种内容类型的默认持续时间为30分钟，但您与Adobe的合同将决定实际值。
+每次播放器生成流开始事件时，TVSDK开始会定期向Adobe的计费系统发送HTTP消息。 对于标准VOD、专业VOD（启用中间广告）和实时内容，期间（称为付费持续时间）可以不同。 每种内容类型的默认持续时间为30分钟，但您与Adobe的合同将决定实际值。
 
-消息包含以下信息：
+这些消息包含以下信息：
 
 * 内容类型（实时、线性或VOD）
 * 内容URL
@@ -25,13 +28,13 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
 * 流是否受DRM保护
 * TVSDK版本和平台
 
-Adobe预配置此安排，但如果要更改此安排，请与Adobe Enablement代表联系。
+Adobe预配置此安排，但如果要更改该安排，请与Adobe支持代表合作。
 
-要监视TVSDK发送给Adobe的统计信息，请从您的Adobe Enablement Presentative获得URL，然后使用网络捕获工具（例如，Charles）查看数据。
+要监视TVSDK发送给Adobe的统计信息，请从Adobe支持代表处获取URL，然后使用网络捕获工具（例如，Charles）查看数据。
 
-## 配置计费指标 {#configure-billing-metrics}
+## 配置计费指标{#configure-billing-metrics}
 
-如果您使用默认配置，则无需执行任何其他操作即可启用或配置计费。 如果您从Adobe Enablement Presentative获得了不同的配置参数，请在初始化媒体播放器之前使用PTBillingMetricsConfiguration类设置这些参数。
+如果您使用默认配置，则无需执行任何其他操作即可启用或配置计费。 如果您从Adobe启用代表获得了不同的配置参数，请在初始化媒体播放器之前使用PTBillingMetricsConfiguration类设置这些参数。
 
 大多数客户应使用默认配置。
 
@@ -39,7 +42,7 @@ Adobe预配置此安排，但如果要更改此安排，请与Adobe Enablement�
 >
 >您设置的配置在媒体播放器的生命周期中保持有效。 初始化媒体播放器后，便无法更改配置。
 
-要配置计费指标，请执行以下操作：
+要配置计费指标：
 
 1. 输入以下代码示例。
 
@@ -54,13 +57,13 @@ Adobe预配置此安排，但如果要更改此安排，请与Adobe Enablement�
    [metadata setMetadata:billingConfig forKey:PTBillingMetricsConfigurationMetadataKey];
    ```
 
-## 传输付费指标 {#transmit-billing-metrics}
+## 传输计费指标{#transmit-billing-metrics}
 
 TVSDK以XML格式向Adobe发送计费指标。
 
 <!--<a id="example_13ABDB1CC0B549968A534765378DA3A0"></a>-->
 
-如果使用网络捕获工具监视TVSDK传输到Adobe的统计信息，您应看到如下单元：
+如果使用网络捕获工具监视TVSDK传输到Adobe的统计信息，您应看到以下单位：
 
 ```
 <request> 
@@ -86,4 +89,4 @@ TVSDK以XML格式向Adobe发送计费指标。
 </request>
 ```
 
-布尔属 `drmProtected`性， `adsEnabled`仅在 `midrollEnabled` 为true时才显示。
+布尔属性`drmProtected`、`adsEnabled`和`midrollEnabled`仅在它们为true时才显示。
