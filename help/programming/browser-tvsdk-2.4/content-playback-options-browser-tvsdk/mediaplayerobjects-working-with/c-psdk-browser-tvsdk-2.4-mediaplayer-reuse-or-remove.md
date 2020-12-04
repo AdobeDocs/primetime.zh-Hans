@@ -1,65 +1,68 @@
 ---
-description: 您可以重置、重用或释放您不再需要的MediaPlayer实例。
-seo-description: 您可以重置、重用或释放您不再需要的MediaPlayer实例。
+description: 您可以重置、重用或释放不再需要的MediaPlayer实例。
+seo-description: 您可以重置、重用或释放不再需要的MediaPlayer实例。
 seo-title: 重用或删除MediaPlayer实例
 title: 重用或删除MediaPlayer实例
 uuid: 0b9a06b0-ece7-4e18-9221-a4528bcbc141
 translation-type: tm+mt
 source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+workflow-type: tm+mt
+source-wordcount: '308'
+ht-degree: 0%
 
 ---
 
 
 # 重用或删除MediaPlayer实例{#reuse-or-remove-a-mediaplayer-instance}
 
-您可以重置、重用或释放您不再需要的MediaPlayer实例。
+您可以重置、重用或释放不再需要的MediaPlayer实例。
 
-## 重置或重用MediaPlayer实例 {#section_C183E6164C184C3CBC5321FC6A2528EA}
+## 重置或重用MediaPlayer实例{#section_C183E6164C184C3CBC5321FC6A2528EA}
 
-您可以重置实 `MediaPlayer` 例以将其返回到未初始化的IDLE状态（如中定义） `MediaPlayerStatus`。 您还可以替换当前媒体项目或使用先前加载的媒体资源设置新媒体项目。
+可以重置`MediaPlayer`实例，使其返回到`MediaPlayerStatus`中定义的未初始化的IDLE状态。 您还可以替换当前媒体项目或使用先前加载的媒体资源设置新媒体项目。
 
 此操作在以下情况下很有用：
 
-* 您希望重复使 `MediaPlayer` 用实例，但需要加载新(视 `MediaResource` 频内容)并替换以前的实例。
+* 您希望重用`MediaPlayer`实例，但需要加载新的`MediaResource`（视频内容）并替换以前的实例。
 
-   重置允许您重复使用实 `MediaPlayer` 例，而无需释放资源、重新创建资源 `MediaPlayer`和重新分配资源。 该方 `replaceCurrentItem` 法会自动为您执行这些步骤。
+   重置允许您重用`MediaPlayer`实例，而无需释放资源、重新创建`MediaPlayer`和重新分配资源。 `replaceCurrentItem`方法会自动为您执行这些步骤。
 
-* 当它处 `MediaPlayer` 于ERROR状态并且需要清除时。
+* 当`MediaPlayer`处于ERROR状态并需要清除时。
 
    >[!IMPORTANT]
    >
    >这是从ERROR状态恢复的唯一方法。
 
-1. 调用 `MediaPlayer.reset()` 以将实例返 `MediaPlayer` 回到其未初始化状态：
+1. 调用`MediaPlayer.reset()`将`MediaPlayer`实例返回到其未初始化状态：
 
    ```js
    reset(); // returns AdobePSDK.PSDKErrorCode.SUCCESS 
             // on successful reset
    ```
 
-1. 调用 `MediaPlayer.replaceCurrentItem()` 以加载另一个 `MediaResource`
+1. 调用`MediaPlayer.replaceCurrentItem()`以加载另一个`MediaResource`
 
    >[!TIP]
    >
-   >要清除错误，请加载相同的错误 `MediaResource`。
+   >要清除错误，请加载相同的`MediaResource`。
 
-1. 调用方 `prepareToPlay()` 法。
+1. 调用`prepareToPlay()`方法。
 
    >[!NOTE]
    >
-   >当您收到具 `MediaPlaybackStatusChangeEvent.STATUS_CHANGED` 有PREPARED状态的事件时，可以开始播放。
+   >当您收到具有PREPARED状态的`MediaPlaybackStatusChangeEvent.STATUS_CHANGED`事件时，您可以开始播放。
 
-## 发布MediaPlayer实例和资源 {#section_2D159975C82245098E7078FE0B1578CE}
+## 释放MediaPlayer实例和资源{#section_2D159975C82245098E7078FE0B1578CE}
 
-当您不再需要 `MediaPlayer` MediaResource时，您应该发布实例和资源。
+当您不再需要MediaResource时，您应该释放`MediaPlayer`实例和资源。
 
-以下是发布Adobe Cloud的一些理由 `MediaPlayer`:
+以下是释放`MediaPlayer`的一些原因：
 
 * 保留不必要的资源可能会影响性能。
-* 留下不必要 `MediaPlayer` 的对象可导致移动设备的电池持续消耗。
-* 如果设备上不支持同一视频编解码器的多个实例，则其他应用程序可能会出现播放失败。
+* 保留不必要的`MediaPlayer`对象可导致移动设备的电池持续消耗。
+* 如果设备不支持同一视频编解码器的多个实例，则其他应用程序可能会出现播放失败。
 
-* 释放 `MediaPlayer`。
+* 释放`MediaPlayer`。
 
    ```js
    void release()
@@ -67,5 +70,5 @@ source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
 
    >[!NOTE]
    >
-   >在发 `MediaPlayer` 布实例后，您不能再使用它。 如果在释放接口 `MediaPlayer` 的任何方法后调用它，则会引 `IllegalStateException` 发一个方法。
+   >释放`MediaPlayer`实例后，您不能再使用它。 如果在释放`MediaPlayer`接口后调用其任何方法，则会引发`IllegalStateException`。
 
