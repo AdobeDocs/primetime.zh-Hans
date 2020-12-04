@@ -13,9 +13,9 @@ ht-degree: 0%
 ---
 
 
-# 越狱执行(需要Adobe PrimetimeDRM){#jailbreak-enforcement-requires-adobe-primetime-drm}
+# 越狱强制(需要Adobe PrimetimeDRM){#jailbreak-enforcement-requires-adobe-primetime-drm}
 
-在支持越狱检测的平台（如Android和iOS移动设备）上，如果在设备上检测到内容，可启用越狱强制 [!DNL jailbreak/root] 以禁止播放内容。
+在支持越狱检测的平台（如Android和iOS移动设备）上，如果在设备上检测到[!DNL jailbreak/root]，则可启用越狱强制以禁止内容回放。
 
 >[!NOTE]
 >
