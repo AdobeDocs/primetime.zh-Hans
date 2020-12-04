@@ -1,35 +1,38 @@
 ---
-description: 您可以获取与TVSDK正在播放的当前选定项目关联的时间轴的描述。 当应用程序显示自定义划动栏控件时，这最有用。在该控件中，标识了与广告内容相对应的内容部分。
-seo-description: 您可以获取与TVSDK正在播放的当前选定项目关联的时间轴的描述。 当应用程序显示自定义划动栏控件时，这最有用。在该控件中，标识了与广告内容相对应的内容部分。
-seo-title: 检查播放时间轴
-title: 检查播放时间轴
+description: 您可以获取与TVSDK正在播放的当前选定项目关联的时间轴的描述。 当应用程序显示自定义拖拽栏控件时，此控件最有用，在该控件中可识别与广告内容对应的内容部分。
+seo-description: 您可以获取与TVSDK正在播放的当前选定项目关联的时间轴的描述。 当应用程序显示自定义拖拽栏控件时，此控件最有用，在该控件中可识别与广告内容对应的内容部分。
+seo-title: Inspect播放时间轴
+title: Inspect播放时间轴
 uuid: d5d68684-d658-44bc-bfff-952b7946c7fd
 translation-type: tm+mt
 source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+workflow-type: tm+mt
+source-wordcount: '285'
+ht-degree: 0%
 
 ---
 
 
-# 检查播放时间轴 {#inspect-the-playback-timeline}
+# Inspect播放时间线{#inspect-the-playback-timeline}
 
-您可以获取与TVSDK正在播放的当前选定项目关联的时间轴的描述。 当应用程序显示自定义划动栏控件时，这最有用。在该控件中，标识了与广告内容相对应的内容部分。
+您可以获取与TVSDK正在播放的当前选定项目关联的时间轴的描述。 当应用程序显示自定义拖拽栏控件时，此控件最有用，在该控件中可识别与广告内容对应的内容部分。
 
-下面是一个示例实现，如以下屏幕截图所示。  ![](assets/inspect-playback.jpg){width=&quot;368.641pt&quot;}
+下面是一个示例实现，如下面的屏幕截图所示。  ![](assets/inspect-playback.jpg){width=&quot;368.641pt&quot;}
 
-1. 使用 `Timeline` 方法访问 `MediaPlayer` 中的对 `getTimeline()` 象。
+1. 使用`getTimeline()`方法访问`MediaPlayer`中的`Timeline`对象。
 
-   类封 `Timeline` 装与时间轴内容相关的信息，该时间轴内容与实例当前加载的媒体项相关联 `MediaPlayer` 。 该 `Timeline` 类允许访问基础时间轴的只读视图。 类提 `Timeline` 供了getter方法，该方法通过对象列表提供迭代 `TimelineMarker` 器。
+   `Timeline`类封装与与`MediaPlayer`实例当前加载的媒体项相关的时间线内容相关的信息。 `Timeline`类提供对基础时间轴的只读视图的访问。 `Timeline`类提供getter方法，该方法通过`TimelineMarker`对象的列表提供迭代器。
 
-1. 遍历列表并使用 `TimelineMarkers` 返回的信息来实现时间轴。
+1. 对`TimelineMarkers`的列表进行迭代，并使用返回的信息来实现时间轴。
 
        “TimelineMarker”对象包含两条信息：
    
    * 标记在时间轴上的位置（以毫秒为单位）
    * 时间轴上标记的持续时间（以毫秒为单位）
 
-1. 侦听实 `MediaPlayerEvent.TIMELINE_UPDATED` 例上的事 `MediaPlayer` 件，并实现回 `TimelineUpdatedEventListener.onTimelineUpdated()` 调。
+1. 监听`MediaPlayer`实例上的`MediaPlayerEvent.TIMELINE_UPDATED`事件，并实现`TimelineUpdatedEventListener.onTimelineUpdated()`回调。
 
-   该对 `Timeline` 象可以通过调用监听器来通知应用程序在播放时间线中可能发生的 `OnTimelineUpdated` 更改。
+   `Timeline`对象可以通过调用`OnTimelineUpdated`监听器通知您的应用程序在播放时间线中可能发生的更改。
 
 ```java
 // access the timeline object 
