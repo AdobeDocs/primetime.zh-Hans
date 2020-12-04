@@ -13,7 +13,7 @@ ht-degree: 64%
 ---
 
 
-# Primetime 迁移帮助 {#migration}
+# Primetime 迁移帮助  {#migration}
 
 + [迁移帮助概述](home.md)
 + [适用于Android的TVSDK 1.4至2.5(Java)](tvsdk-14-25-android.md)
