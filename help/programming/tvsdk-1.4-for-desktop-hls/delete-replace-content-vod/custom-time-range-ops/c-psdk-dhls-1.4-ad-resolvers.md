@@ -1,16 +1,19 @@
 ---
 description: 'null'
 seo-description: 'null'
-seo-title: 广告解析器
-title: 广告解析器
+seo-title: 广告解决程序
+title: 广告解决程序
 uuid: 705df232-4adc-4f3a-b4aa-dafbd2b8fe4c
 translation-type: tm+mt
 source-git-commit: adef0bbd52ba043f625f38db69366c6d873c586d
+workflow-type: tm+mt
+source-wordcount: '8'
+ht-degree: 0%
 
 ---
 
 
-# 广告解析器 {#ad-resolvers}
+# 广告解析器{#ad-resolvers}
 
 ```
 if (resource.metadata != null) { 
