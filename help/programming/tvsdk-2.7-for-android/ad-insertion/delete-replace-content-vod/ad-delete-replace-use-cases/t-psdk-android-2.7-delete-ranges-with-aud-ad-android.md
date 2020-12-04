@@ -1,22 +1,25 @@
 ---
-description: 您可以从时间轴中删除localTime中开始和结束之间的TimeRange。
-seo-description: 您可以从时间轴中删除localTime中开始和结束之间的TimeRange。
+description: 您可以从时间轴中以localTime的形式删除开始和结束之间的TimeRange。
+seo-description: 您可以从时间轴中以localTime的形式删除开始和结束之间的TimeRange。
 seo-title: 删除范围
 title: 删除范围
 uuid: 637829a7-efa8-4b83-9a04-ef01c043621f
 translation-type: tm+mt
 source-git-commit: 0eaf0e7e7e61d596a51d1c9c837ad072d703c6a7
+workflow-type: tm+mt
+source-wordcount: '90'
+ht-degree: 0%
 
 ---
 
 
 # 删除范围{#delete-ranges}
 
-您可以从时间轴中删除localTime中开始和结束之间的TimeRange。
+您可以从时间轴中以localTime的形式删除开始和结束之间的TimeRange。
 
 >[!TIP]
 >
->要仅从内容中删除某些范围，请创建一个实 `CustomRangeMetadata` 例，然后使用定义的自定义范 `DELETE` 围将类型指定为操作。
+>要仅从内容中删除某些范围，请创建`CustomRangeMetadata`实例，并使用定义的自定义范围将类型指定为`DELETE`操作。
 
 广告映射必须由广告服务器定义。
 
