@@ -1,16 +1,19 @@
 ---
 description: 从时间轴中删除以localTime开头和结尾之间的TimeRange。
 seo-description: 从时间轴中删除以localTime开头和结尾之间的TimeRange。
-seo-title: 使用Primetime广告决策广告删除范围
-title: 使用Primetime广告决策广告删除范围
+seo-title: 通过Primetime广告决策广告删除范围
+title: 通过Primetime广告决策广告删除范围
 uuid: efd36a2f-db61-434a-bc2a-50a866f44b33
 translation-type: tm+mt
 source-git-commit: adef0bbd52ba043f625f38db69366c6d873c586d
+workflow-type: tm+mt
+source-wordcount: '60'
+ht-degree: 0%
 
 ---
 
 
-# 使用Primetime广告决策广告删除范围{#delete-ranges-with-primetime-ad-decisioning-ad}
+# 使用Primetime广告决策广告{#delete-ranges-with-primetime-ad-decisioning-ad}删除范围
 
 从时间轴中删除以localTime开头和结尾之间的TimeRange。
 
