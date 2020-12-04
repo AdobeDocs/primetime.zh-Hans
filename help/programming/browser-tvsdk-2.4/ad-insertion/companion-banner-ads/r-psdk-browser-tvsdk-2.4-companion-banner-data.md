@@ -19,8 +19,8 @@ AdBannerAsset的内容描述了配套横幅。
 
 <!--<a id="section_D730B4FD6FD749E9860B6A07FC110552"></a>-->
 
-事件 `AdobePSDK.PSDKEventType.AD_STARTED` 返回一 `Ad` 个包含属性( `companionAssets` )的实 `Array<AdBannerAsset>`例。
-每个组 `AdBannerAsset` 件都提供有关显示资产的信息。
+`AdobePSDK.PSDKEventType.AD_STARTED`事件返回一个`Ad`实例，该实例包含`companionAssets`属性(`Array<AdBannerAsset>`)。
+每个`AdBannerAsset`都提供有关显示资产的信息。
 
 <table id="table_760C885E2DCA4BE983CC57FDA7BD5B14"> 
  <thead> 
@@ -52,7 +52,7 @@ AdBannerAsset的内容描述了配套横幅。
     <pre>
       横幅数据
     </pre> </td> 
-   <td colname="col2"> 由此配套横幅的资源类型指 <span class="codeph"> 定的类</span> 型的数据。 </td> 
+   <td colname="col2"> 由<span class="codeph"> resourceType</span>为此配套横幅指定的类型的数据。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 静态URL </td> 
