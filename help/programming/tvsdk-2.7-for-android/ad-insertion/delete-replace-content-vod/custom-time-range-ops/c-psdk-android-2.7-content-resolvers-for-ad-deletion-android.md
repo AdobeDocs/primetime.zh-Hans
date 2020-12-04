@@ -1,18 +1,21 @@
 ---
-description: 您可以使用多个内容解析器来处理不同的时间轴操作。
-seo-description: 您可以使用多个内容解析器来处理不同的时间轴操作。
+description: 您可以使用多个内容解析器处理不同的时间轴操作。
+seo-description: 您可以使用多个内容解析器处理不同的时间轴操作。
 seo-title: 广告删除／替换的内容解析器
 title: 广告删除／替换的内容解析器
 uuid: ed168c52-ab7b-4fe6-8775-eb18018dc249
 translation-type: tm+mt
 source-git-commit: 812d04037c3b18f8d8cdd0d18430c686c3eee1ff
+workflow-type: tm+mt
+source-wordcount: '51'
+ht-degree: 0%
 
 ---
 
 
-# 广告删除／替换的内容解析器 {#content-resolvers-for-ad-deletion-replacement}
+# 广告删除／替换的内容解析器{#content-resolvers-for-ad-deletion-replacement}
 
-您可以使用多个内容解析器来处理不同的时间轴操作。
+您可以使用多个内容解析器处理不同的时间轴操作。
 
 ```java
 public List<ContentResolver> retrieveResolvers(MediaPlayerItem item) { 
