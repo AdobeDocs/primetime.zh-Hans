@@ -6,17 +6,20 @@ title: 实现自定义内容解析程序
 uuid: 88627fdc-3b68-4a9f-847e-a490ea8e3034
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '258'
+ht-degree: 1%
 
 ---
 
 
-# 实现自定义内容解析程序 {#implement-a-custom-content-resolver}
+# 实现自定义内容解析器{#implement-a-custom-content-resolver}
 
 您可以根据默认解析器实现您自己的内容解析器。
 
-当TVSDK检测到新机会时，它会重新访问注册的内容解析器，寻找能够解决该机会的内容解析器。 选择返回true的第一个用于解决该机会。 如果没有内容解析程序功能，则跳过该机会。 由于内容解析过程通常是异步的，因此内容解析程序负责在进程完成时通知。
+当TVSDK检测到新的机会时，它会重新访问注册的内容解析器，寻找能够解决该机会的内容解析器。 选择返回true的第一个用于解决该机会。 如果没有内容解析程序功能，则跳过该机会。 由于内容解析过程通常是异步的，因此内容解析程序负责在进程完成时通知。
 
-1. 创建自定义 `AdvertisingFactory` 实例并覆盖 `createContentResolver`。
+1. 创建自定义`AdvertisingFactory`实例并覆盖`createContentResolver`。
 
    例如：
 
@@ -43,7 +46,7 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
    }
    ```
 
-1. 将广告客户端工厂注册到 `MediaPlayer`。
+1. 向`MediaPlayer`注册广告客户端工厂。
 
    例如：
 
@@ -53,9 +56,9 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
    mediaPlayer.registerAdClientFactory(advertisingFactory);
    ```
 
-1. 将对象 `AdvertisingMetadata` 传递给TVSDK，如下所示：
-   1. 创建对 `AdvertisingMetadata` 象和对 `MetadataNode` 象。
-   1. 将对象 `AdvertisingMetadata` 保存到 `MetadataNode`。
+1. 将`AdvertisingMetadata`对象传递给TVSDK，如下所示：
+   1. 创建`AdvertisingMetadata`对象和`MetadataNode`对象。
+   1. 将`AdvertisingMetadata`对象保存到`MetadataNode`。
 
    ```java
    MetadataNode result = new MetadataNode(); 
@@ -63,21 +66,21 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
                   advertisingMetadata);
    ```
 
-1. 创建扩展该类的自定义广告解析 `ContentResolver` 程序类。
-   1. 在自定义广告解析程序中，覆盖此受保护的函数：
+1. 创建扩展`ContentResolver`类的自定义广告解析程序类。
+   1. 在自定义广告解析器中，覆盖此受保护的函数：
 
       ```java
       void doResolveAds(Metadata metadata,  
                         PlacementOpportunity placementOpportunity)
       ```
 
-      元数据包含您的 `AdvertisingMetada`内容。 将其用于以下矢量 `TimelineOperation` 生成。
+      元数据包含您的`AdvertisingMetada`。 将其用于以下`TimelineOperation`矢量生成。
 
-   1. 为每个职位安排机会创建一个 `Vector<TimelineOperation>`。
+   1. 对于每个职位安排机会，创建一个`Vector<TimelineOperation>`。
 
-      矢量可为空，但不能为null。
+      矢量可以为空，但不能为null。
 
-      此示例提 `TimelineOperation` 供了以下结构 `AdBreakPlacement`:
+      此示例`TimelineOperation`提供`AdBreakPlacement`的结构：
 
       ```java
       AdBreakPlacement(AdBreak.createAdBreak( 
@@ -90,10 +93,11 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
       )
       ```
 
-   1. 解析广告后，调用以下函数之一：
+   1. 解析广告后，调用以下功能之一：
 
-      * 如果广告解析成功： `notifyResolveComplete(Vector<TimelineOperation> proposals)`
-      * 如果广告解决失败： `notifyResolveError(Error error)`
+      * 如果广告解析成功：`notifyResolveComplete(Vector<TimelineOperation> proposals)`
+      * 如果广告解决失败：`notifyResolveError(Error error)`
+
       例如，如果失败：
 
       ```java
