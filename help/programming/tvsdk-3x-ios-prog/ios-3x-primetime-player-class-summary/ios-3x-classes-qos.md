@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# QoS类别 {#qos-classes}
+# QoS类{#qos-classes}
 
 这些类提供的信息可以帮助您确定播放器的性能。
 
