@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# 用于广告播放的API元素{#api-elements-for-ad-playback}
+# 广告播放的API元素{#api-elements-for-ad-playback}
 
 TVSDK提供可用于自定义包含广告的内容的播放行为的类和方法。
 
@@ -31,7 +31,8 @@ TVSDK提供可用于自定义包含广告的内容的播放行为的类和方法
    <td colname="col1"><span class="codeph"> 广告元数据</span> </td> 
    <td colname="col2">控制广告分段是否应标记为已被查看者观看，如果是，何时标记。 使用 
     <pre>
-     adBreakAsWatched <span class="codeph"> 属性</span> 。
+     the 
+     <span class="codeph"> adBreakAsWatched</span>属性。
     </pre> </td> 
   </tr> 
   <tr> 
