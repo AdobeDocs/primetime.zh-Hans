@@ -19,11 +19,11 @@ ht-degree: 0%
 
 默认情况下，当视频的大小或位置发生变化时(由于应用程序、用户档案开关或内容开关等所做的更改),TVSDK会尝试保持视频视图的宽高比。
 
-您可以通过指定不同的缩放策略来覆盖默认的宽 *高比行为*。 使用对象的属性 `MediaPlayerView` 指定缩放策 `scalePolicy` 略。 默认 `MediaPlayerView`比例策略是使用类的一个实例设 `MaintainAspectRatioScalePolicy` 置的。 要重置比例策略，请用您自己的策略替 `MaintainAspectRatioScalePolicy` 换 `MediaPlayerView.scalePolicy` on的默认实例。 (不能将属 `scalePolicy` 性设置为null值。)
+可以通过指定不同的&#x200B;*缩放策略*&#x200B;来覆盖默认的宽高比行为。 使用`MediaPlayerView`对象的`scalePolicy`属性指定缩放策略。 `MediaPlayerView`的默认缩放策略是使用`MaintainAspectRatioScalePolicy`类的一个实例设置的。 要重置缩放策略，请用您自己的策略替换`MediaPlayerView.scalePolicy`上`MaintainAspectRatioScalePolicy`的默认实例。 （不能将`scalePolicy`属性设置为null值。）
 
-1. 实现接 `MediaPlayerViewScalePolicy` 口以创建您自己的缩放策略。
+1. 实施`MediaPlayerViewScalePolicy`接口以创建您自己的缩放策略。
 
-   它 `MediaPlayerViewScalePolicy` 有一种方法：
+   `MediaPlayerViewScalePolicy`有一个方法：
 
    ```
    public function adjust(viewPort:Rectangle, 
@@ -32,12 +32,13 @@ ht-degree: 0%
 
    >[!NOTE]
    >
-   >TVSDK使用对 `StageVideo` 象来显示视频，并且由于 `StageVideo` 对象不在显示列表中，因此 `viewPort` 参数包含视频的绝对坐标。
+   >TVSDK使用`StageVideo`对象来显示视频，并且由于`StageVideo`对象不在显示列表中，因此`viewPort`参数包含视频的绝对坐标。
    >
    >
    >例如：
    >
-   >```
+   >
+   ```
    >public class CustomScalePolicy implements MediaPlayerViewScalePolicy { 
    >       /** 
    >         * Default constructor. 
@@ -60,14 +61,14 @@ ht-degree: 0%
    >}
    >```
 
-1. 将您的实施分配给 `MediaPlayerView` 属性。
+1. 将实现分配给`MediaPlayerView`属性。
 
    ```
    var view:MediaPlayerView = MediaPlayerView.create(stage.stageVideos[0]); 
    view.scalePolicy = new CustomScalePolicy();
    ```
 
-1. 将您的视图添加到Media Player的属 `view` 性。
+1. 将您的视图添加到媒体播放器的`view`属性。
 
    ```
    addChild(view); 
