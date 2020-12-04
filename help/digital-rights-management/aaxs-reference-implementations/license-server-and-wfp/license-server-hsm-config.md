@@ -11,7 +11,7 @@ ht-degree: 0%
 ---
 
 
-# HSM配置 {#hsm-configuration}
+# HSM配置{#hsm-configuration}
 
 不需要使用HSM，但建议使用。 可以将引用实现配置为使用Sun PKCS11提供程序来支持HSM。 要在HSM上使用凭据，必须为Sun PKCS11提供程序创建配置文件。 有关详细信息，请参阅Sun文档。 要验证HSM和Sun PKCS11配置文件是否配置正确，可以使用以下命令（keytool随Java JDK一起安装）:
 
