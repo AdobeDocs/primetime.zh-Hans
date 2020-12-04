@@ -6,17 +6,20 @@ title: 实现自定义内容解析程序
 uuid: 5f63cc1e-3f4b-460c-9151-2b9d364800e2
 translation-type: tm+mt
 source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+workflow-type: tm+mt
+source-wordcount: '226'
+ht-degree: 2%
 
 ---
 
 
-# 实现自定义内容解析程序 {#implement-a-custom-content-resolver}
+# 实现自定义内容解析器{#implement-a-custom-content-resolver}
 
 您可以根据默认解析器实现您自己的内容解析器。
 
-当TVSDK生成新的机会时，它会循环访问注册的内容解析器，寻找能够解决该机会的内容解析器。 选择返回的第 `true` 一个以解决该机会。 如果没有内容解析程序可用，则会跳过该机会。 由于内容解析过程通常是异步的，因此内容解析程序负责在进程完成时通知TVSDK。
+当TVSDK生成新的机会时，它会重述已注册的内容解析器，寻找能够解决该机会的内容解析器。 选择返回`true`的第一个以解决该机会。 如果没有内容解析程序功能，则跳过该机会。 由于内容解析过程通常是异步的，因此内容解析程序负责在该过程完成时通知TVSDK。
 
-1. 通过扩展界面 `ContentFactory`和覆盖实现您自 `ContentFactory` 定义的自定义 `retrieveResolvers`。
+1. 通过扩展`ContentFactory`接口并覆盖`retrieveResolvers`，实现您自己的自定义`ContentFactory`。
 
    例如：
 
@@ -51,7 +54,7 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
    } 
    ```
 
-1. 将其注 `ContentFactory` 册到 `MediaPlayer`。
+1. 将`ContentFactory`注册到`MediaPlayer`。
 
    例如：
 
@@ -68,9 +71,9 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
    itemLoader.load(resource, id, config);
    ```
 
-1. 将对象 `AdvertisingMetadata` 传递给TVSDK，如下所示：
-   1. 创建对 `AdvertisingMetadata` 象。
-   1. 将对象 `AdvertisingMetadata` 保存到 `MediaPlayerItemConfig`。
+1. 将`AdvertisingMetadata`对象传递给TVSDK，如下所示：
+   1. 创建`AdvertisingMetadata`对象。
+   1. 将`AdvertisingMetadata`对象保存到`MediaPlayerItemConfig`。
 
       ```java
       AdvertisingMetadata advertisingMetadata = new AdvertisingMetadata(); 
@@ -81,8 +84,8 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
       mediaPlayerItemConfig.setAdvertisingMetadata(advertisingMetadata); 
       ```
 
-1. 创建扩展该类的自定义广告解析 `ContentResolver` 程序类。
-   1. 在自定义广告解析程序中， `doConfigure`覆盖 `doCanResolve`、 `doResolve`、、 `doCleanup`:
+1. 创建扩展`ContentResolver`类的自定义广告解析程序类。
+   1. 在自定义广告解析程序中，覆盖`doConfigure`、`doCanResolve`、`doResolve`、`doCleanup`:
 
       ```java
       void doConfigure(MediaPlayerItem item); 
@@ -91,7 +94,7 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
       void doCleanup();
       ```
 
-      从传入的 `advertisingMetadata` 项目中获得您的 `doConfigure`:
+      您从`doConfigure`中传递的项获得`advertisingMetadata`:
 
       ```java
       MediaPlayerItemConfig itemConfig = item.getConfig(); 
@@ -100,9 +103,9 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
         mediaPlayerItemConfig.getAdvertisingMetadata(); 
       ```
 
-   1. 为每个职位安排机会创建一个 `List<TimelineOperation>`。
+   1. 对于每个职位安排机会，创建一个`List<TimelineOperation>`。
 
-      此示例提 `TimelineOperation` 供了以下结构 `AdBreakPlacement`:
+      此示例`TimelineOperation`提供`AdBreakPlacement`的结构：
 
       ```java
       AdBreakPlacement( 
@@ -113,16 +116,16 @@ source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
       ); 
       ```
 
-   1. 解析广告后，调用以下函数之一：
+   1. 解析广告后，调用以下功能之一：
 
-      * 如果广告解析成功，请 `process(List<TimelineOperation> proposals)` 拔 `notifyCompleted(Opportunity opportunity)` 打电话 `ContentResolverClient`
+      * 如果广告解析成功，请调用`ContentResolverClient`上的`process(List<TimelineOperation> proposals)`和`notifyCompleted(Opportunity opportunity)`
 
          ```java
          _client.process(timelineOperations); 
          _client.notifyCompleted(opportunity); 
          ```
 
-      * 如果广告解决失败，请 `notifyResolveError` 致电 `ContentResolverClient`
+      * 如果广告解析失败，请调用`ContentResolverClient`上的`notifyResolveError`
 
          ```java
          _client.notifyFailed(Opportunity opportunity, PSDKErrorCode error);
