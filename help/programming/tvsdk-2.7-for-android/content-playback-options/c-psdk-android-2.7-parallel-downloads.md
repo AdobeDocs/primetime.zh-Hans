@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# 并行下载 {#parallel-downloads}
+# 并行下载{#parallel-downloads}
 
 以并行方式而非以系列方式下载视频和音频可减少启动延迟。
 
