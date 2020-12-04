@@ -6,11 +6,14 @@ title: 显示当前时间和剩余时间
 uuid: b96ade8b-1c81-4367-ba37-fc41a92d7cbc
 translation-type: tm+mt
 source-git-commit: a63768e51c911914a6ba9d884e2587fa34939f9d
+workflow-type: tm+mt
+source-wordcount: '106'
+ht-degree: 0%
 
 ---
 
 
-# 显示当前时间和剩余时间 {#display-the-current-time-and-remaining-time}
+# 显示当前时间和剩余时间{#display-the-current-time-and-remaining-time}
 
 您可以显示正在播放的内容的当前时间和剩余时间。
 
