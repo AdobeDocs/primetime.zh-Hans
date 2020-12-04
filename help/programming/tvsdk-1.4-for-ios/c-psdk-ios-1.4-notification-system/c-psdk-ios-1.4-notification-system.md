@@ -1,16 +1,19 @@
 ---
 description: PTNotification对象提供有关播放器状态、警告和错误更改的信息。 停止播放视频的错误也会导致播放器的状态发生变化。
 seo-description: PTNotification对象提供有关播放器状态、警告和错误更改的信息。 停止播放视频的错误也会导致播放器的状态发生变化。
-seo-title: 播放器状态、活动、错误和日志的通知
-title: 播放器状态、活动、错误和日志的通知
+seo-title: 播放器状态、活动、错误和日志通知
+title: 播放器状态、活动、错误和日志通知
 uuid: 59716a66-3736-4076-8011-8104bfe3a83a
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '470'
+ht-degree: 0%
 
 ---
 
 
-# 播放器状态、活动、错误和记录的通知 {#notifications-for-player-status-activity-errors-and-logs-overview}
+# 播放器状态、活动、错误和记录的通知{#notifications-for-player-status-activity-errors-and-logs-overview}
 
 PTNotification对象提供有关播放器状态、警告和错误更改的信息。 停止播放视频的错误也会导致播放器的状态发生变化。
 
@@ -18,17 +21,17 @@ PTNotification对象提供有关播放器状态、警告和错误更改的信息
 
 >[!IMPORTANT]
 >
->TVSDK还使用 *`notification`* 引用（通知） `NSNotifications` 通 `PTMediaPlayer`*`event`* 知，通知被调度来提供有关播放器活动的信息。
+>TVSDK还使用&#x200B;*`notification`*&#x200B;引用`NSNotifications`（`PTMediaPlayer`通知）*`event`*&#x200B;通知，被调度来提供有关播放器活动的信息。
 
-TVSDK在出现问题 `PTMediaPlayerNewNotificationItemEntryNotification` 时也会出现问题 `PTNotification`。
+TVSDK在问题`PTNotification`时也会出现`PTMediaPlayerNewNotificationItemEntryNotification`问题。
 
-您实现事件监听器以捕获事件并对其做出响应。 许多活动都提 `PTNotification` 供状态通知。
+您实施事件监听器以捕获和响应事件。 许多事件提供`PTNotification`状态通知。
 
-## 通知内容 {#notification-content}
+## 通知内容{#notification-content}
 
 PTNotification提供与播放器状态相关的信息。
 
-TVSDK提供通知的时间顺序 `PTNotification` 列表。 每个通知都包含以下信息：
+TVSDK提供`PTNotification`通知的时间列表。 每个通知都包含以下信息：
 
 * 时间戳
 * 包含以下元素的诊断元数据：
@@ -36,32 +39,32 @@ TVSDK提供通知的时间顺序 `PTNotification` 列表。 每个通知都包�
    * `type`:信息、警告或错误。
    * `code`:通知的数字表示。
    * `name`:通知的可读描述，如SEEK_ERROR
-   * `metadata`:包含有关通知的相关信息的键／值对。 例如，名为的键 `URL` 提供一个值，该值是与通知相关的URL。
+   * `metadata`:包含有关通知的相关信息的键／值对。例如，名为`URL`的键提供一个值，该值是与通知相关的URL。
 
-   * `innerNotification`:对直接影响此通 `PTNotification` 知的其他对象的引用。
+   * `innerNotification`:直接影响此 `PTNotification` 通知的对象的引用。
 
-您可以将此信息存储在本地以供以后分析，或将其发送到远程服务器进行记录和图形表示。
+您可以将此信息存储在本地以供以后分析，或将其发送到远程服务器以进行记录和图形表示。
 
-## 通知设置 {#notification-setup}
+## 通知设置{#notification-setup}
 
 TVSDK为基本通知设置播放器，但您必须为自定义通知完成相同设置。
 
-有两种实现方 `PTNotification`式：
+`PTNotification`有两个实现：
 
 * 聆听
-* 要向 `PTNotificationHistory`
+* 向`PTNotificationHistory`添加自定义通知
 
-要侦听通知，TVSDK将 `PTNotification` 类实例化并将其附加到PTMediaPlayer实例 `PTMediaPlayerItem`中的实例。 每个实例只 `PTNotificationHistory` 有一个 `PTMediaPlayer`。
+要监听通知，TVSDK将`PTNotification`类实例化并将其附加到附加到PTMediaPlayer实例的`PTMediaPlayerItem`实例。 每个`PTMediaPlayer`只有一个`PTNotificationHistory`实例。
 
 >[!IMPORTANT]
 >
->如果添加自定义，则您的应用程序（而非TVSDK）必须执行这些步骤。
+>如果添加自定义项，则您的应用程序（而非TVSDK）必须执行这些步骤。
 
-## 侦听通知 {#listen-to-notifications}
+## 侦听通知{#listen-to-notifications}
 
-有两种方式可以在中侦听 `PTNotification` 通知 `PTMediaPlayer`:
+在`PTMediaPlayer`中，有两种方法可以监听`PTNotification`通知：
 
-1. 使用计时 `PTNotificationHistory` 器手动 `PTMediaPlayerItem` 检查其中的项并检查差异：
+1. 使用计时器手动检查`PTMediaPlayerItem`的`PTNotificationHistory`并检查区别：
 
    ```
    //Access to the PTMediaPlayerItem  
@@ -72,8 +75,8 @@ TVSDK为基本通知设置播放器，但您必须为自定义通知完成相同
    NSArray *notifications = notificationHistory.notificationItems;
    ```
 
-1. 使用发布 [的](https://developer.apple.com/library/mac/%23documentation/Cocoa/Reference/Foundation/Classes/NSNotification_Class/Reference/Reference.html) NSN通知 `PTMediaPlayerPTMediaPlayerNewNotificationEntryAddedNotification`。
-1. 使用要 `NSNotification` 从中获取通知 `PTMediaPlayer` 的实例注册到：
+1. 使用`PTMediaPlayerPTMediaPlayerNewNotificationEntryAddedNotification`的已发布[NSNotification](https://developer.apple.com/library/mac/%23documentation/Cocoa/Reference/Foundation/Classes/NSNotification_Class/Reference/Reference.html)。
+1. 使用要从中获取通知的`PTMediaPlayer`实例注册到`NSNotification`:
 
    ```
    //Register to the NSNotification 
@@ -82,11 +85,11 @@ TVSDK为基本通知设置播放器，但您必须为自定义通知完成相同
      name:PTMediaPlayerNewNotificationEntryAddedNotification object:self.player];
    ```
 
-## 实现通知回呼 {#implement-notification-callbacks}
+## 实现通知回呼{#implement-notification-callbacks}
 
 您可以实现通知回调。
 
-1. 通过从用户信息中获取通知 `PTNotification` 并使用 `NSNotification` 以下方法读取通知回调值 `PTMediaPlayerNotificationKey`:
+1. 通过从`NSNotification`用户信息获取`PTNotification`并使用`PTMediaPlayerNotificationKey`读取其值来实现通知回调：
 
    ```
    - (void) onMediaPlayerNotification:(NSNotification *) nsnotification { 
@@ -95,9 +98,10 @@ TVSDK为基本通知设置播放器，但您必须为自定义通知完成相同
    }
    ```
 
-## 添加自定义通知 {#add-custom-notifications}
+## 添加自定义通知{#add-custom-notifications}
 
-添加自定义通知：新建一 `PTNotification` 个，然后使用当 `PTNotificationHistory` 前版本将其添加到 `PTMediaPlayerItem`:
+添加自定义通知：
+新建一个`PTNotification`，并使用当前`PTMediaPlayerItem`将其添加到`PTNotificationHistory`:
 
 ```
 //Access to the PTMediaPlayerItem  
