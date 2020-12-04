@@ -11,11 +11,11 @@ ht-degree: 0%
 ---
 
 
-# 部署BEES参考实施 {#deploy-the-bees-reference-implementation}
+# 部署BEES引用实现{#deploy-the-bees-reference-implementation}
 
 1. 设置Tomcat应用程序服务器。 （请参阅Tomcat文档。）
-1. 将文 `[!DNL bees.war]` 件复制到Tomcat的文 [!DNL webapps/] 件夹。
-1. 向发送请求 `https://localhost:8080/bees`。
+1. 将`[!DNL bees.war]`文件复制到Tomcat的[!DNL webapps/]文件夹中。
+1. 向`https://localhost:8080/bees`发送请求。
 
    如果看到“BEES is operational”消息，则部署已成功完成。
 1. 在服务器上启用SSL。
