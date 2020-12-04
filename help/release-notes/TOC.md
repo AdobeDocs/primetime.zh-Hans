@@ -13,13 +13,13 @@ ht-degree: 15%
 ---
 
 
-# Primetime 发行说明 {#release-notes}
+# Primetime 发行说明  {#release-notes}
 
 + [发行说明概述](home.md)
-+ PrimetimeAd Insertion {#ptai}
++ PrimetimeAd Insertion{#ptai}
    + [PTAI 20.10.1发行说明](ptai-20x-release-notes.md)
    + [PTAI 19.11.1发行说明](ptai-19x-release-notes.md)
-+ iOS版TVSDK {#tvsdk-ios}
++ iOS的TVSDK {#tvsdk-ios}
    + [适用于iOS的TVSDK 3.12发行说明](tvsdk-3x-ios.md)
    + [TVSDK 1.4 for iOS发行说明](tvsdk-1-4-ios.md)
 + 适用于Android的TVSDK {#tvsdk-android}
@@ -35,7 +35,7 @@ ht-degree: 15%
    + [Primetime Offline Packager版本2版](offline-packager-2x-release-note.md)
 + Primetime Streaming Server {#streaming-server}
    + [Primetime Streaming Server 1版](primetime-streaming-server-1x.md)
-+ 适用于Playstation 4的TVSDK {#tvsdk-playstation}
++ 用于Playstation 4的TVSDK {#tvsdk-playstation}
    + [TVSDK 2.1 PlayStation 4发行说明](tvsdk-21-ps4.md)
-+ Digital Rights Management {#drm}
++ Digital Rights Management{#drm}
    + [DRM 5.3.1发行说明](drm-531-release-notes.md)
