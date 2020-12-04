@@ -13,11 +13,11 @@ ht-degree: 0%
 ---
 
 
-# 注意事项和最佳实践 {#considerations-and-best-practices}
+# 注意事项和最佳实践{#considerations-and-best-practices}
 
 要最有效地使用TVSDK，您应考虑其操作的某些详细信息并遵循某些最佳实践。
 
-## 注意事项 {#section_tvsdk_considerations}
+## 注意事项{#section_tvsdk_considerations}
 
 使用TVSDK时，请记住以下信息：
 
@@ -45,7 +45,7 @@ ht-degree: 0%
 
       用户代理字符串的值默认为操作系统分配的值。
 
-## 最佳实践 {#section_tvsdk_best_practices}
+## 最佳实践{#section_tvsdk_best_practices}
 
 以下是TVSDK的推荐做法：
 
