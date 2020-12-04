@@ -6,6 +6,9 @@ title: 实现DRM回呼
 uuid: a54c5ec2-299f-47b0-b65b-eed5656ab6aa
 translation-type: tm+mt
 source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+workflow-type: tm+mt
+source-wordcount: '181'
+ht-degree: 0%
 
 ---
 
@@ -16,7 +19,7 @@ source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
 
 <!--<a id="section_1090BFDB2C1D4EA4AAC9F9A6EC9DCD51"></a>-->
 
-您可以定义回调函数(例如， `parseContentIdCallback`)来分析内容ID，并通过使用 `drmManager``setParseContentIdCallback` API将其设置为。
+您可以定义回调函数（例如，`parseContentIdCallback`）来分析内容ID，并使用`setParseContentIdCallback` API将其设置为`drmManager`。
 
 ```js
 var arrayToString = function (array) { 
@@ -39,7 +42,7 @@ drmManager.setParseContentIdCallback(parseContentIdCallback);
 
 <!--<a id="section_1E082B428EA74D9CA11C052158A83947"></a>-->
 
-您可以定义回调函数(例如， `onCertificateResponseCallback`)以处理文本证书响应，并通过使用 `drmManager` API将该函数设 `setCertificateResponseCallback` 置为。 可以设置 `setCertificateResponseCallback` 为覆盖默认行为。 例如，如果您的证书 `certificateResponseType` 类型不是 `ArrayBuffer`，则可以使用此回调将证书响应转换为类 `ArrayBuffer` 型。
+您可以定义回调函数（例如，`onCertificateResponseCallback`）以处理文本证书响应，并使用`setCertificateResponseCallback` API将该函数设置为`drmManager`。 可以设置`setCertificateResponseCallback`以覆盖默认行为。 例如，如果您的`certificateResponseType`不是`ArrayBuffer`，则可以使用此回调将证书响应转换为`ArrayBuffer`类型。
 
 ```js
 var base64DecodeUint8Array = function (input) { 
@@ -66,7 +69,7 @@ drmManager.setCertificateResponseCallback(onCertificateResponseCallback);
 
 <!--<a id="section_4DCC1B3ABCED484EB5340A558C9A770A"></a>-->
 
-您可以定义回调函数来分析许可证消息和许可证响应，并在调用中将它们传递给 `drmManager.acquireLicense`。 `onLicenseResponseCallback` 是API中的新参 `acquireLicense` 数。
+您可以定义回调函数来分析许可证消息和许可证响应，并在调用`drmManager.acquireLicense`时传递这些函数。 `onLicenseResponseCallback` 是API中的新参 `acquireLicense` 数。
 
 ```js
 var base64EncodeUint8Array = function (input) { 
@@ -121,7 +124,7 @@ var base64EncodeUint8Array = function (input) {
 drmManager.acquireLicense(drmMetadata, null, acquireLicenseListener, onLicenseMessageCallback, onLicenseResponseCallback);
 ```
 
-在保护数据中，新字 **[!UICONTROL certificateResponseType]** 段用于设置证书响应类型。 以下是保护数据的示例：
+在保护数据中，新的&#x200B;**[!UICONTROL certificateResponseType]**&#x200B;字段用于设置证书响应类型。 以下是保护数据的示例：
 
 ```js
 { 
@@ -137,4 +140,4 @@ drmManager.acquireLicense(drmMetadata, null, acquireLicenseListener, onLicenseMe
 }
 ```
 
-使用字 `certificateResponseType` 段是可选的。 如未使用，则假定值为 `ArrayBuffer`。
+使用`certificateResponseType`字段是可选的。 如果未使用，则假定该值为`ArrayBuffer`。
