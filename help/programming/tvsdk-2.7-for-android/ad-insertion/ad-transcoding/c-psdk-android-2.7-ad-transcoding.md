@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# 使用Adobe创意重新打包服务(CRS)重新打包不兼容的广告 {#repackage-incompatible-ads-using-adobe-creative-repackaging-service-crs}
+# 使用AdobeCreative Repackaging Service(CRS){#repackage-incompatible-ads-using-adobe-creative-repackaging-service-crs}重新打包不兼容的广告
 
 某些第三方广告（或创意）无法拼接到HTTP实时流(HLS)内容流中，因为其视频格式与HLS不兼容。 Primetime广告插入和TVSDK可以有选择地尝试将不兼容的广告重新打包到兼容的M3U8视频中。
 
@@ -27,7 +27,7 @@ ht-degree: 0%
 >
 >对于CRS 3.0版（及更早版本）客户，从CRS 3.1版开始，以下更改提高了安全性和性能：
 >
->* 如果重新打包的内 `https:` 容使用，CRS 3.1将继续 `https:`。 这降低了某些播放器呈现不安全内容的可能性。
+>* 如果重新打包的内容使用`https:`，则CRS 3.1将继续`https:`。 这降低了某些播放器呈现不安全内容的可能性。
    >
    >
 * CRS 3.1极大地减少了网络调用，缩短了视频启动时间。
@@ -36,13 +36,13 @@ ht-degree: 0%
 
 
 
-有关CRS的详细信息，请 [参阅Creative Packaging Service(CRS)](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_certificate_enrollment.pdf)。
+有关CRS的详细信息，请参阅[创意包装服务(CRS)](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_certificate_enrollment.pdf)。
 
 ## 在TVSDK应用程序中启用CRS{#enable-crs-in-tvsdk-applications}
 
 要在TVSDK应用程序中启用CRS，必须在Auditude设置中设置以下信息：
 
-1. 在中启用CRS `AuditudeSettings`。
+1. 在`AuditudeSettings`中启用CRS。
 
    ```
    ... 
