@@ -2,21 +2,21 @@
 cloud: experience-cloud
 product: adobe primetime
 audience: end-user
-user-guide-title: PrimetimeAd Insertion帮助
+user-guide-title: Primetime Ad Insertion 帮助
 user-guide-description: 解释如何通过在服务器上插入面向用户的动态广告来从内容获利，以及如何通过个性化广告吸引受众。
 translation-type: tm+mt
 source-git-commit: fac84687085f289e984c189665bfe775337592b3
 workflow-type: tm+mt
 source-wordcount: '250'
-ht-degree: 7%
+ht-degree: 10%
 
 ---
 
 
-# Primetime Ad Insertion Help {#ad-insertion}
+# Primetime Ad Insertion 帮助  {#ad-insertion}
 
 + [PrimetimeAd Insertion概述](home.md)
-+ PrimetimeAd Insertion{#get-started}
++ PrimetimeAd Insertion入门{#get-started}
    + [概述](get-started-ptai.md)
    + [准备使用PrimetimeAd Insertion](setup-ptai.md)
    + [集成广告服务器](integrate-ad-server.md)
@@ -28,23 +28,23 @@ ht-degree: 7%
 + [清单服务器调试工具](manifest-server-debugging-tool.md)
 
 <!-- + [Server Side Ad Insertion debugging dashboard](ssai-debugging-dashboard.md)-->
-+ 清单服务器API用于Ad Insertion {#manifest-server}
++ Ad Insertion{#manifest-server}的清单服务器API
    + [清单服务器交互概述](msapi-topics/ms-overview.md)
-   + Manifest Server入门 {#get-started}
+   + 清单服务器{#get-started}快速入门
       + [向清单服务器发送命令](msapi-topics/ms-getting-started/ms-sending-cmd.md)
       + [清单服务器查询参数](msapi-topics/ms-getting-started/ms-api-query-params.md)
-   + 广告插入请求 {#ad-insert}
+   + 广告插入请求{#ad-insert}
       + [广告插入请求](msapi-topics/ms-insert-ads/ms-ad-insert.md)
       + [按客户端和情况选择的查询参数](msapi-topics/ms-insert-ads/ms-api-query-param-situation.md)
       + [促进HLS播放器切换到故障转移／备份流](msapi-topics/ms-insert-ads/hls-switching-to-failover.md)
       + [多比特率流](msapi-topics/ms-insert-ads/ms-api-mbr-streams.md)
       + [部分广告中断插入](msapi-topics/ms-insert-ads/partial-ad-break-insetion.md)
       + [针对CRS广告投放的多个CDN支持](msapi-topics/ms-insert-ads/ms-api-multi-cdns-for-crs.md)
-   + 替换VOD时间轴 {#replace-vod}
+   + 替换VOD时间轴{#replace-vod}
       + [对VOD的更改](msapi-topics/ms-changes-vod-timeline/ms-replace-vod-timeline.md)
       + [VOD时间轴格式](msapi-topics/ms-changes-vod-timeline/ms-api-timeline-format.md)
       + [替换VOD时间轴](msapi-topics/ms-changes-vod-timeline/t-ms-replace-vod-timeline.md)
-   + 广告效果跟踪 {#ad}
+   + 广告效果跟踪{#ad}
       + [广告跟踪](msapi-topics/ms-at-effectiveness/ms-at-overview.md)
       + [启用客户端广告跟踪](msapi-topics/ms-at-effectiveness/ms-enable-client-side-ad-tracking.md)
       + [非TVSDK客户端跟踪概述](msapi-topics/ms-at-effectiveness/notvsdk-csat-overview.md)
@@ -52,7 +52,7 @@ ht-degree: 7%
       + [EXT-X-MARKER指令](msapi-topics/ms-at-effectiveness/ms-api-playlists.md)
    + [Cookie](msapi-topics/ms-cookies.md)
    + [支持WebVTT字幕](msapi-topics/ms-webvtt-captions.md)
-   + 列表文件格式 {#list}
+   + 文件格式列表{#list}
       + [文件格式](msapi-topics/ms-list-file-formats/ms-api-file-formats.md)
       + [用于请求变型清单播放列表的URL的JSON格式](msapi-topics/ms-list-file-formats/ms-json-m3u8.md)
       + [用于跟踪URL的JSON格式](msapi-topics/ms-list-file-formats/notvsdk-csat-sidecar.md)
