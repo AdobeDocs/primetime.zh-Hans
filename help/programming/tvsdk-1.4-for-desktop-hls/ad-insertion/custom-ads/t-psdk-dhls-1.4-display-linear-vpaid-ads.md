@@ -17,7 +17,7 @@ ht-degree: 0%
 
 TVSDK支持在广告中断时显示线性视频播放器——广告界面定义(VPAID)广告。 VPAID版本1.0需要Flash，而版本2.0也可与浏览器TVSDK和JavaScript一起使用。
 
-要正确显示VPAID广告，您必须在实例中提 `AdContainerView`供广告容器 `MediaPlayerContext` ()。
+要正确显示VPAID广告，您必须在`MediaPlayerContext`实例中提供广告容器(`AdContainerView`)。
 
 VPAID广告的限制：
 
