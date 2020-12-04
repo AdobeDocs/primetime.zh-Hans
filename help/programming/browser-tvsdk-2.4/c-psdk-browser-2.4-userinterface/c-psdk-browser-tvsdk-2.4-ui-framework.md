@@ -6,23 +6,26 @@ title: UI框架
 uuid: 8460d65c-b9aa-40d0-9e68-771b9f73a7b4
 translation-type: tm+mt
 source-git-commit: 2399515edaad49341cfa406a13887bcc8a3562be
+workflow-type: tm+mt
+source-wordcount: '886'
+ht-degree: 0%
 
 ---
 
 
-# UI框架 {#the-ui-framework}
+# UI Framework {#the-ui-framework}
 
 UI框架是浏览器TVSDK顶部的UI层，它提供各种与视频播放器相关的现成UI构造。 您可以通过进行适合您的环境的点更改来创建高度可自定义的播放器。
 
 >[!TIP]
 >
->可视（外观设置）和UI行为可自定义。
+>可视（外观）和UI行为可自定义。
 
-您可以重写自己的行为或覆盖某些默认行为的功能。 您还可以通过从头开始编写随SDK一起提供的行为来重复使用这些行为。
+您可以重写自己的行为或重写某些默认行为的功能。 您还可以通过从头开始编写随SDK一起提供的行为来重复使用这些行为。
 
-## 创建基本播放器 {#section_30E4812C4DDA4B519C9C837930B6AE45}
+## 创建基本播放器{#section_30E4812C4DDA4B519C9C837930B6AE45}
 
-`primetimevisualapi.min.js` 是UI框架库，它的所有功能都通过全局对象ptp显示。 在以下示例中，方 `videoPlayer` 法创建基础播放器：
+`primetimevisualapi.min.js` 是UI框架库，其所有功能都通过全局对象pt公开。在以下示例中，`videoPlayer`方法创建基础播放器：
 
 ```js
 <script src="scripts/primetimevisualapi.min.js"></script> 
@@ -33,19 +36,19 @@ UI框架是浏览器TVSDK顶部的UI层，它提供各种与视频播放器相�
 </script>
 ```
 
-## 配置播放器 {#section_9FC936B983CD40439E6D7675197B226C}
+## 配置播放器{#section_9FC936B983CD40439E6D7675197B226C}
 
 您可以通过以下方式之一配置播放器：
 
 * 使用JSON对象
 * 使用API
 
-要生成JSON对象，浏览器TVSDK提供UI配置器工具。 在该工具中，您可以选择各种设置，单 **[!UICONTROL Test Configuration]** 击以验证设置，然后单击以 **[!UICONTROL Download Configuration]** 下载设置。 下载的文件的内容将用作要传递给API的JSON对 `ptp.videoPlayer` 象。
+要生成JSON对象，浏览器TVSDK提供UI配置器工具。 在该工具中，您可以选择各种设置，单击&#x200B;**[!UICONTROL Test Configuration]**&#x200B;验证设置，然后单击&#x200B;**[!UICONTROL Download Configuration]**&#x200B;下载设置。 下载的文件内容将用作JSON对象，以传递给`ptp.videoPlayer` API。
 
 **如何运行UI Configurator工具**:
 
-1. 在本 `frameworks` 地Web服务器上托管浏览器TVSDK中提供的文件夹。
-1. 要打开该工具，请打开浏览器并导航到 `< path-to-hosted-frameworks-folder>/ui-framework/ui-configurator/`。
+1. 在本地Web服务器上承载`frameworks`文件夹，该文件夹在浏览器TVSDK中可用。
+1. 要打开该工具，请打开浏览器并导航到`< path-to-hosted-frameworks-folder>/ui-framework/ui-configurator/`。
 
 **配置播放器的行为**
 
@@ -53,15 +56,15 @@ UI框架是浏览器TVSDK顶部的UI层，它提供各种与视频播放器相�
 
 >[!TIP]
 >
->对于某些设置，这两个选项都可用。
+>对于某些设置，这两个选项均可用。
 
-* **使用videoBehavior** API `ptp.videoPlayer` 返回 `ptp.videoBehavior`，它允许您配置基础视频播放器。 如果需要配置某些与播放相关的设置，则可以使用此选项。
+* **使用videoBehavior** `ptp.videoPlayer` API可返 `ptp.videoBehavior`回该视频播放器，它允许您配置基础视频播放器。如果需要配置某些与播放相关的设置，您可以使用此选项。
 
    ```js
    player.setAbrControlParameters ({object})
    ```
 
-* **将配置对象传递到videoPlayer函数** 。使用此对象时，除了上述播放设置外，还可以配置UI的行为。 调用者需要指定必须更改的参数，播放器将继续为未指定参数使用默认值。
+* **将配置对象传递** 到videoPlayer函数使用此对象时，除了上述播放设置外，还可以配置UI的行为。调用者需要指定必须更改的参数，并且播放器将继续为未指定的参数使用默认值。
 
    ```js
    var player = ptp.videoPlayer('#video1', { 
@@ -72,15 +75,15 @@ UI框架是浏览器TVSDK顶部的UI层，它提供各种与视频播放器相�
    });
    ```
 
-   在上例中，ABR控制参数是使用配置对象来配置的。 还传递了一个对象以配置控件栏行为。
+   在上例中，ABR控制参数是使用配置对象配置的。 还传递一个对象以配置控制栏行为。
 
-   有关配置对象的结构，请参阅下面的查看配置对象结构部分。
+   有关配置对象的结构，请参阅下面的视图配置对象结构部分。
 
-* **访问AdobePSDK.MediaPlayer** 在需要访 `videoPlayer.getMediaPlayer` 问浏览器TVSDK的MediaPlayer的某些高级用例中，您可以使用它。
+* **访问AdobePSDK.** MediaPlayer您可 `videoPlayer.getMediaPlayer` 以在某些高级用例中使用，在这些情况下您需要访问浏览器TVSDK的MediaPlayer。
 
-* **配置播放器的外观设置** 有关设置播放器外观的详细信息，请参 [阅设置播放器外观](../../browser-tvsdk-2.4/c-psdk-browser-2.4-userinterface/c-psdk-browser-tvsdk-2.4-skin-the-player.md)。
+* **配置播放器的外观** 有关设置播放器外观的详细信息，请参 [阅设置播放器外观](../../browser-tvsdk-2.4/c-psdk-browser-2.4-userinterface/c-psdk-browser-tvsdk-2.4-skin-the-player.md)。
 
-## 修改默认行为 {#section_D5D692638FFF4BEF81F7BE70E438CCE9}
+## 修改默认行为{#section_D5D692638FFF4BEF81F7BE70E438CCE9}
 
 在UI框架术语中，行为是定义特定组件的可视部分和交互部分的构造。 使用下面概述的对象结构，您可以修改要更改的行为。
 
@@ -111,15 +114,15 @@ var player = ptp.videoPlayer('.videoHolder', {
 
 >[!NOTE]
 >
->根据您需要的自定义，您可以覆盖行为中的某些功能或编写您自己的行为。 有关哪些功能可被覆盖的详细信息，请参阅 [UI框架](https://help.adobe.com/en_US/primetime/api/psdk/btvsdk-ui-framework/index.html) API文档。
+>根据您需要的自定义，您可以重写行为中的某些功能或编写自己的行为。 有关可覆盖哪些功能的详细信息，请参阅[UI框架](https://help.adobe.com/en_US/primetime/api/psdk/btvsdk-ui-framework/index.html) API文档。
 
-## 引用 {#section_0A76A3F44D8A49B09FE4C83F3FACCB76}
+## 引用{#section_0A76A3F44D8A49B09FE4C83F3FACCB76}
 
 以下是一些其他参考信息：
 
-* **查看配置对象结构** 。这是完整的对象结构，它以分层方式提及所有默认行为，并包含行为的默认元素。 在示例配置中，使用UI工厂创建元素。 可以使用相同的元素或首选方法构建元素。
+* **视图配置** 对象结构这是完整的对象结构，它以分层方式提及所有默认行为以及行为的默认元素。在示例配置中，使用UI工厂创建元素。 您可以使用相同的方法或首选方法构建元素。
 
-   您只需指定要更改的部分，其余的功能将从默认值中选择。 首先，根据用例，您需要提供或 `SingleViewConfigurationObject` 结构 `MultiViewConfigurationObject` 。
+   您只需指定要更改的零件，其余功能将从默认值中选择。 要开始，根据用例，您需要提供`SingleViewConfigurationObject`或`MultiViewConfigurationObject`结构。
 
    ```js
    var DEFAULT_CONTROL_BAR_CONFIG = { 
@@ -766,13 +769,13 @@ var player = ptp.videoPlayer('.videoHolder', {
    };
    ```
 
-* **Helper constructs** This construct is componet of the following:
+* **帮** 助器构造此构造由以下部分组成：
 
-   * **工厂** 要创建可视元素，您可以使用、 `ptp.factories.simpleButtonFactory``ptp.factories.simpleDivFactory`、 `ptp.factories.simpleHRFactory`和 `ptp.factories.simpleSliderFactory`。 有关详细信息，请参阅 [UI Framework](https://help.adobe.com/en_US/primetime/api/psdk/btvsdk-ui-framework/index.html) API文档。
+   * **工** 厂要创建可视元素，您可以 `ptp.factories.simpleButtonFactory`使 `ptp.factories.simpleDivFactory`用、 `ptp.factories.simpleHRFactory`和 `ptp.factories.simpleSliderFactory`。有关详细信息，请参阅[UI Framework](https://help.adobe.com/en_US/primetime/api/psdk/btvsdk-ui-framework/index.html) API文档。
 
-   * **Mixins** Mixins是可合成的模块，可以在行为中组成这些模块以使用通用构造。 例如，许多组件希望了解可能影响其行为的更改（例如，广告正在播放）。 所有这些元素都将添加一个 `adBreak` 类。
+   * **MixinsMixins** 是可合成的模块，可以在行为中组成这些模块以使用通用结构。例如，许多组件希望了解可能影响其行为的更改（例如，广告正在播放时）。 所有这些元素都将添加一个`adBreak`类。
 
-      下面是有关如何实现内置混音的示例 `adBreakStyling`:
+      下面是一个有关如何实现内置混音`adBreakStyling`的示例：
 
       ```js
       adBreakStyling = function (element, player) { 
@@ -798,7 +801,7 @@ var player = ptp.videoPlayer('.videoHolder', {
       }
       ```
 
-      现 `customBehavior` 在可以使用公开的所有方法 `adBreakStyling`，在本例中是 `manageAdBreakStyle`。 另一个用例是，混音可以添加事件监听器，而在处理函数中，混音可以以某种方式修改元素。 随后，使用此混音的组件将自动具有此功能。
+      现在，`customBehavior`可以使用`adBreakStyling`公开的所有方法，在本例中为`manageAdBreakStyle`。 另一个用例是混音可以添加事件监听器，在处理函数中，混音可以以某种方式修改元素。 随后，使用此混音的组件将自动具有此功能。
 
-   * **Utils** Some utilities(如在配置部分和中 `ptp.elementGetter`使用的实用程序)可以帮助您编写或扩展 `ptp.deepmerge`行为。 有关详细信息，请参阅 [UI Framework](https://help.adobe.com/en_US/primetime/api/psdk/btvsdk-ui-framework/index.html) API文档。
+   * **实用** 程序一些实用程序， `ptp.elementGetter`如在配置部分和中使用的 `ptp.deepmerge`，可以帮助您编写或扩展行为。有关详细信息，请参阅[UI Framework](https://help.adobe.com/en_US/primetime/api/psdk/btvsdk-ui-framework/index.html) API文档。
 
