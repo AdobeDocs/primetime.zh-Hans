@@ -11,7 +11,7 @@ ht-degree: 0%
 ---
 
 
-# 加密脚本数据 {#encrypting-script-data}
+# 正在加密脚本数据{#encrypting-script-data}
 
 此打包选项指定是否加密嵌入在内容中的脚本数据。
 
