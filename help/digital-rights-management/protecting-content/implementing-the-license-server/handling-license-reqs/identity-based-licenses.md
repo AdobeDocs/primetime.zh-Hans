@@ -15,7 +15,7 @@ ht-degree: 0%
 
 如果使用基于身份的许可，则服务器在颁发许可证之前检查有效的身份验证令牌。
 
-有关处 [理身份验证令牌的详](../../../protecting-content/implementing-the-license-server/processing-drm-requests.md#user-authentication) 细信息，请参阅用户身份验证。
+有关处理身份验证令牌的详细信息，请参阅[用户身份验证](../../../protecting-content/implementing-the-license-server/processing-drm-requests.md#user-authentication)。
 
 >[!NOTE]
 >
