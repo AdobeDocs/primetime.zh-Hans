@@ -1,26 +1,29 @@
 ---
-description: 您可以使用Primetime数字版权管理(DRM)系统的功能来提供对视频内容的安全访问。 或者，您也可以使用第三方DRM解决方案作为Adobe集成Primetime DRM解决方案的替代方案。
-seo-description: 您可以使用Primetime数字版权管理(DRM)系统的功能来提供对视频内容的安全访问。 或者，您也可以使用第三方DRM解决方案作为Adobe集成Primetime DRM解决方案的替代方案。
+description: 您可以使用PrimetimeDigital Rights Management(DRM)系统的功能提供对视频内容的安全访问。 或者，您也可以将第三方DRM解决方案用作Adobe集成Primetime DRM解决方案的替代方案。
+seo-description: 您可以使用PrimetimeDigital Rights Management(DRM)系统的功能提供对视频内容的安全访问。 或者，您也可以将第三方DRM解决方案用作Adobe集成Primetime DRM解决方案的替代方案。
 seo-title: Primetime DRM界面概述
 title: Primetime DRM界面概述
 uuid: 71479464-8356-4732-9774-da9f6084e6ad
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '429'
+ht-degree: 0%
 
 ---
 
 
-# 概述 {#primetime-drm-interface-overview}
+# 概述{#primetime-drm-interface-overview}
 
-您可以使用Primetime数字版权管理(DRM)系统的功能来提供对视频内容的安全访问。 或者，您也可以使用第三方DRM解决方案作为Adobe集成Primetime DRM解决方案的替代方案。
+您可以使用PrimetimeDigital Rights Management(DRM)系统的功能提供对视频内容的安全访问。 或者，您也可以将第三方DRM解决方案用作Adobe集成Primetime DRM解决方案的替代方案。
 
 <!--<a id="section_4DD54E085AB345FE9BE00865E56B28DB"></a>-->
 
-有关第三方DRM解决方案的可用性，请咨询Adobe代表。
+请咨询您的Adobe代表，了解有关第三方DRM解决方案可用性的最新信息。
 
-Primetime数字版权管理(DRM)系统的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序包括一 `DRMHelper` 个类，它演示了如何使某些DRM操作更易于实现。
+Primetime数字版权管理(DRM)系统的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序包含一个`DRMHelper`类，它演示了如何使某些DRM操作更容易实现。
 
-Primetime DRM提供了一个可伸缩、高效的工作流，用于在TVSDK应用程序中实施内容保护。 通过为每个数字媒体文件创建许可证，您可以保护和管理视频内容的权限。
+Primetime DRM提供一个可伸缩、高效的工作流程，用于在TVSDK应用程序中实施内容保护。 通过为每个数字媒体文件创建许可证，您可以保护和管理视频内容的权利。
 
 请参阅TVSDK包中包含的DRM示例播放器代码。
 
@@ -34,13 +37,13 @@ Primetime DRM提供了一个可伸缩、高效的工作流，用于在TVSDK应�
 
    >[!TIP]
    >
-   >此API仅在触发 `DRMManager` 后返回有效 `MediaPlayerEvent.DRM_METADATA` 对象。 如果在此事 `getDRMManager()` 件触发之前调用，它可能返回NULL。
+   >仅当`MediaPlayerEvent.DRM_METADATA`被触发后，此API才会返回有效的`DRMManager`对象。 如果在此事件触发之前调用`getDRMManager()`，它可能返回NULL。
 
-* 帮 `DRMHelper` 助程序类，在实现DRM工作流时非常有用。
+* `DRMHelper`帮助类，在实现DRM工作流时非常有用。
 
-   您可以在中 `DRMHelper` 看到 `ReferencePlayer`。
+   您可以在`ReferencePlayer`中看到`DRMHelper`。
 
-* 一种 `DRMHelper` 元数据加载器方法，当DRM元数据位于与媒体分离的URL中时，加载该元数据。
+* `DRMHelper`元数据加载器方法，当DRM元数据位于与媒体分离的URL中时，加载该元数据。
 
    ```java
    public static void loadDRMMetadata(final DRMManager drmManager,  
@@ -48,7 +51,7 @@ Primetime DRM提供了一个可伸缩、高效的工作流，用于在TVSDK应�
       final DRMLoadMetadataListener loadMetadataListener);
    ```
 
-* 一种 `DRMHelper` 检查DRM元数据以确定是否需要身份验证的方法。
+* 用于检查DRM元数据的`DRMHelper`方法，以确定是否需要身份验证。
 
    ```java
    /** 
@@ -87,7 +90,7 @@ Primetime DRM提供了一个可伸缩、高效的工作流，用于在TVSDK应�
    final DRMAuthenticationListener authenticationListener);
    ```
 
-* 通知应用程序各种DRM活动和状态的事件。
+* 通知您的应用程序各种DRM活动和状态的事件。
 
 <!--<a id="section_899BD9061D484E1BBA46E84617C36867"></a>-->
 
@@ -108,4 +111,4 @@ Comment Type: draft
 -->
 <!--<a id="section_F58941D68EB94A5EBD1C7454D2A1B17A"></a>-->
 
-有关DRM的详细信息，请参阅 [Adobe Primetime DRM文档](https://helpx.adobe.com/primetime/user-guide.html)。
+有关DRM的详细信息，请参阅[Adobe PrimetimeDRM文档](https://helpx.adobe.com/primetime/user-guide.html)。
