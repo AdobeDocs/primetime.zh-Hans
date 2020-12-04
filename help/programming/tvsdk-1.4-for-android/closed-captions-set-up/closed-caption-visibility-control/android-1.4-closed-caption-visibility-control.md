@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# 概述 {#control-closed-caption-visibility}
+# 概述{#control-closed-caption-visibility}
 
 您可以控制隐藏式字幕的可见性。 当可见性打开时，将显示当前选定的轨道。 如果更改当前轨道，则可见性设置将保持不变。
 
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->隐藏式字幕的可见性值在中定义 `MediaPlayer.Visibility`。
+>隐藏式字幕的可见性值在`MediaPlayer.Visibility`中定义。
 >
 >
 ```java
@@ -33,14 +33,14 @@ ht-degree: 0%
 >}
 >```
 
-1. 请等待MediaPlayer至少拥有PREPARED状态(请 [参阅等待有效状态](../../../tvsdk-1.4-for-android/ui-configure/android-1.4-ui-state-prepared-wait-for.md))。
+1. 请等待MediaPlayer至少拥有PREPARED状态（请参阅[等待有效状态](../../../tvsdk-1.4-for-android/ui-configure/android-1.4-ui-state-prepared-wait-for.md)）。
 1. 要获取隐藏式字幕的当前可见性设置，请使用MediaPlayer中的getter方法，它返回一个可见性值。
 
    ```java
    Visibility getCCVisibility() throws IllegalStateException;
    ```
 
-1. 要更改隐藏式字幕的可见性，请使用setter方法，将可见性值从中传递 `MediaPlayer.Visibility`。
+1. 要更改隐藏式字幕的可见性，请使用setter方法，将可见性值从`MediaPlayer.Visibility`传递。
 
    例如：
 
