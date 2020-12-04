@@ -4,6 +4,9 @@ title: 转换文件
 uuid: e17ee003-5ac2-4bb8-83b7-81ee8fa9ee46
 translation-type: tm+mt
 source-git-commit: b4b50471ab0ba98329862322a61bf73aa9e471d5
+workflow-type: tm+mt
+source-wordcount: '173'
+ht-degree: 0%
 
 ---
 
@@ -34,7 +37,7 @@ source-git-commit: b4b50471ab0ba98329862322a61bf73aa9e471d5
    -out mycompany-license.pfx -passin pass:private_key_password -passout pass:pfx_password 
    ```
 
-1. 将临时PEM文件转换为最终的PEM文件。
+1. 将临时PEM文件转换为最终PEM文件。
 
    要使用OpenSSL，请打开命令窗口并输入以下内容：
 
@@ -46,7 +49,7 @@ source-git-commit: b4b50471ab0ba98329862322a61bf73aa9e471d5
    >
    >尽管不是必需的，Adobe建议对私钥(private_key_password)和PFX(pfx_password)使用不同的口令。
 
-   此最终的PEM文件仅包含您的证书。
+   此最终PEM文件仅包含您的证书。
 
 1. 将PEM文件转换为DER文件。
 
@@ -58,5 +61,5 @@ source-git-commit: b4b50471ab0ba98329862322a61bf73aa9e471d5
 
    >[!NOTE]
    >
-   >DER文件仅对HTTP动态流打包程序是必需的。
+   >DER文件仅对HTTP Dynamic Streaming包装程序是必需的。
 
