@@ -1,20 +1,23 @@
 ---
-description: 您可以通过实现界面PlacementOpportunityDetector来实现您自己的机会检测器。
-seo-description: 您可以通过实现界面PlacementOpportunityDetector来实现您自己的机会检测器。
+description: 您可以通过实现接口PlacementOpportunityDetector来实施您自己的机会检测器。
+seo-description: 您可以通过实现接口PlacementOpportunityDetector来实施您自己的机会检测器。
 seo-title: 实施自定义机会检测器
 title: 实施自定义机会检测器
 uuid: 012527c5-4ef0-4cd6-a9df-2fb861078a7e
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '152'
+ht-degree: 2%
 
 ---
 
 
-# 实施自定义机会检测器 {#implement-a-custom-opportunity-detector}
+# 实现自定义机会检测器{#implement-a-custom-opportunity-detector}
 
-您可以通过实现界面PlacementOpportunityDetector来实现您自己的机会检测器。
+您可以通过实现接口PlacementOpportunityDetector来实施您自己的机会检测器。
 
-1. 创建自定义 `AdvertisingFactory` 实例并覆盖 `createOpportunityDetector`。 例如：
+1. 创建自定义`AdvertisingFactory`实例并覆盖`createOpportunityDetector`。 例如：
 
    ```java
    new AdvertisingFactory() { 
@@ -27,7 +30,7 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
    }
    ```
 
-1. 将广告客户端工厂注册到 `MediaPlayer`。 例如：
+1. 向`MediaPlayer`注册广告客户端工厂。 例如：
 
    ```java
    // register the custom advertising factory with media player 
@@ -35,16 +38,16 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
    mediaPlayer.registerAdClientFactory(advertisingFactory);
    ```
 
-1. 创建扩展类的自定义机会检测器 `PlacementOpportunityDetector` 类。
+1. 创建扩展`PlacementOpportunityDetector`类的自定义机会检测器类。
    1. 在自定义机会检测器中，覆盖此函数：
 
       ```java
       public List<PlacementOpportunity> process(List<TimedMetadata> timedMetadataList, Metadata metadata)
       ```
 
-      其中 `timedMetadataList` 包含可用列表， `TimedMetadata`该列表将排序。 元数据包含要发送到广告提供者的定位参数和自定义参数。
+      `timedMetadataList`包含可用`TimedMetadata`的列表，它已排序。 元数据包含要发送到广告提供者的定位参数和自定义参数。
 
-   1. 对于每 `TimedMetadata`个对象，创建一个 `List<PlacementOpportunity>`。 该列表可以为空，但不能为null。 `PlacementOpportunity` 应具有以下属性：
+   1. 对于每个`TimedMetadata`，创建`List<PlacementOpportunity>`。 列表可以为空，但不能为null。 `PlacementOpportunity` 应具有以下属性：
 
       ```java
       PlacementOpportunity( 
@@ -54,9 +57,9 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
       )
       ```
 
-   1. 为检测到的所有定时元数据对象创建放置机会后，只需返回列 `PlacementOpportunity` 表。
+   1. 为检测到的所有定时元数据对象创建放置机会后，只需返回`PlacementOpportunity`列表。
 
-这是一个示例自定义放置机会检测器：
+这是一个自定义放置机会检测器示例：
 
 ```java
 public class CustomPlacementOpportunityDetector implements PlacementOpportunityDetector { 
