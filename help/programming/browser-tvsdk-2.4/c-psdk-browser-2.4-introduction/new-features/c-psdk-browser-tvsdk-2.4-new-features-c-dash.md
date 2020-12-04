@@ -26,7 +26,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->在下面的功能矩阵表中，  ![](assets/supported15.png)
+>在以下功能矩阵表中，![](assets/supported15.png)
 >表示该功能在当前版本中受支持。
 
 支持以下功能：
@@ -82,7 +82,7 @@ ht-degree: 0%
 
  -->
 
-## DASH集成 {#dash-integrations}
+## DASH集成{#dash-integrations}
 
 | 类别 | 内容类型 | 功能 | HTML5 FF、IE、Chrome、Android Chrome |
 |---|---|---|---|
@@ -90,7 +90,7 @@ ht-degree: 0%
 | 集成 | VOD + Live | 计费 | ![](assets/supported15.png) |
 | 集成 | VOD + Live | Browserify | ![](assets/supported15.png) |
 
-## DASH高级广告插入功能(CSAI) {#dash-advanced-insertion-features}
+## DASH高级广告插入功能(CSAI){#dash-advanced-insertion-features}
 
 | 类别 | 内容类型 | 功能 | HTML5 FF、IE、Chrome、Android Chrome |
 |---|---|---|---|
@@ -102,7 +102,7 @@ ht-degree: 0%
 | Ad Insertion | VOD | 伴侣广告、横幅广告和可点击广告 | 不支持 |
 | Ad Insertion | VOD | VPAID 2.0 | 不支持 |
 
-## DASH核心广告插入功能(CSAI) {#dash-core-ad-insertion}
+## DASH核心广告插入功能(CSAI){#dash-core-ad-insertion}
 
 | 类别 | 内容类型 | 功能 | HTML5 FF、IE、Chrome、Android Chrome |
 |---|---|---|---|
@@ -115,7 +115,7 @@ ht-degree: 0%
 | Ad Insertion | VOD + Live | VMAP 1.0 | 仅VOD |
 | Ad Insertion | VOD + Live | CRS v3.1 | 仅VOD |
 
-## DASH内容保护功能 {#dash-content-protection}
+## DASH内容保护功能{#dash-content-protection}
 
 <table id="table_hrb_p2g_xx">  
  <thead> 
@@ -158,7 +158,7 @@ ht-degree: 0%
  </tbody> 
 </table>
 
-## DASH高级回放功能 {#dash-advanced-playback}
+## DASH高级回放功能{#dash-advanced-playback}
 
 | 类别 | 内容类型 | 功能 | HTML5、FF、IE、Chrome、Android Chrome |
 |---|---|---|---|
@@ -172,7 +172,7 @@ ht-degree: 0%
 | 播放 | VOD + Live | 计费 | ![](assets/supported15.png) |
 | 播放 | VOD + Live | Browserify | ![](assets/supported15.png) |
 
-## DASH核心播放功能 {#dash-core-playback}
+## DASH核心播放功能{#dash-core-playback}
 
 | 类别 | 内容类型 | 功能 | HTML5 FF、IE、Chrome、Android Chrome |
 |---|---|---|---|
