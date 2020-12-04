@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# 时间轴广告课程{#timeline-advertising-classes}
+# 时间轴广告类{#timeline-advertising-classes}
 
 这些类提供有关时间轴内发生的广告的信息。
 
@@ -78,13 +78,14 @@ ht-degree: 0%
   <tr rowsep="1"> 
    <td colname="1"> 
     <pre>
-     <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTContentResolver.html" format="html" scope="external"> PTContentResolver类</a> 、PTContentResolver <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Protocols/PTContentResolver.html" format="html" scope="external"> 协议</a>
+     <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTContentResolver.html" format="html" scope="external"> PTContentResolver</a> 类、PTContentResolver 
+     <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Protocols/PTContentResolver.html" format="html" scope="external"> </a> 协议
     </pre> </td> 
    <td colname="2"> 处理Adobe Primetime广告决策流程中广告解析部分的类。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Protocols/PTContentResolverDelegate.html" format="html" scope="external"> PTContentResolverDelegate</a> </td> 
-   <td colname="2"> 描述自定义内容解析程序(PTContentResolver <span class="codeph"></span> )用来向委派内容解析状态的方法的协议。 </td> 
+   <td colname="2"> 描述自定义内容解析程序(<span class="codeph"> PTContentResolver</span>)应使用的方法来向委派内容解析状态的协议。 </td> 
   </tr> 
   <tr rowsep="0"> 
    <td colname="1"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Constants/PTPlacementType.html" format="html" scope="external"> PTPlacementType</a> </td> 
