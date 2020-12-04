@@ -11,9 +11,9 @@ ht-degree: 0%
 ---
 
 
-# 打包内容{#packaging-content}
+# 正在打包内容{#packaging-content}
 
-打包内容时，必须指定许可证服务器URL。 Adobe Access Server URL的格式为：
+打包内容时，必须指定许可证服务器URL。 Adobe Access ServerURL的格式为：
 
 ```
 http(s):// license-server-host:port/flashaccessserver/tenant-name
