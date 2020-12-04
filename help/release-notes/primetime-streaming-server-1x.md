@@ -16,11 +16,11 @@ ht-degree: 0%
 ---
 
 
-# Primetime Streaming Server版本 {#primetime-streaming-server-x-releases}
+# Primetime Streaming Server版本{#primetime-streaming-server-x-releases}
 
 Primetime Streaming Server 1.3和1.4版本的新增功能。
 
-## Primetime Streaming Server 1.4（12月版）的新增功能 {#what-s-new-in-primetime-streaming-server-december-release}
+## Primetime Streaming Server 1.4（12月版）的新增功能{#what-s-new-in-primetime-streaming-server-december-release}
 
 **脱机包装程序**
 
@@ -51,11 +51,11 @@ Primetime Streaming Server 1.3和1.4版本的新增功能。
 * PTPUB-634 - Offline Packager将SpliceInsert添加到清单。
 * PTPUB-635-为单个广告提示插入多个SpliceOut标签。
 
-### 版本1.4中的已知问题 {#known-issue-in-release}
+### 版本1.4 {#known-issue-in-release}中的已知问题
 
 * 即使在脱机打包程序配置中同时提供命令行提示和流内提示时指定DPIScte35模式，也会强制使用PTPUB-645 DPIS示例模式
 
-## Primetime Streaming Server 1.3.1（5月版）的新增功能 {#what-s-new-in-primetime-streaming-server-may-release}
+## Primetime Streaming Server 1.3.1（5月版）{#what-s-new-in-primetime-streaming-server-may-release}的新增功能
 
 版本1.3.1指修补程序。 以下增强功能使客户建议进行升级，因为它包含针对JIT MP4使用案例的主要性能增强功能：
 
@@ -63,17 +63,17 @@ Primetime Streaming Server 1.3和1.4版本的新增功能。
 1. 添加了配置“CopyQueryParamToJITFragmentURIs”，以将查询参数从JIT清单请求复制到为MP4 JIT转换生成的片段URI。 有关示例用法，请参阅HTTP来源服务器文档
 1. 通过添加到vod.xml的仅限Config/MP4配置，允许MP4文件进行JIT转换（无扩展）
 
-### 版本1.3.1中包含的错误修复 {#bug-fixes-included-in-release-1}
+### 版本1.3.1 {#bug-fixes-included-in-release-1}中包含的错误修复
 
 * 3759167 —— 并非所有SCTE35提示都由于打包时时间戳异常导致输出清单。 在SCTE35消息中SpliceInfoSection的TimeSignal中对SpliceTime应用pts_adjustment。
 
-### 版本1.3.1中的已知问题 {#known-issues-in-release}
+### 版本1.3.1 {#known-issues-in-release}中的已知问题
 
 * 3717039 —— 当打包程序配置为生成DPI简单模式提示时，它确实应该寻找特定的信号类型，如接合插入或放置机会，并仅将这些信号转换为简单模式提示。 它应该忽略其它类型的信号，如项目开始、网络开始等。
 
 * 3718598 —— 当来源服务器配置为通过启用HSM访问来提供受保护的内容时，后端LunaSA客户端会与HSM模块频繁通信
 
-## Primetime Streaming Server 1.3（4月版）的新增功能 {#what-s-new-in-primetime-streaming-server-april-release}
+## Primetime Streaming Server 1.3（4月版）{#what-s-new-in-primetime-streaming-server-april-release}的新增功能
 
 Primetime 1.3版本提供了与流内容、更好的可用性和安全性相关的几项新功能。
 
@@ -107,7 +107,7 @@ Primetime Live Packager组件支持从RTMP流创建HLS流。 它还允许向输�
 
 Primetime Offline Packager现在提供一个巧妙的实用程序PlaylistCreator.jar，可轻松创建用于HDS和HLS资产的顶级清单文件。
 
-**附加的安全功能，可加入硬件安全模块**
+**包含硬件安全模块的其他安全功能**
 
 Primetime Offline Packager现在支持从硬件安全模块访问Packager凭据证书和公用密钥。
 
@@ -121,9 +121,9 @@ Primetime Offline Packager现在支持从硬件安全模块访问Packager凭据�
 
 Primetime来源的JIT打包功能已融入多项性能增强功能，以处理用户对大型VOD资源库的请求。
 
-## Adobe Primetime Streaming Server 1.4 {#adobe-primetime-streaming-server}
+## Adobe PrimetimeStreaming Server 1.4 {#adobe-primetime-streaming-server}
 
-### 最低系统要求 {#minimum-system-requirements}
+### 最低系统要求{#minimum-system-requirements}
 
 **网络要求**
 
@@ -136,24 +136,24 @@ Primetime来源的JIT打包功能已融入多项性能增强功能，以处理�
 **硬件要求**
 
 * 3.2GHz Intel® Pentium® 4处理器（建议使用双Intel Xeon®或更快的处理器）
-* 64位操作系统： 4GB内存（推荐8GB）
+* 64位操作系统：4GB内存（推荐8GB）
 * 建议使用1Gb以太网卡（还支持多个网卡和10Gb）
 * 磁盘：
 
-   * （磁盘-SAS）: 最少10GB，带7.5K RPM
-   * （磁盘——固态硬盘）: 400MBps读／写
-   * (NAS): 1 GB专用链接
+   * （磁盘-SAS）:最少10GB，带7.5K RPM
+   * （磁盘——固态硬盘）:400MBps读／写
+   * (NAS):1 GB专用链接
 
 **软件要求**
 
-* Oracle Java JRE 1.7(建议： Sun/Oracle热点JVM)。 JConsole访问JMX API需要JDK
+* OracleJava JRE 1.7(建议：Sun/Oracle热点JVM)。 JConsole访问JMX API需要JDK
 
-### 安装和配置Primetime Streaming Server {#install-and-configure-primetime-streaming-server}
+### 安装和配置Primetime流服务器{#install-and-configure-primetime-streaming-server}
 
 **安装流服务器**
 
-1. 从Oracle站点下载Java SE和JDK软 [件](https://www.oracle.com/technetwork/java/javase/downloads/index.html) ，然后按照安装说明操作。
-2. 将Adobe Primetime-Streaming Server 1.4存档文件解压 `Primetime- StreamingServer-1-4-0-b206-12042014.zip` 到您的磁盘。
+1. 从[Oracle站点](https://www.oracle.com/technetwork/java/javase/downloads/index.html)下载Java SE和JDK软件，然后按照安装说明操作。
+2. 将Adobe Primetime流服务器1.4存档文件`Primetime- StreamingServer-1-4-0-b206-12042014.zip`解压到您的磁盘。
 
 **开始Primetime Streaming Server**
 
@@ -200,7 +200,7 @@ Refer the Primetime Streaming Server Getting Started document for the configurat
 
 本条适用于未使用Primetime Streaming Server，而是部署Primetime Live Packager AND/OR Primetime来源服务器的情况
 
-### 最低系统要求 {#minimum-system-requirements-1}
+### 最低系统要求{#minimum-system-requirements-1}
 
 **网络要求**
 
@@ -213,17 +213,17 @@ Refer the Primetime Streaming Server Getting Started document for the configurat
 **硬件要求**
 
 * 3.2GHz Intel® Pentium® 4处理器（建议使用双Intel Xeon®或更快的处理器）
-* 64位操作系统： 4GB内存（推荐8GB）
+* 64位操作系统：4GB内存（推荐8GB）
 * 建议使用1Gb以太网卡（还支持多个网卡和10Gb）
 * 磁盘：
 
-   * （磁盘-SAS）: 最少10GB，带7.5K RPM
-   * （磁盘——固态硬盘）: 400MBps读／写
-   * (NAS): 1 GB专用链接
+   * （磁盘-SAS）:最少10GB，带7.5K RPM
+   * （磁盘——固态硬盘）:400MBps读／写
+   * (NAS):1 GB专用链接
 
 **软件要求**
 
-* Oracle Java JRE 1.7(建议： Sun/Oracle热点JVM)。 JConsole访问JMX API需要JDK
+* OracleJava JRE 1.7(建议：Sun/Oracle热点JVM)。 JConsole访问JMX API需要JDK
 
 上述最低系统要求适用于来源服务器和Live Packager。
 
@@ -231,15 +231,15 @@ Refer the Primetime Streaming Server Getting Started document for the configurat
 
 **安装Live Packager**
 
-1. 从Oracle站点下载Java SE和JDK软 [件](https://www.oracle.com/technetwork/java/javase/downloads/index.html) ，然后按照安装说明操作。
-1. 将Adobe Primetime - Live Packager 1.4存档文件解压 `Primetime-LivePackager-1-4-0-b206-12042014.zip` 到您的光盘。
+1. 从[Oracle站点](https://www.oracle.com/technetwork/java/javase/downloads/index.html)下载Java SE和JDK软件，然后按照安装说明操作。
+1. 将Adobe Primetime- Live Packager 1.4存档文件`Primetime-LivePackager-1-4-0-b206-12042014.zip`解压到磁盘。
 
 **安装HTTP来源服务器**
 
-1. 从Oracle站点下载Java JRE和JDK [软件](https://www.oracle.com/technetwork/java/javase/downloads/index.html) ，然后按照安装说明操作。
-1. 将Adobe Primetime - HTTP来源服务器1.4存档文件解 `Primetime-HttpOrigin-1-4-0-b206-12042014.zip`压到您的磁盘。
+1. 从[Oracle站点](https://www.oracle.com/technetwork/java/javase/downloads/index.html)下载Java JRE和JDK软件，然后按照安装说明操作。
+1. 将Adobe Primetime- HTTP来源服务器1.4存档文件`Primetime-HttpOrigin-1-4-0-b206-12042014.zip`解压到磁盘。
 
-**要开始Live Packager** To开始Packager，请从Packager的根目录中执行以下命令：\
+**要开始Live** Packager开始打包程序，请从打包程序的根目录中执行以下命令：\
 `$packager_start.sh`
 
 **开始HTTP来源服务器**
@@ -261,7 +261,7 @@ Refer the Primetime Streaming Server Getting Started document for the configurat
 
 要重新启动包装程序，请停止并开始包装程序。
 
-**注意**: 当打包程序开始时，它尝试从临时目录中的片段目标初始化引导信息。 如果在片段目标中找到引导信息，则表示已重新启动打包程序。 在重新启动时，打包程序会等到下一个片段边界，然后开始打包。 打包程序在引导中插入一个间隙条目以指示存在缺失片段。
+**注意**:当打包程序开始时，它尝试从临时目录中的片段目标初始化引导信息。如果在片段目标中找到引导信息，则表示已重新启动打包程序。 在重新启动时，打包程序会等到下一个片段边界，然后开始打包。 打包程序在引导中插入一个间隙条目以指示存在缺失片段。
 
 **重新启动HTTP来源服务器**
 
@@ -271,7 +271,7 @@ Refer the Primetime Streaming Server Getting Started document for the configurat
 
 分发文件包含可用于测试打包程序的示例配置。
 
-解压Adobe Primetime - Live Packager 1.4归档文件后，将目录更改为打包程序目录，并运行packager_开始.sh脚本。 示例配置监听多播地址239.235.0.3:14000，并在端口8080上运行本地来源服务器。 将输出配置为写入 `packager/webroot/_default_/_default_/ directory`。
+解压Adobe Primetime- Live Packager 1.4归档文件后，将目录更改为packager目录，并运行packager_开始.sh脚本。 示例配置监听多播地址239.235.0.3:14000，并在端口8080上运行本地来源服务器。 将输出配置为写入`packager/webroot/_default_/_default_/ directory`。
 
 <!-- 
 
@@ -293,9 +293,9 @@ For more details about the configuration refer [the Primetime Live Packager docu
 
 要卸载HTTP来源服务器，请停止HTTP来源服务器，并删除Primetime目录中HTTP来源服务器的httprogin目录。
 
-## Adobe Primetime Offline Packager 1.4 {#adobe-primetime-offline-packager}
+## Adobe Primetime脱机包装程序1.4 {#adobe-primetime-offline-packager}
 
-### 最低系统要求 {#minimum-system-requirements-2}
+### 最低系统要求{#minimum-system-requirements-2}
 
 **支持的操作系统**
 
@@ -304,27 +304,27 @@ For more details about the configuration refer [the Primetime Live Packager docu
 **硬件要求**
 
 * 3.2GHz Intel® Pentium® 4处理器（建议使用双Intel Xeon®或更快的处理器）
-* 64位操作系统： 4GB内存（推荐8GB）
+* 64位操作系统：4GB内存（推荐8GB）
 * 建议使用1Gb以太网卡（还支持多个网卡和10Gb）
 * 磁盘：
 
-   * （磁盘-SAS）: 最少10GB，带7.5K RPM
-   * （磁盘——固态硬盘）: 400MBps读／写
-   * (NAS): 1 GB专用链接
+   * （磁盘-SAS）:最少10GB，带7.5K RPM
+   * （磁盘——固态硬盘）:400MBps读／写
+   * (NAS):1 GB专用链接
 
 **软件要求**
 
-* Oracle Java JRE 1.7或更高版本。
+* OracleJava JRE 1.7或更高版本。
 
 ### 安装和配置Offline Packager {#install-and-configure-offline-packager}
 
 要安装Offline Packager，请执行以下步骤：
 
-1. 从Oracle站点下载Java SE [软件](https://www.oracle.com/technetwork/java/javase/downloads/index.html) ，然后按照安装说明操作。
-1. 将Adobe Primetime - Offline Packager 1.4存档文件解 `Primetime- OfflinePackager-1-4-0-b206-12042014.zip`压到您的磁盘。
+1. 从[Oracle站点](https://www.oracle.com/technetwork/java/javase/downloads/index.html)下载Java SE软件，然后按照安装说明操作。
+1. 将Adobe Primetime- Offline Packager 1.4存档文件`Primetime- OfflinePackager-1-4-0-b206-12042014.zip`解压到磁盘。
 
-有关此处提供的配置详细信息，请参阅Primetime Offline Packager快速入 [门文档](https://help.adobe.com/en_US/primetime/api/packagers/offline/index.html)。
+有关可用的配置详细信息，请参阅Primetime Offline Packager快速入门文档[此处](https://help.adobe.com/en_US/primetime/api/packagers/offline/index.html)。
 
-## 实用资源 {#helpful-resources}
+## 帮助资源{#helpful-resources}
 
-* 请参阅Adobe Primetime学习和支 [持页面上的完整帮助](https://helpx.adobe.com/support/primetime.html) 文档。
+* 请参阅[Adobe Primetime学习和支持](https://helpx.adobe.com/support/primetime.html)页面上的完整帮助文档。
