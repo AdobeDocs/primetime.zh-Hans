@@ -4,15 +4,18 @@ title: HSM配置
 uuid: da4d7118-65a8-460d-a796-b7bf5c28b208
 translation-type: tm+mt
 source-git-commit: ac75f63f98060e1937570476362bb5d4458d1f85
+workflow-type: tm+mt
+source-wordcount: '142'
+ht-degree: 0%
 
 ---
 
 
-# HSM配置 {#hsm-configuration}
+# HSM配置{#hsm-configuration}
 
-如果选择使用HSM存储服务器凭据，则必须将私钥和证书加载到HSM上并创建配 [!DNL pkcs11.cfg] 置文件。 此文件必须位于 *LicenseServer.ConfigRoot目录中* 。 有关PKCS11 [!DNL Adobe Access Server for Protected Streaming/configs] 配置文件示例，请参阅Adobe Access DVD上的目录。 有关格式的信息，请 [!DNL pkcs11.cfg]参阅Sun PKCS11提供商文档。
+如果选择使用HSM存储服务器凭据，则必须将私钥和证书加载到HSM上并创建[!DNL pkcs11.cfg]配置文件。 此文件必须位于&#x200B;*LicenseServer.ConfigRoot*&#x200B;目录中。 有关PKCS11配置文件的示例，请参阅Adobe访问DVD上的[!DNL Adobe Access Server for Protected Streaming/configs]目录。 有关[!DNL pkcs11.cfg]格式的信息，请参阅Sun PKCS11提供程序文档。
 
-要验证HSM和Sun PKCS11配置文件是否正确配置，可以从文件所在的目录（随Java JRE和JDK一起安装）中使用以 [!DNL pkcs11.cfg] 下命 [!DNL keytool] 令：
+要验证HSM和Sun PKCS11配置文件配置是否正确，可以从[!DNL pkcs11.cfg]文件所在的目录（[!DNL keytool]随Java JRE和JDK一起安装）使用以下命令：
 
 ```
 keytool -keystore NONE -storetype PKCS11 -providerClass sun.security.pkcs11.SunPKCS11 
@@ -23,4 +26,4 @@ keytool -keystore NONE -storetype PKCS11 -providerClass sun.security.pkcs11.SunP
 
 >[!NOTE]
 >
->用于受保护流的Adobe Access Server当前不支持64位Windows OS上的HSM。
+>Adobe访问服务器当前不支持64位Windows OS上的HSM。
