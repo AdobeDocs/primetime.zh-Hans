@@ -6,13 +6,16 @@ title: 标记范围
 uuid: d98efb92-701e-4ee2-b574-823c1e5d5149
 translation-type: tm+mt
 source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+workflow-type: tm+mt
+source-wordcount: '26'
+ht-degree: 0%
 
 ---
 
 
 # 标记范围{#mark-ranges}
 
-在时 `TimeRanges` 间轴中 `begin` 和 `end` 之间标 `localTime` 记为时 `AdBreak` 间轴中的。 其他广告设置将被忽略。
+将`localTime`中的`begin`和`end`之间的`TimeRanges`标记为时间轴中的`AdBreak`。 其他广告设置将被忽略。
 
 1. 标记时间范围。
 
