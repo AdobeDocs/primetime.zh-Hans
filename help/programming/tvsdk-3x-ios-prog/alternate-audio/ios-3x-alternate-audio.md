@@ -4,29 +4,32 @@ title: 替代音频
 uuid: cc38ded2-45b7-4be4-8f46-a919fdaf79cf
 translation-type: tm+mt
 source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+workflow-type: tm+mt
+source-wordcount: '226'
+ht-degree: 0%
 
 ---
 
 
-# 替代音频 {#alternate-audio}
+# 备用音频{#alternate-audio}
 
 替代或延迟绑定音频允许您在视频轨道的可用音轨之间切换。 这样，用户可以在播放视频时选择语言轨道。
 
 <!--<a id="section_E4F9DC28A2944BD08B4190A7F98A8365"></a>-->
 
-当TVSDK为当前视 `MediaPlayerItem` 频创建实例时，它会为每个可用 `AudioTrack` 的音轨创建一个项。 项目包含一个 `name` 属性，该字符串通常包含用户可识别的该轨道语言的描述。 该项目还包含有关是否默认使用该轨道的信息。
+当TVSDK为当前视频创建`MediaPlayerItem`实例时，它为每个可用音轨创建`AudioTrack`项。 该项包含`name`属性，该属性通常包含用户可识别的该音轨语言描述。 该项目还包含有关是否默认使用该轨道的信息。
 
-当需要播放视频时，您可以请求可用音轨列表，或者让用户选择一个音轨，并设置要与所选音轨一起播放的视频。
+当需要播放视频时，您可以要求列表可用的音轨，或者让用户选择一个音轨，并设置要与所选音轨一起播放的视频。
 
-虽然很少，但如果在创建音轨后有其他音轨可用， `MediaPlayerItem`TVSDK会触发事 `MediaPlayerItem.AUDIO_UPDATED` 件。
+虽然很少，但如果在创建`MediaPlayerItem`后有其他音轨可用，TVSDK将触发`MediaPlayerItem.AUDIO_UPDATED`事件。
 
-## 添加的API {#section_87C42C30BA8C4F58A2DAB7CE07FCD3DE}
+## 添加了API {#section_87C42C30BA8C4F58A2DAB7CE07FCD3DE}
 
 已添加以下API以支持备用音频：
 
 **hasAlternateAudio**
 
-如果指定的媒体有除默认音轨之外的备用音轨，则此布尔函数将返回 `true`。 如果没有替代音轨，则函数返回 `false`。
+如果指定的媒体具有除默认音轨之外的备用音轨，则此布尔函数返回`true`。 如果没有替代音轨，则函数返回`false`。
 
 ```
 bool MediaPlayerItemImpl::hasAlternateAudio() const { 
