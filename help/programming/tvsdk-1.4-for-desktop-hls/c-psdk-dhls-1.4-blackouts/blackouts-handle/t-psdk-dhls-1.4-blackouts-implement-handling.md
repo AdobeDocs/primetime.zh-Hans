@@ -1,11 +1,14 @@
 ---
 description: TVSDK提供用于处理封锁期的API和示例代码。
 seo-description: TVSDK提供用于处理封锁期的API和示例代码。
-seo-title: 实现封锁处理
-title: 实现封锁处理
+seo-title: 实施封锁处理
+title: 实施封锁处理
 uuid: 3b4e3f53-0e27-4369-85f2-940380ed16ac
 translation-type: tm+mt
 source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+workflow-type: tm+mt
+source-wordcount: '126'
+ht-degree: 0%
 
 ---
 
@@ -14,7 +17,7 @@ source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
 
 TVSDK提供用于处理封锁期的API和示例代码。
 
-要实现封锁处理，包括在封锁期间提供替代内容，请执行以下操作：
+要实施封锁处理，包括在封锁期中提供替代内容，请执行以下操作：
 
 1. 设置应用程序以检测实时流清单中的封锁标记。
 
@@ -30,7 +33,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 为前台和后台流中的定时元数据事件创建事件监听器。
+1. 为前景和背景流中的定时元数据事件创建事件监听器。
 
    ```
    private function createMediaPlayer(context:MediaPlayerContext):void { 
@@ -42,7 +45,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 为前台流和后台流实现定时元数据事件处理函数。
+1. 为前台和后台流实施定时元数据事件处理函数。
 
    前景：
 
@@ -124,7 +127,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 对播放头位置的每次更新进行检查TimedMetadataObjects列表。
+1. 为每次出现的对播放头位置的更新设置对TimedMetadataObjects列表的检查。
 
    ```
    private function onTimeChange(event:TimeChangeEvent):void { 
@@ -157,7 +160,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 创建用于在封锁期开始和结束时切换内容的方法。
+1. 创建用于在封锁期的开始和结束时切换内容的方法。
 
    ```
    public function initiate(event:TimerEvent=null):void { 
