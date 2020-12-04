@@ -1,22 +1,25 @@
 ---
-description: 如果客户端请求跟踪信息，清单服务器发送回格式化文件。 其格式和内容取决于查询参数pttrackingversion的值
-seo-description: 如果客户端请求跟踪信息，清单服务器发送回格式化文件。 其格式和内容取决于查询参数pttrackingversion的值
+description: 如果客户端请求跟踪信息，清单服务器会发回格式化文件。 其格式和内容取决于查询参数pttrackingversion的值
+seo-description: 如果客户端请求跟踪信息，清单服务器会发回格式化文件。 其格式和内容取决于查询参数pttrackingversion的值
 seo-title: 用于跟踪URL的VMAP格式
 title: 用于跟踪URL的VMAP格式
 uuid: e3173fad-caa2-49cb-9a65-631573812e52
 translation-type: tm+mt
 source-git-commit: 358c5b02d47f23a6adbc98e457e56c8220cae6e9
+workflow-type: tm+mt
+source-wordcount: '170'
+ht-degree: 0%
 
 ---
 
 
-# 用于跟踪URL的VMAP格式 {#vmap-format-for-tracking-urls}
+# 跟踪URL的VMAP格式{#vmap-format-for-tracking-urls}
 
-如果客户端请求跟踪信息，清单服务器发送回格式化文件。 其格式和内容取决于查询参数的值 `pttrackingversion`
+如果客户端请求跟踪信息，清单服务器会发回格式化文件。 其格式和内容取决于查询参数`pttrackingversion`的值
 
-## 单VMAP格式 {#vmap}
+## 单个VMAP格式{#vmap}
 
-清单服务器发送的VMAP文件(如 `pttrackingversion=vmap` 果具有以下示例的格式)来自典型的VMAP块。 本发明结构简单，避免了不必要的重复，结构更清晰。 省略号（三个点，以空格分隔）表示某些URL中和某些代码块之间省略的信息。 未缩短的URL显示在多行上，但它们显示在VMAP文件的单行上。
+如果`pttrackingversion=vmap`的格式为以下示例，则清单服务器发送的VMAP文件来自典型的VMAP块。 缩短了时间，避免了不必要的重复，使结构更清晰。 省略号（三个点，用空格分隔）表示某些URL中和某些代码块之间省略的信息。 未缩短的URL显示在多行上，但显示在VMAP文件的单行上。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?> 
