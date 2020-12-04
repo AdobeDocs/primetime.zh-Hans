@@ -1,18 +1,21 @@
 ---
-description: 浏览器TVSDK提供了一个DRM界面，您可以使用它来播放由不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
-seo-description: 浏览器TVSDK提供了一个DRM界面，您可以使用它来播放由不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
+description: 浏览器TVSDK提供DRM界面，可用于播放由不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
+seo-description: 浏览器TVSDK提供DRM界面，可用于播放由不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
 seo-title: DRM界面概述
 title: DRM界面概述
 uuid: b553ebad-8310-4517-8d97-ef8a1c5f4340
 translation-type: tm+mt
 source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+workflow-type: tm+mt
+source-wordcount: '289'
+ht-degree: 0%
 
 ---
 
 
-# DRM界面概述{#drm-interface-overview}
+# DRM接口概述{#drm-interface-overview}
 
-浏览器TVSDK提供了一个DRM界面，您可以使用它来播放由不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
+浏览器TVSDK提供DRM界面，可用于播放由不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
 
 <!--<a id="section_59994F2059B245E996E0776214804A0A"></a>-->
 
@@ -20,7 +23,7 @@ source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
 >
 >DRM支持使用Microsoft PlayReady（在Windows 8.1和Edge的Internet Explorer上）和Widevine（在Google Chrome上）DRM系统保护的MPEG-Dash流。 DRM支持Safari上受FairPlay保护的HLS流。
 
-DRM工作流程的主要界面是 `DRMManager`。 可以通过MediaPlayer `DRMManager` 实例获取对实例的引用：
+DRM工作流的关键接口是`DRMManager`。 可通过MediaPlayer实例获取对`DRMManager`实例的引用：
 
 * `var mediaPlayer = new AdobePSDK.MediaPlayer();`
 * `var drmManager = mediaPlayer.drmManager;`
@@ -29,7 +32,7 @@ DRM工作流程的主要界面是 `DRMManager`。 可以通过MediaPlayer `DRMMa
 
 以下是播放受DRM保护的内容的高级工作流：
 
-1. 要附加浏览器TVSDK将在受保护流的许可证获取过程中使用的DRM系统特定数据，请在调用前进行以下调用 `mediaPlayer.replaceCurrentResource`:
+1. 要附加浏览器TVSDK将在受保护流的许可证获取过程中使用的DRM系统特定数据，请在调用`mediaPlayer.replaceCurrentResource`之前进行以下调用：
 
    ```js
    var protectionData = { 
@@ -92,7 +95,7 @@ DRM工作流程的主要界面是 `DRMManager`。 可以通过MediaPlayer `DRMMa
    drmManager.setProtectionData(protectionData);
    ```
 
-1. 未设置保护数据时，将从DRM系统的PSSH框（如果适用）检索许可证URL等必要信息。
+1. 如果未设置保护数据，则从DRM系统的PSSH框（如果适用）检索许可证URL等必要信息。
 
    >[!TIP]
    >
@@ -100,14 +103,14 @@ DRM工作流程的主要界面是 `DRMManager`。 可以通过MediaPlayer `DRMMa
 
 1. 默认情况下，DRM许可证的会话类型是临时的，这意味着在会话关闭后不存储许可证。
 
-   您可以使用中的API指定会话类型 `DRMManager`。  为了向后兼容性，会话类 `temporary`型包括 `persistent-license`、 `persistent-usage-record`、和 `persistent`。
+   可以使用`DRMManager`中的API指定会话类型。  为了向后兼容，会话类型包括`temporary`、`persistent-license`、`persistent-usage-record`和`persistent`。
 
    ```js
    var drmManager = mediaPlayer.drmManager; 
     drmManager.setEMESessionType(“<YOUR_SESSION_TYPE>”); 
    ```
 
-1. 当使用 `sessionType` DRM许可证 `persistent-license` 时或 `persistent`者，可以通过调用来返回DRM许可证 `DRMManager.returnLicense`。
+1. 当使用的`sessionType`为`persistent-license`或`persistent`时，可以通过调用`DRMManager.returnLicense`返回DRM许可证。
 
    ```js
    var onLicenseReturnFunc = function () { 
