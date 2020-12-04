@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# 初始化和配置视频分析 {#initialize-and-configure-video-analytics}
+# 初始化和配置视频分析{#initialize-and-configure-video-analytics}
 
 您可以配置播放器以跟踪和分析视频使用情况。
 在激活视频跟踪（视频心跳）之前，请确保您具有以下各项：
@@ -26,8 +26,8 @@ ht-degree: 0%
 <table id="table_3565328ABBEE4605A92EAE1ADE5D6F84"> 
  <tbody> 
   <tr> 
-   <td colname="col1"> <span class="filepath"> ADBMobileConfig.json </span> </td> 
-   <td colname="col2"> <p>重要： 此JSON配置文件名必须保 <span class="filepath"> 留为ADBMobileConfig. </span>json。 此配置文件的名称和路径无法更改。 此文件的路径必须 <span class="filepath"> 是&lt;source root&gt;/assets </span>。 </p> </td> 
+   <td colname="col1"> <span class="filepath"> ADBMobileConfig.json  </span> </td> 
+   <td colname="col2"> <p>重要： 此JSON配置文件名必须保留<span class="filepath"> ADBMobileConfig.json </span>。 此配置文件的名称和路径无法更改。 此文件的路径必须为<span class="filepath"> &lt;source root&gt;/assets </span>。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> AppMeasurement跟踪服务器端点 </td> 
@@ -35,7 +35,7 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td colname="col1"> 视频分析跟踪服务器端点 </td> 
-   <td colname="col2"> 视频分析后端集合端点的URL。 这是发送所有视频心跳跟踪调用的位置。 <p>提示： 访客跟踪服务器的URL与分析跟踪服务器的URL相同。 有关实施访客ID服务的信息，请参 <a href="https://marketing.adobe.com/resources/help/en_US/mcvid/mcvid-setup-target.html" format="html" scope="external"> 阅实施ID服 </a>务。 </p> </td> 
+   <td colname="col2"> 视频分析后端集合端点的URL。 这是发送所有视频心跳跟踪调用的位置。 <p>提示： 访客跟踪服务器的URL与分析跟踪服务器的URL相同。 有关实现访客ID服务的信息，请参见<a href="https://marketing.adobe.com/resources/help/en_US/mcvid/mcvid-setup-target.html" format="html" scope="external">实现ID服务</a>。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 帐户名称 </td> 
@@ -50,7 +50,7 @@ ht-degree: 0%
 
 要在播放器中配置视频跟踪，请执行以下操作：
 
-1. 确认资源文件中的加载 `ADBMobileConfig.json` 时间选项正确。
+1. 确认`ADBMobileConfig.json`资源文件中的加载时间选项是否正确。
 
    ```
    { 
@@ -84,21 +84,21 @@ ht-degree: 0%
    要配置加载时选项，请执行以下操作：
 
 
-   1. 确认文件 `ADBMobileConfig.json` 包含相应的值(由Adobe提供)。
-   1. 确认此文件位于文件 `assets/` 夹中。
+   1. 确认`ADBMobileConfig.json`文件包含相应的值(由Adobe提供)。
+   1. 确认此文件位于`assets/`文件夹中。
 
       此文件夹必须位于应用程序源树的根目录中。
 
    1. 编译和构建应用程序。
    1. 部署和运行捆绑的应用程序。
 
-      有关这些AppMeasurement设置的详细信息，请参 [阅在Adobe Analytics测量视频](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/video/)。
+      有关这些AppMeasurement设置的详细信息，请参阅[在Adobe Analytics测量视频](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/video/)。
 
 1. 初始化和配置视频心跳跟踪元数据。
 
    >[!IMPORTANT]
    >
-   >您可以停止视频分析模块中间流，并根据需要重新初始化它。 在重新初始化模块之前，请确保视频分析元数据也已更新为正确的内容元数据。 要重新创建元数据，请重复以下前两个步骤(子 **步骤** a **和b**)。
+   >您可以停止视频分析模块中间流，并根据需要重新初始化它。 在重新初始化模块之前，请确保视频分析元数据也已更新为正确的内容元数据。 要重新创建元数据，请重复下面的前两个步骤（子步骤&#x200B;**a**&#x200B;和&#x200B;**b**）。
 
    1. 创建视频分析元数据的实例。
 
@@ -135,13 +135,13 @@ ht-degree: 0%
       VideoAnalyticsProvider videoAnalyticsProvider = new VideoAnalyticsProvider(appContext); 
       ```
 
-   1. 在实例上设置视频分析元 `videoAnalyticsProvider` 数据。
+   1. 在`videoAnalyticsProvider`实例上设置视频分析元数据。
 
       ```java
       videoAnalyticsProvider.setVideoAnalyticsMetadata(vaMetadata);
       ```
 
-   1. 将媒体播放器实例连接到该 `videoAnalyticsProvider` 实例：
+   1. 将媒体播放器实例连接到`videoAnalyticsProvider`实例：
 
       ```java
       videoAnalyticsProvider.attachMediaPlayer(mediaPlayer); 
