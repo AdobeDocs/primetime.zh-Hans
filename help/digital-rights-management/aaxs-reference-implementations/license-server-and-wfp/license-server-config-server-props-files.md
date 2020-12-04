@@ -11,7 +11,7 @@ ht-degree: 0%
 ---
 
 
-# 服务器属性文件 {#server-properties-files}
+# 服务器属性文件{#server-properties-files}
 
 服务器需要两个配置文件，一个用于许可证服务器，一个用于打包程序。 两个文件都必须放在类路径上。 属性文件包含由Adobe发出的凭据的位置。 这些凭据可以指定为。pfx文件和密码，或者为存储在HSM上的凭据提供别名和密码。
 
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 要正确准备凭据的密码，请执行以下操作：
 
-1. 转到 [!DNL Reference Implementation\Server\refimpl\scrambler]。
+1. 转至[!DNL Reference Implementation\Server\refimpl\scrambler]。
 1. 在命令提示符下，输入命令：
 
    ```
@@ -39,4 +39,4 @@ ht-degree: 0%
 >
 >上一个示例使用分号(;)作为分隔符。 对于Microsoft Windows以外的平台，请使用冒号(:)作为分隔符。
 
-该实用程序输出加密密码，您必须将其复制到文 [!DNL .properties] 件中。
+实用程序将输出加密密码，您必须将其复制到[!DNL .properties]文件。
