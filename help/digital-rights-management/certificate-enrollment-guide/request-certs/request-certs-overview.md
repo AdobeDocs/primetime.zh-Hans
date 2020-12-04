@@ -4,13 +4,16 @@ title: 请求证书概述
 uuid: 3a4e79d7-1832-49d8-bcf2-a029b3729e6d
 translation-type: tm+mt
 source-git-commit: 635e2893439c5459907c54d2c3bd86f58da0eec5
+workflow-type: tm+mt
+source-wordcount: '82'
+ht-degree: 0%
 
 ---
 
 
-# 概述 {#request-certificates-overview}
+# 概述{#request-certificates-overview}
 
-要使用Adobe Primetime DRM Production SDK，请重复以下步骤以请求每个证书（License Server、Packager和Transport）。 评估版SDK和试用版SDK使用单个证书。
+要使用Adobe PrimetimeDRM生产SDK，请重复以下步骤以请求每个证书（许可证服务器、包装器和传输）。 评估版SDK和试用版SDK使用单个证书。
 
 >[!NOTE]
 >
