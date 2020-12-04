@@ -28,50 +28,51 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
  <tbody> 
   <tr rowsep="1"> 
    <td colname="1"> 实时流 </td> 
-   <td colname="2"> <span class="codeph"> live </span> </td> 
+   <td colname="2"> <span class="codeph"> live  </span> </td> 
    <td colname="3"> 如果流是实时的，则为true;如果为VOD，则为false。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1" morerows="2"> 隐藏式字幕 </td> 
-   <td colname="2"> <span class="codeph"> hasClosedCaptions </span> </td> 
+   <td colname="2"> <span class="codeph"> hasClosedCaptions  </span> </td> 
    <td colname="3"> 如果隐藏式字幕轨道可用，则为true。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> closedCaptionsTracks </span> </td> 
+   <td colname="2"> <span class="codeph"> closedCaptionsTracks  </span> </td> 
    <td colname="3"> 提供可用隐藏字幕轨道的列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> selectedClosedCaptionsTrack </span> </td> 
-   <td colname="3"> 检索用selectClosedCaptionsTrack选择的隐藏字幕 <span class="codeph"> 轨道 </span>。 </td> 
+   <td colname="2"> <span class="codeph"> selectedClosedCaptionsTrack  </span> </td> 
+   <td colname="3"> 检索用<span class="codeph"> selectClosedCaptionsTrack </span>选择的隐藏字幕轨道。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1" morerows="2"> 替代音频 </td> 
-   <td colname="2"> <span class="codeph"> hasAlternateAudio </span> </td> 
+   <td colname="2"> <span class="codeph"> hasAlternateAudio  </span> </td> 
    <td colname="3"> <p>如果流具有替代音轨，则为true。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> audioTracks </span> </td> 
+   <td colname="2"> <span class="codeph"> audioTracks  </span> </td> 
    <td colname="3"> 提供可用备用音轨的列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> selectedAudioTrack </span> </td> 
+   <td colname="2"> <span class="codeph"> selectedAudioTrack  </span> </td> 
    <td colname="3"> 
     <pre>
-      检索当前选定的与selectAudioTrack一起选择的音 <span class="codeph"> 轨( </span>A)。 
+      检索当前选定的已使用 
+     <span class="codeph"> selectAudioTrack </span>。 
     </pre> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1" morerows="1"> 定时元数据 </td> 
-   <td colname="2"> <span class="codeph"> hasTimedMetadata </span> </td> 
+   <td colname="2"> <span class="codeph"> hasTimedMetadata  </span> </td> 
    <td colname="3"> 如果流具有关联的定时元数据，则为true。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> timedMetadata </span> </td> 
+   <td colname="2"> <span class="codeph"> timedMetadata  </span> </td> 
    <td colname="3"> 提供与流关联的定时元数据对象的列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1" morerows="1"> 多个用户档案（位速率） </td> 
-   <td colname="2" morerows="1"> <span class="codeph"> 用户档案 </span> </td> 
+   <td colname="2" morerows="1"> <span class="codeph"> 用户档案  </span> </td> 
    <td colname="3"> </td> 
   </tr> 
   <tr rowsep="1"> 
@@ -79,7 +80,7 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 媒体资源 </td> 
-   <td colname="2"> <span class="codeph"> 资源 </span> </td> 
+   <td colname="2"> <span class="codeph"> 资源  </span> </td> 
    <td colname="3"> 返回与此项目关联的媒体资源。 </td> 
   </tr> 
  </tbody> 
