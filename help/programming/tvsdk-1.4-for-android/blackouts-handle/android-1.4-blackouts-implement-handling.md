@@ -1,11 +1,14 @@
 ---
 description: TVSDK提供用于处理封锁期的API和示例代码。
 seo-description: TVSDK提供用于处理封锁期的API和示例代码。
-seo-title: 实现封锁处理
-title: 实现封锁处理
+seo-title: 实施封锁处理
+title: 实施封锁处理
 uuid: db7f831c-5069-4426-bfe3-5fc51fec7930
 translation-type: tm+mt
 source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+workflow-type: tm+mt
+source-wordcount: '171'
+ht-degree: 0%
 
 ---
 
@@ -14,7 +17,7 @@ source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
 
 TVSDK提供用于处理封锁期的API和示例代码。
 
-要实现封锁处理，包括在封锁期间提供替代内容，请执行以下操作：
+要实施封锁处理，包括在封锁期中提供替代内容，请执行以下操作：
 
 1. 设置应用程序以检测实时流清单中的封锁标记。
 
@@ -27,7 +30,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 为前台和后台流中的定时元数据事件创建事件监听器。
+1. 为前景和背景流中的定时元数据事件创建事件监听器。
 
    ```java
    private MediaPlayer createMediaPlayer() { 
@@ -36,7 +39,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 为前台流和后台流实现定时元数据事件处理函数。
+1. 为前台和后台流实施定时元数据事件处理函数。
 
    前景：
 
@@ -75,7 +78,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }; 
    ```
 
-1. 在运 `TimedMetadata` 行时处理 `MediaPlayer` 对象。
+1. 运行`MediaPlayer`时处理`TimedMetadata`对象。
 
    ```java
    _playbackClockEventListener = new Clock.ClockEventListener() { 
@@ -98,7 +101,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    };
    ```
 
-1. 创建用于在封锁期开始和结束时切换内容的方法。
+1. 创建用于在封锁期的开始和结束时切换内容的方法。
 
    ```java
    private void handleTimedMetadataList(long currentTime) { 
@@ -150,7 +153,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 如果封锁期范围在播放流的DVR中，则更新不可搜索的范围。
+1. 如果播放流上的封锁期范围在DVR中，则更新不可搜索的范围。
 
    ```java
    // prepare and update blackout nonSeekable ranges 
@@ -183,7 +186,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
 
    >[!NOTE]
    >
-   >目前，对于多个位速率实时流，有时可调整的位速率(ABR)配置文件可能会不同步。 这会导致同 `timedMetadata` 一订阅标签的对象重复。 为避免不正确的不可搜索计算，强烈建议在计算后检查重叠的不可搜索范围，如以下示例中所示：
+   >目前，对于多比特率实时流，有时可调整比特率(ABR)用户档案会失去同步。 这会导致重复`timedMetadata`对同一订阅标签的对象。 为避免不正确的不可搜索计算，强烈建议在计算后检查重叠的不可搜索范围，如以下示例中所示：
 
    ```java
    List<TimeRange> rangesToRemove = new ArrayList<TimeRange>(); 
