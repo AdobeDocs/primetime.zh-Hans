@@ -17,7 +17,7 @@ ht-degree: 0%
 
 您可以使用支持HSM的Sun PKCS#11提供程序配置引用实现。 虽然不需要使用HSM，但建议使用。
 
-要在HSM上使用凭据，必须为Sun PKCS#11提供程序创建配置文件。 有关详细信息，请参 [阅Java PCKS#11参考指南](https://docs.oracle.com/javase/1.5.0/docs/guide/security/p11guide.html)。
+要在HSM上使用凭据，必须为Sun PKCS#11提供程序创建配置文件。 有关详细信息，请参阅[Java PCKS#11参考指南](https://docs.oracle.com/javase/1.5.0/docs/guide/security/p11guide.html)。
 
 要验证HSM和Sun PKCS#11配置文件是否已配置，请使用随Java JDK一起安装的keytool键入以下命令：
 
