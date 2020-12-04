@@ -1,30 +1,33 @@
 ---
-description: 您可以根据默认分辨率实现分辨率。
-seo-description: 您可以根据默认分辨率实现分辨率。
+description: 您可以根据默认的解析器实现解析器。
+seo-description: 您可以根据默认的解析器实现解析器。
 seo-title: 实施自定义机会／内容解析程序
 title: 实施自定义机会／内容解析程序
 uuid: 0023f516-12f3-4548-93de-b0934789053b
 translation-type: tm+mt
 source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+workflow-type: tm+mt
+source-wordcount: '344'
+ht-degree: 0%
 
 ---
 
 
-# 实施自定义机会／内容解析程序 {#implement-a-custom-opportunity-content-resolver}
+# 实现自定义机会／内容解析程序{#implement-a-custom-opportunity-content-resolver}
 
-您可以根据默认分辨率实现分辨率。
+您可以根据默认的解析器实现解析器。
 
 <!--<a id="fig_CC41E2A66BDB4115821F33737B46A09B"></a>-->
 
 ![](assets/ios_psdk_content_resolver.png)
 
-1. 通过扩展抽象类开发自定义广告解 `PTContentResolver` 析程序。
+1. 通过扩展`PTContentResolver`抽象类开发自定义广告解析程序。
 
-   `PTContentResolver` 是必须由内容解析器类实现的接口。 同名的抽象类也可用，并自动处理配置（获取委托）。
+   `PTContentResolver` 是必须由内容解析器类实现的接口。同名的抽象类也可用，并自动处理配置（获取委托）。
 
    >[!TIP]
    >
-   >`PTContentResolver` 在课堂上暴露 `PTDefaultMediaPlayerClientFactory` 出来。 客户端可以通过扩展抽象类来注册新的内 `PTContentResolver` 容解析程序。 默认情况下，除非特别删除，否 `PTDefaultAdContentResolver` 则会在中注册 `PTDefaultMediaPlayerClientFactory`。
+   >`PTContentResolver` 都暴露在课 `PTDefaultMediaPlayerClientFactory` 堂里。客户端可以通过扩展`PTContentResolver`抽象类注册新的内容解析程序。 默认情况下，除非特别删除，`PTDefaultAdContentResolver`将在`PTDefaultMediaPlayerClientFactory`中注册。
 
    ```
    @protocol PTContentResolver <NSObject> 
@@ -52,27 +55,28 @@ source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
    @end
    ```
 
-1. 如果 `shouldResolveOpportunity` 它应 `YES` 处理接收的内容，则执行并返回 `PTPlacementOpportunity`。
-1. 实 `resolvePlacementOpportunity`施，开始加载替代内容或广告。
-1. 加载广告后，准备一 `PTTimeline` 个包含要插入的内容相关信息的广告。
+1. 如果应处理接收的`PTPlacementOpportunity`，则执行`shouldResolveOpportunity`并返回`YES`。
+1. 实施`resolvePlacementOpportunity`，该&lt;a0/>开始加载替代内容或广告。
+1. 加载广告后，准备一个`PTTimeline`，其中包含要插入的内容的相关信息。
 
        以下是一些有关时间轴的有用信息：
    
-   * 可以有多 `PTAdBreak`种预卷、中卷和后卷类型。
+   * 可有多种`PTAdBreak`s的前滚、中滚和后滚类型。
 
-      * A具 `PTAdBreak` 有以下各项：
+      * `PTAdBreak`具有以下特性：
 
-         * 具 `CMTimeRange` 有中断的开始时间和持续时间。
+         * 具有中断开始时间和持续时间的`CMTimeRange`。
 
-            这被设置为的范围属性 `PTAdBreak`。
+            它被设置为`PTAdBreak`的范围属性。
 
-         * `NSArray` `PTAd`s.
+         * `NSArray`  `PTAd`s
 
-            此属性设置为的ads属性 `PTAdBreak`。
-   * A代 `PTAd` 表广告，且每个广告 `PTAd` 都具有：
+            它设置为`PTAdBreak`的ads属性。
+   * A `PTAd`表示广告，每个`PTAd`具有以下各项：
 
-      * 设置 `PTAdHLSAsset` 为广告的主要资产属性。
-      * 可能有多个 `PTAdAsset` 实例作为可点击广告或横幅广告。
+      * `PTAdHLSAsset`设置为广告的主资产属性。
+      * 可能有多个`PTAdAsset`实例作为可点击广告或横幅广告。
+
    例如：
 
    ```
@@ -102,8 +106,8 @@ source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
    _timeline.adBreaks = ptBreaks;
    ```
 
-1. 拨 `didFinishResolvingPlacementOpportunity`叫，提供 `PTTimeline`。
-1. 通过调用将自定义内容／广告解析程序注册到默认媒体播放器工厂 `registerContentResolver`。
+1. 调用`didFinishResolvingPlacementOpportunity`，它提供`PTTimeline`。
+1. 通过调用`registerContentResolver`将自定义内容／广告解析程序注册到默认媒体播放器工厂。
 
    ```
    //Remove default content/ad resolver 
@@ -116,11 +120,11 @@ source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
    [[PTDefaultMediaPlayerFactory defaultFactory] registerContentResolver:[contentResolver autorelease]];
    ```
 
-1. 如果您实施了自定义业务机会解析程序，请将其注册到默认的媒体播放器工厂。
+1. 如果您实现了自定义机会解析器，请将其注册到默认媒体播放器工厂。
 
    >[!TIP]
    >
-   >您不必注册自定义机会解析程序即可注册自定义内容／广告解析程序。
+   >您无需注册自定义机会解析程序即可注册自定义内容／广告解析程序。
 
    ```
    //Remove default opportunity resolver 
@@ -137,4 +141,4 @@ source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
 当播放器加载内容并确定其为VOD或LIVE类型时，将发生以下情况之一：
 
 * 如果内容是VOD，则使用自定义内容解析程序获取整个视频的广告时间轴。
-* 如果内容为LIVE，则每次在内容中检测到放置机会（提示点）时都会调用自定义内容解析程序。
+* 如果内容是LIVE，则每次在内容中检测到放置机会（提示点）时，都会调用自定义内容解析器。
