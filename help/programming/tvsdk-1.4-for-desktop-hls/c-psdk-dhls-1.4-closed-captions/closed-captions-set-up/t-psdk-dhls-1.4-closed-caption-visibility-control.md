@@ -23,7 +23,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->隐藏式字幕的可见性值在中定义 `ClosedCaptionsVisibility`。
+>隐藏式字幕的可见性值在`ClosedCaptionsVisibility`中定义。
 >
 >
 ```
@@ -31,14 +31,14 @@ ht-degree: 0%
 >public static const VISIBLE:String = visible;
 >```
 
-1. 请等待 `MediaPlayer` 至少具有PREPARED状态(请 [参阅等待有效状态](../../t-psdk-dhls-1.4-configure/c-psdk-dhls-1.4-ui-configure/t-psdk-dhls-1.4-ui-state-prepared-wait-for.md))。
-1. 要获取隐藏式字幕的当前可见性设置，请使用中的getter `MediaPlayer`方法，它返回可见性值。
+1. 请等待`MediaPlayer`至少具有PREPARED状态（请参阅[等待有效状态](../../t-psdk-dhls-1.4-configure/c-psdk-dhls-1.4-ui-configure/t-psdk-dhls-1.4-ui-state-prepared-wait-for.md)）。
+1. 要获取隐藏式字幕的当前可见性设置，请使用`MediaPlayer`中的getter方法，它返回一个可见性值。
 
    ```
    public function get ccVisibility():String
    ```
 
-1. 要更改隐藏式字幕的可见性，请使用setter方法，将可见性值从中传递 `ClosedCaptionsVisibility`。
+1. 要更改隐藏式字幕的可见性，请使用setter方法，将可见性值从`ClosedCaptionsVisibility`传递。
 
    例如：
 
