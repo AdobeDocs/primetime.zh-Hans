@@ -11,7 +11,7 @@ ht-degree: 0%
 ---
 
 
-# NATIVE_ERROR通知的详细信息 {#details-for-the-native-error-notification}
+# NATIVE_ERROR通知{#details-for-the-native-error-notification}的详细信息
 
 当TVSDK处理本机错误时，它会设置以下部分或全部元数据键值。
 
@@ -24,7 +24,7 @@ ht-degree: 0%
  </thead>
  <tbody> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> RUNTIME_CODE </span> </td> 
+   <td colname="col1"> <span class="codeph"> RUNTIME_CODE  </span> </td> 
    <td colname="col2"> 
     <pre>
       Flash Player的本机错误代码。 
@@ -36,31 +36,31 @@ ht-degree: 0%
     </ul> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> RUNTIME_CODE_MESSAGE </span> </td> 
-   <td colname="col2"> 包含错误名称的字符串；例如， <span class="codeph"> AAXS_InvalidVoucher </span> 或 <span class="codeph"> DECODER_FAILED </span>。 </td> 
+   <td colname="col1"> <span class="codeph"> RUNTIME_CODE_MESSAGE  </span> </td> 
+   <td colname="col2"> 包含错误名称的字符串；例如，<span class="codeph"> AAXS_InvalidVoucher </span>或<span class="codeph"> DECODER_FAILED </span>。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> RUNTIME_SUBERROR_CODE </span> </td> 
-   <td colname="col2"> 对于DRM错误，还返回子错误代码。 这些代码与Flash Player <span class="codeph"> 返回 </span> 的DRMErrorEvents子错误代码相对应。 将报告错误到Adobe时，请包含此数值以获得疑难解答帮助。 </td> 
+   <td colname="col1"> <span class="codeph"> RUNTIME_SUBERROR_CODE  </span> </td> 
+   <td colname="col2"> 对于DRM错误，还返回子错误代码。 这些代码与Flash Player返回的<span class="codeph"> DRMErrorEvents </span>子错误代码相对应。 将报告错误到Adobe时，请包含此数值以获得疑难解答帮助。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> DRM_ERROR_STRING </span> </td> 
+   <td colname="col1"> <span class="codeph"> DRM_ERROR_STRING  </span> </td> 
    <td colname="col2"> 对于DRM，这是DRM服务器部署中的自定义错误字符串（如果已定义）。 当将错误报告到Adobe时，也包括此选项。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 说明 </span> </td> 
+   <td colname="col1"> <span class="codeph"> 说明  </span> </td> 
    <td colname="col2"> 错误的字符串描述。 通常是媒体的URL。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> RESOURCE_URL </span> </td> 
+   <td colname="col1"> <span class="codeph"> RESOURCE_URL  </span> </td> 
    <td colname="col2"> 媒体的URL。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> RESOURCE_TYPE </span> </td> 
+   <td colname="col1"> <span class="codeph"> RESOURCE_TYPE  </span> </td> 
    <td colname="col2"> 媒体类型(HLS)。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> RESOURCE_ID </span> </td> 
+   <td colname="col1"> <span class="codeph"> RESOURCE_ID  </span> </td> 
    <td colname="col2"> 媒体ID。 </td> 
   </tr> 
  </tbody> 
@@ -70,4 +70,4 @@ TVSDK从视频引擎接收这些错误代码和字符串。
 
 >[!IMPORTANT]
 >
->有关Adobe PrimetimeDRM客户端错误代码的完整列表，请参 [阅DRM客户端错误消息参考](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_client_error_message_reference.pdf)。
+>有关Adobe PrimetimeDRM客户端错误代码的完整列表，请参阅[DRM客户端错误消息引用](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_client_error_message_reference.pdf)。
