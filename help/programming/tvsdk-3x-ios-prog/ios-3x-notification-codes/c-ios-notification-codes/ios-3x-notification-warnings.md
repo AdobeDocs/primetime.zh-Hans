@@ -13,7 +13,7 @@ ht-degree: 3%
 ---
 
 
-# 警告通知代码 {#warning-notification-codes}
+# 警告通知代码{#warning-notification-codes}
 
 此表证明了有关WARN类型通知的详细信息。
 
@@ -61,14 +61,14 @@ ht-degree: 3%
    <td colname="5"> </td>
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 204000 </span> </td> 
+   <td colname="1"><span class="codeph"> 204000  </span> </td> 
    <td colname="2"><span class="codeph"> BACKGROUND_MANIFEST_警告</span> </td> 
    <td colname="3"> <p>无 </p> </td> 
-   <td colname="4"><span class="codeph"> BACKGROUND_MANIFEST_WARNING_ERROR</span><span class="codeph"> BACKGROUND_MANIFEST_WARNING_NAME</span> 描述 <span class="codeph"></span> </td> 
+   <td colname="4"><span class="codeph"> BACKGROUND_MANIFEST_WARNING_</span> <span class="codeph"> ERRORBACKGROUND_MANIFEST_WARNING_</span> <span class="codeph"> NAMEDESCRIPTION</span> </td> 
    <td colname="5"> <p> 后台清单下载时出错。 更新后台清单时出现的任何问题将作为TVSDK警告进行调度，并且不会导致播放停止。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 204001 </span> </td> 
+   <td colname="1"><span class="codeph"> 204001  </span> </td> 
    <td colname="2"><span class="codeph"> INVALID_SEEK_警告</span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"><span class="codeph"> 说明</span> </td> 
@@ -82,17 +82,17 @@ ht-degree: 3%
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 210000 </span> </td> 
-   <td colname="2"><span class="codeph"> UNDEFINED_TIME_RANGES </span> </td> 
+   <td colname="1"><span class="codeph"> 210000  </span> </td> 
+   <td colname="2"><span class="codeph"> UNDEFINED_TIME_RANGES  </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"> 无 </td> 
    <td colname="5"> 广告信令模式被定义为自定义范围，但没有定义任何范围。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 210001 </span> </td> 
-   <td colname="2"><span class="codeph"> INVALID_TIME_RANGES </span> </td> 
+   <td colname="1"><span class="codeph"> 210001  </span> </td> 
+   <td colname="2"><span class="codeph"> INVALID_TIME_RANGES  </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
-   <td colname="4"><span class="codeph"> 说明 </span> </td> 
+   <td colname="4"><span class="codeph"> 说明  </span> </td> 
    <td colname="5"> <p> 一个或多个时间范围无效，将被忽略或修改。 </p> <p> DESCRIPTION是包含无效范围描述的字符串。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
@@ -103,52 +103,52 @@ ht-degree: 3%
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 270000 </span> </td> 
-   <td colname="2"><span class="codeph"> PLAYER_NOT_READY </span> </td> 
+   <td colname="1"><span class="codeph"> 270000  </span> </td> 
+   <td colname="2"><span class="codeph"> PLAYER_NOT_READY  </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
-   <td colname="4"><span class="codeph"> 说明 </span> </td> 
+   <td colname="4"><span class="codeph"> 说明  </span> </td> 
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 270001 </span> </td> 
-   <td colname="2"><span class="codeph"> AD_NOT_INSERTED </span> </td> 
+   <td colname="1"><span class="codeph"> 270001  </span> </td> 
+   <td colname="2"><span class="codeph"> AD_NOT_INSERTED  </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"> <p>无 </p> </td> 
    <td colname="5"> <p>未在流中插入AD。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 270002 </span> </td> 
-   <td colname="2"><span class="codeph"> AD_HLS_AUDIOONLY_MISSING </span> </td> 
-   <td colname="3"><span class="codeph"> AD_NOT_INSERTED </span> </td> 
+   <td colname="1"><span class="codeph"> 270002  </span> </td> 
+   <td colname="2"><span class="codeph"> AD_HLS_AUDIOONLY_MISSING  </span> </td> 
+   <td colname="3"><span class="codeph"> AD_NOT_INSERTED  </span> </td> 
    <td colname="4"> <p>无 </p> </td> 
    <td colname="5"> <p>广告不包含纯音频流 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 270003 </span> </td> 
-   <td colname="2"><span class="codeph"> AD_HLS_MATCHING_BITRATE_MISSING </span> </td> 
-   <td colname="3"><span class="codeph"> AD_NOT_INSERTED </span> </td> 
+   <td colname="1"><span class="codeph"> 270003  </span> </td> 
+   <td colname="2"><span class="codeph"> AD_HLS_MATCHING_BITRATE_MISSING  </span> </td> 
+   <td colname="3"><span class="codeph"> AD_NOT_INSERTED  </span> </td> 
    <td colname="4"> <p>无 </p> </td> 
    <td colname="5"> <p>找不到内容当前比特率的匹配广告流。 </p> <p>  </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 270005 </span> </td> 
-   <td colname="2"><span class="codeph"> AVASSET_FAILED_TO_CREATE </span> </td> 
-   <td colname="3"><span class="codeph"> PLAYBACK_ERROR </span> </td> 
+   <td colname="1"><span class="codeph"> 270005  </span> </td> 
+   <td colname="2"><span class="codeph"> AVASSET_FAILED_TO_CREATE  </span> </td> 
+   <td colname="3"><span class="codeph"> PLAYBACK_ERROR  </span> </td> 
    <td colname="4"> <p>无 </p> </td> 
    <td colname="5"> <p>创建AVAset时出错。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 270006 </span> </td> 
-   <td colname="2"><span class="codeph"> SITECATALYST_警告 </span> </td> 
+   <td colname="1"><span class="codeph"> 270006  </span> </td> 
+   <td colname="2"><span class="codeph"> SITECATALYST_警告  </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
-   <td colname="4"><span class="codeph"> 说明 </span> </td> 
+   <td colname="4"><span class="codeph"> 说明  </span> </td> 
    <td colname="5"> <p>警告：请参阅sitecatalyst警告说明。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 270007 </span> </td> 
-   <td colname="2"><span class="codeph"> NETWORK_ERROR </span> </td> 
+   <td colname="1"><span class="codeph"> 270007  </span> </td> 
+   <td colname="2"><span class="codeph"> NETWORK_ERROR  </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
-   <td colname="4"><span class="codeph"> URL </span> </td> 
+   <td colname="4"><span class="codeph"> URL  </span> </td> 
    <td colname="5"> <p>从网络获取数据时出错。 </p> </td> 
   </tr> 
  </tbody> 
@@ -156,6 +156,6 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->可通过PTAdAsset在通知元数据中使用密钥检索adID和源(URL) `AD_ASSET` 。
+>可以使用`AD_ASSET`键通过通知元数据中的PTAdAsset检索adID和源(URL)。
 >
->该属 [] 性指定通知的可选键。
+>[]属性指定通知的可选键。
