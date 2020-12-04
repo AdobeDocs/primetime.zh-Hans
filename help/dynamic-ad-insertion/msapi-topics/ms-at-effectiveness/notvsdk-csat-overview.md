@@ -1,34 +1,37 @@
 ---
-description: 出版商可以构建符合HLS标准的视频播放器，它们可以与Primetime清单服务器客户端广告跟踪工作流程结合使用。 实时流和视频点播(VOD)情况与清单服务器的接口略有不同。
-seo-description: 出版商可以构建符合HLS标准的视频播放器，它们可以与Primetime清单服务器客户端广告跟踪工作流程结合使用。 实时流和视频点播(VOD)情况与清单服务器的接口略有不同。
+description: 出版商可以构建符合HLS标准的视频播放器，它们可与Primetime清单服务器客户端广告跟踪工作流配合使用。 实时流和视频点播(VOD)情况与清单服务器的接口略有不同。
+seo-description: 出版商可以构建符合HLS标准的视频播放器，它们可与Primetime清单服务器客户端广告跟踪工作流配合使用。 实时流和视频点播(VOD)情况与清单服务器的接口略有不同。
 seo-title: 非TVSDK客户端跟踪概述
 title: 非TVSDK客户端跟踪概述
 uuid: fb23be01-3327-443d-82c4-fb0993e7fec1
 translation-type: tm+mt
 source-git-commit: 358c5b02d47f23a6adbc98e457e56c8220cae6e9
+workflow-type: tm+mt
+source-wordcount: '762'
+ht-degree: 0%
 
 ---
 
 
-# 非TVSDK客户端跟踪概述 {#overview-of-non-tvsdk-client-side-tracking}
+# 非TVSDK客户端跟踪{#overview-of-non-tvsdk-client-side-tracking}概述
 
-出版商可以构建符合HLS标准的视频播放器，它们可以与Primetime清单服务器客户端广告跟踪工作流程结合使用。 实时流和视频点播(VOD)情况与清单服务器的接口略有不同。
+出版商可以构建符合HLS标准的视频播放器，它们可与Primetime清单服务器客户端广告跟踪工作流配合使用。 实时流和视频点播(VOD)情况与清单服务器的接口略有不同。
 
-清单服务器提供了一个API，使自定义播放器能请求以下URL，这些URL可用于报告广告跟踪事件：
+清单服务器提供一个API，使自定义播放器能够请求以下URL，它们可以使用这些URL报告广告跟踪事件:
 
 * 广告印象
 * 广告四分位
 * 广告窗格进度
 * 内容窗格进度
 
-清单服务器API假定使用它的任何视频播放器都满足最低要求。 有关更 [多详细信息，请参阅视频播放器要求](../../msapi-topics/ms-player-req.md) 。
+清单服务器API假定使用它的任何视频播放器都满足最低要求。 有关详细信息，请参阅[视频播放器要求](../../msapi-topics/ms-player-req.md)。
 
-## 客户端跟踪工作流 {#section_cst_flow}
+## 客户端跟踪工作流{#section_cst_flow}
 
 ![](assets/pt_ssai_notvsdk_csat_ai-workflow.png)
 
 1. 播放器从发布者获取清单服务器URL。
-1. 播放器会附加特定于其广告插入要求的查询参数，并将HTTP GET请求发送到生成的Bootstrap URL。 引导URL的语法如下：
+1. 播放器附加特定于其广告插入要求的查询参数，并将HTTPGET请求发送到生成的BootstrapURL。 BootstrapURL的语法如下：
 
    ```
    http{s}://{manifest-server:port}/auditude/variant/{PublisherAssetID}/{urlSafeBase64({Content URL})}.m3u8?{query parameters}
@@ -39,7 +42,7 @@ source-git-commit: 358c5b02d47f23a6adbc98e457e56c8220cae6e9
    u=9a2893fd893cab27da24059ff034b78d&z=173475&pttrackingmode=simple&pttrackingversion=v2&__sid__=docExample02
    ```
 
-   该URL包括将命令发送到清单 [服务器中所述的元素](../../msapi-topics/ms-getting-started/ms-sending-cmd.md)。
+   URL包括[向清单服务器](../../msapi-topics/ms-getting-started/ms-sending-cmd.md)发送命令中描述的元素。
 
 1. 清单服务器为该播放器建立会话并生成唯一会话ID。 它创建一个新的变体M3U8播放列表URL，作为JSON响应将其返回给播放器。 JSON的语法如下：
 
@@ -54,8 +57,8 @@ source-git-commit: 358c5b02d47f23a6adbc98e457e56c8220cae6e9
    https://pcor3.manifest.auditude.com/auditude/variant/7LTc86_kMUDFcCjoH9X7K_2auwb_gnWM/f958bef8-9158-43cc-80b9-4b15417b7895/aHR0cDovL3B0ZGVtb3MuY29tL3ZpZGVvcy90b3NoZHVuZW5jcnlwdGVkL2hscy90ZXN0Mi5tM3U4.3u8?u=9a2893fd893cab27da24059ff034b78d&z=173475&pttrackingmode=simple&pttrackingversion=v2
    ```
 
-1. 播放器使用JSON响应中的URL从清单服务器请求新的变体M3U8主播放列表。
-1. 清单服务器返回一个新的变体M3U8，该变体包含具有类似于以下内容的语法的流级播放列表URL:
+1. 播放器使用JSON响应中的URL从清单服务器请求新的变体M3U8主控播放列表。
+1. 清单服务器返回一个新的变体M3U8，其中包含具有类似于以下内容的语法的流级播放列表URL:
 
    ```
    http{s}://{manifest-server:port}/auditude/{live|vod}/{PublisherAssetID}/
@@ -89,7 +92,7 @@ source-git-commit: 358c5b02d47f23a6adbc98e457e56c8220cae6e9
    https://pcor3.manifest.auditude.com/auditude/vod/7LTc86_kMUDFcCjoH9X7K_2auwb_gnWM/500/f958bef8-9158-43cc-80b9-4b15417b7895/aHR0cDovL3d3dy5wdGRlbW9zLmNvbS92aWRlb3MvdG9zaGR1bmVuY3J5cHRlZC9obHMvNTAwL3RvY181MDAubTN1OA.m3u8?u=9a2893fd893cab27da24059ff034b78d&z=173475&pttrackingmode=simple&pttrackingversion=v2
    ```
 
-1. 清单服务器返回包含指向内容和广告TS段链接的链接的流级清单。 例如：
+1. 清单服务器返回包含内容链接和广告TS段链接的流级清单。 例如：
 
    ```
       #EXTM3U
@@ -114,37 +117,37 @@ source-git-commit: 358c5b02d47f23a6adbc98e457e56c8220cae6e9
 
    >[!NOTE]
    >
-   >播放器选择流级播放列表URL以获得内容流。 清单服务器从CDN中检索原始播放列表。 某些编码器可能会将其他详细信息注 `#EXTINF` 入到标题属性中，例如：
+   >播放器选择流级播放列表URL以获得内容流。 清单服务器从CDN检索原始播放列表。 某些编码器可能会向`#EXTINF`标题属性注入其他详细信息，例如：
    >
    >
    ```
    >#EXTINF:6.006,LTC=2017-08-23T13:25:47+00:00
    >```
 
-   由于清单服务器无法推断出非标准属性的含义来修改它们以用于广告拼接播放列表，清单服务器删除除了该标签中的持续时间信息之外的所有附加属性。 有关更 [多详细信息](https://tools.ietf.org/html/rfc8216#section-4.3.2.1) ，请参阅HLS规范中的DIVOF条目。
+   由于清单服务器无法推断非标准属性的含义来修改它们以用于广告拼接播放列表，清单服务器删除除此标签中的持续时间信息之外的所有附加属性。 有关详细信息，请参阅HLS规范中的[DIVANCEF](https://tools.ietf.org/html/rfc8216#section-4.3.2.1)条目。
 
 
-1. 为了请求跟踪信息，播放器将查询参数与任何字母数字 `pttrackingposition` 值一起附加到流级播放列表URL中以获得所选的比特率。 例如：
+1. 要请求跟踪信息，播放器会将查询参数`pttrackingposition`与任何字母数字值一起附加到流级播放列表URL中以获取所选比特率。 例如：
 
    ```
    https://pcor3.manifest.auditude.com/auditude/vod/7LTc86_kMUDFcCjoH9X7K_2auwb_gnWM/500/f958bef8-9158-43cc-80b9-4b15417b7895/aHR0cDovL3d3dy5wdGRlbW9zLmNvbS92aWRlb3MvdG9zaGR1bmVuY3J5cHRlZC9obHMvNTAwL3RvY181MDAubTN1OA.m3u8?u=9a2893fd893cab27da24059ff034b78d
    &z=173475&pttrackingmode=simple&pttrackingversion=v2&pttrackingposition=1
    ```
 
-1. 清单服务器返回使用 [JSON](../../msapi-topics/ms-list-file-formats/notvsdk-csat-sidecar.md) 或 [](../../msapi-topics/ms-list-file-formats/notvsdk-csat-vmap.md) VMAP对象填充的播放列表文件，该对象包含当前请求的流级m3u8文件的广告跟踪数据。
+1. 清单服务器返回已填充[JSON](../../msapi-topics/ms-list-file-formats/notvsdk-csat-sidecar.md)或[VMAP](../../msapi-topics/ms-list-file-formats/notvsdk-csat-vmap.md)对象的播放列表文件，该对象包含当前请求的流级m3u8文件的广告跟踪数据。
 
    >[!NOTE]
    >
-   >如果广告插入当前请求的流级播放列表中，清单服务器将仅生成广告跟踪对象。 如果播放器播放的播放列表不包含插入的广告，则清单服务器为广告跟踪播放列表请求返回HTTP状态201。 如果播放器对未播放的流发出广告跟踪请求，则清单服务器将返回HTTP状态500。 例如，如果当前播放请求为500.m3u8，则清单服务器为广告跟踪请求返回500.m3u8中的JSON|VMAP。 但是，如果播放器随后切换流以播放800.m3u8，则500.m3u8中的广告跟踪信息将变为无效，导致404错误。
+   >如果广告插入当前请求的流级播放列表中，清单服务器将仅生成广告跟踪对象。 如果播放器播放的播放列表不包含插入的广告，则清单服务器为广告跟踪播放列表请求返回HTTP状态201。 如果播放器对未播放的流发出广告跟踪请求，清单服务器将返回HTTP状态500。 例如，如果当前播放请求为500.m3u8，则清单服务器为广告跟踪请求返回500.m3u8中的JSON|VMAP。 但是，如果播放器随后切换流以播放800.m3u8，则500.m3u8中的广告跟踪信息将变为无效，导致404错误。
 
    >[!NOTE]
    >
-   >清单服务器根据Bootstrap URL中的值生成 `pttrackingversion` 广告跟踪对象。 如果忽略 `pttrackingversion` 了该列表或该列表的值无效，则清单服务器将自动填充每个请求的流级播放列表中 `#EXT-X-MARKER` 标记中的广告跟踪信息。 有关更 [多详细信息，请参阅](../../msapi-topics/ms-at-effectiveness/ms-api-playlists.md)。
+   >清单服务器根据BootstrapURL中的`pttrackingversion`值生成广告跟踪对象。 如果`pttrackingversion`被省略或具有无效值，则清单服务器将自动填充每个请求的流级播放列表中`#EXT-X-MARKER`标记中的广告跟踪信息。 有关详细信息，请参阅[](../../msapi-topics/ms-at-effectiveness/ms-api-playlists.md)。
 
-1. 播放器在适当的时间请求每个广告跟踪事件的每个广告跟踪URL。
+1. 播放器会在适当的时间为每个广告跟踪事件请求每个广告跟踪URL。
 
 >[!NOTE]
 >
 >对于实时流，播放器必须重复步骤6到10，因为包装程序在实时事件的整个过程中不断更新播放列表。
 
-播放视频时，播放器必须跟踪播放头位置，并将此位置与从Primetime广告插入接收的跟踪URL结合使用。 跟踪URL按从播放开始的时间偏移进行分组。 对于每次时间偏移，每个广告系统都有一个URL，用于向其发送跟踪信息。 实时视频和视频点播格式的其他详细信息不同。
+播放视频时，播放器必须跟踪播放头位置，并将此位置与跟踪从Primetime广告插入接收的URL结合使用。 跟踪URL按从播放开始的时间偏移进行分组。 对于每次时间偏移，每个广告系统都有一个URL，用于发送跟踪信息。 实时视频和视频点播格式的其他详细信息有所不同。
