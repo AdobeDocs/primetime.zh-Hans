@@ -13,22 +13,22 @@ ht-degree: 1%
 ---
 
 
-# 使用定时元数据 {#use-timed-metadata}
+# 使用定时元数据{#use-timed-metadata}
 
 当当前播放时间与开始时间匹配时，可以使用TimedMetadata。
 
-要在播放时使 `TimedMetadata` 用这些保存的对象，请在调度 `ArrayList` 时从 [存储定时元数据对象中使用保存的对象](../../ad-insertion/custom-tags-configure/android-1.4-timed-metadata-store.md)。
+要在播放过程中使用这些保存的`TimedMetadata`对象，请使用保存的`ArrayList`来自[存储定时元数据对象，因为调度这些对象](../../ad-insertion/custom-tags-configure/android-1.4-timed-metadata-store.md)。
 
 1. 运行计时器并重复查询当前播放时间。
-1. 查找开始时间 `TimedMetadata` 与当前播放时间匹配的所有对象。
+1. 查找开始时间与当前播放时间匹配的所有`TimedMetadata`对象。
 
    您可以使用这些对象完成各种操作。
 
    >[!IMPORTANT]
    >
-   >检查当前播放时间是否与任何对象匹 `TimedMetadata` 配时，请 `shouldTriggerSubscribedTagEvent` 将其作为条件。
+   >检查当前播放时间是否与任何`TimedMetadata`对象匹配时，请将`shouldTriggerSubscribedTagEvent`作为条件。
 
-   时间轴可能会因各种广告行为而发生更改。 例如，一个或多个广告分段可能从其在时间轴上的原始位置移动 `shouldTriggerSubscribedTagEvent` ，但确 `TimeMetadata` 保对象的开始时间与当前播放时间匹配。
+   时间轴可能会因各种广告行为而发生更改。 例如，一个或多个广告中断可能从其在时间轴上的原始位置移动，但`shouldTriggerSubscribedTagEvent`确保`TimeMetadata`对象的开始时间与当前播放时间匹配。
 
    例如：
 
@@ -62,4 +62,4 @@ ht-degree: 1%
    _playbackClock.addClockEventListener(_playbackClockEventListener);
    ```
 
-1. 定期刷新列表 `TimedMetadata` 中的陈旧实例，以防止内存不断增长。
+1. 定期刷新列表中的陈旧`TimedMetadata`实例，以防止内存持续增长。
