@@ -13,9 +13,9 @@ pagecreatedat: en
 pagelayout: video
 sidecolumn: left
 translation-type: tm+mt
-source-git-commit: 6da7d597503d98875735c54e9a794f8171ad408b
+source-git-commit: 3efbd1113e82c4d5f84798997b6f744daf6f508e
 workflow-type: tm+mt
-source-wordcount: '2430'
+source-wordcount: '2437'
 ht-degree: 0%
 
 ---
@@ -309,7 +309,7 @@ Auditude 308008 0 cecebae72a919de350b9ac52602623f3 0 NA
 
 ### TRACE_WEBVTT_RESPONSE记录{#trace-webvtt-response-records}
 
-将``of ``此&lt;a1/>日志``type ````responses ``服务器``manifest ``记录到``clients ``中的``sends ```` `answer` ````requests ```for`字幕。 ``WEBVTT ``TRACE_WEBVTT_RESPONSE &quot;之外的字段以表中显示的顺序显示，以分隔的`by`选项卡。
+清单服务器响应`WEBVTT`字幕请求，向客户端发送此类型日志的记录。 超出`TRACE_WEBVTT_RESPONSE`的字段按表中显示的顺序显示，以选项卡分隔。
 
 | 字段 | 类型 | 说明 |
 |--- |--- |--- |
