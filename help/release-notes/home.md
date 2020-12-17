@@ -4,10 +4,10 @@ seo-title: Adobe Primetime发行说明
 description: 'null'
 seo-description: 'null'
 translation-type: tm+mt
-source-git-commit: 6e4d29f3fb85410943b960b179147b2fc2f1e7c4
+source-git-commit: 4790c8ab25ca6ecf118adf3037fc2e4e4f451cb3
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '280'
+ht-degree: 34%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## PTAI 20.12.1中的增强和修复
 
-此版本包含用于解决间歇性客户端连接问题的修补程序。
+该版本包含一个修补程序，用于解决间歇性客户端连接问题。
 
 ## TVSDK 3.12 Android中的修复
 
@@ -36,7 +36,7 @@ ht-degree: 0%
 
 | 用户指南 | 说明 |
 |--- |--- |
-| [Primetime 编程帮助](/help/programming/home.md) | 允许您学习在 Android 设备上使用 Java 以及在 iOS 设备上使用 Objective-C 开发应用程序和视频播放器。 |
+| [Primetime 编程帮助](/help/programming/home.md) | 让您可以学习在 Android 设备上使用 Java 以及在 iOS 设备上使用 Objective-C 开发应用程序和视频播放器。 |
 | [Primetime迁移和转化帮助](/help/migration-guides/home.md) | 解释从现有 Primetime TVSDK Suite 到下一代套件的转换和迁移流程。 |
 | [参考实施](/help/android-reference-implementation/home.md) | 帮助理解 TVSDK 并修改功能管理器以自定义您的个人播放器。 |
 | [Primetime API参考](/help/reference/api-references.md) | 提供有关 TVSDK 函数、数据结构和其他编程结构的详细信息。 |
