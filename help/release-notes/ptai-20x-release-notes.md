@@ -2,9 +2,9 @@
 title: PTAI 20.12.1发行说明
 description: PTAI发行说明描述了2020年PrimetimeAd Insertion的新增或变化、已解决和已知问题。
 translation-type: tm+mt
-source-git-commit: 6e4d29f3fb85410943b960b179147b2fc2f1e7c4
+source-git-commit: 4790c8ab25ca6ecf118adf3037fc2e4e4f451cb3
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1081'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ PrimetimeAd Insertion20.12.1发行说明描述了PrimetimeAd Insertion2020年的
 
 ### 先前发行版中的增强和修复
 
-#### 版本201.11.1
+#### 版本20.11.1
 
 **时间：** 2020年11月5日星期四东部时间凌晨2时至5时
 
@@ -32,7 +32,7 @@ PrimetimeAd Insertion20.12.1发行说明描述了PrimetimeAd Insertion2020年的
 
 * 维护更新。
 
-#### 版本201.10.2
+#### 版本20.10.2
 
 **时间：** 2020年10月29日星期四东部时间凌晨12时01分至6时
 
@@ -40,7 +40,7 @@ PrimetimeAd Insertion20.12.1发行说明描述了PrimetimeAd Insertion2020年的
 
 * 维护更新。
 
-#### 版本201.10.1
+#### 版本20.10.1
 
 **时间：** 2020年10月13日星期二东部时间凌晨03时至07时
 
