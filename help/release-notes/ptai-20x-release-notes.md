@@ -1,28 +1,52 @@
 ---
-title: PTAI 20.10.1发行说明
-description: PTAI 20.10.1发行说明描述了2020年PrimetimeAd Insertion的新增或变更、已解决和已知问题。
+title: PTAI 20.12.1发行说明
+description: PTAI发行说明描述了2020年PrimetimeAd Insertion的新增或变化、已解决和已知问题。
 translation-type: tm+mt
-source-git-commit: 7d74e526dbc4c9f623d1ec30e4bc70d9318a89f9
+source-git-commit: 6e4d29f3fb85410943b960b179147b2fc2f1e7c4
 workflow-type: tm+mt
-source-wordcount: '1027'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
 
 
-# PrimetimeAd Insertion20.10.1发行说明
+# PrimetimeAd Insertion20.12.1发行说明
 
-PrimetimeAd Insertion20.10.1发行说明描述了PrimetimeAd Insertion2020年的新增或变化、已解决和已知问题。
+PrimetimeAd Insertion20.12.1发行说明描述了PrimetimeAd Insertion2020年的新增或变化、已解决和已知问题。
 
-## PTAI 20.10.1的新增功能
+## PTAI 20.12.1的新增功能
+
+**时间：** 2020年12月08日星期二东部时间凌晨01时至4时
+
+**更改**
+
+* 包含用于解决2020年11月30日PrimetimeAd Insertion中间歇性客户端连接(5xx)问题的修补程序。
+
+### 先前发行版中的增强和修复
+
+#### 版本201.11.1
+
+**时间：** 2020年11月5日星期四东部时间凌晨2时至5时
+
+**更改**
+
+* 维护更新。
+
+#### 版本201.10.2
+
+**时间：** 2020年10月29日星期四东部时间凌晨12时01分至6时
+
+**更改**
+
+* 维护更新。
+
+#### 版本201.10.1
 
 **时间：** 2020年10月13日星期二东部时间凌晨03时至07时
 
 **更改**
 
 * 维护更新。
-
-### 先前发行版中的增强和修复
 
 #### 版本20.9.3
 
