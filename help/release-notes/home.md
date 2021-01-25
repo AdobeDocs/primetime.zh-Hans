@@ -4,9 +4,9 @@ seo-title: Adobe Primetime发行说明
 description: 'null'
 seo-description: 'null'
 translation-type: tm+mt
-source-git-commit: c17145da29d148f3dbfe1bcd1011acfa7177bc25
+source-git-commit: d1b79fb39c0f51b6e06653caaaaa491aef7129d7
 workflow-type: tm+mt
-source-wordcount: '280'
+source-wordcount: '279'
 ht-degree: 34%
 
 ---
@@ -16,9 +16,9 @@ ht-degree: 34%
 
 欢迎阅读Adobe Primetime发行说明。 左侧导航中列出的文档提供特定于发行版的信息、系统要求、限制、已修复问题和已知问题。
 
-## PTAI 21.1.1中的增强和修复
+## PTAI 21.1.2中的增强和修复
 
-该版本包括对联属机构的支持，这些机构提供基于SCTE35的提示格式。
+该版本包括PrimetimeAd Insertion后端内存缓存群集的升级。
 
 ## TVSDK 3.12 Android中的修复
 
