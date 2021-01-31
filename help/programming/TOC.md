@@ -3,11 +3,11 @@ cloud: experience-cloud
 product: adobe primetime
 audience: end-user
 user-guide-title: Primetime 编程帮助
-user-guide-description: 允许您学习在 Android 设备上使用 Java 以及在 iOS 设备上使用 Objective-C 开发应用程序和视频播放器。
+user-guide-description: 让您可以学习在 Android 设备上使用 Java 以及在 iOS 设备上使用 Objective-C 开发应用程序和视频播放器。
 translation-type: tm+mt
-source-git-commit: 02ac57d14cf5c4c2819d17413a9d3e9a31237715
+source-git-commit: aab96dcf5107be90534350156ee66a88de80613e
 workflow-type: tm+mt
-source-wordcount: '4327'
+source-wordcount: '4342'
 ht-degree: 0%
 
 ---
@@ -599,7 +599,7 @@ ht-degree: 0%
          + [初始化和配置视频分析](tvsdk-1.4-for-android/android-1.4-integrating-adobe-analytics/va-integration-overview/android-1.4-va-integrate-heartbeats.md)
          + [实现自定义元数据支持](tvsdk-1.4-for-android/android-1.4-integrating-adobe-analytics/va-integration-overview/android-1.4-va-custom-metadata.md)
          + [实施章节支持](tvsdk-1.4-for-android/android-1.4-integrating-adobe-analytics/va-integration-overview/android-1.4-va-chapter-support.md)
-         + [实施自定义时间更新](tvsdk-1.4-for-android/android-1.4-integrating-adobe-analytics/va-integration-overview/android-1.4-imp-cust-time-updates.md)
+         + [实施自定义时间更新](https://experienceleague.adobe.com/docs/primetime/programming/tvsdk-1-4-for-android/configure-user-interface/inserting-ads/android-1.4-imp-cust-time-updates.html?lang=en#tvsdk-1-4-for-android)
          + [在服务器端设置视频分析报告](tvsdk-1.4-for-android/android-1.4-integrating-adobe-analytics/va-integration-overview/android-1.4-va-server-side-set-up.md)
          + [访问视频分析报告](tvsdk-1.4-for-android/android-1.4-integrating-adobe-analytics/va-integration-overview/android-1.4-va-reports-access.md)
       + 内容保护{#content-protection}
