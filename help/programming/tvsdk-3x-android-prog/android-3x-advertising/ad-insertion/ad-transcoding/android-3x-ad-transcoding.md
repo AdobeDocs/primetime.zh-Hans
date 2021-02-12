@@ -5,9 +5,9 @@ seo-title: 使用Adobe创意重新打包服务(CRS)重新打包不兼容的广�
 title: 使用Adobe创意重新打包服务(CRS)重新打包不兼容的广告
 uuid: ef542d13-6d52-4429-8a1e-0af2df236f12
 translation-type: tm+mt
-source-git-commit: 5df9a8b98baaf1cd1803581d2b60c7ed4261a0e8
+source-git-commit: cecc559480b9b52c412fefff4361603d6f14caf7
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '353'
 ht-degree: 0%
 
 ---
@@ -35,8 +35,6 @@ ht-degree: 0%
 >
 
 
-
-有关CRS的详细信息，请参阅[创意包装服务(CRS)](../../../../../dynamic-ad-insertion/creative-repackaging-service/crs-overview.md)。
 
 ## 在TVSDK应用程序{#enable-crs-in-tvsdk-applications}中启用CRS
 
