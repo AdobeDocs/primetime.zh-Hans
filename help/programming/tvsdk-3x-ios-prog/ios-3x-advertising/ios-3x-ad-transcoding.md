@@ -5,9 +5,9 @@ seo-title: 使用AdobeCreative Repackaging Service重新打包不兼容的广告
 title: 使用AdobeCreative Repackaging Service重新打包不兼容的广告
 uuid: 56a2405d-b395-4fea-820d-343590be7c19
 translation-type: tm+mt
-source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+source-git-commit: cecc559480b9b52c412fefff4361603d6f14caf7
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '497'
 ht-degree: 0%
 
 ---
@@ -22,8 +22,6 @@ ht-degree: 0%
 当TVSDK首次遇到不兼容的广告时，播放器会忽略该广告并向创意重新打包服务(CRS)发出请求，该服务是Primetime广告插入后端的一部分，以将广告重新打包为兼容格式。 CRS尝试生成广告的多位速率M3U8再现，并将这些再现存储在Primetime内容投放网络(CDN)上。 下次TVSDK收到指向该广告的广告响应时，播放器将使用CDN中与HLS兼容的M3U8版本。
 
 要启用此可选功能，请与Adobe代表联系。
-
-有关CRS的详细信息，请参阅[创意包装服务(CRS)](../../../dynamic-ad-insertion/creative-repackaging-service/crs-overview.md)。
 
 ## 对CRS广告投放{#section_900FDDA5454143718F1EB4C9732C8E1C}的多个CDN支持
 
