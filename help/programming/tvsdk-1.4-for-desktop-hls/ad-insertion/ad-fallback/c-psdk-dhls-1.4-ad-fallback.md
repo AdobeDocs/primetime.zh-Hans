@@ -5,9 +5,9 @@ seo-title: VAST和VMAP广告的广告回退
 title: VAST和VMAP广告的广告回退
 uuid: 7b44abf9-50cf-4e39-b594-ceb52208a865
 translation-type: tm+mt
-source-git-commit: adef0bbd52ba043f625f38db69366c6d873c586d
+source-git-commit: cecc559480b9b52c412fefff4361603d6f14caf7
 workflow-type: tm+mt
-source-wordcount: '602'
+source-wordcount: '558'
 ht-degree: 0%
 
 ---
@@ -18,8 +18,6 @@ ht-degree: 0%
 对于启用回退规则的数字视频广告投放模板(VAST)广告（或创意）,TVSDK将无效媒体类型的广告视为空广告并尝试在其位置使用回退广告。 您可以配置回退行为的某些方面。
 
 VAST/数字视频多广告播放列表(VMAP)规范规定，对于启用VAST回退的广告，空广告会自动触发回退广告的使用。 当VAST广告为空时，TVSDK在回退广告中查找有效的HLS媒体类型替换。 当包装器中的VAST广告的媒体类型无效时，TVSDK将此广告视为空。 您可以配置TVSDK是否应对VMAP内嵌的广告执行相同操作。 有关VAST `fallbackOnNoAd`功能的详细信息，请参阅[数字视频广告投放模板(VAST)3.0](https://www.iab.net/guidelines/508676/digitalvideo/vsuite/vast)。
-
-Primetime广告插入后端保留一组优先级，使其能够在同一VAST/VMAP响应中选择不同的媒体类型。 您可以在[CRS](../../../../dynamic-ad-insertion/creative-repackaging-service/crs-overview.md)概述中进一步了解此优先级列表以及如何更改它。
 
 ## 定义VMAP内联广告{#define-fallback-ad-behavior-for-vmap-inline-ads}的回退广告行为
 
