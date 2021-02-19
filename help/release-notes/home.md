@@ -4,10 +4,10 @@ seo-title: Adobe Primetime发行说明
 description: 'null'
 seo-description: 'null'
 translation-type: tm+mt
-source-git-commit: ff723dd66ff4c576bf5c70f5fb061962d021e330
+source-git-commit: 0c0ef7249688137a67482eab902e9d188b4c661c
 workflow-type: tm+mt
-source-wordcount: '279'
-ht-degree: 34%
+source-wordcount: '297'
+ht-degree: 32%
 
 ---
 
@@ -16,19 +16,19 @@ ht-degree: 34%
 
 欢迎阅读Adobe Primetime发行说明。 左侧导航中列出的文档提供特定于发行版的信息、系统要求、限制、已修复问题和已知问题。
 
-## PTAI 21.2.1中的增强和修复
+## PTAI 21.2.2中的增强和修复
 
-该版本包括对DASH输出优化的支持：基于时间的节点整合。
+该版本包括对HLS流中EXT-X-IMAGE-STREAM-INF流插入/同步的支持。 此功能通过服务器端配置启用。 请联系您的技术客户代表以启用该功能。
 
 ## TVSDK 3.12 Android中的修复
 
-该版本侧重于将Primetime Reference应用程序的图形版本更新为5.6.4版。
+该版本侧重于将Primetime Reference应用程序的Gradle版本更新为5.6.4版。
 
-有关[Android](../release-notes/tvsdk-3x-android.md)的当前发布版本的详细信息，请查看。
+有关[Android](../release-notes/tvsdk-3x-android.md)的当前已发布版本的详细信息，请查看。
 
 ## TVSDK 3.12 iOS发行说明中的增强和修复
 
-该版本侧重于解决客户的主要问题。
+此版本侧重于解决客户的主要问题。
 
 有关[iOS](../release-notes/tvsdk-3x-ios.md)的当前已发布版本的详细信息，请查看。
 
@@ -44,7 +44,7 @@ ht-degree: 34%
 | [Primetime Ad Insertion 帮助](/help/primetime-ad-insertion/home.md) | 解释如何通过在服务器上插入面向用户的动态广告来从内容获利，以及如何通过个性化广告吸引受众。 |
 | [存档](https://helpx.adobe.com/primetime/archives.html) | 下载归档文档的PDF。 |
 
-## 实用资源
+## 有用资源
 
 * [了解Adobe Primetime](https://www.adobe.com/in/marketing/primetime.html)
 
@@ -52,6 +52,6 @@ ht-degree: 34%
 
 * [Primetime身份验证](https://tve.helpdocsonline.com/home)
 
-* [Adobe PrimetimeDRM论坛](https://forums.adobe.com/community/adobe_access)
+* [Adobe Primetime DRM论坛](https://forums.adobe.com/community/adobe_access)
 
 * [Adobe Primetime开发人员资源](https://www.adobe.com/devnet/primetime.html)
