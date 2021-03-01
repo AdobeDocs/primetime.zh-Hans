@@ -2,7 +2,7 @@
 cloud: experience-cloud
 product: primetime
 audience: end-user
-user-guide-title: Primetime 参考实施帮助
+user-guide-title: Primetime 引用实施帮助
 user-guide-description: 帮助理解 TVSDK 并修改功能管理器以自定义您的个人播放器。
 translation-type: tm+mt
 source-git-commit: 23a48208ac1d3625ae7d925ab6bfba8f2a980766
@@ -16,7 +16,7 @@ ht-degree: 7%
 # PSDK 1.4 for Android参考实施{#reference-implementation}
 
 + [Android参考实施概述](home.md)
-+ Primetime参考实现{#reference}
++ Primetime参考实施{#reference}
    + [如何使用Primetime参考实施](ref-implementation/how-to-use-ref-player.md)
    + [参考实现结构](ref-implementation/ref-player-structure.md)
    + 如何使用功能管理器{#feature-managers}
@@ -31,20 +31,20 @@ ht-degree: 7%
    + 浏览代码{#explore-code}
       + [PlayerFragment](set-up-dev-environment/exploring-code/player-fragment.md)
       + [功能管理器](set-up-dev-environment/exploring-code/about-psdk-feature-managers.md)
-      + [配置提供程序](set-up-dev-environment/exploring-code/config-provider.md)
-      + [设置活动](set-up-dev-environment/exploring-code/settings-activity.md)
+      + [ConfigProvider](set-up-dev-environment/exploring-code/config-provider.md)
+      + [SettingsActivity](set-up-dev-environment/exploring-code/settings-activity.md)
       + [目录格式](set-up-dev-environment/exploring-code/catalog-format.md)
       + [Primetime广告的JSON对象](set-up-dev-environment/exploring-code/json-pt-ads.md)
-      + [用于直接广告中断的JSON对象](set-up-dev-environment/exploring-code/json-direct-ad-breaks.md)
+      + [用于直接广告分段的JSON对象](set-up-dev-environment/exploring-code/json-direct-ad-breaks.md)
       + [自定义广告标记的JSON对象](set-up-dev-environment/exploring-code/json-custom-ad-markers.md)
       + [授权资源ID的JSON对象](set-up-dev-environment/exploring-code/json-entitlement-resource-id.md)
-      + [示例JSON源格式](set-up-dev-environment/exploring-code/example-json-feed-format.md)
+      + [JSON源格式示例](set-up-dev-environment/exploring-code/example-json-feed-format.md)
    + 实现视频播放{#implement-video}
       + [视频播放的基本操作](implement-video-playback/video-playback.md)
-      + [启用视频回放](implement-video-playback/enable-video-playback.md)
+      + [启用视频播放](implement-video-playback/enable-video-playback.md)
       + [DRM内容保护](implement-video-playback/content-protection.md)
-   + [多比特率](implement-video-playback/mbr.md)
-   + 设置播放器以播放广告{#dvr}
+   + [多位速率](implement-video-playback/mbr.md)
+   + 设置播放器，用于播放广告{#dvr}的DVR
       + [无广告插入的DVR](implement-video-playback/dvr/dvr-without-ad-insertion.md)
       + [带广告插入的DVR](implement-video-playback/dvr/dvr-with-ad-insertion.md)
       + [为DVR选择自定义起点](implement-video-playback/dvr/dvr-custom-start-point.md)
