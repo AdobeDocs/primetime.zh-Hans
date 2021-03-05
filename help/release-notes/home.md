@@ -4,10 +4,10 @@ seo-title: Adobe Primetime发行说明
 description: 'null'
 seo-description: 'null'
 translation-type: tm+mt
-source-git-commit: 0c0ef7249688137a67482eab902e9d188b4c661c
+source-git-commit: a42c5b4478967822c920d96b05d5f04a6dec8c25
 workflow-type: tm+mt
-source-wordcount: '297'
-ht-degree: 32%
+source-wordcount: '345'
+ht-degree: 27%
 
 ---
 
@@ -20,11 +20,13 @@ ht-degree: 32%
 
 该版本包括对HLS流中EXT-X-IMAGE-STREAM-INF流插入/同步的支持。 此功能通过服务器端配置启用。 请联系您的技术客户代表以启用该功能。
 
-## TVSDK 3.12 Android中的修复
+## TVSDK 3.13 Android中的修复
 
-该版本侧重于将Primetime Reference应用程序的Gradle版本更新为5.6.4版。
+此版本为解决FireTV设备(包括Fire TV第3代Sunte和Fire TV 多维数据集第1代和第2代设备)上Widevine DRM流冻结或显示ABR开关上的黑帧的问题提供了解决方法。
 
-有关[Android](../release-notes/tvsdk-3x-android.md)的当前已发布版本的详细信息，请查看。
+要解决此问题，请在启动播放之前为指定的Fire TV设备设置API `MediaPlayer.flushVideoDecoderOnHeaderChange(true)`。 默认值为false。
+
+有关详细信息，请参阅[TVSDK for Android发行说明](../release-notes/tvsdk-3x-android.md)。
 
 ## TVSDK 3.12 iOS发行说明中的增强和修复
 
