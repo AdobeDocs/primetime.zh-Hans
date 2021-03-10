@@ -1,13 +1,10 @@
 ---
 description: 浏览器TVSDK当前支持播放清单和片段不包含扩展的流。
-seo-description: 浏览器TVSDK当前支持播放清单和片段不包含扩展的流。
-seo-title: 无扩展流
 title: 无扩展流
-uuid: c69ba62b-a940-4211-920d-2e559849fd6d
 translation-type: tm+mt
-source-git-commit: 7e8df034035fe465fbe403949ef828e7811ced2e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '167'
+source-wordcount: '149'
 ht-degree: 0%
 
 ---
@@ -19,7 +16,7 @@ ht-degree: 0%
 
 ## 片段级别{#section_0E035129501D4A77BBC14192D8A53A86}
 
-浏览器TVSDK解析响应的前几个字节以检测无扩展片段的内容类型。 如果未检测到有效的内容类型，浏览器TVSDK将抛出错误。
+浏览器TVSDK解析响应的前几个字节以检测无扩展片段的内容类型。 如果未检测到有效的内容类型，则浏览器TVSDK将引发错误。
 
 ## 清单级别{#section_AAD9EBAC883D4CC3A0133A45B555EECF}
 
@@ -38,7 +35,7 @@ var playerWrapper = ptp.videoPlayer('.videoDiv', {
 }); 
 ```
 
-如果未提供`resourceType`，则UI框架将根据资源URL扩展确定资源类型，然后将该资源类型传递给`replaceCurrentResource`方法。
+如果未提供`resourceType`，则UI Framework会根据资源URL扩展确定资源类型，然后将该资源类型传递给`replaceCurrentResource`方法。
 
 >[!TIP]
 >
