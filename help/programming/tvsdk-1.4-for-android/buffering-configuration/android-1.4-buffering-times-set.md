@@ -1,13 +1,10 @@
 ---
 description: 为了提供更流畅的查看体验，TVSDK有时会缓冲视频流。 您可以配置播放器缓冲的方式。
-seo-description: 为了提供更流畅的查看体验，TVSDK有时会缓冲视频流。 您可以配置播放器缓冲的方式。
-seo-title: 设置缓冲时间
 title: 设置缓冲时间
-uuid: 5a3945a4-1935-4797-b19d-84989850a487
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '334'
+source-wordcount: '311'
 ht-degree: 0%
 
 ---
@@ -17,17 +14,17 @@ ht-degree: 0%
 
 为了提供更流畅的查看体验，TVSDK有时会缓冲视频流。 您可以配置播放器缓冲的方式。
 
-TVSDK定义至少30秒的播放缓冲长度，以及在媒体开始播放之前至少2秒的初始缓冲时间。 在应用程序调用`play`但在播放开始之前，TVSDK会将媒体缓冲到初始时间，以在实际开始播放时提供平滑开始。
+TVSDK定义至少30秒的播放缓冲长度和至少2秒的初始缓冲时间，在播放媒体开始之前，该时间内的初始缓冲时间。 在应用程序调用`play`但在播放开始之前，TVSDK会将媒体缓冲到初始时间，以在实际开始播放时提供平滑开始。
 
 您可以通过定义新的缓冲策略来更改缓冲时间，也可以通过使用即时启动来更改初始缓冲的时间。
 
 ## 设置缓冲时间{#set-buffering-times}
 
-`MediaPlayer`提供设置和获取初始缓冲时间和回放缓冲时间的方法。
+`MediaPlayer`提供了设置和获取初始缓冲时间和回放缓冲时间的方法。
 
 >[!TIP]
 >
->如果在开始播放之前未设置缓冲区控制参数，媒体播放器将初始缓冲区默认为2秒，当前播放缓冲区时间默认为30秒。
+>如果在开始播放之前未设置缓冲区控制参数，则媒体播放器默认初始缓冲区为2秒，当前播放缓冲区时间为30秒。
 
 1. 设置`BufferControlParameters`对象，该对象封装初始缓冲时间和播放缓冲时间控制参数：
 
@@ -40,7 +37,7 @@ TVSDK定义至少30秒的播放缓冲长度，以及在媒体开始播放之前�
           long bufferTime)
       ```
 
-   * 要同时设置初始和播放缓冲时间：
+   * 设置初始和播放缓冲时间：
 
       ```java
       public static BufferControlParameters createDual( 
@@ -48,7 +45,7 @@ TVSDK定义至少30秒的播放缓冲长度，以及在媒体开始播放之前�
           long bufferTime)
       ```
 
-      如果参数无效，则这些方法将抛出`IllegalArgumentException`，例如：
+      如果参数无效，则这些方法将引发`IllegalArgumentException`，例如：
 
    * 初始缓冲时间小于零。
    * 初始缓冲时间大于缓冲时间。
