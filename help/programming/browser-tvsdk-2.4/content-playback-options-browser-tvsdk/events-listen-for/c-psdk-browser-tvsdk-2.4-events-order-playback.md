@@ -1,13 +1,10 @@
 ---
-description: 浏览器TVSDK按一般预期序列发送事件/通知。 您的播放器可以根据预期序列中的事件执行操作。
-seo-description: 浏览器TVSDK按一般预期序列发送事件/通知。 您的播放器可以根据预期序列中的事件执行操作。
-seo-title: 播放事件的顺序
-title: 播放事件的顺序
-uuid: 259a9a2d-3d28-4240-b392-cc81f5c3f0cf
+description: 浏览器TVSDK按通常预期的序列调度事件/通知。 您的播放器可以根据预期序列中的事件来实施操作。
+title: 播放事件
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '121'
+source-wordcount: '96'
 ht-degree: 0%
 
 ---
@@ -15,29 +12,29 @@ ht-degree: 0%
 
 # 播放事件的顺序{#order-of-playback-events}
 
-浏览器TVSDK按一般预期序列发送事件/通知。 您的播放器可以根据预期序列中的事件执行操作。
+浏览器TVSDK按通常预期的序列调度事件/通知。 您的播放器可以根据预期序列中的事件来实施操作。
 
 <!--<a id="section_D247A5873A854A079EFA6AC2E80AB894"></a>-->
 
 以下示例显示了包含播放事件的某些事件的顺序。
 
-* 成功通过`replaceCurrentResource`加载媒体资源时，事件的顺序为：
+* 通过`replaceCurrentResource`成功加载媒体资源时，事件的顺序为：
 
-   * `AdobePSDK.MediaPlayerStatusChangeEvent` 与  `event.status =`
+   * `AdobePSDK.MediaPlayerStatusChangeEvent` with  `event.status =`
 
       * `MediaPlayerStatus.INITIALIZING`
       * `MediaPlayerStatus.INITIALIZED`
 
-* 通过`MediaPlayer.prepareToPlay`准备回放时，事件的顺序为：
+* 当通过`MediaPlayer.prepareToPlay`准备播放时，事件的顺序为：
 
-   * `AdobePSDK.MediaPlayerStatusChangeEvent` 与  `event.status =`
+   * `AdobePSDK.MediaPlayerStatusChangeEvent` with  `event.status =`
 
       * `MediaPlayerStatus.PREPARING`
       * `MediaPlayerStatus.PREPARED`
 
 <!--<a id="section_76C13548AF934868B70757CA5489E516"></a>-->
 
-以下示例显示了事件的典型进度：
+以下示例显示了典型的事件进度：
 
 ```js
 player.addEventListener(AdobePSDK.PSDKEventType.STATUS_CHANGED,  
