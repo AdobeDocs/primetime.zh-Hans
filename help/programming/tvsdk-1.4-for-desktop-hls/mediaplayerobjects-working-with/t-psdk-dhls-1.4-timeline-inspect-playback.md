@@ -1,21 +1,18 @@
 ---
-description: 您可以获取与TVSDK正在播放的当前选定项目关联的时间轴的描述。 当应用程序显示自定义拖拽栏控件时，此控件最有用，在该控件中可识别与广告内容对应的内容部分。
-seo-description: 您可以获取与TVSDK正在播放的当前选定项目关联的时间轴的描述。 当应用程序显示自定义拖拽栏控件时，此控件最有用，在该控件中可识别与广告内容对应的内容部分。
-seo-title: Inspect播放时间轴
+description: 您可以获取与TVSDK正在播放的当前选定项目相关联的时间轴的描述。 当应用程序显示自定义划动栏控件时，此选项最有用。
 title: Inspect播放时间轴
-uuid: 2f903493-2d88-4af2-ac71-36300b49735b
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '251'
+source-wordcount: '205'
 ht-degree: 0%
 
 ---
 
 
-# Inspect播放时间线{#inspect-the-playback-timeline}
+# Inspect播放时间轴{#inspect-the-playback-timeline}
 
-您可以获取与TVSDK正在播放的当前选定项目关联的时间轴的描述。 当应用程序显示自定义拖拽栏控件时，此控件最有用，在该控件中可识别与广告内容对应的内容部分。
+您可以获取与TVSDK正在播放的当前选定项目相关联的时间轴的描述。 当应用程序显示自定义划动栏控件时，此选项最有用。
 
 下面是一个示例实现，如下面的屏幕截图所示。
 <!--<a id="fig_6D9FB3764F3947A38B8E7726187BD461"></a>-->
@@ -24,9 +21,9 @@ ht-degree: 0%
 
 1. 使用`get`方法访问`MediaPlayer`中的`Timeline`对象。
 
-   `Timeline`类封装与与`MediaPlayer`实例当前加载的媒体项相关的时间线内容相关的信息。 `Timeline`类提供对基础时间轴的只读视图的访问。 `Timeline`类提供getter方法，用于获取所有已放置的`TimelineMarker`对象。
+   `Timeline`类封装与时间轴内容相关的信息，该时间轴内容与当前由`MediaPlayer`实例加载的媒体项关联。 `Timeline`类提供对基础时间轴的只读视图的访问。 `Timeline`类提供用于获取所有已放置`TimelineMarker`对象的getter方法。
 
-1. 对`TimelineMarkers`的列表进行迭代，并使用返回的信息来实现时间轴。
+1. 遍历`TimelineMarkers`的列表，并使用返回的信息来实现时间轴。
 
        “TimelineMarker”对象包含两条信息：
    
