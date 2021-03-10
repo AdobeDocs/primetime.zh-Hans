@@ -1,23 +1,20 @@
 ---
 description: 创建视频分析管理器
-seo-description: 创建视频分析管理器
-seo-title: 创建视频分析管理器
 title: 创建视频分析管理器
-uuid: d72e1dfe-df70-47cc-9e00-bd09017d6127
 translation-type: tm+mt
-source-git-commit: 31b6cad26bcc393d731080a70eff1c59551f1c8e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '118'
+source-wordcount: '108'
 ht-degree: 0%
 
 ---
 
 
-# 创建视频分析管理器{#create-the-video-analytics-manager}
+# 创建Video Analytics Manager {#create-the-video-analytics-manager}
 
-新的管理器类(`VAManager`)已添加到Android参考实现。 `VAManager` 只需创建并销毁类的实 `VideoHeartbeat` 例。当创建新的`MediaPlayer`时，引用实现会创建一个`VAManager`实例，并在`MediaPlayer`被破坏时销毁该实例。 这在`PlayerFragment.java`中实现。
+新的管理器类(`VAManager`)已添加到Android Reference Implementation。 `VAManager` 简单地创建和销毁类的实 `VideoHeartbeat` 例。引用实现在创建新`MediaPlayer`时创建`VAManager`实例，并在`MediaPlayer`被破坏时销毁该实例。 这在`PlayerFragment.java`中实现。
 
-## 创建新的视频分析管理器
+## 要创建新的Video Analytics Manager
 
 ```java
 VAManager vaManager = ManagerFactory.getVAManager(true, config, mediaPlayer);  
@@ -28,5 +25,5 @@ config变量是`IVAConfig`的具体实现，包含运行时`VideoHeartbeat`配�
 
 >[!NOTE]
 >
->如果Android应用程序未配置Adobe Analytics帐户，则不会生成视频跟踪数据，即使创建并启用了`VAManager`的实例也是如此。
+>如果Android应用程序未配置Adobe Analytics帐户，则不会生成视频跟踪数据，即使已创建并启用`VAManager`实例也是如此。
 
