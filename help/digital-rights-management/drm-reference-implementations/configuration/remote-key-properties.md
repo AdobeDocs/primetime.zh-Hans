@@ -1,13 +1,11 @@
 ---
-description: 'null'
-seo-description: 'null'
-seo-title: 远程密钥投放属性(iOS)
 title: 远程密钥投放属性(iOS)
-uuid: 17e1b756-d106-47a7-99ae-641190693870
+description: 远程密钥投放属性(iOS)
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 7e8df034035fe465fbe403949ef828e7811ced2e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '115'
+source-wordcount: '113'
 ht-degree: 0%
 
 ---
@@ -15,7 +13,7 @@ ht-degree: 0%
 
 # 远程密钥投放属性(iOS){#remote-key-delivery-properties-ios}
 
-要支持为Adobe PrimetimeDRM中的iOS客户端生成远程密钥投放的许可证，必须在`flashaccess-refimpl.properties`文件中指定密钥服务器证书。
+要支持为Adobe Primetime DRM中的iOS客户端生成远程密钥投放的许可证，必须在`flashaccess-refimpl.properties`文件中指定密钥服务器证书。
 
 Primetime DRM中已添加以下属性：
 
