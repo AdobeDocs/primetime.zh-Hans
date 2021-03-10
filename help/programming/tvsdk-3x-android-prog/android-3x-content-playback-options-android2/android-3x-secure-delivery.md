@@ -1,20 +1,18 @@
 ---
 description: TVSDK引入了通过HTTPS的安全投放。
-seo-description: TVSDK引入了通过HTTPS的安全投放。
-seo-title: 通过HTTPS安全投放
-title: 通过HTTPS安全投放
+title: 通过HTTPS保护投放
 translation-type: tm+mt
-source-git-commit: 4a2271fc481b37bb0a437091de6efe98fcb348d9
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '91'
+source-wordcount: '81'
 ht-degree: 0%
 
 ---
 
 
-# 通过HTTPS{#secure-delivery-https}安全投放
+# 通过HTTPS {#secure-delivery-https}保护投放
 
-Adobe PrimetimeTVSDK为来自TVSDK的所有呼叫提供HTTPS投放支持，这些呼叫包括
+Adobe Primetime TVSDK为来自TVSDK的所有调用提供HTTPS投放支持，这些调用包括
 
 * Auditude Ad Server调用
 * CRS请求
