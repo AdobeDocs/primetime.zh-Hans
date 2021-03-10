@@ -1,13 +1,10 @@
 ---
-description: 由Adobe PrimetimeDRM服务器为受保护流应用程序生成的日志文件位于LicenseServer.LogRoot指定的目录中。
-seo-description: 由Adobe PrimetimeDRM服务器为受保护流应用程序生成的日志文件位于LicenseServer.LogRoot指定的目录中。
-seo-title: 日志文件
+description: 由Adobe Primetime DRM服务器为受保护流应用程序生成的日志文件位于由LicenseServer.LogRoot指定的目录中。
 title: 日志文件
-uuid: 4498fe60-65af-4f99-8f9b-e85013d0c9e9
 translation-type: tm+mt
-source-git-commit: d2b8cb67c54fadb8e0e7d2bdc15e393fdce8550e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '210'
+source-wordcount: '186'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 日志文件{#log-files}
 
-由Adobe PrimetimeDRM服务器为受保护流应用程序生成的日志文件位于LicenseServer.LogRoot指定的目录中。
+由Adobe Primetime DRM服务器为受保护流应用程序生成的日志文件位于由LicenseServer.LogRoot指定的目录中。
 
 >[!NOTE]
 >
@@ -42,7 +39,7 @@ ht-degree: 0%
 
 ## 全局日志文件{#section_1CFA90748142439C9F3BE380969539DA}
 
-全局日志文件`flashaccess-global.log`位于&#x200B;*LicenseServer.LogRoot*&#x200B;中。 日志可能包括在服务器初始化期间Adobe PrimetimeDRM Java SDK或日志消息可能生成的日志消息。
+全局日志文件`flashaccess-global.log`位于&#x200B;*LicenseServer.LogRoot*&#x200B;中。 日志可能包括在服务器初始化期间Adobe Primetime DRM Java SDK或日志消息可能已生成的日志消息。
 
 ## 分区日志文件{#section_5660137CD6AA40519E72A4315534846B}
 
