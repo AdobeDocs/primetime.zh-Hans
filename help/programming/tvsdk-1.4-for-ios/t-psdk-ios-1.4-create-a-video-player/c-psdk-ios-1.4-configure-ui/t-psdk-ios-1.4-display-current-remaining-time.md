@@ -1,13 +1,10 @@
 ---
 description: 您可以显示正在播放的内容的当前时间和剩余时间。
-seo-description: 您可以显示正在播放的内容的当前时间和剩余时间。
-seo-title: 显示当前时间和剩余时间
 title: 显示当前时间和剩余时间
-uuid: 800996ff-afc0-4e17-9d70-5ec1e1fcfdc7
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '106'
+source-wordcount: '84'
 ht-degree: 0%
 
 ---
