@@ -1,13 +1,11 @@
 ---
-description: 'null'
-seo-description: 'null'
-seo-title: 在服务器端设置视频分析报告
 title: 在服务器端设置视频分析报告
-uuid: f9aa5ba4-82a3-4e1f-9c33-70eb4bdf9483
+description: 在服务器端设置视频分析报告
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '109'
+source-wordcount: '107'
 ht-degree: 0%
 
 ---
@@ -15,7 +13,7 @@ ht-degree: 0%
 
 # 在服务器端设置视频分析报告{#set-up-video-analytics-reporting-on-the-server-side}
 
-您的Adobe代表将处理Adobe Analytics报告服务器端设置的大多数方面。 有关详细信息，请参阅[Analytics帮助和参考——报告套件管理器](https://microsite.omniture.com/t2/help/en_US/reference/#Report_Suite_Manager)。
+您的Adobe代表将处理Adobe Analytics 报告的服务器端设置的大部分方面。 有关详细信息，请参阅[Analytics帮助和参考 — 报表包管理器](https://microsite.omniture.com/t2/help/en_US/reference/#Report_Suite_Manager)。
 1. 要启用报表包ID(RSID)的转换级别，请执行以下操作：
    1. 访问&#x200B;**[!UICONTROL Admin Tools]**。
    1. 选择&#x200B;**[!UICONTROL Report Suites]**。
