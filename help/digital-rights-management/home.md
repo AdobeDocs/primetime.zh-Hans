@@ -1,20 +1,19 @@
 ---
 title: Primetime Digital Rights Management 帮助
-seo-title: AdobeDigital Rights Management帮助
-description: 'null'
-seo-description: 'null'
+description: Primetime Digital Rights Management 帮助
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 242b5a2875ebc0e0020296ce9489dd54438b5ad0
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '213'
-ht-degree: 51%
+source-wordcount: '211'
+ht-degree: 54%
 
 ---
 
 
 # PrimetimeDigital Rights Management(DRM)帮助
 
-欢迎来到Digital Rights Management帮Adobe Primetime。 左侧导航中列出的文档是分发数字内容的主要推动因素。
+欢迎使用Adobe Primetime的Digital Rights Management帮助。 左侧导航中列出的文档是分发数字内容的关键启用程序。
 
 ## 另请参阅
 
@@ -28,7 +27,7 @@ ht-degree: 51%
 | [Primetime API参考](/help/reference/api-references.md) | 提供有关 TVSDK 函数、数据结构和其他编程结构的详细信息。 |
 | [存档](https://helpx.adobe.com/primetime/archives.html) | 下载归档文档的PDF。 |
 
-## 实用资源
+## 有用资源
 
 * [了解Adobe Primetime](https://www.adobe.com/in/marketing/primetime.html)
 
@@ -36,6 +35,6 @@ ht-degree: 51%
 
 * [Primetime身份验证](https://tve.helpdocsonline.com/home)
 
-* [Adobe PrimetimeDRM论坛](https://forums.adobe.com/community/adobe_access)
+* [Adobe Primetime DRM论坛](https://forums.adobe.com/community/adobe_access)
 
 * [Adobe Primetime开发人员资源](https://www.adobe.com/devnet/primetime.html)
