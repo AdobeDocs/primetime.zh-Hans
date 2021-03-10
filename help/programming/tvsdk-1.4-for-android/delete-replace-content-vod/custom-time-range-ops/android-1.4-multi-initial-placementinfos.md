@@ -1,19 +1,16 @@
 ---
 description: TVSDK可以设置多个初始PlacementInformation。
-seo-description: TVSDK可以设置多个初始PlacementInformation。
-seo-title: 多初始放置信息
-title: 多初始放置信息
-uuid: e0f549d7-3092-45e9-bd67-ee41d01075b5
+title: 多个初始位置信息
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '30'
+source-wordcount: '20'
 ht-degree: 0%
 
 ---
 
 
-# 多个初始位置信息{#multiple-initial-placementinformations}
+# 多个初始PlacementInformations{#multiple-initial-placementinformations}
 
 TVSDK可以设置多个初始PlacementInformation。
 
