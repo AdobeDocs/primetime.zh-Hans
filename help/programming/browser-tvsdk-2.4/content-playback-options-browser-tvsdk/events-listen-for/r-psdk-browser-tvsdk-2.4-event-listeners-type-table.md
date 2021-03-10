@@ -1,13 +1,10 @@
 ---
-description: 当您使用浏览器TVSDK注册事件监听器时，您指定要监听的事件类型和回调的名称。 发生事件时，Browser TVSDK将调用您的回调并将相应类型的事件对象传递给它。
-seo-description: 当您使用浏览器TVSDK注册事件监听器时，您指定要监听的事件类型和回调的名称。 发生事件时，Browser TVSDK将调用您的回调并将相应类型的事件对象传递给它。
-seo-title: 事件类型和回调类
+description: 使用Browser TVSDK注册事件监听器时，您指定要侦听的事件类型和回调的名称。 发生事件时，Browser TVSDK将调用您的回调并将相应类型的事件对象传递给它。
 title: 事件类型和回调类
-uuid: 13d7e939-ff45-4a52-bcbe-70abb56ac205
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '206'
 ht-degree: 0%
 
 ---
@@ -15,13 +12,13 @@ ht-degree: 0%
 
 # 回调的事件类型和类{#event-types-and-classes-for-callbacks}
 
-当您使用浏览器TVSDK注册事件监听器时，您指定要监听的事件类型和回调的名称。 发生事件时，Browser TVSDK将调用您的回调并将相应类型的事件对象传递给它。
+使用Browser TVSDK注册事件监听器时，您指定要侦听的事件类型和回调的名称。 发生事件时，Browser TVSDK将调用您的回调并将相应类型的事件对象传递给它。
 
 <table frame="all" colsep="1" rowsep="1" id="table_FE58AD65AF3B4483816C00D7EAD2FB4F"> 
  <thead> 
   <tr rowsep="1"> 
    <th colname="2" class="entry"> 当您侦听此事件名称(AdobePSDK.EventType)时 </th> 
-   <th class="entry">phrases/browser-tvsdk-name将事件传递给此对象类型的回调(<span class="codeph"> ADOBEPSDK.事件</span>) </th> 
+   <th class="entry">phrases/browser-tvsdk-name将事件传递到此对象类型的回调(<span class="codeph"> ADOBEPSDK.事件</span>) </th> 
   </tr> 
  </thead>
  <tbody> 
@@ -39,7 +36,7 @@ ht-degree: 0%
     <ul id="ul_jpq_pc4_2y"> 
      <li id="li_782365D715684DDC835E16D08CC0BBDB"><span class="codeph"> AD_BREAK_STARTED</span> </li> 
      <li id="li_78D7EAEE99D04A35AD7C6EC60DDDC1CC"><span class="codeph"> AD_BREAK_COMPLETED</span> </li> 
-     <li id="li_6155ADAF5E964C458E92AFFB4F7D6347"><span class="codeph"> AD_BREAK_BRICKPED</span> </li> 
+     <li id="li_6155ADAF5E964C458E92AFFB4F7D6347"><span class="codeph"> AD_BREAK_BRIPPED</span> </li> 
     </ul> </td> 
    <td><span class="codeph"> AdBreakPlaybackEvent</span> </td> 
   </tr> 
@@ -80,11 +77,11 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"><span class="codeph"> OPERATION_FAILED</span> </td> 
-   <td><span class="codeph"> 通知事件</span> </td> 
+   <td><span class="codeph"> NotificationEvent</span> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"><span class="codeph"> RESERVATION_REACHED</span> </td> 
-   <td><span class="codeph"> 保留事件</span> </td> 
+   <td><span class="codeph"> ReservationEvent</span> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> 
@@ -95,7 +92,7 @@ ht-degree: 0%
    <td><span class="codeph"> PlaybackRateEvent</span> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"><span class="codeph"> 用户档案_已更改</span> </td> 
+   <td colname="2"><span class="codeph"> 用户档案_CHANGED</span> </td> 
    <td><span class="codeph"> ProfileEvent</span> </td> 
   </tr> 
   <tr rowsep="1"> 
@@ -125,7 +122,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"><span class="codeph"> TIMELINE_UPDATED</span> </td> 
-   <td><span class="codeph"> 时间轴事件</span> </td> 
+   <td><span class="codeph"> TimelineEvent</span> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"><span class="codeph"> PLAYBACK_RANGE_UPDATED</span> </td> 
