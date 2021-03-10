@@ -1,23 +1,20 @@
 ---
 description: 您可以使用Primetime Player API自定义播放器的行为。 这些类描述您的媒体播放器及其资源。
-seo-description: 您可以使用Primetime Player API自定义播放器的行为。 这些类描述您的媒体播放器及其资源。
-seo-title: 媒体类
-title: 媒体类
-uuid: f43d6968-cb08-4a8e-aebd-7934763df680
+title: Mediacore类
 translation-type: tm+mt
-source-git-commit: adef0bbd52ba043f625f38db69366c6d873c586d
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '692'
+source-wordcount: '667'
 ht-degree: 0%
 
 ---
 
 
-# 媒体类{#mediacore-classes}
+# Mediacore类{#mediacore-classes}
 
 您可以使用Primetime Player API自定义播放器的行为。 这些类描述您的媒体播放器及其资源。
 
-要查看TVSDK的完整API文档，请转至[Adobe PrimetimeAPI引用](https://help.adobe.com/en_US/primetime/api/index.html)。
+要查看TVSDK的完整API文档，请转至[Adobe Primetime API引用](https://help.adobe.com/en_US/primetime/api/index.html)。
 
 这些类描述您的媒体播放器及其资源。
 包：[com.adobe.mediacore](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/package-detail.html)
@@ -44,11 +41,11 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/ClosedCaptionsVisibility.html" format="html" scope="external"> ClosedCaptionsVisibility</a></span> </td> 
-   <td colname="2"> 控制隐藏式字幕是否可见的类。 </td> 
+   <td colname="2"> 控制隐藏字幕是否可见的类。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/ContentFactory.html" format="html" scope="external"> ContentFactory</a> </span> </td> 
-   <td colname="2"> 用于创建和管理广告工作流程中使用的各种组件的工厂基础类。 </td> 
+   <td colname="2"> 用于创建和管理广告工作流中使用的各种组件的工厂基类。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/DefaultAdPolicySelector.html" format="html" scope="external"> DefaultAdPolicySelector</a></span> </td> 
@@ -64,7 +61,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/DefaultMediaPlayerConfig.html" format="html" scope="external"> DefaultMediaPlayerConfig</a> </span> </td> 
-   <td colname="2"> 媒体播放器默认实现的配置类。 </td> 
+   <td colname="2"> 默认实现媒体播放器的配置类。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/DefaultMediaPlayerItemConfig.html" format="html" scope="external"> DefaultMediaPlayerItemConfig</a></span> </td> 
@@ -76,7 +73,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/MediaPlayer.html" format="html" scope="external"> MediaPlayer</a></span> </td> 
-   <td colname="2"><span class="codeph"> DefaultMediaPlayer</span>类的公共接口。 包括事件、播放器状态和可见性的明细列表。 </td> 
+   <td colname="2"><span class="codeph"> DefaultMediaPlayer</span>类的公共接口。 包括事件、PlayerState和可见性的明细列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/MediaPlayerConfig.html" format="html" scope="external"> MediaPlayerConfig</a> </span> </td> 
@@ -84,11 +81,11 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/MediaPlayerContext.html" format="html" scope="external"> MediaPlayerContext</a></span> </td> 
-   <td colname="2"> 为媒体播放器提供附加上下文的类。 </td> 
+   <td colname="2"> 为媒体播放器提供其他上下文的类。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/MediaPlayerItem.html" format="html" scope="external"> MediaPlayerItem</a></span> </td> 
-   <td colname="2"> 表示音频——视频媒体的界面。 </td> 
+   <td colname="2"> 表示音频 — 视频媒体的界面。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/DefaultMediaPlayerItemConfig.html" format="html" scope="external"> DefaultMediaPlayerItemConfig</a></span> </td> 
@@ -96,7 +93,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/MediaPlayerItemLoader.html" format="html" scope="external"> MediaPlayerItemLoader</a></span> </td> 
-   <td colname="2">加载媒体播放器资源并创建相应的<span class="codeph"> MediaPlayerItem</span>对象的类。 </td> 
+   <td colname="2">加载媒体播放器资源并创建相应<span class="codeph"> MediaPlayerItem</span>对象的类。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/MediaPlayerStatus.html" format="html" scope="external"> MediaPlayerStatus</a></span> </td> 
@@ -108,7 +105,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/MediaResource.html" format="html" scope="external"> 媒体资源</a></span> </td> 
-   <td colname="2"> 包含媒体资源所有信息的类。 包括媒体资源类型明细列表。 </td> 
+   <td colname="2"> 包含有关媒体资源的所有信息的类。 包括媒体资源类型的明细列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/MediaResourceType.html" format="html" scope="external"> 媒体资源类型</a></span> </td> 
@@ -116,7 +113,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/PSDKConfig.html" format="html" scope="external"> PSDKConfig</a></span> </td> 
-   <td colname="2"> 除了默认提示标记外，用于封装媒体播放器在执行广告放置时使用的自定义标记的类。 它还包括应用程序希望获得通知的标记名称。 </td> 
+   <td colname="2"> 封装媒体播放器在执行广告放置时使用的自定义标记的类，以及默认提示标记。 它还包括应用程序希望获得通知的标记名称。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/TextFormat.html" format="html" scope="external"> TextFormat</a></span> </td> 
