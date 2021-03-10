@@ -1,13 +1,10 @@
 ---
-description: 完成以下步骤，使用浏览器TVSDK创建基本播放器。
-seo-description: 完成以下步骤，使用浏览器TVSDK创建基本播放器。
-seo-title: 使用TVSDK创建基本播放器
+description: 完成以下步骤以使用浏览器TVSDK创建基本播放器。
 title: 使用TVSDK创建基本播放器
-uuid: ec15cf53-197f-4190-a6b2-600a57815390
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '225'
+source-wordcount: '206'
 ht-degree: 0%
 
 ---
@@ -15,12 +12,12 @@ ht-degree: 0%
 
 # 使用TVSDK{#create-a-basic-player-using-tvsdk}创建基本播放器
 
-完成以下步骤，使用浏览器TVSDK创建基本播放器。
+完成以下步骤以使用浏览器TVSDK创建基本播放器。
 
-1. 新建一个目录，在该目录下可以下载Browser TVSDK的压缩文件。
+1. 创建新目录，在其中可以下载Browser TVSDK的压缩文件。
 1. 从Zendesk下载浏览器TVSDK，解压缩文件，并将frameworks文件夹放在新目录中。
 1. 为包含`div`的代码创建一个简单的HTML样板。
-1. 将此样板文件放入您在步骤1中创建的目录中的HTML文件。
+1. 将此样板文件放在步骤1中创建的目录中的HTML文件中。
 
    ```
    <!DOCTYPE html> 
@@ -36,7 +33,7 @@ ht-degree: 0%
    </html>
    ```
 
-1. 在头部分添加浏览器TVSDK库。
+1. 在头部分添加Browser TVSDK库。
 
    ```js
    <script src= "frameworks/player/dash.min.js"></script> 
@@ -52,9 +49,9 @@ ht-degree: 0%
    ```
 
 1. 开始实现`startVideo`函数。
-1. 添加脚本标签并在标签中创建`startVideo`函数。
+1. 添加一个脚本标签并在标签中创建`startVideo`函数。
 
-   这应该在页面的标题部分。
+   这应该在页面的头部分。
 
    ```js
    <script> 
@@ -81,13 +78,13 @@ ht-degree: 0%
    player.view = view;
    ```
 
-1. 添加播放器事件监听器。
+1. 添加播放器事件侦听器。
 
    ```js
    player.addEventListener(AdobePSDK.PSDKEventType.STATUS_CHANGED, onStatusChange);
    ```
 
-1. 实现事件处理函数并将其放在添加事件监听器之前。
+1. 实现事件处理函数并将它放在添加事件侦听器前。
 
    ```js
    var onStatusChange = function (event) { 
