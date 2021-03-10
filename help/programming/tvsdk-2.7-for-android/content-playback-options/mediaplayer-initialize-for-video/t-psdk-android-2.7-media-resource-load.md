@@ -1,13 +1,10 @@
 ---
 description: 通过直接实例化MediaResource并加载要播放的视频内容来加载资源。 这是加载媒体资源的一种方式。
-seo-description: 通过直接实例化MediaResource并加载要播放的视频内容来加载资源。 这是加载媒体资源的一种方式。
-seo-title: 在媒体播放器中加载媒体资源
 title: 在媒体播放器中加载媒体资源
-uuid: 0334fa69-1d92-44d8-8891-2bc90a1ea498
 translation-type: tm+mt
-source-git-commit: 67975894814fbed8cfc49764a54b80d123032a49
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '188'
 ht-degree: 0%
 
 ---
@@ -29,14 +26,14 @@ ht-degree: 0%
    * `MediaPlayerStatus.INITIALIZED`
    * `MediaPlayerStatus.ERROR`
 
-   通过这些事件,`MediaPlayer`对象在成功加载媒体资源时通知您的应用程序。
+   通过这些事件,`MediaPlayer`对象在成功加载媒体资源后通知您的应用程序。
 1. 当媒体播放器的状态变为`INITIALIZED`时，您可以调用`MediaPlayer.prepareToPlay()`。
 
-   此状态表示媒体已成功加载。 新的`MediaPlayerItem`已准备好播放。 调用`prepareToPlay()`将开始广告解决和投放过程（如果有）。
+   此状态表示媒体已成功加载。 新`MediaPlayerItem`已准备好播放。 调用`prepareToPlay()`将开始广告分辨率和投放过程（如果有）。
 
-如果出现故障，媒体播放器将切换到`ERROR`状态。
+如果发生故障，媒体播放器会切换到`ERROR`状态。
 
-以下简化的示例代码说明加载媒体资源的过程：
+以下简化的示例代码说明了加载媒体资源的过程：
 
 ```java
 // mediaResource is a properly configured MediaResource instance 
