@@ -1,13 +1,10 @@
 ---
 description: MediaResource类表示要由MediaPlayer实例加载的内容。
-seo-description: MediaResource类表示要由MediaPlayer实例加载的内容。
-seo-title: 创建媒体资源
 title: 创建媒体资源
-uuid: f34a11a3-dac2-405e-8632-1d9617cc019d
 translation-type: tm+mt
-source-git-commit: 1b7ec3759561159c55018b4b81f896ecc99a25e8
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '313'
+source-wordcount: '296'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 创建媒体资源{#create-a-media-resource}
 
-对于每个新视频内容，使用视频内容的相关信息初始化MediaResource实例并加载媒体资源。
+对于每个新的视频内容，使用有关视频内容的信息初始化一个MediaResource实例并加载媒体资源。
 
 MediaResource类表示要由MediaPlayer实例加载的内容。
 
@@ -33,7 +30,7 @@ MediaResource类表示要由MediaPlayer实例加载的内容。
       <tbody>
       <tr>
       <td colname="col1"> <span class="codeph"> url  </span> </td>
-      <td colname="col2"> 表示媒体的清单／播放列表的URL的字符串。 </td>
+      <td colname="col2"> 一个字符串，表示媒体的清单/播放列表的URL。 </td>
       </tr>
       <tr>
       <td colname="col1"> <span class="codeph"> 类型  </span> </td>
@@ -53,9 +50,9 @@ MediaResource类表示要由MediaPlayer实例加载的内容。
 
    >[!IMPORTANT]
    >
-   >TVSDK仅支持特定类型的内容的播放。 如果尝试加载任何其他类型的内容，TVSDK将发送错误事件。
+   >TVSDK仅支持特定类型的内容的播放。 如果尝试加载任何其他类型的内容，TVSDK将调度错误事件。
    >
-   >对于MP4视频点播(VOD)内容，TVSDK不支持特技播放、自适应比特率(ABR)流、广告插入、隐藏字幕或DRM。
+   >对于MP4视频点播(VOD)内容，TVSDK不支持特技播放、自适应比特率(ABR)流、广告插入、隐藏式字幕或DRM。
 
    以下代码创建`MediaResource`实例：
 
@@ -76,4 +73,4 @@ MediaResource类表示要由MediaPlayer实例加载的内容。
 
    >[!IMPORTANT]
    >
-   >请勿在后台线程上加载媒体资源。 大多数TVSDK操作都需要在主线程上运行，而在后台线程上运行这些操作可能会导致操作抛出错误并退出。
+   >不要在后台线程上加载媒体资源。 大多数TVSDK操作需要在主线程上运行，而在后台线程上运行这些操作可能会导致操作引发错误并退出。
