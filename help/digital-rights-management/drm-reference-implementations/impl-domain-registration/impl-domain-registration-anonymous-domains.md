@@ -1,13 +1,11 @@
 ---
-description: 'null'
-seo-description: 'null'
-seo-title: 匿名域逻辑
 title: 匿名域逻辑
-uuid: bd0e8e51-27dc-4ccf-b285-a80c2ab9e260
+description: 匿名域逻辑
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '351'
+source-wordcount: '349'
 ht-degree: 0%
 
 ---
@@ -28,19 +26,19 @@ ht-degree: 0%
    * `authentication is not required`
    * `no membership maximum`
 
-   如果请求的域需要身份验证，请确保请求中包含有效的身份验证令牌。 如果在命名空间库中指定了身份验证命名空间，则令牌必须与指定的身份验证匹配。
-1. 如果需要身份验证，但有效的身份验证令牌不可用，则返回错误`DOM_AUTHENTICATION_REQUIRED (503)`。
+   如果请求的域需要身份验证，请确保请求中包含有效的身份验证令牌。 如果在数据库中指定了身份验证命名空间，则令牌必须与指定的身份验证命名空间匹配。
+1. 如果需要身份验证，但无有效的身份验证令牌可用，则返回错误`DOM_AUTHENTICATION_REQUIRED (503)`。
 1. 检查设备是否已注册到域：
 
    1. 在`DomainMembership`表中查找域名。
    1. 将您找到的计算机GUID与请求中的计算机GUID进行比较。
    1. 如果这是新计算机，请在`DomainMembership`表中添加一个条目。
-   1. 如果它是新设备，并且已达到`Max Membership`值，则返回错误`DOM_LIMIT_REACHED (502)`。
+   1. 如果它是新设备，且已达到`Max Membership`值，则返回错误`DOM_LIMIT_REACHED (502)`。
 
 1. 在`DomainKeys`表中查找此域的所有域密钥：
 
    1. 如果`DomainServerInfo`指示需要滚动密钥，则生成新密钥对。
-   1. 将密钥对保存在`DomainKeys`表中，密钥版本比现有的最高密钥高一个数。
+   1. 在`DomainKeys`表中保存密钥对，密钥版本比现有最高密钥高一个数。
    1. 重置`DomainServerInfo`中的`Key Rollover Required`标志。
 
    1. 对于每个域密钥，生成域凭据。
@@ -53,11 +51,11 @@ ht-degree: 0%
 1. 在`DomainServerInfo`表中查找请求的域名。
 1. 如果请求的域需要身份验证，请确保请求中包含有效的身份验证令牌。
 
-   令牌还必须与在命名空间库中指定的身份验证匹配。
+   令牌还必须与在数据库中指定的身份验证命名空间匹配。
 1. 在`DomainMembership`表中查找域名和计算机GUID。
 
    如果找不到匹配的条目，则返回错误`DEREG_DENIED (401)`。
 
-1. 如果这不是预览请求，请从`DomainMembership`中删除该条目，并在`DomainServerInfo`中设置`Key Rollover Required`标志。
+1. 如果这不是预览请求，请从`DomainMembership`中删除该条目，在`DomainServerInfo`中设置`Key Rollover Required`标志。
 
 由于许多计算机可能加入域，因此您不能简单地与计算机ID匹配。 而是应用在个性化过程中分配给计算机的随机计算机GUID。
