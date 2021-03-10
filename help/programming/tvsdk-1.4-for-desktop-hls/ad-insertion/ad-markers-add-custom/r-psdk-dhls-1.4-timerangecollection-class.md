@@ -1,13 +1,10 @@
 ---
-description: TimeRangeCollection实用程序类抽象出TimeRange规范的有序集合的概念，并提供服务将其转换为元数据实例。
-seo-description: TimeRangeCollection实用程序类抽象出TimeRange规范的有序集合的概念，并提供服务将其转换为元数据实例。
-seo-title: TimeRangeCollection类
+description: TimeRangeCollection实用程序类抽象了TimeRange规范的有序集合的概念，并提供了将其自身转换为元数据实例的服务。
 title: TimeRangeCollection类
-uuid: da781df4-6b19-47e1-8dc5-ea83c139f061
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '96'
+source-wordcount: '70'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # TimeRangeCollection类{#timerangecollection-class}
 
-TimeRangeCollection实用程序类抽象出TimeRange规范的有序集合的概念，并提供服务将其转换为元数据实例。
+TimeRangeCollection实用程序类抽象了TimeRange规范的有序集合的概念，并提供了将其自身转换为元数据实例的服务。
 
 <!--<a id="section_D87AA7BC628D458DAB12D5247AD34B41"></a>-->
 
