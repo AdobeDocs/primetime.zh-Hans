@@ -1,13 +1,10 @@
 ---
-description: 这些类允许您自定义日志记录。
-seo-description: 这些类允许您自定义日志记录。
-seo-title: 记录类
-title: 记录类
-uuid: 947f3ec8-c5fe-4a55-b306-f338205ab4e6
+description: 通过这些类，可以自定义日志记录。
+title: 日志记录类
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '172'
+source-wordcount: '163'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 记录类{#logging-classes}
 
-这些类允许您自定义日志记录。
+通过这些类，可以自定义日志记录。
 
 包：[com.adobe.mediacore.logging](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/logging/package-detail.html)
 
@@ -49,7 +46,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="0"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/logging/NullLogger.html" format="html" scope="external"> NullLogger</a></span> </td> 
-   <td colname="2"> 课。 记录器不记录任何内容。</td> 
+   <td colname="2"> 课。 记录器，记录不记录任何内容。</td> 
   </tr> 
  </tbody> 
 </table>
