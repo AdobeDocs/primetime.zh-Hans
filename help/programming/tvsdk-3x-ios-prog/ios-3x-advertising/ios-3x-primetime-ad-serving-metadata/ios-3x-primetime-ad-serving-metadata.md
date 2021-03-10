@@ -1,13 +1,10 @@
 ---
-description: TVSDK支持解析和插入用于VOD和实时／线性流的广告。
-seo-description: TVSDK支持解析和插入用于VOD和实时／线性流的广告。
-seo-title: Primetime广告服务器元数据
+description: TVSDK支持解析和插入VOD和实时/线性流的广告。
 title: Primetime广告服务器元数据
-uuid: 61e224dd-551a-438f-8560-e64915087fef
 translation-type: tm+mt
-source-git-commit: 9d60bff4035963572e49fa49effa576ca854f799
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '153'
+source-wordcount: '137'
 ht-degree: 0%
 
 ---
@@ -15,15 +12,15 @@ ht-degree: 0%
 
 # 概述{#primetime-ad-server-metadata-overview}
 
-TVSDK支持解析和插入用于VOD和实时／线性流的广告。
+TVSDK支持解析和插入VOD和实时/线性流的广告。
 
-## 入门项目
+## 先决条件
 
 在视频内容中包含广告之前，请提供以下元数据信息：
 
-* `mediaID`，它标识要播放的特定内容。
+* `mediaID`，用于标识要播放的特定内容。
 * 您的`zoneID`，用于标识您的公司或网站。
-* 广告服务器域，它指定所分配广告服务器的域。
+* 您的广告服务器域，它指定您分配的广告服务器的域。
 * 其他定位参数。
 
 ## 设置Primetime广告服务器元数据{#section_86C4A3B2DF124770B9B7FD2511394313}
