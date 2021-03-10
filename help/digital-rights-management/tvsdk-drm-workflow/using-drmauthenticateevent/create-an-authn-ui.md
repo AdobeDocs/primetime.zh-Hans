@@ -1,9 +1,9 @@
 ---
-seo-title: 创建身份验证UI
 title: 创建身份验证UI
-uuid: 4744bac0-c36e-4b0a-b3fb-d81c7f2e7617
+description: 创建身份验证UI
+copied-description: true
 translation-type: tm+mt
-source-git-commit: e60d285b9e30cdd19728e3029ecda995cd100ac9
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '188'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 1. 创建用户界面以检索用户的身份验证凭据。
 
-   以下是用于检索用户凭据的简单用户界面的Flex示例。 它由一个面板对象组成，其中包含两个`TextInput`对象，每个对象对应用户名和口令凭据。 该面板还包含一个启动`credentials()`方法的按钮。
+   以下是用于检索用户凭据的简单用户界面的Flex示例。 它包含一个面板对象，其中包含两个`TextInput`对象，每个对象对应用户名和密码凭据。 该面板还包含一个按钮，用于启动`credentials()`方法。
 
    ```xml
    <mx:Panel x="236.5"  
@@ -46,7 +46,7 @@ ht-degree: 0%
 
 1. 编写`credentials()`方法以处理用户提供的身份验证值。
 
-   `credentials()`方法是用户定义的方法，它将用户名和密码值传递给`setDRMAuthenticationCredentials()`方法。 传递这些值后，`credentials()`方法将重置`TextInput`对象的值。
+   `credentials()`方法是用户定义的方法，将用户名和密码值传递给`setDRMAuthenticationCredentials()`方法。 传递这些值后，`credentials()`方法会重置`TextInput`对象的值。
 
    ```
    <mx:Script> 
@@ -59,7 +59,7 @@ ht-degree: 0%
    </mx:Script> 
    ```
 
-   实现这种简单界面的一种方法是将面板作为新状态的一部分包含在其中。 引发`DRMAuthenticateEvent`对象时，新状态源于基状态。 以下示例包含一个`VideoDisplay`对象，该对象具有指向受保护视频文件的源属性。 在这种情况下，将修改`credentials()`方法，以便它还将应用程序返回到基本状态。 在传递用户凭据并重置TextInput对象值后，此方法会执行此操作。
+   实现此类简单接口的一种方法是将面板作为新状态的一部分包含在其中。 当引发`DRMAuthenticateEvent`对象时，新状态源于基状态。 下面的示例包含一个`VideoDisplay`对象，该对象具有指向受保护视频文件的源属性。 在这种情况下，将修改`credentials()`方法，以使其也将应用程序返回到基状态。 此方法在传递用户凭据并重置TextInput对象值后执行。
 
    ```xml
    <?xml version="1.0" encoding="utf-8"?> 
