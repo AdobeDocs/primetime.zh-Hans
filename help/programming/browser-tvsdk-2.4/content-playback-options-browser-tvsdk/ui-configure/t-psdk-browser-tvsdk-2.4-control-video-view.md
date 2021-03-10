@@ -1,13 +1,10 @@
 ---
 description: 您可以使用MediaPlayerView对象控制视频视图的位置和大小。
-seo-description: 您可以使用MediaPlayerView对象控制视频视图的位置和大小。
-seo-title: 控制视频视图的位置和大小
 title: 控制视频视图的位置和大小
-uuid: d09dbc18-1ec0-4336-bf3f-7ff6c265c443
 translation-type: tm+mt
-source-git-commit: 592245f5a7186d18dabbb5a98a468cbed7354aed
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '317'
+source-wordcount: '293'
 ht-degree: 0%
 
 ---
@@ -17,9 +14,9 @@ ht-degree: 0%
 
 您可以使用MediaPlayerView对象控制视频视图的位置和大小。
 
-默认情况下，当视频的大小或位置因应用程序、视图开关、内容开关等所做的更改而发生变化时，浏览器TVSDK会尝试保持视频用户档案的宽高比。
+默认情况下，当视图的大小或位置因应用程序、用户档案开关、内容开关等所做的更改而发生变化时，浏览器TVSDK会尝试保持视频的宽高比。
 
-可以通过指定不同的&#x200B;*缩放策略*&#x200B;来覆盖默认的宽高比行为。 使用`MediaPlayerView`对象的`scalePolicy`属性指定缩放策略。 使用`MaintainAspectRatioScalePolicy`类的实例设置`MediaPlayerView`的默认缩放策略。 要重置缩放策略，请用您自己的策略替换`MediaPlayerView.scalePolicy`上`MaintainAspectRatioScalePolicy`的默认实例。
+可以通过指定不同的&#x200B;*缩放策略*&#x200B;来覆盖默认的宽高比行为。 使用`MediaPlayerView`对象的`scalePolicy`属性指定缩放策略。 使用`MaintainAspectRatioScalePolicy`类的实例设置`MediaPlayerView`的默认缩放策略。 要重置缩放策略，请将`MediaPlayerView.scalePolicy`上`MaintainAspectRatioScalePolicy`的默认实例替换为您自己的策略。
 
 >[!IMPORTANT]
 >
@@ -27,15 +24,15 @@ ht-degree: 0%
 
 ## 非Flash回退方案{#non-flash-fallback-scenarios}
 
-在非Flash回退场景中，要使缩放策略正常工作，`View`构造函数中提供的视频div元素应返回`offsetWidth`和`offsetHeight`的非零值。 要给出一个不正确函数的示例，有时当视频div元素的宽度和高度未在css中显式设置时，`View`构造函数对于`offsetWidth`或`offsetHeight`返回零。
+在非Flash回退方案中，要使缩放策略正常工作，`View`构造函数中提供的视频div元素应返回`offsetWidth`和`offsetHeight`的非零值。 要给出一个不正确函数的示例，有时当视频div元素的宽度和高度未在css中显式设置时，`View`构造函数会为`offsetWidth`或`offsetHeight`返回零。
 
 >[!NOTE]
 >
 >CustomScalePolicy对一些浏览器（尤其是IE、Edge和Safari 9）的支持有限。 对于这些浏览器，无法更改视频的本机长宽比。 但是，视频的位置和尺寸将根据缩放策略强制执行。
 
-1. 实施`MediaPlayerViewScalePolicy`接口以创建您自己的缩放策略。
+1. 实现`MediaPlayerViewScalePolicy`接口以创建您自己的缩放策略。
 
-   `MediaPlayerViewScalePolicy`有一个方法：
+   `MediaPlayerViewScalePolicy`有一种方法：
 
    ```js
    /** 
@@ -74,7 +71,7 @@ ht-degree: 0%
    view.scalePolicy= new MediaPlayerViewCustomScalePolicy();
    ```
 
-1. 将您的视图添加到媒体播放器的`view`属性。
+1. 将您的视图添加到Media Player的`view`属性。
 
    ```
    mediaplayer.view = view;
