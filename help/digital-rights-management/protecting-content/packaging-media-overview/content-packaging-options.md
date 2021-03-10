@@ -1,9 +1,9 @@
 ---
-seo-title: 打包选项
 title: 打包选项
-uuid: 04244428-cb42-438a-8f16-91532c70ea60
+description: 打包选项
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '146'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # 打包选项{#packaging-options}
 
-您可以使用许多选项来打包内容。 可以在`DRMParameters`接口中指定选项，并实现可以接口的类。 通过这些类，您可以设置签名和密钥参数，并指示是加密音频内容、视频内容还是脚本数据。 要了解如何在参考实现中实现这些功能，请参阅&#x200B;*使用Adobe PrimetimeDRM参考实现*&#x200B;中讨论的Media Packager命令行选项说明。 这些选项基于Java API，因此可用于程序化使用。
+您可以使用许多选项来打包内容。 可以在`DRMParameters`接口中指定选项，并实现可以接口的类。 通过这些类，您可以设置签名和密钥参数，并指示是加密音频内容、视频内容还是脚本数据。 要了解如何在参考实现中实现这些功能，请参阅&#x200B;*使用Adobe Primetime DRM参考实现*&#x200B;中讨论的Media Packager命令行选项说明。 这些选项基于Java API，因此可用于编程用途。
 
 打包选项包括：
 
