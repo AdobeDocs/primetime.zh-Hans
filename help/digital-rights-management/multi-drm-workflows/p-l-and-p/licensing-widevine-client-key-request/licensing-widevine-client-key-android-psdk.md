@@ -1,13 +1,10 @@
 ---
 description: 客户端代码将数据传递到Android API。
-seo-description: 客户端代码将数据传递到Android API。
-seo-title: Android PSDK上的密钥请求工作流
 title: Android PSDK上的密钥请求工作流
-uuid: 575163de-0f96-434d-a3ff-7e114caf72de
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '156'
+source-wordcount: '142'
 ht-degree: 0%
 
 ---
@@ -17,7 +14,7 @@ ht-degree: 0%
 
 客户端代码将数据传递到Android API。
 
-在Android上，您的客户端代码应使用以下API传递到许可证服务器URL和随附的许可证获取数据：
+在Android上，您的客户端代码应使用以下API传入许可证服务器URL和随附的许可证获取数据：
 
 ```
 class DRMManager 
@@ -35,9 +32,9 @@ class DRMManager
     }
 ```
 
-成功调用此API后，您的代码可以按常规方式开始内容回放。 如果您使用的是Expressplay，您可以将令牌作为许可证服务器URL的一部分进行传递，或作为请求属性进行传递，并从许可证服务器URL中删除令牌。
+成功调用此API后，您的代码便可以按常规方式开始内容播放。 如果您使用的是Expressplay，则可以将令牌作为许可证服务器URL的一部分或作为请求属性进行传递，并从许可证服务器URL中删除令牌。
 
-某些Android设备同时支持Widevine和PlayReady。 在此类设备上，如果内容具有多个DRM头，则客户可能希望强制PSDK使用特定DRM解密内容。 这可以通过在播放前调用以下API来完成：
+某些Android设备同时支持Widevine和PlayReady。 在此类设备上，如果内容具有多个DRM头，则客户可能希望强制PSDK使用特定DRM解密内容。 这可以通过在播放前调用以下API来实现：
 
 ```
 class MediaPlayer 
