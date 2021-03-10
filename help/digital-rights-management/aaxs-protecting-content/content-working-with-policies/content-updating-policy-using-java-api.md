@@ -1,9 +1,9 @@
 ---
-seo-title: 使用Java API更新策略
 title: 使用Java API更新策略
-uuid: 23c50f05-799e-4f5a-869b-4b5e29a36ce1
+description: 使用Java API更新策略
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '113'
 ht-degree: 0%
@@ -15,14 +15,14 @@ ht-degree: 0%
 
 要使用Java API更新策略，请执行以下步骤：
 
-1. 设置开发环境并包含[设置项目中的开发环境](../../aaxs-protecting-content/content-setting-up-the-sdk/content-setting-up-the-dev-env.md)中提及的所有JAR文件。
+1. 设置开发环境，并包含项目[设置开发环境](../../aaxs-protecting-content/content-setting-up-the-sdk/content-setting-up-the-dev-env.md)中提及的所有JAR文件。
 1. 创建`Policy`实例，并从文件或数据库读取策略。
 
    ```
    Policy policy = new Policy(policyBytes);
    ```
 
-1. 通过设置`Policy`对象的属性（如其名称和使用规则）来更新该对象。
+1. 通过设置`Policy`对象的属性（如名称和使用规则）来更新对象。
 
    ```java
      // Change the policy name.  
@@ -61,4 +61,4 @@ ht-degree: 0%
       out.close(); 
    ```
 
-有关此示例代码的完整源代码，请参见Reference Implementation命令行工具“samples”目录中的`com.adobe.flashaccess.samples.policy.UpdatePolicy`。
+有关此示例代码的完整源代码，请参阅Reference Implementation Command Line Tools &quot;samples&quot;目录中的`com.adobe.flashaccess.samples.policy.UpdatePolicy`。
