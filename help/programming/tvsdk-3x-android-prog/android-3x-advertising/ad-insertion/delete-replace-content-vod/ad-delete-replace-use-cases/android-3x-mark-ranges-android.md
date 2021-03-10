@@ -1,13 +1,10 @@
 ---
-description: 您可以将VOD内容中的时间间隔指定为广告分段。
-seo-description: 您可以将VOD内容中的时间间隔指定为广告分段。
-seo-title: 标记范围
+description: 您可以将VOD内容中的时间间隔指定为广告中断。
 title: 标记范围
-uuid: fa6047dc-9a12-42fa-9e58-8ee3a55fa866
 translation-type: tm+mt
-source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '94'
+source-wordcount: '81'
 ht-degree: 0%
 
 ---
@@ -15,13 +12,13 @@ ht-degree: 0%
 
 # 标记范围{#mark-ranges}
 
-您可以将VOD内容中的时间间隔指定为广告分段。
+您可以将VOD内容中的时间间隔指定为广告中断。
 
 `localTime`中`begin`和`end`之间的`TimeRanges`将在时间轴中标记为`AdBreak`。 其他广告设置将被忽略。
 
 >[!TIP]
 >
->如果只要将内容中的特定范围标记为广告，而不需要动态广告插入，请创建`CustomRangeMetadata`实例，并使用定义的自定义范围将类型指定为`MARK`操作。
+>如果只想将内容中的特定范围标记为广告，而不需要动态广告插入，请创建`CustomRangeMetadata`实例，并使用定义的自定义范围将类型指定为`MARK`操作。
 
 1. 标记范围：
 
