@@ -1,13 +1,10 @@
 ---
 description: TVSDK使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知播放器客户端内部AVAset的availableMediaCharactiesWithMediaSelectionOptions的可用性。
-seo-description: TVSDK使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知播放器客户端内部AVAset的availableMediaCharactiesWithMediaSelectionOptions的可用性。
-seo-title: 显示字幕
 title: 显示字幕
-uuid: 1cd8761f-6e6f-4017-9852-fa61f36197c5
 translation-type: tm+mt
-source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '110'
+source-wordcount: '90'
 ht-degree: 0%
 
 ---
@@ -21,7 +18,7 @@ TVSDK使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知播放�
 
 显示字幕：
 
-1. 将客户端注册为`PTMediaPlayerMediaSelectionOptionsAvailableNotification`通知的监听器。
+1. 将客户端注册为`PTMediaPlayerMediaSelectionOptionsAvailableNotification`通知的侦听器。
 
    ```
    [[NSNotificationCenter defaultCenter]  
