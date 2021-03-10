@@ -1,20 +1,19 @@
 ---
 title: Primetime 迁移帮助
-seo-title: Adobe Primetime移民帮助
-description: 'null'
-seo-description: 'null'
+description: Primetime 迁移帮助
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 242b5a2875ebc0e0020296ce9489dd54438b5ad0
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '211'
-ht-degree: 42%
+source-wordcount: '208'
+ht-degree: 44%
 
 ---
 
 
 # Primetime迁移和转化帮助
 
-欢迎使用Adobe Primetime的迁移和转化帮助。 左侧导航中列出的文档说明了从现有Primetime TVSDK Suite到下一代套件的转换和迁移过程。
+欢迎使用Adobe Primetime的迁移和转换帮助。 左侧导航中列出的文档说明了从现有Primetime TVSDK Suite转换和迁移到下一代套件的过程。
 
 ## 另请参阅
 
@@ -28,7 +27,7 @@ ht-degree: 42%
 | [Primetime API参考](/help/reference/api-references.md) | 提供有关 TVSDK 函数、数据结构和其他编程结构的详细信息。 |
 | [存档](https://helpx.adobe.com/primetime/archives.html) | 下载归档文档的PDF。 |
 
-## 实用资源
+## 有用资源
 
 * [了解Adobe Primetime](https://www.adobe.com/in/marketing/primetime.html)
 
@@ -36,6 +35,6 @@ ht-degree: 42%
 
 * [Primetime身份验证](https://tve.helpdocsonline.com/home)
 
-* [Adobe PrimetimeDRM论坛](https://forums.adobe.com/community/adobe_access)
+* [Adobe Primetime DRM论坛](https://forums.adobe.com/community/adobe_access)
 
 * [Adobe Primetime开发人员资源](https://www.adobe.com/devnet/primetime.html)
