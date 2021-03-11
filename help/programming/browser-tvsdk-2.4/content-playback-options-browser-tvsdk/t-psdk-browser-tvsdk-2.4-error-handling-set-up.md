@@ -1,14 +1,11 @@
 ---
 description: 您可以在应用程序中设置一个位置以执行错误处理以响应ERROR状态。
-seo-description: 您可以在应用程序中设置一个位置以执行错误处理以响应ERROR状态。
-seo-title: 设置错误处理
 title: 设置错误处理
-uuid: 9e650ea7-86cb-4489-a3fd-80cd2ccef41f
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '145'
-ht-degree: 2%
+source-wordcount: '122'
+ht-degree: 3%
 
 ---
 
@@ -17,7 +14,7 @@ ht-degree: 2%
 
 您可以在应用程序中设置一个位置以执行错误处理以响应ERROR状态。
 
-1. 为`AdobePSDK.MediaPlayerStatusChangeEvent`添加事件监听器。
+1. 为`AdobePSDK.MediaPlayerStatusChangeEvent`添加事件侦听器。
 
    例如：
 
@@ -26,10 +23,10 @@ ht-degree: 2%
                            onStatusChange);
    ```
 
-1. 在事件监听器中，当`event.status`为`AdobePSDK.MediaPlayerStatus.ERROR`时，请提供处理所有错误的逻辑。
+1. 在您的事件侦听器中，当`event.status`为`AdobePSDK.MediaPlayerStatus.ERROR`时，请提供处理所有错误的逻辑。
 1. 处理错误后，重置`MediaPlayer`对象或加载新媒体资源。
 
-       当MediaPlayer对象处于ERROR状态时，在您完成以下任一任务后，它将无法退出此状态：
+       当MediaPlayer对象处于ERROR状态时，在您完成以下任一任务之前，它无法退出此状态：
    
    * 使用`MediaPlayer.reset`方法重置MediaPlayer对象。
    * 使用`MediaPlayer.replaceCurrentResource`方法加载新媒体资源。
