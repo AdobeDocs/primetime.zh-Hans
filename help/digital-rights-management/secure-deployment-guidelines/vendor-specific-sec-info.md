@@ -1,13 +1,10 @@
 ---
-description: 您的Adobe PrimetimeDRM解决方案包含操作系统和应用程序服务器。
-seo-description: 您的Adobe PrimetimeDRM解决方案包含操作系统和应用程序服务器。
-seo-title: 供应商特定的安全信息
-title: 供应商特定的安全信息
-uuid: 331baa42-5e19-40a5-bc74-0b1a2cb9370e
+description: Adobe Primetime DRM解决方案中包含操作系统和应用程序服务器。
+title: 特定于供应商的安全信息
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '387'
+source-wordcount: '371'
 ht-degree: 0%
 
 ---
@@ -15,9 +12,9 @@ ht-degree: 0%
 
 # 供应商特定安全信息{#vendor-specific-security-information}
 
-您的Adobe PrimetimeDRM解决方案包含操作系统和应用程序服务器。
+Adobe Primetime DRM解决方案中包含操作系统和应用程序服务器。
 
-要查找操作系统和应用程序服务器的供应商特定安全信息，请参阅使用Adobe PrimetimeDRM密钥服务器。
+要查找操作系统和应用程序服务器的供应商特定安全信息，请参阅使用Adobe Primetime DRM密钥服务器。
 
 ## 操作系统安全信息{#section_53CAD802FCA54C4D8CE0C4E1B3045E52}
 
@@ -30,7 +27,7 @@ ht-degree: 0%
 * 删除不必要的服务和应用程序
 * 备份文件
 
-以下是有关Adobe PrimetimeDRM支持的操作系统的一些信息：
+以下是有关Adobe Primetime DRM支持的操作系统的一些信息：
 
 <table frame="all" colsep="1" rowsep="1" class="+ topic/table adobe-d/table " id="table_ugl_kjz_n4"> 
  <thead class="- topic/thead "> 
@@ -63,15 +60,15 @@ ht-degree: 0%
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <p class="- topic/p ">安全修补程序 </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">如果供应商安全修补程序和升级不能及时应用，则未授权用户可能获得对应用程序服务器的访问权限的风险增加。 </p> <p>注意： 确保在将安全修补程序应用到生产服务器之前先测试它们。 </p> <p class="- topic/p ">您必须创建策略和过程，以定期检查和安装修补程序。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">如果供应商安全补丁和升级不能及时应用，则未授权用户可能获得对应用程序服务器的访问权限的风险增加。 </p> <p>注意： 请确保在将安全修补程序应用到生产服务器之前先测试这些修补程序。 </p> <p class="- topic/p ">您必须创建策略和过程来定期检查和安装修补程序。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <p class="- topic/p ">病毒防护软件 </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">病毒扫描程序可以通过扫描签名或异常行为来识别感染病毒的文件。 </p> <p>扫描程序将其病毒签名保留在文件中，该文件通常存储在本地硬盘上。 新病毒经常被发现，因此您必须确保定期更新此文件。 这样，病毒扫描程序始终可以识别所有当前病毒。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">病毒扫描器可以通过扫描签名或异常行为来识别受感染的文件。 </p> <p>扫描程序将其病毒签名保留在文件中，该文件通常存储在本地硬盘上。 新病毒经常被发现，因此您必须确保定期更新此文件。 这样，病毒扫描器就可以始终识别所有当前病毒。 </p> </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <p class="- topic/p ">网络时间协议(NTP) </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">为获得正确的操作和法证分析，请准确掌握Primetime DRM服务器和包装程序。 使用安全版NTP在所有连接到Internet的系统上同步Primetime DRM时间。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">为获得正确的操作和取证分析，请准确掌握Primetime DRM服务器和打包程序。 使用安全版NTP来同步所有连接到因特网的系统上的Primetime DRM时间。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -87,6 +84,6 @@ ht-degree: 0%
 * 保护控制台管理器
 * 启用安全Cookie
 * 关闭不需要的端口
-* 按IP地址或域限制管理接口
+* 通过IP地址或域限制管理接口
 * 使用Java™ Security Manager
 
