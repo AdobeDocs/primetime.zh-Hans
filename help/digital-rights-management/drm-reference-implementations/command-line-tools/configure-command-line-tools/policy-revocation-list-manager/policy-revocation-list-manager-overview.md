@@ -1,9 +1,9 @@
 ---
-seo-title: DRM撤销列表管理器
-title: DRM撤销列表管理器
-uuid: 30ab5f54-4aac-4535-b30c-b4e5dbfbc475
+title: DRM吊销列表管理器
+description: DRM吊销列表管理器
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '446'
 ht-degree: 0%
@@ -11,11 +11,11 @@ ht-degree: 0%
 ---
 
 
-# DRM撤销列表管理器{#policy-revocation-list-manager}
+# DRM吊销列表管理器{#policy-revocation-list-manager}
 
-使用Primetime DRM撤销列表管理器命令行工具([!DNL AdobeRevocationListManager.jar])创建和管理撤销列表，并检查策略是否已撤销。
+使用Primetime DRM吊销列表管理器命令行工具([!DNL AdobeRevocationListManager.jar])创建和管理吊销列表，并检查策略是否已吊销。
 
-运行[!DNL AdobeRevocationListManager.jar]之前，必须在配置文件的&#x200B;*策略更新列表管理器和撤销列表管理器属性*&#x200B;部分设置属性。
+在运行[!DNL AdobeRevocationListManager.jar]之前，必须在配置文件的&#x200B;*策略更新列表管理器和吊销列表管理器属性*&#x200B;部分设置属性。
 
 >[!NOTE]
 >
@@ -41,7 +41,7 @@ java -jar AdobeRevocationListManager.jar
 ```
 
 * `destfile` 指定保存吊销列表属性的文件的名称。
-* `crlNumber` 表示证书吊销列表(CRL)的非负版本号。每次更新CRL时，您都需要增加此编号。
+* `crlNumber` 表示证书吊销列表(CRL)的非负版本号。每次更新CRL时，您都需要增加此数字。
 
 **表5:命令行选项**
 
@@ -55,7 +55,7 @@ java -jar AdobeRevocationListManager.jar
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-c配置文件</span> </td> 
-   <td colname="2" class="- topic/entry "><p class="- topic/p ">指定配置文件的名称和位置。 </p><p class="- topic/p ">如果未指定名称或位置，则DRM吊销列表管理器将搜索当前工作目录中的<span class="filepath"> flashaccessools.properties</span>。 </p><p>注意： 在命令行上指定的选项优先于在配置文件中指定的选项。 </p>指定配置文件的位置。 如果不应用此选项，则吊销列表管理器将在工作目录中搜索<span class="filepath"> flashaccessols.properties</span>。 </td> 
+   <td colname="2" class="- topic/entry "><p class="- topic/p ">指定配置文件的名称和位置。 </p><p class="- topic/p ">如果未指定名称或位置，DRM吊销列表管理器将在当前工作目录中搜索<span class="filepath"> flashaccessools.properties</span>。 </p><p>注意： 在命令行上指定的选项优先于在配置文件中指定的选项。 </p>指定配置文件的位置。 如果不应用此选项，吊销列表管理器将在工作目录中搜索<span class="filepath"> flashaccessools.properties</span>。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-d文件名</span> </td> 
@@ -63,7 +63,7 @@ java -jar AdobeRevocationListManager.jar
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-e日期</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">（可选）撤销列表的到期日。 使用以下格式之一： 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">（可选）吊销列表的过期日期。 使用以下格式之一： 
      <ul id="ul_2C89F8183C3647C593CB67576D9DED07"> 
       <li id="li_A866F6CBCB464193A119A6609C8F3B2A"><span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd</span> </li> 
       <li id="li_B5F9F6C995E64464838DDE447848F707"><span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd-h24:min:sec</span> </li> 
@@ -71,11 +71,11 @@ java -jar AdobeRevocationListManager.jar
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph">-f文件名[certfile]</span> </td> 
-   <td colname="2" class="- topic/entry "> <p>从现有吊销列表添加所有条目。 只能指定一个现有文件。 </p> <p class="- topic/p ">如果现有列表的签名凭据不是您用来签署新列表的凭据，则需要在验证其签名的旁边指定其证书文件。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>从现有吊销列表添加所有条目。 只能指定一个现有文件。 </p> <p class="- topic/p ">如果现有列表是使用您用来签署新列表的凭据以外的凭据进行签名的，则您需要在验证其签名的旁边指定其证书文件。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> -noprompt</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">不要询问目标文件是否应被覆盖。 如果目标文件已存在且未设置<span class="codeph"> -o</span>，则会发生错误。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">不要询问是否应覆盖目标文件。 如果目标文件已存在且未设置<span class="codeph"> -o</span>，则发生错误。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> -o</span> </td> 
@@ -87,14 +87,14 @@ java -jar AdobeRevocationListManager.jar
      <ul id="ul_1524FBC6818248F3A2B271243E649400"> 
       <li id="li_BC618EA2332D42A59B1B5434CAFFD2AF"><span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd</span> </li> 
       <li id="li_97F77810D20C4CF2944EFCFF5DFAE467"><span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd-h24:min:sec</span> </li> 
-     </ul>例如，2008-12-1或2008-12-1-00:00:00,2008年12月1日午夜。 如果不指定吊销日期，则自动应用当前日期。 </p> </td> 
+     </ul>例如，2008年12月1日午夜2008-12-1或2008-12-1-00:00:00。 如果未指定吊销日期，则自动应用当前日期。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
 ## 配置属性{#configuration-properties}
 
-您需要应用凭据来签署吊销列表。 以下吊销列表管理器属性指定一个PKCS12文件，其中包括对吊销列表（许可证服务器证书）进行签名的凭据以及证书的口令：
+您需要应用凭据来签署吊销列表。 以下吊销列表管理器属性指定一个PKCS12文件，其中包括用于签名吊销列表（许可证服务器证书）的凭据以及证书的密码：
 
 * `revocation.sign.certfile=license-server-credentials.pfx`
 * `revocation.sign.certpass=password`
