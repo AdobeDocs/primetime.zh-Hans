@@ -1,23 +1,20 @@
 ---
 description: 您可以使用Primetime Player API自定义播放器的行为。
-seo-description: 您可以使用Primetime Player API自定义播放器的行为。
-seo-title: 媒体类
-title: 媒体类
-uuid: 2d4e41e6-e689-4f79-9021-1ab8ce0fe40d
+title: Mediacore类
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '651'
+source-wordcount: '635'
 ht-degree: 0%
 
 ---
 
 
-# 媒体类{#mediacore-classes}
+# Mediacore类{#mediacore-classes}
 
 您可以使用Primetime Player API自定义播放器的行为。
 
-要查看TVSDK的完整API文档，请转至[Adobe PrimetimeAPI参考](https://help.adobe.com/en_US/primetime/api/index.html#api-Adobe_Primetime_API_References)。
+要查看TVSDK的完整API文档，请转至[Adobe Primetime API参考](https://help.adobe.com/en_US/primetime/api/index.html#api-Adobe_Primetime_API_References)。
 
 这些类描述您的媒体播放器及其资源。
 包：[com.adobe.mediacore](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/package-summary.html)
@@ -31,7 +28,7 @@ ht-degree: 0%
  </thead>
  <tbody> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/ABRControlParameters.html" format="html" scope="external"> ABRControlParameters</a>  ABRControlParameters</span> </td> 
+   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/ABRControlParameters.html" format="html" scope="external"> ABRControlParametersABRControlParameters</a>  </span> </td> 
    <td colname="2"> 封装所有自适应比特率控制参数的类。 </td> 
   </tr> 
   <tr rowsep="1"> 
@@ -56,11 +53,11 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.html" format="html" scope="external"> MediaPlayer</a> </span> </td> 
-   <td colname="2"><span class="codeph"> DefaultMediaPlayer</span>类的公共接口。 包括事件、播放器状态和可见性的明细列表。 </td> 
+   <td colname="2"><span class="codeph"> DefaultMediaPlayer</span>类的公共接口。 包括事件、PlayerState和可见性的明细列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.AdPlaybackEventListener.html" format="html" scope="external"> MediaPlayer.AdPlaybackEventListener</a></span> </td> 
-   <td colname="2"> 在广告播放过程中要调用的回调集的接口定义。 </td> 
+   <td colname="2"> 在广告播放期间要调用的回调集的接口定义。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.DRMEventListener.html" format="html" scope="external"> MediaPlayer.DRMEventListener</a></span> </td> 
@@ -68,7 +65,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.EventListener.html" format="html" scope="external"> MediaPlayer.EventListener</a> </span> </td> 
-   <td colname="2"> 用于统一事件监听器注册的标记接口。 </td> 
+   <td colname="2"> 用于统一事件侦听器注册的标记接口。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.PlaybackEventListener.html" format="html" scope="external"> MediaPlayer.PlaybackEventListener</a> </span> </td>
@@ -80,7 +77,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayerItem.html" format="html" scope="external"> MediaPlayerItem</a> </span> </td> 
-   <td colname="2"> 表示音频——视频媒体的界面。 </td> 
+   <td colname="2"> 表示音频 — 视频媒体的界面。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayerItemLoader.html" format="html" scope="external"> MediaPlayerItemLoader</a> </span> </td> 
@@ -88,7 +85,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayerItemLoader.LoaderListener.html" format="html" scope="external"> MediaPlayerItemLoader.LoaderListener</a> </span> </td> 
-   <td colname="2"> 定义与MediaPlayerItemLoader对象关联的监听器方法的接口。 </td> 
+   <td colname="2"> 定义与MediaPlayerItemLoader对象关联的侦听器方法的接口。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayerView.html" format="html" scope="external"> MediaPlayerView</a> </span> </td> 
@@ -96,15 +93,15 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaResource.html" format="html" scope="external"> 媒体资源</a> </span> </td> 
-   <td colname="2"> 包含媒体资源所有信息的类。 包括媒体资源类型明细列表。 </td> 
+   <td colname="2"> 包含有关媒体资源的所有信息的类。 包括媒体资源类型的明细列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/PlacementOpportunityDetector.html" format="html" scope="external"> PlacementOpportunityDetector</a> </span> </td> 
-   <td colname="2"> 用于处理清单内提示的界面，这些提示将用作广告决策流程的位置。 </td> 
+   <td colname="2"> 用于处理清单内提示的界面，这些提示将用作广告决策过程的放置位置。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/PSDKConfig.html" format="html" scope="external"> PSDKConfig</a> </span> </td> 
-   <td colname="2"> 除了默认提示标记外，用于封装媒体播放器在执行广告放置时使用的自定义标记的类。 它还包括应用程序希望获得通知的标记名称。 </td> 
+   <td colname="2"> 封装媒体播放器在执行广告放置时使用的自定义标记的类，以及默认提示标记。 它还包括应用程序希望获得通知的标记名称。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/TextFormat.html" format="html" scope="external"> TextFormat</a> </span> </td> 
@@ -112,7 +109,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/TextFormatBuilder.html" format="html" scope="external"> TextFormatBuilder</a></span> </td> 
-   <td colname="2"> 设置文本格式的类方法。 </td> 
+   <td colname="2"> 用于设置文本格式的类方法。 </td> 
   </tr> 
   <tr rowsep="0"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/Version.html" format="html" scope="external"> 版本</a></span> </td> 
