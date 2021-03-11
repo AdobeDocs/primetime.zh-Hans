@@ -1,13 +1,10 @@
 ---
-description: TVSDK调度定时元数据事件，并在遇到默认或自定义标记或清单中的播放列表更改时生成定时元数据。 事件按其在清单中的显示顺序进行调度。
-seo-description: TVSDK调度定时元数据事件，并在遇到默认或自定义标记或清单中的播放列表更改时生成定时元数据。 事件按其在清单中的显示顺序进行调度。
-seo-title: 定时元数据事件
+description: TVSDK在遇到默认或自定义标记或播放列表在清单中发生更改时调度定时元数据事件并生成定时元数据。 事件按在清单中显示的顺序进行调度。
 title: 定时元数据事件
-uuid: 69c43701-6ffa-45fe-a104-fe81391222e7
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '148'
+source-wordcount: '108'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 定时元数据事件{#timed-metadata-events}
 
-TVSDK调度定时元数据事件，并在遇到默认或自定义标记或清单中的播放列表更改时生成定时元数据。 事件按其在清单中的显示顺序进行调度。
+TVSDK在遇到默认或自定义标记或播放列表在清单中发生更改时调度定时元数据事件并生成定时元数据。 事件按在清单中显示的顺序进行调度。
 
 您的播放器根据以下事件实现操作：
 
