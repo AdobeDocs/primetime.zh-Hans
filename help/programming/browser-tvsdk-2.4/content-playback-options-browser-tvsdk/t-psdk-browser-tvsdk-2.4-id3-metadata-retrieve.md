@@ -1,13 +1,10 @@
 ---
-description: ID3标记提供有关音频或视频文件的信息，如文件的标题或艺术家的姓名。 浏览器TVSDK在HLS流中的传输流(TS)段级别检测ID3标记并发送事件。 应用程序可以从标签中提取数据。
-seo-description: ID3标记提供有关音频或视频文件的信息，如文件的标题或艺术家的姓名。 浏览器TVSDK在HLS流中的传输流(TS)段级别检测ID3标记并发送事件。 应用程序可以从标签中提取数据。
-seo-title: ID3标记
+description: ID3标记提供有关音频或视频文件的信息，如文件的标题或艺术家的姓名。 浏览器TVSDK在HLS流中的传输流(TS)段级别检测ID3标记并调度事件。 应用程序可以从标签中提取数据。
 title: ID3标记
-uuid: a47cd0cc-b11d-47df-b1fb-56918896ef4c
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '326'
+source-wordcount: '274'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # ID3标记{#id-tags}
 
-ID3标记提供有关音频或视频文件的信息，如文件的标题或艺术家的姓名。 浏览器TVSDK在HLS流中的传输流(TS)段级别检测ID3标记并发送事件。 应用程序可以从标签中提取数据。
+ID3标记提供有关音频或视频文件的信息，如文件的标题或艺术家的姓名。 浏览器TVSDK在HLS流中的传输流(TS)段级别检测ID3标记并调度事件。 应用程序可以从标签中提取数据。
 
 当在基础HLS流中找到新的ID3元数据时，浏览器TVSDK会触发`AdobePSDK.TimedMetadataEvent`事件。
 
@@ -31,7 +28,7 @@ ID3的`TimedMetadata`对象具有以下属性：
  <tbody> 
   <tr> 
    <td colname="col1"> <p> <span class="codeph"> 类型  </span> </p> </td> 
-   <td colname="col2"> <p><span class="codeph"> TimedMetadata </span>对象的类型。 </p> <p>对于ID3元数据，此值为<span class="codeph"> AdobePSDK.TimedMetadataType.ID3 </span>。 </p> </td> 
+   <td colname="col2"> <p><span class="codeph"> TimedMetadata </span>对象的类型。 </p> <p>对于ID3元数据，该值为<span class="codeph"> AdobePSDK.TimedMetadataType.ID3 </span>。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p> <span class="codeph"> 时间  </span> </p> </td> 
@@ -51,7 +48,7 @@ ID3的`TimedMetadata`对象具有以下属性：
   </tr> 
   <tr> 
    <td colname="col1"> <p> <span class="codeph"> 元数据  </span> </p> </td> 
-   <td colname="col2"> <p> <span class="codeph"> TimedMetadata </span> 处理的信息，它是AdobePSDK <span class="codeph"> 的一个实例。 </span> 存储ID3帧的元数据。 </p> <p> <p>注意： 对于Safari <span class="codeph">视频</span>标记，ID3标记的特定帧数据以对象形式通过<span class="codeph"> AdobePSDK.元数据</span>对象公开，而对于其他浏览器，ID3标记的帧数据以字节数组形式通过<span class="codeph"> AdobePSDK.元数据</span>对象。 </p> </p> </td> 
+   <td colname="col2"> <p> <span class="codeph"> TimedMetadata </span> 处理的信息，该信息是AdobePSDK <span class="codeph"> .存储 </span> ID3帧的元数据的实例。 </p> <p> <p>注意： 对于Safari <span class="codeph">视频</span>标记，ID3标记的特定帧数据以对象形式通过<span class="codeph"> AdobePSDK.Metadata </span>对象公开，而对于其他浏览器，ID3标记的帧数据以字节数组形式通过<span class="codeph"> AdobePSDK.Metadata </span>对象。 </p> </p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -60,7 +57,7 @@ ID3的`TimedMetadata`对象具有以下属性：
 
 应用程序可通过以下两种方式检索存储在`TimedMetadata`中的各种ID3标记：
 
-* 在AdobePSDK.PSDKEventType.TIMED_METADATA_AVAILABLE事件监听器中。
+* 在AdobePSDK.PSDKEventType.TIMED_METADATA_AVAILABLE事件侦听器中。
 
    ```
    var isSafari = function () { 
