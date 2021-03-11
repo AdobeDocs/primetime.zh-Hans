@@ -1,13 +1,10 @@
 ---
-description: 要使用Flash Player，请确保您的环境符合必要的要求。
-seo-description: 要使用Flash Player，请确保您的环境符合必要的要求。
-seo-title: Flash Player要求
+description: 要使用Flash Player，请确保您的环境符合必要要求。
 title: Flash Player要求
-uuid: f181457b-2bb4-4baa-b2b7-d787f65fab75
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '157'
+source-wordcount: '142'
 ht-degree: 1%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 1%
 
 # Flash Player要求{#flash-player-requirements}
 
-要使用Flash Player，请确保您的环境符合必要的要求。
+要使用Flash Player，请确保您的环境符合必要要求。
 
 <!--<a id="section_FEE654D506EC4D85AE77302AD2A27777"></a>-->
 
@@ -31,7 +28,7 @@ ht-degree: 1%
 * 处理浏览器TVSDK API的主应用程序SWF文件。
 * 处理Flash Player安装和更新的`playerProductInstall.swf` SWF文件。
 
-此外，Flash中的视频回放需要一个授权令牌文件，该文件可能是SWF或`.DAT`文件。 SWF文件的路径、授权令牌文件以及令牌文件名和类型都可以使用AdobePSDK API指定。
+此外，Flash中的视频播放需要授权令牌文件，该文件可能是SWF或`.DAT`文件。 可以使用AdobePSDK API指定SWF文件的路径、授权令牌文件以及令牌文件名和类型。
 
 例如：
 
