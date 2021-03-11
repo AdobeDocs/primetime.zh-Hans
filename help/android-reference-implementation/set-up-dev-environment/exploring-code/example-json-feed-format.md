@@ -1,13 +1,10 @@
 ---
 description: 引用实现使用基于JSON的输入文件。
-seo-description: 引用实现使用基于JSON的输入文件。
-seo-title: 示例JSON源格式
-title: 示例JSON源格式
-uuid: a7419aab-36c0-45d1-9bb7-ac2bd64b0bbc
+title: JSON源格式示例
 translation-type: tm+mt
-source-git-commit: 31b6cad26bcc393d731080a70eff1c59551f1c8e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '63'
+source-wordcount: '51'
 ht-degree: 0%
 
 ---
@@ -17,4 +14,4 @@ ht-degree: 0%
 
 引用实现使用基于JSON的输入文件。
 
-[此](https://help.adobe.com/en_US/primetime/api/reference_implementation/json-example.json) 示例说明如何为Primetime广告、直接广告和自定义广告标记设置广告元数据格式。
+[此示](https://help.adobe.com/en_US/primetime/api/reference_implementation/json-example.json) 例说明如何设置Primetime广告、直接广告和自定义广告标记的广告元数据的格式。
