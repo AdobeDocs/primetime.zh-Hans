@@ -1,13 +1,10 @@
 ---
 description: 当用户快速前进或快速后退通过媒体时，他们处于特技播放模式。 要进入特技播放模式，您需要将MediaPlayer播放速率设置为非1的值。
-seo-description: 当用户快速前进或快速后退通过媒体时，他们处于特技播放模式。 要进入特技播放模式，您需要将MediaPlayer播放速率设置为非1的值。
-seo-title: 实现快进和后退
 title: 实现快进和后退
-uuid: 2e5d0fd0-0290-4f08-b9c6-c8ecde26abb8
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '242'
+source-wordcount: '202'
 ht-degree: 0%
 
 ---
@@ -50,13 +47,13 @@ ht-degree: 0%
    }
    ```
 
-1. 您可以选择侦听汇率变化事件，这会让您知道您何时请求汇率变化以及实际发生汇率变化的时间。
+1. 您可以选择侦听汇率变化事件，这会让您知道何时请求汇率变化以及实际发生汇率变化的时间。
 
-       TVSDK发送以下与特技播放相关的事件:
+       TVSDK调度以下与特技播放相关的事件:
    
    * `AdobePSDK.PSDKEventType.RATE_SELECTED` 值变 `rate` 为其他值时。
 
-   * `AdobePSDK.PSDKEventType.RATE_PLAYING` 以选定速率恢复播放时。
+   * `AdobePSDK.PSDKEventType.RATE_PLAYING` 以选定的速率恢复播放时。
 
-      当播放器从技巧播放模式返回到正常播放模式时，TVSDK将调度这两个事件。
+      当播放器从特技播放模式返回到正常播放模式时，TVSDK将调度这两个事件。
 
