@@ -1,13 +1,10 @@
 ---
-description: 您可以使用PrimetimeDigital Rights Management(DRM)系统的功能提供对视频内容的安全访问。 或者，您也可以将第三方DRM解决方案用作Adobe集成Primetime DRM解决方案的替代方案。
-seo-description: 您可以使用PrimetimeDigital Rights Management(DRM)系统的功能提供对视频内容的安全访问。 或者，您也可以将第三方DRM解决方案用作Adobe集成Primetime DRM解决方案的替代方案。
-seo-title: Primetime DRM界面概述
+description: 您可以使用PrimetimeDigital Rights Management(DRM)系统的功能来提供对视频内容的安全访问。 或者，您可以使用第三方DRM解决方案作为Adobe集成Primetime DRM解决方案的替代方案。
 title: Primetime DRM界面概述
-uuid: 71479464-8356-4732-9774-da9f6084e6ad
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '429'
+source-wordcount: '388'
 ht-degree: 0%
 
 ---
@@ -15,15 +12,15 @@ ht-degree: 0%
 
 # 概述{#primetime-drm-interface-overview}
 
-您可以使用PrimetimeDigital Rights Management(DRM)系统的功能提供对视频内容的安全访问。 或者，您也可以将第三方DRM解决方案用作Adobe集成Primetime DRM解决方案的替代方案。
+您可以使用PrimetimeDigital Rights Management(DRM)系统的功能来提供对视频内容的安全访问。 或者，您可以使用第三方DRM解决方案作为Adobe集成Primetime DRM解决方案的替代方案。
 
 <!--<a id="section_4DD54E085AB345FE9BE00865E56B28DB"></a>-->
 
 请咨询您的Adobe代表，了解有关第三方DRM解决方案可用性的最新信息。
 
-Primetime数字版权管理(DRM)系统的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序包含一个`DRMHelper`类，它演示了如何使某些DRM操作更容易实现。
+Primetime数字版权管理(DRM)系统的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序包含一个`DRMHelper`类，它演示了如何使某些DRM操作更易于实现。
 
-Primetime DRM提供一个可伸缩、高效的工作流程，用于在TVSDK应用程序中实施内容保护。 通过为每个数字媒体文件创建许可证，您可以保护和管理视频内容的权利。
+Primetime DRM提供可扩展、高效的工作流，可在TVSDK应用程序中实施内容保护。 您可以通过为每个数字媒体文件创建许可证来保护和管理视频内容的权利。
 
 请参阅TVSDK包中包含的DRM示例播放器代码。
 
@@ -51,7 +48,7 @@ Primetime DRM提供一个可伸缩、高效的工作流程，用于在TVSDK应�
       final DRMLoadMetadataListener loadMetadataListener);
    ```
 
-* 用于检查DRM元数据的`DRMHelper`方法，以确定是否需要身份验证。
+* 用于检查DRM元数据以确定是否需要身份验证的`DRMHelper`方法。
 
    ```java
    /** 
@@ -65,7 +62,7 @@ Primetime DRM提供一个可伸缩、高效的工作流程，用于在TVSDK应�
    public static boolean isAuthNeeded(DRMMetadata drmMetadata);
    ```
 
-* `DRMHelper` 执行身份验证的方法。
+* `DRMHelper` 方法。
 
    ```java
    /** 
@@ -90,7 +87,7 @@ Primetime DRM提供一个可伸缩、高效的工作流程，用于在TVSDK应�
    final DRMAuthenticationListener authenticationListener);
    ```
 
-* 通知您的应用程序各种DRM活动和状态的事件。
+* 事件，通知您的应用程序各种DRM活动和状态。
 
 <!--<a id="section_899BD9061D484E1BBA46E84617C36867"></a>-->
 
@@ -111,4 +108,4 @@ Comment Type: draft
 -->
 <!--<a id="section_F58941D68EB94A5EBD1C7454D2A1B17A"></a>-->
 
-有关DRM的详细信息，请参阅[Adobe PrimetimeDRM文档](https://helpx.adobe.com/primetime/user-guide.html)。
+有关DRM的详细信息，请参阅[Adobe Primetime DRM文档](https://helpx.adobe.com/primetime/user-guide.html)。
