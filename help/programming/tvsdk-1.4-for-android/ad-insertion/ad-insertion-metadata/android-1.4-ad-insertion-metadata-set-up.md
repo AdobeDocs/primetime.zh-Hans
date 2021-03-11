@@ -1,13 +1,10 @@
 ---
-description: 使用帮助类AuditudeSettings（它扩展了MetadataNode类）设置Adobe Primetime广告决策元数据。
-seo-description: 使用帮助类AuditudeSettings（它扩展了MetadataNode类）设置Adobe Primetime广告决策元数据。
-seo-title: 设置广告插入元数据
+description: 使用帮助类AuditudeSettings（它扩展了MetadataNode类）设置Adobe Primetime和决策元数据。
 title: 设置广告插入元数据
-uuid: d96e67c3-4cc7-4309-a2a2-ff5193b46534
 translation-type: tm+mt
-source-git-commit: 4102780d0c7d0b96d120c1c2b3d14c47bc1b0e6f
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '290'
+source-wordcount: '267'
 ht-degree: 0%
 
 ---
@@ -15,11 +12,11 @@ ht-degree: 0%
 
 # 设置广告插入元数据{#set-up-ad-insertion-metadata}
 
-使用帮助类AuditudeSettings（它扩展了MetadataNode类）设置Adobe Primetime广告决策元数据。
+使用帮助类AuditudeSettings（它扩展了MetadataNode类）设置Adobe Primetime和决策元数据。
 
 >[!TIP]
 >
->Adobe Primetime广告决策之前被称为Auditude。
+>Adobe Primetime广告决策之前称为Auditude。
 
 广告元数据位于`MediaResource.Metadata`属性中。 开始播放新视频时，您的应用程序负责设置正确的广告元数据。
 
@@ -47,7 +44,7 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   >媒体ID被TVSDK用作字符串，它被转换为md5值，并用于Primetime广告决策URL请求中的`u`值。 例如：
+   >媒体ID由TVSDK使用为字符串，它被转换为md5值，并用于Primetime广告决策URL请求中的`u`值。 例如：
    >
    >
    ```
@@ -60,7 +57,7 @@ ht-degree: 0%
    >   &g=1000002
    >```
 
-1. 使用媒体流URL和先前创建的广告元数据创建`MediaResource`实例。
+1. 使用媒体流URL和之前创建的广告元数据创建`MediaResource`实例。
 
    ```java
    MediaResource mediaResource = new MediaResource( 
@@ -72,13 +69,13 @@ ht-degree: 0%
    `MediaPlayer`开始加载和处理媒体流清单。
 
 1. 当`MediaPlayer`过渡到`INITIALIZED`状态时，通过`MediaPlayer.CurrentItem`方法以`MediaPlayerItem`实例的形式获取媒体流特性。
-1. （可选）查询`MediaPlayerItem`实例，以查看流是否处于实时状态，而不管它是否具有替代音轨，或者流是否受保护。
+1. （可选）查询`MediaPlayerItem`实例以查看流是否是实时的，而不管它是否具有替代音轨，或者流是否受到保护。
 
-   此信息可以帮助您为播放准备UI。 例如，如果您知道有两个音轨，则可以包含在这些音轨之间切换的UI控件。
+   此信息可帮助您为播放准备UI。 例如，如果您知道有两个音轨，则可以包含在这些音轨之间切换的UI控件。
 
 1. 致电`MediaPlayer.prepareToPlay`开始广告工作流程。
 
-   广告解析并放在时间轴上后，`MediaPlayer`过渡到`PREPARED`状态。
-1. 调用`MediaPlayer.play`开始播放。
+   在解析广告并将其放置到时间轴上后，`MediaPlayer`过渡到`PREPARED`状态。
+1. 调用`MediaPlayer.play`以开始播放。
 
-TVSDK现在在播放媒体时包含广告。
+TVSDK现在在播放您的媒体时包含广告。
