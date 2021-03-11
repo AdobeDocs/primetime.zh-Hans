@@ -1,14 +1,11 @@
 ---
-description: 您可以使用PrimetimeDigital Rights Management(DRM)系统的功能提供对视频内容的安全访问。 或者，您也可以将第三方DRM解决方案用作Adobe集成Primetime DRM解决方案的替代方案。
-keywords: DRM;DASH;HLS
-seo-description: 您可以使用PrimetimeDigital Rights Management(DRM)系统的功能提供对视频内容的安全访问。 或者，您也可以将第三方DRM解决方案用作Adobe集成Primetime DRM解决方案的替代方案。
-seo-title: Primetime DRM界面概述
+description: 您可以使用PrimetimeDigital Rights Management(DRM)系统的功能来提供对视频内容的安全访问。 或者，您可以使用第三方DRM解决方案作为Adobe集成Primetime DRM解决方案的替代方案。
+keywords: DRM；虚线；HLS
 title: Primetime DRM界面概述
-uuid: 5e794147-cc58-448c-b8ec-065e80ef01fd
 translation-type: tm+mt
-source-git-commit: 23a48208ac1d3625ae7d925ab6bfba8f2a980766
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '464'
+source-wordcount: '426'
 ht-degree: 0%
 
 ---
@@ -16,7 +13,7 @@ ht-degree: 0%
 
 # Primetime DRM接口概述{#primetime-drm-interface-overview}
 
-您可以使用PrimetimeDigital Rights Management(DRM)系统的功能提供对视频内容的安全访问。 或者，您也可以将第三方DRM解决方案用作Adobe集成Primetime DRM解决方案的替代方案。
+您可以使用PrimetimeDigital Rights Management(DRM)系统的功能来提供对视频内容的安全访问。 或者，您可以使用第三方DRM解决方案作为Adobe集成Primetime DRM解决方案的替代方案。
 
 <!--<a id="section_4DD54E085AB345FE9BE00865E56B28DB"></a>-->
 
@@ -24,9 +21,9 @@ ht-degree: 0%
 
 Primetime数字版权管理(DRM)系统的关键客户端元素是DRM管理器。
 
-Primetime DRM提供一个可伸缩、高效的工作流程，用于在TVSDK应用程序中实施内容保护。 通过为每个数字媒体文件创建许可证，您可以保护和管理视频内容的权利。
+Primetime DRM提供可扩展、高效的工作流，可在TVSDK应用程序中实施内容保护。 您可以通过为每个数字媒体文件创建许可证来保护和管理视频内容的权利。
 
-TVSDK支持Primetime DRM集成作为自定义DRM工作流。 这意味着您的应用程序必须在使用FlashDRMManager播放流之前实施DRM身份验证工作流。 要启用此功能，MediaPlayer将为您提供DRM管理器以进行身份验证。
+TVSDK支持Primetime DRM集成为自定义DRM工作流。 这意味着您的应用程序必须在使用Flash DRMManager播放流之前实施DRM身份验证工作流。 要启用此功能，MediaPlayer将为您提供DRM管理器以进行身份验证。
 
 请参阅TVSDK包中包含的DRM示例播放器代码。
 
@@ -44,22 +41,22 @@ TVSDK在DRM元数据更改时发出`PTMediaPlayerItemDRMMetadataChanged`通知�
 
 <!--<a id="section_223DCF63BAB6438792A85352A79044CC"></a>-->
 
-如果受DRM保护的流是多比特率(MBR)编码的，则用于变型播放列表的DRM元数据应与在所有比特率流中使用的元数据相同。
+如果受DRM保护的流是多比特率(MBR)编码的，则用于变体播放列表的DRM元数据应与在所有比特率流中使用的元数据相同。
 
 >[!TIP]
 >
->在iOS应用程序中引用受DRM保护的资产URL时，查询字符串参数`?faxs=1`必须附加到(MBR)设置级别M3U8 URL中。 例如：
+>在iOS应用程序中引用受DRM保护的资产URL时，查询字符串参数`?faxs=1`必须附加到(MBR)设置级M3U8 URL中。 例如：
 
 ```
 https://your.domain.com/hls/[...]/index.m3u8?faxs=1
 ```
 
-`faxs=1`查询字符串参数指示内容受DRM保护，并在iOS TVSDK中相应地触发DRM解密工作流。 您还可以在受DRM保护的HLS资产URL上附加`faxs=1`标记，这些资产URL用于其他平台；在iOS上按要求进行观察，或在其他平台上的播放器中被视为非操作。
+`faxs=1`查询字符串参数指示内容受DRM保护，并相应地在iOS TVSDK中触发DRM解密工作流。 您还可以在DRM保护的HLS资产URL上附加`faxs=1`标记，这些资产URL将发往其他平台；在iOS上按要求观察，或在其他平台上的播放器中视为非操作。
 
 ## 在TSVDK应用程序{#implement-primetime-drm-in-a-tsvdk-application}中实施Primetime DRM
 
-Primetime DRM已集成到TVSDK中，这简化了在TVSDK应用程序中实施内容保护。
+Primetime DRM已集成到TVSDK中，这简化了在TVSDK应用程序中实施内容保护的工作。
 
 有关使用Primetime DRM在TVSDK应用程序中实施内容保护的概述和详细信息，请参阅：
 
-* [Adobe PrimetimeTVSDK-DRM工作流程(PDF)](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_tvsdk_drm_workflow.pdf)
+* [Adobe Primetime TVSDK-DRM工作流(PDF)](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_tvsdk_drm_workflow.pdf)
