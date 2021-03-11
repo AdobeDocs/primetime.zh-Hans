@@ -1,13 +1,10 @@
 ---
 description: 视频分析报告将发送到Adobe Analytics报告平台。
-seo-description: 视频分析报告将发送到Adobe Analytics报告平台。
-seo-title: 访问视频分析报告
 title: 访问视频分析报告
-uuid: 82a03409-ad17-4442-8e89-58de2618e8c8
 translation-type: tm+mt
-source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '74'
+source-wordcount: '59'
 ht-degree: 0%
 
 ---
