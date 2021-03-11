@@ -1,19 +1,17 @@
 ---
-description: 'null'
-seo-description: 'null'
-seo-title: 播放受保护的内容需要设备功能
-title: 播放受保护的内容需要设备功能
-uuid: 1490711b-65d9-4716-8779-ae1da7d2c82c
+title: 播放受保护内容所需的设备功能
+description: 播放受保护内容所需的设备功能
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '131'
+source-wordcount: '129'
 ht-degree: 0%
 
 ---
 
 
-# 播放受保护内容{#device-capabilities-required-to-play-protected-content}需要设备功能
+# 播放受保护内容{#device-capabilities-required-to-play-protected-content}所需的设备功能
 
 所需的设备功能指定访问内容所需的硬件功能。 有关硬件功能的信息可用于使用移植工具包的设备。
 
@@ -44,7 +42,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe PrimetimeDRM客户端版本2.0.2及更高版本支持此使用规则。 旧客户端上的行为取决于许可证服务器支持的最低客户端版本。
+>Adobe Primetime DRM客户端版本2.0.2及更高版本支持此使用规则。 旧客户端上的行为取决于许可证服务器支持的最低客户端版本。
 >
 >请参阅[最低客户端版本](../../../../protecting-content/setting-up-the-sdk/setup-dev-env.md)。
 
