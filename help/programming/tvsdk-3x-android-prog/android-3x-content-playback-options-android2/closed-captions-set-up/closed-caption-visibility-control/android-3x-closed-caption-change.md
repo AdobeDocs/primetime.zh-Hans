@@ -1,13 +1,10 @@
 ---
-description: 此过程是有关如何创建按钮的示例，该按钮允许用户选择隐藏字幕轨道。
-seo-description: 此过程是有关如何创建按钮的示例，该按钮允许用户选择隐藏字幕轨道。
-seo-title: 允许用户更改题注轨道
+description: 此过程是有关如何创建允许用户选择隐藏字幕轨道的按钮的示例。
 title: 允许用户更改题注轨道
-uuid: 5a6d33f2-cece-48f6-8a68-fe76d9d2a950
 translation-type: tm+mt
-source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '141'
+source-wordcount: '113'
 ht-degree: 0%
 
 ---
@@ -15,9 +12,9 @@ ht-degree: 0%
 
 # 允许用户更改题注轨道{#allow-users-to-change-the-caption-track}
 
-此过程是有关如何创建按钮的示例，该按钮允许用户选择隐藏字幕轨道。
+此过程是有关如何创建允许用户选择隐藏字幕轨道的按钮的示例。
 
-1. 创建按钮以更改隐藏字幕轨道。
+1. 创建用于更改隐藏字幕轨道的按钮。
 
    ```xml
    <Button 
@@ -33,7 +30,7 @@ ht-degree: 0%
 
 1. 将可用隐藏字幕轨道的列表转换为字符串数组。
 
-   隐藏字幕轨道具有活动，即TVSDK已发现数据的渠道，将相应地进行标记。
+   对具有活动(即TVSDK已发现数据的渠道)的隐藏字幕轨道进行相应标记。
 
    ```java
    /** 
