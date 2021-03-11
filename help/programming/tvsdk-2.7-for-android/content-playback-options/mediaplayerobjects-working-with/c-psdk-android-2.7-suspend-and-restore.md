@@ -1,14 +1,11 @@
 ---
-description: 在设备屏幕关闭且必须由应用程序处理时挂起和恢复TVSDK MediaPlayer。
-keywords: SurfaceView;Suspend;Restore;BroadcastReceiver
-seo-description: 在设备屏幕关闭且必须由应用程序处理时挂起和恢复TVSDK MediaPlayer。
-seo-title: 挂起和恢复MediaPlayer
+description: 当设备屏幕关闭且必须由应用程序处理时，挂起和恢复TVSDK MediaPlayer。
+keywords: SurfaceView；挂起；恢复；广播接收器
 title: 挂起和恢复MediaPlayer
-uuid: 7777af91-547c-4f7a-8818-3d46dccee7d6
 translation-type: tm+mt
-source-git-commit: 0eaf0e7e7e61d596a51d1c9c837ad072d703c6a7
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '180'
+source-wordcount: '159'
 ht-degree: 0%
 
 ---
@@ -16,13 +13,13 @@ ht-degree: 0%
 
 # 挂起和恢复MediaPlayer {#suspend-and-restore-mediaplayer}
 
-在设备屏幕关闭且必须由应用程序处理时挂起和恢复TVSDK MediaPlayer。
+当设备屏幕关闭且必须由应用程序处理时，挂起和恢复TVSDK MediaPlayer。
 
-在Android的广播接收器中，可以处理`MediaPlayer`上的挂起和恢复操作，以便屏幕打开／关闭。
+您可以在Android的广播接收器内的`MediaPlayer`上处理挂起和恢复操作，以便打开/关闭屏幕。
 
-TVSDK无法确定片段(或活动)何时在后台或前台。 此外，当设备屏幕关闭时(但活动暂停),Android `SurfaceView`不会被销毁。 但是，当设备将应用程序置于后台时，`SurfaceView` *确实*&#x200B;会被销毁。 TVSDK无法检测到任何这些更改，因此必须由您的应用程序处理它们。
+TVSDK无法确定片段(或活动)何时在后台或前台。 此外，当设备屏幕关闭(但活动暂停)时，Android `SurfaceView`不会被销毁。 但是，当设备将应用程序置于后台时， `SurfaceView` *确实*&#x200B;会被销毁。 TVSDK无法检测任何这些更改，因此必须由您的应用程序处理它们。
 
-以下示例代码，当设备屏幕在应用程序级别打开和关闭时，应用程序如何处理挂起和恢复`MediaPlayer`:
+下面的示例代码，说明应用程序在应用程序级别打开和关闭设备屏幕时如何处理挂起和恢复`MediaPlayer`:
 
 ```java
 // Track the state of a fragment to determine if it is PAUSED or RESUMED 
