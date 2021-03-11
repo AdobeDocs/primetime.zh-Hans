@@ -1,13 +1,12 @@
 ---
 title: Adobe Primetime编程帮助
-seo-title: Adobe Primetime编程帮助
-description: 'null'
-seo-description: 'null'
+description: Adobe Primetime编程帮助
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 242b5a2875ebc0e0020296ce9489dd54438b5ad0
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '222'
-ht-degree: 37%
+source-wordcount: '220'
+ht-degree: 38%
 
 ---
 
@@ -16,7 +15,7 @@ ht-degree: 37%
 
 欢迎使用Adobe Primetime的Android和iOS编程帮助。 左侧导航中列出的文档允许您学习在Android设备上使用Java以及在iOS设备上使用Objective-C开发应用程序和视频播放器。
 
-有关[当前已发布版本](tvsdk-3x-ios-prog/ios-3x-introduction/ios-3x-overview/ios-3x-overview.md)的详细信息，请查看。
+有关[当前已发布版本](tvsdk-3x-ios-prog/ios-3x-introduction/ios-3x-overview/ios-3x-overview.md)的详细信息，请查阅。
 
 ## 另请参阅
 
@@ -30,7 +29,7 @@ ht-degree: 37%
 | [Primetime API参考](/help/reference/api-references.md) | 提供有关 TVSDK 函数、数据结构和其他编程结构的详细信息。 |
 | [存档](https://helpx.adobe.com/primetime/archives.html) | 下载归档文档的PDF。 |
 
-## 实用资源
+## 有用资源
 
 * [了解Adobe Primetime](https://www.adobe.com/in/marketing/primetime.html)
 
@@ -38,6 +37,6 @@ ht-degree: 37%
 
 * [Primetime身份验证](https://tve.helpdocsonline.com/home)
 
-* [Adobe PrimetimeDRM论坛](https://forums.adobe.com/community/adobe_access)
+* [Adobe Primetime DRM论坛](https://forums.adobe.com/community/adobe_access)
 
 * [Adobe Primetime开发人员资源](https://www.adobe.com/devnet/primetime.html)
