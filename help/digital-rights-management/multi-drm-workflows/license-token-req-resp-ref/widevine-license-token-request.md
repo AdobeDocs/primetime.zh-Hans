@@ -1,25 +1,22 @@
 ---
-description: Widevine许可证令牌接口提供生产和测试服务。
-seo-description: Widevine许可证令牌接口提供生产和测试服务。
-seo-title: Widevine许可证令牌请求／响应
-title: Widevine许可证令牌请求／响应
-uuid: a3522422-7075-49a7-bc55-137ef84ee430
+description: Widevine许可证令牌界面提供生产和测试服务。
+title: Widevine许可证令牌请求/响应
 translation-type: tm+mt
-source-git-commit: ffb993889a78ee068b9028cb2bd896003c5d4d4c
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '873'
+source-wordcount: '858'
 ht-degree: 5%
 
 ---
 
 
-# Widevine许可证令牌请求／响应{#widevine-license-token-request-response}
+# Widevine许可证令牌请求/响应{#widevine-license-token-request-response}
 
-Widevine许可证令牌接口提供生产和测试服务。
+Widevine许可证令牌界面提供生产和测试服务。
 
 此HTTP请求返回可兑换为Widevine许可证的令牌。
 
-**方法：GET** 、POST（带有包含两种方法参数的ww-url编码的正文）
+**方法：GET, POST** （带有www-url编码的正文，其中包含两种方法的参数）
 
 **URL:**
 
@@ -49,51 +46,51 @@ Widevine许可证令牌接口提供生产和测试服务。
   <tr> 
    <th class="entry"> <b>查询参数</b> </th> 
    <th class="entry"> <b>说明</b> </th> 
-   <th class="entry"> <b>必需？</b> </th> 
+   <th class="entry"> <b>需要？</b> </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
    <td> <span class="codeph"> customerAuthenticator  </span> </td> 
-   <td> <p>这是您的客户API密钥，每个密钥针对您的生产和测试环境。 您可以在ExpressPlay管理员仪表板选项卡上找到此选项。 </p> </td> 
+   <td> <p>这是您的客户API密钥，每个密钥针对您的生产和测试环境。 您可以在ExpressPlay管理仪表板选项卡上找到此选项。 </p> </td> 
    <td> 是 </td> 
   </tr> 
   <tr> 
    <td> <span class="codeph"> errorFormat  </span> </td> 
-   <td> <span class="codeph"> html </span>或<span class="codeph"> json </span>。 <p>如果<span class="codeph"> html </span>（默认），则在响应的实体正文中提供任何错误的HTML表示形式。 如果指定<span class="codeph">json </span>，则返回JSON格式的结构化响应。 有关详细信息，请参阅<a href="https://www.expressplay.com/developer/restapi/#json-errors" format="html" scope="external"> JSON错误</a>。 </p> <p>响应的MIME类型为：成功时<span class="codeph"> text/uri-列表</span>, <span class="codeph"> text/html </span>（对于<span class="codeph"> html </span>错误格式），或<span class="codeph"> application/json </span>（对于<span class="codeph"> </span>错误格式）。 </p> </td> 
+   <td> <span class="codeph"> html </span>或<span class="codeph"> json </span>。 <p>如果<span class="codeph"> html </span>（默认）在响应的实体正文中提供了任何错误的HTML表示形式。 如果指定<span class="codeph"> json </span>，则返回JSON格式的结构化响应。 有关详细信息，请参阅<a href="https://www.expressplay.com/developer/restapi/#json-errors" format="html" scope="external"> JSON错误</a>。 </p> <p>响应的MIME类型为：成功时<span class="codeph"> text/uri-列表 </span>, <span class="codeph"> text/html </span>（<span class="codeph"> html </span>错误格式），或<span class="codeph"> application/json </span>（<span class="codeph"> json </span>错误格式）。 </span></p> </td> 
    <td> 否 </td> 
   </tr> 
  </tbody> 
 </table>
 
-**表14:许可查询参数**
+**表14:许可证查询参数**
 
-| 查询参数 | 说明 | 必需？ |
+| 查询参数 | 说明 | 需要？ |
 |--- |--- |--- |
 | `generalFlags` | 表示许可证标志的4字节十六进制字符串。 “0000”是唯一允许的值 | 否 |
-| `kek` | 密钥加密密钥(KEK)。 密钥使用密钥打包算法（AES密钥包，RFC3394）通过KEK进行加密存储。 | 否 |
-| `kid` | 内容加密密钥的16字节十六进制字符串表示形式或字符串`^somestring'`。 字符串后跟`^`的长度不能大于64个字符。 请查看下面的注释以了解示例。 | 是 |
+| `kek` | 密钥加密密钥(KEK)。 密钥使用密钥封装算法（AES密钥封装，RFC3394）通过KEK进行加密存储。 | 否 |
+| `kid` | 内容加密密钥的16字节十六进制字符串表示形式或字符串`^somestring'`。 字符串后跟`^`的长度不能大于64个字符。 有关示例，请查看下面的备注。 | 是 |
 | `ek` | 加密内容密钥的十六进制字符串表示形式。 | 否 |
 | `contentKey` | 内容加密密钥的16字节十六进制字符串表示形式 | 是，除非提供`kek`和`ek`或`kid` |
 | `contentId` | 内容ID | 否 |
 | `securityLevel` | 允许的值为1-5。 <ul><li>1 = `SW_SECURE_CRYPTO`</li><li> 2 = `SW_SECURE_DECODE` </li><li> 3 = `HW_SECURE_CRYPTO` </li><li> 4 = `HW_SECURE_DECODE` </li><li> 5 = `HW_SECURE_ALL`</li></ul> | 是 |
 | `hdcpOutputControl` | 允许的值为0、1、2。 <ul><li>0 = `HDCP_NONE` </li><li> 1 = `HDCP_V1` </li><li> 2 = `HDCP_V2`</li></ul> | 是 |
-| `licenseDuration` * | 许可证持续时间（秒）。 如果未提供，则表示持续时间没有限制。 请查看下面的说明以了解详细信息。 | 否 |
-| `wvExtension` | 以逗号分隔的字符串形式将extensionType和extensionPayload打包的简短表单。 请参阅下面的格式。 示例：`…&wvExtension=wudo,AAAAAA==&…` | 否，可以使用任何数字 |
+| `licenseDuration` * | 许可证持续时间（秒）。 如果未提供，则表示对持续时间没有限制。 请查看下面的说明以了解详细信息。 | 否 |
+| `wvExtension` | 以逗号分隔的字符串形式将extensionType和extensionPayload打包的短表单。 请参阅下面的格式。 示例：`…&wvExtension=wudo,AAAAAA==&…` | 否，可以使用任何数字 |
 
-关于`licenseDuration`: <ol><li> 回放开始后，将停止`licenseDuration`秒。 </li><li> 要允许在不限的时间内停止／恢复播放，请忽略`licenseDuration`（默认为无限）。 否则，请指定最终用户可以享受流的时间。 </li></ol>
+关于`licenseDuration`: <ol><li> 播放将在播放开始后的`licenseDuration`秒内停止。 </li><li> 若要允许在不限时间内停止/恢复播放，请省略`licenseDuration`（默认为infinite）。 否则，请指定最终用户可以享受流的时间。 </li></ol>
 
 **表15:令牌限制查询参数**
 
-| 查询参数 | 说明 | 必需？ |
+| 查询参数 | 说明 | 需要？ |
 |--- |--- |--- |
-| `expirationTime` | 此令牌的过期时间。 此值必须以[RFC 3339](https://www.ietf.org/rfc/rfc3339.txt)日期／时间格式的字符串（“祖鲁时间”）或前面带有+符号的整数表示。 RFC 3339的日期／时间示例为2006-04-14T12:01:10Z。 <br> 如果该值是RFC 3339日 [期／时](https://www.ietf.org/rfc/rfc3339.txt) 间格式中的字符串，则它表示令牌的绝对过期日期／时间。如果值是前面有+符号的整数，则它被解释为从发出开始的相对秒数，表示令牌有效。 例如，`+60`指定一分钟。 <br> 最大和默认（如果未指定）令牌生命周期为30天。 | 否 |
+| `expirationTime` | 此令牌的过期时间。 此值必须是[RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) “Z”区域指示符（“祖鲁时间”）中日期/时间格式的字符串，或前面带+符号的整数。 RFC 3339的日期/时间示例为2006-04-14T12:01:10Z。 <br> 如果该值是RFC 3339日 [期/时](https://www.ietf.org/rfc/rfc3339.txt) 间格式的字符串，则它表示令牌的绝对过期日期/时间。如果值是前面有+符号的整数，则会将其解释为从发出开始的相对秒数，表示令牌有效。 例如，`+60`指定一分钟。 <br> 最大和默认（如果未指定）令牌生存期为30天。 | 否 |
 
 **表16:相关查询参数**
 
-| **查询参数** | **说明** | **必需？** |
+| **查询参数** | **说明** | **需要？** |
 |---|---|---|
-| `cookie` | 任意字符串，长达32个字符，在令牌中携带并由令牌兑换服务器记录。 可用于关联兑换服务器上的日志条目和服务提供商服务器上的日志条目。 | 否 |
+| `cookie` | 任意字符串（长达32个字符），长度在令牌中携带并由令牌兑换服务器记录。 可用于关联兑换服务器上的日志条目和服务提供商服务器上的日志条目。 | 否 |
 
 <!--<a id="section_6BFBD314C77C40C4B172ABBDD2D8D80E"></a>-->
 
@@ -102,7 +99,7 @@ Widevine许可证令牌接口提供生产和测试服务。
 | **HTTP状态代码** | **说明** | **内容类型** | **实体正文包含** |
 |---|---|---|---|
 | `200 OK` | 无错误。 | `text/uri-list` | 许可证获取URL +令牌 |
-| `400 Bad Request` | 无效标记 | `text/html` 或  `application/json` | 错误描述 |
+| `400 Bad Request` | 无效的图 | `text/html` 或  `application/json` | 错误描述 |
 | `401 Unauthorized` | 身份验证失败 | `text/html` 或  `application/json` | 错误描述 |
 | `404 Not found` | 错误的URL | `text/html` 或  `application/json` | 错误描述 |
 | `50x Server Error` | 服务器错误 | `text/html` 或  `application/json` | 错误描述 |
@@ -119,11 +116,11 @@ Widevine许可证令牌接口提供生产和测试服务。
  <tbody> 
   <tr> 
    <td> -2002 </td> 
-   <td> 令牌到期时间无效：&lt;详细信息&gt; </td> 
+   <td> 令牌过期时间无效：&lt;详细信息&gt; </td> 
   </tr> 
   <tr> 
    <td> -2003 </td> 
-   <td> IP地址无效 </td> 
+   <td> 无效的IP地址 </td> 
   </tr> 
   <tr> 
    <td> -2005 </td> 
@@ -139,7 +136,7 @@ Widevine许可证令牌接口提供生产和测试服务。
   </tr> 
   <tr> 
    <td> -2018 </td> 
-   <td> 身份验证令牌无效：&lt;详细信息&gt; <p>注意： 如果验证器错误，或使用生产验证器访问*.test.expressplay.com上的测试API时，会发生这种情况，反之亦然。 </p> <p importance="high">注意： 测试SDK和高级测试工具(ATT)只能用于<span class="filepath"> *.test.expressplay.com </span>，而生产设备必须使用<span class="filepath"> *.service.expressplay.com </span> </p>. </td> 
+   <td> 身份验证令牌无效：&lt;详细信息&gt; <p>注意： 如果验证器错误，或使用生产验证器访问*.test.expressplay.com上的测试API时，则会发生这种情况，反之亦然。 </p> <p importance="high">注意： 测试SDK和高级测试工具(ATT)只能与<span class="filepath"> *.test.expressplay.com </span>一起使用，而生产设备必须使用<span class="filepath"> *.service.expressplay.com </span> </p>. </td> 
   </tr> 
   <tr> 
    <td> -2019 </td> 
@@ -159,11 +156,11 @@ Widevine许可证令牌接口提供生产和测试服务。
   </tr> 
   <tr> 
    <td> -2027 </td> 
-   <td> 内容加密密钥必须长32个十六进制数字 </td> 
+   <td> 内容加密密钥必须长32位十六进制数字 </td> 
   </tr> 
   <tr> 
    <td> -2030 </td> 
-   <td> ExpressPlay管理员错误：&lt;详细信息&gt; </td> 
+   <td> ExpressPlay管理错误：&lt;详细信息&gt; </td> 
   </tr> 
   <tr> 
    <td> -2031 </td> 
@@ -179,11 +176,11 @@ Widevine许可证令牌接口提供生产和测试服务。
   </tr> 
   <tr> 
    <td> -2035 </td> 
-   <td> 未指定相应的值 </td> 
+   <td> 未指定相应值 </td> 
   </tr> 
   <tr> 
    <td> -2036 </td> 
-   <td> 扩展名类型应为4个字符 </td> 
+   <td> 扩展类型应为4个字符 </td> 
   </tr> 
   <tr> 
    <td> -2037 </td> 
@@ -215,7 +212,7 @@ Widevine许可证令牌接口提供生产和测试服务。
   </tr> 
   <tr> 
    <td> -4020 </td> 
-   <td> <span class="codeph"> 孩子 </span> 长度必须为32个十六进制字符 </td> 
+   <td> <span class="codeph"> 小 </span> 孩长度必须为32个十六进制字符 </td> 
   </tr> 
   <tr> 
    <td> -4021 </td> 
