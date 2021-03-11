@@ -1,21 +1,18 @@
 ---
-description: 在某些情况下，您需要了解媒体内容是实时还是VOD。
-seo-description: 在某些情况下，您需要了解媒体内容是实时还是VOD。
-seo-title: 确定内容是实时还是VOD
-title: 确定内容是实时还是VOD
-uuid: 4d514c46-a1d0-4721-a423-92108126e37e
+description: 在某些情况下，您需要了解媒体内容是实时的还是VOD的。
+title: 确定内容是实时的还是VOD
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '90'
+source-wordcount: '67'
 ht-degree: 0%
 
 ---
 
 
-# 确定内容是实时还是VOD{#identify-whether-the-content-is-live-or-vod}
+# 确定内容是实时的还是VOD{#identify-whether-the-content-is-live-or-vod}
 
-在某些情况下，您需要了解媒体内容是实时还是VOD。
+在某些情况下，您需要了解媒体内容是实时的还是VOD的。
 
 1. 确保播放器至少处于INITIALIZED状态。
 1. 确定`MediaPlayerItem`内容是实时(true)还是VOD(false)。
