@@ -1,13 +1,10 @@
 ---
-description: 从您创建MediaPlayer实例到您终止（重用或删除）它，该实例将完成一系列状态之间的过渡。
-seo-description: 从您创建MediaPlayer实例到您终止（重用或删除）它，该实例将完成一系列状态之间的过渡。
-seo-title: MediaPlayer对象生命周期
+description: 从您创建MediaPlayer实例到您终止（重用或删除）它的那一刻，该实例将完成状态之间的一系列过渡。
 title: MediaPlayer对象生命周期
-uuid: 6670a30c-7053-4754-bc36-6bb8590c001d
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '446'
 ht-degree: 0%
 
 ---
@@ -15,13 +12,13 @@ ht-degree: 0%
 
 # MediaPlayer对象生命周期{#mediaplayer-object-lifecycle}
 
-从您创建MediaPlayer实例到您终止（重用或删除）它，该实例将完成一系列状态之间的过渡。
+从您创建MediaPlayer实例到您终止（重用或删除）它的那一刻，该实例将完成状态之间的一系列过渡。
 
-某些操作仅在播放器处于特定状态时才允许。 例如，不允许在`IDLE`中调用`play`。 只有在播放器达到`PREPARED`状态后，才能调用此状态。
+某些操作仅在播放器处于特定状态时才允许。 例如，不允许在`IDLE`中调用`play`。 只有在播放器达到`PREPARED`状态后，才可以调用此状态。
 
-要使用状态：
+要使用状态，请执行以下操作：
 
-* 可以使用`MediaPlayer.getStatus`检索`MediaPlayer`对象的当前状态。
+* 可以检索`MediaPlayer.getStatus`对象的当前状态。`MediaPlayer`
 
    ```java
    PlayerState getStatus() throws IllegalStateException;
@@ -46,11 +43,11 @@ ht-degree: 0%
  <tbody> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 空闲  </span> </td> 
-   <td colname="col2"> <p>您的应用程序通过调用<span class="codeph"> DefaultMediaPlayer.create </span>请求新媒体播放器。 新创建的播放器正在等待您指定媒体播放器项。 这是媒体播放器的初始状态。 </p> </td> 
+   <td colname="col2"> <p>您的应用程序通过调用<span class="codeph"> DefaultMediaPlayer.create </span>请求新的媒体播放器。 新创建的播放器正在等待您指定媒体播放器项。 这是媒体播放器的初始状态。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 初始化  </span> </td> 
-   <td colname="col2"> <p>您的应用程序名为<span class="codeph"> MediaPlayer.replaceCurrentItem </span>，并且正在加载媒体播放器。 </p> </td> 
+   <td colname="col2"> <p>您的应用程序名为<span class="codeph"> MediaPlayer.replaceCurrentItem </span>，媒体播放器正在加载。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 已初始化  </span> </td> 
@@ -58,23 +55,23 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 准备  </span> </td> 
-   <td colname="col2"> <p>您的应用程序名为<span class="codeph"> MediaPlayer.prepareToPlay </span>。 媒体播放器正在加载媒体播放器项和相关资源。 </p> <p>提示： 可能会对主媒体进行一些缓冲。 </p> <p>TVSDK正在准备媒体流并尝试执行广告解析和广告插入（如果启用）。 </p> <p>提示： 要将开始时间设置为非零值，请调用<span class="codeph"> prepareToPlay(startTime)</span>，以毫秒为单位。 </p> </td> 
+   <td colname="col2"> <p>您的应用程序名为<span class="codeph"> MediaPlayer.prepareToPlay </span>。 媒体播放器正在加载媒体播放器项和相关资源。 </p> <p>提示： 可能会对主媒体进行一些缓冲。 </p> <p>TVSDK正在准备媒体流并尝试执行广告解析和广告插入（如果已启用）。 </p> <p>提示： 要将开始时间设置为非零值，请调用<span class="codeph"> prepareToPlay(startTime)</span>，以毫秒为单位。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 准备  </span> </td> 
-   <td colname="col2"> <p>内容已准备好，广告已插入时间轴，或广告过程失败。 缓冲或播放可以开始。 </p> </td> 
+   <td colname="col2"> <p>准备内容并将广告插入时间轴，或广告过程失败。 可以开始缓冲或播放。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 播放  </span> </td> 
-   <td colname="col2"> <p>您的应用程序已调用<span class="codeph"> play </span>，因此TVSDK正尝试播放视频。 在视频实际播放之前可能会发生一些缓冲。 </p> </td> 
+   <td colname="col2"> <p>您的应用程序已调用<span class="codeph"> play </span>，因此TVSDK正在尝试播放视频。 在视频实际播放之前可能会发生一些缓冲。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 已暂停  </span> </td> 
-   <td colname="col2"> <p>当应用程序播放和暂停媒体时，媒体播放器在此状态和播放之间移动。 </p> </td> 
+   <td colname="col2"> <p>当应用程序播放和暂停媒体时，媒体播放器会在此状态和播放之间移动。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 已暂停  </span> </td> 
-   <td colname="col2"> <p>在播放器播放或暂停时，您的应用程序从播放中导航离开、关闭设备或切换应用程序。 媒体播放器已挂起，资源已发布。 要继续，请恢复媒体播放器。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 已挂起  </span> </td> 
+   <td colname="col2"> <p>在播放器播放或暂停时，您的应用程序从播放中导航离开，关闭设备或切换应用程序。 媒体播放器已挂起，资源已释放。 要继续，请恢复媒体播放器。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 完成  </span> </td> 
@@ -86,14 +83,14 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 错误  </span> </td> 
-   <td colname="col2"> <p>进程期间出错。 错误还可能影响应用程序下一步的操作。 </p> </td> 
+   <td colname="col2"> <p>进程期间发生错误。 错误还可能影响应用程序下一步的操作。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
 >[!TIP]
 >
->您可以使用状态来提供有关该过程的反馈（例如，在等待下一个状态更改时使用微调框）或在播放媒体时采取下一步，如在调用下一个方法之前等待适当的状态。
+>您可以使用状态来提供对进程的反馈（例如，等待下一个状态更改时的微调框）或在播放媒体时采取下一步，例如在调用下一个方法之前等待适当的状态。
 
 例如：
 
