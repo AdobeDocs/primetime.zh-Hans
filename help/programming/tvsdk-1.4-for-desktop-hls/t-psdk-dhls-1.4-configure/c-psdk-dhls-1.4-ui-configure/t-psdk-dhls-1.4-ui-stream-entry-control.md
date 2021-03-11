@@ -1,14 +1,11 @@
 ---
 description: 默认情况下，在开始播放时，VOD媒体开始为0，实时媒体开始为客户端实时点(DefaultMediaPlayer.LIVE_POINT)。
-seo-description: 默认情况下，在开始播放时，VOD媒体开始为0，实时媒体开始为客户端实时点(DefaultMediaPlayer.LIVE_POINT)。
-seo-title: 在特定时间输入流
 title: 在特定时间输入流
-uuid: f58d908a-77b9-465f-b3a9-8fe63a249d39
 translation-type: tm+mt
-source-git-commit: 8ff38bdc1a7ff9732f7f1fae37f64d0e1113ff40
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '118'
-ht-degree: 1%
+source-wordcount: '91'
+ht-degree: 2%
 
 ---
 
