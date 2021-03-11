@@ -1,13 +1,11 @@
 ---
-description: 'null'
-seo-description: 'null'
-seo-title: 使用UI框架创建基本播放器
 title: 使用UI框架创建基本播放器
-uuid: d1a82dbb-1c05-4d0c-b6bc-e07cbede93cb
+description: 使用UI框架创建基本播放器
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 4102780d0c7d0b96d120c1c2b3d14c47bc1b0e6f
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '136'
+source-wordcount: '134'
 ht-degree: 1%
 
 ---
@@ -36,7 +34,7 @@ ht-degree: 1%
    </script>
    ```
 
-   创建播放器时，指定的`<div>`元素会被赋予`ptp-main-video-div-style`的CSS类。 生成的DOM如下所示：
+   创建播放器时，指定的`<div>`元素将获得`ptp-main-video-div-style`的CSS类。 生成的DOM如下所示：
 
    ```
    <div id="video1" class="ptp-main-video-div-style"> 
@@ -46,7 +44,7 @@ ht-degree: 1%
 
 1. 添加UI控件。
 
-   例如，添加当鼠标悬停在播放器上时显示的控件条：
+   例如，添加当鼠标悬停在播放器上时显示的控制栏：
 
    ```js
    <script> 
@@ -73,7 +71,7 @@ ht-degree: 1%
    </div>
    ```
 
-调用`ptp.videoPlayer()`返回的对象提供了一种行为，该行为包含TVSDK媒体播放器API并允许程序化控制播放。 当您对媒体播放器实例进行调用时，用户界面会根据媒体播放器触发的事件自行更新：
+调用`ptp.videoPlayer()`返回的对象提供了一种行为，该行为将TVSDK媒体播放器API封装起来，并允许对回放进行编程控制。 当您对媒体播放器实例进行调用时，用户界面会根据媒体播放器触发的事件自我更新：
 
 ```js
 <script> 
