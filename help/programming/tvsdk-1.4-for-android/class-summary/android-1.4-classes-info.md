@@ -1,13 +1,10 @@
 ---
 description: 这些类提供有关媒体的信息。
-seo-description: 这些类提供有关媒体的信息。
-seo-title: 信息类
 title: 信息类
-uuid: 49d6dc60-573e-41a6-aef9-2094c2699673
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '176'
+source-wordcount: '167'
 ht-degree: 0%
 
 ---
@@ -28,20 +25,20 @@ ht-degree: 0%
  </thead>
  <tbody> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/info/AudioTrack.html" format="html" scope="external"> AudioTrack</a></span></td> 
-   <td colname="2">扩展<span class="codeph">音轨</span>以定义音轨抽象的类。 </td> 
+   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/info/AudioTrack.html" format="html" scope="external"> 音轨</a></span></td> 
+   <td colname="2">扩展<span class="codeph">轨道</span>以定义音轨抽象的类。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/info/ClosedCaptionsTrack.html" format="html" scope="external"> ClosedCaptionsTrackClosedCaptions </a> 
-   Track</span> </td> 
-   <td colname="2">扩展<span class="codeph"> Track</span>以定义隐藏字幕抽象的类。 定义<span class="codeph"> ClosedCaptions</span>抽象的类。 隐藏字幕轨道由其名称AND其服务类型唯一定义。 不同的服务类型可以共享同一名称。</td> 
+   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/info/ClosedCaptionsTrack.html" format="html" scope="external"> </a> 
+   ClosedCaptionsTrackClosedCaptionsTrack</span> </td> 
+   <td colname="2">扩展<span class="codeph"> Track</span>以定义隐藏字幕抽象的类。 定义<span class="codeph"> ClosedCaptions</span>抽象的类。 隐藏字幕轨道由其名称AND其服务类型唯一定义。 不同的服务类型可以共享相同的名称。</td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/info/Profile.html" format="html" scope="external"> 用户档案</a> </span></td> 
    <td colname="2"> 包含媒体用户档案信息的类，如高度、宽度和位速率。 </td> 
   </tr> 
   <tr rowsep="0"> 
-   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/info/Track.html" format="html" scope="external"> 跟踪</a> </span></td> 
+   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/info/Track.html" format="html" scope="external"> Track</a> </span></td> 
    <td colname="2">定义用于定义<span class="codeph"> AudioTrack</span>和<span class="codeph"> ClosedCaptionsTrack</span>的轨道抽象的类。 </td> 
   </tr>
  </tbody>
