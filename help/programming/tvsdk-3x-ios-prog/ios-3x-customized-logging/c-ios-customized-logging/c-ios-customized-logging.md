@@ -1,36 +1,33 @@
 ---
 description: 您可以实施自己的日志记录系统。
-seo-description: 您可以实施自己的日志记录系统。
-seo-title: 了解自定义日志记录
-title: 了解自定义日志记录
-uuid: f056d7d7-ec3a-4cf1-997f-72a89bbc9447
+title: 了解自定义日志
 translation-type: tm+mt
-source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '297'
+source-wordcount: '287'
 ht-degree: 0%
 
 ---
 
 
-# 自定义日志记录{#customized-logging}
+# 自定义日志{#customized-logging}
 
 您可以实施自己的日志记录系统。
 
-除了使用预定义通知进行记录外，您还可以实施使用TVSDK生成的日志消息和消息的记录系统。 有关预定义通知的详细信息，请参阅[通知系统](https://help.adobe.com/en_US/primetime/psdk/ios/index.html#PSDKs-concept-The_Notification_System)。 您可以使用这些日志对播放器应用程序进行疑难解答，并更好地了解播放和广告工作流程。
+除了使用预定义的通知进行记录外，您还可以实施使用TVSDK生成的日志消息和消息的记录系统。 有关预定义通知的详细信息，请参阅[通知系统](https://help.adobe.com/en_US/primetime/psdk/ios/index.html#PSDKs-concept-The_Notification_System)。 您可以使用这些日志对播放器应用程序进行疑难解答，并更好地了解播放和广告工作流程。
 
-自定义日志记录使用`PSDKPTLogFactory`的共享单一实例，该实例提供将消息记录到多个日志记录器的机制。 定义一个或多个记录程序并将其添加（注册）到`PTLogFactory`。 这允许您使用自定义实现定义多个记录器，如控制台记录器、Web记录器或控制台历史记录记录器。
+自定义日志记录使用`PSDKPTLogFactory`的共享单一实例，该实例提供了将消息记录到多个日志程序的机制。 定义一个或多个记录器并将其添加（注册）到`PTLogFactory`。 这允许您使用自定义实现定义多个日志记录器，如控制台记录器、Web记录器或控制台历史记录记录器。
 
-TVSDK为其许多活动生成日志消息，`PTLogFactory`将其转发到所有已注册的日志记录器。 您的应用程序还可以生成自定义日志消息，这些消息将转发给所有已注册的日志记录器。 每个记录器都可以过滤消息并采取相应操作。
+TVSDK为其许多活动生成日志消息，`PTLogFactory`将其转发到所有已注册的日志。 您的应用程序还可以生成自定义日志消息，这些消息将转发到所有已注册的日志服务器。 每个记录器都可以过滤消息并采取适当的操作。
 
 `PTLogFactory`有两个实现：
 
-* 用于监听日志。
+* 用于侦听日志。
 * 用于向`PTLogFactory`添加日志。
 
 ## 侦听日志{#listen-to-logs}
 
-注册以监听日志：
+要注册以侦听日志，请执行以下操作：
 1. 实现遵循协议`PTLogger`的自定义类：
 
    ```
@@ -48,7 +45,7 @@ TVSDK为其许多活动生成日志消息，`PTLogFactory`将其转发到所有�
    @end
    ```
 
-1. 要注册该实例以接收日志记录条目，请将`PTLogger`的实例添加到`PTLoggerFactory`:
+1. 要注册该实例以接收日志条目，请将`PTLogger`的实例添加到`PTLoggerFactory`:
 
    ```
    PTConsoleLogger *logger = [PTConsoleLogger consoleLogger]; 
@@ -94,7 +91,7 @@ TVSDK为其许多活动生成日志消息，`PTLogFactory`将其转发到所有�
 
 ## 添加新日志消息{#add-new-log-messages}
 
-注册以监听日志：
+要注册以侦听日志，请执行以下操作：
 
 新建一个`PTLogEntry`并将其添加到`thePTLogFactory`:
 
