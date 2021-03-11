@@ -1,9 +1,9 @@
 ---
-seo-title: 为XSTS验证程序创建JKS
 title: 为XSTS验证程序创建JKS
-uuid: e02b517d-0b72-4e95-92b2-09b8f785cce6
+description: 为XSTS验证程序创建JKS
+copied-description: true
 translation-type: tm+mt
-source-git-commit: ed1430bdcb590a53fa69b324ef340ad636b2fa7c
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '70'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # 为XSTS validator{#create-jks-for-an-xsts-validator}创建JKS
 
-1. 查找位于合作伙伴[!DNL .pfx]文件中的私人证书的别名。
+1. 查找位于伙伴[!DNL .pfx]文件中的私人证书别名。
 
    ```
    keytool -list -storetype pkcs12 -keystore xsts_partner_cert.pfx -v 
