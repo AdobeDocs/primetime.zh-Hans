@@ -1,13 +1,10 @@
 ---
 description: MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表示的内容流的信息。
-seo-description: MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表示的内容流的信息。
-seo-title: 用于访问MediaResource信息的MediaPlayerItem方法
 title: 用于访问MediaResource信息的MediaPlayerItem方法
-uuid: c6e77eb7-cefd-48aa-9373-2b44a96217a5
 translation-type: tm+mt
-source-git-commit: 0eaf0e7e7e61d596a51d1c9c837ad072d703c6a7
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '444'
 ht-degree: 0%
 
 ---
@@ -26,7 +23,7 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
  </thead>
  <tbody> 
   <tr rowsep="1"> 
-   <td colname="2"> <b>广告标记</b> </td> 
+   <td colname="2"> <b>广告标签</b> </td> 
    <td colname="3"> </td> 
   </tr> 
   <tr rowsep="1"> 
@@ -59,7 +56,7 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> boolean hasClosedCaptions();  </span> </td> 
-   <td colname="3"> 如果隐藏式字幕轨道可用，则为true。 </td> 
+   <td colname="3"> 如果隐藏字幕轨道可用，则为true。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> &lt;closedcaptionstrack&gt; ListgetClosedActionsTracks();  </span> </td> 
@@ -67,7 +64,7 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> ClosedCaptionsTrack获取SelectedClosedCaptionsTrack();  </span> </td> 
-   <td colname="3"> 检索使用<span class="codeph"> SelectClosedCaptionsTrack </span>选择的当前隐藏字幕轨道。 </td> 
+   <td colname="3"> 检索当前使用<span class="codeph"> SelectClosedCaptionsTrack </span>选择的隐藏字幕轨道。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> selectClosedCaptionsTrack(ClosedCaptionsTrack closedCaptionsTrack)  </span> </td> 
@@ -79,11 +76,11 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> boolean hasAlternateAudio();  </span> </td> 
-   <td colname="3"> 如果流具有替代音轨，则为true。 <p>注意： 主音轨（默认）也是替代音轨列表的一部分。 </p> <p>适用于Android的TVSDK将主音轨视为备选音轨列表中的项目之一。 因此，<span class="codeph"> MediaPlayerItem.hasAlternateAudio </span>返回false的唯一情况是当流完全没有音频时。 如果内容只有一个音轨，则此方法返回true，而<span class="codeph"> MediaPlayerItem.getAudioTracks </span>返回具有单个元素（默认音轨）的列表。 </p> </td> 
+   <td colname="3"> 如果流具有替代音轨，则为true。 <p>注意： 主音轨（默认）也是替代音轨列表的一部分。 </p> <p>适用于Android的TVSDK将主音轨视为备用音轨列表中的项目之一。 因此，<span class="codeph"> MediaPlayerItem.hasAlternateAudio </span>返回false的唯一情况是当流根本没有音频时。 如果内容只有一条音轨，则此方法返回true，而<span class="codeph"> MediaPlayerItem.getAudioTracks </span>返回包含单个元素（默认音轨）的列表。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> &lt;audiotrack&gt; ListgetAudioTracks();  </span> </td> 
-   <td colname="3"> 提供可用备用音轨的列表。 </td> 
+   <td colname="3"> 提供可用替代音轨的列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> AudioTrack getSelectedAudioTrack();  </span> </td> 
@@ -91,7 +88,7 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> selectAudioTrack(AudioTrack audioTrack)  </span> </td> 
-   <td colname="3"> 选择一个音轨作为当前音轨。 </td> 
+   <td colname="3"> 选择音轨作为当前音轨。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <b>定时元数据</b> </td> 
@@ -114,15 +111,15 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
    <td colname="3"> 如果流是多比特率(MBR)流，则为true。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> ListgetProfiles(&lt;profile&gt; );  </span> </td> 
-   <td colname="3"> 提供相关比特率列表用户档案。 对于每个用户档案，您可以检索其比特率以及用户档案的高度和宽度。 </td> 
+   <td colname="2"> <span class="codeph"> &lt;profile&gt; ListgetProfiles();  </span> </td> 
+   <td colname="3"> 提供关联比特率列表用户档案。 对于每个用户档案，您可以检索其位速率以及用户档案的高度和宽度。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> 用户档案getSelectedProfile()  </span> </td> 
    <td colname="3"> 检索当前选定的用户档案。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <b>技巧游戏</b> </td> 
+   <td colname="2"> <b>戏法</b> </td> 
    <td colname="3"> </td> 
   </tr> 
   <tr rowsep="1"> 
@@ -151,7 +148,7 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
   </tr> 
   <tr rowsep="0"> 
    <td colname="2"> <span class="codeph"> int getResourceId()  </span> </td> 
-   <td colname="3"> 返回与此项目关联的媒体标识符。 当使用<span class="codeph"> MediaPlayerItemLoader.load </span>加载项目时，将设置此ID。 </td> 
+   <td colname="3"> 返回与此项目关联的媒体标识符。 使用<span class="codeph"> MediaPlayerItemLoader.load </span>加载项目时设置此ID。 </td> 
   </tr> 
  </tbody> 
 </table>
