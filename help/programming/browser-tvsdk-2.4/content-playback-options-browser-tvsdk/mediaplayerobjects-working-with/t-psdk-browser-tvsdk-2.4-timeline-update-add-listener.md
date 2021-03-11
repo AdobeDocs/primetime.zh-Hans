@@ -1,24 +1,21 @@
 ---
-description: 要接收有关时间轴更新的通知，请注册相应的事件监听器。
-seo-description: 要接收有关时间轴更新的通知，请注册相应的事件监听器。
-seo-title: 为TimelineUpdatedEvent添加监听器
-title: 为TimelineUpdatedEvent添加监听器
-uuid: 7d742e15-5a55-4155-93a7-7b79f21c1472
+description: 要接收有关时间轴更新的通知，请注册相应的事件侦听器。
+title: 为TimelineUpdatedEvent添加侦听器
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '62'
+source-wordcount: '47'
 ht-degree: 0%
 
 ---
 
 
-# 为TimelineUpdatedEvent{#add-listeners-for-timelineupdatedevent}添加监听器
+# 为TimelineUpdatedEvent{#add-listeners-for-timelineupdatedevent}添加侦听器
 
-要接收有关时间轴更新的通知，请注册相应的事件监听器。
+要接收有关时间轴更新的通知，请注册相应的事件侦听器。
 
 每次时间轴更新时，`MediaPlayer`都会调度类型为`AdobePSDK.PSDKEventType.TIMELINE_UPDATED`的`AdobePSDK.TimelineEvent`。
-1. 实现适当的监听器。
+1. 实施适当的监听器。
 
    ```js
    function onTimelineUpdatedEvent(event) { 
