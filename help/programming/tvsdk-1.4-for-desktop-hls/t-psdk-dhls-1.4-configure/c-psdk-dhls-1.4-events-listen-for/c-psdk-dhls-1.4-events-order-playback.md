@@ -1,13 +1,10 @@
 ---
-description: TVSDK按通常预期的序列发送事件/通知。 您的播放器可以根据预期序列中的事件执行操作。
-seo-description: TVSDK按通常预期的序列发送事件/通知。 您的播放器可以根据预期序列中的事件执行操作。
-seo-title: 播放事件的顺序
-title: 播放事件的顺序
-uuid: 4a9ea66b-a383-46ff-9ab8-983b1dd7f935
+description: TVSDK按通常预期的序列调度事件/通知。 您的播放器可以根据预期序列中的事件来实施操作。
+title: 播放事件
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '153'
+source-wordcount: '129'
 ht-degree: 0%
 
 ---
@@ -15,34 +12,34 @@ ht-degree: 0%
 
 # 播放事件的顺序{#order-of-playback-events}
 
-TVSDK按通常预期的序列发送事件/通知。 您的播放器可以根据预期序列中的事件执行操作。
+TVSDK按通常预期的序列调度事件/通知。 您的播放器可以根据预期序列中的事件来实施操作。
 
 <!--<a id="section_6E34A6C7936245D88DEB3315DA64598B"></a>-->
 
 以下示例显示了包含播放事件的某些事件的顺序。
 
-* 成功通过`MediaPlayer.replaceCurrentResource`加载媒体资源时，事件的顺序为：
+* 通过`MediaPlayer.replaceCurrentResource`成功加载媒体资源时，事件的顺序为：
 
    * `MediaPlayerStatusChangeEvent.STATUS_CHANGED` 状态  `MediaPlayerStatus.INITIALIZING`
 
    * `MediaPlayerItemEvent.ITEM_CREATED`
    * `MediaPlayerStatusChangeEvent.STATUS_CHANGED` 状态  `MediaPlayerStatus.INITIALIZED`
 
-* 通过`MediaPlayer.prepareToPlay`准备回放时，事件的顺序为：
+* 当通过`MediaPlayer.prepareToPlay`准备播放时，事件的顺序为：
 
    * `MediaPlayerStatusChangeEvent.STATUS_CHANGED` 状态  `MediaPlayerStatus.PREPARING`
 
-   * `TimelineEvent.TIMELINE_UPDATED` 是否插入广告
+   * `TimelineEvent.TIMELINE_UPDATED` 是否插入了广告
    * `MediaPlayerStatusChangeEvent.STATUS_CHANGED` 状态  `MediaPlayerStatus.PREPARED`
 
-* 对于实时／线性流，在播放期间，随着播放窗口的前进以及其他机会的解决，事件的顺序是：
+* 对于实时/线性流，在播放过程中，随着播放窗口的前进和其他机会的解决，事件的顺序是：
 
    * `MediaPlayerItemEvent.ITEM_UPDATED`
-   * `TimelineEvent.TIMELINE_UPDATED` 是否插入广告
+   * `TimelineEvent.TIMELINE_UPDATED` 是否插入了广告
 
 <!--<a id="section_76C13548AF934868B70757CA5489E516"></a>-->
 
-以下示例显示了事件的典型进度：
+以下示例显示了典型的事件进度：
 
 ```
 mediaPlayer.addEventListener(MediaPlayerItemEvent.ITEM_CREATED, onItemCreated); 
