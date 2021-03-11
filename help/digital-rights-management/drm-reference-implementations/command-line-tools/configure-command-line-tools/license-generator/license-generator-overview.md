@@ -1,9 +1,9 @@
 ---
-seo-title: 概述
 title: 概述
-uuid: 857390be-dd14-46c0-b8f7-2bc661c515d4
+description: 概述
+copied-description: true
 translation-type: tm+mt
-source-git-commit: d2b8cb67c54fadb8e0e7d2bdc15e393fdce8550e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '672'
 ht-degree: 0%
@@ -29,7 +29,7 @@ java -jar AdobeLicenseGenerator.jar -m
 </i class="+ topic>
 ```
 
-* `metadata` -包括Adobe PrimetimeDRM元数据。
+* `metadata`  — 包括Adobe Primetime DRM元数据。
 
    您可以使用Media Packager中的`-d -m`选项从受保护的内容检索此文件。
 
@@ -42,7 +42,7 @@ java -jar AdobeLicenseGenerator.jar -d
 </i class="+ topic>
 ```
 
-* `license` -包含由许可证生成器生成的Adobe PrimetimeDRM许可证。
+* `license`  — 包含由许可证生成器生成的Adobe Primetime DRM许可证。
 
 **表6:选项**
 
@@ -63,16 +63,16 @@ java -jar AdobeLicenseGenerator.jar -d
    <td colname="2" class="- topic/entry "> 显示有关已生成的许可证的信息。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-leaf leaf-filename</span> </td> 
+   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-leaf-leaf-filename</span> </td> 
    <td colname="2" class="- topic/entry "> 生成叶许可证并将输出保存到指定文件中。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-m元数据文件名</span> </td> 
-   <td colname="2" class="- topic/entry "> 指定需要为其生成许可证的内容元数据。 生成许可证需要此选项。 </td> 
+   <td colname="2" class="- topic/entry "> 指定您需要为其生成许可证的内容元数据。 生成许可证时需要此选项。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> -noprompt</span> </td> 
-   <td colname="2" class="- topic/entry ">不要询问目标文件是否应被覆盖。 如果目标文件已存在，且<span class="codeph"> -o</span>尚未设置，则会发生错误。 </td> 
+   <td colname="2" class="- topic/entry ">不要询问是否应覆盖目标文件。 如果目标文件已存在，且<span class="codeph"> -o</span>尚未设置，则会发生错误。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> -o</span> </td> 
@@ -80,14 +80,14 @@ java -jar AdobeLicenseGenerator.jar -d
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-policy-policy-num</span> </td> 
-   <td colname="2" class="- topic/entry "> <p>如果元数据包括多个DRM策略，则可以指定用于生成许可证的DRM策略数。 </p> <p>如果不指定DRM策略的数量，则会自动应用第一个DRM策略。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>如果元数据包括多个DRM策略，则可以指定用于生成许可证的DRM策略数。 </p> <p>如果未指定DRM策略的数量，则会自动应用第一个DRM策略。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-r收件人证书</span> </td> 
-   <td colname="2" class="- topic/entry ">为指定收件人生成许可证。 您可以使用设备或域证书，并可指定多个<span class="+ topic/ph pr-d/codeph codeph"> -r </span>选项，为多个收件人创建许可证。 </td> 
+   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-r 收件人-cert</span> </td> 
+   <td colname="2" class="- topic/entry ">为指定收件人生成许可证。 您可以使用设备或域证书，并可以指定多个<span class="+ topic/ph pr-d/codeph codeph"> -r </span>选项来为多个收件人创建许可证。 </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-root root-filename</span> </td> 
+   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-root-filename</span> </td> 
    <td colname="2" class="- topic/entry "> 生成根许可证并将输出保存到您指定的文件。 </td> 
   </tr> 
  </tbody> 
@@ -95,11 +95,11 @@ java -jar AdobeLicenseGenerator.jar -d
 
 ## 配置文件属性{#configuration-file-properties}
 
-运行许可证生成器之前，您需要在配置文件中指定许可证生成器属性的值。
+在运行许可证生成器之前，您需要在配置文件中为许可证生成器属性指定值。
 
 >[!NOTE]
 >
->对于包含&#x200B;*n*&#x200B;的属性名称，*n*&#x200B;表示一个整数，该整数以1开始，并且对于属性的每个实例增加。
+>对于包含&#x200B;*n*&#x200B;的属性名称，*n*&#x200B;表示一个整数，其开始为1，并且该属性的每个实例都会增加。
 
 <table frame="all" colsep="1" rowsep="1" class="+ topic/table adobe-d/table " id="table_qk1_rry_n4"> 
  <thead class="- topic/thead "> 
@@ -111,15 +111,15 @@ java -jar AdobeLicenseGenerator.jar -d
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph"> licensegen.minClientVersion</span> </td> 
-   <td colname="2" class="- topic/entry "> <p>设置当前支持的最低客户端版本。 如果未设置此属性，则默认情况下将自动支持所有版本。 </p> <p>您可以设置此值以控制旧客户端如何响应他们不支持的许可证要求。 指定<span class="codeph"> x</span>(对于Adobe PrimetimeDRM x.0)，其中<span class="codeph"> x</span>表示主发行号。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>设置当前支持的最低客户端版本。 如果未设置此属性，则默认情况下会自动支持所有版本。 </p> <p>您可以设置此值以控制旧客户端如何响应他们不支持的许可证要求。 指定<span class="codeph"> x</span>(对于Adobe Primetime DRM x.0)，其中<span class="codeph"> x</span>表示主发行号。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph"> licensegen.keyServerCert</span> </td> 
-   <td colname="2" class="- topic/entry "> 密钥服务器证书，是由密钥服务器使用的Adobe颁发的许可证服务器证书。 仅当元数据/DRM策略指示对iOS设备进行密钥投放需要密钥服务器时，才应用此证书。 </td> 
+   <td colname="2" class="- topic/entry "> 密钥服务器证书，是由密钥服务器使用的由Adobe颁发的许可证服务器证书。 仅当元数据/DRM策略指示要将密钥投放到iOS设备时需要密钥服务器时，才应用此证书。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph"> licensegen.sign.certfile</span> </td> 
-   <td colname="2" class="- topic/entry "> 包含用于签署许可证的许可证服务器凭据的PKCS12文件。 此属性需要引用包含证书和私钥的。pfx文件。 </td> 
+   <td colname="2" class="- topic/entry "> 包含用于签名许可证的许可证服务器凭据的PKCS12文件。 此属性需要引用包含证书和私钥的.pfx文件。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph"> licensegen.sign.certpass</span> </td> 
@@ -127,13 +127,13 @@ java -jar AdobeLicenseGenerator.jar -d
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">licensegen.domainca.n</span> </td> 
-   <td colname="2" class="- topic/entry "> <p>如果生成域绑定许可证，则必须指定一个或多个域CA证书以指示许可证颁发者可以信任的域颁发机构。 </p> <p>如果许可证收件人是域证书，而该证书不是由指定域CA之一颁发的，则无法生成许可证。 此属性指定一个<span class="filepath"> .cer</span>文件，其中包含PEM或DER格式的证书。 <span class="codeph">必</span> 须单调增加，从1开始。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>如果生成域绑定的许可证，则必须指定一个或多个域CA证书以指示许可证颁发者可以信任的域颁发机构。 </p> <p>如果许可证收件人是域证书，而该域证书不是由指定的域CA之一颁发的，则无法生成许可证。 此属性指定一个<span class="filepath"> .cer</span>文件，其中包含PEM或DER格式的证书。 <span class="codeph">必</span> 须从1开始单调增加。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 
     <code>licensegen.keys.asymmetric. licenseServerCredential.n</code>
    </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">可选的PKCS12文件，其中包含用于在元数据和DRM策略中解密CEK的附加许可证服务器凭据。 如果之前已将内容与许可服务器证书打包，而不是与<span class="codeph"> licensegen.sign.certfile</span>指定的凭据一起打包，则可以配置其他凭据。 此属性需要引用<span class="filepath"> .pfx</span>文件，该文件包含证书和私钥。 <span class="codeph">必</span> 须单调增加，从1开始。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">可选的PKCS12文件，其中包含用于解密元数据和DRM策略中的CEK的附加许可证服务器凭据。 如果之前已将内容与许可证服务器证书打包，而不是与<span class="codeph"> licensegen.sign.certfile</span>指定的凭据一起打包，则可以配置其他凭据。 此属性需要引用<span class="filepath"> .pfx</span>文件，该文件包含证书和私钥。 <span class="codeph">必</span> 须从1开始单调增加。 </p> </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 
