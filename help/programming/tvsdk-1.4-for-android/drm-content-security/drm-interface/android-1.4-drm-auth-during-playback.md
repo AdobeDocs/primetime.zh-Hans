@@ -1,13 +1,10 @@
 ---
-description: 当视频的DRM元数据包含在媒体流中时，在播放过程中执行身份验证。
-seo-description: 当视频的DRM元数据包含在媒体流中时，在播放过程中执行身份验证。
-seo-title: 播放期间的DRM验证
-title: 播放期间的DRM验证
-uuid: a1a63e3e-be34-49e1-96c4-ae266003b3d1
+description: 当视频的DRM元数据包含在媒体流中时，在播放期间执行身份验证。
+title: 播放期间的DRM身份验证
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '207'
+source-wordcount: '186'
 ht-degree: 0%
 
 ---
@@ -15,15 +12,15 @@ ht-degree: 0%
 
 # 播放{#drm-authentication-during-playback}期间的DRM身份验证
 
-当视频的DRM元数据包含在媒体流中时，在播放过程中执行身份验证。
+当视频的DRM元数据包含在媒体流中时，在播放期间执行身份验证。
 
-请考虑许可证轮换功能，该功能中的资产通过多个DRM许可证进行加密。 每次发现新的DRM元数据时，请使用`DRMHelper`方法检查DRM元数据是否需要DRM身份验证。
+请考虑许可证轮换功能，在此功能中，资产会使用多个DRM许可证进行加密。 每次发现新的DRM元数据时，使用`DRMHelper`方法检查DRM元数据是否需要DRM身份验证。
 
 >[!NOTE]
 >
->本教程不处理域绑定许可证。 理想情况下，在开始播放之前，请检查您是否正在处理域绑定许可证。 如果是，则执行域身份验证（如果需要）并加入域。
+>本教程不处理域绑定许可证。 理想情况下，在开始播放之前，请检查您是否正在处理域绑定的许可证。 如果是，则执行域身份验证（如果需要）并加入域。
 
-1. 在资产中发现新的DRM元数据时，将在应用程序层分派事件。
+1. 当在资产中发现新的DRM元数据时，将在应用程序层调度事件。
 
    ```java
    mediaPlayer.addEventListener(MediaPlayerEvent.DRM_METADATA,  
@@ -37,9 +34,9 @@ ht-degree: 0%
    };
    ```
 
-1. 使用`DRMMetadata`检查是否需要身份验证。 如果没有，则不做；播放继续不间断。
-1. 否则，请执行DRM身份验证。 由于此操作是异步的，并且是在不同的线程中处理的，因此它对用户界面和视频播放没有影响。
-1. 如果身份验证失败，则用户无法继续观看视频，并停止播放。 否则，将继续不间断播放。
+1. 使用`DRMMetadata`检查是否需要身份验证。 如果不能，则不做；播放继续不间断。
+1. 否则，请执行DRM身份验证。 由于此操作是异步的，并且是在其他线程中处理的，因此不会影响用户界面或视频播放。
+1. 如果身份验证失败，用户将无法继续观看视频，播放将停止。 否则，将不间断地继续播放。
 
 ```java
 DRMMetadataInfoEventListener drmMetadataInfoEventListener =  
