@@ -1,9 +1,9 @@
 ---
-seo-title: 设置首选项概述
 title: 设置首选项概述
-uuid: d1c067b1-6c2b-460e-8d00-5a5bfee0789c
+description: 设置首选项概述
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '184'
 ht-degree: 0%
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 # 设置首选项概述{#setting-preferences-overview}
 
-除Packager Server URL外，下面指定的所有首选项都存储在服务器上的[!DNL flashaccess-refimpl-packager.properties]文件中。 所有设置都可以直接在属性文件中或通过AIR应用程序进行修改。 口令存储在服务器的属性文件中时会加密。 在UI中键入未加密的密码，在将其存储到文件中之前，将对其进行加密。
+除Packager Server URL外，以下指定的所有首选项都存储在服务器上的[!DNL flashaccess-refimpl-packager.properties]文件中。 所有设置都可以直接在属性文件中或通过AIR应用程序进行修改。 当口令存储在服务器上的属性文件中时，会加密口令。 在UI中键入未加密的密码，该密码在存储到文件中之前会进行加密。
 
 >[!NOTE]
 >
->所有目录和路径引用打包程序服务器上的目录，而不是运行AIR应用程序的客户端上的目录。
+>所有目录和路径都引用packager服务器上的目录，而不是运行AIR应用程序的客户端上的目录。
 
 保存首选项后，此处所做的任何更改将立即生效。 无需重新启动服务器，除非Packager线程因配置问题而终止。
 
@@ -33,7 +33,7 @@ ht-degree: 0%
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> Packager服务器URL </td> 
-   <td colname="2" class="- topic/entry "> 运行<span class="filepath"> flashaccess-packager.war </span>的服务器的位置；例如<span class="filepath"> https://localhost:8080 </span> </td> 
+   <td colname="2" class="- topic/entry "> 运行<span class="filepath"> flashaccess-packager.war </span>的服务器位置；例如，<span class="filepath"> https://localhost:8080 </span> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 资源目录 </td> 
