@@ -1,9 +1,9 @@
 ---
-seo-title: 许可证获取过程概述
 title: 许可证获取过程概述
-uuid: c2eedd0a-3e3a-4c2f-a781-855f0ba65b15
+description: 许可证获取过程概述
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 7e8df034035fe465fbe403949ef828e7811ced2e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '339'
 ht-degree: 0%
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # 许可证获取过程概述{#license-acquisition-process-overview}
 
-使用ActionScript3(AS3)代码范例，在Primetime DRM的保护下使应用程序能够播放内容在以下几节中进行了介绍。 在移动平台上，本机应用程序与此工作流程的细微差别会适时呈现出来。 但是，Primetime DRM工作流在所有平台上都非常相似，因此您对AS3代码的理解将使用其他平台进行推断变得相当简单。
+使用ActionScript 3(AS3)代码示例，在以下几节中介绍了如何使应用程序能够在Primetime DRM的保护下播放内容。 在适当时，将介绍与移动平台上的本机App工作流程的细微差异。 但是，Primetime DRM工作流在所有平台上都非常相似，因此您对AS3代码的理解将使用其他平台进行推断变得相当简单。
 
-**许可证获取流程：**
+**许可证获取过程：**
 
 1. 获取受保护内容的DRM元数据。
 1. 检查许可证是否在本地可用：
@@ -32,6 +32,6 @@ ht-degree: 0%
 1. 如果需要身份验证并且现在已完成，请从许可证服务器下载许可证。
 1. 播放内容。
 
-如果未发生任何错误，且用户已成功授权视图内容，Primetime将调度`DRMStatusEvent`对象，应用程序将开始播放。 `DRMStatusEvent`对象包含相关的许可证信息，此信息用于标识用户的策略和权限。 例如，`DRMStatusEvent`可能包含有关内容是否可以脱机使用、许可证过期等信息。
+如果未发生任何错误，且用户已成功授权视图内容，Primetime将调度`DRMStatusEvent`对象，应用程序开始播放。 `DRMStatusEvent`对象包含相关的许可证信息，此信息用于标识用户的策略和权限。 例如，`DRMStatusEvent`可能包含有关内容是否可以脱机使用、许可证过期等的信息。
 
-应用程序可以使用许可证信息通知用户其策略的状态。 例如，应用程序可以显示用户在状态栏中查看内容的剩余天数。 如果允许用户脱机访问，则会缓存许可证，并将加密内容下载到用户的计算机。 内容在许可证缓存持续时间中定义的持续时间内可供访问。 事件中的detail属性包含`DRM.voucherObtained`。 应用程序决定将内容存储在本地的位置，以使其脱机可用。 您还可以使用`DRMManager`类预载许可证。
+应用程序可以使用许可证信息通知用户其策略的状态。 例如，应用程序可以显示用户在状态栏中查看内容时剩余的天数。 如果允许用户脱机访问，则会缓存许可证，并将加密内容下载到用户的计算机。 内容在许可证缓存持续时间中定义的持续时间内可供访问。 事件中的detail属性包含`DRM.voucherObtained`。 应用程序决定将内容存储在本地的位置，以使其脱机可用。 您还可以使用`DRMManager`类预载许可证。
