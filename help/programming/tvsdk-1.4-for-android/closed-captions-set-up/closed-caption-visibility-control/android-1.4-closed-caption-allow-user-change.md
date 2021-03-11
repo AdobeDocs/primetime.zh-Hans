@@ -1,13 +1,10 @@
 ---
-description: 这是一个有关如何创建按钮的示例，该按钮允许用户选择隐藏式字幕轨道。
-seo-description: 这是一个有关如何创建按钮的示例，该按钮允许用户选择隐藏式字幕轨道。
-seo-title: 示例允许用户更改题注轨道
+description: 这是一个有关如何创建允许用户选择隐藏字幕轨道的按钮的示例。
 title: 示例允许用户更改题注轨道
-uuid: 4b69d569-0d6e-4388-9fe3-488e2a4d762d
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '134'
+source-wordcount: '107'
 ht-degree: 0%
 
 ---
@@ -15,9 +12,9 @@ ht-degree: 0%
 
 # 示例：允许用户更改题注轨道{#example-allow-users-to-change-the-caption-track}
 
-这是一个有关如何创建按钮的示例，该按钮允许用户选择隐藏式字幕轨道。
+这是一个有关如何创建允许用户选择隐藏字幕轨道的按钮的示例。
 
-1. 创建一个简单的按钮以更改隐藏字幕轨道。
+1. 创建一个用于更改隐藏字幕轨道的简单按钮。
 
    ```xml
       <Button 
@@ -31,7 +28,7 @@ ht-degree: 0%
      android:text="CC" /> 
    ```
 
-1. 将可用隐藏字幕轨道的列表转换为字符串数组。 具有活动(即TVSDK已发现数据的渠道)的隐藏字幕轨道会相应地进行标记：
+1. 将可用隐藏字幕轨道的列表转换为字符串数组。 具有活动的隐藏字幕轨道(即TVSDK已发现数据的渠道)会相应地进行标记：
 
    ```java
    /** 
@@ -57,7 +54,7 @@ ht-degree: 0%
    } 
    ```
 
-1. 当用户单击该按钮时，将显示一个对话框，列表所有默认CC跟踪。
+1. 当用户单击该按钮时，将显示一个对话框，列表所有默认CC轨道。
 
    ```java
       public void selectClosedCaptioningClick(View view) { 
