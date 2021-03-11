@@ -1,13 +1,10 @@
 ---
 description: 这提供有关Digital Rights Management(DRM)活动的信息。
-seo-description: 这提供有关Digital Rights Management(DRM)活动的信息。
-seo-title: Digital Rights Management类
 title: Digital Rights Management类
-uuid: 6ed54e4b-47c7-4e49-8d11-00fc346b43f8
 translation-type: tm+mt
-source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '58'
+source-wordcount: '45'
 ht-degree: 0%
 
 ---
