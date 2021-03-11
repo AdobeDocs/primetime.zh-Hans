@@ -1,14 +1,11 @@
 ---
 description: 当当前播放时间与开始时间匹配时，可以使用TimedMetadata。
-seo-description: 当当前播放时间与开始时间匹配时，可以使用TimedMetadata。
-seo-title: 使用定时元数据
 title: 使用定时元数据
-uuid: 9bbdaefa-4ac5-4e08-92b4-15ebe5c46864
 translation-type: tm+mt
-source-git-commit: 25a0dfef12ecf10ba939500c4ba539468c41ee1b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '116'
-ht-degree: 1%
+source-wordcount: '100'
+ht-degree: 2%
 
 ---
 
@@ -17,9 +14,9 @@ ht-degree: 1%
 
 当当前播放时间与开始时间匹配时，可以使用TimedMetadata。
 
-要在播放过程中使用这些保存的`PTTimedMetadata`对象，请使用保存的[存储定时元数据对象的字典，因为调度这些对象](../../../tvsdk-1.4-for-ios/ad-insertion/c-psdk-ios-1.4-custom-tags-configure/t-psdk-ios-1.4-timed-metadata-store.md)。
+要在播放期间使用这些保存的`PTTimedMetadata`对象，请使用[存储调度的timed-metadata对象中保存的字典。](../../../tvsdk-1.4-for-ios/ad-insertion/c-psdk-ios-1.4-custom-tags-configure/t-psdk-ios-1.4-timed-metadata-store.md)
 
-1. 从此通知提取并更新当前播放时间，找到所有开始时间与当前播放时间匹配的`PTTimedMetadata`对象。
+1. 从此通知提取和更新当前播放时间，找到所有具有与当前播放时间匹配的开始时间的`PTTimedMetadata`对象。
 
    您可以使用这些对象完成各种操作。
 
