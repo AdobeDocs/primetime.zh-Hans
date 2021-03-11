@@ -1,13 +1,11 @@
 ---
-description: 'null'
-seo-description: 'null'
-seo-title: 信令模式和时间范围
 title: 信令模式和时间范围
-uuid: a4d2b0f3-49ce-4a07-a460-9e63bb91b5d3
+description: 信令模式和时间范围
+copied-description: true
 translation-type: tm+mt
-source-git-commit: adef0bbd52ba043f625f38db69366c6d873c586d
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '91'
+source-wordcount: '89'
 ht-degree: 0%
 
 ---
@@ -145,7 +143,7 @@ ht-degree: 0%
  </thead>
  <tbody> 
   <tr> 
-   <td> <span class="codeph"> AdSignlingMode OpportunityGenerator  </span> </td> 
+   <td> <span class="codeph"> AdSigningMode OpportunityGenerator  </span> </td> 
    <td> 
     <code>
       (range.begin,&nbsp; 
@@ -164,8 +162,8 @@ ht-degree: 0%
     </code> </td> 
   </tr> 
   <tr> 
-   <td> <span class="codeph"> SeverMap信 </span> 令模式 </td> 
-   <td> 不存在（广告被禁用）。 </td> 
+   <td> <span class="codeph"> ServerMap信 </span> 令模式 </td> 
+   <td> 不存在（已禁用广告）。 </td> 
    <td> 
     <code>
       placement&nbsp;=&nbsp; 
@@ -179,7 +177,7 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td> <span class="codeph"> ManifestCue信 </span> 令模式 </td> 
-   <td> 不存在（广告被禁用）。 </td> 
+   <td> 不存在（已禁用广告）。 </td> 
    <td> 
     <code>
       placement&nbsp;=&nbsp; 
@@ -193,7 +191,7 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td> <span class="codeph"> CustomRange信 </span> 令模式 </td> 
-   <td> 不存在（广告被禁用）。 </td> 
+   <td> 不存在（已禁用广告）。 </td> 
    <td> 无 </td> 
    <td> 无（已在<span class="codeph"> CustomRangeOpportunityGenerator </span>中处理） </td> 
   </tr> 
