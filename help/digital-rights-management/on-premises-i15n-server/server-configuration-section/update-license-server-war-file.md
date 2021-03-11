@@ -1,9 +1,9 @@
 ---
-seo-title: 更新License Server WAR文件
 title: 更新License Server WAR文件
-uuid: 0cde53d6-185d-4bf2-84fc-0c31d17904a8
+description: 更新License Server WAR文件
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 1547eb3dd220fafc08df923f40504736c16a866c
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '166'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # 更新License Server WAR文件{#update-the-license-server-war-file}
 
-为了支持通过本地个性化服务器个性化的客户端，您必须更新许可证服务器的信任证书根目录以包含新获得的个性化CA凭据。 [!DNL update_license_server]文件夹中包含Python脚本([!DNL addIndivCert.py])。
+为了支持通过本地个性化服务器实现个性化的客户端，您必须更新License Server的信任证书根目录以包含新获得的个性化CA凭据。 [!DNL update_license_server]文件夹中包含Python脚本([!DNL addIndivCert.py])。
 
 请执行以下操作以更新许可证服务器：
 
@@ -32,4 +32,4 @@ ht-degree: 0%
    ./addIndivCert.py -cert NEW_IndivCA.cer -war flashaccess.war
    ```
 
-将修改WAR文件。 如有必要，您可以编辑Python脚本以满足您的特定需求。 执行更新后，可以正常部署WAR文件。
+WAR文件将被修改到位。 如有必要，您可以编辑Python脚本以满足您的特定需求。 执行更新后，可以正常部署WAR文件。
