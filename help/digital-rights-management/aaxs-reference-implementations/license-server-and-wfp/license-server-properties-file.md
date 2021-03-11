@@ -1,9 +1,9 @@
 ---
-seo-title: 许可证服务器属性文件
 title: 许可证服务器属性文件
-uuid: bede307a-2060-451f-baf5-d058702c0a7e
+description: 许可证服务器属性文件
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 7e8df034035fe465fbe403949ef828e7811ced2e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '195'
 ht-degree: 0%
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 # 许可证服务器属性文件{#license-server-properties-file}
 
-使用[!DNL flashaccess-refimpl.properties]文件配置引用实现的License Server组件。 至少要配置与传输凭据和许可证服务器凭据相关的属性。 必须相对于`config.resourcesDirectory`属性指定的目录指定凭据文件的位置。 此文件还包含与打包内容相关的若干属性：这些属性仅用于Flash媒体Rights Management服务器1.x元数据转换。 如果修改此属性文件中的任何值，您需要重新启动许可证服务器才能使更改生效。
+使用[!DNL flashaccess-refimpl.properties]文件配置引用实现的License Server组件。 请务必至少配置与传输凭据和许可证服务器凭据相关的属性。 必须相对于由`config.resourcesDirectory`属性指定的目录指定凭据文件的位置。 此文件还包含与打包内容相关的若干属性：这些属性仅用于Flash Media Rights Management Server 1.x元数据转换。 如果修改此属性文件中的任何值，则需要重新启动许可证服务器，以使更改生效。
 
-要支持在Adobe访问中为iOS客户端生成远程密钥投放的许可证，必须在[!DNL flashaccess-refimpl.properties]中指定密钥服务器证书。
+要支持在Adobe Access中为iOS客户端生成远程密钥投放的许可证，必须在[!DNL flashaccess-refimpl.properties]中指定密钥服务器证书。
 
-在Adobe访问中添加了以下属性：
+以下属性已添加到Adobe访问中：
 
 <table frame="all" colsep="1" rowsep="1" class="+ topic/table adobe-d/table " id="table_xz2_lwy_n4"> 
  <thead class="- topic/thead "> 
@@ -33,7 +33,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> RefImpl.HSM.HandlerConfiguration。\ KeyServerCertificate.Alias</span> </td> 
-   <td colname="2" class="- topic/entry ">存储在HSM上的密钥服务器Adobe颁发的许可证服务器证书的别名。 启用HSM时，请使用此属性，而不是<span class="codeph"> HandlerConfiguration.KeyServerCertificate</span>。 </td> 
+   <td colname="2" class="- topic/entry ">HSM上存储的密钥服务器Adobe颁发的许可证服务器证书的别名。 启用HSM时，请使用此属性而不是<span class="codeph"> HandlerConfiguration.KeyServerCertificate</span>。 </td> 
   </tr> 
  </tbody> 
 </table>
