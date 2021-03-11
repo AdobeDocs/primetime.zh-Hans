@@ -1,13 +1,10 @@
 ---
 description: 使用HTTPGET命令与清单服务器进行交互。
-seo-description: 使用HTTPGET命令与清单服务器进行交互。
-seo-title: 向清单服务器发送命令
 title: 向清单服务器发送命令
-uuid: e9680563-d268-406d-87ce-1521a677e9ec
 translation-type: tm+mt
-source-git-commit: e437f4143fb939f46d106c64efc391137c33fe17
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '253'
+source-wordcount: '235'
 ht-degree: 0%
 
 ---
@@ -27,9 +24,9 @@ ht-degree: 0%
 
 * **需** 要PublisherAssetIDR。特定内容的发布者唯一ID。
 
-* **需要** 内容URLR。内容M3U8文件的URL,Base64编码为在清单服务器URL中是安全的。 内容URL必须指向变型M3U8文件，即使只有一个比特率流也是如此。
+* **内** 容URLRequired。内容M3U8文件的URL，Base64编码为在清单服务器URL中是安全的。 内容URL必须指向变体的M3U8文件，即使只有一个比特率流。
 
-* **查询** 参数一些是必需的，一些是可选的。这些是请求中最多样的部分。 它们告诉清单服务器发出请求的客户端类型以及清单服务器希望执行什么操作。
+* **查询** 参数某些是必需的，某些是可选的。这些是请求中最多样的部分。 它们告诉清单服务器发出请求的客户机类型以及清单服务器希望做什么。
 
    例如：
 
@@ -42,7 +39,7 @@ ht-degree: 0%
 
    **HTTP与HTTPS请求**
 
-   清单服务器使用客户端请求的相同HTTP协议创建URL。 如果播放器发出非安全HTTP(http)请求，清单服务器会使用http协议返回清单URL和Auditude跟踪URL。 如果播放器建立安全的HTTP(https)连接，清单服务器，则它会返回使用https协议的清单URL和Auditude跟踪URL。
+   清单服务器使用客户端请求的相同HTTP协议创建URL。 如果播放器发出了非安全的HTTP(http)请求，清单服务器会使用http协议返回清单URL和Auditude跟踪URL。 如果播放器建立安全的HTTP(https)连接，清单服务器，则会返回具有https协议的清单URL和Auditude跟踪URL。
 
    >[!NOTE]
    >
