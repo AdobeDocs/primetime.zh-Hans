@@ -1,9 +1,9 @@
 ---
-seo-title: 更新租户配置文件
 title: 更新租户配置文件
-uuid: b6cb43e2-b9a5-40bf-879a-010fcc3d5935
+description: 更新租户配置文件
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 58bb3bedc5b0ac63afd96eb6101d9ad779e6deed
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '62'
 ht-degree: 0%
@@ -13,4 +13,4 @@ ht-degree: 0%
 
 # 更新租户配置文件{#updating-the-tenant-configuration-file}
 
-可以随时修改[!DNL flashaccess-tenant.xml]中指定的所有值，这些更改将在服务器下次重新加载配置文件时生效。 此外，服务器检查租户配置文件中引用的所有凭据(.pfx)文件和包装程序允许列表证书文件中是否有更改。
+可以随时修改[!DNL flashaccess-tenant.xml]中指定的所有值，这些更改将在服务器下次重新加载配置文件时生效。 此外，服务器检查租户配置文件中引用的所有凭据(.pfx)文件和打包程序允许列表证书文件中的更改。
