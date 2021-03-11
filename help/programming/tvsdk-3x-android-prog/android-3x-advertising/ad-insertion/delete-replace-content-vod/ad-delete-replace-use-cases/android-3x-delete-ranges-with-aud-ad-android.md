@@ -1,13 +1,10 @@
 ---
 description: 您可以从时间轴中以localTime的形式删除开始和结束之间的TimeRange。
-seo-description: 您可以从时间轴中以localTime的形式删除开始和结束之间的TimeRange。
-seo-title: 删除范围
 title: 删除范围
-uuid: 2aaea7a0-5d52-49a1-901c-f71e4b081d91
 translation-type: tm+mt
-source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '86'
+source-wordcount: '71'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 删除范围{#delete-ranges}
 
-您可以从时间轴中删除`begin`和`end`之间的`TimeRanges`。`localTime`
+您可以从时间轴中删除`begin`和`localTime`中`end`之间的`TimeRanges`。
 
 >[!TIP]
 >
