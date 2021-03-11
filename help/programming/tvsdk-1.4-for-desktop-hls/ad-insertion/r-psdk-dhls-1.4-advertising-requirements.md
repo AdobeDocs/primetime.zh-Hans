@@ -1,13 +1,10 @@
 ---
-description: 您可以使用Adobe Primetime广告决策界面在VOD和实时／线性内容中插入广告。
-seo-description: 您可以使用Adobe Primetime广告决策界面在VOD和实时／线性内容中插入广告。
-seo-title: 广告要求
+description: 您可以使用Adobe Primetime广告决策界面在VOD和实时/线性内容中插入广告。
 title: 广告要求
-uuid: 734e6fc1-9343-4a5c-86a9-2a6d8e2b9acc
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '134'
+source-wordcount: '113'
 ht-degree: 0%
 
 ---
@@ -15,13 +12,13 @@ ht-degree: 0%
 
 # 广告要求{#advertising-requirements}
 
-您可以使用Adobe Primetime广告决策界面在VOD和实时／线性内容中插入广告。
+您可以使用Adobe Primetime广告决策界面在VOD和实时/线性内容中插入广告。
 
 <!--<a id="section_4889E0ED7A4241D98E61AD6C846B84B6"></a>-->
 
-Primetime广告决策与TVSDK协同工作，以识别广告机会、解析广告并在您的视频流中插入已解析的广告。
-要在视频内容中加入广告，请确保广告和主视频内容满足以下要求：
+Primetime广告决策与TVSDK合作，识别广告机会、解析广告并在您的视频流中插入已解析广告。
+要在视频内容中加入广告，请确保广告和主要视频内容满足以下要求：
 
 * 广告内容的HLS版本不能高于主内容的HLS版本。
-* 无论主内容是否多路复用，广告都不必进行多路复用（没有限制）。
+* 无论主内容是否被复用，广告都不必复用（没有限制）。
 
