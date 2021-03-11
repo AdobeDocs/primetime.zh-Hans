@@ -1,13 +1,10 @@
 ---
 description: AdBannerAsset的内容描述了配套横幅。
-seo-description: AdBannerAsset的内容描述了配套横幅。
-seo-title: 配套横幅数据
 title: 配套横幅数据
-uuid: b2c709da-9d19-49d1-8116-9c947371b77c
 translation-type: tm+mt
-source-git-commit: d2b8cb67c54fadb8e0e7d2bdc15e393fdce8550e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '190'
+source-wordcount: '178'
 ht-degree: 0%
 
 ---
@@ -35,7 +32,7 @@ AdBannerAsset的内容描述了配套横幅。
    <td colname="col2"> 配套横幅的宽度（以像素为单位）。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 高度 </td> 
+   <td colname="col1"> 高 </td> 
    <td colname="col2"> 配套横幅的高度（以像素为单位）。 </td> 
   </tr> 
   <tr> 
@@ -44,7 +41,7 @@ AdBannerAsset的内容描述了配套横幅。
     <ul id="ul_A067787FE49E4B6095BE0AC1D447DBB3"> 
      <li id="li_02B7224C67004095B3F6E50FD21E507E">html:数据以HTML代码显示。 </li> 
      <li id="li_5F37E14472424F808C6094F42009E676">iframe:数据是iframe URL(src)。 </li> 
-     <li id="li_48E74AC5F00640EC8A4DE2CB31E106EC">静态：数据是静态图像URL(src)。 </li> 
+     <li id="li_48E74AC5F00640EC8A4DE2CB31E106EC">static:数据是静态图像URL(src)。 </li> 
     </ul> </td> 
   </tr> 
   <tr> 
@@ -56,7 +53,7 @@ AdBannerAsset的内容描述了配套横幅。
   </tr> 
   <tr> 
    <td colname="col1"> 静态URL </td> 
-   <td colname="col2"> <p>有时，配套横幅也可能包含静态URL，该URL是图像的直接URL。 </p> <p>如果不想使用html或iframe，可以使用图像的直接URL。 在这种情况下，您可以使用staticURL显示横幅。 </p> <p>重要： 您必须检查静态URL是否是有效字符串，因为此属性可能不总是可用。 </p> </td> 
+   <td colname="col2"> <p>有时，配套横幅可能还包含一个静态URL，它是图像的直接URL。 </p> <p>如果您不想使用html或iframe，可以使用图像的直接URL。 在这种情况下，您可以使用staticURL显示横幅。 </p> <p>重要说明： 您必须检查静态URL是否为有效字符串，因为此属性可能并不总是可用。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
