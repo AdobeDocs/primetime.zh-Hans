@@ -1,9 +1,9 @@
 ---
-seo-title: 防火墙规则
 title: 防火墙规则
-uuid: a5667030-c4d0-42e3-b56e-20a12c903954
+description: 防火墙规则
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '365'
 ht-degree: 0%
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # 防火墙规则{#firewall-rules}
 
-## 传入的URL {#section-F111526A9DB844CBBF21A3CAE5F50880}
+## 传入URL {#section-F111526A9DB844CBBF21A3CAE5F50880}
 
-配置外部防火墙，使其仅显示您要向最终用户提供的应用程序功能的URL。 允许外部用户仅通过外部防火墙访问下表中列出的URL:
+配置您的外部防火墙，使其仅公开您要提供给最终用户的应用程序功能的URL。 仅允许外部用户通过外部防火墙访问下表中列出的URL:
 
 <table frame="all" colsep="1" rowsep="1" class="+ topic/table adobe-d/table " id="table-bqs-whz-n4"> 
  <thead class="- topic/thead "> 
@@ -37,7 +37,7 @@ ht-degree: 0%
      <li id="li-ED3C15EB4D194FFE99954BDB7D5C1E41"><span class="filepath"> /flashaccess/authn/v4/*</span> </li> 
      <li id="li-4DD6CBBE939F4E6EABA474E3DCCBD893"><span class="filepath"> /flashaccess/authn/v5/*</span> </li> 
     </ul> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">用户身份验证的URL。 仅当您使用Adobe访问客户端API执行用户身份验证时，此URL才可访问。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">用户身份验证的URL。 仅当您使用Adobe Access客户端API执行用户身份验证时，此URL才能访问。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 
@@ -47,7 +47,7 @@ ht-degree: 0%
      <li id="li-E6C551DDA030429B9D0073D2685B778A"><span class="filepath"> /flashaccess/license/v4/*</span> </li> 
      <li id="li-57811F4CD7304DBDAFADD65244AED0D9"><span class="filepath"> /flashaccess/license/v5/*</span> </li> 
     </ul> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">用于向最终用户颁发许可证的URL。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">向最终用户颁发许可证的URL。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 
@@ -56,7 +56,7 @@ ht-degree: 0%
      <li id="li-B333B85FFE8A46DD884595B0A620B4EE"><span class="filepath"> /flashaccess/sync/v4</span> </li> 
      <li id="li-E4771D3C5AA5454CA1EDCFAA3E027CC1"><span class="filepath"> /flashaccess/sync/v5</span> </li> 
     </ul> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">同步请求的URL。 仅当您在许可证中指定同步要求时，此URL才可访问。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">同步请求的URL。 仅当您在许可证中指定同步要求时，才能访问此URL。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 
@@ -65,7 +65,7 @@ ht-degree: 0%
      <li id="li-40F0952F09674CA3B9AAFB5A62F9D02E"><span class="filepath"> /flashaccess/domain/v4</span> </li> 
      <li id="li-3ADE44B959B548F8A31A6FF08537AF46"><span class="filepath"> /flashaccess/domain/v5</span> </li> 
     </ul> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">域注册的URL。 仅当您实施域支持时，此URL才可访问。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">域注册的URL。 仅当您实施域支持时，才能访问此URL。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 
@@ -74,7 +74,7 @@ ht-degree: 0%
      <li id="li-AB33657BC7E140E695767710DF7AEC72"><span class="filepath"> /flashaccess/dereg/v4</span> </li> 
      <li id="li-D15B32BCD4674269A3A2644DD5204707"><span class="filepath"> /flashaccess/dereg/v5</span> </li> 
     </ul> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">域取消注册的URL。 仅当您实施域支持时，此URL才可访问。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">域取消注册的URL。 仅当您实施域支持时，才能访问此URL。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="filepath"> /flashaccess/headerconversion/v1/*</span> </td> 
@@ -82,24 +82,24 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="filepath"> /edcws/services/urn:EDCLicenseService/*</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">LiveCycle Rights Management ESWeb服务URL。 如果内容是使用FMRMS的较早版本发布的，则此URL允许旧客户端连接到服务器并提示升级到Adobe访问。 </p> <p class="- topic/p ">注意：<i class="+ topic/ph hi-d/i ">此URL必须使用SSL(HTTPS)</i>。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">LiveCycle Rights Management ESWeb服务URL。 如果内容是使用FMRMS的早期版本发布的，则此URL允许旧版客户端连接到服务器并提示升级到Adobe访问。 </p> <p class="- topic/p ">注意：<i class="+ topic/ph hi-d/i ">此URL必须使用SSL(HTTPS)</i>。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="1" class="- topic/entry "><span class="filepath"> /flashaccess/lreturn/v5</span> </td> 
-   <td colname="2" class="- topic/entry "> <p>退回许可证的URL。 仅当您实施许可证返回支持时，URL才能访问。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>退回许可证的URL。 仅当您实施许可证退回支持时，URL才必须可访问。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
 >[!NOTE]
 >
->内部防火墙只能允许通过反向代理与Adobe访问许可证服务器建立连接，并且只能与上面列出的URL建立连接。 为了提高可伸缩性，反向代理与Adobe访问之间的连接将通过HTTP进行。
+>内部防火墙只能允许通过反向代理连接到Adobe Access许可证服务器，并且仅允许连接到上面列出的URL。 为了提高可伸缩性，反向代理与Adobe访问之间的连接将通过HTTP进行。
 
 ## 传出URL {#section-FFF9F7BB353149F4A27F8788E9934A48}
 
-许可证服务器需要通过防火墙访问以下CRL从Adobe下载：
+许可证服务器需要通过防火墙访问以从Adobe下载以下CRL:
 
-* ttps://crl2.adobe.com/Adobe/FlashAccessRootCA.crl<span></span>
-* tps://crl2.adobe.com/Adobe/FlashAccessIntermediateCA.crl<span></span>
-* tps://crl3.adobe.com/AdobeSystemsIncorporatedFlashAccessRuntime/LatestCRL.crl<span></span>
-* tps://crl2.adobe.com/Adobe/FlashAccessIndividualizationCA.crl<span></span>
+* h<span></span>ttps://crl2.adobe.com/Adobe/FlashAccessRootCA.crl
+* ht<span></span>tps://crl2.adobe.com/Adobe/FlashAccessIntermediateCA.crl
+* ht<span></span>tps://crl3.adobe.com/AdobeSystemsIncorporatedFlashAccessRuntime/LatestCRL.crl
+* ht<span></span>tps://crl2.adobe.com/Adobe/FlashAccessIndividualizationCA.crl
