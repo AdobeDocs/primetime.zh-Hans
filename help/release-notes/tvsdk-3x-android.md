@@ -1,16 +1,12 @@
 ---
 title: TVSDK 3.13 for Android发行说明
-seo-title: TVSDK 3.13 for Android发行说明
 description: TVSDK 3.13 for Android发行说明描述了TVSDK Android 3.13中的新增或更改功能、已解决和已知问题以及设备问题
-seo-description: TVSDK 3.13 for Android发行说明描述了TVSDK Android 3.13中的新增或更改功能、已解决和已知问题以及设备问题
-uuid: 685d46f5-5a02-4741-af5c-91e91babd6f7
 products: SG_PRIMETIME
 topic-tags: release-notes
-discoiquuid: 3a27379f-3cef-4ea3-bcae-21382dc1e9fd
 translation-type: tm+mt
-source-git-commit: a42c5b4478967822c920d96b05d5f04a6dec8c25
+source-git-commit: b33240bf1b42b80389cd95a7ae4d3f85185a2d32
 workflow-type: tm+mt
-source-wordcount: '5471'
+source-wordcount: '5443'
 ht-degree: 0%
 
 ---
