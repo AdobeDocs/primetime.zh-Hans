@@ -1,13 +1,10 @@
 ---
-description: 浏览器TVSDK提供DRM界面，可用于播放由不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
-seo-description: 浏览器TVSDK提供DRM界面，可用于播放由不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
-seo-title: DRM界面概述
+description: 浏览器TVSDK提供DRM界面，可用于播放受不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
 title: DRM界面概述
-uuid: b553ebad-8310-4517-8d97-ef8a1c5f4340
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '289'
+source-wordcount: '264'
 ht-degree: 0%
 
 ---
@@ -15,13 +12,13 @@ ht-degree: 0%
 
 # DRM接口概述{#drm-interface-overview}
 
-浏览器TVSDK提供DRM界面，可用于播放由不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
+浏览器TVSDK提供DRM界面，可用于播放受不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
 
 <!--<a id="section_59994F2059B245E996E0776214804A0A"></a>-->
 
 >[!IMPORTANT]
 >
->DRM支持使用Microsoft PlayReady（在Windows 8.1和Edge的Internet Explorer上）和Widevine（在Google Chrome上）DRM系统保护的MPEG-Dash流。 DRM支持Safari上受FairPlay保护的HLS流。
+>DRM支持适用于使用Microsoft PlayReady（在Windows 8.1和Edge的Internet Explorer上）和Widevine（在Google Chrome上）DRM系统保护的MPEG-Dash流。 DRM支持适用于Safari上受FairPlay保护的HLS流。
 
 DRM工作流的关键接口是`DRMManager`。 可通过MediaPlayer实例获取对`DRMManager`实例的引用：
 
@@ -30,9 +27,9 @@ DRM工作流的关键接口是`DRMManager`。 可通过MediaPlayer实例获取�
 
 <!--<a id="section_B7E8AD9A4D4F4BD9BA2A67ABC135D6F9"></a>-->
 
-以下是播放受DRM保护的内容的高级工作流：
+下面是播放受DRM保护的内容的高级工作流：
 
-1. 要附加浏览器TVSDK将在受保护流的许可证获取过程中使用的DRM系统特定数据，请在调用`mediaPlayer.replaceCurrentResource`之前进行以下调用：
+1. 要附加浏览器TVSDK在受保护流的许可证获取过程中将使用的DRM系统特定数据，请在调用`mediaPlayer.replaceCurrentResource`之前进行以下调用：
 
    ```js
    var protectionData = { 
@@ -50,7 +47,7 @@ DRM工作流的关键接口是`DRMManager`。 可通过MediaPlayer实例获取�
    drmManager.setProtectionData(protectionData);
    ```
 
-1. 如果同一内容应用于不同浏览器中的不同DRM系统，则可为多个DRM系统指定保护数据。
+1. 如果希望同一内容在不同的浏览器中与不同的DRM系统一起使用，则可以为多个DRM系统指定保护数据。
 
    ```js
    var protectionData = { 
@@ -101,7 +98,7 @@ DRM工作流的关键接口是`DRMManager`。 可通过MediaPlayer实例获取�
    >
    >指定保护数据将覆盖在PSSH框中指定的许可证URL。
 
-1. 默认情况下，DRM许可证的会话类型是临时的，这意味着在会话关闭后不存储许可证。
+1. 默认情况下，DRM许可证的会话类型是临时的，这意味着会话关闭后不存储许可证。
 
    可以使用`DRMManager`中的API指定会话类型。  为了向后兼容，会话类型包括`temporary`、`persistent-license`、`persistent-usage-record`和`persistent`。
 
