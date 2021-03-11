@@ -1,13 +1,10 @@
 ---
-description: 这些类提供TVSDK与Adobe视频分析之间的接口。
-seo-description: 这些类提供TVSDK与Adobe视频分析之间的接口。
-seo-title: 视频分析类
+description: 这些类提供TVSDK与Adobe Video Analytics之间的接口。
 title: 视频分析类
-uuid: 4eff85a3-f7ca-476c-a308-e346b3e61fc2
 translation-type: tm+mt
-source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '94'
+source-wordcount: '79'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 视频分析类{#video-analytics-classes}
 
-这些类提供TVSDK与Adobe视频分析之间的接口。
+这些类提供TVSDK与Adobe Video Analytics之间的接口。
 
 | **名称** | **说明** |
 |---|---|
