@@ -1,13 +1,11 @@
 ---
-description: 'null'
-seo-description: 'null'
-seo-title: DRM和运行时的最低安全级别
 title: DRM和运行时的最低安全级别
-uuid: 0df2a285-309d-4f49-912c-7a0562637424
+description: DRM和运行时的最低安全级别
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '72'
+source-wordcount: '70'
 ht-degree: 0%
 
 ---
@@ -15,7 +13,7 @@ ht-degree: 0%
 
 # DRM和运行时的最低安全级别{#minimum-security-level-for-drm-and-runtimes}
 
-最低安全级别指定访问内容所需的安全级别。 您为每个组件指定单独的安全级别。
+最低安全级别指定访问内容所需的安全级别。 您可以为每个组件指定单独的安全级别。
 
 DRM/运行时模块的默认安全级别为10000。
 
