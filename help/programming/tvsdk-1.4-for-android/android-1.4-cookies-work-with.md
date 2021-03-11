@@ -1,38 +1,35 @@
 ---
-description: 您可以使用TVSDK在Cookie标头中发送任意数据以进行会话管理、进行门访问等。
-seo-description: 您可以使用TVSDK在Cookie标头中发送任意数据以进行会话管理、进行门访问等。
-seo-title: 使用Cookie
+description: 您可以使用TVSDK在Cookie标头中发送任意数据，以进行会话管理、门访问等。
 title: 使用Cookie
-uuid: f060b520-ceec-48ca-929f-683566fe6ae7
 translation-type: tm+mt
-source-git-commit: 6da7d597503d98875735c54e9a794f8171ad408b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '268'
+source-wordcount: '246'
 ht-degree: 0%
 
 ---
 
 
-# 使用cookie{#work-with-cookies}
+# 使用Cookie{#work-with-cookies}
 
-您可以使用TVSDK在Cookie标头中发送任意数据以进行会话管理、进行门访问等。
+您可以使用TVSDK在Cookie标头中发送任意数据，以进行会话管理、门访问等。
 
-下面是一个在向密钥服务器发出请求时具有某种身份验证类型的示例：
+下面是向密钥服务器发出请求时具有某种身份验证类型的示例：
 
-1. 客户在浏览器中登录您的网站，其登录表明允许他们视图内容。
-1. 您的应用程序根据许可证服务器期望的内容生成身份验证令牌。 将该值传递给TVSDK。
+1. 您的客户在浏览器中登录您的网站，其登录表明允许他们视图内容。
+1. 您的应用程序会根据许可证服务器预期的内容生成身份验证令牌。 将该值传递给TVSDK。
 1. TVSDK在cookie头中设置该值。
-1. 当TVSDK向密钥服务器请求获取密钥以解密内容时，该请求在cookie头中包含身份验证值，因此密钥服务器知道该请求有效。
+1. 当TVSDK向密钥服务器发出请求以获取密钥以解密内容时，该请求在cookie头中包含身份验证值，因此密钥服务器知道该请求是有效的。
 
-要使用Cookie:
+要使用Cookie，请执行以下操作：
 
-1. 创建`cookieManager`并将URI的cookies添加到`cookieStore`。
+1. 创建`cookieManager`并将URI的Cookie添加到`cookieStore`。
 
    例如：
 
    >[!IMPORTANT]
    >
-   >启用302重定向后，广告请求可被重定向到不同于cookie所属域的域。
+   >启用302重定向后，广告请求可以重定向到不同于Cookie所属域的域。
 
    ```java
    CookieManager cookieManager= new CookieManager(); 
@@ -44,9 +41,9 @@ ht-degree: 0%
    cookieManager.getCookieStore().add(newURI("https://twitter.com/"),cookie);
    ```
 
-   TVSDK在运行时查询此cookieManager，检查是否存在与该URL关联的cookie，并自动使用这些cookie。
+   TVSDK在运行时查询此cookieManager，检查是否有任何与URL关联的cookie，并自动使用这些cookie。
 
-   另一个选项是使用`NetworkConfiguration`中的`cookieHeaders`设置用于请求的任意cookie头字符串。 默认情况下，此Cookie头仅随密钥请求一起发送。 要发送包含所有请求的Cookie头，请使用`NetworkConfiguration`方法`setUseCookieHeadersForAllRequests`:
+   另一个选项是使用`NetworkConfiguration`中的`cookieHeaders`设置用于请求的任意Cookie头字符串。 默认情况下，此Cookie头仅随密钥请求一起发送。 要发送包含所有请求的Cookie头，请使用`NetworkConfiguration`方法`setUseCookieHeadersForAllRequests`:
 
 ```java
    NetworkConfiguration networkConfiguration = new NetworkConfiguration(); 
