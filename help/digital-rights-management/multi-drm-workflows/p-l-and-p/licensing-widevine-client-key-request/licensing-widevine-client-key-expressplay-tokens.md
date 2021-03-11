@@ -1,13 +1,10 @@
 ---
-description: 您可以通过向相应的Expressplay令牌服务器发送令牌请求，为加密内容生成Expressplay令牌。
-seo-description: 您可以通过向相应的Expressplay令牌服务器发送令牌请求，为加密内容生成Expressplay令牌。
-seo-title: Expressplay令牌
+description: 您可以通过向相应的Expressplay令牌服务器发送令牌请求，为其加密内容生成Expressplay令牌。
 title: Expressplay令牌
-uuid: 6103e1b2-127d-4758-a589-15f0f3c73db1
 translation-type: tm+mt
-source-git-commit: d0ba1f98b16f6350ae842ca2ce1261bf49dd8a66
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '152'
+source-wordcount: '131'
 ht-degree: 0%
 
 ---
@@ -15,9 +12,9 @@ ht-degree: 0%
 
 # Expressplay令牌{#expressplay-tokens}
 
-您可以通过向相应的Expressplay令牌服务器发送令牌请求，为加密内容生成Expressplay令牌。
+您可以通过向相应的Expressplay令牌服务器发送令牌请求，为其加密内容生成Expressplay令牌。
 
-例如以下URL:
+例如：
 
 ```
 https://wv-gen.service.expressplay.com/hms/wv/
@@ -37,7 +34,7 @@ https://wv.service.expressplay.com/hms/wv/rights/
  SJ4o-d8teAkUZUtW3Od5V-SHsCLnAlbFW84K71h2xNUiMAvRcUFBG3bjxMQ
 ```
 
-然后，您可以
+然后您可以
 
 * 将返回的URL和查询用作许可证服务器URL，或
-* 从URL中取出查询，并作为HTTPPOST头单独传入ExpressPlayToken
+* 从URL中取出查询，并分别作为HTTPPOST头传入ExpressPlayToken
