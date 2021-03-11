@@ -1,9 +1,9 @@
 ---
-seo-title: 使用DRMStatusEvent类概述
 title: 使用DRMStatusEvent类概述
-uuid: 9faf35fe-63ac-43a8-a945-4735c12efb04
+description: 使用DRMStatusEvent类概述
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 9bbcb228d3367fbf53de811bf2941ca653ce3b0e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '78'
 ht-degree: 0%
@@ -15,4 +15,4 @@ ht-degree: 0%
 
 当Primetime DRM保护的内容开始成功播放时，将调度`DRMStatusEvent`对象。 (成功意味着许可证已经过验证，用户已通过身份验证并获得视图内容的授权)。
 
-`DRMStatusEvent`对象包含与许可证相关的信息，包括许可证是否可以脱机使用或许可证过期以及内容是否不再可查看。
+`DRMStatusEvent`对象包含与许可证相关的信息，包括许可证是否可以脱机使用或许可证过期以及内容无法再查看。
