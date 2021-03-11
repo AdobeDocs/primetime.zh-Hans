@@ -1,20 +1,19 @@
 ---
 title: Primetime参考实施
-seo-title: Adobe Primetime参考实施帮助
-description: 'null'
-seo-description: 'null'
+description: Primetime参考实施
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 242b5a2875ebc0e0020296ce9489dd54438b5ad0
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '211'
-ht-degree: 42%
+source-wordcount: '207'
+ht-degree: 43%
 
 ---
 
 
 # Primetime参考实施
 
-欢迎使用Adobe Primetime的参考实施帮助。 左侧导航中列出的文档有助于了解TVSDK并修改功能管理器以自定义您的个人播放器。
+欢迎使用Adobe Primetime的参考实施帮助。 左侧导航中列出的文档有助于理解TVSDK并修改功能管理器以自定义您的个人播放器。
 
 ## 另请参阅
 
@@ -28,7 +27,7 @@ ht-degree: 42%
 | [Primetime API参考](/help/reference/api-references.md) | 提供有关 TVSDK 函数、数据结构和其他编程结构的详细信息。 |
 | [存档](https://helpx.adobe.com/primetime/archives.html) | 下载归档文档的PDF。 |
 
-## 实用资源
+## 有用资源
 
 * [了解Adobe Primetime](https://www.adobe.com/in/marketing/primetime.html)
 
@@ -36,6 +35,6 @@ ht-degree: 42%
 
 * [Primetime身份验证](https://tve.helpdocsonline.com/home)
 
-* [Adobe PrimetimeDRM论坛](https://forums.adobe.com/community/adobe_access)
+* [Adobe Primetime DRM论坛](https://forums.adobe.com/community/adobe_access)
 
 * [Adobe Primetime开发人员资源](https://www.adobe.com/devnet/primetime.html)
