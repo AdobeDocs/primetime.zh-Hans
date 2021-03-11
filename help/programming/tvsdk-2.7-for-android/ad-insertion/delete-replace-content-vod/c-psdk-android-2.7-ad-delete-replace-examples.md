@@ -1,21 +1,18 @@
 ---
-description: 以下是删除和替换广告的过程的一些示例。
-seo-description: 以下是删除和替换广告的过程的一些示例。
-seo-title: 删除和替换广告的示例
+description: 以下是删除和替换广告的一些过程示例。
 title: 删除和替换广告的示例
-uuid: 31ceb39a-aa30-472e-908a-3ba57559045f
 translation-type: tm+mt
-source-git-commit: 812d04037c3b18f8d8cdd0d18430c686c3eee1ff
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '68'
+source-wordcount: '50'
 ht-degree: 0%
 
 ---
 
 
-# 删除和替换广告的示例{#examples-to-delete-and-replace-ads}
+# 删除和替换广告{#examples-to-delete-and-replace-ads}的示例
 
-以下是删除和替换广告的过程的一些示例。
+以下是删除和替换广告的一些过程示例。
 
 以下是使用`DELETE_RANGE`的示例：
 
