@@ -1,13 +1,10 @@
 ---
-description: FairPlay许可证令牌接口提供生产和测试服务。
-seo-description: FairPlay许可证令牌接口提供生产和测试服务。
-seo-title: FairPlay许可证令牌请求／响应
-title: FairPlay许可证令牌请求／响应
-uuid: 10d4a760-8895-4fb3-8288-1c3a640df587
+description: FairPlay许可证令牌界面提供生产和测试服务。
+title: FairPlay许可证令牌请求/响应
 translation-type: tm+mt
-source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '814'
 ht-degree: 4%
 
 ---
@@ -15,9 +12,9 @@ ht-degree: 4%
 
 # FairPlay许可证令牌请求和响应{#fairplay-license-token-request-response}
 
-FairPlay许可证令牌接口提供生产和测试服务。 此请求返回可兑换为FairPlay许可证的令牌。
+FairPlay许可证令牌界面提供生产和测试服务。 此请求返回可兑换为FairPlay许可证的令牌。
 
-**方法：GET** 、POST（带有包含两种方法参数的ww-url编码的正文）
+**方法：GET, POST** （带有www-url编码的正文，其中包含两种方法的参数）
 
 **URL:**
 
@@ -50,23 +47,23 @@ FairPlay许可证令牌接口提供生产和测试服务。 此请求返回可�
 
 **表3:令牌查询参数**
 
-| 查询参数 | 说明 | 必需？ |
+| 查询参数 | 说明 | 需要？ |
 |--- |--- |--- |
-| 作为查询参数的客户身份验证器客户身份验证器FairPlay | 这是您的客户API密钥，每个密钥针对您的生产和测试环境。 您可以在ExpressPlay管理员仪表板选项卡上找到此选项。 | 是 |
-| errorFormat | html或json。 如果html（默认）在响应的实体正文中提供任何错误的HTML表示形式。 如果指定json，则返回JSON格式的结构化响应。 有关详细信息，请参阅[JSON错误](https://www.expressplay.com/developer/restapi/#json-errors)。 响应的mime类型为：成功时为text/uri-列表,HTML错误格式为text/html,JSON错误格式为application/json。 | 否 |
+| 作为查询参数的客户Authenticator客户身份验证器客户Authenticator FairPlay | 这是您的客户API密钥，每个密钥针对您的生产和测试环境。 您可以在ExpressPlay管理仪表板选项卡上找到此选项。 | 是 |
+| errorFormat | html或json。 如果在响应的实体正文中提供了任何错误的HTML表示形式（默认）。 如果指定了json，则返回JSON格式的结构化响应。 有关详细信息，请参阅[JSON错误](https://www.expressplay.com/developer/restapi/#json-errors)。 响应的mime类型为：成功时为text/uri-列表,HTML错误格式为text/html，JSON错误格式为application/json。 | 否 |
 
-**表4:许可查询参数**
+**表4:许可证查询参数**
 
-| **查询参数** | **说明** | **必需？** |
+| **查询参数** | **说明** | **需要？** |
 |---|---|---|
 | `generalFlags` | 表示许可证标志的4字节十六进制字符串。 “0000”是唯一允许的值。 | 否 |
-| `kek` | 密钥加密密钥(KEK)。 密钥使用密钥打包算法（AES密钥包，RFC3394）通过KEK进行加密存储。 如果提供`kek`，则需要提供`kid`或`ek`参数之一，*但不同时提供*&#x200B;参数。 | 否 |
+| `kek` | 密钥加密密钥(KEK)。 密钥使用密钥封装算法（AES密钥封装，RFC3394）通过KEK进行加密存储。 如果提供了`kek`，则需要提供`kid`或`ek`参数之一，但不同时提供&#x200B;*参数。* | 否 |
 | `kid` | 内容加密密钥的16字节十六进制字符串表示形式或字符串`'^somestring'`。 字符串后跟`'^'`的长度不能大于64个字符。 | 否 |
 | `ek` | 加密内容密钥的十六进制字符串表示形式。 | 否 |
 | `contentKey` | 内容加密密钥的16字节十六进制字符串表示形式 | 是，除非提供`kek`和`ek`或`kid`。 |
-| `iv` | 内容加密IV的16字节十六进制字符串表示法 | 是 |
-| `rentalDuration` | 租金的持续时间（以秒为单位）（默认- 0） | 否 |
-| `fpExtension` | 以逗号分隔的字符串形式包括`extensionType`和`extensionPayload`的简短表单。 例如：[..] `&fpExtension=wudo,AAAAAA==&`[..] | 否，可以使用任何数字 |
+| `iv` | 内容加密IV的16字节十六进制字符串表示形式 | 是 |
+| `rentalDuration` | 租金的持续时间（以秒为单位）（默认 — 0） | 否 |
+| `fpExtension` | 以逗号分隔的字符串形式，将`extensionType`和`extensionPayload`括起来的短表单。 例如：[...] `&fpExtension=wudo,AAAAAA==&`[..] | 否，可以使用任何数字 |
 
 **表5:令牌限制查询参数**
 
@@ -75,13 +72,13 @@ FairPlay许可证令牌接口提供生产和测试服务。 此请求返回可�
   <tr> 
    <th class="entry"> <b>查询参数</b> </th> 
    <th class="entry"> <b>说明</b> </th> 
-   <th class="entry"> <b>必需？</b> </th> 
+   <th class="entry"> <b>需要？</b> </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
    <td> <span class="codeph"> expirationTime  </span> </td> 
-   <td> 此令牌的过期时间。 此值必须是<a href="https://www.ietf.org/rfc/rfc3339.txt" format="html" scope="external"> RFC 3339 </a>日期／时间格式中的字符串（“祖鲁时间”），或前面有“+”符号的整数。 RFC 3339日期／时间的示例为<span class="codeph"> 2006-04-14T12:01:10Z </span>。 <p>如果该值是<a href="https://www.ietf.org/rfc/rfc3339.txt" format="html" scope="external"> RFC 3339 </a>日期／时间格式的字符串，则它表示令牌的绝对过期日期／时间。 如果值是前面有“+”符号的整数，则它被解释为从发出开始的相对秒数，表示令牌有效。 </p> 例如，<span class="codeph"> +60 </span>指定一分钟。 最大和默认（如果未指定）令牌生命周期为30天。 </td> 
+   <td> 此令牌的过期时间。 此值必须是<a href="https://www.ietf.org/rfc/rfc3339.txt" format="html" scope="external"> RFC 3339 </a> “Z”区域指示符（“祖鲁时间”）中日期/时间格式的字符串，或前面有“+”符号的整数。 RFC 3339的日期/时间示例为<span class="codeph"> 2006-04-14T12:01:10Z </span>。 <p>如果该值是RFC 3339 </a>日期/时间格式的字符串，则它表示令牌的绝对过期日期/时间。 <a href="https://www.ietf.org/rfc/rfc3339.txt" format="html" scope="external">如果值是前面有“+”符号的整数，则它被解释为从发出开始的相对秒数，表示令牌有效。 </a></p> 例如，<span class="codeph"> +60 </span>指定一分钟。 最大和默认（如果未指定）令牌生存期为30天。 </td> 
    <td> 否 </td> 
   </tr> 
  </tbody> 
@@ -89,9 +86,9 @@ FairPlay许可证令牌接口提供生产和测试服务。 此请求返回可�
 
 **表6:相关查询参数**
 
-| **查询参数** | **说明** | **必需？** |
+| **查询参数** | **说明** | **需要？** |
 |---|---|---|
-| `cookie` | 任意字符串，长度不超过32个字符，包含在令牌中并由令牌兑换服务器记录。 这可用于关联在兑换服务器上和服务提供商服务器上的日志条目。 | 否 |
+| `cookie` | 任意字符串，长度不超过32个字符，在令牌中携带并由令牌兑换服务器记录。 这可用于关联兑换服务器上的日志条目和服务提供商服务器上的日志条目。 | 否 |
 
 **响应**
 
@@ -100,7 +97,7 @@ FairPlay许可证令牌接口提供生产和测试服务。 此请求返回可�
 | **HTTP状态代码** | **说明** | **内容类型** | **实体正文包含** |
 |---|---|---|---|
 | `200 OK` | 无错误。 | `text/uri-list` | 许可证获取URL +令牌 |
-| `400 Bad Request` | 无效标记 | `text/html` 或  `application/json` | 错误描述 |
+| `400 Bad Request` | 无效的图 | `text/html` 或  `application/json` | 错误描述 |
 | `401 Unauthorized` | 身份验证失败 | `text/html` 或  `application/json` | 错误描述 |
 | `404 Not found` | 错误的URL | `text/html` 或  `application/json` | 错误描述 |
 | `50x Server Error` | 服务器错误 | `text/html` 或  `application/json` | 错误描述 |
@@ -117,11 +114,11 @@ FairPlay许可证令牌接口提供生产和测试服务。 此请求返回可�
  <tbody> 
   <tr> 
    <td> -2002 </td> 
-   <td> 令牌到期时间无效：&lt;详细信息&gt; </td> 
+   <td> 令牌过期时间无效：&lt;详细信息&gt; </td> 
   </tr> 
   <tr> 
    <td> -2003 </td> 
-   <td> IP地址无效 </td> 
+   <td> 无效的IP地址 </td> 
   </tr> 
   <tr> 
    <td> -2005 </td> 
@@ -137,7 +134,7 @@ FairPlay许可证令牌接口提供生产和测试服务。 此请求返回可�
   </tr> 
   <tr> 
    <td> -2018 </td> 
-   <td> 身份验证令牌无效：&lt;详细信息&gt; <p>注意： 如果验证器错误，或者使用生产验证器访问<span class="filepath"> *.test.expressplay.com </span>上的测试API时，也会发生这种情况，反之亦然。 </p> <p importance="high">注意： 测试SDK和高级测试工具(ATT)只能用于<span class="filepath"> *.test.expressplay.com </span>，而生产设备必须使用<span class="filepath"> *.service.expressplay.com </span>。 </p> </td> 
+   <td> 身份验证令牌无效：&lt;详细信息&gt; <p>注意： 如果验证器错误，或使用生产验证器访问<span class="filepath"> *.test.expressplay.com </span>上的测试API时，则会发生这种情况，反之亦然。 </p> <p importance="high">注意： 测试SDK和高级测试工具(ATT)只能与<span class="filepath"> *.test.expressplay.com </span>一起使用，而生产设备必须使用<span class="filepath"> *.service.expressplay.com </span>。 </p> </td> 
   </tr> 
   <tr> 
    <td> -2019 </td> 
@@ -165,11 +162,11 @@ FairPlay许可证令牌接口提供生产和测试服务。 此请求返回可�
   </tr> 
   <tr> 
    <td> -2027 </td> 
-   <td> 内容加密密钥必须长32个十六进制数字 </td> 
+   <td> 内容加密密钥必须长32位十六进制数字 </td> 
   </tr> 
   <tr> 
    <td> -2030 </td> 
-   <td> ExpressPlay管理员错误：&lt;详细信息&gt; </td> 
+   <td> ExpressPlay管理错误：&lt;详细信息&gt; </td> 
   </tr> 
   <tr> 
    <td> -2031 </td> 
@@ -185,11 +182,11 @@ FairPlay许可证令牌接口提供生产和测试服务。 此请求返回可�
   </tr> 
   <tr> 
    <td> -2035 </td> 
-   <td> 未指定相应的值 </td> 
+   <td> 未指定相应值 </td> 
   </tr> 
   <tr> 
    <td> -2036 </td> 
-   <td> 扩展名类型应为4个字符 </td> 
+   <td> 扩展类型应为4个字符 </td> 
   </tr> 
   <tr> 
    <td> -2037 </td> 
@@ -221,11 +218,11 @@ FairPlay许可证令牌接口提供生产和测试服务。 此请求返回可�
   </tr> 
   <tr> 
    <td> -4020 </td> 
-   <td> <span class="codeph"> 孩子 </span> 长度必须为32个十六进制字符 </td> 
+   <td> <span class="codeph"> 小 </span> 孩长度必须为32个十六进制字符 </td> 
   </tr> 
   <tr> 
    <td> -4021 </td> 
-   <td> <span class="codeph"> ^ </span> 之后长度必须是64个字符 </td> 
+   <td> <span class="codeph"> 孩 </span> 子在^后长64个字符 </td> 
   </tr> 
   <tr> 
    <td> -4022 </td> 
