@@ -1,9 +1,9 @@
 ---
-seo-title: 检查加密的文件内容
 title: 检查加密的文件内容
-uuid: 1b3318f6-0850-43f2-9127-c72ea81a1bdf
+description: 检查加密的文件内容
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '95'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 ---
 
 
-# 正在检查已加密的文件内容{#examining-encrypted-file-content}
+# 正在检查加密的文件内容{#examining-encrypted-file-content}
 
 您可以使用Java API检查加密媒体文件的内容。
 
@@ -21,6 +21,6 @@ ht-degree: 0%
 1. 创建`MediaEncrypter`实例。
 1. 将加密文件传递给`MediaEncrypter.examineEncryptedContent`方法，该方法返回`KeyMetaData`对象。
 
-1. Inspect`KeyMetaData`对象中的信息。
+1. Inspect `KeyMetaData`对象中的信息。
 
-有关描述如何从加密文件提取DRM元数据的示例代码，请参见Reference Implementation Command Line Tools [!DNL samples/]目录中的`com.adobe.flashaccess.samples.mediapackager.ExamineContent`。
+有关描述如何从加密文件提取DRM元数据的示例代码，请参阅Reference Implementation Command Line Tools [!DNL samples/]目录中的`com.adobe.flashaccess.samples.mediapackager.ExamineContent`。
