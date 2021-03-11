@@ -1,13 +1,10 @@
 ---
-description: TVSDK根据广告相关操作(如当广告开始播放时)调度广告播放事件。
-seo-description: TVSDK根据广告相关操作(如当广告开始播放时)调度广告播放事件。
-seo-title: 广告播放事件
+description: TVSDK根据广告相关操作(如广告开始播放时)调度广告播放事件。
 title: 广告播放事件
-uuid: dd6991ae-3e33-4d92-92e9-26b1086a555a
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '288'
+source-wordcount: '269'
 ht-degree: 0%
 
 ---
@@ -15,9 +12,9 @@ ht-degree: 0%
 
 # 广告播放事件{#ad-playback-events}
 
-TVSDK根据广告相关操作(如当广告开始播放时)调度广告播放事件。
+TVSDK根据广告相关操作(如广告开始播放时)调度广告播放事件。
 
-要获得有关所有广告播放相关事件的通知，请注册`MediaPlayer.AdPlaybackEventListener`的实现，包括以下回呼。
+要获得有关所有广告播放相关事件的通知，请注册`MediaPlayer.AdPlaybackEventListener`的实现，包括以下回调。
 
 >[!TIP]
 >
@@ -26,9 +23,9 @@ TVSDK根据广告相关操作(如当广告开始播放时)调度广告播放事�
 | 事件 | 意义 |
 |---|---|
 | [onAdBreakComplete](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.AdPlaybackEventListener.html#onAdBreakComplete(com.adobe.mediacore.timeline.advertising.AdBreak)) (AdBreak adBreak) | 广告中断已经完全播放。 |
-| onAdBreakKbipted | 在播放过程中跳过广告中断。 |
-| [onAdBreakStart](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.AdPlaybackEventListener.html#onAdBreakStart(com.adobe.mediacore.timeline.advertising.AdBreak)) (AdBreak adBreak) | 广告中断已开始。 |
-| [onAdClick](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.AdPlaybackEventListener.html#onAdClick(com.adobe.mediacore.timeline.advertising.AdBreak,%20com.adobe.mediacore.timeline.advertising.Ad,%20com.adobe.mediacore.timeline.advertising.AdClick)) (AdBreak adBreak、Ad ad、AdClick adClick) | 用户已点击该广告。 向应用程序提供有关用户点击的广告的信息，以响应应用程序对`MediaPlayerView`的`notifyClick`调用。 |
-| [onAdComplete](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.AdPlaybackEventListener.html#onAdComplete(com.adobe.mediacore.timeline.advertising.AdBreak)) (AdBreak adBreak、Ad ad) | 广告播放完整。 |
-| [onAdProgress](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.AdPlaybackEventListener.html#onAdProgress(com.adobe.mediacore.timeline.advertising.AdBreak,com.adobe.mediacore.timeline.advertising.Ad,%20int)) （AdBreak adBreak, Ad ad, int百分比） | 广告播放已进行。 在广告播放时多次调度。 |
+| onAdBreakBripted | 在播放过程中跳过了广告中断。 |
+| [onAdBreakStart](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.AdPlaybackEventListener.html#onAdBreakStart(com.adobe.mediacore.timeline.advertising.AdBreak)) (AdBreak adBreak) | 广告休息开始。 |
+| [onAdClick](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.AdPlaybackEventListener.html#onAdClick(com.adobe.mediacore.timeline.advertising.AdBreak,%20com.adobe.mediacore.timeline.advertising.Ad,%20com.adobe.mediacore.timeline.advertising.AdClick)) (AdBreak adBreak、Ad ad、AdClick adClick) | 用户已点击该广告。 向应用程序提供有关用户点击的广告的信息，以响应应用程序在`MediaPlayerView`上调用`notifyClick`。 |
+| [onAdComplete](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.AdPlaybackEventListener.html#onAdComplete(com.adobe.mediacore.timeline.advertising.AdBreak)) (AdBreak adBreak、Ad ad) | 广告已完全播放。 |
+| [onAdProgress](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.AdPlaybackEventListener.html#onAdProgress(com.adobe.mediacore.timeline.advertising.AdBreak,com.adobe.mediacore.timeline.advertising.Ad,%20int)) （AdBreak adBreak， Ad ad， int百分比） | 广告播放已进展。 在广告播放时多次调度。 |
 | [onAdStart](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.AdPlaybackEventListener.html#onAdStart(com.adobe.mediacore.timeline.advertising.AdBreak,%20com.adobe.mediacore.timeline.advertising.Ad)) (AdBreak adBreak、Ad ad) | 广告已开始。 |
