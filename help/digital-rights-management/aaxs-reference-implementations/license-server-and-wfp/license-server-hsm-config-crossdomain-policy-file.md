@@ -1,9 +1,9 @@
 ---
-seo-title: 跨域策略文件
 title: 跨域策略文件
-uuid: 8eae1a52-7eec-46fd-a189-6952f5be98e8
+description: 跨域策略文件
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '40'
 ht-degree: 0%
@@ -13,4 +13,4 @@ ht-degree: 0%
 
 # 跨域策略文件{#crossdomain-policy-file}
 
-为了Flash运行时客户端从许可证服务器请求许可证，需要跨域策略文件。 有关详细信息，请参阅&#x200B;*使用Adobe访问SDK保护内容*。
+为了使Flash Runtime客户端从许可证服务器请求许可证，需要跨域策略文件。 有关更多详细信息，请参阅&#x200B;*使用Adobe Access SDK for Protecting Content*。
