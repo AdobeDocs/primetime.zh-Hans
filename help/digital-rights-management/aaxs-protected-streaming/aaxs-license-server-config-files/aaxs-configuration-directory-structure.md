@@ -1,13 +1,10 @@
 ---
-description: 保护流的Adobe Access Server需要两种类型的配置文件：全局配置文件(flashaccess-global.xml)和每个租户的租户配置文件(flashaccess-tenant.xml)。
-seo-description: 保护流的Adobe Access Server需要两种类型的配置文件：全局配置文件(flashaccess-global.xml)和每个租户的租户配置文件(flashaccess-tenant.xml)。
-seo-title: 配置目录结构
+description: “受保护流”的Adobe Access Server需要两种类型的配置文件：全局配置文件(flashaccess-global.xml)和每个租户的租户配置文件(flashaccess-tenant.xml)。
 title: 配置目录结构
-uuid: c6cfc734-6b7c-4502-9bdb-c7aaca156e0e
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '167'
+source-wordcount: '137'
 ht-degree: 0%
 
 ---
@@ -15,11 +12,11 @@ ht-degree: 0%
 
 # 许可证服务器配置文件和配置目录结构{#configuration-directory-structure}
 
-Adobe Access Server的受保护流需要两种类型的配置文件：每个租户的全局配置文件(flashaccess-global.xml)和租户配置文件(flashaccess-tenant.xml)。
+Adobe Access Server for Protected Streaming需要两种类型的配置文件：每个租户的全局配置文件(flashaccess-global.xml)和租户配置文件(flashaccess-tenant.xml)。
 
-在编辑配置文件后，Adobe建议使用随Adobe Access Server提供的受保护流的实用程序来验证文件的格式是否正确。 有关详细信息，请参阅“[配置验证程序](../../aaxs-protected-streaming/aaxs-protected-streaming-utilities/configuration-validator.md)”。
+在编辑配置文件后，Adobe建议使用随“受保护流”Adobe Access Server提供的实用程序来验证文件的格式是否正确。 有关详细信息，请参阅“[Configuration Validator](../../aaxs-protected-streaming/aaxs-protected-streaming-utilities/configuration-validator.md)”。
 
-为避免在配置文件中以明文形式提供口令，必须对全局配置文件和租户配置文件中指定的所有口令进行加密。 有关加密密码的详细信息，请参阅“[密码剪贴器](../../aaxs-protected-streaming/aaxs-protected-streaming-utilities/password-scrambler.md)”。
+为避免在配置文件中以明文提供密码，必须加密全局配置文件和租户配置文件中指定的所有密码。 有关加密密码的详细信息，请参阅“[密码剪贴器](../../aaxs-protected-streaming/aaxs-protected-streaming-utilities/password-scrambler.md)”。
 
 配置目录具有以下结构：
 
