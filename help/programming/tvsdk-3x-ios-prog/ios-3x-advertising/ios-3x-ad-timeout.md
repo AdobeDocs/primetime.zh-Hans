@@ -1,13 +1,10 @@
 ---
-description: 您可以使用Adobe Primetime广告决策界面在VOD和实时／线性内容中插入广告。
-seo-description: 您可以使用Adobe Primetime广告决策界面在VOD和实时／线性内容中插入广告。
-seo-title: 广告要求
+description: 您可以使用Adobe Primetime广告决策界面在VOD和实时/线性内容中插入广告。
 title: 广告要求
-uuid: 0287f1e4-746f-42e5-b811-409064dd9b13
 translation-type: tm+mt
-source-git-commit: 48ad8aad89701f8414e752a4d4e41da252d28d62
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '144'
+source-wordcount: '123'
 ht-degree: 0%
 
 ---
