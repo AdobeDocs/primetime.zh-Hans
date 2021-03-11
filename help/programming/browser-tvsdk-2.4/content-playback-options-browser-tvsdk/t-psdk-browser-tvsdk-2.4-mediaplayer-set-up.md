@@ -1,13 +1,10 @@
 ---
 description: MediaPlayer对象封装媒体播放器的行为和功能。
-seo-description: MediaPlayer对象封装媒体播放器的行为和功能。
-seo-title: 设置MediaPlayer
 title: 设置MediaPlayer
-uuid: 2279e388-6fbc-49a2-8560-218d3d31e1d6
 translation-type: tm+mt
-source-git-commit: af9b865bc1627a97bf8957b5460ff9b46052a7dc
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '107'
+source-wordcount: '91'
 ht-degree: 0%
 
 ---
@@ -80,4 +77,4 @@ MediaPlayer对象封装媒体播放器的行为和功能。
    }
    ```
 
-`MediaPlayer`实例现已可用，并且已正确配置以在设备屏幕上显示视频内容。
+`MediaPlayer`实例现已可用，并已正确配置以在设备屏幕上显示视频内容。
