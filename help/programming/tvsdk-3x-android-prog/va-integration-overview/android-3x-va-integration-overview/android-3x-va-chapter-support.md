@@ -1,13 +1,11 @@
 ---
-description: 'null'
-seo-description: 'null'
-seo-title: 实施章节支持
 title: 实施章节支持
-uuid: 6e2c3994-d28b-489f-ae60-9b876125a871
+description: 实施章节支持
+copied-description: true
 translation-type: tm+mt
-source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '62'
+source-wordcount: '60'
 ht-degree: 0%
 
 ---
@@ -15,7 +13,7 @@ ht-degree: 0%
 
 # 实施章节支持{#implement-chapter-support}
 
-您可以定义和跟踪&#x200B;*自定义*&#x200B;章节，以便在基于TVSDK的应用程序中进行视频跟踪。
+您可以在基于TVSDK的应用程序中定义和跟踪用于视频跟踪的&#x200B;*自定义*&#x200B;章节。
 
 自定义章节由应用程序管理，并基于CMS数据或应用程序用于定义章节的其他方式。
 
