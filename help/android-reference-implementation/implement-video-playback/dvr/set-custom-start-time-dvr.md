@@ -1,9 +1,9 @@
 ---
-seo-title: 在参考实现中设置自定义开始时间
 title: 在参考实现中设置自定义开始时间
-uuid: ec404e61-9dce-4bd3-ac48-c2dbd834b6f8
+description: 在参考实现中设置自定义开始时间
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 31b6cad26bcc393d731080a70eff1c59551f1c8e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '103'
 ht-degree: 0%
@@ -13,14 +13,14 @@ ht-degree: 0%
 
 # 在引用实现{#set-a-custom-start-time-in-the-reference-implementation}中设置自定义开始时间
 
-您可以使用“设置”界面中的DVR控件面板在参考实现中启用和编辑开始位置。 编辑这些参数时，SharedPreferences中的配置会更新，播放器也会更新。
+您可以使用“设置”界面中的DVR控件面板来启用和编辑引用实现中的开始位置。 编辑这些参数时，将更新SharedPreferences中的配置并更新播放器。
 
-1. 打开Primetime设置对话框。
+1. 打开“Primetime设置”对话框。
 1. 选择&#x200B;**[!UICONTROL DVR controls]**。
 
    <!--<a id="fig_5C7A4E8F0390404F97E667364DB8B0A6"></a>-->
 
    ![](assets/dvr-configuration.jpg)
 
-1. **如果要在** 输入流 **[!UICONTROL ON]** 时在DVR窗口中选择自定义位置，则自定义开始时间控件必须为。
-1. 在&#x200B;**选择自定义开始时间**&#x200B;中设置自定义开始时间。
+1. **如果要在** 进入流 **[!UICONTROL ON]** 时在DVR窗口中选择自定义位置，则自定义开始时间控件必须为。
+1. 在&#x200B;**中设置自定义开始时间，选择自定义开始时间**。
