@@ -1,13 +1,10 @@
 ---
-description: 对于视频点播(VOD)内容，TVSDK通过在主内容中拼接广告来插入广告分段，从而延长时间轴持续时间。
-seo-description: 对于视频点播(VOD)内容，TVSDK通过在主内容中拼接广告来插入广告分段，从而延长时间轴持续时间。
-seo-title: 解析和插入VOD广告
+description: 对于视频点播(VOD)内容，TVSDK通过在主内容中拼接广告来插入广告分段，从而延长时间线持续时间。
 title: 解析和插入VOD广告
-uuid: b7124cab-441b-4b38-ac83-300ab9e5f9ec
 translation-type: tm+mt
-source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '186'
+source-wordcount: '159'
 ht-degree: 0%
 
 ---
@@ -15,26 +12,26 @@ ht-degree: 0%
 
 # 解析和插入VOD广告{#resolve-and-insert-vod-ad}
 
-对于视频点播(VOD)内容，TVSDK通过在主内容中拼接广告来插入广告分段，从而延长时间轴持续时间。
+对于视频点播(VOD)内容，TVSDK通过在主内容中拼接广告来插入广告分段，从而延长时间线持续时间。
 
-在回放之前，TVSDK会解析已知广告，按照Adobe Primetime广告决策返回的时间轴所述在主内容中插入广告中断，并在必要时重新计算虚拟时间轴。
+在播放之前，TVSDK会解析已知广告，在主内容中插入广告分段(如从Adobe Primetime广告决策返回的时间轴所描述)，并在必要时重新计算虚拟时间轴。
 
 TVSDK通过以下方式插入广告：
 
-* **预卷**，放在内容之前。
+* **前滚**，放在内容之前。
 * **中间**，在内容中间。
 * **后滚**，放在内容之后。
 
 >[!TIP]
 >
->播放开始后，内容中不再发生其他更改。
+>播放开始后，内容中不会发生其他更改。
 
-广告不能是：
+广告不能：
 
 * 已插入
 * 已删除
 
-   例如，您不能从内容中删除内置广告以优惠免费广告体验。
+   例如，您无法从内容中删除内置广告以优惠免费广告体验。
 * 已替换
 
    例如，您无法将内置广告替换为目标广告。
