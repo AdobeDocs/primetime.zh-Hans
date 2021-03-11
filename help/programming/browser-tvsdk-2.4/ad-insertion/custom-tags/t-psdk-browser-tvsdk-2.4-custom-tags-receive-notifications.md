@@ -1,25 +1,22 @@
 ---
-description: 要接收清单中标记的通知，请侦听AdobePSDK.TimedMetadataEvent。
-seo-description: 要接收清单中标记的通知，请侦听AdobePSDK.TimedMetadataEvent。
-seo-title: 为定时元数据通知添加监听器
-title: 为定时元数据通知添加监听器
-uuid: c82c5549-0ab6-4343-a766-5176e784d4cb
+description: 要接收有关清单中标记的通知，请侦听AdobePSDK.TimedMetadataEvent。
+title: 为定时元数据通知添加侦听器
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '83'
+source-wordcount: '67'
 ht-degree: 0%
 
 ---
 
 
-# 为定时元数据通知添加监听器{#add-listeners-for-timed-metadata-notifications}
+# 为定时元数据通知添加侦听器{#add-listeners-for-timed-metadata-notifications}
 
-要接收清单中标记的通知，请侦听AdobePSDK.TimedMetadataEvent。
+要接收有关清单中标记的通知，请侦听AdobePSDK.TimedMetadataEvent。
 
 创建新`TimedMetadata`对象时，MediaPlayer将调度`AdobePSDK.TimedMetadataEvent`。
 
-1. 实现适当的监听器。
+1. 实施适当的监听器。
 
    ```js
    function onTimedMetadataEvent(event) { 
@@ -34,5 +31,5 @@ ht-degree: 0%
    player.addEventListener(AdobePSDK.PSDKEventType.TIMED_METADATA_AVAILABLE, onTimedMetadataEvent);
    ```
 
-ID3元数据通过同一`Events.TimedMetadataEvent`调度。 可以使用`timedMetadata.type`属性区分TAG和ID3。
+ID3元数据通过相同的`Events.TimedMetadataEvent`进行调度。 可以使用`timedMetadata.type`属性区分TAG和ID3。
 
