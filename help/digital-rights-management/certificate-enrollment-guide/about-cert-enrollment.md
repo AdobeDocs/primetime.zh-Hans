@@ -1,9 +1,9 @@
 ---
-seo-title: 关于证书注册角色
 title: 关于证书注册角色
-uuid: 100776c2-6622-4b94-bc9b-5d4a04fd3260
+description: 关于证书注册角色
+copied-description: true
 translation-type: tm+mt
-source-git-commit: b4b50471ab0ba98329862322a61bf73aa9e471d5
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '166'
 ht-degree: 0%
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # 关于证书注册角色{#about-certificate-enrollment-roles}
 
-证书注册过程至少需要两名员工：管理员和请求者。 Primetime DRM SDK许可证持有人指定帐户管理员。 只能有一个帐户管理员。 帐户管理员可以指定一个辅助管理员。
+证书注册过程至少需要两名员工：管理员和申请者。 Primetime DRM SDK许可证持有人指定帐户管理员。 只能有一个帐户管理员。 帐户管理员可以指定一个辅助管理员。
 
-管理员最多可指定五个申请者。 申请人是您公司的要求和部署证书的员工。 管理员批准证书请求。 每个Adobe ID帐户只能有一个角色。
+管理员最多可指定五个请求者。 申请人是您公司的员工，他们请求和部署证书。 管理员批准证书请求。 每个Adobe ID帐户只能有一个角色。
 
 以下是每个角色的能力：
 
