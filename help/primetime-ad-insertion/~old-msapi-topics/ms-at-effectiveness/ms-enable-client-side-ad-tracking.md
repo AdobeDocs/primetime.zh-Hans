@@ -1,14 +1,11 @@
 ---
 description: 您可以通过向BootstrapURL请求中添加pttrackingmode和pttrackingversion参数来启用客户端广告跟踪。
-seo-description: 您可以通过向BootstrapURL请求中添加pttrackingmode和pttrackingversion参数来启用客户端广告跟踪。
-seo-title: 启用客户端广告跟踪
 title: 启用客户端广告跟踪
-uuid: 0a825756-1d9a-43c5-bc22-9b366f39fdbb
 translation-type: tm+mt
-source-git-commit: e1e33d3ac0aad44859cd49566331524da72ac7e4
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '110'
-ht-degree: 1%
+source-wordcount: '88'
+ht-degree: 2%
 
 ---
 
