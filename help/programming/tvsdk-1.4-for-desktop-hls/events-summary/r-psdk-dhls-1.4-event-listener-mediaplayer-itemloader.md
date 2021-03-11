@@ -1,13 +1,10 @@
 ---
 description: TVSDK响应加载媒体项而调度媒体播放器项事件。
-seo-description: TVSDK响应加载媒体项而调度媒体播放器项事件。
-seo-title: 加载器事件
 title: 加载器事件
-uuid: 0ad37715-14b1-457c-892f-0db0d6220f0c
 translation-type: tm+mt
-source-git-commit: 91cea7acb8127e02b82e5242b9ad6ab0d12ce0eb
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '137'
+source-wordcount: '122'
 ht-degree: 0%
 
 ---
@@ -19,7 +16,7 @@ TVSDK响应加载媒体项而调度媒体播放器项事件。
 
 这些事件提供了替代工作流。 创建`MediaPlayer`时，不需要实现此接口。 当您希望具有`MediaPlayerItemLoader`时使用此选项。
 
-要获得与加载媒体播放器资源相关的事件通知，请向`MediaPlayerItemLoader`对象注册以下事件的监听器。
+要获得与加载媒体播放器资源相关的事件通知，请向`MediaPlayerItemLoader`对象注册以下事件的侦听器。
 
 | 事件 | 意义 |
 |---|---|
