@@ -1,9 +1,9 @@
 ---
-seo-title: 策略更新列表首选项
 title: 策略更新列表首选项
-uuid: 50c97288-0185-4c52-a30f-2a8e588691ea
+description: 策略更新列表首选项
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '73'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 | 首选项 | 说明 |
 |---|---|
-| 许可证服务器凭据 | 由Adobe颁发的许可证服务器凭据。 此凭据用于签署策略更新列表。 |
+| 许可证服务器凭据 | 由Adobe颁发的License Server凭据。 此凭据用于签署策略更新列表。 |
 | 文件名 | 包含证书和私钥的PKCS#12([!DNL .pfx])文件。 文件必须位于[!DNL Resource]目录中。 |
 | 文件密码 | [!DNL .pfx]文件的口令 |
 
