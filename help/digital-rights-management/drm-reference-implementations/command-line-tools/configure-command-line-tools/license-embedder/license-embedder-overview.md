@@ -1,9 +1,9 @@
 ---
-seo-title: 概述
 title: 概述
-uuid: 5487d1d3-7eb8-410d-a4b1-cde3e94c00a1
+description: 概述
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 19e7c941b3337c3b4d37f0b6a1350aac2ad8a0cc
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '180'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 使用[!DNL AdobeLicenseEmbedder.jar]将预生成的许可证嵌入到Media Packager保护的内容中。
 
-## License Embedder命令行用法{#license-embedder-command-line-usage}
+## License Embedder命令行使用{#license-embedder-command-line-usage}
 
 ```
 java -jar AdobeLicenseEmbedder.jar sourcefile destfile [options]
@@ -44,11 +44,11 @@ java -jar AdobeLicenseEmbedder.jar sourcefile destfile [options]
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -m元数据文件名  </span> </td> 
-   <td colname="2" class="- topic/entry "> 指定可为其生成许可证的内容元数据。 生成许可证需要此选项。 </td> 
+   <td colname="2" class="- topic/entry "> 指定可为其生成许可证的内容元数据。 生成许可证时需要此选项。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="codeph"> -noprompt  </span> </td> 
-   <td colname="2" class="- topic/entry "> 不要询问目标文件是否应被覆盖。 如果目标文件已存在，且<span class="codeph"> -o </span>尚未应用，则会发生错误。 </td> 
+   <td colname="2" class="- topic/entry "> 不要询问是否应覆盖目标文件。 如果目标文件已存在，且<span class="codeph"> -o </span>尚未应用，则会发生错误。 </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="codeph"> -o  </span> </td> 
