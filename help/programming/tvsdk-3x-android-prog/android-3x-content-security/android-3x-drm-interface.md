@@ -1,13 +1,10 @@
 ---
-description: Primetime DRM解决方案的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序还包含一个DRMHelper类，该类可用于使某些DRM操作更易于实现。
-seo-description: Primetime DRM解决方案的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序还包含一个DRMHelper类，该类可用于使某些DRM操作更易于实现。
-seo-title: Primetime DRM界面概述
+description: Primetime DRM解决方案的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序还包含一个DRMHelper类，可用于使某些DRM操作更易于实现。
 title: Primetime DRM界面概述
-uuid: 9e6f6ae6-7193-40fe-bc9d-d8de33705f5d
 translation-type: tm+mt
-source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '300'
+source-wordcount: '256'
 ht-degree: 0%
 
 ---
@@ -15,11 +12,11 @@ ht-degree: 0%
 
 # Primetime DRM接口概述{#primetime-drm-interface-overview}
 
-Primetime DRM解决方案的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序还包含一个`DRMHelper`类，它可用于使某些DRM操作更易于实现。
+Primetime DRM解决方案的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序还包含`DRMHelper`类，可用于使某些DRM操作更易于实现。
 
 <!--<a id="section_4DD54E085AB345FE9BE00865E56B28DB"></a>-->
 
-Primetime DRM提供一个可伸缩、高效的工作流程，用于在TVSDK应用程序中实施内容保护。 通过为每个数字媒体文件创建许可证，您可以保护和管理视频内容的权利。
+Primetime DRM提供可扩展、高效的工作流，可在TVSDK应用程序中实施内容保护。 您可以通过为每个数字媒体文件创建许可证来保护和管理视频内容的权利。
 
 有关详细信息，请参阅TVSDK包中包含的DRM示例播放器代码。
 
@@ -58,7 +55,7 @@ Primetime DRM提供一个可伸缩、高效的工作流程，用于在TVSDK应�
    public static boolean isAuthNeeded(DRMMetadata drmMetadata);
    ```
 
-* `DRMHelper` 执行身份验证的方法。
+* `DRMHelper` 方法。
 
    ```java
    /** 
@@ -83,6 +80,6 @@ Primetime DRM提供一个可伸缩、高效的工作流程，用于在TVSDK应�
    final DRMAuthenticationListener authenticationListener);
    ```
 
-* 通知您的应用程序各种DRM活动和状态的事件。
+* 事件，通知您的应用程序各种DRM活动和状态。
 
 有关DRM的详细信息，请参阅[DRM文档](https://helpx.adobe.com/primetime/user-guide.html)。
