@@ -1,13 +1,10 @@
 ---
-description: 创建一个PlaybackManager，它处理HLS流设置和播放操作。 无需任何其他配置。
-seo-description: 创建一个PlaybackManager，它处理HLS流设置和播放操作。 无需任何其他配置。
-seo-title: 启用视频回放
-title: 启用视频回放
-uuid: ddc0defa-c40f-4ee6-a69f-d5eeca6c2fce
+description: 创建一个PlaybackManager，它处理HLS流设置和播放操作。 不需要任何其他配置。
+title: 启用视频播放
 translation-type: tm+mt
-source-git-commit: a33e1f290fcf78e6f131910f6037f4803f7be98d
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '185'
+source-wordcount: '165'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 启用视频播放{#enable-video-playback}
 
-创建一个PlaybackManager，它处理HLS流设置和播放操作。 无需任何其他配置。
+创建一个PlaybackManager，它处理HLS流设置和播放操作。 不需要任何其他配置。
 
 1. 通过确保[!DNL PlayerFragment.java]中存在以下代码，创建媒体播放器对象：
 
@@ -40,7 +37,7 @@ ht-degree: 0%
      new PlaybackManagerEventListener() 
    ```
 
-1. 在`PlayerFragment`中注册事件监听器：
+1. 在`PlayerFragment`中注册事件侦听器：
 
    ```
    playbackManager.addEventListener(playbackManagerEventListener);
