@@ -1,27 +1,24 @@
 ---
-description: MediaPlayerItem.timedMetadata属性允许您访问通过播放列表／清单标记或媒体流中的ID3标记创建的所有TimedMetadata对象。 MediaPlayerItem.hasTimedMetadata属性指示当前媒体中是否存在订阅的自定义标记。
-seo-description: MediaPlayerItem.timedMetadata属性允许您访问通过播放列表／清单标记或媒体流中的ID3标记创建的所有TimedMetadata对象。 MediaPlayerItem.hasTimedMetadata属性指示当前媒体中是否存在订阅的自定义标记。
-seo-title: 清单标记通知
-title: 清单标记通知
-uuid: 87bee41b-b44e-4d12-afd2-7a63023f992c
+description: 通过MediaPlayerItem.timedMetadata属性，您可以访问从播放列表/清单标记或媒体流中的ID3标记创建的所有TimedMetadata对象。 MediaPlayerItem.hasTimedMetadata属性指示当前媒体中是否存在订阅的自定义标记。
+title: 清单标记的通知
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '231'
+source-wordcount: '188'
 ht-degree: 0%
 
 ---
 
 
-# 清单标记通知{#notifications-for-manifest-tags}
+# 清单标记{#notifications-for-manifest-tags}的通知
 
-MediaPlayerItem.timedMetadata属性允许您访问通过播放列表／清单标记或媒体流中的ID3标记创建的所有TimedMetadata对象。 MediaPlayerItem.hasTimedMetadata属性指示当前媒体中是否存在订阅的自定义标记。
+通过MediaPlayerItem.timedMetadata属性，您可以访问从播放列表/清单标记或媒体流中的ID3标记创建的所有TimedMetadata对象。 MediaPlayerItem.hasTimedMetadata属性指示当前媒体中是否存在订阅的自定义标记。
 
-您可以通过监听以下事件来监视定时元数据，这些活动会通知您的应用程序相关的：
+您可以通过侦听以下事件来监视计时元数据，这些活动会向您的应用程序通知相关的元数据：
 
-* `MediaPlayerItemEvent.ITEM_CREATED`:对象的初始 `TimedMetadata` 列表在创建后 `MediaPlayerItem` 可用。此事件会在发生此情况时通知您的应用程序。
+* `MediaPlayerItemEvent.ITEM_CREATED`:在创建对象 `TimedMetadata` 后，可以使用对象 `MediaPlayerItem` 的初始列表。此事件会在发生此情况时通知您的应用程序。
 
-* `MediaPlayerItemEvent.ITEM_UPDATED`:对于清单／播放列表定期刷新的实时／线性流，更新的播放列表／清单中可能显示其他自定义标记，因此可能会向属性添加其他TimedMetadata `MediaPlayerItem.timedMetadata` 对象。此事件会在发生此情况时通知您的应用程序。
+* `MediaPlayerItemEvent.ITEM_UPDATED`:对于清单/播放列表定期刷新的实时/线性流，更新的播放列表/清单中可能会显示其他自定义标记，因此可能会向属性中添加其他TimedMetadata `MediaPlayerItem.timedMetadata` 对象。此事件会在发生此情况时通知您的应用程序。
 
-* `TimedMetadataEvent.TIMED_METADATA_AVAILABLE`:每次创建新 `TimedMetadata` 对象时，都会由调度此事件 `MediaPlayer`。对于在初始化阶段创建的`TimedMetadata`对象，不调度此事件。
+* `TimedMetadataEvent.TIMED_METADATA_AVAILABLE`:每次创建新 `TimedMetadata` 对象时，都会由调度此事件 `MediaPlayer`。不为在初始化阶段创建的`TimedMetadata`对象调度此事件。
 
