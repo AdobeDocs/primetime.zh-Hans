@@ -1,13 +1,10 @@
 ---
 description: 在使用自定义广告标记时，您可以覆盖TVSDK处理如何搜索广告的默认行为。
-seo-description: 在使用自定义广告标记时，您可以覆盖TVSDK处理如何搜索广告的默认行为。
-seo-title: 控制用于搜索自定义广告标记的播放行为
-title: 控制用于搜索自定义广告标记的播放行为
-uuid: ec95a22f-0143-4c80-826f-d6b40e77cf26
+title: 控制通过自定义广告标记进行搜索的播放行为
 translation-type: tm+mt
-source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '149'
+source-wordcount: '122'
 ht-degree: 0%
 
 ---
@@ -17,9 +14,9 @@ ht-degree: 0%
 
 在使用自定义广告标记时，您可以覆盖TVSDK处理如何搜索广告的默认行为。
 
-默认情况下，当用户搜索或通过放置自定义广告标记所产生的广告部分时，TVSDK会跳过广告。 这可能与标准广告中断的当前播放行为不同。 您可以设置TVSDK，当用户搜索超过一个或多个自定义广告时，将播放头重新定位到最近跳过的自定义广告的开头。
+默认情况下，当用户在放置自定义广告标记后搜索或查看过去的广告部分时，TVSDK会跳过广告。 这可能与标准广告中断的当前播放行为不同。 您可以设置TVSDK将播放头重新定位到用户搜索超过一个或多个自定义广告时最近跳过的自定义广告的开头。
 
-1. 使用`true`调用`CustomRangeMetadata.setAdjustSeekPosition`。
+1. 用`true`调用`CustomRangeMetadata.setAdjustSeekPosition`。
 
    ```java
    customRangeMetadata.setAdjustSeekPosition (true);
