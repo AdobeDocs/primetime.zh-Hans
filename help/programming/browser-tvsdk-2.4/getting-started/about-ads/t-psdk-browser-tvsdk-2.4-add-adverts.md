@@ -1,13 +1,11 @@
 ---
-description: 'null'
-seo-description: 'null'
-seo-title: 添加广告
 title: 添加广告
-uuid: 7762506f-b55e-445d-b8a2-c1208358a370
+description: 添加广告
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 592245f5a7186d18dabbb5a98a468cbed7354aed
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '51'
+source-wordcount: '49'
 ht-degree: 0%
 
 ---
@@ -40,7 +38,7 @@ ht-degree: 0%
    ```
 
 1. 将`ExtCueOutContentFactory`添加到库部分。
-1. 从库部分下载`ExtCueOutContentFactory.js`并将其放在工作文件夹中。
+1. 从库部分下载`ExtCueOutContentFactory.js`并将其放置到工作文件夹中。
 
    ```js
    <script src= "frameworks/player/dash.min.js"></script> 
