@@ -1,13 +1,11 @@
 ---
-description: 'null'
-seo-description: 'null'
-seo-title: 标记范围
 title: 标记范围
-uuid: ca544f64-ef83-4c08-8ec5-1bc07fdba3c4
+description: 标记范围
+copied-description: true
 translation-type: tm+mt
-source-git-commit: a63768e51c911914a6ba9d884e2587fa34939f9d
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '205'
+source-wordcount: '203'
 ht-degree: 0%
 
 ---
@@ -19,11 +17,11 @@ ht-degree: 0%
 
 ## 标记范围{#mark-ranges}
 
-要实施`PTTimeRangeCollection`并将内容范围标记为广告：
+要实施`PTTimeRangeCollection`并将内容范围标记为广告，请执行以下操作：
 1. 准备`PTTimeRangeCollection`。
 1. 将`PTTimeRangeCollection`的类型设置为`PTTimeRangeCollectionTypeMarkRanges`。
 
-   此步骤通知TVSDK自定义范围必须被视为广告。
+   此步骤通知TVSDK必须将自定义范围视为广告。
 
    ```
    #define PSDK_TIMESCALE 100000 
@@ -80,7 +78,7 @@ ht-degree: 0%
 1. 准备`PTTimeRangeCollection`。
 1. 将`PTTimeRangeCollection`的类型设置为`PTTimeRangeCollectionTypeReplaceRanges`。
 
-   此步骤通知TVSDK，需要用替代内容（广告）替换提供的范围。
+   此步骤通知TVSDK需要用替代内容（广告）替换提供的范围。
 
    ```
    #define PSDK_TIMESCALE 100000 
@@ -146,7 +144,7 @@ ht-degree: 0%
 
 要实施`PTTimeRangeCollection`并将内容范围作为广告删除，请执行以下操作：
 1. 准备`PTTimeRangeCollection`。
-1. 将`PTTimeRangeCollection`的类型设置为`PTTimeRangeCollectionTypeDeleteRanges`，它会通知TVSDK需要删除提供的范围。
+1. 将`PTTimeRangeCollection`的类型设置为`PTTimeRangeCollectionTypeDeleteRanges`，这会通知TVSDK需要删除提供的范围。
 
    ```
    #define PSDK_TIMESCALE 100000 
@@ -187,7 +185,7 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   >广告插入是在基于`PTAdMetadata`和当前`PTAdSignalingMode`删除自定义范围之后进行的。
+   >广告插入是在基于`PTAdMetadata`和当前`PTAdSignalingMode`删除自定义范围之后发生的。
 
 1. 创建播放器和开始播放。
 
