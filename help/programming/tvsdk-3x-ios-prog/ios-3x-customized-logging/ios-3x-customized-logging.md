@@ -1,9 +1,9 @@
 ---
-seo-title: 自定义日志记录
-title: 自定义日志记录
-uuid: 415582e8-cd89-4ecd-9ad2-725fcda025b0
+title: 自定义日志
+description: 自定义日志
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '6'
 ht-degree: 0%
@@ -11,4 +11,4 @@ ht-degree: 0%
 ---
 
 
-# 自定义日志记录{#customized-logging}
+# 自定义日志{#customized-logging}
