@@ -1,25 +1,22 @@
 ---
-description: PlayReady许可证令牌接口提供生产和测试服务。
-seo-description: PlayReady许可证令牌接口提供生产和测试服务。
-seo-title: PlayReady许可证令牌请求／响应
-title: PlayReady许可证令牌请求／响应
-uuid: 20ebd582-ebb9-4716-8c1e-df3e58d6ec14
+description: PlayReady许可证令牌界面提供生产和测试服务。
+title: PlayReady许可证令牌请求/响应
 translation-type: tm+mt
-source-git-commit: ffb993889a78ee068b9028cb2bd896003c5d4d4c
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '913'
-ht-degree: 3%
+source-wordcount: '898'
+ht-degree: 4%
 
 ---
 
 
-# PlayReady许可证令牌请求／响应{#playready-license-token-request-response}
+# PlayReady许可证令牌请求/响应{#playready-license-token-request-response}
 
-PlayReady许可证令牌接口提供生产和测试服务。
+PlayReady许可证令牌界面提供生产和测试服务。
 
 此HTTP请求返回可兑换为PlayReady许可证的令牌。
 
-**方法：GET** 、POST（带有包含两种方法参数的ww-url编码的正文）
+**方法：GET, POST** （带有www-url编码的正文，其中包含两种方法的参数）
 
 **URL:**
 
@@ -60,42 +57,42 @@ PlayReady许可证令牌接口提供生产和测试服务。
   <tr> 
    <th class="entry"><b>查询参数</b> </th> 
    <th class="entry"><b>说明</b> </th> 
-   <th class="entry"><b>必需？</b> </th> 
+   <th class="entry"><b>需要？</b> </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
    <td><span class="codeph"> customerAuthenticator</span> </td> 
-   <td> <p>这是您的客户API密钥，每个密钥针对您的生产和测试环境。 您可以在ExpressPlay管理员仪表板选项卡上找到此选项。 </p> </td> 
+   <td> <p>这是您的客户API密钥，每个密钥针对您的生产和测试环境。 您可以在ExpressPlay管理仪表板选项卡上找到此选项。 </p> </td> 
    <td> 是 </td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> errorFormat</span> </td> 
-   <td><span class="codeph"> html</span>或<span class="codeph"> json</span>。 如果<span class="codeph"> html</span>（默认），则在响应的实体正文中提供任何错误的HTML表示。 <p>如果指定<span class="codeph"> json</span>，则返回JSON格式的结构化响应。 有关详细信息，请参阅<a href="https://www.expressplay.com/developer/restapi/#json-errors" format="html" scope="external"> JSON错误</a>。 </p> <p>响应的mime类型为：成功时<span class="codeph"> text/uri-列表</span>，对于HTML错误格式，<span class="codeph"> text/html</span>，或者对于JSON错误格式，<span class="codeph"> application/json</span>。 </p> </td> 
+   <td><span class="codeph"> html</span>或<span class="codeph"> json</span>。 如果<span class="codeph"> html</span>（默认）在响应的实体中提供任何错误的HTML表示形式。 <p>如果指定<span class="codeph"> json</span>，则返回JSON格式的结构化响应。 有关详细信息，请参阅<a href="https://www.expressplay.com/developer/restapi/#json-errors" format="html" scope="external"> JSON错误</a>。 </p> <p>响应的MIME类型为：成功时<span class="codeph"> text/uri-列表</span>,HTML错误格式为<span class="codeph"> text/html</span>,JSON错误格式为<span class="codeph"> application/json</span>。 </p> </td> 
    <td> 否 </td> 
   </tr> 
  </tbody> 
 </table>
 
-**表10:许可查询参数**
+**表10:许可证查询参数**
 
 <table id="table_f1l_fyr_pv">  
  <thead> 
   <tr> 
    <th class="entry"><b>查询参数</b> </th> 
    <th class="entry"><b>说明</b> </th> 
-   <th class="entry"><b>必需？</b> </th> 
+   <th class="entry"><b>需要？</b> </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
    <td><span class="codeph"> generalFlags</span> </td> 
-   <td>表示许可证标志的4字节十六进制字符串。 对于永久许可证，它必须设置为“00000001”。 <p>注意：租赁许可证(<span class="codeph"> rightsType=Rental</span>)必须是永久的。 </p> </td> 
+   <td>表示许可证标志的4字节十六进制字符串。 对于永久许可证，必须将其设置为“00000001”。 <p>注意：租赁许可证(<span class="codeph"> rightsType=Rental</span>)必须是永久的。 </p> </td> 
    <td> 否 </td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> 科索沃</span> </td> 
-   <td> 密钥加密密钥(KEK)。 密钥使用密钥打包算法（AES密钥包，RFC3394）通过KEK进行加密存储。 </td> 
+   <td> 密钥加密密钥(KEK)。 密钥使用密钥封装算法（AES密钥封装，RFC3394）通过KEK进行加密存储。 </td> 
    <td> 否 </td> 
   </tr> 
   <tr> 
@@ -104,7 +101,7 @@ PlayReady许可证令牌接口提供生产和测试服务。
    <td> 是 </td> 
   </tr> 
   <tr> 
-   <td><span class="codeph"> 臭</span> </td> 
+   <td><span class="codeph"> 克</span> </td> 
    <td> 加密内容密钥的十六进制字符串表示形式。 </td> 
    <td> 否 </td> 
   </tr> 
@@ -120,12 +117,12 @@ PlayReady许可证令牌接口提供生产和测试服务。
   </tr> 
   <tr> 
    <td><span class="codeph"> rental.periodEndTime</span> </td> 
-   <td>租金结束日期。 此值必须采用“RFC 3339”_日期／时间格式，采用“Z”区域指示符（“祖鲁时间”）格式，或前面有“+”符号的整数。 <p>如果该值为<a href="https://www.ietf.org/rfc/rfc3339.txt" format="html" scope="external"> RFC 3339</a>日期／时间格式，则它表示许可证的绝对过期日期／时间。 RFC 3339的日期／时间示例为2006-04-14T12:01:10Z。 </p> <p> 如果值是前面有“+”符号的整数，则它被视为自令牌发出之日起的相对秒数。 此时后无法播放内容。 仅当<span class="codeph"> rightsType</span>为<span class="codeph"> Rental</span>时有效。 </p> </td> 
-   <td>是，当<span class="codeph"> rightsType</span>为<span class="codeph">租金</span>时。 </td> 
+   <td>租赁结束日期。 此值必须采用“Z”区域指示符（“祖鲁时间”）格式的“RFC 3339”_日期/时间格式，或前面有“+”符号的整数。 <p>如果值为<a href="https://www.ietf.org/rfc/rfc3339.txt" format="html" scope="external"> RFC 3339</a>日期/时间格式，则表示许可证的绝对过期日期/时间。 RFC 3339的日期/时间示例为2006-04-14T12:01:10Z。 </p> <p> 如果值是前面有“+”符号的整数，则它被视为从发出令牌时起的相对秒数。 此时后无法播放内容。 仅当<span class="codeph"> rightsType</span>为<span class="codeph"> Rental</span>时有效。 </p> </td> 
+   <td>是，当<span class="codeph"> rightsType</span>为<span class="codeph"> Rental</span>时。 </td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> rental.playDuration</span> </td> 
-   <td>开始播放后内容可以播放的时间（以秒为单位）。 仅当<span class="codeph"> rightsType</span>为Rental时有效。 </td> 
+   <td>开始播放后，内容可以播放的时间（以秒为单位）。 仅当<span class="codeph"> rightsType</span>为Rental时有效。 </td> 
    <td> 否 </td> 
   </tr> 
   <tr> 
@@ -135,7 +132,7 @@ PlayReady许可证令牌接口提供生产和测试服务。
   </tr> 
   <tr> 
    <td><span class="codeph"> compressedDigitalAudioOPL</span> </td> 
-   <td> 用于指示压缩数字音频的输出保护级别的整数值。 有效范围0-999。 </td> 
+   <td> 指示压缩数字音频的输出保护级别的整数值。 有效范围0-999。 </td> 
    <td> 是 </td> 
   </tr> 
   <tr> 
@@ -144,18 +141,18 @@ PlayReady许可证令牌接口提供生产和测试服务。
    <td> 是 </td> 
   </tr> 
   <tr> 
-   <td><span class="codeph"> 未压缩数字音频OPL</span> </td> 
+   <td><span class="codeph"> uncompressedDigitalAudioOPL</span> </td> 
    <td> 指示未压缩数字音频的输出保护级别的整数值。 有效范围0-999。 </td> 
    <td> 是 </td> 
   </tr> 
   <tr> 
-   <td><span class="codeph"> 未压缩数字视频OPL</span> </td> 
+   <td><span class="codeph"> uncompressedDigitalVideoOPL</span> </td> 
    <td> 指示未压缩数字视频的输出保护级别的整数值。 有效范围0-999。 </td> 
    <td> 是 </td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> unknownOutputBehavior</span> </td> 
-   <td>输出未知时的必需行为。 允许的值：<span class="codeph">允许</span>、<span class="codeph">不允许</span>或<span class="codeph"> SDOnly</span> </td> 
+   <td>输出未知时的必需行为。 允许的值：<span class="codeph">允许</span>、<span class="codeph">禁止</span>或<span class="codeph"> SDOnly</span> </td> 
    <td> 否 </td> 
   </tr> 
   <tr> 
@@ -165,12 +162,12 @@ PlayReady许可证令牌接口提供生产和测试服务。
   </tr> 
   <tr> 
    <td><span class="codeph"> extensionType</span> </td> 
-   <td>表示扩展的32位标识符的任意4字母单词。 每个字母的8位ASCII码是标识符的相应8位字节部分。 例如，标识符值0x61626364（十六进制）将写成“<span class="codeph"> yua</span>”，因为“a”的ASCII代码为0x61，等等。 </td> 
+   <td>表示扩展的32位标识符的任意4字母字。 每个字母的8位ASCII码是标识符的相应8位字节部分。 例如，将写入标识符值0x61626364（十六进制），因为“a”的ASCII代码为0x61等。<span class="codeph"></span> </td> 
    <td> 否 </td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> extensionPayload</span> </td> 
-   <td> 扩展的基64编码字符串。 </td> 
+   <td> 扩展的base64编码字符串。 </td> 
    <td>是，当指定<span class="codeph"> extensionType</span>时。 </td> 
   </tr> 
  </tbody> 
@@ -183,7 +180,7 @@ PlayReady许可证令牌接口提供生产和测试服务。
 | **HTTP状态代码** | **说明** | **内容类型** | **实体正文包含** |
 |---|---|---|---|
 | `200 OK` | 无错误。 | `text/uri-list` | 许可证获取URL和令牌 |
-| `400 Bad Request` | 无效标记 | `text/html` 或  `application/json` | 错误描述 |
+| `400 Bad Request` | 无效的图 | `text/html` 或  `application/json` | 错误描述 |
 | `401 Unauthorized` | 身份验证失败 | `text/html` 或  `application/json` | 错误描述 |
 | `404 Not found` | 错误的URL | `text/html` 或  `application/json` | 错误描述 |
 | `50x Server Error` | 服务器错误 | `text/html` 或  `application/json` | 错误描述 |
@@ -200,11 +197,11 @@ PlayReady许可证令牌接口提供生产和测试服务。
  <tbody> 
   <tr> 
    <td> -2002 </td> 
-   <td> 令牌到期时间无效：&lt;详细信息&gt; </td> 
+   <td> 令牌过期时间无效：&lt;详细信息&gt; </td> 
   </tr> 
   <tr> 
    <td> -2003 </td> 
-   <td> IP地址无效 </td> 
+   <td> 无效的IP地址 </td> 
   </tr> 
   <tr> 
    <td> -2005 </td> 
@@ -220,7 +217,7 @@ PlayReady许可证令牌接口提供生产和测试服务。
   </tr> 
   <tr> 
    <td> -2018 </td> 
-   <td>身份验证令牌无效：&lt;详细信息&gt; <p>注意： 如果验证器错误，或使用生产验证器访问*.test.expressplay.com上的测试API时，会发生这种情况，反之亦然。 </p> <p importance="high">注意：测试SDK和高级测试工具(ATT)只能用于<span class="filepath"> *.test.expressplay.com</span>，而生产设备必须使用<span class="filepath"> *.service.expressplay.com</span>。 </p> </td> 
+   <td>身份验证令牌无效：&lt;详细信息&gt; <p>注意： 如果验证器错误，或使用生产验证器访问*.test.expressplay.com上的测试API时，则会发生这种情况，反之亦然。 </p> <p importance="high">注意：测试SDK和高级测试工具(ATT)只能与<span class="filepath"> *.test.expressplay.com</span>一起使用，而生产设备必须使用<span class="filepath"> *.service.expressplay.com</span>。 </p> </td> 
   </tr> 
   <tr> 
    <td> -2019 </td> 
@@ -248,11 +245,11 @@ PlayReady许可证令牌接口提供生产和测试服务。
   </tr> 
   <tr> 
    <td> -2027 </td> 
-   <td> 内容加密密钥必须长32个十六进制数字 </td> 
+   <td> 内容加密密钥必须长32位十六进制数字 </td> 
   </tr> 
   <tr> 
    <td> -2030 </td> 
-   <td> ExpressPlay管理员错误：&lt;详细信息&gt; </td> 
+   <td> ExpressPlay管理错误：&lt;详细信息&gt; </td> 
   </tr> 
   <tr> 
    <td> -2031 </td> 
@@ -268,11 +265,11 @@ PlayReady许可证令牌接口提供生产和测试服务。
   </tr> 
   <tr> 
    <td> -2035 </td> 
-   <td> 未指定相应的值 </td> 
+   <td> 未指定相应值 </td> 
   </tr> 
   <tr> 
    <td> -2036 </td> 
-   <td> 扩展名类型应为4个字符 </td> 
+   <td> 扩展类型应为4个字符 </td> 
   </tr> 
   <tr> 
    <td> -2037 </td> 
@@ -280,7 +277,7 @@ PlayReady许可证令牌接口提供生产和测试服务。
   </tr> 
   <tr> 
    <td> -2040 </td> 
-   <td><span class="codeph"> OutputControlFlag</span> 必须编码4个字节 </td> 
+   <td><span class="codeph"> </span> OutputControlFlag必须编码4个字节 </td> 
   </tr> 
   <tr> 
    <td> -3004 </td> 
@@ -300,11 +297,11 @@ PlayReady许可证令牌接口提供生产和测试服务。
   </tr> 
   <tr> 
    <td> -4020 </td> 
-   <td><span class="codeph"> 子代</span> 长度必须为32个十六进制字符 </td> 
+   <td><span class="codeph"> 基</span> 德长度必须为32个十六进制字符 </td> 
   </tr> 
   <tr> 
    <td> -4021 </td> 
-   <td><span class="codeph"> 在^</span> 之后长度必须为64个字符 </td> 
+   <td><span class="codeph"> 在</span> ^之后长度必须为64个字符 </td> 
   </tr> 
   <tr> 
    <td> -4022 </td> 
@@ -328,7 +325,7 @@ PlayReady许可证令牌接口提供生产和测试服务。
   </tr> 
   <tr> 
    <td> -5004 </td> 
-   <td> 设备ID长度必须为32个十六进制字符 </td> 
+   <td> 设备ID必须长32个十六进制字符 </td> 
   </tr> 
   <tr> 
    <td> -5005 </td> 
