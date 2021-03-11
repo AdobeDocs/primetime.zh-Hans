@@ -1,34 +1,31 @@
 ---
-description: 可以使用MediaPlayerItemConfig类在流中配置自定义标记名称。
-seo-description: 可以使用MediaPlayerItemConfig类在流中配置自定义标记名称。
-seo-title: 标记的配置类方法
-title: 标记的配置类方法
-uuid: 222a0349-58d5-4bf3-9d03-e5920610faf5
+description: 可以在流中使用MediaPlayerItemConfig类配置自定义标记名称。
+title: 标记的Config类方法
 translation-type: tm+mt
-source-git-commit: b9e98ef2b4246fdfd79ebcd91db344c97367d661
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '173'
+source-wordcount: '155'
 ht-degree: 0%
 
 ---
 
 
-# 标记{#config-class-methods-for-tags}的配置类方法
+# 标记{#config-class-methods-for-tags}的Config类方法
 
-可以使用MediaPlayerItemConfig类在流中配置自定义标记名称。
+可以在流中使用MediaPlayerItemConfig类配置自定义标记名称。
 
-创建新`MediaPlayerItemConfig`:
+要创建新`MediaPlayerItemConfig`:
 
 ```js
 var mediaPlayerItemConfig = new AdobePSDK.MediPlayerItemConfig();
 ```
 
-以下是关于如何使用`MediaPlayerItemConfig`方法管理自定义标记的一些信息：
+以下是有关如何使用`MediaPlayerItemConfig`方法管理自定义标记的一些信息：
 
 <table id="table_0AC0973497144DDAB05726E3F031ACD1"> 
  <tbody> 
   <tr> 
-   <td colname="col1"> <b>订阅特定自定义标记</b> </td> 
+   <td colname="col1"> <b>订阅特定的自定义标记</b> </td> 
    <td colname="col2"> </td> 
   </tr> 
   <tr> 
@@ -54,7 +51,7 @@ var mediaPlayerItemConfig = new AdobePSDK.MediPlayerItemConfig();
     <code class="syntax javascript">
       var&amp;nbsp;adTagsObtained&amp;nbsp;=&amp;nbsp;mediaPlayerItemConfig.adTags; 
     </code> </td> 
-   <td colname="col2"> <p>检索广告标记的当前列表。 </p> </td> 
+   <td colname="col2"> <p>检索广告标签的当前列表。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 
