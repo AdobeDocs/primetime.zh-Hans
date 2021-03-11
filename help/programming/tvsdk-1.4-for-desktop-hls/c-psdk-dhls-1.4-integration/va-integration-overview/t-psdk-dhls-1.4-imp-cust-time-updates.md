@@ -1,13 +1,10 @@
 ---
-description: 在某些分析实施中，客户端应用程序可能希望提供与TVSDK localTime值报告的播放头位置不同的播放头位置。 例如，在LINEAR流播放期间，可以相对于项目的开始时间提供每个的播放头。
-seo-description: 在某些分析实施中，客户端应用程序可能希望提供与TVSDK localTime值报告的播放头位置不同的播放头位置。 例如，在LINEAR流播放期间，可以相对于项目的开始时间提供每个的播放头。
-seo-title: 实施自定义时间更新
+description: 在某些分析实施中，客户端应用程序可能希望提供与TVSDK localTime值所报告的播放头位置不同的播放头位置。 例如，在LINEAR流播放期间，可以相对于每个项目的开始时间提供其播放头。
 title: 实施自定义时间更新
-uuid: 2b46eca9-3815-4c44-ab5e-21678c35f410
 translation-type: tm+mt
-source-git-commit: 7e8df034035fe465fbe403949ef828e7811ced2e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '181'
+source-wordcount: '135'
 ht-degree: 0%
 
 ---
@@ -15,13 +12,13 @@ ht-degree: 0%
 
 # 实现自定义时间更新{#implement-custom-time-updates}
 
-在某些分析实施中，客户端应用程序可能希望提供与TVSDK localTime值报告的播放头位置不同的播放头位置。 例如，在LINEAR流播放期间，可以相对于项目的开始时间提供每个的播放头。
+在某些分析实施中，客户端应用程序可能希望提供与TVSDK localTime值所报告的播放头位置不同的播放头位置。 例如，在LINEAR流播放期间，可以相对于每个项目的开始时间提供其播放头。
 
 >[!TIP]
 >
 >仅当要提供与默认位置不同的播放头位置时，才覆盖此方法。
 
-1. 要覆盖默认播放头位置，请执行以下操作：
+1. 要覆盖默认播放指示器位置，请执行以下操作：
 
    ```
    vaMetadata.currentTimeUpdateBlock = function():Number { 
