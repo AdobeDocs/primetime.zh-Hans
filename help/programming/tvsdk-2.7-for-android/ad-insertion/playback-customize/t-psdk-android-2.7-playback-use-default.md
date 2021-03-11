@@ -1,13 +1,10 @@
 ---
 description: 您可以选择使用默认广告行为。
-seo-description: 您可以选择使用默认广告行为。
-seo-title: 使用默认播放行为
 title: 使用默认播放行为
-uuid: 20785251-eb2f-4cc0-b919-1a88c0b1c57c
 translation-type: tm+mt
-source-git-commit: 812d04037c3b18f8d8cdd0d18430c686c3eee1ff
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '214'
+source-wordcount: '201'
 ht-degree: 0%
 
 ---
@@ -27,15 +24,15 @@ ht-degree: 0%
 
 您可以自定义或覆盖广告行为。
 
-在自定义或覆盖广告行为之前，请向TVSDK注册广告策略实例。
+在自定义或覆盖广告行为之前，请使用TVSDK注册广告策略实例。
 
 * 实现`AdPolicySelector`接口及其所有方法。
 
-   如果需要覆盖&#x200B;**all**&#x200B;默认广告行为，则建议使用此选项。
+   如果您需要覆盖&#x200B;**all**&#x200B;默认广告行为，建议使用此选项。
 
 * 扩展`DefaultAdPolicySelector`类并仅为那些需要自定义的行为提供实现。
 
-   如果只需要覆盖默认行为的&#x200B;**某些**，则建议使用此选项。
+   如果只需要覆盖默认行为的&#x200B;**some**，则建议使用此选项。
 
 自定义广告行为：
 
