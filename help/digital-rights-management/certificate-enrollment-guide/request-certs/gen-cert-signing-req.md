@@ -1,9 +1,9 @@
 ---
-seo-title: 生成证书签名请求（请求者）
 title: 生成证书签名请求（请求者）
-uuid: 04abd5d2-77ac-4f89-8bea-31d389159aee
+description: 生成证书签名请求（请求者）
+copied-description: true
 translation-type: tm+mt
-source-git-commit: b4b50471ab0ba98329862322a61bf73aa9e471d5
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '203'
 ht-degree: 0%
@@ -21,11 +21,11 @@ ht-degree: 0%
 
    >[!NOTE]
    >
-   >Adobe建议在密钥名称中包含证书类型（lic、pkgr、trans、trial或eval）。 此命名规范可简化在许可证服务器上部署它们的过程。 此示例使用“mycompany-license.key”。 对于评估版和试用版，请使用“mycompany-eval.key”和“mycompany-trial.key”。
+   >Adobe建议在密钥名中包含证书类型（lic、pkgr、trans、trial或eval）。 此命名规范使您在许可证服务器上部署它们更简单。 此示例使用“mycompany-license.key”。 对于评估版和试用版，请使用“mycompany-eval.key”和“mycompany-trial.key”。
 
 1. 输入密码以保护私钥。
 
-   密码至少应包含12个字符。 字符应包含大写和小写ASCII字符和数字的混合。 要使用OpenSSL生成强口令，请打开命令窗口并输入以下内容：
+   密码至少应包含12个字符。 字符应包含大小写ASCII字符和数字的混合。 要使用OpenSSL生成强口令，请打开命令窗口并输入以下内容：
 
    ```
    openssl rand -base64 8
@@ -42,7 +42,7 @@ ht-degree: 0%
 1. 系统会提示您输入私钥的密码。
 1. 创建私钥和密码的备份副本。
 
-   如果您丢失了私钥或私钥被泄露，请与Adobe证书管理员联系以撤销您的证书并请求新证书。
+   如果您丢失了私钥或私钥已泄露，请与Adobe证书管理员联系以撤销您的证书并请求新证书。
 
    >[!NOTE]
    >
