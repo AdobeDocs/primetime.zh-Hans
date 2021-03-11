@@ -1,13 +1,10 @@
 ---
-description: 此表提供有关INFO类型通知的详细信息。
-seo-description: 此表提供有关INFO类型通知的详细信息。
-seo-title: 信息通知代码
+description: 此表提供了有关INFO类型通知的详细信息。
 title: 信息通知代码
-uuid: 21297863-dac1-45a4-ac9d-309d1f746f8b
 translation-type: tm+mt
-source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '192'
+source-wordcount: '180'
 ht-degree: 4%
 
 ---
@@ -15,9 +12,9 @@ ht-degree: 4%
 
 # INFO通知代码{#info-notification-codes}
 
-此表提供有关INFO类型通知的详细信息。
+此表提供了有关INFO类型通知的详细信息。
 
-大多数信息性通知都包含相关元数据，例如，无法下载的资源URL。 某些通知包含元数据，用于指定在主视频内容、备用音频内容还是广告中出现问题。
+大多数信息性通知都包含相关元数据，例如，无法下载的资源的URL。 某些通知包含元数据，用于指定问题是在主视频内容、备用音频内容还是广告中出现。
 
 <table frame="all" colsep="1" rowsep="1" id="table_503463046E764A87B10EB5D8B294EB23"> 
  <thead> 
@@ -26,7 +23,7 @@ ht-degree: 4%
    <th colname="2" class="entry"><b>名称</b></th> 
    <th colname="3" class="entry"><b>内部通知</b></th> 
    <th colname="4" class="entry"><b>元数据键</b></th> 
-   <th colname="5" class="entry"><b>注释</b></th> 
+   <th colname="5" class="entry"><b>评论</b></th> 
   </tr> 
  </thead>
  <tbody> 
@@ -70,10 +67,10 @@ ht-degree: 4%
    <td colname="2"><span class="codeph"> PLAYER_STATE_CHANGE  </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"> <p>无 </p> </td> 
-   <td colname="5"> 播放器状态已更改。 当状态为ERROR时，内部通知是将切换触发到ERROR状态的错误通知对象。 </td> 
+   <td colname="5"> 播放器状态已更改。 当状态为ERROR时，内部通知是将交换机触发到ERROR状态的错误通知对象。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>自适应比特率(ABR)</b> </td> 
+   <td colname="1"><b>自适应比特率</b> </td> 
    <td colname="2"> </td> 
    <td colname="3"> </td> 
    <td colname="4"> </td> 
@@ -87,7 +84,7 @@ ht-degree: 4%
    <td colname="5"> 视频的比特率已更改。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>后期绑定音频(LBA)</b> </td> 
+   <td colname="1"><b>延迟绑定音频(LBA)</b> </td> 
    <td colname="2"> </td> 
    <td colname="3"> </td> 
    <td colname="4"> </td> 
@@ -109,10 +106,10 @@ ht-degree: 4%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 307000  </span> </td> 
-   <td colname="2"><span class="codeph"> SUBTITLES_TRACK_CHANGE  </span> </td> 
+   <td colname="2"><span class="codeph"> SATTLES_TRACK_CHANGE  </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"> <p>无 </p> </td> 
-   <td colname="5"> <p>字幕音轨改了。 </p> </td> 
+   <td colname="5"> <p>字幕曲目改了。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
