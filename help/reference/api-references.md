@@ -1,19 +1,17 @@
 ---
-title: Adobe PrimetimeAPI参考
-seo-title: Adobe PrimetimeAPI参考
-description: 这些API可帮助您快速轻松地创建功能性应用程序或集成。
-seo-description: 这些API可帮助您快速轻松地创建功能性应用程序或集成。
+title: Adobe Primetime API参考
+description: 这些API可帮助您快速轻松地创建功能强大的应用程序或集成。
 topic-tags: API-references
 translation-type: tm+mt
-source-git-commit: 1841f64e6f7a839f997b0710661898fda0d69bd6
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '345'
+source-wordcount: '327'
 ht-degree: 0%
 
 ---
 
 
-# Adobe PrimetimeAPI参考{#api-references}
+# Adobe Primetime API引用{#api-references}
 
 + TVSDK 3.12 {#tvsdk-312}
    + [适用于Android的TVSDK 3.12](https://help.adobe.com/en_US/primetime/api/psdk/javadoc3.12/index.html)
@@ -49,11 +47,11 @@ ht-degree: 0%
 
 + DRM API {#drm-apis}
    + [适用于Android的DRM客户端API](https://help.adobe.com/en_US/primetime/api/drm-apis/client/android/index.html)
-   + [iOS的DRM客户端API](https://help.adobe.com/en_US/primetime/api/drm-apis/client/ios/index.html)
+   + [适用于iOS的DRM客户端API](https://help.adobe.com/en_US/primetime/api/drm-apis/client/ios/index.html)
    + [DRM SDK Server API](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/)
 
 + 杂项{#miscellaneous}
-   + [视频心跳库](https://help.adobe.com/en_US/primetime/api/psdk/vhl_tvsdk_ios/index.html)
+   + [视频心率库](https://help.adobe.com/en_US/primetime/api/psdk/vhl_tvsdk_ios/index.html)
    + [DHPK 2.0 C++](https://help.adobe.com/en_US/primetime/api/psdk/psdk_doxygen/index.html)
-   + [2.4浏览器TVSDK的UI框架](https://help.adobe.com/en_US/primetime/api/psdk/btvsdk-ui-framework/index.html)
+   + [适用于2.4浏览器的UI框架TVSDK](https://help.adobe.com/en_US/primetime/api/psdk/btvsdk-ui-framework/index.html)
    + [PSDK FlashRuntime公共API](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls/)
