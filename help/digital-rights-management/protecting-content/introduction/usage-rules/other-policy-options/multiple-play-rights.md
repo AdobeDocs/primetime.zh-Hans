@@ -1,9 +1,9 @@
 ---
-seo-title: 多播放权限
-title: 多播放权限
-uuid: 90f898bf-ffa2-44f0-a01a-0af8868500ee
+title: 多重播放权限
+description: 多重播放权限
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 53654b740b03c6a79394d30704a41186d4655237
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '66'
 ht-degree: 0%
@@ -15,4 +15,4 @@ ht-degree: 0%
 
 您可以为应用于不同平台或应用程序的不同使用规则指定多个播放权限参数。
 
-示例用例：使用多个播放权限，您可以创建Primetime DRM策略以指定Microsoft® Windows®平台需要输出保护。 但是，它在Apple® Macintosh®和Linux®平台上是可选的。
+示例用例：使用多个播放权限，您可以创建Primetime DRM策略以指定Microsoft® Windows®平台上需要输出保护。 但是，它在Apple® Macintosh®和Linux®平台上是可选的。
