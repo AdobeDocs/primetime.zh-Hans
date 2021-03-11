@@ -1,13 +1,10 @@
 ---
-description: 这些类提供有关特定媒体的时间轴的信息，包括广告投放。
-seo-description: 这些类提供有关特定媒体的时间轴的信息，包括广告投放。
-seo-title: 时间轴类
+description: 这些类提供有关特定媒体的时间线的信息，包括广告投放。
 title: 时间轴类
-uuid: effb7308-f581-4bc2-808d-7f7ccb121a3a
 translation-type: tm+mt
-source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '100'
+source-wordcount: '82'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 时间轴类{#timeline-classes}
 
-这些类提供有关特定媒体的时间轴的信息，包括广告投放。
+这些类提供有关特定媒体的时间线的信息，包括广告投放。
 
 <table frame="all" colsep="1" rowsep="1" id="table_6752E908BA6546549619994A3F7D5F87"> 
  <thead> 
