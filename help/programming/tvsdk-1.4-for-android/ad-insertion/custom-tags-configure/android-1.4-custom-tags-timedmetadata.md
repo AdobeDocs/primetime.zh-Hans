@@ -1,13 +1,10 @@
 ---
-description: 当TVSDK检测到播放列表／清单中的订阅标记时，播放器会自动尝试处理该标记并以TimedMetadata对象的形式公开它。
-seo-description: 当TVSDK检测到播放列表／清单中的订阅标记时，播放器会自动尝试处理该标记并以TimedMetadata对象的形式公开它。
-seo-title: 定时元数据类
+description: 当TVSDK检测到播放列表/清单中的订阅标记时，播放器会自动尝试处理该标记并以TimedMetadata对象的形式公开它。
 title: 定时元数据类
-uuid: 3debfad4-084f-4fb5-b699-ea5e8fd1ed51
 translation-type: tm+mt
-source-git-commit: 5df9a8b98baaf1cd1803581d2b60c7ed4261a0e8
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '389'
+source-wordcount: '358'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 定时元数据类{#timed-metadata-class}
 
-当TVSDK检测到播放列表／清单中的订阅标记时，播放器会自动尝试处理该标记并以TimedMetadata对象的形式公开它。
+当TVSDK检测到播放列表/清单中的订阅标记时，播放器会自动尝试处理该标记并以TimedMetadata对象的形式公开它。
 
 该类提供以下元素：
 
@@ -36,12 +33,12 @@ ht-degree: 0%
   <tr> 
    <td colname="col1"> <span class="codeph"> 元数据  </span> </td> 
    <td colname="col02"> 元数据 </td> 
-   <td colname="col2"> 从播放列表／清单自定义标签中处理／提取的信息。 使用<span class="codeph"> getMetadata </span>。 </td> 
+   <td colname="col2"> 从播放列表/清单自定义标签中处理/提取的信息。 使用<span class="codeph"> getMetadata </span>。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> name </span> </td> 
    <td colname="col02"> 字符串 </td> 
-   <td colname="col2"> 定时元数据的名称。 如果类型为<span class="codeph"> TAG </span>，则值表示cue/tag名称。 如果类型为<span class="codeph"> ID3 </span>，则为null。 使用<span class="codeph"> getName </span>。 </td> 
+   <td colname="col2"> 定时元数据的名称。 如果类型为<span class="codeph"> TAG </span>，则该值表示提示/标记名称。 如果类型为<span class="codeph"> ID3 </span>，则为null。 使用<span class="codeph"> getName </span>。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 时间  </span> </td> 
@@ -53,8 +50,8 @@ ht-degree: 0%
    <td colname="col02"> 类型 </td> 
    <td colname="col2"> 定时元数据的类型。 使用<span class="codeph"> getType </span>。 
     <ul id="ul_70FBFB33E9F846D8B38592560CCE9560"> 
-     <li id="li_739D30561BFB4D9B97DF212E4880BA2C">TAG —— 指示定时元数据是从播放列表／清单中的标记创建的。 </li> 
-     <li id="li_E785E1DEF1CC4D9DBE7764E5D05EFAFC">ID3 —— 指示定时元数据是从媒体流中的ID3标记创建的。 </li> 
+     <li id="li_739D30561BFB4D9B97DF212E4880BA2C">TAG — 指示已从播放列表/清单中的标记创建定时元数据。 </li> 
+     <li id="li_E785E1DEF1CC4D9DBE7764E5D05EFAFC">ID3 — 指示定时元数据是从媒体流中的ID3标记创建的。 </li> 
     </ul> </td> 
   </tr> 
  </tbody> 
@@ -64,7 +61,7 @@ ht-degree: 0%
 
 请记住以下事项：
 
-* TVSDK自动将属性列表提取为键值对，并将属性存储在元数据属性中。
+* TVSDK自动将属性列表提取到键值对中，并将属性存储在元数据属性中。
 
    >[!TIP]
    >
@@ -76,15 +73,15 @@ ht-degree: 0%
    >url="www.example.com:8090?parameter1=xyz&parameter2=abc"
    >```
 
-* 如果提取因自定义标记格式而失败，则元数据属性将为空，您的应用程序必须提取实际信息。 在这种情况下不会引发错误。
+* 如果提取因自定义标记格式而失败，则元数据属性将为空，且您的应用程序必须提取实际信息。 在这种情况下不会引发错误。
 
 | 元素 | 说明 |
 |---|---|
 | `public enum Type { TAG, ID3}` | 定时元数据的可能类型。 |
-| `public TimedMetadata(Type type, long time, long id, String name, Metadata metadata);` | 默认构造函数（时间是本地流时间）。 |
+| `public TimedMetadata(Type type, long time, long id, String name, Metadata metadata);` | 默认构造函数（time是本地流时间）。 |
 | `public long getTime();` | 相对于主内容开始的时间位置，此元数据已插入流中。 |
 | `public Metadata getMetadata();` | 在流中插入的元数据。 |
 | `public Type getType();` | 返回定时元数据的类型。 |
-| `public long getId();` | 返回从提示／标记属性提取的ID。 否则，提供唯一随机值。 |
-| `public String getName();` | 返回提示的名称，该名称通常为HLS标记名称。 |
+| `public long getId();` | 返回从提示/标记属性提取的ID。 否则，提供唯一随机值。 |
+| `public String getName();` | 返回提示的名称，该名称通常是HLS标记名称。 |
 
