@@ -1,13 +1,10 @@
 ---
 description: 此表提供了有关ERROR类型通知的详细信息。
-seo-description: 此表提供了有关ERROR类型通知的详细信息。
-seo-title: 错误通知代码
 title: 错误通知代码
-uuid: cea75277-7747-4f9b-ad59-98f9f1a5ac2f
 translation-type: tm+mt
-source-git-commit: 1b9792a10ad606b99b6639799ac2aacb707b2af5
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '446'
+source-wordcount: '434'
 ht-degree: 5%
 
 ---
@@ -19,7 +16,7 @@ ht-degree: 5%
 
 <!--<a id="section_D29404228F5E4B818642CBA6A0D39546"></a>-->
 
-大多数错误都包含相关元数据，例如，无法下载的资源URL。 某些通知包含元数据，用于指定在主视频内容、备用音频内容还是广告中出现问题。
+大多数错误都包含相关元数据，例如，无法下载的资源的URL。 某些通知包含元数据，用于指定问题是在主视频内容、备用音频内容还是广告中出现。
 
 <table frame="all" colsep="1" rowsep="1" id="table_8B61210A406A45ACBE37FC29729DDE22"> 
  <thead> 
@@ -28,7 +25,7 @@ ht-degree: 5%
    <th colname="2" class="entry"> 名称 </th> 
    <th colname="3" class="entry"> InnerNotification </th> 
    <th colname="4" class="entry"> 元数据键 </th> 
-   <th colname="5" class="entry"> 注释 </th> 
+   <th colname="5" class="entry"> 评论 </th> 
   </tr> 
  </thead>
  <tbody> 
@@ -132,7 +129,7 @@ ht-degree: 5%
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>原生</b> </td> 
+   <td colname="1"><b>本机</b> </td> 
    <td colname="2"> </td> 
    <td colname="3"> </td> 
    <td colname="4"> </td> 
@@ -161,10 +158,10 @@ ht-degree: 5%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 107003  </span> </td> 
-   <td colname="2"><span class="codeph"> SET_CC_STYLING_错误  </span> </td> 
+   <td colname="2"><span class="codeph"> SET_CC_STYLING_ERROR  </span> </td> 
    <td colname="3"> <span class="codeph"> NATIVE_ERROR  </span> </td> 
    <td colname="4"> <p>无 </p> </td> 
-   <td colname="5"> <p>尝试更改CC音轨的样式选项时出错。 </p> </td> 
+   <td colname="5"> <p>尝试更改CC轨道的样式选项时出错。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><b>iOS唯一</b> </td> 
@@ -206,14 +203,14 @@ ht-degree: 5%
    <td colname="2"><span class="codeph"> HLS_SEGMENT_ERROR  </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"><span class="codeph"> 说明 </span><span class="codeph"> URL  </span><span class="codeph"> INTERNAL_ERROR  </span> </td> 
-   <td colname="5"> <p>段超出了为变体指定的带宽。 </p> </td> 
+   <td colname="5"> <p>段超出了为变量指定的带宽。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 170005  </span> </td> 
    <td colname="2"><span class="codeph"> MBR_MEDIASEQUENCE_OFFSYNC  </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> 无 </td> 
-   <td colname="5"> <p>此MBR的所有HLS流上的媒体序列号都未同步。 </p> </td> 
+   <td colname="5"> <p>此MBR的所有HLS流上的媒体序列号未同步。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 170006  </span> </td> 
@@ -238,20 +235,20 @@ ht-degree: 5%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 170009  </span> </td> 
-   <td colname="2"><span class="codeph"> SUBTITLES_TRACK_CHANGE_FAIL  </span> </td> 
+   <td colname="2"><span class="codeph"> SATTLES_TRACK_CHANGE_FAIL  </span> </td> 
    <td colname="3"><span class="codeph"> PLAYER_NOT_READY  </span> </td> 
    <td colname="4"> 无 </td> 
    <td colname="5"> <p>更改字幕轨道时出错。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 邮政编码170010  </span> </td> 
-   <td colname="2"><span class="codeph"> SITECATALYST_错误  </span> </td> 
+   <td colname="1"><span class="codeph"> 170010  </span> </td> 
+   <td colname="2"><span class="codeph"> SITECATALYST_ERROR  </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"><span class="codeph"> 说明  </span> </td> 
    <td colname="5"> <p>Site Catalyst错误。 请参阅说明。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"> 邮政编码170011  </span> </td> 
+   <td colname="1"><span class="codeph"> 170011  </span> </td> 
    <td colname="2"><span class="codeph"> AD_目标_DURATION_INCOMPATIBLE  </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> <span class="codeph"> AD_ASSET</span> </td> 
