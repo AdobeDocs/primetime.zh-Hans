@@ -1,13 +1,10 @@
 ---
-description: 对于每个新视频内容，使用视频内容的相关信息初始化MediaResource实例并加载媒体资源。
-seo-description: 对于每个新视频内容，使用视频内容的相关信息初始化MediaResource实例并加载媒体资源。
-seo-title: 初始化特定视频的媒体播放器
+description: 对于每个新的视频内容，使用有关视频内容的信息初始化一个MediaResource实例并加载媒体资源。
 title: 初始化特定视频的媒体播放器
-uuid: aff3a71f-6e01-49af-9791-84db9f095238
 translation-type: tm+mt
-source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '64'
+source-wordcount: '36'
 ht-degree: 0%
 
 ---
