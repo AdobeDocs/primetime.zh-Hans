@@ -1,13 +1,10 @@
 ---
-description: 您可以通过实现接口PlacementOpportunityDetector来实施您自己的机会检测器。
-seo-description: 您可以通过实现接口PlacementOpportunityDetector来实施您自己的机会检测器。
-seo-title: 实施自定义机会检测器
+description: 您可以通过实现接口PlacementOpportunityDetector来实现您自己的机会检测器。
 title: 实施自定义机会检测器
-uuid: 012527c5-4ef0-4cd6-a9df-2fb861078a7e
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '152'
+source-wordcount: '135'
 ht-degree: 2%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 2%
 
 # 实现自定义机会检测器{#implement-a-custom-opportunity-detector}
 
-您可以通过实现接口PlacementOpportunityDetector来实施您自己的机会检测器。
+您可以通过实现接口PlacementOpportunityDetector来实现您自己的机会检测器。
 
 1. 创建自定义`AdvertisingFactory`实例并覆盖`createOpportunityDetector`。 例如：
 
@@ -45,9 +42,9 @@ ht-degree: 2%
       public List<PlacementOpportunity> process(List<TimedMetadata> timedMetadataList, Metadata metadata)
       ```
 
-      `timedMetadataList`包含可用`TimedMetadata`的列表，它已排序。 元数据包含要发送到广告提供者的定位参数和自定义参数。
+      `timedMetadataList`包含可用`TimedMetadata`的列表，该字段已排序。 元数据包含要发送到广告提供者的定位参数和自定义参数。
 
-   1. 对于每个`TimedMetadata`，创建`List<PlacementOpportunity>`。 列表可以为空，但不能为null。 `PlacementOpportunity` 应具有以下属性：
+   1. 对于每个`TimedMetadata`，创建一个`List<PlacementOpportunity>`。 列表可以为空，但不能为null。 `PlacementOpportunity` 应具有以下属性：
 
       ```java
       PlacementOpportunity( 
