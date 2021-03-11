@@ -1,13 +1,10 @@
 ---
-description: 在Adobe Primetime广告决策中，您可以目标关键价值对上的广告。
-seo-description: 在Adobe Primetime广告决策中，您可以目标关键价值对上的广告。
-seo-title: 定位信息
+description: 在Adobe Primetime广告决策中，您可以目标关键值对上的广告。
 title: 定位信息
-uuid: 72114bef-36a1-4f2d-92e8-59f4885d70d2
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '51'
+source-wordcount: '37'
 ht-degree: 0%
 
 ---
@@ -15,9 +12,9 @@ ht-degree: 0%
 
 # 定位信息{#targeting-information}
 
-在Adobe Primetime广告决策中，您可以目标关键价值对上的广告。
+在Adobe Primetime广告决策中，您可以目标关键值对上的广告。
 
-要将这些键值对传递到浏览器TVSDK:
+要将这些键值对传递到浏览器TVSDK，请执行以下操作：
 
 ```js
 var auditudeSettings = new AdobePSDK.AuditudeSettings(); 
