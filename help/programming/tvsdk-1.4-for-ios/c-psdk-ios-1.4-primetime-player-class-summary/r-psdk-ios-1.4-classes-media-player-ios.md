@@ -1,13 +1,10 @@
 ---
 description: 这些类描述您的媒体播放器及其资源。
-seo-description: 这些类描述您的媒体播放器及其资源。
-seo-title: 媒体播放器类
 title: 媒体播放器类
-uuid: 6b59dcff-9722-4a84-9049-f6f10f7b3e82
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '432'
+source-wordcount: '420'
 ht-degree: 0%
 
 ---
@@ -36,11 +33,11 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTDefaultMediaPlayerClientFactory.html" format="html" scope="external"> PTDefaultMediaPlayerClientFactory</a></span> </td> 
-   <td colname="2"> 在TVSDK中默认实现<span class="codeph"> PTMediaPlayerClientFactory</span>。 它提供可用的<span class="codeph"> PTOportunityReselver</span>、<span class="codeph"> PTContentResolver</span>和<span class="codeph"> PTAdPolicySelector</span>实例。 </td> 
+   <td colname="2"> 在TVSDK中默认实现<span class="codeph"> PTMediaPlayerClientFactory</span>。 它提供可用的<span class="codeph"> PTOportunityResolver</span>、<span class="codeph"> PTContentResolver</span>和<span class="codeph"> PTAdPolicySelector</span>实例。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTMediaPlayer.html" format="html" scope="external"> PTMediaPlayer</a></span> </td> 
-   <td colname="2">定义Primetime Player框架的根组件。 <p>应用程序创建此类的实例以回放媒体。 此组件会发送通知，让应用程序知道播放器在任何给定时间的状态。 </p> </td> 
+   <td colname="2">定义Primetime Player框架的根组件。 <p>应用程序创建此类的实例以播放媒体。 此组件会发送通知，让应用程序在任何给定时间了解播放器的状态。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Protocols/PTMediaPlayerClientFactory.html" format="html" scope="external"> PTMediaPlayerClientFactory</a></span> </td> 
@@ -60,7 +57,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTMediaSelectionOption.html" format="html" scope="external"> PTMediaSelectionOption</a></span> </td> 
-   <td colname="2">表示视听媒体资源，以适应不同的语言首选项、辅助功能要求或自定义应用程序配置。 有效选项类型： 
+   <td colname="2">表示视听媒体资源，以适应不同的语言首选项、辅助功能要求或自定义应用程序配置。 有效的选项类型： 
     <ul id="ul_p2q_gn2_2m"> 
      <li id="li_46BE5AE49732481FB6D336FFF896E5AD">字幕(<span class="codeph"> PTMediaSelectionOptionTypeSubtitle</span>) </li> 
      <li id="li_6CEADCA12D4A48B7AE4A539985F32119">备用音频(<span class="codeph"> PTMediaSelectionOptionTypeAudio</span>) </li> 
@@ -68,12 +65,12 @@ ht-degree: 0%
     </ul> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTOpportunityResolver.html" format="html" scope="external"> PTO</a> </span> pportunityResolverclass、 <span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Protocols/PTOpportunityResolver.html" format="html" scope="external"> </a> PTOpportunityResolverprotocol</span> </td> 
-   <td colname="2"> 用于处理清单内提示的类，将用作Adobe Primetime广告决策过程的位置。 </td> 
+   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTOpportunityResolver.html" format="html" scope="external"> PTOpportunityResolverclass、</a> </span>  <span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Protocols/PTOpportunityResolver.html" format="html" scope="external"> </a> PTOportunityResolverprotocol</span> </td> 
+   <td colname="2"> 用于处理清单内提示的类，这些提示将用作Adobe Primetime广告决策过程的放置。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Protocols/PTOpportunityResolverDelegate.html" format="html" scope="external"> PTOpportunityResolverDelegate</a></span> </td> 
-   <td colname="2"> 描述自定义业务机会解析程序(<span class="codeph"> PTOportunityResolver</span>)应使用的方法来向委托通信业务机会解析的状态的协议。 </td> 
+   <td colname="2"> 描述自定义业务机会解析器(<span class="codeph"> PTOportunityResolver</span>)应使用的方法来向委托通信业务机会解析的状态的协议。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTSDK.html" format="html" scope="external"> PTSDK</a></span> </td> 
