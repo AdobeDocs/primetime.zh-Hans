@@ -1,13 +1,10 @@
 ---
 description: AdAsset的内容描述了配套横幅。
-seo-description: AdAsset的内容描述了配套横幅。
-seo-title: 配套横幅数据
 title: 配套横幅数据
-uuid: f54aecea-5e11-45dd-97d0-5774ca631a4d
 translation-type: tm+mt
-source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '172'
+source-wordcount: '160'
 ht-degree: 0%
 
 ---
@@ -34,7 +31,7 @@ AdAsset的内容描述了配套横幅。
    <td colname="col2"> 配套横幅的宽度（以像素为单位）。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 高度 </td> 
+   <td colname="col1"> 高 </td> 
    <td colname="col2"> 配套横幅的高度（以像素为单位）。 </td> 
   </tr> 
   <tr> 
@@ -47,7 +44,7 @@ AdAsset的内容描述了配套横幅。
   </tr> 
   <tr> 
    <td colname="col1"> 静态URL </td> 
-   <td colname="col2"> <p>有时，配套横幅还具有<span class="codeph"> staticURL</span>，它是指向图像或<span class="codeph"> .swf</span>（flash横幅）的直接URL。 </p> <p>如果不想使用html或iframe，可以使用图像或swf的直接URL在Flash阶段显示横幅。 在这种情况下，可以使用<span class="codeph"> staticURL</span>显示横幅。 </p> <p>重要： 您必须检查静态URL是否是有效字符串，因为此属性可能不总是可用。 </p> </td> 
+   <td colname="col2"> <p>有时，配套横幅还具有<span class="codeph"> staticURL</span>，该URL是指向图像或<span class="codeph"> .swf</span>（flash横幅）的直接URL。 </p> <p>如果您不想使用html或iframe，可以使用指向图像或swf的直接URL来在Flash舞台中显示横幅。 在这种情况下，您可以使用<span class="codeph"> staticURL</span>显示横幅。 </p> <p>重要说明： 您必须检查静态URL是否为有效字符串，因为此属性可能并不总是可用。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
