@@ -1,13 +1,10 @@
 ---
-description: 重置MediaPlayer实例时，它将返回到其未初始化的IDLE状态，如MediaPlayerState中所定义。
-seo-description: 重置MediaPlayer实例时，它将返回到其未初始化的IDLE状态，如MediaPlayerState中所定义。
-seo-title: 重置或重用MediaPlayer实例
+description: 重置MediaPlayer实例时，它将返回到MediaPlayerState中定义的未初始化的IDLE状态。
 title: 重置或重用MediaPlayer实例
-uuid: 72cc4511-8ab0-44e5-b93c-b36f0321bba8
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '300'
+source-wordcount: '276'
 ht-degree: 0%
 
 ---
@@ -17,13 +14,13 @@ ht-degree: 0%
 
 您可以重置、重用或释放不再需要的MediaPlayer实例。
 
-重置MediaPlayer实例时，它将返回到其未初始化的IDLE状态，如MediaPlayerState中所定义。
+重置MediaPlayer实例时，它将返回到MediaPlayerState中定义的未初始化的IDLE状态。
 
 此操作在以下情况下很有用：
 
 * 您希望重用`MediaPlayer`实例，但需要加载新的`MediaResource`（视频内容）并替换以前的实例。
 
-   重置允许您重用`MediaPlayer`实例，而无需释放资源、重新创建`MediaPlayer`和重新分配资源。
+   重置允许您重用`MediaPlayer`实例，而不会产生释放资源、重新创建`MediaPlayer`和重新分配资源的开销。
 
 * 当`MediaPlayer`处于ERROR状态并需要清除时。
 
@@ -43,19 +40,19 @@ ht-degree: 0%
    >
    >要清除错误，请加载相同的`MediaResource`。
 
-1. 当您收到`STATUS_CHANGED`事件回调的PREPARED状态时，请开始播放。
+1. 当您收到具有PREPARED状态的`STATUS_CHANGED`事件回调时，请开始播放。
 
 ## 释放MediaPlayer实例和资源{#release-a-mediaplayer-instance-and-resources}
 
-当您不再需要MediaResource时，您应该发布MediaPlayer实例和资源。
+当您不再需要MediaResource时，您应释放MediaPlayer实例和资源。
 
 释放`MediaPlayer`对象时，将取消分配与此`MediaPlayer`对象关联的基础硬件资源。
 
-以下是发布MediaPlayer的一些理由：
+以下是发布MediaPlayer的一些原因：
 
-* 保留不必要的资源可能会影响性能。
+* 持有不必要的资源会影响性能。
 * 保留不必要的`MediaPlayer`对象可导致移动设备的电池持续消耗。
-* 如果设备不支持同一视频编解码器的多个实例，则其他应用程序可能会出现播放失败。
+* 如果设备上不支持同一视频编解码器的多个实例，则其他应用程序可能会出现播放失败。
 
 1. 释放`MediaPlayer`。
 
@@ -63,4 +60,4 @@ ht-degree: 0%
    void release() throws IllegalStateException;
    ```
 
-释放`MediaPlayer`实例后，您不能再使用它。 如果在释放`MediaPlayer`接口后调用其任何方法，则会引发`IllegalStateException`。
+释放`MediaPlayer`实例后，您不能再使用它。 如果在释放`MediaPlayer`接口后调用其任何方法，则引发`IllegalStateException`。
