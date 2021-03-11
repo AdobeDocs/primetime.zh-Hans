@@ -1,13 +1,10 @@
 ---
 description: 您可以轻松构建基于参考实现框架的自定义用户界面。
-seo-description: 您可以轻松构建基于参考实现框架的自定义用户界面。
-seo-title: 构建自定义用户界面
 title: 构建自定义用户界面
-uuid: b785f6a4-3ef8-4f7a-a087-0d6551da9750
 translation-type: tm+mt
-source-git-commit: 31b6cad26bcc393d731080a70eff1c59551f1c8e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '160'
+source-wordcount: '141'
 ht-degree: 0%
 
 ---
@@ -23,7 +20,7 @@ ht-degree: 0%
 * 广告叠加
 * 延迟绑定音频
 * 隐藏式字幕
-* 以上所有组件的监听器
+* 上述所有组件的监听器
 
 1. 编辑[!DNL PlayerFragment.java]文件以初始化要在播放器中使用的UI组件。
 
@@ -32,4 +29,4 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->要对搜索栏进行UI更改，可编辑MarkableSeekBar类。 [MarkableSeekBar](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/ui/player/MarkableSeekBar.html)类处理滑块、滑块的缩略图、广告标记保持器、提示标记、缓冲区范围和搜索范围背景。
+>要对搜索栏进行UI更改，可以编辑MarkableSeekBar类。 [MarkableSeekBar](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/ui/player/MarkableSeekBar.html)类处理滑块、滑块的拇指、标记保持器、提示标记、缓冲区范围和搜索范围背景。
