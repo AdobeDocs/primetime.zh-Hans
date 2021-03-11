@@ -1,13 +1,10 @@
 ---
-description: 您可以在广告中间通过实时流加入，从而获得类似电视的体验。
-seo-description: 您可以在广告中间通过实时流加入，从而获得类似电视的体验。
-seo-title: 部分广告中断插入
-title: 部分广告中断插入
-uuid: 296a9b6a-9e9f-4ca7-ab8a-c8cbc98fb9af
+description: 您可以在广告中间加入直播流，从而获得类似电视的体验。
+title: 部分广告分段插入
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '349'
+source-wordcount: '325'
 ht-degree: 0%
 
 ---
@@ -15,14 +12,14 @@ ht-degree: 0%
 
 # 部分广告中断插入{#partial-ad-break-insertion}
 
-您可以在广告中间通过实时流加入，从而获得类似电视的体验。
+您可以在广告中间加入直播流，从而获得类似电视的体验。
 
-部分广告中断功能可以模拟类似电视的体验，如果客户端开始某个视频流，该视频流就会在该视频流中开始。 它类似于切换到电视渠道，广告无缝运行。
+“部分广告中断”功能可让您模拟类似电视的体验，如果客户端在某个视频流中开始实时流，则该视频流将在该视频流中开始。 它类似于切换到电视渠道，广告无缝运行。
 
-例如，如果用户在90秒的广告中断（三则30秒的广告）中间加入，在第二则广告中加入10秒（即，在广告中断开始40秒），则会发生以下情况：
+例如，如果用户在90秒广告时段（3个30秒广告）中间加入，在第2个广告时段（即广告时段40秒）中加入10秒，则会发生以下情况：
 
 * 第二个广告在剩余的持续时间（20秒）内播放，然后是第三个广告。
-* 不会触发部分播放的广告（第二个广告）的广告跟踪器。 只会触发第三个广告的跟踪器。
+* 不触发部分播放的广告（第二个广告）的广告跟踪器。 只触发第三个广告的跟踪器。
 
 默认情况下不启用此行为。 要在应用程序中启用此功能，请执行以下操作。
 
@@ -32,7 +29,7 @@ ht-degree: 0%
    advertisingMetadata.setEnableLivePreroll(String.valueOf(false))
    ```
 
-1. 打开“部分广告中断插入”首选项。 使用MediaPlayer界面中的新方法setPartialAdBreakPref将此功能打开。 使用getPartialAdBreakPref方法查找此首选项的当前状态。
+1. 打开“部分插入广告中断”首选项。 使用MediaPlayer界面中的新方法setPartialAdBreakPref将此功能打开。 使用getPartialAdBreakPref方法查找此首选项的当前状态。
 
    ```
    MediaPlayer mediaPlayer = DefaultMediaPlayer.create(getActivity().getApplicationContext()); 
@@ -40,9 +37,9 @@ ht-degree: 0%
           mediaPlayer.setPartialAdBreakPref(true); 
    ```
 
-1. 此功能要求您实施自定义广告策略选择器以自定义行为。 如果您尚未自定义AdvertisingFactory类实现，请添加新的AdvertisingFactory实现。 覆盖createAdPolicySelector方法。 此方法返回AdPolicySelector实现的新实例。
+1. 此功能要求您实施自定义广告策略选择器以自定义行为。 如果您尚未自定义实现AdvertisingFactory类，则添加一个新的AdvertisingFactory实现。 覆盖createAdPolicySelector方法。 此方法返回AdPolicySelector实现的新实例。
 
-   下面给出了示例实施，供您参考。 可从com.adobe.mediacore包中使用以下示例实施。 但是，它被简化以便于参考，建议不按原样使用。
+   下面给出了一个示例实施，供您参考。 可从com.adobe.mediacore包中使用以下示例实施。 但是，它经过简化以便于参考，不建议按原样使用。
 
    1. 示例广告策略选择器
 
