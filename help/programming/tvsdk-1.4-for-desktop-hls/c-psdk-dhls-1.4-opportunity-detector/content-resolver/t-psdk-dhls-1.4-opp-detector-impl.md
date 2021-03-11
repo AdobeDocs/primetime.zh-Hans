@@ -1,13 +1,10 @@
 ---
-description: 您可以实施自己的机会检测器。
-seo-description: 您可以实施自己的机会检测器。
-seo-title: 实施自定义机会检测器
+description: 您可以实施您自己的机会检测器。
 title: 实施自定义机会检测器
-uuid: 18fb431b-4585-4293-92a7-b77ab7f9b7db
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '172'
+source-wordcount: '160'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 实现自定义机会检测器{#implement-a-custom-opportunity-detector}
 
-您可以实施自己的机会检测器。
+您可以实施您自己的机会检测器。
 
 * 如果您的机会生成器基于与当前媒体流关联的`TimedMetadata`对象，则它应扩展`SpliceOutOpportunityGenerator`或`TimedMetadataOpportunityGenerator`。
 
@@ -25,8 +22,8 @@ ht-degree: 0%
 
        如果您的自定义业务机会生成器基于“TimedMetadata”对象，则扩展“TimedMetadataOpportunityGenerator”并覆盖以下方法：
    
-   * `doConfigure` -在创建媒体播放器项目后调用此方法，并提供机会生成器以根据需要创建初始机会集
-   * `doProcess` -每次检测到新内容时都会调 `TimedMetadata` 用此方法（例如，每次播放列表／清单刷新时，对实时／线性流调用该方法）
+   * `doConfigure`  — 在创建媒体播放器项目后调用此方法，并提供机会生成器以根据需要创建初始机会集
+   * `doProcess`  — 每次检测到新内容时都会调 `TimedMetadata` 用此方法（例如，每次播放列表/清单刷新时，对实时/线性流调用此方法）
 
    ```
    public class CustomOpportunityGenerator extends TimedMetadataOpportunityGenerator { 
