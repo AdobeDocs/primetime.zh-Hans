@@ -1,19 +1,16 @@
 ---
 description: 您可以显示正在播放的内容的当前时间和剩余时间。
-seo-description: 您可以显示正在播放的内容的当前时间和剩余时间。
-seo-title: 显示具有当前播放时间位置的搜索拖拽栏
-title: 显示具有当前播放时间位置的搜索拖拽栏
-uuid: 3a13f4a5-538d-4e7e-ac24-043927f3f2ee
+title: 使用当前播放时间位置显示搜索拖拉栏
 translation-type: tm+mt
-source-git-commit: a63768e51c911914a6ba9d884e2587fa34939f9d
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '88'
+source-wordcount: '62'
 ht-degree: 0%
 
 ---
 
 
-# 显示当前播放时间位置{#display-a-seek-scrub-bar-with-the-current-playback-time-position}的搜索滑动条
+# 显示当前播放时间位置{#display-a-seek-scrub-bar-with-the-current-playback-time-position}的搜索拖拉栏
 
 您可以显示正在播放的内容的当前时间和剩余时间。
 
