@@ -1,13 +1,10 @@
 ---
 description: 广告信令模式指定视频流应在何处获得广告信息。
-seo-description: 广告信令模式指定视频流应在何处获得广告信息。
-seo-title: 广告信令模式
 title: 广告信令模式
-uuid: 111b7e43-e97c-4069-a273-4f9f6280453e
 translation-type: tm+mt
-source-git-commit: 0eaf0e7e7e61d596a51d1c9c837ad072d703c6a7
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '139'
+source-wordcount: '123'
 ht-degree: 0%
 
 ---
@@ -41,8 +38,8 @@ ht-degree: 0%
    <td colname="3"> 
     <ul id="ul_D462C76717D94DE09915BDF6E9B3FB68"> 
      <li id="li_FB46108F4AD9457D99D2618ABEF7DBD1"> 使用流内提示进行位置检测 </li> 
-     <li id="li_C3F7FBB98F524CEF97D17318C292E9EA"> 预卷广告插入主流 </li> 
-     <li id="li_A56E1545F84840DFA6D065DA60E98C31"> 中版广告取代主流 </li> 
+     <li id="li_C3F7FBB98F524CEF97D17318C292E9EA"> 在主流中插入预卷广告 </li> 
+     <li id="li_A56E1545F84840DFA6D065DA60E98C31"> 中间滚动广告取代主流 </li> 
     </ul> </td> 
    <td colname="4"> 
     <ul id="ul_F10192B1B6F745CBB0D4C1A6D52A57B4"> 
@@ -51,7 +48,7 @@ ht-degree: 0%
     </ul> </td> 
   </tr> 
   <tr rowsep="0"> 
-   <td colname="1"> 实时／线性 </td> 
+   <td colname="1"> 实时/线性 </td> 
    <td colname="2"> 
     <ul id="ul_82AAC9EE056F49E999F809536A96C2F8"> 
      <li id="li_73BAD2BAA95F4592808B77F8DA436237"> 使用清单提示进行位置检测 </li> 
