@@ -1,21 +1,18 @@
 ---
-seo-title: 用于直接广告中断的JSON对象
-title: 用于直接广告中断的JSON对象
-uuid: ffb901f4-0a8b-40fe-b6ba-5ffebc324cf2
-description: 在类型值为直接和分段时详细描述JSON对象
-seo-description: 在类型值为直接和分段时详细描述JSON对象
+title: 用于直接广告分段的JSON对象
+description: 在类型值为直接和分段时详细列出JSON对象
 translation-type: tm+mt
-source-git-commit: 31b6cad26bcc393d731080a70eff1c59551f1c8e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '182'
+source-wordcount: '164'
 ht-degree: 0%
 
 ---
 
 
-# 直接广告中断的JSON对象{#json-object-for-direct-ad-breaks}
+# 直接广告分段的JSON对象{#json-object-for-direct-ad-breaks}
 
-当类型值为直接广告分段时，以下代码块定义详细信息JSON对象。
+以下代码块定义当类型值为直接广告分段时的详细信息JSON对象。
 
 `IFeedItemAdapter:getStreamMetadata()`返回的`MetadataNode`包含键类型为`com.adobe.mediacore.metadata.DefaultMetadataKeys.JSON_METADATA_KEY`的条目，以及下面详细JSON对象值的字符串表示形式的值。
 
@@ -54,11 +51,11 @@ ht-degree: 0%
 | 属性 | 说明 |
 |---|---|
 | `tag` | 映射到`com.adobe.mediacore.timeline.advertising.AdBreak`中标记字段的字符串。 |
-| `time` | 指示广告中断的开始时间，映射到`com.adobe.mediacore.timeline.advertising.AdBreak`中的时间字段。 值0表示预先投放广告。 |
+| `time` | 指示广告分段的开始时间，映射到`com.adobe.mediacore.timeline.advertising.AdBreak`中的时间字段。 值为0表示预置广告。 |
 | `replace` | 指示广告中断替换持续时间，映射到`com.adobe.mediacore.timeline.advertising.AdBreak`中的`replaceDuration`字段。 |
-| `ad-list` | 在给定广告分时段要播放的广告列表，映射到`com.adobe.mediacore.timeline.advertising.AdBreak`中的`List<Ad>`字段。 |
+| `ad-list` | 在给定广告分段期间要播放的广告列表，映射到`com.adobe.mediacore.timeline.advertising.AdBreak`中的`List<Ad>`字段。 |
 
-以下代码块为广告列表数组定义JSON对象。
+以下代码块为ads-列表数组定义JSON对象。
 
 ```
 "ad-list": [ 
@@ -78,6 +75,6 @@ ht-degree: 0%
 | 属性 | 说明 |
 |---|---|
 | `url` | 广告内容的URL映射到`com.adobe.mediacore.timeline.advertising.Ad`中的url字段。 |
-| `duration` | 广告的持续时间，映射到`com.adobe.mediacore.timeline.advertising.Ad`中的持续时间字段。 |
+| `duration` | 广告的持续时间，映射到`com.adobe.mediacore.timeline.advertising.Ad`中的“持续时间”字段。 |
 | `tag` | 描述字符串。 |
 
