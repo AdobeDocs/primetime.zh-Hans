@@ -1,13 +1,10 @@
 ---
-description: 要在TVSDK应用程序中实施FairPlay流，您需要编写一个资源加载器，该加载器会向您的FairPlay流服务器发送许可证获取请求。
-seo-description: 要在TVSDK应用程序中实施FairPlay流，您需要编写一个资源加载器，该加载器会向您的FairPlay流服务器发送许可证获取请求。
-seo-title: TVSDK应用程序中的Apple FairPlay
+description: 要在TVSDK应用程序中实施FairPlay流，您需要编写一个资源加载器，该加载器向您的FairPlay流服务器发送许可证获取请求。
 title: TVSDK应用程序中的Apple FairPlay
-uuid: 5796d5af-0018-4c69-a755-65e4819ee838
 translation-type: tm+mt
-source-git-commit: e1c6ab1d50f9262aaf70aef34854cf293fb4f30d
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '585'
+source-wordcount: '554'
 ht-degree: 0%
 
 ---
@@ -15,12 +12,12 @@ ht-degree: 0%
 
 # TVSDK应用程序中的Apple FairPlay {#apple-fairplay-in-tvsdk-applications}
 
-要在TVSDK应用程序中实施FairPlay流，您需要编写一个资源加载器，该加载器会向您的FairPlay流服务器发送许可证获取请求。
+要在TVSDK应用程序中实施FairPlay流，您需要编写一个资源加载器，该加载器向您的FairPlay流服务器发送许可证获取请求。
 
 资源加载器代码负责以下任务:
 
 1. 确定在何处发送许可证获取请求。
-1. 格式化请求。
+1. 设置请求的格式。
 1. 向服务器提供必要的信息，以便服务器能够决定是否允许请求。
 
 例如，如果您使用由ExpressPlay提供支持的Adobe的Primetime Cloud DRM，则您的资源加载器会将请求发送到：
@@ -29,19 +26,19 @@ ht-degree: 0%
 https://fp-gen.service.expressplay.com
 ```
 
-资源加载器设置请求的格式并附加一个ExpressPlay令牌，该令牌授权将播放权放到URL。 获取ExpressPlay令牌时，需考虑几个选项。 这些选项取决于您对内容的打包方式。
+资源加载器设置请求的格式，并附加一个ExpressPlay令牌，该令牌授权将播放权交付到URL。 获取ExpressPlay令牌时，需要考虑几个选项。 这些选项取决于您对内容的打包方式。
 
-在打包内容时，打包程序会在M3U8清单中插入`skd:` URL。 在`skd:`条目之后，可以将任何数据放入清单中。 您可以在应用程序代码中使用此任务完成上面列出的数据。 例如，您可以使用`skd:{content_id}`，这样您的应用程序就可以确定正在播放的内容的ID，并为该特定内容请求令牌。 例如，您也可以使用`skd:{entitlement_server_url}?cid={content_id}`，这样您的应用程序就不需要硬编码授权服务器URL。
+在打包内容时，打包程序会在M3U8清单中插入`skd:` URL。 在`skd:`条目之后，可以将任何数据放入清单中。 您可以在应用程序代码中使用此任务来完成上面列出的数据。 例如，您可以使用`skd:{content_id}`，以便您的应用程序可以确定正在播放的内容的ID，并为该特定内容请求令牌。 例如，您还可以使用`skd:{entitlement_server_url}?cid={content_id}`，这样您的应用程序就不需要硬编码授权服务器URL。
 
-如果在播放开始时，您已经通过其他渠道了解内容ID，则您可能不需要`skd:` URL中的任何信息。 第二个示例是测试设置的理想解决方案，但您也可以在生产环境中使用它。
+在播放开始时，如果已通过其他渠道了解内容ID，则可能不需要`skd:` URL中的任何信息。 第二个示例是测试设置的理想解决方案，但您也可以在生产环境中使用它。
 
 >[!TIP]
 >
 >确定`skd:`的格式。
 
-您的内容是使用`skd:`协议获取的，但您的许可证请求使用`https:`。 处理这些协议的最常用选项是：
+您的内容是使用`skd:`协议获取的，但您的许可证请求使用`https:`。 处理这些协议的最常见选项是：
 
-* **端对端回放的初始测试在** 打包内容时，请选择 `skd:` URL。测试应用程序时，请从ExpressPlay手动获取许可证，并在加载器中硬编码许可证(`https:` URL)和内容URL。
+* **端对端播放的初始测试在打** 包内容时，请选择一 `skd:` 个URL。测试应用程序时，请从ExpressPlay手动获取许可证，并在加载程序中对许可证(`https:` URL)和内容URL进行硬编码。
 
    例如：
 
@@ -53,7 +50,7 @@ https://fp-gen.service.expressplay.com
        ExpressPlayToken={copy_your_token_to_here}";
    ```
 
-* **大多数其** 他情况打包内容时，请 `skd:` 选择唯一表示内容ID的URL。在加载器中，解析`skd:` URL，将其发送到服务器以获取令牌，然后使用生成的令牌作为URL。
+* **大多数其** 他情况打包内容时，请 `skd:` 选择唯一表示内容ID的URL。在加载器中，分析`skd:` URL，将其发送到服务器以获取令牌，然后使用生成的令牌作为URL。
 
    例如：
 
@@ -153,19 +150,19 @@ https://fp-gen.service.expressplay.com
 
 ## 在TVSDK应用程序{#section_61CFA3C22FE64F52B2C8CE860B72E88B}中启用Apple FairPlay
 
-您可以在您的TVSDK应用程序中实施Apple FairPlay流，它是Apple的DRM解决方案。
+您可以在您的TVSDK应用程序中实施Apple FairPlay流，这是Apple的DRM解决方案。
 
 1. 通过实施`PTAVAssetResourceLoaderDelegate`创建FairPlay客户资源加载器。 有关详细信息，请参阅TVSDK应用程序中的Apple FairPlay。
 
    >[!NOTE]
    >
-   >确保按照&#x200B;*FairPlay流项目指南*(*FairPlayStreaming_PG.pdf*)中的说明进行操作，该指南包含在用于开发FPS感知型应用程序的](https://developer.apple.com/services-account/download?path=/Developer_Tools/FairPlay_Streaming_SDK/FairPlay_Streaming_Server_SDK.zip)[FairPlay服务器SDK中。
+   >确保按照&#x200B;*FairPlay流项目指南*(*FairPlayStreaming_PG.pdf*)中的说明操作，该指南包含在用于开发FPS感知型应用程序的[FairPlay Server SDK中。](https://developer.apple.com/services-account/download?path=/Developer_Tools/FairPlay_Streaming_SDK/FairPlay_Streaming_Server_SDK.zip)
 
    方法`resourceLoader:shouldWaitForLoadingOfRequestedResource`等效于`AVAssetResourceLoaderDelegate`中的内容。
 
    >[!NOTE]
    >
-   >在ExpressPlay许可证服务器场景中，要播放内容，请将ExpressPlay FairPlay服务器许可证请求URL中的URL方案从`skd://`更改为`https://`（或`https://`）。
+   >在ExpressPlay许可证服务器方案中，要播放内容，请将ExpressPlay FairPlay服务器许可证请求URL中的URL方案从`skd://`更改为`https://`（或`https://`）。
 
 1. 使用`registerPTAVAssetResourceLoader`注册&#x200B;*FairPlay*&#x200B;客户资源加载器。
 
@@ -178,4 +175,4 @@ https://fp-gen.service.expressplay.com
 
    >[!NOTE]
    >
-   >如果您自行编写了FairPlay许可证服务器，或者您使用的是第三方FairPlay许可证服务器，请咨询许可证服务器供应商以确定许可证服务器URL、格式和任何其他要求。
+   >如果您编写了自己的FairPlay许可证服务器，或者您使用的是第三方FairPlay许可证服务器，请咨询您的许可证服务器供应商以确定您的许可证服务器URL、格式和任何其他要求。
