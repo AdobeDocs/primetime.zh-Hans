@@ -1,13 +1,10 @@
 ---
 description: 在AdobeTVSDKConfig.json中，您可以指定特定区域的默认规则和规则。
-seo-description: 在AdobeTVSDKConfig.json中，您可以指定特定区域的默认规则和规则。
-seo-title: 创意选择规则范例
-title: 创意选择规则范例
-uuid: 7b4b4a76-f813-4f6c-ac41-36ca08bb8173
+title: 创意选择规则示例
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '103'
+source-wordcount: '84'
 ht-degree: 0%
 
 ---
@@ -19,7 +16,7 @@ ht-degree: 0%
 
 ## 默认规则示例{#section_xy4_3fx_hz}
 
-以下是仅定义默认规则的`AdobeTVSDKConfig.json`文件的示例：
+以下是仅定义默认规则的`AdobeTVSDKConfig.json`文件示例：
 
 ```
 {
@@ -69,7 +66,7 @@ ht-degree: 0%
 
 ## 附加区域规则{#section_ocv_3fx_hz}的默认规则示例
 
-以下是定义默认规则的[!DNL AdobeTVSDKConfig.json]文件的示例，以及特定区域ID的附加规则（在本例中，区域&#x200B;**&quot;1234&quot;**）:
+以下是定义默认规则的[!DNL AdobeTVSDKConfig.json]文件的示例，此文件加上特定区域ID的其他规则（在此例中，区域&#x200B;**&quot;1234&quot;**）：
 
 ```
 {
