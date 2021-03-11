@@ -1,13 +1,10 @@
 ---
-description: 要使隐藏式字幕对客户端播放器可用，必须启用它们。 用户可以打开或关闭隐藏式字幕并选择格式。
-seo-description: 要使隐藏式字幕对客户端播放器可用，必须启用它们。 用户可以打开或关闭隐藏式字幕并选择格式。
-seo-title: 显示隐藏式字幕
+description: 要使隐藏式字幕对您的客户端播放器可用，必须启用它们。 用户可以打开或关闭隐藏式字幕并选择格式。
 title: 显示隐藏式字幕
-uuid: 209b34ca-f14e-499e-af5f-2d8c7b359ef8
 translation-type: tm+mt
-source-git-commit: 25a0dfef12ecf10ba939500c4ba539468c41ee1b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '143'
+source-wordcount: '114'
 ht-degree: 0%
 
 ---
@@ -15,9 +12,9 @@ ht-degree: 0%
 
 # 显示隐藏式字幕{#expose-closed-captions}
 
-要使隐藏式字幕对客户端播放器可用，必须启用它们。 用户可以打开或关闭隐藏式字幕并选择格式。
+要使隐藏式字幕对您的客户端播放器可用，必须启用它们。 用户可以打开或关闭隐藏式字幕并选择格式。
 
-要显示隐藏式字幕，请执行以下操作：
+显示隐藏式字幕：
 
 1. 在`PTMediaPlayer`对象中，设置`closedCaptionDisplayEnabled`属性。
 
@@ -25,7 +22,7 @@ ht-degree: 0%
 
    >[!NOTE]
    >
-   >客户端用户使用“iOS辅助功能设置”打开或关闭关闭的字幕，这些设置还提供格式选项。
+   >客户端用户使用iOS“辅助功能设置”打开或关闭关闭的字幕，这些设置还提供格式选项。
 
    >[!NOTE]
    >
