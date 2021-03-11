@@ -1,9 +1,9 @@
 ---
-seo-title: 启用背景音频
 title: 启用背景音频
-uuid: aa6dc934-e85c-4db1-901b-9777f47106e6
+description: 启用背景音频
+copied-description: true
 translation-type: tm+mt
-source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '63'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 _mediaPlayer.enableAudioPlaybackInBackground(true);
 ```
 
-在响应电话等事件，当应用程序失去对音频焦点的控制时，应暂停播放。 下面的代码片断演示如何实现`OnAudioFocusChangeListener`:
+在响应电话等事件中，当应用程序失去对音频焦点的控制时，应暂停播放。 下面的代码片断演示了如何实现`OnAudioFocusChangeListener`:
 
 ```
 /** 
