@@ -1,13 +1,10 @@
 ---
-description: 以下是用户如何选择隐藏字幕轨道的示例。
-seo-description: 以下是用户如何选择隐藏字幕轨道的示例。
-seo-title: 允许用户更改轨道
+description: 下面是一个示例，说明用户如何选择隐藏字幕轨道。
 title: 允许用户更改轨道
-uuid: bd3d4d20-9b52-4365-b656-83ec2a405a1c
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '97'
+source-wordcount: '77'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 允许用户更改轨道{#allow-the-user-to-change-the-track}
 
-以下是用户如何选择隐藏字幕轨道的示例。
+下面是一个示例，说明用户如何选择隐藏字幕轨道。
 
 1. 要显示可用的隐藏字幕轨道，请使用`MediaPlayerItem.closedCaptionsTracks`属性。
 
@@ -24,7 +21,7 @@ ht-degree: 0%
    ```
 
 1. 要设置当前的隐藏字幕轨道，请使用`MediaPlayerItem.selectClosedCaptionsTrack`方法。
-1. 准备媒体播放器项目后，使用` MediaPlayer.  currentItem `方法从媒体播放器中检索它。
+1. 准备媒体播放器项后，使用` MediaPlayer.  currentItem `方法从媒体播放器中检索它。
 
    ```js
    // Select the cc track with index k. 
