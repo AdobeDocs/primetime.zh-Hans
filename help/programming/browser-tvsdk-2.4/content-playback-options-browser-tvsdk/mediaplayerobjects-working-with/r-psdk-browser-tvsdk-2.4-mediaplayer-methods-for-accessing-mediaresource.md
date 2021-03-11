@@ -1,13 +1,10 @@
 ---
 description: MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表示的内容流的信息。
-seo-description: MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表示的内容流的信息。
-seo-title: 用于访问MediaResource信息的MediaPlayer属性
 title: 用于访问MediaResource信息的MediaPlayer属性
-uuid: d26f39d6-0a6b-4072-b99a-8767a511a846
 translation-type: tm+mt
-source-git-commit: d2b8cb67c54fadb8e0e7d2bdc15e393fdce8550e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '238'
+source-wordcount: '210'
 ht-degree: 0%
 
 ---
@@ -34,7 +31,7 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
   <tr rowsep="1"> 
    <td colname="1" morerows="2"> 隐藏式字幕 </td> 
    <td colname="2"> <span class="codeph"> hasClosedCaptions  </span> </td> 
-   <td colname="3"> 如果隐藏式字幕轨道可用，则为true。 </td> 
+   <td colname="3"> 如果隐藏字幕轨道可用，则为true。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> closedCaptionsTracks  </span> </td> 
@@ -42,7 +39,7 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> selectedClosedCaptionsTrack  </span> </td> 
-   <td colname="3"> 检索用<span class="codeph"> selectClosedCaptionsTrack </span>选择的隐藏字幕轨道。 </td> 
+   <td colname="3"> 检索与<span class="codeph"> selectClosedCaptionsTrack </span>一起选择的隐藏字幕轨道。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1" morerows="2"> 替代音频 </td> 
@@ -51,7 +48,7 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> audioTracks  </span> </td> 
-   <td colname="3"> 提供可用备用音轨的列表。 </td> 
+   <td colname="3"> 提供可用替代音轨的列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> selectedAudioTrack  </span> </td> 
@@ -76,7 +73,7 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
    <td colname="3"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="3"> 提供与此流关联的相关比特率列表的用户档案。 <p>注意： 您可以检索每个用户档案的位速率以及用户档案的高度和宽度。 </p> </td> 
+   <td colname="3"> 提供与此流关联的相关比特率用户档案的列表。 <p>注意： 您可以检索每个用户档案的位速率以及用户档案的高度和宽度。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 媒体资源 </td> 
