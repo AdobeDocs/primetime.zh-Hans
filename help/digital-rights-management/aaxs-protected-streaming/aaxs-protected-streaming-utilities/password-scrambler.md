@@ -1,9 +1,9 @@
 ---
-seo-title: 密码剪贴器
 title: 密码剪贴器
-uuid: e488babc-cd50-41b9-acb8-490e8e42e8bc
+description: 密码剪贴器
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 47b2ed65ff0ea4f54a210cf7627ed535782296b9
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '80'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # 密码剪贴器{#password-scrambler}
 
-密码扰码器实用程序加密密码，以便在Adobe Access Server使用保护流配置文件。 要运行scrambler，请运行命令：
+密码剪贴器实用程序加密密码，以便在Adobe Access Server中对受保护流配置文件使用。 要运行scrambler，请运行命令：
 
 ```
 Scrambler.bat password 
@@ -35,5 +35,5 @@ Encrypted password: scrambled-password
 
 >[!NOTE]
 >
->Adobe Access Server的受保护流密码扰码器实用程序不能与随参考实施许可证服务器提供的扰码器互换。
+>Adobe Access Server中用于受保护流的密码扰码器实用程序不能与随参考实施许可证服务器提供的扰码器互换。
 
