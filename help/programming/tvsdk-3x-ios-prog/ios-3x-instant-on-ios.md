@@ -1,13 +1,10 @@
 ---
-description: 即时加载在一个或多个渠道上预载部分媒体。 在用户选择或切换渠道后，内容开始会更早，因为某些缓冲已经完成。
-seo-description: 即时加载在一个或多个渠道上预载部分媒体。 在用户选择或切换渠道后，内容开始会更早，因为某些缓冲已经完成。
-seo-title: 即时
+description: 即时加载将部分媒体预加载到一个或多个渠道。 在用户选择或切换渠道后，内容开始会更早，因为某些缓冲已经完成。
 title: 即时
-uuid: 98a5ef79-51e4-474e-a6e8-ca449c430b5e
 translation-type: tm+mt
-source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '241'
+source-wordcount: '210'
 ht-degree: 0%
 
 ---
@@ -15,9 +12,9 @@ ht-degree: 0%
 
 # 即时启动{#instant-on}
 
-即时加载在一个或多个渠道上预载部分媒体。 在用户选择或切换渠道后，内容开始会更早，因为某些缓冲已经完成。
+即时加载将部分媒体预加载到一个或多个渠道。 在用户选择或切换渠道后，内容开始会更早，因为某些缓冲已经完成。
 
-当播放器处于`PTMediaPlayerStatusReady`状态时，调用`prepareToPlay`预加载并处理部分内容以供以后回放。
+当您的播放器处于`PTMediaPlayerStatusReady`状态时，请调用`prepareToPlay`以预加载并处理某些内容以供以后播放。
 
 >[!TIP]
 >
@@ -25,12 +22,12 @@ ht-degree: 0%
 
 TVSDK为`prepareToPlay`完成以下部分或全部任务:
 
-* 如果元数据密钥`kSyncCookiesWithAVAsset`已设置，则TVSDK会向原始M3U8文件发出一个请求，以同步cookie。
-* 加载DRM元数据密钥。
+* 如果设置了元数据密钥`kSyncCookiesWithAVAsset`，则TVSDK向原始M3U8文件发出一个请求以同步Cookie。
+* 加载DRM元数据键。
 * 创建并准备播放内容所需的一些结构、元素或资源。
 
 >[!TIP]
 >
 >`PTMediaPlayer`和`PTMediaPlayerItem` `prepareToPlay`方法相等。 要避免为每个资产创建单独的`PTMediaPlayer`实例，请使用`PTMediaPlayerItem`方法。
 
-即时启动可帮助您启动多个媒体播放器实例或媒体播放器项目加载器实例，同时在后台启动并缓冲所有这些实例中的视频流。 当用户更改渠道，且流已正确缓冲时，调用新渠道开始上的`play`会更快地播放。
+即时启动可帮助您同时在后台启动多个媒体播放器实例或媒体播放器项目加载器实例，并缓冲所有这些实例中的视频流。 当用户更改渠道，且流已正确缓冲时，对新渠道调用`play`会更快地开始播放。
