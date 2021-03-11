@@ -1,13 +1,10 @@
 ---
-description: 全事件重播(FER)是充当实时/DVR资产的VOD资产，因此您的应用程序必须采取步骤来确保正确放置广告。
-seo-description: 全事件重播(FER)是充当实时/DVR资产的VOD资产，因此您的应用程序必须采取步骤来确保正确放置广告。
-seo-title: 支持全事件重播广告
-title: 支持全事件重播广告
-uuid: 69244069-ef61-42e4-b2f5-62ae2561d9e1
+description: 全事件重播(FER)是一个VOD资产，充当实时/DVR资产，因此您的应用程序必须采取步骤以确保正确放置广告。
+title: 实现全事件重播
 translation-type: tm+mt
-source-git-commit: 0eaf0e7e7e61d596a51d1c9c837ad072d703c6a7
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '351'
+source-wordcount: '319'
 ht-degree: 0%
 
 ---
@@ -15,17 +12,17 @@ ht-degree: 0%
 
 # 启用全事件重播{#enable-ads-in-full-event-replay-overview}中的广告
 
-全事件重播(FER)是充当实时/DVR资产的VOD资产，因此您的应用程序必须采取步骤来确保正确放置广告。
+全事件重播(FER)是一个VOD资产，充当实时/DVR资产，因此您的应用程序必须采取步骤以确保正确放置广告。
 
-对于实时内容，TVSDK使用清单中的元数据／提示确定广告的放置位置。 但是，有时实时／线性内容可能与VOD内容类似。 例如，当实时内容完成时，将向实时清单附加一个`EXT-X-ENDLIST`标记。 对于HLS,`EXT-X-ENDLIST`标记表示流是VOD流。 要正确插入广告，TVSDK无法自动将此流与典型VOD流区分开。
+对于实时内容，TVSDK使用清单中的元数据/提示确定放广告的位置。 但是，有时实时/线性内容可能与VOD内容相似。 例如，当活动内容完成时，将向活动清单附加一个`EXT-X-ENDLIST`标记。 对于HLS，`EXT-X-ENDLIST`标记表示流是VOD流。 要正确插入广告，TVSDK无法自动区分此流与典型VOD流。
 
 应用程序必须通过指定`AdSignalingMode`来告诉TVSDK内容是实时的还是VOD的。
 
-对于FER流，Adobe Primetime广告决策服务器不应提供在开始播放之前需要在时间轴上插入的广告中断的列表。 这是VOD内容的典型过程。 相反，通过指定不同的信令模式，TVSDK从FER清单读取所有提示点并转到广告服务器以请求广告中断。 此过程类似于实时/DVR内容。
+对于FER流，Adobe Primetime广告决策服务器不应提供在开始播放之前需要在时间轴上插入的广告中断的列表。 这是VOD内容的典型过程。 相反，通过指定不同的信令模式，TVSDK从FER清单读取所有提示点并转到每个提示点的广告服务器以请求广告中断。 此过程类似于实时/DVR内容。
 
 >[!TIP]
 >
->除了与提示点关联的每个请求外，TVSDK还对预放广告提出额外的广告请求。
+>除了与提示点关联的每个请求外，TVSDK还对前放广告发出额外的广告请求。
 
 1. 从外部源（如vCMS）获得应使用的信令模式。
 1. 创建与广告相关的元数据。
@@ -35,7 +32,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   >在调用`prepareToPlay`之前，必须设置广告信令模式。 在TVSDK开始解析广告并将其放在时间轴上后，将忽略对广告信号模式所做的更改。 在创建`AuditudeSettings`对象时设置模式。
+   >在调用`prepareToPlay`之前，必须设置广告信令模式。 在TVSDK开始解析广告并将其放置到时间轴上后，将忽略对广告信号模式的更改。 在创建`AuditudeSettings`对象时设置模式。
 
 1. 继续播放。
 
