@@ -1,28 +1,25 @@
 ---
 description: 您可以从QOSProvider类读取播放、缓冲和设备统计信息。
-seo-description: 您可以从QOSProvider类读取播放、缓冲和设备统计信息。
-seo-title: 读取QOS播放、缓冲和设备统计
 title: 读取QOS播放、缓冲和设备统计
-uuid: 5ee631fc-cd6f-4f35-8621-2ffdc51a57c7
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '141'
+source-wordcount: '122'
 ht-degree: 1%
 
 ---
 
 
-# 读取QOS播放、缓冲和设备统计信息{#read-qos-playback-buffering-and-device-statistics}
+# 读取QOS播放、缓冲和设备统计{#read-qos-playback-buffering-and-device-statistics}
 
 您可以从QOSProvider类读取播放、缓冲和设备统计信息。
 
 `QOSProvider`类提供各种统计信息，包括有关缓冲、比特率、帧速率、时间数据等的信息。
 
-它还提供有关设备的信息，如制造商、型号、操作系统、SDK版本和屏幕大小／密度。
+它还提供有关设备的信息，例如制造商、型号、操作系统、SDK版本和屏幕大小/密度。
 
 1. 实例化媒体播放器。
-1. 创建`QOSProvider`对象，并将其连接到媒体播放器。
+1. 创建一个`QOSProvider`对象，并将其连接到媒体播放器。
 
    ```
    // Create Media Player. 
@@ -32,7 +29,7 @@ ht-degree: 1%
 
 1. （可选）阅读播放统计信息。
 
-   读取播放统计信息的一个解决方案是设置计时器，该计时器定期从`QOSProvider`中获取新的QoS值。 例如：
+   读取播放统计信息的一个解决方案是设置一个计时器，该计时器从`QOSProvider`中定期获取新的QoS值。 例如：
 
    ```
    var qosTimer:Timer = new Timer(1000); // every 1 second  
