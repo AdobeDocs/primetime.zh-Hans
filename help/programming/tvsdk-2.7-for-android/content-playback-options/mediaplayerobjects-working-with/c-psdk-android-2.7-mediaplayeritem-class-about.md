@@ -1,13 +1,10 @@
 ---
-description: 成功加载MediaResource对象后，TVSDK将创建MediaPlayerItem类的一个实例以提供对该资源的访问。
-seo-description: 成功加载MediaResource对象后，TVSDK将创建MediaPlayerItem类的一个实例以提供对该资源的访问。
-seo-title: 关于MediaPlayerItem类
+description: 成功加载MediaResource对象后，TVSDK会创建MediaPlayerItem类的一个实例，以提供对该资源的访问。
 title: 关于MediaPlayerItem类
-uuid: 2d37f358-d158-481b-81d5-27546e9c2e0e
 translation-type: tm+mt
-source-git-commit: 812d04037c3b18f8d8cdd0d18430c686c3eee1ff
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '176'
+source-wordcount: '151'
 ht-degree: 0%
 
 ---
@@ -17,11 +14,11 @@ ht-degree: 0%
 
 MediaPlayer对象表示您的媒体播放器。 MediaPlayerItem表示播放器上的音频或视频。
 
-成功加载MediaResource对象后，TVSDK将创建MediaPlayerItem类的一个实例以提供对该资源的访问。
+成功加载MediaResource对象后，TVSDK会创建MediaPlayerItem类的一个实例，以提供对该资源的访问。
 
-`MediaResource`表示应用程序层向`MediaPlayer`实例发出的加载内容的请求。
+`MediaResource`表示应用程序层向`MediaPlayer`实例发出的用于加载内容的请求。
 
-`MediaPlayer`解析媒体资源，加载关联的清单文件，并解析清单。 这是资源加载过程的异步部分。 `MediaPlayerItem`实例在资源解析后生成，此实例是`MediaResource`的已解析版本。 TVSDK通过`MediaPlayer.CurrentItem`提供对新创建的`MediaPlayerItem`实例的访问。
+`MediaPlayer`将解析媒体资源，加载关联的清单文件，并解析清单。 这是资源加载过程的异步部分。 `MediaPlayerItem`实例在资源解析后生成，此实例是`MediaResource`的已解析版本。 TVSDK提供对新创建的`MediaPlayerItem`实例的访问，访问路径为`MediaPlayer.CurrentItem`。
 
 >[!TIP]
 >
