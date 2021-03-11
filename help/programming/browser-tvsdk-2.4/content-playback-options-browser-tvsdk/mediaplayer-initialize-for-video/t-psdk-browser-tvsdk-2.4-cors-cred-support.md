@@ -1,14 +1,11 @@
 ---
-description: 支持XMLHttpRequests中的withCredentials属性允许跨来源资源共享(CORS)请求包含目标域的cookies以用于各种请求类型。
-keywords: CORS;cross origin;resource sharing;cookies;withCredentials
-seo-description: 支持XMLHttpRequests中的withCredentials属性允许跨来源资源共享(CORS)请求包含目标域的cookies以用于各种请求类型。
-seo-title: 跨来源资源共享
+description: 支持XMLHttpRequests中的withCredentials属性允许跨来源资源共享(CORS)请求包含针对各种请求类型的目标域的cookie。
+keywords: CORS；交叉来源；资源共享；cookies;withCredentials
 title: 跨来源资源共享
-uuid: e788b542-d4ac-48aa-91e2-1e88068cbba1
 translation-type: tm+mt
-source-git-commit: 592245f5a7186d18dabbb5a98a468cbed7354aed
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '254'
 ht-degree: 0%
 
 ---
@@ -16,9 +13,9 @@ ht-degree: 0%
 
 # 跨来源资源共享{#cross-origin-resource-sharing}
 
-支持XMLHttpRequests中的withCredentials属性允许跨来源资源共享(CORS)请求包含目标域的cookies以用于各种请求类型。
+支持XMLHttpRequests中的withCredentials属性允许跨来源资源共享(CORS)请求包含针对各种请求类型的目标域的cookie。
 
-当客户端请求清单、段或密钥时，服务器可以设置客户端必须通过的cookie才能进行后续请求。 要允许读取和写入Cookie，客户端必须将跨来源请求的`withCredentials`属性设置为`true`。
+当客户端请求清单、区段或密钥时，服务器可以设置客户端必须传递的cookie以用于后续请求。 要允许读取和写入Cookie，客户端必须将跨来源请求的`withCredentials`属性设置为`true`。
 
 要在播放给定媒体资源时启用`withCredentials`对大多数类型的请求的支持，请执行以下操作：
 
@@ -29,7 +26,7 @@ ht-degree: 0%
    corsConfig.enableEncryptionRequest = true; 
    ```
 
-1. 将`corsConfig`连接到`NetworkConfiguration`对象，并将`useCookieHeaderForAllRequests`设置为`true`。
+1. 将`corsConfig`附加到`NetworkConfiguration`对象，将`useCookieHeaderForAllRequests`设置为`true`。
 
    ```js
    var networkConfig = new AdobePSDK.NetworkConfiguration();  
@@ -78,9 +75,9 @@ ht-degree: 0%
 }
 ```
 
-该标志不影响许可证请求，因为某些服务器在响应中将`Access-Control-Allow-Origin`字段设置为通配符(“*”)。 但是，当凭据标志设置为`true`时，通配符不能在`Access-Control-Allow-Origin`中使用。 如果将所有类型的请求的`useCookieHeaderForAllRequests`设置为`true`，则许可证请求可能会出现以下错误：
+该标志不会影响许可证请求，因为某些服务器在响应中将`Access-Control-Allow-Origin`字段设置为通配符(“*”)。 但是，当凭据标志设置为`true`时，通配符不能在`Access-Control-Allow-Origin`中使用。 如果将所有类型的请求的`useCookieHeaderForAllRequests`设置为`true`，则许可证请求可能会出现以下错误：
 
 请记住以下信息：
 
-* 当具有`withCredentials=true`的调用失败时，浏览器TVSDK将重试不具有`withCredentials`的调用。
-* 使用`networkConfiguration.useCookieHeaderForAllRequests=false`进行调用时，将发出XHR请求，而不使用`withCredentials`属性。
+* 当调用`withCredentials=true`失败时，Browser TVSDK将重试调用而不包括`withCredentials`。
+* 当使用`networkConfiguration.useCookieHeaderForAllRequests=false`进行调用时，XHR请求不使用`withCredentials`属性。
