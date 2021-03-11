@@ -1,9 +1,9 @@
 ---
-seo-title: 使用Media Packager
 title: 使用Media Packager
-uuid: e5f8a3cf-b43d-437f-85a2-52d3ba4961d0
+description: 使用Media Packager
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '48'
 ht-degree: 0%
@@ -13,4 +13,4 @@ ht-degree: 0%
 
 # 使用Media Packager {#using-media-packager}
 
-使用Media Packager，您可以指定文件中要加密的数据以及要应用于内容文件的策略。 例如，可指定视频数据已加密，但音频数据未加密。
+使用Media Packager，您可以指定要加密的文件中的数据以及要应用于内容文件的策略。 例如，您可以指定视频数据已加密，但音频数据未加密。
