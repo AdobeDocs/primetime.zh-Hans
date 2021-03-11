@@ -1,13 +1,10 @@
 ---
-description: 这些类允许您自定义日志记录。
-seo-description: 这些类允许您自定义日志记录。
-seo-title: 记录类
-title: 记录类
-uuid: 8b07472e-b529-4c35-b49b-a499debfcff0
+description: 通过这些类，可以自定义日志记录。
+title: 日志记录类
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '135'
+source-wordcount: '126'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 记录类{#logging-classes}
 
-这些类允许您自定义日志记录。
+通过这些类，可以自定义日志记录。
 
 包：[com.adobe.mediacore.logging](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/logging/package-summary.html)
 
