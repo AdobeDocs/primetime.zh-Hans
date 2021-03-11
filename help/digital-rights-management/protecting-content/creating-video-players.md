@@ -1,9 +1,9 @@
 ---
-seo-title: 创建视频播放器
 title: 创建视频播放器
-uuid: 7727ab94-2b5d-419b-8251-8222fbc08781
+description: 创建视频播放器
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '58'
 ht-degree: 0%
@@ -13,8 +13,8 @@ ht-degree: 0%
 
 # 创建视频播放器{#create-video-players}
 
-如果要播放受保护的内容，您的应用程序必须使用ActionScript3 DRM API或Adobe PrimetimeDRM。
+如果要播放受保护的内容，您的应用程序必须使用ActionScript 3 DRM API或Adobe Primetime DRM。
 
-有关详细信息，请参见&#x200B;*编程ActionScript3*&#x200B;和&#x200B;*ActionScript3.0参考。*
+有关详细信息，请参阅&#x200B;*编程ActionScript3*&#x200B;和Adobe Flash Platform *的* ActionScript3.0参考。
 
-请参阅Adobe PrimetimePSDK文档，了解如何构建基于iOS的视频播放器。
+请参阅Adobe Primetime PSDK文档，了解如何构建基于iOS的视频播放器。
