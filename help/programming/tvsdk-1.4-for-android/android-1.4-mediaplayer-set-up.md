@@ -1,13 +1,10 @@
 ---
 description: 适用于Android的MediaPlayer界面封装了媒体播放器的功能和行为。
-seo-description: 适用于Android的MediaPlayer界面封装了媒体播放器的功能和行为。
-seo-title: 设置MediaPlayer
 title: 设置MediaPlayer
-uuid: 492b4693-acdf-4213-98e5-d6f0f1ae086d
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '137'
+source-wordcount: '119'
 ht-degree: 0%
 
 ---
@@ -29,7 +26,7 @@ TVSDK提供`MediaPlayer`接口`DefaultMediaPlayer`类的一个实现。 当您�
    public static MediaPlayer create(Context context) 
    ```
 
-1. 调用`MediaPlayer.getView`获取对`MediaPlayerView`实例的引用。
+1. 调用`MediaPlayer.getView`以获取对`MediaPlayerView`实例的引用。
 
    ```java
    MediaPlayerView getView() throws IllegalStateException; 
@@ -42,4 +39,4 @@ TVSDK提供`MediaPlayer`接口`DefaultMediaPlayer`类的一个实现。 当您�
    playerFrame.addView(mediaPlayer.getView()); 
    ```
 
-`MediaPlayer`实例现已可用，并且已正确配置以在设备屏幕上显示视频内容。
+`MediaPlayer`实例现已可用，并已正确配置以在设备屏幕上显示视频内容。
