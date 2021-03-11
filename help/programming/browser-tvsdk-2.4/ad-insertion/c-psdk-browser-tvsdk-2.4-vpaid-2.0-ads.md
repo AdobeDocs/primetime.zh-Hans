@@ -1,13 +1,10 @@
 ---
-description: 视频播放器广告服务界面定义(VPAID)2.0提供了一个用于播放视频广告的通用界面。 它为用户提供丰富的媒体体验，并允许出版商更好地目标广告、跟踪广告印象并从视频内容受益。
-seo-description: 视频播放器广告服务界面定义(VPAID)2.0提供了一个用于播放视频广告的通用界面。 它为用户提供丰富的媒体体验，并允许出版商更好地目标广告、跟踪广告印象并从视频内容受益。
-seo-title: VPAID 2.0广告支持
+description: 视频播放器广告服务界面定义(VPAID)2.0提供了播放视频广告的通用界面。 它为用户提供丰富的媒体体验，并允许出版商更好地目标广告、跟踪广告印象和从视频内容受益。
 title: VPAID 2.0广告支持
-uuid: 462692b5-c4b3-4488-adb3-f309809d64ad
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '390'
+source-wordcount: '351'
 ht-degree: 0%
 
 ---
@@ -15,19 +12,19 @@ ht-degree: 0%
 
 # VPAID 2.0广告支持{#vpaid-ad-support}
 
-视频播放器广告服务界面定义(VPAID)2.0提供了一个用于播放视频广告的通用界面。 它为用户提供丰富的媒体体验，并允许出版商更好地目标广告、跟踪广告印象并从视频内容受益。
+视频播放器广告服务界面定义(VPAID)2.0提供了播放视频广告的通用界面。 它为用户提供丰富的媒体体验，并允许出版商更好地目标广告、跟踪广告印象和从视频内容受益。
 
 支持以下功能：
 
-* VPAID规范的版本2.0
+* VPAID规范的2.0版
 
    有关详细信息，请参阅[IAB VPAID 2.0](https://www.iab.com/guidelines/digital-video-player-ad-interface-definition-vpaid-2-0/)。
 * 具有视频点播(VOD)内容的线性VPAID广告
-* 在实时内容中，浏览器TVSDK支持预发布JavaScript VPAID广告。
-* 在Flash回退模式下，浏览器TVSDK仅支持基于Flash的VPAID广告。
+* 在实时内容中，浏览器TVSDK支持预放JavaScript VPAID广告。
+* 在Flash回退模式下，Browser TVSDK仅支持基于Flash的VPAID广告。
 * 线性JavaScript VPAID广告
 
-   VPAID广告必须基于JavaScript，广告响应必须将VPAID广告的媒体类型标识为`application/javascript`。
+   VPAID广告必须基于JavaScript，且广告响应必须将VPAID广告的媒体类型标识为`application/javascript`。
 
 不支持以下功能：
 
@@ -36,7 +33,7 @@ ht-degree: 0%
 * 非线性广告，如叠加广告、动态伴侣广告、可最小化广告、可折叠广告和可扩展广告。
 * 预载VPAID广告
 * 实时内容中的VPAID广告
-* FlashVPAID广告
+* Flash付费广告
 
 ## API {#section_0DB1D383CA5047B281BC808BC082C69B}
 
@@ -50,11 +47,11 @@ ht-degree: 0%
 
    默认超时值为10秒。
 
-* API `auditudeSettings.ignoreVPAIDAds`允许您忽略从Auditude服务器收到的VPAID广告。 API不适用于Flash回退。
+* API `auditudeSettings.ignoreVPAIDAds`允许您忽略从Auditude服务器接收的VPAID广告。 API不适用于Flash回退。
 
 播放VPAID广告时：
 
-* VPAID广告显示在播放器视图上方的视图容器中，因此依赖于用户在播放器视图上点击的代码无效。
+* VPAID广告显示在播放器视图上方的视图容器中，因此依赖用户点击播放器视图的代码不起作用。
 * 暂停和播放播放播放器实例暂停和恢复VPAID广告的调用。
 * VPAID广告没有预定义的持续时间，因为该广告可以是交互式广告。
 
