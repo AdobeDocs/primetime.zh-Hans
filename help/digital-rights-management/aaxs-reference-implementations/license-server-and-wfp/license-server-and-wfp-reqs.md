@@ -1,9 +1,9 @@
 ---
-seo-title: 要求
 title: 要求
-uuid: c8e87231-d8c1-48f1-8bb1-5d76f561f216
+description: 要求
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '52'
 ht-degree: 0%
