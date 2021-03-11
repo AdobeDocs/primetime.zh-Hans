@@ -1,9 +1,9 @@
 ---
-seo-title: 使用第三方编码器
 title: 使用第三方编码器
-uuid: 8649303c-b8e6-4c02-a8ad-5734af850bfe
+description: 使用第三方编码器
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '102'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # 使用第三方编码器{#use-a-third-party-encoder}
 
-某些客户可能已使用硬件或软件视频编码器(或Adobe媒体服务器)准备内容。 如果是这样，任何当前可创建Primetime DRM保护内容的产品都可以使用与Primetime Cloud DRM保护套件相同的配置设置打包Primetime Cloud DRM的内容。 可从套件中包含的任一现有配置文件获取所需信息：[!DNL config_hls.xml]或[!DNL config_hds.xml]。
+某些客户可能已经使用硬件或软件视频编码器(或Adobe Medium服务器)准备了内容准备管道。 如果出现这种情况，任何当前可创建Primetime DRM保护内容的产品都可以使用与Primetime Cloud DRM保护工具包相同的配置设置打包Primetime Cloud DRM的内容。 可从套件中包含的任何现有配置文件获取所需信息：[!DNL config_hls.xml]或[!DNL config_hds.xml]。
 
 相关配置项为：
 
