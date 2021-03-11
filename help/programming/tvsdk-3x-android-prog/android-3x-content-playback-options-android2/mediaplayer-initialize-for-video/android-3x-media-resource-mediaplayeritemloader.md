@@ -1,13 +1,10 @@
 ---
-description: 使用MediaPlayerItemLoader可以帮助您获得有关媒体流的信息，而无需实例化MediaPlayer实例。 这在预缓冲流中尤为有用，这样可以无延迟地开始播放。
-seo-description: 使用MediaPlayerItemLoader可以帮助您获得有关媒体流的信息，而无需实例化MediaPlayer实例。 这在预缓冲流中尤为有用，这样可以无延迟地开始播放。
-seo-title: 使用MediaPlayerItemLoader加载媒体资源
+description: 使用MediaPlayerItemLoader可以帮助您获取有关媒体流的信息，而无需实例化MediaPlayer实例。 这在预缓冲流中特别有用，这样可以无延迟地开始播放。
 title: 使用MediaPlayerItemLoader加载媒体资源
-uuid: 504063af-1dd4-4268-88e7-ad5a247fdff7
 translation-type: tm+mt
-source-git-commit: 3fdae2b6babb578d2cacff970fd9c7b53ad2c5dc
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '360'
+source-wordcount: '325'
 ht-degree: 0%
 
 ---
@@ -15,13 +12,13 @@ ht-degree: 0%
 
 # 使用MediaPlayerItemLoader {#load-a-media-resource-using-mediaplayeritemloader}加载媒体资源
 
-使用MediaPlayerItemLoader可以帮助您获得有关媒体流的信息，而无需实例化MediaPlayer实例。 这在预缓冲流中尤为有用，这样可以无延迟地开始播放。
+使用MediaPlayerItemLoader可以帮助您获取有关媒体流的信息，而无需实例化MediaPlayer实例。 这在预缓冲流中特别有用，这样可以无延迟地开始播放。
 
-`MediaPlayerItemLoader`类帮助您交换当前`MediaPlayerItem`的媒体资源，而不将视图附加到`MediaPlayer`实例，该实例将分配视频解码硬件资源。 对于受DRM保护的内容，需要执行其他步骤，但本手册并未说明这些步骤。
+`MediaPlayerItemLoader`类帮助您交换当前`MediaPlayerItem`的媒体资源，而不将视图附加到将分配视频解码硬件资源的`MediaPlayer`实例。 对于受DRM保护的内容，需要执行其他步骤，但本手册并未说明这些步骤。
 
 >[!IMPORTANT]
 >
->TVSDK不支持单个`QoSProvider`以同时与`itemLoader`和`MediaPlayer`一起使用。 如果应用程序使用“即时启动”，则应用程序需要维护两个`QoS`实例并管理两个实例以获取相关信息。 有关详细信息，请参阅[即时启动](../../android-3x-content-playback-options-android2/buffering-configuration/android-3x-instant-on.md)。
+>TVSDK不支持单个`QoSProvider`以同时与`itemLoader`和`MediaPlayer`一起使用。 如果应用程序使用“即时启动”，则应用程序需要维护两个`QoS`实例并管理两个实例以获取相关信息。 有关详细信息，请参阅[Instant-on](../../android-3x-content-playback-options-android2/buffering-configuration/android-3x-instant-on.md)。
 
 1. 创建`MediaPlayerItemLoader`的实例。
 
@@ -80,9 +77,9 @@ ht-degree: 0%
    }
    ```
 
-   在`onLoadComplete()`回调中，执行下列操作之一：
+   在`onLoadComplete()`回调中，执行以下操作之一：
 
-   * 确保任何可能影响缓冲的内容（例如，选择WebVTT或音轨）均已完成，并调用`prepareBuffer()`以立即打开。
+   * 确保任何可能影响缓冲的内容（例如，选择WebVTT或音轨）都已完成，并调用`prepareBuffer()`以便立即打开。
    * 使用`replaceCurrentItem()`将项目连接到`MediaPlayer`实例。
 
    如果调用`prepareBuffer()`，则在准备完成后，您将在`onBufferPrepared`处理函数中收到BUFFER_PREPARED事件。
@@ -94,8 +91,8 @@ ht-degree: 0%
    loader.load(res, 233, getConfig());
    ```
 
-1. 要从流开头以外的点进行缓冲，请调用`prepareBuffer()`，其位置（以毫秒为单位）将缓冲开始。
-1. 使用`MediaPlayer`的`replaceCurrentItem()`和`play()`方法来开始从该点开始播放。
+1. 要从流开头以外的点进行缓冲，请使用开始缓冲的位置（以毫秒为单位）调用`prepareBuffer()`。
+1. 使用`MediaPlayer`的`replaceCurrentItem()`和`play()`方法，从该点开始播放开始。
 1. 等待空闲状态并调用`replaceCurrentItem`。
 1. 播放项目。
 
@@ -105,7 +102,7 @@ ht-degree: 0%
       1. 调用`prepareToPlay()`。
       1. 等待PREPARED状态。
       1. 调用`play()`。
-   * 如果缓冲该项：
+   * 如果缓冲了项：
 
       1. 等待缓冲区准备事件。
       1. 调用`play()`。
