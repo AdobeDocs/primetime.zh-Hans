@@ -1,13 +1,10 @@
 ---
 description: 您可以在VOD内容中插入广告。
-seo-description: 您可以在VOD内容中插入广告。
-seo-title: 用广告替换时间范围
 title: 用广告替换时间范围
-uuid: 50cdcc06-7df5-414b-95d4-c684bc68dce3
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '107'
+source-wordcount: '94'
 ht-degree: 0%
 
 ---
@@ -17,11 +14,11 @@ ht-degree: 0%
 
 您可以在VOD内容中插入广告。
 
-在这种情况下，从时间轴中删除`begin`和`end`之间的`TimeRanges`。 `localTime`它们被替换为`begin`的`AdBreak`到`begin+replaceDuration`。 如果替换持续时间不作为参数存在，则服务器将对返回的Adbreak进行确定。
+在这种情况下，将从时间轴中删除`begin`和`end`之间的`TimeRanges`。 `localTime`它们由`begin`的`AdBreak`替换为`begin+replaceDuration`。 如果替换持续时间不作为参数存在，则服务器会对返回的Adbreak进行确定。
 
 >[!NOTE]
 >
->您应始终为自定义范围提供特定的替换持续时间。 如果没有广告要替换此自定义范围，则提供替换持续时间为0。
+>您应始终为自定义范围提供特定的替换持续时间。 如果没有用于替换此自定义范围的广告，则提供0的替换持续时间。
 
 用Primetime广告决策广告替换范围。
 
