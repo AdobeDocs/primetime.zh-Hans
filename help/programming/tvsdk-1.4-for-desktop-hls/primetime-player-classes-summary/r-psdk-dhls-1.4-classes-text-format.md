@@ -1,13 +1,10 @@
 ---
-description: 这些类指定文本格式。
-seo-description: 这些类指定文本格式。
-seo-title: 文本格式类
+description: 这些类指定文本的格式。
 title: 文本格式类
-uuid: ef0a5098-d6a0-42f4-91f6-eb944eae5c2a
 translation-type: tm+mt
-source-git-commit: 91cea7acb8127e02b82e5242b9ad6ab0d12ce0eb
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '142'
+source-wordcount: '133'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 文本格式类{#text-format-classes}
 
-这些类指定文本格式。
+这些类指定文本的格式。
 
 包：[com.adobe.mediacore.textformat](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/textformat/package-detail.html)
 
