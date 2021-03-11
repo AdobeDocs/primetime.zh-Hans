@@ -1,13 +1,10 @@
 ---
-description: 您的应用程序必须在适当的时间使用相应的PTTimedMetadata对象。
-seo-description: 您的应用程序必须在适当的时间使用相应的PTTimedMetadata对象。
-seo-title: 在调度时存储定时元数据对象
+description: 您的应用程序必须在适当的时间使用适当的PTTimedMetadata对象。
 title: 在调度时存储定时元数据对象
-uuid: d26ed49e-fb29-4765-86e9-9ebbe5fa0a2b
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '219'
+source-wordcount: '199'
 ht-degree: 0%
 
 ---
@@ -15,22 +12,22 @@ ht-degree: 0%
 
 # 在调度定时元数据对象时存储这些对象{#store-timed-metadata-objects-as-they-are-dispatched}
 
-您的应用程序必须在适当的时间使用相应的PTTimedMetadata对象。
+您的应用程序必须在适当的时间使用适当的PTTimedMetadata对象。
 
 在内容分析（在播放前发生）期间，TVSDK识别订阅的标记并通知您的应用程序这些标记。 与每个`PTTimedMetadata`关联的时间是播放时间线上的绝对时间。
 
 您的应用程序必须完成以下任务:
 
 1. 跟踪当前播放时间。
-1. 将当前播放时间与所调度的`PTTimedMetadata`对象匹配。
+1. 将当前播放时间与调度的`PTTimedMetadata`对象匹配。
 
 1. 使用`PTTimedMetadata`，其中开始时间等于当前播放时间。
 
    >[!NOTE]
    >
-   >下面的代码假定一次只有一个`PTTimedMetadata`实例。 如果有多个实例，应用程序必须将它们正确保存在字典中。 一种方法是在给定时间创建一个数组并将所有实例存储在该数组中。
+   >下面的代码假设一次只有一个`PTTimedMetadata`实例。 如果有多个实例，应用程序必须将它们正确保存在词典中。 一种方法是在给定时间创建一个数组，并将所有实例存储在该数组中。
 
-   以下示例说明如何将`PTTimedMetadata`对象保存在按每个`timedMetadata`的开始时间键入的`NSMutableDictionary (timedMetadataCollection)`中。
+   下面的示例说明如何将`PTTimedMetadata`对象保存在按每个`timedMetadata`的开始时间键入的`NSMutableDictionary (timedMetadataCollection)`中。
 
    ```
    NSMutableDictionary *timedMetadataCollection; 
@@ -55,7 +52,7 @@ ht-degree: 0%
    }
    ```
 
-## 解析Nielsen ID3标记{#example_3B51E9D4AF2449FAA8E804206F873ECF}
+## 解析Nielsen ID3标签{#example_3B51E9D4AF2449FAA8E804206F873ECF}
 
 要提取ID3标记以进行分析，请在`onMediaPlayerSubscribedTagIdentified`方法上使用以下内容：
 
@@ -70,7 +67,7 @@ Unknown macro: { PTMetadata *metadata = (PTMetadata *)timedMetadata; NSString * 
 }
 ```
 
-解析ID3标记后，使用以下方法提取Nielsen特定的元数据：
+解析ID3标记后，使用以下方法提取特定于Nielsen的元数据：
 
 ```
     (NSString *)parseNielsenUrlFromID3Tag:(NSString *)str 
