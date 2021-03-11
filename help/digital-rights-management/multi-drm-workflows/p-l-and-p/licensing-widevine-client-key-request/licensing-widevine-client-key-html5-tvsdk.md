@@ -1,13 +1,10 @@
 ---
 description: 代码可以通过DRMManager请求密钥。
-seo-description: 代码可以通过DRMManager请求密钥。
-seo-title: HTML5 TVSDK上的密钥请求工作流
 title: HTML5 TVSDK上的密钥请求工作流
-uuid: a1f50eba-4301-49a1-b2e5-9add6687cff8
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '119'
+source-wordcount: '106'
 ht-degree: 0%
 
 ---
@@ -34,9 +31,9 @@ license acquisition. </p>
    setProtectionData: function(protectionData) 
 ```
 
-您的代码需要调用此API，才能以正常方式开始内容播放。 MediaPlayer.vo.protection.ProtectionData在以下位置提供了说明：[https://vm2.dashif.org/dash.js/docs/jsdocs/MediaPlayer.vo.protection.ProtectionData.html](https://vm2.dashif.org/dash.js/docs/jsdocs/MediaPlayer.vo.protection.ProtectionData.html)
+您的代码需要调用此API，才能以正常方式启动内容播放。 MediaPlayer.vo.protection.ProtectionData在以下位置进行了说明：[https://vm2.dashif.org/dash.js/docs/jsdocs/MediaPlayer.vo.protection.ProtectionData.html](https://vm2.dashif.org/dash.js/docs/jsdocs/MediaPlayer.vo.protection.ProtectionData.html)
 
-以下是PlayReady和Widevine的许可证服务器URL的保护数据对象示例。
+以下是PlayReady和Widevine的带有许可证服务器URL的保护数据对象示例。
 
 ```
 var protectionData = { 
@@ -56,4 +53,4 @@ var protectionData = {
    };
 ```
 
-TVSDK不提供任何API来强制特定DRM系统，因为每个浏览器仅支持一个DRM系统。
+TVSDK不提供任何API以强制特定DRM系统，因为每个浏览器仅支持一个DRM系统。
