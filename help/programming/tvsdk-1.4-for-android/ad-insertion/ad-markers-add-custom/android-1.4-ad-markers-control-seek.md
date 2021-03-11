@@ -1,13 +1,10 @@
 ---
 description: 在使用自定义广告标记时，您可以覆盖TVSDK如何搜索广告的默认行为。
-seo-description: 在使用自定义广告标记时，您可以覆盖TVSDK如何搜索广告的默认行为。
-seo-title: 控制用于搜索自定义广告标记的播放行为
-title: 控制用于搜索自定义广告标记的播放行为
-uuid: cf973caf-be29-46ce-bfa4-651e7653f8d4
+title: 控制通过自定义广告标记进行搜索的播放行为
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '181'
+source-wordcount: '155'
 ht-degree: 0%
 
 ---
@@ -17,11 +14,11 @@ ht-degree: 0%
 
 在使用自定义广告标记时，您可以覆盖TVSDK如何搜索广告的默认行为。
 
-默认情况下，当用户搜索或通过放置自定义广告标记所产生的广告部分时，TVSDK会跳过广告。 这可能与标准广告中断的当前播放行为不同。
+默认情况下，当用户在放置自定义广告标记后搜索或查看过去的广告部分时，TVSDK会跳过广告。 这可能与标准广告中断的当前播放行为不同。
 
 当用户搜索超过一个或多个自定义广告时，您可以告诉TVSDK将播放头重新定位到最近跳过的自定义广告的开头。
 
-1. 将`DefaultMetadataKeys.METADATA_KEY_ADJUST_SEEK_ENABLED`明细列表设置为字符串值“true”（不是布尔`true`）时配置元数据实例。
+1. 将`DefaultMetadataKeys.METADATA_KEY_ADJUST_SEEK_ENABLED`明细列表设置为字符串值“true”（不是布尔`true`）的Metadata实例进行配置。
 
    ```java
    Metadata metadata = new MetadataNode(); 
