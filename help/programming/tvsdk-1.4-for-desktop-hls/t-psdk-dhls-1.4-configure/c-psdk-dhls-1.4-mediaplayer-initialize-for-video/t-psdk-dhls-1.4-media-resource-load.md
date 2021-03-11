@@ -1,19 +1,16 @@
 ---
 description: 通过直接实例化MediaResource并加载要播放的视频内容来加载资源。 这是加载媒体资源的一种方式。
-seo-description: 通过直接实例化MediaResource并加载要播放的视频内容来加载资源。 这是加载媒体资源的一种方式。
-seo-title: 在MediaPlayer中加载媒体资源
 title: 在MediaPlayer中加载媒体资源
-uuid: 8af3e8d1-359d-483c-b394-b95054f7265a
 translation-type: tm+mt
-source-git-commit: 84924d84bfa436a8807c2e8d74d1dc268d457051
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '276'
+source-wordcount: '244'
 ht-degree: 0%
 
 ---
 
 
-# 在MediaPlayer中加载媒体资源{#load-a-media-resource-in-the-mediaplayer}
+# 在MediaPlayer{#load-a-media-resource-in-the-mediaplayer}中加载媒体资源
 
 通过直接实例化MediaResource并加载要播放的视频内容来加载资源。 这是加载媒体资源的一种方式。
 
@@ -21,7 +18,7 @@ ht-degree: 0%
 
    通过调用`MediaPlayer.replaceCurrentResource`并传递现有`MediaResource`实例，替换现有MediaPlayer的当前可播放项。
 
-1. 至少检查以下更改：
+1. 请至少检查以下更改：
 
    * 已初始化
    * 准备
@@ -29,17 +26,17 @@ ht-degree: 0%
 
       通过这些事件,`MediaPlayer`对象可以在媒体资源成功加载时通知您的应用程序。
 
-1. 当媒体播放器的状态变为INITIALIZED时，您可以调用`MediaPlayer.prepareToPlay`
+1. 当媒体播放器的状态更改为INITIALIZED时，您可以调用`MediaPlayer.prepareToPlay`
 
-   INITIALIZED状态表示媒体已成功加载。 调用`prepareToPlay`将开始广告解决和投放过程（如果有）。
+   INITIALIZED状态表示媒体已成功加载。 调用`prepareToPlay`将开始广告分辨率和投放过程（如果有）。
 
 1. 当媒体播放器状态更改为PREPARED时，媒体流已成功加载并准备好回放。
 
    加载媒体流时，将创建`MediaPlayerItem`。
 
-如果出现故障，MediaPlayer将切换到“ERROR”状态。 它还会通过将`STATUS_CHANGED`事件调度到`MediaPlayerStatusChangeEvent`回调来通知您的应用程序。
+如果发生故障，MediaPlayer将切换到“ERROR”状态。 它还会通过向`MediaPlayerStatusChangeEvent`回调调度`STATUS_CHANGED`事件来通知您的应用程序。
 
-这会传递多个参数：
+这传递了几个参数：
 * 具有值`ERROR`的字符串类型的`type`参数。
 
 * `MediaError`参数，可用于获取包含有关错误事件的诊断信息的通知。
@@ -47,7 +44,7 @@ ht-degree: 0%
 
 <!--<a id="example_3774607C6F08473282CF0CB7F3D82373"></a>-->
 
-以下简化的示例代码说明加载媒体资源的过程：
+以下简化的示例代码说明了加载媒体资源的过程：
 
 ```
 // mediaResource is a properly configured MediaResource instance 
