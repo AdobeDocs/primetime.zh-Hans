@@ -1,23 +1,20 @@
 ---
-description: 要接收清单中标记的通知，您需要实施相应的事件监听器。
-seo-description: 要接收清单中标记的通知，您需要实施相应的事件监听器。
-seo-title: 为定时元数据通知添加监听器
-title: 为定时元数据通知添加监听器
-uuid: 336882e7-e2d8-49b8-a23d-f236c7e6a594
+description: 要接收有关清单中标签的通知，您需要实现适当的事件侦听器。
+title: 为定时元数据通知添加侦听器
 translation-type: tm+mt
-source-git-commit: 812d04037c3b18f8d8cdd0d18430c686c3eee1ff
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '174'
+source-wordcount: '152'
 ht-degree: 0%
 
 ---
 
 
-# 为定时元数据通知添加监听器{#add-listeners-for-timed-metadata-notifications}
+# 为定时元数据通知{#add-listeners-for-timed-metadata-notifications}添加侦听器
 
-要接收清单中标记的通知，您需要实施相应的事件监听器。
+要接收有关清单中标签的通知，您需要实现适当的事件侦听器。
 
-您可以通过监听`onTimedMetadata`来监视定时元数据，它会通知您的应用程序相关活动。 每次在分析内容时识别唯一的订阅标记，TVSDK都会准备一个新的`TimedMetadata`对象并调度此事件。 该对象包含您订阅的标记的名称、播放中显示此标记的本地时间以及其他数据。
+您可以通过侦听`onTimedMetadata`来监视计时元数据，该侦听会向您的应用程序通知相关活动。 每次在分析内容时识别唯一的订阅标签时，TVSDK会准备一个新的`TimedMetadata`对象并调度此事件。 该对象包含您订阅的标记的名称、播放中显示此标记的本地时间以及其他数据。
 
 1. 听事件。
 
