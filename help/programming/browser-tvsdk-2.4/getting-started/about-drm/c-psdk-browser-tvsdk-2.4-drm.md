@@ -1,13 +1,10 @@
 ---
 description: 您可以完成Digital Rights Management(DRM)特定的工作流。
-seo-description: 您可以完成Digital Rights Management(DRM)特定的工作流。
-seo-title: Digital Rights Management
 title: Digital Rights Management
-uuid: 011605c7-50c4-4ad5-9961-8cd92d0e6fd8
 translation-type: tm+mt
-source-git-commit: 5a786d8001326f874a51d65b8e8badca44f46e96
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '114'
+source-wordcount: '102'
 ht-degree: 0%
 
 ---
@@ -17,7 +14,7 @@ ht-degree: 0%
 
 您可以完成Digital Rights Management(DRM)特定的工作流。
 
-您可以聆听`AdobePSDK.DRMMetadataInfoEvent`事件来处理DRM工作流:
+您可以侦听`AdobePSDK.DRMMetadataInfoEvent`事件以处理DRM工作流:
 
 ```js
 ... 
@@ -33,7 +30,7 @@ player.addEventListener(AdobePSDK.PSDKEventType.DRM_METADATA_INFO_AVAILABLE, onD
    player.addEventListener(AdobePSDK.PSDKEventType.DRM_METADATA_INFO_AVAILABLE, onDRMMetadataInfoAvaialble);
    ```
 
-1. 在步骤1的行上方实施`onDRMMetadataInfoAvailable`部分。
+1. 执行步骤1中行上方的`onDRMMetadataInfoAvailable`部分。
 
    ```js
    var onDRMMetadataInfoAvaialble = function(event) { 
@@ -82,7 +79,7 @@ player.addEventListener(AdobePSDK.PSDKEventType.DRM_METADATA_INFO_AVAILABLE, onD
 
    >[!TIP]
    >
-   >请确保更新资源类型，因为现在为DASH。
+   >请确保您更新了资源类型，因为现在这是DASH。
 
    ```js
    var resourceUrl = "https://ptdemos.com/videos/dashdrm/stream.mpd"; 
