@@ -1,19 +1,16 @@
 ---
 description: 某些API可以帮助您使用AdobeFlash Player。
-seo-description: 某些API可以帮助您使用AdobeFlash Player。
-seo-title: 有助于AdobeFlash Player的API
-title: 有助于AdobeFlash Player的API
-uuid: eae314c0-fd9e-480f-ae1c-9b5f3eb4db4b
+title: 有用的API，用于AdobeFlash Player
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '84'
+source-wordcount: '64'
 ht-degree: 0%
 
 ---
 
 
-# AdobeFlash Player的有用API{#helpful-apis-for-the-adobe-flash-player}
+# AdobeFlash Player{#helpful-apis-for-the-adobe-flash-player}的有用API
 
 某些API可以帮助您使用AdobeFlash Player。
 
