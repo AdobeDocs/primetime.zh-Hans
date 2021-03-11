@@ -1,13 +1,10 @@
 ---
-description: 授权请求和响应通过在许可证服务器和客户授权服务之间的相互验证的SSL连接进行传递。
-seo-description: 授权请求和响应通过在许可证服务器和客户授权服务之间的相互验证的SSL连接进行传递。
-seo-title: 查看公共API
+description: 授权请求和响应通过许可服务器和客户授权服务之间的相互认证的SSL连接传递。
 title: 查看公共API
-uuid: f3a17d61-04ee-4bdb-9d64-a98066c6d1c8
 translation-type: tm+mt
-source-git-commit: 15403abbd53486e1faa2146cda83f41bd8116632
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '179'
+source-wordcount: '154'
 ht-degree: 0%
 
 ---
@@ -15,13 +12,13 @@ ht-degree: 0%
 
 # 查看公共API {#sees-public-api}
 
-授权请求和响应通过在许可证服务器和客户授权服务之间的相互验证的SSL连接进行传递。
+授权请求和响应通过许可服务器和客户授权服务之间的相互认证的SSL连接传递。
 
-HTTPS URI方案([https://tools.ietf.org/html/rfc7230#section-2.7.2](https://tools.ietf.org/html/rfc7230#section-2.7.2))用于定义授权端点，而HTTPPOST请求方法([https://tools.ietf.org/html/rfc7231#section-4.3.3](https://tools.ietf.org/html/rfc7231#section-4.3.3))用于请求。 授权端点以及指示后端授权的标志是必需的，并且必须在打包时包含在策略中。
+HTTPS URI方案([https://tools.ietf.org/html/rfc7230#section-2.7.2](https://tools.ietf.org/html/rfc7230#section-2.7.2))用于定义授权端点，而HTTPPOST请求方法([https://tools.ietf.org/html/rfc7231#section-4.3.3](https://tools.ietf.org/html/rfc7231#section-4.3.3))用于请求。 需要授权端点以及指示后端授权的标志，并且必须在打包时包含在策略中。
 
 ## 授权请求{#section_BFBFEF0795CA46D6842C479256B95F95}
 
-授权请求的主体将是JSON对象，如下所示。
+授权请求的正文将是JSON对象，定义如下。
 
 **JSON授权请求对象定义**
 
@@ -57,7 +54,7 @@ HTTPS URI方案([https://tools.ietf.org/html/rfc7230#section-2.7.2](https://tool
 
 ## 授权响应{#section_F15A9FD6BAD946B3B4C5C14612F90154}
 
-授权响应的主体是JSON对象。
+授权响应的正文是JSON对象。
 
 **JSON授权响应对象定义**
 
