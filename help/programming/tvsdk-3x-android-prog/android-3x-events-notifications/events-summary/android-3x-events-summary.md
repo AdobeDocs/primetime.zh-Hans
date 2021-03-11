@@ -1,13 +1,10 @@
 ---
-description: 您的应用程序可以监视播放器中的活动以及播放器的不断变化状态，方法是监听TVSDK分派的事件。
-seo-description: 您的应用程序可以监视播放器中的活动以及播放器的不断变化状态，方法是监听TVSDK分派的事件。
-seo-title: Primetime播放器事件摘要
+description: 您的应用程序可以监听TVSDK调度的活动，以监视播放器中的事件和播放器不断变化的状态。
 title: Primetime播放器事件摘要
-uuid: b2ff74f2-c373-42da-a717-2f0550cbcb7f
 translation-type: tm+mt
-source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '598'
+source-wordcount: '568'
 ht-degree: 0%
 
 ---
@@ -15,11 +12,11 @@ ht-degree: 0%
 
 # Primetime播放器事件摘要{#primetime-player-events-summary}
 
-您的应用程序可以监视播放器中的活动以及播放器的不断变化状态，方法是监听TVSDK分派的事件。
+您的应用程序可以监听TVSDK调度的活动，以监视播放器中的事件和播放器不断变化的状态。
 
 ## 事件{#events}
 
-TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据。 每个事件都对应一个监听器类，它有一个必须实现的回调方法。
+TVSDK会在事件发生时通知您，您的应用程序必须对其做出响应。 每个事件都对应一个侦听器类，它有一个必须实现的回调方法。
 
 >[!TIP]
 >
@@ -27,7 +24,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 `AdBreakCompletedEventListener`
 
-* **意** 义广告中断的播放完成。
+* **意** 义广告分段的播放完成。
 
 * **要实现的回调** `onAdBreakCompleted(AdBreakPlaybackEvent event)`
 
@@ -35,7 +32,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 `AdBreakSkippedEventListener`
 
-* **意** 义在播放过程中跳过广告中断。
+* **意** 义在播放过程中跳过了广告中断。
 
 * **要实现的回调** `onAdBreakSkipped(AdBreakPlaybackEvent event)`
 
@@ -66,7 +63,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 `AdProgressEventListener`
 
-* **含义** 在播放期间报告进度。
+* **MeaningReporting** 播放过程。
 
 * **要实现的回调** `onAdProgress(AdPlaybackEvent event)`
 
@@ -74,7 +71,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 `AdResolutionCompleteEventListener`
 
-* **含义** Primetime广告决策广告解决方案已完成。此事件仅适用于VOD内容。
+* **意** 义Primetime广告决策广告解决已完成。此事件仅适用于VOD内容。
 
 * **要实现的回调** `onAdResolutionComplete()`
 
@@ -82,7 +79,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 `AdStartedEventListener`{#section_A4339C48F82640A8AF4AF09CB3B33188}
 
-* **意** 义广告播放已开始。
+* **意** 义广告的播放已开始。
 
 * **要实现的回调** `onAdStarted(AdPlaybackEvent event)`
 
@@ -90,7 +87,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 `AudioUpdatedEventListener`
 
-* **意** 义已检测到新的音轨。
+* **意** 义检测到新音轨。
 
 * **要实现的回调** `onAudioUpdated(MediaPlayerItemEvent event)`
 
@@ -112,7 +109,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 * **事件代码** `BUFFERING_END`
 
-`BufferPreparedEventListener&quot;
+&#39;BufferPreparedEventListener&quot;
 
 * **意** 义缓冲区已准备。
 
@@ -122,7 +119,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 `CaptionsUpdatedEventListener`
 
-* **意** 义已检测到新的字幕轨道。
+* **意** 义已检测到新的题注轨道。
 
 * **要实现的回调** `onCaptionsUpdated(MediaPlayerItemEvent event)`
 
@@ -146,7 +143,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 `ItemLoadCompleteEventListener`
 
-* **意** 义已为当前项目创建新的加载信息。
+* **已** 为当前项目创建新加载信息。
 
 * **要实现的回调** `onLoadComplete(MediaPlayerItemEvent event)`
 
@@ -154,7 +151,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 `LoadInformationEventListener`
 
-* **意** 义已加载新段。
+* **意** 义已加载新区段。
 
 * **要实现的回调** `onLoadInformation(LoadInformationEvent event)`
 
@@ -162,7 +159,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 `MainManifestUpdatedEventListener`
 
-* **意** 义主清单或播放列表已更新。
+* **Meaning** 主清单或播放列表已更新。
 
 * **要实现的回调** `onMainManifestUpdated(MediaPlayerItemEvent event)`
 
@@ -186,7 +183,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 `PlaybackRatePlayingEventListener`
 
-* **意** 义在屏幕上显示新的播放速率。
+* **意** 味在屏幕上显示新的播放速率。
 
 * **要实现的回调** `onRatePlaying(PlaybackRateEvent event)`
 
@@ -266,7 +263,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 `TimeChangeEventListener`
 
-* **意** 义播放头已更改。
+* **意** 义播放指示器已更改。
 
 * **要实现的回调** `onTimeChanged(TimeChangeEvent event)`
 
@@ -274,7 +271,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 `TimedEventEventListener`
 
-* **意** 义操作完成，所花费的时间为操作所用的时间。
+* **意** 义操作已完成，且操作所花费的时间。
 
 * **要实现的回调** `onTimedEvent(TimedEventEvent event)`
 
@@ -282,7 +279,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 `TimelineMetadataAddedInBackgroundEventListener`
 
-* **意** 义已将新的定时元数据添加到背景中的项目。
+* **意** 义已将新的定时元数据添加到后台项目。
 
 * **要实现的回调** `onTimedMetadata(TimedMetadataEvent event)`
 
@@ -298,7 +295,7 @@ TVSDK会在事件发生时通知您，您的应用程序必须响应这些数据
 
 `TimelineUpdatedEventListener`
 
-* **意** 义时间轴已修改。广告可能已添加到时间轴中或从时间轴中删除。
+* **意** 义时间轴已修改。可能已在时间轴中添加或删除广告。
 
 * **要实现的回调** `onTimelineUpdated(TimelineEvent event)`
 
