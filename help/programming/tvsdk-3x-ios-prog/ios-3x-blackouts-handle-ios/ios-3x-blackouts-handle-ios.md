@@ -1,9 +1,9 @@
 ---
-seo-title: 处理实时流中的封锁
 title: 处理实时流中的封锁
-uuid: 717f0242-1a6e-4347-ba4c-ea0450a37874
+description: 处理实时流中的封锁
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 557f42cd9a6f356aa99e13386d9e8d65e043a6af
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '15'
 ht-degree: 0%
