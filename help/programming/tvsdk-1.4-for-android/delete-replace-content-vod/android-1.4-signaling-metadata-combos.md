@@ -1,27 +1,24 @@
 ---
-description: 您可以使用不同的广告信号模式和广告元数据组合来标记、删除和替换VOD流中的时间范围。 不同的信令模式和元数据组合会导致不同的行为。
-seo-description: 您可以使用不同的广告信号模式和广告元数据组合来标记、删除和替换VOD流中的时间范围。 不同的信令模式和元数据组合会导致不同的行为。
-seo-title: 广告信号模式和广告元数据组合对广告插入和删除的影响
-title: 广告信号模式和广告元数据组合对广告插入和删除的影响
-uuid: c2ae8148-889d-46ae-848a-5f45d993a0e2
+description: 您可以使用不同的广告信令模式和广告元数据组合来标记、删除和替换VOD流中的时间范围。 不同的信令模式和元数据组合会导致不同的行为。
+title: 广告插入和删除对广告信令模式和广告元数据组合的影响
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '472'
+source-wordcount: '426'
 ht-degree: 0%
 
 ---
 
 
-# 广告信号模式和广告元数据组合对广告插入和删除的影响{#effect-on-ad-insertion-and-deletion-from-ad-signaling-mode-and-ad-metadata-combinations}
+# 广告插入和删除对广告信令模式和广告元数据组合的影响{#effect-on-ad-insertion-and-deletion-from-ad-signaling-mode-and-ad-metadata-combinations}
 
-您可以使用不同的广告信号模式和广告元数据组合来标记、删除和替换VOD流中的时间范围。 不同的信令模式和元数据组合会导致不同的行为。
+您可以使用不同的广告信令模式和广告元数据组合来标记、删除和替换VOD流中的时间范围。 不同的信令模式和元数据组合会导致不同的行为。
 
 >[!NOTE]
 >
->当时间范围与广告信令模式之间存在冲突时，TVSDK会优先选择时间范围。
+>当时间范围与广告信令模式之间存在冲突时，TVSDK会给予时间范围优先级。
 
-**表3:信令模式／元数据组合行为**
+**表3:信令模式/元数据组合行为**
 
 <table>  
  <thead> 
@@ -45,8 +42,8 @@ ht-degree: 0%
    <td> </td> 
    <td> 删除 </td> 
    <td> 删除 </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.DELETE)</span> </td> 
-   <td> 已删除范围 </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.DELETE)</span> </td> 
+   <td> 已删除的范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
@@ -54,37 +51,37 @@ ht-degree: 0%
    <td> 删除，Auditude </td> 
    <td> 
     <ul> 
-     <li><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.DELETE),  </span> </li> 
-     <li><span class="codeph"> PlacementInfo(Type.SERVER_MAP,Mode.INSERT)</span> </li> 
+     <li><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.DELETE),  </span> </li> 
+     <li><span class="codeph"> PlacementInfo(Type.SERVER_MAP，Mode.INSERT)</span> </li> 
     </ul> </td> 
-   <td> 删除范围、插入广告 </td> 
+   <td> 删除范围，插入广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
    <td> Auditude </td> 
    <td> Auditude </td> 
-   <td><span class="codeph"> PlacementInfo(Type.SERVER_MAP,Mode.INSERT)</span> </td> 
+   <td><span class="codeph"> PlacementInfo(Type.SERVER_MAP，Mode.INSERT)</span> </td> 
    <td> 插入的广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 替换， Auditude </td> 
+   <td> 替换，Auditude </td> 
    <td> 删除，Auditude </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.DELETE)、PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.REPLACE)</span> </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.DELETE)、PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.REPLACE)</span> </td> 
    <td> 已替换范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 标记 </td> 
+   <td> Mark </td> 
    <td> CustomAd </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.MARK)</span> </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
    <td> 标记的范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> Mark, Auditude </td> 
-   <td> CustomAd, Auditude </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.MARK)</span> </td> 
+   <td> Mark， Auditude </td> 
+   <td> CustomAd， Auditude </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
    <td> 标记范围，未插入广告 </td> 
   </tr> 
   <tr> 
@@ -98,7 +95,7 @@ ht-degree: 0%
    <td></td> 
    <td> Auditude </td> 
    <td> Auditude </td> 
-   <td><span class="codeph"> PlacementInfo(Type.PRE_ROLL, Mode.INSERT)</span> </td> 
+   <td><span class="codeph"> PlacementInfo(Type.PRE_ROLL， Mode.INSERT)</span> </td> 
    <td> 插入的广告 </td> 
   </tr> 
   <tr> 
@@ -107,37 +104,37 @@ ht-degree: 0%
    <td> 删除，Auditude </td> 
    <td> 
     <ul> 
-     <li><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.DELETE)</span> </li> 
-     <li><span class="codeph"> PlacementInfo(Type.PRE_ROLL, Mode.INSERT)</span> </li> 
+     <li><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.DELETE)</span> </li> 
+     <li><span class="codeph"> PlacementInfo(Type.PRE_ROLL， Mode.INSERT)</span> </li> 
     </ul> </td> 
    <td> 删除范围，插入广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> Mark, Auditude </td> 
-   <td> Mark, Auditude </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.MARK)</span> </td> 
+   <td> Mark， Auditude </td> 
+   <td> Mark， Auditude </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
    <td> 标记范围，未插入广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
    <td> 删除 </td> 
    <td> 删除 </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.DELETE)</span> </td> 
-   <td> 已删除范围 </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.DELETE)</span> </td> 
+   <td> 已删除的范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 标记 </td> 
+   <td> Mark </td> 
    <td> CustomAd </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.MARK)</span> </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
    <td> 标记的范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 替换， Auditude </td> 
+   <td> 替换，Auditude </td> 
    <td> 删除，Auditude </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.DELETE)、PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.REPLACE)</span> </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.DELETE)、PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.REPLACE)</span> </td> 
    <td> 已替换范围 </td> 
   </tr> 
   <tr> 
@@ -151,15 +148,15 @@ ht-degree: 0%
    <td></td> 
    <td> 删除 </td> 
    <td> 删除 </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.DELETE)</span> </td> 
-   <td> 已删除范围 </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.DELETE)</span> </td> 
+   <td> 已删除的范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
    <td> 删除，Auditude </td> 
    <td> 删除，Auditude </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.DELETE)</span> </td> 
-   <td> 范围已删除，未插入任何广告 </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.DELETE)</span> </td> 
+   <td> 已删除范围，未插入广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
@@ -170,23 +167,23 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td></td> 
-   <td> 替换， Auditude </td> 
+   <td> 替换，Auditude </td> 
    <td> 删除，Auditude </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.DELETE)、PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.REPLACE)</span> </td> 
-   <td> 用广告替换范围 </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.DELETE)、PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.REPLACE)</span> </td> 
+   <td> 范围已替换为广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 标记 </td> 
+   <td> Mark </td> 
    <td> CustomAd </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.MARK)</span> </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
    <td> 标记的范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> Mark, Auditude </td> 
-   <td> 自定义广告， Auditude </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.MARK)</span> </td> 
+   <td> Mark， Auditude </td> 
+   <td> 自定义广告，Auditude </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
    <td> 标记范围，未插入广告 </td> 
   </tr> 
   <tr> 
@@ -200,42 +197,42 @@ ht-degree: 0%
    <td></td> 
    <td> 删除 </td> 
    <td> 删除 </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.DELETE)</span> </td> 
-   <td> 已删除范围 </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.DELETE)</span> </td> 
+   <td> 已删除的范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
    <td> 删除，Auditude </td> 
    <td> 删除，Auditude </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.DELETE)、PlacementInfo(Type.SERVER_MAP, Mode.INSERT)</span> </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.DELETE)、PlacementInfo(Type.SERVER_MAP， Mode.INSERT)</span> </td> 
    <td> 删除范围，插入广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
    <td> Auditude </td> 
    <td> Auditude </td> 
-   <td><span class="codeph"> PlacementInfo(Type.SERVER_MAP,Mode.INSERT)</span> </td> 
+   <td><span class="codeph"> PlacementInfo(Type.SERVER_MAP，Mode.INSERT)</span> </td> 
    <td> 插入的广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 替换， Auditude </td> 
+   <td> 替换，Auditude </td> 
    <td> 删除，Auditude </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.DELETE)、PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.REPLACE)</span> </td> 
-   <td> 用广告替换范围 </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.DELETE)、PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.REPLACE)</span> </td> 
+   <td> 范围已替换为广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 标记 </td> 
+   <td> Mark </td> 
    <td> CustomAd </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.MARK)</span> </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
    <td> 标记的范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> Mark, Auditude </td> 
-   <td> CustomAd, Auditude </td> 
-   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE, Mode.MARK)</span> </td> 
+   <td> Mark， Auditude </td> 
+   <td> CustomAd， Auditude </td> 
+   <td><span class="codeph"> PlacementInfo(Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
    <td> 标记的范围 </td> 
   </tr> 
  </tbody> 
