@@ -1,13 +1,10 @@
 ---
-description: MediaPlayer提供notifyClick()函数，该函数在播放可单击的广告时调度与广告相关的事件。 这些事件提供您的应用程序可用于提供点进功能的广告和广告中断信息。
-seo-description: MediaPlayer提供notifyClick()函数，该函数在播放可单击的广告时调度与广告相关的事件。 这些事件提供您的应用程序可用于提供点进功能的广告和广告中断信息。
-seo-title: 处理可点击的广告
-title: 处理可点击的广告
-uuid: 5d3c9d36-60d7-4272-a523-7d1fe0e1615f
+description: MediaPlayer提供一个notifyClick()函数，用于在播放可单击的广告时调度与广告相关的事件。 这些事件提供您的应用程序可用来提供点进功能的广告和广告中断信息。
+title: 处理可点击广告
 translation-type: tm+mt
-source-git-commit: 592245f5a7186d18dabbb5a98a468cbed7354aed
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '253'
+source-wordcount: '217'
 ht-degree: 0%
 
 ---
@@ -15,9 +12,9 @@ ht-degree: 0%
 
 # 处理可点击广告{#handle-clickable-ads}
 
-MediaPlayer提供notifyClick()函数，该函数在播放可单击的广告时调度与广告相关的事件。 这些事件提供您的应用程序可用于提供点进功能的广告和广告中断信息。
+MediaPlayer提供一个notifyClick()函数，用于在播放可单击的广告时调度与广告相关的事件。 这些事件提供您的应用程序可用来提供点进功能的广告和广告中断信息。
 
-播放可单击的广告时，MediaPlayer将触发以下事件:
+播放可单击广告时，MediaPlayer将触发以下事件:
 
 * `AdobePSDK.PSDKEventType.AD_STARTED`
 * `AdobePSDK.PSDKEventType.AD_CLICKED`
@@ -25,10 +22,10 @@ MediaPlayer提供notifyClick()函数，该函数在播放可单击的广告时�
 
 `AdClickedEvent`包含处理点进函数所需的信息。
 
-1. 在播放器中为用户提供单击可点击广告的控件。
+1. 在播放器中提供一个控件，供用户单击可点击的广告。
 
    这可以是用于捕获用户单击的按钮或任何其他元素。
-1. 为用户的广告单击事件添加事件监听器。
+1. 为用户的广告单击事件添加事件侦听器。
 
    例如：
 
@@ -53,7 +50,7 @@ MediaPlayer提供notifyClick()函数，该函数在播放可单击的广告时�
    } 
    ```
 
-1. 为MediaPlayer广告开始添加事件监听器、已点击广告和已完成广告通知。
+1. 为MediaPlayer广告开始、已点击广告和已完成广告通知添加事件侦听器。
 
    ```
     <i>your_player</i>().addEventListener(AdobePSDK.PSDKEventType.AD_STARTED, onAdStarted); 
@@ -80,7 +77,7 @@ a.处理广告开始事件。
    }
    ```
 
-   b.处理已点击广告的事件。
+   b.处理已点击的广告事件。
 在此示例中，我们从事件获取广告信息，并使用该信息打开新的浏览器窗口：
 
    ```
@@ -99,7 +96,7 @@ a.处理广告开始事件。
    }
    ```
 
-   c.处理广告完成事件。
+   c.处理广告完成的事件。
 
    ```
    onAdCompleted = function (event) { 
