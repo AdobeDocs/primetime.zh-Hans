@@ -1,21 +1,18 @@
 ---
-description: 配置安全网络架构时，在Adobe PrimetimeDRM与企业网络中的其他系统之间进行交互时，需要使用网络协议。
-seo-description: 配置安全网络架构时，在Adobe PrimetimeDRM与企业网络中的其他系统之间进行交互时，需要使用网络协议。
-seo-title: Adobe PrimetimeDRM网络协议
-title: Adobe PrimetimeDRM网络协议
-uuid: 8954e33c-83ac-4b40-9e45-005d4954b44e
+description: 配置安全网络架构时，Adobe Primetime DRM与企业网络中其他系统之间的交互需要网络协议。
+title: Adobe Primetime DRM网络协议
 translation-type: tm+mt
-source-git-commit: c78d3c87848943a0be3433b2b6a543822a7e1c15
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '255'
+source-wordcount: '226'
 ht-degree: 0%
 
 ---
 
 
-# Adobe PrimetimeDRM网络协议{#adobe-primetime-drm-network-protocols}
+# Adobe Primetime DRM网络协议{#adobe-primetime-drm-network-protocols}
 
-配置安全网络架构时，在Adobe PrimetimeDRM与企业网络中的其他系统之间进行交互时，需要使用网络协议。
+配置安全网络架构时，Adobe Primetime DRM与企业网络中其他系统之间的交互需要网络协议。
 
 配置安全网络架构时，此交互需要以下网络协议：
 
@@ -40,12 +37,12 @@ ht-degree: 0%
 
 ## 应用程序服务器{#ports-for-application-servers}的端口
 
-您可以配置Adobe PrimetimeDRM许可证服务器以使用任何网络端口。
+您可以配置Adobe Primetime DRM许可证服务器以使用任何网络端口。
 
-这些端口必须在内部防火墙上启用或禁用，具体取决于您希望允许连接到运行Primetime DRM的应用程序服务器的客户端的网络功能。
+必须在内部防火墙上启用或禁用这些端口，具体取决于您希望允许连接到运行Primetime DRM的应用程序服务器的客户端的网络功能。
 
 ## 配置SSL {#configuring-ssl}
 
-仅当需要支持Flash媒体Rights Management服务器1.x客户端时，才需要安全套接字层(SSL)。
+只有在需要支持Flash Media Rights Management Server 1.x客户端时，才需要安全套接字层(SSL)。
 
-Adobe PrimetimeDRM密钥服务器需要使用客户端身份验证的SSL。 有关详细信息，请参阅[使用Adobe PrimetimeDRM密钥服务器](../../using-the-drm-key-server/requirements.md)。
+Adobe Primetime DRM密钥服务器需要使用客户端身份验证的SSL。 有关详细信息，请参阅[使用Adobe Primetime DRM密钥服务器](../../using-the-drm-key-server/requirements.md)。
