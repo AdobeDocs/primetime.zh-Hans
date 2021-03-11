@@ -1,13 +1,10 @@
 ---
-description: 此表提供有关INFO类型通知的详细信息。
-seo-description: 此表提供有关INFO类型通知的详细信息。
-seo-title: 信息通知代码
+description: 此表提供了有关INFO类型通知的详细信息。
 title: 信息通知代码
-uuid: 27117707-be3d-4935-a193-85776edd26ce
 translation-type: tm+mt
-source-git-commit: b9e98ef2b4246fdfd79ebcd91db344c97367d661
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '443'
+source-wordcount: '431'
 ht-degree: 4%
 
 ---
@@ -15,11 +12,11 @@ ht-degree: 4%
 
 # INFO通知代码{#info-notification-codes}
 
-此表提供有关INFO类型通知的详细信息。
+此表提供了有关INFO类型通知的详细信息。
 
 ## 章节标题{#section_ED4302E363AE48CBA2C3E0B71AE612D8}
 
-大多数信息性通知都包含相关元数据，例如，无法下载的资源URL。 某些通知包含元数据，用于指定在主视频内容、备用音频内容还是广告中出现问题。
+大多数信息性通知都包含相关元数据，例如，无法下载的资源的URL。 某些通知包含元数据，用于指定问题是在主视频内容、备用音频内容还是广告中出现。
 
 <table frame="all" colsep="1" rowsep="1" id="table_503463046E764A87B10EB5D8B294EB23"> 
  <thead> 
@@ -28,7 +25,7 @@ ht-degree: 4%
    <th colname="2" class="entry"> 名称 </th> 
    <th colname="3" class="entry"> 内部通知 </th> 
    <th colname="4" class="entry"> 元数据键 </th> 
-   <th colname="5" class="entry"> 注释 </th> 
+   <th colname="5" class="entry"> 评论 </th> 
   </tr> 
  </thead>
  <tbody> 
@@ -79,14 +76,14 @@ ht-degree: 4%
    <td colname="2"><span class="codeph"> PLAYER_STATE_CHANGE  </span> </td> 
    <td colname="3"> <p>任何错误通知。 </p> </td> 
    <td colname="4"><span class="codeph"> 州  </span> </td> 
-   <td colname="5"> 播放器状态已更改。 当状态为ERROR时，内部通知是将切换触发到ERROR状态的错误通知对象。 </td> 
+   <td colname="5"> 播放器状态已更改。 当状态为ERROR时，内部通知是将交换机触发到ERROR状态的错误通知对象。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 300100  </span> </td> 
    <td colname="2"><span class="codeph"> LOAD_INFO_AVAILABLE  </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"> <span class="codeph"> FRAGMENT_</span> <span class="codeph"> URLFRAGMENT_</span> <span class="codeph"> SIZEFRAGMENT_DOWNLOAD_</span> <span class="codeph"> DURATIONPERIOD_INDEX</span> </td> 
-   <td colname="5"> 提供与视频区段下载方式相关的信息。 </td> 
+   <td colname="5"> 提供与视频区段的下载方式相关的信息。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 300101  </span> </td> 
@@ -96,7 +93,7 @@ ht-degree: 4%
    <td colname="5"> 视频播放窗口的大小已更改。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>自适应比特率(ABR)</b> </td> 
+   <td colname="1"><b>自适应比特率</b> </td> 
    <td colname="2"> </td> 
    <td colname="3"> </td> 
    <td colname="4"> </td> 
@@ -106,7 +103,7 @@ ht-degree: 4%
    <td colname="1"><span class="codeph"> 302000  </span> </td> 
    <td colname="2"><span class="codeph"> BITRATE_CHANGE  </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
-   <td colname="4"><span class="codeph"> 比特率 </span><span class="codeph"> CURRENT_MEDIA_TIME  </span> </td> 
+   <td colname="4"><span class="codeph"> 比特 </span><span class="codeph"> 率CURRENT_MEDIA_TIME  </span> </td> 
    <td colname="5"> 视频的比特率已更改。 </td> 
   </tr> 
   <tr rowsep="1"> 
@@ -128,7 +125,7 @@ ht-degree: 4%
    <td colname="2"><span class="codeph"> AD_BREAK_PLACEMENT_COMPLETE  </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"> <span class="codeph"> PROPOSED_AD_</span> <span class="codeph"> BREAKACCEPTED_AD_BREAK</span> </td> 
-   <td colname="5"> TVSDK接受了建议的广告中断，并将其全部或部分放在播放时间线上。 </td> 
+   <td colname="5"> TVSDK接受了建议的广告中断，并（全部或部分）将其放置在播放时间线上。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 303002  </span> </td> 
@@ -162,11 +159,11 @@ ht-degree: 4%
    <td colname="1"><span class="codeph"> 303006  </span> </td> 
    <td colname="2"><span class="codeph"> AD_PROGRESS  </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
-   <td colname="4"> <span class="codeph"> AD_BREAK</span> <p><span class="codeph"> AD</span> </p> <span class="codeph"> 进度</span> </td> 
+   <td colname="4"> <span class="codeph"> AD_BREAK</span> <p><span class="codeph"> AD</span> </p> <span class="codeph"> 进展</span> </td> 
    <td colname="5"> 特定广告的播放已达到该特定广告的特定百分比。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>后期绑定音频(LBA)</b> </td> 
+   <td colname="1"><b>延迟绑定音频(LBA)</b> </td> 
    <td colname="2"> </td> 
    <td colname="3"> </td> 
    <td colname="4"> </td> 
@@ -191,7 +188,7 @@ ht-degree: 4%
    <td colname="2"><span class="codeph"> DRM_METADATA_AVAILABLE  </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"><span class="codeph"> PREFETCH_TIMESTAMP  </span> </td> 
-   <td colname="5"> <p>有新的DRM数据可用。 </p> </td> 
+   <td colname="5"> <p>新DRM数据可用。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><b>通用</b> </td> 
@@ -205,7 +202,7 @@ ht-degree: 4%
    <td colname="2"><span class="codeph"> GENERIC_INFO  </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"> <p>无 </p> </td> 
-   <td colname="5"> <p>标记通用信息事件。 实际上不是由TVSDK发布的。 它只是TVSDK信息事件对应的数字代码范围末尾的标记。 </p> </td> 
+   <td colname="5"> <p>标记通用信息事件。 并非由TVSDK实际发布。 它只是对应于TVSDK信息事件的数字代码范围末尾的标记。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
