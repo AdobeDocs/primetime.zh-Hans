@@ -1,13 +1,10 @@
 ---
 description: 通过直接实例化MediaResource并加载要播放的视频内容来加载资源。 这是加载媒体资源的一种方式。
-seo-description: 通过直接实例化MediaResource并加载要播放的视频内容来加载资源。 这是加载媒体资源的一种方式。
-seo-title: 在MediaPlayer中加载媒体资源
 title: 在MediaPlayer中加载媒体资源
-uuid: 6ee8032f-0728-423f-a1d2-5030aa7db14f
 translation-type: tm+mt
-source-git-commit: 4ef05be045334a2e723da4c7c6a7ee22fb0f776c
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '220'
 ht-degree: 0%
 
 ---
@@ -26,24 +23,24 @@ ht-degree: 0%
    * `onPrepared`
    * `onStateChanged`，并检查INITIALIZED和ERROR。
 
-1. 当媒体播放器的状态变为INITIALIZED时，您可以调用`MediaPlayer.prepareToPlay`
+1. 当媒体播放器的状态更改为INITIALIZED时，您可以调用`MediaPlayer.prepareToPlay`
 
-   INITIALIZED状态表示媒体已成功加载。 调用`prepareToPlay`将开始广告解决和投放过程（如果有）。
+   INITIALIZED状态表示媒体已成功加载。 调用`prepareToPlay`将开始广告分辨率和投放过程（如果有）。
 
-1. 当TVSDK调用`onPrepared`回调时，媒体流已成功加载并准备回放。
+1. 当TVSDK调用`onPrepared`回调时，媒体流已成功加载并准备好回放。
 
    加载媒体流时，将创建`MediaPlayerItem`。
 
->如果出现故障，`MediaPlayer`将切换为“ERROR（错误）”状态。 它还通过调用`PlaybackEventListener.onStateChanged`回调来通知您的应用程序。
+>如果发生故障，`MediaPlayer`将切换到“ERROR”状态。 它还会通过调用`PlaybackEventListener.onStateChanged`回调来通知您的应用程序。
 >
->这会传递多个参数：
->* 类型为`MediaPlayer.PlayerState`的`state`参数，其值为`MediaPlayer.PlayerState.ERROR`。
+>这传递了几个参数：
+>* `MediaPlayer.PlayerState.ERROR`值为`MediaPlayer.PlayerState`类型的`state`参数。
    >
    >
 * 类型`MediaPlayerNotification`的`notification`参数，包含有关错误事件的诊断信息。
 
 
-以下简化的示例代码说明加载媒体资源的过程：
+以下简化的示例代码说明了加载媒体资源的过程：
 
 ```java
 // mediaResource is a properly configured MediaResource instance 
