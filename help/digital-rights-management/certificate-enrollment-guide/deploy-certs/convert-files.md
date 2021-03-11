@@ -1,9 +1,9 @@
 ---
-seo-title: 转换文件
 title: 转换文件
-uuid: e17ee003-5ac2-4bb8-83b7-81ee8fa9ee46
+description: 转换文件
+copied-description: true
 translation-type: tm+mt
-source-git-commit: b4b50471ab0ba98329862322a61bf73aa9e471d5
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '173'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # 转换文件{#convert-files}
 
-请求者使用OpenSSL和私钥等实用程序，通过在命令窗口中输入以下命令来生成PKCS#12(pfx)和PEM/DER文件：
+请求者使用OpenSSL等实用程序和私钥通过在命令窗口中输入以下命令来生成PKCS#12(pfx)和PEM/DER文件：
 
 1. 将PKCS#7文件转换为临时PEM文件。
 
@@ -47,9 +47,9 @@ ht-degree: 0%
 
    >[!NOTE]
    >
-   >尽管不是必需的，Adobe建议对私钥(private_key_password)和PFX(pfx_password)使用不同的口令。
+   >Adobe建议对私钥(private_key_password)和PFX(pfx_password)使用不同的口令，但不是必需的。
 
-   此最终PEM文件仅包含您的证书。
+   此最终的PEM文件仅包含您的证书。
 
 1. 将PEM文件转换为DER文件。
 
@@ -61,5 +61,5 @@ ht-degree: 0%
 
    >[!NOTE]
    >
-   >DER文件仅对HTTP Dynamic Streaming包装程序是必需的。
+   >DER文件仅对HTTP Dynamic Streaming打包程序是必需的。
 
