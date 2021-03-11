@@ -1,21 +1,18 @@
 ---
-description: 服务质量(QoS)优惠视频引擎的性能的详细视图。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
-seo-description: 服务质量(QoS)优惠视频引擎的性能的详细视图。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
-seo-title: 服务质量统计
+description: 服务质量(QoS)将详细视图优惠到视频引擎的性能。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
 title: 服务质量统计
-uuid: b74cbc94-1d69-4b4b-b969-d0e985b4762b
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '225'
-ht-degree: 0%
+source-wordcount: '197'
+ht-degree: 1%
 
 ---
 
 
-# 服务质量统计{#quality-of-service-statistics}
+# 服务统计数据质量{#quality-of-service-statistics}
 
-服务质量(QoS)优惠视频引擎的性能的详细视图。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
+服务质量(QoS)将详细视图优惠到视频引擎的性能。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
 
 ## 读取QOS播放、缓冲和设备统计数据{#section_9996406E2D814FA382B77E3041CB02BC}
 
@@ -27,12 +24,12 @@ ht-degree: 0%
 
 >[!TIP]
 >
->无法更改播放缓冲区大小，但可以监视缓冲区大小的状态以进行调试或分析。 `PTPlaybackInformation` 包括和等 `playbackBufferFull` 属性 `playbackLikelyToKeepUp`。
+>您无法更改播放缓冲区大小，但可以监视缓冲区大小的状态以进行调试或分析。 `PTPlaybackInformation` 包括和等 `playbackBufferFull` 属性 `playbackLikelyToKeepUp`。
 
 1. 实例化媒体播放器。
-1. 创建`PTQOSProvider`对象，并将其连接到媒体播放器。
+1. 创建一个`PTQOSProvider`对象，并将其连接到媒体播放器。
 
-   `PTQOSProvider`构造函数使用播放器上下文，以便能够检索设备特定信息。
+   `PTQOSProvider`构造函数使用播放器上下文，以便它可以检索设备特定信息。
 
    ```
    qosProvider = [[PTQOSProvider alloc]initWithPlayer:self.player]; 
@@ -40,7 +37,7 @@ ht-degree: 0%
 
 1. （可选）阅读播放统计信息。
 
-   读取播放统计信息的一个解决方案是具有一个定时器，如从`PTQOSProvider`中定期获取新的QoS值的`NSTimer`。 例如：
+   读取播放统计信息的一个解决方案是具有一个计时器，如从`PTQOSProvider`中定期获取新QoS值的`NSTimer`。 例如：
 
    ```
    - (void)printPlaybackInfoLog { 
