@@ -1,13 +1,10 @@
 ---
-description: TVSDK提供用于创建高级视频播放器应用程序（您的Primetime播放器）的工具，您可以将其与其他Primetime组件集成。 它还提供许多旨在最大化视频回放质量的功能。
-seo-description: TVSDK提供用于创建高级视频播放器应用程序（您的Primetime播放器）的工具，您可以将其与其他Primetime组件集成。 它还提供许多旨在最大化视频回放质量的功能。
-seo-title: 设置媒体播放器
+description: TVSDK提供用于创建高级视频播放器应用程序（您的Primetime播放器）的工具，这些应用程序可以与其他Primetime组件集成。 它还提供了多种功能，旨在最大限度地提高视频回放质量。
 title: 设置媒体播放器
-uuid: 1f672484-b340-4f92-8a47-dad4c9f3b3fc
 translation-type: tm+mt
-source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '181'
+source-wordcount: '140'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 设置媒体播放器{#set-up-the-media-player}
 
-TVSDK提供用于创建高级视频播放器应用程序（您的Primetime播放器）的工具，您可以将其与其他Primetime组件集成。 它还提供许多旨在最大化视频回放质量的功能。
+TVSDK提供用于创建高级视频播放器应用程序（您的Primetime播放器）的工具，这些应用程序可以与其他Primetime组件集成。 它还提供了多种功能，旨在最大限度地提高视频回放质量。
 
 <!--<a id="section_1FE83A68DE624F20B52C0959851F5699"></a>-->
 
@@ -27,7 +24,7 @@ TVSDK提供用于创建高级视频播放器应用程序（您的Primetime播放
    MediaPlayer mediaPlayer = new MediaPlayer(context);
    ```
 
-1. 提供帧布局(`android.widget.FrameLayout`)以保存`mediaPlayer`的`ViewGroup`:
+1. 提供帧布局(`android.widget.FrameLayout`)以容纳`mediaPlayer`的`ViewGroup`:
 
    ```java
    FrameLayout playerFrame = (FrameLayout) _viewGroup.findViewById(R.id.playerFrame);
@@ -35,7 +32,7 @@ TVSDK提供用于创建高级视频播放器应用程序（您的Primetime播放
 
    >[!NOTE]
    >
-   >以下是用于创建`_viewGroup`的代码片断。
+   >下面是用于创建`_viewGroup`的代码片断。
 
    ```
    @Override 
@@ -47,7 +44,7 @@ TVSDK提供用于创建高级视频播放器应用程序（您的Primetime播放
     }
    ```
 
-1. 将视图`mediaPlayer`放在框架布局中：
+1. 将`mediaPlayer`视图放在框架布局中：
 
    ```java
    playerFrame.addView(mediaPlayer.getView());
@@ -55,4 +52,4 @@ TVSDK提供用于创建高级视频播放器应用程序（您的Primetime播放
 
    >[!NOTE]
    >
-   >`MediaPlayer`实例(`mediaPlayer`)现已可用，并且已正确配置为在设备屏幕上显示视频内容。
+   >`MediaPlayer`实例(`mediaPlayer`)现已可用，并且已正确配置，可在设备屏幕上显示视频内容。
