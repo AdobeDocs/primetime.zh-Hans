@@ -1,21 +1,19 @@
 ---
-description: 'null'
-seo-description: 'null'
-seo-title: 禁用前置广告
 title: 禁用前置广告
-uuid: 2e307a58-49f2-43d6-908b-97684ad6e3d3
+description: 禁用前置广告
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 5908e5a3521966496aeec0ef730e4a704fddfb68
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '45'
+source-wordcount: '43'
 ht-degree: 0%
 
 ---
 
 
-# 禁用预卷广告{#disable-pre-roll-ads}
+# 禁用前置广告{#disable-pre-roll-ads}
 
-要禁用前置调用，请更改默认的机会生成器以不进行前置调用。 默认的机会生成器是：
+要禁用前滚，请更改默认机会生成器以不进行前滚调用。 默认的机会生成器是：
 
 ```
 @inheritDoc 
