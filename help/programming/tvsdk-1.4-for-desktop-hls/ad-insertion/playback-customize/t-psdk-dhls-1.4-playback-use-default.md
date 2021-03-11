@@ -1,13 +1,10 @@
 ---
 description: 您可以选择使用默认广告行为。
-seo-description: 您可以选择使用默认广告行为。
-seo-title: 使用默认播放行为
 title: 使用默认播放行为
-uuid: 7139384c-167a-4cab-816a-c02fb723a5cb
 translation-type: tm+mt
-source-git-commit: 1985694f99c548284aad6e6b4e070bece230bdf4
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '71'
+source-wordcount: '58'
 ht-degree: 0%
 
 ---
@@ -19,7 +16,7 @@ ht-degree: 0%
 
 要使用默认行为：
 
-* 如果实现自己的`ContentFactory`类，请在实现`doRetrieveAdPolicySelector`时返回新的`DefaultAdPolicySelector`实例。
+* 如果实现自己的`ContentFactory`类，则在`doRetrieveAdPolicySelector`的实现中返回一个新的`DefaultAdPolicySelector`实例。
 
    ```
    public class CustomContentFactory extends ContentFactory { 
