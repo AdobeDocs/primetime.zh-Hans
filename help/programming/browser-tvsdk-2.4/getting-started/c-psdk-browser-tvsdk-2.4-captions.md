@@ -1,13 +1,10 @@
 ---
 description: 播放视频内容时，可以显示字幕。
-seo-description: 播放视频内容时，可以显示字幕。
-seo-title: 字幕
 title: 字幕
-uuid: 4dedcedc-50e5-4983-bb09-3f316337117e
 translation-type: tm+mt
-source-git-commit: d2b8cb67c54fadb8e0e7d2bdc15e393fdce8550e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '64'
+source-wordcount: '55'
 ht-degree: 3%
 
 ---
@@ -17,7 +14,7 @@ ht-degree: 3%
 
 播放视频内容时，可以显示字幕。
 
-要处理字幕，必须添加`AdobePSDK.PSDKEventType.CAPTIONS_UPDATED`事件监听器：
+要处理字幕，必须添加`AdobePSDK.PSDKEventType.CAPTIONS_UPDATED`事件侦听器：
 
 ```js
 ... 
@@ -37,7 +34,7 @@ function onCaptionsUpdateEvent (event) {
 </pre>
 ```
 
-UI框架提供默认字幕行为实现，可以修改这些行为。 还可以通过扩展默认隐藏字幕行为来修改隐藏字幕行为。 例如：
+UI框架提供了默认字幕行为实现，可以修改。 还可以通过扩展默认隐藏字幕行为来修改隐藏字幕行为。 例如：
 
 ```js
 // Using UI Framework 
