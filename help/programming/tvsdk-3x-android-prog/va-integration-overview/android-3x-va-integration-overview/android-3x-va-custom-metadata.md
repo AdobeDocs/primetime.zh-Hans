@@ -1,13 +1,10 @@
 ---
 description: 您可以使用回调函数为内容、广告和章节跟踪调用提供自定义元数据。
-seo-description: 您可以使用回调函数为内容、广告和章节跟踪调用提供自定义元数据。
-seo-title: 实现自定义元数据支持
 title: 实现自定义元数据支持
-uuid: 4d1a8f6e-c2f6-4d7a-804d-c128adb5ae6f
 translation-type: tm+mt
-source-git-commit: bc35da8b258056809ceaf18e33bed631047bc81b
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '94'
+source-wordcount: '74'
 ht-degree: 0%
 
 ---
@@ -17,7 +14,7 @@ ht-degree: 0%
 
 您可以使用回调函数为内容、广告和章节跟踪调用提供自定义元数据。
 
-在进行跟踪调用之前调用回调函数，这样您的应用程序可以附加特定于广告或章节的元数据。
+在进行跟踪调用之前调用回调函数，因此应用程序可以附加特定于广告或章节的元数据。
 
 1. 调用内容、广告和章节的回调函数。
 
