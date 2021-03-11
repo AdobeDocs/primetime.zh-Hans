@@ -1,13 +1,11 @@
 ---
-description: 'null'
-seo-description: 'null'
-seo-title: 使用DRMContentData预加载许可证
 title: 使用DRMContentData预加载许可证
-uuid: 5cedd077-0613-4677-8fb0-81237d7ac61a
+description: 使用DRMContentData预加载许可证
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '132'
+source-wordcount: '130'
 ht-degree: 0%
 
 ---
@@ -19,8 +17,8 @@ ht-degree: 0%
 
 1. 获取打包内容的二进制DRM元数据。
 
-   如果使用Primetime DRM Java Reference Implementations Packager，则此元数据文件将自动生成，扩展名为[!DNL .metadata]。 例如，您可以使用`URLLoader`类下载此元数据。 如果使用HLS或HDS内容，则元数据将被引用在内容清单文件（[!DNL .m3u8]或[!DNL .f4m]）中，或作为Base64编码的字符串（在使用前必须经过Base64解码）包含在清单文件中的&#x200B;*。*
-1. 创建`DRMContentData`对象，将元数据传递给构造函数：
+   如果使用Primetime DRM Java Reference Implementations Packager，则会自动生成此元数据文件，其扩展名为[!DNL .metadata]。 例如，您可以使用`URLLoader`类下载此元数据。 如果使用HLS或HDS内容，则在内容清单文件（[!DNL .m3u8]或[!DNL .f4m]）中引用元数据，或将&#x200B;*作为Base64编码的字符串（在使用前必须解码为Base64）包含在清单文件中。*
+1. 创建一个`DRMContentData`对象，将元数据传递给构造函数：
 
    ```
    var drmData:DRMContentData = new DRMContentData( metadata );
