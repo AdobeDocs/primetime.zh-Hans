@@ -1,25 +1,22 @@
 ---
-description: 服务质量(QoS)为视频引擎的性能提供详细的视图。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
-seo-description: 服务质量(QoS)为视频引擎的性能提供详细的视图。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
-seo-title: 服务质量统计
+description: 服务质量(QoS)提供了视频引擎的性能的详细视图。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
 title: 服务质量统计
-uuid: 8e990461-065b-4efa-b77c-b2b832f86f7d
 translation-type: tm+mt
-source-git-commit: 0eaf0e7e7e61d596a51d1c9c837ad072d703c6a7
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '286'
+source-wordcount: '258'
 ht-degree: 0%
 
 ---
 
 
-# 服务质量统计数据{#quality-of-service-statistics}
+# 服务质量统计{#quality-of-service-statistics}
 
-服务质量(QoS)为视频引擎的性能提供详细的视图。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
+服务质量(QoS)提供了视频引擎的性能的详细视图。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
 
-TVSDK还提供有关以下已下载资源的信息：
+TVSDK还提供有关以下下载资源的信息：
 
-* 播放列表／清单文件
+* 播放列表/清单文件
 * 文件片段
 * 文件的跟踪信息
 
@@ -27,8 +24,8 @@ TVSDK还提供有关以下已下载资源的信息：
 
 您可以从`LoadInformation`类读取有关下载资源（如片段和轨道）的服务质量(QoS)信息。
 
-1. 实现并注册`MediaPlayerEvent.LOAD_INFORMATION_AVAILABLE`事件监听器。
-1. 调用`event.getLoadInformation()`以从传递给回调的`event`参数读取相关数据。
+1. 实现并注册`MediaPlayerEvent.LOAD_INFORMATION_AVAILABLE`事件侦听器。
+1. 调用`event.getLoadInformation()`以从传递到回调的`event`参数读取相关数据。
 
    >[!NOTE]
    >
@@ -38,12 +35,12 @@ TVSDK还提供有关以下已下载资源的信息：
 
 可以从`QOSProvider`类读取播放、缓冲和设备统计信息。
 
-`QOSProvider`类提供各种统计信息，包括有关缓冲、比特率、帧速率、时间数据等的信息。 它还提供有关设备的信息，如制造商、型号、操作系统、SDK版本、制造商的设备ID和屏幕大小／密度。
+`QOSProvider`类提供各种统计信息，包括有关缓冲、比特率、帧速率、时间数据等的信息。 它还提供有关设备的信息，例如制造商、型号、操作系统、SDK版本、制造商的设备ID以及屏幕大小/密度。
 
 1. 实例化媒体播放器。
-1. 创建`QOSProvider`对象，并将其连接到媒体播放器。
+1. 创建一个`QOSProvider`对象，并将其连接到媒体播放器。
 
-   `QOSProvider`构造函数使用播放器上下文，以便能够检索设备特定信息。
+   `QOSProvider`构造函数使用播放器上下文，以便它可以检索设备特定信息。
 
    ```java
    // Create Media Player. 
@@ -53,7 +50,7 @@ TVSDK还提供有关以下已下载资源的信息：
 
 1. （可选）阅读播放统计信息。
 
-   读取播放统计信息的一个解决方案是设置计时器，该计时器定期从`QOSProvider`中获取新的QoS值。
+   读取播放统计信息的一个解决方案是设置一个计时器，该计时器从`QOSProvider`中定期获取新的QoS值。
 
    例如：
 
