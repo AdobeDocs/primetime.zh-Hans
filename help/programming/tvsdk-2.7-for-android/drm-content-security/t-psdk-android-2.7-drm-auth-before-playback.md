@@ -1,13 +1,10 @@
 ---
-description: 当视频的DRM元数据与媒体流分离时，您应在开始播放之前进行身份验证。
-seo-description: 当视频的DRM元数据与媒体流分离时，您应在开始播放之前进行身份验证。
-seo-title: 播放前的DRM验证
-title: 播放前的DRM验证
-uuid: 6b4fbcfb-95fd-4591-bbb2-a17afd783383
+description: 当视频的DRM元数据与媒体流分离时，应在开始播放之前进行身份验证。
+title: 播放前DRM身份验证
 translation-type: tm+mt
-source-git-commit: 16b88f07468811f2c84decb1324b0c5bd2372131
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '364'
+source-wordcount: '339'
 ht-degree: 1%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 1%
 
 # 播放{#drm-authentication-before-playback}前的DRM身份验证
 
-当视频的DRM元数据与媒体流分离时，您应在开始播放之前进行身份验证。
+当视频的DRM元数据与媒体流分离时，应在开始播放之前进行身份验证。
 
 视频资产可以具有关联的DRM元数据文件，例如：
 
@@ -24,7 +21,7 @@ ht-degree: 1%
 
 在此示例中，可以使用`DRMHelper`方法下载DRM元数据文件的内容、分析它并检查是否需要DRM身份验证。
 
-1. 使用`loadDRMMetadata`加载元数据URL内容并将下载的字节解析为`DRMMetadata`。
+1. 使用`loadDRMMetadata`加载元数据URL内容，并将下载的字节解析为`DRMMetadata`。
 
    >[!TIP]
    >
@@ -45,9 +42,9 @@ ht-degree: 1%
                                       new DRMLoadMetadataListener());
    ```
 
-1. 通知用户此操作是异步的，最好让用户知道此操作。
+1. 通知用户此操作是异步的，最好让用户了解此操作。
 
-   如果用户不知道该操作是异步的，他们可能想知道为什么尚未开始播放。 例如，在下载和分析DRM元数据时，您可以显示微调框。
+   如果用户不知道该操作是异步的，他们可能会想知道为什么尚未开始播放。 例如，您可以在下载和分析DRM元数据时显示微调框。
 
 1. 在`DRMLoadMetadataListener`中实现回呼。
 
@@ -68,11 +65,11 @@ ht-degree: 1%
    } 
    ```
 
-   以下是有关处理函数的其他详细信息：
+   以下是有关这些处理函数的其他详细信息：
 
    * `onLoadMetadataUrlStart` 检测元数据URL加载何时开始。
    * `onLoadMetadataUrlComplete` 检测元数据URL何时完成加载。
-   * `onLoadMetadataUrlError` 表示元数据加载失败。
+   * `onLoadMetadataUrlError` 指示元数据加载失败。
 
 1. 加载完成后，检查`DRMMetadata`对象以确定是否需要DRM身份验证。
 
@@ -121,7 +118,7 @@ ht-degree: 1%
            final DRMAuthenticationListener authenticationListener);
       ```
 
-      在本例中，为简单起见，用户的名称和密码被显式编码：
+      在此示例中，为简单起见，用户的名称和密码被显式编码：
 
       ```java
       DRMHelper.performDrmAuthentication(drmManager,  
@@ -155,9 +152,9 @@ ht-degree: 1%
       }); 
       ```
 
-1. 使用事件监听器检查身份验证状态。
+1. 使用事件侦听器检查身份验证状态。
 
-   此过程意味着网络通信，因此这也是异步操作。
+   此过程意味着网络通信，因此这也是一种异步操作。
 
    ```java
    public interface DRMAuthenticationListener { 
@@ -194,6 +191,6 @@ ht-degree: 1%
    ```
 
 1. 如果身份验证成功，请开始播放。
-1. 如果身份验证失败，请通知用户，但不要开始回放。
+1. 如果身份验证不成功，请通知用户，但不要开始播放。
 
-   应用程序必须处理任何身份验证错误。 在播放TVSDK处于错误状态之前无法成功进行身份验证，播放将停止。 您的应用程序必须解决该问题、重置播放器并重新加载资源。
+   应用程序必须处理任何身份验证错误。 在播放TVSDK处于错误状态之前无法成功进行身份验证，播放将停止。 您的应用程序必须解决该问题，重置播放器并重新加载资源。
