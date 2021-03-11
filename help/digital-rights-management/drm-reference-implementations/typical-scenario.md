@@ -1,13 +1,11 @@
 ---
-description: 'null'
-seo-description: 'null'
-seo-title: 典型工作流
 title: 典型工作流
-uuid: aafe0030-8a59-4090-aeac-76867777eaa5
+description: 典型工作流
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 29bc8323460d9be0fce66cbea7c6fce46df20d61
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '98'
+source-wordcount: '96'
 ht-degree: 0%
 
 ---
@@ -15,7 +13,7 @@ ht-degree: 0%
 
 # 典型工作流{#typical-workflow}
 
-这是一个典型的Primetime DRM参考实现工作流程，它同时具有命令行工具和许可证服务器功能：
+这是一个典型的Primetime DRM参考实施工作流程，它同时具备命令行工具和许可证服务器功能：
 
 1. 使用策略命令行工具创建DRM策略。
 1. 使用Packager命令行工具加密内容。
