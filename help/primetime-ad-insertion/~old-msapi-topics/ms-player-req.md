@@ -1,13 +1,10 @@
 ---
-description: 所有视频播放器都必须提供清单服务器赖以插入广告和启用广告跟踪的功能。
-seo-description: 所有视频播放器都必须提供清单服务器赖以插入广告和启用广告跟踪的功能。
-seo-title: 视频播放器要求
+description: 所有视频播放器都必须提供清单服务器所依赖的功能，以插入广告和启用广告跟踪。
 title: 视频播放器要求
-uuid: 29593d67-2901-4d9e-a08f-23c8a7667283
 translation-type: tm+mt
-source-git-commit: e437f4143fb939f46d106c64efc391137c33fe17
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '136'
+source-wordcount: '113'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 视频播放器要求{#video-player-requirements}
 
-所有视频播放器都必须提供清单服务器赖以插入广告和启用广告跟踪的功能。
+所有视频播放器都必须提供清单服务器所依赖的功能，以插入广告和启用广告跟踪。
 
 要使用Primetime广告插入API，视频播放器必须满足以下条件：
 
@@ -23,10 +20,10 @@ ht-degree: 0%
 * 可以在指定的时间请求跟踪URL。
 * 在支持HLS v3或更高版本的设备平台上运行，包括：
 
-   * 标记为`EXT-X-DISCONTINUITY`的PTS不连续
+   * 标有`EXT-X-DISCONTINUITY`标记的PTS间断
    * `EXT-X-DISCONTINUITY-SEQUENCE`
    * `EXT-X-PROGRAM-DATE-TIME`
    * `EXT-X-START`
 
-* 在支持HTTP重定向和解析JSON的平台上运行。
+* 在支持HTTP重定向和分析JSON的平台上运行。
 * 在支持CORS的平台上运行。
