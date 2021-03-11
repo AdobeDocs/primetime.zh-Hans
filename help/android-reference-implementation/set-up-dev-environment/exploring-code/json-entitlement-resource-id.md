@@ -1,13 +1,10 @@
 ---
-seo-title: 授权资源ID的JSON对象
 title: 授权资源ID的JSON对象
-uuid: f5b659da-1732-404c-bf00-d32a0ae39aa1
-description: 当授权资源ID是简单文本字符串时，以下代码块提供JSON对象的示例。
-seo-description: 当授权资源ID是简单文本字符串时，以下代码块提供JSON对象的示例。
+description: 当授权资源ID是简单文本字符串时，以下代码块提供了JSON对象的示例。
 translation-type: tm+mt
-source-git-commit: 31b6cad26bcc393d731080a70eff1c59551f1c8e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '122'
+source-wordcount: '95'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 # 授权资源ID {#json-object-for-entitlement-resource-id}的JSON对象
 
-当授权资源ID是简单文本字符串时，以下代码块提供JSON对象的示例。 在这种情况下，资源ID是字符串“resource”。
+当授权资源ID是简单文本字符串时，以下代码块提供了JSON对象的示例。 在这种情况下，资源ID是字符串&quot;resource&quot;。
 
 ```
 "metadata" : { 
@@ -25,7 +22,7 @@ ht-degree: 0%
 }
 ```
 
-当授权资源ID是HTML编码的mRSS字符串时，以下代码块提供JSON对象的示例。
+当授权资源ID是HTML编码的mRSS字符串时，以下代码块提供了JSON对象的示例。
 
 ```
 <rss version="2.0" xmlns:media="https://search.yahoo.com/mrss/"> 
