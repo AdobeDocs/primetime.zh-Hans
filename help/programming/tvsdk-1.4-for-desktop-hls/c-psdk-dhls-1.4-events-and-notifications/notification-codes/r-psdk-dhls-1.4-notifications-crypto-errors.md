@@ -1,14 +1,11 @@
 ---
 description: Adobe视频引擎的加密模块在NATIVE_ERROR元数据对象中返回这些通知。
-seo-description: Adobe视频引擎的加密模块在NATIVE_ERROR元数据对象中返回这些通知。
-seo-title: NATIVE_ERROR加密值
 title: NATIVE_ERROR加密值
-uuid: 6f5cea7d-688f-421e-bba6-62aeae1ec9ee
 translation-type: tm+mt
-source-git-commit: 040655d8ba5f91c98ed0584c08db226ffe1e0f4e
+source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
-source-wordcount: '104'
-ht-degree: 6%
+source-wordcount: '83'
+ht-degree: 8%
 
 ---
 
@@ -17,7 +14,7 @@ ht-degree: 6%
 
 Adobe视频引擎的加密模块在NATIVE_ERROR元数据对象中返回这些通知。
 
-| RUNTIME_CODE元数据键的值 | RUNTIME_CODE_MESSAGE元数据键的值 | 意义 |
+| RUNTIME_CODE元数据键值 | RUNTIME_CODE_MESSAGE元数据键值 | 意义 |
 |---|---|---|
 | 300 | `CRYPTO_ALGORITHM_NOT_SUPPORTED` | 不支持使用的算法。 |
 | 301 | `CRYPTO_ERROR_CORRUPTED_DATA` | 数据已损坏。 |
