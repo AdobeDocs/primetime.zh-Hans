@@ -2,9 +2,9 @@
 description: 您可以使用Adobe Primetime广告决策界面在VOD和实时/线性内容中插入广告。
 title: 广告要求
 translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+source-git-commit: 944bfb0f3bd0050a9d2974a37f4fabddaaac8a93
 workflow-type: tm+mt
-source-wordcount: '226'
+source-wordcount: '234'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,4 @@ Primetime广告决策与TVSDK合作，识别广告机会、解析广告并在您
 * 如果主内容包含纯音频流，则广告内容还必须包含纯音频流。
 * 如果主内容包含子标题流，则广告内容必须未加密。
 * 如果主内容是多位速率(MBR)，则广告内容也必须是MBR。
-* 如果主内容具有替代音轨，则每个广告必须至少具有一个纯音频流。
-
-如果广告没有至少一个纯音频流，则会跳过广告。
+* 如果主内容有替代的音轨，则每个广告必须至少包含一个纯音频流，或者应取消对广告的混音。 如果广告既没有至少一个纯音频流，也未取消混音，则会跳过广告。
