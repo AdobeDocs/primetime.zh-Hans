@@ -5,7 +5,7 @@ audience: end-user
 user-guide-title: Primetime 发行说明
 user-guide-description: 提供特定于发行版的信息、系统要求、限制、已修复问题和已知问题。
 translation-type: tm+mt
-source-git-commit: a42c5b4478967822c920d96b05d5f04a6dec8c25
+source-git-commit: d1cf8a05172c04655c8a7c76ce116c8f7be61ec9
 workflow-type: tm+mt
 source-wordcount: '114'
 ht-degree: 14%
@@ -21,7 +21,7 @@ ht-degree: 14%
    + [PTAI 20.12.1发行说明](ptai-20x-release-notes.md)
    + [PTAI 19.11.1发行说明](ptai-19x-release-notes.md)
 + 适用于iOS的TVSDK {#tvsdk-ios}
-   + [适用于iOS的TVSDK 3.12发行说明](tvsdk-3x-ios.md)
+   + [TVSDK 3.13 for iOS发行说明](tvsdk-3x-ios.md)
    + [用于iOS的TVSDK 1.4发行说明](tvsdk-1-4-ios.md)
 + 适用于Android {#tvsdk-android}的TVSDK
    + [TVSDK 3.13 for Android发行说明](tvsdk-3x-android.md)
