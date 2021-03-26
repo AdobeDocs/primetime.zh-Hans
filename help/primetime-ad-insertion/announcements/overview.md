@@ -2,7 +2,7 @@
 title: Adobe Primetime Ad Insertion公告
 description: 关于Primetime最新功能发布和其他相关新闻的公告Ad Insertion
 translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+source-git-commit: d8fde0d03bea85b3fefcfa5dcbfddee76b17de03
 workflow-type: tm+mt
 source-wordcount: '307'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## 通过广告解决超时减少程序化广告错误
 
-发布日期：2000年12月1日
+发布于2020年12月1日
 
 Adobe专注于帮助PrimetimeAd Insertion客户最大化其广告库存的盈利。 我们特别关注降低满足程序化需求的复杂性，根据eMarketer的数据，程序化需求占美国数字视频广告支出的四分之三以上。 程序化销售使出版商能够最大化对其广告库存的需求，从而提高填写率和收益。 但它也会增加广告错误（如格式错误的VAST响应、HTTP错误和其他可能导致收入损失和/或查看器体验差的错误）的曝光。
 
