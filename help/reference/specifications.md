@@ -5,15 +5,15 @@ description: Adobe Primetime规范
 seo-description: Adobe Primetime规范
 topic-tags: Adobe Primetime Specifications
 translation-type: tm+mt
-source-git-commit: 53014028cf1a9cb48f93781cbbb4aec3e2bcc523
+source-git-commit: 0bd926b510cd23268b6374ef81a09efcc5d1371a
 workflow-type: tm+mt
-source-wordcount: '264'
+source-wordcount: '263'
 ht-degree: 0%
 
 ---
 
 
-# Adobe Primetime API规范
+# Adobe Primetime规范
 
 Adobe Primetime将电视带到每个连接IP的屏幕。 它为程序员和运营商提供了模块化功能，可跨桌面和设备流化、保护、分析视频并实现货币化。 为这些体验注入活力是用于向Primetime视频播放器提供内容和广告的多种流技术。
 
