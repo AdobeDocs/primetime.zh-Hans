@@ -1,11 +1,9 @@
 ---
-cloud: experience-cloud
-product: adobe primetime
 audience: end-user
 user-guide-title: Primetime 编程帮助
 user-guide-description: 让您可以学习在 Android 设备上使用 Java 以及在 iOS 设备上使用 Objective-C 开发应用程序和视频播放器。
 translation-type: tm+mt
-source-git-commit: aab96dcf5107be90534350156ee66a88de80613e
+source-git-commit: 95626ebde981d1996652a67bc9e0cea05f24aa6d
 workflow-type: tm+mt
 source-wordcount: '4342'
 ht-degree: 0%
