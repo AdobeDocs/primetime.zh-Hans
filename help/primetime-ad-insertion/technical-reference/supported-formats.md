@@ -1,10 +1,11 @@
 ---
 title: 支持的格式
-description: null
+description: 支持的格式
+copied-description: true
 translation-type: tm+mt
-source-git-commit: 126a5129ee4102802173f3203ec4fb829ad0b08d
+source-git-commit: f0e58c59e5f71ff79861dc634d9c9b3364e49db6
 workflow-type: tm+mt
-source-wordcount: '52'
+source-wordcount: '54'
 ht-degree: 0%
 
 ---
@@ -12,17 +13,17 @@ ht-degree: 0%
 
 # 支持的格式{#supported-formats}
 
-PrimetimeAd Insertion拦截并支持广告插入到以下媒体流中：
+PrimetimeAd Insertion会截获并支持广告插入以下媒体流：
 
 ## HLS {#hls}
 
-- 混音音频／视频片段播放列表
-- CMAF和已取消混音的音频／视频播放列表，包括纯音频播放列表
+- 混音音频/视频片段播放列表
+- CMAF和已消除音频/视频播放列表，包括纯音频播放列表
 - WebVTT
 - I-Frame流播放列表(#EXT-X-I-FRAME-STREAM-INF)
 - 图像播放列表(#EXT-X-IMAGE-STREAM-INF)
 
 ## 虚线{#dash}
 
-- CMAF和已取消混音的音频／视频播放列表，包括纯音频播放列表
+- CMAF和已消除音频/视频播放列表，包括纯音频播放列表
 - WebVTT
