@@ -1,20 +1,21 @@
 ---
 title: 最佳实践
-description: null
+description: 最佳实践
+copied-description: true
+exl-id: 2dae6032-5e22-4274-a5a2-02960fcbcf19
 translation-type: tm+mt
-source-git-commit: 76dc54fabdae400ad708ba83fcf6f7fd5caa2b22
+source-git-commit: 3e63c187f12d1bff53370bbcde4d6a77f58f3b4f
 workflow-type: tm+mt
-source-wordcount: '45'
+source-wordcount: '47'
 ht-degree: 0%
 
 ---
 
-
 # 最佳实践{#best-practices}
 
-要获得视频流的最佳性能和开始时间，请参阅以下最佳实践以分析和优化广告和内容工作流。
+为获得最佳性能和开始时间，请参阅以下最佳实践以分析和优化广告和内容工作流。
 
-+ [优化视频开始时间](optimize-video-startup-time.md)
++ [优化视频开始](optimize-video-startup-time.md)
 + [分析性能](analyze-performance.md)
 + [HTTP缓存](caching.md)
 + [优化路由和协议](optimize-routes-protocols.md)
