@@ -1,14 +1,15 @@
 ---
 title: 高级遥测
-description: null
+description: 高级遥测
+copied-description: true
+exl-id: 3a030dc8-c3e5-4bf5-9d69-58cfa880bf6a
 translation-type: tm+mt
-source-git-commit: 0f98b9848f1764e7c66e3692d8a845513493597f
+source-git-commit: 3e63c187f12d1bff53370bbcde4d6a77f58f3b4f
 workflow-type: tm+mt
-source-wordcount: '66'
+source-wordcount: '68'
 ht-degree: 0%
 
 ---
-
 
 # 高级遥测{#advanced-telemetry}
 
