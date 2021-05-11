@@ -1,14 +1,14 @@
 ---
 description: 您可以配置播放器以跟踪和分析视频使用情况。
 title: 初始化和配置视频分析
+exl-id: e0bf461b-a431-4fba-bd3d-c38be307a92f
 translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+source-git-commit: d884836a2a585bd3540b085de1098cf6ae3de46b
 workflow-type: tm+mt
 source-wordcount: '687'
 ht-degree: 0%
 
 ---
-
 
 # 初始化和配置视频分析{#initialize-and-configure-video-analytics}
 
@@ -133,6 +133,7 @@ ht-degree: 0%
           videoAnalyticsProvider.detachMediaPlayer();
           videoAnalyticsProvider = null;
       ```
+
    4. 手动将实时/线性流标记为完成。
 如果您在一个实时流上有各种剧集，则可以使用完整的API手动将某个剧集标记为完整。 这将结束当前视频集的视频跟踪会话，您可以为下一集开始新的跟踪会话。
       >[!TIP]
@@ -146,5 +147,5 @@ ht-degree: 0%
       videoAnalyticsProvider.detachMediaPlayer();
       videoAnalyticsProvider = null;
       // Create a new instance of VideoAnalyticsProvider to continue tracking.
-      } 
+      }
       ```
