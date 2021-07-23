@@ -3,17 +3,17 @@ product: adobe primetime
 audience: end-user
 user-guide-title: Primetime 发行说明
 user-guide-description: 提供特定于发行版的信息、系统要求、限制、已修复问题和已知问题。
-source-git-commit: fe0f5f3399d2e2ab3e07713fbcd29ede47888d98
+source-git-commit: 2b7f0e3202107320168e5b0b37b3a9296029a0cd
 workflow-type: tm+mt
-source-wordcount: '114'
-ht-degree: 14%
+source-wordcount: '113'
+ht-degree: 16%
 
 ---
 
 
-# Primetime 发行说明  {#release-notes}
+# Primetime 发行说明 {#release-notes}
 
-+ [发行说明概述](home.md)
++ [发行说明 概述](home.md)
 + PrimetimeAd Insertion{#ptai}
    + [PTAI 21.5.1发行说明](ptai-21x-release-notes.md)
    + [PTAI 20.12.1发行说明](ptai-20x-release-notes.md)
@@ -28,7 +28,7 @@ ht-degree: 14%
    + [适用于Android的TVSDK 1.4发行说明](tvsdk-1-4-android.md)
 + 浏览器TVSDK {#browser-tvsdk}
    + [浏览器TVSDK 2.4发行说明](tvsdk-24-browser.md)
-+ 用于桌面HLS的TVSDK {tvsdk-desktop-hls}
++ 用于桌面HLS {#tvsdk-desktop-hls}的TVSDK
    + [适用于桌面HLS的TVSDK 1.4发行说明](tvsdk-1-4-desktop-hls.md)
 + Primetime Offline Packager {#offline-packager}
    + [Primetime Offline Packager版本2](offline-packager-2x-release-note.md)
