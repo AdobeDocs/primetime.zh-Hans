@@ -28,8 +28,7 @@ java -jar AdobePublisherIDUtility.jar
 </i class="+ topic>
 ```
 
-* 
-   * `signaturefile`*指定位于应用程序目录中的AIR应用程序的signatures.xml文件的路 [!DNL META-INF] 径
+* `signaturefile` 指定位于应用程序目录中的AIR应用程序的signatures.xml文件的路 [!DNL META-INF] 径
 
 * `signingcert` 指定用于对AIR应用程序进行签名的证书
 
