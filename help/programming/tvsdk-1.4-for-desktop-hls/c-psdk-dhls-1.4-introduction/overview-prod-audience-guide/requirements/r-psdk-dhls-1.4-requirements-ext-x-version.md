@@ -1,15 +1,15 @@
 ---
-description: .m3u8文件中的“#”EXT-X-VERSION的版本会影响应用程序可用的功能以及播放列表/清单中有效的EXT标记。
+description: .m3u8文件中的EXT-X-VERSION版本会影响应用程序可用的功能以及播放列表/清单中有效的EXT标记。
 title: EXT-X-VERSION要求
 exl-id: ee778fe1-d050-4c90-af8d-6600fff72e52
-source-git-commit: 8610792a7410dab59d42ab7771b534c2c1670ad2
+source-git-commit: e2a796dc5eb017929297d127cc79b65ba51a0c75
 workflow-type: tm+mt
 source-wordcount: '226'
 ht-degree: 0%
 
 ---
 
-# `#`EXT-X-VERSION要求{#ext-x-version-requirements}
+# EXT-X-VERSION要求{#ext-x-version-requirements}
 
 .m3u8文件#EXT-X-VERSION的版本会影响应用程序可用的功能以及播放列表/清单中有效的EXT标记。
 
