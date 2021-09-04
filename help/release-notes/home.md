@@ -3,10 +3,10 @@ title: Primetime 发行说明
 description: Primetime 发行说明
 copied-description: true
 exl-id: 29087a3e-f16e-4510-8d3a-ed2229700899
-source-git-commit: fe0f5f3399d2e2ab3e07713fbcd29ede47888d98
+source-git-commit: 97a192ed1d0ddc034f72a836a70293acfcca9881
 workflow-type: tm+mt
-source-wordcount: '352'
-ht-degree: 28%
+source-wordcount: '340'
+ht-degree: 29%
 
 ---
 
@@ -14,9 +14,9 @@ ht-degree: 28%
 
 欢迎使用Adobe Primetime发行说明。 左侧导航中列出的文档提供了特定于发行版的信息、系统要求、限制、已修复问题和已知问题。
 
-## PTAI 21.5.1中的增强功能和修复
+## PTAI 21.8.1中的增强功能和修复
 
-该版本包括针对即将进行的功能板更改的新遥测数据，以及对基于SCTE的提示格式的弃用分段类型0x01(UPID)的支持。
+该版本包括对DASH实时/线性流的支持。
 
 有关其他修复和详细信息，请参阅[Ad Insertion发行说明](/help/release-notes/ptai-21x-release-notes.md)
 
