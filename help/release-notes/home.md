@@ -3,10 +3,10 @@ title: Primetime 发行说明
 description: Primetime 发行说明
 copied-description: true
 exl-id: 29087a3e-f16e-4510-8d3a-ed2229700899
-source-git-commit: 97a192ed1d0ddc034f72a836a70293acfcca9881
+source-git-commit: 9b91bbc92a613a60233a73cded542a04efd61148
 workflow-type: tm+mt
-source-wordcount: '340'
-ht-degree: 29%
+source-wordcount: '301'
+ht-degree: 32%
 
 ---
 
@@ -26,11 +26,9 @@ ht-degree: 29%
 
 有关其他修复和详细信息，请参阅[适用于iOS的TVSDK发行说明](../release-notes/tvsdk-3x-ios.md)
 
-## TVSDK 3.13 Android中的修复
+## TVSDK 3.14 Android中的修复
 
-此版本为FireTV设备（包括Fire TV第3代吊坠和Fire TV Cube第1代和第2代设备）上ABR开关上Widevine DRM流冻结或显示黑帧的问题提供了解决方法。
-
-要解决此问题，请在开始播放之前为指定的Fire TV设备设置API `MediaPlayer.flushVideoDecoderOnHeaderChange(true)`。 默认值为false。
+此版本修复了以下问题：当[!UICONTROL CDATA]节点对于[!UICONTROL VAST]响应中的任何[!UICONTROL ClickTracking]、[!UICONTROL CustomClick]或[!UICONTROL CompanionClickTracking]元素为空时，应用程序崩溃。
 
 有关更多信息，请参阅[适用于Android的TVSDK发行说明](../release-notes/tvsdk-3x-android.md)。
 
@@ -44,7 +42,7 @@ ht-degree: 29%
 | [Primetime API参考](/help/reference/api-references.md) | 提供有关 TVSDK 函数、数据结构和其他编程结构的详细信息。 |
 | [Digital Rights Management](/help/digital-rights-management/home.md) | 帮助您进一步了解Digital Rights Management(DRM)中的各种用户场景 |
 | [Primetime Ad Insertion 帮助](/help/primetime-ad-insertion/home.md) | 解释如何通过在服务器上插入面向用户的动态广告来从内容获利，以及如何通过个性化广告吸引受众。 |
-| [存档](https://helpx.adobe.com/primetime/archives.html) | 下载存档文档的PDF。 |
+| [存档](https://helpx.adobe.com/primetime/archives.html) | 下载已存档文档的PDF。 |
 
 ## 有用资源
 
