@@ -3,10 +3,10 @@ title: Primetime 发行说明
 description: Primetime 发行说明
 copied-description: true
 exl-id: 29087a3e-f16e-4510-8d3a-ed2229700899
-source-git-commit: 6621a42d859cb872569123c175764e577bb46b9a
+source-git-commit: 21695ad15f1dcbbfa33211efd0fb3ab282fefbeb
 workflow-type: tm+mt
-source-wordcount: '301'
-ht-degree: 32%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -20,17 +20,17 @@ ht-degree: 32%
 
 有关更多信息，请参阅[适用于Android的TVSDK发行说明](../release-notes/tvsdk-3x-android.md)。
 
-## PTAI 21.8.1中的增强功能和修复
+## PTAI 21.10.1中的增强功能和修复
 
-该版本包括对DASH实时/线性流的支持。
+此版本重点针对整合服务器，删除非生产和非有用的服务器。
 
-有关其他修复和详细信息，请参阅[Ad Insertion发行说明](/help/release-notes/ptai-21x-release-notes.md)
+有关其他修复和详细信息，请参阅[Ad Insertion发行说明](/help/release-notes/ptai-21x-release-notes.md)。
 
 ## TVSDK 3.13 iOS中的增强功能和修复
 
 该版本引入了对用于实时、VOD和FER流的已删除的“HLS/CMAF”（前置、中置和后置）广告的支持。
 
-有关其他修复和详细信息，请参阅[适用于iOS的TVSDK发行说明](../release-notes/tvsdk-3x-ios.md)
+有关其他修复和详细信息，请参阅[适用于iOS的TVSDK发行说明](../release-notes/tvsdk-3x-ios.md)。
 
 ## 另请参阅
 

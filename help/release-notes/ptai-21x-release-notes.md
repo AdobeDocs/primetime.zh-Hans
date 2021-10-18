@@ -1,46 +1,43 @@
 ---
-title: PTAI 21.8.1发行说明
+title: PTAI 21.10.1发行说明
 description: PTAI发行说明介绍了PrimetimeAd Insertion2021年的新增功能或更改功能、已解决和已知问题。
 exl-id: 39a05f6d-431a-4416-81b1-21d82c0dbd69
-source-git-commit: 97a192ed1d0ddc034f72a836a70293acfcca9881
+source-git-commit: 7d754e95d8a6c5d92382e3d20fe2c9096f2162ea
 workflow-type: tm+mt
-source-wordcount: '272'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
 
-# PrimetimeAd Insertion21.8.1发行说明
+# PrimetimeAd Insertion21.10.1发行说明
 
-PrimetimeAd Insertion21.x.x发行说明介绍了PrimetimeAd Insertion2021年的新增功能或更改功能、已解决的问题和已知问题
+PrimetimeAd Insertion21.x.x发行说明介绍了PrimetimeAd Insertion2021年的新增功能或更改功能、已解决的问题和已知问题。
 
-<!---
-Primetime Ad Insertion 21.9.1
-When: Tuesday, September 7, 2021 from 02:30 AM to 05:30 AM EASTERN
+## PTAI的新增功能21.10.1
 
+时间： 2021年10月12日，星期二，东部时间早7时45分至下午1时45分
 
+* 此版本重点关注服务器的整合，删除非生产和非有用服务器。
 
+## 以前版本中的增强功能和修复
 
+### PrimetimeAd Insertion维护版本
 
+时间：2021年9月28日，星期二东部时间清晨5时至6时
 
+* 将负载平衡器堆栈从AWS的弹性负载平衡器更新到AWS的应用程序负载平衡器，以增强功能和可扩展性。 这些负载平衡器用于将广告请求流量从Ad Insertion层(SSAI/CSAI)路由到Auditude后端。
 
+### 版本21.9.1
 
+时间：2021年9月7日星期二东部时间凌晨02点30分至05点30分
 
-What:  Primetime Ad Insertion 21.9.1
+* 更新了PrimetimeAd Insertion中介和报告组件（Primetime广告GUI）背后的基础架构组件。
 
-When:  Tuesday, September 7, 2021 from 02:30 AM to 05:30 AM Eastern Time
-
-Changes:
-
-* Updates to infrastructure components behind PTAI’s mediation and reporting components (Primetime Ads GUI)
--->
-
-## PTAI 21.8.1的新增功能
+### 版本21.8.1
 
 时间：2021年8月24日，星期二，东部时间凌晨2点至5点
 
 * 添加了对短划线实时/线性流的支持（已支持VOD）。
-
-## 以前版本中的增强功能和修复
 
 ### 版本21.5.1
 
