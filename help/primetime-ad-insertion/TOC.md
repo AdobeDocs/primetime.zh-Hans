@@ -2,7 +2,7 @@
 product: adobe primetime
 audience: end-user
 user-guide-title: Primetime Ad Insertion 帮助
-source-git-commit: 98882f0e36919635d99b0cd95f87f9736b692f73
+source-git-commit: 23930068020475ef32a03e63c8a90d9c08429082
 workflow-type: tm+mt
 source-wordcount: '176'
 ht-degree: 4%
@@ -47,7 +47,7 @@ ht-degree: 4%
 + [实时事件监控](live-event-monitoring.md)
 + 参考 {#technical-reference}
    + [BootstrapAPI](technical-reference/bootstrap-api.md)
-   + [报表API](assets/auditude-report-api.pdf)
+   + [报表API](technical-reference/report-api.md)
    + 最佳实践{#best-practices}
       + [概述](best-practices/best-practices-overview.md)
       + [优化视频启动时间](best-practices/optimize-video-startup-time.md)
