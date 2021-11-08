@@ -3,10 +3,10 @@ title: Primetime 发行说明
 description: Primetime 发行说明
 copied-description: true
 exl-id: 29087a3e-f16e-4510-8d3a-ed2229700899
-source-git-commit: 21695ad15f1dcbbfa33211efd0fb3ab282fefbeb
+source-git-commit: 3b2495960cb4f5c625069415977596b5f6632bc4
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '305'
+ht-degree: 32%
 
 ---
 
@@ -14,23 +14,23 @@ ht-degree: 0%
 
 欢迎使用Adobe Primetime发行说明。 左侧导航中列出的文档提供了特定于发行版的信息、系统要求、限制、已修复问题和已知问题。
 
-## TVSDK 3.14 Android中的修复
+## TVSDK 3.15 Android中的修复
 
-此版本修复了以下问题：当[!UICONTROL CDATA]节点对于[!UICONTROL VAST]响应中的任何[!UICONTROL ClickTracking]、[!UICONTROL CustomClick]或[!UICONTROL CompanionClickTracking]元素为空时，应用程序崩溃。
+此版本修复了当缺少创作标记或 [!UICONTROL url CDATA] 在中为空 [!UICONTROL VAST] 响应。
 
-有关更多信息，请参阅[适用于Android的TVSDK发行说明](../release-notes/tvsdk-3x-android.md)。
+查看 [适用于Android的TVSDK发行说明](../release-notes/tvsdk-3x-android.md) 以了解更多信息。
 
 ## PTAI 21.10.1中的增强功能和修复
 
 此版本重点针对整合服务器，删除非生产和非有用的服务器。
 
-有关其他修复和详细信息，请参阅[Ad Insertion发行说明](/help/release-notes/ptai-21x-release-notes.md)。
+有关其他修复和详细信息，请参阅 [Ad Insertion发行说明](/help/release-notes/ptai-21x-release-notes.md).
 
 ## TVSDK 3.13 iOS中的增强功能和修复
 
 该版本引入了对用于实时、VOD和FER流的已删除的“HLS/CMAF”（前置、中置和后置）广告的支持。
 
-有关其他修复和详细信息，请参阅[适用于iOS的TVSDK发行说明](../release-notes/tvsdk-3x-ios.md)。
+有关其他修复和详细信息，请参阅 [适用于iOS的TVSDK发行说明](../release-notes/tvsdk-3x-ios.md).
 
 ## 另请参阅
 
