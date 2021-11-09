@@ -3,10 +3,10 @@ title: Primetime 发行说明
 description: Primetime 发行说明
 copied-description: true
 exl-id: 29087a3e-f16e-4510-8d3a-ed2229700899
-source-git-commit: 3b2495960cb4f5c625069415977596b5f6632bc4
+source-git-commit: c0e5d435ded98fa9b359c3887ed0aafd1b39b33d
 workflow-type: tm+mt
-source-wordcount: '305'
-ht-degree: 32%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -14,15 +14,13 @@ ht-degree: 32%
 
 欢迎使用Adobe Primetime发行说明。 左侧导航中列出的文档提供了特定于发行版的信息、系统要求、限制、已修复问题和已知问题。
 
+## PTAI 21.11.1中的增强功能和修复
+
+的 [!UICONTROL EXT-X-IMAGE-STREAM-INF] 现在可按区域进行配置。
+
 ## TVSDK 3.15 Android中的修复
 
 此版本修复了当缺少创作标记或 [!UICONTROL url CDATA] 在中为空 [!UICONTROL VAST] 响应。
-
-查看 [适用于Android的TVSDK发行说明](../release-notes/tvsdk-3x-android.md) 以了解更多信息。
-
-## PTAI 21.10.1中的增强功能和修复
-
-此版本重点针对整合服务器，删除非生产和非有用的服务器。
 
 有关其他修复和详细信息，请参阅 [Ad Insertion发行说明](/help/release-notes/ptai-21x-release-notes.md).
 

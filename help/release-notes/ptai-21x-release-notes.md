@@ -1,25 +1,31 @@
 ---
-title: PTAI 21.10.1发行说明
+title: PTAI 21.11.1发行说明
 description: PTAI发行说明介绍了PrimetimeAd Insertion2021年的新增功能或更改功能、已解决和已知问题。
 exl-id: 39a05f6d-431a-4416-81b1-21d82c0dbd69
-source-git-commit: 7d754e95d8a6c5d92382e3d20fe2c9096f2162ea
+source-git-commit: b58fea35be528c4c030eab39fde9dd642d90cb58
 workflow-type: tm+mt
 source-wordcount: '0'
 ht-degree: 0%
 
 ---
 
-# PrimetimeAd Insertion21.10.1发行说明
+# PrimetimeAd Insertion21.11.1发行说明
 
 PrimetimeAd Insertion21.x.x发行说明介绍了PrimetimeAd Insertion2021年的新增功能或更改功能、已解决的问题和已知问题。
 
-## PTAI的新增功能21.10.1
+## PTAI的新增功能21.11.1
 
-时间： 2021年10月12日，星期二，东部时间早7时45分至下午1时45分
+时间：2021年11月9日，星期二东部时间凌晨1点30分至04点30分
 
-* 此版本重点关注服务器的整合，删除非生产和非有用服务器。
+* [!UICONTROL EXT-X-IMAGE-STREAM-INF] 现在可按区域进行配置。
 
 ## 以前版本中的增强功能和修复
+
+### 版本21.10.1
+
+时间：2021年10月12日，星期二，东部时间早7时45分至下午1时45分
+
+* 整合的服务器，删除了非生产和非使用的服务器。
 
 ### PrimetimeAd Insertion维护版本
 
@@ -41,7 +47,7 @@ PrimetimeAd Insertion21.x.x发行说明介绍了PrimetimeAd Insertion2021年的�
 
 ### 版本21.5.1
 
-时间： 2021年5月26日，星期三东部时间凌晨3点30分至6点30分
+时间：2021年5月26日，星期三东部时间凌晨3点30分至6点30分
 
 **更改**
 
@@ -51,7 +57,7 @@ PrimetimeAd Insertion21.x.x发行说明介绍了PrimetimeAd Insertion2021年的�
 
 ### 版本21.4.1
 
-**时间：** 2021年4月22日，星期四，东部时间凌晨2点至5点
+**时间：** 2021年4月22日，星期四东部时间凌晨2点至5点
 
 **更改**
 
@@ -61,7 +67,7 @@ PrimetimeAd Insertion21.x.x发行说明介绍了PrimetimeAd Insertion2021年的�
 
 ### 版本21.2.2
 
-**时间：** 2021年2月23日星期二东部时间凌晨1点至4点
+**时间：** 2021年2月23日，星期二东部时间凌晨1点至4点
 
 **更改**
 
@@ -69,7 +75,7 @@ PrimetimeAd Insertion21.x.x发行说明介绍了PrimetimeAd Insertion2021年的�
 
 ### 版本21.2.1
 
-**时间：** 2021年2月3日，星期三，东部时间凌晨1点至4点
+**时间：** 2021年2月3日，星期三东部时间凌晨1点至4点
 
 **更改**
 
@@ -77,7 +83,7 @@ PrimetimeAd Insertion21.x.x发行说明介绍了PrimetimeAd Insertion2021年的�
 
 ### 版本21.1.2
 
-**时间：** 2021年1月19日星期二东部时间半夜12点30分至08点30分
+**时间：** 2021年1月19日，星期二东部时间半夜12点30分至8点30分
 
 **更改**
 
@@ -85,7 +91,7 @@ PrimetimeAd Insertion21.x.x发行说明介绍了PrimetimeAd Insertion2021年的�
 
 ### 版本21.1.1
 
-**时间：** 2021年1月13日，星期三，东部时间上午1点至4点
+**时间：** 2021年1月13日，星期三东部时间上午01点至4点
 
 **更改**
 
