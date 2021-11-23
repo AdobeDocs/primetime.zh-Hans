@@ -2,9 +2,9 @@
 title: PTAI 21.11.1发行说明
 description: PTAI发行说明介绍了PrimetimeAd Insertion2021年的新增功能或更改功能、已解决和已知问题。
 exl-id: 39a05f6d-431a-4416-81b1-21d82c0dbd69
-source-git-commit: b58fea35be528c4c030eab39fde9dd642d90cb58
+source-git-commit: f4c6ef44c7f13bf8170a1f23a7ae8eba0171316a
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '389'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,8 @@ PrimetimeAd Insertion21.x.x发行说明介绍了PrimetimeAd Insertion2021年的�
 时间：2021年11月9日，星期二东部时间凌晨1点30分至04点30分
 
 * [!UICONTROL EXT-X-IMAGE-STREAM-INF] 现在可按区域进行配置。
+
+* 完全支持Roku Trick Play。
 
 ## 以前版本中的增强功能和修复
 
