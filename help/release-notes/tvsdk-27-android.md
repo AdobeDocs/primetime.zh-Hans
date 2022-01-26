@@ -4,9 +4,9 @@ description: 适用于Android™的TVSDK 2.7发行说明介绍了TVSDK Android�
 products: SG_PRIMETIME
 topic-tags: release-notes
 exl-id: d64f0ef2-60a9-43a1-b2f9-44764a570538
-source-git-commit: d2c8133f126db44b9c505dc0a21ba208fd6c01c8
+source-git-commit: 3891ea44775899c1e0d43c4ac74bbc4b07d7962e
 workflow-type: tm+mt
-source-wordcount: '4072'
+source-wordcount: '4070'
 ht-degree: 0%
 
 ---
@@ -61,7 +61,7 @@ TVSDK 2.7支持在广告时间并发解析所有广告请求，而不是连续�
 * **部分广告时间插入**
 
    在广告中间加入时不触发部分已观看广告的跟踪的类似电视体验。\
-   示例**:**用户在包含三个30秒广告的90秒广告时间的中间（40秒）加入。 这是时间中第二个广告的10秒。
+   示例：用户在包含三个30秒广告的90秒广告时间的中间（40秒）加入。 这是时间中第二个广告的10秒。
    * 第二个广告在剩余的持续时间（20秒）内播放，随后是第三个广告。
    * 不会触发播放的部分广告（第二个广告）的广告跟踪器。 仅触发第三个广告的跟踪器。
 
@@ -71,7 +71,7 @@ TVSDK 2.7支持在广告时间并发解析所有广告请求，而不是连续�
 
 * **添加到CRS请求的AdSystem和创作ID**
 
-   * 现在，在1401和1403请求中包含“AdSystem”和“CreativeId”作为新参数。
+   * 现在包括 `AdSystem` 和 `CreativeId` 作为1401和1403请求中的新参数。
 
 * **删除了NetworkConfiguration类中的API setEncodeUrlForTracking** 因为URL中的不安全字符应进行编码。
 
@@ -81,7 +81,8 @@ Android™ TVSDK v2.5.4提供了以下更新和API更改：
 
 * 默认值的更改 `WebViewDebbuging`
 
-   `WebViewDebbuging` 值默认设置为False。 要启用此功能，请在应用程序中调用setWebContentsDebuggingEnabled(true)。
+   的 `WebViewDebbuging` 值设置为 _False_ 默认情况下。 要启用此功能，请调用 `setWebContentsDebuggingEnabled` to _True_ 中。
+
 * OpenSSL和Curl版本升级已更新 `libcurl` 到v7.57.0和OpenSSL到v1.0.2k。
 * 对VAST响应对象的应用程序级别访问引入了一个新的API NetworkAdInfo:getVastXml()，该API提供对应用程序的VAST响应对象的访问。
 
@@ -334,7 +335,7 @@ TVSDK会自动收集量度，并遵守客户销售合同，以生成计费所需
 * Zendesk#32670 — 播放器没有故障切换到冗余播放列表
    * 现在运行正常，并且setNetworkDownVerificationUrl可按预期工作。
 * Zendesk#32369 — 隐藏式字幕显示不同的颜色垃圾或伪像。
-   * CC故障的问题已在最新版本中修复
+   * CC故障问题已在最新内部版本中修复
 * Zendesk#25590 — 增强：TVSDK Cookie存储(从C++到Java™)
    * Android™ TVSDK现在支持在Java™层(存储在Android™应用程序的CookieStore中)和C++ TVSDK层之间访问Cookie。
 * Zendesk#32252 - TVSDK_Android_2.5.2.12似乎没有修复PTPLAY-20269。此问题已修复并集成到2.5.2分支。
