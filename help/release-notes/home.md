@@ -3,10 +3,10 @@ title: Primetime 发行说明
 description: Primetime 发行说明
 copied-description: true
 exl-id: 29087a3e-f16e-4510-8d3a-ed2229700899
-source-git-commit: f4c6ef44c7f13bf8170a1f23a7ae8eba0171316a
+source-git-commit: d549c83b50683ed3f803226eaa414179896a29b0
 workflow-type: tm+mt
-source-wordcount: '291'
-ht-degree: 34%
+source-wordcount: '320'
+ht-degree: 30%
 
 ---
 
@@ -14,9 +14,9 @@ ht-degree: 34%
 
 欢迎使用Adobe Primetime发行说明。 左侧导航中列出的文档提供了特定于发行版的信息、系统要求、限制、已修复问题和已知问题。
 
-## PTAI 21.11.1中的增强功能和修复
+## PTAI 22.2.2中的增强功能和修复
 
-的 [!UICONTROL EXT-X-IMAGE-STREAM-INF] 现在可按区域配置， [!UICONTROL Roku Trick] 完全支持播放。
+此版本重点关注捕获新的广告性能事件，例如广告创作调用、广告服务器调用和可用解决事件。 在即将发布的版本中，这些事件将通过PrimetimeAd Insertion的新图形用户界面公开。
 
 ## TVSDK 3.15 Android中的修复
 
