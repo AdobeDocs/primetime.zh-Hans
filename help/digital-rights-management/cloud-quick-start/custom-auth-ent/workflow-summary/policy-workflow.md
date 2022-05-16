@@ -2,60 +2,59 @@
 title: 策略工作流详细信息
 description: 策略工作流详细信息
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: e3daf7a9-def0-48a9-8190-adb25eec7b59
+source-git-commit: 0019a95fa9ca6d21249533d559ce844897ab67cf
 workflow-type: tm+mt
-source-wordcount: '593'
+source-wordcount: '582'
 ht-degree: 0%
 
 ---
 
-
-# 蜜蜂工作流{#bees-workflow}
+# 蜜蜂工作流 {#bees-workflow}
 
 **摘要：**
 
-* **策略**  — 创建一个DRM蜜蜂感知策略，该策略指示使用此策略打包的所有内容都需要BEES。
-* **打包**  — 使用BEES-aware DRM策略打包内容。
-* **身份验证**  — 验证您的客户端设备，并使用Primetime DRM API或Primetime API，将此令牌与Primetime Cloud DRM关联。这样做将导致客户端设备将此身份验证令牌连同所有许可证请求一起发送到Primetime Cloud DRM。 Primetime Cloud DRM将不会处理此问题，而是会将其作为不透明的Blob传递给您的BEES端点进行处理。
-* **许可**  — 请求受保护内容的许可。客户端设备将在调用中自动附加您之前设置的身份验证令牌。
-* **权利** - Primetime Cloud DRM将确定内容是与需要BEES的策略一起打包的。Primetime Cloud DRM将构建JSON请求以发送到BEES端点。 BEES响应者将指导Primetime Cloud DRM是否颁发许可证，以及（可选）使用哪些DRM策略。
+* **策略**  — 创建DRM蜜蜂感知策略，该策略指示使用该策略打包的所有内容都需要蜜蜂。
+* **包装**  — 使用支持蜜蜂感知的DRM策略来打包内容。
+* **身份验证**  — 验证您的客户端设备，并使用Primetime DRM API或Primetime API将此令牌与Primetime Cloud DRM关联。 这样做会导致客户端设备将此身份验证令牌连同所有许可证请求一起发送到Primetime Cloud DRM。 Primetime Cloud DRM将不会处理此事件，而是会将其作为不透明Blob传递给您的蜜蜂端点进行处理。
+* **许可**  — 请求受保护内容的许可证。 客户端设备将自动将您之前设置的身份验证令牌附加到调用中。
+* **权利** - Primetime Cloud DRM将确定内容是否与需要BEES的策略打包在一起。 Primetime Cloud DRM将构建一个JSON请求，以发送到BEES端点。 BEES响应将指示Primetime Cloud DRM是否颁发许可证，以及（可选）使用哪种DRM策略。
 
-## 策略工作流详细信息{#policy-workflow-details}
+## 策略工作流详细信息 {#policy-workflow-details}
 
-当Primetime Cloud DRM处理许可证请求时，它会解析请求中的DRM策略，以确定在显示内容之前是否需要调用后端授权服务。 如果需要BEES调用&#x200B;**,Primetime Cloud DRM将创建BEES请求，然后解析DRM策略以获取BEES请求的指定BEES URL端点。
+当Primetime Cloud DRM处理许可证请求时，它会解析请求中的DRM策略，以确定是否需要调用后端授权服务才能显示内容。 如果蜜蜂呼叫 *is* 必需，Primetime Cloud DRM将创建蜂类请求，然后解析DRM策略以获取蜂类请求的指定蜂类URL端点。
 
 应用指示BEES要求的DRM策略，在策略中指定以下两个自定义属性：
 
-    * &#39;policy.customProp.1=bees.required=&lt;true>&#39;
-    * &#39;policy.customProp.2=bees.url=&lt;url to=&quot;&quot; your=&quot;&quot; BEES=&quot;&quot; endpoint=&quot;&quot;>&#39;
+* `policy.customProp.1=bees.required=<true | false>`
+* `policy.customProp.2=bees.url=<url to your BEES endpoint>`
 
 <!--<a id="example_F617FC49A4824C0CB234C92E57D876D3"></a>-->
 
-例如，使用Primetime DRM策略管理器([!DNL AdobePolicyManager.jar])，您可以在[!DNL flashaccesstools.properties]配置文件中指定以下两个自定义属性：
+例如，使用Primetime DRM策略管理器( [!DNL AdobePolicyManager.jar])，您可以在 [!DNL flashaccesstools.properties] 配置文件：
 
 * `policy.customProp.1=bees.required=true`
 * `policy.customProp.2=bees.url=https://mybeesserver.example.com/bees`
 
 >[!NOTE]
 >
->如果您已经使用`policy.customProp.1`或`policy.customProp.2`作为其他属性，只需为较新的属性使用唯一数字。
+>如果您已在使用 `policy.customProp.1` 或 `policy.customProp.2` 对于其他资产，只需为较新的资产使用唯一编号。
 
-## 包工作流详细信息{#package-workflow-details}
+## 包工作流详细信息 {#package-workflow-details}
 
-在打包受Adobe访问保护的内容时，必须对内容应用BEES感知型DRM策略之一。
+在打包受Adobe访问保护的内容时，您必须对内容应用一种支持蜜蜂感知的DRM策略。
 
-## 身份验证工作流详细信息{#authentication-workflow-details}
+## 身份验证工作流详细信息 {#authentication-workflow-details}
 
-为了使您的BEES端点能够做出授权决策，客户端设备必须提供身份验证信息。 您可以使用您自己的客户特定身份验证令牌来完成此操作。
+为了让您的BEES端点做出授权决策，客户端设备必须提供身份验证信息。 您可以使用您自己的特定于客户的身份验证令牌来完成此操作。
 
-Primetime Cloud DRM不必了解此令牌 — 它只是将此令牌传递给您的BEES端点。 客户端设备负责创建或获取此令牌，并使用`DRMManager.setAuthenticationToken()` API设置它。
+Primetime Cloud DRM不必了解此令牌 — 它只需将此令牌传递到您的BEES端点。 客户端设备负责创建或获取此令牌，并使用 `DRMManager.setAuthenticationToken()` API。
 
-请执行以下操作，将此令牌与Primetime Cloud DRM关联，以便随许可证请求一起发送：
+请执行以下操作，将此令牌与Primetime Cloud DRM关联，以便与许可证请求一起发送：
 
-使用为Primetime Cloud DRM打包的内容的DRM元数据实例化`DRMManager`对象。
+实例化 `DRMManager` 对象。
 
-`setAuthenticationToken()`方法的工作方式是将给定字节数组与用于实例化`DRMManager`的DRM元数据中提供的许可证服务器URL关联。
+的 `setAuthenticationToken()` 方法的工作方式是将给定的字节数组与DRM元数据中提供的许可证服务器URL关联，该元数据用于实例化 `DRMManager`.
 
 ```java
 //client device acquires auth token needed by your BEES endpoint  
@@ -63,15 +62,15 @@ DRMManager mgr = new DRMManager(<DRM Metadata of CloudDRM content>);
 mgr.setAuthenticationToken(<auth token>);
 ```
 
-通过调用`.setAuthenticationToken`（参数为null）来清除令牌，随所有许可证请求一起发送令牌。
+令牌随所有许可证请求一起发送，直到通过调用清除令牌为止 `.setAuthenticationToken` 参数为null。
 
 ## 许可证工作流详细信息{#license-workflow-details}
 
-致电`mgr.loadVoucher()`从Primetime Cloud DRM请求许可证。
+通过调用，从Primetime Cloud DRM请求许可证 `mgr.loadVoucher()`.
 
 ## 授权请求和响应详细信息{#entitlement-request-and-response-details}
 
-当Primetime Cloud DRM确定内容已与BEES感知DRM策略打包时，它将构造以下JSON请求以发送到DRM策略中指定的BEES端点：
+当Primetime Cloud DRM确定内容是使用支持蜜蜂感知的DRM策略打包的时，它会构建以下JSON请求，以发送到DRM策略中指定的BEES端点：
 
 ```
 {
@@ -153,4 +152,4 @@ BEES端点需要以下响应：
 }
 ```
 
-Primetime Cloud DRM使用响应来确定是否应向请求设备颁发许可证，以及是否应将新DRM策略替换为许可证生成过程。 如果`isAllowed`是`true`，且响应中未提供策略，则将使用内容打包期间使用的原始DRM策略生成许可证。
+Primetime Cloud DRM使用响应来确定是否应向请求设备颁发许可证，以及是否应将新的DRM策略替换为许可证生成过程。 如果 `isAllowed` is `true` 并且响应中未提供任何策略，则在内容打包期间使用的原始DRM策略将用于生成许可证。
