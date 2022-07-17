@@ -4,9 +4,9 @@ description: 适用于Android的TVSDK 3.15发行说明介绍了TVSDK Android 3.1
 products: SG_PRIMETIME
 topic-tags: release-notes
 exl-id: cd2c64ef-dd42-4dc2-805f-eeb64a8a53d9
-source-git-commit: f266b93281a290a8c2f19ac6869287d6480f49e5
+source-git-commit: 3b051c3188c81673129e12dfeb573aaf85c15c97
 workflow-type: tm+mt
-source-wordcount: '5540'
+source-wordcount: '5516'
 ht-degree: 0%
 
 ---
@@ -274,7 +274,7 @@ Android 2.5.1中发布的重要新增功能。
 
 * **部分区段下载/子分段 —** TVSDK会进一步减小每个片段的大小，以便尽快开始播放。 其片段必须每两秒有一个关键帧。
 
-* **延迟广告解析 —** TVSDK不会在开始播放之前等待非前置广告的分辨率，从而缩短启动时间。 在解析所有广告之前，仍不允许使用搜寻和特技播放等API。 这适用于与CSAI一起使用的VOD流。 在广告解决完成之前，不允许执行搜寻和快进等操作。 对于实时流，无法在实时事件期间为广告分辨率启用此功能。
+* **延迟广告解析 —** TVSDK在开始播放之前不会等待非前置广告的分辨率，从而缩短启动时间。 在解决所有广告之前，仍不允许使用搜寻和特技播放等API。 这适用于与CSAI一起使用的VOD流。 在广告解决完成之前，不允许执行搜寻和快进等操作。 对于实时流，无法在实时事件期间为广告分辨率启用此功能。
 
 * **永久性网络连接 —** 此功能允许TVSDK创建和存储永久网络连接的内部列表。 这些连接会重复用于多个请求，而不是为每个网络请求打开一个新连接，然后在此之后销毁它。 这可以提高网络代码的效率并减少延迟，从而提高播放性能。
 当TVSDK打开连接时，它会要求服务器 *保持活力* 连接。 某些服务器可能不支持此类连接，在这种情况下，TVSDK将回退到为每个请求再次建立连接。 此外，尽管永久连接默认处于打开状态，但TVSDK现在有一个配置选项，以便应用程序可以根据需要关闭永久连接。
@@ -386,7 +386,7 @@ Android 2.5.1中发布的重要新增功能。
 
 | 功能 | 内容类型 | HLS |
 |---|---|---|
-| 常规播放，启用广告 | VOD +实时 | Y |
+| 常规播放，已启用广告 | VOD +实时 | Y |
 | 启用广告的FER内容 | VOD | Y |
 | 默认广告行为 | VOD +实时 | Y |
 | VAST 2.0/3.0 | VOD +实时 | Y |
@@ -534,7 +534,7 @@ Android 2.5.1中发布的重要新增功能。
 
 * ZD #31533 — 在应用程序发送到后台后，在Android上播放音频。
 
-   * 添加了 `enableAudioPlaybackInBackground` MediaPlayer的API，应使用“True”作为参数（当播放器处于PREPARED状态时）来调用该API，以便在应用程序处于后台时启用音频播放。
+   * 添加了 `enableAudioPlaybackInBackground` MediaPlayer的API，应使用“True”作为参数（当播放器处于PREPARED状态时）来调用该API，以便在应用程序处于后台时允许播放音频。
 
 **Android TVSDK 2.5.5**
 
@@ -544,7 +544,7 @@ Android 2.5.1中发布的重要新增功能。
 
 * ZD #26614 — 紧急 — 第三方广告投放/程序化 — 无法提供展示次数。
 
-   * 通过处理XML解析中的问题(当“空格”位于“等于”符号之前，例如 &lt;vast version=&quot;2.0&quot;>
+   * 通过处理XML解析中的情况，增强了之前的修复，当“空格”位于“等号”(如 &lt;vast version=&quot;2.0&quot;>
 
 * ZD #29296 - Android:向CRS请求添加AdSystem和创作ID。
 
@@ -582,7 +582,7 @@ Android 2.5.1中发布的重要新增功能。
 
    * 增强了修复功能，以包含最新固件更新
 
-* ZD #34793 - TVSDK 2.5.x在VideoEngine假定auditudeSettings可用而未可用时，用于在某些情况下与自定义内容解析程序崩溃。
+* ZD #34793 - TVSDK 2.5.x用于在VideoEngine假定auditudeSettings可用而未可用时，与自定义内容解析程序一起崩溃。
 
    * 由于对空共享指针(auditudeSettings)的函数调用，导致崩溃。 在VideoEngineTimeline::placeToSourceTimeline()中添加了条件检查，以确保在对该对象调用任何内容之前，可使用auditudeSettings。
 
@@ -622,7 +622,7 @@ Android 2.5.1中发布的重要新增功能。
    现在运行正常，并且setNetworkDownVerificationUrl可按预期工作。
 * Zendesk#32369 — 隐藏式字幕显示不同的颜色垃圾或伪像。
 
-   CC故障问题已在最新内部版本中修复
+   CC故障的问题已在最新版本中修复
 * Zendesk#25590 — 增强：TVSDK Cookie存储(从C++到JAVA)
 
    Android TVSDK现在支持在JAVA层（存储在Android应用程序的CookieStore中）和C++ TVSDK层之间访问Cookie。
@@ -751,7 +751,7 @@ Android 2.5.1中发布的重要新增功能。
 * 搜寻“延迟绑定音频”内容时，播放可能卡住。
 * 对于实时内容，webVTT字幕可能会间歇性地变得不同步。
 * 在从广告时间传出后，可以间歇性地快速播放少数帧。
-* 有时，即使播放了广告，三步包装器广告中断也会引发303错误。
+* 有时，即使播放广告，三步包装器广告中断也会引发303错误。
 
 **Android TVSDK 2.5.2**
 
@@ -772,10 +772,10 @@ Android 2.5.1中发布的重要新增功能。
 
 ## 有用资源 {#helpful-resources}
 
-* [系统要求](https://docs.adobe.com/content/help/en/primetime/programming/tvsdk-3x-android-prog/introduction/android-3x-requirements.html)
-* [适用于Android的TVSDK 3.10程序员指南](https://docs.adobe.com/content/help/en/primetime/programming/tvsdk-3x-android-prog/introduction/android-3x-overview-prod-audience-guide.html)
+* [系统要求](/help/programming/tvsdk-3x-android-prog/android-3x-introduction/android-3x-requirements.md)
+* [适用于Android的TVSDK 3.10程序员指南](/help/programming/tvsdk-3x-android-prog/android-3x-introduction/overview-prod-audience-guide/android-3x-overview-prod-audience-guide.md)
 * [TVSDK Android Javadoc for API参考](https://help.adobe.com/en_US/primetime/api/psdk/javadoc3.5/index.html)
 * [TVSDK Android C++ API文档](https://help.adobe.com/en_US/primetime/api/psdk/cpp_3.5/namespaces.html)  — 每个Java类都具有相应的C++类，并且C++文档包含比Javaoc更多的说明性材料，因此请参阅C++文档，以更深入地了解Java API。
-* [适用于Android(Java)的TVSDK 1.4到2.5迁移指南](https://helpx.adobe.com/primetime/migration-guides/tvsdk-14-25-android.html)
+* [适用于Android的TVSDK 1.4到2.5(Java)迁移指南](https://helpx.adobe.com/primetime/migration-guides/tvsdk-14-25-android.html)
 * 有关处理屏幕开启/关闭方案的信息，请参阅 `Application_Changes_for_Screen_On_Off.pdf` 文件。
 * 请参阅以下完整帮助文档： [Adobe Primetime学习与支持](https://helpx.adobe.com/support/primetime.html) 页面。

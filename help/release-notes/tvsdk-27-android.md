@@ -4,9 +4,9 @@ description: 适用于Android™的TVSDK 2.7发行说明介绍了TVSDK Android�
 products: SG_PRIMETIME
 topic-tags: release-notes
 exl-id: d64f0ef2-60a9-43a1-b2f9-44764a570538
-source-git-commit: 3891ea44775899c1e0d43c4ac74bbc4b07d7962e
+source-git-commit: 59ea8008c828f3bdf275fea5cc2a59c37b0c4845
 workflow-type: tm+mt
-source-wordcount: '4070'
+source-wordcount: '4037'
 ht-degree: 0%
 
 ---
@@ -335,7 +335,7 @@ TVSDK会自动收集量度，并遵守客户销售合同，以生成计费所需
 * Zendesk#32670 — 播放器没有故障切换到冗余播放列表
    * 现在运行正常，并且setNetworkDownVerificationUrl可按预期工作。
 * Zendesk#32369 — 隐藏式字幕显示不同的颜色垃圾或伪像。
-   * CC故障问题已在最新内部版本中修复
+   * CC故障的问题已在最新版本中修复
 * Zendesk#25590 — 增强：TVSDK Cookie存储(从C++到Java™)
    * Android™ TVSDK现在支持在Java™层(存储在Android™应用程序的CookieStore中)和C++ TVSDK层之间访问Cookie。
 * Zendesk#32252 - TVSDK_Android_2.5.2.12似乎没有修复PTPLAY-20269。此问题已修复并集成到2.5.2分支。
@@ -425,10 +425,10 @@ Adobe Primetime版本字符串已添加到系统用户代理。
 
 ## 有用资源 {#helpful-resources}
 
-* [系统要求](https://experienceleague.adobe.com/docs/primetime/programming/tvsdk-2-7-for-android/overview/c-psdk-android-2.7-requirements.html?lang=en)
-* [适用于Android™的TVSDK 2.7程序员指南](https://experienceleague.adobe.com/docs/primetime/programming/tvsdk-2-7-for-android/overview/c-psdk-android-2.7-overview-prod-audience-guide.html?lang=en)
+* [系统要求](/help/programming/tvsdk-2.7-for-android/c-psdk-android-2.7-requirements.md)
+* [适用于Android™的TVSDK 2.7程序员指南](/help/programming/tvsdk-2.7-for-android/overview-prod-audience-guide/c-psdk-android-2.7-overview-prod-audience-guide.md)
 * [TVSDK Android™ Javadoc for API参考](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_2.7/index.html)
 * [TVSDK Android™ C++ API文档](https://help.adobe.com/en_US/primetime/api/psdk/cpp/namespaces.html)  — 每个Java™类都有相应的C++类，而C++文档包含比Java™文档更多的解释性材料，因此请参阅C++文档，以深入了解Java™ API。
-* [适用于Android™(Java™)的TVSDK 1.4到2.5迁移指南](https://experienceleague.adobe.com/docs/primetime/migration/tvsdk-14-25-android.html?lang=en)
+* [适用于Android™(Java™)的TVSDK 1.4到2.5迁移指南](/help/migration-guides/tvsdk-14-25-android.md)
 * 有关处理屏幕开启/关闭方案的信息，请参阅 `Application_Changes_for_Screen_On_Off.pdf` 文件。
 * 请参阅以下完整帮助文档： [Adobe Primetime学习与支持](https://experienceleague.adobe.com/docs/primetime.html) 页面。
