@@ -1,13 +1,13 @@
 ---
 title: 帐户IQ功能板
-description: '功能板通过分析大量订阅者数据来帮助实现密码共享实例的精准定位。  '
-source-git-commit: f6f1769d86a98d3a545bf986e41e9ba2252a36ff
+description: 功能板通过分析大量订阅者数据来帮助实现密码共享实例的精准定位。
+exl-id: 616da2a5-c9fe-40ea-90cf-f565bc13e764
+source-git-commit: 8e041e6bb3b0f607eb421be002904e3a8a447f52
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: '499'
 ht-degree: 0%
 
 ---
-
 
 # 功能板 {#dashboard}
 
@@ -15,13 +15,15 @@ ht-degree: 0%
 
 ![帐户IQ仪表板](assets/dashboard-capture.png)
 
-## 汇总共享分数 {#aggregated-sharing}
+## 平均共享分数 — 当前区段的汇总 {#aggregated-sharing}
 
 “汇总共享分数”面板提供了一个顶行读出，用于总结在帐户和流量方面共享的数量和影响。
 
 这些值有助于您了解订阅者共享凭据的规模，从而可以衡量是否需要对其执行操作。
 
 ![](assets/aggregate-sharing-score.png)
+
+![](assets/aggregate-sharing-score.svg)
 
 以下三个量度是“聚合共享得分”的组件。
 
