@@ -2,9 +2,9 @@
 title: 帐户IQ功能板
 description: 功能板通过分析大量订阅者数据来帮助实现密码共享实例的精准定位。
 exl-id: 616da2a5-c9fe-40ea-90cf-f565bc13e764
-source-git-commit: 8e041e6bb3b0f607eb421be002904e3a8a447f52
+source-git-commit: 2ae03c61344b878c9cac268ad6e7e91b08810488
 workflow-type: tm+mt
-source-wordcount: '499'
+source-wordcount: '563'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,9 @@ ht-degree: 0%
 
 ![帐户IQ仪表板](assets/dashboard-capture.png)
 
+
+*图：功能板*
+
 ## 平均共享分数 — 当前区段的汇总 {#aggregated-sharing}
 
 “汇总共享分数”面板提供了一个顶行读出，用于总结在帐户和流量方面共享的数量和影响。
@@ -23,9 +26,12 @@ ht-degree: 0%
 
 ![](assets/aggregate-sharing-score.png)
 
+
+*图：“平均共享分数”面板 — 当前区段的汇总*
+
 ![](assets/aggregate-sharing-score.svg)
 
-以下三个量度是“聚合共享得分”的组件。
+以下三个量度是“平均共享得分”的组件。
 
 ### 共享级别 {#sharing-level}
 
@@ -34,6 +40,9 @@ ht-degree: 0%
 根据在所选时间范围内从一个所选程序员频道流传输的一组所选MVPD中每个帐户的共享概率的平均值计算的值。
 
 ![](assets/sharing-level.png)
+
+
+*图：共享级别*
 
 趋势指示器显示中量度值与上一时间范围相比的百分比变化。
 
@@ -45,6 +54,9 @@ ht-degree: 0%
 
 ![](assets/usage-4mshared-accounts.png)
 
+
+*图：从共享帐户使用*
+
 ### 总体共享分数 {#overall-sharing-score}
 
 整体共享分数是共享分数的组合，包括“共享级别”和“从共享帐户使用z”。
@@ -52,6 +64,9 @@ ht-degree: 0%
 与行业相比，它提供的价值旨在反映共享的相对影响。 其用途与信用评分类似，用单个数字概述情况。 但在这种情况下，数字越高，潜在危害就越大。
 
 ![](assets/overall-sharing-score.png)
+
+
+*图：总体共享分数*
 
 <!--### MVPDs in segment {#mvpd-in-segment}
 
@@ -69,11 +84,17 @@ It is a table of risk indices and accounts totals for the top MVPDs ranked by ov
 
 ![](assets/top-mvpds.png)
 
+
+*图：按整体得分划分的区段中排名最前的MVPD*
+
 ### 按渠道和MVPD共享分数 {#sharin-score-by-channels-and-mvpds}
 
 此表提供了在当前区段中为MVPD共享所选渠道分数的比较视图。
 
 ![](assets/sharing-scores-by-channels-mvpds.png)
+
+
+*图：按渠道和MVPD共享分数*
 
 ### 帐户共享概率 {#accounts-sharing-probability}
 
@@ -86,8 +107,15 @@ It is a table of risk indices and accounts totals for the top MVPDs ranked by ov
 
 ![](assets/dashboard-ac-sharing-prob.png)
 
+
+*图：不同共享概率范围内订阅者帐户的数量和百分比*
+
 ### 通过共享概率级别确定的帐户数量和使用情况 {#number-of-accounts-usage-sharing-probability}
 
 此面板提供了表格视图，其中将帐户划分为从非常低(0-20%)到非常高(80=100%)的共享概率五分位数范围，每个五分位数的共享帐户相关使用情况。
 
 ![](assets/no-acc-usage-prob-level.png)
+
+
+*图：在各种概率范围中出现的帐户数、趋势和使用情况*
+
