@@ -2,7 +2,7 @@
 title: 帐户IQ功能板
 description: 功能板通过分析大量订阅者数据来帮助实现密码共享实例的精准定位。
 exl-id: 616da2a5-c9fe-40ea-90cf-f565bc13e764
-source-git-commit: 2ae03c61344b878c9cac268ad6e7e91b08810488
+source-git-commit: cc8b34705d9ede95c5e5f25cab1b86a772abec02
 workflow-type: tm+mt
 source-wordcount: '563'
 ht-degree: 0%
@@ -28,8 +28,6 @@ ht-degree: 0%
 
 
 *图：“平均共享分数”面板 — 当前区段的汇总*
-
-![](assets/aggregate-sharing-score.svg)
 
 以下三个量度是“平均共享得分”的组件。
 
