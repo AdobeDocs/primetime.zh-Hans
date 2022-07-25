@@ -3,10 +3,10 @@ title: Primetime 发行说明
 description: Primetime 发行说明
 copied-description: true
 exl-id: 29087a3e-f16e-4510-8d3a-ed2229700899
-source-git-commit: 9f218bddddeab52480bbdcd41e8f0e6fd0fab0f8
+source-git-commit: 037c65b28d3c4d7f09bde89e3a9d4bae86f6f867
 workflow-type: tm+mt
-source-wordcount: '301'
-ht-degree: 32%
+source-wordcount: '298'
+ht-degree: 33%
 
 ---
 
@@ -14,9 +14,9 @@ ht-degree: 32%
 
 欢迎使用Adobe Primetime发行说明。 左侧导航中列出的文档提供了特定于发行版的信息、系统要求、限制、已修复问题和已知问题。
 
-## PTAI 22.6.2中的增强功能和修复
+## PTAI 22.7.1中的增强功能和修复
 
-此版本重点关注对广告性能日志记录的增强，其中包含有关CRS的可用损失和其他网络存储源的更多详细信息。
+此版本重点增强了广告性能日志记录，引入了DASH工作流的有用相关量度。
 
 ## TVSDK 3.15 Android中的修复
 

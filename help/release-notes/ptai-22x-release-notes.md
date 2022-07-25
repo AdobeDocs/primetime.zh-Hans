@@ -1,27 +1,37 @@
 ---
-title: PTAI 22.6.2发行说明
+title: PTAI 22.7.1发行说明
 description: PTAI发行说明介绍了PrimetimeAd Insertion2022年的新增功能或更改功能、已解决和已知问题。
 exl-id: 58b254b8-18b9-48ba-bd4e-378785e56af5
-source-git-commit: 9f218bddddeab52480bbdcd41e8f0e6fd0fab0f8
+source-git-commit: 037c65b28d3c4d7f09bde89e3a9d4bae86f6f867
 workflow-type: tm+mt
-source-wordcount: '276'
+source-wordcount: '302'
 ht-degree: 0%
 
 ---
 
-# PrimetimeAd Insertion22.6.2发行说明
+# PrimetimeAd Insertion22.7.1发行说明
 
 PrimetimeAd Insertion22.x.x发行说明介绍了PrimetimeAd Insertion2022年的新增功能或更改功能、已解决的问题和已知问题。
 
-## PTAI 22.6.2的新增功能
+## PTAI 22.7.1的新增功能
 
-时间：2022年6月29日，星期三，东部时间凌晨3点至6点
+时间：2022年7月20日，星期三，东部时间凌晨3点至6点
+
+* 增强了广告性能日志记录，引入了用于短划线工作流的有用相关量度。
+
+* 数据库迁移。
+
+## 以前版本中的增强功能和修复
+
+### 版本22.6.2
+
+**时间：** 2022年6月29日，星期三，东部时间凌晨3点至6点
+
+**更改**
 
 * 增强广告性能日志记录，并提供有关可用损失的更多详细信息。
 
 * CRS的其他网络存储源。
-
-## 以前版本中的增强功能和修复
 
 ### 版本22.6.1
 

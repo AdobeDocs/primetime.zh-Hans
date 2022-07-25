@@ -2,9 +2,9 @@
 title: 定义区段和时间范围
 description: 定义区段和时间范围
 exl-id: 86fe010d-3202-4ce2-b803-ff44f5538d7e
-source-git-commit: cc8b34705d9ede95c5e5f25cab1b86a772abec02
+source-git-commit: 037c65b28d3c4d7f09bde89e3a9d4bae86f6f867
 workflow-type: tm+mt
-source-wordcount: '562'
+source-wordcount: '579'
 ht-degree: 0%
 
 ---
@@ -55,8 +55,10 @@ ht-degree: 0%
 
    中的顶级列表项 **区段中的渠道** are [程序员](/help/AccountIQ/product-concepts.md#programmer-def) 公司和程序员名下的清单是他们的 [渠道](/help/AccountIQ/product-concepts.md#channel-def). 您可以在程序员下选择单个渠道，也可以选择程序员，并且该程序员下渠道的所有活动都包含在报表和图表结果中。
 
-   <!--![](assets/programmer-channels.png)
-   *Figure: Programmers and channels listed in channels selector*-->
+   ![](assets/programmer-channels.png)
+
+
+   *图：渠道选择器中列出的程序员和渠道*
 
    >[!IMPORTANT]
    >
@@ -95,7 +97,10 @@ ht-degree: 0%
 
 1. 选择 **周** 或 **月** 从 **聚合方式** 选项来设置评估的粒度。
 
-   <!--![](assets/granularity-timeframe-weekwise.png)   *Figure: Date picker to select Granularity and time frame*-->
+   ![](assets/granularity-timeframe-weekwise.png)
+
+
+   *图：用于选择粒度和时间范围的日期选取器*
 
 1. 选择粒度后，可以使用向前或向后箭头及时向前或向后移动。
 
