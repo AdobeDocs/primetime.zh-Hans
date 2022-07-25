@@ -2,7 +2,7 @@
 title: 帐户IQ功能板
 description: 功能板通过分析大量订阅者数据来帮助实现密码共享实例的精准定位。
 exl-id: 616da2a5-c9fe-40ea-90cf-f565bc13e764
-source-git-commit: cc8b34705d9ede95c5e5f25cab1b86a772abec02
+source-git-commit: 32ba300ce729eab7a6906d8fb0875e8f2bbe2d1d
 workflow-type: tm+mt
 source-wordcount: '563'
 ht-degree: 0%
@@ -110,7 +110,7 @@ It is a table of risk indices and accounts totals for the top MVPDs ranked by ov
 
 ### 通过共享概率级别确定的帐户数量和使用情况 {#number-of-accounts-usage-sharing-probability}
 
-此面板提供了表格视图，其中将帐户划分为从非常低(0-20%)到非常高(80=100%)的共享概率五分位数范围，每个五分位数的共享帐户相关使用情况。
+此面板提供了表格视图，其中将帐户划分为从非常低(0-20%)到非常高(80-100%)的共享概率五分之一，每个五分之一的帐户的相关使用来自共享帐户。
 
 ![](assets/no-acc-usage-prob-level.png)
 
