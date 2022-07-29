@@ -1,19 +1,21 @@
 ---
 title: 报表API
 description: Auditude报表API
-source-git-commit: 7f958c83a4dd481221feb4a266440b920ac7d195
+exl-id: 50eb4869-3765-4591-8c41-794b29d50044
+source-git-commit: 628544e38616715e83e0274ba26cf93302ce0e61
 workflow-type: tm+mt
-source-wordcount: '1024'
+source-wordcount: '1042'
 ht-degree: 1%
 
 ---
-
 
 # 报表API {#report-api}
 
 用户界面为客户和启用(Adobe)团队管理了角色。 客户可以访问门户，然后可以创建和编辑其配置。 用户还可以在用户界面上查看其广告展示次数的报表。
 
 API在后台运行，以便客户和管理员能够与后端基础架构进行通信。
+
+浏览 [!DNL Primetime Ad Insertion] API请参阅 [Ad Insertion触发用户界面中的API端点](https://adconfigservice-va6.cloud.adobe.io/swagger-ui/index.html#/).
 
 ## API端点 {#report-api-endpoint}
 
