@@ -2,9 +2,9 @@
 title: 帐户IQ中的操作
 description: 帐户IQ中的操作包括采取措施对订阅者帐户执行自动化和批量操作并跟踪其效果。
 exl-id: ba6bceca-221c-42db-b207-804e4b9f6d54
-source-git-commit: 40239b6715d8eab95bc2564fb19eb6832387ad3e
+source-git-commit: 5b34fbe26078ae761d61179975366505c5628c9c
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '467'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ ht-degree: 0%
 
 1. 在主“操作”页上选择操作名称。
 
-   报表以堆叠条形图的形式显示。
+   报表以堆叠列图的形式显示。
 
    ![](assets/operation-impact-report.png)
 

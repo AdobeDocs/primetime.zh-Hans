@@ -2,7 +2,7 @@
 title: 帐户IQ功能板
 description: 功能板通过分析大量订阅者数据来帮助实现密码共享实例的精准定位。
 exl-id: 616da2a5-c9fe-40ea-90cf-f565bc13e764
-source-git-commit: 7706d5fcafdcfb9c0d4cc69936681c6223b0739d
+source-git-commit: 5b34fbe26078ae761d61179975366505c5628c9c
 workflow-type: tm+mt
 source-wordcount: '0'
 ht-degree: 0%
@@ -12,10 +12,6 @@ ht-degree: 0%
 # 功能板 {#dashboard}
 
 功能板汇总和汇总了一组图表和报表中的数据，这些图表和报表旨在对帐户共享的范围和影响进行高级概述。 它提供了一个页面，其中包含来自帐户IQ的主要报表和量度。
-
-<table><tr><th>
-
-+++面向程序员的功能板
 
 ![帐户IQ仪表板](assets/dashboard-capture.png)
 
@@ -121,29 +117,7 @@ It is a table of risk indices and accounts totals for the top MVPDs ranked by ov
 
 *图：在各种概率范围中出现的帐户数、趋势和使用情况*
 
-+++
 
-</th><th>
-
-+++ MVPD的仪表板MVPD用户的仪表板与程序员用户的仪表板略有不同。
-
-![](assets/dashboard-mvpd.png)
-
-
-*图：MVPD的功能板*
-
-## 按整体共享分数划分的区段内顶级程序员 {#}
-
-![](assets/top-programmers-panel.png)
-
-
-*图：显示区段中排名最前的程序员的面板*
-+++
-
-</th>
-</tr>
-
-</table>
 
 <!--
 +++Dashboard for programmers
