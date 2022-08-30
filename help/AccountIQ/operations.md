@@ -1,13 +1,13 @@
 ---
 title: 帐户IQ中的操作
 description: 帐户IQ中的操作包括采取措施对订阅者帐户执行自动化和批量操作并跟踪其效果。
-source-git-commit: e61cca77bad4f01de871e300dc99d7368c283f2a
+exl-id: ba6bceca-221c-42db-b207-804e4b9f6d54
+source-git-commit: 40239b6715d8eab95bc2564fb19eb6832387ad3e
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
-
 
 # 操作 {#operations-tab-next-steps}
 
@@ -61,13 +61,24 @@ ht-degree: 0%
 
    *图：操作报告，以查看操作的影响*
 
-   x轴绘制评估周期，y轴绘制变量以衡量操作的影响。
+   X轴表示评估期，Y轴表示操作的影响（以评估期段内区段中的帐户数衡量）。 每个杆分成三部分。
 
-   例如，在上图中，y轴上的变量是帐户数。 通过查看该图，您可以比较在操作区段中的帐户数与在特定时间（如操作评估期的第2周）操作区段外的帐户数。 因此，您可以分析评估期间内，操作区段内和区段外的帐户数量有何变化。
+   * 其中一部分表示仍满足操作区段标准的帐户数。
 
-   因此，如果您的操作要向有疑心的帐户发送警告电子邮件，并且操作区段中的帐户是共享概率超过90且使用5个以上设备来流内容的帐户，则在评估期开始时，区段中的帐户超过700万。 此数字在图表所示的评估时段内发生更改，从而指示操作的影响。 根据评估结果，您可以对怀疑帐户采取补救措施，或继续操作，或调整策略以获得更好的结果以限制凭据共享。
+   * 另一部分表示该期间最初位于区段中但不再满足操作区段标准的活动帐户数量。
 
-2. 要关闭报表并返回到主“操作”页面，请选择 **操作** 选项 **操作** 中。
+   * 第三部分是该期间未活动的帐户。
+   >[!NOTE]
+   >
+   >第一个栏表示在评估期开始时满足操作区段条件的帐户数。
+
+   随着时间的推移，该图表通过指示已相对于原始标准（例如，共享概率超过90并使用5个以上设备）更改其行为或已变为非活动状态的帐户数，来显示操作（通过操作）的效果。
+
+<!--For example, in the above image the variable on the y-axis is number of accounts. Looking at the graph you can compare the number of accounts that are in the operations' segment versus the number of accounts that are outside the operations segment at a particular time (such as week 2nd of the operations evaluation period). Therefore, you can analyze how over the evaluation period do number of accounts vary within the operation segment and outside the segment.
+
+So, if your operation was to send out warning emails to suspecting accounts, and accounts in operations segment were those with sharing probability more than 90 and using more than 5 devices to stream content, then in the beginning of the evaluation period accounts in segment are more than 17 thousand. This number changes over the evaluation period as shown in the graph, thereby indicating the impact of operation. Based on the evaluation, you can take remedial measures on suspecting accounts, or continue with the operation, or adjust your strategy for better outcomes to curb credential sharing.-->
+
+1. 要关闭报表并返回到主“操作”页面，请选择 **操作** 选项 **操作** 中。
 
 <!--
 
