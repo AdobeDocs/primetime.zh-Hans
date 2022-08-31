@@ -2,9 +2,9 @@
 title: 帐户IQ功能板
 description: 功能板通过分析大量订阅者数据来帮助实现密码共享实例的精准定位。
 exl-id: 616da2a5-c9fe-40ea-90cf-f565bc13e764
-source-git-commit: 5b34fbe26078ae761d61179975366505c5628c9c
+source-git-commit: a015cf059c599c043f03b981eed640fbdbffc27b
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '563'
 ht-degree: 0%
 
 ---
@@ -72,7 +72,7 @@ It is a table of risk indices and accounts totals for the top MVPDs ranked by ov
 
 ![](assets/mvpds-in-segment.png)-->
 
-### 全行业MVPD整体共享分数 {#top-mvpds}
+## 全行业MVPD整体共享分数 {#top-mvpds}
 
 此表提供了区段中MVPD的不同汇总共享得分的比较视图。
 
@@ -85,7 +85,7 @@ It is a table of risk indices and accounts totals for the top MVPDs ranked by ov
 
 *图：按整体得分划分的区段中排名最前的MVPD*
 
-### 按渠道和MVPD共享分数 {#sharin-score-by-channels-and-mvpds}
+## 按渠道和MVPD共享分数 {#sharin-score-by-channels-and-mvpds}
 
 此表提供了在当前区段中为MVPD共享所选渠道分数的比较视图。
 
@@ -94,7 +94,7 @@ It is a table of risk indices and accounts totals for the top MVPDs ranked by ov
 
 *图：按渠道和MVPD共享分数*
 
-### 帐户共享概率 {#accounts-sharing-probability}
+## 帐户共享概率 {#accounts-sharing-probability}
 
 此图表将分为几类：分享概率五倍数的范围，从非常低(0-20%)到非常高(80=100%)。
 
@@ -108,7 +108,7 @@ It is a table of risk indices and accounts totals for the top MVPDs ranked by ov
 
 *图：不同共享概率范围内订阅者帐户的数量和百分比*
 
-### 通过共享概率级别确定的帐户数量和使用情况 {#number-of-accounts-usage-sharing-probability}
+## 通过共享概率级别确定的帐户数量和使用情况 {#number-of-accounts-usage-sharing-probability}
 
 此面板提供了表格视图，其中将帐户划分为从非常低(0-20%)到非常高(80-100%)的共享概率五分之一，每个五分之一的帐户的相关使用来自共享帐户。
 
