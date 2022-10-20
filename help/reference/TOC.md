@@ -6,8 +6,8 @@ user-guide-description: 提供有关 TVSDK 函数、数据结构和其他编程�
 user-guide-url: /content/en/primetime/reference/api-references.html
 source-git-commit: 95626ebde981d1996652a67bc9e0cea05f24aa6d
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '20'
+ht-degree: 75%
 
 ---
 

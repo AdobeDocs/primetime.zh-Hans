@@ -5,8 +5,8 @@ user-guide-title: Primetime 引用实施帮助
 user-guide-description: 帮助理解 TVSDK 并修改功能管理器以自定义您的个人播放器。
 source-git-commit: 95626ebde981d1996652a67bc9e0cea05f24aa6d
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '246'
+ht-degree: 7%
 
 ---
 

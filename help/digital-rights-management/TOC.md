@@ -5,7 +5,7 @@ user-guide-title: Primetime Digital Rights Management 帮助
 user-guide-description: 帮助您进一步了解 Digital Rights Management (DRM) 中的各种用户场景。
 source-git-commit: 95626ebde981d1996652a67bc9e0cea05f24aa6d
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '2215'
 ht-degree: 0%
 
 ---
