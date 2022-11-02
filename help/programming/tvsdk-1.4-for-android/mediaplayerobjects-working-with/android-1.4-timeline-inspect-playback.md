@@ -1,35 +1,34 @@
 ---
-description: 您可以获取与TVSDK正在播放的当前选定项目相关联的时间轴的描述。 当应用程序显示自定义划动栏控件时，此选项最有用。
+description: 您可以获取与TVSDK正在播放的当前选定项目关联的时间轴描述。 当您的应用程序显示自定义推移栏控件时，这非常有用，在该控件中可识别与广告内容对应的内容部分。
 title: Inspect播放时间轴
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: af373f1e-ed5b-40a9-a91e-9eb0e4a181de
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
-source-wordcount: '239'
+source-wordcount: '237'
 ht-degree: 0%
 
 ---
 
-
 # Inspect播放时间轴{#inspect-the-playback-timeline}
 
-您可以获取与TVSDK正在播放的当前选定项目相关联的时间轴的描述。 当应用程序显示自定义划动栏控件时，此选项最有用。
+您可以获取与TVSDK正在播放的当前选定项目关联的时间轴描述。 当您的应用程序显示自定义推移栏控件时，这非常有用，在该控件中可识别与广告内容对应的内容部分。
 
-下面是一个示例实现，如下面的屏幕截图所示。  ![](assets/inspect-playback.jpg){width=&quot;368.641pt&quot;}
+以下是一个实施示例，如以下屏幕快照中所示。  ![](assets/inspect-playback.jpg){width="368.641pt"}
 
-1. 使用`getTimeline`方法访问`MediaPlayer`中的`Timeline`对象。
+1. 访问 `Timeline` 对象 `MediaPlayer` 使用 `getTimeline` 方法。
 
-   `Timeline`类封装与时间轴内容相关的信息，该时间轴内容与当前由`MediaPlayer`实例加载的媒体项关联。 `Timeline`类提供对基础时间轴的只读视图的访问。 `Timeline`类提供getter方法，该方法通过`TimelineMarker`对象的列表提供迭代器。
+   的 `Timeline` 类封装与时间轴内容相关的信息，该时间轴内容与当前由加载的媒体项目相关联 `MediaPlayer` 实例。 的 `Timeline` 类提供对基础时间轴的只读视图的访问权限。 的 `Timeline` 类提供getter方法，该方法通过 `TimelineMarker` 对象。
 
-1. 遍历`TimelineMarkers`的列表，并使用返回的信息来实现时间轴。
+1. 遍历 `TimelineMarkers` 并使用返回的信息来实施时间轴。
 
-       “TimelineMarker”对象包含两条信息：
+       “时间轴标记”对象包含两条信息：
    
    * 标记在时间轴上的位置（以毫秒为单位）
    * 时间轴上标记的持续时间（以毫秒为单位）
 
-1. 实现监听器回调接口`MediaPlayer.PlaybackEventListener.onTimelineUpdated`并将其注册到`Timeline`对象。
+1. 实施监听程序回调接口 `MediaPlayer.PlaybackEventListener.onTimelineUpdated` 并在 `Timeline` 对象。
 
-   `Timeline`对象可以通过调用`OnTimelineUpdated`侦听器来通知应用程序在播放时间轴中可能发生的更改。
+   的 `Timeline` 对象可以通过调用 `OnTimelineUpdated` 侦听器。
 
 ```java
 // access the timeline object 
@@ -44,4 +43,3 @@ while (iterator.hasNext()) {
    long duration = marker.getDuration(); 
 }
 ```
-

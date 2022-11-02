@@ -1,21 +1,19 @@
 ---
-description: 您可以获取与当前选定项目（由浏览器TVSDK播放）关联的时间轴的描述。 当应用程序显示自定义划动栏控件时，此说明很有用，在该控件中可识别与广告内容对应的内容部分。
+description: 您可以获取与浏览器TVSDK正在播放的当前选定项目关联的时间轴描述。 当您的应用程序显示一个自定义推移栏控件，在该控件中标识了与广告内容对应的内容部分时，此描述非常有用。
 title: Inspect播放时间轴
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 729ae345-378e-4771-a31b-375872e94262
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
-source-wordcount: '109'
+source-wordcount: '107'
 ht-degree: 0%
 
 ---
 
-
 # Inspect播放时间轴{#inspect-the-playback-timeline}
 
-您可以获取与当前选定项目（由浏览器TVSDK播放）关联的时间轴的描述。 当应用程序显示自定义划动栏控件时，此说明很有用，在该控件中可识别与广告内容对应的内容部分。
+您可以获取与浏览器TVSDK正在播放的当前选定项目关联的时间轴描述。 当您的应用程序显示一个自定义推移栏控件，在该控件中标识了与广告内容对应的内容部分时，此描述非常有用。
 
 以下是实施示例：
 <!--<a id="fig_9CB8AF44F122405C9B78006ADC10F5B1"></a>-->
 
-![](assets/timeline.png){width=&quot;676pt&quot;}
-
+![](assets/timeline.png){width="676pt"}
