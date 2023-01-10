@@ -4,8 +4,8 @@ audience: end-user
 user-guide-title: Primetime Ad Insertion 帮助
 source-git-commit: 2b8aa2d4d20dac0f6f8467043dd2e55a88e9e9f1
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '176'
+ht-degree: 4%
 
 ---
 
