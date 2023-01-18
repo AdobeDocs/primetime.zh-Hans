@@ -2,9 +2,9 @@
 title: 定义区段和时间范围
 description: 定义区段和时间范围
 exl-id: 86fe010d-3202-4ce2-b803-ff44f5538d7e
-source-git-commit: 037c65b28d3c4d7f09bde89e3a9d4bae86f6f867
+source-git-commit: c17fb003d8c8103aac36696f696c9e3c7bb83c4f
 workflow-type: tm+mt
-source-wordcount: '579'
+source-wordcount: '569'
 ht-degree: 0%
 
 ---
@@ -80,10 +80,6 @@ ht-degree: 0%
 * 选择 **删除** 图标(![删除图标](assets/remove-icon.png))的名称以及区段选择器下方显示的渠道。
 
 * 您还可以使用 **清除选择** 删除之前选择的所有MVPD或频道。
-
-![](assets/segment-panel-selection1.png)
-
-*图：区段和时间范围面板中的选定MVPD和渠道*
 
 ![](assets/segment-panel-selection.png)
 

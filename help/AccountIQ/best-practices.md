@@ -1,13 +1,13 @@
 ---
 title: 最佳实践
 description: 请阅读并了解如何更好地使用帐户IQ工具。
-source-git-commit: 3ee1620dad552c76545f5441ea8530a45143fc4b
+exl-id: 55901f5d-d9c1-4ee5-9349-afa28445b324
+source-git-commit: dcd89849937f4893705423465be4003948739eeb
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 0%
 
 ---
-
 
 # 最佳实践 {#aiq-best-practices}
 
@@ -28,6 +28,7 @@ ht-degree: 0%
 ## 执行目标增量操作 {#incremental-targeted-action}
 
 对于定义的目标区段，请采取措施。 从小到细，定义明确，您可以降低无意后果的风险，并更好地了解结果。 无论您在路径上的哪个位置，都始终可以优化或扩展操作的目标。
+
 小规模启动并加大力度是一种审慎的做法。 使用之前识别的区段，并针对特定目标采取操作（作为实验）。
 
 使用操作工具定义目标区段和操作时间范围。 这样，您就可以在下一阶段跟踪效果。
@@ -98,7 +99,7 @@ How many additional ads were viewed?
 
 Did the number of borrowers decrease?
 
-Account IQ’s sophisticated machine learning based models help you analyze and measure the impacts of your experiments (or actions).
+Account IQ's sophisticated machine learning based models help you analyze and measure the impacts of your experiments (or actions).
 
 Improve and repeat
 Based on the outcomes of your experiments and targeted actions on small groups of users, you can expand the reach of your strategies to rest of the user segment or reset the strategy and audience to act on.

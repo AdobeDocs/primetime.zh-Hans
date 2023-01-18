@@ -1,13 +1,13 @@
 ---
-title: '共享帐户报表 '
+title: 共享帐户报表
 description: 共享帐户报表
-source-git-commit: ead505dfa3e6569b7e349fa63170e5f8d90d759b
+exl-id: 16c5ded1-2a95-4373-8b90-b445131f333a
+source-git-commit: dd1001d94e32a1a8b5346ff97b0f6cb7d244dcf2
 workflow-type: tm+mt
-source-wordcount: '461'
+source-wordcount: '458'
 ht-degree: 0%
 
 ---
-
 
 # 共享帐户报表 {#shared-accounts-reports}
 
@@ -53,7 +53,7 @@ ht-degree: 0%
 
 ![](assets/threshold-selector-shared-accounts.png)
 
-选择阈值后，该面板会显示在区段中选定MVPD的所有订阅者帐户中的帐户百分比（和帐户数）。
+选择阈值后，面板会显示选定区段中所有订阅者帐户的帐户百分比（和帐户数）。
 
 ## 区段 — 在总请求中播放请求 {#play-request-out-total}
 

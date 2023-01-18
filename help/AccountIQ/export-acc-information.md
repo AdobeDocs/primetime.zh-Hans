@@ -1,17 +1,17 @@
 ---
 title: 导出共享分数较高的帐户的信息
 description: 导出共享分数较高的帐户的信息。
-source-git-commit: 17a44bde5cf320f519cc537d37df0fe823cf51a6
+exl-id: df41ddd2-fde3-4861-abd4-6e32f0be9ea5
+source-git-commit: dcd89849937f4893705423465be4003948739eeb
 workflow-type: tm+mt
-source-wordcount: '752'
+source-wordcount: '727'
 ht-degree: 1%
 
 ---
 
-
 # 导出共享分数较高的帐户的信息 {#export-account-info-high-score}
 
-帐户IQ允许您根据帐户的IQ导出前1000个订阅者帐户的帐户共享详细信息 [共享概率](/help/AccountIQ/product-concepts.md#account-sharing-probability-def). 导出的CSV文件中的数据按用户帐户(在 [区段](/help/AccountIQ/product-concepts.md#segment-def)，对于 [指定时间范围](/help/AccountIQ/product-concepts.md#time-frame-def).
+帐户IQ允许您根据帐户的IQ导出前1000个订阅者帐户的帐户共享详细信息 [共享概率](/help/AccountIQ/product-concepts.md#account-sharing-probability-def). 导出的CSV文件中的数据按 [区段](/help/AccountIQ/product-concepts.md#segment-def)，对于 [指定时间范围](/help/AccountIQ/product-concepts.md#time-frame-def).
 
 可在 [一般使用情况报表](/help/AccountIQ/general-usage-reports.md) 和 [共享帐户报表](/help/AccountIQ/shared-acc-reports.md) 页面。
 
@@ -23,13 +23,7 @@ ht-degree: 1%
 
 要导出订阅者的帐户共享信息，请执行以下操作：
 
-1. 从区段选择器中指定一个区段。 要选择区段，请执行以下操作：
-
-   1. 从中选择所需的MVPD **区段中的MVPD** 选项。
-
-   1. 从中选择所需的渠道 **区段中的渠道** 选项。
-
-   1. 选择时间范围 **粒度和时间范围** 选项查看该报表。
+1. 按照 [如何定义区段和选择时间范围](/help/AccountIQ/howto-select-segment-timeframe.md) 从 [区段和时间范围](/help/AccountIQ/segments-timeframe.md) 的上界。
 
 1. 选择 **导出前1000个帐户** 用于导出共享概率最高的1000个订阅者的帐户信息的选项。
 
@@ -105,13 +99,13 @@ ht-degree: 1%
 
 MVPD授权流或授予（访问内容）该帐户的次数。
 
->[!NOTE]
->
->的 **#身份验证Z OK** 与 **播放请求数**;它比 **播放请求数** 因为Adobe会缓存MVPD的授权时间通常为24小时。
-
 **播放请求数**
 
 时间段内的实际流数量。
+
+>[!NOTE]
+>
+>**#身份验证Z OK** 通常小于 **播放请求数** 因为Adobe会缓存来自MVPD的授权长达24小时。 此列不适用于MVPD。
 
 **#渠道**
 

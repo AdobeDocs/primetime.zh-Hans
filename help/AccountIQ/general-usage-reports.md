@@ -1,13 +1,13 @@
 ---
 title: 常规使用情况报表
 description: 常规使用情况报表
-source-git-commit: 683b5a5c1dc8dde3f546bbf4b7a09406bc018d78
+exl-id: 1272073a-61fe-47ec-aced-2e8055b6b11e
+source-git-commit: a2181a8fd7334f19b8387a31c71527d4f689ab9d
 workflow-type: tm+mt
-source-wordcount: '1241'
+source-wordcount: '1281'
 ht-degree: 0%
 
 ---
-
 
 # 常规使用情况报表 {#general-usage-reports}
 
@@ -41,7 +41,26 @@ content consumption.....-->
 
 此处的折线图可让您查看在定义的区段的选定时间范围内AuthN OK、AuthZ OK、Play Requests和Unique Subscribers值随时间的变化。
 
-![](assets/line-graph-gu.png)
++++程序员 —  **AuthN OK / AuthZ OK / Play请求/唯一订阅者**
+
+![](assets/progr-line-graph-gu.png)
+
+
+*图：针对程序员用户的AuthN OK / AuthZ OK / Play请求/唯一订阅者*
+
+
++++
+
+
++++MVPD- **AuthN OK / AuthZ OK /唯一订阅者**
+
+![](assets/mvpd-line-graph-gu.png)
+
+
+*图：MVPD用户的AuthN OK / AuthZ OK /唯一订阅者*
+
+
++++
 
 x轴显示当前时间范围内的单位，y轴表示该时段内的基本订阅者活动量度。 利用折线图，可比较MVPD订阅者和您在区段选择面板中选择的渠道的以下值：
 
@@ -57,13 +76,18 @@ x轴显示当前时间范围内的单位，y轴表示该时段内的基本订阅
 
    播放请求是播放请求的数量。 有关更多信息和定义，请参阅 [产品概念：播放请求](/help/AccountIQ/product-concepts.md#play-requests-def)
 
+   >[!NOTE]
+   >
+   >播放请求折线图不适用于MVPD用户。
+
+
 * **独特订阅者**
 
    独特订阅者是成功独特订阅者的数量。 有关更多信息和定义，请参阅 [产品概念：独特订阅者](/help/AccountIQ/product-concepts.md#unique-subscriber-def)
 
    >[!NOTE]
    >
-   >如果程序员使用AdobeTempPass（即免费预览）是区段的一部分，则独特订阅者总数还包括独特设备的数量。
+   >如果程序员使用AdobeTempPass（免费预览）是区段的一部分，则独特订阅者总数还包括独特设备数。
 
 ## 快照概述 — 超过阈值的帐户 {#snapshot-overview}
 
@@ -105,7 +129,7 @@ x轴显示当前时间范围内的单位，y轴表示该时段内的基本订阅
 
 ## 每个帐户每周（或每月）的设备数 {#devices-week-account}
 
-的 **条形图** 根据MVPD的订阅者如何使用其设备访问您渠道中的内容，提供使用行为的分析。
+的 **条形图** 根据订阅者如何使用其设备访问内容，提供使用行为的分析。
 
 x轴绘制“帐户数”，y轴绘制“设备数”。 根据您为每个帐户的设备数量设置的阈值，它将标记在一周的持续时间内从特定数量的设备消费内容的订阅者帐户的绝对数量。
 
@@ -135,7 +159,7 @@ x轴绘制“帐户数”，y轴绘制“设备数”。 根据您为每个帐�
 
 ![](assets/graph-loc-week-acc.png)
 
-定义区段（通过选择MVPD和渠道）并设置位置数量的阈值后，即可从图表中识别：
+定义区段并设置位置数的阈值后，即可从图表中识别：
 
 * 每周从（特定）x个位置访问内容的订阅者数量（和百分比）。
 
@@ -179,5 +203,5 @@ x轴绘制“帐户数”，y轴绘制“IP数”。
 
 >[!MORELIKETHIS]
 >
->* 了解如何使用“一般使用情况报表”中的过滤器，导出选定MVPD的前1000个订阅者的报表 [导出前1000个帐户](/help/AccountIQ/export-acc-information.md) 选项。
+>* 了解如何使用“一般使用情况报表”中的过滤器导出选定区段中前1000个订阅者的报表 [导出前1000个帐户](/help/AccountIQ/export-acc-information.md) 选项。
 

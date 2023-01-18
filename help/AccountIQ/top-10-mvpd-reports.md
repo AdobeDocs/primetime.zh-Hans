@@ -1,15 +1,15 @@
 ---
 title: 如何按程序员角色查看前10个MVPD的报告。
 description: 查看前10个MVPD的报表。
-source-git-commit: e61cca77bad4f01de871e300dc99d7368c283f2a
+exl-id: 76fd1af8-dd96-426b-b9c8-a356b53b491d
+source-git-commit: 5963c55d87385fbd92646bfc45a3650fb568bca5
 workflow-type: tm+mt
 source-wordcount: '565'
 ht-degree: 0%
 
 ---
 
-
-# 如何查看前10个MVPD的报表 <!--and Programmers--> {#view-top-10-mvpd-reports}
+# 查看前10个MVPD的帐户共享报表 <!--and Programmers--> {#view-top-10-mvpd-reports}
 
 帐户IQ功能可帮助您查看和分析您的前10个MVPD(在定义的 [区段](/help/AccountIQ/product-concepts.md#segmet-def))具有：
 

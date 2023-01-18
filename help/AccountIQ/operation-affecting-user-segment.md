@@ -1,13 +1,13 @@
 ---
-title: '对用户区段创建操作并跟踪效果 '
+title: 对用户区段创建操作并跟踪效果
 description: 如何创建操作以影响和跟踪对定义的用户区段的影响。
-source-git-commit: 1d6beb69470fcf6a3193b4d2f508c503d4f957f1
+exl-id: ab74f857-e178-4120-8f9c-655ec921d096
+source-git-commit: dd1001d94e32a1a8b5346ff97b0f6cb7d244dcf2
 workflow-type: tm+mt
-source-wordcount: '881'
+source-wordcount: '1010'
 ht-degree: 0%
 
 ---
-
 
 # 对用户区段创建操作 {#operation-to-track-segment}
 
@@ -34,10 +34,21 @@ ht-degree: 0%
 
 ## 操作详细信息 {#operation-details}
 
++++程序员 — 操作详细信息
+
 将新操作命名为 **操作名称** 字段。 例如，“*测试多因素身份验证对MVPD X订阅者的影响”或“限制并发监控中的流数量”或“限制MVPD D的订阅者查看20多台设备的信道“N”*&quot;
 
++++
+
++++MVPD — 操作详细信息
+
+将新操作命名为 **操作名称** 字段。 例如，“*测试多因素身份验证对频道N查看器的影响”、“在并发监控中限制流数量”或“限制20多台设备的订阅者观看频道“N”*&quot;
+
++++
 
 ## 目标区段 {#segment}
+
++++程序员 — 目标区段
 
 的 **区段** 此处定义了将由此操作操作的用户；或操作的示例组。 默认区段为 **区段** 您选择的 [区段和时间范围面板](/help/AccountIQ/howto-select-segment-timeframe.md) 在主报表或功能板页面上。
 
@@ -47,7 +58,22 @@ ht-degree: 0%
 ![](assets/operations-segment-selection.png)
 *Figure: Segment and timeframe selection on the main page*-->
 
-此区段定义受所创建操作影响的MVPD和渠道的订阅者。 例如，您的（默认）区段包括 *查看频道“N体育”的MVPD的所有用户帐户均名为“C”*.
+此区段定义将受所创建操作影响的订阅者。 例如，您选定的区段可以指定 *查看频道“N体育”的MVPD的所有用户帐户均名为“C”*.
+
++++
+
++++MVPD — 目标区段
+
+的 **区段** 此处定义了将由此操作操作的用户；或操作的示例组。 默认区段为 **区段** 您选择的 [区段和时间范围面板](/help/AccountIQ/howto-select-segment-timeframe.md) 在主报表或功能板页面上。
+
+<!--* The first segment entry in the **Segment** section, by default, shows the **segment** you selected in the step 1.
+
+* The **segment evaluation period** is the time period of analysis you selected in step 1 from **Granularity and Timeframe** option.
+![](assets/operations-segment-selection.png)
+*Figure: Segment and timeframe selection on the main page*-->
+
+此区段定义受所创建操作影响的订阅者（特定渠道的查看者）。 例如，您的（默认）区段包括 *查看频道“N体育”的所有订阅者帐户*.
++++
 
 ### 其他区段 {#additional-segmentation}
 
