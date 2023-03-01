@@ -1,30 +1,30 @@
 ---
 product: adobe primetime
 audience: end-user
-user-guide-title: Primetime Ad Insertion 帮助
+user-guide-title: PrimetimeAd Insertion帮助
 source-git-commit: 2b8aa2d4d20dac0f6f8467043dd2e55a88e9e9f1
 workflow-type: tm+mt
 source-wordcount: '176'
-ht-degree: 4%
+ht-degree: 0%
 
 ---
 
 
-# Primetime Ad Insertion 帮助 {#ad-insertion}
+# PrimetimeAd Insertion帮助 {#ad-insertion}
 
 + [Adobe PrimetimeAd Insertion](home.md)
 + PrimetimeAd Insertion公告{#announcements}
    + [公告](announcements/overview.md)
    + [发行说明](https://experienceleague.adobe.com/docs/primetime/release-notes/ptai/ptai-22x-release-notes.html)
-+ Primetime入门Ad Insertion{#get-started}
++ PrimetimeAd Insertion入门{#get-started}
    + [概述](getting-started/get-started-overview.md)
    + [准备使用PrimetimeAd Insertion](getting-started/setup-ptai.md)
-   + [集成广告服务器](getting-started/integrate-ad-server.md)
-   + [集成CDN](getting-started/integrate-cdn.md)
+   + [集成您的广告服务器](getting-started/integrate-ad-server.md)
+   + [集成您的CDN](getting-started/integrate-cdn.md)
    + [在实时/线性流中使用广告插入](getting-started/ad-insertion-live-linear-stream.md)
-   + [为VOD使用广告插入](getting-started/ad-insertion-vod.md)
+   + [使用广告插入进行VOD](getting-started/ad-insertion-vod.md)
    + [设置广告跟踪](getting-started/set-up-ad-tracking.md)
-+ 即时转码{#just-in-time-transcoding}
++ 实时转码{#just-in-time-transcoding}
    + [概述](just-in-time-transcoding/jit-transcoding-overview.md)
    + [转码和标准化](just-in-time-transcoding/transcoding-and-normalization.md)
    + [交付和存储](https://experienceleague.adobe.com/docs/primetime/ad-insertion/technical-reference/delivery-and-storage.html)
@@ -33,20 +33,20 @@ ht-degree: 4%
 + 高级功能{#advanced-features}
    + [根据规则路由广告](advanced-features/route-ads-based-on-rules.md)
    + [优化广告体验](advanced-features/optimize-ad-experiences.md)
-   + [添加内容保护器](advanced-features/add-content-bumpers.md)
+   + [添加内容缓冲器](advanced-features/add-content-bumpers.md)
    + [上下文报告和定位](advanced-features/contextual-reporting-and-targeting.md)
 + 性能：监控、调试和报告{#performance}
    + [概述](performance-monitoring-debugging-reporting/performance-overview.md)
-   + 监控和调试{#monitor-debug}
+   + 监视和调试{#monitor-debug}
       + [性能监控](performance-monitoring-debugging-reporting/performance-monitoring.md)
-      + [故障诊断和调试](performance-monitoring-debugging-reporting/troubleshoot-and-debug.md)
-   + [报表和账单](performance-monitoring-debugging-reporting/reporting-and-billing.md)
+      + [疑难解答和调试](performance-monitoring-debugging-reporting/troubleshoot-and-debug.md)
+   + [报告和计费](performance-monitoring-debugging-reporting/reporting-and-billing.md)
 + 高级遥测{#advanced-telemetry}
    + [概述](advanced-telemetry/advanced-telemetry-overview.md)
    + [关键量度和数据维度](advanced-telemetry/key-metrics.md)
 + [实时事件监控](live-event-monitoring.md)
-+ 参考 {#technical-reference}
-   + [BootstrapAPI](technical-reference/bootstrap-api.md)
++ 引用 {#technical-reference}
+   + [BOOTSTRAPAPI](technical-reference/bootstrap-api.md)
    + [报表API](technical-reference/report-api.md)
    + 最佳实践{#best-practices}
       + [概述](best-practices/best-practices-overview.md)
