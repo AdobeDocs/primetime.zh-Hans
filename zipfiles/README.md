@@ -1,10 +1,13 @@
 ---
-source-git-commit: 1093480a994ee30969f3bca9b9740097bb9b41d0
+source-git-commit: 9844742419f1ddd6904cbad39bb0271abc822cf6
 workflow-type: tm+mt
-source-wordcount: '52'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
+
+# 关于zipfiles文件夹 {#about-zipfiles}
+
 此文件夹中名为zipfiles(https://git.corp.adobe.com/AdobeDocs/primetime.en/tree/main/zipfiles)的文件和文件夹是以前版本的XML格式文档，适用于以下区域：
 * DRM(Digital Rights Management)
 * TVSDK
