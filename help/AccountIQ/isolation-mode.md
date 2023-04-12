@@ -1,13 +1,13 @@
 ---
 title: 在隔离模式下查看报告
-description: '在隔离模式下查看适用于Xfinity的报表。 '
-source-git-commit: afa77dd0d7ffe38d353fed21dc9591b994b11193
+description: 在隔离模式下查看适用于Xfinity的报表。
+exl-id: e7cf24c5-9bfa-48f6-b5c8-20443a976891
+source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
 workflow-type: tm+mt
 source-wordcount: '471'
 ht-degree: 0%
 
 ---
-
 
 # 在隔离模式下查看共享报告 {#report-isolation-mode}
 
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 *图：隔离模式MVPD标识四个不同的订阅者，而不是两个*
 
-为了管理数据的失真（由于根据访问不同程序员而将同一用户识别为不同的用户），隔离模式将关于程序员的活动限制为仅在该程序员应用程序上的活动。 例如，对于上图中的“隔离模式”，程序员L仅根据身份W和Y的活动查看数据，而忽略身份X和Z。
+为了管理数据的失真（由于根据访问不同程序员而将同一用户识别为不同的用户），隔离模式将关于程序员的活动限制为仅在该程序员应用程序上的活动。 例如，对于上图中的“隔离模式”，程序员L仅根据标识W和Y的活动查看数据，而忽略标识X和Z。
 
 >[!IMPORTANT]
 >

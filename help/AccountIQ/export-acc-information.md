@@ -2,16 +2,16 @@
 title: 导出共享分数较高的帐户的信息
 description: 导出共享分数较高的帐户的信息。
 exl-id: df41ddd2-fde3-4861-abd4-6e32f0be9ea5
-source-git-commit: dcd89849937f4893705423465be4003948739eeb
+source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
 workflow-type: tm+mt
-source-wordcount: '727'
+source-wordcount: '728'
 ht-degree: 1%
 
 ---
 
 # 导出共享分数较高的帐户的信息 {#export-account-info-high-score}
 
-帐户IQ允许您根据帐户的IQ导出前1000个订阅者帐户的帐户共享详细信息 [共享概率](/help/AccountIQ/product-concepts.md#account-sharing-probability-def). 导出的CSV文件中的数据按 [区段](/help/AccountIQ/product-concepts.md#segment-def)，对于 [指定时间范围](/help/AccountIQ/product-concepts.md#time-frame-def).
+帐户IQ允许您根据帐户的IQ导出前1000个订阅者帐户的帐户共享详细信息 [共享概率](/help/AccountIQ/product-concepts.md#account-sharing-probability-def). 导出的CSV文件中的数据按用户帐户(在 [区段](/help/AccountIQ/product-concepts.md#segment-def)，对于 [指定时间范围](/help/AccountIQ/product-concepts.md#time-frame-def).
 
 可在 [一般使用情况报表](/help/AccountIQ/general-usage-reports.md) 和 [共享帐户报表](/help/AccountIQ/shared-acc-reports.md) 页面。
 
@@ -99,13 +99,13 @@ ht-degree: 1%
 
 MVPD授权流或授予（访问内容）该帐户的次数。
 
+>[!NOTE]
+>
+>的 **#身份验证Z OK** 与 **播放请求数**;它比 **播放请求数** 因为Adobe会缓存MVPD的授权时间通常为24小时。
+
 **播放请求数**
 
 时间段内的实际流数量。
-
->[!NOTE]
->
->**#身份验证Z OK** 通常小于 **播放请求数** 因为Adobe会缓存来自MVPD的授权长达24小时。 此列不适用于MVPD。
 
 **#渠道**
 
@@ -127,7 +127,7 @@ MVPD授权流或授予（访问内容）该帐户的次数。
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 使用模式 | 常规用户 | 旅行者或通勤者 | 大家庭 | 亲朋好友 | 社交群组共享 | 一大群朋友 | 并发流 | 社区共享 | 不确定行为 | 小家庭 | 第二个家 | 异常使用 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **共享概率**
 

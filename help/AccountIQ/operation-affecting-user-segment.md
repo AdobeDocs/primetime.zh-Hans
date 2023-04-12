@@ -2,9 +2,9 @@
 title: 对用户区段创建操作并跟踪效果
 description: 如何创建操作以影响和跟踪对定义的用户区段的影响。
 exl-id: ab74f857-e178-4120-8f9c-655ec921d096
-source-git-commit: dd1001d94e32a1a8b5346ff97b0f6cb7d244dcf2
+source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
 workflow-type: tm+mt
-source-wordcount: '1010'
+source-wordcount: '1007'
 ht-degree: 0%
 
 ---
@@ -146,7 +146,7 @@ if not fixed segment, then I won't initially evaluate or have initial set of 500
 
 您可以执行两种类型的操作：
 
-* 使用与帐户IQ集成的系统执行操作；例如 [并发监控](https://tve.helpdocsonline.com/concurrency-monitoring-introduction)<!--, or Adobe Target-->.
+* 使用与帐户IQ集成的系统执行操作；例如 **并发监控** <!--[Concurrency Monitoring](https://tve.helpdocsonline.com/concurrency-monitoring-introduction), or Adobe Target-->.
 
 * 用于创建和处理对帐户IQ以外而未与帐户IQ系统集成的工作流的操作。 例如，频道程序员“N”向MVPD“C”的所有订阅者发送批量电子邮件的操作。
 
