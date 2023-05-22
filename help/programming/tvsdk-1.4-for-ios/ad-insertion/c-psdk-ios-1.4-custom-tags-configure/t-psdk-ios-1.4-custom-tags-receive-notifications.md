@@ -1,32 +1,31 @@
 ---
-description: 要接收有关清单中标记的通知，请实施相应的通知侦听器。
-title: 为定时元数据通知添加侦听器
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 若要接收資訊清單中標籤的相關通知，請實作適當的通知監聽器。
+title: 為定時中繼資料通知新增接聽程式
+exl-id: 259af856-797b-4a50-9add-f72132831ba1
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '186'
 ht-degree: 0%
 
 ---
 
+# 為定時中繼資料通知新增接聽程式 {#add-listeners-for-timed-metadata-notifications}
 
-# 为定时元数据通知{#add-listeners-for-timed-metadata-notifications}添加侦听器
+若要接收資訊清單中標籤的相關通知，請實作適當的通知監聽器。
 
-要接收有关清单中标记的通知，请实施相应的通知侦听器。
+您可以監聽以下事件來監視定時中繼資料，這些事件會通知您的應用程式相關活動：
 
-您可以通过侦听以下事件来监视计时元数据，这些活动会向您的应用程序通知相关的元数据：
+* `PTTimedMetadataChangedNotification`：每次在剖析內容期間識別出不重複的訂閱標籤時，TVSDK都會準備新的 `PTTimedMetadata` 物件並傳送此通知。
 
-* `PTTimedMetadataChangedNotification`:每次在分析内容时识别唯一的订阅标记时，TVSDK会准备一个新对象并 `PTTimedMetadata` 调度此通知。
+   物件包含您訂閱的標簽名稱、此標籤出現所在的播放本地時間以及其他資料。
 
-   该对象包含您订阅的标记的名称、播放中显示此标记的本地时间以及其他数据。
+* `PTMediaPlayerTimeChangeNotification` ：對於資訊清單/播放清單定期重新整理的即時/線性資料流，更新的播放清單/資訊清單中可能會顯示其他自訂標籤，因此會額外顯示 `TimedMetadata` 物件可新增至 `MediaPlayerItem.timedMetadata` 屬性。
 
-* `PTMediaPlayerTimeChangeNotification` :对于清单/播放列表定期刷新的实时/线性流，更新的播放列表/清单中可能会显示其他自定义标记，因此可 `TimedMetadata` 能会向属性添加其他 `MediaPlayerItem.timedMetadata` 对象。
+   發生此情況時，此事件會通知您的應用程式。
 
-   此事件会在发生此情况时通知您的应用程序。
+   以下列其中一種方式擷取計時中繼資料。
 
-   通过以下方式之一检索定时元数据。
-
-   * 将应用程序设置为将自身作为侦听器添加到`PTTimedMetadataChangedNotification`通知中，并使用`PTTimedMetadataKey`获取对象。
+   * 設定您的應用程式，將其本身新增為的監聽器 `PTTimedMetadataChangedNotification` 通知並擷取物件，使用 `PTTimedMetadataKey`.
 
       ```
       [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onTimedMetadataChanged:)  
@@ -38,5 +37,4 @@ ht-degree: 0%
       }
       ```
 
-   * 访问`PTMediaPlayerItem`的`timedMetadataCollection`属性，该属性包含迄今已通知的所有`PTTimedMetadata`对象。
-
+   * 存取 `timedMetadataCollection` 屬性 `PTMediaPlayerItem`，其中包含所有 `PTTimedMetadata` 目前為止已被通知的物件。

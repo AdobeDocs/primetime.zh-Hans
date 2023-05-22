@@ -1,27 +1,25 @@
 ---
-description: 可以设置声音音量的用户界面控件。
+description: 您可以設定音量的使用者介面控制項。
 title: 提供音量控制
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 5c446081-5491-46b6-9259-293131af80cb
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '87'
 ht-degree: 0%
 
 ---
 
+# 提供音量控制{#provide-volume-control}
 
-# 提供卷控件{#provide-volume-control}
+您可以設定音量的使用者介面控制項。
 
-可以设置声音音量的用户界面控件。
+1. 等候 `MediaPlayer` 執行個體將處於此命令的有效狀態。
 
-1. 等待`MediaPlayer`实例处于此命令的有效状态。
-
-   除“已发布”或“错误”之外的任何状态都有效。
-1. 在`MediaPlayer`实例上设置volume属性以设置音频音量。
+   除RELEASED或ERROR以外的任何狀態都有效。
+1. 設定磁碟區屬性 `MediaPlayer` 執行個體以設定音量。
 
    ```js
    player.volume = ...
    ```
 
-   卷的值表示请求的卷占最大卷的比例，其中0为silent，是最大卷。
-
+   磁碟區的值代表要求的磁碟區，以最大磁碟區的比例表示，其中0是靜音，是最大磁碟區。

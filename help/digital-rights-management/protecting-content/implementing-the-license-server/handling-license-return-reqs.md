@@ -1,21 +1,20 @@
 ---
-title: 处理许可证退回请求
-description: 处理许可证退回请求
+title: 處理授權退貨請求
+description: 處理授權退貨請求
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: de577cb9-4ede-440e-8b71-1b39c6cc3c5b
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '152'
 ht-degree: 0%
 
 ---
 
+# 處理授權退貨請求{#handle-license-return-requests}
 
-# 处理许可证退回请求{#handle-license-return-requests}
+如果使用者端應用程式需要傳回授權，它會叫用 `DRMManager.returnVoucher()` 啟動程式的Actionscript API。 此API可在 `immediateCommit` 模式或 `confirmFirst` 模式。 若 `immediateCommit` 設為 `true`之後，使用者端會立即刪除本機授權，而不需等待授權伺服器確認其已收到傳回授權的要求。 Adobe Primetime DRM授權伺服器應處理請求並將回應傳送給使用者端。 授權伺服器是否處理要求（例如減少指定使用者的授權計數）由授權伺服器決定。
 
-如果客户端应用程序需要返回许可证，它将调用`DRMManager.returnVoucher()` Actionscript API来启动该进程。 此API可以在`immediateCommit`模式或`confirmFirst`模式下工作。 如果`immediateCommit`设置为`true`，则客户端将立即删除本地许可证，而无需等待许可证服务器确认其已收到返回许可证的请求。 Adobe Primetime DRM许可证服务器应处理请求并向客户端发送响应。 许可证服务器是否处理该请求，如减少指定用户的许可证计数，由许可证服务器决定。
+* 要求處理常式類別為 `com.adobe.flashaccess.sdk.protocol.licensereturn.LicenseReturnHandler`
+* 請求訊息類別為 `com.adobe.flashaccess.sdk.protocol.licensereturn.LicenseReturnRequestMessage`
 
-* 请求处理程序类为`com.adobe.flashaccess.sdk.protocol.licensereturn.LicenseReturnHandler`
-* 请求消息类为`com.adobe.flashaccess.sdk.protocol.licensereturn.LicenseReturnRequestMessage`
-
-要求的SDK版本最低版本为5;请求URL为&quot; [!DNL /flashaccess/lreturn/v5]&quot;。 `Adobe Primetime DRM`与域取消注册一样，服务器使用`getRequestPhase()`确定客户端是否可以预览许可证返回。
+最小值 `Adobe Primetime DRM` 所需的SDK版本為版本5；請求URL為&quot; [!DNL /flashaccess/lreturn/v5]「。 和網域取消註冊一樣，伺服器會使用 `getRequestPhase()` 以判斷使用者端是否可預覽授權回傳。

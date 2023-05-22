@@ -1,134 +1,133 @@
 ---
 title: Primetime Offline Packager 2.x版
-description: Primetime Offline Packager 2.1和2.3.1版本的新增功能
+description: Primetime Offline Packager 2.1和2.3.1版的新增功能
 contentOwner: asgupta
 products: SG_PRIMETIME
 topic-tags: release-notes
-translation-type: tm+mt
-source-git-commit: b33240bf1b42b80389cd95a7ae4d3f85185a2d32
+exl-id: 911549b4-45b3-400a-b903-fa1479ee862b
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '638'
 ht-degree: 0%
 
 ---
 
+# Primetime Offline Packager版本 {#primetime-offline-packager-x-releases}
 
-# Primetime Offline Packager版本{#primetime-offline-packager-x-releases}
+Primetime Offline Packager 2.1和2.3.1版的新增功能
 
-Primetime Offline Packager 2.1和2.3.1版本的新增功能
+## Primetime Offline Packager 2.3.1的新增功能（2016年10月）  {#what-s-new-in-primetime-offline-packager-oct}
 
-## Primetime Offline Packager 2.3.1（2016年10月）{#what-s-new-in-primetime-offline-packager-oct}的新增功能
+此發行版本啟用MPEG-DASH的隨選設定檔，新增對 `validate` 選項適用於PlaylistCreator工具，並且針對下列多DRM案例有幾項關鍵修正。
 
-该版本为MPEG-DASH启用按需用户档案，为PlaylistCreator工具添加了对`validate`选项的支持，并且对以下列出的多DRM方案几乎没有关键修复。
-
-| **问题编号** | **说明** |
+| **問題編號** | **說明** |
 |---|---|
-| PTPUB-985 | HLS AAXS和Sample-AES不适用于打包程序生成的密钥 |
-| PTPUB-973 | 修复了某些特定Widevine内容的加密算法中的错误 |
-| PTPUB-964 | 某些播放器(Android TVSDK)上某些媒体类型的CENC加密被破坏。 |
-| PTPUB-954 | 默认情况下，Sample-AES加密会绕过AAXS DRM，启用远程密钥投放时引发错误。 |
-| PTPUB-951 | 当未使用Widevine指定key_file_path时，脱机打包程序不会引发异常。 而是抛出NPE。 |
+| PTPUB-985 | HLS AAXS和Sample-AES不適用於封裝程式產生的金鑰 |
+| PTPUB-973 | 修正某些特定Widevine內容的加密演演算法錯誤 |
+| PTPUB-964 | 某些播放器上特定媒體型別的CENC加密中斷 — Android TVSDK。 |
+| PTPUB-954 | 範例AES加密預設會略過AAXS DRM /在啟用遠端金鑰傳遞時擲回錯誤。 |
+| PTPUB-951 | 未使用Widevine指定key_file_path時，Offline Packager不會擲回例外狀況。 而是會擲回NPE。 |
 
-有关Primetime Packager的最新文档，请访问[https://help.adobe.com/en_US/primetime/api/packagers/index.html](https://help.adobe.com/en_US/primetime/api/packagers/index.html)。
+Primetime封裝程式的最新檔案可在以下網址取得： [https://help.adobe.com/en_US/primetime/api/packagers/index.html](https://help.adobe.com/en_US/primetime/api/packagers/index.html).
 
-### 版本2.3.1 {#known-issue-in-version}中的已知问题
+### 2.3.1版中的已知問題 {#known-issue-in-version}
 
-此版本中存在以下问题。
+此版本中存在下列問題。
 
-| **问题编号** | **说明** |
+| **問題編號** | **說明** |
 |---|---|
-| PTPUB-1005 | PlaylistCreator在为AAXS DRM生成的最终集级.mpd文件中不为.pssh文件提供正确的URL。 |
-| PTPUB-1001 | 当通过in_path参数提供空路径时，PlaylistCreator应引发错误 |
-| PTPUB-990 | 对于DASH，当指定参数`log_vi`和`iv_out_path`时，Offline Packager不将包装程序生成的IV写入磁盘。 |
-| PTPUB-980 | 使用配置文件进行打包时，使用参数`key_url`不会从提供的输入中删除引号。 |
+| PTPUB-1005 | PlaylistCreator沒有為針對AAXS DRM產生的最終設定層級.mpd檔案中的.pssh檔案提供正確的URL。 |
+| PTPUB-1001 | 透過in_path引數提供空白路徑時，PlaylistCreator應擲回錯誤 |
+| PTPUB-990 | 對於DASH，當引數為時，Offline Packager不會將封裝程式產生的IV寫入磁碟 `log_vi` 和 `iv_out_path` 已指定。 |
+| PTPUB-980 | 使用設定檔進行封裝時，請使用引數 `key_url` 不會從提供的輸入中移除引號。 |
 
 ## Adobe Primetime Offline Packager 2.3.1 {#adobe-primetime-offline-packager}
 
-### 最低系统要求{#minimum-system-requirements}
+### 最低系統需求 {#minimum-system-requirements}
 
-支持的操作系统
+支援的作業系統
 
-* Linux CentOS 6.3 64位
+* Linux CentOS 6.3 64位元
 
-硬件要求
+硬體需求
 
-* 3.2GHz Intel® Pentium® 4处理器（建议使用双核Intel Xeon®或更快的处理器）
+* 3.2GHz Intel® Pentium® 4處理器(建議使用雙Intel Xeon®或更快處理器)
 
-* 64位操作系统：4GB内存（推荐8GB）
+* 64位元作業系統：4GB的RAM （建議使用8GB）
 
-* 硬盘
+* 硬碟
 
-（磁盘 — SAS）：最少10GB，带7.5K RPM
+（磁碟 — SAS）：最少10GB (7,500RPM)
 
-（磁盘 — 固态硬盘）：400MBps读/写速度
+（磁碟 — SSD）：400MBps讀取/寫入速度
 
-(NAS):1 GB专用链接
+(NAS)：1 GB專用連結
 
-软件要求
+軟體需求
 
-* Oracle Java SE 1.8或更高版本
+* oracleJava SE 1.8或更高版本
 
 ### Adobe Primetime Offline Packager 2.3.1 {#adobe-primetime-offline-packager-1}
 
-1. 从[Oracle站点](https://www.oracle.com/technetwork/java/javase/downloads/index.html)下载Java SE软件，然后按照安装说明操作。
-1. 将名为`PrimetimeOfflinePackager-2-3-1-b47-10142016.zip`的Adobe Primetime Offline Packager 2.3.1存档文件解压到磁盘。
+1. 從下載Java SE軟體 [oracle網站](https://www.oracle.com/technetwork/java/javase/downloads/index.html) 並依照安裝指示操作。
+1. 解壓縮Adobe Primetime Offline Packager 2.3.1封存檔案（已命名） `PrimetimeOfflinePackager-2-3-1-b47-10142016.zip` 到磁碟。
 
-### 配置Offline Packager 2.3.1 {#configuring-the-offline-packager}
+### 設定Offline Packager 2.3.1 {#configuring-the-offline-packager}
 
-有关配置说明，请参阅[https://help.adobe.com/en_US/primetime/api/packagers/offline/index.html](https://help.adobe.com/en_US/primetime/api/packagers/offline/index.html)的Primetime Offline Packager快速入门指南
+您可以在Primetime Offline Packager快速入門手冊中找到設定指示 [https://help.adobe.com/en_US/primetime/api/packagers/offline/index.html](https://help.adobe.com/en_US/primetime/api/packagers/offline/index.html)
 
-## Primetime Offline Packager 2.1（2015年7月）{#what-s-new-in-primetime-offline-packager-july}的新增功能
+## Primetime Offline Packager 2.1的新增功能（2015年7月） {#what-s-new-in-primetime-offline-packager-july}
 
-支持PlayReady BuyDRM（适用于DASH）。 有关详细信息，请参阅此处提供的帮助文档[。](https://help.adobe.com/en_US/primetime/api/packagers/offline/index.html)
+支援PlayReady BuyDRM (DASH)。 如需詳細資訊，請參閱說明檔案 [此處提供](https://help.adobe.com/en_US/primetime/api/packagers/offline/index.html).
 
-还对脱机打包程序进行了以下增强。
+對離線封裝程式也進行了下列增強功能。
 
-PTPUB-780增加了对EXT-X-开始标签的支持
+PTPUB-780新增對EXT-X-START標籤的支援
 
-## Primetime Offline Packager 2.0（2015年6月）{#what-s-new-in-primetime-offline-packager-june}的新增功能
+## Primetime Offline Packager 2.0 （2015年6月）的新增功能 {#what-s-new-in-primetime-offline-packager-june}
 
-已添加明确的DASH输出支持。 有关详细信息，请参阅产品文档[此处](https://help.adobe.com/en_US/primetime/api/packagers/offline/index.html)。
+新增了「清除DASH輸出」支援。 請參閱產品檔案 [此處](https://help.adobe.com/en_US/primetime/api/packagers/offline/index.html) 以取得詳細資訊。
 
-此版本中还修复了以下问题。
+此版本也修正了下列問題。
 
-* PTPUB-783 Offline Packager现在可处理空的WebVTT文件。
-* PTPUB- 781当某些转码的MP4资源与脱机包装程序打包以生成MBR输出时，Chrome上HLS输出中的伪像。
+* PTPUB-783 Offline Packager現在可以處理空的WebVTT檔案。
+* PTPUB- Chrome上HLS輸出中的781成品（當某些轉碼的MP4資產與離線封裝程式封裝在一起以產生MBR輸出時）。
 
 ## Adobe Primetime Offline Packager 2.1 {#adobe-primetime-offline-packager-2}
 
-### 最低系统要求{#minimum-system-requirements-1}
+### 最低系統需求 {#minimum-system-requirements-1}
 
-**支持的操作系统**
+**支援的作業系統**
 
-* Linux CentOS 6.3 64位
+* Linux CentOS 6.3 64位元
 
-**硬件要求**
+**硬體需求**
 
-* 3.2GHz Intel® Pentium® 4处理器（建议使用双核Intel Xeon®或更快的处理器）
+* 3.2GHz Intel® Pentium® 4處理器(建議使用雙Intel Xeon®或更快處理器)
 
-* 64位操作系统：4GB内存（推荐8GB）
+* 64位元作業系統：4GB的RAM （建議使用8GB）
 
-* 建议使用1Gb以太网卡（还支持多个网卡和10Gb）
+* 建議使用1Gb乙太網路卡（也支援多張網路卡和10Gb）
 
-* 硬盘
+* 硬碟
 
-   * （磁盘 — SAS）：最少10GB，带7.5K RPM
-   * （磁盘 — 固态硬盘）：400MBps读/写速度
-   * (NAS):1 GB专用链接
+   * （磁碟 — SAS）：最少10GB (7,500RPM)
+   * （磁碟 — SSD）：400MBps讀取/寫入速度
+   * (NAS)：1 GB專用連結
 
-**软件要求**
+**軟體需求**
 
-* Oracle Java SE 1.8或更高版本
+* oracleJava SE 1.8或更高版本
 
-### 安装Offline Packager 2.1 {#installing-offline-packager}
+### 安裝離線封裝程式2.1 {#installing-offline-packager}
 
-1. 从[Oracle站点](https://www.oracle.com/technetwork/java/javase/downloads/index.html)下载Java SE软件，然后按照安装说明操作。
-1. 将`Adobe Primetime - Offline Packager 2.1.0 archive file, PrimetimeOfflinePackager-2-1-0-b15-07082015.zip`解压到磁盘。
+1. 從下載Java SE軟體 [oracle網站](https://www.oracle.com/technetwork/java/javase/downloads/index.html) 並依照安裝指示操作。
+1. 擷取 `Adobe Primetime - Offline Packager 2.1.0 archive file, PrimetimeOfflinePackager-2-1-0-b15-07082015.zip`，移至您的磁碟。
 
-### 配置Offline Packager 2.1 {#configuring-the-offline-packager-1}
+### 設定離線封裝程式2.1 {#configuring-the-offline-packager-1}
 
-有关此处提供的配置详细信息，请参阅Primetime Offline Packager快速入门文档[https://help.adobe.com/en_US/primetime/api/packagers/offline/index.html](https://help.adobe.com/en_US/primetime/api/packagers/offline/index.html)
+如需此處可用的設定詳細資訊，請參閱Primetime Offline Packager快速入門檔案 [https://help.adobe.com/en_US/primetime/api/packagers/offline/index.html](https://help.adobe.com/en_US/primetime/api/packagers/offline/index.html)
 
-## 有用资源{#helpful-resources}
+## 實用資源 {#helpful-resources}
 
-* 请参阅[Adobe Primetime学习和支持](https://helpx.adobe.com/support/primetime.html)页面上的完整帮助文档。
+* 如需完整說明檔案，請前往 [Adobe Primetime學習與支援](https://helpx.adobe.com/support/primetime.html) 頁面。

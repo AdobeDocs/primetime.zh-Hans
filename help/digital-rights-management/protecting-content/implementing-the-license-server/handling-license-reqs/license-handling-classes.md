@@ -1,29 +1,28 @@
 ---
-title: 概述
-description: 概述
+title: 概觀
+description: 概觀
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 267188d0-83f8-42dc-88e3-78b52945cb6c
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '322'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#overview}
 
-# 概述{#overview}
+若要取得授權，使用者端會從內嵌於封裝內容的中繼資料建立請求，然後將該請求提交至授權伺服器。 授權伺服器使用從內容中繼資料擷取的資訊來產生授權。
 
-要获取许可证，客户端从打包内容中嵌入的元数据中生成请求，然后将该请求提交到许可证服务器。 许可证服务器使用从内容元数据中提取的信息来生成许可证。
+如果使用者端和伺服器都支援通訊協定版本5，則請求URL為「中繼資料中的授權伺服器URL」+ &quot; [!DNL /flashaccess/license/v4]「。 如果通訊協定版本3是使用者端或伺服器支援的最大值，Primetime DRM使用者端就會傳送驗證請求給「中繼資料中的授權伺服器URL」+ 」 [!DNL /flashaccess/license/v3]「。 否則，驗證請求會傳送到「中繼資料中的授權伺服器URL」+ &quot; [!DNL /flashaccess/license/v1]&quot;
 
-如果客户端和服务器都支持协议版本5，则请求URL为“元数据中的许可证服务器URL”+“ [!DNL /flashaccess/license/v4]”。 如果客户端或服务器支持的协议版本3是最大版本，则Primetime DRM客户端会向“元数据中的许可证服务器URL”+“ [!DNL /flashaccess/license/v3]”发送身份验证请求。 否则，身份验证请求将发送到“元数据中的许可证服务器URL”+“ [!DNL /flashaccess/license/v1]”
+一個裝置可能擁有多個相同內容的授權（相同的授權ID），但只能有一個特定授權ID和DRM原則ID的授權。 如果收到具有重複LicenseID/PolicyID的授權，則只有在新授權的發行日期晚於現有授權的發行日期時，新授權才會取代舊授權。 此邏輯用於處理內嵌於內容中的授權。 因此，不建議在內容區塊中嵌入一個以上使用相同DRM原則ID的授權。 相同的邏輯會套用至透過 `DRMManager.storeVoucher()` ActionScript3 API；如果使用者端已擁有日後發行日期的授權，則提供的授權可能會被忽略。
 
-设备可能具有同一内容的多个许可证（同一许可证ID），但对于特定许可证ID和DRM策略ID只能具有一个许可证。 如果它收到具有重复LicenseID/PolicyID的许可证，则只有新许可证的发布日期晚于现有许可证的发布日期，新许可证才会替换旧许可证。 此逻辑用于处理嵌入到内容中的许可证。 因此，不建议在内容块中嵌入多个具有相同DRM策略ID的许可证。 同样的逻辑适用于通过`DRMManager.storeVoucher()` ActionScript3 API传递给客户端的许可证；如果客户端已经拥有一个许可证，并且该许可证的发布日期在以后，则可能会忽略提供的许可证。
+## 授權請求處理類別 {#section_190E3BEF316C4B09ACC21E4C2BAC5C75}
 
-## 许可证请求处理类{#section_190E3BEF316C4B09ACC21E4C2BAC5C75}
+* `com.adobe.flashaccess.sdk.protocol.license.LicenseHandler`  — 這是授權要求處理常式類別。 它會讀取並剖析授權請求。 其 `getRequests()` 方法會傳回以下專案的清單： `LicenseRequestMessage` 物件。
+* `com.adobe.flashaccess.sdk.protocol.license.LicenseRequestMessage`  — 這是要求訊息類別。 呼叫者應透過 `LicenseRequestMessage` 清單傳回 `getRequests()`，並為每個要求產生授權或設定錯誤代碼。 呼叫 `LicenseRequestMessage.getContentInfo()` 以取得從內容中繼資料擷取的資訊，包括內容ID、授權ID和DRM政策。
 
-* `com.adobe.flashaccess.sdk.protocol.license.LicenseHandler`  — 这是许可证请求处理程序类。它读取并解析许可证请求。 其`getRequests()`方法返回`LicenseRequestMessage`对象的列表。
-* `com.adobe.flashaccess.sdk.protocol.license.LicenseRequestMessage`  — 这是请求消息类。调用方应遍历由`getRequests()`返回的`LicenseRequestMessage`列表，并为每个请求生成许可证或设置错误代码。 调用`LicenseRequestMessage.getContentInfo()`以获取从内容元数据中提取的信息，包括内容ID、许可证ID和DRM策略。
+授權和錯誤會同時傳送，當 `LicenseHandler.close()` 方法已呼叫。
 
-调用`LicenseHandler.close()`方法时，将同时发送许可证和错误。
-
-有关详细信息，请参阅[DRM服务器API参考文档](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/overview-summary.html)。
+請參閱 [DRM伺服器API參考檔案](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/overview-summary.html) 以取得詳細資訊。

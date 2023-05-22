@@ -1,37 +1,34 @@
 ---
-description: 当用户快速前进或快速后退通过媒体时，他们处于特技播放模式。 要进入特技播放模式，您需要将MediaPlayer播放速率设置为非1的值。
-title: 实现快进和后退
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 當使用者在媒體中快速前進或快速倒帶時，他們處於特技播放模式。 若要進入特技播放模式，您必須將MediaPlayer播放速率設定為1以外的值。
+title: 實作快速前進和倒帶
+exl-id: 21f9a3f6-1cae-4240-991d-c03a0e49adf3
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '488'
 ht-degree: 0%
 
 ---
 
+# 實作快速前進和倒帶{#implement-fast-forward-and-rewind}
 
-# 实现快进和后退{#implement-fast-forward-and-rewind}
-
-当用户快速前进或快速后退通过媒体时，他们处于特技播放模式。 要进入特技播放模式，您需要将MediaPlayer播放速率设置为非1的值。
+當使用者在媒體中快速前進或快速倒帶時，他們處於特技播放模式。 若要進入特技播放模式，您必須將MediaPlayer播放速率設定為1以外的值。
 
 >[!IMPORTANT]
 >
->* 仅MPEG Dash和HLS VOD内容支持特技播放模式。
->* 直播流或广告不支持特技播放模式。
->* 当从主内容切换到广告时，Browser TVSDK会保留特技播放模式。
-
+>* 僅MPEG短劃線和HLS VOD內容支援特技播放模式。
+>* 即時資料流或廣告不支援特技播放模式。
+>* 從主要內容切換至廣告時，瀏覽器TVSDK會保留特技播放模式。
 >
 
 
+若要切換速度，您必須設定一個值。
 
-要切换速度，必须设置一个值。
+1. 從一般播放模式(1x)移至特技播放模式，方法是在 `MediaPlayer` 至允許的值。
 
-1. 通过将`MediaPlayer`上的速率设置为允许的值，从正常播放模式(1x)移动到特技播放模式。
+   * 此 `MediaPlayerItem` 類別會定義允許的播放速率。
+   * 如果不允許指定的速率，瀏覽器TVSDK會選取允許的最近速率。
 
-   * `MediaPlayerItem`类定义允许的播放速率。
-   * 如果不允许指定速率，浏览器TVSDK将选择最接近的允许速率。
-
-      下面的示例函数设置速率：
+      下列範例函式會設定匯率：
 
       ```js
       setTrickPlayRate = function (player, trickPlayRate) { 
@@ -39,7 +36,7 @@ ht-degree: 0%
       }
       ```
 
-      以下示例函数可用于查询可用的播放速率：
+      以下範例函式可用於查詢可用的播放速率：
 
       ```js
       getAvailableTrickPlayRates = function (player) { 
@@ -49,45 +46,45 @@ ht-degree: 0%
       } 
       ```
 
-1. 您可以选择侦听汇率变化事件，这会让您知道何时请求汇率变化以及实际发生汇率变化的时间。
+1. 您可以選擇接聽費率變更事件，讓您知道何時要求費率變更，以及實際發生費率變更的時間。
 
-       浏览器TVSDK调度与特技播放相关的以下事件:
+       瀏覽器TVSDK會傳送以下與特技播放相關的事件：
    
-   * `AdobePSDK.PSDKEventType.RATE_SELECTED` 值变 `rate` 为其他值时。
+   * `AdobePSDK.PSDKEventType.RATE_SELECTED` 當 `rate` 值會變更為其他值。
 
-   * `AdobePSDK.PSDKEventType.RATE_PLAYING` 以选定的速率恢复播放时。
+   * `AdobePSDK.PSDKEventType.RATE_PLAYING` 以選取的速率繼續播放時。
 
-      当播放器从特技播放模式返回到正常播放模式时，浏览器TVSDK将调度这两个事件。
+      當播放器從特技播放模式返回正常播放模式時，瀏覽器TVSDK會傳送這兩個事件。
 
-## 速率更改API元素{#rate-change-API-elements}
+## 費率變更API元素 {#rate-change-API-elements}
 
-浏览器TVSDK包括确定有效率、当前速率、特技播放是否受支持以及与快速前进和后退相关的其他功能的方法、属性和事件。
+瀏覽器TVSDK包含方法、屬性和事件，用於決定有效率、目前率、是否支援特技播放，以及與快速前進和倒帶相關的其他功能。
 
-使用以下API元素更改播放率：
+使用下列API元素來變更播放率：
 
 * `MediaPlayer.rate`
 * `PlaybackRateEvent.rate`
 * `MediaPlayerItem.istrickPlaySupported`
-* `MediaPlayerItem.availablePlaybackRates`  — 指定有效率。
+* `MediaPlayerItem.availablePlaybackRates`  — 指定有效費率。
 
-   | 速率值 | 播放效果 |
+   | 費率值 | 播放效果 |
    |---|---|
-   | 2.0、4.0、8.0、16.0、32.0、64.0 | 切换到快进模式时，指定的乘数比正常速度快（例如，4比正常速度快4倍） |
-   | -2.0、-4.0、-8.0、-16.0、-32.0、-64.0 | 切换到快速后退模式 |
-   | 1.0 | 切换到正常播放模式（调用`play`与将rate属性设置为1.0相同） |
-   | 0.0 | 暂停（调用`pause`与将速率属性设置为0.0相同） |
+   | 2.0, 4.0, 8.0, 16.0, 32.0, 64.0 | 使用指定的乘數切換到快進模式，速度比正常快（例如，4比正常快4倍） |
+   | -2.0, -4.0, -8.0, -16.0, -32.0, -64.0 | 切換至快速倒帶模式 |
+   | 1.0 | 切換到一般播放模式(呼叫 `play` 與將rate屬性設定為1.0相同) |
+   | 0.0 | 暫停（呼叫） `pause` 與將rate屬性設定為0.0相同) |
 
-## 技巧播放{#limitations-and-behavior-trick-play}的限制和行为
+## 特技播放的限制和行為 {#limitations-and-behavior-trick-play}
 
-技巧播放模式的行为方式存在一些限制和问题。
+特技播放模式的運作方式有一些限制和問題。
 
-以下是技巧播放模式限制的列表:
+以下是特技播放模式限制清單：
 
-* 如果流不包含特技播放适配，则禁用快速倒回，并且快进的最大播放速率限制为8。
-* 当使用特技播放调整来提供特技模式时，将禁用音轨。
-* 在特技播放模式下，禁用音频和隐藏字幕轨道的切换。
-* 播放和暂停已启用。
-* 在搜索时，如果播放处于特技播放模式，则播放率设置为1，并恢复正常播放。
-* 自适应比特率(ABR)逻辑被启用。
+* 如果串流不包含特技播放適配，則會停用快速倒帶，並且快進的最大播放速率限製為8。
+* 當使用特技播放調整來提供特技模式時，音軌會停用。
+* 在特技播放模式中，音訊和隱藏式字幕曲目的切換被停用。
+* 已啟用播放和暫停。
+* 在搜尋時，如果播放處於特技播放模式，播放速率會設為1並繼續正常播放。
+* 已啟用最適化位元速率(ABR)邏輯。
 
-   在使用常规用户档案时，在`ABRControlParameters.minBitRate`和`ABRControlParameters.maxBitRate`之间将限制这些字符。 在使用特技播放调整时，用户档案在`ABRControlParameters.minTrickPlayBitRate`和`ABRControlParameters.maxTrickPlayBitRate`之间受到限制。
+   使用一般調整時，設定檔會限制在 `ABRControlParameters.minBitRate` 和 `ABRControlParameters.maxBitRate`. 使用特技播放調整時，設定檔被限制在 `ABRControlParameters.minTrickPlayBitRate` 和 `ABRControlParameters.maxTrickPlayBitRate`.

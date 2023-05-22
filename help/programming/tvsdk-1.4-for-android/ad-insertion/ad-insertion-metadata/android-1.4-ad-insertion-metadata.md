@@ -1,37 +1,36 @@
 ---
-description: 要允许广告解析程序工作，广告提供商(如Adobe Primetime广告决策)需要配置值以启用与提供商的连接。
-title: 广告插入元数据
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 為了讓廣告解析程式運作，廣告提供者(例如Adobe Primetime ad decisioning)需要設定值來啟用您與提供者的連線。
+title: 廣告插入中繼資料
+exl-id: 7245b42c-f3ba-43ec-b895-c1a2d66aa11f
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '220'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#ad-insertion-metadata}
 
-# 概述{#ad-insertion-metadata}
+為了讓廣告解析程式運作，廣告提供者(例如Adobe Primetime ad decisioning)需要設定值來啟用您與提供者的連線。
 
-要允许广告解析程序工作，广告提供商(如Adobe Primetime广告决策)需要配置值以启用与提供商的连接。
+TVSDK包含Primetime廣告決策程式庫。 若要讓您的內容包含來自Primetime廣告決策伺服器的廣告，您的應用程式必須提供下列必要專案 `AuditudeSettings` 資訊：
 
-TVSDK包括Primetime广告决策库。 要使您的内容包括来自Primetime广告决策服务器的广告，您的应用程序必须提供以下必需的`AuditudeSettings`信息：
+* `mediaID`，此為要播放之視訊的唯一識別碼。
 
-* `mediaID`，这是要播放的视频的唯一标识符。
+   發行者指派 `mediaID` 將影片內容和廣告資訊提交至Adobe Primetime ad decisioning伺服器時。 Primetime廣告決策會使用此ID從伺服器擷取視訊的相關廣告資訊。
 
-   发布者在向Adobe Primetime广告决策服务器提交视频内容和广告信息时分配`mediaID`。 此ID由Primetime广告决策用来从服务器检索视频的相关广告信息。
+* （可選） `defaultMediaId`，會指定在符合下列條件時提供的廣告：
 
-* （可选）`defaultMediaId`，它指定满足以下条件时投放的广告：
-
-   * 您对广告服务器的请求无效，或内容配置不正确。
-   * Primetime广告决策在传播数据时遇到延迟。
-   * Primetime广告决策后端进程之一出现故障或不可用。
+   * 您對廣告伺服器的請求無效，或內容設定不正確。
+   * Primetime廣告決策在傳播資料時發生延遲。
+   * 其中一個Primetime廣告決策後端程式發生問題或無法使用。
 
    >[!TIP]
    >
-   >Adobe建议使用`defaultMediaId`。
+   >Adobe建議使用 `defaultMediaId`.
 
-* 由Adobe分配的`zoneID`标识您的公司或网站。
-* 您分配的广告服务器的域。
-* 其他定位参数。
+* 您的 `zoneID`由Adobe指派，可識別您的公司或網站。
+* 您指派的廣告伺服器的網域。
+* 其他目標定位引數。
 
-   您可以根据您的需求和广告提供商的需求包含这些参数。
+   您可以根據自己的需求和廣告提供者的需求包含這些引數。

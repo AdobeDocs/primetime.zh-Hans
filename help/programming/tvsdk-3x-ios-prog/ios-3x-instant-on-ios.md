@@ -1,33 +1,32 @@
 ---
-description: 即时加载将部分媒体预加载到一个或多个渠道。 在用户选择或切换渠道后，内容开始会更早，因为某些缓冲已经完成。
-title: 即时
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 立即開啟會在一或多個通道上預先載入部分媒體。 使用者選取或切換管道後，內容會更早開始，因為部分緩衝已完成。
+title: 立即開啟
+exl-id: 096104a7-867f-43e3-8433-f697d0224e21
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '210'
 ht-degree: 0%
 
 ---
 
+# 立即開啟 {#instant-on}
 
-# 即时启动{#instant-on}
+立即開啟會在一或多個通道上預先載入部分媒體。 使用者選取或切換管道後，內容會更早開始，因為部分緩衝已完成。
 
-即时加载将部分媒体预加载到一个或多个渠道。 在用户选择或切换渠道后，内容开始会更早，因为某些缓冲已经完成。
-
-当您的播放器处于`PTMediaPlayerStatusReady`状态时，请调用`prepareToPlay`以预加载并处理某些内容以供以后播放。
-
->[!TIP]
->
->如果不调用`prepareToPlay`，调用`play`会先自动调用`prepareToPlay`。 此时已完成预加载和处理。
-
-TVSDK为`prepareToPlay`完成以下部分或全部任务:
-
-* 如果设置了元数据密钥`kSyncCookiesWithAVAsset`，则TVSDK向原始M3U8文件发出一个请求以同步Cookie。
-* 加载DRM元数据键。
-* 创建并准备播放内容所需的一些结构、元素或资源。
+當您的播放器在 `PTMediaPlayerStatusReady` 狀態，呼叫 `prepareToPlay` 以預先載入及處理部分內容，以供稍後播放。
 
 >[!TIP]
 >
->`PTMediaPlayer`和`PTMediaPlayerItem` `prepareToPlay`方法相等。 要避免为每个资产创建单独的`PTMediaPlayer`实例，请使用`PTMediaPlayerItem`方法。
+>如果您不呼叫 `prepareToPlay`，呼叫 `play` 自動呼叫 `prepareToPlay` 首先。 預先載入與處理在此時完成。
 
-即时启动可帮助您同时在后台启动多个媒体播放器实例或媒体播放器项目加载器实例，并缓冲所有这些实例中的视频流。 当用户更改渠道，且流已正确缓冲时，对新渠道调用`play`会更快地开始播放。
+TVSDK會完成下列部分或全部工作 `prepareToPlay`：
+
+* 如果中繼資料索引鍵 `kSyncCookiesWithAVAsset` ，TVSDK會對原始M3U8檔案提出一項要求，以便同步Cookie。
+* 載入DRM中繼資料索引鍵。
+* 建立並準備播放內容所需的一些結構、元素或資產。
+
+>[!TIP]
+>
+>此 `PTMediaPlayer` 和 `PTMediaPlayerItem` `prepareToPlay` 方法相同。 避免建立個別的 `PTMediaPlayer` 對每個資產的執行個體，使用 `PTMediaPlayerItem` 方法。
+
+Instant-on可協助您在背景中同時啟動多個媒體播放器例項，或媒體播放器專案載入器例項，並在所有這些例項中緩衝視訊資料流。 當使用者變更頻道，並且資料流已正確緩衝時，呼叫 `play` 會在新頻道上更早開始播放。

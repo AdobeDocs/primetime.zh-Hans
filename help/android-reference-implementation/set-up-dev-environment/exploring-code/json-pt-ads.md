@@ -1,18 +1,17 @@
 ---
-title: Primetime广告的JSON对象
-description: 当类型值为Primetime广告时，下面的代码块定义详细信息JSON对象。
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+title: Primetime廣告的JSON物件
+description: 當型別值為Primetime廣告時，下面的程式碼區塊會定義詳細資訊JSON物件。
+exl-id: b1392781-2dfb-4934-b1ce-1c761cbfb22d
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '120'
 ht-degree: 0%
 
 ---
 
+# Primetime廣告的JSON物件 {#json-object-for-primetime-ads}
 
-# Primetime广告{#json-object-for-primetime-ads}的JSON对象
-
-当类型值为Primetime广告时，下面的代码块定义详细信息JSON对象。
+當型別值為Primetime廣告時，下面的程式碼區塊會定義詳細資訊JSON物件。
 
 ```
 “metadata”: {
@@ -33,11 +32,11 @@ ht-degree: 0%
 }
 ```
 
-| 属性 | 说明 |
+| 屬性 | 說明 |
 |---|---|
-| 域 | 用于广告请求的Primetime广告域。 |
-| mediaid | 在Primetime广告中为此内容设置的媒体。 |
-| zoneid | Primetime广告区域。 有关更多信息，请参阅Primetime广告文档。 |
-| 定位 | 用于定位内容特定广告的键/值对的数组。 |
+| 網域 | 用於廣告請求的Primetime廣告網域。 |
+| mediaid | 已針對此內容在Primetime廣告中設定的mediaid。 |
+| zoneid | Primetime廣告zoneid。 如需詳細資訊，請參閱Primetime廣告檔案。 |
+| 目標定位 | 用來鎖定內容特定廣告的索引鍵/值組陣列。 |
 
-有关这些属性值的详细信息，请参阅[com.adobe.mediacore.metadata.AuditudeSettings](https://help.adobe.com/en_US/primetime/api/psdk/javadoc/com/adobe/mediacore/metadata/AuditudeSettings.html)。
+另請參閱 [com.adobe.mediacore.metadata.AuditudeSettings](https://help.adobe.com/en_US/primetime/api/psdk/javadoc/com/adobe/mediacore/metadata/AuditudeSettings.html) 以取得這些屬性值的詳細資訊。

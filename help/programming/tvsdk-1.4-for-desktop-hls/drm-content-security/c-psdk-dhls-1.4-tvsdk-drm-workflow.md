@@ -1,19 +1,18 @@
 ---
-description: Primetime DRM已集成到TVSDK中，这简化了在TVSDK应用程序中实施内容保护的工作。
-title: 在TSVDK应用程序中实施Primetime DRM
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: Primetime DRM已整合至TVSDK，這簡化了TVSDK應用程式中實施內容保護的流程。
+title: 在TSVDK應用程式中實作Primetime DRM
+exl-id: 28400b9f-96fd-4748-b27a-60350d3558ff
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '79'
 ht-degree: 0%
 
 ---
 
+# 在TSVDK應用程式中實作Primetime DRM {#implementing-primetime-drm-in-a-tsvdk-application}
 
-# 在TSVDK应用程序{#implementing-primetime-drm-in-a-tsvdk-application}中实施Primetime DRM
+Primetime DRM已整合至TVSDK，這簡化了TVSDK應用程式中實施內容保護的流程。
 
-Primetime DRM已集成到TVSDK中，这简化了在TVSDK应用程序中实施内容保护的工作。
+如需使用Primetime DRM在TVSDK應用程式中實作內容保護的概述和詳細資訊，請參閱：
 
-有关使用Primetime DRM在TVSDK应用程序中实施内容保护的概述和详细信息，请参阅：
-
-* [Adobe Primetime TVSDK-DRM工作流(PDF)](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_tvsdk_drm_workflow.pdf)
+* [Adobe Primetime TVSDK-DRM工作流程(PDF)](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_tvsdk_drm_workflow.pdf)

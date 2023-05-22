@@ -1,22 +1,21 @@
 ---
-description: 以下新API允许您定义DRM回调。
-title: 实施DRM回呼
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 下列新API可讓您定義DRM回呼。
+title: 實作DRM回呼
+exl-id: 3aaa502d-9273-4320-a022-642fee75dafd
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '168'
 ht-degree: 0%
 
 ---
 
+# 實作DRM回呼{#implementing-drm-callbacks}
 
-# 实施DRM回呼{#implementing-drm-callbacks}
-
-以下新API允许您定义DRM回调。
+下列新API可讓您定義DRM回呼。
 
 <!--<a id="section_1090BFDB2C1D4EA4AAC9F9A6EC9DCD51"></a>-->
 
-您可以定义一个回调函数（例如，`parseContentIdCallback`）来分析内容ID，并使用`setParseContentIdCallback` API将其设置为`drmManager`。
+您可以定義回呼函式(例如， `parseContentIdCallback`)，以剖析內容ID並將其設為 `drmManager` 藉由使用 `setParseContentIdCallback` API。
 
 ```js
 var arrayToString = function (array) { 
@@ -39,7 +38,7 @@ drmManager.setParseContentIdCallback(parseContentIdCallback);
 
 <!--<a id="section_1E082B428EA74D9CA11C052158A83947"></a>-->
 
-您可以定义一个回调函数（例如`onCertificateResponseCallback`）来处理文本证书响应，并通过使用`setCertificateResponseCallback` API将该函数设置为`drmManager`。 可以设置`setCertificateResponseCallback`以覆盖默认行为。 例如，如果您的`certificateResponseType`不是`ArrayBuffer`，则可以使用此回调将证书响应转换为`ArrayBuffer`类型。
+您可以定義回呼函式(例如， `onCertificateResponseCallback`)以處理文字憑證回應，並將函式設為 `drmManager` 藉由使用 `setCertificateResponseCallback` API。 您可以設定 `setCertificateResponseCallback` 以覆寫預設行為。 例如，如果您的 `certificateResponseType` 不是 `ArrayBuffer`，您可以使用此回呼將憑證回應轉換為 `ArrayBuffer` 型別。
 
 ```js
 var base64DecodeUint8Array = function (input) { 
@@ -66,7 +65,7 @@ drmManager.setCertificateResponseCallback(onCertificateResponseCallback);
 
 <!--<a id="section_4DCC1B3ABCED484EB5340A558C9A770A"></a>-->
 
-您可以定义回调函数来分析许可证消息和许可证响应，并在对`drmManager.acquireLicense`的调用中传递这些函数。 `onLicenseResponseCallback` 是API中的新参 `acquireLicense` 数。
+您可以定義回呼函式來剖析授權訊息和授權回應，並在對的呼叫中傳遞它們 `drmManager.acquireLicense`. `onLicenseResponseCallback` 是 `acquireLicense` API。
 
 ```js
 var base64EncodeUint8Array = function (input) { 
@@ -121,7 +120,7 @@ var base64EncodeUint8Array = function (input) {
 drmManager.acquireLicense(drmMetadata, null, acquireLicenseListener, onLicenseMessageCallback, onLicenseResponseCallback);
 ```
 
-在保护数据中，新&#x200B;**[!UICONTROL certificateResponseType]**&#x200B;字段用于设置证书响应类型。 以下是保护数据的示例：
+在保護資料中，新的 **[!UICONTROL certificateResponseType]** 欄位用於設定憑證回應型別。 以下是保護資料的範例：
 
 ```js
 { 
@@ -137,4 +136,4 @@ drmManager.acquireLicense(drmMetadata, null, acquireLicenseListener, onLicenseMe
 }
 ```
 
-使用`certificateResponseType`字段是可选的。 如果未使用，则假定该值为`ArrayBuffer`。
+使用 `certificateResponseType` 欄位為選用。 若未使用，則會假設值為 `ArrayBuffer`.

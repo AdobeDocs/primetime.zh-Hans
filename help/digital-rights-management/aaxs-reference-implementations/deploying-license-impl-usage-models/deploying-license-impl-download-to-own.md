@@ -1,16 +1,15 @@
 ---
-title: 下载自有
-description: 下载自有
+title: 下載至擁有
+description: 下載至擁有
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 5fb00d70-da06-4104-b513-ae1f2b9c1b65
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '49'
 ht-degree: 0%
 
 ---
 
+# 下載至擁有 {#download-to-own}
 
-# 下载自有{#download-to-own}
-
-使用“下载至自有”(DTO)使用模式时，用户可以在线或离线下载内容，并获得内容的永久许可证。 在请求许可证时，用户必须进行身份验证，以便服务器可以验证用户是否已购买了内容。
+使用下載至擁有(DTO)使用模式時，使用者可以下載內容以供線上或離線使用，並獲得內容的永久授權。 請求授權時，使用者必須驗證，讓伺服器可以驗證使用者是否已購買內容。

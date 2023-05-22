@@ -1,22 +1,21 @@
 ---
-description: 您可以根据默认解析器实现您自己的内容解析器。
-title: 实现自定义内容解析器
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以根據預設解析器來實作您自己的內容解析器。
+title: 實作自訂內容解析程式
+exl-id: 96468f6d-80ad-4721-8ed3-4dbfa2a64b9e
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '241'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
+# 實作自訂內容解析程式 {#implement-a-custom-content-resolver}
 
-# 实现自定义内容解析程序{#implement-a-custom-content-resolver}
+您可以根據預設解析器來實作您自己的內容解析器。
 
-您可以根据默认解析器实现您自己的内容解析器。
+當TVSDK偵測到新的商機時，它會逐一瀏覽註冊的內容解析器，尋找能夠解析該商機的內容。 系統會選取傳回true的第一個來解析商機。 如果沒有內容解析程式可用，則會略過該機會。 由於內容解析程式通常是非同步的，內容解析器負責在程式完成時進行通知。
 
-当TVSDK检测到新的机会时，它会重新访问注册的内容解析器，寻找能够解决该机会的内容解析器。 选择返回true的第一个以解决该机会。 如果没有内容解析程序可用，则跳过该机会。 由于内容解析过程通常是异步的，因此内容解析程序负责在进程完成时通知。
-
-1. 创建自定义`AdvertisingFactory`实例并覆盖`createContentResolver`。
+1. 建立自訂 `AdvertisingFactory` 執行個體和覆寫 `createContentResolver`.
 
    例如：
 
@@ -43,7 +42,7 @@ ht-degree: 1%
    }
    ```
 
-1. 向`MediaPlayer`注册广告客户端工厂。
+1. 將廣告使用者端工廠註冊至 `MediaPlayer`.
 
    例如：
 
@@ -53,9 +52,9 @@ ht-degree: 1%
    mediaPlayer.registerAdClientFactory(advertisingFactory);
    ```
 
-1. 将`AdvertisingMetadata`对象传递给TVSDK，如下所示：
-   1. 创建`AdvertisingMetadata`对象和`MetadataNode`对象。
-   1. 将`AdvertisingMetadata`对象保存到`MetadataNode`。
+1. 傳遞 `AdvertisingMetadata` 物件至TVSDK，如下所示：
+   1. 建立 `AdvertisingMetadata` 物件和 `MetadataNode` 物件。
+   1. 儲存 `AdvertisingMetadata` 物件至 `MetadataNode`.
 
    ```java
    MetadataNode result = new MetadataNode(); 
@@ -63,21 +62,21 @@ ht-degree: 1%
                   advertisingMetadata);
    ```
 
-1. 创建扩展`ContentResolver`类的自定义广告解析程序类。
-   1. 在自定义广告解析器中，覆盖此受保护的函数：
+1. 建立自訂廣告解析程式類別，以擴充 `ContentResolver` 類別。
+   1. 在自訂廣告解析程式中，覆寫此受保護的函式：
 
       ```java
       void doResolveAds(Metadata metadata,  
                         PlacementOpportunity placementOpportunity)
       ```
 
-      元数据包含您的`AdvertisingMetada`。 将它用于以下`TimelineOperation`矢量生成。
+      中繼資料包含您的 `AdvertisingMetada`. 將其用於以下專案 `TimelineOperation` 向量產生。
 
-   1. 对于每个职位安排机会，创建一个`Vector<TimelineOperation>`。
+   1. 針對每個刊登機會，建立 `Vector<TimelineOperation>`.
 
-      矢量可以是空的，但不能为null。
+      向量可以是空的，但不可以是Null。
 
-      此示例`TimelineOperation`提供了`AdBreakPlacement`的结构：
+      此範例 `TimelineOperation` 提供以下專案的結構： `AdBreakPlacement`：
 
       ```java
       AdBreakPlacement(AdBreak.createAdBreak( 
@@ -90,12 +89,12 @@ ht-degree: 1%
       )
       ```
 
-   1. 解析广告后，调用下列功能之一：
+   1. 解析廣告後，請呼叫下列其中一個函式：
 
-      * 如果广告解析成功：`notifyResolveComplete(Vector<TimelineOperation> proposals)`
-      * 如果广告解决失败：`notifyResolveError(Error error)`
+      * 如果廣告解析成功： `notifyResolveComplete(Vector<TimelineOperation> proposals)`
+      * 如果廣告解析失敗： `notifyResolveError(Error error)`
 
-      例如，如果失败：
+      例如，如果失敗：
 
       ```java
       Metadata metadata = new MetadataNode(); 
@@ -106,7 +105,7 @@ ht-degree: 1%
 
 <!--<a id="example_4F0D7692A92E480A835D6FDBEDBE75E7"></a>-->
 
-此示例自定义广告解析程序向广告服务器发出HTTP请求并接收JSON响应。
+此自訂廣告解析程式範例會向廣告伺服器發出HTTP要求並接收JSON回應。
 
 ```java
 public class CustomAdResolver extends ContentResolver { 
@@ -125,7 +124,7 @@ public class CustomAdResolver extends ContentResolver {
 }
 ```
 
-实时流的JSON和服务器响应示例：
+即時資料流的JSON廣告伺服器回應範例：
 
 ```
 {     
@@ -162,7 +161,7 @@ public class CustomAdResolver extends ContentResolver {
 } 
 ```
 
-VOD的JSON和服务器响应示例：
+VOD的JSON廣告伺服器回應範例：
 
 ```
 {     
@@ -223,4 +222,3 @@ VOD的JSON和服务器响应示例：
     } 
 } 
 ```
-

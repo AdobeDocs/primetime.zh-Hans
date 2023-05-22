@@ -1,20 +1,19 @@
 ---
-title: 更新策略
-description: 更新策略
+title: 更新原則
+description: 更新原則
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 0ea8d03b-68dd-415e-a75b-fd439bf858b6
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '163'
 ht-degree: 0%
 
 ---
 
+# 更新原則 {#updating-policies}
 
-# 更新策略{#updating-policies}
+如果在封裝內容後更新原則，請將更新的原則提供給授權伺服器，以便在發行授權時可以使用更新的版本。 如果您的授權伺服器可存取資料庫以儲存原則，您可以從資料庫擷取更新的原則並呼叫 `LicenseRequestMessage.setSelectedPolicy()` 提供原則的新版本。
 
-如果在打包内容后更新了策略，请向许可证服务器提供更新的策略，以便在发布许可证时可以使用更新的版本。 如果您的许可证服务器有权访问存储策略的数据库，则可以从数据库检索更新的策略并调用`LicenseRequestMessage.setSelectedPolicy()`以提供策略的新版本。
+對於不依賴中央資料庫的授權伺服器，SDK提供原則更新清單支援。 原則更新清單是包含已更新或已撤銷原則清單的檔案。 更新原則時，產生新的原則更新清單，並定期將清單推送到所有授權伺服器。 透過設定將清單傳遞至SDK `HandlerConfiguration.setPolicyUpdateList()`. 如果提供更新清單，SDK在剖析內容中繼資料時會參考此清單。 `ContentInfo.getUpdatedPolicies()` 包含中繼資料中指定的原則更新版本。
 
-对于不依赖中央数据库的许可证服务器，SDK提供对策略更新列表的支持。 策略更新列表是包含已更新或已吊销策略列表的文件。 更新策略时，生成新的策略更新列表，并定期将列表推出到所有许可证服务器。 通过设置`HandlerConfiguration.setPolicyUpdateList()`将列表传递到SDK。 如果提供了更新列表，则SDK在分析内容元数据时会咨询此列表。 `ContentInfo.getUpdatedPolicies()` 包含元数据中指定的策略的更新版本。
-
-请参阅[使用策略](../../../aaxs-protecting-content/content-working-with-policies/content-working-with-policies-overview.md)和[策略更新列表。](/help/digital-rights-management/protecting-content/working-policies-overview/policy-update-lists/working-with-policy-update-lists.md)
+另請參閱 [使用原則](../../../aaxs-protecting-content/content-working-with-policies/content-working-with-policies-overview.md) 和 [原則更新清單。](/help/digital-rights-management/protecting-content/working-policies-overview/policy-update-lists/working-with-policy-update-lists.md)

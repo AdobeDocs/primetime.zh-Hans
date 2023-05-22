@@ -1,20 +1,19 @@
 ---
-description: 此过程是有关如何创建允许用户选择隐藏字幕轨道的按钮的示例。
-title: 允许用户更改题注轨道
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 此程式是如何建立按鈕的範例，該按鈕可讓使用者選取隱藏式字幕追蹤。
+title: 允許使用者變更註解追蹤
+exl-id: cf273f06-ae0d-458c-aeef-7f70dad6106f
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '113'
 ht-degree: 0%
 
 ---
 
+# 允許使用者變更註解追蹤 {#allow-users-to-change-the-caption-track}
 
-# 允许用户更改题注轨道{#allow-users-to-change-the-caption-track}
+此程式是如何建立按鈕的範例，該按鈕可讓使用者選取隱藏式字幕追蹤。
 
-此过程是有关如何创建允许用户选择隐藏字幕轨道的按钮的示例。
-
-1. 创建用于更改隐藏字幕轨道的按钮。
+1. 建立按鈕以變更隱藏式字幕追蹤。
 
    ```xml
    <Button 
@@ -28,9 +27,9 @@ ht-degree: 0%
      android:text="CC" /> 
    ```
 
-1. 将可用隐藏字幕轨道的列表转换为字符串数组。
+1. 將可用的隱藏式字幕曲目清單轉換為字串陣列。
 
-   对具有活动(即TVSDK已发现数据的渠道)的隐藏字幕轨道进行相应标记。
+   具有活動的隱藏式字幕追蹤（即TVSDK已探索資料的管道）會適當地加上標籤。
 
    ```java
    /** 
@@ -58,7 +57,7 @@ ht-degree: 0%
    } 
    ```
 
-1. 当用户单击该按钮时，将显示一个对话框，其中列表所有默认的隐藏字幕轨道。
+1. 當使用者按一下按鈕時，顯示列出所有預設隱藏式字幕追蹤的對話方塊。
 
    ```java
    public void selectClosedCaptioningClick(View view) { 

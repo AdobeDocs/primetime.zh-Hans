@@ -1,18 +1,17 @@
 ---
-title: 存储键
-description: 存储键
+title: 存放區金鑰
+description: 存放區金鑰
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 922e1e2c-8d4a-41f6-8f4d-7db0522f39d4
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '111'
 ht-degree: 0%
 
 ---
 
+# 存放區金鑰{#store-keys}
 
-# 存储键{#store-keys}
+Adobe建議內容發行者將簽署和加密所需的密碼編譯私密金鑰儲存在安全、防篡改的硬體裝置中。 儲存在軟體中的金鑰比儲存在硬體中的金鑰更容易受到危害。 例如，如果軟體金鑰洩露，通常會複製包含該金鑰的金鑰或檔案，使得偵測洩露變得困難。 儲存在硬體上的金鑰不易受到未偵測到的危害。
 
-Adobe建议内容发布者将用于签名和加密的加密私钥存储在安全、篡改验证硬件设备中。 与存储在硬件中的密钥相比，存储在软件中的密钥更容易受到危害。 例如，如果软件密钥被泄露，则通常会复制包含密钥的密钥或文件，从而难以检测到漏洞。 存储在硬件上的密钥不易受到未检测到的危害。
-
-硬件安全模块(HSM)是存储和保护加密密钥的专用硬件设备。 有关详细信息，请参阅&#x200B;*使用Adobe Primetime DRM SDK保护内容*&#x200B;中的&#x200B;*存储凭据*。
+硬體安全模組(HSM)是儲存和保護密碼編譯金鑰的專用硬體裝置。 如需詳細資訊，請參閱 *儲存認證* 在 *使用Adobe Primetime DRM SDK保護內容*.

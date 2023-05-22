@@ -1,38 +1,38 @@
 ---
-title: 如何将MVPD登录页面从iFrame迁移到弹出窗口
-description: 如何将MVPD登录页面从iFrame迁移到弹出窗口
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 如何將MVPD登入頁面從iFrame移轉至快顯視窗
+description: 如何將MVPD登入頁面從iFrame移轉至快顯視窗
+exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '689'
 ht-degree: 0%
 
 ---
 
-
-# 如何将MVPD登录页面从iFrame迁移到弹出窗口 {#migr-mvpd-login-iframe-popup}
+# 如何將MVPD登入頁面從iFrame移轉至Popup {#migr-mvpd-login-iframe-popup}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-## 弹出窗口与iFrame {#popup-vs-iframe}
+## 快顯視窗與iFrame {#popup-vs-iframe}
 
-某些用户在MVPD登录页面的iFrame实施中遇到第三方Cookie问题。
+有些使用者在MVPD登入頁面的iFrame實作中遇到第三方Cookie問題。
 <!--These issues are described in the tech notes linked below:
 
 * [Adobe Primetime authentication and Safari login issues](https://tve.helpdocsonline.com/adobe-pass)
 * [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)-->
 
-Adobe Primetime身份验证团队 **建议实施弹出窗口/新窗口登录页面** 而不是Firefox和Safari上的iFrame版本。  但是，如果您为Internet Explorer实施登录页面，则可能会遇到弹出式实施问题。 IE问题的原因是，在用户在弹出窗口中使用其MVPD进行验证后，Adobe Primetime身份验证会强制父页面重定向，该重定向被Internet Explorer视为弹出窗口阻止程序。 Adobe Primetime身份验证团队 **建议为Internet Explorer实施iFrame登录**.
+Adobe Primetime驗證團隊 **建議實作快顯/新視窗登入頁面** 而不是Firefox和Safari上的iFrame版本。  不過，若您正在實作Internet Explorer的登入頁面，您可能會遇到快顯視窗實作的問題。 造成此IE問題的原因在於，使用者在快顯視窗中使用其MVPD進行驗證後，Adobe Primetime驗證會強制上層頁面重新導向，而Internet Explorer會將重新導向視為快顯視窗封鎖程式。 Adobe Primetime驗證團隊 **建議實作Internet Explorer的iFrame登入**.
 
-此技术说明中提供的示例代码使用iFrame和弹出窗口的混合实现 — 在Internet Explorer上打开iFrame，在其他浏览器上打开弹出窗口。
+此技術備註中顯示的程式碼範例使用iFrame和快顯視窗的混合實作 — 在Internet Explorer上開啟iFrame，並在其他瀏覽器上開啟快顯視窗。
 
-考虑到iFrame实施已存在，技术说明的第一部分显示iFrame实施的代码，第二部分显示更改以默认包含弹出式实施。
+考慮到iFrame實作已經存在，技術備註的第一部分會顯示iFrame實作的程式碼，第二部分則會顯示變更，以符合快顯視窗實作作為預設值。
 
 
-## 在iFrame中具有登录页面的MVPD选取器 {#mvpd-pickr-iframe}
+## iFrame中具有登入頁面的MVPD選擇器 {#mvpd-pickr-iframe}
 
-以前的代码示例显示的HTML页面包含 &lt;div> 标记，其中将创建iFrame以及close iFrame按钮：
+HTML先前的程式碼範例顯示包含 &lt;div> 標籤要建立iFrame的位置，並附上「關閉iFrame」按鈕：
 
 ```HTML
 <body> 
@@ -48,7 +48,7 @@ Adobe Primetime身份验证团队 **建议实施弹出窗口/新窗口登录页�
 </body>
 ```
 
-以下是关联的 **JavaScript** 代码：
+以下是相關聯的 **JavaScript** 程式碼：
 
 ```JavaScript
 /*
@@ -103,12 +103,12 @@ function setSelectedProvider(providerID) {
 ```
 
 
-## 在弹出窗口中具有登录页面的MVPD选取器 {#mvpd-pickr-popup}
+## 在快顯視窗中具有登入頁面的MVPD選擇器 {#mvpd-pickr-popup}
 
-因为我们不会使用 **iFrame** 现在，HTML代码将不包含iFrame或用于关闭iFrame的按钮。 以前包含iFrame的div - **mvpddiv**  — 将保留并用于以下用途：
+因為我們不會使用 **iFrame** HTML程式碼將不再包含iFrame或關閉iFrame的按鈕。 先前包含iFrame的div - **mvpddiv**  — 將保留，並用於下列專案：
 
-* 通知用户，如果弹出窗口焦点丢失，则MVPD登录页面已打开
-* 提供链接以重新聚焦弹出窗口
+* 通知使用者，如果快顯視窗焦點遺失，MVPD登入頁面已經開啟
+* 提供重新獲得快顯視窗焦點的連結
 
 ```HTML
 <body onload="javascript:loadAccessEnabler();"> 
@@ -134,9 +134,9 @@ function setSelectedProvider(providerID) {
 </body>
 ```
 
-MVPD列表将显示在名为 **选取器** 作为选择 **-mvpdList**.
+MVPD清單將顯示在名為的div中 **選取器** 作為選取項 **-mvpdList**.
 
-将使用新的API回调 —  **setConfig(configXML)**. 调用setRequestor(requestorID)函数后，将触发回调。 此回调将返回与请求者ID先前设置的集成的MVPD的列表。 在回调方法中，将解析传入的XML，并缓存MVPD列表。 MVPD选取器也已创建，但未显示。
+將使用新的API回呼 —  **setConfig(configXML)**. 呼叫setRequestor(requestorID)函式之後會觸發回呼。 此回呼會傳回與先前設定的requestorID整合的MVPD清單。 在回呼方法中，會剖析傳入的XML，並快取MVPD清單。 也會建立MVPD選擇器，但不會顯示。
 
 ```JavaScript
 var mvpdList;  // The list of cached MVPDs
@@ -168,7 +168,7 @@ function setConfig(configXML) {
 }
 ```
 
-在调用getAuthentication()或getAuthorization()函数后，将触发displayProviderDialog()回调。 通常，在此回调中，会生成并显示MVPD列表。 由于MVPD选取器已经构建，因此只需将其显示给用户即可。
+呼叫getAuthentication()或getAuthorization()函式後，就會觸發displayProviderDialog()回呼。 通常，在此回呼內，會建立並顯示MVPD清單。 由於MVPD選擇器已建置，因此唯一要做的就是向使用者顯示。
 
 ```JavaScript
 /*
@@ -179,15 +179,15 @@ function displayProviderDialog(providers) {
 }
 ```
 
-用户从选取器中选择MVPD后，需要创建弹出窗口。 如果弹出窗口是使用about:blank创建，或者包含另一个域上的页面，则某些浏览器可能会阻止该弹出窗口 — 因此建议使用加载AccessEnabler的主机名将其打开。
+使用者從選擇器選取MVPD後，需要建立快顯視窗。 如果使用about：blank或使用其他網域上的頁面建立快顯視窗，則某些瀏覽器可能會封鎖快顯視窗，因此建議使用載入AccessEnabler的主機名稱開啟快顯視窗。
 
-在iFrame实施中，由btnCloseIframe按钮和JavaScript函数closeIframeAction()完成身份验证流程的重置，但现在无法再对iFrame进行装饰。 因此，在关闭弹出窗口时通过观看（用户或完成验证流程）可实现相同的行为。 添加了代码片段，以便用户失去弹出窗口的焦点时也可提供帮助：
+在iFrame實作中，重設驗證流程已由btnCloseIframe按鈕和JavaScript函式closeIframeAction()完成，但現在已無法再裝飾iFrame。 因此，透過觀察快顯視窗何時關閉（使用者或完成驗證流程），可獲得相同的行為。 已新增程式碼片段，萬一使用者失去快顯視窗的焦點時也有幫助：
 
 ```HTML
 "<a href="javascript:mvpdWindow.focus();">Click here to open it.</a>".
 ```
 
-在createIFrame()回调中， **mvpddiv** 将显示div。
+在createIFrame()回呼上 **mvpddiv** 將會顯示div。
 
 ```JavaScript
 function createIFrame(width, height) {
@@ -228,8 +228,8 @@ function checkClosed() {
 
 >[!IMPORTANT]
 >
->* 示例代码包含用于所用requestorID - &#39;REF&#39;的硬编码变量，该变量应被真正的程序员请求者ID替换。
->* 示例代码将仅从与使用的请求者ID关联的已列入白名单的域中正常运行。
->* 由于整个代码可供下载，因此此技术说明中显示的代码已被截断。 有关完整示例，请参阅 **JS iFrame与弹出窗口示例**.
->* 外部JavaScript库的链接来自 [Google托管服务](https://developers.google.com/speed/libraries/).
+>* 程式碼範例包含所用要求者ID的硬式編碼變數 — 「REF」，該變數應被真正的程式設計人員要求者ID取代。
+>* 範常式式碼只會從與所用請求者ID相關聯的白名單網域正確執行。
+>* 由於整個程式碼都可供下載，此技術備註中顯示的程式碼已遭截斷。 如需完整範例，請參閱 **JS iFrame與快顯視窗範例**.
+>* 外部JavaScript程式庫連結自 [Google託管服務](https://developers.google.com/speed/libraries/).
 

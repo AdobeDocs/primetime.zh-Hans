@@ -1,39 +1,38 @@
 ---
-description: 打包内容是准备视频内容以在Web上回放的过程。 打包包括将原始视频转换为清单文件，以及使用不同设备和浏览器的不同DRM解决方案对内容进行加密。
-title: 打包内容
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 封裝內容是準備視訊內容以供網路播放的程式。 封裝包括將原始視訊轉換為資訊清單檔案，以及針對不同裝置和瀏覽器，選擇使用不同的DRM解決方案來加密內容。
+title: 封裝您的內容
+exl-id: d6f922d6-afec-4314-a01e-b951c1f8a7e8
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '561'
 ht-degree: 0%
 
 ---
 
+# 封裝您的內容 {#package-your-content}
 
-# 打包您的内容{#package-your-content}
+封裝內容是準備視訊內容以供網路播放的程式。 封裝包括將原始視訊轉換為資訊清單檔案，以及針對不同裝置和瀏覽器，選擇使用不同的DRM解決方案來加密內容。
 
-打包内容是准备视频内容以在Web上回放的过程。 打包包括将原始视频转换为清单文件，以及使用不同设备和浏览器的不同DRM解决方案对内容进行加密。
+若要準備內容，您可以使用AdobeOffline Packager或其他工具，例如ExpressPlay的Bento4封裝程式。 封裝者會準備視訊以進行播放（例如，將原始檔案分割並放入資訊清單中），並使用您選擇的DRM解決方案（PlayReady、Widevine、FairPlay、Access等）來保護視訊:
 
-要准备内容，您可以使用Adobe Offline Packager或其他工具，如ExpressPlay的Bento4 Packager。 包装程序既可准备视频以供播放（例如，将原始文件分片并放入清单中），又可使用您选择的DRM解决方案（PlayReady、Widevine、FairPlay、Access等）保护视频:
-
-* [Adobe Offline Packager](https://helpx.adobe.com/content/dam/help/en/primetime/guides/offline_packager_getting_started.pdf)
-* [ExpressPlay Packagers](https://www.expressplay.com/developer/packaging-tools/)
+* [Adobe離線封裝程式](https://helpx.adobe.com/content/dam/help/en/primetime/guides/offline_packager_getting_started.pdf)
+* [ExpressPlay封裝](https://www.expressplay.com/developer/packaging-tools/)
 
 <!--<a id="fig_jbn_fw5_xw"></a>-->
 
 ![](assets/pkg_lic_play_web.png)
 
-1. 打包或获取用于测试设置的内容。
+1. 封裝或以其他方式取得用於測試設定的內容。
 
-   打包时要记住的要点之一是，在此打包步骤中使用的密钥ID（内容ID）与您在后续许可证令牌请求中必须提供的密钥ID（内容ID）相同。 密钥ID是唯一标识您的CEK的项(可以存储在您自己的密钥管理存储库中，或使用[ExpressPlay的密钥服务](https://www.expressplay.com/developer/key-storage/)存储)。
+   封裝時請記住的一個關鍵點是，您在此封裝步驟中使用的金鑰ID （內容ID）與您必須在後續的授權Token請求中提供的金鑰ID （內容ID）相同。 金鑰ID是唯一可識別您CEK的專案(可儲存在您自己的金鑰管理資料庫中，或是使用儲存 [ExpressPlay的金鑰儲存服務](https://www.expressplay.com/developer/key-storage/).
 
    >[!NOTE]
    >
-   >对于熟悉Adobe Access的用户而言，这是不同解决方案工作方式的重要区别。 在“访问”中，许可证密钥嵌入到DRM元数据中，并随受保护的内容来回传递。 在此处描述的多DRM系统中，实际许可证不会通过，而是安全地存储并通过密钥ID获得。
+   >對於熟悉Adobe存取的人來說，這是不同解決方案運作方式的重要差異。 在Access中，授權金鑰內嵌在DRM中繼資料中，並與受保護的內容來回傳遞。 在此說明的多重DRM系統中，實際授權並未傳遞，而是安全地儲存並透過金鑰ID取得。
 
 <!--<a id="example_52AF76B730174B79B6088280FCDF126D"></a>-->
 
-以下是使用Adobe Offline Packager for Widevine的打包示例。 Packager使用一个配置文件（例如[!DNL widevine.xml]），它类似于：
+以下是使用Widevine的AdobeOffline Packager封裝範例。 封裝程式會使用組態檔(例如 [!DNL widevine.xml])，如下所示：
 
 ```
 <config> 
@@ -51,21 +50,21 @@ ht-degree: 0%
 </config>
 ```
 
-* `in_path`  — 此入口指向源视频在本地打包机器上的位置。
-* `out_type`  — 此条目描述打包输出的类型，本例中为DASH（用于HTML5上的Widevine保护）。
-* `out_path`  — 您希望输出转到的本地计算机上的位置。
-* `drm_sys`  — 要打包的DRM解决方案。这可以是`widevine`、`fairplay`或`playready`。
+* `in_path`  — 此專案指向本機封裝電腦上的來源視訊位置。
+* `out_type`  — 此專案說明封裝輸出的型別，在此例中為DASH (用於HTML5上的Widevine保護)。
+* `out_path`  — 本機電腦上您要輸出到的位置。
+* `drm_sys`  — 您封裝的DRM解決方案。 這將會是 `widevine`， `fairplay`，或 `playready`.
 
-* `frag_dur` 和是 `target_dur` 与视频播放相关的特定于DASH的持续时间条目。
+* `frag_dur` 和 `target_dur` 是和視訊播放相關的DASH特定期間專案。
 
-* `key_file_path`  — 这是许可证文件在打包计算机上用作内容加密密钥(CEK)的位置。它是一个基64编码的16字节十六进制字符串。
-* `widevine_content_id`  — 这是Widevine的“样板”；总是这样 `2a`。（请勿将其与`widevine_key_id`混淆。）
+* `key_file_path`  — 這是封裝電腦上用作內容加密金鑰(CEK)的授權檔案的位置。 它是Base-64編碼的16位元組十六進位字串。
+* `widevine_content_id`  — 這是Widevine的「樣板」，永遠都是 `2a`. (請勿將此問題與 `widevine_key_id`.)
 
-* `widevine_provider`  — 出于我们的目的，始终将此设置为 `intertrust`。
+* `widevine_provider`  — 基於我們的目的，請一律將此項設為 `intertrust`.
 
-* `widevine_key_id`  — 这是您在条目中指定的许可证的标 `key_file_path` 识符。换句话说，它标识您用于加密内容的密钥。 此ID是您自己创建的16字节的HEX字符串。
+* `widevine_key_id`  — 這是您在「 」中指定的授權識別碼 `key_file_path` 登入點。 換言之，這可以識別您用來加密內容的金鑰。 此ID是您自行建立的16位元組HEX字串。
 
-如[Packager文档](https://helpx.adobe.com/content/dam/help/en/primetime/guides/offline_packager_getting_started.pdf)中所述，“作为最佳实践，请创建一个配置文件，其中包含要用于生成输出的常用选项。 然后，通过将特定选项作为命令行参数提供来创建输出。” 在这种情况下，我们的配置文件相当完整，因此您可以按如下方式创建输出：
+如 [Packager檔案](https://helpx.adobe.com/content/dam/help/en/primetime/guides/offline_packager_getting_started.pdf)，「最佳做法是建立組態檔，其中包含您要用來產生輸出的常用選項。 然後，提供特定選項作為命令列引數來建立輸出。」 在此情況下，我們的設定檔案相當完整，因此您可以建立您的輸出，如下所示：
 
 ```
 java -jar OfflinePackager.jar -conf_path widevine.xml -out_path test_dash/ 
@@ -73,5 +72,4 @@ java -jar OfflinePackager.jar -conf_path widevine.xml -out_path test_dash/
 
 >[!NOTE]
 >
->命令行参数优先于配置文件参数。 在此示例中，所需的一切都在配置文件中，但我们已使用`-out_path test_dash/`覆盖了配置文件中指定的输出路径。
-
+>命令列引數優先於設定檔案引數。 在此範例中，所有必要專案都在設定檔案中，但我們已使用覆寫設定檔案中指定的輸出路徑 `-out_path test_dash/`.

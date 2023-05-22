@@ -1,16 +1,15 @@
 ---
-title: 向iOS客户端发放远程密钥投放许可(需要Adobe Primetime)
-description: 向iOS客户端发放远程密钥投放许可(需要Adobe Primetime)
+title: 核發遠端金鑰傳遞至iOS使用者端的授權(需要Adobe Primetime)
+description: 核發遠端金鑰傳遞至iOS使用者端的授權(需要Adobe Primetime)
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: f9f13ab3-3394-4729-a64c-f28c67601e26
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '63'
 ht-degree: 0%
 
 ---
 
+# 核發遠端金鑰傳遞至iOS使用者端的授權(需要Adobe Primetime){#issuing-licenses-for-remote-key-delivery-to-ios-clients-requires-adobe-primetime}
 
-# 向iOS客户端颁发远程密钥投放许可证(需要Adobe Primetime){#issuing-licenses-for-remote-key-delivery-to-ios-clients-requires-adobe-primetime}
-
-如果要为需要iOS设备远程密钥投放的内容颁发许可证，则需要在`HandlerConfiguration.setKeyServerCertificate()`中指定密钥服务器的许可证服务器证书。
+如果您想要針對iOS裝置需要遠端金鑰傳遞的內容核發授權，您需要指定金鑰伺服器的授權伺服器憑證 `HandlerConfiguration.setKeyServerCertificate()`.

@@ -1,74 +1,73 @@
 ---
-title: 适用于Android的TVSDK 1.4至2.5(Java)
-description: TVSDK 2.5在性能、安全性、更好的集成等方面比1.4版优惠了多种优势。
+title: 適用於Android (Java)的TVSDK 1.4至2.5
+description: 相較於1.4版，TVSDK 2.5在效能、安全性、更好的整合等各方面均具備多項優點。
 contentOwner: vishgupt
 products: SG_PRIMETIME
 topic-tags: migration
-translation-type: tm+mt
-source-git-commit: b33240bf1b42b80389cd95a7ae4d3f85185a2d32
+exl-id: 3b7f8355-ebea-4322-aef4-5393308391b5
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '2323'
 ht-degree: 0%
 
 ---
 
+# 適用於Android (Java)的TVSDK 1.4至2.5 {#tvsdk-to-for-android-java}
 
-# 适用于Android的TVSDK 1.4至2.5(Java){#tvsdk-to-for-android-java}
+相較於1.4版，TVSDK 2.5在效能、安全性、更好的整合等各方面均具備多項優點。
 
-TVSDK 2.5在性能、安全性、更好的集成等方面比1.4版优惠了多种优势。
+TVSDK解決了最重要的裝置上最大的挑戰。 Android繼續保持其全球主導地位，市場份額超過86%。 在Android上移轉至TVSDK可最佳化播放效能，藉由支援新內容格式，改善使用者參與度並加快上市時間。
 
-TVSDK解决了最重要的设备上的最大挑战。 Android继续占据着全球主导地位，占据了86%以上的市场份额。 在Android上迁移到TVSDK将优化播放性能，以提高用户参与度并加快上市速度，同时支持新的内容格式。
+## 移轉至TVSDK v2.5的好處 {#benefits-of-migrating-to-tvsdk-v}
 
-## 迁移到TVSDK v2.5 {#benefits-of-migrating-to-tvsdk-v}的优势
+相較於1.4版，TVSDK 2.5在效能、安全性、更好的整合等各方面均具備多項優點。 請閱讀下文，快速瞭解移轉至此新版本的好處。
 
-TVSDK 2.5在性能、安全性、更好的集成等方面比1.4版优惠了多种优势。 继续阅读，快速了解迁移到此新版本的好处。
+根據協力廠商的基準測試研究，v2.5的啟動時間比業界平均縮短了5倍，掉格時間也縮短了3.8倍。
 
-根据第三方基准测试研究，v2.5的启动时间比行业平均水平减少5倍，丢帧减少3.8倍。
-
-| 性能功能 | 说明 |
+| 效能功能 | 說明 |
 |--- |--- |
-| VOD和实时的即时启动 | 预加载初始段，以便在渠道切换时立即播放VOD和实时线性流，以获得类似电视的体验。 |
-| 延迟广告加载 | 开始在以并行线程解析中间卷广告时，在预卷或内容可用时立即播放。 |
-| 永久网络连接 | 提高效率并缩短网络代码的等待时间，以提高播放性能。 |
-| 改进的ABR逻辑 | 新的ABR逻辑基于缓冲区长度、缓冲区长度变化率和测量带宽。 这确保ABR在带宽波动时选择正确的比特率，还通过监视缓冲区长度变化的速率来优化比特率切换实际发生的次数。 |
-| 部分区段下载 | 开始在客户端可靠地渲染视频时，只要有来自区段的足够帧就可以播放。 |
-| 并行下载 | TVSDK并行下载音频和视频段以取消内容混合以优化回放性能。 |
+| 立即開啟VOD和即時 | 預先載入初始ts區段，以便在頻道切換時立即播放VOD和即時線性資料流，以提供類似電視的體驗。 |
+| 延遲廣告載入 | 在平行執行緒中解析中段廣告時，在有前段或內容可用時立即開始播放。 |
+| 持續性網路連線 | 提高網路程式碼的效率並減少延遲時間，以加快播放效能。 |
+| 改善ABR邏輯 | 新的ABR邏輯是以緩衝區長度、緩衝區長度變更速率和測量到的頻寬為基礎。 這可確保ABR在頻寬波動時選擇正確的位元速率，並透過監控緩衝區長度變更的速率，最佳化位元速率切換的實際發生次數。 |
+| 部分割槽段下載 | 當區段中有足夠的影格可在使用者端可靠轉譯視訊時，立即開始播放。 |
+| 平行下載 | TVSDK會同時下載音訊和視訊區段，以使用未嵌入的內容來最佳化播放效能。 |
 
-回放功能通过提供数字上线性广播的体验来提高消费者参与度。 此外，它还可帮助您利用本机DRM（如Widevine）进行高清回放。
+播放功能透過數位提供線性廣播的體驗，提升消費者參與度。 此外，它還有助於您運用Widevine等原生DRM進行HD播放。
 
-| 播放功能 | 说明 |
+| 播放功能 | 說明 |
 |--- |--- |
-| MP4播放 | MP4短片无需重新转码为在TVSDK中播放。 |
-| 虚线VOD内容播放 | 支持基本的DASH VOD播放用例。 |
-| 使用ABR实现顺畅的滴答 | 支持在HLS中使用低速关键帧和高速I帧的快进和后退。 支持所有支持的帧。 |
+| MP4播放 | MP4短片不必重新轉碼為TVSDK內的播放。 |
+| 虛線VOD內容播放 | 支援基本DASH VOD播放使用案例。 |
+| 使用ABR進行平滑的點播 | 支援在HLS中快速前進和倒帶，使用低速率的關鍵影格，以及速度更快的I影格。 ABR支援所有支援的框架。 |
 
-这些功能对于满足工作室限制（如通过本机DRM播放HD）非常重要。
+這些功能對於滿足工作室限制非常重要，例如透過原生DRM進行HD播放。
 
-| 功能 | 说明 |
+| 功能 | 說明 |
 |--- |--- |
-| 基于分辨率的输出保护 | 播放只能限于DRM要求允许的特定分辨率。 仅通过Primetime DRM提供。 |
-| Widevine支持 | 支持DASH VOD流，以启用本机DRM用例。 |
+| 以解析度為基礎的輸出保護 | 只能將播放限製為DRM需求所允許的特定解析度。 只能透過Primetime DRM使用。 |
+| Widevine支援 | 透過DASH VOD串流支援，可啟用原生DRM使用案例。 |
 
-直接计费增强功能无需每月创建手动计费报表。 VHL 2.0具有预建集成和更准确的跟踪功能，可缩短上市时间。
+直接帳單增強功能消除了每月建立手動帳單報告的需求。 VHL 2.0透過建置前的整合和更好的追蹤準確性，可加快上市時間。
 
-| 功能 | 说明 |
+| 功能 | 說明 |
 |--- |--- |
-| Moat集成 | 支持从Moat进行广告可见性测量。 |
-| VHL 2.0 | 最新优化的视频心率库集成，可自动收集Adobe Analytics的使用数据。 |
-| 故障转移支持 | 实施了其他策略以继续无中断播放，尽管主机服务器、播放列表文件和区段出现故障。 |
-| 直接付费集成 | 将计费指标发送到Adobe Analytics后端，后者经Adobe Primetime认证，可用于客户使用的流。 |
+| Moat整合 | 支援來自Moat的廣告可見度測量。 |
+| VHL 2.0 | 最新最佳化的視訊心率資料庫整合，可自動收集Adobe Analytics的使用量資料。 |
+| 容錯移轉支援 | 即使主機伺服器、播放清單檔案和區段失敗，仍實施其他策略以繼續不間斷播放。 |
+| 直接帳單整合 | 將計費量度傳送至Adobe Analytics後端，該後端已由Adobe Primetime針對客戶使用的資料流進行認證。 |
 
 >[!NOTE]
 >
->v2.5中支持TVSDK v1.4的所有功能，但多CDN支持除外。
+>v2.5支援TVSDK v1.4的所有功能，但多重CDN支援除外。
 
-## 迁移过程{#overview-of-the-migration-process}概述
+## 移轉程式概述 {#overview-of-the-migration-process}
 
-从TVSDK 1.4顺利迁移到2.5需要更改到版本2.5库，重新编译，然后使用此文档帮助调试出现的任何问题。
+順利從TVSDK 1.4移轉至2.5版需要變更為2.5版程式庫、重新編譯，然後使用此檔案協助偵錯任何發生的問題。
 
-TVSDK v1.4库不能与v2.5库一起使用并共存。 您必须将v2.5库与TVSDK 2.5一起使用，并迁移您的应用程序和集成以升级到TVSDK 2.5。本文档描述如何和如何更改应用程序代码以及如何解决重新编译过程中的错误。
+TVSDK v1.4程式庫無法搭配v2.5程式庫使用及並存。 您必須搭配TVSDK 2.5使用v2.5程式庫，並移轉應用程式和整合以升級至TVSDK 2.5。本檔案說明如何變更應用程式程式碼以及重新編譯期間如何解決錯誤。
 
-psdk.jar文件使用第三方库支持不同功能。 要防止删除库，请在`proguard.cfg`文件中包含以下内容：
+psdk.jar檔案使用協力廠商程式庫來支援不同功能。 若要防止程式庫遭到移除，請在以下檔案中加入下列內容： `proguard.cfg` 檔案：
 
 ```java
 # Adobe TVSDK keep classes
@@ -77,41 +76,41 @@ psdk.jar文件使用第三方库支持不同功能。 要防止删除库，请�
 { *; }
 ```
 
-在`build.gradle`文件中，需要包含编译指令以包含基于TVSDK的JAR文件。 如果您的应用程序包含Adobe Video Analytics，则您需要在应用程序中包含Adobe Video Analytics集成所需的附加jar的编译指令
+在 `build.gradle` 檔案時，您必須包含編譯指示詞，才能包含以TVSDK為基礎的JAR檔案。 如果您的應用程式包含Adobe Video Analytics，則您必須在應用程式中包含Adobe Video Analytics整合所需的其他jar的compile指令
 
 ```java
 # Compile Adobe TVSDK jars compile files('libs/psdk-va.jar')
 compile files('libs/VideoHeartbeat.jar')
 ```
 
-本文档未涵盖多项细微更改。 有关API的细微更改，请参阅[TVSDK 2.5 for Android Java API](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_2.5/index.html)。 相应的C++ API参考有详细说明。 有关类似的C++ API文档，请参阅[用于Android C++ API的TVSDK 2.5](https://help.adobe.com/en_US/primetime/api/psdk/cpp_2.5/index.html)。
+本檔案未涵蓋多項次要變更。 如需API的細微變更，請參閱 [Android Java API適用的TVSDK 2.5](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_2.5/index.html). 對應的C++ API參考有詳細說明。 如需類似的C++ API檔案，請參閱 [Android C++ API適用的TVSDK 2.5](https://help.adobe.com/en_US/primetime/api/psdk/cpp_2.5/index.html).
 
-随TVSDK分发的参考实现中介绍了API使用的多个示例。
+隨TVSDK分發的參考實作中會涵蓋API使用的多個範例。
 
-## TVSDK v2.5 {#api-changes-in-tvsdk-v}中的API更改
+## TVSDK v2.5中的API變更 {#api-changes-in-tvsdk-v}
 
-新的、过时的和修改的API在下面进行了说明。
+新的、過時的和修改過的API記錄如下。
 
-| TVSDK v1.4 | TVSDK v2.5 | 说明 |
+| TVSDK v1.4 | TVSDK v2.5 | 說明 |
 |--- |--- |--- |
-| 导入com.adobe.ave.drm .DRMAcquireLicenseSettings | 导入com.adobe.mediacore.drm .DRMAcquireLicenseSettings; | TVSDK 2.5 API中的所有类名以com.adobe.mediacore前缀开头。 这只是一个例子。 |
-| MediaPlayerException、IllegalStateException或IllegalArgumentException | MediaPlayerException | 在2.5中，API仅生成MediaPlayerException。 |
-| MediaPlayer.PlayerState(MediaPlayer.事件.PLAYBACK) | MediaPlayerStatus(MediaPlayerEvent.STATUS_CHANGED) | 在v2.5中，MediaPlayer.PlayerState已重命名为单独的枚举MediaPlayerStatus。 |
-| DefaultMediaPlayer.create(getActivity()。getApplicationContext()) | MediaPlayer mediaPlayer = new MediaPlayer(getActivity()。 getApplicationContext()); | 用于创建对象的静态方法由公共构造函数替换。 |
-| MediaPlayer.seekToLocalTime() | MediaPlayer.seekToLocal() | MediaPlayer.seekToLocalTime()方法现在称为MediaPlayer.seekToLocal()。 |
+| 匯入com.adobe.ave.drm .DRMAquireLicenseSettings | 匯入com.adobe.mediacore.drm .DRMAquireLicenseSettings； | TVSDK 2.5 API中的所有類別名稱都會以com.adobe.mediacore前置詞開頭。 這只是個範例。 |
+| MediaPlayerException、IllegalStateException或IllegalArgumentException | MediaPlayerException | 在2.5中，API只會產生MediaPlayerException。 |
+| MediaPlayer.PlayerState (MediaPlayer.Event.PLAYBACK) | MediaPlayerStatus (MediaPlayerEvent.STATUS_CHANGED) | 在v2.5中，MediaPlayer.PlayerState已重新命名為個別的列舉MediaPlayerStatus。 |
+| DefaultMediaPlayer.create (getActivity()。getApplicationContext()) | MediaPlayer mediaPlayer =新的MediaPlayer(getActivity()。 getApplicationContext()； | 用來建立物件的靜態方法會被公用建構函式取代。 |
+| MediaPlayer.seekToLocalTime() | MediaPlayer.seekToLocal() | MediaPlayer.seekToLocalTime()方法現在稱為MediaPlayer.seekToLocal()。 |
 | closedCaptionsTrack.isActive() |  | 不可用 |
-| 元数据节点 | 元数据 | 在v2.5中，Metadata类替换了v1.4 MetadataNode类的使用。 |
-| DefaultMetadataKeys | 元数据键 | v1.4中的DefaultMetadataKeys在v2.5枚举MetadataKeys中。 |
-| AdvertisingFactory | ContentFactory | v1.4中的AdvertisingFactory在v2.5中更名为ContentFactory |
-| PlacementOpportunityDetector | OpportunityGenerator | 探测器被发电机取代。 |
-| mediaPlayer.getView()。notifyClick(); | mediaPlayer.notifyClick(); | MediaPlayerView的notifyClick()方法已移到MediaPlayer类。 |
-| public ABRControlParameters(ABRPolicy abrPolicy， int nInitialBitRate， int nMinBitRate， int nMaxBitRate) | public ABRControlParameters(int nInitialBitRate， int nMinBitRate， int nMaxBitRate， ABRPolicy abrPolicy， int nMinTrickPlayBitRate， int nMaxTricPlayBitRate， intmaxTrickPlayBandwidthUsage，多次dMaxPlayoutRate) |  |
+| MetadataNode | 中繼資料 | 在v2.5中，Metadata類別會取代v1.4 MetadataNode類別的使用。 |
+| DefaultMetadataKey | 中繼資料索引鍵 | v1.4中的DefaultMetadataKeys位於v2.5列舉MetadataKeys中。 |
+| AdvertisingFactory | ContentFactory | v1.4中的AdvertisingFactory已重新命名為v2.5中的ContentFactory |
+| PlacementOpportunityDetector | 機會產生器 | 偵測器已更換為產生器。 |
+| mediaPlayer.getView()。notifyClick()； | mediaPlayer.notifyClick()； | MediaPlayerView的notifyClick()方法已移至MediaPlayer類別。 |
+| 公用ABRControlParameters(ABRPolicy abrPolicy， int nInitialBitRate， int nMinBitRate， int nMaxBitRate) | 公用ABRControlParameters(int nInitialBitRate， int nMinBitRate， int nMaxBitRate， ABRPolicy abrPolicy， int nMinTrickPlayBitRate， int nMaxTrickPlayBitRate， int nMaxTrickPlayBandwidnessUsage， double dMaxPlayRate) |  |
 | playbackInformation.getTimeToFirstFrame() |  | 不可用 |
-|  | playbackInformation.get PerveisedBandwidth() | TVSDK v2.5 QOSProvider有一个新属性，用于确定流会话期间的可感知带宽。 |
+|  | playbackInformation.get EtherapedBandwidth() | TVSDK v2.5 QOSProvider有新屬性，可判斷串流工作階段期間的感知頻寬。 |
 
-### 已删除类{#removed-classes}
+### 已移除的類別 {#removed-classes}
 
-将删除以下类，但没有等效类。
+下列類別會被移除，且沒有對應的類別。
 
 * `TimeRangeCollection`
 * `PSDKConfig`
@@ -122,13 +121,13 @@ compile files('libs/VideoHeartbeat.jar')
 * `LogFactory`
 * `NullLogger`
 
-这些类中的最后六个类在参考实现中可用作实用程序类。
+最後6個類別可作為參照實作中的公用程式類別使用。
 
-## 命名空间更改{#namespace-changes}
+## 名稱空間變更 {#namespace-changes}
 
-TVSDK 2.5 API整合命名空间。
+TVSDK 2.5 API可整合名稱空間。
 
-TVSDK 2.5 API中的所有类名以com.adobe.mediacore前缀开头。 TVSDK 1.4 API开始中的某些类名与com.adobe.ave。 相应的2.5类将com.adobe.ave更改为com.adobe.mediacore。 例如，请注意1.4和2.5的以下代码行中的更改：
+TVSDK 2.5 API中的所有類別名稱都會以com.adobe.mediacore前置詞開頭。 TVSDK 1.4 API中的部分類別名稱會以com.adobe.ave開頭。 對應的2.5類別會將com.adobe.ave變更為com.adobe.mediacore。 例如，請留意1.4和2.5的下列程式碼行變更：
 
 ```java
 // TVSDK 1.4
@@ -142,10 +141,10 @@ import com.adobe.mediacore.drm.DRMAcquireLicenseSettings; import com.adobe.media
 import com.adobe.mediacore.drm.DRMManager; import com.adobe.mediacore.drm.DRMMetadata;
 ```
 
-## 事件处理{#changes-in-event-handling}中的更改
+## 事件處理的變更 {#changes-in-event-handling}
 
-要在此版本中注册事件，请将处理函数传递给`addEventListener`。 事件的列表已从1.4版大幅修订为2.5版。\
-例如，下面介绍如何为`MediaPlayerEvent.STATUS_CHANGED:`注册事件处理程序
+若要在此版本中註冊事件，請將處理常式傳遞至 `addEventListener`. 事件清單已從1.4版大幅修訂至2.5版。\
+例如，以下說明如何登入事件處理常式 `MediaPlayerEvent.STATUS_CHANGED:`
 
 ```java
 mPlayer.addEventListener(MediaPlayerEvent.STATUS_CHANGED,
@@ -157,7 +156,7 @@ public void onStatusChanged(MediaPlayerStatusChangeEvent event) {
 });
 ```
 
-这是事件在1.4中的注册方式：
+以下為事件在1.4中的登入方式：
 
 ```java
 mPlayer.addEventListener(MediaPlayer.Event.PLAYBACK, new MediaPlayer.PlaybackEventListener() {
@@ -171,7 +170,7 @@ MediaPlayerNotification notification) {
 });
 ```
 
-MediaPlayerEvent枚举包含所有事件代码。 2.5中不再存在以下1.4事件代码：
+MediaPlayerEvent列舉包含所有事件程式碼。 下列1.4中的事件程式碼在2.5中已不存在：
 
 * `ADBREAK_PLACEMENT_COMPLETED`
 * `ADBREAK_PLACEMENT_FAILED`
@@ -204,7 +203,7 @@ MediaPlayerEvent枚举包含所有事件代码。 2.5中不再存在以下1.4事
 * `VIDEO_ERROR`
 * `VIDEO_STATE_CHANGED`
 
-以下事件代码是2.5中的新增功能：
+2.5版本新增了下列事件程式碼：
 
 * `AD_RESOLUTION_COMPLETE`
 * `BUFFER_PREPARED`
@@ -216,30 +215,30 @@ MediaPlayerEvent枚举包含所有事件代码。 2.5中不再存在以下1.4事
 * `TIMED_EVENT`
 * `TIMED_METADATA_ADDED_IN_BACKGROUND`
 
-### 重命名的事件{#renamed-events}
+### 已重新命名事件 {#renamed-events}
 
-| 新名称 | 旧名 |
+| 新名稱 | 舊名稱 |
 |--- |--- |
 | SEEK_BEGIN | SEEK_STARTED |
-| SEEK_END | SEEK_COMPLETED |
+| 搜尋結束 | SEEK_COMPLETED |
 | SEEK_POSITION_ADJUSTED | SEEK_ADJUST_COMPLETED |
-| BUFFERING_BEGIN | BUFFERING_STARTED |
-| BUFFERING_END | BUFFERING_COMPLETED |
-| AUDIO_TRACK_UPDATED | AUDIO_TRACK_CHANGED |
-| STATUS_CHANGED | STATE_CHANGED |
+| BUFFERING_BEGIN | BUFFING_STARTED |
+| BUFFERING_END | 緩衝完成 |
+| AUDIO_TRACK_UPDATES | AUDIO_TRACK_CHANGED |
+| STATUS_CHANGE | 狀態_已變更 |
 | TIMED_METADATA_AVAILABLE | TIMED_METADATA_ADDED |
 | SIZE_AVAILABLE | SIZE_CHANGED |
 | LOAD_INFO | LOAD_INFORMATION_AVAILABLE |
 
-## MediaPlayer更改{#mediaplayer-changes}
+## MediaPlayer變更 {#mediaplayer-changes}
 
-构造`MediaPlayer`并改变某些方法的一种新方法。
+一種新的建構方式 `MediaPlayer` 和部分方法的變更。
 
-**对MediaPlayer类的更改**
+**MediaPlayer類別的變更**
 
-以下是对`MediaPlayer`类的更改：
+以下為的變更 `MediaPlayer` 類別：
 
-* `MediaPlayerStatus`枚举替换`MediaPlayer.PlayerState`。 例如：
+* 此 `MediaPlayerStatus` 列舉取代 `MediaPlayer.PlayerState`. 例如：
 
 ```java
 //TVSDK v1.4
@@ -264,7 +263,7 @@ public void onStatusChanged(MediaPlayerStatusChangeEvent event) {
 });
 ```
 
-* `MediaPlayer.seekToLocalTime()`方法现在称为`MediaPlayer.seekToLocal`。 例如：
+* 此 `MediaPlayer.seekToLocalTime()` 方法現在稱為 `MediaPlayer.seekToLocal`. 例如：
 
 ```java
 //TVSDK v1.4
@@ -276,7 +275,7 @@ public void seekToLocal(long localPosition) { mediaPlayer.seekToLocal(localPosit
 }
 ```
 
-* `MediaPlayerView.notifyClick()`方法现在为`MediaPlayer.notifyClick()`。 例如：
+* 此 `MediaPlayerView.notifyClick()` 方法現在為 `MediaPlayer.notifyClick()`. 例如：
 
 ```java
 //TVSDK v1.4
@@ -288,8 +287,8 @@ public void adClick() { mediaPlayer.notifyClick();
 }
 ```
 
-* 以前的`MediaPlayer.MediaPlayer.getNotificationHistory()`方法现已消失，未被替换。
-* 前者`MediaPlayer.replaceCurrentItem()`分为两种方法：`replaceCurrentResource()`，它采用`MediaResource`实例，`replaceCurrentItem()`，它采用`MediaPlayerItem`实例。 例如：
+* 前者 `MediaPlayer.MediaPlayer.getNotificationHistory()` 方法現已消失且未取代。
+* 前者 `MediaPlayer.replaceCurrentItem()` 分為兩種方法： `replaceCurrentResource()`，這會取一個例項 `MediaResource`、和 `replaceCurrentItem()`，這會取一個例項 `MediaPlayerItem`. 例如：
 
 ```java
 //TVSDK v1.4
@@ -333,19 +332,19 @@ itemLoader.load(playerResource); itemLoader.prepareBuffer();
 mediaPlayer.replaceCurrentItem(itemLoader.getItem());
 ```
 
-您可以使用它在预先初始化的MediaPlayer实例之间切换，如果出现封锁期。
+您可以使用這個選項在預先初始化的MediaPlayer執行個體之間切換，例如當發生中斷時。
 
-**构造函数替换静态create()方法**
+**建構函式會取代靜態create()方法**
 
-您可以使用TVSDK v2.5中的构造函数，而不是使用TVSDK v1.4的`create()`方法。v2.5中不提供所有名称以Default开头的类，如`DefaultMediaPlayer`、`DefaultNetworkConfig`、`DefaultContentFactory`。
+您可以在TVSDK v2.5中使用建構函式，而不需使用 `create()` TVSDK v1.4的方法。名稱以「預設」開頭的所有類別，例如 `DefaultMediaPlayer`， `DefaultNetworkConfig`， `DefaultContentFactory`，不適用於v2.5。
 
-在某些情况下，TVSDK v1.4 API使用以下模式创建类：
+在某些情況下，TVSDK v1.4 API會使用以下模式來建立類別：
 
-1. 定义接口（例如`MediaPlayer`）。
-1. 提供默认类（例如`DefaultMediaPlayer`）。
-1. 在默认类上提供`create()`方法，以提供实现接口的类。
+1. 定義介面(例如， `MediaPlayer`)。
+1. 提供預設類別(例如， `DefaultMediaPlayer`)。
+1. 提供 `create()` 預設類別上的方法，以提供實作介面的類別。
 
-在TVSDK v2.5中，此类接口是具体的类，您可以使用相应的构造函数创建这些类的实例。 以下代码片段说明了这一差异：
+在TVSDK v2.5中，這類介面是具體類別，您可以使用個別建構函式來建立這些類別的執行個體。 下列程式碼片段說明了這種差異：
 
 ```java
 //TVSDK v1.4
@@ -362,10 +361,10 @@ new MediaPlayer(getActivity().getApplicationContext()); return mediaPlayer;
 }
 ```
 
-未遵循此模式但在1.4中使用`create()`方法的其他类包括：
+不遵循此模式但使用 `create()` 1.4中的方法包括：
 
-* 媒体资源\
-   以前使用`MediaResource.createFromUrl()`。 现在使用构造函数，它采用URL、资源类型和元数据。 例如：
+* MediaResource\
+   此為先前使用的 `MediaResource.createFromUrl()`. 現在使用建構函式，它會接受URL、資源型別和中繼資料。 例如：
 
 ```java
 //TVSDK v1.4
@@ -382,18 +381,18 @@ try { mediaPlayer.replaceCurrentResource(playerResource,_mediaPlayerItemConfig);
 }
 ```
 
-* 广告
+* 廣告
 * AdAsset
-* AdBreak
+* 廣告插播
 
-某些类（例如，`ContentFactory`）是没有公开可用的默认实现的抽象类（例如，`DefaultContentFactory`）。 在这些情况下，您可以通过便利函数提供默认实现，例如：`mediaPlayerItemConfig.getDefaultContentFactory()`
+某些類別(例如， `ContentFactory`)是抽象類別，沒有公開可用的預設實作(例如， `DefaultContentFactory`)。 在這些情況下，您可以透過方便使用的函式來提供預設實施，例如： `mediaPlayerItemConfig.getDefaultContentFactory()`
 
-**隐藏式字幕中的更改**
+**隱藏式字幕的變更**
 
-以下更改影响与隐藏式字幕相关的类：
+下列變更會影響與隱藏式字幕相關的類別：
 
-* 检索隐藏字幕轨道时，`MediaPlayerItem.getClosedCaptionTracks()`仅返回活动轨道。
-* `ClosedCaptionTrack` 不再有方 `isActive()` 法。
+* 擷取隱藏式字幕曲目時， `MediaPlayerItem.getClosedCaptionTracks()` 只傳回作用中的曲目。
+* `ClosedCaptionTrack` 不再具有 `isActive()` 方法。
 
 ```java
 //TVSDK v1.4
@@ -439,30 +438,30 @@ View.VISIBLE/*Visible*/);
 };
 ```
 
-## 广告变化{#advertising-changes}
+## 廣告變更 {#advertising-changes}
 
-版本2.5中有几项与广告相关的更改。
+版本2.5中有幾項與廣告相關的變更。
 
-**广告行为的变化**
+**廣告行為的變更**
 
-在v2.5中，当用户执行“广告”窗格以外的搜索时，广告播放的默认行为会稍有改变。如果广告中断未被观看，则广告在向前搜索后被播放。 当应用程序使用默认广告策略时，在播放完成后，广告中断将被删除。 使用TVSDK v2.5，如果用户在时间轴上的广告窗格后面搜索，且广告中断不被观看，则不会播放任何广告。
+當使用者在廣告Pod之外執行搜尋時，廣告播放的預設行為在v2.5中會稍微變更。如果未觀看廣告插播，則會在向前搜尋後播放廣告。 當應用程式使用預設廣告原則時，廣告插播會在播放完成後移除。 使用TVSDK v2.5時，如果使用者在時間軸上的廣告Pod後面搜尋且未觀看廣告插播，則不會播放任何廣告。
 
-但是，在TVSDK v1.4中，默认情况下，在向后搜索时将回放广告。 例如，如果在第三个和第四个广告中断之间向后搜索，则TVSDK v1.4的默认行为是播放第三个广告中断。
+不過，在TVSDK v1.4中，如果向後搜尋，預設會播放廣告。 例如，如果您在第三個和第四個廣告插播之間向後搜尋，TVSDK v1.4的預設行為是播放第三個廣告插播。
 
-**广告规则更改**
+**廣告規則變更**
 
-广告规则是使用JSON文件指定的。 JSON文件的格式在两个版本的TVSDK中保持不变。 但是，在TVSDK v2.5中，Ad规则JSON文件必须托管在可通过HTTP URL访问的位置上。 应用程序可以使用AuditudeSettings的实例。
+廣告規則是使用JSON檔案指定的。 JSON檔案的格式在兩個版本的TVSDK中維持相同。 不過，在TVSDK v2.5中，廣告規則JSON檔案必須託管於可透過HTTP URL存取的位置。 應用程式可以使用AuditudeSettings的例項。
 
 ```java
 //TVSDK v2.5
 AuditudeSettings result = new AuditudeSettings(); result.setCRSRulesJsonURL(<http url of AdobeTVSDKConfig.json>);
 ```
 
-在TVSDK版本1.4中，此文件位于应用程序中assets文件夹的下方，TVSDK将加载该文件。
+在TVSDK 1.4版中，此檔案會放置在應用程式中的assets資料夾下方，且TVSDK會載入檔案。
 
-**广告工厂重命名**
+**廣告工廠重新命名**
 
-`AdvertisingFactory` 现在已命名 `ContentFactory`。使用`ContentFactory`，您可以通过覆盖其某些方法来创建自定义广告工作流。 使用return null保留默认行为，如下所示：
+`AdvertisingFactory` 現已命名 `ContentFactory`. 替換為 `ContentFactory` 您可以覆寫自訂廣告工作流程的某些方法，以建立自訂廣告工作流程。 使用傳回null來保留預設行為，如下所示：
 
 ```java
 //TVSDK v2.5
@@ -482,17 +481,17 @@ public List<CustomAdHandler> retrieveCustomAdPlaybackHandlers(MediaPlayerItem it
 };
 ```
 
-**零长广告分段**
+**零長度廣告插播**
 
-当广告服务器不返回任何广告时，TVSDK 2.5将零长广告分段插入占位符。
+當Advertising伺服器未傳回任何廣告時，TVSDK 2.5會插入零長度的廣告插播作為預留位置。
 
-零长度广告中断可通过使用onAdBreakStarted事件检测广告中断的广告数为零来确定，并且应用程序必须相应地处理这些广告中断。
+長度為零的廣告插播可藉由使用onAdBreakStarted事件偵測廣告插播中的廣告計數為零來判斷，且應用程式必須據此處理這些廣告插播。
 
-**元数据更改**
+**中繼資料變更**
 
-Metadata类为以前的MetadataNode类提供了更强大的替换。
+Metadata類別更能夠取代之前的MetadataNode類別。
 
-* Metadata类可以存储字符串、字节数组和其他Metadata对象：
+* 中繼資料類別可以儲存字串、位元組陣列和其他中繼資料物件：
 
 ```java
 TVSDK v1.4
@@ -519,7 +518,7 @@ return adSettings;
 }
 ```
 
-* `MetadataKeys`枚举替换`DefaultMetadataKeys`。 新版本中并非存在`DefaultMetadataKeys`中的所有键。
+* 此 `MetadataKeys` 列舉取代 `DefaultMetadataKeys`. 並非中的所有索引鍵 `DefaultMetadataKeys` 會出現在新版本中。
 
 ```java
 //TVSDK v1.4
@@ -543,7 +542,7 @@ vaMetadata = parseVideoAnalyticsMetadata(vaMetadataObj);
 }
 ```
 
-* 广告元数据现在由`AdvertisingMetadata`类表示，它是元数据的子类，现在存储在`MediaPlayerItemConfig`中，而不是`MediaResource`中。
+* 廣告中繼資料現在由 `AdvertisingMetadata` 類別，中繼資料的子類別，現在儲存在 `MediaPlayerItemConfig` 而非 `MediaResource`.
 
 ```java
 //TVSDK v1.4
@@ -577,7 +576,7 @@ mediaPlayer.replaceCurrentResource(playerResource, mItemConfig);
 }
 ```
 
-网络配置元数据（以前是`MediaResource`类的成员）现在由`NetworkConfiguration`类表示，现在存储在`MediaPlayerItemConfig`中，而不是存储在`MediaResource`中。
+網路設定中繼資料（先前為成員） `MediaResource` 類別，現在由 `NetworkConfiguration` 類別，且現在儲存在 `MediaPlayerItemConfig` 而非 `MediaResource`.
 
 ```java
 //TVSDK v1.4
@@ -590,9 +589,9 @@ MediaPlayerItemConfig mediaItemConfig = new MediaPlayerItemConfig(context);
 NetworkConfiguration mediaNetworkConfiguration = mediaItemConfig.getNetworkConfiguration();
 ```
 
-**对TimedMetadata分析的更改**
+**TimedMetadata剖析的變更**
 
-在2.5中，对于用于分析ID3标记的数据类型，`TimedMetadata`的分析已发生更改。
+剖析 `TimedMetadata` 在2.5中針對剖析ID3標籤的資料型別已變更。
 
 ```java
 //TVSDK v1.4
@@ -659,30 +658,30 @@ if (timedMetadata.getName().equalsIgnoreCase("#EXT-OATCLS-SCTE35")) { PMPDemoApp
 }
 ```
 
-**其他更改**
+**其他變更**
 
-版本2.5中提供了以下其他更改：
+2.5版提供下列額外變更：
 
-* `notifyClick()`方法已从`MediaPlayerView`移至`MediaPlayer`。
+* 此 `notifyClick()` 方法已從「 」移至「 」 `MediaPlayerView` 至 `MediaPlayer`.
 
-* `AdPolicySelector` 是接口，而不是类。实施其所有方法。
-* `AdPolicyInfo` 现在包含的列表 `AdBreakTimelineItem`为，不是 `AdBreakPlacement`。
+* `AdPolicySelector` 是介面，而不是類別。 實作其所有方法。
+* `AdPolicyInfo` 現在包含清單 `AdBreakTimelineItem`，非 `AdBreakPlacement`.
 
-* `ContentResolver`抽象类的API名称已更改。
-* `PlacementOpportunityDetector` 不再可用。请扩展`OpportunityGenerator`抽象类。 参考实现提供了一个示例。
+* 的API名稱 `ContentResolver` 抽象類別已變更。
+* `PlacementOpportunityDetector` 不再提供。 請改為擴充 `OpportunityGenerator` 抽象類別。 參考實作提供這方面的範例。
 
-* `AdBreakPlacement`构造函数的参数相同，但顺序不同。 有关示例实施，请参阅与产品捆绑的Reference Player实施。
+* 的引數 `AdBreakPlacement` 建構函式是相同的，但順序不同。 如需實作範例，請參閱產品隨附的Reference Player實作。
 
-## DRM {#changes-in-drm}中的更改
+## DRM中的變更 {#changes-in-drm}
 
-此版本中的大多数更改位于DRM层中。 下表显示了版本1.4和2.5之间的其他更改：
+此版本中的大部分變更都在DRM圖層中。 下表顯示1.4版和2.5版之間的其他變更：
 
-| DRMManager方法 | 1.4中的成功回调 | 1.4中的错误回调 | 2.5中的侦听器 |
+| DRMManager方法 | 1.4中的Success Callback | 1.4中的錯誤回呼 | 2.5版的監聽器 |
 |--- |--- |--- |--- |
-| acquireLicense | DRMLicenseAppiredCallback | DRMOperationErrorCallback | DRMAcquireLicenseListener |
-| acquirePreviewLicense | DRMLicenseAppiredCallback | DRMOperationErrorCallback | DRMAcquireLicenseListener |
-| 身份验证 | DRMAuthenticationCompleteCallback | DRMOperationErrorCallback | DRMAuthenticateListener |
-| createMetadataFromBytes | NA | DRMOperationErrorCallback | DRMErrorListener |
+| acquireLicense | DRMLicenseAcquiredCallback | DRMOperationErrorCallback | DRMAcquireLicenseListener |
+| acquirePreviewLicense | DRMLicenseAcquiredCallback | DRMOperationErrorCallback | DRMAcquireLicenseListener |
+| 驗證 | DRMAuthenticationCompleteCallback | DRMOperationErrorCallback | DRMAuthenticateListener |
+| createMetadataFromBytes | 不適用 | DRMOperationErrorCallback | DRMErrorListener |
 | 初始化 | DRMOperationCompleteCallback | DRMOperationErrorCallback | DRMOperationCompleteListener |
 | joinLicenseDomain | DRMOperationCompleteCallback | DRMOperationErrorCallback | DRMOperationCompleteListener |
 | leaveLicenseDomain | DRMOperationCompleteCallback | DRMOperationErrorCallback | DRMOperationCompleteListener |
@@ -828,13 +827,13 @@ public void onAuthenticationComplete(byte[] authenticationToken) { PMPDemoApp.lo
 };
 ```
 
-现在，在触发`onDRMMetadataInfo`事件侦听器后，可以使用创建mediaplayer后在1.4中提供的静态`DRMManager`实例。
+靜態 `DRMManager` 建立mediaplayer後可在1.4中使用的執行個體，現在可在 `onDRMMetadataInfo` 事件接聽程式已觸發。
 
-## 自适应比特率(ABR)相关更改{#adaptive-bitrate-abr-related-changes}
+## 最適化位元速率(ABR)相關變更 {#adaptive-bitrate-abr-related-changes}
 
-**常量的更改**
+**常數中的變更**
 
-许多常量已将类型从`String`更改为`int`。 例如：`MediaResourceType`、`ABRControlParameters`和`MediaPlayerStatusChangeEvent`。
+許多常數已變更型別 `String` 至 `int`. 例如： `MediaResourceType`， `ABRControlParameters`、和 `MediaPlayerStatusChangeEvent`.
 
 ```java
 //TVSDK v1.4
@@ -891,9 +890,9 @@ _mediaPlayer.setABRControlParameters(abrBuilder.toABRControlParameters());
 }
 ```
 
-**对ABRControlParameters构造函数的更改**
+**ABRControlParameters建構函式的變更**
 
-某些参数已添加、某些已重命名、某些已移动。 以下是v1.4中的构造函数签名和2.5中的新签名：
+部分引數已新增、部分引數已重新命名，部分引數已移動。 以下是v1.4中的建構函式簽章和2.5中的新簽章：
 
 ```java
 //TVSDK v1.4
@@ -909,13 +908,13 @@ int nMinTrickPlayBitRate, int nMaxTrickPlayBitRate,
 int nMaxTrickPlayBandwidthUsage, double dMaxPlayoutRate)
 ```
 
-## 错误事件和处理{#error-events-and-handling}
+## 錯誤事件與處理 {#error-events-and-handling}
 
-**错误处理更改**
+**錯誤處理的變更**
 
-`MediaError`类已替换为`Notification`类。 类`MediaError`和`Notification`之间的唯一区别是后者不包含描述属性。 TVSDK 2.5中不存在值101xxx、102xxx、104xxx、106xxx、107xxx、109xxx的TVSDK 1.4错误代码。有关TVSDK 2.5中的回放代码，请参阅[本机错误 — 视频回放值](assets/psdk_android_2.5.pdf)。
+此 `MediaError` 類別已取代為 `Notification` 類別。 類別之間的唯一差異 `MediaError` 和 `Notification` 是後者不包含description屬性。 TVSDK 2.5中不存在值為101xxx、102xxx、104xxx、106xxx、107xxx、109xxx的TVSDK 1.4錯誤代碼。如需TVSDK 2.5中的播放程式碼，請參閱 [原生錯誤 — 視訊播放值](assets/psdk_android_2.5.pdf).
 
-以下是TVSDK 1.4和2.5中的错误处理示例：
+以下是TVSDK 1.4和2.5中的錯誤處理範例：
 
 ```java
 //TVSDK v1.4
@@ -957,7 +956,7 @@ default:
 };
 ```
 
-所有可恢复的错误均被视为警告，并使用TVSDK 2.5中的`NotificationEventListener`进行处理。警告以TVSDK 1.4中的QOS处理程序中的`onOperationFailed`侦听器的通知显示，与TVSDK 2.5中的通知是单独的事件。 1.4和2.5中处理的警告如下：
+所有可復原的錯誤都會被視為警告，並使用 `NotificationEventListener` （在TVSDK 2.5中）。警告會顯示為通知，並附上 `onOperationFailed` TVSDK 1.4中QOS處理常式的接聽程式，其中通知是個別事件，與TVSDK 2.5中相同。 1.4和2.5中處理的警告如下：
 
 ```java
 //TVSDK v1.4
@@ -1037,15 +1036,15 @@ showToast(sb.toString()); PMPDemoApp.logger.d(LOG_TAG, sb.toString());
 };
 ```
 
-**新的例外**
+**新例外**
 
-TVSDK v1.4使用了空值、错误返回和各种异常（`MediaPlayerException`、`IllegalStateException`和`IllegalArgumentException`）的组合，而TVSDK v2.5 `generatesMediaPlayerException`则用于所有错误。
+雖然TVSDK v1.4使用了空值、錯誤傳回和各種例外狀況的組合( `MediaPlayerException`， `IllegalStateException`、和 `IllegalArgumentException`)，TVSDK v2.5 `generatesMediaPlayerException` 所有錯誤。
 
 >[!NOTE]
 >
->要获取有关MediaPlayerException的详细信息，可以使用`getErrorCode()`。
+>若要取得MediaPlayerException的詳細資訊，您可以使用 `getErrorCode()`.
 
-更改的示例如下：
+以下是變更的範例：
 
 ```java
 //TVSDK v1.4
@@ -1065,12 +1064,12 @@ mediaPlayer.setBufferControlParameters(getBufferParamsFromSettings());
 }
 ```
 
-## 对QOS参数{#changes-to-qos-parameters}的更改
+## QOS引數的變更 {#changes-to-qos-parameters}
 
-对QOSProvider对象属性进行了细微更改：
+QOSProvider物件屬性有微幅變更：
 
-* `TimeToFirstFrame`在TVSDK 2.5中不可用。
-* TVSDK 2.5 QOSProvider具有新属性，用于确定流会话期间的可感知带宽。
+* 此 `TimeToFirstFrame` TVSDK 2.5中不提供。
+* TVSDK 2.5 QOSProvider有新屬性，可決定串流工作階段期間的感知頻寬。
 
 ```java
 //TVSDK v1.4
@@ -1091,9 +1090,9 @@ setQosItem("Time to prepare", (int) playbackInformation.getTimeToPrepare());
 setQosItem("Perceived Bandwidth", (int) playbackInformation.getPerceivedBandwidth());
 ```
 
-* TVSDK 2.5中不再存在`QOSEventListener::onOperationFailed()`。此事件侦听器中过去显示的警告现在将显示在`NotificationEventListener::onNotification()`事件侦听器中。
+* 此 `QOSEventListener::onOperationFailed()` TVSDK 2.5已不存在。以前出現在此事件接聽程式中的警告，現在會出現在 `NotificationEventListener::onNotification()` 事件監聽器。
 
-* `QOSProvider event listeners onBufferStart()`、`onBufferComplete()`、`onSeekStart()`、`onSeekComplete()`和`onLoadInfo()`是与mediaPlayer实例绑定的各个事件侦听器。
+* 此 `QOSProvider event listeners onBufferStart()`， `onBufferComplete()`， `onSeekStart()`， `onSeekComplete()`、和 `onLoadInfo()` 是與mediaPlayer例項繫結的個別事件接聽程式。
 
 ```java
 //TVSDK v1.4
@@ -1229,6 +1228,6 @@ LOG_TAG + "::LoadInformationEventListener#onLoadInfomation()", "Url: " + loadInf
 };
 ```
 
-## 有用资源{#helpful-resources}
+## 實用資源 {#helpful-resources}
 
-* 请参阅[Adobe Primetime学习和支持](https://helpx.adobe.com/support/primetime.html)页面上的完整帮助文档。
+* 如需完整說明檔案，請前往 [Adobe Primetime學習與支援](https://helpx.adobe.com/support/primetime.html) 頁面。

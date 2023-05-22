@@ -1,30 +1,31 @@
 ---
-title: 错误报告
-description: 错误报告
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 錯誤報告
+description: 錯誤報告
+exl-id: a52bd2cf-c712-40a2-a25e-7d9560b46ba6
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '2961'
 ht-degree: 1%
 
 ---
 
-# 错误报告 {#error-reporting}
+# 錯誤報告 {#error-reporting}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
 
-## 概述 {#overview}
+## 概觀 {#overview}
 
-Adobe Primetime身份验证中的错误报告当前采用两种不同的方式实施：
+Adobe Primetime驗證中的錯誤報告目前以兩種不同的方式實作：
 
-* **高级错误报告** 如果 [AccessEnabler JavaScript SDK](#accessenabler-javascript-sdk) 或实现名为“ ”的接口方法`status`“ [AccessEnabler iOS/tvOS SDK](#accessenabler-ios-tvos-sdk) 和 [AccessEnabler Android SDK](#accessenabler-android-sdk)，以接收高级错误报告。 错误分为 **信息**, **警告**&#x200B;和 **错误** 类型。 此报告系统 **异步**，在 **无法保证触发多个错误的顺序**.  有关高级错误报告系统的详细信息，请参阅 [高级错误报告](#advanced-error-reporting) 中。
+* **進階錯誤報告** 若發生以下情況，實作人員會註冊錯誤回呼： [AccessEnabler JavaScript SDK](#accessenabler-javascript-sdk) 或實作名為&#39;&#39;的介面方法`status`&quot;若是 [AccessEnabler iOS/tvOS SDK](#accessenabler-ios-tvos-sdk) 和 [AccessEnabler Android SDK](#accessenabler-android-sdk)，以接收進階錯誤報告。 錯誤會分類為 **資訊**， **警告**、和 **錯誤** 型別。 此報告系統是 **非同步**，在此 **無法保證觸發多個錯誤的順序**.  如需進階錯誤報告系統的詳細資訊，請參閱 [進階錯誤報告](#advanced-error-reporting) 區段。
 
-* **原始错误报告 —** 一种静态报告系统，在该系统中，当特定请求失败时，错误消息会传递到特定回调函数。 错误分为通用、身份验证和授权类型。 有关在原始系统中报告的错误列表，请参阅 [原始错误报告](#original-error-reporting) 中。
+* **原始錯誤報告 —** 一種靜態報告系統，當特定請求失敗時，錯誤訊息會傳遞至特定的回呼函式。 錯誤會分組為通用、驗證和授權型別。 如需在原始系統中報告的錯誤清單，請參閱 [原始錯誤報告](#original-error-reporting) 區段。
 
 
-## 高级错误报告 {#advanced-error-reporting}
+## 進階錯誤報告 {#advanced-error-reporting}
 
 * [AccessEnabler JavaScript SDK](#accessenabler-javascript-sdk)
 * [AccessEnabler iOS/tvOS SDK](#accessenabler-ios-tvos-sdk)
@@ -33,19 +34,19 @@ Adobe Primetime身份验证中的错误报告当前采用两种不同的方式�
 
 >[!IMPORTANT]
 >
->旧 [原始错误报告](#original-error-reporting) API将继续正常运行，高级错误报告不会中断功能，但原始错误报告将不再接收任何更新。 高级错误报告系统将发生所有新错误和更新。
+>舊的 [原始錯誤報告](#original-error-reporting) API會繼續像之前一樣運作，進階錯誤報告不會破壞功能，但原始錯誤報告將不再收到任何更新。 所有新的錯誤和更新都會發生在進階錯誤報告系統中。
 
 ### AccessEnabler JavaScript SDK {#accessenabler-javascript-sdk}
 
-新的错误报告系统是可选的，因此实施者可以显式注册错误处理程序回调以接收高级错误报告。 该系统包括动态注册和注销多个错误回调的能力。 此外，在加载AccessEnabler JavaScript SDK后，您可以立即注册任何新的错误回调，而无需执行任何其他初始化（在调用之前） `setRequestor()`)，这意味着您能够接收有关初始化和配置错误的高级报告。
+新的錯誤報告系統保留為選擇性，因此實作人員可以明確註冊錯誤處理常式回呼，以接收進階錯誤報告。 此系統包含動態註冊和取消註冊多個錯誤回呼的功能。 此外，一旦AccessEnabler JavaScript SDK載入，您就可以註冊任何新的錯誤回呼，而不需要執行任何其他初始化（在呼叫之前） `setRequestor()`)，這表示您可以接收有關初始化和設定錯誤的進階報告。
 
 
-#### 实施 {#access-enab-js-imp}
+#### 實作 {#access-enab-js-imp}
 
-yourErrorHandler(errorData:Object)
+yourErrorHandler(errorData：Object)
 
 
-您的错误处理程序回调函数将接收具有以下结构的单个对象（映射）：
+您的錯誤處理常式回呼函式將接收單一物件（對應），其結構如下：
 
 ```JavaScript
     {
@@ -58,57 +59,57 @@ yourErrorHandler(errorData:Object)
     }
 ```
 
-### 1.绑定 {#bind}
+### 1.繫結 {#bind}
 
 **`.bind(eventType:String, handlerName:String):void`**
 
-为事件附加处理程序。
+附加事件的處理常式。
 
-**`eventType`**  — 仅“`errorEvent`&quot;值会导致AccessEnabler JavaScript SDK触发高级错误报告回调。
+**`eventType`**  — 僅限&quot;`errorEvent`「值會導致AccessEnabler JavaScript SDK觸發進階錯誤報告回呼。
 
-**`handlerName`**  — 指定错误处理程序函数名称的字符串。\
+**`handlerName`**  — 指定錯誤處理常式函式名稱的字串。\
  
 
-两个绑定参数必须只使用以下集中的字符： `[0-9a-zA-Z][-._a-zA-Z0-9]`;即，参数必须以数字或字母开头，然后只能包含连字符、句点、下划线和字母数字字符。  此外，参数不能超过1024个字符。  
+兩個繫結引數都必須只使用下列集合中的字元： `[0-9a-zA-Z][-._a-zA-Z0-9]`；也就是說，引數必須以數字或字母開頭，然後只能包含連字型大小、句號、底線和英數字元。  此外，引數不能超過1024個字元。  
 
-**示例** 绑定错误处理程序：
+**範例** 的繫結錯誤處理常式：
 
 ```JavaScript
 accessEnabler.bind('errorEvent', 'myCustomErrorHandler');
 accessEnabler.bind('errorEvent', 'errorLogger');
 ```
 
-由于技术限制，您无法绑定闭包或匿名函数。 必须在第二个参数中指定方法的名称。
+由於技術限制，您無法繫結關閉或匿名函式。 您必須在第二個引數中指定方法的名稱。
 
  
-### 2.解除绑定 {#unbind}
+### 2.解除繫結 {#unbind}
 
 **`.unbind(eventType:String, handlerName:String=null):void`**
 
-删除之前附加的事件处理程序。
+移除先前附加的事件處理常式。
 
-**`eventType`**  — 仅“`errorEvent`“值会导致AccessEnabler JavaScript SDK触发高级错误报告回调。
+**`eventType`**  — 僅&#39;`errorEvent`&#39;值會導致AccessEnabler JavaScript SDK觸發進階錯誤報告回呼。
 
-**`handlerName`**  — 指定错误处理程序函数名称的字符串（如果为null或缺少指定的所有附加处理程序） `eventType` 将被删除。
+**`handlerName`**  — 指定錯誤處理常式函式名稱的字串（如果為null或遺失指定之所有附加的處理常式） `eventType` 將被移除。
 
-两个绑定参数必须只使用以下集中的字符： `[0-9a-zA-Z][-._a-zA-Z0-9]`;即，参数必须以数字或字母开头，然后只能包含连字符、句点、下划线和字母数字字符。  此外，参数不能超过1024个字符。  
+兩個繫結引數都必須只使用下列集合中的字元： `[0-9a-zA-Z][-._a-zA-Z0-9]`；也就是說，引數必須以數字或字母開頭，然後只能包含連字型大小、句號、底線和英數字元。  此外，引數不能超過1024個字元。  
 
-**示例** 删除单个错误处理程序：
+**範例** 移除單一錯誤處理常式時：
 
 `accessEnabler.unbind('errorEvent', 'errorLogger');`
 
-**示例** 删除所有错误处理程序：
+**範例** 移除所有錯誤處理常式：
 
 `accessEnabler.unbind('errorEvent');`
 
 
 ### AccessEnabler iOS/tvOS SDK {#accessenabler-ios-tvos-sdk}
 
-新的错误报告系统是强制性的，因此实施者必须明确符合新的Objective C“授权状态”协议。 这种新方法允许程序员接收高级错误报告。
+新的錯誤報告系統是強制性的，因此實作人員必須明確遵循新的Objective C「EntitlementStatus」通訊協定。 此新方法可讓程式設計師接收進階錯誤報告。
 
-#### 实施 {#accessenab-ios-tvossdk-imp}
+#### 實作 {#accessenab-ios-tvossdk-imp}
 
-实施者需要符合以下条件 **权利状态** 协议：
+實作人員必須符合下列條件 **EntitlementStatus** 通訊協定：
 
 **EntitlementStatus.h**
 
@@ -120,7 +121,7 @@ accessEnabler.bind('errorEvent', 'errorLogger');
     @end
 ```
 
-您的 **状态** 函数将接收单个对象( `NSDictionary`)，其结构如下：
+您的 **狀態** 函式將接收單一物件(一個 `NSDictionary`)的屬性具有下列結構：
 
 ```OBJ-C
     {
@@ -133,13 +134,13 @@ accessEnabler.bind('errorEvent', 'errorLogger');
     }
 ```
 
-**1. 声明**
+**1. 宣告**
 
 ```OBJ-C
     @interface MyEntitlementStatusDelegate : NSObject <EntitlementStatus>
 ```
 
-**2. 实施**
+**2. 實作**
 
 ```OBJ-C
     @implementation DemoAppAppDelegate     
@@ -152,11 +153,11 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 
 ### AccessEnabler Android SDK {#accessenabler-android-sdk}
 
-新的错误报告系统是强制性的，因为实施者必须明确符合 `IAccessEnablerDelegate` 接口定义协议。 这种新方法允许程序员接收高级错误报告。
+新的錯誤報告系統是強制性的，因為實作人員必須明確遵守 `IAccessEnablerDelegate` 介面定義的通訊協定。 此新方法可讓程式設計師接收進階錯誤報告。
 
-#### 实施 {#access-enablr-androidsdk-imp}
+#### 實作 {#access-enablr-androidsdk-imp}
 
-实施者需要处理新 `status` 方法`IAccessEnablerDelegate`. 的 **`status`** 函数将收到 **`AdvancedStatus`** 具有以下模型的对象：
+實作人員需要處理新的 `status` 來自介面的方法`IAccessEnablerDelegate`. 此 **`status`** 函式將收到單一 **`AdvancedStatus`** 具有下列模型的物件：
 
 ```C++
     class AdvancedStatus {
@@ -177,7 +178,7 @@ accessEnabler.bind('errorEvent', 'errorLogger');
     }
 ```
 
-**示例**
+**範例**
 
 ```C++
     @Override
@@ -191,11 +192,11 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 ### AccessEnabler FireOS SDK {#accessenabler-fireos-sdk}
 
 
-新的错误报告系统是强制性的，因为实施者必须明确符合 `IAccessEnablerDelegate` 接口定义协议。 这种新方法允许程序员接收高级错误报告。
+新的錯誤報告系統是強制性的，因為實作人員必須明確遵守 `IAccessEnablerDelegate` 介面定義的通訊協定。 此新方法可讓程式設計師接收進階錯誤報告。
 
-#### 实施 {#access-enab-fireos-sdk-}
+#### 實作 {#access-enab-fireos-sdk-}
 
-实施者需要处理新 `status`方法`IAccessEnablerDelegate`. 的 **`status`** 函数将收到 **`AdvancedStatus`** 具有以下模型的对象：
+實作人員需要處理新的 `status`來自介面的方法`IAccessEnablerDelegate`. 此 **`status`** 函式將收到單一 **`AdvancedStatus`** 具有下列模型的物件：
 
 ```C++
     class AdvancedStatus {
@@ -216,7 +217,7 @@ accessEnabler.bind('errorEvent', 'errorLogger');
     }
 ```
 
-**示例**
+**範例**
 
 ```C++
     @Override
@@ -227,82 +228,82 @@ accessEnabler.bind('errorEvent', 'errorLogger');
     }
 ```
 
-## 高级错误代码参考 {#advanced-error-codes-reference}
+## 進階錯誤代碼參考 {#advanced-error-codes-reference}
 
-下表列出并描述了较新错误API公开的错误代码，以及要采取哪些措施来更正它们的建议：
+下表列出並描述較新的錯誤API所公開的錯誤代碼，以及更正這些錯誤的建議動作：
 
-| ID | 级别 | 描述 | 开发人员操作 | 用户操作 | JavaScript | iOS/tvOS | Android |
+| ID | 層級 | 說明 | 開發人員動作 | 使用者動作 | JavaScript | iOS/tvOS | Android |
 |---|-------------|------------|----------------|---|---|---|---|
-| AAPL&amp; AAPL_ERROR | 错误 | 一般Apple SSO错误 | 该错误包含一个包含原始VSA错误的详细信息字段。 | n/a | n/a | 是 | n/a |
-| VSA203 | 信息 | 当通过平台SSO登录导致身份验证发生时，用户决定注销应用程序。 | 指示/提示用户明确从tvOS上的“设置” — >“帐户” — >“电视提供商”注销。 <br><br> 指示/提示用户从iOS/iPadOS上的“设置” — >“电视提供商”中明确注销。 | 从tvOS上的“设置” — >“帐户” — >“电视提供商”明确注销。 <br> <br> 从iOS/iPadOS上的“设置”>“电视提供商”中明确注销 | n/a | 是 | n/a |
-| VSA404 | 信息 | 应用程序视频订阅者帐户权限未确定。 | 通过解释单点登录(SSO)用户体验的好处，激励拒绝授予访问订阅信息权限的用户。 | 用户可以通过转到应用程序设置（电视提供商访问权限）或iOS/iPadOS上的“设置” — >“电视提供商”或“设置” — >“帐户” — >“电视提供商tvOS”中的部分来更改其决定。 | n/a | 是 | n/a |
-| VSA503 | 信息 | 应用程序视频订阅者帐户元数据请求失败。 | MVPD端点没有响应。 应用程序可能回退到常规身份验证流程。 | n/a | n/a | 是 | n/a |
-| 500 | 错误 | 内部错误 | 使用AccessEnablerDebug并检查调试日志（console.log输出），以确定出错的原因。 | n/a | 是 | 是 | n/a |
-| SEC403 | 错误 | 域安全错误。 请求者使用的域无效。 特定请求者ID使用的所有域都需要按Adobe列入白名单。 |  — 仅从允许的域列表中加载AccessEnabler <br> <br>  — 联系Adobe，以管理所用请求者ID的域白名单 <br> <br> -iOS:验证您使用的证书是否正确，以及签名是否已正确创建 | n/a | n/a | 是 | n/a |
-| SEC412 | 警告 | [ 在版本2.5中提供 ] 设备ID不匹配。 每当基础平台更改其设备ID时，都可能发生这种情况。 在这种情况下，将清除现有令牌，并且用户将不再进行身份验证。 请注意，当用户使用JS SDK并且正在漫游（在JS上，客户端IP是设备ID的一部分）时，这是合法发生的。 否则，这可能表示欺诈尝试，即尝试从其他设备复制令牌。 |  — 监控警告的数量。 如果这些流量没有明显原因而激增(最近没有更新浏览器；新操作系统)，这可能是欺诈企图的一个指标。  <br> <br> — （可选）告知用户他需要再次登录。 | 再次登录。 | 是 | 是 | 是，从3.2开始 |
-| SEC420 | 错误 | 与Adobe Primetime身份验证服务器通信时出现HTTP安全错误。 当欺骗/代理就绪时，通常会发生此错误。 |  — 加载 `[https://]{SP_FQDN\}` 并手动接受SSL证书，例如 **https://api.auth.adobe.com** 或 **https://api.auth-staging.adobe.com** <br> <br> — 将代理证书标记为受信任 | 如果对于普通用户，这表示可能是中间人攻击！ | 是 | 是 | 是，从3.2开始 |
-| CFG100 | 警告 | 未正确设置客户端计算机Date / Time / Timezone。 这可能会导致身份验证/授权错误。 |  — 通知用户设置正确的时间。 <br> <br> 采取措施防止权利流，因为它们很可能会失败。 | 设置正确的日期/时间。 | 是 | 是 | 是，从3.2开始 |
-| CFG400 | 错误 | 提供了无效的请求者ID。 | 开发人员必须指定有效的请求者ID。 | n/a | 是 | 是 | 是，从3.2开始 |
-| CFG404 | 错误 | 未找到Adobe Primetime身份验证服务器。 这可能在3个实例中发生： <br><br>  — 开发人员已实施无效的欺骗。 <br><br>  — 用户出现网络问题，无法访问Adobe Primetime身份验证域。 <br><br> -Adobe Primetime身份验证服务器配置错误。 <br><br>  **注意：** 在Firefox上，将显示CFG400而不是CFG404（浏览器限制） |  — 检查欺骗。 <br><br>  — 检查网络/DNS设置。 <br><br>  — 通知Adobe。 | 检查网络/DNS设置。 | 是 | 是 | 是，从3.2开始 |
-| CFG410 | 错误 | AccessEnabler太旧。 | 通知用户清除缓存。 | 清除浏览器缓存。 | 是 | n/a | 是，从3.2开始 |
-| CFG5xx | 错误 | Adobe Primetime身份验证服务器遇到内部错误。 xx可以是任何数字。 |  — 告知用户Adobe Primetime身份验证不可用。 <br><br>  — 绕过Adobe Primetime身份验证。 <br> <br>  — 通知Adobe。 | 稍后再试。 | 是 | 是 | 是，从3.2开始 |
-| N000 | 信息 | 用户未进行身份验证。 | n/a | 登录。 | 是 | 是 | 是，从3.2开始 |
-| N001 | 信息 | 已在后台启动被动身份验证尝试。 对于配置了“每个请求者的身份验证”的MVPD，会发生这种情况。 虽然用户有望自动进行身份验证，但这会在初始化时对性能造成影响。 | （可选）通知用户或显示UI以提醒用户“工作正在进行”。 | 等等。 | 是 | 是 | 是，从3.2开始 |
-| N003 | 信息 | 用户从Apple MVPD选取器中选择“其他电视提供商”选项。 | 的 *displayProviderDialog* 将调用callback，并且应用程序可能会回退到常规身份验证流程。 | 选择常规MVPD并继续登录屏幕。 | n/a | 是 | n/a |
-| N004 | 信息 | 用户选择当前请求者不支持的电视提供商。 | 的 *displayProviderDialog* 将调用callback，并且应用程序可能会回退到常规身份验证流程。 | 选择常规MVPD并继续登录屏幕。 | n/a | 是 | n/a |
-| N005 | 信息 | 已取消MVPD选取器。 | n/a | n/a | 是 | 是 | 是，从3.2开始 |
-| N010 | 警告 | 在为所选MVPD设置“authenticate-all”降级规则时，用户已通过身份验证。 | 或者，通知用户由于MVPD困难而“免费”访问。 | n/a | 是 | 是 | 是，从3.2开始 |
-| N011 | 信息 | 用户已使用TempPass进行身份验证。 |  — 通知用户。 <br> <br>  — （可选）提供常规MVPD的列表。 | （可选）使用常规MVPD登录。 | 是 | 是 | 是，从3.2开始 |
-| N111 | 警告 | 过期的TempPass。 |  — 通知用户。 <br> <br>  — 提供常规MVPD的列表。 <br> <br>  — 隐藏TempPass选项。 | 使用常规MVPD登录。 | 是 | 是 | 是，从3.2开始 |
-| N130 | 错误 | **在会话中未找到身份验证令牌。**  这可能是由于以下原因之一所致： <br> <br> 1. 浏览器已禁用（第三方）Cookie（不适用于AccessEnabler JavaScript SDK版本4.x） <br> <br> 2. 浏览器已启用阻止跨站点跟踪（Safari 11及更高版本） <br> <br> 3. 会话已过期 <br> <br> 4. 程序员以不正确的顺序调用身份验证API <br> <br> 注意：此错误代码不适用于全页重定向身份验证流。 | 1.提示用户启用（第三方）Cookie <br> <br> 2. 允许用户禁用跨站点跟踪 <br> <br> 3. 提示用户重新验证身份 <br> <br> 4. 按正确顺序调用API | 1.启用（第三方）Cookie <br> <br> 2. 禁用跨站点跟踪 <br> <br> 3. 重新验证 <br> <br> 4. 不适用 | 是 | 是 | 是，从3.2开始 |
-| N500 | 错误 | 内部错误。 <br> <br> 注意：这是原始错误系统的“一般身份验证错误”和“内部身份验证错误”。 这一错误最终将逐步消除。 | 使用AccessEnablerDebug并检查调试日志（console.log输出），以确定出错的原因。 | n/a | 是 | 是 | n/a |
-| R401 | 错误 | 尝试获取访问令牌时出错。 <br> <br> 注意：这是一个无法恢复的错误。 告知用户应用程序不可用。 | -iOS:检查应用程序中的软件语句和自定义方案。 <br> <br> - JavaScript:检查您网站应用程序中的软件语句。 <br> <br> 使用Zendesk打开票证，并告知用户系统暂时不可用 | n/a | 是，从v4.0开始 | 是，从v3.0 | 是，从3.2开始 |
-| R400 | 错误 | 未注册应用程序。 软件语句无效或已吊销。 <br> <br> 注意：这是一个无法恢复的错误。 告知用户应用程序不可用。 | -iOS:检查应用程序中的软件语句和自定义方案。 <br> <br> - JavaScript:检查您网站应用程序中的软件语句。 <br> <br> 使用Zendesk打开票证，并告知用户系统暂时不可用 | n/a | 是，从v4.0开始 | 是，从v3.0 | 是，从3.2开始 |
-| REG500 | 错误 | 无法从服务器获取注册代码。 <br> <br> 注意：这是一个无法恢复的错误。 告知用户应用程序不可用。 | 使用Zendesk打开一个票证，并告知用户系统暂时不可用。 | n/a | 是，从v4.0开始 | 是，从v3.0 | 是，从3.2开始 |
-| REGCODE | 成功 | tvOS平台上名为setSelectedProvider API的应用程序。 | 指示/提示用户使用提供的注册代码使用第二个设备（屏幕）登录。 | 使用第2台设备（屏幕）上的regcode启动身份验证。 | n/a | 仅适用于tvOS | n/a |
-| Z010 | 警告 | 在为所选MVPD设置“authenticate-all”或“authorize-all”降级规则时，用户已获得授权。 | 或者，通知用户由于MVPD困难而“免费”访问。 | n/a | 是 | 是 | 是，从3.2开始 |
-| Z011 | 信息 | 用户已使用TempPass获得授权 | （可选）通知用户 | n/a | 是 | 是 | 是，从3.2开始 |
-| Z100 | 错误 | 授权失败，因为用户未订阅请求的资源，或者由于来自MVPD的其他原因（例如，视频与用户帐户的家长控制设置不匹配） |  — 不允许播放。 <br> <br>  — 通知用户。 <br> <br>  — 错误消息中的“消息”键可能包含MVPD提供的更详细的消息。 | n/a | 是 | 是 | 是，从3.2开始 |
-| Z110 | 错误 | 由于MVPD拒绝而拒绝授权。 可能的欺诈企图或DOS。 |  — 不允许播放。 <br> <br>  — 通知用户。 | n/a | 是 | 是 | 是，从3.2开始 |
-| Z120 | 错误 | 由于与MVPD通信的技术原因而拒绝授权。 可能的网络错误。 |  — 不允许播放。 <br> <br>  — 告知用户MVPD遇到了困难，他们应稍后再试。 | 稍后再试。 | 是 | 是 | 是，从3.2开始 |
-| Z130 | 错误 | 由于使用了无效/格式错误的资源，授权被拒绝。 | 检查资源字符串并更正该字符串。 通常，此错误是由于格式不正确的MRSS或使用纯字符串而不是MRSS所致。 | n/a | 是 | 是 | 是，从3.2开始 |
-| Z169 | 错误 | 由于已对指定资源应用了authzNone降级规则，因此授权被拒绝。 | 通知用户 | n/a | 是 | 是 | 是，从3.2开始 |
-| Z500 | 错误 | 内部错误。 <br> <br>  注意：这是旧版“一般身份验证错误”和“内部身份验证错误”。 这一错误最终将逐步消除。 | 使用AccessEnablerDebug并检查调试日志（console.log输出），以确定出错的原因。 | n/a | 是 | 是 | 是，从3.2开始 |
-| P100 | 错误 | 预授权失败。 这很可能是因为请求授权的资源过多。 |  — 请勿使用超过允许的最大资源数。 <br> <br>  — 联系Adobe Primetime身份验证支持人员以查找/设置允许的最大资源数。 | n/a | 是，从v3.0 | 是 | 是，从3.2开始 |
-| IS2XX | 错误 | 当个性化服务器端点响应数据的格式无效或缺少所需的个性化信息时，将返回这些错误代码。 | 使用Zendesk打开票证，并告知用户系统暂时不可用 | n/a | 是，从v3.0 | n/a | n/a |
-| IS4XX | 错误 | 如果个性化服务器端点失败4XX — 是响应的HTTP状态代码，则会返回这些错误代码。 | 使用Zendesk打开票证，并告知用户系统暂时不可用 | n/a | 是，从v3.0 | n/a | n/a |
-| IS5XX | 错误 | 在个性化服务器端点失败5XX时，会返回这些错误代码 — 是响应的HTTP状态代码。 | 使用Zendesk打开票证，并告知用户系统暂时不可用 | n/a | 是，从v3.0 | n/a | n/a |
-| IS0 | 错误 | 当个性化服务器端点根本没有响应时，将返回此代码，因此连接已超时 | 使用Zendesk打开票证，并告知用户系统暂时不可用 | n/a | 是，从v3.0 | n/a | n/a |
-| LS011 | 警告 | 由于LSO/LocalStorage问题和WebStorage问题（或不可用）， AccessEnabler正在使用易失存储。 <br> <br> 身份验证/授权不会在当前页面之外继续存在！。 每次页面加载都会导致用户需要进行身份验证。 在重新加载页面时，不会强制使用已配置的TTL。 |  — 告知用户限制。 <br> <br>  — 告知用户如何增加可用存储空间。 <br> <br>  — 或者注销以清除存储。 |  — 增加存储。 <br> <br>  — 注销以清除存储。 | 是 | n/a | n/a |
+| AAPL和AAPL_ERROR | 錯誤 | 一般Apple SSO錯誤 | 錯誤包含具有原始VSA錯誤的詳細資料欄位。 | 不適用 | 不適用 | 是 | 不適用 |
+| VSA203 | 資訊 | 使用者決定登出應用程式，而驗證發生於透過平台SSO登入的結果。 | 指示/提示使用者從tvOS上的[設定] -> [帳戶] -> [電視提供者]明確登出。 <br><br> 指示/提示使用者明確登出iOS/iPadOS上的「設定 — >電視提供者」。 | 明確地從tvOS上的[設定] -> [帳戶] -> [電視提供者]登出。 <br> <br> 明確登出iOS/iPadOS上的「設定 — >電視提供者」 | 不適用 | 是 | 不適用 |
+| VSA404 | 資訊 | 應用程式視訊訂閱者帳戶許可權未確定。 | 說明單一登入(SSO)使用者體驗的優點，以鼓勵拒絕授予存取訂閱資訊許可權的使用者。 | 使用者可以變更其決定，方法是前往應用程式設定（電視提供者存取），或前往iOS/iPadOS上的「設定 — >電視提供者」或tvOS上的「設定 — >帳戶 — >電視提供者」區段。 | 不適用 | 是 | 不適用 |
+| VSA503 | 資訊 | 應用程式視訊訂閱者帳戶中繼資料要求失敗。 | MVPD端點沒有回應。 應用程式可退回至一般驗證流程。 | 不適用 | 不適用 | 是 | 不適用 |
+| 500 | 錯誤 | 內部錯誤 | 使用AccessEnablerDebug和檢查偵錯記錄（console.log輸出）來判斷哪裡出了問題。 | 不適用 | 是 | 是 | 不適用 |
+| SEC403 | 錯誤 | 網域安全性錯誤。 請求者使用無效的網域。 特定請求者ID使用的所有網域都必須依Adobe列入白名單。 |  — 僅從允許的網域清單載入AccessEnabler <br> <br>  — 聯絡Adobe以管理所使用請求者ID的網域白名單 <br> <br> - iOS：確認您使用正確的憑證，且簽章已正確建立 | 不適用 | 不適用 | 是 | 不適用 |
+| SEC412 | 警告 | [ 第2.5發行版本提供 ] 裝置ID不相符。 每當基礎平台變更其裝置ID時，就可能發生這種情況。 在此情況下，現有的Token將會清除，且使用者將不再獲得驗證。 請注意，當使用者使用JS SDK且漫遊（在JS上，使用者端IP是裝置ID的一部分）時，就會合法地發生此狀況。 否則，這可能表示有人嘗試詐騙，即有人嘗試從其他裝置複製Token。 |  — 監視警告數目。 如果流量尖峰沒有明顯的原因（沒有近期的瀏覽器更新；新的作業系統），這可能表示有人企圖詐騙。  <br> <br> — 選擇性地通知使用者他需要再次登入。 | 再次登入。 | 是 | 是 | 是（從3.2） |
+| SEC420 | 錯誤 | 與Adobe Primetime驗證伺服器通訊時出現HTTP安全性錯誤。 此錯誤通常會在假冒/代理程式就位時發生。 |  — 載入 `[https://]{SP_FQDN\}` 並手動接受SSL憑證，例如 **https://api.auth.adobe.com** 或 **https://api.auth-staging.adobe.com** <br> <br> — 將Proxy憑證標示為受信任 | 如果這發生在一般使用者身上，則表示可能是中間人攻擊！ | 是 | 是 | 是（從3.2） |
+| CFG100 | 警告 | 使用者端電腦日期/時間/時區未正確設定。 這可能會導致驗證/授權錯誤。 |  — 通知使用者設定正確的時間。 <br> <br> 採取行動來避免權益流程，因為這些流程可能會失敗。 | 設定正確的日期/時間。 | 是 | 是 | 是（從3.2） |
+| CFG400 | 錯誤 | 提供了無效的請求者ID。 | 開發人員必須指定有效的請求者ID。 | 不適用 | 是 | 是 | 是（從3.2） |
+| CFG404 | 錯誤 | 找不到Adobe Primetime驗證伺服器。 這可能在3個例項中發生： <br><br>  — 開發人員已設定無效的偽造。 <br><br>  — 使用者發生網路問題，無法連線Adobe Primetime驗證網域。 <br><br> -Adobe Primetime驗證伺服器設定錯誤。 <br><br>  **注意：** 在Firefox上，將會顯示CFG400，而不是CFG404 （瀏覽器限制） |  — 檢查偽造。 <br><br>  — 檢查網路/DNS設定。 <br><br>  — 通知Adobe。 | 檢查網路/DNS設定。 | 是 | 是 | 是（從3.2） |
+| CFG410 | 錯誤 | AccessEnabler太舊。 | 通知使用者清除快取。 | 清除瀏覽器快取。 | 是 | 不適用 | 是（從3.2） |
+| CFG5xx | 錯誤 | Adobe Primetime驗證伺服器發生內部錯誤。 xx可以是任何數字。 |  — 通知使用者Adobe Primetime驗證無法使用。 <br><br>  — 略過Adobe Primetime驗證。 <br> <br>  — 通知Adobe。 | 請稍後再試。 | 是 | 是 | 是（從3.2） |
+| N000 | 資訊 | 使用者未驗證。 | 不適用 | 登入。 | 是 | 是 | 是（從3.2） |
+| N001 | 資訊 | 已在背景啟動被動驗證嘗試。 這將會發生在設定為「每個請求者的驗證」的MVPD上。 雖然使用者有望自動驗證，但這會在初始化時造成效能損失。 | 選擇性地通知使用者或顯示UI提醒使用者「工作進行中」。 | 等一下。 | 是 | 是 | 是（從3.2） |
+| N003 | 資訊 | 使用者從Apple MVPD選擇器中選取「其他電視提供者」選項。 | 此 *displayProviderDialog* 將會呼叫callback，而應用程式可以回覆成一般的驗證流程。 | 選取一般MVPD並繼續登入畫面。 | 不適用 | 是 | 不適用 |
+| N004 | 資訊 | 使用者會選取目前要求者不支援的電視提供者。 | 此 *displayProviderDialog* 將會呼叫callback，而應用程式可以回覆成一般的驗證流程。 | 選取一般MVPD並繼續登入畫面。 | 不適用 | 是 | 不適用 |
+| N005 | 資訊 | MVPD選擇器已取消。 | 不適用 | 不適用 | 是 | 是 | 是（從3.2） |
+| N010 | 警告 | 在為所選MVPD設定全部驗證降級規則時，使用者已驗證。 | 選擇性地告知使用者，由於MVPD問題，他獲得「免費」的免費存取權。 | 不適用 | 是 | 是 | 是（從3.2） |
+| N011 | 資訊 | 已使用TempPass驗證使用者。 |  — 通知使用者。 <br> <br>  — 可選擇提供一般MVPD的清單。 | 您可以選擇使用一般MVPD登入。 | 是 | 是 | 是（從3.2） |
+| N111 | 警告 | 過期的TempPass |  — 通知使用者。 <br> <br>  — 提供一般MVPD的清單。 <br> <br>  — 隱藏TempPass選項 | 使用一般MVPD登入。 | 是 | 是 | 是（從3.2） |
+| N130 | 錯誤 | **在工作階段中找不到驗證權杖。**  這可能是由於下列其中一個原因所造成： <br> <br> 1. 瀏覽器已停用（第三方） Cookie （不適用於AccessEnabler JavaScript SDK 4.x版） <br> <br> 2. 瀏覽器已啟用「防止跨網站追蹤」 (Safari 11+) <br> <br> 3. 工作階段已過期 <br> <br> 4. 程式設計師呼叫驗證API的順序不正確 <br> <br> 注意：此錯誤碼不適用於整頁重新導向驗證流程。 | 1.提示使用者啟用（第三方） Cookie <br> <br> 2. 提示使用者停用跨網站追蹤 <br> <br> 3. 提示使用者重新驗證 <br> <br> 4. 以正確順序呼叫API | 1.啟用（第三方） Cookie <br> <br> 2. 停用跨網站追蹤 <br> <br> 3. 重新驗證 <br> <br> 4. 不適用 | 是 | 是 | 是（從3.2） |
+| N500 | 錯誤 | 內部錯誤。 <br> <br> 注意：這是原始錯誤系統的「一般驗證錯誤」和「內部驗證錯誤」。 此錯誤最終將被淘汰。 | 使用AccessEnablerDebug和檢查偵錯記錄（console.log輸出）來判斷哪裡出了問題。 | 不適用 | 是 | 是 | 不適用 |
+| R401 | 錯誤 | 嘗試取得存取權杖時發生錯誤。 <br> <br> 注意：這是無法復原的錯誤。 通知使用者應用程式無法使用。 | - iOS：檢查應用程式中的軟體陳述式和自訂配置。 <br> <br> - JavaScript：檢查網站應用程式中的軟體陳述式。 <br> <br> 使用Zendesk開啟票證，並通知使用者系統暫時無法使用 | 不適用 | 是（從v4.0） | 是（從v3.0） | 是（從3.2） |
+| R400 | 錯誤 | 應用程式未註冊。 軟體陳述式無效或已撤銷。 <br> <br> 注意：這是無法復原的錯誤。 通知使用者應用程式無法使用。 | - iOS：檢查應用程式中的軟體陳述式和自訂配置。 <br> <br> - JavaScript：檢查網站應用程式中的軟體陳述式。 <br> <br> 使用Zendesk開啟票證，並通知使用者系統暫時無法使用 | 不適用 | 是（從v4.0） | 是（從v3.0） | 是（從3.2） |
+| REG500 | 錯誤 | 無法從伺服器擷取註冊代碼。 <br> <br> 注意：這是無法復原的錯誤。 通知使用者應用程式無法使用。 | 使用Zendesk開啟票證，並通知使用者系統暫時無法使用。 | 不適用 | 是（從v4.0） | 是（從v3.0） | 是（從3.2） |
+| REGCODE | 成功 | tvOS平台上名為setSelectedProvider API的應用程式。 | 指示/提示使用者使用第二部裝置（熒幕）登入，並使用提供的註冊代碼。 | 在第2部裝置（熒幕）上使用regcode來起始驗證。 | 不適用 | 是，僅適用於tvOS | 不適用 |
+| Z010 | 警告 | 在為選定的MVPD實施「全部驗證」或「全部授權」降級規則時，使用者已獲得授權。 | 選擇性地告知使用者，由於MVPD問題，他獲得「免費」的免費存取權。 | 不適用 | 是 | 是 | 是（從3.2） |
+| Z011 | 資訊 | 已使用TempPass授權使用者 | 選擇性地通知使用者 | 不適用 | 是 | 是 | 是（從3.2） |
+| Z100 | 錯誤 | 授權失敗，因為使用者沒有訂閱要求的資源，或是其他源自MVPD的原因，例如視訊不符合使用者帳戶的家長監護設定 |  — 不允許播放。 <br> <br>  — 通知使用者。 <br> <br>  — 錯誤訊息中的&#39;message&#39;索引鍵可能包含MVPD提供的更詳細訊息。 | 不適用 | 是 | 是 | 是（從3.2） |
+| Z110 | 錯誤 | 由於重複的MVPD拒絕，授權被拒絕。 可能的詐騙企圖或DOS。 |  — 不允許播放。 <br> <br>  — 通知使用者。 | 不適用 | 是 | 是 | 是（從3.2） |
+| Z120 | 錯誤 | 由於與MVPD通訊的技術原因，拒絕授權。 可能的網路錯誤。 |  — 不允許播放。 <br> <br>  — 通知使用者MVPD發生問題，他們應該稍後再試。 | 請稍後再試。 | 是 | 是 | 是（從3.2） |
+| Z130 | 錯誤 | 授權被拒絕，因為使用了無效/格式錯誤的資源。 | 檢查資源字串並加以更正。 一般而言，此錯誤是由於MRSS格式錯誤或使用純字串而非MRSS所造成。 | 不適用 | 是 | 是 | 是（從3.2） |
+| Z169 | 錯誤 | 授權被拒絕，因為authzNone降級規則已套用到指定的資源。 | 通知使用者 | 不適用 | 是 | 是 | 是（從3.2） |
+| Z500 | 錯誤 | 內部錯誤。 <br> <br>  注意：這是舊版「一般驗證錯誤」和「內部驗證錯誤」。 此錯誤最終將被淘汰。 | 使用AccessEnablerDebug和檢查偵錯記錄（console.log輸出）來判斷哪裡出了問題。 | 不適用 | 是 | 是 | 是（從3.2） |
+| P100 | 錯誤 | 預先授權失敗。 這很可能是因為請求對太多資源的授權。 |  — 請勿使用超過允許的最大資源數。 <br> <br>  — 聯絡Adobe Primetime驗證支援以尋找/設定允許的最大資源數量。 | 不適用 | 是（從v3.0） | 是 | 是（從3.2） |
+| IS2XX | 錯誤 | 當個人化伺服器端點回應資料的格式無效或缺少必要的個人化資訊時，會傳回這些錯誤代碼。 | 使用Zendesk開啟票證，並通知使用者系統暫時無法使用 | 不適用 | 是（從v3.0） | 不適用 | 不適用 |
+| IS4XX | 錯誤 | 若個別化伺服器端點失敗4XX — 是回應的HTTP狀態碼，則會傳回這些錯誤代碼。 | 使用Zendesk開啟票證，並通知使用者系統暫時無法使用 | 不適用 | 是（從v3.0） | 不適用 | 不適用 |
+| IS5XX | 錯誤 | 若個別化伺服器端點失敗5XX — 是回應的HTTP狀態碼，則會傳回這些錯誤代碼。 | 使用Zendesk開啟票證，並通知使用者系統暫時無法使用 | 不適用 | 是（從v3.0） | 不適用 | 不適用 |
+| IS0 | 錯誤 | 當個人化伺服器端點完全沒有回應，因此連線已逾時時，會傳回此程式碼 | 使用Zendesk開啟票證，並通知使用者系統暫時無法使用 | 不適用 | 是（從v3.0） | 不適用 | 不適用 |
+| LS011 | 警告 | 由於LSO / LocalStorage問題和WebStorage問題（或無法使用），AccessEnabler使用不穩定的儲存體。 <br> <br> 驗證/授權不會持續存在超過目前頁面！ 每次頁面載入都會導致使用者需要驗證。 頁面重新載入時不會強制執行已設定的TTL。 |  — 通知使用者限制。 <br> <br>  — 告知使用者如何增加可用儲存空間。 <br> <br>  — 或是登出以清除儲存空間。 |  — 增加儲存空間。 <br> <br>  — 登出以清除儲存空間。 | 是 | 不適用 | 不適用 |
 
 <br>
 
-## 原始错误报告 {#original-error-reporting}
+## 原始錯誤報告 {#original-error-reporting}
 
-本节介绍原始错误报告系统以及原始错误代码。 在原始错误报告系统中， AccessEnabler将错误传递到以下两个回调函数： `setAuthenticationStatus()` 调用 `checkAuthentication()`; `tokenRequestFailed()`，在调用失败后 `checkAuthorization()` 或 `getAuthorization()`.
+本節說明原始的錯誤報告系統，以及原始的錯誤代碼。 在原始錯誤報告系統中，AccessEnabler會將錯誤傳遞給這兩個回呼函式： `setAuthenticationStatus()` 在呼叫之後 `checkAuthentication()`； `tokenRequestFailed()`，在對的呼叫失敗後 `checkAuthorization()` 或 `getAuthorization()`.
 
-原始错误报告和状态API将继续像以前一样工作。 但是，今后不会更新原始错误报告API。 所有有关旧错误的新错误报告和更新将仅反映在Newe中 [高级错误报告系统](#advanced-error-reporting).
+原始錯誤報告和狀態API會繼續像之前一樣運作。 不過，日後不會更新原始的錯誤報告API。 舊錯誤的所有新錯誤報告和更新都將只反映在新版 [進階錯誤報告系統](#advanced-error-reporting).
 
 
-有关使用原始错误报告系统的示例，请参阅 [JavaScript API参考](/help/authentication/javascript-sdk-api-reference.md):[setAuthenticationStatus()](/help/authentication/javascript-sdk-api-reference.md#set-authn-status-isauthn-error) 和 [tokenRequestFailed()](/help/authentication/javascript-sdk-api-reference.md#token-request-failed-error-msg) 函数， [iOS/tvOS API参考](/help/authentication/iostvos-sdk-api-reference.md): [setAuthenticationStatus()](/help/authentication/javascript-sdk-api-reference.md#setAuthNStatus)和 [tokentRequestFailed()](/help/authentication/javascript-sdk-api-reference.md#tokenReqFailed), [Android API参考](/help/authentication/android-sdk-api-reference.md): [setAuthenticationStatus()](/help/authentication/android-sdk-api-reference.md#setAuthNStatus) 和 [tokenRequestFailed()](/help/authentication/android-sdk-api-reference.md#setAuthNStatus#tokenRequestFailed).
+如需使用原始錯誤報告系統的範例，請參閱 [JavaScript API參考](/help/authentication/javascript-sdk-api-reference.md)：[setAuthenticationStatus()](/help/authentication/javascript-sdk-api-reference.md#set-authn-status-isauthn-error) 和 [tokenRequestFailed()](/help/authentication/javascript-sdk-api-reference.md#token-request-failed-error-msg) 函式， [iOS/tvOS API參考](/help/authentication/iostvos-sdk-api-reference.md)： [setAuthenticationStatus()](/help/authentication/javascript-sdk-api-reference.md#setAuthNStatus)和 [tokentRequestFailed()](/help/authentication/javascript-sdk-api-reference.md#tokenReqFailed)， [Android API參考](/help/authentication/android-sdk-api-reference.md)： [setAuthenticationStatus()](/help/authentication/android-sdk-api-reference.md#setAuthNStatus) 和 [tokenRequestFailed()](/help/authentication/android-sdk-api-reference.md#setAuthNStatus#tokenRequestFailed).
 
-### 原始回调错误代码 {#original-callback-error-codes}
+### 原始回呼錯誤代碼 {#original-callback-error-codes}
 
-| **一般错误** |  |
+| **一般錯誤** |  |
 |---|---|
-| 内部错误 | 尝试处理请求时发生系统错误。 |
-| 未选择提供程序错误 | 在提供商选择对话框中客户取消时发生。 |
-| 提供程序不可用错误 | 在没有提供程序时发生。 |
+| 內部錯誤 | 嘗試處理請求時發生系統錯誤。 |
+| 未選取提供者錯誤 | 當客戶在提供者選擇對話方塊中取消時發生。 |
+| 無法使用提供者錯誤 | 當沒有可用的提供者時發生。 |
 |  |  |
-| **身份验证错误** |  |
-| 一般身份验证错误 | 原因未知或无法发布时返回。 |
-| 内部身份验证错误 | 尝试验证时出现系统错误。 |
-| 用户未验证错误 | 用户未通过身份验证。 |
+| **驗證錯誤** |  |
+| 一般驗證錯誤 | 原因不明或無法發佈時傳回。 |
+| 內部驗證錯誤 | 嘗試驗證時發生系統錯誤。 |
+| 使用者未驗證錯誤 | 使用者未驗證。 |
 |  |  |
-| **授权错误** |  |
-| 一般授权错误 | 原因未知或无法发布时返回。 |
-| 内部授权错误 | 尝试授权时出现系统错误。 |
-| 用户未授权错误 | 客户无权查看请求的内容。 |
+| **授權錯誤** |  |
+| 一般授權錯誤 | 原因不明或無法發佈時傳回。 |
+| 內部授權錯誤 | 嘗試授權時發生系統錯誤。 |
+| 使用者未授權錯誤 | 客戶無權檢視要求的內容。 |
 
 <!--
 ## Related Information {#related-information}

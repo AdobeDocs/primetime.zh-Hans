@@ -1,27 +1,26 @@
 ---
-description: 延迟绑定音频使用MediaPlayer播放在M3U8 HLS播放列表中指定的、可包含多个替代音频流的视频。
-title: 访问备用音轨
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 後期繫結音訊使用MediaPlayer來播放在M3U8 HLS播放清單中指定，並且可以包含數個替代音訊資料流的視訊。
+title: 存取替代音軌
+exl-id: d357bcc9-2996-42f0-a733-482f59e938ac
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '107'
 ht-degree: 0%
 
 ---
 
+# 存取替代音軌{#access-alternate-audio-tracks}
 
-# 访问备用音轨{#access-alternate-audio-tracks}
+後期繫結音訊使用MediaPlayer來播放在M3U8 HLS播放清單中指定，並且可以包含數個替代音訊資料流的視訊。
 
-延迟绑定音频使用MediaPlayer播放在M3U8 HLS播放列表中指定的、可包含多个替代音频流的视频。
+1. 等待MediaPlayer至少處於PREPARED狀態。
+1. 接聽此事件：
 
-1. 等待MediaPlayer至少处于PREPARED状态。
-1. 听听此事件:
+   `MediaPlayer.PlaybackEventListener.onStateChanged with state MediaPlayer.PlayerState.INITIALIZED`：音訊曲目的初始清單可供使用。
 
-   `MediaPlayer.PlaybackEventListener.onStateChanged with state MediaPlayer.PlayerState.INITIALIZED`:音轨的初始列表可用。
+1. 從取得可用的音軌 `MediaPlayerItem` 執行個體。
 
-1. 从`MediaPlayerItem`实例获取可用的音轨。
-
-   `mediaPlayerItem.getAudioTracks()` 1. （可选）向用户显示可用音轨。
-1. 在`MediaPlayerItem`实例上设置所选音轨。
+   `mediaPlayerItem.getAudioTracks()` 1. （選用）向使用者展示可用的曲目。
+1. 將選取的音軌設定在 `MediaPlayerItem` 執行個體。
 
    `mediaPlayerItem.selectAudioTrack(audioTrack)`

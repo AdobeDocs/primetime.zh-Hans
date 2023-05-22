@@ -1,26 +1,25 @@
 ---
-title: 处理同步请求
-description: 处理同步请求
+title: 處理同步處理請求
+description: 處理同步處理請求
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: b19245e3-19ae-4dd4-9e5e-6956feb91334
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '154'
 ht-degree: 0%
 
 ---
 
+# 處理同步處理請求 {#handle-synchronization-requests}
 
-# 处理同步请求{#handle-synchronization-requests}
+如果授權指定同步化需求  [同步化需求，](../../protecting-content/introduction/usage-rules/authentication/synchronization.md) 使用者端會根據授權中指定的頻率，定期傳送同步處理要求給伺服器。 若要啟用同步處理訊息，請設定 `SyncFrequencyRequirements` 在PlayRight中。
 
-如果许可证指定同步要求[同步要求，则](../../protecting-content/introduction/usage-rules/authentication/synchronization.md)客户端根据许可证中指定的频率定期向服务器发送同步请求。 要启用同步消息，请在PlayRight中设置`SyncFrequencyRequirements`。
+* 要求處理常式類別為 `com.adobe.flashaccess.sdk.protocol.sync.SynchronizationHandler`
+* 請求訊息類別為 `com.adobe.flashaccess.sdk.protocol.sync.SynchronizationRequestMessage`
+* 如果使用者端和伺服器都支援通訊協定版本5，則請求URL是「中繼資料中的授權伺服器URL： + 」 [!DNL /flashaccess/sync/v4]「。 否則，請求URL是「中繼資料中的授權伺服器URL」+ &quot; [!DNL /flashaccess/sync/v3]&quot;
 
-* 请求处理程序类为`com.adobe.flashaccess.sdk.protocol.sync.SynchronizationHandler`
-* 请求消息类为`com.adobe.flashaccess.sdk.protocol.sync.SynchronizationRequestMessage`
-* 如果客户端和服务器支持协议版本5，则请求URL为“元数据中的许可证服务器URL:+ &quot; [!DNL /flashaccess/sync/v4]&quot;。 否则，请求URL为“元数据中的许可证服务器URL”+“ [!DNL /flashaccess/sync/v3]”
+同步化訊息可用來將使用者端的時間與伺服器的時間同步。 如果授權內嵌於內容中，且不需要從授權伺服器擷取，同步使用者端的時間非常重要，以防止使用者端修改其時鐘，以略過授權到期。
 
-同步消息用于同步客户端的时间与服务器的时间。 如果许可证嵌入到内容中，并且不需要从许可证服务器检索，则同步客户端的时间对于防止客户端修改其时钟以绕过许可证过期很重要。
+同步化訊息也可用來將使用者端狀態資訊傳遞給伺服器( `getClientState()`)以進行復原偵測。
 
-同步消息还可用于将客户端状态信息传送到服务器(`getClientState()`)以进行回滚检测。
-
-请参阅[回滚保护](../../protecting-content/implementing-the-license-server/processing-drm-requests.md#rollback-detection)。
+另請參閱 [復原保護](../../protecting-content/implementing-the-license-server/processing-drm-requests.md#rollback-detection).

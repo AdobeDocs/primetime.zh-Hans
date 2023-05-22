@@ -1,36 +1,34 @@
 ---
-title: 阻止列表DRM客户端无法访问受保护的内容
-description: 阻止列表DRM客户端无法访问受保护的内容
+title: 封鎖無法存取受保護內容的DRM使用者端清單
+description: 封鎖無法存取受保護內容的DRM使用者端清單
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 837e55ef-8dff-46eb-a952-c787d40d4a1b
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '400'
 ht-degree: 0%
 
 ---
 
+# 封鎖無法存取受保護內容的DRM使用者端清單 {#blocklist-of-drm-clients-restricted-from-accessing-protected-content}
 
-# 阻止列表DRM客户端无法访问受保护的内容{#blocklist-of-drm-clients-restricted-from-accessing-protected-content}
+此封鎖清單指定無法存取受保護內容的Primetime DRM使用者端。 您可以依使用者端版本和平台封鎖清單使用者端。
 
-此阻止列表指定无法访问受保护内容的Primetime DRM客户端。 按客户端版本和平台阻止列表客户端。
+使用案例範例：在安全性違反的情況下，可將較新版本的Primetime DRM使用者端指定為授權取得和內容播放所需的最低版本。 授權伺服器會先檢查發出授權要求的Primetime DRM使用者端是否符合版本需求，然後再發出授權。 Primetime DRM使用者端也會在播放內容之前檢查授權中的版本。 如果網域中的授權可能傳輸到其他電腦，則需要此使用者端檢查。
 
-示例用例：在发生安全漏洞的事件下，可以将Primetime DRM客户端的新版本指定为获取许可证和内容播放所需的最低版本。 许可证服务器在颁发许可证之前检查发出许可证请求的Primetime DRM客户端是否满足版本要求。 Primetime DRM客户端在播放内容前还会检查许可证中的版本。 如果域可能将许可证传输到另一台计算机，则需要此客户端检查。
+Primetime DRM使用者端版本可由下表中指定的屬性來識別：
 
-Primetime DRM客户端版本可由下表中指定的属性标识：
-
-| **属性** | **支持的值** | **匹配条件** | **说明** |
+| **屬性** | **支援的值** | **符合條件** | **說明** |
 |---|---|---|---|
-| 环境 | `“PC”, “PortingKit”` | 精确匹配 | 标识客户端是在桌面上还是任何其他设备上运行。 |
-| 操作系统 | `“Win”, “Mac”, “Linux”, “Android”, “iOS”, "ChromeOS"` | 精确匹配 | 平台 |
-| 架构 | `“32”, “64”` | 精确匹配 | 32位或64位 |
-| 屏幕类型 | `“PC”, “Mobile”, “TV”` | 精确匹配 |  |
-| 运行时版本 | 有效的版本号。 例如，`“2.0.0”, "3.0", "4.0", "11.0"`等。 | 如果客户端版本小于或等于指定版本，则匹配。 | 版本号指定为数字和句点(&quot;。&quot;)的组合 任何长度。 |
-| Primetime DRM库版本 | 有效的版本号。 例如，`“2.0.0”`。 | 如果客户端版本小于或等于指定版本，则匹配。 | 版本号指定为数字和句点(&quot;。&quot;)的组合 任何长度。 |
-| OEM供应商 | 可位于向将Primetime DRM移植到设备的客户颁发的运行时证书中的OEM供应商字符串。 | 精确匹配 | 使用移植工具包的设备的OEM供应商标识字符串。 |
-| 模型 | 可以位于向将Primetime DRM移植到设备的客户颁发的运行时证书中的模型字符串。 例如，`"iOS_Mobile", "Android_Mobile", "Chrome", "ChromeOS_ARM", "WindowsOnARM", "AVE"` | 精确匹配 | 使用移植工具包的设备的设备模型标识字符串。 |
+| 環境 | `“PC”, “PortingKit”` | 完全相符 | 識別使用者端是否正在桌上型電腦或任何其他裝置上執行。 |
+| 作業系統 | `“Win”, “Mac”, “Linux”, “Android”, “iOS”, "ChromeOS"` | 完全相符 | Platform |
+| 架構 | `“32”, “64”` | 完全相符 | 32位元或64位元 |
+| 熒幕型別 | `“PC”, “Mobile”, “TV”` | 完全相符 |  |
+| 執行階段版本 | 有效的版本號碼。 例如， `“2.0.0”, "3.0", "4.0", "11.0"`等。 | 如果使用者端版本小於或等於指定的版本，則相符。 | 版本編號是以數字和句點(「。」)的組合來指定 任何長度。 |
+| Primetime DRM程式庫版本 | 有效的版本號碼。 例如， `“2.0.0”`. | 如果使用者端版本小於或等於指定的版本，則相符。 | 版本編號是以數字和句點(「。」)的組合來指定 任何長度。 |
+| OEM廠商 | OEM廠商字串，可位於發行給將Primetime DRM移植到裝置的客戶的Runtime憑證中。 | 完全相符 | 使用移植套件之裝置的OEM廠商識別字串。 |
+| 模型 | 可在發行給將Primetime DRM移植到裝置的客戶的Runtime憑證中找到的模型字串。 例如， `"iOS_Mobile", "Android_Mobile", "Chrome", "ChromeOS_ARM", "WindowsOnARM", "AVE"` | 完全相符 | 使用移植套件的裝置的裝置型號識別字串。 |
 
 >[!NOTE]
 >
->在阻止列表中指定条目时，可以为上表中提及的一个或多个属性设置值。 未指定的任何属性都被视为通配符。 如果Primetime DRM客户端与阻止列表条目中指定的所有值匹配，则受保护内容可能无法由该客户端访问。
-
+>在區塊清單中指定專案時，您可以為上一個表格中提及的一或多個屬性設定值。 任何未指定的屬性都會視為萬用字元。 如果Primetime DRM使用者端符合封鎖清單專案中指定的所有值，則該使用者端可能無法存取受保護的內容。

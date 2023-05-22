@@ -1,30 +1,29 @@
 ---
-title: 存储凭据
-description: 存储凭据
+title: 儲存認證
+description: 儲存認證
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 42bccf3a-307f-4763-8b02-f983bcc2e131
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '363'
 ht-degree: 0%
 
 ---
 
+# 儲存認證{#storing-credentials}
 
-# 存储凭据{#storing-credentials}
-
-SDK支持多种存储凭据（公钥证书及其关联的私钥）的方式，包括在HSM上或作为PKCS12文件。 当需要私钥时使用凭据（例如，包装程序对元数据进行签名，或者许可证服务器解密使用许可证服务器或传输公钥加密的数据）。 私钥必须受到严密保护，以确保内容和许可证服务器的安全。 PKCS12是包含使用密码加密的凭据的文件的标准格式。 文件扩展名.pfx通常用于此格式的文件。
-
->[!NOTE]
->
->Adobe建议使用HSM以实现最大安全性。 有关详细信息，请参阅Adobe访问安全部署指南。
+SDK支援多種憑證儲存方式（公開金鑰憑證及其關聯的私密金鑰），包括在HSM上或當作PKCS12檔案。 當需要私密金鑰時（例如，封裝者需要簽署中繼資料，或授權伺服器需要解密使用授權伺服器或傳輸公開金鑰加密的資料），就會使用認證。 必須嚴密保護私密金鑰，以確保您的內容和License Server的安全性。 PKCS12是檔案的標準格式，其中包含使用密碼加密的認證。 檔案副檔名.pfx通常用於此格式的檔案。
 
 >[!NOTE]
 >
->从Java1.7开始，64位Sun Java for Windows不支持Adobe Access DRM为与HSM设备通信而需要的PKCS11接口。 如果您计划使用HSM，请使用32位版本的Java，或使用支持完整PKCS11接口的JDK。
+>Adobe建議使用HSM以獲得最大安全性。 如需詳細資訊，請參閱Adobe存取安全部署准則。
 
-您可以在硬件安全模块(HSM)上保留私钥，并使用SDK传入您从HSM获得的凭据。 要使用存储在HSM上的凭据，请使用可以与HSM通信的JCE提供程序来获取对私钥的处理。 然后，将包含公钥的私钥句柄、提供者名称和证书传递到`ServerCredentialFactory.getServerCredential()`。
+>[!NOTE]
+>
+>自Java1.7起，Windows適用的64位元Sun Java不支援Adobe存取DRM與HSM裝置通訊所需的PKCS11介面。 如果您打算使用HSM，請使用32位元版本的Java，或使用支援完整PKCS11介面的JDK。
 
-SunPKCS11提供程序是JCE提供程序的一个示例，它可用于访问HSM上的私钥（有关使用此提供程序的说明，请参见Sun Java文档）。 某些HSM还附带Java SDK，其中包括JCE提供程序。
+您可以在Hardware Security Module (HSM)上保留私密金鑰，並使用SDK傳遞您從HSM取得的認證。 若要使用儲存在HSM上的認證，請使用可與HSM通訊的JCE提供者來取得私密金鑰的控制碼。 然後，將私密金鑰控制代碼、提供者名稱和包含公開金鑰的憑證傳遞至 `ServerCredentialFactory.getServerCredential()`.
 
-PEM和DER是对公钥证书进行编码的两种方式。 PEM是基64编码，DER是二进制编码。 证书文件通常使用扩展名.cer、.pem。 或.der。 仅在需要公钥的位置使用证书。 如果组件仅需要公钥才能运行，则最好向该组件提供证书，而不是凭据或PKCS12文件。
+SunPKCS11提供者是JCE提供者的一個範例，可用來存取HSM上的私密金鑰（請參閱Sun Java檔案以瞭解使用此提供者的指示）。 部分HSM也隨附Java SDK，內含JCE提供者。
+
+PEM和DER是兩種編碼公開金鑰憑證的方式。 PEM是base-64編碼，而DER是二進位編碼。 憑證檔案通常使用副檔名.cer、.pem。 或.der. 憑證用於只需要公開金鑰的地方。 如果元件僅需要公開金鑰才能運作，最好向該元件提供憑證，而不是認證或PKCS12檔案。

@@ -1,22 +1,21 @@
 ---
-description: 浏览器TVSDK以XML格式向Adobe发送计费量度。
-title: 传输付费量度
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 瀏覽器TVSDK會以XML格式將計費量度傳送至Adobe。
+title: 傳輸計費量度
+exl-id: f6ed72be-a5a8-48f2-b518-76c710300ea7
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '61'
 ht-degree: 0%
 
 ---
 
+# 傳輸計費量度{#transmit-billing-metrics}
 
-# 传输计费量度{#transmit-billing-metrics}
-
-浏览器TVSDK以XML格式向Adobe发送计费量度。
+瀏覽器TVSDK會以XML格式將計費量度傳送至Adobe。
 
 <!--<a id="example_13ABDB1CC0B549968A534765378DA3A0"></a>-->
 
-如果使用网络捕获工具来监视浏览器TVSDK传输到Adobe的统计信息，您应看到以下单位：
+如果您使用網路擷取工具來監視Browser TVSDK傳輸至Adobe的統計資料，您應該會看到如下的單位：
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -40,4 +39,4 @@ ht-degree: 0%
 </request>
 ```
 
-布尔属性`drmProtected`、`adsEnabled`和`midrollEnabled`仅在为true时才显示。
+布林值屬性 `drmProtected`， `adsEnabled`、和 `midrollEnabled` 只有在為true時才會出現。

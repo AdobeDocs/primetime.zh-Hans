@@ -1,32 +1,31 @@
 ---
-description: 您可以使用现有的延迟广告加载机制启用或禁用延迟广告解析功能（默认情况下禁用延迟广告解析）。
-keywords: 延迟；广告解析；广告加载；延迟加载
-title: 启用延迟广告解决
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以使用現有的延遲廣告載入機制來啟用或停用延遲廣告解析功能（預設會停用延遲廣告解析）。
+keywords: 延遲；廣告解決；廣告載入；delayLoading
+title: 啟用延遲廣告解析
+exl-id: a52a1f9a-3bf6-4193-8347-1ef248ba8884
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '298'
 ht-degree: 0%
 
 ---
 
+# 啟用延遲廣告解析 {#enable-lazy-ad-resolving}
 
-# 启用延迟广告解析{#enable-lazy-ad-resolving}
+您可以使用現有的延遲廣告載入機制來啟用或停用延遲廣告解析功能（預設會停用延遲廣告解析）。
 
-您可以使用现有的延迟广告加载机制启用或禁用延迟广告解析功能（默认情况下禁用延迟广告解析）。
+您可以透過呼叫來啟用或停用延遲廣告解析 [AdvertisingMetadata.setDelayLoading](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_2.4/com/adobe/mediacore/metadata/AdvertisingMetadata.html#setDelayAdLoading-boolean-) 為true或false。
 
-可以通过调用[AdvertisingMetadata.setDelayLoading](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_2.4/com/adobe/mediacore/metadata/AdvertisingMetadata.html#setDelayAdLoading-boolean-)（为true或false）来启用或禁用“延迟广告解析”。
+* 使用布林值 *hasDelayAdloading* 和 *setDelayAdloading* AdvertisingMetadata中控制廣告解析時間及廣告在時間軸上置入位置的方法：
 
-* 使用AdvertisingMetadata中的布尔&#x200B;*hasDelayAdLoading*&#x200B;和&#x200B;*setDelayAdLoading*&#x200B;方法控制广告分辨时间以及时间轴上广告的放置：
+   * 若 *hasDelayAdloading* 傳回false，TVSDK會等到所有廣告解析並置入後再轉換為PREPARED狀態。
+   * 若 *hasDelayAdloading* 傳回true，TVSDK只會解析初始廣告和轉換到PREPARED狀態。
 
-   * 如果&#x200B;*hasDelayAdLoading*&#x200B;返回false，则TVSDK会等到所有广告都解析并置入后，再转换到PREPARED状态。
-   * 如果&#x200B;*hasDelayAdLoading*&#x200B;返回true，则TVSDK仅将初始广告和过渡解析为PREPARED状态。
-
-      * 其余广告在播放过程中进行解析和放置。
-   * 当*hasPreroll *或&#x200B;*hasLivePreroll*&#x200B;返回false时，TVSDK假定不存在预卷广告并立即开始内容的播放。 这些值默认为true。
+      * 剩餘的廣告會在播放期間解析和置入。
+   * 當*hasPreroll*或 *hasLivePreroll* return false，TVSDK會假設沒有前置廣告，並立即開始播放內容。 這些預設值設定為true。
 
 
-**与懒惰广告解析相关的API:**
+**與延遲廣告解析度相關的API：**
 
 ```
 Class:    com.adobe.mediacore.metadata.AdvertisingMetadata 
@@ -46,11 +45,11 @@ Methods:
     public Placement.Type getPlacementType() // Returns whether
 ```
 
-要将广告准确反映为拖拽栏上的提示，请倾听`TimelineEvent`事件，并在每次收到此事件时重绘拖拽栏。
+若要將廣告準確地反映為拖曳列上的提示，請聆聽 `TimelineEvent`事件，並在每次收到此事件時重繪清除列。
 
-如果为VOD流启用了“延迟广告解析”，则所有广告分段都会放在时间轴上，但是，许多广告分段仍无法解析。 应用程序可以通过检查`TimelineMarker::getDuration()`来确定是否绘制这些标记。 如果该值大于零，则广告分段内的广告已解析。
+為VOD資料流啟用延遲廣告解決時，所有廣告插播都會放在時間軸上，但是，許多廣告插播尚未解決。 應用程式可藉由檢查 `TimelineMarker::getDuration()`. 如果值大於零，則表示廣告插播中的廣告已解決。
 
-TVSDK在解决广告中断时以及当播放器过渡为PREPARED状态时分派此事件。
+TVSDK會在廣告插播解決後，以及播放器轉換為「已準備」狀態時傳送此事件。
 
 ```
 mediaPlayer.addEventListener(MediaPlayerEvent.TIMELINE_UPDATED, timelineUpdatedEventListener); 

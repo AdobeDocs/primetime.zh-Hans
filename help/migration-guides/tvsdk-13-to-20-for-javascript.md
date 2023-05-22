@@ -1,27 +1,26 @@
 ---
-title: TVSDK转换 — 对于JavaScript，为1.3到2.0
-description: 2.0的许多方法签名和API元素名称已更改。请查看这些表以查看所有API更改详细信息。
+title: TVSDK轉換 — JavaScript適用的1.3至2.0
+description: 許多方法簽章和API元素名稱已針對2.0變更。檢閱這些表格以檢視所有API變更詳細資訊。
 contentOwner: asgupta
 products: SG_PRIMETIME
 topic-tags: migration
-translation-type: tm+mt
-source-git-commit: b33240bf1b42b80389cd95a7ae4d3f85185a2d32
+exl-id: 4b251e26-cee6-4d96-bb55-6c47195da4d0
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '5034'
 ht-degree: 0%
 
 ---
 
+# TVSDK轉換 — JavaScript適用的1.3至2.0 {#tvsdk-conversion-to-for-javascript}
 
-# TVSDK转换 — 对于JavaScript {#tvsdk-conversion-to-for-javascript}，为1.3到2.0
+許多方法簽章和API元素名稱已針對2.0變更。檢閱這些表格以檢視所有API變更詳細資訊。
 
-2.0的许多方法签名和API元素名称已更改。请查看这些表以查看所有API更改详细信息。
+## 在JavaScript中實作回呼函式 {#implement-callback-functions-in-javascript}
 
-## 在JavaScript {#implement-callback-functions-in-javascript}中实现回调函数
+方法檔案中的註解會建議您需要實作的回呼簽章。
 
-方法文档中的注释建议您需要实施的回呼的签名。
-
-对于JavaScript，API语法基于Web ID。 对于TVSDK接口，方法名称称为&#x200B;*methodName*()。 对于应用程序要实现的方法，将向接口添加一个名为&#x200B;*methodName* CallbackFunc的读/写属性，并且应用程序应将其设置为指向实现该方法的函数。 例如：
+對於JavaScript，API語法會根據Web ID。 若是TVSDK介面，則會呼叫方法名稱 *方法名稱*()。 對於由應用程式實作的方法，讀取/寫入屬性稱為 *方法名稱* CallbackFunc已新增至介面，您的應用程式應將其設定為指向實作方法的函式。 例如：
 
 ```shell
 // An app implementable interface
@@ -56,28 +55,28 @@ playerConfig.adFactory = factory;
 // Use this config to load new MediaResource
 ```
 
-## 2.0 {#advertising-workflow-api-element-changes-for}的广告工作流API元素更改
+## 2.0的Advertising工作流程API元素變更 {#advertising-workflow-api-element-changes-for}
 
-这些表比较了版本1.3和2.0之间JavaScript TVSDK的广告工作流API元素。
+下表比較了1.3版和2.0版之間JavaScript TVSDK的廣告工作流程API元素。
 
-本主题中的表：
+此主題中的表格：
 
 * TimedMetadata
-* AdSigningMode
-* 广告元数据
+* AdSignalingMode
+* AdvertisingMetadata
 * CustomRangeMetadata
 * ReplaceTimeRange
-* 放置
-* 机会
-* 保留
-* 时间轴/时间轴项/时间轴标记
-* AdBreak
+* 刊登
+* 機會
+* 預訂
+* 時間軸/時間軸專案/時間軸標籤
+* 廣告插播
 * Ad / AdAsset / AdClick / AdList / AdAssetList / AdBannerAsset
 * AdBreakTimelineItem / AdTimelineItem
 * AdBreakPolicy / AdBreakWatchedPolicy / AdPolicy / AdPolicyMode / AdPolicyInfo / AdPolicySelector
-* 时间轴操作
+* 時間軸操作
 * AdBreakPlacement
-* AuditudeSettings
+* Auditudesettings
 
 ### TimedMetadata {#timedmetadata}
 
@@ -88,17 +87,17 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p> <strong>TimedMetadata</strong>:接口TimedMetadata {<br /> const unsigned short METADATA_TYPE_TAG = 0 ; <br /> const unsigned short metadata_TYPE_ID3 = 1 ; <br /> 只读属性unsigned short type; <br /> readonly属性long time;readonly<br /> 属性DomString id;readonly<br /> 属性DomString名称；<br /> readonly属性DomString内容； <br /> 只读属性对象元数据；<br /> }; </p> </td> 
-   <td><p>interfaceTimedMetadata {<br />包含未签名的短METADATA_TYPE_TAG = 0 ;<br />包含未签名的短METADATA_TYPE_ID3 = 1 ;<br />只读属性unsigned short metadataType;<br />只读属性长时间；<br />只读属性长id;<br />只读属性domString name;<br /> <br />只读属性对象元数据；<br /> };</p> </td> 
+   <td><p> <strong>TimedMetadata</strong>：介面TimedMetadata {<br /> const unsigned short METADATA_TYPE_TAG = 0 ； <br /> const unsigned short METADATA_TYPE_ID3 = 1 ； <br /> readonly屬性（不帶正負號的短型別）； <br /> readonly attribute long time；<br /> 唯讀屬性DomString ID；<br /> 唯讀屬性DomString名稱；<br /> 唯讀屬性DomString內容； <br /> 唯讀屬性Object中繼資料；<br /> }； </p> </td> 
+   <td><p>介面TimedMetadata {<br /> const unsigned short METADATA_TYPE_TAG = 0 ；<br /> const unsigned short METADATA_TYPE_ID3 = 1 ；<br /> readonly屬性（不帶正負號的短metadataType）；<br /> readonly attribute long time；<br /> 唯讀屬性長id；<br /> 唯讀屬性DomString名稱；<br /> <br /> 唯讀屬性Object中繼資料；<br /> }；</p> </td> 
   </tr> 
   <tr> 
-   <td><strong>TimedMetadataList</strong>:（2.0没有变化）</td> 
-   <td><p>接口TimedMetadataList {<br />只读属性unsigned long length;<br /> getter TimedMetadata(unsigned long index);<br /> };</p> </td> 
+   <td><strong>TimedMetadataList</strong>：（2.0版沒有變更）</td> 
+   <td><p>介面TimedMetadataList {<br /> readonly屬性（不帶正負號的長長度）；<br /> getter TimedMetadata (unsigned long index)；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-### AdSigningMode {#adsignalingmode}
+### AdSignalingMode {#adsignalingmode}
 
 <table> 
  <tbody> 
@@ -107,8 +106,8 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>接口AdSigningMode { <br />控制未签名短MODE_DEFAULT， <br />控制未签名短MODE_MANIFEST_CEASS， <br />控制未签名短MODE_SERVER_MAP， <br />控制未签名短MODE_CUSTOM_RANGES <br /> };</p> </td> 
-   <td>这将替换MetadataKeys::MANIFEST_CAIS键。</td> 
+   <td><p>介面AdSigningMode { <br /> const unsigned short MODE_DEFAULT， <br /> const unsigned short MODE_MANIFEST_CUE ， <br /> const unsigned short MODE_SERVER_MAP ， <br /> const unsigned short MODE_CUSTOM_RANGES <br /> }；</p> </td> 
+   <td>這會取代MetadataKeys：：MANIFEST_CUE索引鍵。</td> 
   </tr> 
  </tbody> 
 </table>
@@ -122,8 +121,8 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>接口AdvertisingMetadata { <br />属性AdSigningMode模式；<br />属性AdBreakWatchedPolicy adBreakAsWatched;<br />属性boolean livePreroll;<br />属性boolean delayAdLoading ;<br /> };</p> </td> 
-   <td>此功能由<p>MetadataKeys::ADVERTISING_METADATA</p> key.</td> 
+   <td><p>介面AdvertisingMetadata { <br /> 屬性AdSigningMode模式； <br /> 屬性AdBreakWatchedPolicy adBreakAsWatched； <br /> 屬性布林值livePreroll； <br /> 屬性布林值delayAdLoading ； <br /> }；</p> </td> 
+   <td>此功能由提供<p>中繼資料索引鍵：：ADVERTISING_METADATA</p> 金鑰。</td> 
   </tr> 
  </tbody> 
 </table>
@@ -137,8 +136,8 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>接口CustomRangeMetadata { <br />控制未签名的短TYPE_MARK_RANGE;<br /> const unsigned short TYPE_DELETE_RANGE;<br /> const unsigned short TYPE_REPLACE_RANGE;<br />属性未签名短类型；<br />属性boolean adjustSeekPosition;<br />属性TimeRangeList timeRangeList;<br /> };</p> </td> 
-   <td>（2.0新增）</td> 
+   <td><p>介面CustomRangeMetadata { <br /> 限制不帶正負號的短TYPE_MARK_RANGE； <br /> const unsigned short TYPE_DELETE_RANGE； <br /> 限制不帶正負號的短TYPE_REPLACE_RANGE； <br /> 屬性不帶正負號的短型別； <br /> 屬性布林值adjustSeekPosition； <br /> 屬性TimeRangeList timeRangeList； <br /> }；</p> </td> 
+   <td>（2.0的新功能）</td> 
   </tr> 
  </tbody> 
 </table>
@@ -152,13 +151,13 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>interfaceReplaceTimeRange { <br />属性unsigned long begin;<br /> readonly属性unsigned long end;<br />属性未签名的长持续时间；<br />属性unsigned long replaceDuration;<br /> };</p> </td> 
-   <td>（2.0新增）</td> 
+   <td><p>介面ReplaceTimeRange { <br /> 屬性無符號long begin； <br /> readonly屬性（不帶正負號的長端）； <br /> 屬性無簽署的持續時間； <br /> 屬性unsigned long replaceDuration； <br /> }；</p> </td> 
+   <td>（2.0的新功能）</td> 
   </tr> 
  </tbody> 
 </table>
 
-### 位置{#placement}
+### 刊登 {#placement}
 
 <table> 
  <tbody> 
@@ -167,13 +166,13 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>接口位置{ <br />包含未签名的短TYPE_MID_ROLL;<br /> const unsigned short TYPE_PRE_ROLL;<br /> const unsigned short TYPE_POST_ROLL;<br /> const unsigned short TYPE_SERVER_MAP;<br /> const unsigned short TYPE_CUSTOM_RANGE;<br /> readonly attribute unsigned short type;<br />只读属性时间较长；<br />只读属性长持续时间；<br /> const unsigned short MODE_DEFAULT;<br /> const unsigned short MODE_INSERT;<br />控制未签名的短MODE_REPLACE;<br /> const unsigned short MODE_DELETE;<br /> const unsigned short MODE_MARK;<br />控制未签名的短MODE_FREE_REPLACE;<br />只读属性未签名短模式；<br />只读属性TimeRange范围；<br /> };</p> </td> 
-   <td>（2.0新增）</td> 
+   <td><p>介面位置{ <br /> const unsigned short TYPE_MID_ROLL； <br /> 限制不帶正負號的短TYPE_PRE_ROLL； <br /> 限制不帶正負號的短TYPE_POST_ROLL； <br /> const unsigned short TYPE_SERVER_MAP； <br /> const unsigned short TYPE_CUSTOM_RANGE；<br /> readonly屬性（不帶正負號的短型別）； <br /> readonly attribute long time； <br /> 唯讀屬性長持續時間； <br /> const unsigned short MODE_DEFAULT； <br /> const unsigned short MODE_INSERT； <br /> const unsigned short MODE_REPLACE； <br /> const unsigned short MODE_DELETE； <br /> const unsigned short MODE_MARK； <br /> 限制不帶正負號的短MODE_FREE_REPLACE； <br /> readonly attribute unsigned short mode； <br /> 唯讀屬性TimeRange； <br /> }；</p> </td> 
+   <td>（2.0的新功能）</td> 
   </tr> 
  </tbody> 
 </table>
 
-### 机会{#opportunity}
+### 機會 {#opportunity}
 
 <table> 
  <tbody> 
@@ -182,13 +181,13 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>接口机会{ <br />只读属性DomString id;<br />只读属性放置；<br />只读属性对象设置；<br /> readonly属性Object customParameters;<br /> }; </p> </td> 
-   <td>（2.0新增）</td> 
+   <td><p>介面商機{ <br /> 唯讀屬性DomString ID； <br /> 唯讀屬性Placement； <br /> 唯讀屬性Object設定； <br /> 唯讀屬性Object customParameters； <br /> }； </p> </td> 
+   <td>（2.0的新功能）</td> 
   </tr> 
  </tbody> 
 </table>
 
-### 保留{#reservation}
+### 預訂 {#reservation}
 
 <table> 
  <tbody> 
@@ -197,13 +196,13 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>接口保留{ <br />只读属性TimeRange范围；<br /> readonly属性long hold;<br /> }; </p> </td> 
-   <td> （2.0新增）</td> 
+   <td><p>介面預訂{ <br /> 唯讀屬性TimeRange； <br /> 唯讀屬性長保留； <br /> }； </p> </td> 
+   <td> （2.0的新功能）</td> 
   </tr> 
  </tbody> 
 </table>
 
-### 时间轴/时间轴项/时间轴标记{#timeline-timelineitem-timelinemarker}
+### 時間軸/時間軸專案/時間軸標籤 {#timeline-timelineitem-timelinemarker}
 
 <table> 
  <tbody> 
@@ -212,21 +211,21 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p><strong>时间轴</strong>:接口时 <br /> 间线{只读属性TimelineMarkerList timelineMarkers; <br /> 只读属性TimelineItemList timelineItems; <br /> 多次convertToLocalTime(多次时间); <br /> 多次convertToVirtualTime(多次时间); <br /> };</p> </td> 
-   <td><p>接口时间线{<br />只读属性TimelineMarkerList timelineMarkers;<br /> <br /> <br /> <br /> };</p> </td> 
+   <td><p><strong>時間表</strong>：介面時間軸 <br /> { readonly attribute TimelineMarkerList timelineMarkers； <br /> 唯讀屬性TimelineItemList timelineItems； <br /> double convertToLocalTime( double time)； <br /> double convertToVirtualTime( double time)； <br /> }；</p> </td> 
+   <td><p>介面時間表{<br /> 唯讀屬性TimelineMarkerList timelineMarkers；<br /> <br /> <br /> <br /> }；</p> </td> 
   </tr> 
   <tr> 
-   <td><p> <strong>TimelineItem</strong>:interfaceTimelineItem:<br /> TimelineMarker {<br /> readonly属性long id; <br /> 只读属性TimeRange virtualRange; <br /> 只读属性TimeRange localRange; <br /> 只读属性boolean watched; <br /> 只读属性布尔临时； <br /> }; </p> </td> 
-   <td>（2.0新增）</td> 
+   <td><p> <strong>時間軸專案</strong>：介面時間軸專案：<br /> 時間軸標籤{<br /> 唯讀屬性長id； <br /> 唯讀屬性TimeRange virtualRange； <br /> 唯讀屬性TimeRange localRange； <br /> 唯讀屬性布林值watched； <br /> readonly屬性布林值暫存； <br /> }； </p> </td> 
+   <td>（2.0的新功能）</td> 
   </tr> 
   <tr> 
-   <td><strong>时间轴标记</strong>:（2.0没有变化）</td> 
-   <td><p>interfaceTimelineMarker {<br />只读属性多次时间；<br />只读属性多次持续时间；<br /> };</p> </td> 
+   <td><strong>時間軸標籤</strong>：（2.0版沒有變更）</td> 
+   <td><p>介面時間軸標籤{<br /> 唯讀屬性雙倍時間；<br /> 唯讀屬性雙倍持續時間；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-### AdBreak {#adbreak}
+### 廣告插播 {#adbreak}
 
 <table> 
  <tbody> 
@@ -235,8 +234,8 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>接口AdBreak {<br /> <br /> <br /> <br />只读属性多次持续时间；<br />只读属性AdList广告；<br /> <br /> <br />只读属性AdInsertionType插入类型；<br /> }; </p> </td> 
-   <td><p>接口AdBreak {<br />只读属性多次时间；<br />只读属性多次replaceDuration;<br /> <br />只读属性多次持续时间；<br />只读属性AdList adList;<br /> <br />只读属性DomString数据；<br /> <br /> }; </p> </td> 
+   <td><p>介面廣告插播{<br /> <br /> <br /> <br /> 唯讀屬性雙倍持續時間；<br /> 唯讀屬性AdList廣告；<br /> <br /> <br /> readonly屬性AdInsertionType insertionType；<br /> }； </p> </td> 
+   <td><p>介面廣告插播{<br /> 唯讀屬性雙倍時間；<br /> 唯讀屬性double replaceDuration；<br /> <br /> 唯讀屬性雙倍持續時間；<br /> 唯讀屬性AdList adList；<br /> <br /> 唯讀屬性DomString資料；<br /> <br /> }； </p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -250,28 +249,28 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p> <strong>广告</strong>:interface Ad {readonly<br /> 属性AdAsset primaryAsset;readonly<br /> 属性AdAssetList companionAssets;readonly属性多次持续时间；readonly<br /> <br /> 属性DomString id;const short ADTYPE_LINEAR = 0 <br /> <br /> <br /> <br /> <br /> <br /> const unsigned short AD类型；只读AdInSERTIONType ADInSERTIONType; <br /> <br /> 只读属性布尔可单击； <br /> 只读属性boolean isCustomAdMarker;<br /> }; </p> </td> 
-   <td><p>接口Ad {<br />只读属性AdAsset primaryAsset;<br />只读属性AdAssetList companionAssets;<br /> <br />只读属性多次持续时间；<br />只读属性DomString id;<br />连续未签名的短ADTYPE_LINEAR = 0;<br />const unsigned short ADTYPE_NONLINERAL = 1;<br /> <br /> readonly属性unsigned short type;<br /> readonly属性AdInsertionType insertionType;<br />只读属性对象跟踪器；<br /> <br /> <br /> }; </p> </td> 
+   <td><p> <strong>廣告</strong>：介面廣告{<br /> 唯讀屬性AdAsset primaryAsset；<br /> 唯讀屬性AdAssetList companionAssets；<br /> <br /> 唯讀屬性雙倍持續時間；<br /> 唯讀屬性DomString ID；<br /> const unsigned short ADTYPE_LINEAR = 0 ；<br /> const unsigned short ADTYPE_NONLINEAR = 1 ；<br /> <br /> readonly屬性（不帶正負號的短adType）；<br /> readonly屬性AdInsertionType adInsertionType； <br /> <br /> 唯讀屬性布林值可點按； <br /> 唯讀屬性布林值isCustomAdMarker；<br /> }； </p> </td> 
+   <td><p>介面廣告{<br /> 唯讀屬性AdAsset primaryAsset；<br /> 唯讀屬性AdAssetList companionAssets；<br /> <br /> 唯讀屬性雙倍持續時間；<br /> 唯讀屬性DomString ID；<br /> const unsigned short ADTYPE_LINEAR = 0 ；<br /> const unsigned short ADTYPE_NONLINEAR = 1 ；<br /> <br /> readonly屬性（不帶正負號的短型別）；<br /> readonly屬性AdInsertionType insertionType； <br /> 唯讀屬性Object tracker；<br /> <br /> <br /> }； </p> </td> 
   </tr> 
   <tr> 
-   <td><strong>AdAsset</strong>:（2.0没有变化）</td> 
-   <td><p>接口AdAsset {<br />只读属性DomString id;<br />只读属性多次持续时间；<br />只读属性MediaResource资源；<br />只读属性AdClick adClick;<br />只读属性Object元数据；<br /> };</p> </td> 
+   <td><strong>AdAsset</strong>：（2.0版沒有變更）</td> 
+   <td><p>介面AdAsset {<br /> 唯讀屬性DomString ID；<br /> 唯讀屬性雙倍持續時間；<br /> 唯讀屬性MediaResource；<br /> 唯讀屬性AdClick adClick；<br /> 唯讀屬性Object中繼資料；<br /> }；</p> </td> 
   </tr> 
   <tr> 
-   <td><strong>AdClick</strong>:（2.0没有变化）</td> 
-   <td><p>接口AdClick {<br />只读属性DomString id;<br />只读属性DomString title;<br />只读属性DomString url;<br /> };</p> </td> 
+   <td><strong>AdClick</strong>：（2.0版沒有變更）</td> 
+   <td><p>介面AdClick {<br /> 唯讀屬性DomString ID；<br /> 唯讀屬性DomString title；<br /> 唯讀屬性DomString url；<br /> }；</p> </td> 
   </tr> 
   <tr> 
-   <td><strong>AdList</strong>:（2.0没有变化）</td> 
-   <td><p>接口AdList {<br />只读属性unsigned long length;<br /> getter Ad(unsigned long index);<br /> };</p> </td> 
+   <td><strong>廣告清單</strong>：（2.0版沒有變更）</td> 
+   <td><p>介面廣告清單{<br /> readonly屬性（不帶正負號的長長度）；<br /> getter Ad (unsigned long index)；<br /> }；</p> </td> 
   </tr> 
   <tr> 
-   <td><strong>AdAssetList</strong>:（2.0没有变化）</td> 
-   <td><p>接口AdAssetList {<br />只读属性unsigned long length;<br /> getter AdAsset(unsigned long index);<br /> };</p> </td> 
+   <td><strong>AdAssetList</strong>：（2.0版沒有變更）</td> 
+   <td><p>介面AdAssetList {<br /> readonly屬性（不帶正負號的長長度）；<br /> getter AdAsset (unsigned long index)；<br /> }；</p> </td> 
   </tr> 
   <tr> 
-   <td><p><strong>AdBannerAsset</strong>:接口AdBannerAsset:AdAsset<br /> {<br /> readonly attribute int width;readonly<br />  attribute int height;readonly <br /> attribute DomString staticUrl;readonly <br /> attribute DomString height;<br /> readonly attribute DomString width<br /> ;};</p> </td> 
-   <td> 2.0中的新增功能</td> 
+   <td><p><strong>AdBannerAsset</strong>：介面AdBannerAsset ： AdAsset<br /> {<br /> 唯讀屬性int寬度；<br /> 唯讀屬性int高度；<br /> readonly屬性DomString staticUrl；<br /> 唯讀屬性DomString高度；<br /> 唯讀屬性DomString寬度；<br /> }；</p> </td> 
+   <td> 2.0中的新功能</td> 
   </tr> 
  </tbody> 
 </table>
@@ -285,16 +284,16 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p> <strong>AdBreakTimelineItem</strong>:接口AdBreakTimelineItem:TimelineItem {  <br /> readonly属性AdBreak adBreak; <br /> 只读属性AdTimelineItemList项； <br /> }; </p> </td> 
-   <td> （2.0新增）</td> 
+   <td><p> <strong>AdBreakTimelineItem</strong>：介面AdBreakTimelineItem ： TimelineItem { <br /> 唯讀屬性AdBreak adBreak； <br /> 唯讀屬性AdTimelineItemList專案； <br /> }； </p> </td> 
+   <td> （2.0的新功能）</td> 
   </tr> 
   <tr> 
-   <td><p><strong>AdTimelineItem</strong>:接口AdTimelineItem:TimelineItem {  <br /> readonly属性AdBreak adBreak; <br /> 只读属性广告； <br /> }; </p> </td> 
-   <td> （2.0新增）</td> 
+   <td><p><strong>AdTimelineItem</strong>：介面AdTimelineItem ： TimelineItem { <br /> 唯讀屬性AdBreak adBreak； <br /> 唯讀屬性廣告廣告； <br /> }； </p> </td> 
+   <td> （2.0的新功能）</td> 
   </tr> 
   <tr> 
-   <td><p><strong>AdBreakTimelineItemList</strong>:interfaceAdBreakTimelineItemList {  <br /> readonly attribute unsigned longgh; <br /> getterAdBreakTimelineItem（未签名的lo ng索引）； <br /> };</p> </td> 
-   <td> （2.0新增）</td> 
+   <td><p><strong>AdBreakTimelineItemList</strong>：介面AdBreakTimelineItemList { <br /> readonly屬性（不帶正負號的長長度）； <br /> getter AdBreakTimelineItem （未簽署的記錄檔索引）； <br /> }；</p> </td> 
+   <td> （2.0的新功能）</td> 
   </tr> 
  </tbody> 
 </table>
@@ -308,33 +307,33 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>接口AdBreakPolicy {<br />只读属性short AD_BREAK_POLICY_SKIP;<br />只读属性short AD_BREAK_POLICY_PLAY;<br />只读属性short AD_BREAK_POLICY_REMOVE;<br />只读属性short AD_AD_AD_BREK_POLICY_REMOVE_AFTER_PLAY;<br /> };</p> </td> 
-   <td><p> 接口AdPolicyConstants {<br />只读属性short AD_BREAK_POLICY_SKIP;<br />只读属性short AD_BREAK_POLICY_PLAY;<br />只读属性short AD_BREAK_POLICY_REMOVE;<br />只读属性shortAD_POLICY_REMOVE_AFTER_PLAY;}<br /> ...</p> </td> 
+   <td><p>介面AdBreakPolicy {<br /> 唯讀屬性短AD_BREAK_POLICY_SKIP；<br /> 唯讀屬性短AD_BREAK_POLICY_PLAY；<br /> 唯讀屬性短AD_BREAK_POLICY_REMOVE；<br /> 唯讀屬性短AD_BREAK_POLICY_REMOVE_AFTER_PLAY；<br /> }；</p> </td> 
+   <td><p> 介面AdPolicyConstants {<br /> 唯讀屬性短AD_BREAK_POLICY_SKIP；<br /> 唯讀屬性短AD_BREAK_POLICY_PLAY；<br /> 唯讀屬性短AD_BREAK_POLICY_REMOVE；<br /> readonly屬性短AD_BREAK_POLICY_REMOVE_AFTER_PLAY；}<br /> ...</p> </td> 
   </tr> 
   <tr> 
-   <td><p> interfaceAdBreakWatchPolicy {<br />只读属性short AD_BREAK_AS_WATCHED_ON_BEGIN;<br />只读属性shortAD_BREAK_AS_WATCHED_ON_END;<br />只读属性shortAD_BREAD_BREK_BREK_BREK_AS_AS_AS_AS_ASWATCHED_NEVER;<br /> }; </p> </td> 
-   <td><p> ...<br />只读属性short AD_BREAK_AS_WATCHED_ON_BEGIN;<br />只读属性short AD_BREAK_AS_WATCHED_ON_END;<br />只读属性short AD_BREAK_AS_WAS_WATCH_NEVER;&lt;at;<br />...</p> </td> 
+   <td><p> 介面AdBreakWatchedPolicy {<br /> 唯讀屬性短AD_BREAK_AS_WATCHED_ON_BEGIN；<br /> 唯讀屬性短AD_BREAK_AS_WATCHED_ON_END；<br /> 唯讀屬性短AD_BREAK_AS_WATCHED_NEVER；<br /> }； </p> </td> 
+   <td><p> ...<br /> 唯讀屬性短AD_BREAK_AS_WATCHED_ON_BEGIN；<br /> 唯讀屬性短AD_BREAK_AS_WATCHED_ON_END；<br /> 唯讀屬性短AD_BREAK_AS_WATCHED_NEVER；<br /> ...</p> </td> 
   </tr> 
   <tr> 
-   <td><p>接口AdPolicy {<br />只读属性short AD_POLICY_PLAY;<br />只读属性short AD_POLICY_PLAY_FROM_AD_BEGIN;<br />只读属性short AD_POLICY_PLAY_FROM_AD_BREAK_BEGIN;只读属性short AD_POLICY_SKIP_TO_NEXT_AD_IN_BREAK;<br /> <br /> readonly属性short AD_POLICY_SKIP_AD_BREAK;<br /> };</p> </td> 
-   <td><p> ... <br />只读属性short AD_POLICY_PLAY;<br />只读属性short AD_POLICY_PLAY_FROM_AD_BEGIN;<br />只读属性shortAD_POLICY_PLAY_FROM_AD_BREAK_BEGIN;<br />仅属性short AD_POLICY_SKIP_TO_NEXT_AD_IN_BREAK;<br />只读属性short AD_POLICY_SKIP_AD_BREAK;<br /> ...</p> </td> 
+   <td><p>介面AdPolicy {<br /> 唯讀屬性短AD_POLICY_PLAY；<br /> 唯讀屬性短AD_POLICY_PLAY_FROM_AD_BEGIN；<br /> 唯讀屬性短AD_POLICY_PLAY_FROM_AD_BREAK_BEGIN；唯讀屬性短AD_POLICY_SKIP_TO_NEXT_AD_IN_BREAK；<br /> <br /> readonly屬性短AD_POLICY_SKIP_AD_BREAK；<br /> }；</p> </td> 
+   <td><p> ... <br /> 唯讀屬性短AD_POLICY_PLAY；<br /> 唯讀屬性短AD_POLICY_PLAY_FROM_AD_BEGIN；<br /> 唯讀屬性短AD_POLICY_PLAY_FROM_AD_BREAK_BEGIN；<br /> 唯讀屬性短AD_POLICY_SKIP_TO_NEXT_AD_IN_BREAK；<br /> readonly屬性短AD_POLICY_SKIP_AD_BREAK；<br /> ...</p> </td> 
   </tr> 
   <tr> 
-   <td><p>接口AdPolicyMode {<br />只读属性short AD_POLICY_MODE_PLAY;<br />只读属性short AD_POLICY_MODE_SEEK;<br />只读属性short AD_POLICY_MODE_TRICKPLAY;<br /> };</p> </td> 
-   <td><p> ...<br /> {readonly attribute short AD_POLICY_MODE_PLAY;<br /> readonly attribute short AD_POLICY_MODE_SEEK;<br /> readonly attribute short AD_POLICY_MODE_TRICKPLAY;<br /> };</p> </td> 
+   <td><p>介面AdPolicyMode {<br /> 唯讀屬性短AD_POLICY_MODE_PLAY；<br /> 唯讀屬性短AD_POLICY_MODE_SEEK；<br /> 唯讀屬性短AD_POLICY_MODE_TRICKPLAY；<br /> }；</p> </td> 
+   <td><p> ...<br /> {readonly屬性短AD_POLICY_MODE_PLAY；<br /> 唯讀屬性短AD_POLICY_MODE_SEEK；<br /> 唯讀屬性短AD_POLICY_MODE_TRICKPLAY；<br /> }；</p> </td> 
   </tr> 
   <tr> 
-   <td><p>interfaceAdPolicyInfo {<br />只读属性AdBreakTimelineItemList <br /> adBreakTimelineItems;<br />只读属性AdTimelineItem adTimelineItem;<br />只读属性多次currentTime;<br />只读属性多次搜索toTime;<br />只读属性多次率；<br />只读属性短模式；//AdPolicyMode<br /> };</p> </td> 
-   <td><p>interfaceAdPolicyInfo {<br />只读属性AdBreakPlacementList <br /> adBreakAptiens;<br />只读属性Ad;<br />只读属性多次currentTime;<br />只读属性多次seekToTime;<br />只读属性多次速率；a6/&gt;只读属性短模式；//AdPolicyMode<br /> };<br /></p> </td> 
+   <td><p>介面AdPolicyInfo {<br /> 唯讀屬性AdBreakTimelineItemList <br /> adBreakTimelineItems；<br /> 唯讀屬性AdTimelineItem adTimelineItem；<br /> 唯讀屬性double currentTime；<br /> 唯讀屬性double seekToTime；<br /> 唯讀屬性雙倍速率；<br /> 唯讀屬性短模式； //AdPolicyMode<br /> }；</p> </td> 
+   <td><p>介面AdPolicyInfo {<br /> 唯讀屬性AdBreakPlacementList <br /> adBreakPlacements；<br /> 唯讀屬性廣告廣告；<br /> 唯讀屬性double currentTime；<br /> 唯讀屬性double seekToTime；<br /> 唯讀屬性雙倍速率；<br /> 唯讀屬性短模式； //AdPolicyMode<br /> }；</p> </td> 
   </tr> 
   <tr> 
-   <td><p>接口AdPolicySelector {<br /> /**<br /> * AdbreakPolicy selectForAdBreak(<br /> * AdPolicyInfo adPolicyInfo);<br /> */<br />属性Object selectPolicyForAdBreakCallbackInfofunc;<br /> /**<br /> * AdBreakTimelineItemList selectAdBreaksToPlay(<br /> * AdPolicyInfo adPolicyInfo);<br /> */<br />属性Object selectAdBreaksToPlayCallbackInfofunc;<br /> /**<br /> * AdPolicy selectForSeekIntoAd(AdPolicyInfo adPolicyInfo);<br /> */<br />属性Object selectPolicyForSeekIntoAdAdcallbackFunc;<br /> /**<br /> * AdBreakWatchPolicy selectWatchedPolicyForAdBreak(<br /> * AdPolicyInfo adPolicyInfo);<br /> */<br />属性对象selectWatkedPolicyForAdBreakCallbackFunc;<br /> };</p> </td> 
-   <td><p>接口AdPolicySelector {<br /> /**<br /> * AdbreakPolicy selectForAdBreak(<br /> * AdPolicyInfo adPolicyPolicyInfo);<br /> */<br />属性Object selectPolicyForAdBreakFuncFunc回调；<br /> /**<br /> * AdBreakPlacementList selectAdBreaksToPlay(<br /> * AdPolicyInfo adPolicyInfo);<br /> */<br />属性Object selectAdBreaksToPlayCallback;&lt;allback;<br /> /**<br /> * AdPolicy selectForSeekIntoAd(AdPolicyInfo adPolicyInfo);<br /> */<br />属性Object selectPolicyForSeekIntoAdCallback;<br /> /**<br /> * AdBreakAsWatched selectWatchedPolicyForAdBreak(<br /> * AdPolicyInfo adPolicyInfo);<br /> */<br />属性对象selectWatedPolicyForAdBreakCallback;<br /> };</p> </td> 
+   <td><p>介面AdPolicySelect {<br /> /**<br /> * AdbreakPolicy selectPolicyForAdBreak(<br /> * AdPolicyInfo adPolicyInfo)；<br /> */<br /> 屬性物件selectPolicyForAdBreakCallbackFunc；<br /> /**<br /> * AdBreakTimelineItemList selectAdBreaksToPlay(<br /> * AdPolicyInfo adPolicyInfo)；<br /> */<br /> 屬性物件selectAdBreaksToPlayCallbackFunc；<br /> /**<br /> * AdPolicy selectPolicyForSeekIntoAd(AdPolicyInfo adPolicyInfo)；<br /> */<br /> 屬性物件selectPolicyForSeekIntoAdCallbackFunc； <br /> /**<br /> * AdBreakWatchedPolicy selectWatchedPolicyForAdBreak(<br /> * AdPolicyInfo adPolicyInfo)；<br /> */<br /> 屬性物件selectWatchedPolicyForAdBreakCallbackFunc；<br /> }；</p> </td> 
+   <td><p>介面AdPolicySelect {<br /> /**<br /> * AdbreakPolicy selectPolicyForAdBreak(<br /> * AdPolicyInfo adPolicyInfo)；<br /> */<br /> 屬性物件selectPolicyForAdBreakFuncCallback；<br /> /**<br /> * AdBreakPlacementList selectAdBreaksToPlay(<br /> * AdPolicyInfo adPolicyInfo)；<br /> */<br /> 屬性物件selectAdBreaksToPlayCallback；<br /> /**<br /> * AdPolicy selectPolicyForSeekIntoAd(AdPolicyInfo adPolicyInfo)；<br /> */<br /> 屬性物件selectPolicyForSeekIntoAdCallback； <br /> /**<br /> * AdBreakAsWatched selectWatchedPolicyForAdBreak(<br /> * AdPolicyInfo adPolicyInfo)；<br /> */<br /> 屬性物件selectWatchedPolicyForAdBreakCallback；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-### TimelineOperation {#timelineoperation}
+### 時間軸操作 {#timelineoperation}
 
 <table> 
  <tbody> 
@@ -343,8 +342,8 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>接口TimelineOperation { <br />只读属性放置；<br /> };</p> </td> 
-   <td> （2.0新增）</td> 
+   <td><p>介面時間軸操作{ <br /> 唯讀屬性Placement ； <br /> }；</p> </td> 
+   <td> （2.0的新功能）</td> 
   </tr> 
  </tbody> 
 </table>
@@ -358,13 +357,13 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>接口AdBreakPlacement:TimelineOperation {<br />只读属性AdBreak adBreak;<br />只读属性放置；//从TimelineOperation<br />只读属性多次时间；<br />只读属性多次持续时间；<br /> };</p> </td> 
-   <td><p>interfaceAdBreakPlacement {<br />只读属性AdBreak adBreak;<br />只读属性Placement;<br />只读属性多次时间；<br />只读属性多次持续时间；<br /> };</p> </td> 
+   <td><p>介面AdBreakPlacement ： TimelineOperation {<br /> 唯讀屬性AdBreak adBreak；<br /> 唯讀屬性Placement placement； //從TimelineOperation<br /> 唯讀屬性雙倍時間；<br /> 唯讀屬性雙倍持續時間；<br /> }；</p> </td> 
+   <td><p>介面AdBreakPlacement {<br /> 唯讀屬性AdBreak adBreak；<br /> 唯讀屬性Placement；<br /> 唯讀屬性雙倍時間；<br /> 唯讀屬性雙倍持續時間；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-### AuditudeSettings {#auditudesettings}
+### Auditudesettings {#auditudesettings}
 
 <table> 
  <tbody> 
@@ -373,21 +372,21 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>接口AuditudeSettings:AdvertisingMetadata { <br />属性DomString zoneId;<br />属性DomString mediaId;<br />属性DomString defaultMediaId ;<br />属性DomString域；<br />属性Object targettingInfo ;<br />属性Object customParameters;<br />属性Boolean creativePackaingEnabled ;<br />属性Boolean showStaticBanners ;<br /> };</p> </td> 
-   <td>功能由MetadataKeys::AUDITUDE_METADATA_KEY提供。</td> 
+   <td><p>介面AuditudeSettings ： AdvertisingMetadata { <br /> 屬性DomString zoneId； <br /> 屬性DomString mediaId； <br /> 屬性DomString defaultMediaId ； <br /> 屬性DomString網域； <br /> 屬性Object targettingInfo ； <br /> 屬性物件customParameters ； <br /> 屬性Boolean creativePackingEnabled ；<br /> 屬性布林值showStaticBanners ；<br /> }；</p> </td> 
+   <td>功能由MetadataKeys：：AUDITUDE_METADATA_KEY提供。</td> 
   </tr> 
  </tbody> 
 </table>
 
-## 2.0 {#customization-api-element-changes-for}的自定义API元素更改
+## 2.0的自訂API元素變更 {#customization-api-element-changes-for}
 
-这些表比较了版本1.3和2.0之间JavaScript TVSDK的自定义API元素。
+下表比較了1.3版和2.0版之間JavaScript TVSDK的自訂API元素。
 
-本主题中的表：
+此主題中的表格：
 
 * MediaPlayerItemConfig
 * ContentFactory
-* 网络配置
+* 網路組態
 
 ### MediaPlayerItemConfig {#mediaplayeritemconfig}
 
@@ -398,8 +397,8 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>interfaceMediaPlayerItemConfig {<br />属性ContentFactory adFactory;<br />属性StringList subscribeTags;<br /> <br />属性StringList adTags;<br /> <br /> <br />属性AdSigningMode;<br />属性CustomRangeMetadata customRangeMetadata;<br />属性NetworkConfiguration networkConfiguration;<br />属性AdvertisingMetadata advertisingMetadata;<br />属性Boolean useHardwareDecoder;<br /> };</p> </td> 
-   <td><p>interfaceMediaPlayerConfig {<br /> <br /> <br /> <br />属性StringList adTags;<br />属性StringList subscriedTags;<br />属性MediaPlayerClientFactoryFactory;<br /> <br /> <br /> <br /> &lt;a&gt; <br />a10/&gt; <br /> };</p> </td> 
+   <td><p>介面MediaPlayerItemConfig {<br /> 屬性ContentFactory adFactory；<br /> 屬性StringList subscribeTags；<br /> <br /> 屬性StringList adTags；<br /> <br /> <br /> 屬性AdSignalingMode adSignalingMode；<br /> 屬性CustomRangeMetadata customRangeMetadata；<br /> 屬性NetworkConfiguration networkConfiguration；<br /> 屬性AdvertisingMetadata advertisingMetadata；<br /> 屬性布林值useHardwareDecoder；<br /> }；</p> </td> 
+   <td><p>介面MediaPlayerConfig {<br /> <br /> <br /> <br /> 屬性StringList adTags；<br /> 屬性StringList subscribedTags；<br /> 屬性MediaPlayerClientFactory clientFactory；<br /> <br /> <br /> <br /> <br /> <br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -413,13 +412,13 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>interfaceContentFactory {<br /> /*<br /> * AdPolicySelector retrieveAdPolicySelector（<br /> * MediaPlayerItem项）；<br /> */<br />属性Object retrieveAdPolicySelectorCallbackFunc;<br />;</p> </td> 
-   <td><p>interfaceMediaPlayerClientFactory {<br /> /*<br /> * AdPolicySelector retrieveAdPolicySelector（<br /> * MediaPlayerItem项）；<br /> */<br />属性Object retrieveAdPolicySelectorFunc;<br /> };</p> </td> 
+   <td><p>介面ContentFactory {<br /> /*<br /> * AdPolicySelector retrieveAdPolicySelector(<br /> * MediaPlayerItem)；<br /> */<br /> 屬性Object retrieveAdPolicySelectorCallbackFunc；<br /> }；</p> </td> 
+   <td><p>介面MediaPlayerClientFactory {<br /> /*<br /> * AdPolicySelector retrieveAdPolicySelector(<br /> * MediaPlayerItem)；<br /> */<br /> 屬性Object retrieveAdPolicySelectorFunc；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-### NetworkConfiguration {#networkconfiguration}
+### 網路組態 {#networkconfiguration}
 
 <table> 
  <tbody> 
@@ -428,28 +427,28 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>interfaceNetworkConfiguration<br /> {<br />属性boolean forceNativeNetworking;<br />属性boolean useRedirectedUrl;<br />属性Object cookieHeader;<br />属性boolean readSetCookieHeader;<br />属性int masterUpdateInterIntervateInterIntervateInterva;<br />属性boolean useCookieHeaderForAllRequests;<br />属性int readLimit;<br /> };</p> </td> 
-   <td>在1.3中，部分此功能是由MetadataKeys提供的</td> 
+   <td><p>介面網路組態<br /> {<br /> 屬性布林值forceNativeNetworking；<br /> 屬性布林值useRedirectedUrl；<br /> 屬性Object cookieHeader；<br /> 屬性布林值readSetCookieHeader；<br /> 屬性int masterUpdateInterval； <br /> 屬性布林值useCookieHeaderForAllRequests；<br /> 屬性int readLimit；<br /> }；</p> </td> 
+   <td>在1.3中，部分此功能是由MetadataKeys提供</td> 
   </tr> 
  </tbody> 
 </table>
 
-## 2.0 {#drm-api-element-changes-for}的DRM API元素更改
+## 2.0的DRM API元素變更 {#drm-api-element-changes-for}
 
-这些表比较了版本1.3和2.0之间的JavaScript TVSDK的DRM API元素。
+這些表格會比較1.3版和2.0版之間JavaScript TVSDK的DRM API元素。
 
-本主题中的表：
+此主題中的表格：
 
-* DRM工作流初始化
-* DRMAcquireLicenseSettings/DRMAuthenticationMethod
+* DRM工作流程初始化
+* DRMAcquireLicenseSettings / DRMAuthenticationMethod
 * DRMMetadata
 * DRMPlaybackTimeWindow
 * DRMLicense
 * DRMLicenseDomain
-* DRMPolicy
-* DRMManager
+* DRMPpolicy
+* DRM管理員
 
-### DRM工作流初始化{#drm-workflow-initialization}
+### DRM工作流程初始化 {#drm-workflow-initialization}
 
 <table> 
  <tbody> 
@@ -458,8 +457,8 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td>应用程序需要调用AdobePSDK.initiateDRMWorkflow以启动DRM工作流。 没有此呼叫，DRM视频将无法播放。<p>接口AdobePSDK<br /> {<br /> void initiateDRMWorkFlow(<br /> DomString appStoratePath， <br /> DomString publisherId， <br /> DomString appId， <br /> AppVersion， <br /> boolean privacyModeOn);<br /> };</p> </td> 
-   <td>初始化是在内部完成的，不需要显式调用。</td> 
+   <td>應用程式需要呼叫AdobePSDK.initiateDRMWorkflow來啟動DRM工作流程。 沒有這個呼叫，DRM視訊將無法播放。<p>介面AdobePSDK<br /> {<br /> void initiateDRMWorkFlow(<br /> DomString appStoratePath， <br /> DomString publisherId， <br /> DomString appId， <br /> DomString appVersion， <br /> 布林值privacyModeOn)；<br /> }；</p> </td> 
+   <td>初始化已在內部完成，不需要明確呼叫。</td> 
   </tr> 
  </tbody> 
 </table>
@@ -468,10 +467,10 @@ playerConfig.adFactory = factory;
 
 | 2.0 API | 1.3 API |
 |--- |--- |
-| **DRMAcquireLicenseSettings** |  |
-| 2.0没有更改。 | enum DRMAcquireLicenseSettings <br>{<br> const unsigned int FORCE_REFRESH = 0;<br> const unsigned int LOCAL_ONLY = 1;<br> const unsigned int ALLOW_SERVER = 2;<br> }; |
+| **DRMAquireLicenseSettings** |  |
+| 2.0版沒有變更。 | 列舉DRMAquireLicenseSettings <br>{<br> const unsigned int FORCE_REFRESH = 0；<br> const unsigned int LOCAL_ONLY = 1；<br> const unsigned int ALLOW_SERVER = 2；<br> }； |
 | **DRMAuthenticationMethod** |  |
-| 2.0没有更改。 | enum DRMAuthenticationMethod <br>{<br> const unsigned int UNKNOWN = 0;<br> const unsigned int ANNOMYS = 1;<br> const unsigned int USERNAME_AND_PASSWORD = 2;<br> } |
+| 2.0版沒有變更。 | 列舉DRMAuthenticationMethod <br>{<br> const unsigned int UNKNOWN = 0；<br> const unsigned int ANONYMOUS = 1；<br> const unsigned int USERNAME_AND_PASSWORD = 2；<br> } |
 
 ### DRMMetadata {#drmmetadata}
 
@@ -482,8 +481,8 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td>2.0没有更改。</td> 
-   <td><p>interfaceDRMMetadata<br /> {<br />只读属性DomString serverUrl;<br />只读属性DomString licenseId;<br />只读属性DRMPolicyArray策略；<br /> };</p> </td> 
+   <td>2.0版沒有變更。</td> 
+   <td><p>介面DRMMetadata<br /> {<br /> readonly屬性DomString serverUrl；<br /> 唯讀屬性DomString licenseId；<br /> 唯讀屬性DRMPolicyArray原則； <br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -497,8 +496,8 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>interfaceDRMPlaybackTimeWindow {<br /> readonly attribute int playbackPeriodInSeconds;<br /> readonly attribute long playbackStartDate;<br /> readonly attribute long playbackEndDate;<br /> };</p> </td> 
-   <td><p>interface DRMPlaybackTimeWindow {<br /> readonly attribute int periodInSeconds;<br /> readonly attribute int startDate;<br /> readonly attribute intentDate;<br /> };</p> </td> 
+   <td><p>介面DRMPlaybackTimeWindow {<br /> readonly屬性int playbackPeriodInSeconds；<br /> readonly屬性long playbackStartDate；<br /> 唯讀屬性long playbackEndDate；<br /> }；</p> </td> 
+   <td><p>介面DRMPlaybackTimeWindow {<br /> 唯讀屬性int periodInSeconds；<br /> readonly attribute int startDate；<br /> readonly attribute int endDate；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -512,8 +511,8 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td>2.0没有更改。</td> 
-   <td><p>interfaceDRMLicense {<br />只读属性Uint8Array bytes;<br />只读属性Date licenseStartDate;<br />只读属性Date licenseEndDate;<br />只读属性Date offflineStorageStartDate;<br />只读属性Date offlineStorageEndStoreStorageEnd日期；<br />只读属性DomString serverUrl;<br />只读属性DomString licenseID;<br />只读属性DomString policyID;<br />只读属性DRMPlaybackTimeWindow playbackTimeWindow;<br />只读属性Object customPropertiter;<br /> }; </p> </td> 
+   <td>2.0版沒有變更。</td> 
+   <td><p>介面DRMLicense {<br /> 唯讀屬性Uint8Array位元組；<br /> 唯讀屬性Date licenseStartDate；<br /> 唯讀屬性Date licenseEndDate；<br /> 唯讀屬性Date offlineStorageStartDate；<br /> 唯讀屬性Date offlineStorageEndDate； <br /> readonly屬性DomString serverUrl；<br /> 唯讀屬性DomString licenseID；<br /> 唯讀屬性DomString policyID；<br /> 唯讀屬性DRMPlaybackTimeWindow playbackTimeWindow；<br /> 唯讀屬性Object customProperties；<br /> }； </p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -527,13 +526,13 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>interfaceDRMLicenseDomain {<br />只读属性DomString authenticationDomain;<br />只读属性DRMAuthenticationMethod authenticationMethod;<br />只读属性DomString serverUrl;<br /> };</p> </td> 
-   <td><p>interfaceDRMLicenseDomain {<br />只读属性DomString authDomain;<br />只读属性DRMAuthenticationMethod authMethod;<br />只读属性DomString serverURL;<br /> };</p> </td> 
+   <td><p>介面DRMLicenseDomain {<br /> 唯讀屬性DomString authenticationDomain；<br /> 唯讀屬性DRMAuthenticationMethod authenticationMethod； <br /> readonly屬性DomString serverUrl；<br /> }；</p> </td> 
+   <td><p>介面DRMLicenseDomain {<br /> readonly屬性DomString authDomain；<br /> 唯讀屬性DRMAuthenticationMethod authMethod； <br /> readonly屬性DomString serverURL；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-### DRMPolicy {#drmpolicy}
+### DRMPpolicy {#drmpolicy}
 
 <table> 
  <tbody> 
@@ -542,13 +541,13 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>interfaceDRMPolicy<br /> {<br />只读属性DomString authenticationDomain;<br />只读属性DRMAuthenticationMethod authenticationMethod;<br /> <br />只读属性DomString displayName;<br />只读属性DRMLicenseDomain lice域；<br /> }</p> </td> 
-   <td><p>interfaceDRMPolicy<br /> {<br />只读属性DomString authDomain;<br />只读属性DRMAuthenticationMethod authMethod;<br />只读属性DomString dispName;<br />只读属性DRMLicenseDomain licenseDomainDomain;5/&gt; };<br /></p> </td> 
+   <td><p>介面DRMPpolicy<br /> {<br /> 唯讀屬性DomString authenticationDomain；<br /> 唯讀屬性DRMAuthenticationMethod authenticationMethod；<br /> <br /> 唯讀屬性DomString displayName；<br /> 唯讀屬性DRMLicenseDomain licenseDomain；<br /> }；</p> </td> 
+   <td><p>介面DRMPpolicy<br /> {<br /> readonly屬性DomString authDomain；<br /> 唯讀屬性DRMAuthenticationMethod authMethod；<br /> 唯讀屬性DomString dispName；<br /> 唯讀屬性DRMLicenseDomain licenseDomain；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-### DRMManager {#drmmanager}
+### DRM管理員 {#drmmanager}
 
 <table> 
  <tbody> 
@@ -557,64 +556,64 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>接口DRMManager:EventTarget {<br /> void acquireLicense（DRMMetadata元数据， <br /> DRMAcquireLicenseSettings， <br /> DRMAquireLicenseListener）；<br /> void acquirePreviewLicense(DRMMetadata， <br /> DRMAQuireLicenseListener);<br /> void authenticate（DRMMetadata， <br /> DomString url，<br /> DomString &amp;authenticationDomain， <br /> DomString用户， <br /> DomString密码， <br /> DRMAuthenticatelistener）；<br /> <br /> DRMMetadata createMetadataFromBytes(<br /> Uint8Array， DRMErrorListener);<br /> void initialize(DRMOperationCompleteListener);<br />属性long maxOperationTime;<br /> <br /> void joinLicenseDomain(<br /> DRMLicenseDomain licenseDomain， <br /> boolean forceRefresh， <br /> DRMOperationCompleteListener);<br /> void leaveLicenseDomain(<br /> DRMLicenseDomain licenseDomain， <br /> DRMOperationCompleteListener);<br /> <br /> void resetDRM(DRMOperationCompleteListener);&lt;a)26/&gt; void returnLicense(DomString serverURL， <br /> DomString licenseID， <br /> DomString policyID， <br /> boolean commitImtedially，<br /> DRMReturLicenseListener);<br /> void setAuthenticationToken（<br /> DRMMetadata元数据， <br /> DomString authenticationDomain， <br /> Uint8Array令牌， <br /> DRMOperationCompleteListener）；<br /> void storeLicenseBytes(Uint8Array licenseBytes， <br /> DRMOperationCompleteListener);<br /> };<br /></p> </td> 
-   <td><p>接口DRMManager:EventTarget {<br /> void acquireLicense（DRMMetadata元数据， <br /> DRMAcquireLicenseSettings， <br /> EventContext eventContext）；<br /> void acquirePreviewLicense(DRMMetatadata， <br /> EventContextContextContext);<br /> void authenticate（DRMMetadata元数据，<br /> DomString url，<br /> DomString &amp;authenticationDomain， <br /> DomString用户， <br /> DomString密码， <br /> EventContext）；<br />12/&gt; DRMMetadata createMetadataFromBytes(<br /> Uint8Array， EventContext eventContext);<br /> void initialize(EventContext eventContext);<br /> attribute longOperationTime;<br />a17/&gt; void joinLicenseDomain(<br /> DRMLicenseDomain licenseDomain， <br /> boolean forceRefresh， <br /> EventContext);<br /> void leaveLicenseDomain(<br /> DRMLICENSEDomain licenseDomain， <br /> EventContext eventContext);<br /> <br /> void resetDRM(EventContext eventContext);<br /> void returnLicense(DomString serverURL， <br /> DomString licenseID，<br /> DomString policyID， <br /> boolean commitImmetially，<br /> EventContext);<br /> void setAuthenticationToken（<br /> DRMMetadata元数据，<br /> DomString authenticationDomain、<br /> Uint8Array令牌、<br /> EventContext事件Context）；<br /> void storeLicenseBytes（Uint8Array licenseBytes， <br /> EventContext事件Context）；<br /> };<br /><br /></p> </td> 
+   <td><p>介面DRM管理員： EventTarget {<br /> void acquireLicense(DRMMetadata中繼資料， <br /> DRMAquireLicenseSettings設定， <br /> DRMAquireLicenseListener)；<br /> void acquirePreviewLicense(DRMMetadata中繼資料， <br /> DRMAquireLicenseListener)；<br /> 無效驗證(DRMMetadata中繼資料， <br /> DomString url，<br /> DomString &amp;authenticationDomain， <br /> DomString使用者， <br /> DomString密碼， <br /> DRMAuthenticateListener)；<br /> <br /> DRMMetadata createMetadataFromBytes(<br /> Uint8Array陣列、DRMErrorListener)；<br /> void initialize(DRMOperationCompleteListener listener)；<br /> 屬性long maxOperationTime；<br /> <br /> void joinLicenseDomain(<br /> DRMLicenseDomain licenseDomain， <br /> 布林值forceRefresh， <br /> DRMOperationCompleteListener)；<br /> void leaveLicenseDomain(<br /> DRMLicenseDomain licenseDomain， <br /> DRMOperationCompleteListener)；<br /> <br /> void resetDRM(DRMOperationCompleteListener)；<br /> 無效returnLicense(DomString serverURL， <br /> DomString licenseID、 <br /> DomString policyID， <br /> 布林值commitImmediate，<br /> DRMReturnLicenseListener)；<br /> void setAuthenticationToken(<br /> DRM中繼資料， <br /> DomString authenticationDomain， <br /> Uint8Array權杖， <br /> DRMOperationCompleteListener)；<br /> void storeLicenseBytes(Uint8Array licenseBytes， <br /> DRMOperationCompleteListener)；<br /> }；</p> </td> 
+   <td><p>介面DRM管理員： EventTarget {<br /> void acquireLicense(DRMMetadata中繼資料， <br /> DRMAquireLicenseSettings設定， <br /> EventContext eventContext)；<br /> void acquirePreviewLicense(DRMMetadata中繼資料， <br /> EventContext eventContext)；<br /> 無效驗證(DRMMetadata中繼資料， <br /> DomString url，<br /> DomString &amp;authenticationDomain， <br /> DomString使用者， <br /> DomString密碼， <br /> EventContext eventContext)；<br /> <br /> DRMMetadata createMetadataFromBytes(<br /> Uint8Array陣列、EventContext eventContext)；<br /> void initialize(EventContext eventContext)；<br /> 屬性long maxOperationTime；<br /> <br /> void joinLicenseDomain(<br /> DRMLicenseDomain licenseDomain， <br /> 布林值forceRefresh， <br /> EventContext eventContext)；<br /> void leaveLicenseDomain(<br /> DRMLicenseDomain licenseDomain， <br /> EventContext eventContext)；<br /> <br /> 無效resetDRM(EventContext eventContext)；<br /> 無效returnLicense(DomString serverURL， <br /> DomString licenseID、<br /> DomString policyID， <br /> 布林值commitImmediate，<br /> EventContext eventContext)；<br /> void setAuthenticationToken(<br /> DRM中繼資料， <br /> DomString authenticationDomain， <br /> Uint8Array權杖， <br /> EventContext eventContext)；<br /> void storeLicenseBytes(Uint8Array licenseBytes， <br /> EventContext eventContext)；<br /> }；</p> </td> 
   </tr> 
   <tr> 
-   <td><p>类DRMErrorListener :<br /> public psdkutils::PSDKInterfaceWithUserData {<br /> public:<br /> virtual void onDRMError(uint32_t major， <br /> uint32_t minor， <br /> const psdkutils:PSDKString&amp;errorString， <br /> const psdkutils::PSDKString&amp; errorServerUrl)= 0;<br /> <br />受保护：<br />虚拟~DRMErrorListener(){} <br /> }</p> </td> 
-   <td>事件/界面/说明 
+   <td><p>類別DRMErrorListener ： <br /> 公用psdkutils：：PSDKInterfaceWithUserData {<br /> 公用：<br /> 虛擬void onDRMError(uint32_t major， <br /> uint32_t次要， <br /> const psdkutils：： PSDKString&amp; errorString， <br /> const psdkutils：：PSDKString&amp; errorServerUrl) = 0；<br /> <br /> 受保護：<br /> virtual ~DRMErrorListener() {}<br /> }</p> </td> 
+   <td>事件/介面/說明 
     <ul> 
-     <li>kEventDRMOperationError<p>/ DRMOperationErrorEvent</p> <p>在DRMManger的异步方法之一期间发生错误时。</p> </li> 
+     <li>kEventDRMOperationError<p>/ DRMOperationErrorEvent</p> <p>當DRMManger的其中一個非同步方法發生錯誤時。</p> </li> 
     </ul> </td> 
   </tr> 
   <tr> 
-   <td><p>类DRMOperationCompleteListener :<br /> public DRMErrorListener {<br /> public:<br /> virtual void onDRMOperationComplete()= 0;<br /> <br />受保护：<br />虚拟~DRMOperationCompleteListener(){} <br /> };</p> </td> 
-   <td>事件/界面/说明 
+   <td><p>類別DRMOperationCompleteListener ： <br /> 公開DRM錯誤接聽程式{<br /> 公用：<br /> virtual void onDRMOperationComplete() = 0；<br /> <br /> 受保護：<br /> virtual ~DRMOperationCompleteListener() {}<br /> }；</p> </td> 
+   <td>事件/介面/說明 
     <ul> 
-     <li>kEventDRMInitializationComplete<p>/ PSDKEvent</p> <p>完成DRM初始化时。</p> </li> 
-     <li>kEventDRMJoinLicenseDomainComplete<p>/ PSDKEvent</p> <p>joinLicenseDomain()操作成功完成时。</p> </li> 
-     <li>kEventDRMLeaveLicenseDomainComplete<p>/ PSDKEvent</p> <p>leaveLicenseDomain()操作成功完成。</p> </li> 
-     <li>kEventDRMResetCompletePSDKEvent<p>/ PSDKEvent</p> <p>resetDRM()操作成功完成时。</p> </li> 
-     <li>kEventDRMAuthenticationTokenSet<p>/ PSDKEvent</p> <p>setAuthenticationTokenSet()操作成功完成时。</p> </li> 
-     <li>kEventDRMLicenseStored<p>/ PSDKEvent</p> <p>当storeLicenseBytes()操作成功完成时。</p> </li> 
+     <li>kEventDRMIinitializationComplete<p>/ PSDKEvent</p> <p>DRM初始化完成時。</p> </li> 
+     <li>kEventDRMJoinLicenseDomainComplete<p>/ PSDKEvent</p> <p>當joinLicenseDomain()動作成功完成時。</p> </li> 
+     <li>kEventDRMLeaveLicenseDomainComplete<p>/ PSDKEvent</p> <p>leaveLicenseDomain()動作成功完成時。</p> </li> 
+     <li>kEventDRMResetCompletePSDKEvent<p>/ PSDKEvent</p> <p>當resetDRM()動作成功完成時。</p> </li> 
+     <li>kEventDRMAuthenticationTokenSet<p>/ PSDKEvent</p> <p>當setAuthenticationTokenSet()動作成功完成時。</p> </li> 
+     <li>kEventDRMLicenseStore<p>/ PSDKEvent</p> <p>當storeLicenseBytes()動作成功完成時。</p> </li> 
     </ul> </td> 
   </tr> 
   <tr> 
-   <td><p>类DRMAuthenticateListener:<br />公用DRMErrorListener {<br />公用：<br /> virtual void onAuthenticationComplete(<br /> psdkutils::PSDKImmutableByteArray* <br /> authenticationToken)= 0;<br /> <br />受保护：<br /> ~drmauthenticateListener(){}<br /> }</p> </td> 
-   <td>事件/界面/说明 
+   <td><p>類別DRMAuthenticateListener ： <br /> 公開DRM錯誤接聽程式{<br /> 公用：<br /> virtual void onAuthenticationComplete(<br /> psdkutils：：PSDKImmutableByteArray* <br /> authenticationToken) = 0；<br /> <br /> 受保護：<br /> virtual ~DRMAuthenticateListener() {}<br /> }</p> </td> 
+   <td>事件/介面/說明 
     <ul> 
-     <li>kEventDRMAuthenticationComplete<p>/ DRMAuthenticationCompleteEvent</p> <p>当DRMManager::authenticate方法调用成功时。</p> </li> 
+     <li>kEventDRMAuthenticationComplete<p>/ DRMAuthenticationCompleteEvent</p> <p>當DRMManager：：authenticate方法呼叫成功時。</p> </li> 
     </ul> </td> 
   </tr> 
   <tr> 
-   <td><p>类DRMAquireLicenseListener:<br /> public DRMErrorListener {<br /> public:<br /> virtual void onLicenseAppired(const DRMLicense*)= 0;<br /> <br /> protected:<br /> virtual ~DRMAquireLicensenseListener(){} {}<br /> };</p> </td> 
-   <td>事件/界面/说明 
+   <td><p>類別DRMAquireLicenseListener： <br /> 公開DRM錯誤接聽程式{<br /> 公用：<br /> virtual void onLicenseAcquired(const DRMLicense*) = 0；<br /> <br /> 受保護：<br /> virtual ~DRMAquireLicenseListener() {}<br /> }；</p> </td> 
+   <td>事件/介面/說明 
     <ul> 
-     <li>kEventDRMPreviewLicenseAcquired<p>/ DRMLicenseAppiredEvent</p> <p>当DRMManager::acquirePreviewLicense方法调用成功时。</p> </li> 
-     <li>kEventDRMLicenseAppired<p>/ DRMLicenseAppiredEvent</p> <p>当DRMManager::acquireLicense方法调用成功时。</p> </li> 
+     <li>kEventDRMPreviewLicenseAcquired<p>/ DRMLicenseAcquiredEvent</p> <p>當DRMManager：：acquirePreviewLicense方法呼叫成功時。</p> </li> 
+     <li>kEventDRMLicenseAcquired<p>/ DRMLicenseAcquiredEvent</p> <p>DRMManager：：acquireLicense方法呼叫成功時。</p> </li> 
     </ul> </td> 
   </tr> 
   <tr> 
-   <td><p>类DRMReturnLicenseListener:<br /> public DRMErrorListener {<br /> public:<br /> virtual void onLicenseReturnComplete(uint32_t numReturned)= 0;<br /> <br /> protected:<br /> ~ virtual DRMReturnLicenseListener(){} {} <br />;</p> </td> 
-   <td>事件/界面/说明 
+   <td><p>類別DRMReturnLicenseListener： <br /> 公開DRM錯誤接聽程式{<br /> 公用：<br /> virtual void onLicenseReturnComplete(uint32_t numReturned ) = 0；<br /> <br /> 受保護：<br /> virtual ~DRMReturnLicenseListener() {}<br /> }；</p> </td> 
+   <td>事件/介面/說明 
     <ul> 
-     <li>kEventDRMLicenseReturnComplete<p>/ DRMLicenseReturnCompleteEvent</p> <p>当DRMManager::returnLicense方法调用成功时。</p> </li> 
+     <li>kEventDRMLicenseReturnComplete<p>/ DRMLicenseReturnCompleteEvent</p> <p>DRMManager：：returnLicense方法呼叫成功時。</p> </li> 
     </ul> </td> 
   </tr> 
  </tbody> 
 </table>
 
-## 2.0 {#generic-playback-api-element-changes-for}的通用回放API元素更改
+## 2.0的一般播放API元素變更 {#generic-playback-api-element-changes-for}
 
-这些表比较JavaScript TVSDK 1.3和2.0之间的通用播放API元素。
+下表比較JavaScript TVSDK 1.3和2.0之間的一般播放API元素。
 
-本主题中的表：
+此主題中的表格：
 
-* 媒体资源
+* MediaResource
 * MediaPlayer
 * ABRControlParameters
 * BufferControlParameters
-* TextFormat
+* 文字格式
 * MediaPlayerItemLoader
 
 ### MediaResource {#mediaresource}
@@ -626,8 +625,8 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>interface MediaResource {<br />属性DomString url;<br />属性未签名短类型；<br />属性对象元数据；<br />控制未签名短类型TYPE_HLS;<br />控制未签名短类型TYPE_DASH;<br />控制未签名短类型TYPE_CUSTOM;<br />控制未签名短类型TYPE;<br />_UNKNOWN;<br /> };</p> </td> 
-   <td><p>interfaceMediaResource {<br />属性DomString url;<br />属性DomString类型；<br />属性对象元数据；<br /> <br /> <br /> <br /> <br /> <br /> };</p> </td> 
+   <td><p>介面MediaResource {<br /> 屬性DomString url； <br /> 屬性不帶正負號的短型別；<br /> 屬性物件中繼資料；<br /> const unsigned short TYPE_HLS；<br /> const unsigned short TYPE_HDS；<br /> 限制不帶正負號的短TYPE_DASH；<br /> const unsigned short TYPE_CUSTOM；<br /> const unsigned short TYPE_UNKNOWN；<br /> }；</p> </td> 
+   <td><p>介面MediaResource {<br /> 屬性DomString url；<br /> 屬性DomString型別；<br /> 屬性物件中繼資料；<br /> <br /> <br /> <br /> <br /> <br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -641,39 +640,39 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>接口MediaPlayer:EventTarget<br /> {<br /> void prepareToPlay(多次位置);<br /> void play();<br /> void pause();<br /> void seek(多次位置);<br /> void seekToLocal(多次位置);<br /> void reset();<br /> void release);<br /> void replaceCurrentItem（MediaPlayerItem项）；<br /> void replaceCurrentResource（MediaResource资源， <br /> MediaPlayerItemConfig）；<br /> void suspend();<br /> void restore();<br /> void notifyClick();<br /> <br />只读属性TimeRange playbackRange;<br />只读属性TimeRange seekableRange;&lt;ableRange&gt;只读属性多次currentTime;<br />只读属性多次localTime;<br />只读属性TimeRange bufferedRange;<br />只读属性DRMManager drmManager;<br />只读属性MediaPlayerItem currentItem;<br /> <br /> // PlayerStatus<br /> <br /> <br /> <br />控制未签名的短PLAYER_STATUS_INITIALIZED;<br />控制未签名的短PLAYER_STATUS_PREPARING;<br />控制未签名的短PLAYER_PLAYER_status_PREPARED;<br />包含未签名短播放器_状态_播放；<br />包含未签名短播放器_状态_暂停；<br />包含未签名短播放器_状态_搜索；<br />包含未签名短播放器_状态_SEEKINGcomplete;<br /> const unsigned short PLAYER_STATUS_ERROR;<br /> const unsigned short PLAYER_STATUS_RELEASED;<br /> <br /> readonly attribute short status;<br /> <br /> attribute sunignsigned volumededed9/&gt; attribute ABRControlParameters abrControlParameters;<br /> attribute BufferControlParameters bufferControlParameters;<br /> <br />包含无符号短VISIBLE;//对于CC可见性<br />，无符号短不可见；//对于CC可见性<br />属性unsigned short ccVisibility;<br />属性TextFormat ccStyle;<br />只读属性PlaybackMetricsMetrics;<br /> <br />属性多次率；<br />属性MediaPlayer查看视图;<br />只读属性时间轴；<br />属性多次currentTimeUpdateInterval;<br /> //设置2.0<br /> }不支持此设置；<br /></p> </td> 
-   <td><p>接口MediaPlayer:EventTarget<br /> {<br /> void prepareToPlay(int position);<br /> void play();<br /> void pause();<br /> void seekToLocalTime(int position);<br /> void reset();<br /> void release);<br /> void replaceCurrentItem（MediaResource源）；<br /> <br /> <br /> <br /> <br /> <br /> <br />只读属性TimeRange playbackRange;<br />属性TimeRange seekableRange;<br />只读属性多次 currentTime;<br />只读属性多次localTime;<br />只读属性TimeRange bufferedRange;<br />只读属性DRMManager drmManager;<br />仅属性MediaPlayerItem currentItem;<br /> <br /> // PlayerState<br />包含未签名的短PLAYER_STATE_IDLE;<br />包含未签名的短PLAYER_STATE_INITIALIZING;<br />包含未签名的短PLAYERSTATE_INITIALIZED;<br />控制未签名短PLAYER_STATE_PREPARING;<br />控制未签名短PLAYER_STATE_PREPARED;<br />控制未签名短PLAYER_STATE_PLAYING;<br />控制未签名短PLAYER_STATEPAUSED;<br />继续未签名的短PLAYER_STATE_SEEKING;<br />继续未签名的短PLAYER_STATE_COMPLETE;<br />继续未签名的短PLAYER_STATE_ERROR;<br />继续未签名的短PLAYER_STATE_RELEASE;<br />const unsigned short PLAYER_STATUS_SUSPENDED;<br /> readonly attribute unsigned short state;<br /> <br /> attribute unsigned short volume;<br /> attribute ABRControlParameters abreters;&lt;aters;<br />属性BControlParameters bufferControlParameters;<br /> <br />只读未签名的短VISIBLE;//对于CC可见性<br />只读未签名短INVISIBLE;//对于CC可见性<br />属性unsigned short ccVisibility;<br />属性TextFormat ccStyle;<br />只读属性PlaybackMetrics playbackMetrics;<br />属性MediaPlayerConfig;<br />属性多次rate;<br />属性MediaPlayerView视图;<br />只读属性时间轴；<br /> <br /> <br /> };<br /></p> </td> 
+   <td><p>介面MediaPlayer ： EventTarget<br /> {<br /> void prepareToPlay( double position)；<br /> void play()；<br /> void pause()；<br /> void seek( double position)；<br /> void seekToLocal( double position)；<br /> void reset()；<br /> void release()；<br /> void replaceCurrentItem(MediaPlayerItem item)；<br /> 無效replaceCurrentResource(MediaResource資源， <br /> MediaPlayerItemConfig)； <br /> void suspend()；<br /> void restore()；<br /> 無效notifyClick()；<br /> <br /> 唯讀屬性TimeRange playbackRange；<br /> 唯讀屬性TimeRange seekableRange；<br /> 唯讀屬性double currentTime；<br /> 唯讀屬性double localTime；<br /> 唯讀屬性TimeRange bufferedRange；<br /> 唯讀屬性DRMManager drmManager；<br /> 唯讀屬性MediaPlayerItem currentItem；<br /> <br /> //播放器狀態<br /> <br /> <br /> const unsigned short PLAYER_STATUS_INITIALIZED；<br /> const unsigned short PLAYER_STATUS_PREPARING；<br /> const unsigned short PLAYER_STATUS_PREPARED；<br /> const unsigned short PLAYER_STATUS_PLAYING；<br /> const unsigned short PLAYER_STATUS_PAUSED；<br /> const unsigned short PLAYER_STATUS_SEEKING；<br /> const unsigned short PLAYER_STATUS_COMPLETE；<br /> const unsigned short PLAYER_STATUS_ERROR；<br /> const unsigned short PLAYER_STATUS_RELEASED；<br /> <br /> readonly attribute unsigned short status；<br /> <br /> 屬性無符號短磁碟區；<br /> 屬性ABRControlParameters abrControlParameters；<br /> 屬性BufferControlParameters bufferControlParameters；<br /> <br /> const unsigned short VISIBLE； //For CC visibility<br /> const unsigned short INVISIBLE； //For CC visibility； //For CC visibility<br /> 屬性不帶正負號的short Visibility；<br /> 屬性TextFormat ccStyle；<br /> 唯讀屬性PlaybackMetrics playbackMetrics；<br /> <br /> 屬性雙倍率；<br /> 屬性MediaPlayerView檢視；<br /> 唯讀屬性時間軸；<br /> 屬性double currentTimeUpdateInterval； <br /> //設定2.0不支援此設定<br /> }；</p> </td> 
+   <td><p>介面MediaPlayer ： EventTarget<br /> {<br /> void prepareToPlay( int position)；<br /> void play()；<br /> void pause()；<br /> void seek( int position)；<br /> void seekToLocalTime( int position)；<br /> void reset()；<br /> void release()；<br /> 無效replaceCurrentItem（MediaResource來源）；<br /> <br /> <br /> <br /> <br /> <br /> <br /> 唯讀屬性TimeRange playbackRange；<br /> 唯讀屬性TimeRange seekableRange；<br /> 唯讀屬性double currentTime；<br /> 唯讀屬性double localTime；<br /> 唯讀屬性TimeRange bufferedRange；<br /> 唯讀屬性DRMManager drmManager；<br /> 唯讀屬性MediaPlayerItem currentItem；<br /> <br /> //播放器狀態<br /> const unsigned short PLAYER_STATE_IDLE；<br /> const unsigned short PLAYER_STATE_INITIALIZING；<br /> const unsigned short PLAYER_STATE_INITIALIZED；<br /> const unsigned short PLAYER_STATE_PREPARING；<br /> const unsigned short PLAYER_STATE_PREPARED；<br /> const unsigned short PLAYER_STATE_PLAYING；<br /> const unsigned short PLAYER_STATE_PAUSED；<br /> const unsigned short PLAYER_STATE_SEEKING；<br /> const unsigned short PLAYER_STATE_COMPLETE；<br /> const unsigned short PLAYER_STATE_ERROR；<br /> const unsigned short PLAYER_STATE_RELEASED；<br /> const unsigned short PLAYER_STATUS_SUSPENDED；<br /> readonly attribute unsigned short state；<br /> <br /> 屬性無符號短磁碟區；<br /> 屬性ABRControlParameters abrControlParameters；<br /> 屬性BufferControlParameters bufferControlParameters；<br /> <br /> Readonly unsigned short VISIBLE； //For CC visibility<br /> 唯讀無符號短不可見； //用於CC可見性<br /> 屬性不帶正負號的short Visibility；<br /> 屬性TextFormat ccStyle；<br /> 唯讀屬性PlaybackMetrics playbackMetrics；<br /> 屬性MediaPlayerConfig mediaPlayerConfig；<br /> 屬性雙倍率；<br /> 屬性MediaPlayerView檢視；<br /> 唯讀屬性時間軸；<br /> <br /> <br /> }；</p> </td> 
   </tr> 
   <tr> 
-   <td><p>interfaceMediaPlayerStatus<br /> {<br /> // PlayerStatus<br />控制未签名短PLAYER_STATUS_IDLE;<br />控制未签名短PLAYER_STATUS_INITIALIZED;<br />控制未签名短PLAYER_STATUS_INITIALIZED;<br />player_STATUS_PREPARING;<br />包含未签名的短PLAYER_STATUS_PREPARED;<br />包含未签名的短PLAYER_STATUS_PLAYING;<br />包含未签名的短PLAYER_STATUS_SEEKING;<br />连接未签名的短PLAYER_STATUS_COMPLETE;<br />连接未签名的短PLAYER_STATUS_ERROR;<br />连接未签名的短PLAYER_STATUS_RELEASED;<br />连接未签名的短PLAYER_STATUS_SUSPENDED;<br />;<br /></p> </td> 
-   <td>（2.0新增）</td> 
+   <td><p>介面MediaPlayerStatus<br /> {<br /> //播放器狀態<br /> const unsigned short PLAYER_STATUS_IDLE；<br /> const unsigned short PLAYER_STATUS_INITIALIZATION；<br /> const unsigned short PLAYER_STATUS_INITIALIZED；<br /> const unsigned short PLAYER_STATUS_PREPARING；<br /> const unsigned short PLAYER_STATUS_PREPARED；<br /> const unsigned short PLAYER_STATUS_PLAYING；<br /> const unsigned short PLAYER_STATUS_PAUSED；<br /> const unsigned short PLAYER_STATUS_SEEKING；<br /> const unsigned short PLAYER_STATUS_COMPLETE；<br /> const unsigned short PLAYER_STATUS_ERROR；<br /> const unsigned short PLAYER_STATUS_RELEASED；<br /> const unsigned short PLAYER_STATUS_SUSPENDED；<br /> }；</p> </td> 
+   <td>（2.0的新功能）</td> 
   </tr> 
  </tbody> 
 </table>
 
-#### 事件受MediaPlayer {#events-supported-by-mediaplayer}支持
+#### MediaPlayer支援的事件 {#events-supported-by-mediaplayer}
 
 <table> 
  <tbody> 
   <tr> 
-   <th>2.0事件名称</th> 
-   <th>2.0接口</th> 
+   <th>2.0事件名稱</th> 
+   <th>2.0介面</th> 
    <th> </th> 
-   <th>1.3事件名称</th> 
-   <th>1.3接口</th> 
+   <th>1.3事件名稱</th> 
+   <th>1.3介面</th> 
   </tr> 
   <tr> 
-   <td><p>（2.0版已删除）</p> </td> 
+   <td><p>（2.0版本已刪除）</p> </td> 
    <td> </td> 
    <td> </td> 
-   <td>准备</td> 
+   <td>已準備</td> 
    <td>事件</td> 
   </tr> 
   <tr> 
-   <td><p>itemUpdated</p> <p>媒体播放器项目更新时。</p> </td> 
+   <td><p>itemUpdate</p> <p>媒體播放器專案更新時。</p> </td> 
    <td>MediaPlayerItemEvent</td> 
    <td> </td> 
-   <td><p>更新</p> <p>媒体播放器成功更新媒体时。</p> </td> 
+   <td><p>已更新</p> <p>媒體播放器成功更新媒體時。</p> </td> 
    <td>事件</td> 
   </tr> 
   <tr> 
@@ -684,21 +683,21 @@ playerConfig.adFactory = factory;
    <td>TimedMetadataEvent</td> 
   </tr> 
   <tr> 
-   <td>timelineUpdated</td> 
+   <td>時間表已更新</td> 
    <td>事件</td> 
    <td> </td> 
-   <td>TetmelineUpdated</td> 
-   <td>事件</td> 
-  </tr> 
-  <tr> 
-   <td>已在2.0中删除</td> 
-   <td> </td> 
-   <td> </td> 
-   <td>playStart</td> 
+   <td>時間線已更新</td> 
    <td>事件</td> 
   </tr> 
   <tr> 
-   <td>已删除2.0</td> 
+   <td>在2.0中刪除</td> 
+   <td> </td> 
+   <td> </td> 
+   <td>playstart</td> 
+   <td>事件</td> 
+  </tr> 
+  <tr> 
+   <td>2.0版本已刪除</td> 
    <td> </td> 
    <td> </td> 
    <td>playComplete</td> 
@@ -708,28 +707,28 @@ playerConfig.adFactory = factory;
    <td>statusChanged</td> 
    <td>StatusEvent</td> 
    <td> </td> 
-   <td>stateChanged</td> 
+   <td>stateChange</td> 
    <td>StateEvent</td> 
   </tr> 
   <tr> 
    <td>sizeAvailable</td> 
-   <td>SizeEvent</td> 
+   <td>大小事件</td> 
    <td> </td> 
    <td>大小</td> 
-   <td>SizeEvent</td> 
+   <td>大小事件</td> 
   </tr> 
   <tr> 
-   <td>adBreakStarted</td> 
+   <td>adbreakstarted</td> 
    <td>AdBreakEvent</td> 
    <td> </td> 
-   <td>adBreakStart</td> 
+   <td>Adbreakstart</td> 
    <td>AdBreakEvent</td> 
   </tr> 
   <tr> 
-   <td>adStarted</td> 
+   <td>adstarted</td> 
    <td>AdEvent</td> 
    <td> </td> 
-   <td>adStart</td> 
+   <td>adstart</td> 
    <td>AdEvent</td> 
   </tr> 
   <tr> 
@@ -755,20 +754,20 @@ playerConfig.adFactory = factory;
   </tr> 
   <tr> 
    <td>timeChanged</td> 
-   <td>TimeEvent</td> 
+   <td>時間事件</td> 
    <td> </td> 
-   <td>进展</td> 
+   <td>進度</td> 
    <td>ProgressEvent</td> 
   </tr> 
   <tr> 
-   <td>bufferingBegin</td> 
+   <td>緩衝開始</td> 
    <td>事件</td> 
    <td> </td> 
-   <td>缓冲区</td> 
+   <td>緩衝</td> 
    <td>事件</td> 
   </tr> 
   <tr> 
-   <td>bufferingEnd</td> 
+   <td>bufferingend</td> 
    <td>事件</td> 
    <td> </td> 
    <td>bufferComplete</td> 
@@ -776,31 +775,31 @@ playerConfig.adFactory = factory;
   </tr> 
   <tr> 
    <td>seekBegin</td> 
-   <td>SeekEvent</td> 
+   <td>搜尋事件</td> 
    <td> </td> 
-   <td>seekStart</td> 
+   <td>搜尋開始</td> 
    <td>事件</td> 
   </tr> 
   <tr> 
    <td>seekEnd</td> 
-   <td>SeekEvent</td> 
+   <td>搜尋事件</td> 
    <td> </td> 
    <td>seekComplete</td> 
-   <td>TimeEvent</td> 
+   <td>時間事件</td> 
   </tr> 
   <tr> 
    <td>loadInformationAvailable</td> 
-   <td>LoadInformationEvent</td> 
+   <td>loadinformevent</td> 
    <td> </td> 
    <td>loadInfo</td> 
    <td>LoadInfoEvent</td> 
   </tr> 
   <tr> 
-   <td>operationFailed</td> 
-   <td>NotificationEvent</td> 
+   <td>operationfailed</td> 
+   <td>通知事件</td> 
    <td> </td> 
-   <td>operationFailed</td> 
-   <td>ErrorEvent</td> 
+   <td>operationfailed</td> 
+   <td>錯誤事件</td> 
   </tr> 
   <tr> 
    <td>drmMetadataInfoAvailable</td> 
@@ -810,11 +809,11 @@ playerConfig.adFactory = factory;
    <td>DRMMetadataEvent</td> 
   </tr> 
   <tr> 
-   <td>reservationReached</td> 
+   <td>reservationReacked</td> 
    <td>ReservationEvent</td> 
    <td> </td> 
-   <td>timelineHolderReached</td> 
-   <td>TimelineHolderEvent</td> 
+   <td>時間軸持有者已達到</td> 
+   <td>時間軸持有者事件</td> 
   </tr> 
   <tr> 
    <td> </td> 
@@ -838,66 +837,66 @@ playerConfig.adFactory = factory;
    <td>PlaybackRateEvent</td> 
   </tr> 
   <tr> 
-   <td>adBreakBripted</td> 
+   <td>adbreakskipped</td> 
    <td>AdBreakEvent</td> 
    <td> </td> 
-   <td>adBreakBripted</td> 
+   <td>adbreakskipped</td> 
    <td>AdBreakEvent</td> 
   </tr> 
   <tr> 
-   <td>adClicked<br />当用户单击广告时。</td> 
+   <td>adClick<br /> 當使用者點選廣告時。</td> 
    <td>AdClickedEvent</td> 
    <td> </td> 
-   <td><p>2.0中的新增功能</p> </td> 
+   <td><p>2.0中的新功能</p> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>profileChanged<br />当播放用户档案更改时。</td> 
+   <td>設定檔已變更<br /> 當播放設定檔變更時。</td> 
    <td>ProfileEvent</td> 
    <td> </td> 
-   <td><p>2.0中的新增功能</p> </td> 
+   <td><p>2.0中的新功能</p> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>seekPositionAdjusted<br />当搜索位置因内部或外部规则而调整时。</td> 
-   <td>SeekEvent</td> 
+   <td>seekPositionAdjusted<br /> 當搜尋位置因內部或外部規則而調整時。</td> 
+   <td>搜尋事件</td> 
    <td> </td> 
-   <td><p>2.0中的新增功能</p> </td> 
+   <td><p>2.0中的新功能</p> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>audioUpdated<br />当媒体播放器项目更新时。 对于包含仅在播放时可检测的音轨的特定流，当有新的音轨可用时，将触发此事件。</td> 
+   <td>音訊已更新<br /> 媒體播放器專案更新時。 對於包含只能在播放時偵測到的音軌的特定串流，此事件會在有新音軌可用時觸發。</td> 
    <td>MediaPlayerItemEvent</td> 
    <td> </td> 
-   <td><p>2.0中的新增功能</p> </td> 
+   <td><p>2.0中的新功能</p> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>字幕更新<br />当媒体播放器项目更新时。 对于实时/线性流，客户端必须定期刷新媒体资源以检测新的可用内容。 发生这种情况时，某些媒体特性可能会发生变化。</td> 
+   <td>字幕已更新 <br /> 媒體播放器專案更新時。 對於即時/線性資料流，使用者端必須定期重新整理媒體資源，以偵測新的可用內容。 發生此情況時，某些媒體特性可能會變更。</td> 
    <td>MediaPlayerItemEvent</td> 
    <td> </td> 
-   <td><p>2.0中的新增功能</p> </td> 
+   <td><p>2.0中的新功能</p> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>master更新<br />媒体播放器项目更新时。 对于实时/线性流，客户端必须定期刷新媒体资源以检测新的可用内容。 发生这种情况时，某些媒体特性可能会发生变化。</td> 
+   <td>masterUpdate <br /> 媒體播放器專案更新時。 對於即時/線性資料流，使用者端必須定期重新整理媒體資源，以偵測新的可用內容。 發生此情況時，某些媒體特性可能會變更。</td> 
    <td>MediaPlayerItemEvent</td> 
    <td> </td> 
-   <td><p>2.0中的新增功能</p> </td> 
+   <td><p>2.0中的新功能</p> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>playbackRangeUpdated<br />当媒体播放器项目更新时。 对于实时/线性流，客户端必须定期刷新媒体资源以检测新的可用内容。 发生这种情况时，某些媒体特性可能会发生变化。</td> 
+   <td>playbackRangeUpdated<br /> 媒體播放器專案更新時。 對於即時/線性資料流，使用者端必須定期重新整理媒體資源，以偵測新的可用內容。 發生此情況時，某些媒體特性可能會變更。</td> 
    <td>MediaPlayerItemEvent</td> 
    <td> </td> 
-   <td><p>2.0中的新增功能</p> </td> 
+   <td><p>2.0中的新功能</p> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>timedEvent<br />在生成定时事件时发送。</td> 
+   <td>timedEvent<br /> 產生計時事件時傳送。</td> 
    <td>TimedEvent</td> 
    <td> </td> 
-   <td><p>2.0中的新增功能</p> </td> 
+   <td><p>2.0中的新功能</p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -911,8 +910,8 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>interfaceABRControlParameters<br /> {<br /> const unsigned short ABR_POLICY_CONSERVAL = 0 ;<br /> const unsigned short ABR_POLICY_AGGRESIVE = 1 ;<br /> <br />attribute unsigned short abrPolicy;<br /> attribute unsigned int initialBitRate;<br /> attribute unsigned int minBitRate;<br /> attribute unsigned int maxBitRate;<br /> const unsigned short DEFAULT_ ABR_ABR_MIN_BITRATE;<br />包含未签名的短DEFAULT_ABR_MAX_BITRATE;<br />包含ABRPolicy DEFAULT_ABR_POLICY;<br /> };<br /><br /></p> </td> 
-   <td><p>interfaceABRControlParameters<br /> {<br /> const unsigned short ABR_POLICY_CONSERVAL = 0 ;<br /> const unsigned short ABR_POLICY_AGGRESIVE = 1 ;<br /> <br />attribute unsigned short abrPolicy;<br /> attribute unsigned int initialBitRate;<br /> attribute unsigned int minBitRate;<br /> attribute unsigned int maxBitRate;<br /> <br /> <br /> <br /> };<br /><br /></p> </td> 
+   <td><p>介面ABRControlParameters<br /> {<br /> const unsigned short ABR_POLICY_CONSERVATIVE = 0 ；<br /> const unsigned short ABR_POLICY_MODERATE = 1 ；<br /> const unsigned short ABR_POLICY_AGGRESIVE = 2 ；<br /> <br /> 屬性未簽署的短字元abrPolicy；<br /> 屬性unsigned int initialBitRate；<br /> 屬性無正負號int minBitRate；<br /> 屬性unsigned int maxBitRate；<br /> 限制不帶正負號的短DEFAULT_ABR_INITIAL_BITRATE；<br /> 限制不帶正負號的短DEFAULT_ABR_MIN_BITRATE；<br /> 限制不帶正負號的短DEFAULT_ABR_MAX_BITRATE；<br /> 常數原則DEFAULT_ABR_POLICY；<br /> }；</p> </td> 
+   <td><p>介面ABRControlParameters<br /> {<br /> const unsigned short ABR_POLICY_CONSERVATIVE = 0 ；<br /> const unsigned short ABR_POLICY_MODERATE = 1 ；<br /> const unsigned short ABR_POLICY_AGGRESIVE = 2 ；<br /> <br /> 屬性未簽署的短字元abrPolicy；<br /> 屬性unsigned int initialBitRate；<br /> 屬性無正負號int minBitRate；<br /> 屬性unsigned int maxBitRate；<br /> <br /> <br /> <br /> <br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -926,13 +925,13 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>interfaceBufferControlParameters<br /> {<br />属性多次initialBufferTime;<br />属性多次playBufferTime;<br />控制多次DEFAULT_INITIAL_BUFFER_TIME;<br />控制多次DEFAULT_PLAY_BUFFER_TIME;&lt;a/&gt; };<br /></p> </td> 
-   <td><p>interfaceBufferControlParameters<br /> {<br />属性多次initialBufferTime;<br />属性多次playBufferTime;<br /> <br /> <br /> };</p> </td> 
+   <td><p>介面BufferControlParameters<br /> {<br /> 屬性double initialBufferTime；<br /> 屬性double playBufferTime；<br /> 常數兩次DEFAULT_INITIAL_BUFFER_TIME；<br /> 持續雙重DEFAULT_PLAY_BUFFER_TIME；<br /> }；</p> </td> 
+   <td><p>介面BufferControlParameters<br /> {<br /> 屬性double initialBufferTime；<br /> 屬性double playBufferTime；<br /> <br /> <br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-### TextFormat {#textformat}
+### 文字格式 {#textformat}
 
 <table> 
  <tbody> 
@@ -941,8 +940,8 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td>2.0没有更改</td> 
-   <td><p>interfaceTextFormat<br /> {<br /> // Color<br />包含无符号短COLOR_DEFAULT = 0;<br />包含无符号短COLOR_BLACK = 1;<br />包含无符号短COLOR_GRAY = 2;<br />包含无符号短COLOR_WHITE = 3; a6/&gt;连接未签名短COLOR_BRIGHT_WHITE = 4;<br />连接未签名短COLOR_DARK_RED = 5;<br />连接未签名短COLOR_BRIGHT_RED = 6;<br />连接未签名短COLOR = 7;<br />_DARK_GREEN = 8 ;<br />未签名短COLOR_GREEN = 9 ;<br />未签名短COLOR_BRIGHT_GREEN = 10 ;<br />未签名短COLOR_DARK_BLUE = 11 ;<br /> constshort COLOR_BLUE = 12;<br />无符号短COLOR_BRIGHT_BLUE = 13;<br />无符号短COLOR_DARK_YELLOW = 14;<br />无符号短COLOR_YELLOW = 15;<br />连续未签名短色COLOR_BRIGHT_YELLOW = 16 ;<br />连续未签名短色COLOR_DARK_MAGENTA = 17 ;<br />连续未签名短色COLOR_BRIGHT_MAGENA = 19;<br />包含无符号短COLOR_DARK_CYAN = 20;<br />包含无符号短COLOR_CYAN = 21;<br />包含无符号短COLOR_BRIGHT_CYAN = 22;<br /><br />仅读属性unsigned short fontColor;<br />只读属性unsigned short backgroundColor;<br />只读属性unsigned short fillColor;<br />只读属性unsigned short edgeColor;<br /> <br /> // Size<br /> const unsigned SIZE SIZE_ DEFAULT= 0;<br /> const unsigned short SIZE_SMALL = 1;<br /> const unsigned short SIZE_MEDIUM = 2;<br /> const unsigned short SIZE_LARGE = 3;<br /> <br /> readonly attribute short size;<br /><br /> // FontEdge<br />控制未签名短FONT_EDGE_DEFAULT = 0 ;<br />控制未签名短FONT_EDGE_NONE = 1 ;<br />控制未签名短FONT_EDGE_ROUSED = 2 ;<br /> CONST UNSIGNEDSHORT FONT_EDGE_CONSECTED = 3;<br /> const unsigned short FONT_EDGE_UNIFORM = 4;<br /> const unsigned short FONT_EDGE_SHADOW_LEFT = 5;<br />const const shortFONT_EDGE_EDGE_EDGE_EDGE_EDGE_EDGE_UNSIGNED_UNSIGNEDdrop_SHADOW_RIGHT = 6 ;<br />只读属性unsigned short fontEdge;<br /> <br /> // Font<br /> const unsigned short FONT_DEFAULT = 0 ;<br /> const unsigned short FONT_MONOSPACED_WITH_WIFS = 1 ;<br />包含无符号短FONT_PROPORTION_WITH_SERIFS = 2 ;<br />包含无符号短FONT_MONSPACED_WITHOUT_SERIFS = 3 ;<br />包含无符号短FONT_CASIAL = 4 ;<br />unsigned short FONT_CURSIVE = 5;<br /> const unsigned short FONT_SMALL_CAPPALITES = 6;<br />只读未签名的short fontOpacity;<br />只读属性unsigned short backgroundOpacity;&lt;acyatattribute unsigned short fillOpacity;<br /> readonly attribute unsigned short DEFAULT_OPACITY;<br /> };<br /><br /><br /><br /></p> </td> 
+   <td>2.0無變更</td> 
+   <td><p>介面文字格式<br /> {<br /> //色彩<br /> const unsigned short COLOR_DEFAULT = 0 ；<br /> const unsigned short COLOR_BLACK = 1 ；<br /> const unsigned short COLOR_GRAY = 2 ；<br /> const unsigned short COLOR_WHITE = 3 ；<br /> const unsigned short COLOR_BRIGHT_WHITE = 4 ；<br /> const unsigned short COLOR_DARK_RED = 5 ；<br /> const unsigned short COLOR_RED = 6 ；<br /> const unsigned short COLOR_BRIGHT_RED = 7 ；<br /> const unsigned short COLOR_DARK_GREEN = 8 ；<br /> const unsigned short COLOR_GREEN = 9 ；<br /> const unsigned short COLOR_BRIGHT_GREEN = 10 ；<br /> const unsigned short COLOR_DARK_BLUE = 11 ；<br /> const unsigned short COLOR_BLUE = 12 ；<br /> const unsigned short COLOR_BRIGHT_BLUE = 13 ；<br /> const unsigned short COLOR_DARK_YELLOW = 14 ；<br /> const unsigned short COLOR_YELLOW = 15 ；<br /> const unsigned short COLOR_BRIGHT_YELLOW = 16 ；<br /> const unsigned short COLOR_DARK_MAGENTA = 17 ；<br /> const unsigned short COLOR_MAGENTA = 18 ；<br /> const unsigned short COLOR_BRIGHT_MAGENTA = 19 ；<br /> const unsigned short COLOR_DARK_CYAN = 20 ；<br /> const unsigned short COLOR_CYAN = 21 ；<br /> const unsigned short COLOR_BRIGHT_CYAN = 22 ；<br /> <br /> readonly屬性（不帶正負號的短字型色彩）；<br /> readonly屬性（不帶正負號的短背景色彩）；<br /> readonly屬性（不帶正負號的短填色）；<br /> 唯讀屬性（不帶正負號的短edgeColor）；<br /> <br /> //大小<br /> const unsigned short SIZE_DEFAULT = 0 ；<br /> const unsigned short SIZE_SMALL = 1 ；<br /> const unsigned short SIZE_MEDIUM = 2 ；<br /> const unsigned short SIZE_LARGE = 3 ；<br /> <br /> readonly屬性（不帶正負號的短大小）；<br /> <br /> //字型邊緣<br /> const unsigned short FONT_EDGE_DEFAULT = 0 ；<br /> const unsigned short FONT_EDGE_NONE = 1 ；<br /> const unsigned short FONT_EDGE_RAUDED = 2 ；<br /> const unsigned short FONT_EDGE_DEPRESSED = 3 ；<br /> const unsigned short FONT_EDGE_UNIFORM = 4 ；<br /> const unsigned short FONT_EDGE_DROP_SHADOW_LEFT = 5 ；<br /> const unsigned short FONT_EDGE_DROP_SHADOW_RIGHT = 6 ；<br /> readonly attribute unsigned short fontEdge；<br /> <br /> //字型<br /> const unsigned short FONT_DEFAULT = 0 ；<br /> const unsigned short FONT_MONOSPACED_WITH_SERIFS = 1 ；<br /> const unsigned short FONT_PROPORTIONAL_WITH_SERIFS = 2 ；<br /> const unsigned short FONT_MONSPACED_WITHOUT_SERIFS = 3 ；<br /> const unsigned short FONT_CASUAL = 4 ；<br /> const unsigned short FONT_CURSIVE = 5 ；<br /> const unsigned short FONT_SMALL_CAPTINGS = 6 ；<br /> readonly attribute unsigned short font；<br /> readonly屬性（不帶正負號的短字型不透明度）；<br /> readonly屬性（不帶正負號的短背景）不透明度；<br /> readonly屬性（不帶正負號的short fillOpacity）；<br /> 唯讀屬性（不帶正負號的短DEFAULT_OPACITY）；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -956,25 +955,25 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>interfaceMediaPlayerItemLoader:<br /> {<br /> void load(MediaResource， long resourceId，<br /> ItemLoaderListener， <br /> MediaPlayerItemConfig);<br /> void();<br />只读属性MediaPlayerItemItemcurrentItem;<br /> };</p> </td> 
+   <td><p>介面MediaPlayerItemLoader：<br /> {<br /> void load(MediaResource，long resourceId，<br /> ItemLoaderListener接聽程式， <br /> MediaPlayerItemConfig) ；<br /> void cancel()；<br /> 唯讀屬性MediaPlayerItem currentItem；<br /> }；</p> </td> 
    <td>2.0的新增功能</td> 
   </tr> 
   <tr> 
-   <td><p>interfaceItemLoaderListener<br /> {<br /> //onLoadCompleteCallbackFunc(MediaPlayerItem)<br /> var onLoadCompleteCallbackFunc;<br /> //onErrorCallbackFunc(PSDKErrorCode)<br />var onErrorCallbackFunc;<br /> }</p> </td> 
+   <td><p>介面ItemLoaderListener<br /> {<br /> //onLoadCompleteCallbackFunc(MediaPlayerItem)<br /> var onLoadCompleteCallbackFunc；<br /> //onErrorCallbackFunc(PSDKErrorCode)<br /> var onErrorCallbackFunc；<br /> }</p> </td> 
    <td>2.0的新增功能</td> 
   </tr> 
  </tbody> 
 </table>
 
-## 2.0 {#media-characteristics-api-element-changes-for}的媒体特性API元素更改
+## 2.0的媒體特性API元素變更 {#media-characteristics-api-element-changes-for}
 
-这些表比较了版本1.3和2.0之间C++ TVSDK的媒体特性API元素。
+下表比較了1.3版和2.0版之間C++ TVSDK的媒體特性API元素。
 
-本主题中的表：
+此主題中的表格：
 
 * MediaPlayerItem
 * Track、AudioTrack、ClosedCaptionsTrack
-* 用户档案
+* 設定檔
 * DRMMetadataInfo
 
 ### MediaPlayerItem {#mediaplayeritem}
@@ -986,13 +985,13 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>interfaceMediaPlayerItem {<br />只读属性MediaResource;<br />只读属性long resourceId;<br />只读属性boolean live;<br /> <br />只读属性boolean hasAlternateAudio;<br />只读属性AudioTrackList audioTrackstrichoTracks;&lt;adoTroadioTradoTro属性AudioTrack selectedAudioTrack;<br /> void selectAudioTrack(AudioTrack);<br /> <br />只读属性boolean hasClosedCaptions;<br />只读属性ClosedCaptionsTrackClosedCaptionsTracks;<br />只读属性ClosedCaptionsTrack;<br /> void selectClodesCloidClodCoidCedCaptionsCaptionsCaptionsCaptionsCaptionsCaptionstrack（<br /> ClosedCaptionsTrack轨道）；<br /> <br />只读属性boolean hasTimedMetadata;<br />只读属性TimedMetadataList timedMetadata;<br />只读属性boolean dynamic;<br /> <br />只读属性boolean isProtected;<br />仅属性DRMMetadataInfoList drmMetadataInfos;<br />只读属性ProfileList用户档案;<br />只读属性用户档案selectedProfile;<br /> <br />只读属性boolean trickPlaySupported;<br />FloatArray availablePlaybackRates;<br />只读属性float selectedPlaybackRate;<br /> <br /> <br />只读属性MediaPlayer mediaPlayer;<br />只读属性MediaPlayerItemConfig;<br /> };<br /></p> </td> 
-   <td><p>interfaceMediaPlayerItem {<br />只读属性MediaResource;<br />只读属性long resourceId;<br />只读属性boolean live;<br /> <br />只读属性boolean hasAlternateAudio;<br />只读属性AudioTrackList audioTracksadioTracks;&lt;adioTrachoTrachoTrachoTreaudioTrack selectedAudioTrack;<br /> <br /> <br />只读属性boolean hasClosedCaptions;<br />只读属性ClosedCaptionsTrackList ccTracks;<br />属性ClosedCtedCCTrack;&lt;acta13/&gt; <br /> <br />只读属性boolean hasTimedMetadata;<br />只读属性TimedMetadataList timedMetadata;<br />只读属性boolean dynamic;<br /> <br />只读属性boolean isProtected;<br />只读属性DRMMetadataInfoList drmMetadataInfos;<br />只读属性ProfileList用户档案;<br /> <br /> <br />只读属性boolean trickPlaySupported;<br />只读属性Int32Array availablePlaybackRates;<br /> <br />只读属性StringList adTags;<br /> <br />只读属性MediaPlayer mediaPlayer;<br /> <br /> };<br /><br /><br /></p> </td> 
+   <td><p>介面MediaPlayerItem {<br /> 唯讀屬性MediaResource；<br /> readonly屬性long resourceId；<br /> readonly attribute boolean live；<br /> <br /> 唯讀屬性布林值hasAlternateAudio；<br /> 唯讀屬性AudioTrackList audioTracks；<br /> 唯讀屬性AudioTrack selectedAudioTrack；<br /> void selectAudioTrack(AudioTrack track)； <br /> <br /> 唯讀屬性布林值hasClosedCaptions；<br /> 唯讀屬性ClosedCaptionsTrackList closedCaptionsTracks；<br /> 唯讀屬性ClosedCaptionsTrack selectedClosedCaptionsTrack；<br /> void selectClosedCaptionsTrack(<br /> ClosedCaptionsTrack)； <br /> <br /> 唯讀屬性布林值hasTimedMetadata；<br /> 唯讀屬性TimedMetadataList timedMetadata；<br /> 唯讀屬性布林值動態；<br /> <br /> 唯讀屬性布林值isProtected；<br /> 唯讀屬性DRMMetadataInfoList drmMetadataInfo；<br /> 唯讀屬性ProfileList設定檔；<br /> 唯讀屬性Profile selectedProfile；<br /> <br /> 唯讀屬性布林值trickPlaySupported；<br /> 唯讀屬性FloatArray availablePlaybackRates；<br /> 唯讀屬性float selectedPlaybackRate；<br /> <br /> <br /> 唯讀屬性MediaPlayer mediaPlayer；<br /> 唯讀屬性MediaPlayerItemConfig；<br /> }；</p> </td> 
+   <td><p>介面MediaPlayerItem {<br /> 唯讀屬性MediaResource；<br /> readonly屬性long resourceId；<br /> readonly attribute boolean live；<br /> <br /> 唯讀屬性布林值hasAlternateAudio；<br /> 唯讀屬性AudioTrackList audioTracks；<br /> 屬性AudioTrack selectedAudioTrack；<br /> <br /> <br /> 唯讀屬性布林值hasClosedCaptions；<br /> 唯讀屬性ClosedCaptionsTrackList ccTracks；<br /> 屬性ClosedCaptionsTrack selectedCCTrack；<br /> <br /> <br /> <br /> 唯讀屬性布林值hasTimedMetadata；<br /> 唯讀屬性TimedMetadataList timedMetadata；<br /> 唯讀屬性布林值動態；<br /> <br /> 唯讀屬性布林值isProtected；<br /> 唯讀屬性DRMMetadataInfoList drmMetadataInfo；<br /> 唯讀屬性ProfileList設定檔；<br /> <br /> <br /> 唯讀屬性布林值trickPlaySupported；<br /> 唯讀屬性Int32Array availablePlaybackRates；<br /> <br /> 唯讀屬性StringList adTags；<br /> <br /> 唯讀屬性MediaPlayer mediaPlayer；<br /> <br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-### 音轨/音轨/隐藏字幕轨道{#track-audiotrack-closedcaptionstrack}
+### Track / AudioTrack / ClosedCaptionsTrack {#track-audiotrack-closedcaptionstrack}
 
 <table> 
  <tbody> 
@@ -1001,29 +1000,29 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>interface Track<br /> {<br />只读属性DomString name;<br />只读属性DomString语言；<br />只读属性布尔默认值；<br />只读属性布尔值autoSelect;<br /> }; </p> </td> 
+   <td><p>介面追蹤<br /> {<br /> 唯讀屬性DomString名稱；<br /> 唯讀屬性DomString語言；<br /> 唯讀屬性布林值預設；<br /> 唯讀屬性布林值autoSelect；<br /> }； </p> </td> 
    <td>2.0的新增功能</td> 
   </tr> 
   <tr> 
-   <td><p>接口AudioTrack:Track<br /> {<br />只读属性DomString名称；//FromTrack<br />只读属性DomString语言；//FromTrack<br />只读属性布尔默认值；// From Track<br /> readonly attribute autoSelect;//FromTrack<br /> <br /> readonly attribute unsigned int pid;<br /> };</p> </td> 
-   <td><p>interfaceAudioTrack<br /> {<br />只读属性DomString名称；<br />只读属性DomString语言；<br />只读属性布尔默认值；<br />只读属性boolean autoSelect;<br />只读属性布尔值强制；<br /> <br /> };</p> </td> 
+   <td><p>interface AudioTrack ： Track<br /> {<br /> readonly屬性DomString name； //FromTrack<br /> readonly屬性DomString language；//FromTrack<br /> 唯讀屬性布林值預設； //從追蹤<br /> 唯讀屬性布林值autoSelect；//FromTrack<br /> <br /> readonly屬性unsigned int pid；<br /> }；</p> </td> 
+   <td><p>介面AudioTrack<br /> {<br /> 唯讀屬性DomString名稱；<br /> 唯讀屬性DomString語言； <br /> 唯讀屬性布林值預設；<br /> 唯讀屬性布林值autoSelect；<br /> 強制唯讀屬性布林值；<br /> <br /> }；</p> </td> 
   </tr> 
   <tr> 
-   <td>2.0没有更改</td> 
-   <td><p>interfaceAudioTrackList<br /> {<br />只读属性unsigned long length;<br /> getter AudioTrack(unsigned long index);<br /> };</p> </td> 
+   <td>2.0無變更</td> 
+   <td><p>介面AudioTrackList<br /> {<br /> readonly屬性（不帶正負號的長長度）；<br /> getter AudioTrack （不帶正負號的長索引）；<br /> }；</p> </td> 
   </tr> 
   <tr> 
-   <td><p>接口ClosedCaptionsTrack:Track<br /> {<br />只读属性DomString名称；//FromTrack<br />只读属性DomString语言；//FromTrack<br />只读属性布尔默认值；// FromTrack<br />只读属性boolean autoSelect;// FromTrack<br /> <br /> <br />  const unsigned short SERVICE_608_CAPTIONS = 0;<br /> const unsigned short SERVICE = 1;<br />_WEB_VTT_CAPTIONS = 2;<br />只读属性unsigned short serviceType;<br />只读属性boolean forced;<br /> };</p> </td> 
-   <td><p>interfaceClosedCaptionsTrack<br /> {<br />只读属性DomString name;<br />只读属性DomString语言；<br />只读属性布尔默认值；<br /> <br /> <br />只读属性布尔活动；<br /> <br /> <br /> <br /> <br /> <br /> };</p> </td> 
+   <td><p>介面ClosedCaptionsTrack ： Track<br /> {<br /> readonly屬性DomString name； //FromTrack<br /> readonly屬性DomString language；//FromTrack<br /> 唯讀屬性布林值預設；// FromTrack<br /> 唯讀屬性布林值autoSelect；//FromTrack<br /> <br /> <br /> const unsigned short SERVICE_608_CAPTIONS = 0；<br /> const unsigned short SERVICE_708_CAPTIONS = 1；<br /> const unsigned short SERVICE_WEB_VTT_CAPTIONS = 2；<br /> readonly屬性（不帶正負號的短型別）；<br /> 強制唯讀屬性布林值；<br /> }；</p> </td> 
+   <td><p>介面ClosedCaptionsTrack<br /> {<br /> 唯讀屬性DomString名稱；<br /> 唯讀屬性DomString語言；<br /> 唯讀屬性布林值預設；<br /> <br /> <br /> 唯讀屬性布林值作用中；<br /> <br /> <br /> <br /> <br /> <br /> }；</p> </td> 
   </tr> 
   <tr> 
-   <td>2.0没有更改</td> 
-   <td><p>interfaceClosedCaptionsTrackList<br /> {<br />只读属性unsigned long length;<br /> getter ClosedCaptionsTrack(unsigned long index);<br /> };</p> </td> 
+   <td>2.0無變更</td> 
+   <td><p>介面ClosedCaptionsTrackList<br /> {<br /> readonly屬性（不帶正負號的長長度）；<br /> getter ClosedCaptionsTrack (unsigned long index)；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-### 用户档案{#profile}
+### 設定檔 {#profile}
 
 <table> 
  <tbody> 
@@ -1032,12 +1031,12 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td>用户档案:2.0没有更改</td> 
-   <td><p>接口用户档案<br /> {<br /> readonly attribute unsigned int width;<br /> readonly attribute unsigned int height;<br /> readonly attribute unsigned intRate;<br /> }; </p> </td> 
+   <td>設定檔： 2.0版無變更</td> 
+   <td><p>介面設定檔<br /> {<br /> readonly attribute unsigned int width；<br /> readonly屬性（不帶正負號的int高度）；<br /> readonly屬性（不帶正負號的int bitRate）；<br /> }； </p> </td> 
   </tr> 
   <tr> 
-   <td>ProfileList:2.0没有更改</td> 
-   <td><p>interfaceProfileList<br /> {<br />只读属性unsigned long length;<br /> getter 用户档案(unsigned long index);<br /> };</p> </td> 
+   <td>設定檔清單： 2.0版沒有變更</td> 
+   <td><p>介面設定檔清單<br /> {<br /> readonly屬性（不帶正負號的長長度）；<br /> getter設定檔（無符號長索引）；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -1051,39 +1050,39 @@ playerConfig.adFactory = factory;
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><strong>DRMMetadataInfo</strong>:2.0没有更改</td> 
-   <td><p>interfaceDRMMetadataInfo<br /> { <br />只读属性DRMMetadata;<br />只读属性long prefetchTimestamp;<br />只读属性TimeRange timeRange;<br /> };</p> </td> 
+   <td><strong>DRMMetadataInfo</strong>：2.0版沒有變更</td> 
+   <td><p>介面DRMMetadataInfo<br /> { <br /> 唯讀屬性DRMMetadata中繼資料；<br /> 唯讀屬性long prefetchTimestamp；<br /> 唯讀屬性TimeRange timeRange；<br /> }；</p> </td> 
   </tr> 
   <tr> 
-   <td><strong>DRMMetadataInfoList</strong>:2.0没有更改</td> 
-   <td><p>interfaceDRMMetadataInfoList<br /> {<br />只读属性unsigned longlength;<br /> getter DRMMetadataInfo(unsigned long index);<br /> };</p> </td> 
+   <td><strong>DRMMetadataInfoList</strong>：2.0版沒有變更</td> 
+   <td><p>介面DRMMetadataInfoList<br /> {<br /> readonly屬性（不帶正負號的長長度）；<br /> getter DRMMetadataInfo (unsigned long index)；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-## 将C++错误映射到不同语言的异常{#mapping-c-errors-to-exceptions-in-different-languages}
+## 將C++錯誤對應至不同語言的例外 {#mapping-c-errors-to-exceptions-in-different-languages}
 
-您可以将C++错误代码映射到不同语言的异常。
+您可以將C++錯誤碼對應至不同語言的例外狀況。
 
-C++ PSDK的API有“不抛送”策略。 大多数API方法返回PSDKErrorCode值以指示方法是否成功执行。 异步错误通过错误事件通知。
+C++ PSDK的API有「禁止擲回」原則。 大部分的API方法會傳回PSDKErrorCode值，指出方法是否成功執行。 系統會透過錯誤事件通知非同步錯誤。
 
-ActionScript和JAVA PSDK有不同的策略。 大多数错误将引发ArgumentError或IllegalStateException，以指示无法执行方法的同步部分。 不会捕获这些例外，应用程序代码负责处理例外。 它们通常提供方法调用失败的原因的有用信息。 例如，如果在无效状态中调用prepareToPlay命令，将引发以下异常：
+ActionScript和JAVA PSDK有不同的原則。 大部分的錯誤都會擲回ArgumentError或IllegalStateException，指出無法執行方法的同步部分。 系統不會攔截到這些例外狀況，而應用程式程式碼會負責處理例外狀況。 它們通常包含方法呼叫失敗原因的有用資訊。 例如，如果以無效狀態呼叫prepareToPlay命令，則會擲回下列例外狀況：
 
 ```shell
 throw new IllegalStateException("Invalid player state. prepareToPlay method 
 must be called only once after replaceCurrentItem or replaceCurrentResource method.");
 ```
 
-ActionScript/JAVA还会引发构造函数的异常，以指示某些内部对象创建不正确。 这些例外是内部处理的，不会传播到应用程序。 这些例外将包含在发送到应用程序的警告通知中
+ActionScript/JAVA也會擲回建構函式中的例外狀況，指出某些內部物件建立不正確。 這些例外狀況會在內部處理，而不會傳播至應用程式。 例外狀況會包含在傳送至應用程式的警告通知中
 
-例如，如果未为接收的广告响应找到有效的媒体文件，则无法创建有效的广告资产对象或广告。 因此，不会在时间轴上放置任何广告，并调度NotificationEvent.OperationFailed通知。
+例如，如果沒有為收到的廣告回應找到有效的媒體檔案，則無法建立有效的廣告資產物件或廣告。 因此，時間軸上不會放置任何廣告，且會傳送NotificationEvent.OperationFailed通知。
 
-从Adobe视频引擎(AVE)异步接收的错误或警告代码作为普通事件调度给应用程序。 通知事件包含所有接收的错误代码和任何其他元数据，如URL、资源标识符、句柄等。 如果错误严重且无法继续播放当前媒体，则调度MediaPlayer过渡为ERROR状态和onStatusChanged回调或MediaPlayerStatusChanged.STATUS_CHANGED事件。 如果播放可以继续，则调度普通通知事件。
+非同步從Adobe視訊引擎(AVE)收到的錯誤或警告程式碼會以一般事件的形式傳送至應用程式。 通知事件包含所有收到的錯誤代碼和任何其他中繼資料，例如URL、資源識別碼、控制代碼等。 如果錯誤嚴重且無法繼續播放目前媒體，MediaPlayer會轉換為ERROR狀態，並傳送onStatusChanged回呼或MediaPlayerStatusChanged.STATUS_CHANGED事件。 如果可以繼續播放，則會傳送一般通知事件。
 
 <table> 
  <tbody> 
   <tr> 
-   <th>C++错误（PSDKError代码）</th> 
+   <th>C++錯誤（PSDKError代碼）</th> 
    <th> </th> 
    <th>Java</th> 
    <th>ActionScript</th> 
@@ -1093,174 +1092,174 @@ ActionScript/JAVA还会引发构造函数的异常，以指示某些内部对象
    <td>kECInvalidArgument</td> 
    <td> </td> 
    <td>IllegalArgumentException</td> 
-   <td>ArgumentError</td> 
-   <td>代码为1的异常，description = "INVALID_ARGUMENT", additionalInfo= &lt;as pass by方法引发此异常&gt;</td> 
+   <td>引數錯誤</td> 
+   <td>例外狀況代碼= 1，說明= "INVALID_ARGUMENT"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
-   <td>kECNullPointer</td> 
+   <td>Kecnullpointer</td> 
    <td> </td> 
    <td>IllegalArgumentException</td> 
-   <td>ArgumentError</td> 
-   <td>代码为2的异常，description = "GENERIC_ERROR" and additionalInfo= &lt;as pass by方法引发此异常&gt;</td> 
+   <td>引數錯誤</td> 
+   <td>例外狀況代碼= 2，說明= "GENERIC_ERROR"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECIllegalState</td> 
    <td> </td> 
-   <td>IllegalStateException</td> 
-   <td>IllegalStateException</td> 
-   <td>代码为3的异常，description = "ILLEGAL_STATE", additionalInfo= &lt;as passed by method which this exception&gt;</td> 
+   <td>IllegalState例外狀況</td> 
+   <td>IllegalState例外狀況</td> 
+   <td>例外狀況代碼= 3，說明= "ILLEGAL_STATE"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECInterfaceNotFound</td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为4的异常，description = "GENERIC_ERROR" and additionalInfo= &lt;as pass by方法引发此异常&gt;</td> 
+   <td>例外狀況代碼= 4，說明= "GENERIC_ERROR"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECCreationFailed</td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为5的异常，description = "CREATION_FAILED", additionalInfo= &lt;as pass by方法引发此异常&gt;</td> 
+   <td>例外狀況代碼= 5，說明= "CREATION_FAILED"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECUnsupportedOperation</td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为5的异常，description = "CREATION_FAILED", additionalInfo= &lt;as pass by方法引发此异常&gt;</td> 
+   <td>例外狀況代碼= 5，說明= "CREATION_FAILED"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECDataNotAvailable</td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为7的异常，description = "DATA_NOT_AVAILABLE"和additionalInfo= &lt;as passed by method which this exception&gt;</td> 
+   <td>例外狀況代碼= 7，說明= "DATA_NOT_AVAILABLE"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECSeekError</td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为8的异常，description = "SEEK_ERROR" and additionalInfo= &lt;as pass by方法引发此异常&gt;</td> 
+   <td>例外狀況代碼= 8，說明= "SEEK_ERROR"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
-   <td>kECUnsupported功能</td> 
+   <td>kECUnsupportedFeature</td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为9的异常，description = "UNSUPPORTED_FEATURE" and additionalInfo= &lt;as pass by方法引发此异常&gt;</td> 
+   <td>例外狀況代碼= 9，說明= "UNSUPPORTED_FEATURE"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECRangeError</td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为10的异常，description = "RANGE_ERROR", additionalInfo= &lt;as pass by方法引发此异常</td> 
+   <td>例外狀況代碼= 10，說明= "RANGE_ERROR"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECCodecNotSupported</td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为11的异常，description = "CODEC_NOT_SUPPORTED"和additionalInfo= &lt;as pass by方法引发此异常&gt;</td> 
+   <td>例外狀況代碼= 11，說明= "CODEC_NOT_SUPPORTED"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECMediaError</td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为12的异常，description = "MEDIA_ERROR" and additionalInfo= &lt;as pass by method which this exception&gt;</td> 
+   <td>例外狀況代碼= 12，說明= "MEDIA_ERROR"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECNetworkError</td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为13的异常，description = "NETWORK_ERROR" and additionalInfo= &lt;as pass by method which this exception&gt;</td> 
+   <td>例外狀況代碼= 13，說明= "NETWORK_ERROR"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECGenericError</td> 
    <td> </td> 
    <td>MediaPlayerNotification.Error或MediaPlayerNotification.Warning</td> 
    <td>MediaError或NotificationEvent</td> 
-   <td>代码为14的异常，description = "GENERIC_ERROR" and additionalInfo= &lt;as pass by method which this exception&gt;</td> 
+   <td>例外狀況代碼= 14，說明= "GENERIC_ERROR"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECInvalidSeekTime</td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为15的异常，description = "INVALID_SEEK_TIME"和additionalInfo= &lt;as pass by方法引发此异常&gt;</td> 
+   <td>例外狀況代碼= 15，說明= "INVALID_SEEK_TIME"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECAudioTrackError</td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为16的异常，description = "AUDIO_TRACK_ERROR"和additionalInfo= &lt;as pass by方法引发此异常&gt;</td> 
+   <td>例外狀況代碼= 16，說明= "AUDIO_TRACK_ERROR"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
-   <td>kECAccessFromDifferent<p>线程错误</p> </td> 
+   <td>kECAccessFromDifferent<p>執行緒錯誤</p> </td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为17的异常，description = "GENERIC_ERROR" and additionalInfo= &lt;as pass by方法引发此异常&gt;</td> 
+   <td>例外狀況代碼= 17，說明= "GENERIC_ERROR"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECElementNotFound</td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为18的异常，description = "GENERIC_ERROR", additionalInfo= &lt;as pass by方法引发此异常</td> 
+   <td>例外狀況代碼= 18，說明= "GENERIC_ERROR"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
-   <td>kECNotImplemented</td> 
+   <td>kECNotImplements</td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为19的异常，description = "GENERIC_ERROR" and additionalInfo= &lt;as pass by方法引发此异常&gt;</td> 
+   <td>例外狀況代碼= 19，說明= "GENERIC_ERROR"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECPlaybackOperationFailed</td> 
    <td> </td> 
    <td>-</td> 
    <td>-</td> 
-   <td>代码为200的异常，description = "PLAYBACK_OPERATION_FAILED" and additionalInfo= &lt;as pass by方法引发此异常&gt;</td> 
+   <td>例外狀況代碼= 200，說明= "PLAYBACK_OPERATION_FAILED"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECNativeWarning</td> 
    <td> </td> 
    <td>MediaPlayerNotification.Warning</td> 
-   <td>NotificationEvent</td> 
-   <td>代码为201的异常，description = "NATIVE_WARNING", additionalInfo= &lt;as pass by方法引发此异常</td> 
+   <td>通知事件</td> 
+   <td>例外狀況代碼= 201，說明= "NATIVE_WARNING"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
   <tr> 
    <td>kECAdResolverFailed</td> 
    <td> </td> 
    <td>MediaPlayerNotification.Warning</td> 
    <td>-</td> 
-   <td>代码为202的异常，description = "AD_RESOLVER_FAILED"和additionalInfo= &lt;as pass by方法传递的异常&gt;</td> 
+   <td>例外狀況代碼= 202，說明= "AD_RESOLVER_FAILED"及additionalInfo= &lt;as passed="" by="" method="" which="" threw="" this="" exception=""&gt;</td> 
   </tr> 
  </tbody> 
 </table>
 
-## 2.0 {#utility-and-helper-api-element-changes-for}的实用程序和帮助程序API元素更改
+## 2.0的公用程式和Helper API元素變更 {#utility-and-helper-api-element-changes-for}
 
-这些表比较了版本1.3和2.0之间JavaScript TVSDK的实用程序和帮助程序API元素。
+下表比較了1.3版和2.0版之間JavaScript TVSDK的公用程式和Helper API元素。
 
-本主题中的表：
+此主題中的表格：
 
 * 版本
-* 时间范围
-* QOSProvider
-* 设备信息
+* 時間範圍
+* QOSProviser
+* 裝置資訊
 * LoadInfo
-* 视图
-* 播放信息
+* 檢視
+* 播放資訊
 
-### 版本{#version}
+### 版本 {#version}
 
 <table> 
  <tbody> 
@@ -1269,13 +1268,13 @@ ActionScript/JAVA还会引发构造函数的异常，以指示某些内部对象
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>接口版本<br /> {<br />只读属性DomString版本；<br />只读属性DomString描述；<br />只读属性long major;<br />只读属性long minor;<br />只读属性long revision;<br />只读属性long apiVersion;<br /> };</p> </td> 
-   <td><p>接口版本<br /> {<br />只读属性DomString版本；<br />只读属性DomString描述；<br />只读属性DomString主要；<br />只读属性DomString次要；<br />只读属性DomString修订版；<br />只读属性DomString apiversion;<br /> };</p> </td> 
+   <td><p>介面版本<br /> {<br /> 唯讀屬性DomString版本；<br /> 唯讀屬性DomString說明；<br /> readonly屬性長主要；<br /> 唯讀屬性long minor；<br /> 唯讀屬性長修訂；<br /> readonly屬性long apiVersion；<br /> }；</p> </td> 
+   <td><p>介面版本<br /> {<br /> 唯讀屬性DomString版本；<br /> 唯讀屬性DomString說明；<br /> 唯讀屬性DomString major；<br /> 唯讀屬性DomString minor；<br /> 唯讀屬性DomString修訂版本；<br /> readonly屬性DomString apiVersion；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-### TimeRange {#timerange}
+### 時間範圍 {#timerange}
 
 <table> 
  <tbody> 
@@ -1284,13 +1283,13 @@ ActionScript/JAVA还会引发构造函数的异常，以指示某些内部对象
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td>2.0没有更改</td> 
-   <td><p>interfaceTimeRange<br /> {<br />只读属性unsigned long begin;<br />只读属性unsigned long end;<br />只读属性unsigned long duration;<br /> };</p> </td> 
+   <td>2.0無變更</td> 
+   <td><p>介面TimeRange<br /> {<br /> readonly attribute unsigned long begin；<br /> readonly屬性（不帶正負號的長端）；<br /> readonly屬性（不帶正負號的長持續期間）；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-### QOSProvider {#qosprovider}
+### QOSProviser {#qosprovider}
 
 <table> 
  <tbody> 
@@ -1299,13 +1298,13 @@ ActionScript/JAVA还会引发构造函数的异常，以指示某些内部对象
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td>2.0没有更改</td> 
-   <td><p>接口QOSProvider<br /> {<br /> void attachMediaPlayer(MediaPlayer);<br /> void detachMediaPlayer();<br /> <br />只读属性DeviceInformation;<br />只读属性PlaybackInformation;<br />};</p> </td> 
+   <td>2.0無變更</td> 
+   <td><p>介面QOSProvider<br /> {<br /> void attachMediaPlayer(MediaPlayer player)；<br /> 無效detachMediaPlayer()；<br /> <br /> 唯讀屬性DeviceInformation deviceInformation；<br /> 唯讀屬性PlaybackInformation playbackInformation；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-### 设备信息{#deviceinformation}
+### 裝置資訊 {#deviceinformation}
 
 <table> 
  <tbody> 
@@ -1314,8 +1313,8 @@ ActionScript/JAVA还会引发构造函数的异常，以指示某些内部对象
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>interfaceDeviceInformation<br /> {<br />只读属性DomString os;<br /> <br /> <br /> <br />只读属性DomString id;<br />只读属性int intDPI;<br />只读属性int heightPixels;<br />只读属性int widthPix;<br />只读属性boolean seekToKeyFrame;<br /> };</p> </td> 
-   <td><p>interfaceDeviceInformation<br /> {<br />只读属性DomString os;<br />只读属性int sdk;<br />只读属性DomString模型；<br />只读属性DomString制造商；<br />只读属性DomString id;<br />只读属性intDPI7/&gt;只读属性int heightPixels;<br />只读属性int widthPixels;<br /> <br /> };<br /></p> </td> 
+   <td><p>介面裝置資訊<br /> {<br /> 唯讀屬性DomString os；<br /> <br /> <br /> <br /> 唯讀屬性DomString ID；<br /> 唯讀屬性int densityDPI；<br /> 唯讀屬性int heightPixels；<br /> 唯讀屬性int widthPixels；<br /> 唯讀屬性布林值seekToKeyFrame；<br /> }；</p> </td> 
+   <td><p>介面裝置資訊<br /> {<br /> 唯讀屬性DomString os；<br /> 唯讀屬性int sdk；<br /> 唯讀屬性DomString模型；<br /> 唯讀屬性DomString製造商；<br /> 唯讀屬性DomString ID；<br /> 唯讀屬性int densityDPI；<br /> 唯讀屬性int heightPixels；<br /> 唯讀屬性int widthPixels；<br /> <br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -1329,13 +1328,13 @@ ActionScript/JAVA还会引发构造函数的异常，以指示某些内部对象
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td>2.0没有更改</td> 
-   <td><p>interfaceLoadInfo<br /> {<br />只读属性DomString url;<br />只读属性int size;<br />只读属性多次downloadDuration;<br />只读属性int periodIndex;<br />只读属性多次 mediaDuration;<br />只读属性短TRACK_TYPE_TYPE_TYPE_TYPE_fragment;<br />只读属性short TRACK_TYPE_TRACK;<br />只读属性short TRACK_TYPE_MANIFEST;<br />只读属性short type;<br />只读属性DomString trackName;<br />只读属性DomString trackType;&lt;ackType;&lt;a;12/&gt; readonly attribute int trackIndex;<br /> };<br /></p> </td> 
+   <td>2.0無變更</td> 
+   <td><p>介面載入資訊<br /> {<br /> 唯讀屬性DomString url；<br /> 唯讀屬性int大小；<br /> 唯讀屬性double downloadDuration；<br /> readonly屬性int periodIndex；<br /> 唯讀屬性double mediaDuration；<br /> 唯讀屬性短TRACK_TYPE_FRAGMENT；<br /> 唯讀屬性短TRACK_TYPE_TRACK；<br /> 唯讀屬性短TRACK_TYPE_MANIFEST；<br /> 唯讀屬性短型別；<br /> 唯讀屬性DomString trackName；<br /> 唯讀屬性DomString trackType；<br /> readonly attribute int trackIndex；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-### 视图{#view}
+### 檢視 {#view}
 
 <table> 
  <tbody> 
@@ -1344,13 +1343,13 @@ ActionScript/JAVA还会引发构造函数的异常，以指示某些内部对象
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td>2.0没有更改</td> 
-   <td><p>接口视图<br /> {<br />只读属性unsigned short x;<br />只读属性unsigned short y;<br />只读属性unsigned short width;<br />只读属性unsigned short height;<br /> <br /> void setSize(unsigned short x， short y);<br /> }<br /></p> </td> 
+   <td>2.0無變更</td> 
+   <td><p>介面檢視<br /> {<br /> readonly屬性（不帶正負號的短x）；<br /> readonly屬性（不帶正負號的y）；<br /> readonly屬性（不帶正負號的短寬度）；<br /> readonly屬性（不帶正負號的短高度）；<br /> <br /> void setSize (unsigned short width， unsigned short height)；<br /> void setPos (unsigned short x， unsigned short y)；<br /> }</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-### PlaybackInformation {#playbackinformation}
+### 播放資訊 {#playbackinformation}
 
 <table> 
  <tbody> 
@@ -1359,12 +1358,12 @@ ActionScript/JAVA还会引发构造函数的异常，以指示某些内部对象
    <th>1.3 API</th> 
   </tr> 
   <tr> 
-   <td><p>interfacePlaybackInformation<br /> {<br />只读属性多次timeToFirstByte;<br />只读属性多次timeToLoad;<br />只读属性多次timeToStart;<br />只读属性多次timeToFail;<br />只读属性intTotal已播放；<br />只读属性int totalSecondsSpent;<br />只读属性多次frameRate;<br />只读属性int droppedFrameCount;<br />只读属性intencedBandwidth;<br />只读属性intbitrate;<br />只读属性多次bittime;<br />只读属性int bufferLength;<br />只读属性int emptyBufferCount;<br />只读属性多次bufferingTime;<br /> };</p> </td> 
-   <td><p>interfacePlaybackInformation<br /> {<br />只读属性多次timeToFirstByte;<br />只读属性多次timeToLoad;<br />只读属性多次timeToStart;<br />只读属性多次timeToFail;<br />只读属性intTotal已播放；<br />只读属性int totalSecondsSpent;<br />只读属性多次frameRate;<br />只读属性int droppedFrameCount;<br /> <br />只读属性intbitrate;<br />只读属性多次缓冲区Time;<br />仅属性int bufferLength;<br /> readonly属性int emptyBufferCount;<br /> readonly属性多次bufferingTime;<br /> };</p> </td> 
+   <td><p>介面播放資訊<br /> {<br /> 唯讀屬性double timeToFirstByte；<br /> 唯讀屬性double timeToLoad；<br /> 唯讀屬性double timeToStart；<br /> 唯讀屬性double timeToFail；<br /> readonly屬性int totalSecondsPlayed；<br /> readonly屬性int totalSecondsSpent；<br /> 唯讀屬性double frameRate；<br /> readonly屬性int droppedFrameCount；<br /> readonly attribute int esceptedBandwidth；<br /> readonly attribute int bitrate；<br /> 唯讀屬性double bufferTime；<br /> readonly屬性int bufferLength；<br /> readonly屬性int emptyBufferCount；<br /> 唯讀屬性double bufferingTime；<br /> }；</p> </td> 
+   <td><p>介面播放資訊<br /> {<br /> 唯讀屬性double timeToFirstByte；<br /> 唯讀屬性double timeToLoad；<br /> 唯讀屬性double timeToStart；<br /> 唯讀屬性double timeToFail；<br /> readonly屬性int totalSecondsPlayed；<br /> readonly屬性int totalSecondsSpent；<br /> 唯讀屬性double frameRate；<br /> readonly屬性int droppedFrameCount；<br /> <br /> readonly attribute int bitrate；<br /> 唯讀屬性double bufferTime；<br /> readonly屬性int bufferLength；<br /> readonly屬性int emptyBufferCount；<br /> 唯讀屬性double bufferingTime；<br /> }；</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-## 有用资源{#helpful-resources}
+## 實用資源 {#helpful-resources}
 
-* 请参阅[Adobe Primetime学习和支持](https://helpx.adobe.com/support/primetime.html)页面上的完整帮助文档。
+* 如需完整說明檔案，請前往 [Adobe Primetime學習與支援](https://helpx.adobe.com/support/primetime.html) 頁面。

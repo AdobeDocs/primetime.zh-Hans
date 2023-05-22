@@ -1,27 +1,26 @@
 ---
-title: 选择音轨
-description: 选择音轨
+title: 選取音訊曲目
+description: 選取音訊曲目
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: d4a7260a-82dd-4b57-8037-b91815d9b954
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '136'
 ht-degree: 0%
 
 ---
 
+# 選取音訊曲目{#select-the-audio-tracks}
 
-# 选择音轨{#select-the-audio-tracks}
+若要選取後期繫結音訊的音訊曲目，請實作 [IAAConfig](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/config/IAAConfig.html).
 
-要为延迟绑定音频选择音轨，请实现[IAAConfig](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/config/IAAConfig.html)。
-
-| 到…… | 打电话…… |
+| 至…… | 呼叫…… |
 |---|---|
-| 获取可用AA音轨的列表 | [getAudioTracks()](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/AAManager.html#getAudioTracks()) |
-| 获取当前选定的轨道 | [getSelectedAudioTrack()](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/AAManager.html#getSelectedAudioTrack()) |
-| 选择AA轨道 | [selectAlternateAudioTrack()](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/AAManager.html#selectAlternateAudioTrack(int)) |
+| 取得可用AA曲目的清單 | [getAudioTracks()](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/AAManager.html#getAudioTracks()) |
+| 取得目前選取的曲目 | [getSelectedAudioTrack()](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/AAManager.html#getSelectedAudioTrack()) |
+| 選取AA曲目 | [selectAlternateAudioTrack()](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/AAManager.html#selectAlternateAudioTrack(int)) |
 
-以下代码示例说明了引用实现如何从TVSDK获取音轨并将所选音轨分配给关联的媒体项目：
+下列程式碼範例說明參考實作如何從TVSDK取得音訊曲目，並將選取的曲目指派給關聯的媒體專案：
 
 ```java
 /** 

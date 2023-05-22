@@ -1,30 +1,28 @@
 ---
-description: 您可能需要了解媒体内容是实时的还是VOD的。
-title: 确定内容是实时的还是VOD
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可能需要知道媒體內容為即時或VOD。
+title: 識別內容為即時或VOD
+exl-id: fb15c779-db25-4858-b7d7-ae5eabf646a3
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '85'
 ht-degree: 0%
 
 ---
 
+# 識別內容為即時或VOD{#identify-whether-the-content-is-live-or-vod}
 
-# 确定内容是实时的还是VOD{#identify-whether-the-content-is-live-or-vod}
+您可能需要知道媒體內容為即時或VOD。
 
-您可能需要了解媒体内容是实时的还是VOD的。
+1. 等候瀏覽器TVSDK觸發 `AdobePSDK.PSDKEventType.STATUS_CHANGED` 具有的事件 `event.status` 之 `AdobePSDK.MediaPlayerStatus.PREPARED`.
 
-1. 等待浏览器TVSDK触发`AdobePSDK.PSDKEventType.STATUS_CHANGED`事件,`event.status`为`AdobePSDK.MediaPlayerStatus.PREPARED`。
-
-   此步骤可确保媒体资源已成功加载。
+   此步驟可確保媒體資源已成功載入。
 
    >[!IMPORTANT]
    >
-   >如果Browser TVSDK不至少处于`PREPARED`状态，则尝试调用以下方法将引发`IllegalStateException`。
+   >如果瀏覽器TVSDK未至少位於 `PREPARED` state，嘗試呼叫以下方法會擲回 `IllegalStateException`.
 
-1. 从`MediaPlayerItem`接口读取`live`:
+1. 讀取 `live` 從 `MediaPlayerItem` 介面：
 
    ```js
    player.currentItem.live
    ```
-

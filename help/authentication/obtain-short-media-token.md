@@ -1,41 +1,41 @@
 ---
-title: 获取短媒体令牌
-description: 获取短媒体令牌
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 取得短媒體Token
+description: 取得短媒體Token
+exl-id: 667eaaba-423e-4d54-9dbe-084b3c049e1f
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '370'
 ht-degree: 0%
 
 ---
 
-
-# 获取短媒体令牌 {#obtain-short-media-token}
+# 取得短媒體Token {#obtain-short-media-token}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-## REST API端点 {#clientless-endpoints}
+## REST API端點 {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;reggie_fqdn>：
 
-* 生产 —  [`api.auth.adobe.com`](http://api.auth.adobe.com/)
-* 暂存 —  [`api.auth-staging.adobe.com`](http://api.auth-staging.adobe.com/)
+* 生產 —  [`api.auth.adobe.com`](http://api.auth.adobe.com/)
+* 分段 —  [`api.auth-staging.adobe.com`](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;sp_fqdn>：
 
-* 生产 —  [`api.auth.adobe.com`](http://api.auth.adobe.com/)
-* 暂存 —  [`api.auth-staging.adobe.com`](http://api.auth-staging.adobe.com/)
+* 生產 —  [`api.auth.adobe.com`](http://api.auth.adobe.com/)
+* 分段 —  [`api.auth-staging.adobe.com`](http://api.auth-staging.adobe.com/)
 
 </br>
 
-## 描述 {#description}
+## 說明 {#description}
 
-获取短媒体令牌。  
+取得短媒體Token。  
 
-| 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
+| 端點 | 已呼叫  </br>作者： | 輸入   </br>引數 | HTTP  </br>方法 | 回應 | HTTP  </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/mediatoken</br></br>  或</br></br>&lt;sp_fqdn>/api/v1/tokens/media</br></br>例如：</br></br>&lt;sp_fqdn>/api/v1/tokens/media | 流应用程序</br></br>或</br></br>程序员服务 | 1.请求者（必填）</br>2.  deviceId（必需）</br>3.  资源（必需）</br>4.  device_info/X-Device-Info（必需）</br>5.  _deviceType_</br> 6.  _deviceUser_ （已弃用）</br>7.  _appId_ （已弃用） | GET | 包含Base64编码的媒体令牌的XML或JSON，或者，如果失败，则包含错误详细信息。 | 200 — 成功  </br>403 — 无法成功 |
+| &lt;sp_fqdn>/api/v1/mediatoken</br></br>  或</br></br>&lt;sp_fqdn>/api/v1/tokens/media</br></br>例如：</br></br>&lt;sp_fqdn>/api/v1/tokens/media | 串流應用程式</br></br>或</br></br>程式設計師服務 | 1.請求者（必要）</br>2.  deviceId （必要）</br>3.  資源（必要）</br>4.  device_info/X-Device-Info （必要）</br>5.  _deviceType_</br> 6.  _deviceuser_ （已棄用）</br>7.  _appId_ （已棄用） | GET | 包含Base64編碼媒體權杖的XML或JSON，或如果失敗則包含錯誤詳細資料。 | 200 — 成功  </br>403 — 無成功 |
 
 {style="table-layout:auto"}
 
@@ -47,21 +47,21 @@ ht-degree: 0%
 
 </br>
 
-| 输入参数 | 描述 |
+| 輸入引數 | 說明 |
 | --- | --- |
-| 请求者 | 此操作有效的程序员请求者ID。 |
-| deviceId | 设备ID字节。 |
-| 资源 | 包含resourceId（或MRSS片段）的字符串，用于标识用户请求的内容，并由MVPD授权端点识别。 |
-| device_info/</br></br>X-Device-Info | 流设备信息。</br></br>**注意**:此URL可以作为URL参数传递，但由于此参数的潜在大小以及GETURL长度的限制，它应作为X-Device-Info在http标头中传递。 </br></br>请参阅 [传递设备和连接信息](/help/authentication/passing-client-information-device-connection-and-application.md). |
-| _deviceType_ | 设备类型（例如Roku、PC）。</br></br>如果此参数设置正确，ESM将提供 [按设备类型划分]/(help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type)，以便可以针对不同类型的分析执行。 例如，Roku、AppleTV和Xbox。</br></br>请参阅 [使用无客户端设备类型参数的好处&#x200B;](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**:device_info将替换此参数。 |
-| _deviceUser_ | 设备用户标识符。</br></br>**注意**:如果使用，deviceUser的值应与 [创建注册代码](/help/authentication/registration-code-request.md) 请求。 |
-| _appId_ | 应用程序ID/名称。 </br></br>**注意**:device_info替换此参数。 如果使用， `appId` 的值应与 [创建注册代码](/help/authentication/registration-code-request.md) 请求。 |
+| 請求者 | 此作業有效的程式設計員requestorId。 |
+| deviceId | 裝置ID位元組。 |
+| 資源 | 包含resourceId （或MRSS片段）的字串，可識別使用者請求的內容並由MVPD授權端點識別。 |
+| device_info/</br></br>X-Device-Info | 串流裝置資訊。</br></br>**注意**：此引數可以作為URL引數傳遞，但由於此引數潛在的大小以及GETURL的長度限制，它應該在http標頭中作為X-Device-Info傳遞。 </br></br>如需詳細資訊，請參閱 [傳遞裝置和連線資訊](/help/authentication/passing-client-information-device-connection-and-application.md). |
+| _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>如果此引數設定正確，ESM會提供 [依裝置型別劃分]/(help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type)使用無使用者端時，因此可針對執行不同型別的分析。 例如，Roku、AppleTV和Xbox。</br></br>另請參閱 [使用無使用者端devicetype引數的好處&#x200B;](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**：device_info會取代此引數。 |
+| _deviceuser_ | 裝置使用者識別碼。</br></br>**注意**：若使用，deviceUser的值應與中的相同 [建立註冊代碼](/help/authentication/registration-code-request.md) 要求。 |
+| _appId_ | 應用程式id/名稱。 </br></br>**注意**：device_info會取代此引數。 若已使用， `appId` 應具有與中的相同的值 [建立註冊代碼](/help/authentication/registration-code-request.md) 要求。 |
 
 {style="table-layout:auto"}
 
-### 示例响应 {#response}
+### 範例回應 {#response}
 
-**XML:**
+**XML：**
 
 ```XML
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -77,7 +77,7 @@ ht-degree: 0%
 
 
 
-**JSON:**
+**JSON：**
 
 ```JSON
     {
@@ -92,6 +92,6 @@ ht-degree: 0%
 
  
 
-### 媒体验证库兼容性
+### 媒體驗證程式庫相容性
 
-字段 `serializedToken` 从“获取短媒体令牌”调用中，是可针对Adobe Medium验证库验证的Base64编码令牌。
+欄位 `serializedToken` 從「取得短媒體Token」呼叫是Base64編碼的Token，可根據Adobe Medium驗證程式庫進行驗證。

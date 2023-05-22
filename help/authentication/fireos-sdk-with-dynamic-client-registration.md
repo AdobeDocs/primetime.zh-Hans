@@ -1,170 +1,169 @@
 ---
-title: Amazon FireOS SDK，带有动态客户端注册
-description: Amazon FireOS SDK，带有动态客户端注册
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: Amazon FireOS SDK與Dynamic Client註冊
+description: Amazon FireOS SDK與Dynamic Client註冊
+exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '1150'
 ht-degree: 0%
 
 ---
 
-
-# Amazon FireOS SDK，带有动态客户端注册 {#amazon-fireos-sdk-with-dynamic-client-registration}
+# Amazon FireOS SDK與Dynamic Client註冊 {#amazon-fireos-sdk-with-dynamic-client-registration}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
 </br>
 
-## <span id=""></span>简介 {#Intro}
+## <span id=""></span>簡介 {#Intro}
 
-FireOS AccessEnabler SDK for FireTV已修改为在不使用会话Cookie的情况下启用身份验证。 随着越来越多的浏览器限制对Cookie的访问，需要使用另一种方法来允许身份验证。
+已修改適用於FireTV的FireOS AccessEnabler SDK，以啟用驗證而不使用工作階段Cookie。 隨著越來越多的瀏覽器限制對Cookie的存取，需要另一種方法來允許驗證。
 
-**FireOS SDK 3.0.4** 将基于签名请求者ID和会话cookie身份验证的当前应用程序注册机制替换为 [动态客户端注册](/help/authentication/dynamic-client-registration.md).
+**FireOS SDK 3.0.4** 以簽署的請求者ID和工作階段Cookie驗證，取代目前的應用程式註冊機制 [動態使用者端註冊](/help/authentication/dynamic-client-registration.md).
  
 
-## API更改 {#API}
+## API變更 {#API}
 
 ### Factory.getInstance
 
-**描述：** 实例化Access Enabler对象。 每个应用程序实例应有一个Access Enabler实例。
+**說明：** 具現化Access Enabler物件。 每個應用程式執行個體應有一個存取啟用程式執行個體。
 
-| API调用：构造函数 |
+| API呼叫：建構函式 |
 | --- |
-| public static AccessEnabler getInstance(ContextAppContext， String softwareStatement， String redirectUrl)<br>        引发AccessEnablerException |
+| 公用靜態AccessEnabler getInstance(Context appContext、String softwareStatement、String redirectUrl)<br>        擲回AccessEnablerException |
 
 **可用性：** v3.0+
 
-**参数：**
+**引數：**
 
-- *appContext*:Android应用程序上下文
-- *softwareStatement*:从TVE仪表板或 *null* 如果在strings.xml中设置了“software\_statement”
-- *redirectUrl* :对于FireTV实施，此参数应为null。 此属性的任何设置都将被忽略。 
+- *appContext*：Android應用程式內容
+- *軟體陳述式*：從TVE控制面板或取得的值 *null* 如果在strings.xml中設定&quot;software\_statement&quot;
+- *redirectUrl* ：對於FireTV實作，此引數應該為Null。 將忽略此屬性上的任何設定。 
 
-**注释**
+**附註**
 
-- 无效的softwareStatement将导致应用程序无法初始化AccessEnabler或注册应用程序以进行Adobe Pass身份验证和授权
-- FireTV的redirectUrl参数由SDK设置为adobepass://android.app as身份验证，由唯一的AccessEnabler实例处理。
+- 無效的softwareStatement將導致應用程式無法初始化AccessEnabler或註冊Adobe Pass驗證和授權的應用程式
+- FireTV的redirectUrl引數由SDK設定為adobepass://android.app ，因為驗證是由唯一的AccessEnabler執行個體處理。
 
 ### setRequestor
 
-**描述：** 确定渠道的标识。 在向Adobe Primetime身份验证系统的Adobe注册时，会为每个渠道分配一个唯一ID。 在处理SSO和远程令牌时，当应用程序处于后台时，身份验证状态可能会发生更改，当应用程序进入前台时，可以再次调用setRequestor以与系统状态同步（如果启用了SSO，则获取远程令牌，如果同时发生注销，则删除本地令牌）。
+**說明：** 建立管道的身分。 每個管道在為Adobe Primetime驗證系統向Adobe註冊後都會獲得一個唯一的ID。 處理SSO和遠端Token時，驗證狀態會在應用程式於背景時變更，當應用程式進入前景時可再次呼叫setRequestor，以便與系統狀態同步（如果SSO已啟用，請擷取遠端Token，如果同時發生登出，請刪除本機Token）。
 
-服务器响应包含MVPD列表以及附加到渠道标识的一些配置信息。 服务器响应由Access Enabler代码在内部使用。 只有操作的状态（即SUCCESS/FAIL）会通过setRequestorComplete()回调函数显示给您的应用程序。
+伺服器回應包含MVPD清單，以及附加到通道身分識別的一些設定資訊。 伺服器回應由Access Enabler程式碼在內部使用。 只有作業的狀態（即SUCCESS/FAIL）會透過setRequestorComplete()回呼顯示給您的應用程式。
 
-如果 *url* 参数，则生成的网络调用将定向默认的服务提供商URL:Adobe发布生产环境。
+如果 *url* 不會使用引數，因此產生的網路呼叫會鎖定預設服務提供者URL：Adobe發行生產環境。
 
-如果为 *url* 参数，则生成的网络调用将定向 *url* 参数。 所有配置请求都在单独的线程中同时触发。 编译MVPD列表时，优先使用第一个响应者。 对于列表中的每个MVPD，访问启用码会记住相关服务提供商的URL。 所有后续授权请求都会被定向到与配置阶段中与目标MVPD配对的服务提供商关联的URL。
+如果提供的值用於 *url* 引數，則所產生的網路呼叫會鎖定中提供的所有URL *url* 引數。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD，「存取啟用程式」會記住相關服務提供者的URL。 所有後續的軟體權利檔案要求都會導向至與設定階段期間與目標MVPD配對的服務提供者相關聯的URL。
 
-| API调用：请求者配置 |
+| API呼叫：要求者設定 |
 | --- |
-| public void setRequestor(String requestorId) |
+| 公用void setRequestor(String requestorId) |
 
 **可用性：** v3.0+
 
-| API调用：请求者配置 |
+| API呼叫：要求者設定 |
 | --- |
 | ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
 
 **可用性：** v3.0+
 
-**参数：**
+**引數：**
 
-- *requestorID*:与渠道关联的唯一ID。 在您首次向Adobe Primetime身份验证服务注册时，将由Adobe分配的唯一ID传递到您的网站。
-- *url*:可选参数；默认情况下，使用Adobe服务提供商(http://sp.auth.adobe.com/)。 此数组允许您为由Adobe提供的身份验证和授权服务指定端点（可能出于调试目的而使用不同的实例）。 您可以使用它指定多个Adobe Primetime身份验证服务提供程序实例。 这样做时，MVPD列表由所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商关联；即首先响应并支持该MVPD的提供商。
+- *請求者ID*：與管道相關聯的唯一ID。 當您首次向Adobe Primetime驗證服務註冊時，請將Adobe指派的唯一ID傳遞至您的網站。
+- *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可用於偵錯）。 您可以使用此選項來指定多個Adobe Primetime驗證服務提供者執行個體。 如此一來，MVPD清單就會由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯，也就是首先回應並支援該MVPD的提供者。
 
-已弃用：
+已棄用：
 
-- *signedRequestorID*:使用您的私钥进行数字签名的请求者ID的副本。 <!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
+- *signedRequestorID*：以私密金鑰數位簽署的請求者ID復本。 <!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
 
-**触发的回调：** `setRequestorComplete()`
+**觸發的回呼：** `setRequestorComplete()`
 
 </br>
 
-### 注销
+### 登出
 
-**描述：** 使用此方法启动注销流程。 注销是一系列HTTP重定向操作的结果，因为用户需要从Adobe Primetime身份验证服务器以及MVPD服务器中注销。 因此，此流程将打开一个ChromeCustomTab窗口以执行注销。
+**說明：** 使用此方法可起始登出流程。 登出是一系列HTTP重新導向作業的結果，因為使用者需要同時從Adobe Primetime驗證伺服器和MVPD的伺服器登出。 因此，此流程將開啟ChromeCustomTab視窗以執行登出。
 
-| API调用：启动注销流程 |
+| API呼叫：起始登出流程 |
 | --- |
-| 公共撤销注销() |
+| public void logout() |
 
 **可用性：** v3.0+
 
-**参数：** 无
+**引數：** 無
 
-**触发的回调：** `setAuthenticationStatus()`
+**觸發的回呼：** `setAuthenticationStatus()`
 
-## 程序员实施流程 {#Progr}
+## 程式設計師實作流程 {#Progr}
 
-### **1. 注册申请** 
+### **1. 註冊應用程式** 
 
-1. 从Adobe Pass获取software\_statement(TVE Dashboard)
-1. 有两个选项可将这些值传递到Adobe Pass SDK:
-   - 在strings.xml中，添加： 
+1. 從Adobe Pass （ TVE控制面板）取得software\_statement
+1. 您可透過兩個選項將這些值傳遞至Adobe Pass SDK：
+   - 在strings.xml中新增： 
 
       ```
       <string name>"software\_statement">[softwarestatement value]</string>
       ```
 
-   - 调用AccessEnabler.getInstance(appContext，softwareStatement， null)
+   - 呼叫AccessEnabler.getInstance(appContext，softwareStatement， null)
 
  
 
-### **2. 配置应用程序**
+### **2. 設定應用程式**
 
-- a. setRequestor(requestor\_id) 
+- a. setRequestor(requestor\_id) 
 
-   SDK将执行以下操作： 
+   SDK將執行下列操作： 
 
-   - 注册申请：使用 **software\_statement**,SDK将获取 **client\_id， client\_secret， client\_id\_issued\_at, redirect\_uris， grant\_types**. 此信息将存储在应用程序的内部存储中。
-   - 获取 **access\_token** 使用client\_id、client\_secret和grant\_type=&quot;client\_credentials&quot;。 此access\_token将用于SDK对Adobe Pass服务器进行的每次调用。
+   - 註冊應用程式：使用 **software\_statement**，SDK將會取得 **client\_id， client\_secret， client\_id\_issued\_at， redirect\_uris， grant\_types**. 此資訊會儲存在應用程式的內部儲存空間中。
+   - 取得 **access\_token** 使用client\_id、client\_secret和grant\_type=&quot;client\_credentials&quot; 。 此access\_token將用於SDK對Adobe Pass伺服器進行的每次呼叫。
 
-| 令牌错误响应： |  |  |
+| 權杖錯誤回應： |  |  |
 |--- | --- | --- |
-| HTTP 400（请求错误） | {&quot;error&quot;:&quot;invalid\_request&quot;} | 该请求缺少必需的参数，包括不受支持的参数值（除授予类型外），重复参数，包括多个凭据，使用多个机制对客户端进行身份验证，或者格式不正确。 |
-| HTTP 400（请求错误） | {&quot;error&quot;:&quot;无效\_client&quot;} | 客户端身份验证失败，因为客户端未知。 SDK *必须* 再次向授权服务器注册。 |
-| HTTP 400（请求错误） | {&quot;error&quot;:&quot;unauthed\_client&quot;} | 已验证的客户端无权使用此授权授权类型。 |
+| HTTP 400 （錯誤請求） | {&quot;error&quot;： &quot;invalid\_request&quot;} | 請求缺少必要的引數、包含不受支援的引數值（授權型別除外）、重複引數、包含多個認證、使用多個機制來驗證使用者端，或格式錯誤。 |
+| HTTP 400 （錯誤請求） | {&quot;error&quot;： &quot;invalid\_client&quot;} | 使用者端驗證失敗，因為使用者端不明。 SDK *必須* 再次向授權伺服器註冊。 |
+| HTTP 400 （錯誤請求） | {&quot;error&quot;： &quot;unauthorized\_client&quot;} | 已驗證的使用者端無權使用此授權授予型別。 |
 
-- 如果MVPD需要被动身份验证，则WebView将打开以使用该MVPD执行被动身份验证，并在完成后关闭
+- 如果MVPD需要被動驗證，則會開啟WebView以使用該MVPD執行被動驗證，並在完成後關閉
 
-- b. checkAuthentication()
+- b. checkAuthorization()
 
-   - *true* :转到授权
-   - *false* :转到选择MVPD
+   - *true* ：前往授權
+   - *false* ：前往選取MVPD
 
-- c.getAuthentication :SDK将包含 **access_token** 在调用参数中 
+- c. getAuthentication ：SDK將包含 **access_token** 在呼叫引數中 
 
-   - mvpd记住：转到setSelectedProvider(mvpd\_id)
-   - 未选择mvpd :displayProviderDialog
-   - 已选择mvpd:转到setSelectedProvider(mvpd\_id)
+   - 記憶的mvpd ：前往setSelectedProvider(mvpd\_id)
+   - 未選取mvpd ： displayProviderDialog
+   - 已選取mvpd ：前往setSelectedProvider(mvpd\_id)
 
-- d.setSelectedProvider
+- d. setSelectedProvider
 
-   - mvpd\_id身份验证url已加载到ChromeCustomTabs中
-   - 登录成功：delegate.setAuthenticationStatus(SUCCESS)
-   - 已取消登录：重置MVPD选择
-   - URL方案建立为“adobepass://android.app”，用于在身份验证完成时捕获
+   - mvpd\_id驗證url已載入ChromeCustomTabs中
+   - 登入成功： delegate.setAuthenticationStatus ( SUCCESS )
+   - 登入已取消：重設MVPD選擇
+   - URL配置會建立為「adobepass://android.app」，以便在驗證完成時擷取
 
-- e.get/checkAuthorization :SDK将在标头中包**access\_token**作为授权：持有者 **access\_token**
+- e. get/checkAuthorization ： SDK將在標頭中包含**access\_token **as Authorization： Bearer **access\_token**
 
-- 如果授权成功，将进行调用以获取媒体令牌
+- 如果授權成功，將會呼叫以取得媒體權杖
 
-- f.注销： 
+- f.登出： 
 
-   - SDK将删除当前请求者的有效令牌（由其他应用程序获取且未通过SSO进行的身份验证将保持有效）
-   - SDK将打开Chrome自定义选项卡以访问mvpd\_id注销端点。 完成后，将关闭Chrome自定义选项卡
-   - URL方案建立为“adobepass://logout”以捕获注销完成时的时刻
-   - logout将触发sendTrackingData(new Event(EVENT\_LOGOUT，USER\_NOT\_AUTHENTICATED\_ERROR)和回调：setAuthenticationStatus(0,&quot;Logout&quot;)
+   - SDK將會刪除目前請求者的有效Token （由其他應用程式取得而非透過SSO取得的驗證將保持有效）
+   - SDK將開啟Chrome自訂標籤以存取mvpd\_id登出端點。 完成後，Chrome自訂標籤將關閉
+   - URL配置會建立為「adobepass://logout」，以擷取登出完成時的時間
+   - 登出將會觸發sendTrackingData(new Event(EVENT\_LOGOUT，USER\_NOT\_AUTHENTICATED\_ERROR)和回呼：setAuthenticationStatus(0，&quot;Logout&quot;)
 
  
 
-**注意：** 因为每个调用都需要 **access_token**,SDK中会处理以下可能的错误代码。 
+**注意：** 因為每個呼叫都需要 **access_token**，下列可能的錯誤碼會在SDK中處理。 
 
-| 错误响应 |  |  |
+| 錯誤回應 |  |  |
 |--- | --- | --- |
-| invalid_request | 400 | 请求的格式错误。 SDK应停止执行对服务器的调用。 |
-| invalid_client | 403 | 不再允许客户端ID执行请求。 sdk必须再次执行客户端注册。 |
-| access_denied | 401 | access_token无效。 sdk必须请求新的access_token。 |
-
+| invalid_request | 400 | 要求的格式錯誤。 SDK應停止執行對伺服器的呼叫。 |
+| invalid_client | 403 | 不再允許使用者端ID執行要求。 sdk必須再次執行使用者端註冊。 |
+| access_denied | 401 | access_token無效。 sdk必須要求新的access_token。 |

@@ -1,9 +1,8 @@
 ---
-title: 性能监控
-description: 性能监控
+title: 效能監視
+description: 效能監視
 copied-description: true
 exl-id: 6fe66f77-2663-4674-81a1-6402db7db943
-translation-type: tm+mt
 source-git-commit: 3e63c187f12d1bff53370bbcde4d6a77f58f3b4f
 workflow-type: tm+mt
 source-wordcount: '45'
@@ -11,6 +10,6 @@ ht-degree: 0%
 
 ---
 
-# 性能监视{#monitoring-performance}
+# 效能監視 {#monitoring-performance}
 
-PrimetimeAd Insertion具有专用的[监视和调试工具](https://ssai.console.primetime.adobe.com/)，它包含用于监视广告插入性能和服务状态（如http成功/错误率、并发请求/会话、广告创意统计、调试等）的仪表板。
+PrimetimeAd Insertion有專屬的 [監控與偵錯工具](https://ssai.console.primetime.adobe.com/) 其中包括用來監控廣告插入效能和服務狀態的儀表板，例如http成功/錯誤率、並行請求/工作階段、廣告創意統計資料、偵錯等。

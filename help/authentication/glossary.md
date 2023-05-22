@@ -1,143 +1,143 @@
 ---
-title: 术语表
-description: 术语表
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 字彙表
+description: 字彙表
+exl-id: e64a94f6-7460-4aa8-8d6b-e0553ba1e4ec
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '836'
 ht-degree: 0%
 
 ---
 
-
-# 术语表 {#glossary}
+# 字彙表 {#glossary}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
 ## AccessEnabler {#accessEnabler}
 
-Adobe Primetime身份验证的客户端组件。 Adobe Primetime身份验证为每个受支持的平台提供了一个AccessEnabler库。
+Adobe Primetime驗證的使用者端元件。 Adobe Primetime驗證為每個支援的平台提供AccessEnabler程式庫。
 
 ## AuthN {#authn}
 
-用作“AuthN Token”或“AuthN Flow”中“authentication”的简写形式。
+用作「驗證」的簡稱，如「AuthN代號」或「AuthN流量」。
 
 
-## AuthN令牌{#authn-token}
+## AuthN權杖{#authn-token}
 
-验证令牌，在用户通过MVPD成功验证后，由Adobe Primetime验证生成。 根据程序员的集成平台，令牌会存储在用户设备或Adobe Primetime身份验证服务器上。
+驗證權杖，在使用者透過MVPD成功驗證後由Adobe Primetime驗證產生。 根據程式設計師的整合平台，代號會儲存在使用者的裝置上或Adobe Primetime驗證伺服器上。
 
 ## AuthZ {#authz}
 
-用作“授权”的简写，如“AuthZ令牌”或“AuthZ流”中的简写。
+用作「授權」的簡稱，如「AuthZ代號」或「AuthZ流量」。
 
-## AuthZ令牌 {#authz-token}
+## AuthZ權杖 {#authz-token}
 
-授权令牌，在授权用户查看受保护内容后由Adobe Primetime身份验证生成。 AuthZ令牌存储在Adobe Primetime身份验证服务器上，用于生成 [短暂的媒体令牌](#short-lived-token).
+授權權杖，在使用者獲得授權可檢視受保護的內容後，由Adobe Primetime驗證產生。 AuthZ權杖儲存在Adobe Primetime驗證伺服器上，並用來產生 [短期媒體Token](#short-lived-token).
 
-## 渠道ID（已弃用） {#channel_id}
+## 管道ID （已棄用） {#channel_id}
 
-资源ID的前一个术语。
+資源ID的前一個辭彙。
 
-## 无客户端API {#clientless-api}
+## 無使用者端API {#clientless-api}
 
-一种Adobe Primetime身份验证集成解决方案，它采用Web服务而不是AccessEnabler客户端组件。
+採用Web服務（而非AccessEnabler使用者端元件）的Adobe Primetime驗證整合解決方案。
 
-## 设备ID {#device-id}
+## 裝置ID {#device-id}
 
-唯一标识设备（如手机、平板电脑等） 在Adobe Primetime身份验证中。 此ID由程序员的应用程序获取/提供。
+可唯一識別裝置（例如手機、平板電腦等） 在Adobe Primetime驗證中。 此ID由程式設計師的應用程式取得/提供。
 
 
-## 授权流程{#entitlement_flow}
+## 權益流程{#entitlement_flow}
 
-Adobe Primetime身份验证文档中使用的术语，是指在Adobe Primetime身份验证中注册设备/用户、使用MVPD验证用户、为用户授权资源以及注销用户的整个过程。
+Adobe Primetime驗證檔案中使用的術語，是指使用Adobe Primetime驗證註冊裝置/使用者、使用MVPD驗證使用者、為使用者授權資源以及登出使用者的整個過程。
 
 
 ## GUID {#guid}
 
-请参阅 [用户ID](#user-id).
+另請參閱 [使用者ID](#user-id).
 
 ## IdP {#idp}
 
-识别提供商；与MVPD在Adobe Primetime身份验证集成中的角色上下文中的同义。 （客户必须通过其付费电视提供商的登录页面验证其身份。）
+識別提供者；在Adobe Primetime驗證整合中，MVPD角色的內容與MVPD同義。 （客戶必須透過其付費電視提供者的登入頁面驗證其身分。）
 
-## 媒体令牌验证器 {#media-token-verifier}
+## 媒體權杖驗證器 {#media-token-verifier}
 
-Adobe提供的库，由程序员用来验证在授权流程成功完成后由Adobe Primetime身份验证生成的短期媒体令牌。
+Adobe提供的資料庫，程式設計師可使用此資料庫，驗證Adobe Primetime驗證在成功完成權利流程後產生的短期媒體權杖。
 
 ## MVPD {#mvpd}
 
-多渠道视频节目分发服务；与“付费电视提供商”同义。
+多頻道視訊節目經銷商；與「付費電視供應商」同義。
 
 ## MVPD ID {#mvpd-id}
 
-请参阅 [用户ID](#user-id).
+另請參閱 [使用者ID](#user-id).
 
-## 合作伙伴ID {#partner-id}
+## 合作夥伴ID {#partner-id}
 
-Adobe传递给MVPD的标识符，MVPD使用它来标识代表Adobe Primetime身份验证请求身份验证的用户。 有时，它用于为特定程序员配置其UI，有时在所有程序员中都是相同的，它取决于MVPD的需求。
+Adobe傳遞給MVPD的識別碼，MVPD會用它來識別Adobe Primetime驗證請求驗證的是誰的代表。 有時用於為特定程式設計人員設定其UI，有時用於所有程式設計人員都一樣，這取決於MVPD的需求。
 
-## 付费电视提供商 {#pay-tv-provider}
+## 付費電視提供者 {#pay-tv-provider}
 
-与同义 [MVPD](#mvpd).
+同義詞 [MVPD](#mvpd).
 
-## 程序员 {#programmer}
+## 程式設計師 {#programmer}
 
-与“内容提供商”、“帐户”、“渠道”、“服务提供商”、“品牌”等同义。
+與「內容提供者」、「帳戶」、「管道」、「服務提供者」、「品牌」等同義。
 
-## 代理MVPD {#proxy-mvpd}
+## Proxy MVPD {#proxy-mvpd}
 
-为其他MVPD提供身份服务的MVPD;直接与Adobe Primetime身份验证集成。
+提供其他MVPD的身分識別服務的MVPD；直接與Adobe Primetime驗證整合。
 
 ## 代理的MVPD {#proxied-mvpd}
 
-未与AdobeSP直接集成，但通过代理MVPD集成的MVPD。
+與AdobeSP沒有直接整合，但透過Proxy MVPD整合的MVPD。
 
-## 请求者ID {#requestor-id}
+## 請求者ID {#requestor-id}
 
-唯一标识 [程序员](#programmer) （帐户、品牌、渠道或属性）。 此ID在初始设置帐户期间由程序员和Adobe确定。 在Web上，请求者ID与一组列入白名单的域相关联；任何使用外部域ID的调用都将被拒绝。 程序员还会使用Analytics的请求者ID。 每个程序员通常只有一个请求者ID。 与请求者ID相关的另一个功能是，程序员必须向Adobe提供公共证书，因为setRequestor API调用希望发送加密数据，该数据用于在Adobe Primetime身份验证系统中验证程序员。
+唯一識別 [程式設計師](#programmer) Adobe Primetime （帳戶、品牌、管道或屬性）。 此ID是在帳戶初始設定期間在程式設計師和Adobe之間決定。 在網路上，請求者ID與已列入白名單的網域相關聯；任何使用來自外部網域的ID的呼叫都將被拒絕。 程式設計師也會將請求者ID用於分析。 每個程式設計師通常只有一個要求者ID。 與請求者ID相關的另一個功能是，程式設計師必須向Adobe提供公開憑證，因為setRequestor API呼叫預期會傳送加密的資料，以用於驗證Adobe Primetime驗證系統中的程式設計師。
 
-## 资源ID {#resource-id}
+## 資源ID {#resource-id}
 
-用于标识 [程序员](#programmer) 到MVPD。 程序员与MVPD之间已达成协议；Adobe Primetime身份验证会将资源ID传递至未更改的ID，因此所有MVPD的ID必须相同。 只要MVPD知道每个ID代表什么，程序员就可以使用多个资源ID。
+可識別 [程式設計師](#programmer) 至MVPD。 這由程式設計師和MVPD商定；Adobe Primetime驗證會傳遞資源ID而不被接觸，因此它對於所有MVPD都必須相同。 只要MVPD知道每個ID代表的意義，程式設計師就可以使用多個資源ID。
 
-## 会话GUID {#sessionGUID}
+## SessionGUID {#sessionGUID}
 
-请参阅 [用户ID](#user-id).
+另請參閱 [使用者ID](#user-id).
 
-## 短暂的媒体令牌 {#short-lived-token}
+## 短期媒體Token {#short-lived-token}
 
-此令牌是在特定用户的授权流程成功完成后由Adobe Primetime身份验证生成的。 令牌将传递给程序员，程序员使用短期媒体令牌上的Adobe Primetime身份验证令牌验证器来验证授权过程的安全性。
+此Token是由Adobe Primetime驗證在成功完成特定使用者的權益程式後產生。 權杖會傳遞至程式設計師，程式設計師在短期媒體權杖上使用Adobe Primetime驗證權杖驗證器，驗證授權程式的安全性。
 
-## 智能设备 {#smart-device}
+## 智慧型裝置 {#smart-device}
 
-在整个Adobe Primetime身份验证文档中使用的术语，指机顶盒、游戏机和智能电视。 这些设备具有网络功能，但无法呈现网页。
+在Adobe Primetime驗證檔案中使用的術語，是指機頂盒、遊戲主機和智慧型電視。 這些裝置具備網路功能，但無法轉譯網頁。
 
 ## SP{#sp}
 
-服务提供商；这通常指 *角色* 由Adobe Primetime身份验证播放，代表程序员与 [MVPD](#mvpd).
+服務提供者；這通常指 *角色* SP的ID (由Adobe Primetime驗證播放)，代表程式設計師與 [MVPD](#mvpd).
 
-## 临时通道 {#temp-pass}
+## 暫時通過 {#temp-pass}
 
-允许程序员提供对付费内容的临时免费访问的功能。 在程序员指定的时间段内，访问是按请求者进行的。
+可讓程式設計師提供臨時免費存取權，以支付內容的功能。 對於程式設計師指定的時段，存取權是每個請求者。
 
 ## TTL {#ttl}
 
-活下去。 这是令牌有效的指定时长。
+存留時間。 這是指定的權杖有效時間長度。
 
 ## TVE {#tve}
 
-电视无处不在。
+到處都是電視。
 
-## 用户ID {#user-id}
+## 使用者ID {#user-id}
 
-唯一标识程序员应用程序的用户，但是从MVPD组织。 可在不同表单中用于不同用例。 请参阅 [在程序员概述中了解用户ID](/help/authentication/programmer-overview.md#user-ids).
+唯一識別程式設計師應用程式的使用者，但源自MVPD。 適用於不同使用案例的不同表格。 另請參閱 [瞭解程式設計師概觀中的使用者ID](/help/authentication/programmer-overview.md#user-ids).
 
-## 允许列表 {#whitelist}
+## 允許清單 {#whitelist}
 
-为与Adobe Primetime身份验证通信而指定为合法的域的列表。
+為了與Adobe Primetime驗證通訊而指定為合法的網域清單。
 
-## XSTS令牌 {#xsts-token}
+## XSTS權杖 {#xsts-token}
 
-由Microsoft颁发的用于Xbox控制台应用程序开发的安全令牌，用于Xbox/Adobe Primetime身份验证集成。
+由Microsoft所核發的用於Xbox主控台應用程式開發的安全性權杖，用於Xbox/Adobe Primetime驗證整合。

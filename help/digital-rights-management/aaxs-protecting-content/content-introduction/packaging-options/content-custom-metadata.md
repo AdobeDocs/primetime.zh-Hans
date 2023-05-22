@@ -1,20 +1,19 @@
 ---
-title: 自定义元数据
-description: 自定义元数据
+title: 自訂中繼資料
+description: 自訂中繼資料
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: d7783420-b345-44de-8f22-a16dda5d7554
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '109'
 ht-degree: 0%
 
 ---
 
+# 自訂中繼資料 {#custom-metadata}
 
-# 自定义元数据{#custom-metadata}
+**指定自訂索引鍵/值，以新增至伺服器應用程式可解譯的內容中繼資料。**
 
-**指定自定义键/值以添加到可由服务器应用程序解释的内容元数据。**
+Adobe存取內容中繼資料格式允許在封裝時包含自訂金鑰/值配對，以便在授權發行期間由授權伺服器處理。 此中繼資料與原則不同，並且每個內容片段可以唯一。
 
-Adobe Access内容元数据格式允许在打包时包含自定义密钥/值对，这些对将由许可证服务器在许可证发放期间进行处理。 此元数据与策略不同，对于每条内容都可以是唯一的。
-
-示例用例：在测试阶段，您在打包时包含自定义属性“Release:BETA”。 许可证服务器可以在测试期内向此内容提供许可证，但在测试期结束后，许可证服务器将不允许访问该内容。
+使用案例範例：在Beta版階段，您會在封裝時包含自訂屬性「Release：BETA」。 授權伺服器可以在Beta版期間發行此內容的授權，但在Beta版到期後，授權伺服器將不允許存取內容。

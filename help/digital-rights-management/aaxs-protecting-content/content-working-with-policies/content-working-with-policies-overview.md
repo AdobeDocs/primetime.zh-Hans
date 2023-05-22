@@ -1,30 +1,29 @@
 ---
-title: 概述
-description: 概述
+title: 概觀
+description: 概觀
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 15733120-b1bb-46a7-90d2-4eb11c539d62
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '301'
 ht-degree: 0%
 
 ---
 
+# 概觀  {#overview}
 
-# 概述{#overview}
+使用Adobe® Access™，內容提供者可以將原則套用至媒體檔案。 使用原則管理API，管理員可以建立、檢視詳細資訊和更新原則。
 
-使用Adobe® Access™，内容提供商可以将策略应用于媒体文件。 使用策略管理API，管理员可以创建、视图策略的详细信息和更新策略。
+A *原則* 定義使用者檢視內容的方式；這是包含安全性設定、驗證要求和使用許可權的資訊集合。 套用原則時，加密和簽署可讓內容提供者維持對其內容的控制，無論其散佈的範圍有多廣。 受保護檔案可透過Adobe®Flash®Media Server或HTTP伺服器傳送。 可透過iOS適用的Adobe® AIR®、Adobe®Flash®Player和Adobe® Primetime SDK建立自訂播放器，下載並播放這些區段。 原則是許可證伺服器產生許可證時使用的範本。 使用者端也可以在請求授權之前參考原則，以判斷在向伺服器發出授權請求之前是否需要提示使用者進行驗證。
 
-*policy*&#x200B;定义用户如何视图内容；它是包含安全性设置、身份验证要求和使用权限的信息集合。 当应用策略时，加密和签名允许内容提供商保持对其内容的控制，无论内容分发的范围有多广。 可以使用Adobe® Flash® Media Server或HTTP服务器交付受保护的文件。 可在使用Adobe® AIR®、Adobe® Flash® Player和Adobe® Primetime SDK for iOS构建的自定义播放器中下载和播放它们。 策略是许可证服务器在生成许可证时使用的模板。 客户端还可以在请求许可证之前参考该策略，以确定它是否需要在向服务器发出许可证请求之前提示用户进行身份验证。
+原則指定授予使用者端的一或多個許可權。 通常，原則至少會包含「向右播放」。 也可以指定多個播放許可權，每個許可權都有不同的限制。 當使用者端遇到具有多個播放許可權的授權時，它會使用第一個符合所有限制的授權。 例如，此功能可用於在不同的平台上強制執行不同的輸出保護設定。 如需說明此範例的範常式式碼，請參閱 `CreatePolicyWithOutputProtection.java` 在「參考實作命令列工具」的「範例」目錄中。
 
-策略指定授予客户端的一个或多个权限。 通常，策略至少包括“播放权”。 还可以指定多个播放权限，每个播放权限具有不同的限制。 当客户遇到具有多个播放权限的许可证时，会使用第一个满足所有限制的许可证。 例如，此功能可用于在不同平台上实施不同的输出保护设置。 有关说明此示例的示例代码，请参阅Reference Implementation Command Line Tools &quot;samples&quot;目录中的`CreatePolicyWithOutputProtection.java`。
+您可以使用原則管理API完成下列工作：
 
-您可以使用策略管理API完成以下任务:
+* 建立和更新原則
+* 檢視原則詳細資訊
+* 管理原則更新清單
 
-* 创建和更新策略
-* 视图策略详细信息
-* 管理策略更新列表
+如需本章所述Java API的詳細資訊，請參閱 *Adobe存取API參考*.
 
-有关本章中讨论的Java API的详细信息，请参阅&#x200B;*Adobe访问API参考*。
-
-有关策略管理器引用实现的信息，请参阅&#x200B;*使用Adobe访问引用实现*。
+如需Policy Manager參考實作的相關資訊，請參閱 *使用Adobe存取參考實作*.

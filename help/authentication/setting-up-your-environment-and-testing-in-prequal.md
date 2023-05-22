@@ -1,34 +1,34 @@
 ---
-title: 在每季度前设置环境和测试
-description: 在每季度前设置环境和测试
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 在預備中設定您的環境和測試
+description: 在預備中設定您的環境和測試
+exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '473'
 ht-degree: 0%
 
 ---
 
-
-# 在每季度前设置环境和测试{#setting-up-your-environment-and-testing-in-prequal}
+# 在預備中設定您的環境和測試{#setting-up-your-environment-and-testing-in-prequal}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-本技术说明旨在帮助我们的合作伙伴设置其环境，并开始测试在Adobe资格预审环境中部署的新内部版本。
+本技術說明旨在協助我們的合作夥伴設定其環境，並開始測試部署在Adobe資格預審環境上的新組建。
 
-由于存在两种构建风格： ***生产*** 和 ***暂存***，在本文档中，我们将重点介绍生产设置，并提及所有步骤在暂存方面是相同的，只有URL不同。
+由於有兩種建置風格： ***生產*** 和 ***分段***，在本檔案中，我們將專注於生產設定，並提及測試的所有步驟相同，只有URL不同。
 
-步骤1和2在其中一台测试机上设置测试环境，步骤3是对基本流程的验证，步骤4和5介绍一些测试准则。
+步驟1和2是在其中一台測試機器上設定測試環境，步驟3是驗證基本流程，而步驟4和5呈現一些測試准則。
 
 >[!IMPORTANT]
 >
-> 每当您想要更改测试环境（从暂存配置文件切换到生产配置文件，或者以其他方式切换到）时，执行步骤1和2非常重要
+> 每當您想要變更測試環境（從測試環境切換至生產設定檔或反之）時，請務必執行步驟1和2
  
 
-## 步骤1. 解析将域传递到IP {#resolving-pass-domain-to-an-ip}
+## 步驟1. 正在將傳遞網域解析為IP {#resolving-pass-domain-to-an-ip}
 
-* 要查找可用于欺骗的负载平衡器IP，请运行以下命令：
+* 若要尋找可用於欺騙的負載平衡器IP，請執行以下命令：
 
 * **在Windows上**
 
@@ -56,44 +56,43 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->因为域名不相关，可能因用户而异，因此无法回答相关问题。
+>網域因不相關且可能因使用者而異，所以無法回答。
 
 >[!IMPORTANT]
 >
-> 这些IP地址在将来可能会发生更改，对于不同地理区域的用户来说，它们可能不相同。
+> 這些IP位址在未來可能會變更，而且對於不同地理區域的使用者而言，這些IP位址可能不同。
 
 
-## 步骤2.  诱使资格预审环境成为生产环境 {#spoofing-the-prequalification-environment}
+## 步驟2.  將資格預審環境偽裝成生產環境 {#spoofing-the-prequalification-environment}
 
-* 编辑 *c:\\windows\\System32\\drivers\\etc\\hosts* 文件（在Windows中）或 */etc/hosts* 文件（在Macintosh/Linux/Android上）并添加以下内容：
+* 編輯 *c：\\windows\\System32\\drivers\\etc\\hosts* 檔案（在Windows中）或 */etc/hosts* 檔案（在Macintosh/Linux/Android上）並新增下列專案：
 
-* 假脱机生产配置文件
-   * 52.13.71.11 http://entitlement.auth.adobe.com, http://sp.auth.adobe.com, http://api.auth.adobe.com
+* 偽造生產設定檔
+   * 52.13.71.11 http://entitlement.auth.adobe.com， http://sp.auth.adobe.com， http://api.auth.adobe.com
 
-**Android上的欺骗：** 要在Android上假设，您必须使用Android模拟器。
+**在Android上欺騙：** 若要在Android上進行欺騙，您必須使用Android模擬器。
 
-* 实施欺骗后，您只需为生产和暂存用户档案使用常规URL即可：(即 `http://sp.auth-staging.adobe.com` 和 `http://entitlement.auth-staging.adobe.com` 而你会真的 *资格预审环境/生产* *新内部版本的。
-
-
-## 步骤3.  验证您是否指向正确的环境 {#Verify-you-are-pointing-to-the-right-environment}
-
-**这是一个简单的步骤：**
-
-* 加载 [权利预定环境](https://entitlement-prequal.auth.adobe.com/environment.html) 和 [权利](https://entitlement.auth.adobe.com/environment.html). 他们应返回相同的响应。
+* 一旦設定好詐騙罪名，您就可以將一般URL用於生產和測試設定檔： (也就是說， `http://sp.auth-staging.adobe.com` 和 `http://entitlement.auth-staging.adobe.com` 而且您實際上會點選 *資格預審環境/生產* 新版本編號的。
 
 
-## 步骤4.  使用程序员的网站执行简单的验证/授权流程 {#peform-a-simple-auth-flow}
+## 步驟3.  確認您指向正確的環境 {#Verify-you-are-pointing-to-the-right-environment}
 
-* 此步骤需要程序员的网站地址和一些有效的MVPD凭据（经过身份验证和授权的用户）。
+**這是一個簡單的步驟：**
 
-## 步骤5.  使用程序员网站执行情景测试 {#perform-scenario-testing-using-programmer-website}
-
-* 完成环境设置并确保基本的身份验证授权流程正常工作后，您可以继续测试更复杂的方案。
+* 載入 [權利前置環境](https://entitlement-prequal.auth.adobe.com/environment.html) 和 [權利](https://entitlement.auth.adobe.com/environment.html). 他們應該會傳回相同的回應。
 
 
-## 步骤6.  使用API测试网站执行测试 {#perform-testing-using-api-testing-site}
+## 步驟4.  使用程式設計師的網站執行簡單的驗證/授權流程 {#peform-a-simple-auth-flow}
 
-* 如果您想要更深入地测试Adobe Primetime身份验证，我们建议您使用 [API测试网站](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
+* 此步驟需要程式設計師的網站位址和一些有效的MVPD認證（已驗證和授權的使用者）。
 
-有关API测试网站的更多详细信息，请访问 [如何使用Adobe的API测试网站测试身份验证和授权流程](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md).
+## 步驟5.  使用程式設計人員的網站執行案例測試 {#perform-scenario-testing-using-programmer-website}
 
+* 完成環境設定並確保基本驗證授權流程正常運作後，您可以繼續測試更複雜的情境。
+
+
+## 步驟6.  使用API測試網站執行測試 {#perform-testing-using-api-testing-site}
+
+* 如果您想更深入探究測試Adobe Primetime驗證，建議您使用 [API測試網站](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
+
+您可以在API測試網站找到更多詳細資料 [如何使用Adobe的API測試網站測試驗證和授權流程](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md).

@@ -2,19 +2,18 @@
 title: Adobe AIR
 description: Adobe AIR
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 23f49e1e-9a0b-4b01-aa64-31be2dfbbed6
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '169'
 ht-degree: 0%
 
 ---
 
-
 # Adobe AIR{#adobe-air}
 
-Adobe AIR是一个跨操作系统的运行时，它允许内容制作者通过设计自定义多媒体应用程序将他们在web上的现有投资扩展到桌面。 它构建于久经考验的开放技术之上，为企业开发和部署定制应用程序提供了一种可靠而简化的方式，这些应用程序可以被信任来提供更安全、更愉悦的用户体验。 Adobe AIR使企业能够轻松集成富媒体，从而创建更引人入胜的交互式用户体验。 它使开发人员能使用熟悉的工具(如HTML、JavaScript、Flash或Adobe®Flex®软件)将他们独特的富Internet应用程序组合部署到Windows、Macintosh或Linux。
+Adobe AIR是跨作業系統的執行階段，可讓內容製作者透過設計自訂的多媒體應用程式，將其現有的網頁投資擴充至案頭。 它以經過實證的開放式技術為基礎，為企業開發和部署值得信賴的自訂應用程式提供可靠、簡化的方式，以提供更安全、更愉快的使用者體驗。 Adobe AIR可讓企業輕鬆整合多媒體，創造更沈浸式且互動式的使用者體驗。 它可讓開發人員使用熟悉的工具，例如HTML、JavaScript、Flash或Adobe®Flex®軟體，將其獨特的豐富網際網路應用程式組合部署到Windows、Macintosh或Linux。
 
-企业可以完全控制用户界面，并可以设计用户体验来反映和强化其品牌。 借助对播放使用Adobe Primetime DRM SDK保护的内容的内置支持，Adobe AIR可帮助创建自定义的端到端内容分发链。
+企業可完整控制使用者介面，並可設計使用者體驗來反映及強化其品牌。 Adobe AIR內建支援以Adobe Primetime DRM SDK保護的內容播放，可協助建立自訂的端對端內容發佈鏈。
 
-有关Adobe AIR的更多信息，请访问：[www.adobe.com/go/air](https://www.adobe.com/go/air)
+如需Adobe AIR的詳細資訊，請造訪： [www.adobe.com/go/air](https://www.adobe.com/go/air)

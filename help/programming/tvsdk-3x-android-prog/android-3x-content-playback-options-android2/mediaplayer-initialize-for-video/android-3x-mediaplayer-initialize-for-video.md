@@ -1,7 +1,6 @@
 ---
-description: 对于每个新的视频内容，使用有关视频内容的信息初始化一个MediaResource实例并加载媒体资源。
-title: 初始化特定视频的媒体播放器
-translation-type: tm+mt
+description: 對於每個新視訊內容，使用視訊內容的資訊初始化MediaResource例項並載入媒體資源。
+title: 初始化特定視訊的媒體播放器
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '36'
@@ -10,4 +9,4 @@ ht-degree: 0%
 ---
 
 
-# 初始化特定视频{#initialize-the-media-player-for-a-specific-video}的媒体播放器
+# 初始化特定視訊的媒體播放器 {#initialize-the-media-player-for-a-specific-video}

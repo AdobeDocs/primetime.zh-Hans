@@ -1,44 +1,44 @@
 ---
-title: iOS身份验证错误 — 找不到adobepass.ios.app
-description: iOS身份验证错误 — 找不到adobepass.ios.app
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: iOS驗證錯誤 — 找不到adobepass.ios.app
+description: iOS驗證錯誤 — 找不到adobepass.ios.app
+exl-id: cd97c6fb-f0fa-45c2-82c1-f28aa6b2fd12
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '364'
 ht-degree: 0%
 
 ---
 
-
-# iOS身份验证错误 — 找不到adobepass.ios.app {#ios-authentication-error-adobepass.ios.app-cannot-be-found}
+# iOS驗證錯誤 — 找不到adobepass.ios.app {#ios-authentication-error-adobepass.ios.app-cannot-be-found}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-## 问题 {#issue}
+## 問題 {#issue}
 
-用户正在完成身份验证流程，在与提供商成功输入其凭据后，他们将被重定向回错误页面、搜索页面或其他一些自定义页面，以告知他们 `adobepass.ios.app` 找不到/解决。
+使用者正在執行驗證流程，當他們成功向提供者輸入認證後，系統會將他們重新導向回錯誤頁面、搜尋頁面或其他自訂頁面，通知他們 `adobepass.ios.app` 找不到/無法解析。
 
-## 说明 {#explanation}
+## 說明 {#explanation}
 
-在iOS, `adobepass.ios.app` 用作最终的重定向URL，以指示AuthN流已完成。 此时，应用程序需要向AccessEnabler发出请求，以获取AuthN令牌并完成AuthN流程。
+在iOS上， `adobepass.ios.app` 會作為最終重新導向URL使用，以指出AuthN流程已完成。 此時，應用程式需要向AccessEnabler提出要求，才能取得AuthN權杖及完成AuthN流程。
 
-问题是 `adobepass.ios.app` 实际上不存在，并且会在 `webView`. 旧版iOS DemoApp假定此错误将始终在AuthN流程结束时触发，并且经过设置以相应地处理(`indidFailLoadWithError`)。
+問題在於 `adobepass.ios.app` 實際上不存在，並且會在中觸發錯誤訊息 `webView`. 舊版iOS DemoApp假設此錯誤一律會在AuthN流程結束時觸發，並設定為據此處理(`indidFailLoadWithError`)。
 
-**注意：** 在DemoApp的较新版本(随iOS SDK下载提供)中修复了此问题。
+**注意：** 此問題已在較新版本的DemoApp (隨iOS SDK下載提供)中修正。
 
-不幸的是，这一假设并不正确。 有些所谓的“智能”DNS或代理服务器不会简单地传递引发的错误，而是会执行下列操作之一： 
+很遺憾，此假設不正確。 有些所謂的「智慧」DNS或Proxy伺服器不會簡單地傳遞引發的錯誤，而是會執行下列其中一項作業： 
 
-- 创建自定义错误页面
-- 转发到搜索页面，或某些其他类型的客户页面或门户。
+- 建立自訂錯誤頁面
+- 轉寄至搜尋頁面或其他型別的客戶頁面或入口網站。
 
-在这些情况下，返回到iOS webView的响应对于webView而言将是完全有效的响应，并且不会触发旧DemoApp所依赖的错误。
+在這些情況下，回到iOS webView的回應在webView看來將是完全有效的回應，而且不會觸發舊DemoApp所依據的錯誤。
 
-## 解决方案 {#solution}
+## 解決方案 {#solution}
 
-请不要假定DemoApp会做出相同的假设。 相反，请在执行请求之前截获该请求(在 `shouldStartLoadWithRequest`)并正确处理。
+請勿採取與DemoApp相同的假設。 改為在執行請求之前先擷取請求(在 `shouldStartLoadWithRequest`)並妥善處理。
 
-有关如何在执行请求之前截获请求的示例：
+如何在執行請求前截獲請求的範例：
 
 ```obj-c
 - (BOOL)webView:(UIWebView*)localWebView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
@@ -58,9 +58,8 @@ return YES;
 }
 ```
 
-请注意以下事项：
+請注意以下幾點：
 
-- 从不使用 `adobepass.ios.app` 代码中的任意位置。 请改用常量 `ADOBEPASS_REDIRECT_URL`
-- 的 `return NO;` 语句将阻止页面加载
-- 确保 `getAuthenticationToken` 调用在您的代码中只调用一次。 对 `getAuthenticationToken` 将产生未定义的结果。
-
+- 永不使用 `adobepass.ios.app` 直接在程式碼中的任意位置存取。 請改用常數 `ADOBEPASS_REDIRECT_URL`
+- 此 `return NO;` 陳述式將阻止頁面載入
+- 請務必確認 `getAuthenticationToken` 呼叫在程式碼中只會呼叫一次。 多次呼叫目標 `getAuthenticationToken` 將導致未定義的結果。

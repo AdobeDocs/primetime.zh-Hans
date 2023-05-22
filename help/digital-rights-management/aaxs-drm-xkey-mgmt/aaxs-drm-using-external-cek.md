@@ -1,30 +1,29 @@
 ---
-description: 使用外部CEK功能，使用您现有的CKMS进行许可证的打包和打包。
-title: 使用外部CEK购买和打包许可证
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 使用「外部CEK」功能，以使用現有CKMS來銷售及封裝授權。
+title: 使用外部CEK來銷售和封裝授權
+exl-id: 3944624a-099e-4fc0-b829-6ab154a53758
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '227'
 ht-degree: 0%
 
 ---
 
+# 使用外部CEK來銷售和封裝授權{#using-external-cek-to-vend-and-package-licenses}
 
-# 使用外部CEK销售和打包许可证{#using-external-cek-to-vend-and-package-licenses}
-
-使用外部CEK功能，使用您现有的CKMS进行许可证的打包和打包。
+使用「外部CEK」功能，以使用現有CKMS來銷售及封裝授權。
 
 ## EncryptContentWithExternalKey.java
 
-这是一个命令行工具，它将AAXS加密视频并创建元数据，元数据将&#x200B;*不*&#x200B;包含CEK（受AAXS许可证服务器的公共证书保护）。 相反，该工具将CEK ID嵌入到视频的元数据中。
+這是命令列工具，可對AAXS加密視訊並建立中繼資料，將 *not* 包含CEK （受AAXS授權伺服器的公開憑證保護）。 反之，此工具會將CEK ID內嵌至視訊的中繼資料中。
 
-在获取许可证期间，AAXS许可证服务器在元数据中观察一个标志，该标志标识此内容是使用外部CEK保护的。 许可证服务器将从元数据中提取CEK ID，然后查询安全存储库/CKMS以检索相应的CEK。
+在取得授權期間，AAXS授權伺服器會觀察中繼資料中的旗標，指出此內容已使用外部CEK受到保護。 授權伺服器將從中繼資料中擷取CEK ID，然後查詢安全存放庫/CKMS以擷取適當的CEK。
 
-## 打包工作流
+## 封裝工作流程
 
-1. 确保您使用的是Java 1.6.0_24或更高版本。
-1. 要查看工具用法：`java -jar AdobePackager_ExternalCEK.jar`
-1. 要打包内容：
+1. 確保您使用的是Java 1.6.0_24或更新版本。
+1. 若要檢視工具使用情形： `java -jar AdobePackager_ExternalCEK.jar`
+1. 若要封裝內容：
 
    ```
    java -jar AdobePackager_ExternalCEK.jar sample.flv encrypted.flv abc abcdef0123456789 
@@ -34,34 +33,32 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->* Java源代码可以使用包含的ANT `build-samples.xml`来构建
->* Flash Access SDK(`adobe-flashaccess-sdk.jar`)必须位于类路径中
-
+>* 可以使用隨附的ANT建置Java原始程式碼 `build-samples.xml`
+>* FLASH ACCESSSDK ( `adobe-flashaccess-sdk.jar`)必須在類別路徑上
 >
 
 
+## 伺服器工作流程
 
-## 服务器工作流
-
-1. 设置“参考实施”。
-1. 如果存在，请清除以前的参考实施部署：
+1. 設定參考實作。
+1. 如果有的話，請清理先前的參考實作部署：
 
    1. `delete <tomcat>\work\Catalina\*.*`
    1. `delete <tomcat>\conf\Catalina\*.*`
    1. `delete <tomcat>\logs\*.*`
 
-1. 验证在[!DNL flashaccess-refimpl.properties]旁边是否有[!DNL CEKDepot.properties]文件
+1. 確認存在 [!DNL CEKDepot.properties] 檔案與您的 [!DNL flashaccess-refimpl.properties]
 
-1. 从Adobe Primetime Player发起许可证请求
-1. 观察类似于：
+1. 從Adobe Primetime Player起始授權請求
+1. 觀察參考實作記錄，以瞭解類似下列的內容：
 
    ```
    DEBUG [com.adobe.flashaccess.refimpl.web.RefImplLicenseReqHandler.REQUESTS] 
      Used CEK ID:{abc} to retrieve CEK: {abcdef0123456789} from depot
    ```
 
-   1. 您可能必须更改[!DNL log4j.xml]设置才能以`DEBUG`级别登录（默认设置为`INFO`）
+   1. 您可能必須變更您的 [!DNL log4j.xml] 記錄位置的設定 `DEBUG` level ( `INFO` 已預設設定)
 
-## 已知问题
+## 已知問題
 
-无
+無

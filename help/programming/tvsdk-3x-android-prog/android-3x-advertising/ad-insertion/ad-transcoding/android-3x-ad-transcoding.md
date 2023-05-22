@@ -1,43 +1,39 @@
 ---
-description: 无法将某些第三方广告（或创意）拼接到HTTP实时流(HLS)内容流中，因为其视频格式与HLS不兼容。 Primetime广告插入和TVSDK可以选择尝试将不兼容的广告重新打包到兼容的M3U8视频中。
-title: 使用Adobe Creative Repackaging Service(CRS)重新打包不兼容的广告
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 部分協力廠商廣告（或創意）無法結合至HTTP即時串流(HLS)內容資料流，因為其視訊格式與HLS不相容。 Primetime廣告插入和TVSDK可選擇嘗試將不相容的廣告重新封裝成相容的M3U8影片。
+title: 使用Adobe Creative重新封裝服務(CRS)重新封裝不相容的廣告
+exl-id: 7e1f9ffd-cd7e-488b-bbb7-f78e1623b697
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '303'
 ht-degree: 0%
 
 ---
 
+# 使用Adobe Creative重新封裝服務(CRS)重新封裝不相容的廣告 {#repackage-incompatible-ads-using-adobe-creative-repackaging-service-crs}
 
-# 使用Adobe Creative Repackaging Service(CRS){#repackage-incompatible-ads-using-adobe-creative-repackaging-service-crs}重新打包不兼容的广告
+部分協力廠商廣告（或創意）無法結合至HTTP即時串流(HLS)內容資料流，因為其視訊格式與HLS不相容。 Primetime廣告插入和TVSDK可選擇嘗試將不相容的廣告重新封裝成相容的M3U8影片。
 
-无法将某些第三方广告（或创意）拼接到HTTP实时流(HLS)内容流中，因为其视频格式与HLS不兼容。 Primetime广告插入和TVSDK可以选择尝试将不兼容的广告重新打包到兼容的M3U8视频中。
+由不同第三方提供的廣告，例如代理廣告伺服器、詳細目錄合作夥伴或廣告網路，通常以不相容的格式傳送，例如漸進式下載MP4格式。
 
-来自不同第三方（如代理广告服务器、您的库存合作伙伴或广告网络）的广告通常以不兼容的格式提供，如渐进式下载MP4格式。
+當TVSDK首次遇到不相容的廣告時，播放器會忽略該廣告，並向創意重新封裝服務(CRS) （Primetime廣告插入後端的一部分）發出請求，以將廣告重新封裝為相容的格式。 CRS會嘗試產生廣告的多位元速率M3U8轉譯，並將這些轉譯儲存在Primetime內容傳遞網路(CDN)上。 下次TVSDK收到指向該廣告的廣告回應時，播放器會使用來自CDN的HLS相容M3U8版本。
 
-当TVSDK第一次遇到不兼容的广告时，播放器会忽略该广告并向创意重新打包服务(CRS)发出请求，以将广告重新打包为兼容格式，该服务是Primetime广告插入后端的一部分。 CRS尝试生成广告的多位速率M3U8再现，并将这些再现存储在Primetime内容投放网络(CDN)上。 下次TVSDK收到指向该广告的广告响应时，播放器将使用CDN中与HLS兼容的M3U8版本。
-
-要激活此可选CRS功能，请与Adobe代表联系。
+若要啟用此選擇性CRS功能，請聯絡您的Adobe代表。
 
 >[!NOTE]
 >
->对于CRS 3.0版（及更早版本）客户，从CRS 3.1版开始，以下更改提高了安全性和性能：
+>對於CRS 3.0版（及舊版）客戶，從CRS 3.1版開始，下列變更已改善安全性和效能：
 >
->* 如果重新打包的内容使用`https:`，则CRS 3.1将继续`https:`。 这降低了某些播放器呈现不安全内容的可能性。
-   >
-   >
-* CRS 3.1大大减少了网络调用，缩短了视频启动时间。
-
+>* CRS 3.1繼續提供 `https:` 如果重新封裝的內容使用 `https:`. 如此一來，部分播放器就不太可能呈現不安全的內容。
+>
+>* CRS 3.1大幅減少網路呼叫，改善視訊啟動時間。
 >
 
 
+## 在TVSDK應用程式中啟用CRS {#enable-crs-in-tvsdk-applications}
 
-## 在TVSDK应用程序{#enable-crs-in-tvsdk-applications}中启用CRS
+若要在TVSDK應用程式中啟用CRS，您必須在稽核設定中設定下列資訊：
 
-要在TVSDK应用程序中启用CRS，必须在Auditude设置中设置以下信息：
-
-1. 在`AuditudeSettings`中启用CRS。
+1. 在中啟用CRS `AuditudeSettings`.
 
    ```
    ... 

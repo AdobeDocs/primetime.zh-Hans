@@ -1,32 +1,31 @@
 ---
-description: Adobe Primetime软件开发工具包(TVSDK)是一个工具包，允许您向应用程序添加高级视频播放功能。
-title: 概述
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: Adobe Primetime Software Development Kit (TVSDK)是一個工具組，可讓您在應用程式中新增進階視訊播放功能。
+title: 概觀
+exl-id: 81a60813-138d-456e-ace3-1efc7859159f
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '215'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#overview}
 
-# 概述{#overview}
+Adobe Primetime Software Development Kit (TVSDK)是一個工具組，可讓您在應用程式中新增進階視訊播放功能。
 
-Adobe Primetime软件开发工具包(TVSDK)是一个工具包，允许您向应用程序添加高级视频播放功能。
+* 如需TVSDK支援的功能清單，請參閱 [Primetime Player TVSDK功能](../c-psdk-ios-1.4-overview/c-psdk-ios-1.4-overview-of-the-player.md).
+* 如需使用TVSDK的特定硬體與軟體需求，請參閱 [需求](../c-psdk-ios-1.4-overview/c-psdk-ios-1.4-requirements.md).
 
-* 有关TVSDK支持的功能的列表，请参阅[Primetime Player TVSDK功能](../c-psdk-ios-1.4-overview/c-psdk-ios-1.4-overview-of-the-player.md)。
-* 有关使用TVSDK的具体硬件和软件要求，请参阅[要求](../c-psdk-ios-1.4-overview/c-psdk-ios-1.4-requirements.md)。
+## 產品概述 {#section_3C0C7E7FEF1F41BD9C65392C6C5E8D8E}
 
-## 产品概述{#section_3C0C7E7FEF1F41BD9C65392C6C5E8D8E}
+TVSDK包含API說明和程式碼範例，可協助您將進階視訊功能、內容保護和廣告功能整合到播放器中。 您可以使用Objective-C建立視訊播放器使用者介面。 TVSDK可協助您將該使用者介面連線到其媒體播放器。 這可讓您根據媒體資訊清單播放影片和廣告。 您也可以使用TVSDK來擷取視訊的相關資訊、處理安全性，以及控制和監視播放。
 
-TVSDK包含API描述和代码示例，帮助您将高级视频功能、内容保护和广告功能集成到您的播放器中。 使用Objective-C创建视频播放器用户界面。 TVSDK可帮助您将该用户界面连接到其媒体播放器。 这使您能够根据媒体清单播放视频和广告。 您还可以使用TVSDK检索有关视频的信息、处理安全性以及控制和监视播放。
+如需使用TVSDK的特定硬體與軟體需求，請參閱 [需求](../c-psdk-ios-1.4-overview/c-psdk-ios-1.4-requirements.md).
 
-有关使用TVSDK的具体硬件和软件要求，请参阅[要求](../c-psdk-ios-1.4-overview/c-psdk-ios-1.4-requirements.md)。
+## 對象 {#section_527860B373734D3BA89FCF5EC1F6DC37}
 
-## 受众{#section_527860B373734D3BA89FCF5EC1F6DC37}
+本指南假設您瞭解如何使用Objective-C開發應用程式和影片播放器。您可以使用該語言來實作視訊播放器使用者介面，並整合TVSDK功能。
 
-本指南假定您了解如何使用Objective-C开发应用程序和视频播放器。您使用该语言实现视频播放器用户界面并融入TVSDK功能。
+## 關於本指南 {#section_9A5B2FC506B34B5DB71CA827B307A4D0}
 
-## 关于本指南{#section_9A5B2FC506B34B5DB71CA827B307A4D0}
-
-本指南提供的信息允许您在iOS设备上使用Objective-C在视频播放器中合并TVSDK功能。
+本指南提供的資訊可讓您在iOS裝置上使用Objective-C，將TVSDK功能合併到視訊播放器中。

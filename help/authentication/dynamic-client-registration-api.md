@@ -1,103 +1,103 @@
 ---
-title: 动态客户端注册API
-description: 动态客户端注册API
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 動態使用者端註冊API
+description: 動態使用者端註冊API
+exl-id: 06a76c71-bb19-4115-84bc-3d86ebcb60f3
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '927'
 ht-degree: 0%
 
 ---
 
-
-# 动态客户端注册API {#dynamic-client-registration-api}
+# 動態使用者端註冊API {#dynamic-client-registration-api}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-## 概述 {#overview}
+## 概觀 {#overview}
 
-目前，Primetime身份验证可通过两种方式来识别和注册应用程序：
+目前，Primetime驗證識別及註冊應用程式的方式有兩種：
 
-* 基于浏览器的客户端通过允许的方式进行注册 [域列表](/help/authentication/programmer-overview.md)
-* 本机应用程序客户端(如iOS和Android应用程序)通过签名请求器机制进行注册。
+* 瀏覽器型使用者端是透過允許進行註冊 [網域清單](/help/authentication/programmer-overview.md)
+* 原生應用程式使用者端(例如iOS和Android應用程式)會透過已簽署的請求者機制進行註冊。
 
-Adobe Primetime身份验证为注册应用程序提出了一种新机制。 以下各段介绍了这一机制。
+Adobe Primetime驗證會提出註冊應用程式的新機制。 以下段落將說明此機制。
 
-## 申请登记机制 {#appRegistrationMechanism}
+## 應用程式註冊機制 {#appRegistrationMechanism}
 
-### 技术原因 {#reasons}
+### 技術原因 {#reasons}
 
-Adobe Primetime身份验证中的身份验证机制依赖于会话Cookie，但由于 [Android Chrome自定义选项卡](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} and [Apple Safari View Controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}，则无法再实现此目标。
+Adobe Primetime驗證中的驗證機制需仰賴工作階段Cookie，原因如下 [Android Chrome自訂標籤](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} and [Apple Safari View Controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}，此目標無法再達成。
 
-鉴于这些限制，Adobe为其所有客户引入了新的注册机制。 它基于OAuth 2.0 RFC，包含以下步骤：
+由於存在這些限制，Adobe為其所有使用者端引進了新的註冊機制。 此變數以OAuth 2.0 RFC為基礎，並包含下列步驟：
 
-1. 从TVE Dashboard检索软件语句
-1. 获取客户端凭据
-1. 获取访问令牌
+1. 從TVE儀表板擷取軟體陳述式
+1. 取得使用者端認證
+1. 取得存取權杖
 
-### 从TVE仪表板检索软件语句 {#softwareStatement}
+### 從TVE儀表板擷取軟體陳述式 {#softwareStatement}
 
-对于您发布的每个应用程序，您需要获取一份软件声明。 在创建应用程序后，所有软件语句都通过TVE Dashboard提供。 软件语句应与用户设备上的应用程序一起部署。
+對於您發行的每個應用程式，都需要取得軟體宣告。 應用程式建立後，所有軟體陳述式都會透過TVE Dashboard提供。 軟體陳述式應該與使用者裝置上的應用程式一起部署。
 
 >[!IMPORTANT]
 >
->使用软件语句时，不再需要签名的请求者ID机制。
+>使用軟體陳述式時，將不再需要已簽署的請求者ID機制。
 
-有关如何创建软件语句的更多详细信息，请访问 [TVE仪表板中的客户注册](/help/authentication/dynamic-client-registration.md).
+如需如何建立軟體陳述式的詳細資訊，請造訪 [TVE儀表板中的使用者端註冊](/help/authentication/dynamic-client-registration.md).
 
-### 获取客户端凭据 {#clientCredentials}
+### 取得使用者端認證 {#clientCredentials}
 
-从TVE Dashboard中检索软件语句后，需要在Adobe Primetime授权服务器上注册您的应用程序。 为此，请执行/register调用并检索您的唯一客户端标识符。
+從TVE Dashboard擷取軟體陳述式後，您需要向Adobe Primetime授權伺服器註冊應用程式。 請執行/register呼叫並擷取唯一的使用者端識別碼，以執行此操作。
 
-**请求**
+**請求**
 
-| HTTP调用 |  |
+| HTTP呼叫 |  |
 |-----------|--------------------|
-| 路径 | /o/client/register |
+| 路徑 | /o/client/register |
 | 方法 | POST |
 
-| 字段 |  |  |
+| 欄位 |  |  |
 |--------------------|---------------------------------------------------------------------------|-----------|
-| software_statement | 在TVE Dashboard中创建的软件语句。 | 强制 |
-| redirect_uri | 应用程序用于完成身份验证流程的URI。 | 可选 |
+| software_statement | 在TVE儀表板中建立的軟體陳述式。 | 強制 |
+| redirect_uri | 應用程式用來完成驗證流程的URI。 | 可選 |
 
-| 请求头 |  |  |
+| 請求標頭 |  |  |
 |-----------------|--------------------------------------------------------------------------------|-----------|
-| Content-Type | application/json | 强制 |
-| X-Device-Info | 传递设备和连接信息中定义的设备信息 | 强制 |
-| User-Agent | 用户代理 | 强制 |
+| Content-Type | application/json | 強制 |
+| X-Device-Info | 傳遞裝置和連線資訊中定義的裝置資訊 | 強制 |
+| User-Agent | 使用者代理 | 強制 |
 
-**响应**
+**回應**
 
-| 响应头 |  |  |
+| 回應標頭 |  |  |
 |------------------|------------------|-----------|
-| Content-Type | application/json | 强制 |
+| Content-Type | application/json | 強制 |
 
-| 响应字段 |  |  |
+| 回應欄位 |  |  |
 |---------------------|-----------------|----------------------------|
-| client_id | 字符串 | 强制 |
-| client_secret | 字符串 | 强制 |
-| client_id_issued_at | long | 强制 |
-| redirect_uris | 字符串列表 | 强制 |
-| grant_types | 字符串列表<br/> **接受值**<br/> `client_credentials`:由不安全的客户端（如Android SDK）使用。 | 强制 |
-| 错误 | **接受的值**<ul><li>invalid_request</li><li>invalid_redirect_uri</li><li>invalid_software_statement</li><li>unapproved_software_statement</li></ul> | 错误流中的必需项 |
+| client_id | 字串 | 強制 |
+| client_secret | 字串 | 強制 |
+| client_id_issued_at | long | 強制 |
+| redirect_uris | 字串清單 | 強制 |
+| grant_types | 字串清單<br/> **接受的值**<br/> `client_credentials`：由不安全的使用者端使用，例如Android SDK。 | 強制 |
+| 錯誤 | **接受的值**<ul><li>invalid_request</li><li>invalid_redirect_uri</li><li>invalid_software_statement</li><li>unapproved_software_statement</li></ul> | 錯誤流程中的必要專案 |
 
 
-#### 错误响应 {#error-response}
+#### 錯誤回應 {#error-response}
 
-如果出现错误，注册服务器将使用HTTP 400（错误请求）状态代码进行响应，并在响应中包含以下参数：
+發生錯誤時，註冊伺服器會以HTTP 400 （錯誤請求）狀態代碼回應，並在回應中包含下列引數：
 
-| 状态代码 | 响应体 | 描述 |
+| 狀態代碼 | 回應內文 | 說明 |
 | --- | --- | --- |
-| HTTP 400 | {&quot;error&quot;:&quot;invalid_request&quot;} | 请求缺少必需的参数、包含不受支持的参数值、重复参数，或者其格式不正确。 |
-| HTTP 400 | {&quot;error&quot;:&quot;invalid_redirect_uri&quot;} | 基于此客户端的注册应用程序，不允许此客户端使用redirect_uri。 |
-| HTTP 400 | {&quot;error&quot;:&quot;invalid_software_statement&quot;} | 软件语句无效。 |
-| HTTP 400 | {&quot;error&quot;:&quot;unapproved_software_statement&quot;} | 在配置中未找到software_id。 |
+| HTTP 400 | {&quot;error&quot;： &quot;invalid_request&quot;} | 請求缺少必要的引數、包含不受支援的引數值、重複引數或格式錯誤。 |
+| HTTP 400 | {&quot;error&quot;： &quot;invalid_redirect_uri&quot;} | 根據此使用者端已註冊的應用程式，不允許對其使用redirect_uri。 |
+| HTTP 400 | {&quot;error&quot;： &quot;invalid_software_statement&quot;} | 軟體陳述式無效。 |
+| HTTP 400 | {&quot;error&quot;： &quot;unapproved_software_statement&quot;} | 在設定中找不到software_id。 |
 
-#### 客户端凭据示例 {#client-credentials-example}
+#### 使用者端認證範例 {#client-credentials-example}
 
-**请求：**
+**要求：**
 
 ```HTTPS
 POST /o/client/register HTTP/1.1
@@ -120,7 +120,7 @@ POST /o/client/register HTTP/1.1
   "redirect_uri": "adobepass://com.programmer"  }
 ```
 
-**响应：**
+**回應：**
 
 ```HTTPS
 HTTP/1.1 201 Created
@@ -138,7 +138,7 @@ Pragma: no-cache
 }
 ```
 
-**错误响应：**
+**錯誤回應：**
 
 ```HTTPS
 HTTP/1.1 400 Bad Request
@@ -149,52 +149,52 @@ Pragma: no-cache
 { "error": "invalid_request" }
 ```
 
-### 获取访问令牌 {#accessToken}
+### 取得存取Token {#accessToken}
 
-在检索应用程序的唯一客户端标识符（客户端ID和客户端密钥）后，您需要获取访问令牌。 访问令牌是强制性的OAuth 2.0令牌，用于调用Primetime身份验证API。
+擷取應用程式的唯一使用者端識別碼（使用者端ID和使用者端密碼）後，您需要取得存取權杖。 存取權杖是必要的OAuth 2.0權杖，用於呼叫Primetime驗證API。
 
 >[!NOTE]
 >
->目前，访问令牌的存留时间为24小时。
+>目前，存取權杖有24小時的存留時間。
 
-**请求**
+**請求**
 
 
-| **HTTP调用** |  |
+| **HTTP呼叫** |  |
 | --- | --- |
-| 路径 | `/o/client/token` |
+| 路徑 | `/o/client/token` |
 | 方法 | POST |
 
-| **请求参数** |  |
+| **要求引數** |  |
 | --- | --- |
-| `grant_type` | 在客户端注册过程中收到。<br/> **接受的值**<br/>`client_credentials`:用于不安全的客户端，例如Android SDK。 |
-| `client_id` | 在客户端注册过程中获取的客户端标识符。 |
-| `client_secret` | 在客户端注册过程中获取的客户端标识符。 |
+| `grant_type` | 在使用者端註冊程式中接收。<br/> **接受的值**<br/>`client_credentials`：用於不安全的使用者端，例如Android SDK。 |
+| `client_id` | 在使用者端註冊程式中取得的使用者端識別碼。 |
+| `client_secret` | 在使用者端註冊程式中取得的使用者端識別碼。 |
 
-**响应**
+**回應**
 
-| 响应字段 |  |  |
+| 回應欄位 |  |  |
 | --- | --- | --- |
-| `access_token` | 您应用于调用Primetime API的访问令牌值 | 强制 |
-| `expires_in` | access_token过期之前的时间（以秒为单位） | 强制 |
-| `token_type` | 令牌的类型 **载体** | 强制 |
-| `created_at` | 令牌的问题时间 | 强制 |
-| **响应头** |  |  |
-| `Content-Type` | application/json | 强制 |
+| `access_token` | 您用來呼叫Primetime API的存取權杖值 | 強制 |
+| `expires_in` | access_token過期前的秒數 | 強制 |
+| `token_type` | 權杖的型別 **承載** | 強制 |
+| `created_at` | 權杖的問題時間 | 強制 |
+| **回應標頭** |  |  |
+| `Content-Type` | application/json | 強制 |
 
-**错误响应**
+**錯誤回應**
 
-如果出现错误，授权服务器将回复HTTP 400（错误请求）状态代码，并在响应中包含以下参数：
+發生錯誤時，授權伺服器會以HTTP 400 （錯誤請求）狀態代碼回應，並在回應中包含下列引數：
 
-| 状态代码 | 响应体 | 描述 |
+| 狀態代碼 | 回應內文 | 說明 |
 | --- | --- | --- |
-| HTTP 400 | {&quot;error&quot;:&quot;invalid_request&quot;} | 该请求缺少必需的参数，包括不受支持的参数值（除授予类型外），重复参数，包括多个凭据，使用多个机制对客户端进行身份验证，或者格式不正确。 |
-| HTTP 400 | {&quot;error&quot;:&quot;invalid_client&quot;} | 客户端身份验证失败，因为客户端未知。 SDK必须再次向授权服务器注册。 |
-| HTTP 400 | {&quot;error&quot;:&quot;unauthorized_client&quot;} | 已验证的客户端无权使用此授权授权类型。 |
+| HTTP 400 | {&quot;error&quot;： &quot;invalid_request&quot;} | 請求缺少必要的引數、包含不受支援的引數值（授權型別除外）、重複引數、包含多個認證、使用多個機制來驗證使用者端，或格式錯誤。 |
+| HTTP 400 | {&quot;error&quot;： &quot;invalid_client&quot;} | 使用者端驗證失敗，因為使用者端不明。 SDK必須再次向授權伺服器註冊。 |
+| HTTP 400 | {&quot;error&quot;： &quot;unauthorized_client&quot;} | 已驗證的使用者端無權使用此授權授予型別。 |
 
-#### 获取访问令牌示例： {#obt-access-token}
+#### 取得存取Token範例： {#obt-access-token}
 
-**请求：**
+**要求：**
 
 ```HTTPS
 POST o/client/token HTTP/1.1
@@ -203,7 +203,7 @@ Content-Type: application/x-www-form-urlencoded
 grant_type=client_credentials&client_id=AAA&client_secret=SSS
 ```
 
-**响应：**
+**回應：**
 
 ```JSON
 HTTP/1.1 200 OK
@@ -219,7 +219,7 @@ Pragma: no-cache
 }
 ```
 
-**错误响应：**
+**錯誤回應：**
 
 ```JSON
 HTTP/1.1 400 Bad Request
@@ -230,25 +230,25 @@ Pragma: no-cache
 { "error": "invalid_request" }
 ```
 
-## 执行身份验证请求 {#autheticationRequests}
+## 執行驗證要求 {#autheticationRequests}
 
-使用访问令牌执行Adobe Primetime [身份验证API调用](/help/authentication/initiate-authentication.md). 要实现此目的，需要通过以下方式之一将访问令牌添加到API请求中：
+使用存取權杖執行Adobe Primetime [驗證API呼叫](/help/authentication/initiate-authentication.md). 為此，需要以下列方式之一將存取權杖新增到API請求：
 
-* 向请求中添加新查询参数。 该新参数称为 **access_token**.
+* 將新的查詢引數新增至請求。 此新引數稱為 **access_token**.
 
-* 通过向请求添加新的HTTP标头：授权：持票人。 我们建议您使用HTTP标头，因为查询字符串在服务器日志中往往可见。
+* 將新的HTTP標頭新增到請求中：授權：載體。 建議您使用HTTP標頭，因為查詢字串通常顯示在伺服器記錄中。
 
-如果发生错误，可返回以下错误响应：
+發生錯誤時，可能會傳回下列錯誤回應：
 
-| 错误响应 |  |  |
+| 錯誤回應 |  |  |
 |-----------------|-----|--------------------------------------------------------------------------------------------------------|
-| invalid_request | 400 | 请求的格式错误。 |
-| invalid_client | 403 | 不再允许客户端ID执行请求。 应生成新的客户端凭据。 |
-| access_denied | 401 | access_token无效（过期或无效）。 客户端必须请求新的access_token。 |
+| invalid_request | 400 | 要求的格式錯誤。 |
+| invalid_client | 403 | 不再允許使用者端ID執行要求。 應產生新的使用者端認證。 |
+| access_denied | 401 | access_token無效（過期或無效）。 使用者端必須要求新的access_token。 |
 
-### 执行身份验证请求示例：
+### 執行驗證要求範例：
 
-**将访问令牌作为请求参数发送：**
+**以要求引數傳送存取權杖：**
 
 ```HTTPS
 GET adobe-services/config?access_token=<access_token>&requestor_id=... HTTP/1.1
@@ -256,7 +256,7 @@ GET adobe-services/config?access_token=<access_token>&requestor_id=... HTTP/1.1
 Host: sp.auth.adobe.com
 ```
 
-**将访问令牌作为HTTP标头发送：**
+**以HTTP標頭傳送存取權杖：**
 
 ```HTTPS
 POST adobe-services/sessionDevice?device_id=platformDeviceId HTTP/1.1
@@ -266,7 +266,7 @@ Authorization: Bearer <access_token>
 Host: sp.auth.adobe.com
 ```
 
-**错误响应作为响应正文：**
+**錯誤回應為回應內文：**
 
 ```HTTPS
 HTTP/1.1 401 Unauthorized
@@ -277,7 +277,7 @@ Pragma: no-cache
 { "error":"invalid_client" }
 ```
 
-**作为URL参数响应错误：**
+**錯誤回應為URL引數：**
 
 ```HTTPS
 HTTP/1.1 302 Found

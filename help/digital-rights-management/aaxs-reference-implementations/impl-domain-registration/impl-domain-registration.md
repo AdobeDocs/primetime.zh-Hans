@@ -1,20 +1,18 @@
 ---
-title: 实现域注册
-description: 实现域注册
+title: 實作網域註冊
+description: 實作網域註冊
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: ba3ff0cd-9462-49b2-8810-d334c9ca861b
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '37'
 ht-degree: 0%
 
 ---
 
+# 實作網域註冊 {#implementing-domain-registration}
 
-# 实现域注册{#implementing-domain-registration}
+參考實作授權伺服器示範網域註冊商業邏輯上的兩種變化。 典型的網域伺服器只會實作下列其中一個工作流程：
 
-参考实施许可证服务器演示了域注册业务逻辑的两个变体。 典型域服务器只能实现以下工作流之一：
-
-* 基于身份的域
-* 匿名域
-
+* 以身分為基礎的網域
+* 匿名網域

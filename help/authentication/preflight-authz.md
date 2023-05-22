@@ -1,54 +1,53 @@
 ---
-title: 预检授权
-description: 预检授权
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 預檢授權
+description: 預檢授權
+exl-id: 036b1a8e-f2dc-4e9a-9eeb-0787e40c00d9
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '1512'
 ht-degree: 0%
 
 ---
 
-
-
-# 预检授权 {#preflight-authorization}
+# 預檢授權 {#preflight-authorization}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
 </br>
 
-## 概述 {#overview}
+## 概觀 {#overview}
 
-此功能为多个资源提供了轻量级的授权检查。 此轻量检查的目的是装饰UI（例如，使用锁图标和解锁图标指示访问状态）。 预检授权尽可能简单、高效，这样单个API调用就会生成资源列表的授权状态。 请注意，此功能在授权资源方面不具有权威性。
+此功能為多個資源提供輕量授權檢查。 此輕量級檢查的目的是裝飾UI （例如，使用鎖定和解鎖圖示指示存取狀態）。 預檢授權儘可能簡易和有效，因此單一API呼叫會產生資源清單的授權狀態。 請注意，此功能在授權資源方面並不權威。
 
-A `getAuthorization(resource)` 或 `checkAuthorization(resource)` 在允许播放之前，必须仍调用。
+A `getAuthorization(resource)` 或 `checkAuthorization(resource)` 在允許播放之前，仍須進行呼叫。
 
-预检授权还为不同的用例提供支持，在该用例中，程序员需要请求对多个资源ID的授权，以便允许播放一项媒体内容。 程序员可以对所需资源进行初始预检，如果不满足业务条件，则根据响应情况，可能会提前失败。
+預檢授權也提供不同使用案例的支援，在這種情況下，程式設計師需要請求多個資源ID的授權，才能允許播放一個媒體內容。 程式設計師可以對所需資源執行初始預檢檢查，如果不符合業務條件，則視回應而定，可能會提前失敗。
 
-有关支持飞行前授权的MVPD列表，请参阅 [MVPD预飞授权](/help/authentication/mvpd-preflight-authz.md#preflight_support_list) 页面。 
+如需支援預檢授權的MVPD清單，請參閱 [MVPD預檢授權](/help/authentication/mvpd-preflight-authz.md#preflight_support_list) 頁面。 
 
 >[!NOTE]
 >
-> 请注意，对于没有完全飞行前授权支持的MVPD，需要预先与Adobe和MVPD商定使用此功能。 在这些MVPD上使用飞行前授权将属于描述的“最坏情况” [此处](/help/authentication/mvpd-preflight-authz.md#intro) 并且可能会导致性能问题和响应时间缓慢。 </br>
-> 另外，请注意，使用 **需要由Adobe明确同意5个以上的资源**.
+> 請注意，此功能用於沒有完整預檢授權支援的MVPD時，需要事先與Adobe和MVPD商定。 在這些MVPD上使用預檢授權將屬於所述的「最壞情況」 [此處](/help/authentication/mvpd-preflight-authz.md#intro) 並可能導致效能問題和緩慢的回應時間。 </br>
+> 此外，請注意，使用預檢授權 **需要Adobe明確同意5個以上的資源**.
 
 ## AccessEnabler Preflight API {#AE_pre_api}
 
-AccessEnabler公开了一个API/回调函数对来实施预检授权。 API调用采用一个参数，其中包含资源列表。 回调函数采用一个表示实际授权资源的参数。 以下示例已ActionScript，但AccessEnabler的所有版本都提供了这些调用。
+AccessEnabler會公開API/回呼函式配對，以實作預檢授權。 API呼叫採用由資源清單組成的單一引數。 回呼函式會採用代表實際授權資源的單一引數。 以下範例為ActionScript，但所有型別的AccessEnabler都可以使用呼叫。
 
-### checkPreauthorizedResources(Array:resources):void {#checkPreauthRes}
+### checkPreauthorizedResources(Array：resources)：void {#checkPreauthRes}
 
-在AccessEnabler对象上调用此函数，以请求资源列表的授权状态。
+在AccessEnabler物件上呼叫此函式，以請求資源清單的授權狀態。
 
-资源参数是应检查授权的资源列表。 列表中的每个元素都应是一个表示资源ID的字符串。 资源ID受与 `getAuthorization()` 呼叫，即在程序员与MVPD或媒体RSS片段之间建立的值上达成一致。 请注意，Adobe Primetime身份验证不会以任何方式管理资源，只是具有可以根据MVPD实际支持的内容来转换资源格式的精简中介层。
+resources引數是應檢查其授權的資源清單。 清單中的每個元素都應是代表資源ID的字串。 資源ID的限制與 `getAuthorization()` 呼叫，也就是說，程式設計師和MVPD或媒體RSS片段之間建立的值已商定。 請注意，Adobe Primetime驗證不會以任何方式管理資源，除了根據MVPD實際支援的內容來轉換資源格式的精簡中繼層。
 
-### preauthorizedResources(Array:authorizedResources) {#preauthRes}
+### preauthorizedResources(Array：authorizedResources) {#preauthRes}
 
-这是一个回调函数，必须在程序员的上层应用程序中实现。 在计算授权资源列表后， AccessEnabler将调用此函数。
+這是一個回呼函式，必須在程式設計人員的上層應用程式中實作。 AccessEnabler會在計算授權資源清單後呼叫此函式。
 
 
-### JS示例
+### JS範例
 
 ```javascript
     checkPreauthorizedResources(["CNBC","MSNBC"]);
@@ -63,31 +62,31 @@ AccessEnabler公开了一个API/回调函数对来实施预检授权。 API调�
     }
 ```
 
-## 实施信息 {#details}
+## 實作資訊 {#details}
 
-- [使用ChannelID预检](#preflight_using_channelID)
-- [POST/预授权](#post)
-- [存储](#storage)
+- [使用ChannelID預檢](#preflight_using_channelID)
+- [POST/預先授權](#post)
+- [儲存](#storage)
 
-API调用会尝试在客户端的本地存储中查找当前用户的已授权资源的缓存列表。 如果没有缓存的列表，则会向AdobePass服务器发起HTTPS调用以检索该列表。
+API呼叫會嘗試在使用者端的本機儲存空間中尋找目前使用者的已授權資源快取清單。 如果沒有快取清單，則會對AdobePass伺服器進行HTTPS呼叫，以擷取清單。
 
-缓存机制通过完全跳过网络调用来缩短后续调用的性能时间。 此外，作为身份验证过程的一部分，还可以提前填充缓存列表。  (有关设置此方案的信息，请参阅 [预检授权集成](/help/authentication/authz-usecase.md#preflight_authz_int) （位于MVPD集成指南的授权部分）。
+快取機制會透過完全略過網路呼叫來改善後續呼叫的效能時間。 此外，快取清單可在驗證程式中預先填入。  (如需設定此情境的相關資訊，請參閱 [Preflight授權整合](/help/authentication/authz-usecase.md#preflight_authz_int) （位於MVPD整合指南的授權區段）。
 
-此外，缓存的资源列表可能用于优化授权流程，即如果存在缓存的资源列表， `checkAuthorization()` 可以在执行网络调用之前对其进行检查。 如果资源不在预授权资源列表中，则检查可能会失败，而无需调用Primetime身份验证服务器。
+此外，快取的資源清單可能會用於最佳化授權流程，因為如果存在快取的資源清單， `checkAuthorization()` 可以在執行網路呼叫之前檢查它。 如果資源不在預先授權的資源清單中，則檢查可能會失敗，而無需呼叫Primetime驗證伺服器。
 
 
-### 使用ChannelID预检 {#preflight_using_channelID}
+### 使用ChannelID預檢 {#preflight_using_channelID}
 
-从Primetime身份验证2.4.1版本开始，预检流程如下所示：
+從Primetime驗證2.4.1版開始，Preflight流程的工作方式如下：
 
-1. 在身份验证期间，Primetime身份验证会读取 `channelIID` 元素，并使用此值设置 `authorizedResources` 元素。
-1. 内部 `checkPreauthorizedResources()` API函数，Primetime身份验证检查 `authorizedResources` 元素。
-1. 如果 `authorizedResources` 元素，Primetime身份验证会读取该值，并从中执行资源列表之间的交集 `authorizedResources` 元素和从 `checkPreauthorizedResources()` 参数。  此交集的结果是预先授权的资源的最终列表。
-1. 如果 `authorizedResources` 元素未设置，则执行先前实现的流程，其中接收自 `checkPreauthorizedResources()` 参数被传递到PreAuthorizationServlet。 此Servlet对MVPD端点执行授权调用并返回预授权资源列表。
+1. 驗證期間，Primetime驗證會讀取 `channelIID` 元素，並使用此值來設定 `authorizedResources` 個元素。
+1. 內部 `checkPreauthorizedResources()` API函式，Primetime驗證會檢查 `authorizedResources` 元素已設定。
+1. 如果 `authorizedResources` 元素已設定，Primetime驗證會讀取該值，並從以下位置執行資源清單之間的交集： `authorizedResources` 元素和從收到的資源清單 `checkPreauthorizedResources()` 引數。  此交集的結果是預先授權資源的最終清單。
+1. 如果 `authorizedResources` 元素未設定，請執行先前實作的流程，其中會包含從以下來源收到的資源清單 `checkPreauthorizedResources()` 引數會傳遞至PreAuthorizationServlet。 此servlet會對MVPD端點執行授權呼叫，並傳回預先授權的資源清單。
 
-### 使用ChannelID进行预检的示例
+### 使用ChannelID預檢的範例
 
-以下示例显示了一个示例渠道阵容。 请注意，用于将渠道列表发送到另一个MVPD的属性名称可能不同：
+以下範例顯示管道排列範例。 請注意，用於傳送管道清單的屬性名稱可能因一個MVPD而異：
 
 ```XML
     <saml:Attribute Name="visible_channels" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
@@ -109,7 +108,7 @@ API调用会尝试在客户端的本地存储中查找当前用户的已授权�
 ```
  
 
-的 `authorizedResources` 身份验证元素中的元素如下所示：
+此 `authorizedResources` 驗證元素中的元素如下所示：
 
 ```JSON
     <authorizedResources>
@@ -130,45 +129,45 @@ API调用会尝试在客户端的本地存储中查找当前用户的已授权�
     </authorizedResources>
 ```
 
-程序员执行 `checkPreauthorizedResources()` API调用，以传递以下参数列表：</span>
+程式設計師執行 `checkPreauthorizedResources()` API呼叫，傳遞下列引數清單：</span>
 
 - &quot;MSNBC&quot; 
 - &quot;FBN&quot; 
-- &quot;TruTV&quot;
+- 「訊通科技」
 - &quot;fbc-fox&quot;
 
-当前的Preflight实施执行与 `authorizedResources` 元素，并返回此列表：
+目前的「預檢」實作會使用來自下列專案的資源清單來執行交集： `authorizedResources` 元素並傳回此清單：
 
 - &quot;MSNBC&quot;
 - &quot;FBN&quot;
-- &quot;TruTV&quot;
+- 「訊通科技」
 
  
 
-**注意：** 请注意，交集不区分大小写。
+**注意：** 請注意，交集不區分大小寫。
 
  
 
-### POST/预授权 {#post}
+### POST/預先授權 {#post}
 
-当不存在缓存、授权、资源列表时，AccessEnabler将自动执行此调用。 
+當不存在快取、授權的資源清單時，AccessEnabler會自動執行此呼叫。 
 
 
-#### 请求 {#req}
+#### 請求 {#req}
 
-| 参数 | 类型 | 必需 | 描述 |
+| 引數 | 型別 | 必填 | 說明 |
 | --- | --- | --- | --- |
-| `authentication_token` | 字符串 | 是 | 身份验证令牌。 |
-| `resource_id` | 字符串 | 是 | 单个资源。 可以多次指定此值，在 `checkPreauthorizedResources()` API调用。 |
+| `authentication_token` | 字串 | 是 | 驗證Token。 |
+| `resource_id` | 字串 | 是 | 單一資源。 您可以針對中提供的資源陣列的每個元素指定多次，一次即可 `checkPreauthorizedResources()` API呼叫。 |
 
 
-**注意：** 可以配置请求的最大资源数。
-**最大默认值为5。**
+**注意：** 可設定請求資源的最大數量。
+**最大預設值為5。**
 
 
-#### 响应 {#resp}
+#### 回應 {#resp}
 
-预授权Servlet发回的响应格式如下：
+預先授權servlet傳回的回應具有以下格式：
 
 ```XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -188,77 +187,77 @@ API调用会尝试在客户端的本地存储中查找当前用户的已授权�
     </resources>
 ```
 
-### 存储 {#storage}
+### 儲存 {#storage}
 
-AccessEnabler从服务提供商获取的预授权资源列表。 以下资源列表：
+AccessEnabler從服務提供者取得的預先授權資源清單。 此資源清單：
 
-- 与AuthN和AuthZ令牌一起存储
-- 只要用户位于同一网站上，或者在AuthN令牌过期之前有效
-- 每当用户登陆新的Primetime身份验证集成网站时，便会重新检索该网站
+- 會與AuthN和AuthZ權杖一起儲存
+- 只要使用者位於相同網站，或直到AuthN權杖過期為止，即有效
+- 每次使用者登陸新的Primetime驗證整合網站時都會重新擷取
 
-每个条目都包含用户预先授权的资源ID。
+每個專案都包含使用者預先授權的資源ID。
 
 例如：
 
 
-| 资源ID | 已授权 |
+| 資源ID | 已授權 |
 | ----------- | ---------- |
 | CNN | true |
 | TNT | false |
 | ... | ... |
 
 
-此列表名为“预授权缓存”。
+此清單名為「預先授權快取」。
 
 #### 流量 {#flow}
 
-1. 程序员应用程序/网站将 `checkPreauthorizedResources(resourceList)` 呼叫。
-1. AccessEnabler验证授权资源的身份验证令牌：
-   1. 如果身份验证令牌包含授权资源 — 此列表是授权的，则不应进行任何调用以获取此信息。 在身份验证令牌上的授权资源列表内搜索resourceList中的资源，并且只返回那些已找到的资源 `preauthorizedResources()` 回调。
-   1. 如果身份验证令牌不包含授权资源 —  `resourceList` 与预授权缓存中的资源列表进行比较。
-      1. 如果列表包含相同的资源 — 这表示已对服务器进行调用，并且响应已位于预授权缓存中。 只有获得授权的资源才会由 `preauthorizedResources()` 回调。
-      1. 如果列表DOES NOT包含相同的资源，则客户端需要对服务器进行调用，以获取resourceList中资源的授权状态。 将获取响应并将其存储在预授权缓存中，以完全替换旧资源。 只有获得授权的资源才会由 `preauthorizedResources()` 回调。
+1. 程式設計師的應用程式/網站製作 `checkPreauthorizedResources(resourceList)` 呼叫。
+1. AccessEnabler會驗證授權資源的驗證Token：
+   1. 如果驗證Token包含授權資源 — 此清單具有權威性，不應進行呼叫來取得此資訊。 在驗證Token上的授權資源清單中搜尋來自resourceList的資源，並且只傳回找到的資源。 `preauthorizedResources()` callback。
+   1. 如果驗證Token DOES NOT contain authorized resources - `resourceList` 會與預先授權快取中的資源清單進行比較。
+      1. 如果清單包含相同的資源 — 這表示已呼叫伺服器，而且回應已在預先授權快取中。 只有獲授權的資源才會由傳回 `preauthorizedResources()` callback。
+      1. 如果清單不包含相同的資源 — 使用者端需要呼叫伺服器，才能取得resourceList中資源的授權狀態。 回應將會擷取並儲存在預先授權快取中，完全取代舊資源。 只有獲授權的資源才會由傳回 `preauthorizedResources()` callback。
 
 
-#### 列表检索 {#listRetrieve}
+#### 清單擷取 {#listRetrieve}
 
-只要 `checkPreauthorizedResources()` 调用时，将针对预授权缓存检查要验证授权的资源列表。 如果列表包含相同的资源集，则不会调用服务提供商，因为触发 `preauthorizedResources()` 回调已在缓存中。
+每當 `checkPreauthorizedResources()` 會呼叫，根據預先授權快取檢查要驗證授權的資源清單。 如果清單包含相同的資源集，則不會呼叫服務提供者，因為觸發 `preauthorizedResources()` 快取中已存在回呼。
 
 
 #### logout() {#logout}
 
-注销时会清空预授权缓存。
+登出時會清空預先授權快取。
 
 
-## 依赖关系 {#depends}
+## 相依性 {#depends}
 
-预检API的性能取决于特定的MVPD实施。  有关实施选项，请参阅 [预检授权集成](/help/authentication/authz-usecase.md#preflight_authz_int) （位于MVPD集成指南的授权部分）。
+Preflight API的效能取決於特定的MVPD實作。  如需實作選項，請參閱 [Preflight授權整合](/help/authentication/authz-usecase.md#preflight_authz_int) MVPD整合指南的授權區段。
 
 
 ## 安全性 {#security}
 
-客户端API可供所有程序员使用。
+使用者端API可供所有程式設計師使用。
 
-该实施使用HTTPS作为传输，但为了进行更轻松的调用，不会使用其他安全措施（无签名、无FAXS）。
+實作使用HTTPS作為傳輸，但為了呼叫更輕，不採用其他安全性措施（無簽署、無FAXS）。
 
-**注意：** 请勿以权威方式使用此API来确定是否应向用户授予对受保护资源的访问权限。 此API的用途是进行UI修饰和/或预先制定业务决策。 的 `getAuthorization()` 和 `checkAuthorization()` 应始终在允许播放之前发起调用。
+**注意：** 請勿以授權方式使用此API來判斷是否應授予使用者對受保護資源的存取權。 此API的用途是UI裝飾和/或預先決定業務決策。 此 `getAuthorization()` 和 `checkAuthorization()` 呼叫一律應在允許播放之前進行。
 
 
-## 兼容性 {#compat}
+## 相容性 {#compat}
 
-AccessEnabler的所有版本都支持此功能：AS、JS、AIR、iOS、Android、Xbox（在第2屏幕AuthN流程中）。
+AccessEnabler的所有版本都支援此功能： AS、JS、AIR、iOS、Android、Xbox （在第2個畫面的AuthN流程中）。
 
-预授权不支持包含CDATA节的预授权资源。 目前飞行前系统的重点是支持信道级滤波。 包含CDATA部分的资源可能是资产级别的资源。 预检功能支持简单 `mrss` 渠道级别预授权的资源，只要它们不包含CDATA。 
+預檢授權不支援包含CDATA區段的預先授權資源。 目前預檢系統的重點是支援頻道層級篩選。 包含CDATA區段的資源可能是資產層級的資源。 預檢不支援簡單操作 `mrss` 管道層級預先授權的資源，只要不包含CDATA即可。 
 
-## 与其他功能集成 {#integ_w_other_features}
+## 與其他功能整合 {#integ_w_other_features}
 
-如果资源不在预授权资源列表中，则可能的优化可在授权流上发生，以便快速失败。
+如果資源不在預先授權的資源清單中，授權流程可能會發生可能的最佳化，以便快速失敗。
 
-在此优化中，服务器预检终结点与降级机制集成。  
+在此最佳化中，伺服器預檢端點會與降級機制整合。  
 
-如果MVPD和请求者已设置“AuthN All”规则，则预检端点将只镜像请求中接收的所有资源。
+如果MVPD和請求者的「AuthN All」規則已就緒，預檢端點只會映象回請求中收到的所有資源。
 
-如果为请求中存在的至少一个资源启用了“AuthZ All”，则情况也是如此。
+如果至少為請求中存在的其中一個資源啟用「AuthZ All」，則相同情況亦然。
 
 <!--
 ## Related Information

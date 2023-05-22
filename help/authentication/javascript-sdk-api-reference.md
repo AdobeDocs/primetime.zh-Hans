@@ -1,23 +1,23 @@
 ---
-title: JavaScript SDK API参考
-description: JavaScript SDK API参考
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: JavaScript SDK API參考
+description: JavaScript SDK API參考
+exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '2835'
 ht-degree: 0%
 
 ---
 
-
-# JavaScript SDK API参考 {#javascript-sdk-api-reference}
+# JavaScript SDK API參考 {#javascript-sdk-api-reference}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-## API参考 {#api-reference}
+## API參考 {#api-reference}
 
-这些函数启动与MVPD交互的请求。 所有调用均是异步的；您必须实施 [回调](#callbacks) 要处理响应，请执行以下操作：
+這些函式會起始與MVPD互動的要求。 所有呼叫為非同步呼叫；您必須實作 [回呼](#callbacks) 若要處理回應：
 
 - [setRequestor()](#setReq)
 - [getAuthorization()](#getAuthZ)
@@ -30,29 +30,29 @@ ht-degree: 0%
 - [logout()](#logout)
 
 
-## setRequestor(inRequestorID， endpoints， options){#setrequestor(inRequestorID,endpoints,options)}
+## setRequestor （inRequestorID、端點、選項）{#setrequestor(inRequestorID,endpoints,options)}
 
-**描述：** 标识请求源自的网站。  您必须在通信会话中进行任何其他API调用之前进行此调用。 
+**說明：** 識別要求起始的網站。  您必須在通訊工作階段中的任何其他API呼叫之前進行此呼叫。 
 
-**参数：**
+**引數：**
 
-- *inRequestorID*  — 在注册期间分配给始发站点的Adobe的唯一标识符。
+- *inRequestorID*  — 註冊期間Adobe指派給原始網站的唯一識別碼。
 
-- *端点*  — 此参数是可选的。 它可以是以下值之一：
+- *端點*  — 此引數為選用引數。 可以是下列其中一個值：
 
-   - 一个数组，用于指定由Adobe提供的身份验证和授权服务的端点（可能出于调试目的而使用不同的实例）。 如果提供了多个URL，则MVPD列表由所有服务提供商的端点组成。 每个MVPD都与最快的服务提供商关联；即首先响应并支持该MVPD的提供商。 默认情况下（如果未指定值），将使用Adobe服务提供程序(<http://sp.auth.adobe.com/>)。
+   - 陣列，可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可用於偵錯）。 若提供多個URL，MVPD清單會由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯，也就是首先回應並支援該MVPD的提供者。 根據預設（若未指定值），會使用Adobe服務提供者(<http://sp.auth.adobe.com/>)。
 
-   示例：
+   範例：
    - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
 
 
-- *选项*  — 包含应用程序ID值、访客ID值无刷设置（后台登录注销）和MVPD设置(iFrame)的JSON对象。 所有值都是可选的。
-   1. 如果指定，则将在库执行的所有网络调用中报告Experience CloudvisitorID。 该值稍后可用于高级分析报表。
-   2. 如果指定了应用程序的唯一标识符 — `applicationId`  — 该值将作为X-Device-Info HTTP标头的一部分添加到应用程序进行的所有后续调用中。 稍后可以从 [ESM](/help/authentication/entitlement-service-monitoring-overview.md) 报表。
+- *選項*  — 包含應用程式ID值、訪客ID值不重新整理設定（背景登入登出）和MVPD設定(iFrame)的JSON物件。 所有值都是選用的。
+   1. 若指定，系統會在資料庫執行的所有網路呼叫上報告Experience CloudvisitorID。 此值稍後可用於進階分析報表。
+   2. 如果指定了應用程式的唯一識別碼 — `applicationId`  — 此值將作為X-Device-Info HTTP標頭的一部分新增到應用程式進行的所有後續呼叫中。 此值稍後可從擷取 [ESM](/help/authentication/entitlement-service-monitoring-overview.md) 使用正確查詢的報表。
 
-   **注意：** 所有JSON键都区分大小写。
+   **注意：** 所有JSON金鑰都區分大小寫。
 
-    示例：
+    範例：
 
 ```JSON
    setRequestor("IFC", {
@@ -61,7 +61,7 @@ ht-degree: 0%
   })
 ```
 
-- 程序员可以通过指定是否需要iFrame进行登录(*iFrameRequired* 键)和iFrame尺寸(*iFrameWidth* 和 *iFrameHeight* 键)。 JSON对象具有以下模板：
+- 程式設計師可以透過指定登入是否需要iFrame來覆寫Adobe Primetime驗證中設定的MVPD設定(*iFrameRequired* key)和iFrame尺寸(*iFrameWidth* 和 *iFrameHeight* 鍵)。 JSON物件有下列範本：
 
 ```JSON
     {  
@@ -85,14 +85,14 @@ ht-degree: 0%
 ```
  
 
-上述模板中的所有顶级键都是可选的，并且具有默认值(*backgroundLogin*, *backgroundLogut*&#x200B;默认为false，而mvpdConfig为null — 表示不覆盖MVPD设置)。
+上述範本中的所有頂層索引鍵都是選用的，且具有預設值(*背景登入*， *backgroundLogut*&#x200B;預設為false，而mvpdConfig為null — 表示不會覆寫任何MVPD設定)。
 
  
-- **注意**:为上述参数指定无效值/类型将导致行为未定义。
+- **注意**：為上述引數指定無效的值/型別將會導致未定義的行為。
 
  
 
-以下是以下方案的配置示例：激活无刷新登录和注销，将MVPD1更改为全页重定向登录（非iFrame），将MVPD2更改为iFrame登录，宽度=500，高度=300:
+以下是以下情況的設定範例：啟用不需重新整理的登入和登出、將MVPD1變更為完整頁面重新導向登入（非iFrame）以及將MVPD2變為iFrame登入，其寬度為500而高度為300：
 
 ```JSON
     {  
@@ -112,161 +112,161 @@ ht-degree: 0%
 ```
 
 
-**触发的回调：** [setConfig()](#setconfigconfigxml-setconfigconfigxml)
+**觸發的回呼：** [setConfig()](#setconfigconfigxml-setconfigconfigxml)
 </br>
 
-[返回页首](#top)
+[返回頁首](#top)
 
 </br>
 
 ## getAuthorization(inResourceID， redirect_url) {#getauthorization(inresourceid,redirect_url)}
 
-**描述：** 请求对指定资源的授权。 每当客户尝试访问可授权的资源时，请调用此函数以从Access Enabler中获取短时的授权令牌。 资源ID与提供授权的MVPD协议。
+**說明：** 要求指定資源的授權。 每次客戶嘗試存取可授權資源時，請呼叫此函式以從Access Enabler取得短暫的授權權杖。 資源ID會與提供授權的MVPD商定。
 
-为当前客户使用缓存的身份验证令牌。 如果未找到此类令牌，请先启动身份验证过程，然后继续授权。\
+使用目前客戶的快取驗證Token。 如果找不到此類Token，會先啟動驗證程式，然後繼續授權。\
  
-**参数：**
+**引數：**
 
-- `inResourceID`  — 用户请求授权的资源的ID。
-- `redirect_url`  — 可选地提供重定向URL，以便MVPD的授权过程将用户返回到该页面，而不是从中启动授权的页面。
+- `inResourceID`  — 使用者要求授權的資源ID。
+- `redirect_url`  — 可選擇提供重新導向URL，讓MVPD的授權程式將使用者傳回該頁面，而不是起始授權的頁面。
 
 
-**触发的回调：** [setToken()](#settokeninrequestedresourceid-intoken-settokeninrequestedresourceidintoken) 成功时， [tokenRequestFailed](#tokenrequestfailedinrequestedresourceid-inrequesterrorcode-inrequestdetailederrormessage-tokenrequestfailedinrequestedresourceidinrequesterrorcodeinrequestdetailederrormessage) 失败
+**觸發的回呼：** [setToken()](#settokeninrequestedresourceid-intoken-settokeninrequestedresourceidintoken) 成功時， [tokenRequestFailed](#tokenrequestfailedinrequestedresourceid-inrequesterrorcode-inrequestdetailederrormessage-tokenrequestfailedinrequestedresourceidinrequesterrorcodeinrequestdetailederrormessage) 失敗時
 
 >[!CAUTION]
 >
->请尽可能使用checkAuthorization()而不是getAuthorization()。 getAuthorization()方法将启动完整的身份验证流程（如果用户未进行身份验证），这可能导致程序员方面实施复杂。
+>請儘量使用checkAuthorization()而非getAuthorization()。 getAuthorization()方法將啟動完整的驗證流程（如果使用者未驗證），這可能會導致程式設計人員方面的複雜實施。
 
 </b>
 
-[返回页首](#top)
+[返回頁首](#top)
 
 </br>
 
 ## getAuthentication(redirect_url) {#getauthentication(redirect_url}
 
-**描述：** 请求当前客户的身份验证。 通常在单击“登录”按钮时调用。 检查当前客户的缓存身份验证令牌。 如果未找到此类令牌，则启动身份验证过程。 这会调用默认或自定义提供程序选择对话框，然后使用选定的提供程序重定向到MVPD的登录界面。
+**說明：** 要求驗證目前客戶。 通常會呼叫以回應按一下登入按鈕。 檢查目前客戶的快取驗證Token。 如果找不到此類Token，則會起始驗證程式。 這會叫用預設或自訂提供者選擇對話方塊，然後使用選取的提供者重新導向至MVPD的登入介面。
 
-成功时，为用户创建并存储身份验证令牌。 如果身份验证失败，提供程序会向 [setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode) 回调。
+成功後，會為使用者建立並儲存驗證Token。 如果驗證失敗，提供者會傳回適當的錯誤訊息給您的 [setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode) callback。
 
-**参数：**
+**引數：**
 
-- redirect_url — （可选）提供一个重定向URL，以便MVPD的身份验证过程会将用户返回到该页面，而不是从中启动身份验证的页面。
+- redirect_url — 可選擇性地提供重新導向URL，讓MVPD的驗證程式將使用者傳回該頁面，而不是起始驗證的頁面。
 
- **触发的回调：** [setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [displayProviderDialog()](#displayproviderdialogproviders-displayproviderdialogproviders), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+ **觸發的回呼：** [setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)， [displayProviderDialog()](#displayproviderdialogproviders-displayproviderdialogproviders)， [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
-[返回页首](#top)
+[返回頁首](#top)
 
 </br>
 
 ## checkAuthN {#checkauthn}
 
-**描述：** 检查当前客户的当前身份验证状态。  未与任何UI关联。
+**說明：** 檢查目前客戶的目前驗證狀態。  未關聯任何UI。
 
-**触发的回调：** [setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)
+**觸發的回呼：** [setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)
 
 </br>
 
-[返回页首](#top)
+[返回頁首](#top)
 
 </br>
 
 ## checkAuthorization(inResourceID) {#checkauthorization(inresourceid)}
 
-**描述：** 应用程序使用此方法检查当前客户和给定资源的授权状态。 首先，检查身份验证状态。 如果未通过身份验证，则会触发tokenRequestFailed()回调，并且方法将退出。 如果用户已通过身份验证，则还会触发授权流程。 请参阅 [getAuthorization()](#getAuthZ方法。
+**說明：** 應用程式使用此方法來檢查目前客戶和指定資源的授權狀態。 首先檢查驗證狀態。 如果未驗證，則會觸發tokenRequestFailed()回呼，而方法會結束。 如果使用者已通過驗證，它也會觸發授權流程。 欲知詳情，請參閱 [getAuthorization()](#getAuthZ方法。
 
 >[!TIP]
 >
-> **使用check-status函数**  在请求授权之前，您无需检查身份验证或授权的状态。 例如，您可以调用这些函数来更新您自己的状态显示。 当您需要任何用户交互时，请勿使用它们。
+> **使用檢查狀態函式**  在請求授權之前，您不需要檢查驗證或授權的狀態。 例如，您可以呼叫這些函式來更新您自己的狀態顯示。 請勿在您需要任何使用者互動時使用它們。
 
-**参数：**
+**引數：**
 
-- `inResourceID`  — 用户请求授权的资源的ID。
+- `inResourceID`  — 使用者要求授權的資源ID。
 
  
-**触发的回调：**
-[setToken()](#settokeninrequestedresourceid-intoken-settokeninrequestedresourceidintoken), [tokenRequestFailed()](#tokenrequestfailedinrequestedresourceid-inrequesterrorcode-inrequestdetailederrormessage-tokenrequestfailedinrequestedresourceidinrequesterrorcodeinrequestdetailederrormessage), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata), [setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)
+**觸發的回呼：**
+[setToken()](#settokeninrequestedresourceid-intoken-settokeninrequestedresourceidintoken)， [tokenRequestFailed()](#tokenrequestfailedinrequestedresourceid-inrequesterrorcode-inrequestdetailederrormessage-tokenrequestfailedinrequestedresourceidinrequesterrorcodeinrequestdetailederrormessage)， [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)， [setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)
 
 </br>
 
 ## checkPreauthorizedResources(resources) {#checkPreauthorizedResources(resources)}
 
-**描述：** 请求“预检”授权状态以获取资源列表。
+**說明：** 要求資源清單的「預檢」授權狀態。
 
-**参数：**
+**引數：**
 
-- *资源*:资源参数是应检查授权的资源数组。 列表中的每个元素都应是一个表示资源ID的字符串。 资源ID受与 `getAuthorization()` 调用，即程序员与MVPD或媒体RSS片段之间建立的约定值。 
+- *資源*：resources引數是應檢查其授權的資源陣列。 清單中的每個元素都應是代表資源ID的字串。 資源ID的限制與 `getAuthorization()` 呼叫，也就是說，這是程式設計師與MVPD或媒體RSS片段之間建立的議定值。 
 
 </br>
 
 ## checkPreauthorizedResources(resources-cache=true) {#checkPreauthorizedResources(resources-cache=true)}
 
-从JS SDK版本4.0开始，提供了此API变体
+此API變體從JS SDK 4.0版開始提供
 
 
-**参数：**
+**引數：**
 
-- *资源*:资源参数是应检查授权的资源数组。 列表中的每个元素都应是一个表示资源ID的字符串。 资源ID受与 `getAuthorization()` 调用，即程序员与MVPD或媒体RSS片段之间建立的约定值。 
+- *資源*：resources引數是應檢查其授權的資源陣列。 清單中的每個元素都應是代表資源ID的字串。 資源ID的限制與 `getAuthorization()` 呼叫，也就是說，這是程式設計師與MVPD或媒體RSS片段之間建立的議定值。 
 
-- *缓存*:检查预授权资源时是否使用内部缓存。 这是一个可选参数，默认为 **true**. 如果为true，则行为与上述API相同，这意味着后续调用此函数时将使用内部缓存来解析预授权资源。 传递 **false** 对于此参数，将禁用内部缓存，每次在 **checkPreauthorizedResources** 调用API。
+- *快取*：檢查預先授權的資源時，是否使用內部快取。 此為選用引數，預設為 **true**. 如果為true，則行為與上述API相同，這表示對此函式的後續呼叫將使用內部快取來解析預先授權的資源。 通過 **false** 會停用內部快取，導致每次 **checkPreauthorizedResources** 已呼叫API。
 
-**触发的回调：** [preauthorizedResources()](#preauthorizedresourcesauthorizedresources-preauthorizedresourcesauthorizedresources)
+**觸發的回呼：** [preauthorizedResources()](#preauthorizedresourcesauthorizedresources-preauthorizedresourcesauthorizedresources)
  
 </br>
 
-[返回页首](#top)
+[返回頁首](#top)
 </br>
 
 ## getMetadata(Key) {#getMetadata}
 
-**描述：** 检索作为元数据由Access Enabler库公开的信息。
+**說明：** 擷取Access Enabler程式庫公開為中繼資料的資訊。
 
-元数据有两种类型： 
+中繼資料有兩種型別： 
 
-- **静态** （身份验证令牌TTL、授权令牌TTL和设备ID） 
-- **用户元数据** （这包括在身份验证和/或授权流程期间从MVPD传递到用户设备的用户特定信息）
+- **靜態** （驗證權杖TTL、授權權杖TTL和裝置ID） 
+- **使用者中繼資料** （這包括在驗證和/或授權流程期間，從MVPD傳遞至使用者裝置的使用者特定資訊）
 
-**更多信息：** [用户元数据](#UserMetadata)
+**更多資訊：** [使用者中繼資料](#UserMetadata)
 
-**参数：**
+**引數：**
 
-- *key*:用于指定所请求元数据的ID:
-   - 如果键为 `"TTL_AUTHN",` 然后，进行查询以获取身份验证令牌过期时间。
+- *金鑰*：指定請求的中繼資料的ID：
+   - 如果索引鍵為 `"TTL_AUTHN",` 然後進行查詢以取得驗證權杖到期時間。
 
-   - 如果键为 `"TTL_AUTHZ"` 而params是一个将资源id作为字符串包含在内的数组，则会进行查询以获取与指定资源关联的授权令牌的过期时间。
+   - 如果索引鍵為 `"TTL_AUTHZ"` 而params是包含資源id作為字串的陣列，則會執行查詢以獲取與指定資源關聯的授權權杖的到期時間。
 
-   - 如果键为 `"DEVICEID"` 然后，进行查询以获取当前设备id。 请注意，此功能默认处于禁用状态，程序员应联系Adobe以获取有关启用和费用的信息。
+   - 如果索引鍵為 `"DEVICEID"` 接著會進行查詢以取得目前的裝置id。 請注意，此功能預設為停用，程式設計師應聯絡Adobe以取得有關啟用和費用的資訊。
 
-   - 如果键来自以下用户元数据类型列表，则会将包含相应用户元数据的JSON对象发送到 [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata) 回调函数：
+   - 如果索引鍵來自以下使用者中繼資料型別清單，則會將包含對應使用者中繼資料的JSON物件傳送至 [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata) 回呼函式：
 
-   - `"zip"`  — 邮政编码
+   - `"zip"`  — 郵遞區號
 
-   - `"encryptedZip"`  — 加密的邮政编码
+   - `"encryptedZip"`  — 加密的郵遞區號
 
-   - `"householdID"`  — 家庭标识符。 如果MVPD不支持子帐户，则此ID将与userID相同。
+   - `"householdID"`  — 家庭識別碼。 在MVPD不支援附屬帳戶的情況下，這將與userID相同。
 
-   - `"maxRating"`  — 用户的家长评分上限
+   - `"maxRating"`  — 使用者的父母最高分級
 
-   - `"userID"`  — 用户标识符。 如果MVPD支持子帐户，而用户不是主帐户，则userID将与houselID不同。
+   - `"userID"`  — 使用者識別碼。 在MVPD支援子帳戶，且使用者不是主帳戶的情況下，userID將會與householdID不同。
 
-   - `"channelID"`  — 用户有权查看的渠道列表
+   - `"channelID"`  — 使用者有權檢視的管道清單
 
-   - `"is_hoh"`  — 标识用户是否为户主的标记
+   - `"is_hoh"`  — 識別使用者是否為戶主的旗標
 
-   - `"encryptedZip"`  — 加密的邮政编码
+   - `"encryptedZip"`  — 加密的郵遞區號
 
-   - `"typeID"`  — 标识用户帐户是主/次帐户的标记
+   - `"typeID"`  — 識別使用者帳戶是否為主要/次要帳戶的旗標
 
-   - `"primaryOID"`  — 家庭标识符
+   - `"primaryOID"`  — 家庭識別碼
 
-   - `"postalCode"`  — 类似于邮政编码
+   - `"postalCode"`  — 類似於郵遞區號
 
-   - `"acctID"`  — 帐户ID
+   - `"acctID"`  — 帳戶ID
 
-   - `"acctParentID"`  — 帐户父ID
-   **注意**:程序员可用的实际用户元数据取决于MVPD提供的内容。  请参阅 [用户元数据](#UserMetadata) ，用于当前可用用户元数据列表。
+   - `"acctParentID"`  — 帳戶父級ID
+   **注意**：程式設計師可使用的實際使用者中繼資料取決於MVPD所提供的內容。  另請參閱 [使用者中繼資料](#UserMetadata) 以取得目前可用的使用者中繼資料清單。
 
 
 例如：
@@ -290,58 +290,58 @@ ht-degree: 0%
 ```
  
 
-**触发的回调：** [setMetadataStatus()](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata)
+**觸發的回呼：** [setMetadataStatus()](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata)
 
 </br>
 
-[返回页首](#top)
+[返回頁首](#top)
 
 </br>
 
 
 ## setSelectedProvider(providerid) {#setSelectedProvider}
 
-**描述：** 当用户从提供商选择UI中选择了MVPD以将提供商选择发送到访问启用程序时，请调用此函数，或者使用空参数调用此函数，以防用户在没有选择提供商的情况下取消提供商选择UI。 
+**說明：** 當使用者從您的提供者選擇UI選取MVPD以將提供者選擇傳送到Access Enabler時，呼叫此函式，或使用null引數呼叫此函式，以防使用者未選取提供者即解除您的提供者選擇UI。 
 
-**触发的回调：**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+**觸發的回呼：**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)， [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
-[返回页首](#top)
+[返回頁首](#top)
 
 </br>
 
 ## getSelectedProvider() {#getSelectedProvider}
 
-**描述：** 在提供程序选择对话框中检索客户选择的结果。 在进行初始身份验证检查后，可随时使用此功能。
+**說明：** 在提供者選擇對話方塊中擷取客戶選擇的結果。 這可在初始驗證檢查後隨時使用。
 
-此函数是异步的，并将其结果返回给 `selectedProvider()` 回调函数。
+此函式為非同步，且其結果會傳回給 `selectedProvider()` 回呼函式。
 
-- **MVPD** 当前选择的MVPD，或者如果未选择MVPD，则为空。
-- **AE_State** 当前客户的身份验证结果为“新用户”、“用户未验证”或“用户已验证”
+- **MVPD** 目前選取的MVPD，若未選取MVPD，則為null。
+- **AE_State** 目前客戶的驗證結果為「新使用者」、「使用者未驗證」或「使用者已驗證」
 
- **触发的回调：** [selectedProvider()](#getselectedprovider-getselectedprovider)
-
-</br>
-
-[返回页首](#top)
+ **觸發的回呼：** [selectedProvider()](#getselectedprovider-getselectedprovider)
 
 </br>
 
-## 注销 {#logout}
+[返回頁首](#top)
 
-**描述：** 注销当前客户，清除该用户的所有身份验证和授权信息。 从客户的系统中删除所有authN和authZ令牌。
+</br>
 
- **触发的回调：** [setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)
+## 登出 {#logout}
+
+**說明：** 登出目前的客戶，清除該使用者的所有驗證和授權資訊。 從客戶系統刪除所有authN和authZ權杖。
+
+ **觸發的回呼：** [setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)
 </br> 
 
-[返回页首](#top)
+[返回頁首](#top)
 
 </br>
 
-## 回调定义 {#calllback-definitions}
+## 回呼定義 {#calllback-definitions}
 
-您必须实施这些回调来处理对异步请求调用的响应：
+您必須實作這些回撥來處理非同步要求呼叫的回應：
 
 - [entitlementLoaded()](#entitlementloaded-entitlementloaded)
 - [setConfig()](#setconfigconfigxml-setconfigconfigxml)
@@ -359,37 +359,37 @@ ht-degree: 0%
 
 ## entitlementLoaded() {#entitlementLoaded}
 
-**描述：** 当Access Enabler完成初始化并准备接收请求时触发。 实施此回调以了解何时可以开始与Access Enabler API通信。
+**說明：** 當Access Enabler完成初始化並準備接收請求時觸發。 實作此回撥以瞭解何時可以使用Access Enabler API開始通訊。
 </br>
 
-[返回页首](#top)
+[返回頁首](#top)
 
 </br>
 
 ## setConfig(configXML) {#setconfig(configXML)}
 
-**描述：** 实施此回调以接收配置信息和MVPD列表。
+**說明：** 實作此回呼以接收組態資訊和MVPD清單。
 
-**参数：**
+**引數：**
 
-- *configXML*:xml对象，其中包含当前请求者（包括MVPD列表）的配置。
+- *configXML*：儲存目前REQUESTOR （包括MVPD清單）之設定的xml物件。
 
  
-**触发者：** [setRequestor()](#setrequestor-inrequestorid-endpoints-optionssetreq)
+**觸發者：** [setRequestor()](#setrequestor-inrequestorid-endpoints-optionssetreq)
 
 </br>
 
-[返回页首](#top)
+[返回頁首](#top)
 
 </br>
 
 ## displayProviderDialog(providers) {#displayproviderdialog(providers)}
 
-**描述：** 实施此回调以调用您自己的自定义提供程序选择UI。 您的对话框应使用显示名称（和可选徽标）来提供客户的选择。 当客户做出选择并取消对话框时，在对 *setSelectedProvider()*.
+**說明：** 實作此回呼以叫用您自己的自訂提供者選擇UI。 您的對話方塊應使用顯示名稱（和選用的標誌）來提供客戶的選擇。 當客戶做出選擇並取消對話時，將呼叫中選定提供者的相關ID傳送至 *setSelectedProvider()*.
 
-**参数：**
+**引數：**
 
-- *提供商*  — 表示请求的MVPD的对象数组：
+- *提供者*  — 代表所要求MVPD的物件陣列：
 
 ```JSON
     var mvpd = {
@@ -399,42 +399,42 @@ ht-degree: 0%
     }
 ```
 
-**触发者：** [getAuthentication()](#getauthenticationredirecturl-getauthenticationredirecturl), [getAuthorization()](#getauthorizationinresourceid-redirecturl-getauthorizationinresourceidredirecturl)
+**觸發者：** [getAuthentication()](#getauthenticationredirecturl-getauthenticationredirecturl)， [getAuthorization()](#getauthorizationinresourceid-redirecturl-getauthorizationinresourceidredirecturl)
 
-</br>[返回页首](#top)
+</br>[返回頁首](#top)
 
 </br>
 
 ## createIFrame(inWidth， inHeight) {#createIFrame(inWidth,inHeight)}
 
-**描述：** 如果用户选择的MVPD要求iFrame在其中显示其身份验证登录页面UI，则实施此回调。
+**說明：** 如果使用者選取的MVPD需要iFrame才能顯示其驗證登入頁面UI，請實作此回呼。
 
-**触发者：**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**觸發者：**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
-</br> [返回页首](#top)
+</br> [返回頁首](#top)
 
 </br>
 
 ## setAuthenticationStatus(isAuthenticated， errorCode) {#set-authn-status-isauthn-error}
 
-**描述：** 实施此回调以接收身份验证状态（1=authenticated或0=not authenticated），以及在尝试确定身份验证状态时发生任何错误（成功完成检查时出现空字符串）时的描述性错误消息。
+**說明：** 實施此回撥以接收驗證狀態（1=authenticated或0=not authenticated）和描述性錯誤訊息（如果在嘗試確定驗證狀態時發生錯誤，則為檢查成功完成的空字串）。
 
 >[!NOTE]
 > 
->如果您使用的是当前版本， [提前错误报告](/help/authentication/error-reporting.md) 系统中，可以忽略发送到此函数的errorCode参数。  但是，isAuthenticated标记仍可用于跟踪授权流程中用户的身份验证状态
+>如果您使用目前的 [進階錯誤報告](/help/authentication/error-reporting.md) 系統，您可以忽略傳送至此函式的errorCode引數。  不過，isAuthenticated旗標仍可用於追蹤軟體權利檔案流程中使用者的驗證狀態
 
 
-**参数：**
+**引數：**
 
-- *isAuthenticated*  — 提供身份验证状态：1（已验证）或0（未验证）。
-- *errorCode*  — 确定身份验证状态时发生的任何错误。 空字符串（如果没有）。
+- *isAuthenticated*  — 提供驗證狀態： 1 （已驗證）或0 （未驗證）。
+- *errorCode*  — 判斷驗證狀態時發生錯誤。 空白字串（如果沒有）。
 
  
-**触发者：** [checkAuthentication()](#checkauthn-checkauthn), [getAuthentication()](#getauthenticationredirecturl-getauthenticationredirecturl), [checkAuthorization()](#checkauthorizationinresourceid-checkauthorizationinresourceid)
+**觸發者：** [checkAuthentication()](#checkauthn-checkauthn)， [getAuthentication()](#getauthenticationredirecturl-getauthenticationredirecturl)， [checkAuthorization()](#checkauthorizationinresourceid-checkauthorizationinresourceid)
 
 </br>
 
-[返回页首](#top)
+[返回頁首](#top)
 
 </br>
 
@@ -442,127 +442,127 @@ ht-degree: 0%
 
 >[!CAUTION]
 >
->设备类型和操作系统是通过使用公共Java库(<http://java.net/projects/user-agent-utils>)和用户代理字符串。 请注意，此信息仅作为一种将操作量度划分为设备类别的粗略方式提供，但该Adobe不会对错误结果负责。 请相应地使用新功能。
+>裝置型別和作業系統衍生自使用公用Java程式庫(<http://java.net/projects/user-agent-utils>)和使用者代理字串。 請注意，此資訊僅以粗略的方式提供，以將運作量度劃分為裝置類別，但該Adobe對錯誤結果概不負責。 請據以使用新功能。
 
-**描述：** 实施此回调以在发生特定事件时接收跟踪数据。 例如，您可以使用此功能来跟踪有多少用户使用相同的凭据登录。 当前无法配置跟踪。 使用Adobe Primetime身份验证1.6, `sendTrackingData()` 还报告有关设备、Access Enabler客户端和操作系统类型的信息。 的 `sendTrackingData()` 回调仍向后兼容。\
+**說明：** 實作此回撥以在發生特定事件時接收追蹤資料。 例如，您可以使用它來追蹤有多少使用者以相同認證登入。 目前無法設定追蹤。 使用Adobe Primetime驗證1.6， `sendTrackingData()` 也會報告有關裝置、 Access Enabler使用者端和作業系統型別的資訊。 此 `sendTrackingData()` 回呼會保持回溯相容性。\
  
-- 设备类型的可能值：
-   - 计算机
-   - 平板电脑
-   - 移动设备
-   - 游戏机
+- 裝置型別的可能值：
+   - 電腦
+   - 平板電腦
+   - 行動裝置
+   - gameconsole
    - 未知
 
-- Access Enabler客户端类型的可能值：
+- Access Enabler使用者端型別的可能值：
    - html5
    - ios
    - android
 
 
-传递事件类型和关联信息数组。 事件类型包括：
+傳遞事件型別和關聯資訊的陣列。 事件型別包括：
 
-| mvpdSelection | 用户在提供商选择对话框中选择了MVPD。 |
+| mvpdSelection | 使用者在提供者選擇對話方塊中選取了MVPD。 |
 | ----------------------- | --------------------------------------------------------- |
-| authenticationDetection | 验证检查已完成。 |
-| authorizationDetection | 授权请求已完成。 |
+| authenticationDetection | 驗證檢查已完成。 |
+| authorizationDetection | 授權要求已完成。 |
 
 </br>
-数据特定于每个事件类型：
+資料特定於每個事件型別：
 </br>
 
-| 事件类型（字符串） | 数据（数组） |
+| 事件型別（字串） | 資料（陣列） |
 |:--- | :--- |
-| mvpdSelection | 0:选定的MVPD |
-|  | 1:设备类型 |
-|  | 2:Access Enabler客户端类型 |
-|  | 3:操作系统 |
-| authenticationDetection | 0:令牌请求是否成功(true/false) |
-|  | 1:MVPD ID |
-|  | 2:GUID |
-|  | 3:缓存中已有令牌(true/false) |
-|  | 4:设备类型 |
-|  | 5:Access Enabler客户端类型 |
-|  | 6:操作系统 |
-| authorizationDetection | 0:令牌请求是否成功(true/false) |
-|  | 1:MVPD ID |
-|  | 2:GUID |
-|  | 3:缓存中已有令牌(true/false) |
-|  | 4:错误 |
-|  | 5:详细信息 |
-|  | 6:设备类型 |
-|  | 7:Access Enabler客户端类型 |
-|  | 8:操作系统 |
+| mvpdSelection | 0：選取的MVPD |
+|  | 1：裝置型別 |
+|  | 2：存取啟用程式使用者端型別 |
+|  | 3：作業系統 |
+| authenticationDetection | 0：權杖要求是否成功(true/false) |
+|  | 1： MVPD ID |
+|  | 2： GUID |
+|  | 3：權杖已存在於快取中(true/false) |
+|  | 4：裝置型別 |
+|  | 5： Access Enabler使用者端型別 |
+|  | 6：作業系統 |
+| authorizationDetection | 0：權杖要求是否成功(true/false) |
+|  | 1： MVPD ID |
+|  | 2： GUID |
+|  | 3：權杖已存在於快取中(true/false) |
+|  | 4：錯誤 |
+|  | 5：詳細資料 |
+|  | 6：裝置型別 |
+|  | 7：存取啟用程式使用者端型別 |
+|  | 8：作業系統 |
 
 
-**触发者：** [checkAuthentication()](#checkauthn-checkauthn), [getAuthentication()](#getauthenticationredirecturl-getauthenticationredirecturl), [checkAuthorization()](#checkauthorizationinresourceid-checkauthorizationinresourceid), [getAuthorization()](#getauthorizationinresourceid-redirecturl-getauthorizationinresourceidredirecturl)
+**觸發者：** [checkAuthentication()](#checkauthn-checkauthn)， [getAuthentication()](#getauthenticationredirecturl-getauthenticationredirecturl)， [checkAuthorization()](#checkauthorizationinresourceid-checkauthorizationinresourceid)， [getAuthorization()](#getauthorizationinresourceid-redirecturl-getauthorizationinresourceidredirecturl)
 
 </br>
 
-[返回页首](#top)
+[返回頁首](#top)
 
 </br>
 
 ## setToken(inRequestedResourceID， inToken) {#setToken(inRequestedResourceID,inToken)}
 
-**描述：** 实施此回调以接收已针对其发出授权请求或检查授权请求并成功完成的资源(inRequestedResourceID)的短生命周期媒体令牌(inToken)和ID。
+**說明：** 實作此回撥以接收已提出授權要求或檢查授權要求且已成功完成的短期媒體權杖(inToken)和資源(inRequestedResourceID)的ID。
 
-**触发者：** [checkAuthorization()](#checkAuthZ), [getAuthorization()](#getAuthZ)
+**觸發者：** [checkAuthorization()](#checkAuthZ)， [getAuthorization()](#getAuthZ)
 </br>
 
-[返回页首](#top)
+[返回頁首](#top)
 
 </br>
 
 ## tokenRequestFailed(inRequestedResourceID， inRequestErrorCode， inRequestDetailedErrorMessage) {#token-request-failed-error-msg}
 
-**描述：** 实施此回调，以在授权或检查授权请求失败时发出信号。 MVPD可以选择使用来提供程序员要显示的自定义消息。
+**說明：** 實作此回呼以在授權或檢查授權要求失敗時發出訊號。 可選擇供MVPD用來提供要由程式設計師顯示的自訂訊息。
 
 >[!IMPORTANT]
 >
->此回调函数是旧版Primetime身份验证错误报告系统的一部分。 它会保留以进行向后兼容性，但是如果您已使用当前的高级错误报告系统实施了自己的回调，则根本不需要使用此函数。 较新的错误报告系统提供了有关授权（或其他操作）失败原因的更详细信息，以及针对每种错误或警告类型的建议操作过程。
+>此回呼函式是舊版原始Primetime驗證錯誤報告系統的一部分。 保留此函式是為了回溯相容性，但如果您已使用目前的進階錯誤報告系統實作自己的回呼，則根本不需要使用此函式。 較新的錯誤報告系統提供有關授權（或其他操作）失敗原因的更多詳細資訊，以及針對每種錯誤或警告型別的建議動作過程。
 
-**参数：**
+**引數：**
 
-- *inRequestedResourceID*  — 提供授权请求中使用的资源ID的字符串。
-- *inRequestErrorCode*  — 显示Adobe Primetime身份验证错误代码的字符串，用于指示失败的原因；可能的值为“用户未验证错误”和“用户未授权错误”；有关更多详细信息，请参阅下面的“回调错误代码”。
-- *inRequestDetailedErrorMessage*  — 适用于显示的附加描述性字符串。 如果此描述性字符串因任何原因不可用，则Adobe Primetime身份验证会发送一个空字符串 **(&quot;&quot;)**.  MVPD可以使用此功能传递自定义错误消息或与销售相关的消息。 例如，如果某个订阅者被拒绝授权某个资源，则MVPD可以通过 `*inRequestDetailedErrorMessage*` 例如： **“您当前无权访问包中的此渠道。 如果要升级包，请单击\*此处\*。”** 该消息由Adobe Primetime身份验证通过此回调传递到程序员网站。 然后程序员可以选择显示或忽略它。 Adobe Primetime身份验证也可以使用 `*inRequestDetailedErrorMessage*` 通知程序员可能导致错误的条件。 例如， **“与提供商的授权服务通信时出现网络错误”。**
+- *InrequesterresourceID*  — 提供授權請求所使用的資源ID的字串。
+- *inRequestErrorCode*  — 顯示Adobe Primetime驗證錯誤碼的字串，指出失敗的原因；可能的值是「使用者未驗證錯誤」和「使用者未授權錯誤」；如需詳細資訊，請參閱下方的「回撥錯誤代碼」。
+- *inRequestDetailedErrorMessage*  — 適用於顯示的其他描述性字串。 如果此描述性字串因任何原因而無法使用，Adobe Primetime驗證會傳送空白字串 **(「」)**.  MVPD可使用此功能傳遞自訂錯誤訊息或銷售相關訊息。 例如，如果拒絕訂閱者對資源的授權，MVPD可能會回覆一個 `*inRequestDetailedErrorMessage*` 例如： **「您目前無法在套件中存取此管道。 如果您想要升級套件，請按一下\*這裡\*。」** 此訊息會透過此回呼由Adobe Primetime驗證傳遞至程式設計師的網站。 然後程式設計師可以選擇顯示或忽略它。 Adobe Primetime驗證也可以使用 `*inRequestDetailedErrorMessage*` 通知程式設計師可能導致錯誤的狀況。 例如， **「與提供者的授權服務通訊時發生網路錯誤」。**
 
  
 
-**触发者：**  [checkAuthorization()](#checkauthorizationinresourceid-checkauthorizationinresourceid), [getAuthorization()](#getauthorizationinresourceid-redirecturl-getauthorizationinresourceidredirecturl)
+**觸發者：**  [checkAuthorization()](#checkauthorizationinresourceid-checkauthorizationinresourceid)， [getAuthorization()](#getauthorizationinresourceid-redirecturl-getauthorizationinresourceidredirecturl)
 </br>
 
-[返回页首](#top)
+[返回頁首](#top)
 
 </br>
 
 
 ## preauthorizedResources(authorizedResources) {#preauthorizedResources(authorizedResources)}
 
-**描述：** 由Access Enabler触发的回调，该Access Enabler可传送在调用 `checkPreauthorizedResources()`.
+**說明：** 由Access Enabler觸發的回呼，用於傳遞在呼叫後傳回的授權資源清單 `checkPreauthorizedResources()`.
 
-**参数：**
+**引數：**
 
-- *authorizedResources*：已授权资源的列表。
+- *authorizedresources*：已授權資源的清單。
 
-**触发者：** [checkPreauthorizedResources()](#checkPreauthRes)
+**觸發者：** [checkPreauthorizedResources()](#checkPreauthRes)
 </br>
 
-[返回页首](#top)
+[返回頁首](#top)
 
 </br>
 
 ## setMetadataStatus(key， encrypted， data) {#setMetadataStatus(key,encrypted,data)}
 
-**描述：** 由Access Enabler触发的回调，该回调通过 `getMetadata()` 呼叫。
+**說明：** 由Access Enabler觸發的回呼，透過傳遞請求的中繼資料 `getMetadata()` 呼叫。
 
-**更多信息：** [用户元数据](#userMetadata)
+**更多資訊：** [使用者中繼資料](#userMetadata)
 
-**参数：**
+**引數：**
 
-- *键（字符串）*:请求所针对的元数据的键。
-- *已加密（布尔值）*:表示是否加密了“value”的标记。 如果为“true”，则“value”实际上将是实际值的JSON Web加密表示形式。 
-- *数据（JSON对象）*:表示元数据的JSON对象。对于简单请求(`TTL_AUTHN`&#39;, &#39;`TTL_AUTHZ`&#39;, &#39;`DEVICEID`&#39;)，则结果为字符串（表示身份验证TTL、授权TTL或设备ID）。 对于用户元数据请求，结果可以是表示元数据有效负载的基元对象或JSON对象。 JSON用户元数据对象的实际结构类似于以下内容：
+- *索引鍵（字串）*：提出請求的中繼資料的索引鍵。
+- *encrypted （布林值）*：表示「值」是否已加密的旗標。 如果這是「true」，則「value」實際上將會是JSON Web加密的實際值表示法。 
+- *資料（JSON物件）*：具有中繼資料表示的JSON物件。若為簡單請求(&#39;`TTL_AUTHN`&#39;， &#39;`TTL_AUTHZ`&#39;， &#39;`DEVICEID`&#39;)，結果為字串（代表驗證TTL、授權TTL或裝置ID）。 若是使用者中繼資料請求，結果可以是代表中繼資料裝載的基本或JSON物件。 JSON使用者中繼資料物件的實際結構類似於以下內容：
 
 ```JSON
     {
@@ -597,47 +597,47 @@ ht-degree: 0%
 ```
  
 
-**触发者：** [`getMetadata()`](#getmetadatakey-getmetadata)
+**觸發者：** [`getMetadata()`](#getmetadatakey-getmetadata)
 </br>
-[返回页首](#top)
+[返回頁首](#top)
 
 </br>
 
 ## selectedProvider(result) {#selectedProvider(result)}
 
-**描述：** 实施此回调以接收当前选定的MVPD以及封装在 `result` 参数。 的 `result` 参数是具有以下属性的对象：
+**說明：** 實作此回撥以接收目前選取的MVPD以及封裝在中的目前使用者驗證結果 `result` 引數。 此 `result` parameter是一個物件，具有以下屬性：
 
-- **MVPD** 当前选择的MVPD，或者如果未选择MVPD，则为空。
-- **AE\_State** 当前用户（“新用户”、“用户未经身份验证”或“用户已验证”中的一个）的身份验证结果
+- **MVPD** 目前選取的MVPD，若未選取MVPD，則為null。
+- **AE\_State** 目前使用者身分驗證的結果，可能是「新使用者」、「使用者未驗證」或「使用者已驗證」
 
- **触发者：** [getSelectedProvider()](#getSelProv)
-
-</br>
-
-[返回页首](#top)
+ **觸發者：** [getSelectedProvider()](#getSelProv)
 
 </br>
 
-### 回调错误代码 {#callback-error-codes}
+[返回頁首](#top)
 
-| 一般错误 |  |
-|:--- | :--- | 
-| 内部错误 | 尝试处理请求时发生系统错误。 |
-| 未选择提供程序错误 | 在提供商选择对话框中客户取消时发生 |
-| 提供程序不可用错误 | 在没有提供程序时发生。 |
+</br>
 
-| 身份验证错误 |  |
-|:--- | :--- | 
-| 一般身份验证错误 | 原因未知或无法发布时返回。 |
-| 内部身份验证错误 | 尝试验证时出现系统错误。 |
-| 用户未验证错误 | 用户未通过身份验证。 |
-| 多个身份验证请求错误 | 在第一个验证请求完成之前，已收到其他验证请求。 |
+### 回撥錯誤代碼 {#callback-error-codes}
 
-| 授权错误 |  |
+| 一般錯誤 |  |
 |:--- | :--- | 
-| 一般授权错误 | 原因未知或无法发布时返回。 |
-| 内部授权错误 | 尝试授权时出现系统错误。 |
-| 用户未授权错误 | 客户无权查看请求的内容。 |
+| 內部錯誤 | 嘗試處理請求時發生系統錯誤。 |
+| 未選取提供者錯誤 | 當客戶在提供者選擇對話方塊中取消時發生 |
+| 無法使用提供者錯誤 | 當沒有可用的提供者時發生。 |
+
+| 驗證錯誤 |  |
+|:--- | :--- | 
+| 一般驗證錯誤 | 原因不明或無法發佈時傳回。 |
+| 內部驗證錯誤 | 嘗試驗證時發生系統錯誤。 |
+| 使用者未驗證錯誤 | 使用者未驗證。 |
+| 多個驗證請求錯誤 | 在完成第一個驗證請求之前，已收到其他驗證請求。 |
+
+| 授權錯誤 |  |
+|:--- | :--- | 
+| 一般授權錯誤 | 原因不明或無法發佈時傳回。 |
+| 內部授權錯誤 | 嘗試授權時發生系統錯誤。 |
+| 使用者未授權錯誤 | 客戶無權檢視要求的內容。 |
 
 <!--
 
@@ -651,5 +651,4 @@ ht-degree: 0%
 * **Tracking Data in Adobe Primetime authentication**
 -->
 
-[返回页首](#top)
-
+[返回頁首](#top)

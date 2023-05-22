@@ -1,65 +1,64 @@
 ---
-description: 您可以使用不同的广告信令模式和广告元数据组合来标记、删除和替换VOD流中的时间范围。 不同的信令模式和元数据组合会导致不同的行为。
-title: 广告插入和删除对广告信令模式和广告元数据组合的影响
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以使用不同的廣告訊號模式和廣告中繼資料組合，標籤、刪除和取代VOD串流中的時間範圍。 訊號模式和中繼資料的不同組合會產生不同的行為。
+title: 對從廣告訊號模式和廣告中繼資料組合中插入和刪除廣告的影響
+exl-id: f42a2db5-642f-4944-87f6-2d7d902a2837
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '307'
 ht-degree: 0%
 
 ---
 
+# 對從廣告訊號模式和廣告中繼資料組合中插入和刪除廣告的影響 {#effect-on-ad-insertion-and-deletion-from-ad-signaling-mode-and-ad-metadata-combinations}
 
-# 广告插入和删除对广告信令模式和广告元数据组合的影响{#effect-on-ad-insertion-and-deletion-from-ad-signaling-mode-and-ad-metadata-combinations}
-
-您可以使用不同的广告信令模式和广告元数据组合来标记、删除和替换VOD流中的时间范围。 不同的信令模式和元数据组合会导致不同的行为。
+您可以使用不同的廣告訊號模式和廣告中繼資料組合，標籤、刪除和取代VOD串流中的時間範圍。 訊號模式和中繼資料的不同組合會產生不同的行為。
 
 >[!TIP]
 >
->当时间范围与广告信令模式之间存在冲突时，TVSDK会给予时间范围优先级。
+>當時間範圍和廣告訊號模式之間發生衝突時，TVSDK會提供時間範圍優先順序。
 
-下表提供了有关信令模式和元数据组合行为的详细信息：
+下表提供有關訊號模式和中繼資料組合行為的詳細資訊：
 
-**服务器映射**
+**伺服器對應**
 
-| **广告元数据** | **已创建解析器** | **`PlacementInformations`已创建** | **结果行为** |
+| **廣告中繼資料** | **解析器已建立** | **`PlacementInformations`已建立** | **產生的行為** |
 |--- |--- |--- |--- |
-|  | 删除 | 删除 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE)` | 已删除的范围 |
-| 删除，Auditude | 删除，Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE),` <br>`PlacementInfo (Type.SERVER_MAP, Mode.INSERT)` | 删除范围，插入广告 |
-| Auditude | Auditude | `PlacementInfo (Type.SERVER_MAP, Mode.INSERT)` | 插入的广告 |
-| 替换，Auditude | 删除，Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE), PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.REPLACE)` | 已替换范围 |
-| Mark | CustomAd | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 标记的范围 |
-| Mark， Auditude | CustomAd， Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 标记范围，未插入广告 |
+|  | 刪除 | 刪除 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE)` | 已刪除範圍 |
+| 刪除，稽核 | 刪除，稽核 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE),` <br>`PlacementInfo (Type.SERVER_MAP, Mode.INSERT)` | 刪除範圍，插入廣告 |
+| Auditude | Auditude | `PlacementInfo (Type.SERVER_MAP, Mode.INSERT)` | 廣告已插入 |
+| 取代，稽核 | 刪除，稽核 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE), PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.REPLACE)` | 範圍已取代 |
+| 標籤 | CustomAd | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 標示的範圍 |
+| 標籤，Auditude | CustomAd， Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 已標籤範圍，未插入廣告 |
 
-**清单提示**
+**資訊清單提示**
 
-| 广告元数据 | 已创建解析器 | `PlacementInformations` 已创建 | 结果行为 |
+| 廣告中繼資料 | 解析器已建立 | `PlacementInformations` 已建立 | 產生的行為 |
 |--- |--- |--- |--- |
-| Auditude | Auditude | `PlacementInfo (Type.PRE_ROLL, Mode.INSERT)` | 插入的广告 |
-| 删除，Auditude | 删除，Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE)`<br>`PlacementInfo (Type.PRE_ROLL, Mode.INSERT)` | 删除范围，插入广告 |
-| Mark， Auditude | Mark， Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 标记范围，未插入广告 |
-| 删除 | 删除 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE)` | 已删除的范围 |
-| Mark | CustomAd | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 标记的范围 |
-| 替换，Auditude | 删除，Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE), PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.REPLACE)` | 已替换范围 |
+| Auditude | Auditude | `PlacementInfo (Type.PRE_ROLL, Mode.INSERT)` | 廣告已插入 |
+| 刪除，稽核 | 刪除，稽核 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE)`<br>`PlacementInfo (Type.PRE_ROLL, Mode.INSERT)` | 刪除範圍，插入廣告 |
+| 標籤，Auditude | 標籤，Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 已標籤範圍，未插入廣告 |
+| 刪除 | 刪除 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE)` | 已刪除範圍 |
+| 標籤 | CustomAd | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 標示的範圍 |
+| 取代，稽核 | 刪除，稽核 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE), PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.REPLACE)` | 範圍已取代 |
 
-**自定义时间范围**
+**自訂時間範圍**
 
-| 广告元数据 | 已创建解析器 | `PlacementInformations` 已创建 | 结果行为 |
+| 廣告中繼資料 | 解析器已建立 | `PlacementInformations` 已建立 | 產生的行為 |
 |--- |--- |--- |--- |
-| 删除 | 删除 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE)` | 已删除的范围 |
-| 删除，Auditude | 删除，Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE)` | 已删除范围，未插入广告 |
-| Auditude | Auditude | 无 | 未插入广告 |
-| 替换，Auditude | 删除，Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE), PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.REPLACE)` | 范围已替换为广告 |
-| Mark | CustomAd | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 标记的范围 |
-| Mark， Auditude | 自定义广告，Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 标记范围，未插入广告 |
+| 刪除 | 刪除 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE)` | 已刪除範圍 |
+| 刪除，稽核 | 刪除，稽核 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE)` | 範圍已刪除，未插入廣告 |
+| Auditude | Auditude | 無 | 未插入任何廣告 |
+| 取代，稽核 | 刪除，稽核 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE), PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.REPLACE)` | 範圍已取代為廣告 |
+| 標籤 | CustomAd | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 標示的範圍 |
+| 標籤，Auditude | 自訂廣告，Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 已標籤範圍，未插入廣告 |
 
-**未设置（默认）**
+**未設定（預設）**
 
-| 广告元数据 | 已创建解析器 | `PlacementInformations` 已创建 | 结果行为 |
+| 廣告中繼資料 | 解析器已建立 | `PlacementInformations` 已建立 | 產生的行為 |
 |--- |--- |--- |--- |
-| 删除 | 删除 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE)` | 已删除的范围 |
-| 删除，Auditude | 删除，Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE), PlacementInfo (Type.SERVER_MAP, Mode.INSERT)` | 删除范围，插入广告 |
-| Auditude | Auditude | `PlacementInfo (Type.SERVER_MAP, Mode.INSERT)` | 插入的广告 |
-| 替换，Auditude | 删除，Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE), PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.REPLACE)` | 范围已替换为广告 |
-| Mark | CustomAd | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 标记的范围 |
-| Mark， Auditude | CustomAd， Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 标记的范围 |
+| 刪除 | 刪除 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE)` | 已刪除範圍 |
+| 刪除，稽核 | 刪除，稽核 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE), PlacementInfo (Type.SERVER_MAP, Mode.INSERT)` | 刪除範圍，插入廣告 |
+| Auditude | Auditude | `PlacementInfo (Type.SERVER_MAP, Mode.INSERT)` | 廣告已插入 |
+| 取代，稽核 | 刪除，稽核 | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.DELETE), PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.REPLACE)` | 範圍已取代為廣告 |
+| 標籤 | CustomAd | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 標示的範圍 |
+| 標籤，Auditude | CustomAd， Auditude | `PlacementInfo (Type.CUSTOM_TIME_RANGE, Mode.MARK)` | 標示的範圍 |

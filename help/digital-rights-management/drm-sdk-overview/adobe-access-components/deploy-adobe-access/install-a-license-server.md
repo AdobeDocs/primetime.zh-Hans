@@ -1,7 +1,6 @@
 ---
-description: 使用Adobe Primetime DRM SDK，您必须创建许可证服务器。 使用Primetime DRM保护内容时，只有通过许可服务器向消费者颁发许可证后，才能查看内容。 如果使用基于身份的许可，则基于密码的身份验证可确保只有经过授权的消费者才能打开和视图内容。
-title: 实施许可证服务器
-translation-type: tm+mt
+description: 使用Adobe Primetime DRM SDK時，您必須建立License Server。 使用Primetime DRM保護內容時，除非授權伺服器向消費者發出授權，否則無法檢視內容。 如果使用以身分為基礎的授權，以密碼為基礎的驗證可確保只有經過授權的消費者才能開啟和檢視內容。
+title: 實作授權伺服器
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '159'
@@ -10,10 +9,10 @@ ht-degree: 0%
 ---
 
 
-# 实施许可证服务器{#implement-a-license-server}
+# 實作授權伺服器{#implement-a-license-server}
 
-使用Adobe Primetime DRM SDK，您必须创建许可证服务器。 使用Primetime DRM保护内容时，只有通过许可服务器向消费者颁发许可证后，才能查看内容。 如果使用基于身份的许可，则基于密码的身份验证可确保只有经过授权的消费者才能打开和视图内容。
+使用Adobe Primetime DRM SDK時，您必須建立License Server。 使用Primetime DRM保護內容時，除非授權伺服器向消費者發出授權，否則無法檢視內容。 如果使用以身分為基礎的授權，以密碼為基礎的驗證可確保只有經過授權的消費者才能開啟和檢視內容。
 
-实施许可证服务器时，必须从Adobe获得必要的数字证书。 有关申请证书的详细说明，请参阅Primetime DRM证书登记文档。
+實作License Server時，您必須從Adobe取得必要的數位憑證。 如需請求憑證的詳細說明，請參閱Primetime DRM憑證註冊檔案。
 
-要了解有关实施许可证服务器和获取数字证书的更多信息，请参阅*使用Adobe Primetime DRM SDK保护内容。*
+若要深入瞭解如何實作License Server及取得數位憑證，請參閱*使用Adobe Primetime DRM SDK保護內容。*

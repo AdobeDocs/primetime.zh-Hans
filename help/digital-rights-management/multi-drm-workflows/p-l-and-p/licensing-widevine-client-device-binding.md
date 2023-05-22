@@ -1,32 +1,31 @@
 ---
-description: 在某些情况下，您可能希望限制最终用户在购买或租用内容时在多个设备上播放内容。 如果客户使用Expressplay，则可通过使用Expressplay API将用户的Expressplay令牌绑定到用户的计算机来执行此操作。
-title: 设备绑定
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 在某些情況下，您可能想要限制一般使用者在購買或出租內容時，無法在多部裝置上播放內容。 如果客戶使用Expressplay，可使用Expressplay API將使用者的Expressplay權杖繫結到使用者的電腦來完成此操作。
+title: 裝置繫結
+exl-id: 96ead794-e3eb-4059-91d3-a2c351a17ea3
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 0%
 
 ---
 
+# 裝置繫結{#device-binding}
 
-# 设备绑定{#device-binding}
+在某些情況下，您可能想要限制一般使用者在購買或出租內容時，無法在多部裝置上播放內容。 如果客戶使用Expressplay，可使用Expressplay API將使用者的Expressplay權杖繫結到使用者的電腦來完成此操作。
 
-在某些情况下，您可能希望限制最终用户在购买或租用内容时在多个设备上播放内容。 如果客户使用Expressplay，则可通过使用Expressplay API将用户的Expressplay令牌绑定到用户的计算机来执行此操作。
+您可以透過下列方式使用API。
 
-您可以通过以下方式使用API。
+1. 產生Cookie。
+1. 以查詢字串(Cookie=)形式附加產生的Cookie，以傳送虛擬Token產生請求`<cookie>`)或當作標頭。
+1. 讓使用者的電腦使用上述Token （例如，透過播放虛擬內容），將授權請求傳送至Expressplay授權伺服器。
 
-1. 生成Cookie。
-1. 发送虚拟令牌生成请求，将生成的cookie作为查询字符串(cookie=`<cookie>`)或头附加。
-1. 让用户的计算机使用上述令牌向Expressplay许可证服务器发送许可证请求，例如播放虚拟内容。
+   此虛擬授權要求若成功，會將使用者的device_id （由使用者裝置上的DRM實作計算或產生）與Expressplay後端的Cookie建立關聯。 然後會以下列方式使用此Cookie：
 
-   此虚拟许可证请求成功时，将用户的device_id（由用户设备上的DRM实现计算或生成）与Expressplay后端中的cookie关联。 然后，此Cookie的使用方式如下：
+   * 在內容購買/出租時，程式碼會傳送相關Cookie ( [https://www.expressplay.com/developer/restapi/#record-retrieval](https://www.expressplay.com/developer/restapi/#record-retrieval))
+   * 使用購買內容的金鑰(CEK)、keyID (CEKSID)、原則及其他資訊傳送權杖產生請求，將上述Cookie和device_id分別附加為 `cookie` 關聯引數和 `deviceid` 權杖限制引數。
 
-   * 在内容购买/租用时，代码通过发送关联的Cookie([https://www.expressplay.com/developer/restapi/#record-retrieval](https://www.expressplay.com/developer/restapi/#record-retrieval))，将Expressplay后端查询为用户的device_id
-   * 发送包含所购买内容的密钥(CEK)、keyID(CEKSID)、策略和其他信息的令牌生成请求，分别将上述cookie和device_id附加为`cookie`相关参数和`deviceid`令牌限制参数。
+   * 提供此Token給使用者。
 
-   * 向用户提供此令牌。
+      此程式會為繫結至使用者device_id的內容產生權杖。 當使用者的電腦使用此權杖傳送授權請求時，Expressplay後端會交叉檢查權杖的device_id和授權請求的device_id。
 
-      此进程为绑定到用户的device_id的内容生成一个令牌。 当用户的计算机发出具有此令牌的许可证请求时，Expressplay后端将使用许可证请求的deviceid交叉检查令牌的deviceid。
-
-      示例Expressplay授权服务器实现此工作流。
+      Expressplay軟體權利檔案伺服器會實作此工作流程。

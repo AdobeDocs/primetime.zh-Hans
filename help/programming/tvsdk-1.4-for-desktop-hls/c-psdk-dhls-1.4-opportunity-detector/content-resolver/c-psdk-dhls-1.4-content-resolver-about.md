@@ -1,23 +1,22 @@
 ---
-description: TVSDK提供默认的机会生成器和内容解析器，将广告放在时间轴中，这些生成器和解析器基于清单中的非标准标记。 您的应用程序可能需要根据清单中识别的机会（如封锁期的指示器）更改时间轴。
-title: 机会生成器和内容解析器
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: TVSDK提供在時間軸中放置廣告的預設機會產生器和內容解析器，這些產生器和解析器以資訊清單中的非標準標籤為基礎。 您的應用程式可能需要根據資訊清單中識別的機會（例如中斷期間的指標）來變更時間表。
+title: 機會產生器和內容解析器
+exl-id: 6daf7ff4-10c4-4750-8592-94a2be489473
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '395'
 ht-degree: 0%
 
 ---
 
+# 機會產生器和內容解析器{#opportunity-generators-and-content-resolvers}
 
-# 机会生成器和内容解析器{#opportunity-generators-and-content-resolvers}
+TVSDK提供在時間軸中放置廣告的預設機會產生器和內容解析器，這些產生器和解析器以資訊清單中的非標準標籤為基礎。 您的應用程式可能需要根據資訊清單中識別的機會（例如中斷期間的指標）來變更時間表。
 
-TVSDK提供默认的机会生成器和内容解析器，将广告放在时间轴中，这些生成器和解析器基于清单中的非标准标记。 您的应用程序可能需要根据清单中识别的机会（如封锁期的指示器）更改时间轴。
+一個 *`opportunity`* 代表時間軸上的興趣點，通常表示廣告投放機會。 此機會也可以指出可能影響時間表的自訂操作，例如中斷期間。 一個 *`opportunity generator`* 會識別時間軸中的特定機會（標籤），並通知TVSDK這些機會已標籤。 在的時間表中識別機會 `TimedMetadata`. 此 `SpliceOutOpportunityGenerator` 根據以下專案建立商機： `TimedMetadata` 針對資訊清單中偵測到的每個廣告標籤所建立的物件，以及 `AdSignalingModeOpportunityGenerator` 建立以「 」為基礎的初始商機 `MediaPlayerItem` 型別及其相關聯的廣告訊號模式。
 
-*`opportunity`*&#x200B;表示时间线上通常指示广告投放机会的关注点。 此机会还可以指示可能影响时间线的自定义操作，如封锁期。 *`opportunity generator`*&#x200B;标识时间轴中的特定机会（标记），并通知TVSDK这些机会已标记。 在`TimedMetadata`的时间轴中确定机会。 `SpliceOutOpportunityGenerator`基于为清单中检测到的每个广告标签创建的`TimedMetadata`对象创建机会，而`AdSignalingModeOpportunityGenerator`创建基于`MediaPlayerItem`类型及其关联的广告信令模式的初始机会。
+當您的應用程式收到有關商機（標籤）的通知時，您的應用程式可能會變更時間表，例如，透過插入一系列廣告、切換至替代資料流（中斷）或編輯時間表內容。 根據預設，TVSDK會呼叫適當的 *`content resolver`* 以實作必要的時間表變更或動作。 您的應用程式可以使用預設的TVSDK廣告內容解析程式或註冊自己的內容解析程式。
 
-当您的应用程序收到有关机会（标签）的通知时，您的应用程序可能会通过以下方式改变时间轴：插入一系列广告、切换到备用流（封锁期）或以其他方式编辑时间轴内容。 默认情况下，TVSDK调用相应的&#x200B;*`content resolver`*&#x200B;以实现所需的时间轴更改或操作。 您的应用程序可以使用默认的TVSDK广告内容解析程序或注册其自己的内容解析程序。
+您也可以使用 `PSDKConfig.adTags` 新增更多預設的廣告標籤標籤/提示 `SpliceOutOpportunityGenerator` 類別與使用 `PSDKConfig.setSubscribedTags` 以便TVSDK可以將可能包含廣告工作流程資訊的其他標籤通知給您的應用程式。
 
-您还可以使用`PSDKConfig.adTags`为默认`SpliceOutOpportunityGenerator`类添加更多广告标记标记标记/提示并使用`PSDKConfig.setSubscribedTags`，以便TVSDK可以通知您的应用程序可能包含广告工作流程信息的其他标记。
-
-自定义解析程序的一个可能用途是用于封锁期。 要处理这些期间，您的应用程序可以实施并注册一个负责处理封锁标签的封锁机会检测器。 当TVSDK遇到此标记时，它将轮询所有注册的内容解析器以找到处理指定标记的第一个解析器。 在此示例中，它是封锁内容解析程序，例如，它可以在标签指定的持续时间内，将播放器上的当前项目替换为替代内容。
+自訂解析器的一種可能使用方式是中斷期間。 若要處理這些期間，您的應用程式可以實作並註冊負責處理中斷標籤的中斷機會偵測器。 當TVSDK遇到此標籤時，它會輪詢所有註冊的內容解析器，以尋找處理指定標籤的第一個。 在此範例中，它是中斷內容解析程式，舉例來說，它可以用播放器上的替代內容取代目前專案，持續時間由標籤指定。

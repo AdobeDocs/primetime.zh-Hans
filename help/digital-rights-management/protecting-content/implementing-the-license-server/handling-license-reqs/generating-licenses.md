@@ -1,20 +1,19 @@
 ---
-title: 生成许可证
-description: 生成许可证
+title: 正在產生授權
+description: 正在產生授權
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: c47627b5-19de-41e5-8cb6-4084af714e09
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '144'
 ht-degree: 0%
 
 ---
 
+# 正在產生授權{#generating-licenses}
 
-# 生成许可证{#generating-licenses}
+如果您想要向使用者核發分葉授權，SDK必須解密內容中繼資料中包含的CEK，並為請求授權的機器重新加密它。 若要解密CEK，伺服器必須提供解密金鑰所需的資訊。 呼叫 `ContentInfo.setKeyRetrievalInfo()` 並提供 `AsymmetricKeyRetrieval` 物件。 如果中繼資料包含多個原則，伺服器必須決定要使用哪個原則並呼叫 `LicenseRequestMessage.setSelectedPolicy()`. 然後呼叫 `LicenseRequestMessage.generateLicense()` 以產生授權。 使用 `License` 傳回的物件，您可以修改授權中的到期日或權利。
 
-如果您要向用户发布叶许可证，SDK必须解密内容元数据中包含的CEK，并为请求许可证的计算机重新加密它。 要解密CEK，服务器必须提供解密密钥所需的信息。 调用`ContentInfo.setKeyRetrievalInfo()`并提供`AsymmetricKeyRetrieval`对象。 如果元数据包括多个策略，则服务器必须确定要使用哪个策略并调用`LicenseRequestMessage.setSelectedPolicy()`。 然后调用`LicenseRequestMessage.generateLicense()`生成许可证。 使用返回的`License`对象，您可以修改许可证的过期时间或权限。
+如果 `ExternalKeyRetrieval` 物件指定於 `ContentInfo` 物件，則授權伺服器應使用關聯的CEK ID來擷取插入到授權中的適當CEK。
 
-如果在`ContentInfo`对象中指定了`ExternalKeyRetrieval`对象，则许可证服务器应使用关联的CEK ID来检索插入到许可证中的相应CEK。
-
-有关如何使用外部CEK工作流的更多详细信息，请参阅[Adobe Primetime DRM外部CEK概述](../../../aaxs-drm-xkey-mgmt/aaxs-drm-using-external-cek-overview.md)。
+請參閱 [Adobe Primetime DRM外部CEK概觀](../../../aaxs-drm-xkey-mgmt/aaxs-drm-using-external-cek-overview.md) 瞭解更多有關如何使用外部CEK工作流程的詳細資訊。

@@ -1,21 +1,20 @@
 ---
-description: 您可以通过将基于TVSDK的应用程序与您的Adobe Analytics帐户集成来轻松跟踪视频。
-title: 概述
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 將TVSDK式應用程式與Adobe Analytics帳戶整合，即可輕鬆追蹤視訊。
+title: 概觀
+exl-id: bc86b48f-3e55-4825-89f8-74d3e61d1e67
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '148'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#overview}
 
-# 概述{#overview}
+將TVSDK式應用程式與Adobe Analytics帳戶整合，即可輕鬆追蹤視訊。
 
-您可以通过将基于TVSDK的应用程序与您的Adobe Analytics帐户集成来轻松跟踪视频。
+Adobe Primetime TVSDK與Adobe Analytics的整合可讓您在Android應用程式中追蹤視訊資料。 TVSDK之間的這項整合在此處稱為 *視訊分析*.
 
-Adobe Primetime TVSDK与Adobe Analytics的集成使您能够跟踪Android应用程序中的视频数据。 TVSDK之间的这种集成在此称为&#x200B;*视频分析*。
+參考實作指南的此區段會概述視訊分析如何在Primetime Android參考實作中實作，並描述如何根據參考實作，在TVSDK型播放器中啟用和設定視訊分析。
 
-该参考实施指南的此部分概述了视频分析如何在Primetime Android参考实施中实施，并描述了您如何根据参考实施在基于TVSDK的播放器中启用和配置视频分析。
-
-默认情况下，在参考实现中禁用视频分析实现。 在跟踪视频数据之前，您需要有一个可用的Adobe Analytics帐户。 然后，您必须使用Adobe Analytics帐户信息配置参考实施的视频分析组件。
+參考實作中的視訊分析實作預設為停用。 您必須具備有效的Adobe Analytics帳戶，才能追蹤視訊資料。 然後，您必須使用您的Adobe Analytics帳戶資訊來設定參考實作的視訊分析元件。

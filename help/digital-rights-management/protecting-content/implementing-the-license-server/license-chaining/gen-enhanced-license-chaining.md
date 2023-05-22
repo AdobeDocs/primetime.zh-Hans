@@ -1,23 +1,21 @@
 ---
-title: 增强的许可证链接
-description: 增强的许可证链接
+title: 增強授權鏈結
+description: 增強授權鏈結
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 4b07b29c-e739-4bf9-b464-0c82f68542d4
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '253'
 ht-degree: 0%
 
 ---
 
+# 增強授權鏈結 {#enhanced-license-chaining}
 
-# 增强的许可证链{#enhanced-license-chaining}
+如果使用DRM原則來產生支援授權鏈結的授權，則伺服器必須決定是核發Leaf授權、Root授權，還是兩者都核發。 如果要確定DRM原則支援的授權鏈結型別，您必須使用 `Policy.getLicenseChainType()`，或呼叫 `Policy.getRootLicenseId()` 以判斷DRM原則是否具有根授權。 透過Adobe Primetime DRM 2.0授權鏈結，伺服器通常會在使用者第一次請求特定機器的授權時發出Leaf授權，之後再請求根授權。 如果您要判斷電腦是否已擁有指定原則的Leaf授權，您需要呼叫 `LicenseRequestMessage.clientHasLeafForPolicy()`.
 
-如果使用DRM策略生成支持许可证链接的许可证，则服务器必须决定是发放叶许可证、根许可证还是同时发放两者。 如果要确定DRM策略支持的许可证链接类型，则必须使用`Policy.getLicenseChainType()`或调用`Policy.getRootLicenseId()`来确定DRM策略是否具有根许可证。 借助Adobe Primetime DRM 2.0许可证链，服务器通常在用户第一次请求特定计算机的许可证时发出叶许可证，此后发出根许可证。 如果要确定计算机是否已具有指定策略的叶许可证，则需要调用`LicenseRequestMessage.clientHasLeafForPolicy()`。
-
-借助Adobe Primetime DRM 3.0中增强的许可证链接，建议用户在第一次请求特定计算机的许可证时同时发布叶和根。 如果用户已拥有Root许可证，则服务器可能仅发出Leaf（调用`LicenseRequestMessage.clientHasEnhancedRootForPolicy()`以确定客户端是否已拥有3.0 Enhanced Root）。 然后，对于后续的许可证请求，客户端会指示它已具有Leaf和Root，因此服务器应发布新的Root许可证。 当使用增强的许可证链时，必须调用`setRootKeyRetrievalInfo()`以提供解密DRM策略中的根加密密钥所需的凭据。
+透過Adobe Primetime DRM 3.0中的增強型授權鏈結，建議在使用者第一次請求特定電腦的授權時同時核發Leaf和Root。 如果使用者已經擁有Root授權，伺服器可能只會發出Leaf (呼叫 `LicenseRequestMessage.clientHasEnhancedRootForPolicy()` 以判斷使用者端是否已具有3.0 Enhanced Root)。 若是後續的授權要求，使用者端會指出它已有分葉和根，所以伺服器應該核發新的根授權。 使用增強型授權鏈結時， `setRootKeyRetrievalInfo()` 必須呼叫以提供在DRM原則中解密根加密金鑰所需的認證。
 
 >[!NOTE]
 >
->如果策略支持3.0增强许可证链接，但客户端是Primetime DRM 2.0，则服务器将发出2.0原始链接许可证。 要确定客户端版本，请使用`LicenseRequestMessage.getClientVersion()`。
-
+>如果原則支援3.0 Enhanced License Chaining，但使用者端是Primetime DRM 2.0，則伺服器會發出2.0原始鏈結授權。 若要判斷使用者端版本，請使用 `LicenseRequestMessage.getClientVersion()`.

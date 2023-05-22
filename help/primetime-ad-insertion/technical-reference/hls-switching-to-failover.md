@@ -1,30 +1,29 @@
 ---
-title: 促进HLS播放器切换到故障转移／备份流
-description: 如果Apple HLS堆栈无法检索主集的任何流，则它支持切换到故障转移／备份流。 对于Apple HLS设备，为了便于故障转移，您可以发出信号通知清单服务器将主控播放列表中标识的主流和故障转移流视为不连接集（使用它们自己的UUID）。
-translation-type: tm+mt
-source-git-commit: d5e948992d7c59e80b530c8f4619adbffc3c03d8
+title: 促進HLS播放器切換到容錯移轉/備份資料流
+description: 如果無法擷取主要集的任何資料流，Apple HLS棧疊支援切換至容錯移轉/備份資料流。 對於Apple HLS裝置，為了方便容錯移轉，您可以傳送訊號給資訊清單伺服器，以將主要播放清單中識別的主要和容錯移轉資料流視為脫離連線的集合（使用其自己的UUID）。
+exl-id: 58c7a490-403f-41b2-bdbd-6f93e27083b0
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '345'
 ht-degree: 0%
 
 ---
 
+# 促進HLS播放器切換到容錯移轉/備份資料流 {#facilitating-hls-player-switching-to-failover-backup-streams}
 
-# 促进HLS播放器切换到故障转移／备份流{#facilitating-hls-player-switching-to-failover-backup-streams}
+如果無法擷取主要集的任何資料流，Apple HLS棧疊支援切換至容錯移轉/備份資料流。 對於Apple HLS裝置，為了方便容錯移轉，您可以傳送訊號給資訊清單伺服器，以將主要播放清單中識別的主要和容錯移轉資料流視為脫離連線的集合（使用其自己的UUID）。
 
-如果Apple HLS堆栈无法检索主集的任何流，则它支持切换到故障转移／备份流。 对于Apple HLS设备，为了便于故障转移，您可以发出信号通知清单服务器将主控播放列表中标识的主流和故障转移流视为不连接集（使用它们自己的UUID）。
+若要加速切換至Apple HLS裝置上的容錯移轉或備份資料流，您可以指定 `ptfailover` BootstrapURL中的引數。 如果您提供此引數，資訊清單伺服器會為每個容錯移轉集建立個別的播放工作階段（決定拼接的廣告）。
 
-为便于切换到Apple HLS设备上的故障转移或备份流，可在BootstrapURL中指定`ptfailover`参数。 如果您提供此参数，清单服务器将为每个故障转移集创建单独的播放会话（确定拼接广告）。
+## 詳細資料
 
-## 详细信息
+當您包含時，SSAI如何處理HLS切換到容錯移轉/備份 `ptfailover=true` 在Bootstrap請求中：
 
-当您在Bootstrap请求中包含`ptfailover=true`时，SSAI如何处理HLS切换到故障转移／备份：
+* 當主要播放清單包含主要和備份集時：
 
-* 当主控的播放列表包含主播放列表和备份集时：
+   * 資訊清單伺服器會使用識別不同容錯移轉集的AV資料流URL。 `BANDWIDTH` 屬性和AV資料流URL的剖析順序。 它會建立個別的內部播放工作階段（以個別的UUID識別），並建立指向資訊清單伺服器的串流URL，這些UUID會識別不同的播放工作階段。
+   * 資訊清單伺服器會使用相符專案來識別不同容錯移轉集的I-Frame資料流URL `RESOLUTION` I-Frame資料流URL的屬性和剖析順序。 SSAI會使用識別I-Frame串流URL相關AV串流的UUID，指向SSAI。
+   * 對於此功能，資訊清單伺服器僅支援 `EXT-X-MEDIA` 群組在主播放清單中沒有URI屬性。
+   * 資訊清單伺服器會偵測來自CDN的404錯誤回應，其中包含 `X-Object-Too-Old: true` 標題，並在將該回應傳送至播放器時保留狀態代碼和標題。
 
-   * 清单服务器使用`BANDWIDTH`属性和AV流URL的解析顺序来标识不同故障转移集的AV流URL。 它创建单独的内部播放会话（由单独的UUID标识），并创建指向清单服务器的流URL，这些清单服务器具有标识不同播放会话的不同UUID。
-   * 清单服务器使用匹配的`RESOLUTION`属性和I帧流URL的解析顺序为不同故障转移集标识I帧流URL。 SSAI使用UUID标识指向SSAI的I帧流URL的关联AV流。
-   * 对于此功能，清单服务器仅支持主控播放列表中没有URI属性的`EXT-X-MEDIA`组。
-   * 清单服务器检测来自具有`X-Object-Too-Old: true`头的CDN的404错误响应，并在将该响应发送到播放器时保留状态代码和头。
-
-* 预卷广告只添加到主集合；它们在故障转移集中被完全禁用，以避免在播放器切换到故障转移流时出现任何错误和／或重复的预卷广告。
+* 前段廣告只會新增到主要集；在容錯移轉集中會完全停用前段廣告，以避免播放器切換至容錯移轉資料流時有任何錯誤和/或重複的前段廣告。

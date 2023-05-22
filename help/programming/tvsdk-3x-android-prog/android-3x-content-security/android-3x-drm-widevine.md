@@ -1,34 +1,33 @@
 ---
-description: 您可以使用PrimetimeDigital Rights Management(DRM)系统的功能来提供对视频内容的安全访问。 或者，您也可以使用第三方DRM解决方案作为Adobe集成解决方案的替代方案。
+description: 您可以使用PrimetimeDigital Rights Management(DRM)系統的功能，提供對視訊內容的安全存取。 或者，您也可以使用協力廠商DRM解決方案，作為Adobe整合解決方案的替代方案。
 title: Widevine DRM
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 44ab032e-e665-4b63-a08b-54e862894987
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '288'
 ht-degree: 0%
 
 ---
 
-
 # Widevine DRM {#widevine-drm}
 
-您可以使用PrimetimeDigital Rights Management(DRM)系统的功能来提供对视频内容的安全访问。 或者，您也可以使用第三方DRM解决方案作为Adobe集成解决方案的替代方案。
+您可以使用PrimetimeDigital Rights Management(DRM)系統的功能，提供對視訊內容的安全存取。 或者，您也可以使用協力廠商DRM解決方案，作為Adobe整合解決方案的替代方案。
 
-有关第三方DRM解决方案可用性的最新信息，请与Adobe代表联系。
+請連絡您的Adobe代表，取得有關協力廠商DRM解決方案可用性的最新資訊。
 
 <!--<a id="section_1385440013EF4A9AA45B6AC98919E662"></a>-->
 
-您可以将Android本机Widevine DRM与HLS CMAF流一起使用。
+您可以搭配HLS CMAF資料流使用Android原生Widevine DRM。
 
 >[!NOTE]
 >
-> Widevine CENC CTR方案要求最低版本为Android 4.4（API级别19）。
+> Widevine CENC CTR Scheme至少需要Android 4.4版(API Level 19)。
 >
-> Widevine CBCS Scheme要求最低版本为Android 7.1(API Level 25)。
+> Widevine CBCS配置需要最低Android 7.1版(API Level 25)。
 
-## 设置许可证服务器详细信息{#license-server-details}
+## 設定授權伺服器詳細資料 {#license-server-details}
 
-在加载MediaPlayer资源之前，请调用以下`com.adobe.mediacore.drm.DRMManager` API:
+呼叫下列專案 `com.adobe.mediacore.drm.DRMManager` 載入MediaPlayer資源前的API：
 
 ```java
 public static void setProtectionData(
@@ -37,15 +36,15 @@ String licenseServerURL,
 Map<String, String> requestProperties)
 ```
 
-### 参数{#arguments-license-server}
+### 引數 {#arguments-license-server}
 
-* `drm` - `"com.widevine.alpha"` 维德文。
+* `drm` - `"com.widevine.alpha"` 為Widevine。
 
-* `licenseServerURL`  — 接收许可证请求的Widevine许可证服务器的URL。
+* `licenseServerURL` - Widevine授權伺服器接收授權要求的URL。
 
-* `requestProperties`  — 包含要包含在传出许可证请求中的额外标头。
+* `requestProperties`  — 包含要包含在傳出授權請求中的額外標頭。
 
-例如，在使用为Expressplay DRM打包的内容时，请在播放前使用以下代码：
+例如，使用封裝為Expressplay DRM的內容時，在播放之前請使用下列程式碼：
 
 ```java
 DRMManager.setProtectionData(
@@ -55,33 +54,33 @@ DRMManager.setProtectionData(
   null);
 ```
 
-## 提供自定义回调{#custom-callback}
+## 提供自訂回撥 {#custom-callback}
 
-在加载MediaPlayer资源之前，请调用以下`com.adobe.mediacore.drm.DRMManager` API。
+呼叫下列專案 `com.adobe.mediacore.drm.DRMManager` 載入MediaPlayer資源之前的API。
 
 ```java
 public static void setMediaDrmCallback(
 MediaDrmCallback callback)
 ```
 
-### 参数{#arguments-custom-callback}
+### 引數 {#arguments-custom-callback}
 
-* `callback` - MediaDrmCallback的自定义实现，以代替默认 `com.adobe.mediacore.drm.WidevineMediaDrmCallback`。
+* `callback`  — 自訂實施MediaDrmCallback以使用，而非預設值 `com.adobe.mediacore.drm.WidevineMediaDrmCallback`.
 
-有关详细信息，请参阅[Android TVSDK 3.11 API文档](https://help.adobe.com/en_US/primetime/api/psdk/javadoc3.11/index.html)。
+如需詳細資訊，請參閱 [Android TVSDK 3.11 API檔案](https://help.adobe.com/en_US/primetime/api/psdk/javadoc3.11/index.html).
 
-## 获取当前加载的MediaPlayer资源{#pssh-box-mediaplayer-resoource}的PSSH框
+## 擷取目前載入之MediaPlayer資源的PSSH方塊 {#pssh-box-mediaplayer-resoource}
 
-调用以下`com.adobe.mediacore.drm.DRMManager` API，最好在自定义回调实现中。
+呼叫下列專案 `com.adobe.mediacore.drm.DRMManager` API，最好在自訂回呼實施中進行。
 
 ```java
 public static byte[] getPSSH()
 ```
 
-API返回与加载的Widevine媒体资源关联的保护系统特定标头框。
+API會傳回與載入的Widevine媒體資源相關聯的Protection System Specific Header Box。
 
-有效框在较短的时间内可用（在创建DRM实例和加载密钥之间）。 `MediaDrmCallback callback executeKeyRequest()` 可以使用它自定义获取许可证密钥。
+有效方塊可用於較短期間（在DRM例證建立和載入金鑰之間）。 `MediaDrmCallback callback executeKeyRequest()` 可使用它來自訂擷取授權金鑰。
 
 >[!NOTE]
 >
-> `getPSSH()` 仅单播放器实例支持API。多个播放器或“即时启动”功能应依次初始化，以接收正确的框。
+> `getPSSH()` API僅支援單一播放器執行個體。 多個播放器或「立即開啟」功能應該以序列方式初始化，才能收到正確的方塊。

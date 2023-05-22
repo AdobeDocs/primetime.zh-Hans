@@ -1,73 +1,72 @@
 ---
-description: 从创建MediaPlayer实例到终止实例的那一刻起，此实例将从一个状态过渡到下一个状态。
-title: MediaPlayer对象的生命周期和状态
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 從建立MediaPlayer例項的那一刻到它終止的那一刻，此例項會從一個狀態轉換到下一個狀態。
+title: MediaPlayer物件的生命週期和狀態
+exl-id: 26cad982-ef85-42fb-aaa7-e5d494088766
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '372'
 ht-degree: 0%
 
 ---
 
+# MediaPlayer物件的生命週期和狀態{#life-cycle-and-states-of-the-mediaplayer-object}
 
-# MediaPlayer对象的生命周期和状态{#life-cycle-and-states-of-the-mediaplayer-object}
+從建立MediaPlayer例項的那一刻到它終止的那一刻，此例項會從一個狀態轉換到下一個狀態。
 
-从创建MediaPlayer实例到终止实例的那一刻起，此实例将从一个状态过渡到下一个状态。
+可能的狀態如下：
 
-以下是可能的状态：
+* **閒置**： `MediaPlayerStatus.IDLE`
 
-* **空闲**:  `MediaPlayerStatus.IDLE`
+* **正在初始化**： `MediaPlayerStatus.INITIALIZING`
 
-* **初始化**:  `MediaPlayerStatus.INITIALIZING`
+* **已初始化**： `MediaPlayerStatus.INITIALIZED`
 
-* **初始化**:  `MediaPlayerStatus.INITIALIZED`
+* **正在準備**： `MediaPlayerStatus.PREPARING`
 
-* **准备**:  `MediaPlayerStatus.PREPARING`
+* **已準備**： `MediaPlayerStatus.PREPARED`
 
-* **准备**:  `MediaPlayerStatus.PREPARED`
+* **正在播放**： `MediaPlayerStatus.PLAYING`
 
-* **播放**:  `MediaPlayerStatus.PLAYING`
+* **已暫停**： `MediaPlayerStatus.PAUSED`
 
-* **暂停**:  `MediaPlayerStatus.PAUSED`
+* **搜尋**： `MediaPlayerStatus.SEEKING`
 
-* **搜索**:  `MediaPlayerStatus.SEEKING`
+* **完成**： `MediaPlayerStatus.COMPLETE`
 
-* **完成**:  `MediaPlayerStatus.COMPLETE`
+* **錯誤**： `MediaPlayerStatus.ERROR`
 
-* **错误**:  `MediaPlayerStatus.ERROR`
+* **已發行**： `MediaPlayerStatus.RELEASED`
 
-* **已发布**:  `MediaPlayerStatus.RELEASED`
+完整的狀態清單定義於 `MediaPlayerStatus`.
 
-状态的完整列表在`MediaPlayerStatus`中定义。
+瞭解播放器的狀態很有用，因為某些操作只有在播放器處於特定狀態時才被允許。 例如， `play` 當處於「閒置」狀態時，無法呼叫。 它必須在達到PREPARED狀態之後呼叫。 ERROR狀態也會變更後續發生的情況。
 
-了解玩家的状态很有用，因为只有当玩家处于特定状态时，才允许某些操作。 例如，在IDLE状态下无法调用`play`。 必须在到达准备状态后发出呼吁。 ERROR状态还会更改接下来可能发生的情况。
+載入及播放媒體資源時，播放器會以下列方式轉換：
 
-加载和播放媒体资源时，播放器会按以下方式过渡:
+1. 初始狀態為IDLE。
+1. 您的應用程式呼叫 `MediaPlayer.replaceCurrentResource`，會將播放器移動至INITIALIZING狀態。
+1. 如果瀏覽器TVSDK成功載入資源，狀態會變更為INITIALIZED。
+1. 您的應用程式呼叫 `MediaPlayer.prepareToPlay`，而狀態會變更為「準備中」。
+1. 瀏覽器TVSDK會準備媒體串流，並開始廣告解析和廣告插入（如果已啟用）。
 
-1. 初始状态为IDLE。
-1. 应用程序调用`MediaPlayer.replaceCurrentResource`，将播放器移动到INITIALIZING状态。
-1. 如果浏览器TVSDK成功加载资源，则状态将更改为INITIALIZED。
-1. 您的应用程序调用`MediaPlayer.prepareToPlay`，并且状态更改为PREPARING。
-1. 浏览器TVSDK准备媒体流，并开始广告解析和广告插入（如果启用）。
-
-   完成此步骤后，将在时间轴中插入广告或广告过程失败，且播放器状态更改为PREPARED。
-1. 当应用程序播放和暂停媒体时，状态在播放和暂停之间移动。
+   完成此步驟後，即會在時間軸中插入廣告，或廣告程式失敗，且播放器狀態會變更為「已準備」。
+1. 當您的應用程式播放和暫停媒體時，狀態會在「正在播放」和「已暫停」之間移動。
 
    >[!TIP]
    >
-   >播放或暂停时，当您导航离开播放、关闭设备或切换应用程序时，状态变化为SUSPENDED并释放资源。 要继续，请恢复媒体播放器。
+   >播放或暫停時，當您離開播放、關閉裝置或切換應用程式時，狀態會變更為「已暫停」，而資源會釋放。 若要繼續，請還原媒體播放器。
 
-1. 当播放器到达流的末尾时，状态变为COMPLETE。
-1. 应用程序释放媒体播放器时，状态将更改为“已释放”。
-1. 如果进程期间发生错误，则状态将更改为ERROR。
+1. 當播放器到達資料流結尾時，狀態會變成「完成」。
+1. 當您的應用程式發行媒體播放器時，狀態會變更為「已發行」。
+1. 如果在處理過程中發生錯誤，狀態會變更為ERROR。
 
-以下是MediaPlayer实例的生命周期的插图：
+以下是MediaPlayer例項的生命週期圖例：
 
 <!--<a id="fig_DD3DAE7507C549C8A4720A26DFCFFCCB"></a>-->
 
 ![](assets/player-state-transitions-diagram-android_1.2_web.png)
 
-您可以使用状态向用户提供有关该过程的反馈（例如，在等待下一个状态更改时使用微调框）或在播放媒体时采取后续步骤，例如在调用下一个方法之前等待适当的状态。
+您可以使用狀態來向使用者提供程式的意見回饋（例如，在等待下一個狀態變更時執行旋轉圖示），或是在播放媒體時採取後續步驟，例如在呼叫下一個方法之前等待適當的狀態。
 
 例如：
 
@@ -82,4 +81,3 @@ function onStateChanged(state) {
     } 
 } 
 ```
-

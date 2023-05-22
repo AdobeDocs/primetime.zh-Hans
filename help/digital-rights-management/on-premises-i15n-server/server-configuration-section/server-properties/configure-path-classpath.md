@@ -1,37 +1,34 @@
 ---
-title: 配置路径和类路径
-description: 配置路径和类路径
+title: 設定路徑和類別路徑
+description: 設定路徑和類別路徑
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: e6e9f837-4e3d-43e1-971d-3fa0ccaeff39
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '149'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
+# 設定路徑和類別路徑{#configure-the-path-and-classpath}
 
-# 配置路径和类路径{#configure-the-path-and-classpath}
+此 [!DNL flashaccess.war] 包含 [!DNL jsafeWithNative.jar]，亦即Crypto-J程式庫。 後者需要額外的原生程式庫來執行加密作業。
 
-[!DNL flashaccess.war]包含[!DNL jsafeWithNative.jar]，该库是Crypto-J库。 后者需要额外的本机库来执行加密操作。
+1. 新增原生 [!DNL jsafe] 資料庫至您的路徑。
 
-1. 将本机[!DNL jsafe]库添加到路径中。
+   * **Linux / [!DNL libjsafe.so] -** 包含的目錄 [!DNL libjsafe.so] 路徑上（原生加密J程式庫也可用於其他平台）。 例如，設定 [!DNL libjsafe.so] 於 `LD_LIBRARY_PATH`.
 
-   * **Linux/- [!DNL libjsafe.so] 包** 含的目 [!DNL libjsafe.so] 录必须位于路径上（本机Crypto-J库也可用于其他平台）。例如，在`LD_LIBRARY_PATH`上设置[!DNL libjsafe.so]。
+   * **Windows / [!DNL jsafe.dll] -** Windows上的對應專案 [!DNL libjsafe.so] 是否適當 [!DNL jsafe.dll].
+   您可在以下位置使用這些程式庫： [!DNL thirdparty] 資料庫資料夾。
+1. 放入其中一項 [!DNL adobe-flashaccess-certs] 類別路徑上的jar檔案。
 
-   * **Windows/- [!DNL jsafe.dll] Windows** 上的对应项 [!DNL libjsafe.so] 是合适的 [!DNL jsafe.dll]。
-   这些库位于[!DNL thirdparty]库文件夹中。
-1. 将[!DNL adobe-flashaccess-certs] jar文件之一放在类路径上。
-
-       此JAR文件未包含在WAR文件中；必须将其显式添加到类路径中。
+       這個JAR檔案不包括在WAR檔案中；您必須將其明確新增到類別路徑中。
    
-   * 开发服务器 — 应仅使用[!DNL adobe-flashaccess-certs-prerelease.jar]。
-   * 生产服务器 — 应仅使用[!DNL adobe-flashaccess- certs.jar]
+   * 開發伺服器 — 應該僅使用 [!DNL adobe-flashaccess-certs-prerelease.jar].
+   * 生產伺服器 — 僅應使用 [!DNL adobe-flashaccess- certs.jar]
 
-分发包括[!DNL shared]文件夹，其中既包括jar文件，也包括预配置的[!DNL AdobeInitial.properties]文件。 Adobe建议您通过[!DNL catalina.properties]文件将这些项目添加到`common.loader`。 例如：
+此分佈包含 [!DNL shared] 同時包含jar檔案和預先設定的資料夾 [!DNL AdobeInitial.properties] 檔案。 Adobe建議您將這些專案新增至 `common.loader` 透過 [!DNL catalina.properties] 檔案。 例如：
 
 ```
 common.loader=<Any Pre-Existing Values>,${catalina.home}/shared/classes,${catalina.home}/shared/lib/*.jar
 ```
-
-

@@ -1,29 +1,28 @@
 ---
-title: 使用Ad Insertion进行VOD
-description: 将Ad Insertion用于VOD
-translation-type: tm+mt
-source-git-commit: 0f98b9848f1764e7c66e3692d8a845513493597f
+title: 使用Ad Insertion進行VOD
+description: 使用VOD的Ad Insertion
+exl-id: c998938e-f8a6-4ad3-97f6-ca4ad5055f15
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '181'
 ht-degree: 0%
 
 ---
 
+# 使用Ad Insertion進行VOD {#ad-insertion-vod}
 
-# 使用Ad Insertion进行VOD {#ad-insertion-vod}
-
-PrimetimeAd Insertion使用标准VAST 3.0+或VMAP 1.0+格式支持广告插入多个VOD资产。
+PrimetimeAd Insertion支援使用標準VAST 3.0+或VMAP 1.0+格式將廣告插入多個VOD資產。
 
 * [IAB VMAP](https://www.iab.com/wp-content/uploads/2015/06/VMAPv1_0.pdf)
 
 * [IAB VAST](https://www.iab.com/wp-content/uploads/2015/06/VASTv3_0.pdf)
 
-## VOD（广告映射）{#server-mapped-ads}
+## VOD （廣告地圖） {#server-mapped-ads}
 
-PrimetimeAd Insertion支持在播放开始前插入广告的VOD插入，广告时间线信息以VMAP格式定义。  特定于VMAP的广告跟踪（如breakStart/breakEnd信标）将与[广告跟踪](set-up-ad-tracking.md)一起提供。
+PrimetimeAd Insertion支援使用VMAP格式中定義的廣告時間表資訊，在開始播放之前插入廣告，以插入VOD插入。  VMAP專屬廣告追蹤（例如breakStart/breakEnd信標）將透過以下方式傳送： [廣告追蹤](set-up-ad-tracking.md).
 
-## 完整事件重播(带有Ad Decisioning提示的VOD){#full-event-replay}
+## 完整事件重播(具有Ad Decisioning提示的VOD) {#full-event-replay}
 
-PrimetimeAd Insertion还支持包含内容流本身提示的专用VOD资产，如回放以前录制的实时事件。 有关我们支持的广告决策提示（或提示格式）类型的详细信息，请参阅[在实时／线性](ad-insertion-live-linear-stream.md)中使用Ad Insertion。
+PrimetimeAd Insertion也支援在內容串流本身包含提示的特殊VOD資產，例如可在先前錄製的即時事件播放中找到。 如需我們支援的廣告決策提示（或提示格式）型別的詳細資訊，請參閱 [在即時/線性中使用Ad Insertion](ad-insertion-live-linear-stream.md).
 
-对于包含多个广告分段的VOD资产，我们支持单个广告请求和并行的多个广告请求方案。 有关详细信息，请参阅[参数说明](/help/primetime-ad-insertion/technical-reference/bootstrap-api.md)中的`ptmulticall`参数。 VAST和VMAP格式均支持流内提示。
+對於包含多個廣告插播的VOD資產，我們支援單一廣告請求和平行多個廣告請求情境。 如需詳細資訊，請參閱 `ptmulticall` 中的引數 [引數說明](/help/primetime-ad-insertion/technical-reference/bootstrap-api.md). 串流提示支援VAST和VMAP格式。

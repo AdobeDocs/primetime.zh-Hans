@@ -1,24 +1,22 @@
 ---
-description: 设置策略是指定允许用户何时以及如何播放受保护视频内容的过程。
-title: 设置策略
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 設定原則是指定允許使用者播放受保護視訊內容的時機和方式條件的程式。
+title: 設定原則
+exl-id: ab7295c8-88f2-4d4a-a7f1-3332df7bb735
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '163'
 ht-degree: 0%
 
 ---
 
+# 設定原則{#setting-policies}
 
-# 设置策略{#setting-policies}
+設定原則是指定允許使用者播放受保護視訊內容的時機和方式條件的程式。
 
-设置策略是指定允许用户何时以及如何播放受保护视频内容的过程。
+原則建立是授權權杖請求的一部分。 (請參閱 [https://www.expressplay.com/developer/restapi/#widevine-license-token-request](https://www.expressplay.com/developer/restapi/#widevine-license-token-request) 例如，使用Widevine)。
 
-策略创建作为许可证令牌请求的一部分进行。 (有关使用Widevine的示例，请参阅[https://www.expressplay.com/developer/restapi/#widevine-license-token-request](https://www.expressplay.com/developer/restapi/#widevine-license-token-request))。
-
-一旦客户的服务器端代码确定将颁发许可证（基于授权检查、地理位置或任何其他必需信息），它就会请求令牌，并在令牌&#x200B;*中指定所需的`securityLevel`、`hdcpOutputControl`和`licenseDuration`。*&#x200B;这些是Widevine策略的客户端选项。 其他DRM解决方案也优惠了类似的方法，但每种情况下的细节都有所不同，并在各个工作流中加以阐述。
+一旦客戶的伺服器端程式碼判定將核發授權（根據權益檢查、地理位置或任何其他必要資訊），就會要求代號，然後 *在權杖中* 它會指定必要的 `securityLevel`， `hdcpOutputControl`、和 `licenseDuration`. 這些是Widevine原則的使用者端選項。 其他DRM解決方案提供類似的方法，但每個案例的詳細資訊都不同，並在個別工作流程中詳細說明。
 
 >[!NOTE]
 >
->Adobe提供了一个示例参考服务器，用于说明如何实现您自己的授权服务器/店面：[参考服务器：示例ExpressPlay授权服务器(SEES)](../../multi-drm-workflows/feature-topics/sees-reference-server.md)
-
+>Adobe提供範例參考伺服器，說明如何實作您自己的軟體權利檔案伺服器/店面： [參考伺服器：範例ExpressPlay軟體權利檔案伺服器(SEES)](../../multi-drm-workflows/feature-topics/sees-reference-server.md)

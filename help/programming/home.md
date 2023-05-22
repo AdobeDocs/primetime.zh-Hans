@@ -1,42 +1,42 @@
 ---
-title: Adobe Primetime编程帮助
-description: Adobe Primetime编程帮助
+title: Adobe Primetime程式設計說明
+description: Adobe Primetime程式設計說明
 copied-description: true
 exl-id: 4abaa7a7-4302-4471-88fd-a23eb6af6175
 source-git-commit: 5619a2170d85871c7a92221181cd05e929ce6ce2
 workflow-type: tm+mt
 source-wordcount: '233'
-ht-degree: 36%
+ht-degree: 0%
 
 ---
 
-# Primetime 编程帮助
+# Primetime程式設計說明
 
-欢迎使用Adobe Primetime的Android和iOS编程帮助。 左侧导航中列出的文档允许您了解如何在Android设备上使用Java以及在iOS设备上使用Objective-C开发应用程序和视频播放器。
+歡迎使用Adobe Primetime的Android和iOS程式設計說明。 左側導覽列示的檔案可讓您瞭解如何在Android裝置上使用Java以及在iOS裝置上使用Objective-C來開發應用程式和影片播放程式。
 
-有关 [当前已发布版本](tvsdk-3x-ios-prog/ios-3x-introduction/ios-3x-overview/ios-3x-overview.md).
+請檢視以瞭解更多關於 [目前發行版本](tvsdk-3x-ios-prog/ios-3x-introduction/ios-3x-overview/ios-3x-overview.md).
 
-## 另请参阅
+## 另請參閱
 
-| 用户指南 | 描述 |
+| 使用手冊 | 說明 |
 |---|---|
-| [Primetime 发行说明](/help/release-notes/home.md) | 提供特定于发行版的信息、系统要求、限制、已修复问题和已知问题。 |
-| [帐户IQ文档](/help/AccountIQ/home.md) | 说明如何使用帐户IQ缓解密码共享。 |
-| [Primetime迁移和转换帮助](/help/migration-guides/home.md) | 解释从现有 Primetime TVSDK Suite 到下一代套件的转换和迁移流程。 |
-| [参考实施](/help/android-reference-implementation/home.md) | 帮助理解 TVSDK 并修改功能管理器以自定义您的个人播放器。 |
-| [Primetime Ad Insertion 帮助](/help/primetime-ad-insertion/home.md) | 解释如何通过在服务器上插入面向用户的动态广告来从内容获利，以及如何通过个性化广告吸引受众。 |
-| [Digital Rights Management](/help/digital-rights-management/home.md) | 帮助您进一步了解Digital Rights Management(DRM)中的各种用户场景 |
-| [Primetime API参考](/help/reference/api-references.md) | 提供有关 TVSDK 函数、数据结构和其他编程结构的详细信息。 |
-| [存档](https://helpx.adobe.com/primetime/archives.html) | 下载已存档文档的PDF。 |
+| [Primetime發行說明](/help/release-notes/home.md) | 提供版本特定資訊、系統需求、限制、已修正問題和已知問題。 |
+| [Account IQ檔案](/help/AccountIQ/home.md) | 說明如何使用Account IQ緩解密碼共用問題。 |
+| [Primetime移轉與轉換說明](/help/migration-guides/home.md) | 說明從您現有的Primetime TVSDK套裝轉換和移轉至新一代套裝的程式。 |
+| [參考實作](/help/android-reference-implementation/home.md) | 協助瞭解TVSDK並修改功能管理員，以自訂您的個人播放器。 |
+| [PrimetimeAd Insertion說明](/help/primetime-ad-insertion/home.md) | 說明如何透過在伺服器上插入以使用者為目標的動態廣告，從內容創造營收，並透過個人化廣告吸引對象。 |
+| [Digital Rights Management](/help/digital-rights-management/home.md) | 協助您進一步瞭解Digital Rights Management(DRM)中的各種使用者情境 |
+| [Primetime API參考](/help/reference/api-references.md) | 提供有關TVSDK函式、資料結構和其他程式設計建構的詳細資訊。 |
+| [封存](https://helpx.adobe.com/primetime/archives.html) | 下載封存檔案的PDF。 |
 
-## 有用资源
+## 實用資源
 
-* [了解Adobe Primetime](https://www.adobe.com/in/marketing/primetime.html)
+* [瞭解Adobe Primetime](https://www.adobe.com/in/marketing/primetime.html)
 
-* [并发监控](https://tve.helpdocsonline.com/concurrency-monitoring-introduction)
+* [並行監視](https://tve.helpdocsonline.com/concurrency-monitoring-introduction)
 
-* [Primetime身份验证](https://tve.helpdocsonline.com/home)
+* [Primetime驗證](https://tve.helpdocsonline.com/home)
 
-* [Adobe Primetime DRM论坛](https://forums.adobe.com/community/adobe_access)
+* [Adobe Primetime DRM論壇](https://forums.adobe.com/community/adobe_access)
 
-* [Adobe Primetime开发人员资源](https://www.adobe.com/devnet/primetime.html)
+* [Adobe Primetime開發人員資源](https://www.adobe.com/devnet/primetime.html)

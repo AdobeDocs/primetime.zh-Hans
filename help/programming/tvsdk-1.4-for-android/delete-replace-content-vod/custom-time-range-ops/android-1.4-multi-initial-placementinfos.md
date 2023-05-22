@@ -1,18 +1,17 @@
 ---
-description: TVSDK可以设置多个初始PlacementInformation。
-title: 多个初始位置信息
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: TVSDK可設定多個初始位置資訊。
+title: 多個初始位置資訊
+exl-id: 104e981e-7246-4e4a-9c14-dac6ee2624f6
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '20'
 ht-degree: 0%
 
 ---
 
+# 多個初始位置資訊{#multiple-initial-placementinformations}
 
-# 多个初始PlacementInformations{#multiple-initial-placementinformations}
-
-TVSDK可以设置多个初始PlacementInformation。
+TVSDK可設定多個初始位置資訊。
 
 ```java
 ArrayList<PlacementInformation> placementInformations = new ArrayList<PlacementInformation>(); 
@@ -48,4 +47,3 @@ else if (customRangeHelper.hasRanges() == CustomRangeHelper.REPLACE_RANGE) {
 } 
 return  placementInformations;
 ```
-

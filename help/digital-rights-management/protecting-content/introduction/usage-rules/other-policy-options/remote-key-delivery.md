@@ -1,27 +1,25 @@
 ---
-title: 远程和本地iOS密钥投放
-description: 远程和本地iOS密钥投放
+title: 遠端和本機iOS金鑰傳遞
+description: 遠端和本機iOS金鑰傳遞
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: becc2d3f-39f3-40ee-b980-7dfbbe6f569d
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '245'
 ht-degree: 0%
 
 ---
 
+# 遠端和本機iOS金鑰傳遞 {#remote-and-local-ios-key-delivery}
 
-# 远程和本地iOS密钥投放{#remote-and-local-ios-key-delivery}
+Adobe Primetime支援下列將金鑰傳送至iOS使用者端的選項：
 
-Adobe Primetime支持以下选项，用于iOS客户端的关键投放:
+* **遠端**  — 依照HTTP即時資料流(HLS)規格中指定的方式執行；M3U8資訊清單指定HTTPS路徑，其中包含應該用來解密資料流中下列加密區段的AES金鑰。 當您指定 `Remote` 在Primetime DRM原則中，使用者端裝置必須連線到遠端HTTPS伺服器才能取得AES金鑰。
 
-* **远程**  — 按照HTTP实时流(HLS)规范中的指定执行；M3U8清单指定包含AES密钥的HTTPS路径，该密钥应用于解密流中的以下加密段。在Primetime DRM策略中指定`Remote`时，客户端设备必须连接到远程HTTPS服务器才能获取AES密钥。
+* **本機**  — 當您指定 `Local` 在Primetime DRM中，本機HTTPS伺服器內嵌於iOS應用程式，然後管理所有AES金鑰要求，而不是連線到網際網路/網路來取得AES金鑰。 內嵌HTTPS伺服器會自動在P應用程式中設定和設定。 應用程式開發人員不需要介入。
 
-* **本地**  — 当您在Primetime DRM中 `Local` 指定而不是连接到AES密钥的因特网/网络时，本地HTTPS服务器会嵌入到iOS应用程序中，然后iOS应用程序会管理所有AES密钥请求。嵌入的HTTPS服务器会在P应用程序中自动设置和配置。 应用程序开发人员无需干预。
-
-远程密钥投放通过用于打包内容的Primetime DRM策略启用。 如果要更改此设置，必须重新打包内容。 如果启用远程密钥投放，则必须部署能够管理来自iOS客户端的密钥请求的Primetime DRM密钥服务器。 但是，对于其他平台上的客户端，工作流没有更改。
+遠端金鑰傳遞會透過用來封裝內容的Primetime DRM原則來啟用。 若要變更此設定，您必須重新封裝內容。 如果您啟用遠端金鑰傳遞，則必須部署可管理iOS使用者端之金鑰請求的Primetime DRM金鑰伺服器。 不過，其他平台的使用者端工作流程沒有變更。
 
 >[!NOTE]
 >
->键投放选择仅影响iOS客户端。 使用HLS内容的所有其他设备(如Android和Primetime on Desktop(Flash Player))始终使用`Local`键投放，即使已指定`Remote`。
-
+>金鑰傳遞選擇只會影響iOS使用者端。 所有其他使用HLS內容的裝置(例如Android和案頭上的Primetime (Flash Player))，一律使用 `Local` 金鑰傳遞，即使 `Remote` 已指定。

@@ -1,22 +1,21 @@
 ---
-title: 概述
-description: 概述
+title: 概觀
+description: 概觀
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 4781e0bc-c753-4c8f-9c91-bf15294eb8b2
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '60'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#overview}
 
-# 概述{#overview}
+使用Primetime DRM Policy Manager命令列工具( [!DNL AdobePolicyManager.jar])，以建立和管理DRM政策。
 
-使用Primetime DRM策略管理器命令行工具([!DNL AdobePolicyManager.jar])创建和管理DRM策略。
-
-运行[!DNL AdobePolicyManager.jar]之前，必须在配置文件的“策略管理器属性”部分设置属性。 在配置文件中设置的值将应用于所有DRM策略。
+執行之前 [!DNL AdobePolicyManager.jar]，您必須在設定檔案的Policy Manager Properties區段中設定屬性。 您在組態檔案中設定的值會套用至所有DRM原則。
 
 >[!NOTE]
 >
->您还可以从命令行指定所有策略管理器属性。
+>您也可以從命令列指定所有Policy Manager屬性。

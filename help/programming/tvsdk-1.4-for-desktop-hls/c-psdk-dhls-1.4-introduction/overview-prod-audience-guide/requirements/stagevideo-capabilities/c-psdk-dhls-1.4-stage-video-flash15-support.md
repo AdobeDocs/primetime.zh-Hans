@@ -1,32 +1,31 @@
 ---
-description: 从Flash 15和更高版本，当使用StageVideo进行硬件渲染不可用时，StageVideo无缝地回退到软件StageVideo对象。
-title: Flash 15支持StageVideo
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 從Flash15及更新版本開始，當無法使用StageVideo的硬體轉譯功能時，StageVideo會順暢地回覆為軟體StageVideo物件。
+title: Flash15支援StageVideo
+exl-id: 23ef0806-3aa5-4c48-a4f7-4ad9b72bdcc9
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '246'
 ht-degree: 0%
 
 ---
 
+# Flash15支援StageVideo{#flash-support-for-stagevideo}
 
-# Flash 15支持StageVideo{#flash-support-for-stagevideo}
+從Flash15及更新版本開始，當無法使用StageVideo的硬體轉譯功能時，StageVideo會順暢地回覆為軟體StageVideo物件。
 
-从Flash 15和更高版本，当使用StageVideo进行硬件渲染不可用时，StageVideo无缝地回退到软件StageVideo对象。
+請考慮下列有關Flash15 StageVideo後援軟體的資訊：
 
-请考虑以下有关Flash 15 StageVideo回退到软件的信息：
+* 您的應用程式中不需要變更程式碼。
+* 不需變更TVSDK。
 
-* 您的应用程序中不需要代码更改。
-* 无需更改TVSDK。
+   您不需要TVSDK更新即可使用StageVideo後援軟體。
+* 您的應用程式需要重新編譯以進行Flash15。
+* 您針對Flash15重新編譯的應用程式將繼續使用Flash14及舊版，前提是這些應用程式不使用Flash Player15中推出的任何新API。
 
-   您无需TVSDK更新即可使用StageVideo回退到软件。
-* 您的应用程序需要重新编译以使用Flash 15。
-* 只要Flash 15中未引入任何新的API，您为Flash 15重新编译的应用程序将继续与Flash Player 14及更早版本一起使用。
+   如果您的Flash14應用程式需要使用新的Flash15 API，您必須動態呼叫API，並將Object型別轉型為，讓應用程式在執行階段不會在Flash Player14中失敗。
 
-   如果您的Flash 14应用程序需要使用新的Flash 15 API，则必须使用对象类型的转换动态调用API，以便应用程序在运行时不会在Flash Player 14中失败。
+## HTML覆蓋圖 {#html-overlays}
 
-## HTML叠加{#html-overlays}
+在Flash15和更新版本中，您可以在硬體StageVideo無法使用並回覆至軟體StageVideo時，維持順暢顯示HTML覆蓋圖。 若要啟用此功能，請設定 `wmode=opaque`.
 
-在Flash 15和更高版本中，当硬件StageVideo不可用并回退到软件StageVideo时，您可以保持HTML叠加的无缝显示。 要启用此功能，请设置`wmode=opaque`。
-
-某些旧版浏览器不支持硬件加速。 有关这些要求的详细信息，请参阅[StageVideo最低要求](../../../../../tvsdk-1.4-for-desktop-hls/c-psdk-dhls-1.4-introduction/overview-prod-audience-guide/requirements/stagevideo-capabilities/r-psdk-dhls-1.4-requirements-stage-video.md)。 设置`wmode=opaque`时，视频使用软件StageVideo渲染，这会影响性能。 通常，设置`wmode=direct`会将视频直接渲染到GPU，这会产生更好的性能。 但是，此选项也会覆盖HTML叠加。
+某些舊版瀏覽器不支援硬體加速。 如需這些需求的詳細資訊，請參閱 [StageVideo最低需求](../../../../../tvsdk-1.4-for-desktop-hls/c-psdk-dhls-1.4-introduction/overview-prod-audience-guide/requirements/stagevideo-capabilities/r-psdk-dhls-1.4-requirements-stage-video.md). 當您設定時 `wmode=opaque`，影片會以StageVideo軟體呈現，而這會影響效能。 通常設定 `wmode=direct` 直接將視訊轉譯為GPU，進而獲得更優異的效能。 不過，此選項也會覆寫HTML覆蓋圖。

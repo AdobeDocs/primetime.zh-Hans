@@ -1,91 +1,90 @@
 ---
-description: 媒体播放器的状态决定哪些操作是合法的。
-title: MediaPlayer对象的生命周期和状态
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 媒體播放器的狀態會決定哪些動作是合法的。
+title: MediaPlayer物件的生命週期和狀態
+exl-id: b50d5378-4e9b-44c0-9098-8c3e27053b3b
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '453'
 ht-degree: 0%
 
 ---
 
+# MediaPlayer物件的生命週期和狀態{#lifecycle-and-statuses-of-the-mediaplayer-object}
 
-# MediaPlayer对象的生命周期和状态{#lifecycle-and-statuses-of-the-mediaplayer-object}
+媒體播放器的狀態會決定哪些動作是合法的。
 
-媒体播放器的状态决定哪些操作是合法的。
+使用媒體播放器狀態：
 
-对于使用媒体播放器状态：
+* 您可以擷取 `MediaPlayer` 物件與 `MediaPlayer.getStatus()`.
 
-* 可以检索`MediaPlayer.getStatus()`对象的当前状态。`MediaPlayer`
+* 狀態清單定義於 [MediaPlayerStatus](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_2.5/com/adobe/mediacore/MediaPlayerStatus.html) 列舉。
 
-* 状态列表在[MediaPlayerStatus](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_2.5/com/adobe/mediacore/MediaPlayerStatus.html)枚举中定义。
-
-`MediaPlayer`实例生命周期的状态过渡图：
+生命週期的狀態轉換圖 `MediaPlayer` 例項：
 
 <!--<a id="fig_A6425F24C7734DC681D992859D2A6743"></a>-->
 
 ![](assets/media_player_statuses.png)
 
-下表提供了有关媒体播放器的生命周期和状态的详细信息：
+下表提供有關媒體播放器生命週期和狀態的詳細資訊：
 
 <table id="table_82757A0043EB4AACA474E6B30326A6B7"> 
  <thead> 
   <tr> 
-   <th colname="col1" class="entry"> 状态 </th> 
-   <th colname="col2" class="entry"> 在 </th> 
+   <th colname="col1" class="entry"> 狀態 </th> 
+   <th colname="col2" class="entry"> 發生於 </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
-   <td colname="col1"> 空闲 </td> 
-   <td colname="col2"> <p>媒体播放器的初始状态。 播放器已创建，正在等待您指定媒体播放器项。 </p> </td> 
+   <td colname="col1"> 閒置 </td> 
+   <td colname="col2"> <p>媒體播放器的初始狀態。 播放器已建立，並正等待您指定媒體播放器專案。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 初始化 </td> 
-   <td colname="col2"> <p>您的应用程序调用<span class="codeph"> MediaPlayer.replaceCurrentItem()</span>。 </p> <p>媒体播放器项正在加载。 </p> </td> 
+   <td colname="col1"> 正在初始化 </td> 
+   <td colname="col2"> <p>您的應用程式呼叫 <span class="codeph"> MediaPlayer.replaceCurrentItem() </span>. </p> <p>正在載入媒體播放器專案。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 已初始化 </td> 
-   <td colname="col2"> <p>TVSDK成功设置媒体播放器项。 </p> </td> 
+   <td colname="col2"> <p>TVSDK已成功設定媒體播放器專案。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 准备 </td> 
-   <td colname="col2"> <p>您的应用程序调用<span class="codeph"> MediaPlayer.prepareToPlay()</span>。 媒体播放器正在加载媒体播放器项目和任何相关资源。 </p> </td> 
+   <td colname="col1"> 正在準備 </td> 
+   <td colname="col2"> <p>您的應用程式呼叫 <span class="codeph"> MediaPlayer.prepareToPlay() </span>. 媒體播放器正在載入媒體播放器專案和任何相關的資源。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 准备 </td> 
-   <td colname="col2"> <p>TVSDK已准备媒体流，并尝试执行广告解析和广告插入（如果已启用）。 准备内容并将广告插入时间轴，或广告过程失败。 </p> <p>可以开始缓冲或播放。 </p> </td> 
+   <td colname="col1"> 已準備 </td> 
+   <td colname="col2"> <p>TVSDK已準備媒體串流，並嘗試執行廣告解析和廣告插入（如果已啟用）。 內容已準備好，且廣告已插入時間軸中，或廣告程式失敗。 </p> <p>緩衝或播放可以開始。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 播放/暂停 </td> 
-   <td colname="col2"> <p>当应用程序播放和暂停媒体时，媒体播放器会在这些状态之间移动。 </p> </td> 
+   <td colname="col1"> 正在播放/暫停 </td> 
+   <td colname="col2"> <p>當應用程式播放和暫停媒體時，媒體播放器會在這兩種狀態之間移動。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 已挂起 </td> 
-   <td colname="col2"> <p>如果应用程序在播放或暂停播放时导航离开播放、关闭设备或切换应用程序，媒体播放器将挂起并释放资源。 </p> <p>调用<span class="codeph"> MediaPlayer.restore()</span>将播放器返回到播放器在挂起前处于的状态。 异常情况是，如果调用暂停时播放器为SEEKING，则播放器为PAUSED，然后为SUSPENDED。 </p> <p>重要说明：  <p>请记住以下信息： 
+   <td colname="col1"> 已暫停 </td> 
+   <td colname="col2"> <p>如果應用程式在播放器播放或暫停時離開播放、關閉裝置或切換應用程式，媒體播放器會暫停並釋放資源。 </p> <p>通話 <span class="codeph"> MediaPlayer.restore() </span> 將播放器傳回至播放器暫停前的狀態。 例外情況是，如果呼叫暫停時播放器正在搜尋，則播放器會暫停然後暫停。 </p> <p>重要：  <p>請記住以下資訊： 
       <ul id="ul_1B21668994D1474AAA0BE839E0D69B00"> 
-       <li id="li_08459A3AB03C45588D73FA162C27A56C">仅当<span class="codeph"> MediaPlayerView </span>使用的surface对象被破坏时，<span class="codeph"> MediaPlayer </span>才会自动调用<span class="codeph">挂起</span>。 </li> 
-       <li id="li_B9926AA2E7B9441490F37D24AE2678A1"><span class="codeph"> MediaPlayer </span>仅在创建<span class="codeph"> MediaPlayerView </span>使用的新表面对象时，才会自动调用<span class="codeph"> restore()</span>。 </li> 
-      </ul> </p> </p> <p>如果您始终希望在恢复MediaPlayer时暂停播放，请让Android活动的<span class="codeph"> onPause()</span>方法中的应用程序调用<span class="codeph"> MediaPlayer.pause()</span>。 </p> </td> 
+       <li id="li_08459A3AB03C45588D73FA162C27A56C">此 <span class="codeph"> MediaPlayer </span> 自動呼叫 <span class="codeph"> 暫停 </span> 只有當使用的曲面物件為 <span class="codeph"> MediaPlayerView </span> 已損毀。 </li> 
+       <li id="li_B9926AA2E7B9441490F37D24AE2678A1">此 <span class="codeph"> MediaPlayer </span> 自動呼叫 <span class="codeph"> restore() </span> 僅當使用新的曲面物件時 <span class="codeph"> MediaPlayerView </span> 「 」已建立。 </li> 
+      </ul> </p> </p> <p>如果您一律想要在MediaPlayer還原時暫停播放，請讓應用程式呼叫 <span class="codeph"> MediaPlayer.pause() </span> 在Android活動的 <span class="codeph"> onPause() </span> 方法。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 完成 </td> 
-   <td colname="col2"> <p>播放器已到达流的末尾，且播放已停止。 </p> </td> 
+   <td colname="col2"> <p>播放器已到達串流結尾，且播放已停止。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 已发布 </td> 
-   <td colname="col2"> <p>您的应用程序发布了媒体播放器，该播放器也会发布任何相关资源。 您不能再使用此实例。 </p> </td> 
+   <td colname="col1"> 已發行 </td> 
+   <td colname="col2"> <p>您的應用程式已發行媒體播放器，也會發行任何相關資源。 您無法再使用此例項。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 错误 </td> 
-   <td colname="col2"> <p>进程期间发生错误。 错误还可能影响应用程序下一步的操作。 有关详细信息，请参阅<a href="../../../tvsdk-3x-android-prog/android-3x-content-playback-options-android2/android-3x-error-handling-set-up.md" format="dita" scope="local">设置错误处理</a>。 </p> </td> 
+   <td colname="col1"> 錯誤 </td> 
+   <td colname="col2"> <p>處理期間發生錯誤。 錯誤也可能會影響應用程式接下來可以執行的動作。 如需詳細資訊，請參閱 <a href="../../../tvsdk-3x-android-prog/android-3x-content-playback-options-android2/android-3x-error-handling-set-up.md" format="dita" scope="local"> 設定錯誤處理 </a>. </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
 >[!TIP]
 >
->您可以使用状态来提供有关该过程的反馈，例如，在等待下一个状态更改时提供一个微调框，或者在播放媒体时采取后续步骤，例如在调用下一个方法之前等待适当的状态。
+>您可以使用狀態來提供程式的意見回饋，例如，在等待下一個狀態變更時執行微調器，或在播放媒體時採取後續步驟，例如在呼叫下一個方法之前等待適當的狀態。
 
 例如：
 

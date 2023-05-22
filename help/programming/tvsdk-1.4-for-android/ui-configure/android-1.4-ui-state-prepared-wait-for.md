@@ -1,20 +1,19 @@
 ---
-description: 通过TVSDK，您可以控制实时和视频点播(VOD)的基本播放体验。 TVSDK在播放器实例上提供可用于配置播放器用户界面的方法和属性。
-title: 等待有效状态
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 透過TVSDK，您可以控制即時和隨選視訊(VOD)的基本播放體驗。 TVSDK提供播放器例項上的方法和屬性，可用來設定播放器使用者介面。
+title: 等待有效的狀態
+exl-id: ab9da066-429f-44ca-b2e7-2bde9e5c0f90
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '143'
 ht-degree: 0%
 
 ---
 
+# 等待有效的狀態 {#wait-for-a-valid-state}
 
-# 等待有效状态{#wait-for-a-valid-state}
+透過TVSDK，您可以控制即時和隨選視訊(VOD)的基本播放體驗。 TVSDK提供播放器例項上的方法和屬性，可用來設定播放器使用者介面。
 
-通过TVSDK，您可以控制实时和视频点播(VOD)的基本播放体验。 TVSDK在播放器实例上提供可用于配置播放器用户界面的方法和属性。
+您必須先讓播放器處於有效狀態，才能使用大部分的TVSDK播放器方法。
+播放器會經過各種狀態。 等候播放器處於正確狀態可確保媒體資源已成功載入。 如果播放器未處於至少必要的狀態，許多播放器方法會擲回 `IllegalStateException`.
 
-在您可以使用大多数TVSDK播放器方法之前，播放器必须处于有效状态。
-玩家在各种状态中移动。 等待播放器处于正确状态可确保媒体资源已成功加载。 如果播放器不处于至少所需的状态，则许多播放器方法会抛出`IllegalStateException`。
-
-所需的状态通常为PREPARED。
+所需的狀態通常是PREPARED。

@@ -1,22 +1,21 @@
 ---
-description: TVSDK提供用于处理封锁期的API和示例代码。
-title: 实施封锁处理
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: TVSDK提供處理中斷期間的API和範常式式碼。
+title: 實作中斷處理
+exl-id: 31e4a016-ecba-47cc-b574-553db85ece53
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '129'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
+# 實作中斷處理 {#implement-blackout-handling}
 
-# 实现封锁处理{#implement-blackout-handling}
+TVSDK提供處理中斷期間的API和範常式式碼。
 
-TVSDK提供用于处理封锁期的API和示例代码。
+若要實施中斷處理並在中斷期間提供替代內容：
 
-要在封锁期间实施封锁处理并提供替代内容，请执行以下操作：
-
-1. 设置应用程序以订阅实时流清单中的封锁标记。
+1. 設定您的應用程式以訂閱即時資料流資訊清單中的中斷標籤。
 
 ```
  - (void) createMediaPlayer:(PTMediaPlayerItem *)item
@@ -27,7 +26,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
  }
 ```
 
-1. 为`PTTimedMetadataChangedNotification`添加通知侦听器。
+1. 新增通知接聽程式 `PTTimedMetadataChangedNotification`.
 
    ```
    - (void)addobservers 
@@ -37,7 +36,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 在前景中为`PTTimedMetadata`对象实现监听器方法。
+1. 實作接聽程式方法 `PTTimedMetadata` 前景中的物件。
 
    例如：
 
@@ -61,7 +60,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 在播放期间使用持续更新处理`TimedMetadata`对象。
+1. 控制代碼 `TimedMetadata` 在播放期間持續更新的物件。
 
    ```
    - (void)onMediaPlayerTimeChange:(NSNotification *)notification 
@@ -82,7 +81,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 添加`PTTimedMetadata`处理函数以切换到替代内容，并返回到由`PTTimedMetadata`对象及其播放时间指示的主内容。
+1. 新增 `PTTimedMetadata` 處理常式，可切換至替代內容並返回主要內容，如 `PTTimedMetadata` 物件及其播放時間。
 
    ```
    - (void)handleCollectionAtTime:(int)currentTime 
@@ -197,7 +196,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 在后台为`PTTimedMetadata`对象实现监听器方法。
+1. 實作接聽程式方法 `PTTimedMetadata` 背景中的物件。
 
    ```
    - (void)onSubscribedTagInBackground:(NSNotification *)notification 
@@ -218,7 +217,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 为背景错误实现侦听器方法。
+1. 針對背景錯誤實作接聽程式方法。
 
    ```
    - (void) onBackgroundManifestError:(NSNotification *)notification 
@@ -227,7 +226,7 @@ TVSDK提供用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 如果封锁范围位于播放流中的DVR上，请更新不可查看的范围。
+1. 如果中斷範圍在播放資料流的DVR上，請更新不可搜尋的範圍。
 
    ```
    // This sample assumes that blackoutStartTimedMetadata is the PTTimedMetadata  

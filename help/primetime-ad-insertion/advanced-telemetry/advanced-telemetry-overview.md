@@ -1,9 +1,8 @@
 ---
-title: 高级遥测
-description: 高级遥测
+title: 進階遙測
+description: 進階遙測
 copied-description: true
 exl-id: 3a030dc8-c3e5-4bf5-9d69-58cfa880bf6a
-translation-type: tm+mt
 source-git-commit: 3e63c187f12d1bff53370bbcde4d6a77f58f3b4f
 workflow-type: tm+mt
 source-wordcount: '68'
@@ -11,6 +10,6 @@ ht-degree: 0%
 
 ---
 
-# 高级遥测{#advanced-telemetry}
+# 進階遙測 {#advanced-telemetry}
 
-客户能够使用PrimetimeAd Insertion捕获广告和会话相关事件和指标，找出内容和广告错误的主要原因，从而洞察视频和广告效果。  广告请求可以在原始请求级别捕获，使运营商能够调试直接来自提供商的特定VAST或VMAP标记。
+客戶可以使用PrimetimeAd Insertion來擷取廣告和工作階段相關的事件和量度，以找出內容和廣告錯誤的主要原因，進而深入瞭解視訊和廣告的效能。  您可以在原始請求層級擷取廣告請求，讓操作員能夠偵錯直接從提供者取得的特定VAST或VMAP標籤。

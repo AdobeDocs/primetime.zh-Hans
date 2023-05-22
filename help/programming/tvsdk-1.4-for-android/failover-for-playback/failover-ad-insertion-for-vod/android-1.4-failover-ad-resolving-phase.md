@@ -1,36 +1,35 @@
 ---
-description: TVSDK与广告投放服务(如Adobe Primetime广告决策)联系，并尝试获取与广告的视频流对应的主播放列表文件。 在广告解析阶段，TVSDK对远程广告投放服务器进行HTTP调用并解析服务器的响应。
-title: 广告分析阶段
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: TVSDK會聯絡廣告傳送服務(例如Adobe Primetime ad decisioning)，並嘗試取得與廣告的視訊資料流對應的主要播放清單檔案。 在廣告解析階段，TVSDK會向遠端廣告傳送伺服器發出HTTP呼叫，並剖析伺服器的回應。
+title: 廣告解析階段
+exl-id: 5dd96709-1a65-442f-a753-a4343c6e8762
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '291'
 ht-degree: 0%
 
 ---
 
+# 廣告解析階段{#ad-resolving-phase}
 
-# 广告分辨阶段{#ad-resolving-phase}
+TVSDK會聯絡廣告傳送服務(例如Adobe Primetime ad decisioning)，並嘗試取得與廣告的視訊資料流對應的主要播放清單檔案。 在廣告解析階段，TVSDK會向遠端廣告傳送伺服器發出HTTP呼叫，並剖析伺服器的回應。
 
-TVSDK与广告投放服务(如Adobe Primetime广告决策)联系，并尝试获取与广告的视频流对应的主播放列表文件。 在广告解析阶段，TVSDK对远程广告投放服务器进行HTTP调用并解析服务器的响应。
+TVSDK支援下列型別的廣告提供者：
 
-TVSDK支持以下类型的广告提供者：
+* 中繼資料廣告提供者
 
-* 元数据广告提供商
+   廣告資料會以純文字JSON檔案編碼。
+* Primetime廣告決策廣告提供者
 
-   广告数据以纯文本JSON文件进行编码。
-* Primetime广告决策广告提供商
+   TVSDK會傳送要求（包括一組目標定位引數和資產識別碼）至Primetime ad decisioning後端伺服器。 Primetime廣告決策會以包含所需廣告資訊的SMIL （同步多媒體整合語言）檔案回應。
+* 自訂廣告標籤提供者
 
-   TVSDK向Primetime广告决策后端服务器发送请求，包括一组定位参数和资产标识号。 Primetime广告决策采用包含所需广告信息的SMIL（同步多媒体集成语言）文档做出响应。
-* 自定义广告标记提供者
+   處理從伺服器端將廣告燒錄到串流中的情況。 TVSDK不會執行實際的廣告插入，但需要追蹤插入在伺服器端的廣告。 此提供者會設定TVSDK用來執行廣告追蹤的廣告標籤。
 
-   处理从服务器端将广告刻录到流中的情况。 TVSDK不执行实际广告插入，但需要跟踪在服务器端插入的广告。 此提供者设置TVSDK用于执行广告跟踪的广告标记。
+在此階段可能會發生下列其中一種容錯移轉情況：
 
-在此阶段中，可能发生以下故障切换情形之一：
+* 無法擷取資料，原因包括缺乏連線或伺服器端錯誤，例如找不到資源等。
+* 已擷取資料，但格式無效。
 
-* 无法检索数据，原因包括缺少连接或服务器端错误，如找不到资源等。
-* 已检索数据，但格式无效。
+   例如，發生此狀況可能是因為剖析傳入資料失敗。
 
-   这可能是因为，例如，分析入站数据失败。
-
-TVSDK发出有关该错误的警告通知并继续处理。
+TVSDK會發出有關錯誤的警告通知，並繼續處理。

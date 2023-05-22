@@ -1,24 +1,23 @@
 ---
-description: TVSDK使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知播放器客户端内部AVAset的availableMediaCharactiesWithMediaSelectionOptions的可用性。
-title: 显示字幕
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: TVSDK會使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知，通知播放器使用者端內部AVAset的availableMediaCharacticesWithMediaSelectionOptions的可用性。
+title: 公開字幕
+exl-id: 42f15536-39ea-4d83-b501-b05086a0056b
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '90'
 ht-degree: 0%
 
 ---
 
+# 公開字幕 {#expose-subtitles}
 
-# 显示字幕{#expose-subtitles}
+TVSDK會使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知，通知播放器使用者端內部AVAset的availableMediaCharacticesWithMediaSelectionOptions的可用性。
 
-TVSDK使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知播放器客户端内部AVAset的availableMediaCharactiesWithMediaSelectionOptions的可用性。
+您可以透過以下方式存取可用的字幕： `PTMediaPlayerItem` 屬性的 `subtitlesOptions`.
 
-您可以通过`PTMediaPlayerItem`属性的`subtitlesOptions`访问可用的字幕。
+若要公開字幕：
 
-显示字幕：
-
-1. 将客户端注册为`PTMediaPlayerMediaSelectionOptionsAvailableNotification`通知的侦听器。
+1. 將從屬端註冊為監聽器 `PTMediaPlayerMediaSelectionOptionsAvailableNotification` 通知。
 
    ```
    [[NSNotificationCenter defaultCenter]  
@@ -26,8 +25,8 @@ TVSDK使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知播放�
      name:PTMediaPlayerMediaSelectionOptionsAvailableNotification object:self.player];
    ```
 
-   当您的客户端收到此通知时，`PTMediaPlayerItem`中的字幕就绪。
-1. 实现与以下示例类似的`onMediaPlayerItemMediaSelectionOptionsAvailable`方法：
+   當您的客戶收到此通知時，字幕已可在 `PTMediaPlayerItem`.
+1. 實作 `onMediaPlayerItemMediaSelectionOptionsAvailable` 方法與下列範例類似：
 
    ```
    - (void) onMediaPlayerItemMediaSelectionOptionsAvailable:(NSNotification *) notification { 
@@ -36,4 +35,4 @@ TVSDK使用PTMediaPlayerMediaSelectionOptionsAvailableNotification通知播放�
    }
    ```
 
-   有关替代音轨的信息，请参阅[替代音频](../../alternate-audio/ios-3x-alternate-audio.md)。
+   如需替代音軌的相關資訊，請參閱  [替代音訊](../../alternate-audio/ios-3x-alternate-audio.md).

@@ -1,44 +1,41 @@
 ---
-description: TVSDK提供在实施封锁期（包括方法、元数据和通知）时有用的API元素。
-title: 封锁API元素
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: TVSDK提供API元素，這些元素在實施中斷時很有用，包括方法、中繼資料和通知。
+title: 中斷API元素
+exl-id: 9dae236b-0bd8-4fce-9163-628d4ed94f02
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '239'
 ht-degree: 0%
 
 ---
 
+# 中斷API元素{#blackout-api-elements}
 
-# 封锁API元素{#blackout-api-elements}
+TVSDK提供API元素，這些元素在實施中斷時很有用，包括方法、中繼資料和通知。
 
-TVSDK提供在实施封锁期（包括方法、元数据和通知）时有用的API元素。
-
-在播放器中实施封锁解决方案时，可以使用以下方法。
+在播放器中實作中斷解決方案時，您可以使用下列專案。
 
 * **MediaPlayer**
 
-   * `registerCurrentItemAsBackgroundItem` 将当前加载的资源保存为后台资源。如果在此方法之后调用`replaceCurrentResource`，则TVSDK将继续下载后台项的清单，直到您调用`unregisterCurrentBackgroundItem`。
+   * `registerCurrentItemAsBackgroundItem` 將目前載入的資源儲存為背景資源。 若 `replaceCurrentResource` 此方法之後呼叫，TVSDK會繼續下載背景專案的資訊清單，直到您呼叫 `unregisterCurrentBackgroundItem`.
 
-   * `unregisterCurrentBackgroundItem`  清除当前设置的背景资源并停止获取和分析背景清单。
+   * `unregisterCurrentBackgroundItem`  清除目前設定的背景資源，並停止擷取和分析背景資訊清單。
 
-* **BlackoutMetadata** 特定于封锁的元数据类型。
+* **BlackoutMetadata** 特定於中斷的中繼資料型別。
 
-   这允许您在TVSDK上设置不可搜索的范围（另一个名为`nonseekableRange`的`TimeRange`属性）。 每次用户搜索时，TVSDK都会检查这些范围（所需的搜索位置是否在`nonseekableRange`内）。 如果设置了查看器并用户搜索到不可搜索的范围，TVSDK会强制查看器到`seekableRange`的结束时间。
+   這可讓您設定無法搜尋的範圍(額外的 `TimeRange` 已呼叫屬性 `nonseekableRange`)。 TVSDK會檢查這些範圍(所需的搜尋位置是否落在 `nonseekableRange`)時。 如果已設定，且使用者搜尋到無法搜尋的範圍，TVSDK會強制檢視器到結尾時間 `seekableRange`.
 
-* **开始此** **** 处NEXTDefaultMetadataKeys通过设置为true或false在实时流上启 `ENABLE_LIVE_PREROLL` 用或禁用预卷。如果为false，则TVSDK在内容播放之前不会对前置广告进行显式广告服务器调用，因此不会播放前置广告。 这对中间人没有影响。 默认值为true。
+* **從這裡開始（下一步）** **DefaultMetadataKey** 透過設定在即時資料流上啟用或停用前置滾動 `ENABLE_LIVE_PREROLL` 為true或false。 若為false，TVSDK不會在內容播放前對前段廣告發出明確廣告伺服器呼叫，因此不會播放前段廣告。 這對中間卷沒有影響。 預設值為true。
 
 * **TimedMetadataEvent**
 
-   * `TIMED_METADATA_IN_BACKGROUND_AVAILABLE` 事件子类型 — 当TVSDK检测到后台清单中的订阅标记时调度。
+   * `TIMED_METADATA_IN_BACKGROUND_AVAILABLE` 事件子型別 — 當TVSDK在背景資訊清單中偵測到訂閱的標籤時傳送。
 
 * **通知**
 
    * `BACKGROUND_MANIFEST_WARNING`
 
-      * 代码：204000
-      * 类型：警告
-      * 后台清单下载时出错。
-   * `SeekEvent.SEEK_POSITION_ADJUSTED` 在不可搜索范围内尝试搜索时调度。
-
-
+      * 代碼： 204000
+      * 型別：警告
+      * 背景資訊清單下載發生錯誤。
+   * `SeekEvent.SEEK_POSITION_ADJUSTED` 在無法搜尋的範圍內嘗試搜尋時傳送。

@@ -1,30 +1,29 @@
 ---
-title: 处理域注册请求
-description: 处理域注册请求
+title: 處理網域註冊請求
+description: 處理網域註冊請求
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: f846e154-e90c-4e45-aafd-f6e22dac3339
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '553'
 ht-degree: 0%
 
 ---
 
+# 處理網域註冊請求{#handling-domain-registration-requests}
 
-# 处理域注册请求{#handling-domain-registration-requests}
+如果DRM中繼資料指出播放內容需要網域註冊，使用者端應用程式應叫用DRMManager.addToDeviceGroup()ActionScriptAPI或joinLicenseDomain() iOS API。 如果使用者端尚未在指定的網域伺服器註冊（或如果應用程式正在強制重新加入），則會傳送網域註冊要求。 網域伺服器會判斷是否允許使用者端加入網域，並向使用者端發出一或多個網域認證。
 
-如果DRM元数据指示播放内容需要域注册，则客户端应用程序应调用DRMManager.addToDeviceGroup()ActionScriptAPI或joinLicenseDomain()iOS API。 如果客户端尚未向指定的域服务器注册（或应用程序正在强制重新加入），则会发送域注册请求。 域服务器确定是否允许客户端加入域并向客户端发出一个或多个域凭据。
+* 要求處理常式類別為 `com.adobe.flashaccess.sdk.protocol.domain.DomainRegistrationHandler`
+* 請求訊息類別為 `com.adobe.flashaccess.sdk.protocol.domain.DomainRegistrationRequestMessage`
+* 如果使用者端和伺服器都支援通訊協定版本5，則請求URL是「中繼資料中的網域伺服器URL： + &quot;/flashaccess/domain/v4」。 否則，請求URL是中繼資料中的網域伺服器URL&quot; + &quot;/flashaccess/domain/v3&quot;
 
-* 请求处理程序类为`com.adobe.flashaccess.sdk.protocol.domain.DomainRegistrationHandler`
-* 请求消息类为`com.adobe.flashaccess.sdk.protocol.domain.DomainRegistrationRequestMessage`
-* 如果客户端和服务器都支持协议版本5，则请求URL为“元数据中的域服务器URL:+ &quot;/flashaccess/domain/v4&quot;。 否则，请求URL为元数据&quot; + &quot;/flashaccess/domain/v3&quot;中的域服务器URL
+初始化時 `DomainRegistrationHandler`，必須指定網域伺服器URL。 此URL將包含在處理常式發出的網域權杖中，以指出發出權杖的網域伺服器。 該URL必須符合在要求向伺服器註冊網域的任何原則中指定的網域伺服器URL。
 
-初始化`DomainRegistrationHandler`时，必须指定域服务器URL。 此URL将包含在由处理程序发出的域令牌中，以指示发出令牌的域服务器。 该URL必须与任何需要向服务器进行域注册的策略中指定的域服务器URL匹配。
+若要判斷是否允許使用者端加入網域，伺服器可以檢查要求中的電腦和使用者資訊。 另請參閱 [使用電腦識別碼](../../aaxs-protecting-content/content-implementing-the-license-server/content-processing-aaxs-requests/content-using-machine-ids.md) 瞭解如何識別及計算加入網域的電腦數目。 伺服器也可以決定允許使用者端加入哪個網域。 請注意，使用者端只能是每個網域伺服器URL一個網域的成員。 如果電腦已有此網域伺服器URL的網域權杖，則網域註冊要求將會包含目前的網域名稱( `getRequestDomainName()`)。 對於重新加入請求，網域伺服器必須傳回此網域的目前網域認證集或傳回錯誤（網域伺服器可能不會傳回不同網域的網域認證）。
 
-为了确定是否允许客户端加入域，服务器可以检查请求中的计算机和用户信息。 有关如何识别和计算加入域的计算机的信息，请参阅[使用计算机标识符](../../aaxs-protecting-content/content-implementing-the-license-server/content-processing-aaxs-requests/content-using-machine-ids.md)。 服务器还可以确定允许客户端加入的域。 请注意，每个域服务器URL的客户端只能是一个域的成员。 如果计算机已具有此域服务器URL的域令牌，则域注册请求将包含当前域名(`getRequestDomainName()`)。 对于重新加入请求，域服务器必须返回此域的当前域凭据集或返回错误（域服务器不能返回其他域的域凭据）。
+如果網域伺服器需要驗證才能加入網域，則請求應包含驗證權杖。 就像授權要求一樣，網域註冊可能需要使用者名稱/密碼或自訂驗證。 另請參閱 [使用者驗證](../../aaxs-protecting-content/content-introduction/content-usage-rules/content-authentication/content-user-authentication.md) 以取得處理驗證Token的詳細資訊。
 
-如果域服务器需要身份验证才能加入域，则请求应包含身份验证令牌。 与许可证请求一样，域注册可能需要用户名/密码或自定义身份验证。 有关处理身份验证令牌的详细信息，请参阅[用户身份验证](../../aaxs-protecting-content/content-introduction/content-usage-rules/content-authentication/content-user-authentication.md)。
+網域伺服器負責儲存和管理與每個網域相關聯的網域金鑰。 當需要為網域（網域的第一個網域註冊）產生新金鑰組時，叫用 `generateDomainCredential` `(String, int, Principal, Date)`. 此方法將會產生新的網域金鑰組和網域憑證。 網域伺服器必須儲存私密金鑰和憑證，並在處理此網域的後續請求時提供這些物件。 也可以為網域產生新的金鑰組，以便翻轉金鑰。 將滑鼠指向特定網域的金鑰時，請務必增加中的金鑰版本 `generateDomainCredential` 以及。
 
-域服务器负责存储和管理与每个域相关联的域密钥。 当需要为域（域的第一个域注册）生成新的密钥对时，请调用`generateDomainCredential` `(String, int, Principal, Date)`。 此方法将生成新的域密钥对和域证书。 域服务器必须存储私钥和证书，并在处理此域的后续请求时提供这些对象。 还可以为域生成新的密钥对，以便滚动到密钥上。 滚动到特定域的键时，请确保在`generateDomainCredential`中也增加键版本。
-
-每次计算机注册同一域时，应使用相同的域私钥和证书。 调用`addDomainCredential(DomainToken, PrivateKey)`将现有域凭据返回到客户端。 如果由于更改了域密钥而存在多个域凭据，则服务器应为当前域密钥和所有以前的域密钥提供域凭据，以便客户端可以使用绑定到旧域密钥的许可证。 这样，绑定到旧域令牌的许可证便可移动到新注册的计算机，并且仍然可以播放。
+後續每次機器向相同網域註冊時，都應使用相同的網域私密金鑰和憑證。 叫用 `addDomainCredential(DomainToken, PrivateKey)` 將現有的網域認證傳回使用者端。 如果因為網域金鑰已變更，所以網域有多個網域認證，則伺服器應該提供目前網域金鑰和所有先前網域金鑰的網域認證，讓使用者端可以使用繫結至舊版網域金鑰的授權。 這可讓繫結至舊網域權杖的授權移至新註冊的電腦且仍可播放。

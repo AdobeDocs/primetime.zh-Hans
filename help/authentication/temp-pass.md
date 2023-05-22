@@ -1,85 +1,85 @@
 ---
-title: 临时通道
-description: 临时通道
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 暫時通過
+description: 暫時通過
+exl-id: 1df14090-8e71-4e3e-82d8-f441d07c6f64
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '2210'
 ht-degree: 0%
 
 ---
 
-
-# 临时通道 {#temp-pass}
+# 暫時通過 {#temp-pass}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
 ## 功能摘要 {#tempass-featur-summary}
 
-临时传递允许程序员为没有MVPD帐户凭据的用户提供对其受保护内容的临时访问。  Temp Pass包括以下功能：
+Temp Pass可讓程式設計師為沒有MVPD帳戶憑證的使用者提供對其受保護內容的暫時存取權。  臨時通行證包含下列功能：
 
-* Temp Pass可配置为提供临时访问以涵盖多种情况，包括以下情况：
-   * 程序员可以每天提供其其中一个网站的简短（例如，10分钟的预览）。
-   * 程序员可以为诸如奥运会或NCAA March Exards等大型体育赛事提供单次、长时间的演示（例如，四小时）。
-   * 程序员可以提供前两种情形的组合；例如，一天查看一段较长的初始时段，然后是一系列较短的时段，这些时段每天会重复一些后续天数。
-* 程序员指定其临时传递的持续时间（生存时间或TTL）。
-* Temp Pass按请求者运行。  例如，NBC可为请求者“NBCOlympics”设置4小时的临时通行证。
-* 程序员可以重置授予特定请求者的所有令牌。  用于实施临时传递的“临时MVPD”必须配置为“每个请求者的身份验证”。
-* **向特定设备上的个人用户授予临时通行访问权限**. 在用户“临时通过”访问过期后，该用户将无法在同一设备上获得临时访问权限，直到该用户过期 [授权令牌](/help/authentication/glossary.md#authz-token) 从Adobe Primetime身份验证服务器中清除。
+* Temp Pass可設定為提供暫時存取權，以涵蓋各種案例，包括：
+   * 程式設計師可以提供其網站之一的每日簡短（例如10分鐘預覽）。
+   * 程式設計師可提供大型體育活動（例如奧運會）的單次長報告（例如四小時），或NCAA March Madness。
+   * 程式設計師可以提供前兩種情況的組合；例如，初始的較長的檢視期間，然後是一連串的較短期間，這些期間會在隨後的某些天中每天重複。
+* 程式設計師指定其臨時通過的持續時間（存留時間或TTL）。
+* 臨時傳遞會依每個請求者操作。  例如，NBC可以為請求者「NBCOlympics」設定4小時的臨時通過。
+* 程式設計師可以重設授與特定請求者的所有Token。  用於實作Temp Pass的「臨時MVPD」必須設定為啟用「每個請求者的驗證」。
+* **臨時傳遞存取權已授予特定裝置上的個別使用者**. 在使用者的Temp Pass存取權過期後，該使用者將無法取得相同裝置上的暫時存取權，直到該使用者過期為止 [授權權杖](/help/authentication/glossary.md#authz-token) 會從Adobe Primetime驗證伺服器清除。
 
 
 >[!NOTE]
 >
->Temp Pass是Premium Workflow包的一部分。 如果对使用此功能感兴趣，请联系您的Primetime销售代表。
+>Temp Pass是Premium Workflow封裝的一部分。 如果您有興趣使用此功能，請聯絡您的Primetime銷售代表。
 
-## 功能详细信息 {#tempass-featur-details}
+## 功能詳細資料 {#tempass-featur-details}
 
-* **查看时间的计算方式**  — 临时通行证保持有效的时间与用户在程序员应用程序上查看内容所花费的时间量无关。  当初始用户请求通过临时通道进行授权时，通过将初始当前请求时间添加到程序员指定的TTL来计算过期时间。 此过期时间与用户的设备ID和程序员请求者ID相关联，并存储在Primetime身份验证数据库中。 每当用户尝试使用来自同一设备的临时通行证访问内容时，Primetime身份验证将比较服务器请求时间与与用户设备ID和程序员请求者ID关联的过期时间。 如果服务器请求时间小于过期时间，则授予授权；否则，将拒绝授权。
-* **配置参数**  — 程序员可以指定以下Temp Pass参数以创建Temp Pass规则：
-   * **令牌TTL**  — 允许用户在不登录MVPD的情况下观看的时间。 此时间基于时钟，无论用户是否在观看内容，都会过期。
+* **檢視時間的計算方式** - Temp Pass保持有效的時間與使用者在程式設計人員應用程式上檢視內容所花的時間無關。  在透過Temp Pass的授權初始使用者請求時，到期時間透過將初始目前請求時間加到程式設計師指定的TTL來計算。 此到期時間與使用者的裝置ID和程式設計師的請求者ID相關聯，並儲存在Primetime驗證資料庫中。 每次使用者嘗試使用來自相同裝置的Temp Pass存取內容時，Primetime驗證都會比較伺服器請求時間與使用者裝置ID和程式設計人員請求者ID相關聯的到期時間。 如果伺服器要求時間小於到期時間，則會授與授權；否則，會拒絕授權。
+* **設定引數**  — 程式設計師可指定下列Temp Pass引數，以建立Temp Pass規則：
+   * **權杖TTL**  — 允許使用者在未登入MVPD的情況下觀看的時間長度。 此時間以時鐘為基礎，無論使用者是否觀看內容，都會過期。
    >[!NOTE]
-   >请求者ID不能与其关联多个临时传递规则。
-* **身份验证/授权**  — 在“临时传递”流中，将MVPD指定为“临时传递”。  Primetime身份验证不会与临时传递流程中的实际MVPD通信，因此“临时传递”MVPD会授权任何资源。 程序员可以指定一个可使用临时传递进行访问的资源，就像他们对其网站上的其余资源所做的一样。 与往常一样，媒体验证器库可用于验证临时传递短媒体令牌，并在播放前强制执行资源检查。
-* **跟踪临时传递流中的数据**  — 有关在临时传递授权流程期间跟踪数据的两点：
-   * 从Primetime身份验证传递到您的 **sendTrackingData()** callback是设备ID的哈希值。
-   * 由于临时传递流程中使用的MVPD ID是“临时传递”，因此同一MVPD ID会被传递回 **sendTrackingData()**. 大多数程序员可能希望以不同的方式处理临时传递量度，而不是实际的MVPD量度。 这需要在您的Analytics实施中执行一些其他工作。
+   >要求者ID不能有一個以上的暫時通過規則與其相關聯。
+* **驗證/授權**  — 在Temp Pass流程中，您將MVPD指定為「Temp Pass」。  Primetime驗證不會與Temp Pass流程中的實際MVPD通訊，因此「Temp Pass」MVPD會授權任何資源。 程式設計師可以指定可使用Temp Pass存取的資源，就像他們對其網站上的其他資源所做的一樣。 媒體驗證器程式庫可照常使用，以驗證Temp Pass短媒體權杖，並在播放前強制執行資源檢查。
+* **在暫時傳遞流程中追蹤資料**  — 關於在Temp Pass權益流程期間追蹤資料的兩點：
+   * 從Primetime驗證傳遞至您的的追蹤ID **sendTrackingData()** callback是裝置ID的雜湊。
+   * 由於Temp Pass流程中使用的MVPD ID是「Temp Pass」，因此會將相同的MVPD ID傳回 **sendTrackingData()**. 大多數程式設計師可能會想要以不同的方式處理「暫時通過」量度與實際MVPD量度。 這需要在您的Analytics實作中進行一些額外工作。
 
-下图显示了“临时通行证”流程：
+下圖顯示「暫時通過」流程：
 
-![临时通道流](assets/temp-pass-flow.png)
+![暫時傳遞流程](assets/temp-pass-flow.png)
 
-*图：临时通道流*
+*圖：溫度傳遞流程*
 
-## 实施临时通道 {#implement-tempass}
+## 實作暫時傳遞 {#implement-tempass}
 
-在Primetime身份验证端，通过向参与程序员的服务器配置添加名为“TempPass”的伪MVPD来实施Temp Pass。  此伪MVPD的作用类似于实际的MVPD，它临时授予对程序员受保护内容的访问权限。
+在Primetime驗證方面，Temp Pass是在參與的程式設計師伺服器設定中新增名為「TempPass」的偽MVPD來實作。  這個偽MVPD的作用就像一個實際的MVPD，會暫時授予程式設計師受保護內容的存取權。
 
-在程序员端，MVPD用于身份验证的两种方案的临时传递如下所示：
+在程式設計師方面，Temp Pass的實作方式如下，適用於MVPD用於驗證的兩種情況：
 
-* **程序员页面上的iFrame**. Temp Pass无论MVPD的身份验证类型如何，都可正常工作，但对于iFrame方案，需要执行其他步骤来取消当前身份验证流程并使用Temp Pass进行身份验证。 这些步骤如 [iFrame登录](/help/authentication/temp-pass.md) 下。
-* **重定向到MVPD登录页面**. 在较传统的情况下，在使用MVPD启动身份验证之前，会先显示用于触发临时通行证的UI，因此无需执行特殊步骤。 Temp Pass的处理方式应与常规MVPD类似。
+* **程式設計師頁面上的iFrame**. 不論MVPD的驗證型別為何，暫時傳遞都能運作，但若是iFrame案例，則需要執行其他步驟來取消目前的驗證流程，並使用暫時傳遞進行驗證。 這些步驟顯示於 [iFrame登入](/help/authentication/temp-pass.md) 下方的。
+* **重新導向至MVPD登入頁面**. 在較傳統的情況下，在開始使用MVPD驗證之前會顯示用於觸發Temp Pass的UI，無需採取任何特殊步驟。 臨時傳遞的處理方式應像一般MVPD一樣。
 
-以下几点适用于这两个实施方案：
+下列幾點適用於兩種實施案例：
 
-* “临时通过”应仅在MVPD选取器中显示给尚未请求临时通过授权的用户。 通过在Cookie中保留标记，可以阻止后续请求的显示。 只要用户未清除浏览器缓存，这项操作就会起作用。 如果用户清除其浏览器缓存，则“临时通过”会再次显示在选取器中，用户将能够再次请求它。 仅当“临时通过”时间尚未过期时，才授予访问权限。
-* 当用户请求通过临时传递访问时，Primetime身份验证服务器在身份验证过程中将不执行其常用安全断言标记语言(SAML)请求。 相反，当令牌对设备有效时，每次调用身份验证端点都会返回成功。
-* 当临时传递过期时，其用户将不再进行身份验证，因为在临时传递流程中，身份验证令牌和授权令牌具有相同的过期日期。 为了向用户说明其临时通过已过期，程序员必须在调用后立即检索选定的MVPD `setRequestor()`，然后调用 `checkAuthentication()` 一如往常。 在 `setAuthenticationStatus()` 可以进行回调检查以确定auth状态是否为0，以便如果选定的MVPD为“TempPass”，则向其Temp Pass会话已过期的用户显示一条消息。
-* 如果用户在过期前删除临时传递令牌，则后续授权检查将生成一个TTL等于剩余时间的令牌。
-* 如果用户在过期后删除临时传递令牌，则后续授权检查将返回“用户未授权”。
+* 只有尚未請求臨時通行授權的使用者，「臨時通行證」應該顯示在MVPD選擇器中。 可藉由在Cookie上保留標幟來封鎖後續請求的顯示。 只要使用者未清除瀏覽器快取，此功能就會運作。 如果使用者清除其瀏覽器快取，選擇器中會再次顯示「暫時通過」，使用者將能夠再次請求。 只有在「臨時通過」時間尚未過期時，才會授予存取權。
+* 當使用者透過Temp Pass請求存取時，Primetime驗證伺服器不會在驗證過程中執行其常用的安全性宣告標籤語言(SAML)請求。 而是每次在權杖對裝置有效時叫用驗證端點時，驗證端點都會傳回成功。
+* Temp Pass過期時，將不再驗證其使用者，因為在Temp Pass流程中，驗證Token和授權Token具有相同到期日。 為了向使用者說明他們的臨時通行證已過期，程式設計師必須在呼叫後立即擷取所選的MVPD `setRequestor()`，然後呼叫 `checkAuthentication()` 如往常一樣。 在 `setAuthenticationStatus()` 回呼可執行檢查以判斷驗證狀態是否為0，如此一來，如果選取的MVPD為「TempPass」，便可以向使用者顯示訊息，指出其Temp Pass工作階段已過期。
+* 如果使用者在到期前刪除Temp Pass權杖，後續權益檢查將產生TTL等於剩餘時間的權杖。
+* 如果使用者在到期後刪除Temp Pass權杖，後續的軟體權利檔案檢查將傳回「使用者未授權」。
 
-请参阅 [示例代码](/help/authentication/temp-pass.md#tempass-sample-code) 下面介绍了如何编码此部分中描述的实施详细信息的示例。
+請參閱中的範例 [程式碼範例](/help/authentication/temp-pass.md#tempass-sample-code) 以下是如何編寫本節所述實作詳細資訊的範例。
 
-## 示例代码 {#tempass-sample-code}
+## 程式碼範例 {#tempass-sample-code}
 
-以下部分显示如何调用Primetime身份验证API以实施临时传递流程：
+以下各節說明如何呼叫Primetime驗證API以實作Temp Pass流程：
 
-* [iFrame登录示例](/help/authentication/temp-pass.md#iframe-login-sample)
-* [自动登录示例](/help/authentication/temp-pass.md#auto-login-sample)
+* [iFrame登入範例](/help/authentication/temp-pass.md#iframe-login-sample)
+* [自動登入範例](/help/authentication/temp-pass.md#auto-login-sample)
 
-### iFrame登录示例 {#iframe-login-sample}
+### iFrame登入範例 {#iframe-login-sample}
 
-此示例展示了如何在MVPD支持iFrame集成的情况下实施临时传递：
+此範例說明如何在MVPD支援iFrame整合的情況下實作Temp Pass：
 
 ```HTML
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -210,35 +210,35 @@ ht-degree: 0%
 </html>
 ```
 
-#### iFrame登录用例 {#iframe-login-use-cases}
+#### iFrame登入使用案例 {#iframe-login-use-cases}
 
-**要首次请求临时传递，请执行以下操作：**
+**第一次要求暫時通過：**
 
-1. 用户访问程序员页面并单击登录链接。
-1. 此时会打开MVPD选取器，用户会从列表中选择MVPD。
-1. 将显示验证iFrame。 此iFrame包含“临时传递”链接。
-1. 用户单击“临时传递”，因此程序员会向Cookie中添加一个标记，以防止用户在随后访问页面时看到“临时传递”链接。
-1. 临时通过身份验证请求到达Primetime身份验证服务器，并且它们生成身份验证令牌。 TTL等于程序员为临时通行设置的时间段。
-1. Temp Pass授权请求到达Primetime身份验证服务器。
-1. Primetime身份验证服务器从请求中提取设备和请求者ID，并将它们与过期时间一起存储在数据库中。 过期时间的计算方式为：初始临时传递请求时间加上TTL（由程序员指定）。
-1. Primetime身份验证服务器生成授权令牌。
-1. 用户访问受保护的内容。
+1. 使用者存取程式設計師頁面並按一下登入連結。
+1. MVPD選擇器開啟，使用者從清單中選擇MVPD。
+1. 驗證iFrame隨即顯示。 此iFrame包含「暫時通過」連結。
+1. 使用者按一下「暫時通過」，程式設計師就會在Cookie中新增標幟，以防止使用者在後續造訪頁面時看到「暫時通過」連結。
+1. Temp Pass驗證請求會到達Primetime驗證伺服器，並產生驗證Token。 TTL等於程式設計師為暫存階段設定的時段。
+1. Temp Pass授權請求到達Primetime驗證伺服器。
+1. Primetime驗證伺服器會從請求中擷取裝置和請求者ID，並將其與到期時間一起儲存在資料庫中。 到期時間的計算方式為：初始Temp Pass要求時間加上TTL （由程式設計師指定）。
+1. Primetime驗證伺服器會產生授權權杖。
+1. 使用者存取受保護的內容。
 
-**要在返回的临时传递用户删除浏览器Cookie后再次请求临时传递，请执行以下操作：**
+**若要在回訪的Temp Pass使用者刪除瀏覽器Cookie後再次要求Temp Pass：**
 
-1. 用户访问程序员页面并单击登录链接。
-1. 此时会打开MVPD选取器，用户会从列表中选择MVPD。
-1. 将显示验证iFrame。 此iFrame包含“临时传递”链接（用户删除了原始Cookie，因此程序员不知道用户之前是否点击了“临时传递”链接）。
-1. 用户再次单击“临时传递”，因此程序员会再次向Cookie中添加标记，以防止用户在随后访问页面时看到“临时传递”链接。
-1. Temp Pass身份验证请求将到达Primetime身份验证服务器，该服务器生成身份验证令牌。 TTL现在是临时传递的剩余时间（当前时间与与设备ID关联的过期时间之差）。
-1. Temp Pass授权请求到达Primetime身份验证服务器。
-1. Primetime身份验证服务器从请求中提取设备和请求者ID，并使用它们从Primetime身份验证数据库中检索过期时间。 将当前时间与过期时间进行比较。
-1. 如果用户的临时通过未过期，则Primetime身份验证服务器会生成授权令牌。
-1. 如果用户的临时传递未过期，则用户将能够访问受保护的内容。
+1. 使用者存取程式設計師的頁面並按一下登入連結。
+1. MVPD選擇器開啟，使用者從清單中選擇MVPD。
+1. 驗證iFrame隨即顯示。 此iFrame包含「暫時通過」連結（使用者已刪除原始Cookie，因此程式設計師不知道使用者之前是否按過「暫時通過」連結）。
+1. 使用者再次點選「臨時傳遞」，因此程式設計師再次將標幟新增到Cookie，以防止使用者在後續造訪頁面時看到「臨時傳遞」連結。
+1. Temp Pass驗證請求到達Primetime驗證伺服器，伺服器會產生驗證Token。 TTL現在是「暫時通過」的剩餘時間（目前時間與裝置ID相關到期時間之間的差異）。
+1. Temp Pass授權請求到達Primetime驗證伺服器。
+1. Primetime驗證伺服器會從請求中擷取裝置和請求者ID，並使用它們從Primetime驗證資料庫中擷取到期時間。 系統會比較目前時間與到期時間。
+1. 如果使用者的暫時傳遞尚未過期，Primetime驗證伺服器會產生授權權杖。
+1. 如果使用者的Temp Pass尚未過期，則使用者將能夠存取受保護的內容。
 
-### 自动登录示例 {#auto-login-sample}
+### 自動登入範例 {#auto-login-sample}
 
-以下示例说明了用户在访问网站时自动使用TempPass登录的情况。 用户可以随时选择使用常规MVPD登录，如果TempPass已过期，则会发出警告：
+下列範例說明使用者造訪網站時，自動以TempPass登入的情況。 使用者可以隨時選擇使用一般MVPD登入，並在TempPass過期時收到警告：
 
 ```HTML
 <html>
@@ -472,55 +472,55 @@ ht-degree: 0%
 </html>
 ```
 
-## 使用多个临时传递 {#use-mult-tempass}
+## 使用多個臨時路徑 {#use-mult-tempass}
 
-某些事件需要分阶段免费访问内容，例如初始免费访问间隔（例如4小时），然后是每日免费访问（例如，后续每天10分钟）。  为了让程序员实施此方案，他们必须安排与Adobe联系，为程序员配置两个临时MVPD。
+某些事件需要分階段免費存取內容，例如免費存取的初始間隔（例如4小時），然後是每日免費存取（例如，之後每一天10分鐘）。  為了讓程式設計師實作此案例，他們必須安排其Adobe連絡人，以便為程式設計師設定兩個暫時的MVPD。
 
-在此示例情景（初始的4小时免费会话，后接每日10分钟免费会话）Adobe配置一个名为TempPass1的MVPD，其生存时间(TTL)为4小时，而TempPass2的TTL为10分钟，用于后续时段。  这两者都与程序员的请求者ID相关联。
+在此範例案例中（初始4小時免費工作階段，接著每日10分鐘免費工作階段），Adobe會設定名為TempPass1的MVPD，其存留時間(TTL)為4小時，並在後續期間設定名為TempPass2的TTL為10分鐘。  兩者都與程式設計人員的請求者ID相關聯。
 
-### 程序员实施 {#mult-tempass-prog-impl}
+### 程式設計師實作 {#mult-tempass-prog-impl}
 
-在Adobe配置两个TempPass实例后，另外两个MVPD（TempPass1和TempPass2）将显示在程序员的MVPD列表中。  程序员需要采取以下步骤来实施多个临时通行证：
+在Adobe設定兩個TempPass執行個體後，兩個額外的MVPD （TempPass1和TempPass2）會出現在程式設計師的MVPD清單中。  程式設計師必須執行下列步驟，實作多個臨時通道：
 
-1. 在用户最初访问网站时，使用TempPass1自动登录。 您可以使用上述自动登录示例作为此任务的起点。
-1. 当您检测到TempPass1已过期时，请（在Cookie/本地存储中）存储事实，并向用户显示您的标准MVPD选取器。 **确保从该列表中筛选出TempPass1和TempPass2**.
-1. 在后续的每天，如果TempPass1过期，则使用TempPass2自动登录该用户。
-1. 当TempPass2过期时，将该事实（存储在Cookie/本地存储中）存储在该日期，并向用户显示您的标准MVPD选取器。 再次，确保从该列表中过滤掉TempPass1和TempPass2。
-1. 在每个新日子00:00时，使用 [重置TempPass Web API](/help/authentication/temp-pass.md#reset-all-tempass).
+1. 使用者初次造訪網站時，會自動使用TempPass1登入。 您可以使用上述自動登入範例作為此工作的起點。
+1. 當您偵測到TempPass1已過期時，請將事實儲存在Cookie/本機儲存體中，並向使用者呈現您的標準MVPD選取器。 **請務必從該清單中篩選掉TempPass1和TempPass2**.
+1. 在後續每一天，如果TempPass1已過期，請使用TempPass2自動登入該使用者。
+1. 當TempPass2過期時，請將當天的實際值（儲存在Cookie/本機儲存體中）呈現給使用者，並提供您標準的MVPD選擇器。 請再次確定從該清單中篩選掉TempPass1和TempPass2。
+1. 在每個新日00:00，使用 [重設TempPass Web API](/help/authentication/temp-pass.md#reset-all-tempass).
 
 >[!NOTE]
->**编程说明：** Primetime身份验证没有内置机制，无法在10分钟后停止免费流播放。  TempPass2过期后，由程序员来限制访问。 要实现此目的，程序员可以在其网站/应用程序中每X分钟实施一次“checkAuthorization”调用，其中X是程序员确定适合其应用程序的时间段。
+>**程式設計備註：** Primetime驗證沒有內建機制可在10分鐘後停止免費串流。  一旦TempPass2過期，由程式設計師來限制存取。 為了完成此操作，程式設計師可以在他們的網站/應用程式中每X分鐘實施一次「checkAuthorization」呼叫，其中X是程式設計師認為對其應用程式有意義的時間段。
 
-## 重置所有临时传递 {#reset-all-tempass}
+## 重設所有暫時傳遞 {#reset-all-tempass}
 
-某些业务规则需要定期清除临时通行，或针对特定请求者ID和MVPD ID发出的所有临时通行进行临时重置。 此功能支持以下用例：
+某些商業規則需要定期清除臨時通行證，或臨時重設針對特定請求者ID和MVPD ID發出的所有臨時通行證。 此功能支援下列使用案例：
 
-* 每天10分钟的临时通道（临时通道必须在一天的开头重置）
-* 在突发新闻期间，所有用户都可以使用临时通行证。 （当突发新闻开始时，需要为所有设备立即重置“临时通行证”。）
-* 多次临时传递方案提供了初始查看时段（一定长度）和后续每日时段（另一长度）的组合。
+* 每日10分鐘的臨時通過（臨時通過必須在當天開始時重置）
+* 即時新聞期間可供所有使用者使用的臨時傳遞。 （突發新聞開始時，需要立即為所有裝置重設暫時通過。）
+* 多重「暫時通過」情境提供某個長度的初始檢視期間組合，之後是另一個長度的後續每日期間。
 
-为了重置所有临时传递，Primetime身份验证为程序员提供 *公共* web API:
+為了重設所有臨時傳遞，Primetime驗證為程式設計師提供 *公共* 網頁API：
 
 ```url
 DELETE https://mgmt.auth.adobe.com/reset-tempass/v2/reset
 ```
 
 >[!NOTE]
->上述URL将取代之前的重置API。 不再支持旧的重置API(v1)。
+>上述URL會取代先前的重設API。 舊的reset API (v1)不再受支援。
 
-* **协议：** HTTPS
-* **主机：**
-   * 版本 — mgmt.auth.adobe.com
-   * Prequal - mgmt-prequal.auth.adobe.com
-* **路径：** /reset-tempass/v2/reset
-* **查询参数：** `device_id=all&requestor_id=REQUESTOR_ID&mvpd_id=TEMPPASS_MVPD_ID`
-* **标题：** ApiKey - 1232293681726481
-* **响应：**
+* **通訊協定：** HTTPS
+* **主機：**
+   * 發行版本 — mgmt.auth.adobe.com
+   * 前述 — mgmt-prequal.auth.adobe.com
+* **路徑：** /reset-tempass/v2/reset
+* **查詢引數：** `device_id=all&requestor_id=REQUESTOR_ID&mvpd_id=TEMPPASS_MVPD_ID`
+* **標頭：** ApiKey - 1232293681726481
+* **回應：**
    * 成功 — HTTP 204
-   * 失败：
-      * 请求不正确的HTTP 400
-      * 未指定ApiKey时的HTTP 401
-      * ApiKey无效时的HTTP 403
+   * 失敗：
+      * HTTP 400 （針對不正確的請求）
+      * HTTP 401 （若未指定ApiKey）
+      * HTTP 403 （如果ApiKey無效）
 
 例如：
 
@@ -528,23 +528,23 @@ DELETE https://mgmt.auth.adobe.com/reset-tempass/v2/reset
 $ curl -H "Authorization: Bearer <access_token_here>" -X DELETE -v "https://mgmt.auth.adobe.com/reset-tempass/v2.1/reset?device_id=all&requestor_id=AdobeBEAST&mvpd_id=TempPass"
 ```
 
-## 支持的客户端 {#supp-clients}
+## 支援的使用者端 {#supp-clients}
 
-平台对临时通行证和重置工具的支持：
+平台支援暫時通過和重設工具：
 
-| Adobe Primetime身份验证客户端 | 临时通道 | 重置工具 |
+| Adobe Primetime驗證使用者端 | 暫時通過 | 重設工具 |
 |:--------------------------------------:|:---------:|:----------:|
 | JS AccessEnabler | 是 | 是 |
-| 本机客户端iOS | 是 | 是 |
-| 本机客户端tvOS | 是 | 是 |
-| 本机客户端Android | 是 | 是 |
-| 本机客户端fireTV | 是 | 是 |
-| 无客户端API | 是 | 是 |
+| Native Client iOS | 是 | 是 |
+| 原生使用者端tvOS | 是 | 是 |
+| Native Client Android | 是 | 是 |
+| Native Client fireTV | 是 | 是 |
+| 無使用者端API | 是 | 是 |
 
-## 限制和已知问题 {#limitations}
+## 限制和已知問題 {#limitations}
 
-本节介绍适用于当前Temp Pass实施的限制。
+本節說明適用於目前實作Temp Pass的限制。
 
-**JavaScript SDK**:支持从版本重置临时传递功能 **3.X及更高版本**.
+**JavaScript SDK**：支援從版本重設暫時傳遞功能 **3.X及更高版本**.
 
 <!--For Customers migrating from the 2.X JavaScript AccessEnabler to the 3.X JavaScript AccessEnabler, see [AccessEnabler JS 2.x to JS 3.x migration guide](https://tve.helpdocsonline.com/accessenabler-js-to-js-migration-guide).-->

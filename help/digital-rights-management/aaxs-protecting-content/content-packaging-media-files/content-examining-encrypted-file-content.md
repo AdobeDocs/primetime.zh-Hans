@@ -1,23 +1,22 @@
 ---
-title: 检查加密的文件内容
-description: 检查加密的文件内容
+title: 正在檢查加密的檔案內容
+description: 正在檢查加密的檔案內容
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: a8a61d1c-c259-4346-9a71-6741f70697ae
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '98'
 ht-degree: 0%
 
 ---
 
+# 正在檢查加密的檔案內容 {#examining-encrypted-file-content}
 
-# 检查加密的文件内容{#examining-encrypted-file-content}
+若要使用Java API檢查FLV或F4V檔案的內容，請執行下列步驟：
 
-要使用Java API检查FLV或F4V文件的内容，请执行以下步骤：
+1. 設定您的開發環境，並包含中提到的所有JAR檔案 [設定開發環境](../../aaxs-protecting-content/content-setting-up-the-sdk/content-setting-up-the-dev-env.md) 在您的專案中。
+1. 建立 `MediaEncrypter` 執行個體。
+1. 將加密檔案傳遞至 `MediaEncrypter.examineEncryptedContent` 方法，會傳回 `KeyMetaData` 物件。
+1. Inspect中的資訊 `KeyMetaData` 物件。
 
-1. 设置开发环境，并包含项目[设置开发环境](../../aaxs-protecting-content/content-setting-up-the-sdk/content-setting-up-the-dev-env.md)中提及的所有JAR文件。
-1. 创建`MediaEncrypter`实例。
-1. 将加密文件传递给`MediaEncrypter.examineEncryptedContent`方法，该方法返回`KeyMetaData`对象。
-1. Inspect `KeyMetaData`对象中的信息。
-
-有关演示如何从加密文件提取DRM元数据的示例代码，请参阅Reference Implementation Command Line Tools &quot;samples&quot;目录中的`com.adobe.flashaccess.samples.mediapackager.ExamineContent`。
+如需示範如何從加密檔案擷取DRM中繼資料的範常式式碼，請參閱 `com.adobe.flashaccess.samples.mediapackager.ExamineContent` 在「參考實作命令列工具」的「範例」目錄中。

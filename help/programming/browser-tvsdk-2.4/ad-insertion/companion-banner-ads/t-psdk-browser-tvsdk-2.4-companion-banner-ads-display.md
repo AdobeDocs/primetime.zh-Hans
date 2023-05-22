@@ -1,47 +1,46 @@
 ---
-description: 要显示横幅广告，您需要创建横幅实例并允许浏览器TVSDK侦听广告相关事件。
-title: 显示横幅广告
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 若要顯示橫幅廣告，您必須建立橫幅例項，並允許Browser TVSDK接聽與廣告相關的事件。
+title: 顯示橫幅廣告
+exl-id: 331c10a4-ae31-4d3b-aaca-9497e2970ecf
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '242'
 ht-degree: 0%
 
 ---
 
+# 顯示橫幅廣告 {#display-banner-ads}
 
-# 显示横幅广告{#display-banner-ads}
+若要顯示橫幅廣告，您必須建立橫幅例項，並允許Browser TVSDK接聽與廣告相關的事件。
 
-要显示横幅广告，您需要创建横幅实例并允许浏览器TVSDK侦听广告相关事件。
+瀏覽器TVSDK提供透過與線性廣告相關聯的隨附橫幅廣告清單 `AdobePSDK.PSDKEventType.AD_STARTED` 事件。
 
-浏览器TVSDK通过`AdobePSDK.PSDKEventType.AD_STARTED`事件提供与线性广告关联的附属横幅广告的列表。
-
-清单可以通过以下方式指定配套横幅广告：
+資訊清單可透過以下方式指定隨附橫幅廣告：
 
 * HTML片段
-* iFrame页面的URL
-* 静态图像或Adobe Flash SWF文件的URL
+* iFrame頁面的URL
+* 靜態影像或AdobeFlashSWF檔案的URL
 
-对于每个配套广告，浏览器TVSDK会指示哪些类型可用于您的应用程序。
+對於每個隨附廣告，瀏覽器TVSDK會指出您的應用程式可用的型別。
 
-为事件`AdobePSDK.PSDKEventType.AD_STARTED`添加一个侦听器，它执行以下操作：
-1. 清除横幅实例中的现有广告。
-1. 从`Ad.getCompanionAssets`获取伴侣广告的列表。
-1. 如果附属广告的列表不是空的，请在横幅实例的列表上迭代。
+新增事件的接聽程式 `AdobePSDK.PSDKEventType.AD_STARTED` 這樣會執行下列動作：
+1. 清除橫幅例項中的現有廣告。
+1. 從取得隨附廣告清單 `Ad.getCompanionAssets`.
+1. 如果隨附廣告清單不是空的，請在清單上反複檢視橫幅例項。
 
-   每个横幅实例(`AdBannerAsset`)都包含宽度、高度、资源类型（html、iframe或static）等信息以及显示配套横幅所需的数据。
-1. 如果视频广告没有随其预订的配套广告，则配套资产的列表不包含该视频广告的数据。
-1. 将横幅信息发送到页面上显示横幅的相应位置的函数。
+   每個橫幅例項(一個 `AdBannerAsset`)包含寬度、高度、資源型別（html、iframe或靜態）等資訊，以及顯示隨附橫幅所需的資料。
+1. 如果視訊廣告沒有隨附廣告，隨附資產清單則不包含該視訊廣告的資料。
+1. 將橫幅資訊傳送至頁面上會在適當位置顯示橫幅的函式。
 
-   这通常是`div`，您的函数使用`div ID`显示横幅。 例如：
+   這通常是 `div`，而您的函式會使用 `div ID` 以顯示橫幅。 例如：
 
-   添加事件侦听器：
+   新增事件接聽程式：
 
    ```js
    _player.addEventListener(AdobePSDK.PSDKEventType.AD_STARTED, onAdStarted);
    ```
 
-   实现监听器处理函数：
+   實作接聽程式處理常式：
 
    ```js
    private function onAdStarted(event:AdPlaybackEvent):void 
@@ -61,7 +60,7 @@ ht-degree: 0%
    }
    ```
 
-   处理显示的JavaScript示例：
+   處理顯示的JavaScript範例：
 
    ```js
    function displayCompanion (resourceType, width, height, data) { 
@@ -75,4 +74,3 @@ ht-degree: 0%
        } 
    }
    ```
-

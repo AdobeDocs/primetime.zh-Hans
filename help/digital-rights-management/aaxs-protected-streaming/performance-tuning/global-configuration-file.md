@@ -1,37 +1,36 @@
 ---
-title: 全局配置文件
-description: 全局配置文件
+title: 全域組態檔
+description: 全域組態檔
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 109e6e5b-4bb5-43dc-b11e-50799a346a28
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '285'
 ht-degree: 0%
 
 ---
 
+# 全域組態檔{#global-configuration-file}
 
-# 全局配置文件{#global-configuration-file}
+對效能的最大影響是使用全域組態檔flashaccess-global.xml中的設定。 這些設定包括 `<Caching>` 和 `<Logging>` 元素。
 
-对性能的影响最大的是使用全局配置文件flashaccess-global.xml中的设置。 这些设置包括`<Caching>`和`<Logging>`元素。
-
-* `<Caching>` 该元 `<Caching>` 素控制内存中配置文件的缓存。`<Caching>`元素的语法如下：
+* `<Caching>` 此 `<Caching>` element控制記憶體中組態檔的快取。 此 `<Caching>` 元素具有下列語法：
 
    ```
    <Caching refreshDelaySeconds="..." numTenants="..."/>
    ```
 
-   * `refreshDelaySeconds` 控制服务器检查配置文件更新的频率。`refreshDelaySeconds`的低值会对性能产生负面影响，而较高值会改善性能。 有关`refreshDelaySeconds`的详细信息，请参阅“[更新配置文件](../../aaxs-protected-streaming/updating-configuration-files/updating-configuration-files-overview.md)”。
+   * `refreshDelaySeconds` 控制伺服器檢查組態檔更新的頻率。 以下專案的低值 `refreshDelaySeconds` 會對效能造成負面影響，而較高的值可以改善效能。 如需詳細資訊，請參閱 `refreshDelaySeconds`，請參閱「[更新組態檔](../../aaxs-protected-streaming/updating-configuration-files/updating-configuration-files-overview.md)「。
 
-   * `numTenants` 指定租户的数量。低于租户数量的值可能会影响性能，因为向剩余租户发出的请求会导致缓存丢失。 配置数据的缓存丢失会对性能产生负面影响。 因此，Adobe建议您将此值设置为高于为服务器配置的租户数，除非需要考虑内存限制。
+   * `numTenants` 指定租使用者的數量。 低於租使用者數的值可能會影響效能，因為對其他租使用者的請求會導致快取遺漏。 設定資料的快取遺漏對效能有負面影響。 因此，Adobe建議您將此值設定為高於為伺服器設定的租使用者數量，除非有記憶體限制需要考量。
 
-* `<Logging>` 元 `<Logging>` 素指定日志级别和滚动日志文件的频率。`<Logging>`元素的语法如下：
+* `<Logging>` 此 `<Logging>` element會指定記錄層級以及記錄檔的捲動頻率。 此 `<Logging>` 元素具有下列語法：
 
    ```
    <Logging level="..." rollingFrequency=""/>
    ```
 
-   * `level` 指定要记录的消息。值“DEBUG”会生成大量日志消息，并会对性能产生负面影响。 Adobe建议设置“WARN”以获得最佳性能。 但是，这一价值确实有可能丢失基本的运行时信息，如许可证审核。 要保留有价值的日志信息，同时降低性能影响，请使用“INFO”值。
-   * `rollingFrequency` 指定滚动日志文件的 *频率*。“滚动”是新日志文件变为活动日志的过程，而以前活动的日志文件不再写入并被视为已滚动的过程。 滚动间隔可设置为“MINUTELY”、“HOURLY”、“TWICE-DAILY”、“DAILY”、“WEEKLY”、“MONTHLY”或“NEVER”。
+   * `level` 指定要記錄的訊息。 「DEBUG」值會產生許多記錄訊息，並可能對效能造成負面影響。 Adobe建議將「WARN」設定為最佳效能。 但是，這個值可能會遺失必要的執行階段資訊，例如授權稽核。 若要以最低的效能影響保留有價值的記錄資訊，請使用「INFO」值。
+   * `rollingFrequency` 指定記錄檔的頻率 *已滾動*. 滾動是新記錄檔變成使用中記錄檔的過程，而先前使用的記錄檔不再寫入，且會視為滾動。 滾動間隔可設為「分鐘」、「每小時」、「每日兩次」、「每日」、「每週」、「每月」或「從不」。
 
-有关优化性能的其他提示，请参阅&#x200B;*使用Adobe Access SDK for Protecting Content*。
+另請參閱 *使用Adobe存取SDK保護內容* 以取得效能最佳化的其他秘訣。

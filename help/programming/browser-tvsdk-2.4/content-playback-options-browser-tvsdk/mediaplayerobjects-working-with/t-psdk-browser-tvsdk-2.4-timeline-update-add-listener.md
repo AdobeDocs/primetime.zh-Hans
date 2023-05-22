@@ -1,21 +1,20 @@
 ---
-description: 要接收有关时间轴更新的通知，请注册相应的事件侦听器。
-title: 为TimelineUpdatedEvent添加侦听器
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 若要接收關於時間表更新的通知，請註冊適當的事件接聽程式。
+title: 新增TimelineUpdatedEvent的監聽器
+exl-id: 7b55beb5-fd84-4144-8d02-bbd998f99e3a
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '47'
 ht-degree: 0%
 
 ---
 
+# 新增TimelineUpdatedEvent的監聽器{#add-listeners-for-timelineupdatedevent}
 
-# 为TimelineUpdatedEvent{#add-listeners-for-timelineupdatedevent}添加侦听器
+若要接收關於時間表更新的通知，請註冊適當的事件接聽程式。
 
-要接收有关时间轴更新的通知，请注册相应的事件侦听器。
-
-每次时间轴更新时，`MediaPlayer`都会调度类型为`AdobePSDK.PSDKEventType.TIMELINE_UPDATED`的`AdobePSDK.TimelineEvent`。
-1. 实施适当的监听器。
+每次時間軸更新時， `MediaPlayer` dispatches `AdobePSDK.TimelineEvent` 具有型別 `AdobePSDK.PSDKEventType.TIMELINE_UPDATED`.
+1. 實作適當的接聽程式。
 
    ```js
    function onTimelineUpdatedEvent(event) { 
@@ -33,10 +32,9 @@ ht-degree: 0%
    }
    ```
 
-1. 注册事件监听器。
+1. 註冊事件監聽器。
 
    ```js
    player.addEventListener(AdobePSDK.PSDKEventType.TIMELINE_UPDATED,  
        onTimelineUpdatedEvent);
    ```
-

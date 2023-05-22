@@ -1,23 +1,21 @@
 ---
-title: 更新现有策略
-description: 更新现有策略
+title: 更新現有原則
+description: 更新現有原則
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 36480297-b079-41cf-b405-aac807e0d92f
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '80'
 ht-degree: 0%
 
 ---
 
+# 更新現有原則 {#update-an-existing-policy}
 
-# 更新现有策略{#update-an-existing-policy}
+若要更新現有原則，請從下拉式清單中選擇檔案名稱，然後按一下 **[!UICONTROL Open]**. 修改任何想要的原則屬性。 除了與驗證和授權鏈結相關的屬性外，所有屬性都可以修改。
 
-要更新现有策略，请从下拉列表中选择文件名，然后单击&#x200B;**[!UICONTROL Open]**。 修改任何所需的策略属性。 除了与身份验证和许可证链接相关的属性外，所有属性都可以修改。
-
-完成后，单击&#x200B;**[!UICONTROL Save]**。 [!DNL Resource]目录中的策略文件将替换为更新的版本。
+完成後，按一下 **[!UICONTROL Save]**. 中的原則檔 [!DNL Resource] 目錄將由更新版本取代。
 
 >[!NOTE]
 >
->即使更改了策略名称，[!DNL Resource]目录中的文件名称也不会被修改。
-
+>即使原則名稱已變更，在 [!DNL Resource] 將不會修改目錄。

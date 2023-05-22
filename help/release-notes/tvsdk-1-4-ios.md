@@ -1,217 +1,216 @@
 ---
-title: 用于iOS的TVSDK 1.4发行说明
-description: TVSDK 1.4 for iOS发行说明描述了TVSDK iOS 1.4中的新增或更改功能、已解决和已知问题以及设备问题
+title: iOS適用的TVSDK 1.4發行說明
+description: iOS適用的TVSDK 1.4發行說明說明TVSDK iOS 1.4的新增或變更內容、已解決和已知問題以及裝置問題
 products: SG_PRIMETIME
 topic-tags: release-notes
-translation-type: tm+mt
-source-git-commit: b33240bf1b42b80389cd95a7ae4d3f85185a2d32
+exl-id: 30284f89-969b-49be-98b4-bd3f23258590
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
-source-wordcount: '6550'
+source-wordcount: '6549'
 ht-degree: 0%
 
 ---
 
+# iOS適用的TVSDK 1.4發行說明 {#tvsdk-for-ios-release-notes}
 
-# 用于iOS的TVSDK 1.4发行说明{#tvsdk-for-ios-release-notes}
+iOS適用的TVSDK 1.4發行說明說明TVSDK iOS 1.4的新增或變更專案、已解決和已知問題以及裝置問題。
 
-TVSDK 1.4 for iOS发行说明描述了TVSDK iOS 1.4中的新增或更改功能、已解决和已知问题以及设备问题。
-
-## 新增功能{#new-features}
+## 新功能 {#new-features}
 
 **版本1.4.45**
 
-* 为了符合Xcode10,TVSDK已从“`libstdc++`”移动到“`libc++`”，因此支持的最低版本为iOS 7。 更早时候是iOS 6。
+* 為符合Xcode10，TVSDK已從「`libstdc++`「到」`libc++`&quot;，因此支援的最低版本為iOS 7。 之前是iOS 6。
 
 **版本1.4.44**
 
-* 此版本中没有新增功能或增强功能。
+* 此版本中沒有新功能或增強功能。
 
 **版本1.4.43**
 
-* 在不触发部分广告跟踪的情况下加入广告的体验与电视类似。\
-   示例：用户在包含3个30秒广告的90秒广告分时段中间（40秒）加入。 这是分时段的第二个广告。
+* 類似電視的體驗，即能夠在廣告中間加入，而不會觸發部分廣告的追蹤。\
+   範例：使用者在包含三個30秒廣告的90秒廣告插播中間（在40秒）加入。 這是插播中第二個廣告的10秒。
 
-   * 第二个广告在剩余的持续时间（20秒）内播放，然后是第三个广告。
-   * 不会触发已播放的部分广告（第二个广告）的广告跟踪器。 只触发第三个广告的跟踪器。
+   * 第二個廣告會播放剩餘的持續時間（20秒），接著是第三個廣告。
+   * 未觸發已播放部分廣告（第二個廣告）的廣告追蹤器。 只會觸發第三個廣告的追蹤器。
 
-* 在PTAdMetadata接口中添加了布尔类型的enableVodPreroll属性。 该属性可用于在VoD流上启用预滚动。 如果enableVodPreroll为NO，则PSDK不播放预卷。 然而，这对移民没有影响。 enableVodPreroll的默认值为YES。
-* 从iOS v1.4.43开始，PTMediaPlayer接口的closedCaptionDisplayEnabled API被标记为已弃用。 要确定给定的PTMediaPlayerItem是否提供隐藏式字幕，请检查PTMediaPlayerMediaItem的subtitlesOptions属性。
+* 在PTAdMetadata介面中新增布林型別的enableVodPreroll屬性。 屬性可用來在VoD資料流上啟用前置滾動。 如果enableVodPreroll為NO，PSDK不會播放前段。 但是，這對中鏡沒有影響。 enableVodPreroll的預設值為YES。
+* PTMediaPlayer介面的closedCaptionDisplayEnabled API從iOS v1.4.43開始標籤為已棄用。 若要判斷隱藏式字幕是否適用於指定的PTMediaPlayerItem，請檢查PTMediaPlayerMediaItem的subtitlesOptions屬性。
 
 **版本1.4.42**
 
-此版本中未添加任何新功能。 有关已修复的问题的列表，请参阅已解决的问题。
+此版本中未新增任何新功能。 如需已修正的問題清單，請參閱已解決的問題。
 
 **版本1.4.41**
 
-API更改：
+API變更：
 
-* **isSecure**:引入了一个新的API isSecure，以保护播放器不会录制和引发错误。默认值为true。
-* **allowExternalRecording**:引入了新的API以允许对安全内容进行空播镜像。播放镜像视为录制，因此，allowExternalRecording值必须设置为“True”，以允许播放镜像或设置为“False”，以停止安全内容的播放镜像。 默认情况下，值为true。
+* **isSecure**：推出新的API isSecure，可保護播放器避免錄製和擲回錯誤。 預設值為true。
+* **allowExternalRecording**：引入新API以允許安全內容的播放映象。 Airplay映象被視為錄製，因此allowExternalRecording值必須設定為「True」，以允許Airplay映象或設定為「False」，以停止安全內容的播放映象。 預設值為true。
 
-**版本1.4.40**
+**1.4.40版**
 
-无新增功能。
+沒有新功能。
 
 **版本1.4.39**
 
-* iOS TVSDK通过VHL 2.0.1和VHL 2.0.1认证，Nielsen通过。
-* 更新iOS TVSDK以从新的Akamai主机`primetime-a.akamaihd.net`发出CRS请求。
-* 新的主机名配置通过HTTP和HTTPS(SSL)提供更大规模的CRS资产投放。
+* iOS TVSDK已通過VHL 2.0.1和VHL 2.0.1的認證，並與Nielsen合作。
+* iOS TVSDK已更新，可向新Akamai主機發出CRS請求 `primetime-a.akamaihd.net`.
+* 新的主機名稱設定可大幅透過HTTP和HTTPS (SSL)提供CRS資產傳遞。
 
 **版本1.4.36**
 
-在iOS TVSDK中集成和验证VHL 2.0:通过降低API的复杂性，降低VideoHeartbeatsLibrary实现中的障碍。
+在iOS TVSDK中整合及認證VHL 2.0 ：降低API的複雜性，以降低VideoHeartbeatsLibrary實作的障礙。
 
 **版本1.4.34**
 
-* 网络广告信息
+* 網路廣告資訊
 
-   TVSDK API现在提供有关第三方VAST响应的更多信息。 广告ID、广告系统和VAST广告扩展提供在`PTNetworkAdInfo`类中，可通过广告资产上的`networkAdInfo`属性访问。 此信息可用于与其他广告分析平台（如&#x200B;**Moat Analytics**）集成。
+   TVSDK API現在提供有關第三方VAST回應的其他資訊。 廣告ID、廣告系統和VAST廣告擴充功能提供於 `PTNetworkAdInfo` 類別可透過  `networkAdInfo`  屬性。 此資訊可用於與其他Ad Analytics平台整合，例如 **Moat Analytics**.
 
 **版本1.4.31**
 
-* **账单** 量度为了迎合那些希望只支付其使用费用而不是固定费率的客户，Adobe会收集使用情况量度并使用这些量度来确定向客户收取多少账单。
+* **計費量度** 為因應客戶只想依使用量付款，而不想依實際使用量支付固定費率的需求，Adobe會收集使用量度並使用這些量度來決定向客戶收費的金額。
 
-每次TVSDK生成流开始事件时，播放器都会开始定期向Adobe的付费系统发送HTTP消息。 对于标准VOD、专业VOD（启用中间广告）和实时内容，期间（称为可计费持续时间）可以不同。 每种内容类型的默认持续时间为30分钟，但您与Adobe的合同将决定实际值。
+每當TVSDK產生資料流開始事件時，播放器就會開始定期傳送HTTP訊息至Adobe的計費系統。 期間（稱為可計費期間）在標準VOD、pro VOD （啟用中段廣告）和即時內容中可能不同。 每種內容型別的預設持續時間為30分鐘，但您的Adobe合約會決定實際值。
 
-* **针对CRS Ads的多CDN支**&#x200B;持TVSDK现在支持针对CRS广告的多CDN。通过为CRS广告提供FTP详细信息，您可以指定CDN位置，而不是默认的Adobe拥有的CDN（如Akamai）。
+* **CRS Ads的多重CDN支援** TVSDK現在支援CRS廣告的多重CDN。 透過提供CRS廣告的FTP詳細資料，您可以指定CDN位置，而不是Adobe擁有的預設CDN （例如Akamai）。
 
 **版本1.4.29**
 
-在PTSDKConfig类中，已添加forceHTTPS API。
+已在PTSDKConfig類別中新增forceHTTPS API。
 
-PTSDKConfig类提供了对向Adobe Primetime广告决策、DRM和Video Analytics服务器发出的请求实施SSL的方法。 有关详细信息，请参阅该类的`forceHTTPS`和`isForcingHTTPS`方法。 如果清单是通过HTTPS加载的，则TVSDK保留HTTPS的内容使用，并在从该清单加载任何相对URL时遵守此用法。
+PTSDKConfig類別提供在向Adobe Primetime ad decisioning、DRM和Video Analytics伺服器提出的請求上強制SSL的方法。 如需詳細資訊，請參閱 `forceHTTPS` 和 `isForcingHTTPS` 此類別上的方法。 如果資訊清單是透過HTTPS載入，TVSDK會保留HTTPS的內容使用方式，並在從該資訊清單載入任何相對URL時遵循此使用方式。
 
-**注意**:对第三方域（如广告跟踪像素、内容和广告URL）的请求以及类似请求不会进行修改，内容提供者和广告服务器有责任提供通过HTTPS支持的URL。
+**注意**：對第三方網域（例如廣告追蹤畫素、內容和廣告URL）的要求以及類似要求不會修改，內容提供者和廣告伺服器有責任提供透過HTTPS支援的URL。
 
 **版本1.4.18**
 
-Primetime iOS TVSDK现在支持VPAID 2.0 Javascript创意，以实现丰富的交互式流内广告体验。
+Primetime iOS TVSDK現在支援VPAID 2.0 Javascript創意，以提供豐富的互動式串流廣告體驗。
 
-有关VPAID 2.0的详细信息，请参阅[VPAID广告支持](../programming/tvsdk-1.4-for-ios/ad-insertion/c-psdk-ios-1.4-vpaid-2.0-ads.md)。
+如需VPAID 2.0的詳細資訊，請參閱 [VPAID廣告支援](../programming/tvsdk-1.4-for-ios/ad-insertion/c-psdk-ios-1.4-vpaid-2.0-ads.md).
 
 **版本1.4.17**
 
 * tvOS
 
-   TVSDK支持tvOS本机应用程序。
-* 可以播放以下类型的内容：
+   tvsdk支援tvOS原生應用程式。
+* 可以播放下列型別的內容：
 
    * VOD
-   * 实时
+   * 即時
    * AES-128
-   * 替代音频和字幕
+   * 替代音訊和字幕
    * FER
 
-* 可显示以下类型的广告：
+* 可以顯示下列型別的廣告：
 
    * 基本
    * VAST2
    * VAST3
    * VMA
 
-* 当前不支持以下功能：
+* 目前不支援下列功能：
 
    * Digital Rights Management(DRM)
-   * 广告横幅
-   * TV标记语言(TVML)
+   * 廣告橫幅
+   * 電視標籤語言(TVML)
 
 **版本1.4.13**
 
-**注意**:Nielsen模块已从TVSDK版本中删除，TVSDK将在不久的将来用新的Nielsen集成模块进行更新。
+**注意**： Nielsen模組已從TVSDK建置版本中移除，TVSDK將在近期內以新的Nielsen整合模組更新。
 
-* **广告回退，广告选择逻辑中的菊花链(Zendesk #3103)**
+* **廣告遞補、廣告選擇邏輯中的Daisy鏈結(Zendesk #3103)**
 
-对于启用回退规则的VAST广告（创意），TVSDK将MIME类型无效的广告视为空广告并尝试使用回退广告替代广告。 您可以配置回退行为的某些方面。
+對於已啟用遞補規則的VAST廣告（創意內容），TVSDK會將具有無效MIME型別的廣告視為空白廣告，並嘗試在其位置使用遞補廣告。 您可以設定遞補行為的某些方面。
 
-有关详细信息，请参阅[VAST和VMAP广告的广告回退](../programming/tvsdk-1.4-for-ios/ad-insertion/c-psdk-ios-1.4-ad-fallback.md)。
+如需詳細資訊，請參閱 [VAST和VMAP廣告的廣告遞補](../programming/tvsdk-1.4-for-ios/ad-insertion/c-psdk-ios-1.4-ad-fallback.md).
 
 **版本1.4.9**
 
-* **具有替代内容替换的封锁信号**
+* **使用替代內容取代發出中斷訊號**
 
-作为1.4 TVSDK更新的一部分，我们现在还支持针对线性内容的区域封锁进入和返回。 TVSDK现在可以并行处理两个清单文件，主文件和备用文件，以监视封锁信号，即使在显示替代原始编程的替代编程时也是如此。
+在1.4 TVSDK更新中，我們現在也支援進入線性內容的中斷或從區域性中斷返回。 TVSDK現在可以並行處理兩個資訊清單檔案（主要和替代），以監控中斷訊號，即使替代程式設計正在取代原始程式設計。
 
 **版本1.4.8**
 
-* **已更新至版本1.5的视频心率库(VHL)**
+* **視訊心率程式庫(VHL)更新至1.5版**
 
-   * 能够将带有视频开始和/或视频/广告/章节开始的元数据作为上下文数据发送
-   * 网络流量更少 — 心率平均更少，且更小
+   * 能夠連同視訊開始和/或視訊/廣告/章節開始一起傳送中繼資料作為內容資料
+   * 網路流量較少 — 心率平均而言更少，且大小較小
 
 **版本1.4.7**
 
-* **预置个性化支持**
+* **內部部署個人化支援**
 
-支持在事先安装Adobe Indivialization Server以自定义客户端的个性化请求以转到其他端点。
+支援Adobe個人化伺服器的內部部署安裝，可自訂使用者端的個人化請求，以移至其他端點。
 
-* **基于分辨率的输出保护**
+* **以解析度為基礎的輸出保護**
 
-DRM策略现在可指定允许的最高分辨率，具体取决于设备的“输出保护”功能。 例如“如果HDCP可用，则允许播放分辨率高达1080p的内容；如果HDCP不可用，则允许播放分辨率高达480p的内容”。
+DRM原則現在可以根據裝置的「輸出保護」功能，指定允許的最高解析度。 例如「如果有HDCP，則允許播放解析度最高為1080p的內容，如果沒有HDCP，則允許播放解析度最高為480p的內容」。
 
 **版本1.4.4**
 
-* **视频心率库(VHL)更新至版本1.4.1.1**
+* **視訊心率程式庫(VHL)更新至1.4.1.1版**
 
-   * 添加了将来自其他SDK或播放器的不同分析用例与Adobe Analytics Video Essentials捆绑在一起的功能。
-   * 已通过删除trackAdBreakStart和trackAdBreakComplete方法优化了广告跟踪。 广告中断从trackAdStart和trackAdComplete方法调用推断出来。
-   * 跟踪广告时不再需要playhead属性。
-   * 增加了对Marketing Cloud访客ID的支持。
+   * 新增將其他SDK或播放器中的不同Analytics使用案例與Adobe Analytics Video Essentials搭配的功能。
+   * 已透過移除trackAdBreakStart和trackAdBreakComplete方法最佳化廣告追蹤。 廣告插播是從trackAdStart和trackAdComplete方法呼叫中推斷出來的。
+   * 追蹤廣告時不再需要播放點屬性。
+   * 新增對Marketing Cloud訪客ID的支援。
 
-* **Nielsen SDK集成**
+* **Nielsen SDK整合**
 
-   * TVSDK现在支持将mTVR和MDPR ID3信标发送到Nielsen SDK，而无需任何自定义集成。 为了开始，请下载3.1.2.19 Nielsen iOS App SDK。
+   * TVSDK現在支援傳送mTVR和MDPR ID3信標至Nielsen SDK，無需任何自訂整合。 若要開始使用，請下載3.1.2.19 Nielsen iOS應用程式SDK。
 
-**版本1.4.0**
+**1.4.0版**
 
-* **具有替代内容替换的封锁信号**
+* **使用替代內容取代發出中斷訊號**
 
-   * 作为1.4 TVSDK更新的一部分，TVSDK现在还支持针对线性内容的区域封锁进入和返回。 TVSDK现在可以并行处理两个清单文件，主文件和备用文件，以监视封锁信号，即使在显示替代原始编程的替代编程时也是如此。
+   * 在1.4 TVSDK更新中，TVSDK現在也支援進入及從線性內容的區域中斷返回。 TVSDK現在可以並行處理兩個資訊清單檔案（主要和替代），以監控中斷訊號，即使替代程式設計正在取代原始程式設計。
 
-* **删除/替换C3广告**
+* **移除/取代C3廣告**
 
-   * 现在，无需进行额外的准备工作，即可将新广告动态插入从C3窗口传出的视频点播(VOD)资产中。 TVSDK现在提供一个API，用于删除自定义内容范围和动态插入新广告。 当实时/线性内容在广播期间播放时，并且会立即作为点播内容被拉下来使用，而无需适当时间“清理”资源时，此强大的新功能也非常有用。
+   * 現在，不需要額外的準備工作，即可動態地將新廣告插入從C3視窗傳出的隨選影片(VOD)資產。 TVSDK現在提供API來移除自訂內容範圍並動態插入新廣告。 在廣播期間播放即時/線性內容，並立即下拉以供隨選內容使用（沒有適當的時間來「清除」資產）的情況下，這項強大的新功能也很有用。
 
-## 1.4 {#device-certification-and-support-in}中的设备认证和支持
+## 1.4版的裝置認證與支援 {#device-certification-and-support-in}
 
 >[!NOTE]
 >
->TVSDK支持以下功能&#x200B;**不**:
+>下列功能為 **not** TVSDK支援：
 >
->* 在任何平台或版本上慢动作。
->* 实时戏法。
+>* 在任何平台或版本上，動作緩慢。
+>* 即時特技播放。
 
 
 **版本1.4.43**
 
-* TVSDK 1.4.43已针对iOS 11进行认证。
+* TVSDK 1.4.43已通過iOS 11的認證。
 
 **版本1.4.29**
 
-* TVSDK 1.4.29已通过iOS 10认证。
+* TVSDK 1.4.29已通過iOS 10的認證。
 
 **版本1.4.28**
 
-* TVSDK 1.4.28已通过iOS 10 Beta 7认证。
-* 通过添加forceHTTPS和isForcingHTTPS API来强制HTTPS的DRM支持。
-* 将VHL库更新为1.5.8，将Adobe Mobile库更新为4.8.4，将记录器实用程序库更新为7.0版部署目标。
+* TVSDK 1.4.28已通過iOS 10 Beta 7的認證。
+* DRM支援可透過新增forceHTTPS和isForcingHTTPS API來強制HTTPS。
+* 將VHL程式庫更新至1.5.8、將Mobile程式庫Adobe至4.8.4，並將記錄器公用程式程式庫更新至7.0版部署目標。
 
 **版本1.4.19**
 
-此版本的TVSDK已通过iOS和tvOS的FairPlay支持认证。
+此版本的TVSDK已通過iOS和tvOS的FairPlay支援認證。
 
 **版本1.4.17**
 
 * tvOS
 
-   此版本的TVSDK包含对tvOS的支持，并已针对未加密的HLS流进行验证。
+   此版本的TVSDK支援tvOS，並經過未加密的HLS資料流認證。
 
-   **注意**:请记住以下编译准则：
+   **注意**：請記住以下編譯准則：
 
-   * TVSDK tvOs支持仅限于非AdobeDRM加密流。 必须在tvOS构建设置中删除对drmNativeInterface.framework的引用。 仍支持AES加密流。
-   * Apple要求启用所有Apple TV应用程序的位代码，因此必须在项目设置中打开此标志。
+   * TVSDK tvOs支援僅限於非Adobe的DRM加密資料流。 您必須移除tvOS組建設定中drmNativeInterface.framework的參照。 仍支援AES加密資料流。
+   * Apple要求所有Apple TV應用程式都必須啟用位元代碼，因此您必須在專案設定中開啟此標幟。
 
-## 解决了1.4 {#resolved-issues-in}中的问题
+## 1.4中已解決的問題 {#resolved-issues-in}
 
 <!-- 
 
@@ -231,763 +230,763 @@ Comment Type: draft
 
 **版本1.4.45{#ios-tvsdk}**
 
-* 票证#36294 - iOS TVSDK在Xcode 10中无法正常工作
+* 票證#36294 - iOS TVSDK無法搭配Xcode 10運作
 
-   * 修复了XCode 10上的TVSDK的编译问题。 由于XCode 10要求，从iOS 1.4.45版的TVSDK上构建的应用程序要求最低部署目标，因为iOS 7.0
+   * 修正XCode 10上TVSDK的編譯問題。 由於XCode 10需求，在iOS 1.4.45以上的TVSDK上建置應用程式需要最低部署目標為iOS 7.0
 
-* 票#36321 — 在PTMediaPlayer和处于“播放”状态的AVPlayer实例之间的可搜索范围中观察到的差异。
-* 票证#36493 - iOS 12上的`libstdc++`支持
+* 票證#36321 — 在「正在播放」狀態中，PTMediaPlayer和AVPlayer執行個體之間的可搜尋範圍出現差異。
+* 票證#36493- `libstdc++` iOS 12支援
 
-   * 修复了iOS 12上的TVSDK的编译问题。 从iOS 1.4.45版到TVSDK上构建的应用程序需要最低的部署目标，如iOS 7.0
+   * 修正iOS 12上TVSDK的編譯問題。 iOS 1.4.45以上版本的TVSDK上建置的應用程式需要最低部署目標為iOS 7.0
 
 **版本1.4.44**
 
-* 票#34683 — 广告播放进度时间为负
+* 票證#34683 — 廣告播放進度時間將變成負數
 
-   * 当广告服务器报告的持续时间与实际广告内容不匹配时，会引入其他检查来处理这种情况。
+   * 當廣告伺服器報告的持續時間與實際廣告內容不符時，會輸入其他檢查來處理這種情況。
 
-* 票证#34801 — 当在暂停状态期间搜索到新位置时，当前时间和localTime未更新
+* 票證#34801 — 在暫停狀態期間搜尋新位置時，currentTime和localTime未更新
 
-   * 当播放器处于暂停状态时，播放器的当前时间现在可以设置为零；之前，仅在播放状态中将当前时间设置为零。
+   * 若播放器處於暫停狀態，播放器的目前時間現在可以設為零；先前只會在播放狀態中將目前時間設為零。
 
-* 票#35037 — 从基于信号的广告插入返回时，播放会停止有错误的URL。
+* 票證#35037 — 從訊號型廣告插入返回時，播放因錯誤URL而停止。
 
-   * 改进了针对1.4.42版中#34385问题提供的修复。 添加了isCancelled检查和异常处理代码，使操作队列更加健壮。
+   * 1.4.42版中針對已關閉問題#34385案提供的改良修正。 新增isCanceled檢查與例外狀況處理程式碼，讓作業佇列更穩健。
 
 **版本1.4.43**
 
-* (ZD#32990)- iOS:在某些提示点上播放内容，而不是投放广告。 属于AVPlayerItem接口的“selectedMediaOptionInMediaSelectionGroup”API现在已移到iOS 11中的AVMediaSelection下。 使用此新API解决了此问题。
-* (ZD#33683)TVSDK removed == suffix from the metadata strings. 解析逻辑中修复了此问题。
-* (ZD#33905)- iOS TVSDK使用两个用户代理调用清单文件。 用户代理问题已在第一次m3u8调用（新安装案例）中得到修复。 M3u8拥有相同的用户代理来处理所有呼叫。
-* (ZD#34293) — 在iOS11上无法正确播放在线性流上插入的预滚动。 已修复前放广告的问题。
-* (ZD#34684) — 应用广告跳过策略时，将显示前滚广告帧数几秒钟。 新的API enableVodPreroll已引入，可在vod播放中禁用预卷播放。 此API的默认值为“是”。 API可确保跳过主内容中的广告内容拼接。
-* (ZD#34765) — 调用stop()后，仍有少数传输流区段被下载。 增强了Stop()API以避免下载额外的区段。
-* (ZD#34865) — 在iOS上，实时流的前滚广告被截断。 与iOS11相关，并添加一个附加检查以确认流是前置内容还是主内容，可解决此问题。
-* (ZD#35093) — 修复了在启动时，如果流的主要变体失败（返回404），则播放不切换到备份流的故障转移方案。
+* (ZD#32990) - iOS：在某些提示點上播放內容而非廣告。 屬於AVPlayerItem介面的&#39;selectedMediaOptionInMediaSelectionGroup&#39; API現已移至iOS 11中的AVMediaSelection下方。 此新API已解決問題。
+* (ZD#33683) TVSDK從中繼資料字串中移除==尾碼。 此問題已在剖析邏輯中修正。
+* (ZD#33905) - iOS TVSDK透過兩個使用者代理程式呼叫資訊清單檔案。 使用者代理問題已在第一個m3u8呼叫（全新安裝案例）中修正。 M3u8現在對所有呼叫具有相同的使用者代理。
+* (ZD#34293) — 插入在LINEAR資料流上的前段膠捲無法在iOS11上正確播放。 前置式廣告的問題已修正。
+* (ZD#34684) — 套用廣告略過原則時，前段廣告框架會顯示幾秒。 已引入新的API enableVodPreroll ，以停用vod播放中的前段播放。 此API的預設值為「是」。 此API可確保跳過主要內容中的廣告內容拼接。
+* (ZD#34765) — 呼叫stop()後，仍會下載少數「傳輸串流」區段。 增強Stop() API以避免下載額外的區段。
+* (ZD#34865) — 在iOS上，直播串流的前置廣告會遭截斷。 與iOS11相關，並新增其他檢查以確認資料流是前段或主要內容，以解決此問題。
+* (ZD#35093) — 修正容錯移轉情況，其中如果資料流的主要變體在啟動時失敗（傳回404），播放不會切換至備份資料流。
 
-**版本1.4.42(1.4.42.118)**
+**1.4.42版(1.4.42.118)**
 
-* (ZD#34385) — 从基于信号的广告插入返回时，播放会停止，并且URL不正确。
+* (ZD#34385) — 從訊號型廣告插入傳回時，播放因錯誤URL而停止。
 
-   增加CustomAVAssetLoaderOperations的最大并发计数，以便清单读取可以继续执行。
-* (ZD#34373) — 当不允许流录制时，最终用户无法流化到HDMI连接的设备。
-* (ZD#32678)- TVSDK在iOS上不收集正确的广告ID。
+   增加CustomAVAssetLoaderOperations的最大並行計數，以便資訊清單讀取可以繼續執行。
+* (ZD#34373) — 不允許串流錄製時，一般使用者無法串流到HDMI連線的裝置。
+* (ZD#32678) - TVSDK無法在iOS上收集正確的廣告ID。
 
-   在VHL ping中，如果出现VAST/VMAP重定向，现在会拾取最终广告创意的广告ID。
-* (ZD#33904)- TVSDK未注册AVFoundationnotifications AVAudioSessionMediaServicesWerLostNotification和AVAudioSessionMediaServicesWerResetNotification。
+   若VAST/VMAP重新導向，最終廣告創意的廣告ID現在可在VHL Ping中擷取。
+* (ZD#33904) - TVSDK未針對AVAudioSessionMediaServicesWereLostNotification和AVAudioSessionMediaServicesWereResetNotification註冊AVFoundation通知。
 
-   现在可在播放器应用程序上注册PTMediaServicesWereLostNotification和PTMediaServicesWereResetNotification，以在媒体服务重置或丢失时获取通知。
+   現在可以在播放器應用程式上註冊PTMediaServicesWasLostNotification和PTMediaServicesWareResetNotification，以便在媒體服務重設或遺失時取得通知。
 
-* (ZD#33815) — 客户无需更新应用程序即可更新其优先级和标准化CRS规则。
+* (ZD#33815) — 客戶無法在不更新應用程式的情況下更新其優先順序和標準化CRS規則。
 
-   已将getCRSRulesJsonURL和setCRSRulesJsonURL API添加到iOS TVSDK。
+   將getCRSRulesJsonURL和setCRSRulesJsonURL API新增至iOS TVSDK 。
 
-**版本1.4.41(1.4.41.76)**
+**1.4.41版(1.4.41.76)**
 
-* (ZD #34464) — 使用TVSDK版本1.4.41构建参考应用程序时出现的问题
+* (ZD #34464) — 使用TVSDK 1.4.41版建置參考應用程式時發生問題
 
-   启动此版本时，编译iOS的TVSDK需要Xcode 9。
-* (ZD #29456) — 处于暂停状态的播放开始
+   自此版本開始，編譯適用於iOS的TVSDK時需要Xcode 9。
+* (ZD #29456) — 播放開始於暫停狀態
 
-   修复了进入播放时视频暂停的暂停问题。
-* (ZD #30371) — 当我们在线性流中插入2个以上广告时，AdBreak开始时间会发生变化
+   修正進入Airplay時視訊暫停的暫停問題。
+* (ZD #30371) — 當我們線上性資料流中插入超過2個廣告時，AdBreak開始時間會變更
 
-   修复了尝试在Apple TV上播放内容时出错的问题，该错误会完全阻止播放
-* (ZD #32146) — 阻止iOS 11开发测试版上的HLS Live内容未收到PTMediaPlayerStatusError
+   修正嘗試在Apple TV上播放內容時，導致完全無法播放的錯誤
+* (ZD #32146) — 封鎖iOS 11 dev測試版時，HLS Live內容未收到任何PTMediaPlayerStatusError
 
-   使用Charles（Drop connection和403）阻止时，未收到HLS Live和VOD内容的PTMediaPlayerStatusError
-* (ZD #29242) — 启用广告时播放视频播放失败
+   使用Charles封鎖時，未針對HLS即時和VOD內容收到任何PTMediaPlayerStatusError （卸除連線和403）
+* (ZD #29242) - Airplay視訊播放失敗，並啟用廣告
 
-   启用广告并启用AirPlay后，开始播放视频时，视频播放不会开始，不会显示错误
-* (ZD#33341)- DRMInterface.h触发器在Xcode 9中生成警告
+   當廣告已啟用且AirPlay已啟用開始播放視訊時，視訊播放不會開始且不會顯示錯誤
+* (ZD#33341) - DRMInterface.h觸發在Xcode 9中建立警告
 
-   修复了DRMInterface.h中缺少参数列表中“void”一词的两个块原型
-* (ZD#31979) — 对于iPhone 7/iPhone7+，如果iOS 10或更高版本，则不编译/运行
+   修正DRMInterface.h中引數清單中遺漏&#39;void&#39;字詞的兩個區塊原型
+* (ZD#31979) — 當它是iPhone 7/iPhone7+的iOS 10或更新版本時，不會編譯/執行
 
-   不再支持为早于iOS 7编译IB文档
-* (ZD#32920) — 广告中断内的空白屏幕，无广告中断完成
+   已修正不再支援iOS 7之前的編譯IB檔案
+* (ZD#32920) — 廣告插播內的空白畫面且沒有廣告插播完成
 
-   当广告断点显示广告实例时，在广告实例完成后，将显示空白屏幕
-* (ZD#32509) — 停用iOS 11屏幕录制停用iOS 11上的屏幕录制
+   當廣告插播展示廣告例項時，在廣告例項完成後，會顯示空白畫面
+* (ZD#32509) — 停用iOS 11熒幕錄製停用iOS 11上的熒幕錄製
 
-* (ZD#33179)- iOS11上的间歇性事件故障
+* (ZD#33179) - iOS11上的間歇性事件失敗
 
-   修复了iOS 11上的事件故障
+   修正iOS 11的事件失敗
 
-**版本1.4.40** (1.4.40.72)
+**1.4.40版** (1.4.40.72)
 
-* (ZD #32465) — 播放器无法处理合并的播放列表。
+* (ZD #32465) — 播放器無法處理合併的播放清單。
 
-   调用finishLoadingWithError(with:错误)，以使AV基础尝试替代流/触发故障转移。
+   呼叫finishLoadingWithError(with： Error)，讓AV基礎嘗試替代串流/觸發容錯移轉。
 
-* (ZD #31951) — 许可证轮替期间TVSDK错误。
+* (ZD #31951) — 授權循環期間發生TVSDK錯誤。
 
-   修复了许可证轮换问题。
-* (ZD #31951) — 广告中断内的空白屏幕，没有广告中断完成。
+   已修正授權輪換問題。
+* (ZD #31951) — 廣告插播內的空白畫面且沒有廣告插播完成。
 
-   处理了Facebook VPAID广告通常在单个\&amp;lt;AdParameters\&amp;gt；中返回多个CDATA块的问题；VAST节点。
-* (ZD #33336)- [iOS] TVSDK — 尽管Freewheel返回的广告足够多，广告窗格仍未填写。
+   處理Facebook VPAID廣告通常在單一\&amp;lt；AdParameters\&amp;gt； VAST節點中傳回多個CDATA區塊的問題。
+* (#33336澤東元) - [iOS] TVSDK — 未填入廣告Pod，儘管Freewheel傳回了足夠的廣告。
 
-   创建了基于父序列和索引的序列广告和回退广告和排序之间的父子关系。
+   在序列廣告和遞補廣告之間建立父子關係，並根據父序列和索引進行排序。
 
 **版本1.4.39** (1.4.39.43)
 
-* (ZD #32178)- iOS TVSDK版本不正确。
+* (ZD #32178) - iOS TVSDK版本不正確。
 
-   日志文件中的TVSDK版本输出为1.0.211。修复了输出正确版本的问题。
+   記錄檔中的TVSDK版本輸出為1.0.211。輸出正確版本是固定的。
 
-* (ZD #32199) — 延迟广告加载 — 不显示内容的视频。
+* (ZD #32199) — 延遲廣告載入 — 不針對內容顯示影片。
 
-   以前未初始化的本地Adbreak时间轴现在在使用前刷新。
+   先前未初始化的本機Adbreak時間表現在會在使用前重新整理。
 
-* (ZD #27528) — 如果在iOS 1.2上将辅助音频设置为非默认值，则在播放资源开始后1-45秒内，视频、音频或两者都将冻结。
+* (ZD #27528) — 如果次要音訊在iOS 1.2上設為非預設值，則資產開始播放後1-45秒會凍結視訊、音訊或兩者。
 
-   准备音轨并通知其处于“就绪”状态。
+   準備並通知處於就緒狀態的音軌。
 
-* (ZD #30411) — 如果您选择辅助Sap语言，您可能会收到意外结果，如没有音频或音频不正确。
+* (ZD #30411) — 如果您選擇次要Sap語言，可能會收到未預期的結果，例如沒有音訊或音訊不正確。
 
-   准备音轨并通知其处于“就绪”状态。
+   準備並通知處於就緒狀態的音軌。
 
-* (ZD #32199) — 延迟广告加载 — 不显示内容的视频。
+* (ZD #32199) — 延遲廣告載入 — 不針對內容顯示影片。
 
-   以前未初始化的本地Adbreak时间轴现在在使用前刷新。
+   先前未初始化的本機Adbreak時間表現在會在使用前重新整理。
 
-* (ZD #27528) — 如果在iOS 1.2上将辅助音频设置为非默认值，则在播放资源开始后1-45秒内，视频、音频或两者都将冻结。
+* (ZD #27528) — 如果次要音訊在iOS 1.2上設為非預設值，則資產開始播放後1-45秒會凍結視訊、音訊或兩者。
 
-   准备音轨并通知其处于“就绪”状态。
+   準備並通知處於就緒狀態的音軌。
 
-* (ZD #30411) — 如果您选择辅助Sap语言，您可能会收到意外结果，如没有音频或音频不正确。
+* (ZD #30411) — 如果您選擇次要Sap語言，可能會收到未預期的結果，例如沒有音訊或音訊不正確。
 
-   准备音轨并通知其处于“就绪”状态。
+   準備並通知處於就緒狀態的音軌。
 
 **版本1.4.38** (1.4.38.860)
 
-* (ZD #29281)- iOS:向CRS请求添加AdSystem和Creative Id
+* (ZD #29281) - iOS：將AdSystem和創作Id新增至CRS請求
 
-基于CRS规范规则的CRS请求中创意ID和AdSystem的使用
+根據CRS標準化規則在CRS請求中使用創作ID和AdSystem
 
-* (ZD #29176)- PTAdPolicyDeligate satAdBreakAsWatched:position上的崩溃
+* (ZD #29176) - PTAdPolicyDeligate satAdBreakAsWatched：position當機
 
-现在已处理空AdBreak导致的崩溃。
+現在已處理因空白AdBreak而造成的當機。
 
-* (ZD #30125) — 程序化广告在iOS平台中不起作用
+* (ZD #30125) — 程式化廣告無法在iOS平台中運作
 
-在iOS中增加了程序化广告支持。
+在iOS中新增程式化廣告支援。
 
-* (ZD #30782)- #EXT-X-项目-DATE-TIME通知
+* (ZD #30782) - #EXT-X-PROGRAM-DATE-TIME通知
 
-对于包含LIVE DRM流的# EXT-X-项目-DATE-TIME标记，不会触发定时元数据事件。
+使用即時DRM資料流的# EXT-X-PROGRAM-DATE-TIME標籤不會觸發定時中繼資料事件。
 
-**版本1.4.37(1.4.37.842)**
+**1.4.37版(1.4.37.842)**
 
-* (ZD #28950)- VOD播放问题
+* (ZD #28950 ) - VOD播放問題
 
-流中# EXT-X-PLAYLIST-TYPE标签设置为事件而非VOD时的播放问题
+當串流中的# EXT-X-PLAYLIST-TYPE標籤設定為Event而非VOD時的播放問題
 
-* (ZD #29281)- iOS:向CRS请求添加AdSystem和Creative Id
+* (ZD #29281) - iOS：將AdSystem和創作Id新增至CRS請求
 
-在基于CRS规范规则的CRS请求中使用创意ID和AdSystem。
+根據CRS標準化規則，在CRS請求中使用Creative Id和AdSystem。
 
-* (ZD #29462)- A&amp;E VOD中的ThuochHub广告导致iOS应用程序崩溃
+* (ZD #29462) - A&amp;E VOD中的TremorHub廣告導致iOS應用程式當機
 
-**版本1.4.36(1.4.36.835)**
+**版本1.4.36 (1.4.36.835)**
 
-* (ZD #29418) — 持续时间为0(#EXT-X-CUE-OUT:0.000)的提示导致iOS TVSDK停止或崩溃播放。
+* (ZD #29418) — 持續時間為0 (#EXT-X-CUE-OUT：0.000)的提示會導致iOS TVSDK停止或當機播放。
 
-问题已修复，且播放开始正确。
+問題已修正，且播放已正確開始。
 
-* (ZD #29462) — 在iOS TVSDK上导致崩溃的VOD中添加广告。
+* (ZD #29462) - VOD中的廣告導致iOS TVSDK當機。
 
-问题已修复。 iOS TVSDK引发异常(AUDNetworkAdInfo::initWithAdId)，但未处理它。 此异常是由于空广告ID。
+問題已修正。 iOS TVSDK引發例外狀況(AUDNetworkAdInfo：：initWithAdId)而未處理。 此例外狀況是因為空白的廣告ID。
 
-* (ZD #29281) — 向CRS请求添加AdSystem和Creative ID。
+* (ZD #29281) — 將AdSystem和Creative ID新增至CRS請求。
 
-在1401和1403请求中将AdSystem和CreativeId包含为新参数（所有其他参数保持不变）。
+將AdSystem和CreativeId加入為1401和1403請求中的新引數（所有其他引數保持不變）。
 
 **版本1.4.35** (1.4.35.830)
 
-* (ZD #27830) — 需要以编程方式确定iOS中隐藏字幕和子标题之间的差异。
+* (ZD #27830) — 需要以程式設計方式確定iOS中隱藏式字幕與字幕的差異。
 
-TVSDK现在公开两种类型，它们可用于过滤掉所需的题注类型。
+TVSDK現在會顯示兩種型別，可用來篩選掉所需的註解型別。
 
-* (ZD #29160)- EXT-X-CUE-OUT广告提示未在TVSDK iOS上正确拼接。
+* (ZD #29160) - TVSDK iOS上未正確插入EXT-X-CUE-OUT廣告提示。
 
-EXT-X-CUE-OUT Midroll广告正在播放。
+搭配EXT-X-CUE-OUT midroll廣告正在播放中。
 
-* (ZD #29100) — 当用户滑到电影末尾时，应用程序崩溃。
+* (ZD #29100) — 當使用者拖曳至影片結尾時，應用程式當機。
 
-修复了与同步相关的多个崩溃。
+修正了與同步相關的多次當機。
 
-* (ZD #28785)、(ZD #27712)和(ZD #25076)- iOS应用程序在大型实时事件期间崩溃。
+* (ZD #28785)、 (ZD #27712)和(ZD #25076) - iOS應用程式在大型直播活動期間當機。
 
-修复了与同步相关的多个崩溃。
+修正了與同步相關的多次當機。
 
-**版本1.4.34** （适用于iOS 6.0+的1.4.34.815）
+**版本1.4.34** (iOS 6.0+為1.4.34.815)
 
-* (ZD# 28481) — 由于在这些FER流的广告中断结束时附加了不正确的密钥，导致FER中断
+* (ZD# 28481) - FER中斷，因為這些FER資料流的廣告插播結尾附加了錯誤的索引鍵
 
-对于FER流，在广告中断结束后插入广告中断前的密钥。 通过在广告中断的末尾附加&#x200B;*最后查看的键*&#x200B;来解决此问题。
+對於FER資料流，會在廣告插播結束之後插入廣告插播之前的索引鍵。 此問題已透過附加 *上次檢視的金鑰* 在廣告插播結束時。
 
-**版本1.4.33** （适用于iOS 6.0+的1.4.33.803）
+**版本1.4.33** (iOS 6.0+為1.4.33.803)
 
-* (ZD# 21701)为子帐户启用CRS
+* (ZD# 21701)為子帳戶啟用CRS
 
-根据CRS后端的要求，为1401 CRS请求发送原始创意URL而不是标准化URL，从而启用。
+根據CRS後端的需求，透過傳送1401 CRS請求的原始創意URL而不是標準化URL來啟用。
 
-* (ZD# 26218)- PSDKResources.bundle加载问题
+* (ZD# 26218) - PSDKResources.bundle載入問題
 
-通过更新资源加载以从所有可用的包中查找，解决了此问题。
+此問題已透過更新資源載入以從所有可用套件組合中檢視來解決。
 
-* (ZD# 27460)Midroll第一个广告呼叫 — POST到cdn.auditude<span></span>.com返回403。
+* (ZD# 27460) Midroll第一個廣告呼叫 — POST至cdn.auditude<span></span>.com傳回403。
 
-新的CDN帐户无法处理POST CDN请求。 通过更新代码使`cdn.auditude.com`广告请求成为GET而不是POST，解决了此问题。
+新的CDN帳戶無法處理POST CDN請求。 此問題已透過更新程式碼以使 `cdn.auditude.com` 廣告要求是GET而非POST。
 
-**版本1.4.32** （适用于iOS 6.0+的1.4.32.792）
+**版本1.4.32** (iOS 6.0+為1.4.32.792)
 
-* (ZD# 27132)支持VMAP广告分段的小数值。
+* (ZD# 27132)支援VMAP廣告插播的小數值。
 
-当内容未按定义的广告分段时，整数会导致意外的广告放置。 通过不将小数值转换为整数，解决了该问题。
+未依照定義的廣告插播將內容分段時，整數會導致非預期的廣告位置。 未將小數值轉換為整數即可解決此問題。
 
-* (ZD# 27189)带有EXT-X-DINSTRUCTION-SEQUENCE标签的AES内容播放不正确。
+* (ZD# 27189)具有EXT-X-DISCONTINUITY-SEQUENCE標籤的AES內容無法正確播放。
 
-通过将标记放置在播放列表的开头，解决了该问题。
+將標籤放在播放清單的開頭即可解決問題。
 
-**版本1.4.31** （适用于iOS 6.0+的1.4.31.785）
+**版本1.4.31** (iOS 6.0+為1.4.31.785)
 
-* (ZD# 24528)实施TVSDK计费使用量度
+* (ZD# 24528)實作計費的TVSDK使用量度
 
-有关详细信息，请参阅[帐单量度](../programming/tvsdk-1.4-for-ios/c-psdk-ios-1.4-billing/c-psdk-ios-1.4-billing.md)。
+如需詳細資訊，請參閱 [計費量度](../programming/tvsdk-1.4-for-ios/c-psdk-ios-1.4-billing/c-psdk-ios-1.4-billing.md).
 
-* (ZD# 24642)对TVSDK的画中画支持
+* (ZD# 24642) TVSDK的畫中畫支援
 
-画中画功能在某些情况下无法正常工作，现已修复。
+在某些情況下，畫中畫功能無法正常運作，現已修正。
 
-* (ZD# 25246)错误的广告中断信号
+* (ZD# 25246)不正確的廣告插播訊號
 
-通过对齐变体清单上的不连续标签，解决了此问题。
+此問題可透過在變體資訊清單間對齊不連續標籤來解決。
 
-* (ZD# 26218)当尝试将PSDKLibrary.framework包含在客户端的应用程序框架中时，应用程序构建过程变得复杂
+* (ZD# 26218)嘗試在使用者端的應用程式架構中包含PSDKLibrary.framework時，應用程式建置流程會變得複雜
 
-已按照请求打包PSDKLibrary.framework来解决此问题。
+依要求封裝PSDKLibrary.framework即可解決此問題。
 
-* (ZD# 26364)针对CRS广告的多CDN支持
+* (ZD# 26364) CRS Ads的多重CDN支援
 
 <!-- 
 Comment Type: draft
 For more information, see [Multiple CDN support for CRS Ad Delivery](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-concept-Multiple_CDN_support_for_CRS_ad_delivery).
 -->
-* (ZD# 27028)在iOS 10中播放某些流时出现延迟。
+* (ZD# 27028)iOS 10中部分資料流的播放延遲。
 
-通过为没有M3U8扩展的流提供解决此问题的方法。
+此問題已藉由為沒有M3U8擴充功能的資料流提供因應措施而解決。
 
-**版本1.4.30** （适用于iOS 6.0+的1.4.30.754）
+**1.4.30版** (iOS 6.0+為1.4.30.754)
 
-TVSDK在此版本中已解决以下问题：
+此版本解決了TVSDK的下列問題：
 
-* (ZD# 24180)向允许列表添加自定义标头
+* (ZD# 24180)新增自訂標題至允許清單
 
-新的自定义标头已添加到TVSDK允许列表。
+新的自訂標題已新增至TVSDK允許清單。
 
-* (ZD# 25016)设置ABR控制参数时，会随机选择故障转移流
+* (ZD# 25016)設定ABR控制引數時，會隨機選取容錯移轉資料流
 
-通过按在包含故障转移URL的流上为ABR设置提供initialBitrate设置时的顺序维护ABR流，解决了此问题。 这将避免播放故障转移流而不是主流。
+當ABR設定在包含容錯移轉URL的資料流上具有initialBitrate設定時，透過依序維護ABR資料流來解決此問題。 這將避免播放容錯移轉串流而不是主要串流。
 
-* (ZD# 25076)PTAuditudeAdResolver loadComplete上的崩溃
+* (ZD# 25076) PTAuditudeAdResolver loadComplete當機
 
-已修复在快速开始/停止包含广告的多个PTMediaPlayer实例期间发生崩溃的问题。
+已修正快速啟動/停止多個具有廣告的PTMediaPlayer執行個體期間發生當機的問題。
 
-* (ZD# 25960)没有其他订阅标记会触发元数据更改通知广播
+* (ZD# 25960)沒有其他訂閱標籤會觸發中繼資料變更通知廣播
 
-在清单中第一段之前出现订阅标记时未通知的问题。
+已修正當訂閱標籤出現在資訊清單中的第一個區段之前時，未收到通知的問題。
 
-* (ZD# 26084)PSDK投106000.101000。-11833在从上一个广告中断转换回娱乐内容时找不到解码器错误
+* (ZD# 26084) PSDK擲回106000.101000.-11833從上一個廣告插播轉換回娛樂內容時，找不到解碼器錯誤
 
-当来自VMAP的最后一个广告中断开始时间在总持续时间完成之前，在某些情况下，直到最后一个广告中断结束之后才插入密钥。 此问题已修复。
+當來自VMAP的最後一個廣告插播開始時間在總持續時間完成之前時，在某些情況下，直到最後一個廣告插播結束之後才會插入索引鍵。 此問題已修正。
 
-* 视频心率库(VHL)已更新为版本1.5.9，以解决以下问题：
+* 視訊心率程式庫(VHL)已更新至1.5.9版，以解決下列問題：
 
-   * (ZD #22351)VHL — 分析：实时视频资产持续时间
+   * (ZD #22351) VHL - Analytics：即時視訊資產持續時間
 
-通过将assetDuration API添加到`PTVideoAnalyticsTrackingMetadata`来更新实时/线性流的资产持续时间并提供检查实时流的逻辑，解决了此问题。
+此問題已透過將assetDuration API新增到解決 `PTVideoAnalyticsTrackingMetadata` 更新即時/線性資料流的資產持續時間，並提供檢查即時資料流的邏輯。
 
-* (ZD# 22675)VHL — 分析：更新实时视频资产持续时间
+* (ZD# 22675) VHL - Analytics：更新即時視訊資產持續時間
 
-此问题与ZD #22351相同。
+此問題與ZD #22351相同。
 
-* (ZD #25908)VHL — 分析：Adobe心率事件崩溃
+* (ZD #25908) VHL - Analytics：Adobe心率事件當機
 
-通过更新实施以使用最新版VHL for iOS版本1.5.9来提高稳定性和性能，解决了此问题。
+此問題已透過更新實作以使用iOS 1.5.9版適用的最新版VHL來改善穩定性和效能而解決。
 
-* (ZD #25956)VHL — 分析：重复播放视频时崩溃
+* (ZD #25956) VHL - Analytics：重複播放視訊時當機
 
-此问题与ZD #25908相同。
+此問題與ZD #25908相同。
 
 **版本1.4.29** (1.4.29.743)
 
-* (ZD# 23901)第三方广告不播放
+* (ZD# 23901)未播放協力廠商廣告
 
-通过切换到CRS v3 URL结构以在重新打包的URL中包含区域ID，解决了此问题。
+移至CRS v3 URL結構，在重新封裝的URL中包含區域ID，即可解決此問題。
 
-* (ZD #25183)在tvOS和iOS上播放DRM的问题
+* (ZD #25183) tvOS和iOS上的DRM播放問題
 
-通过为多DRM支持所需的多个关键标签提供支持，解决了此问题。
+此問題已透過提供支援多個DRM支援所需的多個關鍵標籤來解決。
 
-* (ZD# 25334)TVSDK无法播放cDVR共享内容
+* (ZD# 25334) TVSDK無法播放cDVR共用內容
 
-通过阻止TVSDK将空字符串转换为绝对URL，解决了此问题。
+透過防止TVSDK將空白字串轉換為絕對URL，此問題已解決。
 
-* (ZD# 25347)在AVURLAsset上设置自定义HTTP头
+* (ZD# 25347)在AVURLAsset上設定自訂HTTP標頭
 
-已添加通过PTNetworkConfiguration类对其区段请求的自定义标头的支持。
+新增透過PTNetworkConfiguration類別支援其區段請求的自訂標頭。
 
 **版本1.4.28** (1.4.28.722)
 
-* (ZD #24549)多个广告跟踪调用
+* (ZD #24549)多個廣告追蹤呼叫
 
-通过更新时间轴管理器以在创建多个播放器时侦听特定对象的通知，解决了此问题。
+此問題已透過更新時間表管理員解決，以便在建立多個播放器時接聽特定物件的通知。
 
-* (ZD #24758)PTManifestLogger不支持iOS 8
+* (ZD #24758) PTManifestLogger不支援iOS 8
 
-通过将记录器实用程序库更新到版本7.0部署目标解决了此问题。
+將記錄器公用程式程式庫更新至7.0版部署目標，即可解決此問題。
 
-* (ZD #24775)由于广告而延迟的流
+* (ZD #24775)由於廣告而延遲的資料流
 
-通过正确计算事件播放列表上的持续时间漂移，解决了此问题。
+正確計算事件播放清單上的持續時間漂移即可解決此問題。
 
-* (ZD #24799)某些剧集在iOS APP上不播放
+* (ZD #24799)部分集數未在iOS應用程式中播放
 
-当WebVTT文件受地域限制时，通过为字幕使用本地Web服务器解决了此问题。
+當WebVTT檔案受到地理限制時，此問題可透過使用本機網頁伺服器來製作字幕來解決。
 
-**适用于iOS 6.0** +的版本1.4.27(1.4.27.711)
+**版本1.4.27** (1.4.27.711) (適用於iOS 6.0+)
 
-* (ZD #24089) — 针对长DVR流的广告解析优化
+* (ZD #24089) — 針對長DVR資料流的廣告解析進行最佳化
 
-通过添加多个优化来解决此问题，以缩短在实时/线性流中处理DVR窗口所需的时间。
+此問題已透過新增多個最佳化來解決，以減少在即時/線性資料流中處理DVR視窗所需的時間。
 
-* (ZD #21554) — 未为application-type = video/mp4触发TVSDK错误信标
+* (ZD #21554) — 應用程式型別未觸發TVSDK錯誤信標= video/mp4
 
-通过使播放器能够ping无效资产格式上的正确错误跟踪URL，解决了此问题。
+此問題可透過讓播放器對無效資產格式偵測到正確的錯誤追蹤URL來解決。
 
-* (ZD #24424)- EXC_BAD_ACCESS KERN_INVALID_ADDRESS类型的崩溃源于较新硬件设备上iOS的PSDKLib内部。
+* (ZD #24424) - EXC_BAD_ACCESS KERN_INVALID_ADDRESS型別的當機起源於較新硬體裝置上iOS的PSDKLib。
 
-已修复因取消分配的媒体播放器实例而发生的在不同流之间快速切换播放时的崩溃。
+已修正因取消配置的媒體播放器例項（在不同串流之間快速切換播放時）而發生的當機問題。
 
-* (ZD #24575)- enableDebugLog=true时，在32位设备上的TVSDK中发生崩溃
+* (ZD #24575) — 當enableDebugLog=true時，32位元裝置上的TVSDK當機
 
-已修复在启用日志记录时导致32位设备崩溃的日志格式问题。
+已修正啟用記錄時導致32位元裝置當機的記錄格式問題。
 
-**适用于iOS 6.0** +的版本1.4.26(1.4.26.702)
+**版本1.4.26** (1.4.26.702) (適用於iOS 6.0+)
 
-* (ZD# 20213) — 对于XCode7,TVSDK FW需要动态/模块化
+* (ZD# 20213) - XCode7的TVSDK FW必須動態/模組化
 
-   * 通过更新具有模块支持的库来修复
+   * 透過更新支援模組的程式庫來修正
 
-**适用于iOS 6.0** +的1.4.25(1.4.25.684)版
+**版本1.4.25** (1.4.25.684) (適用於iOS 6.0+)
 
-* (ZD #19629) — 进入ATV 4播放时暂停实时视频
+* (ZD #19629) — 進入Airplay到ATV 4時直播視訊暫停
 
-通过在删除旧项目后但在向AVQueuePlayer添加新项目之前添加等待时间来解决此问题。 如果没有等待时间，则通知将发送到错误的项。
+此問題可在移除舊專案後但在將新專案新增至AVQueuePlayer之前新增等候期間來解決。 若沒有等候時間，系統會將通知傳送至不正確的專案。
 
-* (ZD #19856) — 默认情况下启用时不显示字幕
+* (ZD #19856) — 預設啟用時不會顯示字幕
 
-webvtt播放列表中导致字幕无法正确显示的问题已修复。
+已修正webvtt播放清單中造成字幕無法正確顯示的問題。
 
-* (ZD #21590) — 最新来源构建中的视频性能和跟踪
+* (ZD #21590) — 最新原始組建中的視訊效能和追蹤
 
-VideoAnalytics中缺失视频长度的问题已修复。
+已修正VideoAnalytics中缺少視訊長度的問題。
 
-* (ZD #20202) — 设置自定义字幕样式会使iOS应用程序崩溃
+* (ZD #20202) — 設定自訂字幕樣式會讓iOS應用程式當機
 
-通过在设置子标题样式时添加其他空对象检查解决了此问题。
+此問題已藉由在設定字幕樣式時新增其他null物件檢查來解決。
 
-* (ZD #20709) — 在视频开始跟踪中，视频长度报告为0
+* (ZD #20709) — 視訊開始追蹤中的視訊長度回報為0
 
-此问题与(ZD #21590)相同。
+此問題與(ZD #21590)相同。
 
-* (ZD #22280) — 将“Analytics视频长度”设置为0
+* (ZD #22280) - Analytics影片長度設為0
 
-此问题与(ZD #21590)相同。
+此問題與(ZD #21590)相同。
 
-* (ZD #22592)- Primetime中Airplay的问题
+* (ZD #22592) - Primetime中的Airplay問題
 
-此问题与(ZD #19629)相同。
+此問題與(ZD #19629)相同。
 
-* (ZD#22922)- iOS的手动比特率切换
+* (ZD#22922) - iOS適用的手動位元速率切換
 
-通过提供指定最大比特率的选项解决了此问题。
+此問題已透過提供指定最大位元速率的選項而解決。
 
-* (ZD #23084)- Apple仅IPv6网络的规范
+* (ZD #23084) — 僅IPv6網路符合Apple規範
 
-Apple不建议与IPv6兼容的符号已被删除。
+移除了Apple不建議用於IPv6相容性的符號。
 
-**适用于iOS 6.** 0+的1.4.24(1.4.24.661)版
+**版本1.4.24** (1.4.24.661) (適用於iOS 6.0+)
 
-* ZD #2548)- Primetime对移动上交互式广告的支持 — VPAID 2.0
+* ZD #2548) - Primetime支援行動裝置上的互動式廣告 — VPAID 2.0
 
-如果VPAID广告无法播放，则通过更新逻辑以取消隐藏播放器视图来解决此问题。
+當VPAID廣告無法播放時，透過更新邏輯以取消隱藏播放器檢視來解決此問題。
 
-* (ZD #20101) — 自定义章节实现在广告播放过程中触发章节开始事件
+* (ZD #20101) — 自訂章節實施在廣告播放期間觸發章節開始事件
 
-通过更新VideoAnalyticsTracker，在章节和非章节边界之间转换时正确检测章节开始/完成，解决了此问题。
+此問題已透過更新VideoAnalyticsTracker解決，以便在章節與非章節邊界之間轉換時正確偵測章節開始/完成。
 
-* (ZD #20784) — 分析：为实时视频过渡完成触发内容
+* (ZD #20784) - Analytics：觸發即時視訊轉換的內容完成
 
-通过在视频跟踪会话期间添加一个逻辑来手动触发内容完成，解决了此问题。
+此問題已透過新增邏輯來解決，以在視訊追蹤工作階段期間手動觸發內容的完成。
 
-更新了以下库：
+下列程式庫已更新：
 
-* AdobeMobile库到4.10.0
-* VHL库到1.5.6
-* VHL-Nielsen图书馆至1.6.7
-* (ZD #21855) — 字幕在中间滚动后不播放
+* AdobeMobile資料庫至4.10.0
+* VHL資料庫至1.5.6
+* VHL-Nielsen資料庫至1.6.7
+* (ZD #21855) — 中段後不播放字幕
 
-在此问题中，重复中断标签导致字幕在中间滚动后不显示。 通过删除彼此相邻的不连续标签解决了此问题。
+在此問題中，重複的不連續性標籤導致字幕未出現在中段之後。 此問題已透過移除彼此相鄰的不連續標籤來解決。
 
-* (ZD #21994)- PTHLSUtils中的字符串越界
+* (ZD #21994) - PTHLSUtils中的字串超出界限
 
-导致崩溃的最可能原因是EXT-X-KEY的URL被引号包围。
+當機最可能的原因是EXT-X-KEY的URL被引號包圍。
 
-* ZD #22074) — 每分钟在iOS上发生一次AUDVAST崩溃
+* ZD #22074) - AUDVAST當機在iOS上每分鐘發生一次
 
-在版本1.4.23中，修复了由VAST重定向URL中存在不安全字符导致的崩溃。 但是，TVSDK仍在跳过这些广告。
+在1.4.23版中，已修正VAST重新導向URL中存在不安全字元所導致的當機。 不過，TVSDK會繼續略過這些廣告。
 
-通过处理不安全字符和允许播放广告，解决了此问题。
+此問題已透過處理不安全字元和允許廣告播放而解決。
 
-* (ZD #22694)- PTMediaPlayer。  视图由播放器隐藏
+* (ZD #22694) - PTMediaPlayer。  檢視已被播放器隱藏
 
-如果VPAID广告无法播放，则通过更新逻辑以取消隐藏播放器视图来解决此问题。
+當VPAID廣告無法播放時，透過更新邏輯以取消隱藏播放器檢視來解決此問題。
 
-**适用于iOS 6.0** +的版本1.4.23(1.4.23.641)
+**版本1.4.23** (1.4.23.641) (適用於iOS 6.0+)
 
-* (ZD #18016)- Primetime SDK没有对网络状况不佳的响应
+* (ZD #18016) - Primetime SDK沒有回應且網路狀況不良
 
-通过改进发生AVFoundation的致命错误时的错误通知并允许应用程序在错误发生后处理重新启动，解决了此问题。
+改善發生來自AVFoundation的嚴重錯誤時的錯誤通知，並允許應用程式處理錯誤後的重新啟動，即可解決此問題。
 
-* (ZD #20580)- PTSplicerManager中的崩溃
+* (ZD #20580) - PTSpplicerManager當機
 
-通过提供额外保护来避免导致崩溃的并发问题，解决了此问题。
+此問題已透過提供額外保護來避免導致當機的並行問題而解決。
 
-* (ZD #21782)- iOS错误代码10100
+* (ZD #21782) - iOS錯誤碼10100
 
-TVSDK在Adobe访问DRM流上启动播放时返回101000错误的问题已修复。
+已修正TVSDK在Adobe存取DRM資料流上開始播放時傳回101000錯誤的問題。
 
-* (ZD #21889) — 在线广告和脱机内容播放失败
+* (ZD #21889) — 線上廣告和離線內容播放失敗
 
-解决了AES加密脱机内容上的广告播放失败的问题。
+修正AES加密離線內容上的廣告後播放失敗的問題。
 
-* (ZD #22074) — 每分钟在iOS上发生一次AUDVAST崩溃
+* (ZD #22074) - AUDVAST當機在iOS上每分鐘發生一次
 
-通过改进对URL中包含无效字符的第三方VAST广告标记的处理，解决了此问题。
+改善處理URL中有無效字元的第三方VAST廣告標籤，即可解決此問題。
 
-* (ZD #22257)- TVSDK无法播放DRM流
+* (ZD #22257) - TVSDK無法播放DRM資料流
 
-修复了在Adobe访问DRM流上启动播放时返回101000错误的TVSDK的问题。
+已修正在Adobe存取DRM資料流上開始播放時TVSDK傳回101000錯誤的問題。
 
-**适用于iOS 6.0** +的1.4.22(1.4.22.627)版
+**版本1.4.22** (1.4.22.627) (適用於iOS 6.0+)
 
-* (ZD #18709) — 在iOS的TVSDK中崩溃
+* (ZD #18709) - iOS的TVSDK當機
 
-已修复某些Adobe访问DRM保护流上发生崩溃的问题。
+已修正某些Adobe存取DRM保護的資料流發生當機的問題。
 
-* (ZD #18850) — 根据CRS规则更新创意选择逻辑
+* (ZD #18850) — 根據CRS規則更新創意選擇邏輯
 
-通过添加.json配置文件来指定创意选择优先级，解决了此问题。
+此問題已透過新增.json設定檔案來指定創意選擇優先順序而解決。
 
-* (ZD #19770) — 受保护的AES视频源不再播放
+* (ZD #19770) — 受保護的AES視訊摘要不再播放
 
-已修复某些302重定向流无法播放的问题。
+已修正某些302重新導向資料流無法播放的問題。
 
-* (ZD #19629) — 进入ATV 4播放时暂停实时视频
+* (ZD #19629) — 進入Airplay到ATV 4時直播視訊暫停
 
-通过为Apple TV 4设备打开播放时添加实时视频暂停的解决方法，解决了此问题。 问题似乎是AppleTV 4问题。
+在Apple TV 4裝置上開啟Airplay功能後，新增即時視訊暫停的因應措施，即可解決此問題。 問題似乎是AppleTV 4問題。
 
-* (ZD #21119) — 在广告播放后，TVSDK停止
+* (ZD #21119) - TVSDK在廣告播放後停滯
 
-在使用广告插入时，增加了对序列IV的AES加密流的支持。
+新增支援，可在使用廣告插入時使用序列IV的AES加密資料流。
 
-* (ZD #21125) — 提前从实时/线性广告中断返回
+* (ZD #21125) — 從即時/線性廣告插播回訪
 
-已添加支持，以在播放到完成之前从广告中断返回。 通过自定义清单标记指示提前返回。
+已新增支援，可讓您在廣告插播播放至完成之前從廣告插播回訪。 透過自訂資訊清單標籤指示提早傳回。
 
-* (ZD #21224) — 对来自Akamai的标记流的播放支持
+* (ZD #21224) - Akamai語匯流的Airplay支援
 
-API已添加到PTNetworkConfiguration类，以在某些Akamai标记流的区段上附加cookies作为URL参数。
+API已新增至PTNetworkConfiguration類別，針對特定Akamai代碼化的串流，將Cookie附加為區段的URL引數。
 
-* (ZD #21287) — 无关日志
+* (ZD #21287) — 無關記錄
 
-修复了在xcode控制台中默认显示的某些日志语句的问题，即使在禁用日志记录时也是如此。
+已修正某些記錄陳述式的問題，即使停用記錄時，這些問題也會預設顯示在xcode主控台中。
 
-* (ZD #21446)- Ad Break事件有时不是由TVSDK触发
+* (ZD #21446) - TVSDK有時不會觸發廣告插播事件
 
-在事件流中，广告中断在上一个版本生成中无法正确触发。 此版本可解决此问题。
+在「事件」串流上，無法正確觸發先前版本組建中的廣告插播。 此組建解決此問題。
 
-**适用于iOS**  6.0+的1.4.21(1.4.21.605)
+**1.4.21** (1.4.21.605) (適用於iOS 6.0+)
 
-* (ZD #20749) — 回退将跳过非空VAST响应；额外广告跟踪URL着火
+* (ZD #20749) — 遞補內容略過非空白的VAST回應；引發額外的廣告追蹤URL
 
-已解决回退广告上的重复ping问题。
+後援廣告重複Ping的問題已解決。
 
-**适用于iOS**  6.0+的1.4.20(1.4.20.590)
+**1.4.20** (1.4.20.590) (適用於iOS 6.0+)
 
-* (ZD #18639)- TVSDK正在对冗长的热录制资源使用过多的CPU/资源
+* (ZD #18639) - TVSDK耗費過多的CPU/資源處理冗長的熱錄資產
 
-在两个级别中修复了CPU/资源使用过多的问题。 首先，让时间更新函数在全局队列而不是主线程上运行，并通过优化CPU使用以利用先前处理和缓存的m3u8来分析清单。
+已在兩個層級中修正過度CPU/資源使用量。 首先，讓時間更新函式在全域佇列上執行，而不是在主執行緒上執行，以及最佳化CPU使用率，以使用先前處理和快取的m3u8剖析資訊清單。
 
-* (ZD #19349) — 在限制网络连接时将跳过预卷广告。
+* (ZD #19349) — 節流網路連線時，會略過前段廣告。
 
-通过为应用程序和adMetadata提供超时事件(requestTimeout)来解决此问题。  adRequestTimeout API以覆盖默认的10秒超时。
+此問題已藉由為應用程式和adMetadata提供逾時事件(requestTimeout)而解決。  adRequestTimeout API可覆寫預設的10秒逾時。
 
-* (ZD #19446) — 实时流上缺少通知
+* (ZD #19446) — 即時資料流上缺少通知
 
-通过允许应用程序订阅实时流上的EXT-X-项目-DATE-TIME，解决了此问题。
+此問題可透過允許應用程式在即時資料流上訂閱EXT-X-PROGRAM-DATE-TIME來解決。
 
-* (ZD #19459) — 使用PTMediaPlayerItem prepareAudioOptionsWithAVMediaSelectionOptions准备备用音频时崩溃
-* (ZD #19460) — 崩溃 — [PTMediaPlayerItem prepareSubtitlesOptionsWithAVMediaSelectionOptions:nonForcedOptions:]
+* (ZD #19459) — 使用PTMediaPlayerItem prepareAudioOptionsWithAVMediaSelectionOptions準備替代音訊時當機
+* (ZD #19460) — 當機 —  [PTMediaPlayerItem prepareSubtitlesOptionsWithAVMediaSelectionOptions:nonForcedOptions:]
 
-此问题与Zendesk #19459相同。
+此問題與Zendesk #19459相同。
 
-* (ZD #19574)- TVSDK不返回DRM或非DRM内容的M3U8响应数据
+* (ZD #19574) - TVSDK不會傳回DRM或非DRM內容的M3U8回應資料
 
-在PTMediaPlayerItem.prepareToPlay中清单文件的初始加载中，如果加载清单失败，TVSDK不会报告对应用程序的失败响应的正文。
+在PTMediaPlayerItem.prepareToPlay中資訊清單檔案的初始載入中，如果載入資訊清單失敗，TVSDK不會向應用程式報告失敗回應的內文。
 
-通过允许TVSDK将失败响应作为错误报告给应用程序，解决了此问题。
+允許TVSDK將失敗回應回報給應用程式，即可解決此問題。
 
-* (ZD #19615) — 回退逻辑无效
+* (ZD #19615) — 遞補邏輯無法運作
 
-在当前实施中，回退广告被跳过且未重新打包，除非这些广告采用m3u8格式。 通过添加对重新打包回退广告的支持，解决了此问题。
+在目前的實作中，已略過遞補廣告，除非這些廣告為m3u8格式，否則不會重新封裝。 此問題已透過新增重新封裝遞補廣告的支援而解決。
 
-* (ZD #19770)- TVSDK无法播放任何带302重定向的受保护AES内容
+* (ZD #19770) - TVSDK無法使用302重新導向播放任何受保護的AES內容
 
-已修复重定向问题，因为在可用于分析清单之前，重定向URL已被cleanConnectionData清除。
+已修正重新導向問題，因為重新導向URL在可用來剖析資訊清單之前已被cleanConnectionData清除。
 
-* (ZD #19856) — 默认情况下启用时，某些位速率不显示字幕
+* (ZD #19856) — 預設啟用時，某些位元速率不會顯示字幕
 
-通过处理iOS中不显示字幕的流段的错误，解决了此问题。
+此問題已透過處理iOS針對未顯示字幕的資料流區段所傳回的錯誤而解決。
 
-* (ZD #19868) — 当无效创意被贩卖时，TVSDK崩溃
+* (ZD #19868) - TVSDK在販運無效創意時當機
 
-已修复TVSDK中错误地取消分配广义分析器实例的崩溃。
+已修正TVSDK中錯誤解除配置Vast剖析器執行個體的當機問題。
 
-* (ZD #20180) — 偶尔会跳过VPAID广告
+* (ZD #20180) — 偶爾會略過VPAID廣告
 
-JavaScript mime类型并非始终包含或视为有效的mime类型。 通过将JavaScript作为有效的mime类型来解决此问题。
+JavaScript MIME型別並非總是包含或視為有效的MIME型別。 將JavaScript加入為有效的MIME型別，即可解決此問題。
 
-* (ZD #20749) — 回退将跳过非空VAST响应；额外广告跟踪URL着火
+* (ZD #20749) — 遞補內容略過非空白的VAST回應；引發額外的廣告追蹤URL
 
-某些创意未重新打包的问题已解决。
+已修正部分創意內容未重新封裝的問題。
 
-**适用于iOS 6.** 0+的1.4.19(1.4.19.563)版
+**版本1.4.19** (1.4.19.563) (適用於iOS 6.0+)
 
-* ZD #18639)- TVSDK对冗长的热录制资源使用过多的CPU/资源
+* ZD #18639) - TVSDK在冗長的熱錄影資產上佔用過多的CPU/資源
 
-通过优化DRM m3u8播放列表重写到缓存先前已重写的播放列表位，解决了此问题。 这在您播放每段下载后下载m3u8的实时m3u8流时最相关。
+此問題已透過最佳化DRM m3u8播放清單重寫至播放清單中先前已重寫的快取位元來解決。 當您播放m3u8的即時資料流時，此資料流最相關，因為每下載一個區段後，都會下載該資料流的m3u8。
 
-* (ZD#18956) — 在iOS Demo Player中设置断点时，player.drmManager为nil
+* (ZD#18956) — 在iOS示範播放器中設定中斷點時，player.drmManager為零
 
-通过更新PTMediaPlayer.drmManager API实现以从DRM框架中获取DRMManager，解决了此问题。
+此問題已透過更新PTMediaPlayer.drmManager API實作以從DRM架構取得DRManager而解決。
 
-**适用于iOS 6.0** +的1.4.18(1.4.18.557)版
+**版本1.4.18** 適用於iOS 6.0+的( 1.4.18.557)
 
-* (ZD #18844)跟踪iOS播放器中实时内容的播放头。
+* (ZD #18844)在iOS播放器中追蹤即時內容的播放點。
 
-通过允许应用程序设置其自己的播放头值，解决了此问题。
+允許應用程式設定自己的播放點值，即可解決此問題。
 
-* Zendesk #18518 — 如果未指定视频名称，则TVSDK的名称默认为&#x200B;*基于PSDK的播放器。*
+* Zendesk #18518 — 如果未指定視訊名稱，TVSDK的名稱會預設為 *PSDK型播放器。*
 
-通过删除播放器名称的默认值解决了此问题。
+此問題已透過移除播放器名稱的預設值來解決。
 
-**适用于iOS 6.** 0+的1.4.17(1.4.17.545)版
+**版本1.4.17** (1.4.17.545) (適用於iOS 6.0+)
 
-* Zendesk #2228 — 增强TVSDK以返回清单获取的JSON响应
+* Zendesk #2228 — 增強TVSDK以傳回擷取資訊清單的JSON回應
 
-DRM框架返回零DRMetadata，而不是在内容不是M3U8时发送错误。 通过在M3U8_PARSER_ERROR通知发生时添加元数据以公开内容，解决了该问题。
+DRM Framework不會在內容不是M3U8時傳送錯誤，而是傳回nil DRMMetadata。 透過新增中繼資料以在M3U8_PARSER_ERROR通知發生時公開內容，該問題得以解決。
 
-* Zendesk #2231 — 从获取MediaPlayerNotification中不可用的清单返回错误
+* Zendesk #2231 — 擷取MediaPlayerNotification中無法使用的資訊清單時傳回錯誤
 
-与Zendesk #2228分辨率相同
+與Zendesk #2228相同的解析度
 
-* Zendesk #3304 — 未填充VAST 3.0 `[ERRORCODE]`宏
+* Zendesk #3304 - VAST 3.0 `[ERRORCODE]` 未填入巨集
 
-解决了跟踪URL开头有空格时Auditude SDK无法发送ping的问题。
+已解決Auditude SDK在追蹤URL的開頭有空格時無法傳送Ping的問題。
 
-* Zendesk #17294 — 崩溃SecKeyRawSign
+* Zendesk #17294 — 當機SecKeyRawSign
 
-解决了客户代码使用密钥链时可能发生的崩溃问题。
+已解決客戶的程式碼使用金鑰鏈結時可能發生的當機問題。
 
-* Zendesk #18008 - iOS8+支持Cookie以支持标记流
+* Zendesk #18008 — 支援iOS8+的Cookie以支援代碼化的資料流
 
-Akamai标记流要求在区段请求时发送cookie，而在iOS 7及更早版本上无法这样做。 从iOS 8开始，Apple已添加一个API，允许为区段请求传递Cookie。 TVSDK中现在提供此支持。 此外，还添加了对发送用户代理的支持（如果可用）。
+Akamai代碼化的資料流要求在區段請求時傳送Cookie，但在iOS 7和更早版本上無法做到這一點。 從iOS 8開始，Apple已新增API允許為區段請求傳遞Cookie。 TVSDK現已提供這項支援。 已新增傳送使用者代理程式（若有）的支援。
 
-* Zendesk #18166 - TVSDK 1.4.15在使用dSYM文件选项的DWARF进行编译时会发出数百条警告
+* Zendesk #18166 - TVSDK 1.4.15在使用dSYM檔案選項編譯DWARF時會發出數百個警告
 
-所有警告都已解决。
+所有警告已解決。
 
-**注意**:为TVSDK添加了与tvOS兼容的库。
+**注意**：已為TVSDK新增tvOS相容程式庫。
 
 **版本1.4.16** (1.4.16.1454)
 
-* Zendesk #3875 - Tab S在播放期间崩溃
+* Zendesk #3875 — 播放期間Tab S當機
 
-正在还原OKHTTP对CRSauditude的依赖关系，因为TVSDK现在直接使用httpurlconnection而不是curl。 通过在进行另一个JNI调用之前清除例外解决了此问题。
+回覆CRS稽核上的OKHTTP相依性，因為TVSDK現在直接使用httpurlconnection而非curl。 此問題已透過在發出另一個JNI呼叫之前清除例外來解決。
 
-* Zendesk #4487 — 跟踪内容的线性渠道
+* Zendesk #4487 — 追蹤線性內容頻道
 
-通过在线性流播放会话期间重新初始化视频心率跟踪器，解决了该问题。
+線上性資料流播放工作階段期間，透過重新初始化視訊心率追蹤器來解決問題。
 
-* Zendesk #17919 - Android — 内容搜索导致心跳错误
+* Zendesk #17919 - Android — 內容搜尋導致心率錯誤
 
-问题是当在章节中存在搜索时，解决错误状态中的心跳
+問題是當章節中有搜尋時，解決錯誤狀態的心率
 
-* Zendesk #18053 — 使用TVSDK的应用程序在Marshmallow上崩溃
+* Zendesk #18053 — 使用TVSDK的應用程式在Marshmallow上當機
 
-当TVSDK库使用执行YUV -> RGB颜色转换的neon代码时，TVSDK在Android M OS上崩溃。 通过使用非Neon版本的代码更新导致此问题的函数，解决了此问题。
+當TVSDK程式庫使用會進行YUV ->RGB色彩轉換的霓虹燈程式碼時，TVSDK在Android M作業系統上當機。 使用非Neon版本的程式碼來更新造成此問題的函式，即可解決此問題。
 
-* Zendesk #18072 - Android M — 应用程序崩溃
+* Zendesk #18072 - Android M — 應用程式當機
 
-检查是否支持用户档案和级别时，调用MediaCodecList和MediaCodecInfo API时发生此崩溃。 Adobe正在寻求谷歌的支持，以获得更多洞察。 通过提前加载所有编解码器信息以避免仅在需要编解码器信息时才调用这些API，解决了此问题。
+在檢查設定檔和層級是否受到支援時，呼叫MediaCodecList和MediaCodecInfo API時，就會發生此當機。 Adobe正在尋求Google對額外深入分析的支援。 此問題已透過提前載入所有轉碼器資訊來提供暫時解決方法解決，以避免僅在需要轉碼器資訊時呼叫這些API。
 
-* Zendesk #18074 — 阿拉伯语字幕在Nexus和Android 6.0上不工作
+* Zendesk #18074 — 使用Android 6.0時Nexus無法使用的阿拉伯字幕
 
-通过提供对Android CTS字体映射的支持解决了此问题。
+此問題藉由支援Android CTS字型對應而解決。
 
-**适用于iOS 6.** 0+的1.4.15(1.4.15.512)版
+**版本1.4.15** (1.4.15.512) (適用於iOS 6.0+)
 
-**注意**:Nielsen模块已从TVSDK版本中删除，但TVSDK将在不久的将来用新的Nielsen集成模块进行更新。
+**注意**： Nielsen模組已從TVSDK建置版本中移除，但TVSDK將在近期以新的Nielsen整合模組更新。
 
-* (ZD #2228) — 从获取MediaPlayerNotification中不可用的清单返回错误
+* (ZD #2228) — 擷取MediaPlayerNotification中無法使用的資訊清單傳回錯誤
 
-添加了元数据，以在发生通知M3U8_PARSER_ERROR时公开内容。
+新增中繼資料，以便在通知M3U8_PARSER_ERROR發生時公開內容。
 
-* (ZD #4437)-Adobe Primetime SDK内部崩溃
+* (ZD #4437) - Adobe Primetime SDK內的當機
 
-修复了准备字幕/替代音频时报告的崩溃问题。
+修正準備字幕/替代音訊時報告的當機問題。
 
-* (ZD #4487) — 跟踪内容的线性渠道
+* (ZD #4487) — 追蹤線性內容頻道
 
-允许在线性流播放会话期间重新初始化视频心率跟踪器。
+允許線上性資料流播放工作階段期間重新初始化視訊心率追蹤器。
 
-**适用于iOS 6.0** +的版本1.4.14(1.4.14.498)
+**版本1.4.14** (1.4.14.498) (適用於iOS 6.0+)
 
-* (ZD #17260)- playlistManagerForURL崩溃
+* (ZD #17260) - playlistManagerForURL當機
 
-修复了并发问题导致的间歇性崩溃。
+修正了因並行問題造成的間歇性當機。
 
 **版本1.4.13** (iOS 6.0+)
 
-* (ZD #3304) — 未填充VAST 3.0 `[ERRORCODE]`宏
+* (#3304元) - VAST 3.0 `[ERRORCODE]` 未填入巨集
 
-   * 如果内嵌，则将显示错误代码400   广告的创意很差。
-   * `[ERRORCODE]` 宏将进行URL编码。
+   * 如果內嵌廣告具有不良創意，則會顯示錯誤代碼400。
+   * `[ERRORCODE]` 巨集將會進行URL編碼。
 
-* (ZD #3865)心率与IMA广告集成
+* (ZD #3865)心率與IMA廣告整合
 
-修复了视频长度报告不正确的错误。
+修正錯誤回報視訊長度的問題。
 
-* 更新了TVSDK演示播放器以支持iOS 9
+* 更新TVSDK示範播放器以支援iOS 9
 
-要正确支持iOS 9，您需要配置Application Transportation Security的例外。 为演示目的，ATS已完全禁用。
+若要正確支援iOS 9，您需要設定「應用程式傳輸安全性」的例外狀況。 在示範中，ATS會完全停用。
 
-**适用于iOS 6.0** +的版本1.4.12(1.4.12.464)
+**版本1.4.12** (1.4.12.464) (適用於iOS 6.0+)
 
-* (ZD #4521)CRS测试客户端和SSAI
+* (ZD #4521) CRS測試使用者端和SSAI
 
-修复了3P URL中不正确的反向MD5。
+修正3P URL中錯誤的反向MD5。
 
-**适用于iOS 6.0** +的版本1.4.12(1.4.12.463)
+**版本1.4.12** (1.4.12.463) (適用於iOS 6.0+)
 
-* (ZD #2751)CSAI和CRS |增强：处理特定媒体文件URL中的动态元素。
+* (ZD #2751) CSAI和CRS |增強：處理特定媒體檔案URL中的動態元素。
 
-更新了Creative重新打包服务，以通过动态创意URL正确处理广告。
+更新Creative重新封裝服務，以正確處理具有動態創意URL的廣告。
 
-* (ZD #3654)1.3.4.166后PSDK版本中的内存泄漏
+* (ZD #3654) 1.3.4.166版之後的PSDK版本發生記憶體流失
 
-在iOS 8.2设备上定期回放，修复了drmFramework中的内存泄漏
+修正iOS 8.2裝置上定期播放的drmFramework中的記憶體洩漏問題
 
-* (ZD #3988)在首次播放后重新搜索时，会跳过预卷
+* (ZD #3988)第一次播放後重新搜尋時會略過Preroll
 
-修复了一个错误，以便可以正确禁用广告策略。
+修正錯誤，以便正確停用廣告原則。
 
-* (ZD #4017)请求iOS API在向后搜索时强制和回放
+* (ZD #4017)請求iOS API強制向後搜尋播放廣告
 
-通过ZD #4279的修复解决
+已解決ZD#4279案的修正
 
-* (ZD #4279)iOS和桌面上的HLS TVSDK广告插入–302重定向问题
+* (ZD #4279) iOS和桌上型電腦上的HLS TVSDK廣告插入–302重新導向問題
 
-修复了广告资产使用相对重定向URL时的错误
+修正廣告資產使用相對重新導向URL時的錯誤
 
-**适用于iOS 6.** 0+的版本1.4.9(1.4.9.427)
+**版本1.4.9** (1.4.9.427) (適用於iOS 6.0+)
 
-* (ZD #3075)Internet可达性问题 — iOS
+* (ZD #3075)網際網路連線能力問題 — iOS
 
-添加了通知以检测播放何时停止。
+已新增通知，以偵測播放何時停止。
 
-* (ZD #3193)在TVSDK中请求用户档案更改API
+* (ZD #3193) TVSDK中的設定檔變更API要求
 
-更新了PTPlaybackInformation以显示更新的assidedBitrate。 更新了BITRATE_CHANGE通知，使M3U8报告的比特率更加可靠和准确。
+更新PTPlaybackInformation以公開更新的indicatedBitrate。 更新BITRATE_CHANGE通知，以對M3U8報告的位元速率提供更可靠的時間與精確度。
 
-* (ZD #3324)Primetime广告报告问题（当VMAP中没有广告媒体时）
+* (ZD #3324)當VMAP中沒有廣告媒體時，Primetime廣告報告問題
 
-支持ping空广告中断跟踪URL，TVSDK现在将验证广告中断开始并完成对空广告中断的ping
+支援釘選空白廣告插播追蹤URL，TVSDK現在將驗證空白廣告插播的廣告插播開始和完整Ping
 
 **版本1.4.8** (1.4.8.402)
 
-* (ZD #3158)IOS 7在完整事件重播中崩溃
+* (ZD #3158) IOS 7在完整事件重播中當機
 
 **版本1.4.7** (1.4.7.382)
 
-* (ZD #2197)跟踪广告错误。 为资产添加的通知无法加载清单。
-* (ZD #2894)播放器在播放期间发出4个顶级清单请求。
-* (ZD #2992)Auditude报告的奇怪持续时间和标识符。
+* (ZD #2197)追蹤廣告錯誤。 為無法載入資訊清單的資產新增通知。
+* (ZD #2894)播放器在播放期間發出4個頂層資訊清單請求。
+* (ZD #2992)稽核報表怪異持續時間和識別碼。
 
 **版本1.4.6**(1.4.6.325)
 
-* (ZD #2197)跟踪广告错误。 为资产添加的通知无法加载清单
+* (ZD #2197)追蹤廣告錯誤。 已新增資產無法載入資訊清單的通知
 
 **版本1.4.5** (1.4.5.283)
 
-* (ZD #2141)Analytics implementation for TreeHouse app，添加了要构建包的AdobeAnalyticsPlugin.a库。
-* 视频心率库更新到1.4.1.2
-* (PTPALY-4226)(与ZD #2423相关)执行DRM重置可能会导致删除应用程序文档数据。
+* (ZD #2141) TreeHouse應用程式的Analytics實作，已新增AdobeAnalyticsPlugin.a程式庫以建置套件。
+* 視訊心率資料庫更新至1.4.1.2
+* (PTPALY-4226) (與ZD #2423相關)執行DRM重設會導致刪除應用程式檔案資料。
 
 **版本1.4.4** (1.4.4.242)
 
-* 视频心率库(VHL)更新至1.4.1。
+* 視訊心率程式庫(VHL)更新至1.4.1。
 
-* (ZD #2435)有关分析需求更新的TV SDK文档
+* (ZD #2435)分析需求更新的TV SDK檔案
 
-**版本1.4.2** (1.4.2.210:iOS 6.0+)
+**版本1.4.2** (1.4.2.210 ： iOS 6.0+)
 
-* (ZD #1129)_player.currentItem.audioOptions返回空
-* (ZD #2109)Primetime PSDK 1.4.1.125不适用于Xcode 5.1.1
-* (ZD #2137)无法加载DRM元数据时，iOS上的PSDK中崩溃
+* (ZD #1129) _player.currentItem.audioOptions傳回空白
+* (ZD #2109) Primetime PSDK 1.4.1.125無法搭配Xcode 5.1.1運作
+* (ZD #2137)無法載入DRM中繼資料時，iOS上的PSDK當機
 
 **版本1.4.1** (1.4.1.125)
 
-* (ZD #1107)CocoaLumberjack重复符号
-* (ZD #1644)为定位和报告修改iOS用户代理
-* (ZD #1850)iOS SDK中包含的Cocoa Lumberjack文件
-* (ZD#1908)如果存在1个以上的自定义标记，则PSDK会忽略这些自定义标记
+* (ZD #1107) CocoaLumberjack重複符號
+* (ZD #1644)修改用於鎖定目標和報告的iOS使用者代理
+* (ZD #1850) iOS SDK中包含的Cocoa Lumberjack檔案
+* (ZD#1908)如果超過1個，PSDK會忽略自訂標籤
 
-**版本1.4.0** (1.4.0.32)
+**1.4.0版** (1.4.0.32)
 
-* Zendesk #1024 — 通过清单从流中删除广告的功能
+* Zendesk #1024 — 透過資訊清單從資料流中移除廣告的功能
 
-## 1.4 {#known-issues-in}中的已知问题
+## 1.4中的已知問題 {#known-issues-in}
 
-* 在iOS TVSDK中，所有广告都拼接到内容清单中。 广告行为是通过根据内容和广告区段的持续时间进行搜索来实现的。 因此，如果区段持续时间不准确，搜索可能并不总是在广告中断开始或结束的确切帧结束。 即使持续时间是帧，平台本身对搜索也有容差，并且可能会显示一些帧或广告或内容。 这是平台的限制，广告插入在iOS上与TVSDK一起使用的方式也是有限的。
-* 在这种情况下，在搜索事件上会做出跳过的决定。 但是，由于清单中的广告段持续时间不能准确地表示广告的实际持续时间，因此搜索不准确。 因此，在应用广告策略时，您会看到广告的几个帧。
-* RECORDING_ERROR:录制屏幕时出错。
-* 它可能会体验到，许可证旋转视频在iOS 11上无法播放，在iOS 9.x和iOS 10.x上播放正常。
-* 在VPAID 2.0支持中，如果在AirPlay上播放时播放处于活动状态，将跳过VPAID广告。
-* 当最小目标设置为iOS7（或更高版本）时，drmNativeInterface.framework无法正确链接。\
-   解决方法：显式指定`libstdc++6`。  dylib库，如下所示：转到“目标” — >“构建阶段” — >“将二进制文件与库链接”并添加`libstdc++.6.dylib`。
+* 在iOS TVSDK中，所有廣告都會連結至內容資訊清單。 廣告行為是透過根據內容和廣告區段的持續時間進行搜尋來實作。 因此，如果區段持續時間不準確，搜尋可能不會總是以廣告插播開始或結束的確切影格結束。 即使持續期間在框架上，平台本身也會在搜尋上施加容許度，而且可能會顯示一些框架、廣告或內容。 這是平台的限制，以及廣告插入在iOS上搭配TVSDK使用的方式。
+* 在此情況下，跳過的決定會發生在搜尋事件上。 不過，由於資訊清單中的廣告區段持續時間無法準確表示廣告的實際持續時間，因此搜尋的框架不正確。 因此，您會在套用廣告原則時看到一些廣告畫面。
+* RECORDING_ERROR：錄製畫面時發生錯誤。
+* 它可能會體驗到授權輪換影片無法在iOS 11上播放，且在iOS 9.x和iOS 10.x上播放時可能會沒有問題。
+* 在VPAID 2.0支援中，如果透過AirPlay有效播放，則會略過VPAID廣告。
+* 當最小目標設定為iOS7 （或更新版本）時，drmNativeInterface.framework無法正確連結。\
+   因應措施：明確指定 `libstdc++6`.  dylib程式庫，如下所示：前往Target->建立階段 — >連結二進位檔與程式庫並新增 `libstdc++.6.dylib`.
 
-* 未插入用于替换API的后滚广告。
-* 在广告分时段内进行搜索（不退出）会发布重复广告开始和广告分时段通知
-* 设置currentTimeUpdateInterval没有任何效果。\
-   注意：在某些iOS版本中，操作系统不会自动加载PSDKLibrary.framework内的资源。 必须手动将PSDKResources.bundle复制到应用程序的包资源：转到“构建阶段”并复制捆绑包资源。
-* 无法使用Xcode 8或更低版本构建引用应用程序。 从iOS TVSDK版本1.4.41开始，使用Xcode 9进行编译。
+* 未插入用於取代API的後置式廣告。
+* 在廣告插播中搜尋（不退出）會發佈重複的廣告開始廣告插播通知
+* 設定currentTimeUpdateInterval沒有任何效果。\
+   注意：在某些iOS版本中，作業系統不會自動載入PSDKLibrary.framework內的資源。 請務必手動將PSDKResources.bundle複製到應用程式的套件資源：前往「建立階段」並複製套件資源。
+* 無法使用Xcode 8或更低版本建置參考應用程式。 iOS TVSDK 1.4.41版以後，請使用Xcode 9進行編譯。
 
-## 有用资源{#helpful-resources}
+## 實用資源 {#helpful-resources}
 
-* 请参阅[Adobe Primetime学习和支持](https://helpx.adobe.com/support/primetime.html)页面上的完整帮助文档。
+* 如需完整說明檔案，請前往 [Adobe Primetime學習與支援](https://helpx.adobe.com/support/primetime.html) 頁面。

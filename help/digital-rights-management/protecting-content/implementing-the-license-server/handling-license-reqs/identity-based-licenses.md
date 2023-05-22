@@ -1,23 +1,21 @@
 ---
-title: 基于身份的许可
-description: 基于身份的许可
+title: 以身分為基礎的授權
+description: 以身分為基礎的授權
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 27168b44-392b-43db-89a2-39af9535dad7
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '43'
 ht-degree: 0%
 
 ---
 
+# 以身分為基礎的授權{#identity-based-licenses}
 
-# 基于身份的许可证{#identity-based-licenses}
+如果使用以身分為基礎的授權，伺服器會在發行授權之前檢查有效的驗證Token。
 
-如果使用基于身份的许可，则服务器在颁发许可证之前检查有效的身份验证令牌。
-
-有关处理身份验证令牌的详细信息，请参阅[用户身份验证](../../../protecting-content/implementing-the-license-server/processing-drm-requests.md#user-authentication)。
+另請參閱 [使用者驗證](../../../protecting-content/implementing-the-license-server/processing-drm-requests.md#user-authentication) 以取得處理驗證Token的詳細資訊。
 
 >[!NOTE]
 >
->要预览基于身份的内容的许可证，客户端必须进行身份验证。
-
+>若要預覽以身分為基礎之內容的授權，使用者端必須驗證。

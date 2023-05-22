@@ -1,16 +1,15 @@
 ---
-title: 应用程序服务器的端口
-description: 应用程序服务器的端口
+title: 應用程式伺服器的連線埠
+description: 應用程式伺服器的連線埠
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 589d598f-aa3e-4567-9e41-0fd2177a4742
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '58'
 ht-degree: 0%
 
 ---
 
+# 應用程式伺服器的連線埠{#ports-for-application-servers}
 
-# 应用程序服务器的端口{#ports-for-application-servers}
-
-您可以配置Adobe Access许可证服务器以使用任何网络端口。 必须在内部防火墙上启用或禁用这些端口，具体取决于您希望允许连接到运行Adobe Access的应用程序服务器的客户端的网络功能。
+您可以設定Adobe存取授權伺服器使用任何網路連線埠。 這些連線埠必須在內部防火牆上啟用或停用，具體取決於您要允許連線到執行Adobe存取的應用程式伺服器的使用者端使用的網路功能。

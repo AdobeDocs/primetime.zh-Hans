@@ -1,6 +1,6 @@
 ---
-title: 策略工作流详细信息
-description: 策略工作流详细信息
+title: 原則工作流程詳細資料
+description: 原則工作流程詳細資料
 copied-description: true
 exl-id: e3daf7a9-def0-48a9-8190-adb25eec7b59
 source-git-commit: 0019a95fa9ca6d21249533d559ce844897ab67cf
@@ -10,51 +10,51 @@ ht-degree: 0%
 
 ---
 
-# 蜜蜂工作流 {#bees-workflow}
+# BEES工作流程 {#bees-workflow}
 
 **摘要：**
 
-* **策略**  — 创建DRM蜜蜂感知策略，该策略指示使用该策略打包的所有内容都需要蜜蜂。
-* **包装**  — 使用支持蜜蜂感知的DRM策略来打包内容。
-* **身份验证**  — 验证您的客户端设备，并使用Primetime DRM API或Primetime API将此令牌与Primetime Cloud DRM关联。 这样做会导致客户端设备将此身份验证令牌连同所有许可证请求一起发送到Primetime Cloud DRM。 Primetime Cloud DRM将不会处理此事件，而是会将其作为不透明Blob传递给您的蜜蜂端点进行处理。
-* **许可**  — 请求受保护内容的许可证。 客户端设备将自动将您之前设置的身份验证令牌附加到调用中。
-* **权利** - Primetime Cloud DRM将确定内容是否与需要BEES的策略打包在一起。 Primetime Cloud DRM将构建一个JSON请求，以发送到BEES端点。 BEES响应将指示Primetime Cloud DRM是否颁发许可证，以及（可选）使用哪种DRM策略。
+* **原則**  — 建立DRM BEES感知原則，指示使用此原則封裝的所有內容都需要BEES。
+* **封裝**  — 使用BEES感知DRM原則封裝內容。
+* **驗證**  — 驗證您的使用者端裝置，並使用Primetime DRM API或Primetime API，將此代號與Primetime Cloud DRM建立關聯。 這麼做會讓使用者端裝置將此驗證權杖連同所有授權請求一起傳送至Primetime Cloud DRM。 Primetime Cloud DRM不會處理此變數，而是會將其以不透明blob的形式傳遞至您的BEES端點以進行處理。
+* **授權**  — 請求受保護內容的授權。 使用者端裝置會自動將您先前設定的驗證Token附加至呼叫。
+* **權利** - Primetime Cloud DRM會判斷內容是否封裝了需要BEES的原則。 Primetime Cloud DRM會建構JSON要求以傳送至BEES端點。 BEES回應將會指示Primetime Cloud DRM是否核發授權，以及選擇使用哪個DRM政策。
 
-## 策略工作流详细信息 {#policy-workflow-details}
+## 原則工作流程詳細資料 {#policy-workflow-details}
 
-当Primetime Cloud DRM处理许可证请求时，它会解析请求中的DRM策略，以确定是否需要调用后端授权服务才能显示内容。 如果蜜蜂呼叫 *is* 必需，Primetime Cloud DRM将创建蜂类请求，然后解析DRM策略以获取蜂类请求的指定蜂类URL端点。
+當Primetime Cloud DRM處理授權請求時，它會剖析請求中的DRM原則，以判斷是否需要在顯示內容之前呼叫後端權益服務。 如果蜜蜂呼叫 *是* 必要時，Primetime Cloud DRM會建立BEES要求，然後剖析DRM原則，以取得BEES要求的指定BEES URL端點。
 
-应用指示BEES要求的DRM策略，在策略中指定以下两个自定义属性：
+套用指示BEES需求的DRM原則，在原則中指定以下兩個自訂屬性：
 
 * `policy.customProp.1=bees.required=<true | false>`
 * `policy.customProp.2=bees.url=<url to your BEES endpoint>`
 
 <!--<a id="example_F617FC49A4824C0CB234C92E57D876D3"></a>-->
 
-例如，使用Primetime DRM策略管理器( [!DNL AdobePolicyManager.jar])，您可以在 [!DNL flashaccesstools.properties] 配置文件：
+例如，使用Primetime DRM原則管理員( [!DNL AdobePolicyManager.jar])，則可在「 」中指定以下兩個自訂屬性 [!DNL flashaccesstools.properties] 設定檔：
 
 * `policy.customProp.1=bees.required=true`
 * `policy.customProp.2=bees.url=https://mybeesserver.example.com/bees`
 
 >[!NOTE]
 >
->如果您已在使用 `policy.customProp.1` 或 `policy.customProp.2` 对于其他资产，只需为较新的资产使用唯一编号。
+>如果您已使用 `policy.customProp.1` 或 `policy.customProp.2` 若是另一個屬性，則只需對較新的屬性使用唯一數字即可。
 
-## 包工作流详细信息 {#package-workflow-details}
+## 封裝工作流程詳細資料 {#package-workflow-details}
 
-在打包受Adobe访问保护的内容时，您必须对内容应用一种支持蜜蜂感知的DRM策略。
+在封裝受Adobe存取保護的內容時，您必須將其中一個BEES感知的DRM政策套用至內容。
 
-## 身份验证工作流详细信息 {#authentication-workflow-details}
+## 驗證工作流程詳細資料 {#authentication-workflow-details}
 
-为了让您的BEES端点做出授权决策，客户端设备必须提供身份验证信息。 您可以使用您自己的特定于客户的身份验证令牌来完成此操作。
+為了讓您的BEES端點做出許可權決策，使用者端裝置必須提供驗證資訊。 您可以使用自己的客戶特定驗證Token來達到此目的。
 
-Primetime Cloud DRM不必了解此令牌 — 它只需将此令牌传递到您的BEES端点。 客户端设备负责创建或获取此令牌，并使用 `DRMManager.setAuthenticationToken()` API。
+Primetime Cloud DRM不必瞭解此Token，只需將此Token傳遞至您的BEES端點即可。 使用者端裝置負責建立或取得此Token，並使用進行設定 `DRMManager.setAuthenticationToken()` API。
 
-请执行以下操作，将此令牌与Primetime Cloud DRM关联，以便与许可证请求一起发送：
+請執行以下動作來將此權杖與Primetime Cloud DRM建立關聯，以便隨授權請求傳送：
 
-实例化 `DRMManager` 对象。
+例項化 `DRMManager` 物件，其中包含針對Primetime Cloud DRM封裝之內容的DRM中繼資料。
 
-的 `setAuthenticationToken()` 方法的工作方式是将给定的字节数组与DRM元数据中提供的许可证服务器URL关联，该元数据用于实例化 `DRMManager`.
+此 `setAuthenticationToken()` 方法的運作方式是將指定的位元組陣列與用來具現化的DRM中繼資料中提供的License Server URL建立關聯 `DRMManager`.
 
 ```java
 //client device acquires auth token needed by your BEES endpoint  
@@ -62,15 +62,15 @@ DRMManager mgr = new DRMManager(<DRM Metadata of CloudDRM content>);
 mgr.setAuthenticationToken(<auth token>);
 ```
 
-令牌随所有许可证请求一起发送，直到通过调用清除令牌为止 `.setAuthenticationToken` 参数为null。
+Token會隨所有授權請求一起傳送，直到透過呼叫清除Token為止 `.setAuthenticationToken` 以null作為引數。
 
-## 许可证工作流详细信息{#license-workflow-details}
+## 授權工作流程詳細資料{#license-workflow-details}
 
-通过调用，从Primetime Cloud DRM请求许可证 `mgr.loadVoucher()`.
+透過呼叫，向Primetime Cloud DRM請求授權 `mgr.loadVoucher()`.
 
-## 授权请求和响应详细信息{#entitlement-request-and-response-details}
+## 權益請求和回應詳細資料{#entitlement-request-and-response-details}
 
-当Primetime Cloud DRM确定内容是使用支持蜜蜂感知的DRM策略打包的时，它会构建以下JSON请求，以发送到DRM策略中指定的BEES端点：
+當Primetime Cloud DRM判斷內容是以BEES感知DRM原則封裝時，它會建構以下JSON請求以傳送至DRM原則中指定的BEES端點：
 
 ```
 {
@@ -104,7 +104,7 @@ mgr.setAuthenticationToken(<auth token>);
 }
 ```
 
-BEES端点需要以下响应：
+BEES端點應會產生下列回應：
 
 ```
 {
@@ -152,4 +152,4 @@ BEES端点需要以下响应：
 }
 ```
 
-Primetime Cloud DRM使用响应来确定是否应向请求设备颁发许可证，以及是否应将新的DRM策略替换为许可证生成过程。 如果 `isAllowed` is `true` 并且响应中未提供任何策略，则在内容打包期间使用的原始DRM策略将用于生成许可证。
+Primetime Cloud DRM會使用回應來判斷是否應該向請求裝置發放授權，以及是否應該將新的DRM政策取代至授權產生程式。 若 `isAllowed` 是 `true` 而且回應中不會提供任何原則，那麼內容封裝期間使用的原始DRM原則將用於產生授權。

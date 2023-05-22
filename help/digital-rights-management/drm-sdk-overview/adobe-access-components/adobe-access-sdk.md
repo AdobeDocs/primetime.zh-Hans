@@ -1,19 +1,18 @@
 ---
-description: Primetime DRM的主要组件包括Java SDK以及Flash Player和Adobe AIR客户端运行时环境。
-title: Java SDK、Flash Player和Adobe AIR客户端
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: Primetime DRM的主要元件包括Java SDK、Flash Player和Adobe AIR使用者端執行階段環境。
+title: Java SDK、Flash Player和Adobe AIR使用者端
+exl-id: 01bb53dc-211d-4ec0-9e06-3bdbca01a071
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '128'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#drm-components-overview}
 
-# 概述{#drm-components-overview}
+Primetime DRM的主要元件包括Java SDK、Flash Player和Adobe AIR使用者端執行階段環境。
 
-Primetime DRM的主要组件包括Java SDK以及Flash Player和Adobe AIR客户端运行时环境。
+如需設定SDK的詳細資訊，請參閱以下的「設定SDK」： *使用Adobe Primetime DRM SDK保護內容。*
 
-有关设置SDK的详细信息，请参阅&#x200B;*使用Adobe Primetime DRM SDK保护内容中的设置SDK。*
-
-Primetime DRM SDK可让您开发数字版权管理解决方案，该解决方案与贵组织的现有业务基础架构(如内容管理、计费和用户访问控制系统)集成。 Flash Player和Adobe AIR使您能创建并轻松部署应用程序，消费者可以通过它们访问和视图大型数字内容库。
+Primetime DRM SDK可讓您開發數位版權管理解決方案，該解決方案與您組織現有的業務基礎架構整合，例如內容管理、帳單和使用者存取控制系統。 Flash Player和Adobe AIR可讓您建立並輕鬆部署應用程式，讓消費者透過它們存取和檢視大型數位內容資料庫。

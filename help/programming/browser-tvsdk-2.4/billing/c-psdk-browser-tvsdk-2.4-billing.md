@@ -1,30 +1,29 @@
 ---
-description: 为了照顾那些只想为所用内容而非固定费用付费（无论实际用途如何）的客户，Adobe会收集使用量度并使用这些量度来确定向客户收取多少费用。
-title: 账单量度
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 為因應客戶只想依使用量付款，而不想依實際使用量支付固定費率的需求，Adobe會收集使用量度並使用這些量度來決定向客戶收費的金額。
+title: 計費量度
+exl-id: f4200573-571f-4ed3-be8c-08b72d4f9e0e
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '223'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#billing-metrics-overview}
 
-# 概述{#billing-metrics-overview}
+為因應客戶只想依使用量付款，而不想依實際使用量支付固定費率的需求，Adobe會收集使用量度並使用這些量度來決定向客戶收費的金額。
 
-为了照顾那些只想为所用内容而非固定费用付费（无论实际用途如何）的客户，Adobe会收集使用量度并使用这些量度来确定向客户收取多少费用。
+每次播放器產生資料流開始事件時，瀏覽器TVSDK就會開始定期傳送HTTP訊息至Adobe的計費系統。 期間（稱為可計費期間）在標準VOD、pro VOD （啟用中段廣告）和即時內容中可能不同。 每種內容型別的預設持續時間為30分鐘，但您的Adobe合約會決定實際值。
 
-每次播放器生成流开始事件时，Browser TVSDK开始会定期向Adobe的计费系统发送HTTP消息。 对于标准VOD、专业VOD（启用中间广告）和实时内容，期间（称为可计费持续时间）可以不同。 每种内容类型的默认持续时间为30分钟，但您与Adobe的合同将决定实际值。
+訊息包含下列資訊：
 
-这些消息包含以下信息：
+* 內容型別（即時、線性或VOD）
+* 內容URL
+* 是否啟用廣告
+* 是否啟用中段廣告（僅限VOD）
+* 資料流是否受DRM保護
+* 瀏覽器TVSDK版本和平台
 
-* 内容类型（实时、线性或VOD）
-* 内容URL
-* 是否启用广告
-* 是否启用中间广告（仅VOD）
-* 流是否受DRM保护
-* 浏览器TVSDK版本和平台
+Adobe會預先設定此安排，但如果您想要變更安排，請與您的Adobe啟用代表合作。
 
-Adobe预配置此安排，但如果要更改此安排，请与Adobe支持代表合作。
-
-要监视浏览器TVSDK发送给Adobe的统计信息，请从您的Adobe启用代表处获取URL，并使用网络捕获工具（例如，Charles）查看数据。
+若要監視Browser TVSDK傳送至Adobe的統計資料，請從您的Adobe啟用代表取得URL，然後使用網路擷取工具（例如Charles）來檢視資料。

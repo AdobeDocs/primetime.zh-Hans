@@ -1,18 +1,17 @@
 ---
-title: 监视文件夹属性
-description: 监视文件夹属性
+title: Watched資料夾屬性
+description: Watched資料夾屬性
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: e86518d4-2a16-45c7-aa96-189f677c3ee6
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '163'
 ht-degree: 0%
 
 ---
 
+# Watched資料夾屬性 {#watched-folder-properties}
 
-# 监视文件夹属性{#watched-folder-properties}
+每個watched資料夾都包含名為的檔案 [!DNL properties/watchfolder.properties]. 此檔案包含置入此資料夾之內容的封裝選項，包括要加密的內容以及要套用哪些原則。 對屬性檔案中的值所做的任何變更會在下次執行watched資料夾封裝程式時生效（您不需要重新啟動伺服器）。
 
-每个监视文件夹都包含一个名为[!DNL properties/watchfolder.properties]的文件。 此文件包含放置在此文件夹中的内容的打包选项，包括要加密的内容以及要应用的策略。 对属性文件中的值所做的任何更改将在下次运行监视的文件夹打包程序时生效（无需重新启动服务器）。
-
-如果打包程序属性文件中存在配置错误，打包程序线程将停止。 要恢复监视的文件夹打包程序，请重新启动服务器。 如果监视文件夹属性文件中存在配置错误，则从打包程序进程的文件夹列表中临时删除监视文件夹。 要将监视的文件夹添加回列表，请重新启动服务器或修改打包程序属性文件。 如果在打包特定文件时出错（例如，由于文件已损坏），将跳过该文件，并处理该文件夹中的其余文件。
+如果封裝程式屬性檔案中有設定錯誤，封裝程式執行緒就會停止。 若要繼續watched資料夾封裝程式，請重新啟動伺服器。 如果watched資料夾屬性檔案中發生設定錯誤，則會從封裝程式處理的資料夾清單中暫時移除watched資料夾。 若要將watched資料夾新增回清單，請重新啟動伺服器或修改封裝程式屬性檔案。 如果在封裝特定檔案期間發生錯誤（例如，因為檔案已損毀），則會略過檔案，並處理資料夾中的其餘檔案。

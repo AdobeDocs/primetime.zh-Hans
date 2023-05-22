@@ -1,22 +1,21 @@
 ---
-description: 要添加VPAID 2.0支持，请添加自定义广告视图和相应的监听器。
-title: 实施VPAID 2.0集成
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 若要新增VPAID 2.0支援，請新增自訂廣告檢視和適當的監聽器。
+title: 實作VPAID 2.0整合
+exl-id: 8a6b81e7-1034-48fc-87aa-4cb8ab305d15
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '169'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
+# 實作VPAID 2.0整合 {#implement-vpaid-integration}
 
-# 实施VPAID 2.0集成{#implement-vpaid-integration}
+若要新增VPAID 2.0支援，請新增自訂廣告檢視和適當的監聽器。
 
-要添加VPAID 2.0支持，请添加自定义广告视图和相应的监听器。
+若要新增VPAID 2.0支援：
 
-要添加VPAID 2.0支持，请执行以下操作：
-
-1. 当播放器处于PREPARED状态时，将自定义广告视图添加到播放器界面。
+1. 當播放器處於「已準備」狀態時，將自訂廣告檢視新增到播放器介面。
 
    ```java
    ... 
@@ -33,17 +32,17 @@ ht-degree: 2%
        _playerFrame.addView(view);
    ```
 
-1. 创建监听器并处理事件监听器中描述的事件。
+1. 建立接聽程式並處理事件接聽程式中說明的事件。
 
    >[!IMPORTANT]
    >
-   >在VPAID 2.0工作流中，对于自定义广告视图，在`AdBreak`开始(事件`AD_BREAK_START`)和`AdBreak`完成(事件`AD_BREAK_COMPLETE`)之间维护您的`CustomAdView`实例非常重要，从创建自定义广告视图到处置该实例的时间。 即切勿在每个广告中断开始上创建自定义广告视图，并在每个广告中断完成时处理。
+   >在VPAID 2.0工作流程中，對於自訂廣告檢視，維護您的網站非常重要 `CustomAdView` 執行個體跨越 `AdBreak` 開始(事件 `AD_BREAK_START`)和 `AdBreak` 完成(事件 `AD_BREAK_COMPLETE`)，從您建立自訂廣告檢視到您處置它為止。 也就是說，請勿在每次廣告插播開始時建立自訂廣告檢視，並在每次廣告插播完成時將其處置。
    >
    >
-   >此外，您只应在播放器处于PREPARED状态时创建自定义广告视图,
+   >此外，您應僅在播放器處於「已準備」狀態時建立自訂廣告檢視。
    >
    >
-   >在调用重置时，仅处置自定义广告视图。 例如：
+   >只有在呼叫重設時處置自訂廣告檢視。 例如：
    >
    >
    ```
@@ -54,7 +53,7 @@ ht-degree: 2%
    >} 
    >```
    >
-   >最后，在处置自定义广告视图之前，必须从`FrameLayout`中删除它。 例如：
+   >最後，在處置自訂廣告檢視之前，您必須將其從 `FrameLayout`. 例如：
    >
    >
    ```

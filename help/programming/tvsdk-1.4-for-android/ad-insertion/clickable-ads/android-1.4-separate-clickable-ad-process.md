@@ -1,22 +1,21 @@
 ---
-description: 您应将播放器的UI逻辑与管理广告点击的过程分开。 为此，一种方法是为活动实施多个片段。
-title: 分离可点击广告流程
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您應該將播放器的UI邏輯與管理廣告點按的處理程式分開。 其中一個方法是為活動實作多個片段。
+title: 將可點按的廣告程式分開
+exl-id: 6519b8ed-2963-4708-bbb9-8ff178c1fa86
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '143'
 ht-degree: 0%
 
 ---
 
+# 將可點按的廣告程式分開{#separate-the-clickable-ad-process}
 
-# 分离可单击广告进程{#separate-the-clickable-ad-process}
+您應該將播放器的UI邏輯與管理廣告點按的處理程式分開。 其中一個方法是為活動實作多個片段。
 
-您应将播放器的UI逻辑与管理广告点击的过程分开。 为此，一种方法是为活动实施多个片段。
+1. 實作一個片段以包含 `MediaPlayer` 和負責視訊播放。
 
-1. 实施一个片段以包含`MediaPlayer`，该片段将负责视频播放。
-
-   此片段应调用`notifyClick`。
+   此片段應該呼叫 `notifyClick`.
 
    ```java
    public class PlayerFragment extends SherlockFragment { 
@@ -28,9 +27,9 @@ ht-degree: 0%
    } 
    ```
 
-1. 实现不同的片段以显示指示广告可点击的UI元素，监视该UI元素，并将用户点击量告知包含`MediaPlayer`的片段。
+1. 實作不同的片段以顯示UI元素（指出廣告可點按）、監視該UI元素，並將使用者點按的訊息傳達給包含 `MediaPlayer`.
 
-   此片段应声明片段通信的接口。 该片段在其onAttach生命周期方法期间捕获接口实现，并可以调用接口方法与活动通信。
+   此片段應宣告用於片段通訊的介面。 片段會在其onAttach生命週期方法期間擷取介面實施，並可呼叫介面方法以與活動通訊。
 
    ```java
    public class PlayerClickableAdFragment extends SherlockFragment { 
@@ -90,4 +89,3 @@ ht-degree: 0%
        } 
    } 
    ```
-

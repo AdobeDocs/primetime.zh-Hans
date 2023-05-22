@@ -1,20 +1,19 @@
 ---
-description: 播放内容时，Browser TVSDK可在创建MediaResource对象时显示广告并传递有关广告的信息。
-title: 广告
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 播放內容時，瀏覽器TVSDK可在建立MediaResource物件時顯示廣告並傳遞有關廣告的資訊。
+title: 廣告
+exl-id: a44ad0fa-841f-474b-89f4-39666190231f
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '100'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#ads-overview}
 
-# 概述{#ads-overview}
+播放內容時，瀏覽器TVSDK可在建立MediaResource物件時顯示廣告並傳遞有關廣告的資訊。
 
-播放内容时，Browser TVSDK可在创建MediaResource对象时显示广告并传递有关广告的信息。
-
-在收到`AdobePSDK.MediaPlayerStatus.INITIALIZED`后，您可以选择调用`prepareToPlay`函数。
+您可以選擇呼叫 `prepareToPlay` 函式（收到） `AdobePSDK.MediaPlayerStatus.INITIALIZED`.
 
 ```js
 function onStatusChange (event) { 
@@ -39,14 +38,14 @@ player.addEventListener(AdobePSDK.PSDKEventType.STATUS_CHANGED, onStatusChange);
 var mediaResource = new AdobePSDK.MediaResource(resourceUrl, resourceType, auditudeSettings, false);
 ```
 
-浏览器TVSDK还提供以下广告特定事件，您可以在事件处理程序中使用这些应用程序来防止广告播放时内容快速转发：
+瀏覽器TVSDK還提供下列廣告專屬事件，您可在事件處理常式中使用，以防止內容在廣告播放時快速轉送：
 
 * `AdobePSDK.PSDKEventType.AD_BREAK_STARTED`
 * `AdobePSDK.PSDKEventType.AD_BREAK_COMPLETED`
 * `AdobePSDK.PSDKEventType.AD_STARTED`
 * `AdobePSDK.PSDKEventType.AD_COMPLETED`
 
-要在UI框架中查看此功能，请按如下方式在配置中指定广告设置：
+若要在UI Framework中看到此運作方式，請在設定中指定廣告設定，如下所示：
 
 ```js
 // Using UI Framework 
@@ -68,4 +67,4 @@ var playerWrapper = ptp.videoPlayer('.videoDiv', {
 }; 
 ```
 
-有关所需`AuditudeSettings`的详细信息，请参阅[广告插入元数据](../../ad-insertion/ad-insertion-metadata/c-psdk-browser-tvsdk-2.4-ad-insertion-metadata.md)。
+如需有關要求的詳細資訊 `AuditudeSettings`，請參閱 [廣告插入中繼資料](../../ad-insertion/ad-insertion-metadata/c-psdk-browser-tvsdk-2.4-ad-insertion-metadata.md).

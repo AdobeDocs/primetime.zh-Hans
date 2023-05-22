@@ -1,21 +1,19 @@
 ---
-title: 管理域
-description: 管理域
+title: 管理網域
+description: 管理網域
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: c9030373-fd54-4745-9f03-0218532b9d6d
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '210'
 ht-degree: 0%
 
 ---
 
+# 管理網域{#managing-domains}
 
-# 管理域{#managing-domains}
+為了防止使用者為了略過網域取消註冊而備份及還原其檔案，建議對網域管理實作下列其中一種方法：
 
-为防止用户为了绕过域取消注册而备份和恢复其文件，建议对域管理实施以下方法之一：
-
-* 限制域凭据有效的时间。 客户端需要与域服务器联系，以在域证书过期时重新获取域凭据。 此时，域服务器可以确保计算机仍被授权为域的成员。
-* 每次用户取消注册时，滚动域键。 许可证服务器应仅向具有最新域密钥的客户端颁发许可证。 这假定许可证服务器可以与域服务器协作，以了解最新的密钥。 滚动域密钥涉及为域生成新密钥对。 滚动到特定域的键时，请确保在`generateDomainCredential`中增加键版本。 有关实现密钥转换的详细信息，请参阅“参考实现”中的&#x200B;*RefImplDomainReqHandler*。
-* 如果域服务器与许可证服务器相同，则服务器可以使用回滚计数器检测备份和恢复。 请参阅&#x200B;*使用Adobe Access SDK保护内容中的*处理Adobe访问请求*。*
-
+* 限制網域認證的有效時間長度。 使用者端需要連絡網域伺服器，才能在網域憑證過期時重新取得網域憑證。 此時，網域伺服器可確保電腦仍被授權成為網域的成員。
+* 每次使用者取消註冊時，將網域金鑰滑鼠指向上方。 License Server應該只向擁有最新網域金鑰的使用者端發行授權。 這假設License Server可以與Domain Server協調以瞭解哪個金鑰是最新的。 捲動網域金鑰涉及為網域產生新的金鑰組。 將滑鼠指向特定網域的金鑰時，請務必增加中的金鑰版本 `generateDomainCredential`. 如需實作金鑰變換的詳細資訊，請參閱 *RefImplDomainReqHandler* 在參考實作中。
+* 如果網域伺服器與License Server相同，則伺服器可以使用復原計數器來偵測備份和還原。 請參閱中的*處理Adobe存取要求* *使用Adobe存取SDK來保護內容。*

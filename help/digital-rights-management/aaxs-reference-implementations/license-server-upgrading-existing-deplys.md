@@ -1,21 +1,20 @@
 ---
-title: 升级现有部署
-description: 升级现有部署
+title: 升級現有部署
+description: 升級現有部署
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: e07b883f-d5f7-40d3-9221-a0dc2d859a5a
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '123'
 ht-degree: 0%
 
 ---
 
+# 升級現有部署 {#upgrading-existing-deployments}
 
-# 升级现有部署{#upgrading-existing-deployments}
+若要升級執行3.0版參考實作授權伺服器或Watched Folder Packager的伺服器，請將 [!DNL .war] 使用Adobe存取參考實作伺服器隨附的檔案部署在應用程式伺服器上的檔案。
 
-要升级运行3.0 Reference Implementation License Server或Watched Folder Packager的服务器，请将部署在Application Server上的[!DNL .war]文件替换为Adobe Access Reference Implementation Server附带的文件。
-
-如果您计划使用引用实施许可证服务器进行域注册，则需要多个新的数据库表。 要重新创建整个参考实现数据库，请运行`CreateSampleDB.sql`。 要保留现有数据库记录并添加新表，请打开`CreateSampleDB.sql`并仅运行命令以创建以下表：
+如果您打算使用參照實作授權伺服器的網域註冊，則需要幾個新的資料庫表格。 若要重新建立整個參考實作資料庫，請執行 `CreateSampleDB.sql`. 若要保留現有資料庫記錄並新增表格，請開啟 `CreateSampleDB.sql`並且只執行命令以建立下清單格：
 
 * `DomainServerInfo`
 * `DomainKeys`
@@ -23,15 +22,14 @@ ht-degree: 0%
 * `UserDomainMembership`
 * `UserDomainRefCount`
 
-必须向flashaccess-refimpl.properties添加以下属性才能使用域支持：
+下列屬性必須新增至flashaccess-refimpl.properties才能使用網域支援：
 
-* `HandlerConfiguration.DomainCAs.n` 或  `RefImpl.HSM.HandlerConfiguration.DomainCAs.Alias.n`
+* `HandlerConfiguration.DomainCAs.n` 或 `RefImpl.HSM.HandlerConfiguration.DomainCAs.Alias.n`
 
-* `Domain RegistrationHandler.ServerCredential` 和 `DomainRegistrationHandler.ServerCredential.password`，或  `RefImpl.HSM.DomainRegistrationHandler.ServerCredential.Alias`
+* `Domain RegistrationHandler.ServerCredential` 和 `DomainRegistrationHandler.ServerCredential.password`，或 `RefImpl.HSM.DomainRegistrationHandler.ServerCredential.Alias`
 
 * `DomainRegistrationHandler.DomainServerUrl`
 
-必须向[!DNL flashaccess-refimpl.properties]添加以下属性，以支持向iOS客户端进行远程密钥投放:
+下列屬性必須新增至 [!DNL flashaccess-refimpl.properties] 若要支援將遠端金鑰傳遞至iOS使用者端：
 
-* `HandlerConfiguration.KeyServerCertificate` 或  `RefImpl.HSM.HandlerConfiguration.KeyServerCertificate.Alias`
-
+* `HandlerConfiguration.KeyServerCertificate` 或 `RefImpl.HSM.HandlerConfiguration.KeyServerCertificate.Alias`

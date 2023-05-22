@@ -1,15 +1,14 @@
 ---
-title: 优化路由和协议
-description: 优化路由和协议
-translation-type: tm+mt
-source-git-commit: d5e948992d7c59e80b530c8f4619adbffc3c03d8
+title: 最佳化路由和通訊協定
+description: 最佳化路由和通訊協定
+exl-id: 837e4582-5813-48fd-a1a6-3143a06edacb
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '78'
 ht-degree: 0%
 
 ---
 
+# 最佳化路由和通訊協定 {#optimize-routes-and-protocols}
 
-# 优化路由和协议{#optimize-routes-and-protocols}
-
-PrimetimeAd Insertion提供基于规则的URL重写，以优化客户端协议和CDN投放。  例如，可以创建规则以强制PrimetimeAd Insertion仅根据HTTP协议从CDN获取资源，即使PrimetimeAd Insertion的协议是HTTPS协议也是如此。  可创建将视频和片段URL映射到内容CDN的其他规则，确保单个CDN投放。
+PrimetimeAd Insertion提供規則型URL重新寫入，以最佳化使用者端通訊協定和CDN傳送。  例如，您可以建立規則，強制PrimetimeAd Insertion只在HTTP通訊協定下從CDN擷取資源，即使PrimetimeAd Insertion的通訊協定在HTTPS下也是如此。  可以建立其他規則將視訊廣告片段URL對應至內容CDN，以確保單一CDN傳遞。

@@ -1,40 +1,39 @@
 ---
-description: 您可以使用Adobe的Offline Packager为Primetime Cloud DRM支持的、由ExpressPlay支持的任何DRM解决方案准备内容。
+description: 您可以使用Adobe的Offline Packager，為Primetime Cloud DRM支援的任何DRM解決方案（由ExpressPlay提供技術支援）準備內容。
 title: Primetime Packager / Cloud DRM / TVSDK
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 2055c18b-62de-41bf-9644-f366609e0198
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '437'
 ht-degree: 0%
 
 ---
 
-
 # Primetime Packager / Cloud DRM / TVSDK {#primetime-packager-cloud-drm-tvsdk}
 
-您可以使用Adobe的Offline Packager为Primetime Cloud DRM支持的、由ExpressPlay支持的任何DRM解决方案准备内容。
+您可以使用Adobe的Offline Packager，為Primetime Cloud DRM支援的任何DRM解決方案（由ExpressPlay提供技術支援）準備內容。
 
-这组说明假定您已经设置了ExpressPlay管理帐户：[Primetime DRM云快速开始](../../../multi-drm-workflows/quick-start/quick-overview.md)。
-1. 选择用于打包内容的基础结构。 Primetime Packager支持将内容的命令行和基于配置的打包与FairPlay、Widevine和PlayReady DRM一起使用。 TVSDK当前支持以下格式和加密（管道中还有更多）：
+這組指示假設您已設定ExpressPlay管理員帳戶： [Primetime DRM雲端快速入門](../../../multi-drm-workflows/quick-start/quick-overview.md).
+1. 選擇用於封裝內容的基礎結構。 Primetime Packager支援命令列式與組態式內容封裝，以搭配FairPlay、Widevine和PlayReady DRM使用。 TVSDK目前支援下列格式和加密（管道中提供詳細資訊）：
 
-   * DASH(CENC)/ PlayReady，Widevine — 适用于HTML5
-   * HLS/FairPlay， Access - For iOS
+   * DASH (CENC) / PlayReady、Widevine -HTML5
+   * HLS / FairPlay、Access — 適用於iOS
 
-1. 选择密钥管理系统(KMS):
+1. 選擇金鑰管理系統(KMS)：
 
-   * 使用ExpressPlay的KMS([ExpressPlay密钥存储](https://www.expressplay.com/developer/key-storage/));此系统通过ExpressPlay的RESTful API管理您的内容密钥。
+   * 使用ExpressPlay的KMS ( [ExpressPlay金鑰儲存](https://www.expressplay.com/developer/key-storage/))；此系統透過ExpressPlay的RESTful API管理您的內容金鑰。
 
       或……
 
-   * 设置您自己的KMS 创建内容键数据库，可由Content-ID选择。
+   * 設定您自己的KMS。 建立內容金鑰的資料庫，可由Content-ID選取。
 
-      在任一情况下，KMS都管理内容密钥的供应，每个密钥都具有关联的内容ID。
+      無論是哪種情況，KMS都會管理內容金鑰的供給，每個金鑰都有一個相關聯的內容ID。
 
-1. 打包您的内容。 利用Primetime Packager，您可以打包特定DRM解决方案或多个DRM解决方案的内容。
+1. 封裝您的內容。 透過Primetime Packager，您可以封裝特定DRM解決方案或多個DRM解決方案的內容。
 
-   以下示例命令显示了针对不同DRM解决方案打包内容的一些示例：
+   下列範例指令顯示不同DRM解決方案封裝內容的一些範例：
 
-   * [使用Primetime Packager的Widevine](https://helpx.adobe.com/content/dam/help/en/primetime/guides/offline_packager_getting_started.pdf#page=19) （生成MPD文件）：
+   * [Widevine搭配Primetime Packager](https://helpx.adobe.com/content/dam/help/en/primetime/guides/offline_packager_getting_started.pdf#page=19) （產生MPD檔案）：
 
       ```
       java -jar OfflinePackager.jar \ 
@@ -53,7 +52,7 @@ ht-degree: 0%
         -widevine_header provider:intertrust#content_id:2a
       ```
 
-   * [FairPlay与Primetime Packager](https://helpx.adobe.com/content/dam/help/en/primetime/guides/offline_packager_getting_started.pdf#page=20) （生成M3U8文件）：
+   * [FairPlay與Primetime Packager](https://helpx.adobe.com/content/dam/help/en/primetime/guides/offline_packager_getting_started.pdf#page=20) （產生M3U8檔案）：
 
       ```
       java -jar OfflinePackager.jar  
@@ -70,21 +69,21 @@ ht-degree: 0%
 
       >[!NOTE]
       >
-      >将复制`key_url`值，与M3U8文件中一样。
+      >此 `key_url` 值會依原樣複製到M3U8檔案中。
 
-1. 创建“店面服务器”。
+1. 建立「店面伺服器」。
 
-       店面服务器需要处理以下操作：
+       店面伺服器需要處理下列作業：
    
-   1. 客户选择内容。 此实现需要包括客户端的端点，以便为特定内容ID请求内容令牌。
-   1. 客户权利
-   1. 来自客户端的许可证令牌(ExpressPlay)请求（[ExpressPlay许可证令牌请求/响应引用](../../../multi-drm-workflows/license-token-req-resp-ref/license-req-resp-overview.md)）
+   1. 客戶選擇內容。 此實作需要包含端點，以便使用者端請求特定內容ID的內容權杖。
+   1. 客戶權益
+   1. 來自使用者端的授權權杖(ExpressPlay)請求( [ExpressPlay授權權杖請求/回應參考](../../../multi-drm-workflows/license-token-req-resp-ref/license-req-resp-overview.md))
 
-1. 创建您的客户。
+1. 建立您的使用者端。
 
-       客户端应包括对您的店面服务器的调用。Adobe建议客户端在用户选择某些内容后以及用户通过身份验证后调用商店。 然后，将从ExpressPlay返回的令牌传递给您的播放器以用于许可证请求。 有关如何实现播放器的DRM组件的介绍，请访问：
+       使用者端應包含對您的店面伺服器的呼叫。 Adobe建議使用者端在使用者選取部分內容後，以及在使用者通過驗證後，呼叫店面。 然後，將從ExpressPlay傳回的Token傳遞至您的播放器，以用於授權請求。 以下是有關實作播放器DRM元件的簡介：
    
-   * [适用于HTML5的浏览器TVSDK](https://help.adobe.com/en_US/primetime/psdk/browser_tvsdk/index.html#PSDKs-reference-DRM_interface_overview)
+   * [HTML5的瀏覽器TVSDK](https://help.adobe.com/en_US/primetime/psdk/browser_tvsdk/index.html#PSDKs-reference-DRM_interface_overview)
    * [iOS](../../../../programming/tvsdk-3x-ios-prog/ios-3x-drm-content-security/ios-3x-apple-fairplay-tvsdk.md)
 
-1. 有了许可证令牌，客户端现在可以从令牌中派生请求URL并向ExpressPlay发出许可证请求，然后为用户播放选定的内容。
+1. 有了授權權杖，使用者端現在可以從權杖衍生請求URL，向ExpressPlay提出授權請求，然後為使用者播放選取的內容。

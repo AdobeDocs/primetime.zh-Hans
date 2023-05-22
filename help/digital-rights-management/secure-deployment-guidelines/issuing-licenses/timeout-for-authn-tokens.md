@@ -1,7 +1,6 @@
 ---
-description: Adobe Primetime DRM SDK生成的所有身份验证令牌都具有超时间隔，以保护应用程序安全。
-title: 身份验证令牌超时
-translation-type: tm+mt
+description: Adobe Primetime DRM SDK產生的所有驗證Token都有保護應用程式安全的逾時間隔。
+title: 驗證Token逾時
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '110'
@@ -10,10 +9,10 @@ ht-degree: 0%
 ---
 
 
-# 身份验证令牌超时{#timeout-for-authentication-tokens}
+# 驗證Token逾時{#timeout-for-authentication-tokens}
 
-Adobe Primetime DRM SDK生成的所有身份验证令牌都具有超时间隔，以保护应用程序安全。
+Adobe Primetime DRM SDK產生的所有驗證Token都有保護應用程式安全的逾時間隔。
 
-在处理身份验证请求时，会使用Primetime DRM SDK指定身份验证令牌的过期时间。 令牌过期后，该令牌不再有效，用户必须向许可证服务器重新进行身份验证。
+處理驗證請求時，會使用Primetime DRM SDK指定驗證權杖的到期日。 到期後，權杖不再有效，使用者必須透過授權伺服器再次驗證。
 
-要了解有关身份验证请求的更多信息，请参阅[AuthenticationHandler](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/protocol/authentication/AuthenticationHandler.html)。
+若要進一步瞭解驗證請求，請參閱 [AuthenticationHandler](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/protocol/authentication/AuthenticationHandler.html).

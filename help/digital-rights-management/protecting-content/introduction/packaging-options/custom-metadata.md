@@ -1,20 +1,19 @@
 ---
-title: 自定义元数据
-description: 自定义元数据
+title: 自訂中繼資料
+description: 自訂中繼資料
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: cfc8b17b-c077-4b28-896d-b1ede1d5090b
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '117'
 ht-degree: 0%
 
 ---
 
+# 自訂中繼資料 {#custom-metadata}
 
-# 自定义元数据{#custom-metadata}
+使用此專案來將自訂索引鍵/值配對新增至可由伺服器應用程式解譯的內容中繼資料。
 
-使用它向可由服务器应用程序解释的内容元数据中添加自定义键/值对。
+Primetime DRM內容的中繼資料格式可讓您在封裝時包含自訂索引鍵/值配對。 然後，授權伺服器便可在授權發行期間處理此自訂中繼資料。 中繼資料與Primetime DRM原則不同，而且每個內容區段都可獨特。
 
-Primetime DRM内容的元数据格式使您能够在打包时包含自定义键/值对。 然后，许可证服务器在颁发许可证期间可以处理此自定义元数据。 元数据与Primetime DRM策略不同，对于每个内容部分都可以是唯一的。
-
-示例用例：在测试阶段，可以在打包时包含自定义属性`Release:BETA`。 许可证服务器可以在测试期内向此内容提供许可证。 但是，在测试期到期后，许可证服务器将不允许访问内容。
+使用案例範例：在Beta版階段，您可以包含自訂屬性 `Release:BETA` 封裝時。 授權伺服器可以在Beta版期間發行此內容的授權。 但是，在Beta版期限過後，授權伺服器會禁止存取內容。

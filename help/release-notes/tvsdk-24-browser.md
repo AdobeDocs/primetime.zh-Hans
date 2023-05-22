@@ -1,6 +1,6 @@
 ---
-title: 浏览器TVSDK 2.4发行说明
-description: 浏览器TVSDK 2.4发行说明介绍了浏览器TVSDK 2.4中新增的、受支持和不受支持的功能以及已知问题。
+title: 瀏覽器TVSDK 2.4發行說明
+description: 瀏覽器TVSDK 2.4發行說明說明說明瀏覽器TVSDK 2.4支援和不支援的新功能和已知問題。
 contentOwner: dekalra
 topic-tags: release-notes
 products: SG_PRIMETIME
@@ -12,121 +12,121 @@ ht-degree: 0%
 
 ---
 
-# 浏览器TVSDK 2.4发行说明 {#browser-tvsdk-release-notes}
+# 瀏覽器TVSDK 2.4發行說明 {#browser-tvsdk-release-notes}
 
-浏览器TVSDK 2.4发行说明介绍了浏览器TVSDK 2.4中新增的、受支持和不受支持的功能以及已知问题。
+瀏覽器TVSDK 2.4發行說明說明說明瀏覽器TVSDK 2.4支援和不支援的新功能和已知問題。
 
-## 简介 {#introduction}
+## 簡介 {#introduction}
 
-浏览器TVSDK是一个工具包，允许您向基于浏览器的视频播放器应用程序添加高级视频播放功能、内容保护和广告。
+瀏覽器TVSDK是工具組，可讓您新增進階視訊播放功能、內容保護和廣告至瀏覽器視訊播放器應用程式。
 
-浏览器TVSDK 2.4提供了JavaScript API来构建基于浏览器的视频应用程序，并在以下模式中包含播放支持：
+瀏覽器TVSDK 2.4提供JavaScript API以建置瀏覽器視訊應用程式，並包含下列模式的播放支援：
 
-* 仅HTML5
-* HTML5，带自动闪存回退
-* Flash始终
+* 僅限HTML5
+* 具有自動快閃後援的HTML5
+* 一律Flash
 
-此版本包括以下信息：
+此版本包含下列資訊：
 
-· [浏览器TVSDK API文档](https://help.adobe.com/en_US/primetime/api/psdk/browser_tvsdk/index.html).
+· [瀏覽器TVSDK API檔案](https://help.adobe.com/en_US/primetime/api/psdk/browser_tvsdk/index.html).
 
-· [浏览器TVSDK编程指南](https://helpx.adobe.com/content/dam/help/en/primetime/programming-guides/psdk_browser-tvsdk.pdf).
+· [瀏覽器TVSDK程式設計手冊](https://helpx.adobe.com/content/dam/help/en/primetime/programming-guides/psdk_browser-tvsdk.pdf).
 
-· [适用于1.4 DHLS的TVSDK到浏览器TVSDK 2.4迁移指南](https://helpx.adobe.com/primetime/migration-guides/tvsdk-14-dhls-browser-tvsdk-24.html).
+· [TVSDK for 1.4 DHLS至瀏覽器TVSDK 2.4移轉指南](https://helpx.adobe.com/primetime/migration-guides/tvsdk-14-dhls-browser-tvsdk-24.html).
 
-· [从浏览器TVSDK 2.4.6转换到版本2.4.7](https://helpx.adobe.com/primetime/conversion-guides/browser-tvsdk-246-to-247-for-javascript.html).
+· [從瀏覽器TVSDK 2.4.6轉換至2.4.7版](https://helpx.adobe.com/primetime/conversion-guides/browser-tvsdk-246-to-247-for-javascript.html).
 
-·引用实施，包含在内部版本中。
+·包含在組建中的參考實作。
 
 >[!NOTE]
 >
->*有关此版本的安全注意事项的完整列表，请参阅安全注意事项。
+>*如需此版本安全性考量的完整清單，請參閱安全性考量。
 
-## 新增功能和受支持功能 {#what-s-new-and-supported-features}
+## 新增功能與支援的功能 {#what-s-new-and-supported-features}
 
-此版本的浏览器TVSDK提供了可用于增强视频应用程序的新功能。
+此版本的瀏覽器TVSDK提供可用來增強視訊應用程式的新功能。
 
-**2.4.12更新（版本204）中的新增功能**
+**2.4.12更新中的新增功能（版本編號204）**
 
-作为浏览器TVSDK 2.4.12更新（版本204）的一部分，提供了以下添加内容：
+瀏覽器TVSDK 2.4.12更新（版本編號204）提供下列新增功能：
 
-* 更改了AdobePSDK.MediaPlayer的卷API的实施，以允许在播放静音时在iOS上自动播放。
+* AdobePSDK.MediaPlayer的音量API實作已變更為允許在播放停用時自動在iOS上播放。
 
-·新的API， `auditudeSettings.ignoreVPAIDAds`，以允许忽略从Auditude服务器收到的VPAID广告。 API不适用于Flash回退。
+·新的API、 `auditudeSettings.ignoreVPAIDAds`，以允許忽略從Auditude伺服器接收的VPAID廣告。 API無法用於Flash遞補。
 
 **版本2.4.11**
 
-浏览器TVSDK 2.4.11版本中提供了以下增强功能和新增功能：
+下列增強功能和新增專案屬於瀏覽器TVSDK 2.4.11版：
 
-· MSE和Flash回退模式支持HLS实时区段故障切换。
+· MSE和Flash遞補模式支援HLS即時區段容錯移轉。
 
-·支持 `AuditudeSettings.creativeRepackagingDomain` API现在也适用于MSE。 以前仅支持Flash回退模式。
+·支援 `AuditudeSettings.creativeRepackagingDomain` API現在也可供MSE使用。 先前僅支援Flash遞補模式。
 
-·该版本包含针对关键客户问题的修复。 请参阅 *已修复的问题* 列表。
+·此版本包含嚴重客戶問題的修正。 另請參閱 *已修正的問題* 清單。
 
 **版本2.4.10**
 
-浏览器TVSDK 2.4.10版本中提供了以下增强功能和新增功能：
+下列增強功能和新增專案屬於瀏覽器TVSDK 2.4.10版：
 
-· TVSDK提供enableLogging()以启用或禁用日志记录。 请参阅 [API文档](https://help.adobe.com/en_US/primetime/api/psdk/browser_tvsdk/index.html)，以便使用。
+· TVSDK提供enableLogging()來啟用或停用記錄。 請參閱 [API檔案](https://help.adobe.com/en_US/primetime/api/psdk/browser_tvsdk/index.html)以取得使用狀況。
 
-·使用Adobe Analytics时，TVSDK不再支持默认章节。 使用您的应用程序定义和管理章节。
+·使用Adobe Analytics時，TVSDK不再支援預設章節。 使用您的應用程式定義和管理章節。
 
-·该版本包含针对关键客户问题的修复。 请参阅*问题修复*列表。
+·此版本包含嚴重客戶問題的修正。 請參閱*已修正的問題*a清單。
 
 **版本2.4.9**
 
-浏览器TVSDK 2.4.9版本中提供了以下增强功能和新增功能：
+下列增強功能和新增專案屬於瀏覽器TVSDK 2.4.9版：
 
-·支持具有时间不连续但没有间断标记的HLS VOD和实时流。
+·支援HLS VOD和即時串流，其具有時間不連續性，但不具不連續性標籤。
 
-· HLS VOD和实时流的Safari视频标记支持ID3 v2.4.0帧。
+· HLS VOD和即時資料流的Safari視訊標籤支援ID3 v2.4.0影格。
 
-·安全广告加载实施可确保根据API配置将广告服务器调用升级为安全HTTP。 有关详细信息，请参阅AdobePSDK.AdvertisingMetadata和AdobePSDK.ForceHttpsAdConfiguration类。 Flash回退模式不支持此功能。
+·安全廣告載入實作可確保廣告伺服器呼叫根據API設定升級為安全的HTTP。 如需詳細資訊，請參閱AdobePSDK.AdvertisingMetadata和AdobePSDK.ForceHttpsAdConfiguration類別。 Flash遞補模式不支援此功能。
 
-·与VAST 3.0响应关联的广告ID信息和扩展信息现在由TVSDK提供给应用程序，并可用于实施广告测量的Moat集成。 有关详细信息，请参阅AdobePSDK.NetworkAdInfo API。 在Flash回退模式中不支持此功能。
+·與VAST 3.0回應相關聯的廣告ID和擴充功能資訊，現在可由TVSDK提供給應用程式，且可用來實作廣告測量的Moat整合。 如需詳細資訊，請參閱AdobePSDK.NetworkAdInfo API 。 Flash遞補模式不支援此功能。
 
-· AdobePSDK.ForceHttpsConfiguration类不再可用。 成功者
+· AdobePSDK.ForceHttpsConfiguration類別已無法使用。 成功者為
 
-AdobePSDK.ForceHttpsAdConfiguration类。
+AdobePSDK.ForceHttpsAdConfiguration類別。
 
-·现在有一个新的API，AdobePSDK.optimizeFlashCalls，可用于优化调用以改进Flash回退模式下的HLS播放体验。 默认情况下，此设置处于禁用状态。
+·新的API AdobePSDK.optimizeFlashCalls現在可用於最佳化呼叫，以改善Flash遞補模式中的HLS播放體驗。 預設為停用。
 
-**2.4.8更新（版本6002）中的新增功能**
+**2.4.8更新中的新增功能（版本編號6002）**
 
-此更新包含针对关键客户问题的修复。 请参阅 *已修复的问题*，以获取列表。
+此更新包含嚴重客戶問題的修正。 另請參閱 *已修正的問題*，以取得清單。
 
 **版本2.4.8**
 
-浏览器TVSDK 2.4.8版本中提供了以下增强功能和新增功能：
+下列增強功能和新增專案屬於瀏覽器TVSDK 2.4.8版：
 
-· SDK现在与Chrome EME兼容，并且从Chrome v58开始提供的最佳实践更改。 有关更多详细信息，请参阅 [https://storage.googleapis.com/wvdocs/Chrome_EME_Changes_and_Best_Practices.pdf](https://storage.googleapis.com/wvdocs/Chrome_EME_Changes_and_Best_Practices.pdf)**
+· SDK現在與Chrome EME相容，且從Chrome v58開始提供最佳實務變更。 如需詳細資訊，請參閱 [https://storage.googleapis.com/wvdocs/Chrome_EME_Changes_and_Best_Practices.pdf](https://storage.googleapis.com/wvdocs/Chrome_EME_Changes_and_Best_Practices.pdf)**
 
-· UI框架现在支持Flash、仅限广告和定位信息工作流中的HLS访问DRM。
+· UI Framework現在支援在Flash、僅限廣告和目標定位資訊工作流程上使用HLS存取DRM。
 
-· setDRMAuthenticateData API已添加到UI框架中。 要播放受Adobe访问DRM保护的流，请调用此API。 或者，也可以在播放器中指定drmAuthenticateData属性。 请参阅 [AdobePSDK.videoBehavior ](https://help.adobe.com/en_US/primetime/api/psdk/btvsdk-ui-framework/VideoBehavior.html)以了解详细信息。
+· setDRMAuthenticateData API已新增至UI Framework。 若要播放受Adobe存取DRM保護的資料流，請叫用此API。 或者，也可以在播放器中指定drmAuthenticateData屬性。 另請參閱 [AdobePSDK.videoBehavior ](https://help.adobe.com/en_US/primetime/api/psdk/btvsdk-ui-framework/VideoBehavior.html)以取得詳細資訊。
 
 **版本2.4.7**
 
-以下功能在版本2.4.7中是新增的：
+下列是2.4.7版的新功能：
 
-·在UI框架中添加UI配置器
+·在UI架構中新增UI設定器
 
-您可以通过以下方式之一配置播放器：
+您可以透過下列其中一種方式來設定播放器：
 
-·使用JSON对象
+· JSON物件
 
 ·使用API
 
-为帮助生成JSON对象，浏览器TVSDK提供了**UI配置器**工具。
+為協助產生JSON物件，瀏覽器TVSDK提供**UI配置器**工具。
 
-在此工具中，您可以选择各种设置，单击**测试配置**以验证设置，然后单击**下载配置**以下载设置。 下载文件后，您可以将此文件的内容作为JSON对象传递到ptp.videoPlayer API。
+在此工具中，您可以選取各種設定，按一下**測試設定**以驗證設定，然後按一下**下載設定**以下載設定。 下載檔案後，您可以將此檔案的內容當作JSON物件傳遞至ptp.videoPlayer API。
 
-·在UI框架中添加了MediaPlayerItemConfig API
+·將MediaPlayerItemConfig API新增至UI架構
 
-包括advertisingMetadata、advertisingFactory、adSigningMode、networkConfiguration、customRangeMetadata、useHardwareDecoder、subscribeTags、adTags、thumbnailScrubber、billingMetricsConfig在内的各种功能都可以通过MediaPlayerItemConfig进行配置。 有关更多信息，请参阅 [浏览器TVSDK API](https://help.adobe.com/en_US/primetime/api/psdk/browser_tvsdk/index.html)* * [文档](https://help.adobe.com/en_US/primetime/api/psdk/browser_tvsdk/index.html).
+您可以透過MediaPlayerItemConfig設定各種功能，包括advertisingMetadata、advertisingFactory、adSigningMode、networkConfiguration、customRangeMetadata、useHardwareDecoder、subscribeTags、adTags、thumbnailScrubber、billingMetricsConfiguration。 如需詳細資訊，請參閱「 」中的AdobePSDK.MediaPlayerItemConfig檔案 [瀏覽器TVSDK API](https://help.adobe.com/en_US/primetime/api/psdk/browser_tvsdk/index.html)* * [檔案](https://help.adobe.com/en_US/primetime/api/psdk/browser_tvsdk/index.html).
 
-在UI框架中，修改了通过播放器配置传递网络配置的方式。
+在UI Framework中，已修改透過播放器設定傳遞網路設定的方式。
 
 **版本2.4.6**
 
@@ -156,217 +156,217 @@ AdobePSDK.ForceHttpsAdConfiguration类。
 
 `};`
 
-* 在UI框架中支持DRM和Analytics工作流
+* 在UI框架中支援DRM和Analytics工作流程
 
-可通过UI框架启用DRM配置和Analytics跟踪。
+DRM設定和Analytics追蹤可透過UI Framework啟用。
 
-* 添加 `AdobePSDK.embedSWFinFullScreenDiv` API
+* 新增 `AdobePSDK.embedSWFinFullScreenDiv` API
 
-此新API为播放器应用程序提供了选择div的灵活性，可将FlashFallback.swf文件嵌入到该div中。
+這個新API讓播放器應用程式能夠靈活地選取可以內嵌FlashFallback.swf檔案的div。
 
-* 已更换 `getVersion`API来自 `AdobePSDK.MediaPlayer` 类 `AdobePSDK.Version` 类。 有关详细信息，请参阅 `AdobePSDK.Version` API [此处](https://help.adobe.com/en_US/primetime/api/psdk/browser_tvsdk/AdobePSDK.Version.html).
+* 已取代 `getVersion`API來源 `AdobePSDK.MediaPlayer` 類別 `AdobePSDK.Version` 類別以取得TVSDK版本相關資訊。 如需詳細資訊，請參閱 `AdobePSDK.Version` API [此處](https://help.adobe.com/en_US/primetime/api/psdk/browser_tvsdk/AdobePSDK.Version.html).
 
 **版本2.4.6**
 
-以下功能在版本2.4.6中是新增的：
+下列是2.4.6版的新功能：
 
-* **Browserify支持**
+* **瀏覽器支援**
 
-Browserify允许您在浏览器中使用node.js样式模块。 您可以定义依赖项，并将所有内容浏览到一个JavaScript文件中。
+Browserify可讓您在瀏覽器中使用node.js樣式模組。 您可以定義相依性，且Browserify會將所有內容整合到一個JavaScript檔案中。
 
-* **帐单**
+* **帳單**
 
-借助帐单，浏览器TVSDK可以收集播放器使用量度以向Primetime客户计费。
+在計費的協助下，瀏覽器TVSDK可以收集播放器使用量度，以便對Primetime客戶計費。
 
 >[!NOTE]
 >
->已在版本2.4.6中删除Enum PSDKErrorCode中已弃用的enum MediaPlayer.Events和已弃用的常量。有关更多信息，请参阅 [从浏览器TVSDK 2.4.5转换到版本2.4.6](https://helpx.adobe.com/primetime/conversion-guides/browser-tvsdk-245-to-246-for-javascript.html).
+>Enum PSDKErrorCode中已棄用的列舉MediaPlayer.Events和已棄用的常數已在2.4.6版中移除。如需詳細資訊，請參閱 [從瀏覽器TVSDK 2.4.5轉換至2.4.6版](https://helpx.adobe.com/primetime/conversion-guides/browser-tvsdk-245-to-246-for-javascript.html).
 
 **版本2.4.5**
 
-以下功能在版本2.4.5中是新增的：
+下列是2.4.5版的新功能：
 
-* **完整事件重播和广告**
+* **完整事件重播和廣告**
 
-   HLS完整事件重播(FER)流现在支持广告解析和广告行为。 要启用此支持，请将广告信令模式设置为 `MANIFEST_CUES` 创建 `MediaPlayerItemConfig` 对象。
+   HLS完整事件重播(FER)資料流現在支援廣告解析度和廣告行為。 若要啟用此支援，請將廣告訊號模式設定為 `MANIFEST_CUES` 建立 `MediaPlayerItemConfig` 物件。
 
-* **MediaplayerView ScalePolicy支持**
+* **MediaplayerView ScalePolicy支援**
 
-   应用程序开发人员现在可以使用MediaplayerView scalePolicy属性为视图指定不同的scalePolicy。
+   應用程式開發人員現在可以使用MediaplayerView scalePolicy屬性，為檢視指定不同的scalePolicy。
 
-* **变形内容支持**
+* **變形內容支援**
 
-   现在，使用MSE和Flash播放时支持变形内容播放。
+   使用MSE和Flash播放時，現在支援變形內容播放。
 
-* **选择性应用`withCredentials`**
+* **選擇性套用`withCredentials`**
 
-When `withCredentials` 设置为true时， `Access-Control-Allow-Origin` 标头无法设置为通配符。 根据服务器的响应，浏览器TVSDK将有选择地设置 `withCredentials` 属性。 有关此支持的更多信息，请参阅 [浏览器TVSDK API文档](https://help.adobe.com/en_US/primetime/api/psdk/browser_tvsdk/index.html).
+時間 `withCredentials` 設為true，則 `Access-Control-Allow-Origin` 標頭不可設為萬用字元。 視伺服器的回應而定，瀏覽器TVSDK會選擇性地將 `withCredentials` 屬性。 如需此支援的詳細資訊，請參閱 [瀏覽器TVSDK API檔案](https://help.adobe.com/en_US/primetime/api/psdk/browser_tvsdk/index.html).
 
 **版本2.4.4**
 
-以下功能在版本2.4.4中新增：
+下列是2.4.4版的新功能：
 
-* **Chromecast示例应用程序**
+* **Chromecast範例應用程式**
 
-此版本支持发送者和接收者应用程序，该应用程序通过客户端广告插入演示了DASH VOD流和DASH Widevine流的播放。
+此發行版本支援傳送者與接收者應用程式，可示範使用者端廣告插入的DASH VOD資料流與DASH Widevine資料流的播放。
 
-* **高级故障切换支持**
+* **進階容錯移轉支援**
 
-此版本包含对HLS VOD流的高级故障切换用例（区段和服务器故障切换）的支持。
+此版本包含對HLS VOD資料流的進階容錯移轉使用案例（區段和伺服器容錯移轉）的支援。
 
 **版本2.4.3**
 
-以下功能在版本2.4.3中新增：
+下列是2.4.3版的新功能：
 
-* **短划线VOD的自定义标记**
+* **虛線VOD的自訂標籤**
 
-   内联自定义标记（事件）可作为TimedMetadata对象订阅和接收。
+   內嵌自訂標籤（事件）可以訂閱並接收為TimedMetadata物件。
 
-* **播放不带扩展的流**
+* **沒有擴充功能的資料流播放**
 
-   现在支持不带扩展的HLS和DASH流。 对于清单文件，在加载资源时需要指定resourceType。 对于区段和VTT文件，Content-Type响应标头用于确定内容类型。
+   現在支援不含擴充功能的HLS和DASH資料流。 對於資訊清單檔案，載入資源時需要指定resourceType。 對於區段和VTT檔案，系統會使用Content-Type回應標頭來決定內容型別。
 
 **版本2.4.2**
 
-以下功能在版本2.4.2中新增：
+下列是2.4.2版的新功能：
 
-* **API奇偶校验**
+* **API同位檢查**
 
-有关API奇偶校验的完整列表，请参阅 [适用于1.4 DHLS的TVSDK到浏览器TVSDK 2.4迁移指南](https://helpx.adobe.com/primetime/migration-guides/tvsdk-14-dhls-browser-tvsdk-24.html).
+如需API同位檢查的完整清單，請參閱 [TVSDK for 1.4 DHLS至瀏覽器TVSDK 2.4移轉指南](https://helpx.adobe.com/primetime/migration-guides/tvsdk-14-dhls-browser-tvsdk-24.html).
 
-* **Sample-AES支持**
+* **Sample-AES支援**
 
-   此版本增加了对MSE和Flash回退上Sample-AES加密内容播放的支持。 删除了在Google Chrome上通过安全源托管AES内容的要求。
+   此版本新增對MSE和Flash遞補上的Sample-AES加密內容播放的支援。 已移除在Google Chrome上透過安全來源託管AES內容的要求。
 
-* **支持AAC容器**
+* **支援AAC容器**
 
-   现在支持播放扩展名为.aac的文件。 这可以是纯音频流或替代音频。
+   現在支援以.aac副檔名播放檔案。 這可以是純音訊串流或替代音訊。
 
    >[!NOTE]
    >
-   >尚不支持AC3和增强的AC3编解码器。
+   >尚不支援AC3和增強型AC3轉碼器。
 
-* **标记化流播放**
+* **標籤化的資料流播放**
 
-通过内容交付网络(CDN)交付的HLS流有时可能会在清单和区段请求中使用身份验证令牌进行验证，并且这些令牌可以作为URL参数或Cookie标头提供。 现在支持播放此类流。
+透過內容傳遞網路(CDN)傳遞的HLS資料流有時可以使用資訊清單和區段請求上的驗證權杖進行驗證，這些權杖可以作為URL引數或Cookie標頭提供。 現在支援播放這類串流。
 
 **版本2.4.1**
 
-以下功能在版本2.4.1中新增：
+下列是2.4.1版的新功能：
 
 * **UI框架**
 
-此框架旨在加快基于JavaScript的视频播放器应用程序的UI开发，由API组成，这些API用于包含播放/暂停和音量等基本控件，以及用于轻松添加或删除元素（如推移栏状态和隐藏式字幕设置）。 您可以指定与控件关联的行为、创建自定义控件，以及为播放器UI设置外观。 这一切都通过框架实现，无需直接操作DOM结构。
+此架構旨在加速JavaScript型視訊播放器應用程式的UI開發，包含的API可包含播放/暫停和音量等基本控制項，以及可輕鬆新增或移除推移列狀態和隱藏式字幕設定等元素。 您可以指定與控制項相關聯的行為、建立自訂控制項，並讓播放器UI具有外觀。 這都是透過框架進行的，不需要直接操控DOM結構。
 
-* **实时流的HLS播放增强功能**
+* **即時資料流的HLS播放增強功能**
 
-此版本支持由广告插入引起的不连续。 它使用EXT-PROGRAM-DATE-TIME标记，后跟EXT-MEDIA-SEQUENCE标记，在自适应比特率配置文件中进行同步，以便顺利播放。
+此版本支援廣告插入所導致的不連續性。 它會使用EXT-PROGRAM-DATE-TIME標籤，後面接著EXT-MEDIA-SEQUENCE標籤，以跨最適化位元速率設定檔進行同步，以便順利播放。
 
-* **VPAID 2.0支持**
+* **VPAID 2.0支援**
 
-视频播放器广告服务界面定义(VPAID)版本2.0为用户提供了丰富的媒体体验，并允许发布者更好地定位广告、跟踪广告展示次数，以及从视频内容中盈利。 此版本支持用于视频点播(VOD)内容的线性JavaScript VPAID广告。
+影片播放器廣告服務介面定義(VPAID) 2.0版為使用者提供豐富的媒體體驗，並可讓發佈者更妥善地鎖定廣告、追蹤廣告印象，以及從影片內容獲利。 此版本支援線性JavaScript VPAID廣告隨選影片(VOD)內容。
 
-* **自定义HLS标记**
+* **自訂HLS標籤**
 
-媒体流可以在播放列表/清单文件中以标记形式携带其他元数据。 浏览器TVSDK允许您指定和订阅其他标记，并在清单中显示这些标记时收到通知。
+媒體串流可以播放清單/資訊清單檔案中的標籤形式攜帶其他中繼資料。 瀏覽器TVSDK可讓您指定及訂閱其他標籤，並在這些標籤出現在資訊清單中時收到通知。
 
-* **播放器时间轴上显示的广告标记**
+* **在播放器時間軸上顯示的廣告標籤**
 
-此版本支持在播放器时间轴上为VOD和实时内容显示广告标记。 您可以在引用播放器中看到此行为。
+此版本支援在播放器時間軸上為VOD和即時內容顯示廣告標籤。 您可以在參考播放器中看到此行為。
 
-**在2.4中受支持**
+**2.4支援**
 
-版本2.4中提供了以下功能：
+2.4版提供下列功能：
 
-* **MP3音频播放**
+* **MP3音訊播放**
 
-   此版本支持在具有媒体源扩展(MSE)和Safari视频标记的浏览器上播放MP3音频。
+   此版本支援瀏覽器上使用Media Source Extensions (MSE)和Safari視訊標籤播放MP3音訊。
 
-* **MP4视频播放**
+* **MP4視訊播放**
 
-   支持以下功能：
+   支援下列功能：
 
-   * 单个流播放
-   * 具有广告行为和跟踪的前置和后置MP4广告
-   * 具有广告行为和跟踪的前置和后置HLS广告
-   * 具有广告行为和跟踪的前置和后置短划线广告
+   * 單一資料流播放
+   * 具有廣告行為和追蹤的前置和後置MP4廣告
+   * 具有廣告行為和追蹤的前置和後置HLS廣告
+   * 具有廣告行為和追蹤的前段和後段虛線廣告
 
-## 支持的平台 {#supported-platforms}
+## 支援的平台 {#supported-platforms}
 
-浏览器TVSDK对于需要运行的平台和软件级别有特定要求。 支持以下平台和软件级别：
+瀏覽器TVSDK對其需要執行的平台和軟體層級有特定需求。 支援的平台和軟體層級如下：
 
-### 桌面配置 {#desktop-configurations}
+### 桌上型電腦設定 {#desktop-configurations}
 
-* Microsoft Windows 7:
+* Microsoft Windows 7：
 
    * Internet Explorer 11+
-   * 铬33+
+   * Chrome 33+
    * Firefox 38+
 
 * Microsoft Windows 8.1
 
    * Internet Explorer 11+
-   * 铬33+
+   * Chrome 33+
    * Firefox 38+
 
 * Microsoft Windows 10
 
    * Edge+
 
-* Apple OS X
+* APPLE OS X
 
-   * Safari 9及以上版本
-   * 铬33+
+   * Safari 9+
+   * Chrome 33+
    * Firefox 38+
 
-### 移动Web配置 {#mobile-web-configurations}
+### 行動網站設定 {#mobile-web-configurations}
 
 * Android 4.4
 
-   * 本机浏览器
-   * 铬33+
+   * 原生瀏覽器
+   * Chrome 33+
 
 * Android 5.0
 
-   * 本机浏览器
-   * 铬33+
+   * 原生瀏覽器
+   * Chrome 33+
 
 * Android 6.0
 
-   * ·铬33+
+   * · Chrome 33+
 
-* AppleiOS9
+* APPLE IOS 9
 
-   * Safari 9及以上版本
-   * 铬33+
+   * Safari 9+
+   * Chrome 33+
 
-* AppleiOS10
+* Apple iOS 10
 
-   * Safari 9及以上版本
-   * 铬33+
+   * Safari 9+
+   * Chrome 33+
 
-**Google Chromecast(第二代；（仅限短划线播放）**
+**Google Chromecast （第二代；僅適用於DASH播放）**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><p><strong>技术</strong> </p> </td> 
-   <td><p><strong>浏览器TVSDK视频标记</strong><sup>1</sup></p> </td> 
-   <td><p><strong>浏览器TVSDK MSE</strong></p> </td> 
+   <td><p><strong>技術</strong> </p> </td> 
+   <td><p><strong>瀏覽器TVSDK影片標籤</strong><sup>1</sup></p> </td> 
+   <td><p><strong>瀏覽器TVSDK MSE</strong></p> </td> 
    <td><p><strong>Flash</strong></p> </td> 
-   <td><p><strong>默认技术</strong></p> </td> 
+   <td><p><strong>預設技術</strong></p> </td> 
   </tr> 
   <tr> 
    <td><p>iOS</p> </td> 
    <td><p>MP4和HLS</p> </td> 
    <td><p>-</p> </td> 
    <td><p>-</p> </td> 
-   <td><p>视频标记</p> </td> 
+   <td><p>影片標籤</p> </td> 
   </tr> 
   <tr> 
    <td><p>Android</p> </td> 
    <td><p>MP4</p> </td> 
-   <td><p>HLS和DASH</p> </td> 
+   <td><p>HLS和虛線</p> </td> 
    <td><p>-</p> </td> 
    <td><p>MSE</p> </td> 
   </tr> 
@@ -375,19 +375,19 @@ When `withCredentials` 设置为true时， `Access-Control-Allow-Origin` 标头�
    <td><p>MP4和HLS</p> </td> 
    <td><p>-</p> </td> 
    <td><p>MP4和HLS</p> </td> 
-   <td><p>视频标记</p> </td> 
+   <td><p>影片標籤</p> </td> 
   </tr> 
   <tr> 
    <td><p>Google Chrome</p> </td> 
    <td><p>MP4</p> </td> 
-   <td><p>HLS和DASH</p> </td> 
+   <td><p>HLS和虛線</p> </td> 
    <td><p>MP4和HLS</p> </td> 
    <td><p>MSE</p> </td> 
   </tr> 
   <tr> 
    <td><p>Mozilla Firefox</p> </td> 
    <td><p>MP4</p> </td> 
-   <td><p>HLS和DASH</p> </td> 
+   <td><p>HLS和虛線</p> </td> 
    <td><p>MP4和HLS</p> </td> 
    <td><p>MSE<sup>2</sup></p> </td> 
   </tr> 
@@ -401,112 +401,112 @@ When `withCredentials` 设置为true时， `Access-Control-Allow-Origin` 标头�
   <tr> 
    <td><p>Internet Explorer 11</p> <p>(Windows 8.1)</p> </td> 
    <td><p>MP4</p> </td> 
-   <td><p>HLS、达什</p> </td> 
+   <td><p>HLS、虛線</p> </td> 
    <td><p>MP4和HLS</p> </td> 
    <td><p>MSE</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-## 特征矩阵 {#feature-matrix}
+## 功能矩陣 {#feature-matrix}
 
-以下是此版本支持和不支持的功能列表：
+以下是此版本支援和不支援的功能的清單：
 
-* *MP3音频功能 — 核心播放*
-* *MP4视频功能 — 核心播放*
-* *MP4视频功能 — 核心Ad Insertion*
+* *MP3音訊功能 — 核心播放*
+* *MP4視訊功能 — 核心播放*
+* *MP4視訊功能 — 核心Ad Insertion*
 
 >[!NOTE]
 >
->*在以下功能矩阵表中，“Y”表示当前版本支持该功能。*
+>*在下方的功能矩陣表格中，「Y」表示目前版本支援該功能。*
 
-### MP3音频功能 {#mp-audio-features}
+### MP3音訊功能 {#mp-audio-features}
 
-**表1:核心播放{#table-core-playback}**
+**表1：核心播放{#table-core-playback}**
 
-| 类别 | 内容类型 | 功能 | Flash | HTML5:FF、IE、Chrome、Android Chrome | HTML5:Safari、iOS Safari |
+| 類別 | 內容型別 | 功能 | Flash | HTML5：FF、IE、Chrome、Android Chrome | HTML5： Safari、iOS Safari |
 |--- |--- |--- |--- |--- |--- |
-| 播放 | MP3 VOD | 常规播放（播放、暂停、搜寻） | 不受支持 | Y | Y |
+| 播放 | MP3 VOD | 一般播放（播放、暫停、搜尋） | 不支援 | Y | Y |
 
-1浏览器TVSDK视频标记不支持流和DRM。 在所有浏览器中，编解码器和容器支持并不相同。
+1瀏覽器TVSDK視訊標籤不支援串流和DRM。 並非所有瀏覽器的轉碼器和容器支援都相同。
 
-2对于版本41或更低版本，Firefox默认为Flash Player。
+2 Firefox 41版或更舊版本的預設值為Flash Player。
 
-### MP4音频功能 {#mp-audio-features-1}
+### MP4音訊功能 {#mp-audio-features-1}
 
-**表2:核心播放**
+**表2：核心播放**
 
-| 类别 | 内容类型 | 功能 | Flash | HTML5:FF、IE、Chrome、Android Chrome | HTML5:Safari、iOS Safari |
+| 類別 | 內容型別 | 功能 | Flash | HTML5：FF、IE、Chrome、Android Chrome | HTML5： Safari、iOS Safari |
 |--- |--- |--- |--- |--- |--- |
-| 播放 | MP4 VOD | 常规播放（播放、暂停、搜寻） | 不受支持 | Y | Y |
+| 播放 | MP4 VOD | 一般播放（播放、暫停、搜尋） | 不支援 | Y | Y |
 
-**表3:核心Ad Insertion**
+**表3：核心Ad Insertion**
 
-| 类别 | 内容类型 | 功能 | Flash | HTML5:FF、IE、Chrome、Android Chrome | HTML5:Safari、iOS Safari |
+| 類別 | 內容型別 | 功能 | Flash | HTML5：FF、IE、Chrome、Android Chrome | HTML5： Safari、iOS Safari |
 |--- |--- |--- |--- |--- |--- |
-| Ad Insertion | MP4 VOD | 前置(MP4) | 不受支持 | Y | Y |
-| Ad Insertion | MP4 VOD | 后置(MP4) | 不受支持 | Y | Y |
+| Ad Insertion | MP4 VOD | 前置滾動(MP4) | 不支援 | Y | Y |
+| Ad Insertion | MP4 VOD | 後置滾動(MP4) | 不支援 | Y | Y |
 
-有关HLS或DASH功能支持的更多信息，请参阅下文。
+如需HLS或DASH功能支援的詳細資訊，請參閱下文。
 
-## HLS功能矩阵 {#hls-feature-matrix}
+## HLS功能矩陣 {#hls-feature-matrix}
 
-以下是浏览器TVSDK中HLS功能的功能矩阵。
+以下是瀏覽器TVSDK中HLS功能的功能對照表。
 
 * *HLS核心播放*
-* *HLS高级播放功能*
-* *HLS内容保护功能*
-* *HLS核心广告插入功能*
-* *HLS高级广告插入功能*
-* *HLS集成*
+* *HLS進階播放功能*
+* *HLS內容保護功能*
+* *HLS核心廣告插入功能*
+* *HLS進階廣告插入功能*
+* *HLS整合*
 
 >[!NOTE]
 >
->*在以下功能矩阵表中，“Y”表示当前版本支持该功能。*
+>*在下方的功能矩陣表格中，「Y」表示目前版本支援該功能。*
 
 ### HLS功能 {#hls-features}
 
-支持以下功能：
+支援下列功能：
 
-**表4:HLS核心播放**
+**表4： HLS核心播放**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><p><strong>类别</strong></p> </td> 
-   <td><p><strong>内容类型</strong></p> </td> 
+   <td><p><strong>類別</strong></p> </td> 
+   <td><p><strong>內容型別</strong></p> </td> 
    <td><p><strong>功能</strong></p> </td> 
    <td><p><strong>Flash</strong></p> </td> 
-   <td><p><strong>HTML5:FF、IE、Chrome、Android Chrome</strong></p> </td> 
-   <td><p><strong>HTML5:Safari、iOS Safari</strong></p> </td> 
+   <td><p><strong>HTML5：FF、IE、Chrome、Android Chrome</strong></p> </td> 
+   <td><p><strong>HTML5： Safari、iOS Safari</strong></p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>常规播放（播放、暂停、搜寻）</p> </td> 
-   <td><p><strong> </strong></p> <p>Y</p> </td> 
-   <td><p><strong> </strong></p> <p>Y</p> </td> 
-   <td><p><strong> </strong></p> <p>Y</p> </td> 
-  </tr> 
-  <tr> 
-   <td><p>播放</p> </td> 
-   <td><p>层VOD</p> </td> 
-   <td><p>常规播放（播放、暂停和搜寻）</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>一般播放（播放、暫停、搜尋）</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>自适应比特率</p> </td> 
+   <td><p>FER VOD</p> </td> 
+   <td><p>一般播放（播放、暫停和搜尋）</p> </td> 
+   <td><p><strong> </strong></p> <p>Y</p> </td> 
+   <td><p><strong> </strong></p> <p>Y</p> </td> 
+   <td><p><strong> </strong></p> <p>Y</p> </td> 
+  </tr> 
+  <tr> 
+   <td><p>播放</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>最適化位元速率</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
+   <td><p>VOD +即時</p> </td> 
    <td><p>608/708字幕</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
@@ -514,80 +514,80 @@ When `withCredentials` 设置为true时， `Access-Control-Allow-Origin` 标头�
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
+   <td><p>VOD +即時</p> </td> 
    <td><p>WebVTT</p> </td> 
    <td><p>Y</p> </td> 
-   <td><p>仅VOD</p> </td> 
-   <td><p>仅VOD</p> </td> 
+   <td><p>僅限VOD</p> </td> 
+   <td><p>僅限VOD</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>清单故障转移</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>資訊清單容錯移轉</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>高级故障切换</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>進階容錯移轉</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>平台限制</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
+   <td><p>VOD +即時</p> </td> 
    <td><p>QoS和播放器通知</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
-   <td><p>有限的QoS支持</p> </td> 
+   <td><p>有限的QoS支援</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>支持Cookie标头</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>支援Cookie標頭</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>平台限制</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>设置缓冲控制参数</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>設定緩衝區控制引數</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
    <td><p>平台限制</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>设置自适应</p> <p>比特率控制</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>設定最適化</p> <p>位元速率控制項</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>平台限制</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>自定义标记</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>自訂標籤</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>平台限制</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td>延迟绑定音频</td> 
+   <td><p>VOD +即時</p> </td> 
+   <td>延遲繫結音訊</td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>平台限制</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>302重定向</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>302重新導向</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>平台限制</p> </td> 
@@ -595,30 +595,22 @@ When `withCredentials` 设置为true时， `Access-Control-Allow-Origin` 标头�
  </tbody> 
 </table>
 
-**表5:HLS高级播放功能**
+**表5：HLS進階播放功能**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><p><strong>类别</strong></p> </td> 
-   <td><p><strong>内容类型</strong></p> </td> 
+   <td><p><strong>類別</strong></p> </td> 
+   <td><p><strong>內容型別</strong></p> </td> 
    <td><p><strong>功能</strong></p> </td> 
    <td><p><strong>Flash</strong></p> </td> 
-   <td><p><strong>HTML5:FF、IE、Chrome、Android Chrome</strong></p> </td> 
-   <td><p><strong>HTML5:Safari、iOS Safari</strong></p> </td> 
+   <td><p><strong>HTML5：FF、IE、Chrome、Android Chrome</strong></p> </td> 
+   <td><p><strong>HTML5： Safari、iOS Safari</strong></p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
    <td><p>VOD</p> </td> 
-   <td><p>偏移时播放</p> </td> 
-   <td><p>Y</p> </td> 
-   <td><p>Y</p> </td> 
-   <td><p>Y</p> </td> 
-  </tr> 
-  <tr> 
-   <td><p>播放</p> </td> 
-   <td><p>VOD</p> </td> 
-   <td><p>纯音频播放</p> </td> 
+   <td><p>在位移處播放</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
@@ -626,7 +618,7 @@ When `withCredentials` 设置为true时， `Access-Control-Allow-Origin` 标头�
   <tr> 
    <td><p>播放</p> </td> 
    <td><p>VOD</p> </td> 
-   <td><p>技巧游戏</p> </td> 
+   <td><p>純音訊播放</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
@@ -634,39 +626,47 @@ When `withCredentials` 设置为true时， `Access-Control-Allow-Origin` 标头�
   <tr> 
    <td><p>播放</p> </td> 
    <td><p>VOD</p> </td> 
-   <td><p>平滑技巧游戏</p> </td> 
+   <td><p>特技播放</p> </td> 
+   <td><p>Y</p> </td> 
+   <td><p>Y</p> </td> 
+   <td><p>Y</p> </td> 
+  </tr> 
+  <tr> 
+   <td><p>播放</p> </td> 
+   <td><p>VOD</p> </td> 
+   <td><p>Smooth Trick Play</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>平台限制</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>ID3解析</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>ID3剖析</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>不连续标记支持</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>不連續標籤支援</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>标记化流</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>代碼化的串流</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>平台限制</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>帐单</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>帳單</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
@@ -674,69 +674,69 @@ When `withCredentials` 设置为true时， `Access-Control-Allow-Origin` 标头�
  </tbody> 
 </table>
 
-**表6:HLS内容保护功能**
+**表6：HLS內容保護功能**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><p><strong>类别</strong></p> </td> 
-   <td><p><strong>内容类型</strong></p> </td> 
+   <td><p><strong>類別</strong></p> </td> 
+   <td><p><strong>內容型別</strong></p> </td> 
    <td><p><strong>功能</strong></p> </td> 
    <td><p><strong>Flash</strong></p> </td> 
-   <td><p><strong>HTML5:FF、IE、Chrome、Android Chrome</strong></p> </td> 
-   <td><p><strong>HTML5:Safari、iOS Safari</strong></p> </td> 
+   <td><p><strong>HTML5：FF、IE、Chrome、Android Chrome</strong></p> </td> 
+   <td><p><strong>HTML5： Safari、iOS Safari</strong></p> </td> 
   </tr> 
   <tr> 
-   <td><p>内容保护</p> </td> 
-   <td><p>VOD +实时</p> </td> 
+   <td><p>內容保護</p> </td> 
+   <td><p>VOD +即時</p> </td> 
    <td><p>AES-128</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
   </tr> 
   <tr> 
-   <td><p>内容保护</p> </td> 
-   <td><p>VOD +实时</p> </td> 
+   <td><p>內容保護</p> </td> 
+   <td><p>VOD +即時</p> </td> 
    <td><p>Sample-AES</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
-   <td><p>内容保护</p> </td> 
+   <td><p>內容保護</p> </td> 
    <td><p>VOD</p> </td> 
    <td><p>DRM</p> </td> 
-   <td><p>Adobe访问</p> </td> 
-   <td><p>不受支持</p> </td> 
-   <td><p>FairPlay</p> </td> 
+   <td><p>Adobe存取</p> </td> 
+   <td><p>不支援</p> </td> 
+   <td><p>Fairplay</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-**表7:HLS核心广告插入功能**
+**表7： HLS核心廣告插入功能**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><p><strong>类别</strong></p> </td> 
-   <td><p><strong>内容类型</strong></p> </td> 
+   <td><p><strong>類別</strong></p> </td> 
+   <td><p><strong>內容型別</strong></p> </td> 
    <td><p><strong>功能</strong></p> </td> 
    <td><p><strong>Flash</strong></p> </td> 
-   <td><p><strong>HTML5:FF、IE、Chrome、Android Chrome</strong></p> </td> 
-   <td><p><strong>HTML5:Safari、iOS Safari</strong></p> </td> 
+   <td><p><strong>HTML5：FF、IE、Chrome、Android Chrome</strong></p> </td> 
+   <td><p><strong>HTML5： Safari、iOS Safari</strong></p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>前置(MP4/HLS)</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>前置滾動(MP4/HLS)</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>中置(HLS)</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>中間滾動(HLS)</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>平台限制</p> </td> 
@@ -744,30 +744,30 @@ When `withCredentials` 设置为true时， `Access-Control-Allow-Origin` 标头�
   <tr> 
    <td><p>Ad Insertion</p> </td> 
    <td><p>VOD</p> </td> 
-   <td><p>后置(MP4/HLS)</p> </td> 
+   <td><p>後置滾動(MP4/HLS)</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>层VOD</p> </td> 
-   <td><p>广告分辨率和行为</p> </td> 
+   <td><p>FER VOD</p> </td> 
+   <td><p>廣告解析度和行為</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>平台限制</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>默认广告策略</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>預設廣告原則</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>平台限制</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
+   <td><p>VOD +即時</p> </td> 
    <td><p>VAST 2.0/3.0</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
@@ -775,7 +775,7 @@ When `withCredentials` 设置为true时， `Access-Control-Allow-Origin` 标头�
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
+   <td><p>VOD +即時</p> </td> 
    <td><p>VMAP 1.0</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
@@ -783,8 +783,8 @@ When `withCredentials` 设置为true时， `Access-Control-Allow-Origin` 标头�
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>创意重新打包（MP4到HLS）</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>創意重新封裝（MP4到HLS）</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
@@ -792,62 +792,62 @@ When `withCredentials` 设置为true时， `Access-Control-Allow-Origin` 标头�
  </tbody> 
 </table>
 
-**表8:HLS高级广告插入功能**
+**表8：HLS進階廣告插入功能**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><p><strong>类别</strong></p> </td> 
-   <td><p><strong>内容类型</strong></p> </td> 
+   <td><p><strong>類別</strong></p> </td> 
+   <td><p><strong>內容型別</strong></p> </td> 
    <td><p><strong>功能</strong></p> </td> 
    <td><p><strong>Flash</strong></p> </td> 
-   <td><p><strong>HTML5:FF、IE、Chrome、Android Chrome</strong></p> </td> 
-   <td><p><strong>HTML5:Safari、iOS Safari</strong></p> </td> 
+   <td><p><strong>HTML5：FF、IE、Chrome、Android Chrome</strong></p> </td> 
+   <td><p><strong>HTML5： Safari、iOS Safari</strong></p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
    <td><p>VOD</p> </td> 
-   <td><p>仅限广告</p> </td> 
-   <td><p>不受支持</p> </td> 
+   <td><p>僅限廣告</p> </td> 
+   <td><p>不支援</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>定位参数</p> </td> 
-   <td><p>Y</p> </td> 
-   <td><p>Y</p> </td> 
-   <td><p>Y</p> </td> 
-  </tr> 
-  <tr> 
-   <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>自定义参数</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>目標定位引數</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>自定义广告策略</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>自訂引數</p> </td> 
+   <td><p>Y</p> </td> 
+   <td><p>Y</p> </td> 
+   <td><p>Y</p> </td> 
+  </tr> 
+  <tr> 
+   <td><p>Ad Insertion</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>自訂廣告原則</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>Y</p> </td> 
    <td><p>平台限制</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>延迟广告加载</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>延遲廣告載入</p> </td> 
    <td><p>Y</p> </td> 
-   <td><p>不受支持</p> </td> 
+   <td><p>不支援</p> </td> 
    <td><p>平台限制</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
    <td><p>VOD</p> </td> 
-   <td><p>伴随广告、横幅广告、可点击广告</p> </td> 
+   <td><p>隨附廣告、橫幅廣告、可點按廣告</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
@@ -863,22 +863,22 @@ When `withCredentials` 设置为true时， `Access-Control-Allow-Origin` 标头�
  </tbody> 
 </table>
 
-**表9:HLS集成{#table-hls-integrations}**
+**表9：HLS整合{#table-hls-integrations}**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><p><strong>类别</strong></p> </td> 
-   <td><p><strong>内容类型</strong></p> </td> 
+   <td><p><strong>類別</strong></p> </td> 
+   <td><p><strong>內容型別</strong></p> </td> 
    <td><p><strong>功能</strong></p> </td> 
    <td><p><strong>Flash</strong></p> </td> 
-   <td><p><strong>HTML5:FF、IE、Chrome、Android Chrome</strong></p> </td> 
-   <td><p><strong>HTML5:Safari、iOS Safari</strong></p> </td> 
+   <td><p><strong>HTML5：FF、IE、Chrome、Android Chrome</strong></p> </td> 
+   <td><p><strong>HTML5： Safari、iOS Safari</strong></p> </td> 
   </tr> 
   <tr> 
-   <td><p>集成</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>Adobe Analytics VHL集成</p> </td> 
+   <td><p>整合</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>Adobe Analytics VHL整合</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
@@ -886,845 +886,845 @@ When `withCredentials` 设置为true时， `Access-Control-Allow-Origin` 标头�
  </tbody> 
 </table>
 
-## 短划线特征矩阵 {#dash-feature-matrix}
+## 虛線特徵矩陣 {#dash-feature-matrix}
 
-以下是浏览器TVSDK中DASH功能的功能矩阵。
+以下是瀏覽器TVSDK中DASH功能的功能矩陣。
 
-· *短划线核心播放功能*
+· *虛線核心播放功能*
 
-· *短划线高级播放功能*
+· *DASH進階播放功能*
 
-· *短划线内容保护功能*
+· *DASH內容保護功能*
 
-· *短划线核心广告插入功能*
+· *DASH Core廣告插入功能*
 
-· *短划线高级广告插入功能*
+· *DASH進階廣告插入功能*
 
-· *DASH集成*
+· *DASH整合*
 
 >[!NOTE]
 >
->在以下功能矩阵表中，Y表示当前版本支持该功能。
+>在下方的功能矩陣表格中，Y表示目前版本支援該功能。
 
-### 短划线特征 {#dash-features}
+### 虛線特徵 {#dash-features}
 
-支持以下功能：
+支援下列功能：
 
-**表10:短划线核心播放功能**
+**表10：虛線核心播放功能**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><p><strong>类别</strong></p> </td> 
-   <td><p><strong>内容类型</strong></p> </td> 
+   <td><p><strong>類別</strong></p> </td> 
+   <td><p><strong>內容型別</strong></p> </td> 
    <td><p><strong>功能</strong></p> </td> 
    <td><p><strong>HTML5 FF、IE、Chrome、Android Chrome</strong></p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>常规播放（播放、暂停、搜寻）</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>一般播放（播放、暫停、搜尋）</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>层VOD</p> </td> 
-   <td><p>常规播放（播放、暂停和搜寻）</p> </td> 
-   <td><p>不受支持</p> </td> 
+   <td><p>FER VOD</p> </td> 
+   <td><p>一般播放（播放、暫停和搜尋）</p> </td> 
+   <td><p>不支援</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>自适应比特率</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>最適化位元速率</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
+   <td><p>VOD +即時</p> </td> 
    <td><p>608/708字幕</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
+   <td><p>VOD +即時</p> </td> 
    <td><p>WebVTT</p> </td> 
-   <td><p>仅VOD</p> </td> 
+   <td><p>僅限VOD</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>故障转移</p> </td> 
-   <td><p>仅VOD</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>容錯移轉</p> </td> 
+   <td><p>僅限VOD</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
+   <td><p>VOD +即時</p> </td> 
    <td><p>QoS和播放器通知</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>支持Cookie标头</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>支援Cookie標頭</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>设置缓冲控制参数</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>設定緩衝區控制引數</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>设置自适应比特率控制</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>設定最適化位元速率控制項</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>自定义标记(EventStream)</p> </td> 
-   <td><p>仅限VOD（内联）</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>自訂標籤(EventStream)</p> </td> 
+   <td><p>僅限VOD （內嵌）</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>后期音频</p> </td> 
-   <td><p>仅VOD</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>延遲的音訊</p> </td> 
+   <td><p>僅限VOD</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>302重定向</p> </td> 
-   <td><p>仅VOD</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>302重新導向</p> </td> 
+   <td><p>僅限VOD</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-**表11:短划线高级播放功能**
+**表11：虛線進階播放功能**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><p><strong>类别</strong></p> </td> 
-   <td><p><strong>内容类型</strong></p> </td> 
+   <td><p><strong>類別</strong></p> </td> 
+   <td><p><strong>內容型別</strong></p> </td> 
    <td><p><strong>功能</strong></p> </td> 
    <td><strong>HTML5 FF、IE、Chrome、Android Chrome</strong></td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
    <td><p>VOD</p> </td> 
-   <td><p>偏移时播放</p> </td> 
+   <td><p>在位移處播放</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
    <td><p>VOD</p> </td> 
-   <td><p>纯音频播放</p> </td> 
+   <td><p>純音訊播放</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
    <td><p>VOD</p> </td> 
-   <td><p>戏法游戏</p> </td> 
+   <td><p>特技播放</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
    <td><p>VOD</p> </td> 
-   <td><p>平滑技巧游戏</p> </td> 
+   <td><p>Smooth Trick Play</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>ID3解析</p> </td> 
-   <td><p>不受支持</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>ID3剖析</p> </td> 
+   <td><p>不支援</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>多期支持</p> </td> 
-   <td><p>仅VOD</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>多期間支援</p> </td> 
+   <td><p>僅限VOD</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>标记化流</p> </td> 
-   <td><p>不受支持</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>代碼化的串流</p> </td> 
+   <td><p>不支援</p> </td> 
   </tr> 
   <tr> 
    <td><p>播放</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>帐单</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>帳單</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-**表12:短划线内容保护功能**
+**表12：DASH內容保護功能**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><p><strong>类别</strong></p> </td> 
-   <td><p><strong>内容类型</strong></p> </td> 
+   <td><p><strong>類別</strong></p> </td> 
+   <td><p><strong>內容型別</strong></p> </td> 
    <td><p><strong>功能</strong></p> </td> 
    <td><p><strong>HTML5 FF、IE、Chrome、Android Chrome</strong></p> </td> 
   </tr> 
   <tr> 
-   <td><p>内容保护</p> </td> 
-   <td><p>VOD +实时</p> </td> 
+   <td><p>內容保護</p> </td> 
+   <td><p>VOD +即時</p> </td> 
    <td><p>AES-128</p> </td> 
-   <td><p>不受支持</p> </td> 
+   <td><p>不支援</p> </td> 
   </tr> 
   <tr> 
-   <td><p>内容保护</p> </td> 
-   <td><p>VOD +实时</p> </td> 
+   <td><p>內容保護</p> </td> 
+   <td><p>VOD +即時</p> </td> 
    <td><p>Sample-AES</p> </td> 
-   <td><p>不受支持</p> </td> 
+   <td><p>不支援</p> </td> 
   </tr> 
   <tr> 
-   <td><p>内容保护</p> </td> 
+   <td><p>內容保護</p> </td> 
    <td><p>VOD</p> </td> 
    <td><p>DRM</p> </td> 
-   <td><p>·在Chrome、Firefox 47及更高版本以及Chromecast中使用Widevine</p> <p>·在Windows 8.1和Edge上的Internet Explorer上播放就绪</p> <p>·适用于Windows Firefox的Primetime DRM（仅限视频）</p> </td> 
+   <td><p>· Chrome、Firefox 47和更新版本以及Chromecast上的Widevine</p> <p>· Windows 8.1和Edge上的Internet Explorer上的PlayReady</p> <p>· Windows Firefox適用的Primetime DRM （僅限影片）</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-**表13:短划线核心广告插入功能**
+**表13：DASH Core廣告插入功能**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><p><strong>类别</strong></p> </td> 
-   <td><p><strong>内容类型</strong></p> </td> 
+   <td><p><strong>類別</strong></p> </td> 
+   <td><p><strong>內容型別</strong></p> </td> 
    <td><p><strong>功能</strong></p> </td> 
    <td><p><strong>HTML5 FF、IE、Chrome、Android Chrome</strong></p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>前置（MP4/短划线）</p> </td> 
-   <td><p>仅VOD</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>前段廣告（MP4/虛線）</p> </td> 
+   <td><p>僅限VOD</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>中置（短划线）</p> </td> 
-   <td><p>仅VOD</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>中間滾動（虛線）</p> </td> 
+   <td><p>僅限VOD</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
    <td><p>VOD</p> </td> 
-   <td><p>后置（MP4/短划线）</p> </td> 
+   <td><p>後置式（MP4/虛線）</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>层VOD</p> </td> 
-   <td><p>广告分辨率和行为</p> </td> 
-   <td><p>不受支持</p> </td> 
+   <td><p>FER VOD</p> </td> 
+   <td><p>廣告解析度和行為</p> </td> 
+   <td><p>不支援</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>默认广告策略</p> </td> 
-   <td><p>仅VOD</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>預設廣告原則</p> </td> 
+   <td><p>僅限VOD</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
+   <td><p>VOD +即時</p> </td> 
    <td><p>VAST 2.0/3.0</p> </td> 
-   <td><p>仅VOD</p> </td> 
+   <td><p>僅限VOD</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
+   <td><p>VOD +即時</p> </td> 
    <td><p>VMAP 1.0</p> </td> 
-   <td><p>仅VOD</p> </td> 
+   <td><p>僅限VOD</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>创意重新打包（MP4到短划线）</p> </td> 
-   <td><p>不支持</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>創意重新封裝（MP4至DASH）</p> </td> 
+   <td><p>不支援</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-**表14:短划线高级广告插入功能**
+**表14：DASH進階廣告插入功能**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><p><strong>类别</strong></p> </td> 
-   <td><p><strong>内容类型</strong></p> </td> 
+   <td><p><strong>類別</strong></p> </td> 
+   <td><p><strong>內容型別</strong></p> </td> 
    <td><p><strong>功能</strong></p> </td> 
    <td><p><strong>HTML5</strong> FF、IE、Chrome、Android Chrome</strong></p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
    <td><p>VOD</p> </td> 
-   <td><p>仅限广告</p> </td> 
+   <td><p>僅限廣告</p> </td> 
    <td><p>Y</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
    <td><p>VOD</p> </td> 
-   <td><p>定位参数</p> </td> 
-   <td><p>仅VOD</p> </td> 
+   <td><p>目標定位引數</p> </td> 
+   <td><p>僅限VOD</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
    <td><p>VOD</p> </td> 
-   <td><p>自定义参数</p> </td> 
-   <td><p>仅VOD</p> </td> 
+   <td><p>自訂引數</p> </td> 
+   <td><p>僅限VOD</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>自定义广告策略</p> </td> 
-   <td><p>不受支持</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>自訂廣告原則</p> </td> 
+   <td><p>不支援</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>延迟广告加载</p> </td> 
-   <td><p>不受支持</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>延遲廣告載入</p> </td> 
+   <td><p>不支援</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
    <td><p>VOD</p> </td> 
-   <td><p>伴随广告、横幅广告、可点击广告</p> </td> 
-   <td><p>不受支持</p> </td> 
+   <td><p>隨附廣告、橫幅廣告、可點按廣告</p> </td> 
+   <td><p>不支援</p> </td> 
   </tr> 
   <tr> 
    <td><p>Ad Insertion</p> </td> 
    <td><p>VOD</p> </td> 
    <td><p>VPAID 2.0</p> </td> 
-   <td><p>不受支持</p> </td> 
+   <td><p>不支援</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-**表15:DASH集成**
+**表15：虛線整合**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><p><strong>类别</strong></p> </td> 
-   <td><p><strong>内容类型</strong></p> </td> 
+   <td><p><strong>類別</strong></p> </td> 
+   <td><p><strong>內容型別</strong></p> </td> 
    <td><p><strong>功能</strong></p> </td> 
-   <td><p><strong>HTML5:FF、IE、Chrome、Android Chrome</strong></p> </td> 
+   <td><p><strong>HTML5：FF、IE、Chrome、Android Chrome</strong></p> </td> 
   </tr> 
   <tr> 
-   <td><p>集成</p> </td> 
-   <td><p>VOD +实时</p> </td> 
-   <td><p>Adobe Analytics VHL集成</p> </td> 
+   <td><p>整合</p> </td> 
+   <td><p>VOD +即時</p> </td> 
+   <td><p>Adobe Analytics VHL整合</p> </td> 
    <td><p><strong> </strong></p> <p>Y</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-## 已修复的问题 {#issues-fixed}
+## 已修正的問題 {#issues-fixed}
 
-**2.4.12更新（版本204）中修复的问题**
+**2.4.12更新（版本編號204）中修正的問題**
 
-在浏览器TVSDK版本2.4.12更新（版本204）中修复了以下问题：
+瀏覽器TVSDK版本2.4.12更新（版本編號204）中修正下列問題：
 
-· **21647** — 音频静音时，TVSDK应允许在iOS设备上自动播放视频。
+· **21647**- TVSDK應允許在音訊靜音時在iOS裝置上自動播放視訊。
 
-· **21465** — 在播放DASH实时流后播放受DRM保护的DASH流时，收到错误密钥系统访问被拒绝。
+· **21465** — 播放DASH Live資料流後播放受DRM保護的DASH資料流時，收到「錯誤金鑰系統存取遭拒」。
 
-· **21442** — 在以用户手势播放前置广告后，在iOS Web上启用内容自动播放。
+· **21442** — 在使用使用者手勢播放前置廣告後，在iOS網頁上啟用內容自動播放。
 
-· **21240** — 提供了用于筛选从Auditude/VMAP解析的VPAID广告的API。
+· **21240** — 提供API以篩選從Auditude/VMAP剖析的VPAID廣告。
 
-**版本2.4.11中修复的问题**
+**2.4.11版中修正的問題**
 
-已在浏览器TVSDK版本2.4.11中修复以下问题：
-
-**核心播放功能：**
-
-· **19192**:TVSDK现在实施TextFormat:bottomInset和TextFormat:safeArea。 由于这些增强功能，如果控制栏显示在屏幕上，则可以重新放置隐藏式字幕。
-
-· **21009**:如果在出现不连续的搜寻时直到出现新字幕，屏幕上会保留隐藏式字幕。
-
-· **21141**:在区段追加期间，由于存在争用条件，向回搜寻被拒绝。
-
-· **21142**:使可搜寻的播放范围在播放器处于“初始化”状态时可用。 由于这些更改，现在支持在位启动会话。
-
-· **21363**:608/708型隐藏式字幕在为短划线流插入广告后不同步。
-
-**广告插入功能：**
-
-· **21179**:现在，可以通过正确设置ad.primaryAsset.adParameters属性来解决VOD内容的中置相关问题（长时间暂停、黑色帧）。
-
-· **21257**:如果MP4不是有效的mime类型，并且启用了创作重新打包功能，则会选择位速率最高的MP4文件进行转码。
-
-· **21361**:TVSDK现在将广告系统和创作ID从VAST响应中作为创作包装请求中的查询参数传递，以支持其他标准化规则。
-
-**版本2.4.10中修复的问题**
-
-已在浏览器TVSDK版本2.4.10中修复以下问题：
+瀏覽器TVSDK 2.4.11版已修正下列問題：
 
 **核心播放功能：**
 
-· **21060**:包含中断和ISO BMFF框的HLS流在流结束时引发的编解码器错误无效。
+· **19192**： TVSDK現在會實作TextFormat：bottomInset和TextFormat：safeArea。 由於這些增強功能，如果熒幕上顯示控制列，隱藏式字幕可以重新定位。
 
-· **21045**:播放列表中的首次视频播放完成后，自动播放在iOS上不起作用。
+· **21009**：如果跨不連續性搜尋，隱藏式字幕會持續保留在熒幕上，直到出現新字幕。
 
-· **20975**:Chrome浏览器上的QoS提供程序将以NaN的形式返回帧率。
+· **21141**：在附加區段期間，由於競爭條件，已拒絕向後搜尋。
 
-· **20823**:遇到没有数据的区段时引发不受支持的编解码器错误。
+· **21142**：當播放器處於初始化狀態時，讓可搜尋的播放範圍可供使用。 由於這些變更，現在支援在位置開始工作階段。
 
-· **20769**:现在，SDK在进行搜寻时以当前比特率开头，而不是基于ABR策略立即切换。
+· **21363**：插入短劃線資料流的廣告後，608/708隱藏式字幕不同步。
 
-· **20031**:在IE 11(Windows 8.1)上以纵向模式时，视频屏幕变小。 内容保护功能：
+**廣告插入功能：**
 
-· **19316**:在HLS AES-128流的情况下，跳过解密失败的段。
+· **21179**：現在，透過正確設定ad.primaryAsset.adParameters屬性，可解決VOD內容的中段相關問題（長暫停、黑色影格）。
 
-**版本2.4.9中修复的问题**
+· **21257**：如果MP4不是有效的MIME型別，且已啟用創意重新封裝功能，則會選擇具有最高位元速率的MP4檔案進行轉碼。
 
-在浏览器TVSDK版本2.4.9中修复了以下问题：
+· **21361**： TVSDK現在會從VAST回應傳遞廣告系統和創作ID作為創意封裝請求中的查詢引數，以支援其他標準化規則。
+
+**2.4.10版中修正的問題**
+
+瀏覽器TVSDK 2.4.10版已修正下列問題：
 
 **核心播放功能：**
 
-· **13407**:如果Firefox在播放期间停止发送“ontimeupdate”事件，则短划线流可能会停止。
+· **21060**：包含中斷的HLS資料流及ISO BMFF方塊執行到資料流結尾時，擲回無效的轉碼器錯誤。
 
-· **16380**:在通过MSE对具有不匹配开始时间的区段进行混合音频视频内容播放期间，在ABR交换机上累积表示之间的音频同步错误，最终导致错误(Chromium问题#663686)。
+· **21045**：播放清單中的第一個視訊播放完成後，自動播放無法在iOS上運作。
 
-· **17985**:在Firefox浏览器上播放特定ISO-BMFF流时，播放卡住(Firefox问题#1342913)。 自Firefox v53起，此问题已修复。
+· **20975**：QoS提供者在Chrome瀏覽器上將影格速率傳回為NaN。
 
-· **19141**:未捕获（在promise中）ReferenceError:宽度。
+· **20823**：遇到沒有資料的區段時擲回不支援的轉碼器錯誤。
 
-· **18997,19299**:区段边界处的视频闪烁问题。 这是因为SDK无法正确计算最后一个示例的合成时间偏移。
+· **20769**：SDK現在會在搜尋時從目前的位元速率開始，而不是根據ABR原則立即切換。
 
-· **19780**:在Firefox v53上，HLS内容和HLS广告未开始播放(Firefox问题#354653)。
+· **20031**：在IE11 (Windows 8.1)上處於直向模式時，視訊畫面會變小。 內容保護功能：
 
-· **20046**:Program Date Time（程序日期时间）在作为定时元数据对象接收时将作为键接收，而不是作为值接收。
+· **19316**：略過解密失敗的區段（若是HLS AES-128資料流）。
 
-· **20047**:useDefaultResizeHandler因Flash回退而引发错误。
+**2.4.9版中修正的問題**
 
-· **20179**:Flash回退不适用于Flash Playerv25.0.0.171。
+下列問題已在瀏覽器TVSDK版本2.4.9中修正：
 
-· **20293**:Firefox会停止缓冲某些HLS流的数据，从而导致数据停止。
+**核心播放功能：**
 
-· **20626**:由于零持续时间的视频示例处理不正确，播放器在Chrome上引发媒体解码错误。
+· **13407**：如果Firefox在播放期間停止傳送「ontimeupdate」事件，DASH資料流可能會停頓。
 
-· **20078**:浏览器错误“超出配额”时播放停止。
+· **16380**：在透過MSE播放具有不符開始時間的區段之混合音訊視訊內容期間，表示之間的音訊同步錯誤累積在ABR切換器上，最終導致錯誤(Chromium問題#663686)。
 
-· **18639**:在HLS实时流608 CC文本中，有时显示拼写错误。
+· **17985**：在Firefox瀏覽器上播放特定ISO-BMFF串流時，播放會卡住(Firefox問題#1342913)。 此問題自Firefox v53以來已修正。
 
-· **20028**:ClosedCaptions size参数不会更改字体大小。
+· **19141**：未抓取（在Promise中） ReferenceError：未定義寬度。
 
-· **20613**:隐藏式字幕框彼此重叠，无法辨认。
+· **18997， 19299**：區段邊界出現視訊閃爍問題。 這是因為SDK未正確計算最後一個範例的構成時間位移。
+
+· **19780**：Firefox v53上的HLS內容和HLS廣告不會開始播放(Firefox問題#354653)。
+
+· **20046**：程式日期時間接收為金鑰，而不是作為計時中繼資料物件時的值。
+
+· **20047**： useDefaultResizeHandler擲回Flash遞補錯誤。
+
+· **20179**：Flash遞補不適用於Flash Playerv25.0.0.171。
+
+· **20293**：Firefox會停止緩衝某些HLS資料流的資料，導致停頓。
+
+· **20626**：播放器因錯誤處理零持續時間的視訊範例，在Chrome上擲回媒體解碼錯誤。
+
+· **20078**：瀏覽器錯誤「QuotaExceeded」導致播放停止。
+
+· **18639**：在HLS即時資料流608 CC中，有時會顯示為拼字錯誤。
+
+· **20028**： ClosedCaptions size引數不會變更字型大小。
+
+· **20613**：隱藏式字幕方塊彼此重疊，使字幕難以辨認。
 
 **核心Ad Insertion(CSAI)功能：**
 
-· **20043**:缺少包含多个广告和第三方重定向的广告展示和广告跟踪调用。
+· **20043**：缺少具有多個廣告和第三方重新導向的廣告曝光次數和廣告追蹤呼叫。
 
-· **20044**:使用创意重新打包时，需要成功重新打包广告时间中的所有广告，否则广告时间将被完全丢弃。
+· **20044**：使用創意重新封裝時，必須成功重新封裝廣告插播中的所有廣告，否則會完全捨棄廣告插播。
 
-· **20097**:跳过广告播放，主内容立即恢复，而不是在广告清单不可用时等待20秒的超时。
+· **20097**：如果廣告資訊清單不可用，則會跳過廣告播放並立即繼續主要內容，而不是等待20秒的逾時。
 
-**版本2.4.8更新（版本6002）中修复的问题**
+**在2.4.8版（版本編號6002）更新中修正的問題**
 
-在浏览器TVSDK版本2.4.8更新（版本6002）中修复了以下问题：
+瀏覽器TVSDK版本2.4.8更新（版本編號6002）中修正下列問題：
 
-· **14126:** 由于MSE源缓冲区中的内部间隙，在Firefox上播放可能会停止(问题#1316024)。 尝试搜寻以继续播放
+· **14126：** 由於MSE來源緩衝區中的內部間隙，Firefox上的播放可能會停滯(問題#1316024)。 嘗試搜尋以繼續播放
 
-· **19608:** 修复了对Auditude VMAP响应中的时间偏移值的执行问题。
+· **19608：** 修正以接受來自Auditude VMAP回應的時間偏移值。
 
-· **19635:** 修复了Windows 10上Internet Explorer 11中的视频停滞问题。
+· **19635：** 修正Windows 10上Internet Explorer 11的視訊停頓問題。
 
-· **19761:** 修复了HLS的ABR问题。
+· **19761：** 修正HLS的ABR問題。
 
-· **19780:** 修复了在Mozilla Firefox v53中损坏的HLS内容的广告播放。
+· **19780：** 修正Mozilla Firefox v53中HLS內容損毀的廣告播放。
 
-· **19877和19744:** 这些问题修复了在执行搜寻操作后选择比特率时的不一致性。 现在，搜索时的比特率选择是当前比特率和启动时比特率的较低值。
+· **19877和19744：** 此問題修正搜尋作業後選取位元速率的不一致問題。 現在，搜尋時選擇的位元速率是目前位元速率和啟動時位元速率的較低值。
 
-· **19881:** 执行搜寻3-4次后，播放卡住并缓冲叠加将无限显示。
+· **19881：** 執行3-4次搜尋後，播放停滯和緩衝覆蓋會無限期顯示。
 
-· **19884:** 确认符合Chrome 59测试版验证的媒体路径(VMP)要求。 bTVSDK能够使用Chrome 59测试版播放Widevine DRM内容。
+· **19884：** 確認符合Chrome 59 Beta驗證媒體路徑(VMP)的要求。 bTVSDK能夠使用Chrome 59 Beta版播放Widevine DRM內容。
 
-· **19916:** UI-Framework上的DRM播放已中断。 现在，即使元数据中没有策略，也会调用acquireLicense。
+· **19916：** UI-Framework上的DRM播放中斷。 現在，即使中繼資料中沒有原則，它也會叫用acquireLicense。
 
-**版本2.4.8中修复的问题**
+**2.4.8版中修正的問題**
 
-在浏览器TVSDK 2.4.8版本中修复了以下问题：
+瀏覽器TVSDK 2.4.8版已修正下列問題：
 
-· **10075**:在时间线之前进行搜寻时，未在Firefox和Chrome上收到播放结束事件，且未在Firefox上收到搜寻事件。
+· **10075**：在時間表之前搜尋時，未在Firefox和Chrome上收到播放完成事件，並且未在Firefox上收到搜尋事件。
 
-· **15775**:在Windows 8.1 Internet Explorer上未收到播放结束事件。
+· **15775**：在Windows 8.1 Internet Explorer上未收到播放完成事件。
 
-· **17306**:对于SSAI流，支持播放。 不支持跟踪拼合广告。
+· **17306**：對於SSAI串流，支援播放。 不支援追蹤拼接廣告。
 
-· **19142**:有时，倒退会导致视频播放器永远保持缓冲状态。
+· **19142**：有時倒帶會導致視訊播放器永遠保持緩衝狀態。
 
-· **19218**:广告标记无法通过UI框架使用。
+· **19218**：無法透過UI框架使用廣告標籤。
 
-· **19219**:仅广告播放无法通过UI框架运行。
+· **19219**：僅廣告播放無法透過UI框架運作。
 
-· **19222**:对播放列表请求一次AES-128密钥，然后从缓存中提供后续请求。 之前，会为每个区段请求该区段。
+· **19222**：對播放清單請求一次AES-128金鑰，然後從快取中提供後續請求。 之前會要求每個區段使用它。
 
-· **19597**:&quot;未捕获类型错误：在Chrome加那利内部版本中看到“无法读取未定义的属性“日志””。
+· **19597**： Chrome Canary組建中出現「Uncated TypeError： Cannot read property &#39;log&#39; of undefined」。
 
-· **19605**:adRequestDomain在Flash回退模式下不可用。
+· **19605**：在Flash遞補模式中無法使用adRequestDomain。
 
-· **19608**:未为HLS实时流插入VMAP广告。 SDK现在会考虑提示标记，并且不依赖VMAP响应中的时间偏移值。
+· **19608**：沒有為HLS即時資料流插入VMAP廣告。 SDK現在會考量提示標籤，不依賴VMAP回應中的時間位移值。
 
-· **19637**:广告播放在广告结束时只会导致脚本错误。
+· **19637**：僅廣告播放會在廣告結尾導致指令碼錯誤。
 
-· **19732**:CRS播放列表请求失败，并出现404错误。 现在，已更新来自浏览器TVSDK的1401和1403请求，以便处理这些请求。
+· **19732**：CRS播放清單請求失敗，並出現404錯誤。 來自瀏覽器TVSDK的1401和1403請求現已更新以處理這些請求。
 
-· **19762**:acquireLicense ，用于在setAuthenticationToken之前调用，因为无论令牌的有效性如何，都会返回有效的许可证。 此问题现已修复，并且仅在setAuthenticationToken响应后调用acquireLicense。
+· **19762**：由於setAuthenticationToken之前曾呼叫acquireLicense，因此不論權杖是否有效，都會傳回有效的授權。 此問題現在已修正，且僅在setAuthenticationToken回應後呼叫acquireLicense。
 
-**版本2.4.7中修复的问题**
+**2.4.7版中修正的問題**
 
-在版本2.4.7中修复了以下问题：
+版本2.4.7已修正下列問題：
 
-· **8397**:如果区段不以关键帧开头，则通过Adobe Medium服务器生成的HLS实时流可能不会播放。
+· **8397**：如果區段不是以關鍵框架開頭，則透過Adobe Medium伺服器產生的HLS即時資料流可能不會播放。
 
-· **13606**:修复了Chrome浏览器上HLS流的多个搜寻相关问题。
+· **13606**：已修正Chrome瀏覽器上HLS資料流的多個搜尋相關問題。
 
-· **14807**:在Chrome浏览器上，如果在play()后立即触发搜寻或暂停，则播放可能会停止，并出现错误DOMException:play()请求被调用中断……(Chromium第593273期)。
+· **14807**：在Chrome瀏覽器上，如果在play()之後立即觸發搜尋或暫停，播放可能會停止並出現錯誤DOMException： play()請求被呼叫中斷……(Chromium問題# 593273)。
 
-· **19085**:在重置播放器时，MediaPlayer参数（如volume、abrControlParameters和ccStyle）未设置为默认值。
+· **19085**：重設播放器時，MediaPlayer引數（例如音量、abrControlParameters和ccStyle）未設定為預設值。
 
-**版本2.4.6中修复的问题**
+**2.4.6版中修正的問題**
 
-在版本2.4.6中修复了以下问题：
+版本2.4.6已修正下列問題：
 
-· **18093**:在Flash回退模式下使用Flash Player版本24时，会返回订阅标记旁边标记的TimedMetadata。
+· **18093**：當您在Flash遞補模式中使用Flash Player版本24時，會傳回訂閱標籤旁邊的TimedMetadata。
 
-**版本2.4.4中修复的问题**
+**2.4.4版中修正的問題**
 
-在版本2.4.4中修复了以下问题：
+版本2.4.4已修正下列問題：
 
-· **8711**:对于MSE，默认情况下608/708字幕是两端对齐的。
+· **8711**：使用MSE時，608/708字幕預設為靠左對齊。
 
-· **13934**:播放HLS实时流时，广告的ABR设置不适用。
+· **13934**：廣告的ABR設定不適用於HLS即時資料流的播放。
 
-· **14079**:低DVR窗口的HLS实时流的寿命可能会失败，因为由于网络延迟问题，播放可能会落后。 单击实时点以继续播放。
+· **14079**：具有低DVR視窗的HLS即時資料流的壽命可能會失敗，因為播放可能會因為網路延遲問題而延遲。 按一下即時點以繼續播放。
 
-· **15037**:播放器UI框架随附的示例在Windows 7的Microsoft Internet Explorer 10上不起作用。
+· **15037**：播放器UI架構隨附的範例無法在Windows 7上的Microsoft Internet Explorer 10上運作。
 
-· **15913**:对于HLS VOD流，在Chrome上，如果清单响应为304且未修改，则不会播放流。 自Chrome v55(Chromium问题633696)起，此问题已修复。
+· **15913**：對於HLS VOD資料流，如果資訊清單回應為304且未修改，則在Chrome上不會播放資料流。 此問題自Chrome v55 (Chromium問題633696)以來已修正。
 
-· **16103**:在Android Chrome上，在低带宽条件下，播放可能会因未捕获类型错误而停止：无法读取未定义错误的属性“programDateTime”。
+· **16103**：在Android Chrome上，在低頻寬條件下，播放可能會因未攔截的TypeError：無法讀取未定義錯誤的屬性「programDateTime」而停止。
 
-· **16265**:对于HLS VOD和实时流，跨中断搜寻不起作用。
+· **16265**：針對HLS VOD和即時資料流，無法跨不連續範圍搜尋。
 
-· **16709**:使用PDT和中断标记恢复HLS实时流可能会导致播放器在缓冲中卡住。
+· **16709**：使用PDT和不連續性標籤恢復HLS即時資料流可能會導致播放器卡在緩衝中。
 
-## 已知问题和限制 {#known-issues-and-limitations}
+## 已知問題和限制 {#known-issues-and-limitations}
 
-下面介绍了浏览器TVSDK中的限制和已知问题。
+底下提及瀏覽器TVSDK的限制和已知問題。
 
-**表16:核心播放功能**
+**表16：核心播放功能**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><strong>内容类型</strong></td> 
+   <td><strong>內容型別</strong></td> 
    <td><strong>功能</strong></td> 
    <td><strong>Flash</strong></td> 
-   <td><strong>HTML5（在Firefox、IE、Chrome、Android Chrome中）</strong></td> 
-   <td><strong>HTML5(位于Safari、iOS Safari中)</strong></td> 
-   <td><strong>Chromecast（仅短划线播放）</strong></td> 
+   <td><strong>Firefox、IE、Chrome、Android Chrome中的HTML5</strong></td> 
+   <td><strong>Safari、iOS、Safari中的HTML5</strong></td> 
+   <td><strong>Chromecast （僅限DASH播放）</strong></td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
-   <td>常规播放（播放、暂停、搜寻）</td> 
-   <td><p>·不支持HLS以外的媒体格式。</p> <p>8799:Flash回退不处理混合内容，因此需要确保内容、广告和其他URL不会导致混合内容（内容安全且不安全）。</p> <p>· 19271:在Flash回退模式下，不支持通过UI框架进行多视图播放。</p> <p>·在Windows 7的Microsoft Internet Explorer 8和9上，无法回退Flash，因为SDK不支持这些版本。</p> <p>· 20262:Flash回退将自定义参数添加到定位信息列表。 对于Flash和MSE，自定义参数的优先级顺序也不同。</p> <p>· 20653：浏览器TVSDKFlash回退在Win10中无法通过Creators Update进行操作。</p> <p>·Flash回退适用于Flash Player版本23及更高版本。</p> <p>· 20087 - Chrome 59 Beta版，带</p> <p>Flash25.0.0.171</p> <p>测试版（默认），HLS播放在Flash回退模式下不起作用。 在金丝雀上还行。</p> </td> 
-   <td><p>· 12563:由于MPD中不支持的音频编解码器字符串，带有音频编解码器的短划线流mp4a.40.02在Firefox上无法播放。 支持音频编解码器mp4a.40.2。</p> <p>15029:在UI-Framework的multiView中切换视频时，播放/暂停按钮不会相应地更新。</p> <p>· 16034：在Windows 8.1 IE上，调用reset()会导致MIME类型未知错误。 请重新加载媒体以继续播放。</p> <p>· 18235:在包含广告的短划线VOD流中，观察到某些搜寻问题。</p> <p>· 18727:MSE不支持错误API</p> <p>18750:在某些情况下，SDK和UI框架以及UI框架的状态更改事件可能会失序，在加载资源后添加的事件侦听器可能缺少IDLE和初始化StatusChange事件。</p> <p>· 18889:如果MediaPlayer处于ERROR状态，则不会返回视图对象。</p> <p>· 19039:如果为AdobePSDK。 MediaPlayer。 seekToLocal()的值大于EOF，则在出现MSE时，播放从头开始。</p> <p>· 19049:在播放过程中阻止视频时，在Chrome、IE、Firefox上Flash Player未报告错误状态。</p> <p>· 17205:在音频继续播放的同时，视频播放在播放未经过混合的流时停止数小时(Chromium问题# 664033)。</p> <p>· 12308:指定composition_time_offset的短划线流可能会在Chrome浏览器上对其应用timeStampOffset，从而导致负的解码时间，从而导致MEDIA_ERR_SRC_NOT_SUPPORTED错误(Chromium问题#398141)。</p> <p>· 14126:由于MSE源缓冲区中存在内部间隙，在Firefox上播放可能会停止(问题# 1316024)。 尝试搜寻以继续播放。</p> <p>· 19115:MS Edge和IE 11（Win 8.1和10）未在CORS重定向时将Origin设置为null，但失败，因为标头不为null，从而导致播放错误。</p> <p>· 19861：对于已播放的媒体，在源缓冲区上附加行为出现问题。 Chrome拒绝附加的片段（包括moov），从而导致后续解码错误。 (Chromium期#735335)</p> <p>19921:某些HLS内容即使成功缓冲仍停止播放(Chromium问题#713540)</p> <p>· 20444：在IE和Edge上寻求结束缓冲范围可能会导致播放停止。</p> <p>· 20511:有时，对于包含或不包含广告的HLS流，可以观察到搜寻拒绝。</p> <p>· 20743:在Windows 10 Chrome上，HLS实时流在MP4前置播放之前播放几秒钟。</p> <p>· 21043:由于缺少元数据，在初始加载时视频维度可能不正确。</p> <p>· 21115:如果播放列表中的视频有前置广告，则需要使用Android用户手势来开始播放。</p> <p>· HLS Live不支持时间戳滚动更新。</p> <p>·不支持AAC-SSR音频。</p> <p>不支持音频编解码器AC3和增强型AC3。</p> <p>·对于时间戳不连续但没有中断标记的流</p> <p>·由于跳转，播放可能出现故障和搜索错误。</p> <p>·内容持续时间和播放持续时间可能不匹配。</p> <p>·表示形式和呈现形式之间的不连续性应与其他方面相匹配，这可能导致同步和停滞问题。</p> <p>·字幕和WebVTT可能不会在流的末尾附近显示。</p> <p>·不支持跨时间戳跳转更改音频编解码器。</p> <p>·不支持广告插入。</p> <p>·快进特技模式可能导致Win 8.1 IE 11上的播放循环(MS问题#12446268)。</p> <p>短划线：</p> <p>·对于实时流 — 支持具有动态类型的实时配置文件。</p> <p>·对于VoD流 — 支持静态类型的实时配置文件。</p> <p>对于VoD流 — 点播用户档案未经广告工作流认证。</p> </td> 
-   <td><p>·不支持短划线实时视频和短划线视频点播流。</p> <p>·iOS全屏模式下不支持PIP（画中画）视频播放。</p> <p>在Safari（视频标记）扩展中，如果没有正确的内容类型标头，则无法正常使用清单。</p> </td> 
-   <td><p>·发送者应用程序中的应用程序ID必须与将接收者的URL注册为自定义接收者应用程序时生成的应用程序ID相同。</p> <p>·参考播放器经过DASH工作流程认证。 UI框架未经认证。</p> <p>有关支持的媒体编解码器列表，请参阅 <a href="https://developers.google.com/cast/docs/media"><em>此处</em></a>.</p> </td> 
+   <td>VOD +即時</td> 
+   <td>一般播放（播放、暫停、搜尋）</td> 
+   <td><p>·不支援HLS以外的媒體格式。</p> <p>8799：Flash遞補不會處理混合的內容，因此需要確保內容、廣告和其他URL不會導致混合的內容（安全和不安全內容合在一起）。</p> <p>· 19271：Flash遞補模式不支援透過UI框架的多重檢視播放。</p> <p>·Flash遞補無法在Windows 7上的Microsoft Internet Explorer 8和9上運作，因為SDK不支援這些版本。</p> <p>· 20262：Flash備援會將自訂引數新增到目標定位資訊清單。 此外，自訂引數的優先順序在Flash和MSE的情況下也不同。</p> <p>· 20653：瀏覽器TVSDKFlash遞補無法在具有建立者更新的Win10上運作。</p> <p>·Flash遞補可搭配Flash Player版本23或更新版本使用。</p> <p>· 20087 - Chrome 59 Beta版，含</p> <p>Flash25.0.0.171</p> <p>Beta （預設），HLS播放無法用於Flash遞補模式。 在Canary上運作正常。</p> </td> 
+   <td><p>· 12563：使用音訊轉碼器mp4a.40.02的Dash Streams不會在Firefox上播放，因為MPD不支援的音訊轉碼器字串。 支援音訊轉碼器mp4a.40.2。</p> <p>15029：在UI-Framework的multiView中切換視訊時，播放/暫停按鈕未相應地更新。</p> <p>· 16034：在Windows 8.1 IE上，呼叫reset()會導致未知的MIME型別錯誤。 請重新載入媒體以繼續播放。</p> <p>· 18235：使用具有廣告的DASH vod串流時，發現某些搜尋問題。</p> <p>· 18727： MSE不支援錯誤API</p> <p>18750：在某些情況下，SDK和UI架構的「狀態變更」事件可能順序不對，而在UI架構中，載入資源後新增的事件「接聽程式」可能缺少「閒置」和「正在初始化StatusChange」事件。</p> <p>· 18889：如果MediaPlayer處於ERROR狀態，則不會傳回檢視物件。</p> <p>·19039：若為AdobePSDK。 MediaPlayer。 seekToLocal()與大於EOF的值搭配使用，若是MSE，則會從頭開始播放。</p> <p>· 19049：當視訊在播放期間遭到封鎖時，Chrome、IE、Firefox上未報告Flash Player的錯誤狀態。</p> <p>· 17205：當音訊繼續播放時，影片播放停止播放未設為靜音的資料流幾個小時(Chromium issue# 664033)。</p> <p>· 12308：指定composition_ time_offset的DASH資料流可能會在Chrome瀏覽器上套用timeStampOffset，導致負的解碼時間，因此會出現MEDIA_ERR_ SRC_NOT_ SUPPORTED錯誤(Chromium問題#398141)。</p> <p>· 14126：由於MSE來源緩衝區中的內部間隙，Firefox上的播放可能會停滯(問題# 1316024)。 嘗試搜尋以繼續播放。</p> <p>· 19115： MS Edge和IE 11 （Win 8.1和10）未在CORS重新導向上將Origin設定為null但會失敗，因為標題不是null會導致播放錯誤。</p> <p>· 19861：在已播放媒體的來源緩衝區上附加行為的問題。 Chrome會拒絕附加的片段（包括moov），導致後續的解碼錯誤。 (Chromium第#735335期)</p> <p>19921：某些HLS內容的播放停止，即使已成功緩衝(Chromium問題#713540)</p> <p>· 20444：在IE和Edge上搜尋至緩衝範圍的結尾可能會導致播放停止。</p> <p>·20511：有時候，對於有或沒有廣告的HLS資料流，可以觀察到搜尋拒絕。</p> <p>· 20743：在Windows 10 Chrome上，HLS Live資料流會在MP4前段播放之前播放幾秒。</p> <p>· 21043：由於缺少中繼資料，首次載入時的視訊維度可能不正確。</p> <p>·21115：如果播放清單中的影片有前段廣告，則需要使用Android使用者手勢才能開始播放。</p> <p>· HLS Live不支援時間戳記滑動。</p> <p>·不支援AAC-SSR音訊。</p> <p>不支援音訊轉碼器AC3和增強型AC3。</p> <p>·對於具有時間戳記不連續但不具有不連續標籤的資料流</p> <p>·由於跳躍，播放可能會出現問題和不正確的搜尋。</p> <p>·內容持續期間和播放持續期間可能不相符。</p> <p>·表示和轉譯之間的不連續情況應符合其他智慧，這可能會導致同步和延遲問題。</p> <p>·字幕和WebVTT可能不會出現在資料流結尾附近。</p> <p>·跨時間戳記跳躍不支援音訊轉碼器變更。</p> <p>·不支援廣告插入。</p> <p>·快速前進特技模式可能會導致Win 8.1 IE 11上的播放回圈(MS問題#12446268)。</p> <p>虛線：</p> <p>·對於即時資料流 — 支援動態型別的即時設定檔。</p> <p>·對於VoD串流 — 支援靜態型別的即時設定檔。</p> <p>對於VoD串流 — 隨選設定檔未針對廣告工作流程進行認證。</p> </td> 
+   <td><p>·不支援DASH Live和DASH Video on Demand資料流。</p> <p>·全熒幕模式的iOS不支援PIP（子母畫面）視訊播放。</p> <p>在Safari （影片標籤）擴充功能上，沒有正確內容型別標題的較少資訊清單無法運作。</p> </td> 
+   <td><p>·傳送者應用程式中的applicationID必須與將接收者的URL註冊為自訂接收者應用程式時產生的相同。</p> <p>·參考播放器已通過DASH工作流程認證。 UI架構未認證。</p> <p>如需支援的媒體轉碼器清單，請參閱 <a href="https://developers.google.com/cast/docs/media"><em>此處</em></a>.</p> </td> 
   </tr> 
   <tr> 
-   <td>层VOD</td> 
-   <td>常规播放（播放、暂停、搜寻）</td> 
+   <td>FER VOD</td> 
+   <td>一般播放（播放、暫停、搜尋）</td> 
    <td> </td> 
-   <td>18098:在HLS LBA FER流中观察到某些搜寻问题。</td> 
-   <td> </td> 
-   <td> </td> 
-  </tr> 
-  <tr> 
-   <td>VOD +实时</td> 
-   <td>自适应比特率</td> 
-   <td><p>· 20079:在缓冲的范围内进行搜寻时重写缓冲区。</p> <p>20080:FlashABR行为与MSE一致。</p> </td> 
-   <td><p>·由于与缓冲相关的限制，ABR流中仅音频的回退变体将被忽略。</p> <p>· 12289:在HLS/DASH流未混合的情况下，ABR控制参数不适用于音频。</p> </td> 
+   <td>18098：發現HLS LBA FER串流存在某些搜尋問題。</td> 
    <td> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
+   <td>VOD +即時</td> 
+   <td>最適化位元速率</td> 
+   <td><p>· 20079：在緩衝範圍內的搜尋時進行緩衝重新寫入。</p> <p>20080：FlashABR行為與MSE一致。</p> </td> 
+   <td><p>·由於緩衝區相關限制，已忽略ABR資料流中的僅限音訊遞補變體。</p> <p>· 12289：未設為多址的HLS/短劃線串流時，ABR控制引數不適用於音訊。</p> </td> 
+   <td> </td> 
+   <td> </td> 
+  </tr> 
+  <tr> 
+   <td>VOD +即時</td> 
    <td>608/708字幕</td> 
    <td> </td> 
-   <td><p>· 7810:在Android 4.4.4上，Chrome似乎不支持播放器使用的基本CSS字体系列，因此字体样式更改功能不起作用。</p> <p>·对于608个字幕，无法更改CC渠道。</p> <p>· 608字幕不支持高级样式功能。</p> <p>支持通过辅助功能标记发出的信号(608/708)的嵌入式字幕。</p> </td> 
+   <td><p>· 7810：在Android 4.4.4上，Chrome似乎不支援播放器使用的基本CSS字型系列，因此字型樣式變更功能無法運作。</p> <p>·有608個字幕時無法變更CC頻道。</p> <p>· 608字幕不支援進階樣式功能。</p> <p>支援透過Accessibility標籤訊號的內嵌註解(608/708)。</p> </td> 
    <td> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
+   <td>VOD +即時</td> 
    <td>WebVTT</td> 
    <td> </td> 
-   <td><p>· 5206:播放器在显示字幕时，会忽略WebVTT文件中的区域标记。</p> <p>·短划线：不支持碎片化/分段VTT文件。</p> </td> 
+   <td><p>· 5206：播放器在顯示註解時會忽略WebVTT檔案中的區域標籤。</p> <p>· DASH：不支援片段/分段VTT檔案。</p> </td> 
    <td> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
-   <td>清单故障切换</td> 
-   <td>21056:使用Flash回退，如果主流在播放期间返回404错误，则实时流不会发生故障转移。</td> 
-   <td>清单故障切换仅适用于内容，而不适用于广告。</td> 
-   <td>缺少的播放列表故障转移仅适用于HTTP错误代码404的Safari。</td> 
+   <td>VOD +即時</td> 
+   <td>資訊清單容錯移轉</td> 
+   <td>21056：透過Flash遞補，如果主要資料流在播放期間傳回404錯誤，則不會發生即時資料流的容錯移轉。</td> 
+   <td>資訊清單容錯移轉僅適用於內容，不適用於廣告。</td> 
+   <td>遺失播放清單容錯移轉僅適用於HTTP錯誤碼404的Safari。</td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
-   <td>高级故障切换</td> 
+   <td>VOD +即時</td> 
+   <td>進階容錯移轉</td> 
    <td> </td> 
-   <td><p>·区段故障切换不支持跳过不可用的区段和继续播放。</p> <p>20533:播放列表中缺少的区段应当被视为“不连续”，并且应从下一个可用区段继续播放。</p> <p>21267:因故障转移而进行的流切换可能会导致下载较旧的区段。</p> </td> 
+   <td><p>·區段容錯移轉不支援略過無法使用的區段並繼續播放。</p> <p>20533：播放清單中缺少的區段應視為中斷，並應從下一個可用區段繼續播放。</p> <p>21267：因容錯移轉而切換資料流可能會導致下載較舊的區段。</p> </td> 
    <td> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
+   <td>VOD +即時</td> 
    <td>QoS和播放器通知</td> 
-   <td>21129:帧率在“Flash回退”情况下不可用。</td> 
-   <td><p>· 11170:</p> <p>Timed_Event不适用于具有MSE的浏览器TVSDK，而不适用于具有Flash回退的浏览器TVSDK。</p> <p>21129:不会计算实时流的帧速率。</p> </td> 
+   <td>21129：在Flash遞補時無法使用影格速率。</td> 
+   <td><p>• 11170:</p> <p>Timed_Event不適用於具有MSE的瀏覽器TVSDK，不同於具有Flash遞補的瀏覽器TVSDK。</p> <p>21129：不會計算即時資料流的影格速率。</p> </td> 
    <td> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
-   <td>支持Cookie标头</td> 
+   <td>VOD +即時</td> 
+   <td>支援Cookie標頭</td> 
    <td> </td> 
    <td> </td> 
-   <td><p>Safari不支持withCredentials标记和Cookie标头。</p> <p>21051:要允许Safari中的Cookie，请启用首选项&gt;隐私中的“Cookie和网站数据”设置。</p> </td> 
-   <td> </td> 
-  </tr> 
-  <tr> 
-   <td>VOD +实时</td> 
-   <td>自定义标记</td> 
-   <td>14763:不应支持以#开头的自定义标记。 现在，会在Flash回退期间为此类标记创建和报告TimedMetadata对象。</td> 
-   <td>带内自定义标记的流未经认证。</td> 
-   <td> </td> 
+   <td><p>Safari不支援withCredentials標幟和Cookie標頭。</p> <p>21051：若要在Safari中允許Cookie，請從「偏好設定&gt;隱私權」啟用「Cookie和網站資料」設定。</p> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
-   <td>延迟绑定音频</td> 
-   <td> </td> 
-   <td><p>· HLS实时LBA流不支持广告插入。</p> <p>· 17273:在故障转移时，HLS VOD LBA流切换到默认呈现，无法切换回最后选定的内容。</p> <p>· 20251:HLS实时LBA流可能会在搜索时停止。</p> <p>· 20497:如果HLS LBA未混合流在流的末尾附近缺少音频或视频帧，则播放器会保持缓冲状态。</p> </td> 
+   <td>VOD +即時</td> 
+   <td>自訂標籤</td> 
+   <td>14763：不支援開頭為#以外的自訂標籤。 現在，系統會在Flash遞補期間，針對這類標籤建立和報告TimedMetadata物件。</td> 
+   <td>未認證具有頻帶內自訂標籤的資料流。</td> 
    <td> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
-   <td>302重定向</td> 
+   <td>VOD +即時</td> 
+   <td>延遲繫結音訊</td> 
    <td> </td> 
-   <td><p>15787:302</p> <p>windows Edge和IE浏览器不支持重定向优化，因为这些浏览器不支持XMLHttpRequest对象中的responseURL属性。</p> </td> 
+   <td><p>· HLS Live LBA資料流不支援廣告插入。</p> <p>· 17273：在容錯移轉的情況下，HLS VOD LBA資料流會切換至預設轉譯，且無法切換回上次選取的專案。</p> <p>·20251： HLS即時LBA資料流可能在搜尋時停頓。</p> <p>· 20497：如果HLS LBA未設為多址的資料流在接近資料流結尾處遺漏音訊或視訊影格，播放器會維持緩衝狀態。</p> </td> 
+   <td> </td> 
+   <td> </td> 
+  </tr> 
+  <tr> 
+   <td>VOD +即時</td> 
+   <td>302重新導向</td> 
+   <td> </td> 
+   <td><p>15787: 302</p> <p>windows Edge和IE瀏覽器不支援重新導向最佳化，因為這些瀏覽器不支援XMLHttpRequest物件中的responseURL屬性。</p> </td> 
    <td> </td> 
    <td> </td> 
   </tr> 
  </tbody> 
 </table>
 
-**表17:高级播放功能**
+**表17：進階播放功能**
 
 <table> 
  <tbody> 
   <tr> 
-   <td>内容类型</td> 
+   <td>內容型別</td> 
    <td>功能</td> 
    <td>Flash</td> 
-   <td><strong>HTML5（在Firefox、IE、Chrome、Android Chrome中）</strong></td> 
-   <td><strong>HTML5(位于Safari、iOS Safari中)</strong></td> 
-   <td><strong>Chromecast（仅短划线播放）</strong></td> 
+   <td><strong>Firefox、IE、Chrome、Android Chrome中的HTML5</strong></td> 
+   <td><strong>Safari、iOS、Safari中的HTML5</strong></td> 
+   <td><strong>Chromecast （僅限DASH播放）</strong></td> 
   </tr> 
   <tr> 
    <td>VOD</td> 
-   <td>偏移时播放</td> 
-   <td><p>不支持以特定偏移值开始播放MP4内容。</p> </td> 
-   <td>20492:在内容从偏移值恢复之前，将播放偏移之前的中置广告。</td> 
-   <td>iOS不支持带有偏移功能的播放。</td> 
+   <td>在位移處播放</td> 
+   <td><p>不支援在特定位移值開始播放MP4內容。</p> </td> 
+   <td>20492：在內容從位移值繼續之前，會播放位移值之前的中段廣告。</td> 
+   <td>iOS不支援具有位移功能的播放。</td> 
    <td> </td> 
   </tr> 
   <tr> 
    <td>VOD</td> 
-   <td>技巧游戏</td> 
-   <td>无iFrame呈现的流无法使用平滑滴播。</td> 
-   <td><p>· Firefox和Internet Explorer不支持适应特技播放，因此这些浏览器不提供反向特技模式。</p> <p>·在随广告一起播放内容时，不提供特技播放。</p> <p>· 10435:在DASH播放期间，在Internet Explorer(Win 8.1)上进行前向特技播放时，视频冻结</p> <p>间歇性。 之所以会出现这种情况，是因为我们使用的是视频元素playbackRate属性，而无需特技播放调整。</p> <p>14182:有时，在Chrome浏览器上回退期间，可能未收到搜寻事件，因此技巧模式将不起作用。</p> <p>· 14942:即使在非特技播放流的情况下，也可以在Android的Chrome上设置播放率，但将不应用设置，并且播放将以正常速率继续。</p> <p>· 17308:搜寻在Trickplay模式下不起作用。</p> <p>· 17309:在Chrome浏览器上，反向技巧模式的持续时间不能超过2秒。</p> <p>19272:对于DASH流，在Windows 10 Edge浏览器上，技巧播放可能无法从缓冲中恢复。</p> </td> 
-   <td>不支持倒带技巧模式。</td> 
+   <td>特技播放</td> 
+   <td>沒有iFrame轉譯的資料流無法使用「平滑點播」。</td> 
+   <td><p>· Firefox和Internet Explorer不支援Trick Play改寫功能，因此這些瀏覽器不提供反向特技模式。</p> <p>·將內容與廣告一起播放時，無法使用Trickplay。</p> <p>· 10435：在DASH播放期間，在Internet Explorer上繼續特技播放的視訊會凍結(Win 8.1)</p> <p>間歇性。 發生這種情況是因為我們使用的視訊元素playbackRate屬性沒有特技播放適配。</p> <p>14182：有時候，在Chrome瀏覽器上倒帶期間，可能不會收到搜尋事件，因此特技模式將無法運作。</p> <p>· 14942：即使是在非特技播放資料流的情況下，也可以在Android的Chrome上設定播放速率，但將不會套用設定，而且會以正常速率繼續播放。</p> <p>· 17308：搜尋在Trickplay模式下無法運作。</p> <p>· 17309：在Chrome瀏覽器上，反向特技模式不能持續超過2秒。</p> <p>19272：如果是DASH資料流，Windows 10 Edge瀏覽器上的緩衝可能無法復原特技播放。</p> </td> 
+   <td>不支援倒帶特技模式。</td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
-   <td>ID3解析</td> 
-   <td>20346:SDK还应返回ID3帧的文本编码字节。</td> 
-   <td><p>SDK将忽略音频数据传输流(ADTS)中可用的ID3标记。</p> <p>· 12378:ID3定时元数据在支持MSE的Flash和浏览器上的不同时间进行解析，因此引用播放器时间轴上的显示行为也不同。</p> <p>· 19247:UI框架不支持解析ID3。</p> </td> 
-   <td><p>· 20323:Safari未解析用于表示aac区段第一个示例时间戳的PRIV ID3标记(Safari问题#32422733)</p> <p>· 20350:在某些设备(包括MAC OS X 10.1、iPad 10)上，当处于特技模式时，Safari不提供提示更改事件，因此未收到ID3帧。 (Safari问题#32450526)</p> </td> 
+   <td>VOD +即時</td> 
+   <td>ID3剖析</td> 
+   <td>20346： SDK也應傳回ID3框架的文字編碼位元組。</td> 
+   <td><p>SDK會忽略音訊資料傳輸串流(ADTS)中可用的ID3標籤。</p> <p>· 12378：透過MSE支援，ID3定時中繼資料會在Flash和瀏覽器上的不同時間剖析，因此參考播放器時間軸上的顯示行為也會不同。</p> <p>· 19247： UI架構不支援ID3剖析。</p> </td> 
+   <td><p>· 20323：Safari不會剖析用來訊號aac區段第一個樣本時間戳記的PRIV ID3標籤(Safari問題#32422733)</p> <p>· 20350：在某些裝置上(包括MAC OS X 10.1、iPad10)，Safari在特技模式下不會提供提示變更事件，因此不會收到ID3框架。 (Safari第#32450526期)</p> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
-   <td>不连续标记支持</td> 
+   <td>VOD +即時</td> 
+   <td>不連續標籤支援</td> 
    <td> </td> 
-   <td><p>·包含中断的HLS流不支持客户端广告插入。</p> <p>·不允许跨HLS流中的中断更改音频编解码器。</p> <p>·具有不连续性标记的HLS流不支持音频轨道开关</p> </td> 
-   <td>不连续序列号是在Safari上播放存在不连续的HLS流的一个要求。</td> 
+   <td><p>·包含中斷的HLS資料流不支援使用者端廣告插入。</p> <p>· HLS資料流中的不連續狀況不允許音訊轉碼器變更。</p> <p>·具有中斷標籤的HLS資料流不支援音訊曲目切換</p> </td> 
+   <td>具有不連續性的HLS資料流必須有不連續序號，才能在Safari上播放。</td> 
    <td> </td> 
   </tr> 
  </tbody> 
 </table>
 
-**表18:内容保护功能**
+**表18：內容保護功能**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><strong>内容类型</strong></td> 
+   <td><strong>內容型別</strong></td> 
    <td><strong>功能</strong></td> 
    <td><strong>Flash</strong></td> 
-   <td><strong>HTML5（在Firefox、IE、Chrome、Android Chrome中）</strong></td> 
-   <td><strong>HTML5(位于Safari、iOS Safari中)</strong></td> 
-   <td><strong>Chromecast（仅短划线播放）</strong></td> 
+   <td><strong>Firefox、IE、Chrome、Android Chrome中的HTML5</strong></td> 
+   <td><strong>Safari、iOS、Safari中的HTML5</strong></td> 
+   <td><strong>Chromecast （僅限DASH播放）</strong></td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
+   <td>VOD +即時</td> 
    <td>AES-128</td> 
    <td> </td> 
-   <td>AES-128加密内容不支持字节范围。</td> 
-   <td>12324:如果未指定IV标记，则HLS AES-128加密流无法在Safari上播放。</td> 
+   <td>AES-128加密內容不支援位元組範圍。</td> 
+   <td>12324：如果未指定IV標籤，HLS AES-128加密的資料流就無法在Safari上播放。</td> 
    <td> </td> 
   </tr> 
   <tr> 
    <td>VOD</td> 
    <td>DRM</td> 
    <td> </td> 
-   <td><p>· 12660:HTML5播放器对过期的PlayReady加密短划线内容引发内部服务器错误。</p> <p>· 16720:如果缺少句点标记中的开始属性，则短划线DRM加密内容将不起作用。</p> <p>· 18589:带Xlink的受DRM保护的短划线VoD多时段流不支持播放。</p> <p>· 18653:使用多个键的WideIne多时段内容的播放在第一时段停止，并且无法切换到下一时段。</p> <p>· 18656:Playready MultiPeriod流，使用不同的密钥加密，无法播放。</p> <p>未对Dash的Playready 2.0进行认证。</p> <p> </p> <p> </p> </td> 
-   <td>12602:Safari上的HLS Fairplay DRM元数据由HTML5播放器重复刷新</td> 
-   <td><p>可以播放通过Bento4打包的DRM内容。 不会播放通过Offline Packager和Shaka Packager打包的内容。 不支持短划线播放就绪DRM。</p> </td> 
+   <td><p>· 12660：HTML5播放器擲回內部伺服器錯誤訊息給過期的PlayReady加密虛線內容。</p> <p>· 16720：如果缺少period標籤中的start屬性，DASH DRM加密內容將無法運作。</p> <p>· 18589：不支援使用Xlink播放DRM保護的Dash VoD多時段資料流。</p> <p>· 18653：使用多個索引鍵播放Widevine MultiPeriod內容，在第一時段停止，且無法切換到下一個時段。</p> <p>· 18656：播放就緒的MultiPeriod資料流，使用不同的金鑰加密，無法播放。</p> <p>Playready 2.0 for Dash未通過認證。</p> <p> </p> <p> </p> </td> 
+   <td>12602： HLS Fairplay DRM中繼資料會由Safari上的HTML5播放器重複重新整理</td> 
+   <td><p>可以播放透過Bento4封裝的DASH Widevine DRM內容。 透過Offline Packager和Shaka Packager封裝的內容不會播放。 不支援虛線PlayReady DRM。</p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-**表19:核心Ad Insertion功能(CSAI)**
+**表19：核心Ad Insertion功能(CSAI)**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><strong>内容类型</strong></td> 
+   <td><strong>內容型別</strong></td> 
    <td><strong>功能</strong></td> 
    <td><strong>Flash</strong></td> 
-   <td><strong>HTML5（在Firefox、IE、Chrome、Android Chrome中）</strong></td> 
-   <td><strong>HTML5(位于Safari、iOS Safari中)</strong></td> 
-   <td><strong>Chromecast（仅短划线播放）</strong></td> 
+   <td><strong>Firefox、IE、Chrome、Android Chrome中的HTML5</strong></td> 
+   <td><strong>Safari、iOS、Safari中的HTML5</strong></td> 
+   <td><strong>Chromecast （僅限DASH播放）</strong></td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
-   <td>前/中/后</td> 
+   <td>VOD +即時</td> 
+   <td>前/中/後</td> 
    <td> </td> 
-   <td><p>·具有HLS实时内容的前置广告在双播放器模式下播放。</p> <p>·不支持包含HLS内容的短划线广告和包含短划线内容的HLS广告。</p> <p>· 19002:在具有MSE adBreak的HTML5播放器中。 insertionType不返回正确的值来描述正确的插入类型，即插入的客户端和插入的服务器。</p> <p>1974年：在默认控制栏以全屏模式显示的移动设备(iOS、带有Chrome 33或更低版本的Android或本机浏览器)上，搜索栏和快进按钮在广告播放时可用。</p> <p>· 11048:如果使用媒体源扩展，从广告切换到HLS实时内容会不顺畅。</p> <p>· 16083:在Android 4.4 Chrome v52上，有时，包含HLS内容的HLS广告在播放停止后可能会导致管道解码错误。</p> <p>· 16097:未处理在广告时间期间遇到的错误，可能会导致主流停止播放。</p> <p>· 18095:HLS实时内容不支持MP4广告。</p> <p>19120:对HLS内容的HLS广告进行多次搜索可能会导致流停止播放。</p> <p>· 19131:在从前置广告时间切换到内容时，可能会显示缓冲叠加图。</p> <p>· 20296:对于HLS实时流，在DVR窗口中再次搜寻，然后再搜寻已解析的中间卷可能会导致播放停止。</p> <p>· 20298:HLS中间卷的实时流在第一个中间卷广告移出DVR窗口的瞬间停止。</p> <p>· 20317:如果广告时间包含多个广告，则在切换到下一个广告或从广告切换到内容时，HLS实时流可能会停止。</p> 
+   <td><p>·含HLS即時內容的前置廣告會以Dual player模式播放。</p> <p>·不支援含有HLS內容的虛線廣告和含有虛線內容的HLS廣告。</p> <p>· 19002：在具有MSE adBreak的HTML5播放器中。 insertionType未傳回正確的值來描述正確的插入型別，即使用者端插入和/或伺服器插入。</p> <p>7794：在全熒幕模式下顯示預設控制列的行動裝置(iOS、具有Chrome 33或更低版本或原生瀏覽器的Android)上，可在廣告播放時使用搜尋列和快速前進按鈕。</p> <p>· 11048：如果是Media Source Extensions，從廣告切換至HLS即時內容會不流暢。</p> <p>· 16083：在Android 4.4 Chrome v52上，有時在播放延遲後，包含HLS內容的HLS廣告可能會導致管道解碼錯誤。</p> <p>· 16097：未處理廣告插播期間遇到的錯誤，可能會導致主資料流停止播放。</p> <p>· 18095： HLS即時內容不支援MP4廣告。</p> <p>19120：在具有HLS內容的HLS廣告上搜尋多個搜尋可能會導致資料流停止播放。</p> <p>·19131：從前段廣告插播切換為內容時，可能會顯示緩衝覆蓋。</p> <p>· 20296：若是HLS即時資料流，在DVR視窗中搜尋後接著搜尋已解析的中間捲動可能會導致播放停滯。</p> <p>· 20298：具有中間捲動的HLS即時資料流會在第一個中間捲動廣告移出DVR視窗時停頓。</p> <p>· 20317：如果廣告插播包含多個廣告，則在切換到下一個廣告或從廣告切換到內容時，HLS即時資料流可能會停滯。</p> 
     <ul> 
-     <li>无法解析HLS实时流的DVR窗口中的广告。</li> 
+     <li>HLS即時資料流的DVR視窗中的廣告未解析。</li> 
     </ul> </td> 
    <td> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
+   <td>VOD +即時</td> 
    <td>VAST 2.0/3.0</td> 
    <td> </td> 
-   <td>SDK在VAST adSource的VMAP响应中不执行序列属性。</td> 
+   <td>SDK不會執行VAST adSource的VMAP回應中的序列屬性。</td> 
    <td> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
+   <td>VOD +即時</td> 
    <td>VAST 2.0/3.0</td> 
    <td> </td> 
-   <td>20779:SDK不遵循VAST adSource的VMAP响应中的sequence属性。</td> 
+   <td>20779： SDK不會接受VAST adSource的VMAP回應中的序列屬性。</td> 
    <td> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
+   <td>VOD +即時</td> 
    <td>VMAP 1.0</td> 
    <td> </td> 
-   <td>12014:不支持VMAP重复属性。</td> 
+   <td>12014：不支援VMAP重複屬性。</td> 
    <td> </td> 
    <td> </td> 
   </tr> 
   <tr> 
-   <td>VOD +实时</td> 
-   <td>创意重新打包</td> 
+   <td>VOD +即時</td> 
+   <td>創意重新封裝</td> 
    <td> </td> 
-   <td>21464:如果广告时间中某个广告的创意重新打包失败，则广告响应将完全丢弃。</td> 
+   <td>21464：如果廣告插播中的某個廣告的創意重新封裝失敗，則會完全捨棄廣告回應。</td> 
    <td> </td> 
    <td> </td> 
   </tr> 
  </tbody> 
 </table>
 
-**表20:高级Ad Insertion功能(CSAI)**
+**表20：進階Ad Insertion功能(CSAI)**
 
 <table> 
  <tbody> 
   <tr> 
-   <td><strong>内容类型</strong></td> 
+   <td><strong>內容型別</strong></td> 
    <td><strong>功能</strong></td> 
    <td><strong>Flash</strong></td> 
-   <td><strong>HTML5（在Firefox、IE、Chrome、Android Chrome中）</strong></td> 
-   <td><strong>HTML5(位于Safari、iOS Safari中)</strong></td> 
-   <td><strong>Chromecast（仅短划线播放）</strong></td> 
+   <td><strong>Firefox、IE、Chrome、Android Chrome中的HTML5</strong></td> 
+   <td><strong>Safari、iOS、Safari中的HTML5</strong></td> 
+   <td><strong>Chromecast （僅限DASH播放）</strong></td> 
   </tr> 
   <tr> 
    <td>VOD</td> 
-   <td>仅限广告</td> 
+   <td>僅限廣告</td> 
    <td> </td> 
-   <td>20056:播放器技术属性没有相关性，因为它基于主内容，在“仅限广告”播放时，主内容为空</td> 
-   <td> </td> 
-   <td> </td> 
-  </tr> 
-  <tr> 
-   <td>VOD +实时</td> 
-   <td>自定义广告策略</td> 
-   <td> </td> 
-   <td><p>· MP4广告和MP4内容不支持广告行为。</p> <p>· 13973:自定义广告行为 — 与MSE一起使用时，SKIP策略不会引发结束事件。</p> <p>· 14939:自定义广告行为策略跳过和跳过广告时间对短划线内容不起作用。</p> <p>· 17131:广告的第一帧可见，在“跳过”广告时间策略的情况下，内容会继续。</p> </td> 
+   <td>20056：播放器技術屬性不相關，因為其基礎是主要內容，但在僅限廣告播放的情況下為空白</td> 
    <td> </td> 
    <td> </td> 
   </tr> 
   <tr> 
+   <td>VOD +即時</td> 
+   <td>自訂廣告原則</td> 
    <td> </td> 
-   <td>伴随广告/横幅广告/可点击广告</td> 
+   <td><p>· MP4廣告和MP4內容不支援廣告行為。</p> <p>· 13973：自訂廣告行為 — SKIP原則在與MSE搭配使用時不會擲回完成事件。</p> <p>· 14939：自訂廣告行為原則略過和略過廣告插播不適用於DASH內容。</p> <p>· 17131：廣告的第一個影格可見，然後如果SKIP廣告插播原則，則內容會繼續。</p> </td> 
+   <td> </td> 
+   <td> </td> 
+  </tr> 
+  <tr> 
+   <td> </td> 
+   <td>隨附廣告/橫幅廣告/可點按廣告</td> 
    <td> </td> 
    <td> </td> 
    <td> </td> 
-   <td>使用引用播放器时，横幅广告不可见。</td> 
+   <td>使用參考播放器時看不到橫幅廣告。</td> 
   </tr> 
   <tr> 
    <td> </td> 
    <td>VPAID 2.0</td> 
    <td> </td> 
-   <td><p>· VPAID广告不支持广告行为。</p> <p>· 15032:不支持在广告时间将VPAID广告与MP4或HLS广告结合使用。</p> <p>· 19001:在Android和iOS上，当以MP4作为主内容播放VPAID广告时，可以听到双音轨、主内容之一和广告之一。</p> <p>· 20762:画中画(PIP)不支持VPAID广告。</p> <p>· 21172:未收到包含VPAID广告的HLS VOD内容的播放结束事件。</p> <p>· 21173:未收到HLS VOD内容和后置VPAID广告的onAdBreakCompleteEvent。</p> </td> 
-   <td>在VPAID广告和主内容之间切换时，播放器在正常模式和全屏模式之间切换。</td> 
+   <td><p>· VPAID廣告不支援廣告行為。</p> <p>· 15032：不支援在廣告插播中搭配VPAID廣告與MP4或HLS廣告使用。</p> <p>· 19001：在Android和iOS上，當VPAID廣告以MP4播放為主要內容時，可聽到雙音軌、主要內容之一和廣告之一。</p> <p>· 20762：子母畫面(PIP)不支援VPAID廣告。</p> <p>· 21172：未收到包含VPAID廣告的HLS VOD內容的播放完成事件。</p> <p>· 21173：未收到HLS VOD內容和後置滾動VPAID廣告的onAdBreakCompleteEvent。</p> </td> 
+   <td>播放器會在正常模式和全熒幕模式之間切換，同時在VPAID廣告和主要內容之間切換。</td> 
    <td> </td> 
    <td> </td> 
   </tr> 
  </tbody> 
 </table>
 
-**表21:集成**
+**表21：整合**
 
-| **内容类型** | **功能** | **Flash** | **HTML5（在Firefox、IE、Chrome、Android Chrome中）** | **HTML5(位于Safari、iOS Safari中)** | **Chromecast（仅短划线播放）** |
+| **內容型別** | **功能** | **Flash** | **Firefox、IE、Chrome、Android Chrome中的HTML5** | **Safari、iOS、Safari中的HTML5** | **Chromecast （僅限DASH播放）** |
 |---|---|---|---|---|---|
-| VOD +实时 | Adobe Analytics VHL集成 |  | 19004:无法通过UI配置器工具进行Video Analytics跟踪。 |  |  |
+| VOD +即時 | Adobe Analytics VHL整合 |  | 19004：無法透過UI設定工具使用Video Analytics追蹤。 |  |  |
 
-## 有用资源 {#helpful-resources}
+## 實用資源 {#helpful-resources}
 
-* 请参阅以下完整帮助文档： [Adobe Primetime学习与支持](https://experienceleague.adobe.com/docs/primetime.html) 页面。
+* 如需完整說明檔案，請前往 [Adobe Primetime學習與支援](https://experienceleague.adobe.com/docs/primetime.html) 頁面。

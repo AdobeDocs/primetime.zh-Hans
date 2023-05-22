@@ -1,44 +1,43 @@
 ---
-description: 要设置Adobe® Access™以供使用，请从DVD中复制文件。 这些文件包括包含代码、证书和第三方类的JAR文件。 此外，请求Adobe Systems Incorporated的证书。 您将获得多个凭据，用于保护打包内容、许可证的完整性以及客户端与服务器之间的通信。
-title: 设置开发环境
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 若要設定Adobe®存取™使用，請從DVD複製檔案。 這些檔案包含包含程式碼、憑證和協力廠商類別的JAR檔案。 此外，請向Adobe Systems Incorporated要求憑證。 您將獲得多個認證，用於保護封裝內容、授權及使用者端與伺服器之間通訊的完整性。
+title: 設定開發環境
+exl-id: 66310fc8-7513-4aab-81d6-1370ce216cbf
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '406'
 ht-degree: 0%
 
 ---
 
+# 設定SDK {#setting-up-the-sdk}
 
-# 设置SDK {#setting-up-the-sdk}
+若要設定Adobe®存取™使用，請從DVD複製檔案。 這些檔案包含包含程式碼、憑證和協力廠商類別的JAR檔案。 此外，請向Adobe Systems Incorporated要求憑證。 您將獲得多個認證，用於保護封裝內容、授權及使用者端與伺服器之間通訊的完整性。
 
-要设置Adobe® Access™以供使用，请从DVD中复制文件。 这些文件包括包含代码、证书和第三方类的JAR文件。 此外，请求Adobe Systems Incorporated的证书。 您将获得多个凭据，用于保护打包内容、许可证的完整性以及客户端与服务器之间的通信。
+Adobe存取SDK提供兩種型別：
+* ADOBE ACCESS CORE SDK
+* ADOBE ACCESS PROFESSIONAL SDK
 
-Adobe访问SDK有两种类型：
-* Adobe Access Core SDK
-* Adobe Access Professional SDK
+下表顯示Adobe存取SDK的基本比較：
 
-下表显示了Adobe Access SDK的基本比较：
-
-| 功能 | Adobe Access Core SDK | Adobe Access Professional SDK |
+| 功能 | ADOBE ACCESS CORE SDK | ADOBE ACCESS PROFESSIONAL SDK |
 |---|---|---|
-| Flash Access 2.0功能 | 可用 | 可用 |
-| 键旋转 | - | 可用 |
-| 域支持 | 可用 | 可用 |
-| 增强的许可证链接 | 可用 | 可用 |
-| 同步消息 | 可用 | 可用 |
-| 许可预生成 | 可用 | 可用 |
-| 嵌入式许可 | 可用 | 可用 |
+| Flash Access2.0功能 | 可用 | 可用 |
+| 金鑰輪換 | - | 可用 |
+| 網域支援 | 可用 | 可用 |
+| 增強授權鏈結 | 可用 | 可用 |
+| 同步處理訊息 | 可用 | 可用 |
+| 授權預先產生 | 可用 | 可用 |
+| 內嵌授權 | 可用 | 可用 |
 
-## 设置开发环境{#setting-up-the-development-environment}
+## 設定開發環境 {#setting-up-the-development-environment}
 
-从DVD中，复制以下SDK文件以用于开发环境和Java类路径：
+從DVD複製以下SDK檔案，以用於您的開發環境和Java類別路徑：
 
-* adobe-flashaccess-certs.jar(包含Adobe根证书)
-* adobe-flashaccess-sdk.jar(包含Adobe Access Core SDK类)
-* adobe-flashaccess-sdk-pro.jar(包含Adobe Access Professional SDK类，仅专业版功能需要)
+* adobe-flashaccess-certs.jar (包含Adobe根憑證)
+* adobe-flashaccess-sdk.jar (包含Adobe Access Core SDK類別)
+* adobe-flashaccess-sdk-pro.jar (包含Adobe Access Professional SDK類別，僅適用於Professional功能)
 
-您需要以下第三方JAR文件（也位于SDK的“第三方”文件夹的DVD中）：
+您還需要下列第三方JAR檔案，這些檔案也位於SDK的「第三方」資料夾中的DVD上：
 
 * bcmail-jdk15-141.jar
 * bcprov-jdk15-141.jar
@@ -52,6 +51,6 @@ Adobe访问SDK有两种类型：
 * rm-pdrl.jar
 * xsdlib.jar
 
-为了提高性能，您可以通过部署位于SDK的“thirdparty/cryptoj”文件夹中的特定平台库，选择启用对加密操作的本机支持。 要启用本机支持，请将平台的库（适用于Windows的jsafe.dll或适用于Linux的libjsafe.so）添加到路径中。 提供了这些库的32位和64位版本。 （请注意，仅当您有64位操作系统并且运行64位版本的Java时，才应使用64位版本）。
+為改善效能，您可以部署位於SDK「thirdparty/cryptoj」資料夾中的平台特定程式庫，選擇性地啟用密碼編譯作業的原生支援。 若要啟用原生支援，請將您平台的程式庫（適用於Windows的jsafe.dll或適用於Linux的libjsafe.so）新增至路徑。 提供這些程式庫的32位元和64位元版本。 （請注意，只有在您有64位元作業系統且您執行64位元版Java時，才應該使用64位元版）。
 
-此外，SDK的一个可选部分是adobe-flashaccess-lcrm.jar。 只有与Adobe Flash Media Dibation Server(FMRMS)1.x兼容性相关的功能才需要此文件。 如果您之前部署了FMRMS 1.x，但不想重新打包受FMRMS保护的内容，则必须向许可证服务器添加支持，以便它能够处理旧内容和客户端。
+此外，SDK的選用部分為adobe-flashaccess-lcrm.jar。 只有與AdobeFlash媒體Rights Management伺服器(FMRMS) 1.x相容性相關的功能才需要此檔案。 如果您先前已部署FMRMS 1.x，並且不想重新封裝受FMRMS保護的內容，則必須新增對授權伺服器的支援，使其能夠處理舊的內容和使用者端。

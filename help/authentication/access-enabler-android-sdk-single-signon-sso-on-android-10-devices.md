@@ -1,41 +1,39 @@
 ---
-title: 在Android 10应用程序上访问启用程序Android SDK单点登录(SSO)
-description: 在Android 10应用程序上访问启用程序Android SDK单点登录(SSO)
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: Android 10應用程式上的Access Enabler Android SDK單一登入(SSO)
+description: Android 10應用程式上的Access Enabler Android SDK單一登入(SSO)
+exl-id: dedade15-c451-4757-b684-d3728e11dd87
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '377'
 ht-degree: 0%
 
 ---
 
-
-
-# 在Android 10应用程序上访问启用程序Android SDK单点登录(SSO) {#access-enabler-android-sdk-single-sign-on-sso-on-android-10-apps}
+# Android 10應用程式上的Access Enabler Android SDK單一登入(SSO) {#access-enabler-android-sdk-single-sign-on-sso-on-android-10-apps}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-## 概述
+## 概觀
 
-在使用Android OS的设备上，可通过Access Enabler Android SDK使用Adobe Primetime身份验证支持的应用程序之间的单点登录(SSO)。 为了在Android设备上提供单点登录(SSO),Access Enabler Android SDK版本3.2.1（最新版本）及更早版本使用在Android存储实施中保存的共享数据库文件，所有支持Adobe Primetime身份验证的应用程序均可访问该文件。
+使用Android作業系統的裝置可透過Access Enabler Android SDK在Adobe Primetime驗證支援的應用程式之間使用單一登入(SSO)。 為了在Android裝置上提供單一登入(SSO)，Access Enabler Android SDK 3.2.1版（最新）和舊版使用共用資料庫檔案（儲存在Android儲存實施中），所有Adobe Primetime驗證支援的應用程式都可以存取。
 
-但是，在最新的Android 10版本中，Google做出了一些更改，“以便让用户更好地控制其文件并限制文件混乱，默认情况下，面向Android 10（API级别29）及更高版本的应用程序可以获得外部存储设备（或范围存储）的范围访问权限。 此类应用程序只能看到其特定于应用程序的目录 `\[...\]`&quot; 有关这些Android 10存储更改的更多详细信息，请参阅 [适用于Android的数据和文件存储文档](https://developer.android.com/training/data-storage/files/external-scoped).
+不過，Google在最新的Android 10版本中做了一些變更，「讓使用者更能掌控其檔案，並限制檔案雜亂，針對Android 10 （API層級29）及更高版本的應用程式預設會獲得外部儲存裝置的設定範圍存取權，或設定範圍儲存裝置。 這類應用程式只能看見其應用程式專屬的目錄 `\[...\]`「。 有關這些Android 10儲存空間變更的更多詳細資訊，請參閱 [Android的資料和檔案儲存檔案](https://developer.android.com/training/data-storage/files/external-scoped).
 
-由于这些更改，Access Enabler Android版本提供的单点登录(SSO)发生了变化 **3.2.1 SDK（最新版）** 和以前版本可能会在Android 10设备上受到影响，如下一节中所述。
+由於這些變更，Access Enabler Android版本所提供的單一登入(SSO)功能 **3.2.1 SDK （最新）** 和舊版可能會在Android 10裝置上受到影響，如下節所述。
 
-请参阅 [Roku SSO概述](/help/authentication/roku-sso-overview.md).
+另請參閱 [Roku SSO概觀](/help/authentication/roku-sso-overview.md).
 
-## 行为
+## 行為
 
-具体取决于您应用程序的 **target SDK级别** 或 **android:requestLegacyExternalStorage** 清单属性Access Enabler Android 3.2.1 SDK（最新版本）及更早版本提供的单点登录(SSO)当前的行为如下所示：
+根據您應用程式的 **目標SDK層級** 或使用方式 **android：requestLegacyExternalStorage** 資訊清單屬性Access Enabler Android 3.2.1 SDK （最新）版和舊版所提供的單一登入(SSO)目前行為如下：
 
-- 您的应用程序目标 **Android 9（API级别28）** 或 **-\>** 单点登录(SSO) **会奏效**
-- 您的应用程序目标 **Android 10** **（API级别29）** 和 **set** 的值 **requestLegacyExternalStorage设置为true** 在应用程序的清单文件中 **-\>** 单点登录(SSO) **会奏效**
-- 您的应用程序目标 **Android 10** **（API级别29）** 和 **未设置** 的值 **requestLegacyExternalStorage设置为true** 在应用程序的清单文件中 **-\>** 单点登录(SSO) **不起作用**
+- 您的應用程式目標 **Android 9 （API層級28）** 或以下 **-\>** 單一登入(SSO) **將有效**
+- 您的應用程式目標 **Android 10** **（API層級29）** 和會 **set** 的值 **requestLegacyExternalStorage設為true** 在應用程式的資訊清單檔案中 **-\>** 單一登入(SSO) **將有效**
+- 您的應用程式目標 **Android 10** **（API層級29）** 和會 **未設定** 的值 **requestLegacyExternalStorage設為true** 在應用程式的資訊清單檔案中 **-\>** 單一登入(SSO) **無法運作**
 
 
 >[!TIP]
 >
-> 在Adobe Primetime身份验证Access Enabler Android SDK与范围存储完全兼容之前，您可以根据应用程序的目标SDK级别或requestLegacyExternalStorage清单属性（如公共中所述）临时选择禁用 [Android文档](https://developer.android.com/training/data-storage/files/external-scoped#opt-out-of-scoped-storage).
-
+> 在Adobe Primetime Authentication Access Enabler Android SDK與適用範圍的儲存完全相容之前，您可以根據應用程式的目標SDK層級或requestLegacyExternalStorage資訊清單屬性（如公開內容所述），暫時選擇退出 [Android檔案](https://developer.android.com/training/data-storage/files/external-scoped#opt-out-of-scoped-storage).

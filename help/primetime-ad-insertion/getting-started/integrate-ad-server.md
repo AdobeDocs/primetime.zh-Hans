@@ -1,34 +1,33 @@
 ---
-title: 集成广告服务器
-description: 集成广告服务器
-translation-type: tm+mt
-source-git-commit: 0f98b9848f1764e7c66e3692d8a845513493597f
+title: 整合您的廣告伺服器
+description: 整合您的廣告伺服器
+exl-id: 4f2c75e0-db88-4c5d-8ddd-a5eab5d0b910
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '147'
 ht-degree: 0%
 
 ---
 
+# 整合您的廣告伺服器 {#integrate-ad-server}
 
-# 集成广告服务器{#integrate-ad-server}
-
-要开始，您将获得访问PrimetimeAd Insertion控制台的登录名，在该控制台中，您将设置PrimetimeAd Insertion用来将广告请求转发到您选择的广告服务器的规则。 PrimetimeAd Insertion支持大多数符合VAST或VMAP规范的广告服务器。
+開始之前，系統會提供您登入許可權以存取PrimetimeAd Insertion主控台，您可在此設定PrimetimeAd Insertion用來將廣告請求轉送至您所選廣告伺服器的規則。 PrimetimeAd Insertion支援大多數符合VAST或VMAP的廣告伺服器。
 
 >[!NOTE]
 >
->[IAB VAST Page](https://www.iab.com/guidelines/digital-video-ad-serving-template-vast)
+>[IAB VAST頁面](https://www.iab.com/guidelines/digital-video-ad-serving-template-vast)
 
-## 宏支持{#macro-support}
+## 巨集支援 {#macro-support}
 
-PrimetimeAd Insertion支持所有流的以下广告服务器宏：
+PrimetimeAd Insertion可針對所有串流啟用下列廣告伺服器巨集：
 
-* 缓存破坏
-* 应用程序上下文或页面url
-* 可用持续时间
-* 当前视频资产
+* 防快取
+* 應用程式內容或頁面URL
+* 有效期間
+* 目前的視訊資產
 
-如果需要其他宏，请与您的Adobe Primetime支持代表联系。
+如果需要其他巨集，請聯絡您的Adobe Primetime支援代表。
 
-## 高级功能{#advanced-features}
+## 進階功能 {#advanced-features}
 
-PrimetimeAd Insertion还具备支持高级功能的基于规则的决策功能。 如果您希望根据库存权限将广告路由到不同的广告服务器，或为单个广告启用频率限制，这一点很重要。 有关详细信息，请参阅[高级功能](/help/primetime-ad-insertion/advanced-features/route-ads-based-on-rules.md)。
+PrimetimeAd Insertion也提供規則型決策，可啟用進階功能。 如果您想要根據庫存許可權將廣告路由到不同的廣告伺服器，或為個別廣告啟用頻率上限，這可能很重要。 如需詳細資訊，請參閱 [進階功能](/help/primetime-ad-insertion/advanced-features/route-ads-based-on-rules.md).

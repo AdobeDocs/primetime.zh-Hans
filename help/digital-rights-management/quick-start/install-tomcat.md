@@ -1,27 +1,26 @@
 ---
-title: 安装Tomcat
-description: 安装Tomcat
+title: 安裝Tomcat
+description: 安裝Tomcat
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: aed8fc1c-0d75-47ca-bbd4-c0934a66e284
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '78'
 ht-degree: 0%
 
 ---
 
+# 安裝Tomcat {#install-tomcat}
 
-# 安装Tomcat {#install-tomcat}
-
-必须在两台服务器上安装Tomcat。
-1. 从安装DVD上的 [!DNL \Third Party\Tomcat\6.0.18\] 目录安装Tomcat。
+您必須在兩部伺服器上安裝Tomcat。
+1. 從安裝Tomcat [!DNL \Third Party\Tomcat\6.0.18\] 目錄。
 
    >[!NOTE]
    >
-   >确保Tomcat安装在路径中没有空格的位置。 可以输入`C:\Program Files\Tomcat`，但不能输入`C:\Tomcat\`。
+   >請確定Tomcat安裝在路徑中沒有空格的位置。 您可以輸入 `C:\Program Files\Tomcat`，但不是 `C:\Tomcat\`.
 
-1. 要开始Tomcat，请输入`TomcatInstallDir>\bin\catalina.bat run`。
-1. 要验证安装，请输入`https://<Hostname>:8080/`，转到Tomcat登陆页。
-1. 创建一个`crossdomain.xml`文件，并将该文件放在`<TomcatInstallDir>\webapps\ROOT\`目录中。
+1. 若要啟動Tomcat，請輸入 `TomcatInstallDir>\bin\catalina.bat run`.
+1. 若要驗證安裝，請前往Tomcat登陸頁面，方法是輸入 `https://<Hostname>:8080/`.
+1. 建立 `crossdomain.xml` 檔案並將檔案放入 `<TomcatInstallDir>\webapps\ROOT\` 目錄。
 
-   还可以从`https://drmtest2.adobe.com/crossdomain.xml`目录中复制文件。
+   您也可以複製檔案，從 `https://drmtest2.adobe.com/crossdomain.xml` 目錄。

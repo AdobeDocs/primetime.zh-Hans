@@ -1,25 +1,24 @@
 ---
-title: 优化视频开始时间
-description: 优化视频开始时间
-translation-type: tm+mt
-source-git-commit: d5e948992d7c59e80b530c8f4619adbffc3c03d8
+title: 最佳化視訊啟動時間
+description: 最佳化視訊啟動時間
+exl-id: 5a89c774-0fed-4378-9cf8-98c4c843ae0d
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '110'
 ht-degree: 0%
 
 ---
 
+# 最佳化視訊啟動時間概觀 {#optimize-video-start-up-times}
 
-# 优化视频开始时间概述{#optimize-video-start-up-times}
+PrimetimeAd Insertion提供數項功能來最佳化視訊啟動時間，例如快取和路由/通訊協定最佳化的規則。 以下是使用PrimetimeAd Insertion時為確保影片更快速啟動而建議的其他幾項內容：
 
-PrimetimeAd Insertion提供多种功能来优化视频开始时间，如缓存和路由／协议优化规则。 以下是一些其他建议，可确保在使用Primetime开始时更短的视频Ad Insertion:
+* 從內容傳遞網路(CDN)提供所有廣告和內容
 
-* 提供来自内容投放网络(CDN)的所有广告和内容
+* 減少或移除PrimetimeAd Insertion和CDN之間的TLS握手。 如需詳細資訊，請參閱 [最佳化路由和通訊協定](optimize-routes-protocols.md).
 
-* 减少或删除PrimetimeAd Insertion与CDN之间的TLS握手。 有关详细信息，请参阅[优化路由和协议](optimize-routes-protocols.md)。
+* 從相同的CDN提供廣告和內容片段
 
-* 从同一CDN提供广告和内容片段
+* 為即時/VOD內容和資訊清單插入快取控制標頭
 
-* 插入实时/VOD内容和清单的缓存控制标头
-
-* 减少或删除响应速度较慢的广告提供商或广告创意人员
+* 減少或移除回應緩慢的廣告提供者或廣告創意

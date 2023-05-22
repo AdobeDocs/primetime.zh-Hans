@@ -1,31 +1,30 @@
 ---
-description: 您可以使用TextFormat类为隐藏字幕轨道提供样式信息。 这会设置播放器显示的任何隐藏式字幕的样式。
-title: 控制隐藏式字幕样式
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以使用TextFormat類別為隱藏式字幕軌跡提供樣式資訊。 這會設定播放器所顯示之任何隱藏式字幕的樣式。
+title: 控制隱藏式字幕樣式
+exl-id: 0083c141-9c03-46a2-902b-6e7eebaadea4
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '656'
 ht-degree: 0%
 
 ---
 
+# 控制隱藏式字幕樣式 {#control-closed-caption-styling-overview}
 
-# 控制隐藏字幕样式{#control-closed-caption-styling-overview}
+您可以使用TextFormat類別為隱藏式字幕軌跡提供樣式資訊。 這會設定播放器所顯示之任何隱藏式字幕的樣式。
 
-您可以使用TextFormat类为隐藏字幕轨道提供样式信息。 这会设置播放器显示的任何隐藏式字幕的样式。
+此類別會封裝隱藏式字幕樣式資訊，例如字型型別、大小、顏色和背景不透明度。 關聯的協助程式類別， `TextFormatBuilder`，方便使用隱藏式字幕樣式設定。
 
-此类封装隐藏字幕样式信息，如字体类型、大小、颜色和背景不透明度。 关联的帮助程序类`TextFormatBuilder`便于使用隐藏字幕样式设置。
+## 設定隱藏式字幕樣式 {#set-closed-caption-styles}
 
-## 设置隐藏字幕样式{#set-closed-caption-styles}
+您可以使用TVSDK方法設定隱藏式字幕文字的樣式。
 
-可以使用TVSDK方法设置隐藏字幕文本的样式。
+1. 等候媒體播放器至少處於PREPARED狀態。
+1. 建立 `TextFormatBuilder` 執行個體。
 
-1. 等待媒体播放器至少处于PREPARED状态。
-1. 创建`TextFormatBuilder`实例。
+   您可以現在提供所有隱藏式字幕樣式引數，或稍後再設定。
 
-   您可以立即提供所有隐藏式字幕样式参数，也可以稍后设置。
-
-   TVSDK将隐藏字幕样式信息封装到`TextFormat`接口中。 `TextFormatBuilder`类创建实现此接口的对象。
+   TVSDK會將隱藏式字幕樣式資訊封裝在 `TextFormat` 介面。 此 `TextFormatBuilder` 類別會建立實作此介面的物件。
 
    ```java
    public TextFormatBuilder( 
@@ -41,19 +40,19 @@ ht-degree: 0%
       int fillOpacity)
    ```
 
-1. 要获取对实现`TextFormat`接口的对象的引用，请调用`TextFormatBuilder.toTextFormat`公共方法。
+1. 若要取得實作物件的參照 `TextFormat` 介面，呼叫 `TextFormatBuilder.toTextFormat` 公用方法。
 
-   这返回可应用于媒体播放器的`TextFormat`对象。
+   這會傳回 `TextFormat` 可套用至媒體播放器的物件。
 
    ```java
    public TextFormat toTextFormat()
    ```
 
-1. （可选）通过执行下列操作之一来获取当前隐藏式字幕样式设置：
+1. 您可以執行下列任一項作業，取得目前的隱藏式字幕樣式設定：
 
-   * 获取所有具有`MediaPlayer.getCCStyle`的样式设置。
+   * 取得所有樣式設定 `MediaPlayer.getCCStyle`.
 
-      返回值是`TextFormat`接口的实例。
+      傳回值是 `TextFormat` 介面。
 
       ```js
       /** 
@@ -65,7 +64,7 @@ ht-degree: 0%
       public TextFormat getCCStyle() throws IllegalStateException;
       ```
 
-   * 通过`TextFormat`接口getter方法一次获取一个设置。
+   * 透過，一次取得一個設定 `TextFormat` 介面getter方法。
 
       ```js
       public Color getFontColor(); 
@@ -79,13 +78,13 @@ ht-degree: 0%
       public int getBackgroundOpacity();
       ```
 
-1. 要更改样式设置，请执行下列操作之一：
+1. 若要變更樣式設定，請執行下列任一項動作：
 
    >[!NOTE]
    >
-   >无法更改WebVTT字幕的大小。
+   >您無法變更WebVTT註解的大小。
 
-   * 使用setter方法`MediaPlayer.setCCStyle`，传递`TextFormat`接口的实例：
+   * 使用setter方法 `MediaPlayer.setCCStyle`，傳遞的例項 `TextFormat` 介面：
 
       ```js
       /** 
@@ -101,9 +100,9 @@ ht-degree: 0%
       public void setCCStyle(TextFormat textFormat) throws IllegalStateException;
       ```
 
-   * 使用`TextFormatBuilder`类，它定义单个setter方法。
+   * 使用 `TextFormatBuilder` 類別，定義個別setter方法。
 
-      `TextFormat`接口定义不可变对象，因此只有getter方法和没有设置器。 只能使用`TextFormatBuilder`类设置隐藏字幕样式参数：
+      此 `TextFormat` 介面會定義不可變物件，因此只有getter方法而沒有setter。 您只能使用設定隱藏式字幕樣式引數 `TextFormatBuilder` 類別：
 
       ```js
       // set font type 
@@ -123,11 +122,11 @@ ht-degree: 0%
       public void setFontColor(Color fontColor)
       ```
 
-设置隐藏字幕样式是一个异步操作，因此更改可能需要几秒钟时间才能显示在屏幕上。
+設定隱藏式字幕樣式為非同步操作，因此可能需要幾秒鐘才能讓變更顯示在畫面上。
 
-## 隐藏字幕样式选项{#closed-caption-styling-options}
+## 隱藏式字幕樣式選項 {#closed-caption-styling-options}
 
-您可以指定多个题注样式选项，这些选项会覆盖原始题注中的样式选项
+您可以指定數個註解樣式選項，這些選項會覆寫原始註解中的樣式選項
 
 ```
 public TextFormatBuilder(
@@ -146,70 +145,70 @@ public TextFormatBuilder(
 
 >[!TIP]
 >
->在定义默认值（例如，DEFAULT）的选项中，该值引用最初指定题注时的设置。
+>在定義預設值的選項（例如DEFAULT）中，該值是指最初指定註解時的設定。
 
 <table frame="all" colsep="1" rowsep="1" id="table_87205DEFEE384AF4AF83952B15E18A42"> 
  <thead> 
   <tr rowsep="1"> 
    <th colname="1" class="entry"><b> 格式 </b></th> 
-   <th colname="2" class="entry"> <b>说明</b> </th> 
+   <th colname="2" class="entry"> <b>說明</b> </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr rowsep="1"> 
-   <td colname="1"> 字体 </td> 
-   <td colname="2"> <p>字体类型。 </p> <p>只能设置为由<span class="codeph"> TextFormat.Font </span>明细列表定义的值，并表示（例如，带有或不带序列）的等间距。 </p> <p>提示： 设备上可用的实际字体可能有所不同，并在必要时使用替代。 带serif的单空间通常用作替代，尽管这种替代可以是系统特定的。 </p> </td> 
+   <td colname="1"> 字型 </td> 
+   <td colname="2"> <p>字型型別。 </p> <p>只能設定為以下定義的值： <span class="codeph"> TextFormat.Font </span> 分項清單，並代表（例如，有或沒有襯線）等寬。 </p> <p>提示：裝置上可用的實際字型可能會有所不同，必要時會使用替代。 通常使用含襯線的等寬做為替代，不過此替代可以是系統特定的。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 大小 </td> 
-   <td colname="2"> <p>题注的大小。 </p> <p> 只能设置为由<span class="codeph"> TextFormat.Size </span>明细列表定义的值： 
+   <td colname="2"> <p>註解的大小。 </p> <p> 只能設定為下列專案所定義的值： <span class="codeph"> TextFormat.Size </span> 分項清單： 
      <ul compact="yes" id="ul_544BFC7A46474A74839477108F1AB1E9"> 
-      <li id="li_A592ED46B8DF4D8FAD7AF3BD931A712B"> <span class="codeph"> 中 —  </span> 标准大小 </li> 
-      <li id="li_4F8CEDE54965430EB707DD3D5B2E3F87"> <span class="codeph"> 大 —  </span> 比中大约30% </li> 
-      <li id="li_D78D823883F54D869118BAB58257E377"> <span class="codeph"> 小 —  </span> 比中小约30% </li> 
-      <li id="li_9299C13408584A38835F8D91BD048083"> <span class="codeph"> 默 </span> 认 — 题注的默认大小；与介质相同 </li> 
+      <li id="li_A592ED46B8DF4D8FAD7AF3BD931A712B"> <span class="codeph"> 中 </span>  — 標準大小 </li> 
+      <li id="li_4F8CEDE54965430EB707DD3D5B2E3F87"> <span class="codeph"> 大 </span>  — 大約比中號大30% </li> 
+      <li id="li_D78D823883F54D869118BAB58257E377"> <span class="codeph"> 小 </span>  — 約比中號小30% </li> 
+      <li id="li_9299C13408584A38835F8D91BD048083"> <span class="codeph"> 預設 </span>  — 註解的預設大小；與「中」相同 </li> 
      </ul> </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> 字体边缘 </td> 
-   <td colname="2"> <p>用于字体边缘的效果，如凸起或无。 </p> <p>只能设置为由<span class="codeph"> TextFormat.FontEdge </span>明细列表定义的值。 </p> </td> 
+   <td colname="1"> 字型邊緣 </td> 
+   <td colname="2"> <p>用於字型邊緣的效果，例如凸出或無。 </p> <p>只能設定為以下定義的值： <span class="codeph"> TextFormat.FontEdge </span> 分項清單。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> 字体颜色 </td> 
-   <td colname="2"> <p>字体颜色。 </p> <p>只能设置为由<span class="codeph"> TextFormat.Color </span>明细列表定义的值。 </p> </td> 
+   <td colname="1"> 字型顏色 </td> 
+   <td colname="2"> <p>字型顏色。 </p> <p>只能設定為下列專案所定義的值： <span class="codeph"> TextFormat.Color </span> 分項清單。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> 边缘颜色 </td> 
-   <td colname="2"> <p>边缘效果的颜色。 </p> <p>可以设置为任何可用于字体颜色的值。 </p> </td> 
+   <td colname="1"> 邊緣顏色 </td> 
+   <td colname="2"> <p>邊緣效果的色彩。 </p> <p>可以設定為字型顏色可用的任何值。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> 背景颜色 </td> 
-   <td colname="2"> <p>背景字符单元格颜色。 </p> <p>只能设置为可用于字体颜色的值。 </p> </td> 
+   <td colname="1"> 背景顏色 </td> 
+   <td colname="2"> <p>背景字元儲存格顏色。 </p> <p>只能設定為可用於字型顏色的值。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> 填充颜色 </td> 
-   <td colname="2"> <p>文本所在窗口的背景颜色。 </p> <p>可以设置为任何可用于字体颜色的值。 </p> </td> 
+   <td colname="1"> 填色顏色 </td> 
+   <td colname="2"> <p>文字所在視窗背景的色彩。 </p> <p>可以設定為字型顏色可用的任何值。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> 字体不透明度 </td> 
-   <td colname="2"> <p>文本的不透明度。 </p> <p>表示为0（完全透明）到100（完全不透明）之间的百分比。 <span class="codeph"> 字体的 </span> DEFAULT_OPACITY为100。 </p> </td> 
+   <td colname="1"> 字型不透明度 </td> 
+   <td colname="2"> <p>文字的不透明度。 </p> <p>以從0 （完全透明）到100 （完全不透明）的百分比表示。 <span class="codeph"> DEFAULT_不透明度 </span> 的字型為100。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 背景不透明度 </td> 
-   <td colname="2"> <p>背景字符单元格的不透明度。 </p> <p>表示为0（完全透明）到100（完全不透明）之间的百分比。 <span class="codeph"> 背景的 </span> DEFAULT_OPACITY为100。 </p> </td> 
+   <td colname="2"> <p>背景字元儲存格的不透明度。 </p> <p>以從0 （完全透明）到100 （完全不透明）的百分比表示。 <span class="codeph"> DEFAULT_不透明度 </span> 背景為100。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> 填充不透明度 </td> 
-   <td colname="2"> <p>题注窗口背景的不透明度。 </p> <p>表示为0（完全透明）到100（完全不透明）之间的百分比。 <span class="codeph"> 填充的DEFAULT_ </span> OPACITY为0。 </p> </td> 
+   <td colname="1"> 填色不透明度 </td> 
+   <td colname="2"> <p>註解視窗背景的不透明度。 </p> <p>以從0 （完全透明）到100 （完全不透明）的百分比表示。 <span class="codeph"> DEFAULT_不透明度 </span> 填色為0。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-## 题注格式示例{#examples-caption-formatting}
+## 註解格式範例 {#examples-caption-formatting}
 
-您可以指定隐藏式字幕格式。
+您可以指定隱藏式字幕格式。
 
-**示例1:显式指定格式值**
+**範例1：明確指定格式值**
 
 ```java
 private final MediaPlayer.PlaybackEventListener  
@@ -233,7 +232,7 @@ private final MediaPlayer.PlaybackEventListener
 } 
 ```
 
-**示例2:在参数中指定格式值**
+**範例2：在引數中指定格式值**
 
 ```java
 /** 

@@ -1,26 +1,24 @@
 ---
-title: 自定义身份验证/授权概述（可选）
-description: 自定义身份验证/授权概述（可选）
+title: 自訂驗證/權益概觀（選擇性）
+description: 自訂驗證/權益概觀（選擇性）
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: d92c4246-c772-44da-80b6-4086dfc30ff4
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '105'
 ht-degree: 0%
 
 ---
 
+# 自訂驗證/權益概觀（選擇性）{#custom-authentication-entitlement-overview-optional}
 
-# 自定义身份验证/授权概述（可选）{#custom-authentication-entitlement-overview-optional}
+Primetime Cloud DRM可設定為您自己的後端驗證/權益服務來確定：
 
-Primetime Cloud DRM可配置为联系您自己的后端身份验证/授权服务，以确定：
+* 是否允許此使用者取得授權？
+* 授權中應有哪些權利/限制？
 
-* 是否允许此用户获得许可证？
-* 许可证应包含哪些权利/限制？
-
-Primetime Cloud DRM包括后端身份验证/授权服务的参考实施。 出于演示目的，此服务器正在对BEES请求发出“允许”响应。 请参阅[!DNL BEESServlet.java]以修改服务器行为。
+Primetime Cloud DRM包含後端驗證/權利服務的參考實作。 為了示範，此伺服器正在發出BEES要求的「允許」回應。 另請參閱 [!DNL BEESServlet.java] 修改伺服器行為。
 
 >[!NOTE]
 >
->以前，这是名为&#x200B;*Back End Entitlement Server*(BEES)的单独产品，因此在此文档和源文件中对BEES的引用。
-
+>之前，這是一個單獨產品，稱為 *後端權益伺服器* (BEES)，因此在本檔案及來源檔案中會參照BEES。

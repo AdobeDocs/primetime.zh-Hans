@@ -1,35 +1,34 @@
 ---
-title: 更新License Server WAR文件
-description: 更新License Server WAR文件
+title: 更新授權伺服器WAR檔案
+description: 更新授權伺服器WAR檔案
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: a70d04e2-24a4-4848-9e9b-97467f2c1749
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '166'
 ht-degree: 0%
 
 ---
 
+# 更新授權伺服器WAR檔案{#update-the-license-server-war-file}
 
-# 更新License Server WAR文件{#update-the-license-server-war-file}
+為了支援透過On Premises Individualization Server進行個人化的使用者端，您必須更新License Server的信任憑證根目錄，以包含新取得的個人化CA認證。 Python指令碼( [!DNL addIndivCert.py])包含在 [!DNL update_license_server] 資料夾。
 
-为了支持通过本地个性化服务器实现个性化的客户端，您必须更新License Server的信任证书根目录以包含新获得的个性化CA凭据。 [!DNL update_license_server]文件夹中包含Python脚本([!DNL addIndivCert.py])。
+請執行以下動作以更新授權伺服器：
 
-请执行以下操作以更新许可证服务器：
+1. 複製要更新的WAR檔案(範例： [!DNL flashaccess.war]， [!DNL faxsks.war])。
+1. 請確定WAR檔案已解除鎖定，並已設定其許可權以便修改。
+1. 執行 [!DNL addIndivCert.py] 用於更新License Server WAR檔案的Python指令碼。
 
-1. 制作要更新的WAR文件副本(示例：[!DNL flashaccess.war], [!DNL faxsks.war])。
-1. 确保已解锁WAR文件并设置其权限，以便修改它们。
-1. 运行[!DNL addIndivCert.py] Python脚本以更新License Server WAR文件。
+   指令碼的輸入如下：
 
-   脚本的输入如下：
+   * `cert`：包含個人化CA憑證的PKCS12檔案
+   * `war`：要更新的WAR檔案
 
-   * `cert`:包含个性化CA证书的PKCS12文件
-   * `war`:要更新的WAR文件
-
-   输出文件是更新的WAR文件。
+   輸出檔案是更新的WAR檔案。
 
    ```
    ./addIndivCert.py -cert NEW_IndivCA.cer -war flashaccess.war
    ```
 
-WAR文件将被修改到位。 如有必要，您可以编辑Python脚本以满足您的特定需求。 执行更新后，可以正常部署WAR文件。
+將會就地修改WAR檔案。 如有需要，您可以編輯Python指令碼以符合您的特定需求。 執行更新後，您可以正常部署WAR檔案。

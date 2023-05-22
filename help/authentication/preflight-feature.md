@@ -1,42 +1,41 @@
 ---
-title: 预检功能、如何启用、疑难解答或确定问题
-description: 预检功能、如何启用、疑难解答或确定问题
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 預檢功能、如何啟用、疑難排解或判斷問題
+description: 預檢功能、如何啟用、疑難排解或判斷問題
+exl-id: 9e4ec343-371f-4116-915f-191e5f42cb47
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '495'
 ht-degree: 0%
 
 ---
 
-
-# 预检功能：如何启用、疑难解答或确定问题 {#preflight-feature}
+# 預檢功能：如何啟用、疑難排解或判斷問題 {#preflight-feature}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-Adobe Primetime身份验证计算preAuthorizeResources的方式已发生更改。 PreAuthorization API具有新的实施。 此实施取代了旧解决方案，该解决方案仅进行多个授权调用。
-预授权API的外部接口保持不变，程序员应用程序中不需要更新。
+Adobe Primetime驗證計算preAuthorizeResources的方式已變更。 PreAuthorization API有新的實作。 此實作會取代僅進行多個授權呼叫的舊解決方案。
+PreAuthorization API的外部介面未變更，程式設計師的應用程式中不需要更新。
 
-预检资源的计算方式有三种：
+預檢資源的計算方式有三種：
 
-* **一种到MVPD的分支连接方法**:这包括Adobe对MVPD进行多次授权调用（但客户仍必须进行一次预检调用）。
-* **渠道排队**:MVPD在SAML身份验证响应中为已登录用户公开通道线路，并且Adobe会根据该线路返回授权资源。 SAML跟踪器中的SAML authN响应应显示该列表。
-* **多信道授权**:客户端和Adobe身份验证都对一组资源的MVPD进行单次调用。
+* **MVPD的分叉及連線方法**：這涉及Adobe對MVPD進行多次授權呼叫（使用者端仍須進行一個預檢呼叫）。
+* **管道排列**： MVPD會在SAML驗證回應中公開登入使用者的頻道行，且Adobe會根據該來源傳回授權資源。 SAML追蹤器中的SAML authN回應應該會公開該清單。
+* **多頻道授權**：使用者端和Adobe驗證作業都會針對一組資源對MVPD發出單一呼叫。
 
-无论使用何种MVPD，客户端应用程序都将对预检端点(checkPreauthorizedResources API)进行单次调用，从而传递一组resourceID。 根据MVPD支持的上述方式之一，Adobe随后将返回预授权的资源ID。
+不論MVPD為何，使用者端應用程式都會對Preflight端點(checkPreauthorizedResources API)進行單一呼叫，並傳遞一組resourceID。 根據MVPD支援的上述方法之一，Adobe會傳回預先授權的resourceID。
 
-如果预检基于分支连接方法，则Adobe Primetime身份验证后端会检查为其配置中“最大预授权调用数”设置的值。 这由Adobe配置。
+如果Preflight是以fork &amp; join方法為基礎，則Adobe Primetime Authentication後端會檢查其設定中為「最大預先授權呼叫」設定的值。 這是由Adobe設定。
 
-“最大预授权调用数”配置的默认值为“5”，这意味着在预检中，对于分支MVPD和加入MVPD，最多只能发送5个资源。 传递超过5个资源将导致异常，并且将返回空列表。 这是预期行为。 如果MVPD不支持渠道阵列或多渠道授权，但只有在将它们作为多个分支和加入授权调用进行咨询后，它们的加载时间才会增加，则我们可以将其配置为任何值。
+&#39;max preauthorization calls&#39;設定的預設值為&#39;5&#39;，這表示在分叉並加入MVPD的Preflight中最多只能傳送5個資源。 傳遞超過5個資源會產生例外狀況，並會傳回null清單。 這是預期行為。 如果MVPD不支援管道排列或多管道授權，我們可以將此設定為任何值，但必須諮詢他們是否為多個取用和加入授權呼叫會增加其載入時間。
 
-因此，在为MVPD启用预检/疑难解答时，需要考虑以下事项：
+因此，在啟用/疑難排解MVPD的印前檢查時，需要注意以下幾點：
 
-* MVPD支持的方法（分支连接、通道排队或多通道）。
-* 如果仅支持分支和连接，则需要询问程序员在预检呼叫中将发送多少resourceID。
-* 需要咨询MVPD，并需要了解发出“n”个分支和加入授权调用的影响。 之后，如果值大于5，则必须在配置中配置该值。
+* MVPD支援的方法（分叉和聯結、頻道排列或多頻道）。
+* 如果只支援分支並加入，則需要詢問程式設計師將在Preflight呼叫中傳送多少資源ID。
+* 需要諮詢MVPD，並需要瞭解發出「n」個分叉與加入授權呼叫的影響。 之後，如果值大於5，則必須在config中設定值。
 
 **限制**
 
-请注意，如果某些MVPD（如AT&amp;T和TWC）的预检调用中有任何资源ID是虚假ID或者它们在预检调用中发送的资源ID列表中未识别的ID，则我们不会从预检调用中返回任何资源ID，即使我们在该列表中也具有有效的和授权资源。
-
+請注意，對於某些MVPD （例如AT&amp;T和TWC），如果任何resourceID是假的ID，或是在預檢呼叫中傳送的resourceID清單中無法辨識的ID，我們並不會從預檢呼叫中取得任何resourceID，即使我們在該清單中也有有效且已授權的資源。

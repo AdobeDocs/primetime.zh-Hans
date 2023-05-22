@@ -1,36 +1,35 @@
 ---
-description: 此示例显示了在播放时间轴中包含TimeRange规范的建议方法。
-title: 将时间范围广告标记置于时间轴上
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 此範例說明在播放時間軸上包含TimeRange規格的建議方法。
+title: 將TimeRange廣告標籤放置在時間軸上
+exl-id: a4d45395-38a4-4345-9ba3-87cd9200b9f6
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '409'
 ht-degree: 0%
 
 ---
 
+# 將TimeRange廣告標籤放置在時間軸上 {#place-timerange-ad-markers-on-the-timeline}
 
-# 将TimeRange和标记放置到时间轴{#place-timerange-ad-markers-on-the-timeline}
+此範例說明在播放時間軸上包含TimeRange規格的建議方法。
 
-此示例显示了在播放时间轴中包含TimeRange规范的建议方法。
+1. 將頻外廣告定位資訊轉譯為 `TimeRange` 規格(亦即 `TimeRange` 類別)。
+1. 使用集合 `TimeRange` 填入 `TimeRangeCollection` 類別。
+1. 傳遞中繼資料例項，可從以下網址取得： `TimeRangeCollection` 執行個體，到 `replaceCurrentItem` 方法(的一部分 `MediaPlayer` 介面)。
+1. 等候TVSDK轉換為PREPARED狀態 `PlaybackEventListener#onPrepared` 要觸發的回呼。
+1. 呼叫「 」以開始播放視訊 `play()` 方法(的一部分 `MediaPlayer` 介面)。
 
-1. 将带外广告定位信息转换为`TimeRange`规范（即`TimeRange`类的实例）的列表。
-1. 使用`TimeRange`规范集填充`TimeRangeCollection`类的实例。
-1. 将可从`TimeRangeCollection`实例获取的Metadata实例传递给`replaceCurrentItem`方法（`MediaPlayer`接口的一部分）。
-1. 等待TVSDK过渡到PREPARED状态，方法是等待触发`PlaybackEventListener#onPrepared`回调。
-1. 开始视频播放，方法是调用`play()`方法（`MediaPlayer`接口的一部分）。
+* 處理時間表衝突：在某些情況下 `TimeRange` 規格與播放時間軸重疊。 例如，與 `TimeRange` 規格可能低於已放置的結束位置值。 在此情況下，TVSDK會以無訊息方式調整違規專案的開始位置 `TimeRange` 避免時間表衝突的規格。 透過此調整，新的 `TimeRange` 會比原先指定的時間更短。 如果調整太過極端，以致於會導致 `TimeRange` 持續零毫秒，TVSDK會以無訊息方式捨棄違規專案 `TimeRange` 規格。
 
-* 处理时间轴冲突：有时某些`TimeRange`规范在播放时间线上重叠。 例如，与`TimeRange`规格对应的开始位置值可能低于已放置的结束位置值。 在这种情况下，TVSDK将静默调整违规`TimeRange`规范的开始位置以避免时间线冲突。 通过此调整，新`TimeRange`将变得比最初指定的更短。 如果调整过于极端，以致于会导致持续时间为零毫秒的`TimeRange`，则TVSDK将静默地删除违规的`TimeRange`规范。
+* 時間 `TimeRange` 提供自訂廣告插播的規格，TVSDK會嘗試將這些轉譯為分組在廣告插播內的廣告。 TVSDK會尋找相鄰的 `TimeRange` 規格並將它們叢集到個別的廣告插播中。 如果時間範圍與任何其他時間範圍都不相鄰，則會將其轉譯為包含單一廣告的廣告插播。
 
-* 当提供自定义广告分段的`TimeRange`规范时，TVSDK会尝试将这些规范转换为分组在广告分段内的广告。 TVSDK查找相邻的`TimeRange`规范，并将它们分成不同的广告分段。 如果有时间范围不与任何其他时间范围相邻，则这些时间范围会转换为包含单个广告的广告分段。
+* 假設正在載入的媒體播放器專案指向VOD資產。 TVSDK會在您的應用程式嘗試載入中繼資料包含的媒體資源時檢查此專案 `TimeRange` 僅可在自訂廣告標籤功能內容中使用的規格。 如果基礎資產不是VOD型別，TVSDK程式庫會擲回例外狀況。
 
-* 假定正在加载的媒体播放器项目指向VOD资产。 当您的应用程序尝试加载其元数据包含`TimeRange`规范的媒体资源时，TVSDK会检查这一点，这些规范只能在自定义广告标记功能的上下文中使用。 如果基础资源不是VOD类型，TVSDK库将引发异常。
-
-* 在处理自定义广告标记时，TVSDK会停用其他广告解析机制(通过Adobe Primetime广告决策（以前称为Auditude）或其他广告供应系统)。 您可以使用TVSDK提供的各种广告解析器模块或自定义广告标记机制之一。 使用自定义广告标记API时，广告内容被视为已解析并放置在时间轴上。
+* 處理自訂廣告標籤時，TVSDK會停用其他廣告解決機制(透過Adobe Primetime ad decisioning （先前稱為Auditude）或其他廣告布建系統)。 您可以使用TVSDK提供的各種廣告解析程式模組之一，或是自訂廣告標籤機制。 使用自訂廣告標籤API時，會將廣告內容視為已解析並放置在時間軸上。
 
 <!--<a id="example_639BD1B66CE74F3DB65ED06CAD23EB09"></a>-->
 
-以下代码片断提供了一个简单示例，其中一组由三个`TimeRange`规范组成的规范作为自定义广告标记放置在时间轴上。
+下列程式碼片段提供簡單範例，說明一組3個 `TimeRange` 規格會以自訂廣告標籤的形式放置在時間軸上。
 
 ```
 // Assume that the 3 timerange specs are obtained through external means: CMS, etc. 

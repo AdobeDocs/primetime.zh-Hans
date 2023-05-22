@@ -1,22 +1,21 @@
 ---
-title: 加密脚本数据
-description: 加密脚本数据
+title: 加密指令碼資料
+description: 加密指令碼資料
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: aa5c43e0-400f-45a9-aecf-1ea421fe44e4
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '67'
 ht-degree: 0%
 
 ---
 
+# 加密指令碼資料 {#encrypting-script-data}
 
-# 正在加密脚本数据{#encrypting-script-data}
-
-此打包选项指定是否加密嵌入在内容中的脚本数据。
+此封裝選項會指定是否加密內嵌在內容中的指令碼資料。
 
 >[!NOTE]
 >
->此规则仅适用于FLV文件格式。 对于其他格式的文件，脚本数据始终保持清除状态。
+>此規則僅適用於FLV檔案格式。 對於其他格式的檔案，指令碼資料一律保留在清除中。
 
-示例用例：使用此选项可使脚本数据保持未加密状态，这允许元数据聚合工具读取受保护内容的元数据。
+範例使用案例：使用此選項可讓指令碼資料保持未加密，讓中繼資料彙總工具可讀取受保護內容的中繼資料。

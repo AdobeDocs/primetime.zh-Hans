@@ -1,22 +1,21 @@
 ---
-description: 完整事件重播(FER)内容是通过将#EXT-X-ENDLIST标签添加到清单文件末尾而转换为VOD的实时流。 流保留其广告提示标记。
-title: FER广告解析和插入
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 完整事件重播(FER)內容是指將#EXT-X-ENDLIST標籤新增至資訊清單檔案的結尾處，藉此轉換為VOD的即時資料流。 串流會保留其廣告提示標籤。
+title: FER廣告解析和插入
+exl-id: 9075932d-4e77-4249-af5d-0b392033907f
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '206'
 ht-degree: 0%
 
 ---
 
+# FER廣告解析和插入{#fer-ad-resolving-and-insertion}
 
-# FER广告解析和插入{#fer-ad-resolving-and-insertion}
+完整事件重播(FER)內容是指將#EXT-X-ENDLIST標籤新增至資訊清單檔案的結尾處，藉此轉換為VOD的即時資料流。 串流會保留其廣告提示標籤。
 
-完整事件重播(FER)内容是通过将#EXT-X-ENDLIST标签添加到清单文件末尾而转换为VOD的实时流。 流保留其广告提示标记。
+瀏覽器TVSDK會將FER資料流視為VOD，所以預設的廣告訊號模式為 `SERVER_MAP`. 不過，由於串流會保留其廣告提示標籤，因此您可以將廣告訊號模式設定為 `MANIFEST_CUES`，可讓您使用廣告提示標籤來插入廣告。
 
-浏览器TVSDK将FER流视为VOD，因此默认情况下，广告信令模式为`SERVER_MAP`。 但是，由于流保留其广告提示标记，您可以将广告信令模式设置为`MANIFEST_CUES`，这样您就可以使用广告提示标记进行广告插入。
-
-要使用FER流的提示标记打开广告插入，请执行以下操作：
+若要使用FER資料流的提示標籤來開啟廣告插入：
 
 ```js
 var config = new AdobePSDK.MediaPlayerItemConfig(); 
@@ -24,11 +23,11 @@ config.adSignalingMode = AdobePSDK.AdSignalingMode.MANIFEST_CUES;
 player.replaceCurrentResource(mediaResource, config);
 ```
 
-FER广告解析和插入行为与实时广告解析和插入类似。 浏览器TVSDK执行以下操作：
+FER廣告解析和插入行為類似於即時廣告解析和插入。 瀏覽器TVSDK會執行下列動作：
 
-1. 在内容的开头插入任何前置广告。
-1. 解析由清单中定义的提示点指定的广告。
-1. 用相同持续时间的广告中断替换部分主内容
-1. 如有必要，重新计算虚拟时间轴。
+1. 在內容的開頭插入任何前段廣告。
+1. 解析資訊清單中定義的提示點所指定的廣告。
+1. 以相同持續時間的廣告插播取代部分主要內容
+1. 如有必要，請重新計算虛擬時間表。
 
-**限制：** 浏览器TVSDK仅支持HLS FER流播放。此外，FER流不支持MP4中间卷广告。
+**限制：** 瀏覽器TVSDK僅支援HLS FER資料流播放。 此外，FER資料流不支援MP4中段廣告。

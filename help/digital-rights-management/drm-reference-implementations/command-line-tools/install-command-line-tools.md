@@ -1,26 +1,25 @@
 ---
-title: 安装命令行工具
-description: 安装命令行工具
+title: 安裝命令列工具
+description: 安裝命令列工具
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: a4775d96-3a3b-4896-bdfb-c7bc51347166
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '81'
 ht-degree: 0%
 
 ---
 
+# 安裝命令列工具 {#install-the-command-line-tools}
 
-# 安装命令行工具{#install-the-command-line-tools}
+1. 複製以下專案的內容： [DRM SDK DVD]\Reference Implementation\Command Line Tools\目錄至您系統上的工作目錄。
 
-1. 将[DRM SDK DVD]\Reference Implementation\Command Line Tools\目录的内容复制到您系统上的工作目录。
+   [!DNL .../Command Line Tools/] 內容：
 
-   [!DNL .../Command Line Tools/] 内容：
-
-   * [!DNL flashaccesstools.properties]  — 命令行工具的默认配置文件。
-   * [!DNL libs/]  — 包含命令行工具JAR文件
-   * [!DNL samples/]  — 包含ant构建脚本() [!DNL build-samples.xml]和Java源文件。
+   * [!DNL flashaccesstools.properties]  — 命令列工具的預設組態檔。
+   * [!DNL libs/]  — 包含命令列工具JAR檔案
+   * [!DNL samples/]  — 包含Ant建置指令碼( [!DNL build-samples.xml])和Java來源檔案。
 
       >[!NOTE]
       >
-      >Java源文件演示如何使用Primetime DRM SDK API。 要构建并运行示例，请在[!DNL samples/]中运行[!DNL build-samples.xml] Ant脚本。
+      >Java來源檔案會示範如何使用Primetime DRM SDK API。 若要建置並執行範例，請執行 [!DNL build-samples.xml] 中的Ant指令碼 [!DNL samples/].

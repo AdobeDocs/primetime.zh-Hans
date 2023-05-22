@@ -1,33 +1,32 @@
 ---
-description: 您可以自定义或覆盖广告行为。
-title: 设置自定义播放
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以自訂或覆寫廣告行為。
+title: 設定自訂播放
+exl-id: 28c28589-9e94-40de-b921-1bffc0392c29
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '169'
 ht-degree: 0%
 
 ---
 
+# 設定自訂播放{#set-up-customized-playback}
 
-# 设置自定义播放{#set-up-customized-playback}
+您可以自訂或覆寫廣告行為。
 
-您可以自定义或覆盖广告行为。
+在您可以自訂或覆寫廣告行為之前，請先使用註冊廣告原則執行個體。
+若要自訂廣告行為，請執行下列任一項作業：
 
-在自定义或覆盖广告行为之前，请先注册广告策略实例。
-要自定义广告行为，请执行以下操作之一：
+* 實作 `AdPolicySelector` 介面及其所有方法。
 
-* 实现`AdPolicySelector`接口及其所有方法。
+   如果您需要覆寫，建議使用此選項 **全部** 預設廣告行為。
 
-   如果您需要覆盖&#x200B;**all**&#x200B;默认广告行为，建议使用此选项。
+* 擴充 `DefaultAdPolicySelector` 類別並提供僅用於需要自訂之行為的實作。
 
-* 扩展`DefaultAdPolicySelector`类并仅为那些需要自定义的行为提供实现。
+   如果您只需要覆寫，則建議使用此選項 **部分** 預設行為的ID。
 
-   如果只需要覆盖默认行为的&#x200B;**some**，则建议使用此选项。
+針對這兩個選項，請完成下列工作：
 
-对于这两个选项，请完成以下任务:
-
-1. 实施您自己的自定义广告策略选择器。
+1. 實作您自己的自訂廣告原則選擇器。
 
    ```
    public class CustomAdPolicySelector implements AdPolicySelector { 
@@ -35,7 +34,7 @@ ht-degree: 0%
    }
    ```
 
-1. 扩展内容工厂以使用自定义广告策略选择器。
+1. 擴充內容工廠以使用自訂廣告原則選擇器。
 
    ```
    public class CustomContentFactory extends DefaultContentFactory { 
@@ -55,7 +54,7 @@ ht-degree: 0%
    factory->retrieveAdPolicySelector(item, &defaultAdPolicySelector);
    ```
 
-1. 注册TVSDK在广告工作流程中使用的新内容工厂。
+1. 註冊TVSDK在廣告工作流程中使用的新內容工廠。
 
    ```
    PSDKConfig.advertisingFactory = new CustomContentFactory();
@@ -63,4 +62,4 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   >如果通过`MediaPlayerItemConfig`类为特定流注册了自定义内容工厂，则当取消分配`MediaPlayer`实例时，将清除它。 每次创建新的播放会话时，您的应用程序都必须注册它。
+   >如果自訂內容處理站是透過 `MediaPlayerItemConfig` 類別，則會在 `MediaPlayer` 執行個體已取消配置。 您的應用程式必須在每次建立新的播放工作階段時註冊它。

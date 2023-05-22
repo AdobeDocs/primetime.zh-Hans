@@ -1,22 +1,21 @@
 ---
-description: 您可以根据默认解析器实现您自己的内容解析器。
-title: 实现自定义内容解析器
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以根據預設解析器來實作您自己的內容解析器。
+title: 實作自訂內容解析程式
+exl-id: 04eff874-8a18-42f0-adb2-5b563e5c6a31
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '209'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
+# 實作自訂內容解析程式 {#implement-a-custom-content-resolver}
 
-# 实现自定义内容解析程序{#implement-a-custom-content-resolver}
+您可以根據預設解析器來實作您自己的內容解析器。
 
-您可以根据默认解析器实现您自己的内容解析器。
+當TVSDK產生新的商機時，它會透過註冊的內容解析程式反複尋找，尋找能夠解析該商機的內容。 第一個傳回 `true` 已選取以解析商機。 如果沒有內容解析程式可用，則會略過該機會。 由於內容解析程式通常是非同步的，內容解析程式負責在程式完成時通知TVSDK。
 
-当TVSDK生成新的机会时，它会循环访问注册的内容解析器，寻找能够解决该机会的内容解析器。 选择返回`true`的第一个以解析该机会。 如果没有内容解析程序可用，则跳过该机会。 由于内容解析过程通常是异步的，因此内容解析程序负责在进程完成时通知TVSDK。
-
-1. 通过扩展`ContentFactory`接口并覆盖`retrieveResolvers`，实现您自己的自定义`ContentFactory`。
+1. 實作您自己的自訂 `ContentFactory`，透過擴充 `ContentFactory` 介面和覆寫 `retrieveResolvers`.
 
    例如：
 
@@ -51,7 +50,7 @@ ht-degree: 2%
    } 
    ```
 
-1. 将`ContentFactory`注册到`MediaPlayer`。
+1. 註冊 `ContentFactory` 至 `MediaPlayer`.
 
    例如：
 
@@ -68,9 +67,9 @@ ht-degree: 2%
    itemLoader.load(resource, id, config);
    ```
 
-1. 将`AdvertisingMetadata`对象传递给TVSDK，如下所示：
-   1. 创建`AdvertisingMetadata`对象。
-   1. 将`AdvertisingMetadata`对象保存到`MediaPlayerItemConfig`。
+1. 傳遞 `AdvertisingMetadata` 物件至TVSDK，如下所示：
+   1. 建立 `AdvertisingMetadata` 物件。
+   1. 儲存 `AdvertisingMetadata` 物件至 `MediaPlayerItemConfig`.
 
       ```java
       AdvertisingMetadata advertisingMetadata = new AdvertisingMetadata(); 
@@ -81,8 +80,8 @@ ht-degree: 2%
       mediaPlayerItemConfig.setAdvertisingMetadata(advertisingMetadata); 
       ```
 
-1. 创建扩展`ContentResolver`类的自定义广告解析程序类。
-   1. 在自定义广告解析器中，覆盖`doConfigure`、`doCanResolve`、`doResolve`、`doCleanup`:
+1. 建立自訂廣告解析程式類別，以擴充 `ContentResolver` 類別。
+   1. 在自訂廣告解析程式中，覆寫 `doConfigure`， `doCanResolve`， `doResolve`， `doCleanup`：
 
       ```java
       void doConfigure(MediaPlayerItem item); 
@@ -91,7 +90,7 @@ ht-degree: 2%
       void doCleanup();
       ```
 
-      您从传入`doConfigure`的项目获得`advertisingMetadata`:
+      您取得您的 `advertisingMetadata` 從傳入的專案 `doConfigure`：
 
       ```java
       MediaPlayerItemConfig itemConfig = item.getConfig(); 
@@ -100,9 +99,9 @@ ht-degree: 2%
         mediaPlayerItemConfig.getAdvertisingMetadata(); 
       ```
 
-   1. 对于每个职位安排机会，创建一个`List<TimelineOperation>`。
+   1. 針對每個刊登機會，建立 `List<TimelineOperation>`.
 
-      此示例`TimelineOperation`提供了`AdBreakPlacement`的结构：
+      此範例 `TimelineOperation` 提供以下專案的結構： `AdBreakPlacement`：
 
       ```java
       AdBreakPlacement( 
@@ -113,16 +112,16 @@ ht-degree: 2%
       ); 
       ```
 
-   1. 解析广告后，调用下列功能之一：
+   1. 解析廣告後，請呼叫下列其中一個函式：
 
-      * 如果广告解析成功，请在`ContentResolverClient`上调用`process(List<TimelineOperation> proposals)`和`notifyCompleted(Opportunity opportunity)`
+      * 如果廣告解析成功，請呼叫 `process(List<TimelineOperation> proposals)` 和 `notifyCompleted(Opportunity opportunity)` 於 `ContentResolverClient`
 
          ```java
          _client.process(timelineOperations); 
          _client.notifyCompleted(opportunity); 
          ```
 
-      * 如果广告解析失败，请在`ContentResolverClient`上调用`notifyResolveError`
+      * 如果廣告解析失敗，請呼叫 `notifyResolveError` 於 `ContentResolverClient`
 
          ```java
          _client.notifyFailed(Opportunity opportunity, PSDKErrorCode error);
@@ -136,7 +135,7 @@ ht-degree: 2%
 
 <!--<a id="example_463B718749504A978F0B887786844C39"></a>-->
 
-此示例自定义广告解析程序解决了一个机会，并提供了一个简单的广告：
+此自訂廣告解析程式範例可解析商機並提供簡單的廣告：
 
 ```java
 public class CustomContentResolver extends ContentResolver { 
@@ -169,4 +168,3 @@ public class CustomContentResolver extends ContentResolver {
     protected void doCleanup() {} 
 } 
 ```
-

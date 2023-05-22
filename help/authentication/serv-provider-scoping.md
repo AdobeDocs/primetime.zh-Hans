@@ -1,41 +1,41 @@
 ---
-title: 服务提供商范围
-description: 服务提供商范围
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 服務提供者範圍
+description: 服務提供者範圍
+exl-id: 730c43e1-46c0-4eec-b562-b1ad93cce6d3
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '313'
 ht-degree: 0%
 
 ---
 
-
-# 服务提供商范围 {#service-provoider-scoping}
-
->[!NOTE]
->
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
-
-## 概述 {#overview}
-
-与MVPD的Adobe Primetime身份验证集成的默认实施基于 **OLCA规范**. OLCA规范（6.5，主体标识符）的“身份验证要求”部分指出，可以为主体标识符指示服务提供商(SP)的范围。 （主题标识符是MVPD返回到SP的模糊处理用户ID。）  在Adobe Primetime身份验证集成中，需要MVPD启用SP身份验证请求的范围。
-
-随着Adobe Primetime身份验证对程序员起到SP的作用，有必要实施一个自定义，以启用SP对身份验证请求的范围。  需要执行此操作，以便MVPD能够识别在SAML断言中传递到MVPD的标识提供程序(IdP)的网络品牌。  范围界定可以采用下一节中描述的两种方式之一来实施。
-
-## 服务提供商范围 {#service-provider-scoping}
-
-Adobe Primetime身份验证支持以下两种方法来启用身份验证请求的SP范围：
-
-* **SAML颁发者方法。**  在此方法中，“请求者ID”将附加到SAML身份验证请求中的SAML颁发者字符串。
-
-* **自定义范围属性方法。**  在此方法中，“请求者ID”明确作为自定义“范围”属性包含在SAML身份验证请求中。
+# 服務提供者範圍 {#service-provoider-scoping}
 
 >[!NOTE]
 >
->“请求者ID”是Adobe Primetime身份验证指代程序员网络品牌的方式(例如：“CNN”是特纳网络的品牌之一。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-### SAML颁发者方法 {#saml-issuer-approach}
+## 概觀 {#overview}
 
-此方法使用SAML `<Issuer>` 元素，如以下代码片段所示：
+Adobe Primetime驗證與MVPD整合的預設實作是根據 **OLCA規格**. OLCA規格（6.5，主體識別碼）的「驗證需求」區段指出，您可以指出服務提供者(SP)的「主體」識別碼範圍。 （主體識別碼是MVPD傳回SP的模糊化使用者ID。）  在Adobe Primetime驗證整合中，需要MVPD啟用SP驗證請求的範圍設定。
+
+由於Adobe Primetime驗證扮演了程式設計師的SP角色，因此必須實作自訂，以啟用驗證請求的SP範圍設定。  必須這樣做，MVPD才能識別傳遞給MVPD的身分提供者(IdP)的SAML宣告中的網路品牌。  範圍設定可透過下一節所述的兩種方式之一來實作。
+
+## 服務提供者範圍 {#service-provider-scoping}
+
+Adobe Primetime驗證支援以下兩種方式來啟用驗證請求的SP範圍設定：
+
+* **SAML簽發者方法。**  在此方法中，「請求者ID」會附加至SAML驗證請求中的SAML簽發者字串。
+
+* **自訂範圍設定屬性方法。**  在此方法中，「請求者ID」會明確包含在SAML驗證請求中，作為自訂「範圍設定」屬性。
+
+>[!NOTE]
+>
+>「請求者ID」是Adobe Primetime驗證提及程式設計師網路品牌的方式（例如：「CNN」是Turner網路的品牌之一）。
+
+### SAML簽發者方法 {#saml-issuer-approach}
+
+此方法使用SAML `<Issuer>` 元素，如下列代碼片段所示：
 
 ```xml
 ...
@@ -45,9 +45,9 @@ Adobe Primetime身份验证支持以下两种方法来启用身份验证请求�
 ...
 ```
 
-### 自定义范围界定属性方法 {#custom-scoping-property-approach}
+### 自訂範圍設定屬性方法 {#custom-scoping-property-approach}
 
-此方法使用名为“范围”的自定义属性，如SAML身份验证请求的此代码片段所示：
+此方法會使用名為「Scoping」的自訂屬性，如以下SAML驗證請求程式碼片段所示：
 
 ```xml
 ...

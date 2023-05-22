@@ -1,30 +1,29 @@
 ---
-description: TVSDK提供用于创建高级视频播放器应用程序（您的Primetime播放器）的工具，这些应用程序可以与其他Primetime组件集成。 它还提供了多种功能，旨在最大限度地提高视频回放质量。
-title: 设置媒体播放器
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: TVSDK提供建立進階視訊播放器應用程式（您的Primetime播放器）的工具，您可以將其與其他Primetime元件整合。 此外，還提供許多專門設計來最大化視訊播放品質的功能。
+title: 設定媒體播放器
+exl-id: 99fdc4c1-0c67-4de5-87a5-b42d76f43ae9
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '140'
 ht-degree: 0%
 
 ---
 
+# 設定媒體播放器 {#set-up-the-media-player}
 
-# 设置媒体播放器{#set-up-the-media-player}
-
-TVSDK提供用于创建高级视频播放器应用程序（您的Primetime播放器）的工具，这些应用程序可以与其他Primetime组件集成。 它还提供了多种功能，旨在最大限度地提高视频回放质量。
+TVSDK提供建立進階視訊播放器應用程式（您的Primetime播放器）的工具，您可以將其與其他Primetime元件整合。 此外，還提供許多專門設計來最大化視訊播放品質的功能。
 
 <!--<a id="section_1FE83A68DE624F20B52C0959851F5699"></a>-->
 
-实例化`MediaPlayer`并将其视图放入帧布局中。
+例項化 `MediaPlayer` 並將其檢視放入框架版面中。
 
-1. 实例化`MediaPlayer`，将`android.content.Context`对象传递给构造函数：
+1. 具現化 `MediaPlayer`，傳遞 `android.content.Context` 物件至建構函式：
 
    ```java
    MediaPlayer mediaPlayer = new MediaPlayer(context);
    ```
 
-1. 提供帧布局(`android.widget.FrameLayout`)以容纳`mediaPlayer`的`ViewGroup`:
+1. 提供框架版面( `android.widget.FrameLayout`)以保留 `ViewGroup` 之 `mediaPlayer`：
 
    ```java
    FrameLayout playerFrame = (FrameLayout) _viewGroup.findViewById(R.id.playerFrame);
@@ -32,7 +31,7 @@ TVSDK提供用于创建高级视频播放器应用程序（您的Primetime播放
 
    >[!NOTE]
    >
-   >下面是用于创建`_viewGroup`的代码片断。
+   >以下是要建立的程式碼片段 `_viewGroup`.
 
    ```
    @Override 
@@ -44,7 +43,7 @@ TVSDK提供用于创建高级视频播放器应用程序（您的Primetime播放
     }
    ```
 
-1. 将`mediaPlayer`视图放在框架布局中：
+1. 放置檢視 `mediaPlayer` 框架版面配置內：
 
    ```java
    playerFrame.addView(mediaPlayer.getView());
@@ -52,4 +51,4 @@ TVSDK提供用于创建高级视频播放器应用程序（您的Primetime播放
 
    >[!NOTE]
    >
-   >`MediaPlayer`实例(`mediaPlayer`)现已可用，并且已正确配置，可在设备屏幕上显示视频内容。
+   >此 `MediaPlayer` 例項( `mediaPlayer`)現已可用，且已正確設定為在裝置畫面上顯示視訊內容。

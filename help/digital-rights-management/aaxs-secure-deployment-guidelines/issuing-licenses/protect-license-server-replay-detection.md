@@ -1,18 +1,17 @@
 ---
-title: 重播保护
-description: 重播保护
+title: 重播保護
+description: 重播保護
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 1e6ad730-b150-4e8f-9e79-e6b4fe006bf8
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '92'
 ht-degree: 0%
 
 ---
 
+# 重播保護{#replay-protection}
 
-# 重放保护{#replay-protection}
+重播保護可防止攻擊者重播授權要求訊息，並可能對使用者端造成拒絕服務(DoS)攻擊(A) *拒絕服務* 攻擊是攻擊者試圖阻止服務的合法使用者使用該服務的行為。) 例如，使用倒回計數器的重播攻擊可能用來「誘騙」License Server認為DRM使用者端正在倒回其狀態，導致帳戶暫停。
 
-重放保护可防止攻击者重新播放许可证请求消息，并可能导致对客户端的拒绝服务(DoS)攻击（*denial-of-service*&#x200B;攻击是攻击者试图阻止某个服务的合法用户使用该服务的一种尝试）。 例如，使用回退计数器的重放攻击可用于“诱骗”许可证服务器，使其认为DRM客户端正在回退其状态，从而导致帐户挂起。
-
-要了解有关重放保护的详细信息，请参阅&#x200B;*Adobe访问API参考*。`AbstractRequestMessage.getMessageId()`
+若要進一步瞭解重播保護，請參閱 `AbstractRequestMessage.getMessageId()` 此 *Adobe存取API參考*.

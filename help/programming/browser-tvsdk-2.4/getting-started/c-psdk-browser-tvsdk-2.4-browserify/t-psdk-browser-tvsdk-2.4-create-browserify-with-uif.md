@@ -1,29 +1,28 @@
 ---
-description: 在您的应用程序中使用Browser TVSDK提供的Browserify库文件，以使用UI-Framework创建与Browserify兼容的播放器。
-title: 使用UI-Framework创建与浏览器兼容的播放器
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 使用應用程式中瀏覽器TVSDK提供的瀏覽器程式庫檔案，透過UI-Framework建立與瀏覽器相容的播放器。
+title: 使用UI-Framework建立與瀏覽器相容的播放器
+exl-id: cd72cae1-f67e-4192-9a7e-1c1492d88922
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '125'
 ht-degree: 0%
 
 ---
 
+# 使用UI-Framework建立與瀏覽器相容的播放器 {#create-a-browserify-compatible-player-using-the-ui-framework}
 
-# 使用UI-Framework {#create-a-browserify-compatible-player-using-the-ui-framework}创建与浏览器兼容的播放器
+使用應用程式中瀏覽器TVSDK提供的瀏覽器程式庫檔案，透過UI-Framework建立與瀏覽器相容的播放器。
 
-在您的应用程序中使用Browser TVSDK提供的Browserify库文件，以使用UI-Framework创建与Browserify兼容的播放器。
+TVSDK中包含的瀏覽器檔案範例：
 
-TVSDK中包含的示例浏览文件：
+* [！DNL [...]/samples/browserify/ui-framework/build/Gruntfile.js]
+* [！DNL [...]/samples/browserify/ui-framework/build/package.json]
+* [！DNL [...]/samples/browserify/ui-framework/examples/sample.html]
+* [！DNL [...]/samples/browserify/ui-framework/examples/sample.js]
 
-* [!DNL [..]/samples/browserify/ui-framework/build/Gruntfile.js]
-* [!DNL [..]/samples/browserify/ui-framework/build/package.json]
-* [!DNL [..]/samples/browserify/ui-framework/examples/sample.html]
-* [!DNL [..]/samples/browserify/ui-framework/examples/sample.js]
+若要使用UI-Framework建立與瀏覽器相容的應用程式，您必須 `require` 應用程式程式碼中的兩個瀏覽器模組（由瀏覽器TVSDK提供）：
 
-要使用UI-Framework创建与Browserify兼容的应用程序，必须在应用程序代码中`require`两个Browserify模块（由Browser TVSDK提供）：
-
-1. 需要浏览器模块：
+1. 需要瀏覽器模組：
 
    ```
    var AdobePSDK = require('../../../../frameworks/player/AdobePSDK.module.js');  
@@ -31,5 +30,5 @@ TVSDK中包含的示例浏览文件：
    […]
    ```
 
-1. 按照[](../../../browser-tvsdk-2.4/getting-started/c-psdk-browser-tvsdk-2.4-create-a-basic-player/t-psdk-browser-tvsdk-2.4-create-basic-player-uif.md)中的说明继续开发。
->您现在可以使用Browserify捆绑应用程序文件。
+1. 依照中的說明繼續開發 [](../../../browser-tvsdk-2.4/getting-started/c-psdk-browser-tvsdk-2.4-create-a-basic-player/t-psdk-browser-tvsdk-2.4-create-basic-player-uif.md).
+>您現在可以使用Browserify來組合您的應用程式檔案。

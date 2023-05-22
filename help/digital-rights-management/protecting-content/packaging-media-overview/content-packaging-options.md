@@ -1,25 +1,23 @@
 ---
-title: 打包选项
-description: 打包选项
+title: 封裝選項
+description: 封裝選項
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 64c5c22d-0041-4fb9-80d0-72e11cb775f3
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '146'
 ht-degree: 0%
 
 ---
 
+# 封裝選項{#packaging-options}
 
-# 打包选项{#packaging-options}
+封裝內容有許多選項可供您選擇。 您可以在 `DRMParameters` 介面並實作可以介面的類別。 使用這些類別，您可以設定簽名和金鑰引數，以及指示是否要加密音訊內容、視訊內容或指令碼資料。 若要檢視如何在參考實作中實作這些專案，請參閱中討論的「媒體封裝器」命令列選項說明 *使用Adobe Primetime DRM參考實作*. 這些選項是以Java API為基礎，因此可用於程式設計。
 
-您可以使用许多选项来打包内容。 可以在`DRMParameters`接口中指定选项，并实现可以接口的类。 通过这些类，您可以设置签名和密钥参数，并指示是加密音频内容、视频内容还是脚本数据。 要了解如何在参考实现中实现这些功能，请参阅&#x200B;*使用Adobe Primetime DRM参考实现*&#x200B;中讨论的Media Packager命令行选项说明。 这些选项基于Java API，因此可用于编程用途。
+封裝選項包括：
 
-打包选项包括：
-
-* 加密选项（音频、视频、部分加密）。
-* 客户端用作发送到许可证服务器的所有请求的基本URL的许可证服务器URL
-* 许可证服务器传输证书
-* 用于加密CEK的许可证服务器证书
-* 用于对元数据进行签名的打包程序凭据
-
+* 加密選項（音訊、視訊、部分加密）。
+* 使用者端用作傳送至授權伺服器之所有要求基本URL的授權伺服器URL
+* 授權伺服器傳輸憑證
+* 授權伺服器憑證，用於加密CEK
+* 簽署中繼資料的封裝程式認證

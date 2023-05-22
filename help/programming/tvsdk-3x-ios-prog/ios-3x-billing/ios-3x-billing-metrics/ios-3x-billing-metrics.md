@@ -1,47 +1,46 @@
 ---
-description: 为了照顾那些只想为所用内容而非固定费用付费（无论实际用途如何）的客户，Adobe会收集使用量度并使用这些量度来确定向客户收取多少费用。
-title: 账单使用量度
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 為因應客戶只想依使用量付款，而不想依實際使用量支付固定費率的需求，Adobe會收集使用量度並使用這些量度來決定向客戶收費的金額。
+title: 計費使用量度
+exl-id: 8b76d8ea-c8d6-427b-886a-4ae8764bd47a
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '355'
 ht-degree: 0%
 
 ---
 
+# 計費量度 {#billing-metrics}
 
-# 帐单量度{#billing-metrics}
+為因應客戶只想依使用量付款，而不想依實際使用量支付固定費率的需求，Adobe會收集使用量度並使用這些量度來決定向客戶收費的金額。
 
-为了照顾那些只想为所用内容而非固定费用付费（无论实际用途如何）的客户，Adobe会收集使用量度并使用这些量度来确定向客户收取多少费用。
+每次播放器產生資料流開始事件時，TVSDK就會開始定期傳送HTTP訊息至Adobe的計費系統。 期間（稱為可計費期間）在標準VOD、pro VOD （啟用中段廣告）和即時內容中可能不同。 每種內容型別的預設持續時間為30分鐘，但您的Adobe合約會決定實際值。
 
-每次播放器生成流开始事件时，TVSDK开始会定期向Adobe的计费系统发送HTTP消息。 对于标准VOD、专业VOD（启用中间广告）和实时内容，期间（称为可计费持续时间）可以不同。 每种内容类型的默认持续时间为30分钟，但您与Adobe的合同将决定实际值。
+訊息包含下列資訊：
 
-这些消息包含以下信息：
-
-* 内容类型（实时、线性或VOD）
-* 内容URL
-* 是否启用广告
-* 是否启用中间广告（仅VOD）
-* 流是否受DRM保护
+* 內容型別（即時、線性或VOD）
+* 內容URL
+* 是否啟用廣告
+* 是否啟用中段廣告（僅限VOD）
+* 資料流是否受DRM保護
 * TVSDK版本和平台
 
-Adobe预配置此安排，但如果要更改此安排，请与Adobe支持代表合作。
+Adobe會預先設定此安排，但如果您想要變更安排，請與您的Adobe啟用代表合作。
 
-要监视TVSDK发送给Adobe的统计信息，请从您的Adobe支持代表处获取URL，并使用网络捕获工具（例如，Charles）查看数据。
+若要監視TVSDK傳送至Adobe的統計資料，請從Adobe啟用代表取得URL，然後使用網路擷取工具（例如Charles）來檢視資料。
 
-## 配置帐单量度{#configure-billing-metrics}
+## 設定計費量度 {#configure-billing-metrics}
 
-如果您使用默认配置，则无需执行任何其他操作即可启用或配置计费。 如果您从Adobe启用代表获得了不同的配置参数，请在初始化媒体播放器之前使用PTBillingMetricsConfiguration类设置这些参数。
+如果您使用預設設定，則您無需執行任何其他操作即可啟用或設定帳單。 如果您從「Adobe啟用」代表取得不同的設定引數，請在初始化媒體播放器之前使用PTBillingMetricsConfiguration類別設定這些引數。
 
-大多数客户应使用默认配置。
+大部分客戶應使用預設設定。
 
 >[!IMPORTANT]
 >
->您设置的配置在媒体播放器的生命周期内保持有效。 初始化媒体播放器后，便无法更改配置。
+>您設定的設定會在媒體播放器的一生中維持有效。 初始化媒體播放器後，便無法變更設定。
 
-要配置开单量度：
+若要設定計費量度：
 
-输入以下代码示例。
+輸入下列程式碼範例。
 
 ```
 PTBillingMetricsConfiguration *billingConfig = [[[PTBillingMetricsConfiguration alloc] init] autorelease]; 
@@ -54,13 +53,13 @@ billingConfig.liveBillableDurationMinutes = 15.0;
 [metadata setMetadata:billingConfig forKey:PTBillingMetricsConfigurationMetadataKey];
 ```
 
-## 传输计费量度{#transmit-billing-metrics}
+## 傳輸計費量度 {#transmit-billing-metrics}
 
-TVSDK以XML格式向Adobe发送计费量度。
+TVSDK會以XML格式將計費量度傳送至Adobe。
 
 <!--<a id="example_13ABDB1CC0B549968A534765378DA3A0"></a>-->
 
-如果使用网络捕获工具监视TVSDK传输到Adobe的统计信息，您应看到以下单位：
+如果您使用網路擷取工具來監視TVSDK傳輸至Adobe的統計資料，您應該會看到如下的單位：
 
 ```
 <request> 
@@ -86,4 +85,4 @@ TVSDK以XML格式向Adobe发送计费量度。
 </request>
 ```
 
-布尔属性`drmProtected`、`adsEnabled`和`midrollEnabled`仅在为true时才显示。
+布林值屬性 `drmProtected`， `adsEnabled`、和 `midrollEnabled` 只有在為true時才會出現。

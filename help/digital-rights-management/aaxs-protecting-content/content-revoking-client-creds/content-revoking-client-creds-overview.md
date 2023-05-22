@@ -1,20 +1,19 @@
 ---
-title: 撤销客户端凭据
-description: 撤销客户端凭据
+title: 撤銷使用者端認證
+description: 撤銷使用者端認證
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 583dff28-c34a-4759-81a6-0471feab309f
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '143'
 ht-degree: 0%
 
 ---
 
+# 撤銷使用者端認證{#revoking-client-credentials}
 
-# 撤销客户端凭据{#revoking-client-credentials}
+在某些情況下，必須撤銷使用者端的認證，或檢查指定的認證集是否已撤銷。 如果認證遭到破壞，認證可能會被撤銷。 發生此情況時，將不再核發授權給受影響的使用者端。
 
-在某些情况下，必须撤销客户端的凭据或检查给定的一组凭据是否已被吊销。 如果凭据被破坏，则可以撤销凭据。 发生这种情况时，许可证将不再发给受损的客户。
+Adobe會維護可撤銷受威脅使用者端的憑證撤銷清單(CRL)。 SDK會自動強制執行這些CRL。 授權伺服器可能會禁止特定機器認證或DRM和執行階段認證的特定版本，進而限制使用者端。 A `RevocationList` 可建立並傳遞至SDK以撤銷電腦認證。 特定DRM/執行階段版本可以在原則層級（透過在播放許可權中設定模組限制）或全域（透過在設定模組限制）撤銷 `HandlerConfiguration`)。
 
-Adobe保留用于撤销受损客户端的证书吊销列表(CRL)。 这些CRL由SDK自动强制执行。 许可服务器可以通过禁止特定机器凭证或特定版本的DRM和运行时凭证进一步限制客户端。 可以创建`RevocationList`并将其传递到SDK以撤销计算机凭据。 可以在策略级别（通过在播放权中设置模块限制）或全局（通过在`HandlerConfiguration`中设置模块限制）吊销特定DRM/运行时版本。
-
-本章中的讨论将集中于撤销客户端凭据。
+本章的討論內容將集中於撤銷使用者端憑證。

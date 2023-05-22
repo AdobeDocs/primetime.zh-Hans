@@ -1,189 +1,189 @@
 ---
 title: MVPD概述
 description: MVPD概述
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+exl-id: b918550b-96a8-4e80-af28-0a2f63a02396
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '2736'
 ht-degree: 0%
 
 ---
 
-
 # MVPD概述 {#mvpd-overview}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-## 简介 {#intro}
+## 簡介 {#intro}
 
-此概述适用于多渠道视频节目分发商(MVPD)。 有关包括Kickstart和集成指南在内的其他文档，请参阅本文档末尾的“相关信息”部分。
-
-
-
-随处电视(TVE)是当前著名的行业运动，它使付费电视用户能够跨多个设备访问他们已经付费的内容，包括家庭内和家庭外的内容。  对于付费电视提供商来说，TVE创造了新的机会，既可以保留现有客户关系，也可以启用新客户关系。 然而，随着这些机遇的出现，挑战也随之而来。 在TVE环境中，程序员提供内容，但MVPD保存客户信息，以验证潜在查看者是否是有效订阅者。
+本概述適用於多頻道視訊節目經銷商(MVPD)。 如需其他檔案，包括Kickstart和整合指南，請參閱本檔案結尾的「相關資訊」一節。
 
 
 
-与一个程序员协调查看者身份验证和授权可能很简单，但与数十个或数百个不同程序员进行协调变得越来越复杂。 但是，有了Adobe® Pass ,MVPD只需实施单一、简单的集成即可进入整个TVE生态系统，包括NBCUniversal Media 、 Turner Broadcasting(TBS 、 TNT 、 CNN)、Fox Broadcast Networks 、 Hulu等程序员。  Adobe Primetime身份验证提供了一个集成框架，使确定用户权利变得简单和安全。
+TV Everywhere (TVE)是現在廣為人知的產業運動，它讓Pay TV的訂閱者能夠跨多部裝置存取他們已經在家中的付費內容。  對於付費電視供應商，TVE會建立新的商機，以保留現有的客戶關係並啟用新的客戶關係。 然而，這些機遇伴隨著挑戰。 在TVE環境中，程式設計師會提供內容，但MVPD會儲存客戶資訊，以驗證潛在檢視者是有效的訂閱者。
 
 
 
-底线：Adobe Primetime身份验证可安全地介绍程序员和MVPD之间的权利交易，从而方便查看者访问订阅内容。 换句话说，Adobe Primetime身份验证让正确的客户能够轻松、快速地访问正确的内容。
-
-
-通过Adobe Primetime身份验证，MVPD将收到：
-
-与程序员轻松集成。  通过单个集成，从多个内容所有者提供即时连接。
-
-提高客户参与度。  在客户跨多个平台和设备查看内容时，支持流畅的品牌化体验。
-
-安全身份验证。  确保仅授权用户和设备有权访问优质内容，并（可选）限制每个家庭帐户可以连接的设备和并发流数量。
-
-## 常见问题解答 {#faq}
-
-Adobe Primetime身份验证的安全性如何？ Adobe Primetime身份验证架构的首要任务是确保只有经过授权的查看者才能进行身份验证并授予对高级内容的访问权限。 Adobe Primetime身份验证将访问与观看设备紧密绑定，并有助于限制给定家庭的流、会话和/或设备。
-
-
-是否需要Flash Player? Adobe Primetime对TV Everywhere的身份验证与播放器和平台无关，可与任何播放应用程序(包括Silverlight和HTML5)集成。 此外，Adobe Primetime身份验证还为运行iOS和Android的手机和平板电脑等设备提供本机支持。
-
-
-Adobe Primetime身份验证支持哪些设备？ 几乎任何使用HTML5 web kit的设备都支持Adobe Primetime身份验证，以提供浏览器内查看体验。 此外，Adobe Primetime身份验证将继续为各种特定于设备的平台(包括iOS、Android™、Xbox360（已弃用）和AdobeAir®（已弃用）应用程序)推出本机软件开发工具包(SDK)。 最近，Adobe Primetime身份验证为无法呈现浏览器页面的设备（例如，“智能”电视、机顶盒和游戏机）提供了无客户端解决方案。  要使用MVPD验证用户身份，需要能够渲染浏览器页面。
-
-
-Adobe Primetime身份验证是否支持Tv Everywhere的新兴标准？ Adobe Primetime身份验证符合CableLabs OLCA（在线内容访问）规范，该规范为从在线来源向付费电视客户交付视频提供技术要求和架构。 Adobe于2011年6月参与了CableLabs集成测试项目，并通过了服务提供商实施的测试过程。 Adobe Primetime身份验证已根据OLCA规范进行验证（完整且经过测试）。 授权组件已完成，但测试验证当前正在等待CableLabs测试环境的发布。 Adobe还是OATC（开放认证技术联盟）的积极成员，作为该机构的一部分，参加了几个小组委员会的规范起草项目。
+與一名程式設計師協調檢視者驗證和授權可能很簡單，但與數十或數百名不同程式設計師的協調卻變得越來越複雜。 然而，透過Adobe® Pass，MVPD只需要實作單一、簡單的整合，即可存取整個TVE生態系統，包括NBC環球媒體、Turner Broadcasting (TBS、TNT、CNN)、Fox Broadcast Networks、Hulu等程式設計師。  Adobe Primetime驗證提供整合架構，可讓您輕鬆安全地判斷使用者軟體權利檔案。
 
 
 
-什么是身份验证？ 验证是MVPD确认给定用户是已知客户的过程。
+要點： Adobe Primetime驗證可安全地協調程式設計師和MVPD之間的授權交易，方便檢視者存取訂閱內容。 換句話說，Adobe Primetime驗證可讓適當的客戶輕鬆快速地存取適當的內容。
+
+
+透過Adobe Primetime驗證，MVPD會接收：
+
+與程式設計師輕鬆整合。  透過單一整合，提供來自多個內容擁有者的即時連線能力。
+
+增強客戶參與度。  當客戶檢視多個平台和裝置上的內容時，支援順暢的品牌體驗。
+
+安全驗證。  確保只有授權的使用者和裝置才能存取進階內容，並（選擇性）限制每個家庭帳戶可連線的裝置和同時串流數量。
+
+## 常見問題集 {#faq}
+
+Adobe Primetime驗證的安全性如何？ Adobe Primetime驗證架構的第一要務是確保僅授權檢視者通過驗證，並獲授權存取進階內容。 Adobe Primetime驗證會將存取許可權緊密繫結到檢視裝置，並可協助限制特定家庭的串流、工作階段和/或裝置。
+
+
+是否需要Flash Player？ 適用於TV Everywhere的Adobe Primetime驗證不受播放器和平台限制，可與任何播放應用程式(包括Silverlight和HTML5)整合。 此外，Adobe Primetime驗證還為執行iOS和Android的手機和平板電腦等裝置提供原生支援。
+
+
+Adobe Primetime驗證支援哪些裝置？ 幾乎任何具備HTML5 Web套件且提供瀏覽器內檢視體驗的裝置皆支援Adobe Primetime驗證。 此外，Adobe Primetime驗證繼續針對各種裝置特定平台推出原生軟體開發套件(SDK)，包括iOS、Android™、Xbox360 （已棄用）和Adobe Air® （已棄用）應用程式。 最近，Adobe Primetime驗證推出無使用者端解決方案，適用於無法轉譯瀏覽器頁面的裝置（例如「智慧」電視、機上盒和遊戲主機）。  使用MVPD驗證使用者時，需要具備轉譯瀏覽器頁面的能力。
+
+
+Adobe Primetime驗證是否支援各地電視的新興標準？ Adobe Primetime驗證符合CableLabs OLCA （線上內容存取）規格，該規格提供從線上來源將視訊傳送給付費電視客戶的技術需求和架構。 Adobe於2011年6月參與了CableLabs的聯合Interopt測試專案，並通過了服務供應商實作的測試程式。 Adobe Primetime驗證會根據OLCA的驗證規格進行驗證（完整和測試）。 授權元件已完成，但測試驗證目前等待CableLabs測試環境發佈。 Adobe也是OATC （開放式驗證技術聯盟）的積極成員，並參與了該機構的幾個小組委員會規格起草專案。
 
 
 
-什么是授权？ 授权是MVPD确认经过验证的用户对给定资源有效订阅的过程。
+什麼是驗證？ 驗證是MVPD確認指定使用者為已知客戶的程式。
 
 
 
-## 架构 {#architecture}
-
-Adobe Primetime身份验证是一种托管服务，它允许根据MVPD和程序员所需的业务规则进行快速后端（服务器到服务器）集成。 这意味着为所有各方快速上市、提供更安全的防欺诈环境，并提供出众的客户体验，让更多的电视内容可以跨更多平台提供给更多的人。
+什麼是授權？ Authorization是MVPD確認已驗證的使用者是否擁有指定資源的有效訂閱的程式。
 
 
-Adobe Primetime身份验证通过软件即服务(SaaS)模式提供，并使最终用户、MVPD和程序员之间能够进行更加安全的通信，以验证对内容的授权。 该服务的核心组件包括：
 
-服务器端 — 托管的Adobe Primetime身份验证服务器。 这是一个应用服务器，它与MVPD的验证系统进行后通道（服务器到服务器）通信。
-客户端：客户端Access Enabler - Access Enabler是一个小文件，加载到程序员的网页或播放器应用程序中。 它为程序员的内容查看应用程序提供授权API，并与Adobe Primetime身份验证服务器通信。
-无客户端Web服务（适用于非Web功能设备） — RESTful Web服务，为智能电视、游戏机和机顶盒等设备提供授权API。
+## 架構 {#architecture}
+
+Adobe Primetime驗證是一項託管服務，可根據MVPD和程式設計師所需的商業規則，進行快速後端（伺服器對伺服器）整合。 這表示所有各方都能快速上市、提供更安全的環境以防止欺詐，以及卓越的客戶體驗，讓更多平台上的更多人能看到更多的電視內容。
+
+
+Adobe Primetime驗證透過軟體即服務(SaaS)模式提供，並可讓一般使用者、MVPD和程式設計師之間進行更安全的通訊，以驗證內容的權益。 服務的核心元件包括：
+
+伺服器端 — 託管的Adobe Primetime驗證伺服器。 這是應用程式伺服器，可與MVPD的驗證系統進行後端通道（伺服器對伺服器）通訊。
+使用者端：使用者端Access Enabler - Access Enabler是載入程式設計師網頁或播放器應用程式中的小型檔案。 它為程式設計師的內容檢視應用程式提供權益API，並與Adobe Primetime驗證伺服器通訊。
+無使用者端網頁服務（適用於不支援網頁的裝置） - RESTful網頁服務，為智慧型電視、遊戲主機和機上盒等裝置提供軟體授權API。
 
 >[!NOTE]
 >
->作为MVPD，您的Web服务必须能够识别来自Adobe Primetime身份验证的身份验证和授权请求，并以预期格式响应所需数据。
+>身為MVPD，您的Web服務必須能夠識別來自Adobe Primetime驗證的驗證和授權請求，並以預期格式回應所需的資料。
 
-Adobe Primetime身份验证允许您为客户提供联合身份管理，也称为单点登录(SSO)身份验证和授权。 使用Adobe Primetime身份验证后，只要MVPD允许该身份验证保持不变，订阅者就无需在首次身份验证后再次登录。 （通常为30天。） 为实现此目的，Adobe Primetime身份验证为我们的客户提供了一个用于身份验证令牌的通用域。 此身份验证状态信息适用于与给定MVPD集成的所有参与站点。
-
-
-目前，与MVPD的大多数Adobe Primetime身份验证集成都使用SAML协议，SAML协议是主要身份验证标准之一。 Adobe Primetime身份验证在SAML架构中充当代理服务提供程序，并在Adobe公共域中将SAML身份验证响应作为安全令牌保留。 Adobe Primetime身份验证符合SAML 2.0。 但是，尽管Adobe Primetime身份验证目前通常与SAML SSO解决方案一起使用，但Adobe Primetime身份验证架构未绑定到任何特定协议。 因此，可以随着时间的推移添加对新协议（例如基于OAuth 2.0或自定义协议的协议）的支持。
+Adobe Primetime驗證可讓您為客戶提供同盟身分管理，也稱為單一登入(SSO)驗證和授權。 使用Adobe Primetime驗證時，只要MVPD允許保留該驗證，訂閱者就不需要在第一次驗證後再次登入。 （通常為30天。） 為了完成此操作，Adobe Primetime驗證會為我們的客戶提供驗證權杖的共同網域。 與特定MVPD整合的所有參與網站都可以使用此驗證狀態資訊。
 
 
-Adobe可与MVPD的技术团队合作配置Adobe Primetime身份验证，以满足任何现有集成的需求。 MVPD的集成是免费的，前提是采用“标准”集成并且满足最低的支持要求（文档和基本电子邮件支持）。 如果MVPD需要大量支持或时间表上升，则可能需要支付支持费用，或者提供商可能希望与熟悉我们解决方案（如Syncor）的第三方合作。
+目前，大部分的Adobe Primetime驗證與MVPD整合都使用SAML通訊協定，這是主要驗證標準之一。 Adobe Primetime驗證會成為SAML架構中的Proxy服務提供者，並將SAML驗證回應儲存為Adobe通用網域中的安全權杖。 Adobe Primetime驗證符合SAML 2.0規範。 不過，雖然Adobe Primetime驗證目前通常與SAML SSO解決方案搭配使用，但Adobe Primetime驗證架構未繫結到任何特定通訊協定。 因此，可以隨著時間新增對新通訊協定的支援，例如基於OAuth 2.0或自訂通訊協定的支援。
 
 
-Adobe Primetime身份验证还支持有效处理MVPD业务逻辑，如下所示：
+Adobe會與MVPD的技術團隊合作，設定Adobe Primetime驗證，以滿足任何現有整合的需求。 MVPD可免費整合，且須具備「標準」整合及最低支援需求（檔案和基本電子郵件支援）。 如果MVPD需要大量支援或升級的時間表，可能需要支付支援費用，或提供者可能想要與熟悉我們的解決方案的協力廠商合作，例如Synacor。
 
-对于自包含的业务逻辑，当收到授权请求时，MVPD可以应用该业务逻辑，当MVPD收到授权请求时，Adobe会提供支持业务逻辑执行所需的必要数据。 此数据可以包括（但不限于）发出请求的用户的唯一设备ID和设备的IP地址。
 
-对于需要用户干预和/或由Adobe解决方案进行特定处理的业务逻辑，Adobe可以为每个MVPD维护一些自定义属性。 这些特定于MVPD的配置/策略包括启用预定义的工作流，这些工作流可在顶级工作流的特定时间点启动。 有关自定义资产支持的详细信息，请联系您的Adobe代表。
+Adobe Primetime驗證也支援有效處理MVPD商業邏輯，如下所示：
 
-下图说明了MVPD和程序员与这些Adobe Primetime身份验证组件的关系：
+對於獨立且可在收到授權請求時由MVPD套用的商業邏輯，Adobe會在MVPD收到授權請求時提供支援商業邏輯執行所需的必要資料。 此資料可以包括但不限於提出請求之使用者的唯一裝置ID和裝置的IP位址。
+
+對於需要使用者介入和/或Adobe解決方案特定處理的商業邏輯，Adobe可以維護每個MVPD的一些自訂屬性。 這些MVPD特定設定/原則包括啟用預先定義的工作流程，這些工作流程可以在頂層工作流程的特定時間點啟動。 如需自訂屬性支援的詳細資訊，請聯絡您的Adobe代表。
+
+下圖說明MVPD和程式設計師與這些Adobe Primetime驗證元件的關係：
 
 ![](assets/high-level-architecture-nflows.png)
 
-*图：高级架构和流*
+*圖：高階架構和流程*
 
-## Adobe Primetime身份验证组件 {#components}
+## Adobe Primetime驗證元件 {#components}
 
-下面概述了Adobe Primetime身份验证生态系统的一些主要组件。 这些功能包括：
+以下提供Adobe Primetime驗證生態系統的部分主要元件概觀。 其中包括：
 
-* [Access Enabler / Clientless Web服务](#ae)
-* [Adobe托管的后端服务器](#backend)
-* [令牌](#tokens)
+* [存取啟用程式/無使用者端Web服務](#ae)
+* [Adobe託管後端伺服器](#backend)
+* [Token](#tokens)
 
-### 访问启用程序/无客户端Web服务 {#ae}
+### Access Enabler/無使用者端Web服務 {#ae}
 
-Access Enabler方便了与用户进行的所有身份验证和授权交互，并在其系统本地运行。 Access Enabler通过MVPD处理实际的授权工作流，而程序员则负责更高级别的网页或播放器应用程序。
+Access Enabler可促進與使用者的所有驗證和授權互動，並在其系統上本機執行。 它是Access Enabler，會使用MVPD處理實際權益工作流程，而程式設計師則負責處理較高層級的網頁或播放器應用程式。
 
-无客户端Web服务由Adobe Primetime身份验证为无法呈现网页的设备提供。  对于这些设备，授权过程会在智能设备上启动并查看内容，而使用MVPD的身份验证则在支持Web的设备（PC、智能手机和平板电脑）上进行。
+Adobe Primetime驗證為無法轉譯網頁的裝置提供無使用者端網頁服務。  對於這些裝置，軟體權利檔案程式會在智慧型裝置上啟動，且內容會在智慧型裝置上檢視，而使用MVPD的驗證則會發生在支援網頁的裝置（PC、智慧型手機和平板電腦）上。
 
-Access Enabler（访问启用程序）：
+存取啟用碼：
 
-* 启动特定于MVPD的身份验证和授权工作流。
-* 缓存每个程序员资源/渠道的成功授权响应以最大限度地减少不必要的请求流量。
-* 可以为特定于每个MVPD的预定义工作流进行配置，如显式设备注册。
-* 它在以下表单中可用：
-   * Flash Player运行时可以执行的SWF文件
-   * 浏览器直接执行的JS文件
-   * 适用于各种平台(包括iOS、Android和Xbox)的本机Access Enabler。
+* 啟動MVPD特定的驗證和授權工作流程。
+* 根據程式設計人員資源/通道快取成功的授權回應，以減少不必要的請求流量。
+* 可針對每個MVPD特定的預先定義工作流程進行設定，例如明確裝置註冊。
+* 提供下列格式：
+   * Flash Player執行階段可執行的SWF檔案
+   * 由瀏覽器直接執行的JS檔案
+   * 適用於各種平台(包括iOS、Android和Xbox)的原生Access Enabler。
 
-### Adobe托管的后端服务器 {#backend}
+### Adobe裝載的後端伺服器 {#backend}
 
-由Adobe托管的Adobe Primetime身份验证后端服务器：
+Adobe Primetime驗證後端伺服器，由Adobe託管：
 
-* 使用需要Adobe Primetime身份验证与运营商之间服务器到服务器通信的MVPD设置身份验证和授权工作流。
-* 维护程序员站点和应用程序的配置。
-* 托管可下载的Access Enabler组件文件。
-* 生成身份验证和授权令牌。
+* 布建驗證和授權工作流程與需要Adobe Primetime驗證和操作員之間伺服器對伺服器通訊的MVPD。
+* 維護程式設計師網站和應用程式的設定。
+* 裝載可下載的Access Enabler元件檔案。
+* 產生驗證和授權權杖。
 
-### 令牌 {#tokens}
+### Token {#tokens}
 
-Adobe Primetime身份验证授权解决方案的核心是生成在成功完成身份验证/授权工作流程后获得的特定数据段。 这些数据称为令牌。 它们的有效期有限，并且安全地存储在依赖于平台的位置。 到期后，必须通过重新启动身份验证和/或授权工作流来重新发布令牌。
+Adobe Primetime驗證權利解決方案的中心，是產生特定資料片段，這些片段會在成功完成驗證/授權工作流程後取得。 這些資料片段稱為Token。 這類檔案存留期有限，且會安全地儲存在平台相關位置。 到期後，必須透過重新起始驗證和/或授權工作流程重新核發權杖。
 
-在身份验证/授权工作流程中发布了三种类型的令牌。 两个是“长期存在”的，它们为用户的观看体验提供了连续性。 第三种是短暂的令牌，它支持通过流跳转来减轻欺诈的行业最佳实践。 令牌的生存时间(“TTL”)值根据MVPD与程序员之间的协议进行设置。 您可以决定最适合您的业务和客户的TTL值。
+在驗證/授權工作流程期間會核發三種型別的權杖。 其中兩個是「長期」的，可提供使用者觀看體驗的連續性。 第三個是短效代號，可支援業界最佳實務，以透過串流擷取來減少詐騙。 權杖的存留時間(「TTL」)值是根據MVPD和程式設計師之間的協定來設定。 您可以決定最適合您的企業和客戶的TTL值。
 
-**长期使用的身份验证令牌**. 客户使用Adobe Primetime身份验证成功登录其MVPD帐户后，即会进行身份验证成功。 然后，Adobe Primetime身份验证会生成与请求设备绑定的长期身份验证(“authN”)令牌，并且（取决于MVPD）会生成匿名标识用户的全局唯一标识符(“GUID”)。
+**長效驗證權杖**. 客戶使用Adobe Primetime驗證成功登入其MVPD帳戶後，驗證就會成功。 Adobe Primetime驗證接著會產生與請求裝置繫結的長期驗證(「authN」)權杖，以及（根據MVPD）可匿名識別使用者的全域唯一識別碼(「GUID」)。
 
-**长期使用的授权令牌**. 成功授权后，Adobe Primetime身份验证会创建一个长期授权(“authZ”)令牌。 此令牌不可移植，因为它与请求设备和特定的受保护资源（例如渠道、系列或剧集）绑定。 Access Enabler使用长寿命的authZ令牌创建用于实际查看访问的短寿命媒体令牌。
+**長效授權權杖**. 在成功授權後，Adobe Primetime驗證會建立長效授權(「authZ」)權杖。 此權杖無法攜帶，因為它繫結至請求裝置和特定的受保護資源（例如頻道、影集或集數）。 Access Enabler會使用長效的authZ權杖，建立用於實際檢視存取權的短效媒體權杖。
 
-**短暂的媒体令牌**. 用户获得授权后，Adobe Primetime身份验证会生成authZ令牌，并使用该令牌生成由Adobe签名并加密的一次性、短期的媒体令牌，以避免在交换期间发生篡改。 由于短期令牌通过访问启用程序API或无客户端Web服务公开到嵌入站点，因此在提供对受保护资源的访问之前，程序员的媒体服务器必须使用Adobe Primetime身份验证组件（媒体令牌验证器）来验证令牌。
+**短期媒體代號**. 使用者獲得授權後，Adobe Primetime驗證會產生authZ權杖，並使用該權杖產生一次性使用的短期媒體權杖，並由Adobe簽署及加密，以避免在交換期間遭到竄改。 因為短期權杖會透過Access Enabler API或無使用者端Web服務向內嵌網站公開，在提供受保護資源的存取權之前，程式設計師的媒體伺服器必須使用Adobe Primetime驗證元件（媒體權杖驗證器）來驗證權杖。
 
-## MVPD集成生命周期 {#lifecycle}
+## MVPD整合生命週期 {#lifecycle}
 
-下图显示了Adobe Primetime身份验证与MVPD之间集成的生命周期。
+下圖顯示Adobe Primetime驗證和MVPD之間整合的生命週期。
 
 ![](assets/mvpd-int-lifecycle.png)
 
-*图：MVPD集成生命周期*
+*圖： MVPD整合生命週期*
 
-## 权利流程图 {#chart}
+## 權利流程圖 {#chart}
 
-以下流程图介绍了使用Adobe Primetime身份验证确认权利的整个过程：
+以下流程圖顯示使用Adobe Primetime驗證確認軟體權利檔案的整體程式：
 
 ![](assets/authn-authz-entitlmnt-flow.png)
 
-*图：使用Adobe Primetime身份验证确认权利的过程*
+*圖：使用Adobe Primetime驗證確認權益的程式*
 
-## 身份验证步骤 {#authn-steps}
+## 驗證步驟 {#authn-steps}
 
-以下步骤演示了Adobe Primetime身份验证流程的示例。  这是授权流程的一部分，程序员在该流程中确定用户是否是MVPD的有效客户。  在此方案中，用户是MVPD的有效订阅者。  用户正在尝试使用程序员的Flash应用程序查看受保护的内容：
+下列步驟提供Adobe Primetime驗證流程的範例。  這是軟體權利檔案程式的一部分，程式設計師在其中判斷使用者是否為MVPD的有效客戶。  在此案例中，使用者是MVPD的有效訂閱者。  使用者正嘗試使用程式設計師的Flash應用程式檢視受保護的內容：
 
-1. 用户浏览到程序员网页，该网页将程序员的Flash应用程序和Adobe Primetime身份验证访问启用程序组件加载到用户的计算机上。 Flash应用程序使用Access Enabler通过Adobe Primetime身份验证来设置程序员的标识，而Adobe Primetime身份验证将Access Enabler作为程序员的配置和状态数据的前缀（“请求者”）。 在执行任何其他API调用之前，Access Enabler必须从服务器接收此数据。  技术说明：程序员使用Access Enabler&#39;s `setRequestor()` 方法；有关详细信息，请参阅 [程序员集成指南](/help/authentication/programmer-integration-guide-overview.md).
-1. 当用户尝试查看程序员的受保护内容时，程序员的应用程序向用户显示MVPD列表，用户从中选择提供商。
-1. 用户将被重定向到Adobe Primetime身份验证服务器，该服务器会为用户选择的MVPD创建加密的SAML请求。 此请求将作为代表程序员向MVPD发送的身份验证请求。 根据MVPD的系统，用户的浏览器随后会被重定向到MVPD的站点以登录，或者在程序员的应用程序中创建登录iFrame。
-1. 无论是在哪种情况下（重定向还是iFrame），MVPD都会接受请求并显示其登录页面。
-1. 用户使用MVPD登录，MVPD将验证用户作为付费客户的状态，然后MVPD创建自己的HTTP会话。
-1. 验证用户后，MVPD会创建一个响应（SAML和加密），MVPD会将该响应发送回Adobe Primetime身份验证。
-1. Adobe Primetime身份验证接收MVPD响应，发现有一个Adobe Primetime身份验证HTTP会话打开，验证 [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) 来自MVPD的响应，并重定向回程序员网站。
-1. 重新加载程序员站点，重新加载Access Enabler，程序员再次调用setRequestor()。  对setRequestor()的第二次调用是必需的，因为当前配置已更改 — 现在存在一个标记，该标记通知Access Enabler AuthN令牌正在等待在服务器上生成。
-1. Access Enabler会发现有待处理的身份验证，并从Adobe Primetime身份验证服务器请求令牌。 通过调用Flash Player的DRM功能，可从服务器中检索令牌。
-1. AuthN令牌存储在程序员的Flash PlayerLSO缓存中；身份验证现已完成，会话在Adobe Primetime身份验证服务器上被销毁。
+1. 使用者瀏覽到程式設計人員的網頁，該網頁會將程式設計人員的Flash應用程式和Adobe Primetime驗證Access Enabler元件載入到使用者的電腦上。 Flash應用程式會使用Access Enabler來設定程式設計師的識別碼並進行Adobe Primetime驗證，而Adobe Primetime驗證會為該程式設計師（「請求者」）的設定和狀態資料啟動Access Enabler。 Access Enabler必須先從伺服器接收此資料，才能執行任何其他API呼叫。  技術說明：程式設計師使用Access Enabler的 `setRequestor()` 方法；如需詳細資訊，請參閱 [程式設計師整合指南](/help/authentication/programmer-integration-guide-overview.md).
+1. 當使用者嘗試檢視程式設計師的受保護內容時，程式設計師的應用程式會向使用者顯示MVPD清單，使用者可從中選擇提供者。
+1. 系統會將使用者重新導向至Adobe Primetime驗證伺服器，其中會建立使用者所選MVPD的加密SAML要求。 此要求會以代表程式設計師的驗證要求形式傳送至MVPD。 根據MVPD的系統，使用者的瀏覽器會被重新導向至MVPD的網站以登入，或在程式設計人員的應用程式中建立登入iFrame。
+1. 無論是哪種情況（重新導向或iFrame），MVPD都會接受要求並顯示其登入頁面。
+1. 使用者使用MVPD登入，MVPD會驗證使用者作為付款客戶的狀態，然後MVPD會建立自己的HTTP工作階段。
+1. 驗證使用者後，MVPD會建立回應（SAML和加密），然後MVPD會將其傳回Adobe Primetime驗證。
+1. Adobe Primetime驗證會收到MVPD回應，看到有Adobe Primetime驗證HTTP工作階段開啟，並驗證 [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) 會從MVPD回應，並重新導向回程式設計師的網站。
+1. 程式設計師的網站會重新載入、存取啟用碼會重新載入，而程式設計師會再次呼叫setRequestor()。  需要對setRequestor()進行第二次呼叫，因為目前的設定已變更 — 現在出現一個旗標，通知Access Enabler伺服器上正在等待產生AuthN權杖。
+1. Access Enabler發現擱置中的驗證，並向Adobe Primetime驗證伺服器要求Token。 Token是透過叫用Flash Player的DRM功能從伺服器擷取。
+1. AuthN權杖儲存在程式設計師的Flash PlayerLSO快取中；驗證現在已完成，且工作階段已在Adobe Primetime驗證伺服器上毀損。
 
-## 授权步骤 {#authz-steps}
+## 授權步驟 {#authz-steps}
 
-从上一节([身份验证步骤](#authn-steps)):
+以下步驟延續前一節的內容([驗證步驟](#authn-steps))：
 
-1. 当用户尝试访问程序员保护的内容时，程序员的应用程序首先在用户的本地计算机或设备上检查AuthN令牌。  如果令牌不在，则 [身份验证步骤](#authn-steps) 之后是。  如果AuthN令牌存在，则授权流程将随程序员应用程序发起对Access Enabler的调用而进行，该调用请求获取用户对受保护内容特定项目的查看权限。
-1. 受保护内容的特定项目由“资源标识符”表示。  这可以是一个简单的字符串或更复杂的结构，但无论如何，资源标识符的性质是在程序员和MVPD之间提前商定的。  程序员的应用程序将资源标识符传递给Access Enabler。  Access Enabler在用户的本地计算机或设备上检查AuthZ令牌。  如果AuthZ令牌不在，则Access Enabler会将请求传递到后端Adobe Primetime身份验证服务器。
-1. Adobe Primetime身份验证服务器使用标准化协议与MVPD授权端点通信。  如果MVPD响应指示用户有权查看受保护的内容，则Adobe Primetime身份验证服务器将创建一个AuthZ令牌，并将其传递回Access Enabler，Access Enabler将AuthZ令牌存储在用户计算机上。
-1. 通过将AuthZ令牌存储在用户的机器或设备上，程序员的应用程序调用Access Enabler以从Adobe Primetime身份验证服务器获取媒体令牌，并将该令牌提供给程序员的应用程序。
-1. 最后，程序员的应用程序使用媒体令牌验证器组件来确认正确的用户正在查看正确的内容，并且在媒体令牌就位后，允许用户查看受保护的内容。
+1. 當使用者嘗試存取程式設計師的受保護內容時，程式設計師的應用程式會先檢查使用者本機電腦或裝置上的AuthN權杖。  如果該Token不存在，則 [驗證步驟](#authn-steps) 以上說明如下。  如果有AuthN權杖，授權流程會隨著程式設計師的應用程式繼續進行，起始對存取啟用程式的呼叫，並要求取得使用者對受保護內容的特定專案的檢視許可權。
+1. 受保護內容的特定專案由「資源識別碼」表示。  這可以是簡單的字串或更複雜的結構，但在任何情況下，資源識別碼的性質都能在程式設計師和MVPD之間事先商定。  程式設計師的應用程式會將資源識別碼傳遞給Access Enabler。  Access Enabler會檢查使用者的本機電腦或裝置上的AuthZ權杖。  如果沒有AuthZ權杖，Access Enabler會將要求傳遞至後端Adobe Primetime驗證伺服器。
+1. Adobe Primetime驗證伺服器使用標準化的通訊協定與MVPDs授權端點通訊。  如果MVPD的回應指出使用者有權檢視受保護的內容，則Adobe Primetime驗證伺服器會建立AuthZ權杖，並將其傳回Access Enabler，後者會將AuthZ權杖儲存在使用者的電腦上。
+1. 將AuthZ權杖儲存在使用者的電腦或裝置上，程式設計師的應用程式會呼叫Access Enabler以從Adobe Primetime驗證伺服器取得媒體權杖，並將該權杖提供給程式設計師的應用程式。
+1. 最後，程式設計師的應用程式會使用媒體權杖驗證器元件，以確認正確的使用者正在檢視正確的內容，並且在媒體權杖就緒後，允許使用者檢視受保護的內容。
 
 <!--
 >![RELATEDINFORMATION]

@@ -1,44 +1,41 @@
 ---
-description: 本节介绍不同版本的Flash Player和TVSDK提供的功能。
-title: RBOP客户端支持
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 本節說明不同Flash Player版本和TVSDK版本的功能。
+title: RBOP使用者端支援
+exl-id: 1120587e-45cf-45cc-8b41-1886ab2ed2a4
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '338'
 ht-degree: 0%
 
 ---
 
+# RBOP使用者端支援 {#rbop-client-support}
 
-# RBOP客户端支持{#rbop-client-support}
+本節說明不同Flash Player版本和TVSDK版本的功能。
 
-本节介绍不同版本的Flash Player和TVSDK提供的功能。
+**錯誤分派**  — 當正在播放的內容的解析度超過DRM原則中定義的裝置設定所允許的解析度時，下列的TVSDK平台會傳送DRM執行階段錯誤：
 
-**错误调度**  — 当正在播放的内容的分辨率超过DRM策略中定义的设备配置允许的分辨率时，下面列出的TVSDK平台将调度DRM运行时错误：
-
-* Flash Player版本18至20
+* Flash Player版本18到20
 * Android — 版本
 * iOS — 版本
 
 >[!NOTE]
 >
->* 所有Flash和移动平台都支持错误调度，但只有上面列出的TVSDK客户端处理与RBOP相关的错误。
->* 与RBOP相关的[DRM客户端错误](https://help.adobe.com/en_US/primetime/drm/index.html#reference-DRM_Client_Error_Messages):
-   >    * **3371**  — 基于许可证中输出保护限制的错误分辨率。
-   >    * **3372**  — 内容的分辨率大于在输出保护约束中指定的最大分辨率。（如果有人尝试插入用于其他设备的内容，则可能会发生这种情况。）
-   >    * **3373**  — 内容的分辨率大于当前活动的输出保护约束指定的分辨率。（这意味着我们将不得不降级。）
-
+>* 所有Flash和行動平台都支援錯誤分派，但只有上述的TVSDK使用者端會處理與RBOP相關的錯誤。
+>* RBOP相關 [DRM使用者端錯誤](https://help.adobe.com/en_US/primetime/drm/index.html#reference-DRM_Client_Error_Messages)：
+   >    * **3371**  — 根據授權中的輸出保護限制，解析格式錯誤。
+   >    * **3372**  — 內容的解析度大於輸出保護限制中指定的最大解析度。 （如果有人嘗試插入適用於其他裝置的內容，就可能發生這種情況。）
+   >    * **3373**  — 內容的解析度大於目前作用中的輸出保護限制所指定的解析度。 （這表示我們必須降級。）
 >
 
 
+**自動縮減縮放**  — 用於縮減規模的技術因平台和Flash Player版本而異：
 
-**自动缩放**  — 用于缩放的技术因平台和Flash Player版本而异：
-
-* Flash Player 21:支持具有自动缩放（智能比特率切换）的RBOP
-* 在Windows上安装Firefox版本38及更高版本（使用Access CDM）：Adobe自动将较高比特率的流降级为较低比特率的流（而不是下载较低等级的流）。
+* Flash Player版本21：支援具有自動縮減縮放（智慧型位元速率切換）的RBOP
+* Windows上的Firefox 38版和更新版本（含Access CDM）：Adobe會自動將較高位元速率資料流降級為較低位元速率資料流（與下載較低等級的資料流相反）。
 
 >[!NOTE]
 >
->这些平台自动缩小视频，并以低于或等于DRM策略指定分辨率的分辨率显示内容。 利用此功能，只要有满足DRM策略限制的可用流，内容将始终播放回客户端。
+>這些平台會自動縮小視訊規模，並以低於或等於DRM原則所指定的解析度來顯示內容。 使用此功能時，只要有符合DRM原則限制的可用資料流，內容就會一律播放給使用者端。
 
-**旧版输出保护**  — 使用版本18之前的Flash Player的客户端只能处理旧版OP限制。使用Flash Player 18及更高版本的客户端可以处理旧版或RBOP限制。 如果设置的是RBOP限制，则还应为旧客户端设置旧版OP限制。 对于支持RBOP的客户，RBOP限制高于旧版OP限制。
+**舊版輸出保護**  — 使用18版之前Flash Player的使用者端只能處理舊版OP限制。 具有Flash Player版本18及更新版本的使用者端可以處理舊版或RBOP限制。 如果您設定RBOP限制，您也應該為舊版使用者端設定舊版OP限制。 對於支援RBOP的客戶，RBOP限制會取代舊版OP限制。

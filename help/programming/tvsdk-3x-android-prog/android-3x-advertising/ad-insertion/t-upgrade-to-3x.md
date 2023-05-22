@@ -1,27 +1,26 @@
 ---
-description: 'com.adobe.mediacore.timeline.TimelineMarker接口现在包含一种新方法 '
-title: '从2.5.x延迟广告解析升级到3.0.0延迟广告解析（API/工作流更改） '
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: com.adobe.mediacore.timeline.TimelineMarker介面現在包含新方法
+title: 從2.5.x延遲廣告解決升級到3.0.0延遲廣告解決（API/工作流程變更）
+exl-id: 403ccb25-99a9-4545-9d17-3b71583bc6d8
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '155'
 ht-degree: 0%
 
 ---
 
+# 從2.5.x延遲廣告解決升級為3.x延遲廣告解決（API/工作流程變更）：{#upgrading-from-x-lazy-ad-resolving-to-lazy-ad-resolving-api-workflow-changes}
 
-# 从2.5.x延迟广告解析升级到3.x延迟广告解析（API/工作流更改）：{#upgrading-from-x-lazy-ad-resolving-to-lazy-ad-resolving-api-workflow-changes}
-
-com.adobe.mediacore.timeline.TimelineMarker接口现在包含一种新方法：
+com.adobe.mediacore.timeline.TimelineMarker介面現在包含新方法：
 
 **Placement.Type getPlacementType()**
 
-此方法将返回Placement.Type.PRE_ROLL、Placement.Type.MID_ROLL或Placement.Type.POST_ROLL的放置类型。 如果广告中断未解析，则TimelineMarker接口上的`getDuration()`方法将返回0。
+此方法會傳回Placement.Type.PRE_ROLL、Placement.Type.MID_ROLL或Placement.Type.POST_ROLL等版位型別。 如果廣告插播未解析， `getDuration()`TimelineMarker介面上的方法將傳回0。
 
 >[!NOTE]
 >
->如果尚未解析此接口，则它不会始终转换为com.mediacore.timeline.advertising.AdBreakTimelineItem类型。 如果TimelineMarker的`getDuration()`方法大于0，则将能够转换它。
+>如果此介面尚未解析，則不會一律轉型為型別com.mediacore.timeline.advertising.AdBreakTimelineItem。 如果符合以下條件，則能夠強制轉換 `getDuration()` TimelineMarker的方法大於0。
 
-**事件更改：**
+**事件變更：**
 
-`kEventAdResolutionComplete` 现在已折旧，并且现在在玩家进入PREPARED状态后立即触发。以前只听取此事件绘制划动栏的应用程序应将其更改为仅侦听`kEventTimelineUpdated`。 解决单个广告中断后，将调度新的`kEventTimelineUpdated`事件。
+`kEventAdResolutionComplete` 現已折舊，且播放器進入「已準備」狀態後會立即觸發。 先前僅監聽此事件以繪製拖曳列的應用程式應將此變更為監聽 `kEventTimelineUpdated` 僅限。 解決個別廣告插播後，新的 `kEventTimelineUpdated` 將會傳送事件。

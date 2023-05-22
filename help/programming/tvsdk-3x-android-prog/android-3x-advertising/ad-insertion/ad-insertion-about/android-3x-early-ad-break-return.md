@@ -1,25 +1,24 @@
 ---
-description: 对于实时流广告插入，您可能需要先退出广告中断，然后再播放中断中的所有广告以完成。
-title: 实施提前广告分时段退货
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 對於直播串流廣告插入，您可能需要從廣告插播結束，然後播放插播中的所有廣告直到完成。
+title: 實施提早的廣告插播回報
+exl-id: 07246e31-c2a2-4646-9e59-6294f0ce8838
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '178'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
+# 實施提早的廣告插播回報 {#implement-an-early-ad-break-return}
 
-# 实施早期广告中断返回{#implement-an-early-ad-break-return}
+對於直播串流廣告插入，您可能需要從廣告插播結束，然後播放插播中的所有廣告直到完成。
 
-对于实时流广告插入，您可能需要先退出广告中断，然后再播放中断中的所有广告以完成。
+例如，在廣告插播開始之前，某些體育賽事中的廣告插播持續時間可能並不知道。 TVSDK會提供預設持續時間，但如果遊戲在插播完成前繼續，則必須結束廣告插播。 另一個範例是即時資料流中廣告插播期間的緊急訊號。
 
-例如，在某些体育事件中，广告中断的持续时间在中断开始之前可能不为人知。 TVSDK提供默认持续时间，但如果游戏在中断结束前恢复，则必须退出广告中断。 另一个示例是实时流中广告中断期间的紧急信号。
-
-1. 订阅`#EXT-X-CUE-OUT`、`#EXT-X-CUE-IN`和`#EXT-X-CUE`，它们是标记中的splice out/splice。
-有关如何拼接广告标记的详细信息，请参阅[机会生成器和内容解析器](../../ad-insertion/content-resolver/android-3x-content-resolver.md)。
-1. 使用自定义`ContentFactory`。
-1. 在`retrieveGenerators`中，使用`SpliceInPlacementOpportunityGenerator`。
+1. 訂閱 `#EXT-X-CUE-OUT`， `#EXT-X-CUE-IN`、和 `#EXT-X-CUE`，即標籤中的接合輸出/接合。
+如需如何拼接/插入廣告標籤的詳細資訊，請參閱 [機會產生器和內容解析器](../../ad-insertion/content-resolver/android-3x-content-resolver.md).
+1. 使用自訂 `ContentFactory`.
+1. 在 `retrieveGenerators`，使用 `SpliceInPlacementOpportunityGenerator`.
 
    例如：
 
@@ -31,9 +30,9 @@ ht-degree: 2%
    }
    ```
 
-   有关使用自定义`ContentFactory`的详细信息，请参见[实施自定义机会gerenator](../../ad-insertion/content-resolver/android-3x-opp-detector-impl-android.md)中的步骤1。
+   如需關於使用自訂的詳細資訊 `ContentFactory`，請參閱中的步驟1 [實作自訂機會產生器](../../ad-insertion/content-resolver/android-3x-opp-detector-impl-android.md).
 
-1. 在同一个自定义`ContentFactory`上，实现`retrieveResolvers`并包括`AuditudeResolver`和`SpliceInCustomResolver`。
+1. 在相同自訂上 `ContentFactory`，實作 `retrieveResolvers` 並包含 `AuditudeResolver` 和 `SpliceInCustomResolver`.
 
    例如：
 

@@ -1,47 +1,45 @@
 ---
-description: TVSDK处理实时视频流中的封锁，并在封锁期间提供替代内容。
-title: 处理实时流中的封锁
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: TVSDK可處理即時視訊串流中的中斷，並在中斷期間提供替代內容。
+title: 處理即時資料流中的中斷
+exl-id: 772700ac-2b6d-4bf9-9400-c357dd77f701
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '337'
 ht-degree: 0%
 
 ---
 
+# 處理即時資料流中的中斷{#handle-blackouts-in-live-streams}
 
-# 处理实时流中的封锁{#handle-blackouts-in-live-streams}
+TVSDK可處理即時視訊串流中的中斷，並在中斷期間提供替代內容。
 
-TVSDK处理实时视频流中的封锁，并在封锁期间提供替代内容。
+程式設計中斷最常見的使用案例是播放器應用程式為不符合觀看主串流資格的使用者提供替代內容。 此應用程式可使用TVSDK來判斷中斷期間的開始和結束。 如此一來，在中斷期間開始時，播放可以從主要資料流切換至替代資料流，然後在中斷期間結束後切換回主要資料流。
 
-与编程封锁相关的最常见用例是，您的播放器应用程序向没有资格观看主流的用户提供替代内容。 此应用程序可使用TVSDK确定封锁期的开始和结束。 这样，在封锁期开始时，回放可以从主流切换到备用流，然后在封锁期结束时切换回主流。
+若要實作此使用案例的解決方案：
 
-要为此用例实施解决方案，请执行以下操作：
+1. 設定您的應用程式以訂閱即時資料流資訊清單中的中斷標籤。
 
-1. 设置应用程序以订阅实时流清单中的封锁标记。
+   TVSDK無法直接得知中斷標籤，但可在資訊清單檔案剖析期間遇到特定標籤時，讓應用程式訂閱通知。
+1. 新增通知接聽程式 `PTTimedMetadataChangedNotification`.
 
-   TVSDK并不直接知道封锁标记，但它允许应用程序在清单文件解析期间遇到特定标记时订阅通知。
-1. 为`PTTimedMetadataChangedNotification`添加通知侦听器。
+   每次在資訊清單中剖析訂閱的標籤時，都會傳送此通知，並且會傳送新的 `PTTimedMetadata` 已從中準備。
 
-   每次在清单中分析订阅标记并从中准备新的`PTTimedMetadata`时都会调度此通知。
+1. 實作監聽器方法，例如 `onMediaPlayerSubscribedTagIdentified`，代表 `PTTimedMetadata` 前景中的物件。
 
-1. 对前景中的`PTTimedMetadata`对象实现监听器方法，如`onMediaPlayerSubscribedTagIdentified`。
+1. 每次在播放期間有更新時，請使用 `PTMediaPlayerTimeChangeNotification` 要處理的監聽器 `PTTimedMetadata` 物件。
 
-1. 每次播放期间出现更新时，使用`PTMediaPlayerTimeChangeNotification`侦听器处理`PTTimedMetadata`对象。
+1. 新增 `PTTimedMetadata` 處理常式。
 
-1. 添加`PTTimedMetadata`处理函数。
+   此處理常式可讓您切換至替代內容，並返回主要內容，如 `PTTimedMetadata` 物件及其播放時間。
 
-   此处理函数允许您切换到替代内容，并返回到由`PTTimedMetadata`对象及其播放时间指示的主内容。
+1. 使用 `onSubscribedTagInBackground` 實作監聽器方法 `PTTimedMetadata` 背景中的物件。
 
-1. 使用`onSubscribedTagInBackground`为后台中的`PTTimedMetadata`对象实现监听器方法。
+   此方法會監控背景資料流上的時間，這有助於您判斷何時可以從替代內容切換回主要內容。
 
-   此方法监视后台流的计时，这有助于您确定何时可以从替代内容切换回主内容。
+1. 針對背景錯誤實作接聽程式方法。
+1. 如果中斷範圍在播放資料流的DVR中，請更新不可搜尋的範圍。
 
-1. 为背景错误实现侦听器方法。
-1. 如果封锁范围在播放流的DVR中，请更新不可查看的范围。
+   在下列情況下，您的應用程式必須在DVR中設定不可搜尋的範圍：
 
-   在以下情况下，您的应用程序必须在DVR中设置不可搜索的范围：
-
-   * 在DVR中出现封锁时加入主流时。
-   * 从替代内容切换回主内容时。
-
+   * 當DVR中出現中斷時加入主串流時。
+   * 從替代內容切換回主要內容時。

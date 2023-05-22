@@ -1,24 +1,23 @@
 ---
-description: 要升级支持版本3.0 Reference Implementation License Server或Watched Folder Packager的服务器，您需要用Adobe Primetime DRM Reference Implementation Server附带的文件替换在应用程序服务器上部署的.war文件。
-title: 升级现有部署
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 若要升級支援3.0版Reference Implementation License Server或Watched Folder Packager的伺服器，您必須以Adobe Primetime DRM Reference Implementation Server隨附的檔案，取代已部署在應用程式伺服器上的.war檔案。
+title: 升級現有部署
+exl-id: 83edaf0a-e527-470d-8b8d-23e5ba86b039
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '165'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#upgrade-existing-deployments-overview}
 
-# 概述{#upgrade-existing-deployments-overview}
+若要升級支援3.0版Reference Implementation License Server或Watched Folder Packager的伺服器，您必須以Adobe Primetime DRM Reference Implementation Server隨附的檔案，取代已部署在應用程式伺服器上的.war檔案。
 
-要升级支持版本3.0 Reference Implementation License Server或Watched Folder Packager的服务器，您需要用Adobe Primetime DRM Reference Implementation Server附带的文件替换在应用程序服务器上部署的.war文件。
+若要使用Reference Implementation License Server進行網域註冊，則需要幾個新的資料庫表格。 您需要重新建立整個參考實作資料庫並執行 `CreateSampleDB.sql`.
 
-要使用引用实施许可证服务器进行域注册，需要几个新的数据库表。 您需要重新创建整个引用实现数据库并运行`CreateSampleDB.sql`。
+若要保留資料庫記錄並新增表格：
 
-要保留数据库记录并添加新表，请执行以下操作：
-
-1. 打开`CreateSampleDB.sql`并运行创建以下表的命令：
+1. 開啟 `CreateSampleDB.sql` 並執行建立下清單格的命令：
 
    * `DomainServerInfo`
    * `DomainKeys`
@@ -26,14 +25,14 @@ ht-degree: 0%
    * `UserDomainMembership`
    * `UserDomainRefCount`
 
-1. 向[!DNL flashaccess-refimpl.properties]添加以下属性以使用域支持：
+1. 將下列屬性新增至 [!DNL flashaccess-refimpl.properties] 使用網域支援：
 
-   * `HandlerConfiguration.DomainCAs.n` 或  `RefImpl.HSM.HandlerConfiguration.DomainCAs.Alias.n`
+   * `HandlerConfiguration.DomainCAs.n` 或 `RefImpl.HSM.HandlerConfiguration.DomainCAs.Alias.n`
 
-   * `Domain RegistrationHandler.ServerCredential` 和 `DomainRegistrationHandler.ServerCredential.password` 或  `RefImpl.HSM.DomainRegistrationHandler.ServerCredential.Alias`
+   * `Domain RegistrationHandler.ServerCredential` 和 `DomainRegistrationHandler.ServerCredential.password` 或 `RefImpl.HSM.DomainRegistrationHandler.ServerCredential.Alias`
 
    * `DomainRegistrationHandler.DomainServerUrl`
 
-1. 将以下属性添加到[!DNL flashaccess-refimpl.properties]以支持向iOS客户端进行远程密钥投放:
+1. 將下列屬性新增至 [!DNL flashaccess-refimpl.properties] 若要支援將遠端金鑰傳遞至iOS使用者端：
 
-   * `HandlerConfiguration.KeyServerCertificate` 或  `RefImpl.HSM.HandlerConfiguration.KeyServerCertificate.Alias`
+   * `HandlerConfiguration.KeyServerCertificate` 或 `RefImpl.HSM.HandlerConfiguration.KeyServerCertificate.Alias`

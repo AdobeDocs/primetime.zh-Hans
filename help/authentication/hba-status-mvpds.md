@@ -1,48 +1,47 @@
 ---
-title: MVPD的HBA状态
-description: MVPD的HBA状态
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: MVPD的HBA狀態
+description: MVPD的HBA狀態
+exl-id: 9e506417-0886-4306-9b9f-5fde24a792d3
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '139'
 ht-degree: 0%
 
 ---
 
-
-# MVPD的HBA状态
+# MVPD的HBA狀態
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
 
-* 具有启用SAML的MVPD的HBA
-* 启用了OAuth 2.0的HBA MVPD
+* 具有啟用SAML的MVPD的HBA
+* 啟用OAuth 2.0的MVPD的HBA
 
 
-## 具有启用SAML的MVPD的HBA {#bha-saml-enabled-mvpds}
+## 具有啟用SAML的MVPD的HBA {#bha-saml-enabled-mvpds}
 
-| MVPD | 提供基本功能？ | 在身份验证响应中发送标记 | SSO? | 评论 |
+| MVPD | 有基本功能嗎？ | 在驗證回應上傳送標幟 | SSO？ | 註解 |
 |---|---|---|---|---|
 | DirecTV | 是 | 否 |  |  |
-| 碟 | 正在进行 | 正在进行 |  |  |
-| 光谱 | 是 | 是 |  |  |
-| 宪章 | 是 | 否 |  |  |
-| 考克斯 | 是 | 否 |  | 需要启用家长监控 |
+| 上菜 | 進行中 | 進行中 |  |  |
+| 頻譜 | 是 | 是 |  |  |
+| 憲章 | 是 | 否 |  |  |
+| Cox | 是 | 否 |  | 必須啟用家長監護 |
 | AT&amp;T | 是 | 否 |  |  |
 | Verizon | 是 | 是 |  |  |
-| 卡布莱维申 | 正在进行 | 正在进行 |  |  |
-| 突然链接 | 是 | 正在进行 |  |  |
-| Mediacom | 是 | 正在进行 |  |  |
-| 中大陆 | 是 | 正在进行 |  |  |
-| 马西隆 | 是 | 否 |  |  |
-| Google光纤 | 是 | 正在进行 |  |  |
+| Cablevision | 進行中 | 進行中 |  |  |
+| Suddenlink | 是 | 進行中 |  |  |
+| Mediacom | 是 | 進行中 |  |  |
+| 中大陸 | 是 | 進行中 |  |  |
+| 馬西隆 | 是 | 否 |  |  |
+| Google Fiber | 是 | 進行中 |  |  |
 | AlticeOne | 是 | 是 |  |  |
 
 
-## 启用了OAuth 2.0的HBA MVPD {#hba-with-oauth2-enabled-mvpds}
+## 啟用OAuth 2.0的MVPD的HBA {#hba-with-oauth2-enabled-mvpds}
 
-| MVPD | 提供基本功能？ | 在身份验证响应中发送标记 | SSO? | 评论 |
+| MVPD | 有基本功能嗎？ | 在驗證回應上傳送標幟 | SSO？ | 註解 |
 |---|---|---|---|---|
-| 康卡斯特 | 是 | 是 |  |  |
-
+| Comcast | 是 | 是 |  |  |

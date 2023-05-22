@@ -1,19 +1,18 @@
 ---
-title: 命令行使用
-description: 命令行使用
+title: 命令列使用方式
+description: 命令列使用方式
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 51b11ef8-438e-4747-be3e-e1774dc9f31a
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '167'
 ht-degree: 0%
 
 ---
 
+# 命令列使用方式 {#command-line-usage}
 
-# 命令行使用{#command-line-usage}
-
-要嵌入许可证，请使用以下语法：
+若要內嵌授權，請使用下列語法：
 
 ```
     java -jar AdobeLicenseEmbedder.jar  
@@ -22,35 +21,34 @@ ht-degree: 0%
 </i class="+ topic>
 ```
 
-* `sourcefile` 是加密的FLV或F4V文件。
-* `destfile` 指定将写入包含嵌入式许可证的加密内容的位置。如果指定了目录，则文件将使用与源文件相同的文件名保存在此目录中，但该目录不得是包含源文件的目录。
+* `sourcefile` 是加密的FLV或F4V檔案。
+* `destfile` 指定將內嵌授權之加密內容寫入何處。 如果指定目錄，檔案會使用與來源檔案相同的檔案名稱儲存在此目錄中，但目錄不能是包含來源檔案的目錄。
 
-下表描述了可以指定的命令行选项以及前面提到的语法：
+下表說明可搭配上述語法指定的命令列選項：
 
 <table frame="all" colsep="1" rowsep="1" class="+ topic/table adobe-d/table " id="table_hnl_2sy_n4"> 
  <thead class="- topic/thead "> 
   <tr rowsep="1" class="- topic/row "> 
-   <th colname="1" class="- topic/entry entry"> <p class="- topic/p ">命令行选项 </p> </th> 
-   <th colname="2" class="- topic/entry entry"> <p class="- topic/p ">说明 </p> </th> 
+   <th colname="1" class="- topic/entry entry"> <p class="- topic/p ">命令列選項 </p> </th> 
+   <th colname="2" class="- topic/entry entry"> <p class="- topic/p ">說明 </p> </th> 
   </tr> 
  </thead>
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -l许可证文件名  </span> </td> 
-   <td colname="2" class="- topic/entry "> 包含要嵌入的许可证的文件的名称。 可以指定多个<span class="codeph"> -l </span>选项来嵌入多个许可证。 </td> 
+   <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -l license-filename </span> </td> 
+   <td colname="2" class="- topic/entry "> 包含要內嵌之授權的檔案名稱。 多個 <span class="codeph"> -l </span> 可以指定選項以嵌入多個授權。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -m元数据文件名  </span> </td> 
-   <td colname="2" class="- topic/entry "> 指定要为其生成许可证的内容元数据。 （生成许可证时需要） </td> 
+   <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -m metadata-filename </span> </td> 
+   <td colname="2" class="- topic/entry "> 指定要為其產生授權的內容中繼資料。 （產生授權所需） </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <span class="codeph"> -noprompt  </span> </td> 
-   <td colname="2" class="- topic/entry "> 不要询问是否应覆盖目标文件。 如果目标文件已存在且未设置<span class="codeph"> -o </span>，则将返回一个错误。 </td> 
+   <td colname="1" class="- topic/entry "> <span class="codeph"> -noprompt </span> </td> 
+   <td colname="2" class="- topic/entry "> 不要詢問是否應該覆寫目的地檔案。 如果目的地檔案已存在且 <span class="codeph"> -o </span> 未設定，則會傳回錯誤。 </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <span class="codeph"> -o  </span> </td> 
-   <td colname="2" class="- topic/entry "> 如果目标文件已存在，则覆盖它时不进行提示。 </td> 
+   <td colname="1" class="- topic/entry "> <span class="codeph"> -o </span> </td> 
+   <td colname="2" class="- topic/entry "> 如果目的地檔案已經存在，請覆寫它而不提示。 </td> 
   </tr> 
  </tbody> 
 </table>
-

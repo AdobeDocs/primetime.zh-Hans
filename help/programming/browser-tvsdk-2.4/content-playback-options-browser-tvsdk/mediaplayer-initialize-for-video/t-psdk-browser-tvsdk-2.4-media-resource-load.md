@@ -1,44 +1,42 @@
 ---
-description: 通过直接实例化MediaResource并加载要播放的视频内容来加载资源。
-title: 在MediaPlayer中加载媒体资源
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 透過直接例項化MediaResource並載入要播放的視訊內容來載入資源。
+title: 在MediaPlayer中載入媒體資源
+exl-id: b775c33e-399c-4a03-a132-407944f07706
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '187'
 ht-degree: 0%
 
 ---
 
+# 在MediaPlayer中載入媒體資源 {#load-a-media-resource-in-the-mediaplayer}
 
-# 在MediaPlayer中加载媒体资源{#load-a-media-resource-in-the-mediaplayer}
+透過直接例項化MediaResource並載入要播放的視訊內容來載入資源。
 
-通过直接实例化MediaResource并加载要播放的视频内容来加载资源。
+1. 設定您的 `MediaPlayer` 物件的可播放專案，以及要播放的新資源。
 
-1. 使用要播放的新资源设置`MediaPlayer`对象的可播放项。
+   取代您現有的 `MediaPlayer` 物件目前可播放的專案，方法是呼叫 `replaceCurrentResource` 並傳遞現有 `MediaResource` 執行個體。
 
-   通过调用`replaceCurrentResource`并传递现有`MediaResource`实例，替换现有`MediaPlayer`对象当前可播放的项目。
-
-1. 等待浏览器TVSDK将`AdobePSDK.MediaPlayerStatusChangeEvent`调度为`event.status`且其等于以下任一项：
+1. 等待瀏覽器TVSDK派遣 `AdobePSDK.MediaPlayerStatusChangeEvent` 替換為 `event.status` 這等於下列任一專案：
 
    * `MediaPlayerStatus.INITIALIZED`
    * `MediaPlayerStatus.PREPARED`
    * `MediaPlayerStatus.ERROR`
 
-      通过这些事件,MediaPlayer对象将通知您的应用程序媒体资源是否已成功加载。
+      透過這些事件，MediaPlayer物件會通知您的應用程式媒體資源是否已成功載入。
 
-1. 当媒体播放器的状态变为`MediaPlayerStatus.INITIALIZED`时，您可以调用`MediaPlayer.prepareToPlay`。
+1. 當媒體播放器的狀態變更為 `MediaPlayerStatus.INITIALIZED`，您可以呼叫 `MediaPlayer.prepareToPlay`.
 
-   INITIALIZED状态表示媒体已成功加载。 调用`prepareToPlay`将开始广告分辨率和投放过程（如果有）。
-1. 当Browser TVSDK调度`MediaPlayerStatus.PREPARED`事件时，媒体流已成功加载（已创建MediaPlayerItem）并准备好回放。
+   INITIALIZED狀態表示媒體已成功載入。 通話 `prepareToPlay` 開始廣告解析度和刊登版位程式（如果有的話）。
+1. 瀏覽器TVSDK傳送時 `MediaPlayerStatus.PREPARED` 媒體串流已成功載入的事件（已建立MediaPlayerItem）並準備播放。
 
-如果发生故障，`MediaPlayer`将切换到`MediaPlayerStatus.ERROR`。
+如果失敗， `MediaPlayer` 切換至 `MediaPlayerStatus.ERROR`.
 
-它还会通过调度`MediaPlayerStatus.ERROR`事件通知您的应用程序。
+此外，也會透過傳送電子郵件通知應用程式 `MediaPlayerStatus.ERROR` 事件。
 
 ><!--<a id="example_3774607C6F08473282CF0CB7F3D82373"></a>-->
 
-
-以下简化的示例代码说明了加载媒体资源的过程：
+下列簡化的範常式式碼說明載入媒體資源的程式：
 
 ```js
 player.addEventListener(AdobePSDK.PSDKEventType.STATUS_CHANGED,  

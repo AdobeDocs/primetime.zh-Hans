@@ -1,29 +1,28 @@
 ---
-title: 许可证服务器概述
-description: 许可证服务器概述
+title: 授權伺服器概述
+description: 授權伺服器概述
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 101d9f63-b9b9-4281-a069-8c66427b34cb
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '133'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#license-server-overview}
 
-# 概述{#license-server-overview}
+您必須先部署Adobe Primetime DRM授權伺服器，才能向客戶核發授權。 授權伺服器使用Primetime DRM SDK來執行許多工作。
 
-在向客户端发放许可证之前，必须先部署Adobe Primetime DRM许可证服务器。 许可证服务器使用Primetime DRM SDK执行许多任务。
+若要實作License Server：
 
-要实施许可证服务器，请执行以下操作：
+* 如果支援使用者名稱/密碼驗證，則處理驗證請求。
+* 處理授權請求
+* 處理取得伺服器版本要求 — 所有伺服器都必須實作這類要求的支援。
+* 處理網域註冊請求 — 僅在實作網域伺服器時需要。
+* 處理網域取消註冊請求 — 僅在實作網域伺服器時需要。
+* 處理同步化 — 僅當授權指定同步化要求時才需要。
 
-* 如果支持用户名/密码身份验证，则处理身份验证请求。
-* 处理许可证请求
-* 处理获取服务器版本请求 — 所有服务器必须实现对此类型请求的支持。
-* 处理域注册请求 — 仅当实现域服务器时才需要。
-* 处理域取消注册请求 — 仅当实现域服务器时才需要。
-* 进程同步 — 仅当许可证指定同步要求时才需要。
+此外，伺服器需要提供商業邏輯來驗證使用者、判斷使用者是否獲得檢視內容的授權，以及選擇性地追蹤授權使用情況。
 
-此外，服务器需要提供业务逻辑以对用户进行身份验证，确定用户是否被授权视图内容，并可选地跟踪许可证使用情况。
-
-有关Java API的详细信息，请参阅&#x200B;*Adobe Primetime DRM API参考*。
+另請參閱 *Adobe Primetime DRM API參考* 以取得有關Java API的詳細資訊。

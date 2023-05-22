@@ -1,15 +1,14 @@
 ---
-description: 视频点播(VOD)广告插入过程由广告解析、广告插入和广告播放阶段组成。 对于广告跟踪，TVSDK必须通知远程跟踪服务器每个广告的播放进度。 当出现意外情况时，会采取适当的操作。
-title: VOD广告插入和故障转移
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 隨選影片(VOD)廣告插入程式包含廣告解析、廣告插入和廣告播放階段。 對於廣告追蹤，TVSDK必須通知遠端追蹤伺服器每個廣告的播放進度。 當發生非預期的情況時，會採取適當的動作。
+title: VOD的Advertising插入和容錯移轉
+exl-id: bf5be4e4-cf5a-48c1-8652-7453136e1b2d
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '89'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#advertising-insertion-and-failover-for-vod-overview}
 
-# 概述{#advertising-insertion-and-failover-for-vod-overview}
-
-视频点播(VOD)广告插入过程由广告解析、广告插入和广告播放阶段组成。 对于广告跟踪，TVSDK必须通知远程跟踪服务器每个广告的播放进度。 当出现意外情况时，会采取适当的操作。
+隨選影片(VOD)廣告插入程式包含廣告解析、廣告插入和廣告播放階段。 對於廣告追蹤，TVSDK必須通知遠端追蹤伺服器每個廣告的播放進度。 當發生非預期的情況時，會採取適當的動作。

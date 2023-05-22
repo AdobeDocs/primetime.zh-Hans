@@ -1,24 +1,23 @@
 ---
-description: TVSDK从FreeWheel和提供VAST响应的其他加载器获取信息。 FreeWheel在VAST响应中提供来自Moat服务的信息。 Moat服务以更准确的准确度计算广告印象，从而更好地显示创意人员捕捉或忽视受众的兴趣。
-title: 来自Moat的广告测量
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: TVSDK會從FreeWheel和其他提供VAST回應的廣告伺服器取得資訊。 FreeWheel在VAST回應中提供來自Moat服務的資訊。 Moat服務會以較準確的方式計算廣告曝光次數，以更能顯示廣告創意是否捕捉或略過受眾的興趣。
+title: 來自Moat的廣告測量
+exl-id: f8f68e0b-985c-43bb-878e-e24fed54e0c3
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '247'
 ht-degree: 0%
 
 ---
 
+# 來自Moat的廣告測量{#ad-measurements-from-moat}
 
-# 来自Moat{#ad-measurements-from-moat}的广告测量
+TVSDK會從FreeWheel和其他提供VAST回應的廣告伺服器取得資訊。 FreeWheel在VAST回應中提供來自Moat服務的資訊。 Moat服務會以較準確的方式計算廣告曝光次數，以更能顯示廣告創意是否捕捉或略過受眾的興趣。
 
-TVSDK从FreeWheel和提供VAST响应的其他加载器获取信息。 FreeWheel在VAST响应中提供来自Moat服务的信息。 Moat服务以更准确的准确度计算广告印象，从而更好地显示创意人员捕捉或忽视受众的兴趣。
+Moat是一項測量廣告檢視的服務，涵蓋從瀏覽器到應用程式內部的各種用途。 Moat可跨多個平台即時產生行銷分析資料。
 
-Moat是一种服务，用于测量和查看从浏览器到应用程序的多种用途。 Moat可跨多个平台实时生成营销分析数据。
+VAST回應XML具有您的程式碼可讀取的屬性和元素、最外層的廣告ID屬性和最外層的擴充功能元素。 無論如何，您的程式碼都能使用TVSDK來儲存廣告ID資訊和擴充功能資訊，並以樹狀結構組織資訊。 有了這個組織，您的程式碼就能從任何層級擷取資料，然後將其傳送至任何需要的位置。 最外層的廣告ID屬性值可讓您的程式碼協調來自相關行銷活動的資訊。
 
-VAST响应XML有一个属性和一个您的代码可以读取的元素、最外面的ad id属性和最外面的扩展元素。 无论采用哪种方式，您的代码都可以使用TVSDK保存广告ID信息和扩展信息，并以树结构组织信息。 通过这个组织，您的代码可以从任何级别获取数据并将其传递到任何需要的位置。 最外面的ad id属性值使您的代码能够协调来自关联活动的信息。
-
-例如，FreeWheel可以返回Extensions元素中的数据。 以下是示例元素。
+例如，FreeWheel可傳回Extensions元素中的資料。 以下是範例元素。
 
 ```xml
 <Extensions> 
@@ -41,10 +40,10 @@ VAST响应XML有一个属性和一个您的代码可以读取的元素、最外�
 </Extensions>
 ```
 
-Freewheel还可以在Ad元素中设置id属性，如下例所示。
+Freewheel也可在廣告元素中設定id屬性，如下列範例所示。
 
 ```
 <Ad id="118566" sequence="1">
 ```
 
-请参阅`PTAdAsset`中类`PTNetworkAdInfo`的API文档。
+請參閱類別的API檔案 `PTNetworkAdInfo` 在 `PTAdAsset`.

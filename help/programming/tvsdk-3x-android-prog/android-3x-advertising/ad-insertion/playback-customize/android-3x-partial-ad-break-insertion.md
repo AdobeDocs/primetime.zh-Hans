@@ -1,32 +1,31 @@
 ---
-title: 部分广告分段插入
-description: 部分广告分段插入
+title: 部分廣告插播插入
+description: 部分廣告插播插入
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: c86f1e99-7f1e-4a1e-b285-568ad6659f45
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '214'
 ht-degree: 0%
 
 ---
 
+# 部分廣告插播插入 {#partial-ad-break-insertion}
 
-# 部分Ad-break插入{#partial-ad-break-insertion}
+您可以啟用類似電視的體驗，即能夠在廣告中間、在直播串流中加入。 部分廣告插播功能可讓您模擬類似電視的體驗，如果客戶在中間版本內開始即時資料流，它會從該中間版本內開始。 這類似於切換至電視頻道，而商業廣告則順暢運作。
 
-您可以在广告中间加入直播流，从而获得类似电视的体验。 部分广告中断功能可让您模拟类似电视的体验，如果客户端开始某个视频流内部，则该视频流将在该视频中开始。 它类似于切换到电视渠道，广告无缝运行。
+例如，如果使用者在90秒的廣告插播（3個30秒的廣告）中間、第二個廣告的10秒（亦即廣告插播的40秒）中加入，會發生下列情況：
 
-例如，如果用户在90秒广告时段（3个30秒广告）中间加入，在第2个广告时段（即广告时段40秒）中加入10秒，则会发生以下情况：
+* 第二個廣告會播放剩餘的持續時間（20秒），然後是第三個廣告。
+* 部分播放的廣告（第二個廣告）的廣告追蹤器不會觸發。 僅觸發第三個廣告的追蹤器。
 
-* 第二个广告在剩余的持续时间（20秒）内播放，然后是第三个广告。
-* 不触发部分播放的广告（第二个广告）的广告跟踪器。 只触发第三个广告的跟踪器。
+預設不會啟用此行為。 若要在應用程式中啟用此功能，請執行以下操作：
 
-默认情况下不启用此行为。 要在应用程序中启用此功能，请执行以下操作：
-
-打开“部分插入广告中断”首选项。 使用MediaPlayer接口中的新方法`setPartialAdBreakPref`将此功能打开。 使用`getPartialAdBreakPref`方法查找此首选项的当前状态。
+開啟「部分廣告插播插入」的偏好設定。 使用新方法 `setPartialAdBreakPref` 在MediaPlayer介面中開啟此功能。 使用 `getPartialAdBreakPref` 尋找此偏好設定目前狀態的方法。
 
 ```
     MediaPlayer mediaPlayer = new MediaPlayer(getActivity(). getApplicationContext()); 
     mediaPlayer.setPartialAdBreakPref(true);
 ```
 
-如果有，将播放前置广告，然后内容从实时点播放，模仿直播电视的体验。
+播放前段廣告（如果有的話），然後從即時點播放內容，模擬直播電視的體驗。

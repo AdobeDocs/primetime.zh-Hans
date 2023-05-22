@@ -1,19 +1,18 @@
 ---
-title: 概述
-description: 概述
+title: 概觀
+description: 概觀
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 75c8c180-e843-4796-954a-3acff064765a
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '50'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#implement-domain-registration-overview}
 
-# 概述{#implement-domain-registration-overview}
+參考實作授權伺服器示範網域註冊商業邏輯上的兩種變化：
 
-参考实施许可证服务器演示了域注册业务逻辑的两个变体：
-
-* **基于身份**  — 每个经过身份验证的用户都有一个域和一个可加入该域的特定数量的设备。
-* **匿名**  — 许多设备属于一个域，可能不需要身份验证。
+* **以身分為基礎**  — 每個已驗證身分的使用者都有網域和可加入網域的特定裝置數量。
+* **匿名**  — 大量裝置屬於一個網域，可能不需要驗證。

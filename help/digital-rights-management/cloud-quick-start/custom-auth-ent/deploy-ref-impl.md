@@ -1,21 +1,20 @@
 ---
-title: 部署BEES参考实施
-description: 部署BEES参考实施
+title: 部署BEES參考實作
+description: 部署BEES參考實作
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 87f3f879-66b4-4b8c-a0c4-e15551f9b727
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '53'
 ht-degree: 0%
 
 ---
 
+# 部署BEES參考實作 {#deploy-the-bees-reference-implementation}
 
-# 部署BEES引用实现{#deploy-the-bees-reference-implementation}
+1. 設定您的Tomcat應用程式伺服器。 （請參閱您的Tomcat檔案）。
+1. 複製 `[!DNL bees.war]` 檔案放入Tomcat的 [!DNL webapps/] 資料夾。
+1. 傳送要求至 `https://localhost:8080/bees`.
 
-1. 设置Tomcat应用程序服务器。 （请参阅Tomcat文档。）
-1. 将`[!DNL bees.war]`文件复制到Tomcat的[!DNL webapps/]文件夹中。
-1. 向`https://localhost:8080/bees`发送请求。
-
-   如果您看到“蜜蜂是可操作的”消息，则部署已成功完成。
-1. 在服务器上启用SSL。
+   如果您看到「BEES運作中」訊息，表示部署已成功完成。
+1. 在您的伺服器上啟用SSL。

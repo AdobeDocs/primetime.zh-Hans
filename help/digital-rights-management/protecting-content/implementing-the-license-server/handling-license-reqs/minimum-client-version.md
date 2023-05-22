@@ -1,23 +1,21 @@
 ---
-title: 最低客户端版本
-description: 最低客户端版本
+title: 最低使用者端版本
+description: 最低使用者端版本
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: c4aebafe-33b4-4da3-9e79-53d6a7e9f22d
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '241'
 ht-degree: 0%
 
 ---
 
+# 最低使用者端版本 {#minimum-client-version}
 
-# 最低客户端版本{#minimum-client-version}
-
-Adobe Primetime DRM 2.0.2及更高版本引入了一些Primetime DRM 2.0客户端无法理解的新使用规则。 通过设置最低支持的客户端版本(`HandlerConfiguration.setMinSupportedClientVersion()`)，许可证服务器可以控制当旧客户端遇到具有这些使用规则的许可证时其行为。 根据此设置，服务器可以指示旧客户端是否可以忽略他们不理解的使用规则，或者旧客户端是否无法使用这些使用规则使用许可证。
+Adobe Primetime DRM 2.0.2和更新版本引入了一些新的使用規則，Primetime DRM 2.0使用者端不瞭解這些規則。 透過設定支援的最低使用者端版本( `HandlerConfiguration.setMinSupportedClientVersion()`)，則舊版使用者端遇到具有這些使用規則的授權時，授權伺服器可控制舊版使用者端的行為。 根據此設定，伺服器可指出較舊的使用者端是否可忽略他們不瞭解的使用規則，或較舊的使用者端是否無法使用這些使用規則的授權。
 
 例如，
 
-* 如果许可证指定了设备功能要求（播放受保护内容所需的[设备功能](../../../protecting-content/introduction/usage-rules/runtime-application-restrictions/device-capabilities.md)），则Primetime DRM客户端2.0.2及更高版本可以执行这些要求。
-* 如果许可证服务器不希望内容在不了解设备功能要求的客户端上播放，请将支持的最低客户端版本设置为2（对于2.0.2）。 这将阻止服务器在2.0.2之前向Primetime DRM客户端发放许可证。如果许可证从一个客户端传输到另一个客户端，则还将强制实施最低客户端版本。
-* 如果许可证服务器希望允许较旧的客户端忽略设备功能要求，请将支持的最低客户端版本设置为1（对于Primetime DRM 2.0）。 然后，服务器向任何客户端版本2.0及更高版本发放许可证。 如果客户端将许可证升级或转让给版本为2.0.2或更高版本的其他客户端，则许可证中的设备功能要求随后会得到执行，因为客户端随后可以支持该使用规则。
-
+* 如果授權指定裝置功能需求( [播放受保護內容所需的裝置功能](../../../protecting-content/introduction/usage-rules/runtime-application-restrictions/device-capabilities.md))、Primetime DRM使用者端2.0.2和更新版本可強制執行這些要求。
+* 如果授權伺服器不想讓內容在不瞭解裝置功能需求的使用者端上播放，請將支援的使用者端最低版本設定為2 (2.0.2)。 這將防止伺服器在2.0.2之前核發授權給Primetime DRM使用者端。如果授權是從一個使用者端傳輸到另一個使用者端，也會強制執行最低使用者端版本。
+* 如果授權伺服器想要允許較舊的使用者端忽略裝置功能需求，請將支援的最低使用者端版本設定為1 （針對Primetime DRM 2.0）。 然後，伺服器會向任何使用者端2.0版及更高版本發行授權。 如果使用者端升級或將授權傳輸到另一個具有2.0.2版或更新版本的使用者端，則授權中的裝置功能需求就會強制執行，因為使用者端之後可以支援該使用規則。

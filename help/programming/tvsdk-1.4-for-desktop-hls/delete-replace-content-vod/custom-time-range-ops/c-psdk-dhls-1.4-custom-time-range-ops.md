@@ -1,33 +1,32 @@
 ---
-description: TVSDK支持在VOD流中以编程方式删除和替换广告内容。
-title: 自定义时间范围操作
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: TVSDK支援程式化地刪除和取代VOD串流中的廣告內容。
+title: 自訂時間範圍作業
+exl-id: 5480b22a-ecff-4fd8-9ec0-40e4a2e97641
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '248'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#custom-time-range-operations-overview}
 
-# 概述{#custom-time-range-operations-overview}
+TVSDK支援程式化地刪除和取代VOD串流中的廣告內容。
 
-TVSDK支持在VOD流中以编程方式删除和替换广告内容。
-
-删除和替换功能扩展了自定义广告标记功能。 自定义广告标记将主要内容的部分标记为与广告相关的内容句点。 除了标记这些时间范围之外，您还可以删除和替换时间范围。
+刪除和取代功能可延伸自訂廣告標籤功能。 自訂廣告標籤會將主要內容的區段標示為與廣告相關的內容句號。 除了標示這些時間範圍外，您也可以刪除和取代時間範圍。
 
 <!--<a id="section_D3FE668CAF764DCC912373D5410C932C"></a>-->
 
-广告删除和替换是通过自定义标记实现的，这些标记标识VOD流中不同类型的时间范围：标记、删除和替换。 对于每个自定义时间范围，您都可以执行相关操作，包括删除或替换广告内容。
+使用自訂標籤來實施廣告刪除和取代，這些標籤可識別VOD資料流中不同型別的時間範圍：標籤、刪除和取代。 對於每個自訂時間範圍，您可以執行關聯的操作，包括刪除或取代廣告內容。
 
-对于广告删除和替换，TVSDK包括以下&#x200B;*自定义时间范围操作*&#x200B;模式：
+對於廣告刪除和取代，TVSDK包含下列專案 *自訂時間範圍作業* 模式：
 
-* MARK — 为标记区域调度`AdBreak`事件。 （在TVSDK的早期版本中，这称为`customAdMarker`。） 在此模式下不允许插入广告。
+* 標籤 — 派單 `AdBreak` 標籤區域的事件。 (這稱為 `customAdMarker` （在舊版TVSDK中）。 此模式不允許廣告插入。
 
-* DELETE — 对于此模式，应用程序使用`TimeRangeCollection`类定义C3广告删除的时间区域。 在此模式下允许插入广告。
-* REPLACE — 在此模式下，应用程序用Adobe Primetime广告决策`AdBreak`替换`timeRange`。 发生C3广告删除的替换操作开始，在指定时间结束（比原始时间范围短或长）。
+* DELETE — 對於此模式，應用程式會使用 `TimeRangeCollection` 類別，定義C3廣告刪除的時間區域。 此模式允許廣告插入。
+* REPLACE — 在此模式中，應用程式會取代 `timeRange` 搭配Adobe Primetime ad decisioning `AdBreak`. 取代操作從C3廣告刪除發生處開始，並在指定的時間（比原始時間範圍短或長）結束。
 
-TVSDK提供`CustomRangesOpportunityGenerator`类，以生成MARK和DELETE范围的放置机会。 对于REPLACE模式，TVSDK为每个时间范围生成两个放置机会：
+TVSDK提供 `CustomRangesOpportunityGenerator` 類別來產生MARK和DELETE範圍的置入機會。 對於REPLACE模式，TVSDK會為每個時間範圍產生兩個置入機會：
 
-* `CustomRangeResolver`生成DELETE的放置机会
-* `AuditudeAdResolver`为INSERT生成放置机会。
+* 此 `CustomRangeResolver` 產生DELETE的投放機會
+* 此 `AuditudeAdResolver` 為INSERT產生置入機會。

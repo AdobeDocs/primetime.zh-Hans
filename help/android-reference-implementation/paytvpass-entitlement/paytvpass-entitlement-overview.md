@@ -1,21 +1,20 @@
 ---
-description: 您可以使用Adobe Primetime身份验证管理播放器中的用户权利。
-title: 概述
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以使用Adobe Primetime驗證來管理播放器中的使用者權益。
+title: 概觀
+exl-id: 0db18747-0ccb-4654-8f1d-9b51915b3652
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '99'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#overview}
 
-# 概述{#overview}
+您可以使用Adobe Primetime驗證來管理播放器中的使用者權益。
 
-您可以使用Adobe Primetime身份验证管理播放器中的用户权利。
+封裝Primetime驗證權利流程的功能管理員是 `EntitlementManager`. 此類別會封裝權益邏輯，同時將UI工作委派給其他地方。
 
-封装Primetime身份验证授权流的功能管理器是`EntitlementManager`。 该类封装授权逻辑，同时将UI工作委派到其他位置。
+此Android參考實作使用Primetime驗證AccessEnabler程式庫1.7.3版。大部分實作與AccessEnabler程式庫隨附的現有示範應用程式非常類似。
 
-此Android参考实施使用Primetime身份验证AccessEnabler库版本1.7.3。大部分实施与随AccessEnabler库提供的现有演示应用程序非常相似。
-
-有关Primetime身份验证的其他信息，请参阅[节目编排者集成简介](https://tve.helpdocsonline.com/introduction-to-programmer-integration)中的文档。
+如需Primetime驗證的其他資訊，請參閱檔案： [程式設計師整合簡介](https://tve.helpdocsonline.com/introduction-to-programmer-integration).

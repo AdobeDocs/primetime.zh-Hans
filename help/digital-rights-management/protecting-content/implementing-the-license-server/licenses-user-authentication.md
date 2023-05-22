@@ -1,8 +1,7 @@
 ---
-title: 用户身份验证
-description: 用户身份验证
+title: 使用者驗證
+description: 使用者驗證
 copied-description: true
-translation-type: tm+mt
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '106'
@@ -11,10 +10,10 @@ ht-degree: 0%
 ---
 
 
-# 用户身份验证{#user-authentication}
+# 使用者驗證 {#user-authentication}
 
-Adobe Primetime DRM请求可包含身份验证令牌。
+Adobe Primetime DRM請求可包含驗證權杖。
 
-如果使用用户名/密码身份验证，则请求可能包含由`AuthenticationHandler`生成的`AuthenticationToken`。 如果要访问并验证令牌，则需要使用`RequestMessageBase.getAuthenticationToken()`。 要在客户端上启动用户名/密码请求，请使用`DRMManager.authenticate()`ActionScript或iOS API。
+如果使用使用者名稱/密碼驗證，請求可能包含 `AuthenticationToken` 產生者： `AuthenticationHandler`. 如果您想要存取及驗證Token，您需要使用 `RequestMessageBase.getAuthenticationToken()`. 若要在使用者端上起始使用者名稱/密碼請求，請使用 `DRMManager.authenticate()` ActionScript或iOS API。
 
-如果客户端和服务器使用自定义身份验证机制，则客户端通过其他渠道获取身份验证令牌，并使用`DRMManager.setAuthenticationToken` ActionScript 3.0 API设置自定义身份验证令牌。 使用`RequestMessageBase.getRawAuthenticationToken()`获取自定义身份验证令牌。 服务器实现确定自定义身份验证令牌是否有效。
+如果使用者端和伺服器使用自訂驗證機制，使用者端會透過其他通道取得驗證權杖，並使用設定自訂驗證權杖 `DRMManager.setAuthenticationToken` ActionScript3.0 API。 使用 `RequestMessageBase.getRawAuthenticationToken()` 以取得自訂驗證Token。 伺服器實作會判斷自訂驗證權杖是否有效。

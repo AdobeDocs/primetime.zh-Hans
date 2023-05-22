@@ -1,62 +1,62 @@
 ---
-title: MVPD用户元数据交换
-description: MVPD用户元数据交换
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: MVPD使用者中繼資料交換
+description: MVPD使用者中繼資料交換
+exl-id: 8bce6acc-cd33-476c-af5e-27eb2239cad1
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '943'
 ht-degree: 0%
 
 ---
 
-
-# MVPD用户元数据交换
+# MVPD使用者中繼資料交換
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-## 简介 {#intro-user-metadata-exchange}
+## 簡介 {#intro-user-metadata-exchange}
 
-MVPD会维护与其客户有关的特定于用户的元数据，在某些情况下，这些元数据会与程序员共享。 Adobe Primetime身份验证的目的是为此“用户元数据”的交换代理，但不是强制执行任何类型的交换规则。 交换规则是让MVPD与其程序员合作伙伴一起制定的。
+MVPD會維護其客戶的使用者特定中繼資料，這些中繼資料在某些情況下會與程式設計師共用。 Adobe Primetime驗證的目的是為了代理此「使用者中繼資料」的交換，但不強制執行任何種類的關於交換的規則。 交換規則是供MVPD與其程式設計人員合作夥伴合作使用。
 
-当前可用于交换的用户元数据类型包括：
+可用於Exchange的使用者中繼資料型別目前包括下列專案：
 
-* 邮政编码
-* 最高评级（VChip或MPAA）
-* 用户ID
+* 郵遞區號
+* 最高評等（VChip或MPAA）
+* 使用者ID
 * 家庭ID
-* 渠道ID
+* 管道ID
 
-使用此功能，MVPD和程序员可以实施特殊用例，如家长控制。 例如，MVPD可以将家长评级数据传递给程序员，程序员随后使用该数据过滤用户可用的查看选项。
+使用此功能，MVPD和程式設計師可以實作特殊使用案例，例如家長監護。 例如，MVPD可以將家長評等資料傳遞給程式設計師，程式設計師接著使用該資料來篩選使用者的可用檢視選擇。
 
-用户元数据关键点：
+使用者中繼資料關鍵點：
 
-* MVPD在验证和授权流程期间将用户元数据传递到程序员的应用程序
-* Adobe Primetime身份验证会将元数据值保存在AuthN和AuthZ令牌中
-* Adobe Primetime身份验证可以标准化MVPD的值，这些值以不同格式提供用户元数据
-* 某些参数可以使用程序员的密钥加密
-* 特定值由Adobe通过配置更改提供
+* MVPD會在驗證和授權流程期間，將使用者中繼資料傳遞給程式設計師的應用程式
+* Adobe Primetime驗證會將中繼資料值儲存在AuthN和AuthZ權杖中
+* Adobe Primetime驗證可以將MVPD的值標準化，這些值會以不同格式提供使用者中繼資料
+* 部分引數可使用程式設計人員的金鑰加密
+* 特定值可透過設定變更由Adobe提供
 
 >[!NOTE]
 >
->用户元数据是以前在Adobe Primetime身份验证中提供的静态元数据（身份验证令牌TTL、授权令牌TTL和设备ID）的扩展。
+>使用者中繼資料是靜態中繼資料（驗證權杖TTL、授權權杖TTL和裝置ID）的延伸，以前可在Adobe Primetime驗證中使用。
 
-## 示例 {#example-mvpd-user-metadata-exch}
+## 範例 {#example-mvpd-user-metadata-exch}
 
-### 家长控制 {#example-parental-control}
+### 家長監護 {#example-parental-control}
 
-此示例显示了以下内容的更改：
+此範例顯示下列專案的變更：
 
-* [MVPD元数据交换程序员](#progr-mvpd-metadata-exch)
+* [程式設計師到MVPD中繼資料交換](#progr-mvpd-metadata-exch)
 
-* [MVPD到程序员元数据交换流](#mvpd-progr-exchange-flow)
+* [MVPD至程式設計師中繼資料交換流程](#mvpd-progr-exchange-flow)
 
-### MVPD元数据交换程序员 {#progr-mvpd-metadata-exch}
+### 程式設計師到MVPD中繼資料交換 {#progr-mvpd-metadata-exch}
 
-目前，程序员API、Adobe Primetime身份验证和MVPD授权程序均仅支持通道级别的授权。 在程序员的getAuthorization()API调用中，该渠道被指定为纯文本字符串。 此字符串会一直传播到MVPD的授权后端：
+目前，程式設計師API、Adobe Primetime驗證和MVPD授權程式都僅支援通道層級的授權。 通道在程式設計師的getAuthorization() API呼叫中指定為純文字字串。 此字串會一直傳播至MVPD的授權後端：
 
-从程序员的应用程序或网站中，用户选择支持XACML的MVPD（在本例中为“TNT”）。 有关XACML的信息，请参阅 [扩展访问控制标记语言](https://en.wikipedia.org/wiki/XACML){target=_blank}.
-程序员应用程序会形成一个AuthZ请求，其中包含该资源及其元数据。  此示例包括渠道元素的媒体属性中的美国电影协会(MPAA)评级为“pg”：
+從程式設計師的應用程式或網站，使用者會選擇具備XACML功能的MVPD （在此範例中為「TNT」）。 如需XACML的相關資訊，請參閱 [可擴充存取控制標籤語言](https://en.wikipedia.org/wiki/XACML){target=_blank}.
+程式設計師的應用程式會形成包含資源及其中繼資料的AuthZ請求。  此範例在頻道元素的媒體屬性中包含「pg」的MPAA評等：
 
 ```XML
 var resource = '<rss version="2.0" xmlns:media="http://video.search.yahoo.com/mrss/">
@@ -68,20 +68,20 @@ var resource = '<rss version="2.0" xmlns:media="http://video.search.yahoo.com/mr
 getAuthorization(resource);
 ```
 
-Adobe Primetime身份验证实际上支持更精细的授权（在MVPD和程序员都支持的情况下，可精确到资产级别）。 资源及其元数据是不透明的，不可Adobe;其目的是建立一种标准格式，用于以标准化方式指定资源ID和元数据，以将资源ID发送到不同的MVPD。
+當MVPD和程式設計人員都支援時，Adobe Primetime驗證實際上支援更精細的授權，甚至資產層級。 資源及其中繼資料對於Adobe而言是不透明的；其目的在於建立標準格式，以標準化方式指定資源ID和中繼資料，以將資源ID傳送至不同的MVPD。
 
 >[!NOTE]
 >
->如果用户选择仅支持渠道的MVPD，则Adobe Primetime身份验证仅提取渠道标题（上例中为“TNT”），并仅将标题传递给MVPD。
+>如果使用者選擇只能使用通道的MVPD，則Adobe Primetime驗證只會擷取通道標題（上述範例中為「TNT」），並只將標題傳給MVPD。
 
-### MVPD到程序员元数据交换流 {#mvpd-progr-exchange-flow}
+### MVPD至程式設計師中繼資料交換流程 {#mvpd-progr-exchange-flow}
 
-Adobe Primetime身份验证做出以下假设：
+Adobe Primetime驗證會進行下列假設：
 
-* MVPD将作为SAML响应的一部分发送最大评级
-* 此信息将作为身份验证令牌的一部分保存
-* 由Adobe Primetime身份验证提供的API使程序员能够检索此信息
-* 程序员在其网站或应用程序上实施此功能（例如，隐藏超出用户最高评分的视频）
+* MVPD會傳送最大評等作為SAML回應的一部分
+* 此資訊會儲存為驗證權杖的一部分
+* Adobe Primetime驗證會提供API，讓程式設計師可以擷取此資訊
+* 程式設計師在其網站或應用程式上實作此功能（例如，隱藏超過使用者最高評分的視訊）
 
 ```XML
 <saml:Assertion ID="pfxec5f92e0-8589-3fc3-c708-f4fb8e2fad59"
@@ -103,60 +103,60 @@ Adobe Primetime身份验证做出以下假设：
 </saml:Assertion>
 ```
 
-### 注释 {#notes-mvpd-progr-metadata-exch-flow}
+### 附註 {#notes-mvpd-progr-metadata-exch-flow}
 
-**资源标准化和验证。** 资源ID可以作为纯字符串或MRSS字符串进行传递。 程序员可以决定使用纯字符串格式或MRSS，但需要先与MVPD达成协议，以便MVPD知道如何处理该资源。
+**資源標準化與驗證。** 資源ID可以純字串或MRSS字串形式傳遞。 程式設計師可以決定使用純字串格式或MRSS，但需要事先與MVPD達成協定，以便MVPD知道如何處理該資源。
 
-**资源ID和元数据规范。** Adobe Primetime身份验证将RSS标准与Media RSS扩展结合使用来指定资源及其元数据。 与Media RSS扩展一起，Adobe Primetime身份验证支持多种元数据，例如家长控制(通过 `<media:rating>`)或地理位置(`<media:location>`)。
+**資源ID和中繼資料規格。** Adobe Primetime驗證會使用RSS標準搭配Media RSS擴充功能來指定資源及其中繼資料。 結合Media RSS擴充功能後，Adobe Primetime驗證可支援多種中繼資料，例如家長監護(透過 `<media:rating>`)或地理位置(`<media:location>`)。
 
-Adobe Primetime身份验证还可支持从旧版渠道字符串到需要RSS的MVPD的相应RSS资源的透明转换。 另一方面，对于仅通道MVPD，Adobe Primetime身份验证支持从RSS+MRSS转换为纯通道标题。
+Adobe Primetime驗證也可支援從舊版管道字串透明轉換為需要RSS的MVPD的對應RSS資源。 另一方面，Adobe Primetime驗證支援從RSS+MRSS轉換為純頻道標題，適用於僅限頻道的MVPD。
 
-**Adobe Primetime身份验证可确保与现有集成完全向后兼容。** 也就是说，对于使用渠道级别身份验证的程序员，在将渠道ID发送到了解该格式的MVPD之前，Adobe Primetime身份验证会注意以必要的格式打包渠道ID。 反过来也适用：如果程序员以新格式指定其所有资源，则Adobe Primetime身份验证会将新格式转换为简单的渠道字符串（如果针对仅执行渠道级别授权的MVPD进行授权）。
+**Adobe Primetime驗證可確保與現有整合完全回溯相容。** 也就是說，對於使用管道層級驗證的程式設計師而言，Adobe Primetime驗證作業會在將管道ID傳送給瞭解該格式的MVPD之前，小心將管道ID封裝為必要的格式。 反之亦然：如果程式設計師以新格式指定其所有資源，而授權的MVPD只進行頻道層級授權，則Adobe Primetime驗證會將新格式轉譯為簡單的頻道字串。
 
-## 用户元数据用例 {#user-metadata-use-cases}
+## 使用者中繼資料使用案例 {#user-metadata-use-cases}
 
-随着越来越多的MVPD进行法律安排并添加功能，用例会不断变化和扩展。 以下是可用于哪些用户元数据的示例。
+隨著越來越多的MVPD做出法律安排並新增功能，使用案例在不斷變化和擴展。 以下是可用於的使用者中繼資料的範例。
 
-* [MVPD用户ID](#mvpd-user-id)
+* [MVPD使用者ID](#mvpd-user-id)
 * [家庭ID](#household-user-id)
-* [邮政编码](#zip-code)
-* [最大评分（家长控制）](#max-rating-parental-control)
-* [渠道阵容](#channel-line-up)
+* [郵遞區號](#zip-code)
+* [最大評分（家長監護）](#max-rating-parental-control)
+* [頻道組合](#channel-line-up)
 
-### MVPD用户ID {#mvpd-user-id}
+### MVPD使用者ID {#mvpd-user-id}
 
 * 由MVPD提供
-* 不是用户的实际登录信息，因为该信息由MVPD进行哈希处理
-* 可用于指示特定用户遇到或遇到的问题
-* 加密
-* MVPD支持：所有MVPD
+* 不是使用者的實際登入資訊，因為它由MVPD雜湊處理
+* 可用於指出特定使用者的或問題
+* 已加密
+* MVPD支援：所有MVPD
 
-### 家庭用户ID {#household-user-id}
+### 家庭使用者ID {#household-user-id}
 
-* 允许获取良好的量度信息
-* 加密
-* MVPD支持：一些MVPD
+* 可提供良好的量度資訊
+* 已加密
+* MVPD支援：部分MVPD
 
-### 邮政编码 {#zip-code}
+### 郵遞區號 {#zip-code}
 
-* 用户的账单邮政编码
-* 主要用于执行体育赛事冻结期规则
-* 可以随AuthZ响应一起提供，以便进行快速更新
-* MVPD支持：一些MVPD
+* 使用者的帳單郵遞區號
+* 主要用於強制實施體育賽事凍結期規則
+* 可隨附AuthZ回應，以快速更新
+* MVPD支援：部分MVPD
 
-### 最大评分（家长控制） {#max-rating-parental-control}
+### 最大評分（家長監護） {#max-rating-parental-control}
 
-* 初始验证N，加上验证Z刷新
-* 从UI中筛选内容
-* 美国电影协会或VChip评级
-* MVPD支持：一些MVPD
+* AuthN初始，加上AuthZ重新整理
+* 從UI中篩選內容
+* MPAA或VChip評等
+* MVPD支援：部分MVPD
 
-### 渠道阵容 {#channel-line-up}
+### 頻道組合 {#channel-line-up}
 
-* MVPD可以提供用户有权查看的渠道列表
-* 允许快速进行UI绘画
-* OLCA规范允许在AuthN响应中将此作为AttributeStatement
-* 支持MVPD:一些MVPD
+* MVPD可提供使用者有權檢視的管道清單
+* 允許快速UI繪圖
+* OLCA規格允許將此作為AuthN回應中的AttributeStatement
+* 支援MVPD：部分MVPD
 
 <!--
 >[!RELATEDINFORMATION]

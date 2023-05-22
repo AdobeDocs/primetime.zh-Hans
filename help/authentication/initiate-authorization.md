@@ -1,6 +1,6 @@
 ---
-title: 启动授权
-description: 启动授权
+title: 啟動授權
+description: 啟動授權
 exl-id: 2f8a5499-e94f-40dd-9fb0-aac8e080de66
 source-git-commit: 5e775238f0e894f887be4c188903bdb04524c57a
 workflow-type: tm+mt
@@ -9,64 +9,64 @@ ht-degree: 0%
 
 ---
 
-# 启动授权 {#initiate-authorization}
+# 啟動授權 {#initiate-authorization}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-## REST API端点 {#clientless-endpoints}
+## REST API端點 {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;reggie_fqdn>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;sp_fqdn>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
-## 描述 {#description}
+## 說明 {#description}
 
-获取授权响应。 
+取得授權回應。 
 
-| 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
+| 端點 | 已呼叫  </br>作者： | 輸入   </br>引數 | HTTP  </br>方法 | 回應 | HTTP  </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/authorize | 流应用程序</br></br>或</br></br>程序员服务 | 1.请求者（必填）</br>2.  deviceId（必需）</br>3.  资源（必需）</br>4.  device_info/X-Device-Info（必需）</br>5.  _deviceType_</br> 6.  _deviceUser_ （已弃用）</br>7.  _appId_ （已弃用）</br>8.  额外参数（可选） | GET | 包含授权详细信息或错误详细信息（如果失败）的XML或JSON。 请参阅下面的示例。 | 200 — 成功  </br>403 — 无法成功 |
+| &lt;sp_fqdn>/api/v1/authorize | 串流應用程式</br></br>或</br></br>程式設計師服務 | 1.請求者（必要）</br>2.  deviceId （必要）</br>3.  資源（必要）</br>4.  device_info/X-Device-Info （必要）</br>5.  _deviceType_</br> 6.  _deviceuser_ （已棄用）</br>7.  _appId_ （已棄用）</br>8.  額外引數（選擇性） | GET | 包含授權詳細資料的XML或JSON，或如果失敗則包含錯誤詳細資料。 請參閱下列範例。 | 200 — 成功  </br>403 — 無成功 |
 
 {style="table-layout:auto"}
 
 </br>
 
 
-| 输入参数 | 描述 |
+| 輸入引數 | 說明 |
 | --- | --- |
-| 请求者 | 此操作有效的程序员请求者ID。 |
-| deviceId | 设备ID字节。 |
-| 资源 | 包含resourceId（或MRSS片段）的字符串，用于标识用户请求的内容，并由MVPD授权端点识别。 |
-| device_info/</br></br>X-Device-Info | 流设备信息。</br></br>**注意**:此URL可以作为URL参数传递，但由于此参数的潜在大小以及GETURL长度的限制，它应作为X-Device-Info在http标头中传递。 </br></br><!--See the full details in [Passing Device and Connection Information](http://tve.helpdocsonline.com/passing-device-information)-->. |
-| _deviceType_ | 设备类型（例如Roku、PC）。</br></br>如果此参数设置正确，ESM将提供 [按设备类型划分](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) 使用无客户端时，以便可以对Roku、AppleTV、Xbox等执行不同类型的分析。</br></br>请参阅 [传递量度中无客户端设备类型参数的好处&#x200B;](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**:device_info将替换此参数。 |
-| _deviceUser_ | 设备用户标识符。 |
-| _appId_ | 应用程序ID/名称。 </br></br>**注意**:device_info替换此参数。 |
-| 额外参数 | 调用还可以包含可启用其他功能(如：</br></br>* generic_data — 允许使用 [促销TempPass](/help/authentication/promotional-temp-pass.md)</br></br>示例： `generic_data=("email":"email@domain.com")` |
+| 請求者 | 此作業有效的程式設計員requestorId。 |
+| deviceId | 裝置ID位元組。 |
+| 資源 | 包含resourceId （或MRSS片段）的字串，可識別使用者請求的內容並由MVPD授權端點識別。 |
+| device_info/</br></br>X-Device-Info | 串流裝置資訊。</br></br>**注意**：此引數可以作為URL引數傳遞，但由於此引數潛在的大小以及GETURL的長度限制，它應該在http標頭中作為X-Device-Info傳遞。 </br></br><!--See the full details in [Passing Device and Connection Information](http://tve.helpdocsonline.com/passing-device-information)-->. |
+| _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>如果此引數設定正確，ESM會提供 [依裝置型別劃分](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) 使用Clienless時，因此可針對Roku、AppleTV、Xbox等執行不同型別的分析。</br></br>另請參閱 [通過量度中無使用者端裝置型別引數的好處&#x200B;](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**：device_info會取代此引數。 |
+| _deviceuser_ | 裝置使用者識別碼。 |
+| _appId_ | 應用程式id/名稱。 </br></br>**注意**：device_info會取代此引數。 |
+| 額外引數 | 呼叫也可能包含啟用其他功能的選用引數，例如：</br></br>* generic_data — 允許使用 [促銷臨時傳遞](/help/authentication/promotional-temp-pass.md)</br></br>範例： `generic_data=("email":"email@domain.com")` |
 
 {style="table-layout:auto"}
 
 >[!CAUTION]
 >
->**流设备IP地址**</br>
->对于客户端到服务器实施，流设备IP地址会随此调用隐式发送。  对于服务器到服务器实施，其中 **regcode** 调用由程序员服务而不是流设备进行，需要以下标头才能传递流设备IP地址：</br></br>
+>**串流裝置IP位址**</br>
+>對於使用者端對伺服器實作，串流裝置IP位址會隨此呼叫以隱含方式傳送。  對於伺服器對伺服器實作，其中 **regcode** 呼叫是由程式設計人員服務而不是串流裝置所進行，以下標題是傳遞串流裝置IP位址所必需：</br></br>
 >
 >
 ```
 >X-Forwarded-For : <streaming\_device\_ip>
 >```
 >
->where `<streaming\_device\_ip>` 是流设备公共IP地址。</br></br>
->示例：</br>
+>位置 `<streaming\_device\_ip>` 是串流裝置的公用IP位址。</br></br>
+>範例：</br>
 >
 >
 ```
@@ -75,27 +75,27 @@ ht-degree: 0%
 >```
 
 
-### 示例响应 {#sample-response}
+### 範例回應 {#sample-response}
 
-* **用例1:成功**
+* **案例1：成功**
 
 </br>
-  * **XML:**
+  * **XML：**
   </br>
 
-    &quot;&#39;XML
+    ```XML
     &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
     &lt;authorization>
     &lt;expires>1348148289000&lt;/expires>
-    &lt;mvpd>示例MvpdId&lt;/mvpd>
+    &lt;mvpd>sampleMvpdId&lt;/mvpd>
     &lt;requestor>sampleRequestorId&lt;/requestor>
     &lt;resource>sampleResourceId&lt;/resource>
     &lt;/authorization>
-    &quot;
+    ```
 
 
 
-* **JSON:**
+* **JSON：**
 
    ```JSON
    {
@@ -108,11 +108,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->当响应来自代理MVPD时，它可能包含一个名为 `proxyMvpd`. 
+>當回應來自Proxy MVPD時，它可能包含名為的其他元素 `proxyMvpd`. 
 
  
 
-* **用例2:拒绝授权**
+* **案例2：拒絕授權**
 
 
    ```JSON

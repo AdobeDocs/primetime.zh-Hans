@@ -1,20 +1,18 @@
 ---
-title: 配置文件属性
-description: 配置文件属性
+title: 組態檔屬性
+description: 組態檔屬性
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: c636cf2d-6aee-445f-84f3-2fe35722204d
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '32'
 ht-degree: 0%
 
 ---
 
+# 組態檔屬性 {#configuration-file-properties}
 
-# 配置文件属性{#configuration-file-properties}
-
-以下是策略更新列表管理器属性，它指定一个PKCS12文件，其中包含用于签名吊销列表（许可证服务器证书）的凭据：
+以下是「原則更新清單管理員」屬性，這些屬性會指定包含簽署撤銷清單（授權伺服器憑證）認證的PKCS12檔案：
 
 * `revocation.sign.certfile=license-server-credentials.pfx`
 * `revocation.sign.certpass=password`
-

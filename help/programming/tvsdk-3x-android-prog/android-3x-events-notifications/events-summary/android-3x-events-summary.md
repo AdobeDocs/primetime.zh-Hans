@@ -1,5 +1,5 @@
 ---
-description: 您的应用程序可以监视播放器中的活动以及播放器的更改状态，方法是监听TVSDK调度的事件。
+description: 您的應用程式可監聽TVSDK所傳送的事件，以監控播放器中的活動以及播放器狀態的變更。
 title: Primetime播放器事件摘要
 exl-id: 3912f140-1600-41fb-9dc4-306646b7cd85
 source-git-commit: 59f7f8aa82be59c4012ee80648032600590bc4e1
@@ -9,293 +9,293 @@ ht-degree: 0%
 
 ---
 
-# Primetime播放器事件摘要{#primetime-player-events-summary}
+# Primetime播放器事件摘要 {#primetime-player-events-summary}
 
-您的应用程序可以监视播放器中的活动以及播放器的更改状态，方法是监听TVSDK调度的事件。
+您的應用程式可監聽TVSDK所傳送的事件，以監控播放器中的活動以及播放器狀態的變更。
 
 ## 事件 {#events}
 
-TVSDK会在发生应用程序必须响应的事件时通知您。 每个事件都与一个侦听器类相对应，并且必须实现一个回调方法。
+TVSDK會在應用程式必須回應的事件發生時通知您。 每個事件都對應至監聽器類別，並附有您必須實作的回呼方法。
 
 >[!TIP]
 >
->事件代码是`MediaPlayerEvent`枚举的常量。
+>事件程式碼是 `MediaPlayerEvent` 列舉。
 
 `AdBreakCompletedEventListener`
 
-* **** 表示广告时间的播放结束。
+* **含義** 廣告插播的播放完成。
 
-* **要实施的回调** `onAdBreakCompleted(AdBreakPlaybackEvent event)`
+* **要實作的回呼** `onAdBreakCompleted(AdBreakPlaybackEvent event)`
 
-* **事件代码** `AD_BREAK_COMPLETE`
+* **事件代碼** `AD_BREAK_COMPLETE`
 
 `AdBreakSkippedEventListener`
 
-* **** 这意味着在播放期间跳过了广告时间。
+* **含義** 播放期間已略過廣告插播。
 
-* **要实施的回调** `onAdBreakSkipped(AdBreakPlaybackEvent event)`
+* **要實作的回呼** `onAdBreakSkipped(AdBreakPlaybackEvent event)`
 
-* **事件代码** `AD_BREAK_SKIPPED`
+* **事件代碼** `AD_BREAK_SKIPPED`
 
 `AdBreakStartedEventListener`
 
-* **** 这意味着广告时间的播放已开始。
+* **含義** 廣告插播的播放已開始。
 
-* **要实施的回调** `onAdBreakStarted(AdBreakPlaybackEvent event)`
+* **要實作的回呼** `onAdBreakStarted(AdBreakPlaybackEvent event)`
 
-* **事件代码** `AD_BREAK_START`
+* **事件代碼** `AD_BREAK_START`
 
 `AdClickedEventListener`
 
-* **** 这表示在播放期间点击了广告。
+* **含義** 廣告在播放期間被點按。
 
-* **要实施的回调** `onAdClicked(AdClickEvent event)`
-* **事件代码** `AD_CLICK`
+* **要實作的回呼** `onAdClicked(AdClickEvent event)`
+* **事件代碼** `AD_CLICK`
 
 `AdCompletedEventListener`
 
-* **** 表示广告播放结束。
+* **含義** 廣告播放完成。
 
-* **要实施的回调** `onAdCompleted(AdPlaybackEvent event)`
+* **要實作的回呼** `onAdCompleted(AdPlaybackEvent event)`
 
-* **事件代码** `AD_COMPLETE`
+* **事件代碼** `AD_COMPLETE`
 
 `AdProgressEventListener`
 
-* **** MaingReporting在播放期间进度。
+* **含義** 在播放期間報告進度。
 
-* **要实施的回调** `onAdProgress(AdPlaybackEvent event)`
+* **要實作的回呼** `onAdProgress(AdPlaybackEvent event)`
 
-* **事件代码** `AD_PROGRESS`
+* **事件代碼** `AD_PROGRESS`
 
 `AdResolutionCompleteEventListener`
 
-* **** MaingPrimetime广告决策广告解析结束。此事件仅适用于VOD内容。
+* **含義** Primetime廣告決策廣告解析已完成。 此事件僅適用於VOD內容。
 
-* **要实施的回调** `onAdResolutionComplete()`
+* **要實作的回呼** `onAdResolutionComplete()`
 
-* **事件代码** `AD_RESOLUTION_COMPLETE`
+* **事件代碼** `AD_RESOLUTION_COMPLETE`
 
 `AdStartedEventListener`{#section_A4339C48F82640A8AF4AF09CB3B33188}
 
-* **** 这意味着广告的播放已开始。
+* **含義** 廣告播放已開始。
 
-* **要实施的回调** `onAdStarted(AdPlaybackEvent event)`
+* **要實作的回呼** `onAdStarted(AdPlaybackEvent event)`
 
-* **事件代码** `AD_START`
+* **事件代碼** `AD_START`
 
 `AudioUpdatedEventListener`
 
-* **** 意思已检测到新音轨。
+* **含義** 偵測到新的音軌。
 
-* **要实施的回调** `onAudioUpdated(MediaPlayerItemEvent event)`
+* **要實作的回呼** `onAudioUpdated(MediaPlayerItemEvent event)`
 
-* **事件代码** `AUDIO_TRACK_UPDATED`
+* **事件代碼** `AUDIO_TRACK_UPDATED`
 
 `BufferingBeginEventListener`
 
-* **** 这意味着播放器已开始缓冲。
+* **含義** 播放器已開始緩衝。
 
-* **要实施的回调** `onBufferingBegin(BufferEvent event)`
+* **要實作的回呼** `onBufferingBegin(BufferEvent event)`
 
-* **事件代码** `BUFFERING_BEGIN`
+* **事件代碼** `BUFFERING_BEGIN`
 
 `BufferingEndEventListener`
 
-* **** 这意味着播放器已停止缓冲。
+* **含義** 播放器已停止緩衝。
 
-* **要实施的回调** `onBufferingEnd(BufferEvent event)`
+* **要實作的回呼** `onBufferingEnd(BufferEvent event)`
 
-* **事件代码** `BUFFERING_END`
+* **事件代碼** `BUFFERING_END`
 
 `BufferPreparedEventListener`
 
-* **** 含义缓冲区已准备好。
+* **含義** 緩衝區已準備就緒。
 
-* **要实施的回调** `onBufferPrepared()`
+* **要實作的回呼** `onBufferPrepared()`
 
-* **事件代码** `BUFFER_PREPARED`
+* **事件代碼** `BUFFER_PREPARED`
 
 `CaptionsUpdatedEventListener`
 
-* **** 含义检测到新字幕跟踪。
+* **含義** 偵測到新的註解追蹤。
 
-* **要实施的回调** `onCaptionsUpdated(MediaPlayerItemEvent event)`
+* **要實作的回呼** `onCaptionsUpdated(MediaPlayerItemEvent event)`
 
-* **事件代码** `CAPTIONS_UPDATED`
+* **事件代碼** `CAPTIONS_UPDATED`
 
 `DRMMetadataInfoEventListener`
 
-* **** 这意味着已在媒体流中检测到新的DRM元数据。
+* **含義** 已在媒體資料流中偵測到新的DRM中繼資料。
 
-* **要实施的回调** `onDRMMetadataInfo(DRMMetadataInfoEvent event)`
+* **要實作的回呼** `onDRMMetadataInfo(DRMMetadataInfoEvent event)`
 
-* **事件代码** `DRM_METADATA`
+* **事件代碼** `DRM_METADATA`
 
 `ItemCreatedEventListener`
 
-* **** 表示已创建新的媒体播放器项目。
+* **含義** 已建立新的媒體播放器專案。
 
-* **要实施的回调** `onItemCreated(MediaPlayerItemEvent event)`
+* **要實作的回呼** `onItemCreated(MediaPlayerItemEvent event)`
 
-* **事件代码** `ITEM_CREATED`
+* **事件代碼** `ITEM_CREATED`
 
 `ItemLoadCompleteEventListener`
 
-* **** 表示已为当前项目创建新加载信息。
+* **含義** 已為目前專案建立新的載入資訊。
 
-* **要实施的回调** `onLoadComplete(MediaPlayerItemEvent event)`
+* **要實作的回呼** `onLoadComplete(MediaPlayerItemEvent event)`
 
-* **事件代码** `ITEM_UPDATED`
+* **事件代碼** `ITEM_UPDATED`
 
 `LoadInformationEventListener`
 
-* **** 表示已加载新区段。
+* **含義** 已載入新區段。
 
-* **要实施的回调** `onLoadInformation(LoadInformationEvent event)`
+* **要實作的回呼** `onLoadInformation(LoadInformationEvent event)`
 
-* **事件代码** `LOAD_INFORMATION_AVAILABLE`
+* **事件代碼** `LOAD_INFORMATION_AVAILABLE`
 
 `MainManifestUpdatedEventListener`
 
-* **** 含义主清单或播放列表已更新。
+* **含義** 主要資訊清單或播放清單已更新。
 
-* **要实施的回调** `onMainManifestUpdated(MediaPlayerItemEvent event)`
+* **要實作的回呼** `onMainManifestUpdated(MediaPlayerItemEvent event)`
 
-* **事件代码** `MANIFEST_UPDATED`
+* **事件代碼** `MANIFEST_UPDATED`
 
 `NotificationEventListener`
 
-* **** 表示操作失败。
+* **含義** 操作失敗。
 
-* **要实施的回调** `onNotification(NotificationEvent event)`
+* **要實作的回呼** `onNotification(NotificationEvent event)`
 
-* **事件代码** `OPERATION_FAILED`
+* **事件代碼** `OPERATION_FAILED`
 
 `PlaybackRangeUpdatedEventListener`
 
-* **** 这意味着播放范围已更新。
+* **含義** 已更新播放範圍。
 
-* **要实施的回调** `onPlaybackRangeUpdated(MediaPlayerItemEvent event)`
+* **要實作的回呼** `onPlaybackRangeUpdated(MediaPlayerItemEvent event)`
 
-* **事件代码** `PLAYBACK_RANGE_UPDATED`
+* **事件代碼** `PLAYBACK_RANGE_UPDATED`
 
 `PlaybackRatePlayingEventListener`
 
-* **** 这意味着屏幕上会显示新的播放率。
+* **含義** 畫面上會顯示新的播放速率。
 
-* **要实施的回调** `onRatePlaying(PlaybackRateEvent event)`
+* **要實作的回呼** `onRatePlaying(PlaybackRateEvent event)`
 
-* **事件代码** `RATE_PLAYING`
+* **事件代碼** `RATE_PLAYING`
 
 `PlaybackRateSelectedEventListener`
 
-* **** 表示已设置MediaPlayer的速率属性。
+* **含義** 已設定MediaPlayer的速率屬性。
 
-* **要实施的回调** `onRateSelected(PlaybackRateEvent event)`
+* **要實作的回呼** `onRateSelected(PlaybackRateEvent event)`
 
-* **事件代码** `RATE_SELECTED`
+* **事件代碼** `RATE_SELECTED`
 
 `PlayStartEventListener`
 
-* **** 表示播放已开始。
+* **含義** 播放已開始。
 
-* **要实施的回调** `onPlayStart()`
+* **要實作的回呼** `onPlayStart()`
 
-* **事件代码** `PLAY_START`
+* **事件代碼** `PLAY_START`
 
 `ProfileChangeEventListener`
 
-* **** 表示MediaPlayer的当前配置文件已更改。
+* **含義** MediaPlayer目前的設定檔已變更。
 
-* **要实施的回调** `onProfileChanged(ProfileEvent event)`
+* **要實作的回呼** `onProfileChanged(ProfileEvent event)`
 
-* **事件代码** `PROFILE_CHANGED`
+* **事件代碼** `PROFILE_CHANGED`
 
 `ReservationReachedEventListener`
 
-* **** MaingPlayback达到时间轴保留。
+* **含義** 播放達到時間軸預訂。
 
-* **要实施的回调** `onReservationReached(ReservationEvent event)`
+* **要實作的回呼** `onReservationReached(ReservationEvent event)`
 
-* **事件代码** `RESERVATION_REACHED`
+* **事件代碼** `RESERVATION_REACHED`
 
 `SeekBeginEventListener`
 
-* **** MeasingSeek操作已启动。
+* **含義** 搜尋作業已開始。
 
-* **要实施的回调** `onSeekBegin(SeekEvent event)`
+* **要實作的回呼** `onSeekBegin(SeekEvent event)`
 
-* **事件代码** `SEEK_BEGIN`
+* **事件代碼** `SEEK_BEGIN`
 
 `SeekEndEventListener`
 
-* **** 含义搜寻操作已完成。
+* **含義** 搜尋作業已完成。
 
-* **要实施的回调** `onSeekEnd(SeekEvent event)`
+* **要實作的回呼** `onSeekEnd(SeekEvent event)`
 
-* **事件代码** `SEEK_END`
+* **事件代碼** `SEEK_END`
 
 `SeekPositionAdjustedEventListener`
 
-* **** 含义由于内部播放规则或外部业务规则，搜寻位置已进行调整。
+* **含義** 搜尋位置已因內部播放規則或外部商業規則而調整。
 
-* **要实施的回调** `onPositionAdjusted(SeekEvent event)`
+* **要實作的回呼** `onPositionAdjusted(SeekEvent event)`
 
-* **事件代码** `SEEK_POSITION_ADJUSTED`
+* **事件代碼** `SEEK_POSITION_ADJUSTED`
 
 `SizeAvailableEventListener`
 
-* **** 表示可用媒体的大小。
+* **含義** 媒體大小可供使用。
 
-* **要实施的回调** `onSizeAvailable(SizeAvailableEvent event)`
+* **要實作的回呼** `onSizeAvailable(SizeAvailableEvent event)`
 
-* **事件代码** `SIZE_AVAILABLE`
+* **事件代碼** `SIZE_AVAILABLE`
 
 `StatusChangeEventListener`
 
-* **** 表示MediaPlayer状态已更改。
+* **含義** MediaPlayer狀態已變更。
 
-* **要实施的回调** `onStatusChanged(MediaPlayerStatusChangeEvent event)`
+* **要實作的回呼** `onStatusChanged(MediaPlayerStatusChangeEvent event)`
 
-* **事件代码** `STATUS_CHANGED`
+* **事件代碼** `STATUS_CHANGED`
 
 `TimeChangeEventListener`
 
-* **** 含义播放头已更改。
+* **含義** 播放點已變更。
 
-* **要实施的回调** `onTimeChanged(TimeChangeEvent event)`
+* **要實作的回呼** `onTimeChanged(TimeChangeEvent event)`
 
-* **事件代码** `TIME_CHANGED`
+* **事件代碼** `TIME_CHANGED`
 
 `TimedEventEventListener`
 
-* **** 含义操作已完成，且所用的时间为操作。
+* **含義** 作業已完成，且已花費作業時間。
 
-* **要实施的回调** `onTimedEvent(TimedEventEvent event)`
+* **要實作的回呼** `onTimedEvent(TimedEventEvent event)`
 
-* **事件代码** `TIMED_EVENT`
+* **事件代碼** `TIMED_EVENT`
 
 `TimelineMetadataAddedInBackgroundEventListener`
 
-* **** 这意味着已将新的定时元数据添加到后台的项目。
+* **含義** 已將新的計時中繼資料新增到背景中的專案。
 
-* **要实施的回调** `onTimedMetadata(TimedMetadataEvent event)`
+* **要實作的回呼** `onTimedMetadata(TimedMetadataEvent event)`
 
-* **事件代码** `TIMED_METADATA_ADDED_IN_BACKGROUND`
+* **事件代碼** `TIMED_METADATA_ADDED_IN_BACKGROUND`
 
 `TimedMetadataEventListener`
 
-* **** 这意味着在媒体流中检测到新的定时元数据。
+* **含義** 在媒體資料流中偵測到新的計時中繼資料。
 
-* **要实施的回调** `onTimedMetadata(TimedMetadataEvent event)`
+* **要實作的回呼** `onTimedMetadata(TimedMetadataEvent event)`
 
-* **事件代码** `TIMED_METADATA_AVAILABLE`
+* **事件代碼** `TIMED_METADATA_AVAILABLE`
 
 `TimelineUpdatedEventListener`
 
-* **** 含义时间轴已修改。可能已在时间轴中添加或删除了广告。
+* **含義** 時間軸已修改。 廣告可能已新增至時間軸，或從時間軸移除。
 
-* **要实施的回调** `onTimelineUpdated(TimelineEvent event)`
+* **要實作的回呼** `onTimelineUpdated(TimelineEvent event)`
 
-* **事件代码** `TIMELINE_UPDATED`
+* **事件代碼** `TIMELINE_UPDATED`

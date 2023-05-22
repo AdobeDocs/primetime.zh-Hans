@@ -1,18 +1,17 @@
 ---
-title: 多个DRM策略
-description: 多个DRM策略
+title: 多個DRM原則
+description: 多個DRM原則
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 74c3a425-f771-46cc-bfb7-8665ed8dceda
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '86'
 ht-degree: 0%
 
 ---
 
+# 多個DRM原則 {#multiple-drm-policies}
 
-# 多个DRM策略{#multiple-drm-policies}
+您可以指定多個Primetime DRM政策來與單一內容區段相關聯。 授權伺服器會決定使用哪個原則。
 
-您可以指定多个Primetime DRM策略以与单个内容部分关联。 许可证服务器决定使用哪个策略。
-
-示例用例：如果同一资产同时用于电子售出和租赁模型，则此选项允许您为每个业务模型指定不同的使用规则集。 许可证服务器可以根据客户是购买还是租用内容来选择应使用的Primetime DRM策略。
+使用案例範例：如果相同的資產同時用於電子銷售模式與租賃模式，此選項可讓您為每個業務模式指定不同的使用規則集。 授權伺服器可以根據客戶購買還是租借內容來選取應該使用的Primetime DRM政策。

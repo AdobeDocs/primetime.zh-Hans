@@ -1,15 +1,14 @@
 ---
-description: 对于实时和视频点播(VOD)媒体，TVSDK通过下载与中分辨率比特率相关联的播放列表来播放开始，并下载由该播放列表定义的媒体段。 它快速选择高分辨率比特率播放列表及其相关媒体并继续下载过程。
-title: 媒体播放和故障转移
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 對於即時和隨選影片(VOD)媒體，TVSDK會透過下載與中階解析度位元速率相關的播放清單來開始播放，並下載該播放清單定義的媒體區段。 它會快速選取高解析度位元速率播放清單及其相關媒體，並繼續下載程式。
+title: 媒體播放和容錯移轉
+exl-id: 89efaa9a-49f5-4d83-a085-ee79feec4163
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '98'
 ht-degree: 0%
 
 ---
 
+# 媒體播放和容錯移轉 {#media-playback-and-failover}
 
-# 媒体播放和故障转移{#media-playback-and-failover}
-
-对于实时和视频点播(VOD)媒体，TVSDK通过下载与中分辨率比特率相关联的播放列表来播放开始，并下载由该播放列表定义的媒体段。 它快速选择高分辨率比特率播放列表及其相关媒体并继续下载过程。
+對於即時和隨選影片(VOD)媒體，TVSDK會透過下載與中階解析度位元速率相關的播放清單來開始播放，並下載該播放清單定義的媒體區段。 它會快速選取高解析度位元速率播放清單及其相關媒體，並繼續下載程式。

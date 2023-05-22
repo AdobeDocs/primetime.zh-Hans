@@ -1,26 +1,25 @@
 ---
-title: 实施章节支持
-description: 实施章节支持
+title: 實作章節支援
+description: 實作章節支援
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 2cc34a75-5fcb-4b4a-ba2c-5e1e805597e4
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '95'
 ht-degree: 0%
 
 ---
 
+# 實作章節支援 {#implement-chapter-support}
 
-# 实施章节支持{#implement-chapter-support}
+您可以透過下列方式，在以TVSDK為主的應用程式中定義及追蹤視訊追蹤的章節：
 
-您可以通过以下方式在基于TVSDK的应用程序中定义和跟踪视频跟踪章节：
+* 預設章節，由TVSDK內部管理。
 
-* 默认章节，由TVSDK在内部管理。
+   章節定義為每個廣告插播之間的時間。 例如，前段廣告插播和第一個中段之間的時間會定義為第一個章節。
+* 自訂章節，由應用程式管理，並以CMS資料或應用程式用來定義章節的其他方式為基礎。
 
-   章节定义为每个广告中断之间的时间。 例如，前滚广告中断和第一中间滚动之间的时间被定义为第一章。
-* 自定义章节，由应用程序管理，基于CMS数据或应用程序用于定义章节的其他方式。
-
-   定义和跟踪默认或自定义章节。
+   定義及追蹤預設或自訂章節。
 
    ```
    // First, enable chapter tracking by setting the boolean 'enableChapterTracking' to true: 

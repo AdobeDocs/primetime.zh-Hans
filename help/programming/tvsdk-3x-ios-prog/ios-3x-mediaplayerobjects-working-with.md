@@ -1,94 +1,93 @@
 ---
-description: PTMediaPlayer对象表示您的媒体播放器。 PTMediaPlayerItem表示播放器上的音频或视频。
-title: 使用MediaPlayer对象
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: PTMediaPlayer物件代表您的媒體播放器。 PTMediaPlayerItem代表播放器上的音訊或視訊。
+title: 使用MediaPlayer物件
+exl-id: 57dd455e-e78c-4e5b-80af-070ae7982864
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '449'
 ht-degree: 0%
 
 ---
 
+# 使用MediaPlayer物件 {#work-with-mediaplayer-objects}
 
-# 使用MediaPlayer对象{#work-with-mediaplayer-objects}
+PTMediaPlayer物件代表您的媒體播放器。 PTMediaPlayerItem代表播放器上的音訊或視訊。
 
-PTMediaPlayer对象表示您的媒体播放器。 PTMediaPlayerItem表示播放器上的音频或视频。
+## 關於MediaPlayerItem類別 {#section_B6F36C0462644F5C932C8AA2F6827071}
 
-## 关于MediaPlayerItem类{#section_B6F36C0462644F5C932C8AA2F6827071}
+成功載入媒體資源後，TVSDK會建立 `PTMediaPlayerItem` 類別以提供對該資源的存取權。
 
-成功加载媒体资源后，TVSDK会创建`PTMediaPlayerItem`类的实例，以提供对该资源的访问。
-
-`PTMediaPlayer`将解析媒体资源，加载关联的清单文件，并解析清单。 这是资源加载过程的异步部分。 `PTMediaPlayerItem`实例在资源解析后生成，此实例是媒体资源的已解析版本。 TVSDK提供对新创建的`PTMediaPlayerItem`实例的访问，访问路径为`PTMediaPlayer.currentItem`。
+此 `PTMediaPlayer` 解析媒體資源、載入關聯的資訊清單檔案，以及剖析資訊清單。 這是資源載入程式的非同步部分。 此 `PTMediaPlayerItem` 執行個體會在資源解析後產生，而且此執行個體是媒體資源的解析版本。 TVSDK可讓您存取新建立的 `PTMediaPlayerItem` 執行個體到 `PTMediaPlayer.currentItem`.
 
 >[!TIP]
 >
->您必须等待资源成功加载，然后才能访问媒体播放器项。
+>您必須等待資源成功載入，才能存取媒體播放器專案。
 
-## MediaPlayer对象生命周期{#section_D87EF7FBC7B442BDBE825156DC2C1CCF}
+## MediaPlayer物件生命週期 {#section_D87EF7FBC7B442BDBE825156DC2C1CCF}
 
-从您创建`PTMediaPlayer`实例到您终止（重用或删除）该实例的那一刻，该实例将完成从一个状态到另一个状态的一系列过渡。
+從您建立 `PTMediaPlayer` 例證直到您終止（重複使用或移除）它時，此例證會完成從一種狀態到另一種狀態的一系列轉變。
 
-某些操作仅在播放器处于特定状态时才允许。 例如，不允许在`PTMediaPlayerStatusCreated`中调用`play`。 只有在播放器达到`PTMediaPlayerStatusReady`状态后，才可以调用此状态。
+只有播放器處於特定狀態時，才允許進行某些操作。 例如，呼叫 `play` 在 `PTMediaPlayerStatusCreated` 不允許。 只有在播放器到達 `PTMediaPlayerStatusReady` 狀態。
 
-要处理状态：
+使用狀態：
 
-* 可以检索具有`PTMediaPlayer.status`的MediaPlayer对象的当前状态。
-* 状态列表在`PTMediaPlayerStatus`中定义。
+* 您可以使用以下專案擷取MediaPlayer物件的目前狀態 `PTMediaPlayer.status`.
+* 狀態清單定義於 `PTMediaPlayerStatus`.
 
-MediaPlayer实例生命周期的状态过渡图：
+MediaPlayer例項生命週期的狀態轉換圖：
 <!--<a id="fig_1C55DE3F186F4B36AFFDCDE90379534C"></a>-->
 
 ![](assets/player-state-transitions-diagram-ios2_web.png)
 
-下表提供了更多详细信息：
+下表提供其他詳細資訊：
 
 <table id="table_426F0093E4214EA88CD72A7796B58DFD"> 
  <thead> 
   <tr> 
    <th colname="col1" class="entry"><b>PTMediaPlayerStatus</b></th> 
-   <th colname="col2" class="entry"><b>在</b> </th> 
+   <th colname="col2" class="entry"><b>發生於</b> </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
    <td colname="col1"> <p><span class="codeph"> PTMediaPlayerStatusCreated</span> </p> </td> 
-   <td colname="col2"> <p>您的应用程序通过调用<span class="codeph"> playerWithMediaPlayerItem</span>请求新媒体播放器。 新创建的播放器正在等待您指定媒体播放器项。 这是媒体播放器的初始状态。 </p> </td> 
+   <td colname="col2"> <p>您的應用程式呼叫來要求新的媒體播放器 <span class="codeph"> playerWithMediaPlayerItem</span>. 新建立的播放器正等待您指定媒體播放器專案。 這是媒體播放器的初始狀態。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p> <span class="codeph"> PTMediaPlayerStatusInitializing</span> </p> </td> 
-   <td colname="col2"> <p>您的应用程序调用<span class="codeph"> PTMediaPlayer.replaceCurrentItemWithPlayerItem</span>，媒体播放器正在加载。 </p> </td> 
+   <td colname="col2"> <p>您的應用程式呼叫 <span class="codeph"> PTMediaPlayer.replaceCurrentItemWithPlayerItem</span>，且媒體播放器正在載入。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p><span class="codeph"> PTMediaPlayerStatusInitialized</span> </p> </td> 
-   <td colname="col2"> <p>TVSDK成功设置媒体播放器项。 </p> </td> 
+   <td colname="col2"> <p>TVSDK已成功設定媒體播放器專案。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p> <span class="codeph"> PTMediaPlayerStatusReady</span> </p> </td> 
-   <td colname="col2"> <p>准备内容并将广告插入时间轴，或广告过程失败。 可以开始缓冲或播放。 </p> </td> 
+   <td colname="col2"> <p>內容已準備好，且廣告已插入時間軸中，或廣告程式失敗。 緩衝或播放可以開始。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p><span class="codeph"> PTMediaPlayerStatusPlaying</span> </p> </td> 
-   <td colname="col2"> <p>您的应用程序已调用<span class="codeph"> play</span>，因此TVSDK正在尝试播放视频。 在视频实际播放之前可能会发生一些缓冲。 </p> </td> 
+   <td colname="col2"> <p>您的應用程式已呼叫 <span class="codeph"> play</span>，因此TVSDK正嘗試播放視訊。 某些緩衝可能會發生在視訊實際播放之前。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p><span class="codeph"> PTMediaPlayerStatusPaused</span> </p> </td> 
-   <td colname="col2"> <p>当应用程序播放和暂停媒体时，媒体播放器会在此状态和<span class="codeph"> PTMediaPlayerStatusPlaying</span>之间移动。 </p> </td> 
+   <td colname="col2"> <p>當您的應用程式播放和暫停媒體時，媒體播放器會在此狀態與之間移動 <span class="codeph"> PTMediaPlayerStatusPlaying</span>. </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p><span class="codeph"> PTMediaPlayerStatusCompleted</span> </p> </td> 
-   <td colname="col2"> <p>播放器到达流的末尾，播放已停止。 </p> </td> 
+   <td colname="col2"> <p>播放器到達串流結尾，且播放已停止。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p><span class="codeph"> PTMediaPlayerStatusStopped</span> </p> </td> 
-   <td colname="col2"> <p>您的应用程序已发布媒体播放器，该播放器也会发布任何相关资源。 您不能再使用此实例 </p> </td> 
+   <td colname="col2"> <p>您的應用程式已發行媒體播放器，也會發行任何相關資源。 您無法再使用此執行個體 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p><span class="codeph"> PTMediaPlayerStatusError</span> </p> </td> 
-   <td colname="col2"> <p>进程期间发生错误。 错误还可能影响应用程序下一步的操作。 </p> </td> 
+   <td colname="col2"> <p>處理期間發生錯誤。 錯誤也可能會影響您的應用程式接下來可以執行的動作。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
 >[!TIP]
 >
->您可以使用状态来提供有关该过程的反馈（例如，在等待下一个状态更改时使用微调框）或在播放媒体时采取下一步，例如在调用下一个方法之前等待适当的状态。
+>您可以使用狀態來提供程式的意見回饋（例如，在等待下一個狀態變更時執行旋轉圖示），或是在播放媒體時執行下一個步驟，例如在呼叫下一個方法之前等待適當的狀態。

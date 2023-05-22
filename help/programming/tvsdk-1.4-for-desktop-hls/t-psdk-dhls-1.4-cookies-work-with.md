@@ -1,29 +1,28 @@
 ---
-description: 您可以使用TVSDK在Cookie标头中发送任意数据，以进行会话管理、门访问等。
+description: 您可以使用TVSDK在Cookie標頭中傳送任意資料，以進行工作階段管理、閘道存取等。
 title: 使用Cookie
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: f7a64c77-7db6-4bae-b299-69267fedc673
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '234'
 ht-degree: 0%
 
 ---
 
-
 # 使用Cookie{#work-with-cookies}
 
-您可以使用TVSDK在Cookie标头中发送任意数据，以进行会话管理、门访问等。
+您可以使用TVSDK在Cookie標頭中傳送任意資料，以進行工作階段管理、閘道存取等。
 
-下面是向密钥服务器发出请求时具有某种身份验证类型的示例：
+向金鑰伺服器提出請求時，以下是驗證型別的範例：
 
-1. 您的客户在浏览器中登录您的网站，其登录表明允许他们视图内容。
-1. 您的应用程序会根据许可证服务器预期的内容生成身份验证令牌。 将该值传递给TVSDK。
-1. TVSDK在cookie头中设置该值。
-1. 当TVSDK向密钥服务器发出请求以获取密钥以解密内容时，该请求在cookie头中包含身份验证值，因此密钥服务器知道该请求是有效的。
+1. 您的客戶在瀏覽器中登入您的網站，其登入顯示他們有權檢視內容。
+1. 您的應用程式會根據授權伺服器的預期產生驗證Token。 將該值傳遞至TVSDK。
+1. TVSDK會在Cookie標頭中設定該值。
+1. 當TVSDK請求金鑰伺服器取得金鑰以解密內容時，該請求在Cookie標頭中包含驗證值，因此金鑰伺服器知道該請求有效。
 
-要使用Cookie，请执行以下操作：
+若要使用Cookie：
 
-1. 使用`NetworkConfiguration`中的`cookieHeaders`属性设置Cookie。 `cookieHeaders`属性是Metadata对象，您可以向此对象添加键值对，以将其包含在Cookie头中。
+1. 使用 `cookieHeaders` 中的屬性 `NetworkConfiguration` 以設定Cookie。 此 `cookieHeaders` 屬性是中繼資料物件，您可以將索引鍵值配對新增至此物件，以包含在Cookie標頭中。
 
    例如：
 
@@ -35,9 +34,9 @@ ht-degree: 0%
    networkConfiguration.cookieHeaders = metadata;
    ```
 
-   默认情况下，Cookie标头仅随密钥请求一起发送。 要发送包含所有请求的Cookie头，请将`NetworkConfiguration`属性`useCookieHeadersForAllRequests`设置为true。
+   根據預設，Cookie標頭只會隨關鍵要求傳送。 若要傳送包含所有請求的Cookie標頭，請設定 `NetworkConfiguration` 屬性 `useCookieHeadersForAllRequests` 為true。
 
-1. 要确保`NetworkConfiguration`正常工作，请将其设置为元数据：
+1. 若要確保 `NetworkConfiguration` 有效，請將其設定為中繼資料：
 
    ```
    var networkConfiguration:NetworkConfiguration = new NetworkConfiguration(); 
@@ -47,11 +46,10 @@ ht-degree: 0%
                                 networkConfiguration);
    ```
 
-1. 创建`MediaResource`时，请提供上一步中的元数据。
+1. 建立時提供上一步驟的中繼資料 `MediaResource`.
 
-   例如，如果您使用`createFromURL`方法，请输入以下信息：
+   例如，如果您使用 `createFromURL` 方法，輸入下列資訊：
 
    ```
    var resource:MediaResource = MediaResource.createFromURL(url, resourceMetadata);
    ```
-

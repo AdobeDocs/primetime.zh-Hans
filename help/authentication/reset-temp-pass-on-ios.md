@@ -1,68 +1,67 @@
 ---
-title: 在iOS上重置Temp Pass
-description: 在iOS上重置Temp Pass
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 在iOS上重設暫時傳遞
+description: 在iOS上重設暫時傳遞
+exl-id: 53a22fae-192c-4b4c-9d63-fd9a2d960923
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '717'
 ht-degree: 0%
 
 ---
 
-
-# 在iOS上重置Temp Pass {#reset-temp-pass-on-ios}
+# 在iOS上重設暫時傳遞 {#reset-temp-pass-on-ios}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
 </br>
 
-iOS演示应用程序包括用于重置临时传递TTL的专用屏幕。 重置操作需要以下信息：
+iOS示範應用程式包含重設Temp Pass TTL的專用畫面。 重設作業需要下列資訊：
 
-- **环境：** 指定将接收重置Temp Pass网络调用的AdobePay-TVpass服务器端点。 可能值： **普雷夸尔** (*mgmt-prequal.auth-staging.adobe.com*)、 **版本** (*mgmt.auth.adobe.com*)或 **自定义** (保留用于Adobe内部测试)。
-- **OAuth2载体令牌：** 授权程序员进行Adobe付费电视身份验证时，需要使用OAuth2令牌。 此类令牌可以从专用付费电视身份验证OAuth2端点(例如， *curl -u &quot;\&lt;consumer _key=&quot;&quot;>:\&lt;consumer _secret=&quot;&quot; _key=&quot;&quot;>*&quot; *&quot;https://mgmt.auth.adobe.com/oauth2/permanent\_accesstoken?grant\_type=client\_credentials&quot;*)。
-- **请求者ID:** 当前程序员的唯一ID。 此值从演示应用程序的主屏幕（请求者字段）中读取。
-- **临时传递ID:** 临时传递MVPD的唯一ID。
-- **设备ID:** 由演示应用程序计算的经过哈希处理的设备ID。
-- **一般密钥：** 某些Temp Pass MVPD（即下一个可扩展的Temp Pass功能）支持用于重置Temp Pass的通用密钥（与设备ID一起）。
+- **環境：** 指定將接收重設暫存通過網路呼叫的Adobe付費電視通過伺服器端點。 可能的值： **先決條件** (*mgmt-prequal.auth-staging.adobe.com*)， **版本** (*mgmt.auth.adobe.com*)或 **自訂** (保留給Adobe內部測試)。
+- **OAuth2持有人權杖：** OAuth2權杖是授權程式設計師進行Adobe付費電視驗證的必要專案。 此代號可從專用付費電視驗證OAuth2端點取得(例如 *curl -u &quot;\&lt;consumer _key=&quot;&quot;>：\&lt;consumer _secret=&quot;&quot; _key=&quot;&quot;>*&quot; *&quot;https://mgmt.auth.adobe.com/oauth2/permanent\_accesstoken？grant\_type=client\_credentials&quot;*)。
+- **要求者ID：** 目前程式設計師的唯一ID。 從示範應用程式的主畫面（要求者欄位）中讀取此值。
+- **暫存通過ID：** 暫時通過MVPD的唯一ID。
+- **裝置ID：** 由示範應用程式運算出的雜湊裝置ID。
+- **通用金鑰：** 有些Temp Pass MVPD （亦即下一個可擴充的Temp Pass功能）支援一般金鑰來重設Temp Pass （連同裝置ID）。
 
-所有上述参数( *通用键*)是必填项。 以下是将由演示应用程序执行的参数和关联的网络调用示例（示例以*curl *command的形式）：
+上述所有引數(除了 *通用金鑰*)為必填欄位。 以下是示範應用程式將執行的引數和相關網路呼叫的範例（範例採用*curl *命令的形式）：
 
-- **环境：** 版本(*mgmt.auth.adobe.com*)
-- **OAuth2载体令牌：** H4j7cF3GtJX81BrsgDa10GwSizVz
-- **程序员ID:** 参考
-- **临时传递ID:** TempPassREF
-- **设备ID:** f23804a37802993fdc8e28a7f244dfe088b6a9ea21457670728e6731fa639991 
-- **一般密钥：** null（未提供值）
+- **環境：** 發行版本(*mgmt.auth.adobe.com*)
+- **OAuth2持有人權杖：** H4j7cF3GtJX81BrsgDa10GwSizVz
+- **程式設計師ID：** 參考
+- **暫存通過ID：** TempPassREF
+- **裝置ID：** f23804a37802993fdc8e28a7f244dfe088b6a9ea21457670728e6731fa639991 
+- **通用金鑰：** null （未提供值）
 
 ```curl
 curl -X DELETE -H "Authorization:Bearer* *H4j7cF3GtJX81BrsgDa10GwSizVz" "https://mgmt.auth.adobe.com/reset-tempass/v2.1/reset?device_id=f23804a37802993fdc8e28a7f244dfe088b6a9ea21457670728e6731fa639991&requestor_id=REF&mvpd_id=TempPassREF"
 ```
 
-DELETEHTTP请求将发送给 **/reset** 端点，传递 *OAuth2载体令牌* 和 *设备ID*, *请求者ID* 和 *临时传递ID(MVPD ID)* 作为参数。
+將會向發出DELETEHTTP要求 **/reset** 端點，傳遞 *OAuth2持有人權杖* 在Authorization標頭和 *裝置ID*， *請求者ID* 和 *暫存傳遞ID (MVPD ID)* 作為引數。
 
-如果程序员为 *通用键*，将执行另一个HTTP调用(此时 **/reset/generic** 端点)，传递 *通用键* 内部 *key* 请求参数。
+如果程式設計師為 *通用金鑰*，則會執行另一個HTTP呼叫(這次是對 **/reset/generic** 端點)，傳遞 *通用金鑰* 內部 *金鑰* 要求引數。
 
-例如，将 *通用键* 对于临时传递MVPD（支持此类功能）的电子邮件地址哈希，将产生以下HTTP调用(电子邮件为 `user@domain.com` 其SHA-256哈希为 `f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7`):
+例如，設定 *通用金鑰* 電子郵件地址雜湊（適用於支援這類功能的Temp Pass MVPD）會產生以下HTTP呼叫(電子郵件為 `user@domain.com` 其SHA-256雜湊為 `f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7`)：
 
 ```curl
 curl -X DELETE -H "Authorization:Bearer H4j7cF3GtJX81BrsgDa10GwSizVz"
 "https://mgmt.auth.adobe.com/reset-tempass/v2.1/reset/generic?key=f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7&requestor_id=REF&mvpd_id=TempPassREF"
 ```
 
-必须强调的是，在演示应用程序中重置Temp Pass可能对同一设备上的程序员应用程序没有相同的效果。 这是因为设备ID（由演示应用程序和AccessEnabler计算）可能与设备上所有应用程序的ID不同：
+請務必強調，在示範應用程式中重設Temp Pass對同一部裝置上的程式設計師應用程式可能沒有相同的效果。 這是因為裝置ID （由示範應用程式和AccessEnabler計算所得）可能並非對裝置上的所有應用程式都相同：
 
-- iOS 6及以下版本：设备ID是使用MAC地址计算的（对于所有应用程序而言，该地址都是唯一的），因此在演示应用程序中重置Temp Pass将在设备上的所有其他程序员应用程序中重置它。
+- iOS 6及較低版本：裝置ID是使用MAC位址計算（每個應用程式都是唯一的），因此在示範應用程式中重設Temp Pass時，會在該裝置上的所有其他程式設計人員應用程式中重設。
 
-- iOS 7及更高版本：设备ID是基于IDFV（供应商的ID）值计算的，对于具有相同捆绑ID前缀（即除最后一个组件外的所有组件）的所有应用程序而言，IDFV（供应商的ID）值是唯一的。 由于演示应用程序和程序员应用程序具有不同的捆绑ID，因此在演示应用程序中重置临时传递对程序员应用程序没有影响。
+- iOS 7及更高版本：裝置ID是根據IDFV （廠商識別碼）值計算而得，此值在所有應用程式中具有相同的套件ID首碼（亦即除最後一個元件以外的所有元件）時都是唯一的。 由於示範應用程式和程式設計人員應用程式具有不同的套件組合ID，在示範應用程式中重設Temp Pass對程式設計人員應用程式沒有影響。
 
-最后一个用例(iOS 7及更高版本)最常见，因此，让我们看看程序员在这种情况下如何为其应用程序重置Temp Pass。 有以下几个选项：
+最後一個使用案例(iOS 7和更新版本)最常見，因此讓我們看看程式設計師如何在此情況下為其應用程式重設Temp Pass。 有幾個選項：
 
-1. 将代码从演示应用程序端口到程序员应用程序。 的 *TempPassResetViewController* 和 *DeviceIdDemoApp* 类包含用于重置Temp Pass的核心逻辑，并且可以轻松地修改这些逻辑并将其包含在程序员应用程序中。
+1. 將程式碼從示範應用程式移植到程式設計人員應用程式。 此 *TempPassResetViewController* 和 *DeviceIdDemoApp* 類別包含重設Temp Pass的核心邏輯，可輕鬆修改並包含在程式設計人員應用程式中。
 
-1. 执行HTTP请求以通过重置Temp Pass *卷曲*. 可以通过计算程序员应用程序的IDFV并对其应用SHA-256哈希( *DeviceIdDemoApp* 类)。
+1. 執行HTTP要求以重設暫存傳遞，方法為 *curl*. device\_Id引數可透過計算程式設計人員應用程式的IDFV並在其上套用SHA-256雜湊來取得(中的範常式式碼 *DeviceIdDemoApp* 類別)。
 
-1. 只需通过将程序员应用程序的哈希IDFV指定为 *通用键*. 这将产生两个网络调用：一个用于为演示应用程序重置Temp Pass（与程序员无关），另一个用于为程序员应用程序重置Temp Pass。
+1. 只要將程式設計師應用程式的雜湊IDFV指定為，即可從示範應用程式執行重設。 *通用金鑰*. 這會產生兩個網路呼叫：一個用於重設示範應用程式的臨時密碼（與程式設計人員無關），另一個用於重設程式設計人員應用程式的臨時密碼。
 
-以上所有选项都是相似的，需由程序员根据实施的方便程度来选择。 
-
+以上所有選項都類似，視實作的容易程度而定，由程式設計師自行選擇。

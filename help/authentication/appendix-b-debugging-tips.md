@@ -1,49 +1,49 @@
 ---
-title: 附录B“调试提示”
-description: 附录B“调试提示”
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 附錄B「偵錯技巧」
+description: 附錄B「偵錯技巧」
+exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '173'
 ht-degree: 0%
 
 ---
 
-
-# 附录B:调试提示 {#appendix-b-debugging-tips}
+# 附錄B：偵錯秘訣 {#appendix-b-debugging-tips}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
 
-## 清除临时数据 {#clearing-temporary-data}
+## 清除暫時資料 {#clearing-temporary-data}
 
-Adobe Primetime身份验证存储临时数据，如浏览器缓存、LSOs缓存和Cookie。 清除临时数据非常重要，这可确保您在测试时获得完整的信息。
+Adobe Primetime驗證會儲存暫時資料，例如瀏覽器快取、LSO快取和Cookie。 清除臨時資料非常重要，以確保您在測試時獲得乾淨的記錄。
 
-- [清除浏览器缓存和Cookie](#clearing-the-browser-cache-and-cookies)
-- [清除LSOs缓存](#clearing-lsos-cache)\
+- [清除瀏覽器快取和Cookie](#clearing-the-browser-cache-and-cookies)
+- [正在清除LSO快取](#clearing-lsos-cache)\
     
 
-## 清除浏览器缓存和Cookie {#clearing-the-browser-cache-and-cookies}
+## 清除瀏覽器快取和Cookie {#clearing-the-browser-cache-and-cookies}
 
-它可靠，但在Firefox中是：&quot;Tools&quot; -\> &quot;Clear Recent History...&quot; -\>在“清除时间范围：”上，选择“Everything”；和“详细信息”：选中“Cookie”和“Cache” — \>单击“立即清除”。\
+它是瀏覽器可依賴的，但在Firefox中：「工具」 — \>「清除最近的歷史記錄……」 — \>在「清除的時間範圍：」上選取「全部」；在「詳細資料」上選取「Cookie」和「快取」 — \>按一下「立即清除」。\
  
 
-## 清除LSOs缓存 {#clearing-lsos-cache}
+## 正在清除LSO快取 {#clearing-lsos-cache}
 
-访问 [Flash Player帮助](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
+存取 [Flash Player說明](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
 
-选择 ```entitlement.\*``` （具体取决于测试的内容）并单击“删除网站”。\
+選取 ```entitlement.\*``` （視測試內容而定）並按一下「刪除網站」。\
  
 
-## 调试工具 {#tools}
+## 偵錯工具 {#tools}
 
-Adobe Primetime身份验证工程师使用以下调试工具：
+Adobe Primetime驗證工程師會使用以下偵錯工具：
 
 - Firebug - <http://www.getfirebug.com/>
-- Flashbug（与Flash播放器的调试版本配合使用） <https://addons.mozilla.org/en-US/firefox/addon/14465/>
-- Live http头 —  <https://addons.mozilla.org/en-US/firefox/addon/3829/>
-- Fiddler - <http://www.fiddler2.com/fiddler2/>
+- Flashbug （適用於flash player的偵錯版本） <https://addons.mozilla.org/en-US/firefox/addon/14465/>
+- Live http標頭 —  <https://addons.mozilla.org/en-US/firefox/addon/3829/>
+- 小提琴手 —  <http://www.fiddler2.com/fiddler2/>
 - Charles - <http://www.charlesproxy.com/>
 - Wireshark - <http://www.wireshark.org/>
 

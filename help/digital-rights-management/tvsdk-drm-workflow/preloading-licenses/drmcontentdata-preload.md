@@ -1,8 +1,7 @@
 ---
-title: 使用DRMContentData预加载许可证
-description: 使用DRMContentData预加载许可证
+title: 使用DRMContentData預先載入授權
+description: 使用DRMContentData預先載入授權
 copied-description: true
-translation-type: tm+mt
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '130'
@@ -11,20 +10,20 @@ ht-degree: 0%
 ---
 
 
-# 使用DRMContentData预加载许可证{#using-drmcontentdata-to-pre-load-licenses}
+# 使用DRMContentData預先載入授權{#using-drmcontentdata-to-pre-load-licenses}
 
-以下步骤描述了使用`DRMContentData`对象预加载受保护媒体文件的许可证的工作流。
+以下步驟說明使用預先載入受保護媒體檔案之授權的工作流程 `DRMContentData` 物件。
 
-1. 获取打包内容的二进制DRM元数据。
+1. 取得封裝內容的二進位DRM中繼資料。
 
-   如果使用Primetime DRM Java Reference Implementations Packager，则会自动生成此元数据文件，其扩展名为[!DNL .metadata]。 例如，您可以使用`URLLoader`类下载此元数据。 如果使用HLS或HDS内容，则在内容清单文件（[!DNL .m3u8]或[!DNL .f4m]）中引用元数据，或将&#x200B;*作为Base64编码的字符串（在使用前必须解码为Base64）包含在清单文件中。*
-1. 创建一个`DRMContentData`对象，将元数据传递给构造函数：
+   如果使用Primetime DRM Java Reference Implementations Packager，此中繼資料檔案會自動以 [!DNL .metadata] 副檔名。 例如，您可以使用以下專案下載此中繼資料： `URLLoader` 類別。 如果使用HLS或HDS內容，則會在內容資訊清單檔案中參考中繼資料( [!DNL .m3u8] 或 [!DNL .f4m])或包含 *範圍* 資訊清單檔案為Base64編碼的字串（在使用前必須經過Base64解碼）。
+1. 建立 `DRMContentData` 物件，將中繼資料傳遞至建構函式：
 
    ```
    var drmData:DRMContentData = new DRMContentData( metadata );
    ```
 
-1. 其余步骤与&#x200B;*内容保护进程详细信息*&#x200B;中描述的工作流相同。
+1. 其餘步驟與中說明的工作流程相同 *內容保護程式詳細資料*.
 
 <!--<a id="example_EBEDA8E10F6344CABA4DE31DC342B8F8"></a>-->
 

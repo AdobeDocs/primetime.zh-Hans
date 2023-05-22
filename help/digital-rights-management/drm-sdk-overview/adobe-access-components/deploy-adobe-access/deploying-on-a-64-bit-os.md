@@ -1,7 +1,6 @@
 ---
-description: 64位操作系统，如64位版本的RedHat或Windows，与32位操作系统相比，其性能要好得多。
-title: 部署在64位操作系统上
-translation-type: tm+mt
+description: 64位元作業系統（例如64位元版的RedHat或Windows）比32位元作業系統提供更好的效能。
+title: 在64位元作業系統上部署
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '56'
@@ -10,7 +9,7 @@ ht-degree: 0%
 ---
 
 
-# 部署在64位操作系统上{#deploying-on-a-bit-operating-system}
+# 在64位元作業系統上部署{#deploying-on-a-bit-operating-system}
 
-64位操作系统，如64位版本的RedHat或Windows，与32位操作系统相比，其性能要好得多。
+64位元作業系統（例如64位元版的RedHat或Windows）比32位元作業系統提供更好的效能。
 

@@ -1,8 +1,7 @@
 ---
-title: 创建DRMStatusEvent处理函数
-description: 创建DRMStatusEvent处理函数
+title: 建立DRMStatusEvent處理常式
+description: 建立DRMStatusEvent處理常式
 copied-description: true
-translation-type: tm+mt
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '47'
@@ -11,11 +10,11 @@ ht-degree: 0%
 ---
 
 
-# 创建DRMStatusEvent处理函数{#create-a-drmstatusevent-handler}
+# 建立DRMStatusEvent處理常式{#create-a-drmstatusevent-handler}
 
-下面的示例创建一个事件处理函数，它输出发起事件的Primetime对象的DRM内容状态信息。
+下列範例會建立事件處理常式，輸出產生事件之Primetime物件的DRM內容狀態資訊。
 
-向指向受保护内容的Primetime对象添加事件处理函数：
+將事件處理常式新增至指向受保護內容的Primetime物件：
 
 ```
 function drmStatusEventHandler(event:DRMStatusEvent):void { trace(event); } 

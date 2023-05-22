@@ -1,39 +1,38 @@
 ---
-title: 确定引用实施许可证服务器是否正常运行
-description: 确定引用实施许可证服务器是否正常运行
+title: 判斷Reference Implementation License Server是否正確執行
+description: 判斷Reference Implementation License Server是否正確執行
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: ef28e169-f8d2-4c7f-b606-aa4e811aae9b
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '349'
 ht-degree: 0%
 
 ---
 
+# 判斷Reference Implementation License Server是否正確執行 {#determining-if-reference-implementation-license-server-is-running-properly}
 
-# 确定引用实施许可证服务器是否正常运行{#determining-if-reference-implementation-license-server-is-running-properly}
+有數種方法可判斷伺服器是否正確啟動。 檢視 [!DNL catalina.log] 記錄檔可能不足，因為授權伺服器會記錄到自己的記錄檔。 請依照下列步驟操作，以確保您的Reference實作已正確啟動。
 
-有多种方法可确定服务器是否已正确启动。 查看[!DNL catalina.log]日志可能不够，因为许可证服务器会登录到自己的日志文件。 请按照以下步骤确保您的参考实施已正确启动。
+* 檢查您的 [!DNL AdobeFlashAccess.log] 檔案。 這是參考實作寫入記錄資訊的位置。 此記錄檔的位置由以下指示： [!DNL log4j.xml] 檔案，並可修改為指向您想要的任何位置。 依預設，記錄檔會輸出至您執行catalina的工作目錄。
 
-* 检查您的[!DNL AdobeFlashAccess.log]文件。 这是引用实施写入日志信息的位置。 此日志文件的位置由[!DNL log4j.xml]文件指示，可进行修改以指向您想要的任何位置。 默认情况下，日志文件将输出到运行catalina的工作目录。
+* 導覽至下列URL： `https:///flashaccess/license/v4<your server:server port>`. 您應該會看到「License Server已正確設定」文字。
 
-* 导航到以下URL:`https:///flashaccess/license/v4<your server:server port>`。 您应当看到文本“License Server is setup correatly（许可证服务器设置正确）”。
+測試伺服器是否正常運作的另一種方法是封裝測試內容、設定範例視訊播放器並播放。 下列程式說明此程式：
 
-测试服务器是否正常运行的另一种方法是打包测试内容、设置示例视频播放器并播放它。 以下过程描述了此过程：
+1. 導覽至 [!DNL \Reference Implementation\Command Line Tools] 資料夾。 如需安裝命令列工具的資訊，請參閱 [安裝命令列工具](../aaxs-reference-implementations/command-line-tools/aaxs-ref-impl-command-line-overview.md#installing-the-command-line-tools).
 
-1. 导览至[!DNL \Reference Implementation\Command Line Tools]文件夹。 有关安装命令行工具的信息，请参阅[安装命令行工具](../aaxs-reference-implementations/command-line-tools/aaxs-ref-impl-command-line-overview.md#installing-the-command-line-tools)。
-
-1. 使用以下命令创建一个简单的匿名策略：
+1. 使用以下命令建立簡單的匿名原則：
 
    ```
        java -jar libs\AdobePolicyManager.jar new policy_test.pol -x
    ```
 
-   有关使用策略管理器创建策略的详细信息，请参阅[命令行使用](../aaxs-reference-implementations/command-line-tools/policy-manager/command-line-usage.md)。
+   如需有關使用原則管理員建立原則的詳細資訊，請參閱 [命令列使用方式](../aaxs-reference-implementations/command-line-tools/policy-manager/command-line-usage.md).
 
-1. 将[!DNL flashaccesstools.properties]文件中的`encrypt.license.serverurl`属性设置为许可证服务器的URL（例如，`https:// localhost:8080/`）。 [!DNL flashaccesstools.properties]文件位于[!DNL \Reference Implementation\Command Line Tools]文件夹下。
+1. 設定 `encrypt.license.serverurl` 中的屬性 [!DNL flashaccesstools.properties] 檔案至授權伺服器的URL (例如， `https:// localhost:8080/`)。 此 [!DNL flashaccesstools.properties] 檔案位於 [!DNL \Reference Implementation\Command Line Tools] 資料夾。
 
-1. 使用以下命令打包一段内容：
+1. 使用以下命令封裝一段內容：
 
    ```java
        java -jar libs\AdobePackager.jar  
@@ -46,13 +45,13 @@ ht-degree: 0%
    </i class="+ topic>
    ```
 
-1. 将生成的2个文件复制到Tomcat [!DNL webapps\ROOT\Content]文件夹。
-1. 导航到`Reference Implementation\Sample Video Players\Desktop\Flash Player\Release`并将内容复制到Tomcat `webapps\ROOT\SVP\`文件夹。
-1. 安装Flash Player 10.1或更高版本。
-1. 打开Web浏览器并导航到以下URL:
+1. 將2個產生的檔案複製到Tomcat [!DNL webapps\ROOT\Content] 資料夾。
+1. 導覽至 `Reference Implementation\Sample Video Players\Desktop\Flash Player\Release` 並將內容複製到Tomcat `webapps\ROOT\SVP\` 資料夾。
+1. 安裝Flash Player10.1或更新版本。
+1. 開啟網頁瀏覽器，並導覽至下列URL：
 
    `https:// localhost:8080/SVP/player.html`
-1. 导航到以下URL，然后单击“播放”按钮：
+1. 導覽至下列URL，然後按一下「播放」按鈕：
 
    `https:// localhost:8080/Content/<your_encrypted_FLV>`
-1. 如果视频播放失败，请检查是否在示例视频播放器的记录窗格或`AdobeFlashAccess.log`文件中写入了任何错误代码。 `AdobeFlashAccess.log`日志文件的位置由log4j.xml文件指示，可进行修改以指向您想要的任何位置。 默认情况下，日志文件将写入运行catalina的工作目录。
+1. 如果視訊無法播放，請檢查是否已將任何錯誤碼寫入範例視訊播放器的記錄窗格中，或寫入 `AdobeFlashAccess.log` 檔案。 的位置 `AdobeFlashAccess.log` log檔案由您的log4j.xml檔案表示，可以修改為指向您想要的任何位置。 依預設，記錄檔會寫入您執行catalina的工作目錄中。

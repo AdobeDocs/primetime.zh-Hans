@@ -1,30 +1,28 @@
 ---
-description: 在您可以使用大多数浏览器TVSDK播放器方法之前，播放器必须处于有效状态。
-title: 等待有效状态
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 播放器必須處於有效狀態，您才能使用大部分的瀏覽器TVSDK播放器方法。
+title: 等待有效的狀態
+exl-id: 14f6a5db-4f81-448b-b291-487569a7bc4e
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '130'
 ht-degree: 0%
 
 ---
 
+# 等待有效的狀態 {#wait-for-a-valid-state}
 
-# 等待有效状态{#wait-for-a-valid-state}
+播放器必須處於有效狀態，您才能使用大部分的瀏覽器TVSDK播放器方法。
 
-在您可以使用大多数浏览器TVSDK播放器方法之前，播放器必须处于有效状态。
+播放器會經過各種狀態。 等候播放器處於正確狀態可確保媒體資源已成功載入。 如果播放器未處於至少必要的狀態，許多播放器方法會擲回 `IllegalStateException`.
 
-玩家在各种状态中移动。 等待播放器处于正确状态可确保媒体资源已成功加载。 如果播放器不处于至少所需的状态，则许多播放器方法会抛出`IllegalStateException`。
+所需的狀態通常是PREPARED。
 
-所需的状态通常为PREPARED。
+1. 若要確認狀態已準備就緒，請執行下列動作：
 
-1. 要确认该状态为PREPARED:
+   播放器初始化時，請等候瀏覽器TVSDK派送 `AdobePSDK.MediaPlayerStatusChangeEvent` 具有的事件 `event.status` 之 `MediaPlayerStatus.PREPARED`.
 
-   播放器初始化时，请等待浏览器TVSDK以`event.status`的`MediaPlayerStatus.PREPARED`调度`AdobePSDK.MediaPlayerStatusChangeEvent`事件。
-
-   检查MediaPlayer对象的当前状态是否至少为PREPARED。
+   檢查MediaPlayer物件的目前狀態是否至少為PREPARED。
 
    ```
    <readonly> status :AdobePSDK.MediaPlayerStatus
    ```
-

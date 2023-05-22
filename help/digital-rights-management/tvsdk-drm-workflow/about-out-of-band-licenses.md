@@ -1,59 +1,58 @@
 ---
-title: 带外许可证概述
-description: 带外许可证概述
+title: 頻外授權概述
+description: 頻外授權概述
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 31a9f097-74e8-41d0-9b9a-1c2a08d3e63a
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '715'
 ht-degree: 0%
 
 ---
 
+# 頻外授權 {#out-of-band-licenses}
 
-# 带外许可证{#out-of-band-licenses}
+也可以使用將授權儲存在磁碟和記憶體中，在頻外（不連絡Primetime DRM授權伺服器）取得授權 `storeVoucher()` 方法。
 
-通过使用`storeVoucher()`方法将许可证存储在磁盘和内存中，也可获得带外（无需联系Primetime DRM许可证服务器）许可证。
+若要在Primetime中播放加密的視訊，個別執行階段需要取得該視訊的授權。 授權包含視訊的解密金鑰，由客戶已部署的Primetime DRM授權伺服器產生。
 
-要在Primetime中播放加密视频，相应的运行时需要获得该视频的许可证。 该许可证包含视频的解密密钥，并由客户部署的Primetime DRM许可证服务器生成。
+執行階段通常會透過傳送授權請求給視訊的DRM中繼資料( `DRMContentData` 類別)。 應用程式可以呼叫 `DRMManager.loadVoucher()` 方法。
 
-运行时通常通过向视频的DRM元数据（`DRMContentData`类）中指示的Primetime DRM许可证服务器发送许可证请求来获得此许可证。 应用程序可以通过调用`DRMManager.loadVoucher()`方法触发此许可证请求。
+`DRMManager.storeVoucher()` 可讓應用程式傳送已在頻外取得的授權。 然後，執行階段可以略過授權請求程式，並使用轉送的授權來播放加密的視訊。 授權仍需由Primetime DRM授權伺服器產生，才能在頻外取得。 不過，您可以選擇將授權託管在任何HTTP伺服器上，而不是Primetime DRM授權伺服器上。
 
-`DRMManager.storeVoucher()` 允许应用程序发送其获得的带外许可。然后，运行时可以跳过许可证请求过程，并使用转发的许可证播放加密视频。 许可证仍需由Primetime DRM许可证服务器生成，才能在带外获得。 但是，您可以选择在任何HTTP服务器上存放许可证，而不是在Primetime DRM许可证服务器上存放许可证。
+`DRMManager.storeVoucher()` 也用於支援多部裝置之間的授權共用。 在Primetime DRM 3.0之後，此功能稱為「裝置網域支援」。 如果您的部署支援此使用案例，您可以使用將多台電腦註冊到裝置群組 `DRMManager.addToDeviceGroup()` 方法。 如果機器對特定內容具有有效的網域繫結授權，則應用程式可以使用 `DRMVoucher.toByteArray()` 方法，而您可在其他電腦上使用 `DRMManager.storeVoucher()` 方法。
 
-`DRMManager.storeVoucher()` 还用于支持多个设备之间的许可证共享。在Primetime DRM 3.0之后，此功能称为“设备域支持”。 如果您的部署支持此用例，则可以使用`DRMManager.addToDeviceGroup()`方法将多台计算机注册到设备组。 如果某台计算机具有给定内容的有效域绑定许可证，则应用程序随后可以使用`DRMVoucher.toByteArray()`方法提取序列化许可证，而在您的其他计算机上，您可以使用`DRMManager.storeVoucher()`方法导入许可证。
+## 關於裝置註冊 {#about-device-registration}
 
-## 关于设备注册{#about-device-registration}
+所有Primetime DRM授權在建立時都必須繫結到終端圖元。 繫結是僅允許特定實體能夠使用授權的密碼編譯程式。 這是必要的，以防止任何任意裝置都可以使用的「浮動授權」。 若要Primetime DRM「預先產生」授權，這表示必須事先知道這些預先產生授權的「目標」。 Primetime DRM將此稱為「裝置註冊」。
 
-创建时，所有Primetime DRM许可证都必须绑定到最终实体。 绑定是仅允许特定实体使用许可证的加密过程。 这是防止任何任意设备都可以使用的“浮动许可证”的必要条件。 对于Primetime DRM要“预生成”许可证，这意味着必须提前知道这些预生成许可证的“目标”。 Primetime DRM称之为“设备注册”。
+## 註冊裝置 {#register-a-device}
 
-## 注册设备{#register-a-device}
+假設您已執行下列工作：
 
-假设您已执行以下任务:
+* 您已設定Primetime DRM Server SDK。
+* 您已設定HTTP伺服器來核發預先產生的授權。
+* 您已建立Primetime應用程式來檢視受保護的內容。
 
-* 您已设置Primetime DRM Server SDK。
-* 您已设置一个HTTP服务器，用于发放预生成的许可证。
-* 您已创建了一个Primetime应用程序来视图受保护的内容。
+ 裝置註冊階段包含下列動作：
 
- 设备注册阶段涉及以下操作：
+1. 應用程式會建立隨機產生的ID。
+1. 應用程式會叫用 `DRMManager.authenticate()` 方法。 應用程式必須在驗證請求中包含隨機產生的ID。 例如，在使用者名稱欄位中加入ID。
+1. 步驟2中提到的動作會導致Primetime DRM傳送驗證請求給客戶的伺服器。 此請求包含裝置憑證：
+   1. 伺服器會從要求中擷取裝置憑證和產生的ID，並加以儲存。
+   1. 客戶子系統預先產生此裝置憑證的授權、儲存這些授權，並以將其與產生的ID建立關聯的方式授予對這些授權的存取權。.
+1. 伺服器以「success」訊息回應要求。
+1. 應用程式會儲存產生的ID。
 
-1. 应用程序会创建随机生成的ID。
-1. 应用程序调用`DRMManager.authenticate()`方法。 应用程序必须在身份验证请求中包含随机生成的ID。 例如，在用户名字段中包含ID。
-1. 第2步中提到的操作将导致Primetime DRM向客户的服务器发送身份验证请求。 此请求包括设备证书：
-   1. 服务器从请求中提取设备证书和生成的ID并存储。
-   1. 客户子系统预生成此设备证书的许可证，存储它们并以将它们与生成的ID关联的方式授予对它们的访问权。.
-1. 服务器以“success”消息响应请求。
-1. 应用程序存储生成的ID。
+在裝置註冊之後，應用程式會使用產生的ID，其使用方式與先前配置中會使用的裝置ID相同：
+1. 應用程式將嘗試找出產生的ID。
+1. 如果找到產生的ID，應用程式將在下載預先產生的授權時使用產生的ID。 應用程式會使用將授權傳送至Primetime DRM使用者端以供使用 `DRMManager.storeVoucher()` 方法。.
+1. 如果找不到產生的ID，應用程式會進行裝置註冊程式。
 
-在设备注册后，应用程序使用生成的ID的方式与之前方案中使用设备ID的方式相同：
-1. 应用程序将尝试查找生成的ID。
-1. 如果找到生成的ID，应用程序将在下载预生成的许可证时使用生成的ID。 应用程序将使用`DRMManager.storeVoucher()`方法将许可证发送到Primetime DRM客户端以供使用。.
-1. 如果找不到生成的ID，则应用程序将完成设备注册过程。
+## DRM原廠重設 {#drm-factory-reset}
 
-## DRM工厂重置{#drm-factory-reset}
+當裝置的使用者叫用DRM原廠重設選項時，裝置憑證將被清除。 若要繼續播放受保護的內容，應用程式必須再次進行裝置註冊程式。 如果應用程式傳送過時的預先產生授權，則Primetime DRM使用者端將拒絕該授權，因為授權已針對舊裝置ID加密。
 
-当设备的用户调用DRM工厂重置选项时，设备证书将被清除。 要继续播放受保护的内容，应用程序必须再次完成设备注册过程。 如果应用程序发送的预生成许可证已过期，Primetime DRM客户端将拒绝该许可证，因为许可证已针对旧设备ID进行加密。
-
-* Flash API:[DRMManager.resetDRMVouchers()](https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/net/drm/DRMManager.html#resetDRMVouchers()) — （只能针对某些不可恢复的DRM错误代码调用。）
-* iOS API:[DRMManager resetDRM](https://help.adobe.com/en_US/primetime/api/drm-apis/client/ios/interface_d_r_m_manager.html#a0dd6c9662428583196e0419d3ea69446)
-* Android API:[DRMManager.resetDRM()](https://help.adobe.com/en_US/primetime/api/drm-apis/client/android/com/adobe/ave/drm/DRMManager.html#resetDRM(com.adobe.ave.drm.DRMOperationErrorCallback,%20com.adobe.ave.drm.DRMOperationCompleteCallback))
+* FlashAPI： [DRMManager.resetDRMVouchers()](https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/net/drm/DRMManager.html#resetDRMVouchers()) - （只能呼叫來回應某些無法復原的DRM錯誤碼。）
+* iOS API： [DRManager resetDRM](https://help.adobe.com/en_US/primetime/api/drm-apis/client/ios/interface_d_r_m_manager.html#a0dd6c9662428583196e0419d3ea69446)
+* Android API： [DRMManager.resetDRM()](https://help.adobe.com/en_US/primetime/api/drm-apis/client/android/com/adobe/ave/drm/DRMManager.html#resetDRM(com.adobe.ave.drm.DRMOperationErrorCallback,%20com.adobe.ave.drm.DRMOperationCompleteCallback))

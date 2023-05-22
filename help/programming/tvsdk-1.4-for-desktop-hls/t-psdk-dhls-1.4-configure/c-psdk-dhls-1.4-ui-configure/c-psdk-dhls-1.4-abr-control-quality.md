@@ -1,86 +1,85 @@
 ---
-description: HLS和DASH流为同一短视频突发提供不同的比特率编码(用户档案)。 TVSDK可以根据可用带宽为每个突发选择质量级别。
-title: 用于视频质量的自适应比特率(ABR)
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: HLS和DASH資料流為相同的短時突發視訊提供不同的位元速率編碼（設定檔）。 TVSDK可以根據可用頻寬來選取每個高載的品質等級。
+title: 視訊品質的最適化位元速率(ABR)
+exl-id: 2fd24360-4159-4330-a479-02310c6aa525
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '973'
 ht-degree: 0%
 
 ---
 
+# 視訊品質的最適化位元速率(ABR){#adaptive-bit-rates-abr-for-video-quality}
 
-# 用于视频质量的自适应比特率(ABR){#adaptive-bit-rates-abr-for-video-quality}
+HLS和DASH資料流為相同的短時突發視訊提供不同的位元速率編碼（設定檔）。 TVSDK可以根據可用頻寬來選取每個高載的品質等級。
 
-HLS和DASH流为同一短视频突发提供不同的比特率编码(用户档案)。 TVSDK可以根据可用带宽为每个突发选择质量级别。
+TVSDK會持續監控位元速率，以確保內容以目前網路連線的最佳位元速率播放。
 
-TVSDK会持续监视比特率，以确保内容以当前网络连接的最佳比特率播放。
-
-可以设置自适应比特率(ABR)切换策略以及多比特率(MBR)流的初始、最小和最大比特率。 TVSDK自动切换到在指定配置中提供最佳播放体验的比特率。
+您可以設定最適化位元速率(ABR)切換原則，以及多位元速率(MBR)資料流的初始、最小和最大位元速率。 TVSDK會自動切換至在指定設定中提供最佳播放體驗的位元速率。
 
 <table id="table_AF838E082235406AA359BF1C1A77F85F"> 
  <tbody> 
   <tr> 
-   <td colname="col01"> 初始比特率 </td> 
-   <td colname="col2"> <p>第一段的所需回放比特率（以位/秒为单位）。 当播放开始时，第一段使用最接近的用户档案，即等于或大于初始比特率。 </p> <p> 如果定义了最小比特率，并且初始比特率低于最小速率，则TVSDK选择具有高于最小比特率的最低比特率的用户档案。 如果初始速率高于最大速率，则TVSDK选择低于最大速率的最高速率。 </p> <p>如果初始比特率为零或未定义，则初始比特率由ABR策略确定。 </p> <p> <span class="apiname"> ABRInitialBitRate </span> 返回一个整数值，它表示每秒字节用户档案。 </p> </td> 
+   <td colname="col01"> 初始位元速率 </td> 
+   <td colname="col2"> <p>第一個區段的所需播放位元速率（以位元/秒為單位）。 當播放開始時，第一個區段會使用最接近的設定檔（等於或大於初始位元速率）。 </p> <p> 如果已定義最低位元速率，且初始位元速率低於最低位元速率，TVSDK會選取最低位元速率高於最低位元速率的設定檔。 如果初始速率高於最大速率，TVSDK會選取低於最大速率的最高速率。 </p> <p>如果初始位元速率為零或未定義，初始位元速率會由ABR原則決定。 </p> <p> <span class="apiname"> ABRIinitialBitRate </span> 傳回代表每秒位元組設定檔的整數值。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col01"> 最小比特率 </td> 
-   <td colname="col2"> <p>ABR可切换到的允许的最低位速率。 ABR切换忽略比特率低于此比特率的用户档案。 </p> <p> <span class="apiname"> ABRMinBitRate </span> 返回一个整数值，它表示每秒位用户档案。 </p> </td> 
+   <td colname="col01"> 最小位元速率 </td> 
+   <td colname="col2"> <p>ABR可切換的最低位元速率。 ABR切換會忽略位元速率低於此位元速率的設定檔。 </p> <p> <span class="apiname"> ABRMinBitRate </span> 傳回代表每秒位元設定檔的整數值。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col01"> 最大比特率 </td> 
-   <td colname="col2"> <p>ABR可切换到的最高允许位速率。 ABR切换忽略比特率高于此比特率的用户档案。 </p> <p> <span class="apiname"> ABRMaxBitRate </span> 返回一个整数值，它表示每秒的位用户档案。 </p> </td> 
+   <td colname="col01"> 最大位元速率 </td> 
+   <td colname="col2"> <p>ABR可切換的最高允許位元速率。 ABR切換會忽略位元速率高於此位元速率的設定檔。 </p> <p> <span class="apiname"> ABRMaxBitRate </span> 傳回代表每秒位元設定檔的整數值。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col01"> ABR交换策略 </td> 
-   <td colname="col2"> 回放功能会在可能的情况下逐渐切换到最高位速率用户档案。 您可以设置ABR切换策略，该策略确定TVSDK在用户档案之间切换的速度。 默认值为<span class="codeph"> MEODE_POLICY </span>。 <p>当TVSDK决定切换到更高的比特率时，播放器根据当前的ABR策略选择理想的比特率用户档案以切换到： 
+   <td colname="col01"> ABR切換原則 </td> 
+   <td colname="col2"> 儘可能讓播放逐漸切換至最高位元速率設定檔。 您可以設定ABR切換原則，以決定TVSDK在設定檔之間切換的速度。 預設值為 <span class="codeph"> MODERATE_POLICY </span>. <p>當TVSDK決定切換至更高的位元速率時，播放器會根據目前的ABR原則，選取要切換至的理想位元速率設定檔： 
      <ul id="ul_058D0FFC944C476A83BB9E756B95DEBD"> 
-      <li id="li_C690A12DC34C4754B01C2D0616FB6A0A"> <span class="codeph"> CONSERVAL_POLICY  </span>:当带宽比当前比特率高50%时，切换到具有下一个较高比特率的用户档案。 </li> 
-      <li id="li_FF5BDB099B554940AC296938C7A12B81"> <span class="codeph"> MEODE_POLICY  </span>:当带宽比当前比特率高20%时，切换到下一个较高的比特率用户档案。 </li> 
-      <li id="li_E602508429864C279BF78360E95718A6"> <span class="codeph"> ACCORSIVE_POLICY  </span>:当带宽高于当前比特率时，立即切换到最高比特率用户档案。 </li> 
-     </ul> </p> <p>如果初始位速率为零或未指定，但指定了策略，则播放开始的比特率用户档案最低（保守），最接近中等可用用户档案的中位比特率的用户档案，以及攻击性最高的比特率用户档案。 </p> <p>如果指定了最小和最大比特率，则策略在这些比特率的约束下有效。 </p> <p> <span class="codeph"> ABRPolicy从 </span> ABRControlParameters枚举中返 <span class="codeph"> 回当 </span> 前设置：CONSERVAL_POLICY、MEATE_POLICY或ACCORSIVE_POLICY。 </p> </td> 
+      <li id="li_C690A12DC34C4754B01C2D0616FB6A0A"> <span class="codeph"> 保守原則 </span>：當頻寬比目前的位元速率高50%時，切換至具有更高位元速率的設定檔。 </li> 
+      <li id="li_FF5BDB099B554940AC296938C7A12B81"> <span class="codeph"> MODERATE_POLICY </span>：當頻寬比目前的位元速率高20%時，切換至下一個較高的位元速率設定檔。 </li> 
+      <li id="li_E602508429864C279BF78360E95718A6"> <span class="codeph"> 積極原則 </span>：當頻寬高於目前的位元速率時，會立即切換至最高位元速率設定檔。 </li> 
+     </ul> </p> <p>如果初始位元速率為零或未指定，但指定了原則，則播放會從最低位元速率設定檔開始（若為保守設定），從最接近可用設定檔的中位元速率的設定檔開始（若為中等），從最高位元速率設定檔開始（若為主動設定）。 </p> <p>如果指定最小和最大位元速率，則原則會在限制中運作。 </p> <p> <span class="codeph"> ABRP政策 </span> 傳回目前的設定，從 <span class="codeph"> ABRControlParameters </span> 列舉：CONSERVATIVE_POLICY、MODERATE_POLICY或AGGRESSIVE_POLICY。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-请记住以下信息：
+請記住下列資訊：
 
-* TVSDK故障转移机制可能会覆盖您的设置，因为TVSDK偏好持续播放体验，而不是严格遵循您的控制参数。
-* 当比特率更改时，TVSDK将调度`ProfileEvent.PROFILE_CHANGED`。
-* 您可以随时更改ABR设置，播放器会切换以使用与最新设置最接近的用户档案。
+* TVSDK容錯移轉機制可能會覆寫您的設定，因為TVSDK偏好持續播放體驗，而非嚴格遵守控制引數。
+* 當位元速率變更時，TVSDK會傳送 `ProfileEvent.PROFILE_CHANGED`.
+* 您可以隨時變更ABR設定，然後播放器會切換成使用最符合最新設定的設定檔。
 
-例如，如果流具有以下用户档案:
+例如，如果串流具有以下設定檔：
 
-* 1:300000
-* 2:700000
-* 3:1500000
-* 4:2400000
-* 5:4000000
+* 1: 300000
+* 2: 700000
+* 3: 1500000
+* 4: 2400000
+* 5: 4000000
 
-如果指定的范围为300000到2000000，则TVSDK仅考虑用户档案1、2和3。 这使应用程序能够适应各种网络条件，如从wi-fi切换到3G，或切换到手机、平板电脑或台式计算机等各种设备。
+如果您指定300000至2000000的範圍，TVSDK只會考慮設定檔1、2和3。 這可讓應用程式根據各種網路狀況進行調整，例如從Wi-Fi切換至3G或各種裝置，例如手機、平板電腦或桌上型電腦。
 
-要设置ABR控制参数，请执行下列操作之一：
+若要設定ABR控制引數，請執行下列任一項作業：
 
-* 使用`ABRControlParameterBuilder`帮助类设置任何参数子集（在场景后的`ABRControlParameter`上操作）
+* 使用 `ABRControlParameterBuilder` 協助程式類別，可設定引數的任何子集(運算於 `ABRControlParameter` 幕後)
 
-* 在`ABRControlParameter`类上设置参数。
+* 在 `ABRControlParameter` 類別。
 
-## 使用ABRControlParametersBuilder {#section_3DDE397A7CE445E1832EBAA46CE5C069}配置自适应比特率
+## 使用ABRControlParametersBuilder設定最適化位元速率 {#section_3DDE397A7CE445E1832EBAA46CE5C069}
 
-使用`ABRControlParametersBuilder`帮助类是设置ABR参数的最简单、最有效的方法。
+使用 `ABRControlParametersBuilder` helper類別是設定ABR引數最簡單、最有效率的方式。
 
-* `ABRControlParametersBuilder`构造函数将所有ABR参数设置为基础`ABRControlParameters`对象上的默认值。
+* 此 `ABRControlParametersBuilder` 建構函式會將所有ABR引數設定為基礎上的預設值 `ABRControlParameters` 物件。
 
-* 只要保持对同一`ABRControlParametersBuilder`实例的引用，就可以在运行时重置单个ABR参数。
+* 只要維持對單個ABR引數的參照，您就可以在執行階段重設該引數 `ABRControlParametersBuilder` 執行個體。
 
-该类还包括`toABRControlParameters()`帮助程序方法。 使用此方法获取`ABRControlParameters`的实例，并在`mediaPlayer.ABRControlParameters`属性上设置它。 这会使您的设置在播放器中生效。
+此類別也包含 `toABRControlParameters()` helper方法。 使用此方法取得 `ABRControlParameters` 並將其設定在 `mediaPlayer.ABRControlParameters` 屬性。 這會導致您的設定在播放器中生效。
 
-1. 实例化`ABRControlParametersBuilder`帮助程序类，并在媒体播放器上设置参数。
+1. 例項化 `ABRControlParametersBuilder` helper類別，並在媒體播放器上設定引數。
 
    >[!NOTE]
    >
-   >例如，下面的示例将所有参数初始化为默认值，然后将策略仅设置为保守，并将最大比特率限制为1000000:
+   >例如，下列範例會將所有引數初始化為預設值，然後僅將原則設定為保守，並將最大位元速率限製為1000000：
    >
    >
    ```
@@ -92,9 +91,9 @@ TVSDK会持续监视比特率，以确保内容以当前网络连接的最佳比
    >   abrBuilder.toABRControlParameters();
    >```
 
-1. 在运行时修改单个ABR参数。
+1. 在執行階段修改個別ABR引數。
 
-   要修改单个参数，同时保留其余参数，请执行以下操作：
+   若要修改個別引數，同時保留其餘引數不變：
 
    ```
    // If later you want to reset the max bit rate to 2000000 
@@ -103,28 +102,28 @@ TVSDK会持续监视比特率，以确保内容以当前网络连接的最佳比
      abrBuilder.toABRControlParameters();
    ```
 
-   要保留之前的设置，您必须保留对您在步骤1中创建的同一`ABRControlParametersBuilder`实例的引用。
+   若要保留先前設定，您必須維持對先前設定的參照 `ABRControlParametersBuilder` 您在步驟1建立的例項。
 
-## 使用ABRControlParameters {#section_02161FD0A73F40ED9CAE17F9AF850483}配置自适应比特率
+## 使用ABRControlParameters設定最適化位元速率 {#section_02161FD0A73F40ED9CAE17F9AF850483}
 
-您只能使用`ABRControlParameters`设置ABR控件值，但可以随时构建一个新值。
+您只能設定ABR控制值 `ABRControlParameters`，但您隨時可以建構新的虛擬報告套裝。
 
-在存在`ABRControlParametersBuilder`类之前，支持设置ABR参数的功能，但此功能对于在构造时设置ABR参数仍然有效。 但是，要在构造后更改各个参数，应使用`ABRControlParametersBuilder`类。
+在存在之前支援設定ABR引數的功能 `ABRControlParametersBuilder` 類別，但此功能在建構時設定ABR引數仍然有效。 不過，若要在建構後變更個別引數，您應使用 `ABRControlParametersBuilder` 類別。
 
-以下条件适用于`ABRControlParameters`:
+下列條件適用於 `ABRControlParameters`：
 
-* 必须在构造时为所有参数提供值。
-* 在构建时间后不能更改单个值。
-* 如果您指定的参数超出允许的范围，将引发`ArgumentError`。
+* 您必須在建構時提供所有引數的值。
+* 您無法在建構時間之後變更個別值。
+* 如果您指定的引數超出允許的範圍，則 `ArgumentError` 擲回。
 
-1. 确定初始、最小和最大比特率。
-1. 确定ABR策略：
+1. 決定初始、最小和最大位元速率。
+1. 確定ABR原則：
 
    * `CONSERVATIVE_POLICY`
    * `MODERATE_POLICY`
    * `AGGRESSIVE_POLICY`
 
-1. 在`ABRControlParameters`构造函数中设置ABR参数值，并将它们分配给媒体播放器。
+1. 將ABR引數值設定在 `ABRControlParameters` 建構函式並將它們指派給媒體播放器。
 
    ```
    mediaPlayer.abrControlParameters = new ABRControlParameters( 
@@ -134,4 +133,3 @@ TVSDK会持续监视比特率，以确保内容以当前网络连接的最佳比
        1000000 // Maximum bit rate 
    );
    ```
-

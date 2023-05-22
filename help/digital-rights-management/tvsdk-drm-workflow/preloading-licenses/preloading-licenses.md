@@ -1,18 +1,17 @@
 ---
-title: 预加载许可证脱机播放概述
-description: 预加载许可证脱机播放概述
+title: 預先載入離線播放的授權概述
+description: 預先載入離線播放的授權概述
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 0d49c0e4-821b-4354-b92d-bbe2c07e467b
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '88'
 ht-degree: 0%
 
 ---
 
+# 預先載入離線播放的授權 {#pre-loading-licenses-for-offline-playback}
 
-# 用于脱机播放的预加载许可证{#pre-loading-licenses-for-offline-playback}
+您可以預先載入播放受Primetime DRM保護的內容所需的授權。 預先載入的授權可讓使用者檢視內容，無論他們是否有使用中的網際網路連線。
 
-您可以预载播放Primetime DRM保护的内容所需的许可证。 预加载的许可证允许用户视图内容，无论他们是否具有活动的Internet连接。
-
-预加载过程本身&#x200B;*需要Internet连接。*&#x200B;您可以提前使用`DRMManager.loadVoucher()`预加载许可证。 之后，当客户希望播放所需内容时，DRM系统已预先预先预先，并且可以立即播放受保护的内容。
+預先載入程式本身 *會* 需要網際網路連線。 您可以使用 `DRMManager.loadVoucher()` 提前預先載入授權。 之後，當使用者端希望播放所需內容時，DRM系統已預先準備好，可以立即播放受保護的內容。

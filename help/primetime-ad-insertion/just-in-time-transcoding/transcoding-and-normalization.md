@@ -1,9 +1,8 @@
 ---
-title: 转码和标准化
-description: 转码和标准化
+title: 轉碼和標準化
+description: 轉碼和標準化
 copied-description: true
 exl-id: 48d9d971-4b15-4f1b-8740-c21983a3e835
-translation-type: tm+mt
 source-git-commit: 3e63c187f12d1bff53370bbcde4d6a77f58f3b4f
 workflow-type: tm+mt
 source-wordcount: '92'
@@ -11,18 +10,18 @@ ht-degree: 0%
 
 ---
 
-# 转码和标准化{#transcoding-and-normalization}
+# 轉碼和標準化 {#transcoding-and-normalization}
 
-PrimetimeAd Insertion将尝试通过匹配以下内容和广告来确保一致的观看体验：
+PrimetimeAd Insertion會嘗試比對以下內容，以確保跨內容和廣告有一致的檢視體驗：
 
-1. 源流编解码器和比特率，同时在转码时始终选择最高质量/比特率的创意
+1. 來源資料流轉碼器和位元速率，同時在轉碼時一律選擇最高品質/位元速率創意
 
-1. 源流片段大小(HLS/#EXT-X-TARGETDURATION)
+1. 來源資料流片段大小(HLS/#EXT-X-TARGETDURATION)
 
-1. 用于转码的首选创意格式
+1. 轉碼時首選的創意格式
 
-1. 音频自动调平，确保在所有广告创意中达到一致的dB级别。
+1. 音訊自動平準以確保所有廣告創意內容都有一致的dB等級。
 
 >[!NOTE]
 >
->由PrimetimeAd Insertion的即时转码生成的HLS资产会生成版本3的HLS资产，而不管内容中定义的HLS版本。
+>PrimetimeAd Insertion產生的HLS資產會即時轉碼產生版本3的HLS資產，無論內容中定義了哪個HLS版本。

@@ -1,515 +1,515 @@
 ---
-title: Primetime TVE Dashboard用户指南
-description: Primetime TVE Dashboard用户指南
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: Primetime TVE儀表板使用手冊
+description: Primetime TVE儀表板使用手冊
+exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '4386'
 ht-degree: 0%
 
 ---
 
-
-# Primetime TVE Dashboard用户指南 {#tve-db-user-guide}
+# Primetime TVE儀表板使用手冊 {#tve-db-user-guide}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-## 简介 {#tve-db-intro}
+## 簡介 {#tve-db-intro}
 
-[[!DNL Adobe] TVE功能板（TVE功能板）](https://console.auth.adobe.com/) 是一个自助功能板，面向为与Adobe Primetime身份验证产品团队有业务关系的媒体公司（程序员）工作的用户。
+[[!DNL Adobe] TVE儀表板（TVE儀表板）](https://console.auth.adobe.com/) 是一個自助儀表板，目標讀者為與Adobe Primetime驗證產品團隊有業務關係的媒體公司（程式設計師）使用者。
 
-请联系您的技术客户经理(TAM)以获取访问权限。 要获取访问权限，您需要在Adobe Marketing Cloud组织中配置两个新用户组：
+請聯絡您的技術客戶經理(TAM)以取得存取權。 若要取得存取權，您需要在Adobe Marketing Cloud組織中設定兩個新使用者群組：
 
-* TVE功能板读写 — 此组的成员对功能板的所有可编辑部分具有完全权限
-* TVE功能板只读 — 此组的成员仅具有整个功能板的查看权限
-
-
-在深入研究本用户指南之前，我们建议您先浏览以下资源，以便更好地了解Adobe Primetime身份验证产品团队提供的流程和功能，并熟悉本文档中使用的术语：
-
-* [TVE技术文件](/help/authentication/technical-paper.md)
-* [程序员Kickstart指南](/help/authentication/programmer-kickstart-guide.md)
-* [授权流程](/help/authentication/entitlement-flow.md)
-* [术语表](/help/authentication/glossary.md)
+* TVE儀表板讀寫 — 此群組的成員在儀表板的所有可編輯區段上擁有完整許可權
+* 唯讀TVE控制面板 — 此群組的成員僅擁有整個控制面板的檢視許可權
 
 
-继续阅读本用户指南的下一部分，您将了解如何管理贵公司的渠道、节目制作人员或渠道与MVPD（多渠道视频节目分发商）之间的集成的不同设置。
+在深入瞭解本使用手冊之前，建議您先瀏覽下列資源，以充分瞭解Adobe Primetime驗證產品團隊提供的流程和功能，並熟悉本檔案所使用的術語：
 
->[!IMPORTANT]
->TVE功能板提供了在基本工作区和高级工作区之间切换的选项。 为此，您可以切换右上角的图标。 高级工作区面向具有丰富技术知识以及对Adobe Primetime身份验证产品团队所提供功能的高级知识的用户。
+* [TVE技術檔案](/help/authentication/technical-paper.md)
+* [程式設計人員Kickstart指南](/help/authentication/programmer-kickstart-guide.md)
+* [權益流程](/help/authentication/entitlement-flow.md)
+* [字彙表](/help/authentication/glossary.md)
 
-![TVE功能板工作区](assets/tve-basic-advanced-workspace.png)
 
-*图1:Adobe Primetime TVE功能板“基本/高级工作区”下拉列表*
-
-## 环境 {#authn-environments}
-
-根据用户可能需要完成的任务，用户可能需要在Adobe Primetime身份验证环境之间进行切换。 有关Adobe Primetime身份验证环境的详细信息，请参阅以下文档： [了解Adobe Primetime身份验证环境](/help/authentication/understanding-the-adobe-environments.md).
-
-TVE Dashboard提供了两个名为“预先鉴定”和“发布”的环境，每个环境都具有两个名为“暂存”和“生产”的配置文件，如下所示：
-
-* [预定暂存](https://console-prequal.auth-staging.adobe.com/)
-* [预准生产](https://console-prequal.auth.adobe.com/)
-* [版本暂存](https://console.auth-staging.adobe.com/)
-* [发行生产](https://console.auth.adobe.com/)
-
-要在不同环境之间切换，用户可以单击如下所示下拉元素中的条目表示的所需环境：
-
-![TVE功能板环境下拉列表](assets/tve-dashboard-env.png)
-
-*图2:Adobe Primetime TVE功能板环境下拉列表*
+繼續本使用手冊的後續章節，您會發現管理公司頻道、程式設計師或頻道與MVPD （多頻道視訊程式經銷商）之間整合的不同設定的方式。
 
 >[!IMPORTANT]
->请务必注意，在通过TVE Dashboard对Adobe Primetime身份验证配置进行管理更改时，我们强烈建议您按照下面的顺序进行操作，以确保正确的功能。
+>TVE儀表板提供在基本和進階工作區之間切換的選項。 您可以切換右上角的圖示來完成此操作。 進階工作區的目標讀者是具備大量技術知識以及Adobe Primetime驗證產品團隊所提供功能的進階知識的使用者。
 
-要通过TVE功能板对Adobe Primetime身份验证配置进行管理更改，请执行以下操作：
+![TVE儀表板工作區](assets/tve-basic-advanced-workspace.png)
 
-* 在 [发行暂存环境并验证它们](http://sp.auth-staging.adobe.com/apitest/api.html).
-* 在 [准备生产并验证它们](http://sp.auth-staging.adobe.com/apitest/api.html).
-* 在 [发布生产并验证它们](http://sp.auth-staging.adobe.com/apitest/api.html).
+*圖1： Adobe Primetime TVE控制面板「基本/進階工作區」下拉式清單*
+
+## 環境 {#authn-environments}
+
+根據使用者可能需要完成的工作，他/她可能需要在Adobe Primetime驗證環境之間切換。 如需Adobe Primetime驗證環境的詳細資訊，請參閱以下檔案： [瞭解Adobe Primetime驗證環境](/help/authentication/understanding-the-adobe-environments.md).
+
+TVE Dashboard提供名為Prequal (Prequalification)和Release的兩個環境，每個環境都有名為Staging和Production的兩個設定檔，如下所示：
+
+* [預先測試](https://console-prequal.auth-staging.adobe.com/)
+* [預先生產](https://console-prequal.auth.adobe.com/)
+* [發行預備](https://console.auth-staging.adobe.com/)
+* [發行生產](https://console.auth.adobe.com/)
+
+若要在環境之間切換，使用者可以從以下所示的下拉式元素中按一下專案所代表的所需環境：
+
+![TVE儀表板環境下拉式清單](assets/tve-dashboard-env.png)
+
+*圖2： Adobe Primetime TVE儀表板環境下拉式清單*
 
 >[!IMPORTANT]
->要使管理更改上线，用户必须通过选择将显示在侧栏左下角的按钮，导航到“查看和推送更改”部分，以便查看更改、添加新创建更改的描述，并通过选择“推送配置”确认配置更新。
+>請務必注意，在透過TVE儀表板對您的Adobe Primetime驗證設定進行管理變更時，我們強烈建議您依照下列順序進行，以確保正常運作。
 
-![Tve功能板查看推送通知](assets/tve-review-push-notifications.png)
+若要透過TVE儀表板對您的Adobe Primetime驗證設定進行管理變更：
 
-*图3:Adobe Primetime TVE功能板审阅和推送更改通知*
+* 在中執行變更 [發行測試版並進行驗證](http://sp.auth-staging.adobe.com/apitest/api.html).
+* 在中執行變更 [預先生產並進行驗證](http://sp.auth-staging.adobe.com/apitest/api.html).
+* 在中執行變更 [發佈生產環境並進行驗證](http://sp.auth-staging.adobe.com/apitest/api.html).
 
-## 部分 {#sections}
+>[!IMPORTANT]
+>若要讓管理變更上線，使用者必須透過選取按鈕（將顯示在側欄的左下方）導覽至「檢閱和推播變更」區段，以便檢閱變更、新增新建立變更的說明，並透過選取「推播設定」確認設定更新。
 
-为媒体公司（节目制作人）工作的用户可以从侧栏访问TVE仪表板的以下部分：
+![存放儀表板檢閱推播通知](assets/tve-review-push-notifications.png)
 
-* **渠道**  — 包含与内容提供程序相关的设置
-* **程序员**  — 包含与聚合一个或多个父组织相关的设置 **渠道**
-* **集成**  — 包含与集成相关的设置 **渠道** 和 **MVPD**
-* **MVPD**  — 包含与可用 **MVPD**
-* **报表**  — 包含三种报表类型的汇总数据：AuthN TTL、AuthZ TTL、SSO
-* **更改日志**  — 包含应用于TVE功能板配置的最新修改
+*圖3： Adobe Primetime TVE控制面板檢閱和推播變更通知*
 
-![TVE功能板部分](assets/tve-dashboard-sections.png)
+## 區段 {#sections}
 
-*图4:Adobe Primetime TVE功能板部分*
+為媒體公司工作的使用者（程式設計師）可以從側邊欄存取TVE儀表板的以下區段：
 
-### 渠道 {#tve-db-channels-section}
+* **頻道**  — 包含與內容提供者相關的設定
+* **程式設計師**  — 包含與彙總一或多個專案的上層組織相關的設定 **頻道**
+* **整合**  — 包含與以下專案之間的整合相關的設定： **頻道** 和 **MVPDs**
+* **MVPDs**  — 包含與可用專案相關的設定 **MVPDs**
+* **報表**  — 包含三種報表型別的彙總資料：AuthN TTL、AuthZ TTL、SSO
+* **變更記錄**  — 包含套用至TVE儀表板設定的最新修改
 
-利用此部分，可查看和编辑可用渠道的设置或创建新渠道的设置。 单击其中一个可用的渠道将返回一个包含以下选项卡的屏幕：
+![TVE儀表板區段](assets/tve-dashboard-sections.png)
 
-* **渠道数据**
-   * **渠道ID**  — 我们系统中使用的渠道唯一ID，也称为“请求者ID”。
-   * **显示名称**  — 渠道的商业名称。
-* **常规设置**
-   * **Analytics配置**  — 配置要转发到Adobe Primetime的Adobe Analytics身份验证事件。 有关在启用此功能之前需要如何配置报表包ID(RSID)的更多详细信息，请联系Adobe。
-* **证书**
+*圖4： Adobe Primetime TVE控制面板區段*
 
-   包含验证流程中使用的证书列表及其发证组织、发证日期和到期日期。 这些证书将用作私钥/公钥，并用于验证。
-* **域**
+### 頻道 {#tve-db-channels-section}
 
-   包含相应渠道将与Adobe Primetime身份验证通信的域列表。
-* **集成**
+此區段可讓您檢視和編輯可用頻道的設定或建立新頻道。 按一下其中一個可用的「色版」會傳回含有下列標籤的畫面：
 
-   包含与可用MVPD的集成列表，以及每个可能已启用或未启用的集成的状态。 通过单击特定条目，可导航到集成页面。
-* **注册的应用程序**
+* **管道資料**
+   * **管道Id**  — 我們系統中使用的管道唯一ID，也稱為「請求者ID」。
+   * **顯示名稱**  — 頻道的商業名稱。
+* **一般設定**
+   * **Analytics設定**  — 設定Adobe Primetime驗證事件以轉送至Adobe Analytics。 如需在啟用此功能之前需要如何設定報表套裝ID (RSID)的詳細資訊，請聯絡Adobe。
+* **憑證**
 
-   包含申请注册列表。 有关更多详细信息，请查看文档 [动态客户端注册管理](/help/authentication/dynamic-client-registration-management.md).
+   包含驗證流程中使用的憑證清單，以及它們的發行組織、發行日期和到期日。 這些憑證可作為私人/公開金鑰，並用於驗證用途。
+* **網域**
 
-* **自定义方案**
+   包含各個管道將與Adobe Primetime驗證通訊的網域清單。
+* **整合**
 
-   包含自定义方案列表。 有关更多详细信息，请参阅 [iOS/tvOS应用程序注册](/help/authentication/iostvos-application-registration.md) 和 [动态客户端注册管理](/help/authentication/dynamic-client-registration-management.md)
+   包含與可用MVPD的整合清單，以及每個可能啟用或未啟用的整合狀態。 按一下特定專案，即可導覽至整合頁面。
+* **註冊的應用程式**
 
+   包含應用程式註冊清單。 如需更多詳細資訊，請檢閱檔案 [動態使用者端註冊管理](/help/authentication/dynamic-client-registration-management.md).
 
-#### 添加/删除域 {#add-delete-domains}
+* **自訂配置**
 
-要启动为所选渠道添加新域的过程，您需要单击域列表下方的“添加新域”按钮。 这将创建一个新的域条目，您可以在其中指定域名。 如果域列表中已存在更宽泛的域，则不应添加新的子域。
-
-![向选定的渠道部分添加新域](assets/add-domain-to-channel-sec.png)
-
-*图：渠道中的“域”选项卡*
-
-### 程序员 {#tve-db-programmers-section}
-
-此部分允许查看和编辑可用程序员的设置或创建新程序员的设置。 单击其中一个可用的程序员将返回一个包含以下选项卡的屏幕：
-
-* **程序员数据**
-   * **程序员Id**  — 程序员在我们系统中使用的唯一ID。
-   * **显示名称**  — 程序员的商业名称。
-   * **徽标Url**  — 程序员的商业徽标统一资源定位器(URL)。
-   * **徽标预览**  — 从上述统一资源定位符(URL)下载程序员的商业徽标预览。
-
-* **证书**
-
-   包含验证流程中使用的证书列表及其发证组织、发证日期和到期日期。 这些证书将用作私钥/公钥，并用于验证。
-
-* **渠道**
-
-   包含属于此特定程序员的渠道列表。 通过单击特定条目，可导航到渠道部分。
-
-* **注册的申请**
-
-   包含申请注册列表。 有关更多详细信息，请参阅 [动态客户端注册管理](/help/authentication/dynamic-client-registration-management.md).
-
-* **自定义方案**
-
-   包含自定义方案列表。 有关更多详细信息，请参阅 [iOS/tvOS应用程序注册](/help/authentication/iostvos-application-registration.md) 和 [动态客户端注册管理](/help/authentication/dynamic-client-registration-management.md).
+   包含自訂配置清單。 如需詳細資訊，請參閱 [iOS/tvOS應用程式註冊](/help/authentication/iostvos-application-registration.md) 和 [動態使用者端註冊管理](/help/authentication/dynamic-client-registration-management.md)
 
 
-### 集成 {#tve-db-integrations-sec}
+#### 新增/刪除網域 {#add-delete-domains}
 
-此部分允许查看和编辑渠道与可用MVPD之间的集成设置，或创建新的集成设置。 使用“基本工作区”时，单击其中一个可用的集成将返回一个页面；使用“高级工作区”时，单击带有以下选项卡的屏幕将返回一个页面：
+若要啟動為所選管道新增網域的程式，您需要按一下「網域」清單下方的「新增網域」按鈕。 這將建立一個新的網域專案，您可以在其中指定網域名稱。 如果網域清單中已存在較通用的網域，則不應新增子網域。
 
-* **集成数据**
-   * **集成Id** — 将MVPD唯一ID附加到渠道的唯一ID中，并由“_”字符分隔。
-   * **渠道显示名称**  — 渠道的商业名称。
-   * **渠道ID**  — 我们系统中使用的渠道唯一ID，也称为“请求者ID”。
-   * **MVPD显示名称** - MVPD的商业名称。
-   * **MVPD Id**  — 在我们的系统中使用的MVPD的唯一ID。
-* **常规设置**
-   * **用户元数据键**  — 配置可用于特定集成的元数据键。
-   * **平台特定设置**  — 为特定平台（例如，TTL、SSO和IFrame）配置不同的设置。
+![新增網域至選取的管道區段](assets/add-domain-to-channel-sec.png)
 
-* **身份验证设置**
-   * 包含与Adobe Primetime身份验证功能相关的设置。
-* **授权设置**
-   * 包含与Adobe Primetime身份验证授权功能相关的设置。
-* **注销设置**
-   * 包含与Adobe Primetime身份验证注销功能相关的设置。
+*圖：管道中的「網域」索引標籤*
 
-#### 创建集成 {#create-integration}
+### 程式設計師 {#tve-db-programmers-section}
 
-要创建新集成，请执行以下步骤：
+此區段可讓您檢視和編輯可用程式設計人員的設定或建立新設定。 按一下其中一個可用的程式設計人員將傳回包含以下標籤的畫面：
 
-* 单击“添加新集成”按钮
-* 搜索并选择渠道
-* 搜索并选择MVPD
-* 等待TVE功能板计算“集成ID”并显示可用的MVPD端点
-* 选择身份验证、授权和注销端点或使用默认值
-* 单击“创建集成”按钮
-* 根据MVPD设置，可能会显示弹出窗口并要求获取其他属性（这些属性应该事先由MVPD提供），否则将发生到新创建的集成页面的重定向
+* **程式設計師資料**
+   * **程式設計師ID**  — 我們系統中使用的程式設計師唯一id。
+   * **顯示名稱**  — 程式設計師的商業名稱。
+   * **標誌Url**  — 程式設計師的商業標誌統一資源定位器(URL)。
+   * **標誌預覽**  — 程式設計師的商業標誌預覽，可從上述統一資源定位器(URL)下載。
+
+* **憑證**
+
+   包含驗證流程中使用的憑證清單，以及它們的發行組織、發行日期和到期日。 這些憑證可作為私人/公開金鑰，並用於驗證用途。
+
+* **頻道**
+
+   包含屬於此特定程式設計師的管道清單。 按一下特定專案，即可導覽至管道區段。
+
+* **註冊的應用程式**
+
+   包含應用程式註冊清單。 如需詳細資訊，請參閱 [動態使用者端註冊管理](/help/authentication/dynamic-client-registration-management.md).
+
+* **自訂配置**
+
+   包含自訂配置清單。 如需詳細資訊，請參閱 [iOS/tvOS應用程式註冊](/help/authentication/iostvos-application-registration.md) 和 [動態使用者端註冊管理](/help/authentication/dynamic-client-registration-management.md).
+
+
+### 整合 {#tve-db-integrations-sec}
+
+此區段可讓您檢視及編輯頻道與可用MVPD之間整合的設定，或建立新設定。 使用基本工作區時，按一下其中一個可用整合將會傳回單一頁面，或使用進階工作區時，則會傳回包含以下索引標籤的畫面：
+
+* **整合資料**
+   * **整合ID** — 將MVPD的唯一ID附加至以「_」字元分隔的管道唯一ID的結果。
+   * **頻道顯示名稱**  — 頻道的商業名稱。
+   * **管道Id**  — 我們系統中使用的管道唯一ID，也稱為「請求者ID」。
+   * **MVPD顯示名稱** - MVPD的商業名稱。
+   * **MVPD Id**  — 我們系統中使用的MVPD唯一ID。
+* **一般設定**
+   * **使用者中繼資料索引鍵**  — 設定可用於特定整合的中繼資料索引鍵。
+   * **平台特定設定**  — 為特定平台設定不同的設定（例如TTL、SSO和IFrames）。
+
+* **驗證設定**
+   * 包含與Adobe Primetime驗證功能相關的設定。
+* **授權設定**
+   * 包含與Adobe Primetime驗證授權功能相關的設定。
+* **登出設定**
+   * 包含與Adobe Primetime驗證登出功能相關的設定。
+
+#### 建立整合 {#create-integration}
+
+若要建立新的整合，請遵循下列步驟：
+
+* 按一下「新增整合」按鈕
+* 搜尋並選取頻道
+* 搜尋並選取MVPD
+* 等候TVE儀表板計算「整合ID」並顯示可用的MVPD端點
+* 選取驗證、授權和登出端點，或使用預設值
+* 按一下「建立整合」按鈕
+* 視MVPD設定而定，會出現快顯視窗並要求其他屬性，這些屬性應已由MVPD預先提供，否則將重新導向至新建立的整合頁面
 
 ![](assets/new-integration-window.png)
 
 
 
-*图5. Adobe Primetime TVE功能板新集成窗口*
+*圖5. Adobe Primetime TVE儀表板新整合視窗*
 
 
-#### 更新集成 {#update-integration}
+#### 更新整合 {#update-integration}
 
-要更新现有集成，请从集成部分或渠道部分（包含集成选项卡）单击该特定集成的表条目。
+若要更新現有的整合，請從「整合」區段或包含「整合」索引標籤的「管道」區段，按一下該特定整合的表格專案。
 
-使用基本工作区模式时，此部分将允许查看和编辑最常更新的设置，如身份验证和授权令牌TTL（存留期）以及iFrame设置。 请记住，与支持动态定义令牌持久性TTL的MVPD的集成可能缺少TTL设置(请参阅 [MVPD集成要求](/help/authentication/mvpd-integr-features.md))。
-
-
-
-使用高级工作区模式时，此部分将允许查看和编辑不太常见的设置。
+使用基本工作區模式時，本節將允許檢視及編輯最常更新的設定，例如驗證和授權權杖TTL （存留時間）以及iFrame設定。 請記住，與支援動態定義權杖持續性TTL的MVPD的整合可能會遺失TTL設定(請參閱中的專案1.19 [MVPD整合需求](/help/authentication/mvpd-integr-features.md))。
 
 
 
-对于基本和高级工作区模式，可以在平台级别更改这些设置（例如，为Android上的授权TTL令牌选择自定义值，在其他平台上默认）。
+使用進階工作區模式時，此區段將允許檢視及編輯較不常見的設定。
+
+
+
+在基本和進階工作區模式中，這些設定可在平台層級變更（例如，為Android上的授權TTL權杖選取自訂值，在所有其他平台上預設值）。
 
 
 
 >[!IMPORTANT]
->了解设置继承链非常重要：MVPD -> MVPD端点 — >集成 — >平台，其中平台具有最具体的值，而MVPD是最常用的默认值。
+>請務必瞭解設定繼承鏈： MVPD -> MVPD端點 — >整合 — > Platform，其中Platform具有最特定的值，而MVPD是最一般的預設值。
 
 ![](assets/inheritance-chain-component.png)
 
 
-*图6. Adobe Primetime TVE功能板属性继承链组件*
+*圖6. Adobe Primetime TVE儀表板屬性繼承鏈元件*
 
 
-#### 平台特定设置 {#platform-sp-settings}
+#### 平台特定設定 {#platform-sp-settings}
 
-此子部分可用于覆盖特定平台的设置。 可用平台包括：
+此子區段可用於覆寫特定平台的設定。 可用的平台包括：
 
-* **所有平台**  — 设置将应用于所有平台的值，而不考虑程序员实施，以防没有为特定平台设置其他值。
-* **Android**  — 设置将通过Adobe Primetime Authentication Android SDK应用于程序员实施的值。
-* **无客户端REST API**  — 设置将通过Adobe Primetime Authentication REST API应用于程序员实施的值。
-* **Fire TV**  — 设置值，这些值将应用于通过Adobe Primetime Authentication FireTV SDK进行的程序员实施。
-* **FlashSDK**  — 此平台已弃用。 **已弃用**
-* **JavaScript SDK**  — 设置将通过Adobe Primetime身份验证JavaScript SDK应用于程序员实施的值。
-* **Roku**  — 设置将通过Adobe Primetime Authentication REST API应用于程序员实施的值，并将“Roku”作为设备类型发送。 对于Roku设备，此选项优先于为无客户端REST API平台设置的值。
-* **Xbox本机SDK**  — 此平台已弃用。 **已弃用**
-* **Xbox 360 REST API**  — 设置将通过Adobe Primetime Authentication REST API应用于程序员实施的值，并将“xbox”作为设备类型发送。 对于Xbox 360设备，这优先于为无客户端REST API平台设置的值。
-* **Xbox One REST API**  — 设置将通过Adobe Primetime Authentication REST API应用于程序员实施的值，并将“xboxOne”作为设备类型发送。 对于XboxOne设备，此值优先于为无客户端REST Api平台设置的值。
-* **iOS**  — 设置将通过Adobe Primetime Authentication iOS SDK应用于程序员实施的值。
-* **tvOS**  — 设置将通过Adobe Primetime Authentication tvOS SDK应用于程序员实施的值。
+* **所有平台**  — 設定將套用至所有平台的值，不論程式設計人員實施為何，以防沒有針對特定平台設定的其他值。
+* **Android**  — 設定將套用至Adobe Primetime Authentication Android SDK上程式設計人員實作的值。
+* **無使用者端REST API**  — 設定將套用至程式設計人員實作(透過Adobe Primetime驗證REST API)的值。
+* **Fire TV**  — 設定將套用至Adobe Primetime Authentication FireTV SDK上程式設計人員實作的值。
+* **FLASHSDK**  — 此平台已淘汰。 **已棄用**
+* **JavaScript SDK**  — 設定將套用至Adobe Primetime Authentication JavaScript SDK上程式設計人員實作的值。
+* **Roku**  — 設定將透過Adobe Primetime Authentication REST API套用至程式設計人員實作，且以裝置型別傳送「Roku」的值。 在Roku裝置的情況下，優先於為無使用者端REST API平台設定的值。
+* **Xbox原生SDK**  — 此平台已淘汰。 **已棄用**
+* **Xbox 360 REST API**  — 設定將透過Adobe Primetime驗證REST API套用至程式設計人員實作，以及傳送「xbox」作為裝置型別的值。 在Xbox 360裝置的情況下，這會優先於為Clienless REST API平台設定的值。
+* **Xbox One REST API**  — 設定將透過Adobe Primetime Authentication REST API套用至程式設計人員實作，以及傳送「xboxOne」作為裝置型別的值。 在XboxOne裝置的情況下，這會優先於為Clienless REST Api平台設定的值。
+* **iOS**  — 設定將套用至Adobe Primetime Authentication iOS SDK上程式設計人員實作的值。
+* **tvOS**  — 設定將套用至Adobe Primetime Authentication tvOS SDK上程式設計人員實作的值。
 
 
 ![](assets/platform-sp-settings.png)
 
-*图7. Adobe Primetime TVE仪表板平台特定设置*
+*圖7. Adobe Primetime TVE儀表板平台專屬設定*
 
 
-#### 启用Platform单点登录 {#enable-platform-sso}
+#### 啟用平台單一登入 {#enable-platform-sso}
 
-请按照以下步骤为特定集成和平台启用/禁用单点登录：
+請依照下列步驟，為特定整合和平台啟用/停用單一登入：
 
-* 确保使用高级工作区模式
-* 导航到所需的集成
-* 导航到 **常规设置** 选项卡
-* 选择要在其上启用或禁用单点登录的所需平台
-* 切换 **启用单点登录** 标记为所需值（是/否）
-
-   >[!IMPORTANT]
-   >请务必注意， **启用单点登录** 标记仅适用于iOS、tvOS、Roku和FireTV平台，并且仅适用于与支持这些平台单点登录的MVPD集成。
-
-* 切换 **强制平台权限** 标记为所需值（是/否）
+* 請確定您使用的是進階工作區模式
+* 導覽至所需的整合
+* 導覽至 **一般設定** 標籤
+* 選取您要啟用或停用單一登入的所需平台
+* 切換 **啟用單一登入** 標幟為所要的值（是/否）
 
    >[!IMPORTANT]
-   >请务必注意， **强制平台权限** 标记控制用户是否将强制执行允许或拒绝平台访问其电视提供商订阅的决定。 在 **启用单点登录** 标志设置为“是”， **强制平台权限** 标记也设置为“是”，用户选择拒绝平台对其电视提供商订阅的访问，则相应的应用程序（渠道）将无法使用由其他应用程序（渠道）获取的Adobe Primetime身份验证令牌。
+   >請務必注意 **啟用單一登入** 標幟僅適用於iOS、tvOS、Roku和FireTV平台，且僅適用於與在這些平台上支援單一登入的MVPD整合。
+
+* 切換 **強制執行平台許可權** 標幟為所要的值（是/否）
+
+   >[!IMPORTANT]
+   >請務必注意 **強制執行平台許可權** 標幟控制是否將強制執行使用者允許或拒絕平台存取其電視提供者訂閱的決策。 考慮以下情況 **啟用單一登入** 標幟設為「是」， **強制執行平台許可權** 標幟也設為「是」，且使用者選擇拒絕平台存取其電視提供者訂閱，則個別應用程式（頻道）將無法使用其他應用程式（頻道）取得的Adobe Primetime驗證權杖。
 
 
-#### 启用基于家庭的身份验证 {#enable-hba}
+#### 啟用以家庭為基礎的驗證 {#enable-hba}
 
-请按照以下步骤启用/禁用 **OAuth2** 基于MVPD:
+請依照下列步驟，為啟用/停用Home-Base驗證 **OAuth2** 根據MVPD：
 
-* 确保使用高级工作区模式
-* 导航到所需的集成
-* 导航到 **身份验证设置** 选项卡
-* 导航到 **验证动态规则** 子选项卡
-* 切换 **尝试HBA** 标记为所需值（是/否）
+* 請確定您使用的是進階工作區模式
+* 導覽至所需的整合
+* 導覽至 **驗證設定** 標籤
+* 導覽至 **AuthN動態規則** 子標籤
+* 切換 **嘗試HBA** 標幟為所要的值（是/否）
 
 
 >[!IMPORTANT]
->请记住，“HBA AuthN TTL”值绝不应被覆盖，否则授权流可能会意外失败。
+>請記住，「HBA AuthN TTL」值絕不可覆寫，否則授權流程可能會意外失敗。
 
-联系 **tve-support@adobe.com** 有关为基于SAML的MVPD启用主基身份验证的信息。
+請聯絡 **tve-support@adobe.com** 以取得為以SAML為基礎的MVPD啟用Home-Base Authentication的相關資訊。
 
-### MVPD {#tve-db-mvpds-sec}
+### MVPDs {#tve-db-mvpds-sec}
 
-此部分允许查看可用MVPD的设置。 单击其中一个可用的MVPD将返回一个带有以下选项卡的屏幕：
+此區段允許檢視可用MVPD的設定。 按一下其中一個可用的MVPD會傳回含有下列標籤的畫面：
 
-* **MVPD数据**
-   * **MVPD Id**  — 在我们的系统中使用的MVPD的唯一ID。
-   * **显示名称** - MVPD的商业名称，可在用户的选取器中使用。
-   * **徽标Url** - MVPD的商业徽标统一资源定位器(URL)。
-   * **徽标预览**  — 从上述统一资源定位符(URL)下载MVPD的商业徽标预览。
-* **常规设置**
-   * **用户元数据键**
-      * 可用于特定MVPD的元数据键。
-   * **客户端数据属性**
-      * **身份验证/聚合器**  — 如果设置为“是”，则用户尝试访问的每个新渠道都需要新的身份验证令牌。
-      * **已启用被动AuthN**  — 如果Auth / Aggregator标记设置为“是”，并且Passive AuthN Enabled设置为“是”，则后台将会进行其他渠道的身份验证过程，而无需完全浏览器重定向并显示选取器。
-      * **身份验证/浏览器会话**  — 如果设置为“是”，则用户在关闭浏览器后将被注销。 如果设置为“否”，则用户可以重新启动浏览器并保持登录状态。
-      * **IFrame必需**  — 如果设置为“是”，则表示MVPD登录窗口需要iFrame。 “iFrame Width”和“iFrame Height”字段表示加载MVPD登录页面所需的iFrame大小。
-* **身份验证设置**
-   * **选择端点**
-      * 此字段表示MVPD公开的身份验证端点。 端点可能因所使用的身份验证协议而异。
-   * **AuthN常规设置**
-      * 此子选项卡显示MVPD使用的身份验证协议以及与协议相关的信息。
-   * **AuthN证书**
-      * 此子选项卡显示MVPD在身份验证流程中使用的证书及其颁发者组织、颁发日期和到期日期。 这些证书将用作私钥/公钥，并用于验证。
-   * **验证动态规则**
-      * 此子选项卡显示应用于身份验证过程的规则。 通过按图表的请求/响应/令牌，您可以看到高亮显示的参数，该参数应用于身份验证流程的该部分。
-* **授权设置**
-   * **选择端点**
-      * 此字段表示MVPD公开的授权端点。 端点可能因所使用的授权协议而异。 可用的授权协议包括SOAP、REST（用于无客户端设备）、SAML、XACML和OAUTH。
-   * **AuthZ常规设置**
-      * 此子选项卡显示MVPD使用的授权协议和协议相关信息。
-      * **预检配置**
-         * 它描述了MVPD在单次呼叫中可预先授权的资源数、使用的PreFlight模型以及超时阈值。 有时，给定集成的资源数量可能会有所不同。 可通过编辑“**预检资源的最大数量**“常规设置”选项卡下的属性。 此属性仅适用于给定集成，如果设置，则将使用此属性，而不使用授权设置 — > PreFlight配置 — > PreFlight Max Resources中定义的值。
-      * **DOS保护**
-         * 它描述了MVPD授权端点上的拒绝服务保护。 有关每个字段的确切说明，请将鼠标悬停在DOS保护字段上以查看工具提示。
-      * 如果MVPD是 **TempPass**，则 **AuthZ常规设置** 还包含有关TempPass持续时间的信息。
-      * 如果MVPD是 **FlexibleTempPass**，则 **AuthZ常规设置** 还包含有关TempPass持续时间、最大资源数和标识字段的信息（请参阅下图）。
-   * **AuthZ证书**
-      * 此子选项卡显示MVPD在授权流程中使用的证书及其颁发者组织、颁发日期和到期日期。 这些证书将用作私钥/公钥，并用于验证。
-   * **AuthZ动态规则**
-      * 此子选项卡显示应用于授权流程的规则。 通过按图表 **请求/响应/令牌**，则可以查看高亮显示的应用于授权流程该部分的参数。
-* **注销设置**
-   * **选择端点**
-      * 此字段指示MVPD公开的注销端点。 提供的协议可以是SAML或OAuth2。
-      * **注销常规设置**
-         * 此子选项卡显示MVPD使用的注销协议以及协议相关信息。
-         * **要求注销响应已签名**  — 如果设置为“是”，则响应必须由受信任的证书签名。
-      * **注销证书**
-         * 此子选项卡显示MVPD在注销流程中使用的证书及其颁发者组织、颁发日期和到期日期。 这些证书将用作私钥/公钥，并用于验证。
-      * **注销动态规则**
-         * 此子选项卡显示适用于注销流程的规则。 通过按图表 **请求/响应/令牌**，则可以看到高亮显示应用于注销流程该部分的参数。
+* **MVPD資料**
+   * **MVPD Id**  — 我們系統中使用的MVPD唯一ID。
+   * **顯示名稱** - MVPD的商業名稱，可用於使用者的選擇器。
+   * **標誌Url** - MVPD的商業標誌統一資源定位器(URL)。
+   * **標誌預覽** - MVPD的商業標誌預覽，可從上述統一資源定位器(URL)下載。
+* **一般設定**
+   * **使用者中繼資料索引鍵**
+      * 適用於特定MVPD的中繼資料索引鍵。
+   * **使用者端資料屬性**
+      * **驗證/彙總**  — 如果設為「是」，則使用者嘗試存取的每個新管道都需要新的驗證權杖。
+      * **被動驗證已啟用**  — 如果Auth / Aggregator旗標設為「是」，且Passive AuthN Enabled設為「是」，則背景中將發生使用其他頻道的驗證程式，而不需要完整的瀏覽器重新導向和顯示選擇器。
+      * **驗證/瀏覽器工作階段**  — 如果設為「是」，則使用者將在關閉瀏覽器後登出。 如果設為「否」，則使用者可以重新啟動瀏覽器並保持登入。
+      * **需要IFrame**  — 若設為「是」，則表示MVPD登入視窗需要iFrame。 「iFrame寬度」和「iFrame高度」欄位代表iFrame載入MVPD登入頁面所需的大小。
+* **驗證設定**
+   * **選取端點**
+      * 此欄位會指出MVPD公開的驗證端點。 端點可能會因使用的驗證通訊協定而異。
+   * **AuthN一般設定**
+      * 此子頁簽會顯示MVPD使用的驗證通訊協定和通訊協定相關資訊。
+   * **AuthN憑證**
+      * 此子索引標籤會顯示MVPD在驗證流程中使用的憑證，以及其簽發者組織、發行日期和到期日。 這些憑證可作為私人/公開金鑰，並用於驗證用途。
+   * **AuthN動態規則**
+      * 此子標籤會顯示套用至驗證程式的規則。 按下圖表的「請求/回應/代號」時，您可以看到反白顯示套用至驗證流程該部分的引數。
+* **授權設定**
+   * **選取端點**
+      * 此欄位會指出MVPD公開的授權端點。 端點可能會因使用的授權通訊協定而異。 可用的授權通訊協定有SOAP、REST （適用於無使用者端裝置）、SAML、XACML和OAUTH。
+   * **AuthZ一般設定**
+      * 此子頁簽會顯示MVPD使用的授權通訊協定和通訊協定相關資訊。
+      * **預檢設定**
+         * 它說明在一次呼叫中MVPD可預先授權的資源數量、使用的PreFlight模型，以及逾時臨界值。 有時，特定整合的資源數量可能會不同。 可透過編輯&quot;**預檢資源的最大數量**」屬性，可在「一般設定」標籤下使用。 此屬性僅適用於指定的整合，且若設定此屬性，將會取代授權設定 — > PreFlight設定 — > PreFlight最大資源中定義的值。
+      * **DOS保護**
+         * 它說明MVPD授權端點上的拒絕服務保護。 如需每個欄位的確切說明，請將游標停留在DOS保護欄位上以檢視工具提示。
+      * 如果MVPD是 **暫時傳遞**，然後 **AuthZ一般設定** 也包含有關TempPass持續時間的資訊。
+      * 如果MVPD是 **FlexibleTempPass**，然後 **AuthZ一般設定** 也包含有關TempPass持續時間、資源最大數量和識別欄位的資訊（請參閱下圖）。
+   * **AuthZ憑證**
+      * 此子索引標籤會顯示MVPD在授權流程中使用的憑證，以及其簽發者組織、發行日期和到期日。 這些憑證可作為私人/公開金鑰，並用於驗證用途。
+   * **AuthZ動態規則**
+      * 此子頁簽會顯示適用於授權程式的規則。 按下圖表的 **請求/回應/權杖**，您會看到醒目提示套用至該授權流程部分的引數。
+* **登出設定**
+   * **選取端點**
+      * 此欄位會指出MVPD公開的登出端點。 提供的通訊協定可以是SAML或OAuth2。
+      * **登出一般設定**
+         * 此子頁簽會顯示MVPD使用的登出通訊協定和通訊協定相關資訊。
+         * **需要簽署的登出回應**  — 如果設為「是」，則回應必須由受信任的憑證簽署。
+      * **登出憑證**
+         * 此子索引標籤會顯示MVPD在登出流程中使用的憑證，以及其簽發者組織、發行日期和到期日。 這些憑證可作為私人/公開金鑰，並用於驗證用途。
+      * **登出動態規則**
+         * 此子標籤會顯示適用於登出程式的規則。 按下圖表的 **請求/回應/權杖**，您會看到反白顯示套用至該部分登出流程的引數。
 
-### 报表 {#tve-db-reports-sec}
+### 報表 {#tve-db-reports-sec}
 
-要导航到此部分，请单击“[功能板部分](#sections)“ ”菜单。 这将导航到带有3个选项卡的屏幕，以下子部分将详细介绍该屏幕： [AuthN TTL报表](#authn-ttl-reports), [AuthZ TTL报表](#authz-ttl-reports), [单点登录报表](#sso-reports).
+若要導覽至本節，請按一下「[儀表板區段](#sections)「 」功能表。 這會導覽至包含3個索引標籤的畫面，下列子區段將詳細顯示該畫面： [AuthN TTL報表](#authn-ttl-reports)， [AuthZ TTL報表](#authz-ttl-reports)， [SSO報告](#sso-reports).
 
-此部分允许查看和导出渠道与所有平台中各种MVPD集成的多种类型报表的汇总数据。
+此區段可讓您檢視和匯出多種型別報表的彙總資料，以便您在所有平台上整合各種MVPD的管道。
 
 #### 平台 {#report-platforms}
 
-所有报表都会在以下平台中聚合值：
+所有報表都會彙總下列平台中的值：
 
-**浏览器**
-显示将通过Adobe Primetime身份验证JavaScript SDK应用于程序员实施的值。
+**瀏覽器**
+顯示將套用至Adobe Primetime Authentication JavaScript SDK上程式設計人員實作的值。
 
-**移动设备：iOS**
-显示将通过Adobe Primetime Authentication iOS SDK应用于程序员实施的值。
+**行動： IOS**
+顯示將套用至Adobe Primetime Authentication iOS SDK上程式設計人員實作的值。
 
-**移动设备：ANDROID**
-显示将通过Adobe Primetime Authentication Android SDK应用于程序员实施的值。
+**行動裝置：ANDROID**
+顯示將套用至Adobe Primetime Authentication Android SDK上程式設計人員實作的值。
 
-**移动设备：其他**
-显示将应用于针对移动设备开发的通过Adobe Primetime Authentication REST API进行程序员实施的值。
+**行動：其他**
+顯示將套用至程式設計人員實作的值(透過為行動裝置開發的Adobe Primetime Authentication REST API)。
 
-**TVCD:ROKU**
-显示将通过Adobe Primetime Authentication REST API应用于程序员实施的值，并将“Roku”作为设备类型发送。
+**TVCD： ROKU**
+顯示將透過Adobe Primetime Authentication REST API套用至程式設計人員實作的值，以及將「Roku」作為裝置型別傳送的值。
 
-**TVCD:FIRETV**
-显示将通过Adobe Primetime Authentication FireTV SDK应用于程序员实施的值。
+**TVCD： FIRETV**
+顯示將套用至Adobe Primetime Authentication FireTV SDK上程式設計人員實作的值。
 
-**TVCD:APPLETV**
-显示将通过Adobe Primetime Authentication tvOS SDK应用于程序员实施的值。
+**TVCD： APPLETV**
+顯示將套用至Adobe Primetime Authentication tvOS SDK上程式設計人員實作的值。
 
-**TVCD:其他**
-显示将应用于针对电视连接设备开发的通过Adobe Primetime Authentication REST API的程序员实施的值。
+**TVCD：其他**
+顯示將套用至程式設計人員實作的值(透過為電視連線裝置開發的Adobe Primetime Authentication REST API)。
 
 **平台：未知**
-显示将应用于程序员实施的值，Adobe Primetime身份验证服务会为其检测未知设备类型。
+顯示將套用至Adobe Primetime驗證服務偵測到未知裝置型別的程式設計人員實作的值。
 
-回顾 [传递客户端信息](/help/authentication/passing-client-information-device-connection-and-application.md) 到Adobe Primetime身份验证REST API或SDK，以了解有关如何发送所需设备类型（例如，“Roku”）的更多详细信息。
+檢閱的機制 [傳遞使用者端資訊](/help/authentication/passing-client-information-device-connection-and-application.md) 至Adobe Primetime驗證REST API或SDK，以取得有關如何傳送所需裝置型別（例如「Roku」）的詳細資訊。
 
-所有报表都基于每个Adobe Primetime身份验证环境的特定配置计算的聚合值。 因此，在不同的TVE功能板环境之间切换时，可能会得到不同的报表数据。
+所有報表彙總值是根據每個Adobe Primetime驗證環境的特定設定計算而得。 因此，在不同的TVE儀表板環境之間切換時，您可以預期不同的報表資料。
 
-请查看 [环境](#authn-environments) 部分以了解与Adobe Primetime身份验证可用环境相关的更多详细信息。
-
-
-##### 选择特定渠道/ MVPD {#selecting-specific-channels-mvpds}
-
-所有报表都允许通过选择特定渠道或选择要包含在结果报表中的特定MVPD来使用过滤器。
-
-要选择一个或多个渠道，请使用 **下拉列表** 放在“为报表选择的渠道”标签之后。 请参见图8。/9./10. 图像。
-
-要选择一个或多个MVPD，请使用 **下拉列表** 放在“为报表选择的MVPD”标签之后。 请参见图8。/9./10. 图像。
-
-默认情况下，数据会在贵公司的所有渠道（“所有渠道”）以及与之集成的MVPD（“所有MVPD”）之间进行聚合。
-
-如果您选择取消选择“所有渠道”或“所有MVPD”而不选择特定选项，则UI将显示“无可用数据”占位符。
+請檢閱 [環境](#authn-environments) 區段，以瞭解與Adobe Primetime驗證可用環境相關的更多詳細資料。
 
 
-##### 导出报表 {#export-report}
+##### 選取特定通道/ MVPD {#selecting-specific-channels-mvpds}
 
-所有报表都允许以逗号分隔值(CSV)格式文件导出数据。
+所有報表都可透過選取特定通道或選取要包含在結果報表中的特定MVPD來允許使用篩選器。
 
-要导出数据，请使用位于窗口右上角的“导出报表”按钮。 请参见图8。/9./10. 图像。
+若要選取一個或多個管道，請使用 **下拉式清單** 置於「為報表選取的管道」標籤之後。 請參閱圖8。/9./10. 下方影像數。
 
-名为的文件 **Report.csv** 会自动下载到您的计算机。 因此，请确保您浏览器的设置允许下载文件。
+若要選取一或多個MVPD，請使用 **下拉式清單** 置於「為報表選取的MVPD」標籤之後。 請參閱圖8。/9./10. 下方影像數。
 
-计算Report.csv文件时，屏幕上将显示“导出数据”加载图标，该文件可能会 **几分钟** 根据要导出的数据大小。
+依預設，資料會在貴公司的所有頻道（「所有頻道」）與其整合的MVPD（「所有MVPD」）中進行彙總。
 
-#### AuthN TTL报表(#authn-ttl-reports)
-
-此报表显示为渠道集成配置的验证令牌的生存时间(TTL)，该令牌在所有平台中具有各种MVPD。
-
-身份验证令牌Time-To-Live，也称为 **AuthN TTL**，则会显示在人类可读的值中，例如： **天、小时、分钟、秒**.
-
-根据用户体验，AuthN TTL报表允许您根据特定MVPD和特定平台，直观地检查用户将进行身份验证的时间。
-
-要导航到此类型的报表，请单击“报表”部分中的“AuthN TTL报表”选项卡。
-
-![AuthN TTL报表](assets/authn-ttl-reports.png)
-
-*图8:Adobe Primetime TVE功能板身份验证TTL报表选项卡*
-
-AuthN TTL报表表包含页面，并可水平和垂直滚动，具体取决于您的屏幕大小。
-
-如果您考虑更改AuthN TTL值，请查看 [集成](#tve-db-integrations-sec) 中。
-
->[!IMPORTANT]
->“**由MVPD设置**&#x200B;当MVPD将是强制实施AuthN TTL值的MVPD，而不是Adobe Primetime身份验证配置时，会使用占位符。
+如果您選擇取消選取「所有頻道」或「所有MVPD」而未選擇特定選項，UI將顯示「沒有可用的資料」預留位置。
 
 
-#### AuthZ TTL报表 {#authz-ttl-reports}
+##### 匯出報告 {#export-report}
 
-此报表显示为您的渠道集成配置的授权令牌的生存时间(TTL)，该令牌在所有平台中具有各种MVPD。
+所有報表都允許匯出逗號分隔值(CSV)格式檔案的資料。
 
-授权令牌Time-To-Live，也称为 **AuthZ TTL**，则会显示在人类可读的值中，例如： **天、小时、分钟、秒**.
+若要匯出資料，請使用置於視窗右上角的「匯出報告」按鈕。 請參閱圖8。/9./10. 下方影像數。
 
-根据用户体验，AuthZ TTL报表允许您直观地检查用户在考虑特定MVPD和特定平台时获得授权的时间。
+名為的檔案 **Report.csv** 將會自動下載到您的電腦。 因此，請確定您的瀏覽器設定允許下載檔案。
 
-要导航到此类型的报表，请单击“报表”部分中的“AuthZ TTL报表”选项卡。
+計算Report.csv檔案時，「匯出資料」載入圖示會出現在畫面上，這可能要用上 **到幾分鐘** 視您要匯出的資料大小而定。
 
-![AuthZ TTL报表](assets/authz-ttl-reports.png)
+#### AuthN TTL報表(#authn-ttl-reports)
 
-*图9. Adobe Primetime TVE功能板AuthZ TTL报表选项卡*
+此報表顯示針對您管道整合而設定的驗證Token與所有平台上的各種MVPD的存留時間(TTL)。
 
-AuthZ TTL报表表包含页面，并可水平和垂直滚动，具体取决于您的屏幕大小。
+驗證Token存留時間，也稱為 **驗證TTL**，會以人類可讀的值顯示，例如： **天、小時、分鐘、秒**.
 
-如果您考虑更改AuthZ TTL值，请参阅 [集成](#tve-db-integrations-sec) 中。
+就使用者體驗而言，AuthN TTL報表可讓您根據特定MVPD和特定平台，以視覺化方式檢查使用者驗證的時間長度。
+
+若要導覽至此型別的報表，請按一下「報表」區段中的「驗證TTL報表」索引標籤。
+
+![AuthN TTL報表](assets/authn-ttl-reports.png)
+
+*圖8： Adobe Primetime TVE控制面板驗證TTL報告標籤*
+
+「AuthN TTL報表」表格包含頁面，並可依據熒幕大小進行水平和垂直捲動。
+
+如果您考慮變更AuthN TTL值，請檢閱 [整合](#tve-db-integrations-sec) 區段。
 
 >[!IMPORTANT]
->“**由MVPD设置**&#x200B;当MVPD将是强制实施AuthZ TTL值的MVPD，而不是Adobe Primetime身份验证配置时，会使用占位符。
+>「**由MVPD設定**「預留位置用於MVPD會強制執行AuthN TTL值而非Adobe Primetime驗證設定的情況。
 
 
-#### 单点登录报表 {#sso-reports}
+#### AuthZ TTL報表 {#authz-ttl-reports}
 
-此报表显示为您的渠道集成配置的单点登录(SSO)状态，这些渠道与所有平台中的各种MVPD集成。
+此報表顯示針對您管道整合而設定的授權權杖的存留時間(TTL)，以及所有平台上的各種MVPD。
 
-单点登录状态，也称为 **SSO状态**，将显示为具有以下可能值的三状态： **SSO已禁用， SSO已启用， SSO不确定**.
+授權權杖存留時間，也稱為 **AuthZ TTL**，會以人類可讀的值顯示，例如： **天、小時、分鐘、秒**.
 
-在用户体验方面，SSO报表允许您考虑特定MVPD和特定平台，以可视方式检查预期的用户身份验证SSO体验。
+就使用者體驗而言，AuthZ TTL報表可讓您透過視覺化方式，檢查使用者在考慮特定MVPD和特定平台後獲得授權的時間長度。
 
-要导航到此类报表，请单击&#x200B;**单点登录报表**“ ”选项卡&#x200B;**报表**“ ”部分。
+若要導覽至此型別的報告，請按一下「報告」區段中的「AuthZ TTL報告」索引標籤。
 
+![AuthZ TTL報表](assets/authz-ttl-reports.png)
 
-![TVE功能板单点登录报表选项卡](assets/sso-reports.png)
+*圖9. Adobe Primetime TVE控制面板AuthZ TTL報告標籤*
 
+「AuthZ TTL報表」表格包含頁面，並可依據熒幕大小進行水平和垂直捲動。
 
-*图10:Adobe Primetime TVE功能板SSO报表选项卡*
-
-SSO报表表包含页面，并且水平和垂直可滚动，具体取决于您的屏幕大小。
-
-如果您考虑更改单点登录状态，请查看 [集成](#tve-db-integrations-sec) 中。
+如果您考慮變更AuthZ TTL值，請參閱 [整合](#tve-db-integrations-sec) 區段。
 
 >[!IMPORTANT]
->&quot;**单点登录不确定**“在启用了SSO且可能启用SSO的情况下，会使用占位符，但用户平台设置/用户决策（例如，用户浏览器选项阻止第三方Cookie，用户选择拒绝平台访问其电视提供商订阅）或MVPD设置（例如，请求对每个渠道进行身份验证的MVPD）可能会阻止SSO的发生。
-
-### 更改日志 {#tve-db-changelog-sec}
-
-此部分显示通过TVE功能板推送到Adobe Primetime身份验证环境和配置的所有修改的列表。
-
-有列可指示推送日期、操作修改的用户以及推送的状态。
-
-此部分还允许比较两个表条目，以缩小您要检查的特定修改范围，甚至将比较作为邮件项目共享。
-
-### 反馈 {#tve-db-feedback-sec}
-
-此部分允许用户发送反馈。 按照以下步骤向Adobe Primetime身份验证产品团队提供反馈：
-
-* 单击屏幕右侧的“Feedback”按钮
-* 输入主题
-* 输入消息
-* 如果需要，可通过单击“上传屏幕截图”按钮，将屏幕截图上传到消息
-* 单击“提交”按钮
-
-![功能板反馈表](assets/tve-dashboard-feedback.png)
-
-*图11:Adobe Primetime TVE功能板反馈部分*
-
-有关如何捕获屏幕截图的说明，请查看以下链接：
-
-* [如何在Windows上捕获屏幕截图](https://support.microsoft.com/en-us/windows/use-snipping-tool-to-capture-screenshots-00246869-1843-655f-f220-97299b865f6b#1TC=windows-7)
-
-* [如何在Mac上捕获屏幕截图](https://support.apple.com/en-us/HT201361)
-
-## 疑难解答 {#tve-db-troubleshoot}
-
-### 维护模式 {#maintenance-mode}
-
-![维护模式下的TVE应用](assets/tveapp-maintenance-mode.png)
+>「**由MVPD設定**「預留位置用於MVPD會強制執行AuthZ TTL值而非Adobe Primetime驗證設定的情況。
 
 
-*图：维护模式下的TVE应用*
+#### SSO報告 {#sso-reports}
+
+此報表顯示針對您管道與所有平台之各種MVPD的整合所設定的「單一登入」(SSO)狀態。
+
+「單一登入」狀態，也稱為 **SSO狀態**，會顯示為tri-state ，其可能值如下： **SSO停用、SSO啟用、SSO不確定**.
+
+就使用者體驗而言，SSO報告可讓您檢視預期的使用者驗證SSO體驗，並考量特定MVPD和特定平台。
+
+若要導覽至此型別的報告，請按一下「**SSO報告**「 」標籤來自「**報表**「 」區段。
 
 
-如果TVE功能板处于“维护模式”，则用户将无法查看或进行新的更改。
-
-如果发生这种情况，则需要等待Adobe Primetime认证工程团队在TVE仪表板上完成维护工作。
-
-### 降级状态 {#degraded-state}
-
-![TVE应用程序处于降级状态](assets/tve-degraded-state.png)
+![TVE儀表板SSO報告標籤](assets/sso-reports.png)
 
 
-*图：TVE应用程序处于降级状态*
+*圖10： Adobe Primetime TVE控制面板SSO報告標籤*
 
-如果TVE功能板处于“降级”状态，则用户将缺乏搜索和排序功能，但用户将能够查看或进行新的更改。
+「SSO報表」表格包含頁面，並可依據熒幕大小進行水平和垂直捲動。
 
-如果发生这种情况，您将需要等待Adobe Primetime认证工程团队在TVE仪表板上完成维护工作。
+如果您考慮變更SSO狀態，請檢閱 [整合](#tve-db-integrations-sec) 區段。
+
+>[!IMPORTANT]
+>&quot;**SSO不確定**「預留位置用於已啟用且可能使用SSO的情況，但使用者平台設定/使用者決定（例如封鎖第三方Cookie的使用者瀏覽器選項、使用者選擇拒絕平台存取其電視提供者訂閱）或MVPD設定（例如MVPD要求每個頻道進行驗證）可能會導致SSO無法發生。
+
+### 變更記錄 {#tve-db-changelog-sec}
+
+此區段顯示透過TVE控制面板推送至Adobe Primetime驗證環境和設定的所有修改清單。
+
+有些欄會指出推送日期、操作修改的使用者以及推送的狀態。
+
+此區段也允許比較兩個表格專案，以縮小您要檢查的特定修改範圍，甚至將比較結果共用為郵件專案。
+
+### 意見反應 {#tve-db-feedback-sec}
+
+此區段可讓使用者傳送意見反應。 請依照下列步驟，向Adobe Primetime驗證產品團隊提供意見回饋：
+
+* 按一下畫面右側的「意見回饋」按鈕
+* 輸入主旨
+* 輸入訊息
+* 如有需要，請按一下「上傳熒幕擷圖」按鈕，將熒幕擷圖上傳至訊息
+* 按一下「提交」按鈕
+
+![儲存儀表板回饋意見表單](assets/tve-dashboard-feedback.png)
+
+*圖11： Adobe Primetime TVE控制面板意見回饋區段*
+
+如需如何擷取熒幕擷圖的指示，請檢視下列連結：
+
+* [如何在Windows上擷取熒幕擷取畫面](https://support.microsoft.com/en-us/windows/use-snipping-tool-to-capture-screenshots-00246869-1843-655f-f220-97299b865f6b#1TC=windows-7)
+
+* [如何在Mac上擷取熒幕擷取畫面](https://support.apple.com/en-us/HT201361)
+
+## 疑難排除 {#tve-db-troubleshoot}
+
+### 維護模式 {#maintenance-mode}
+
+![處於維護模式的TVE應用程式](assets/tveapp-maintenance-mode.png)
+
+
+*圖：處於維護模式的TVE應用程式*
+
+
+如果TVE儀表板處於「維護模式」，那麼使用者將無法檢視或進行新的變更。
+
+如果發生這種狀況，您必須等候Adobe Primetime驗證工程團隊完成TVE儀表板的維護工作。
+
+### 降級狀態 {#degraded-state}
+
+![TVE應用程式處於降級狀態](assets/tve-degraded-state.png)
+
+
+*圖：TVE應用程式處於降級狀態*
+
+如果TVE儀表板處於「降級狀態」，則使用者將缺乏搜尋和排序功能，但使用者將能夠檢視或進行新變更。
+
+如果發生這種狀況，您必須等候Adobe Primetime驗證工程團隊完成TVE儀表板的維護工作。

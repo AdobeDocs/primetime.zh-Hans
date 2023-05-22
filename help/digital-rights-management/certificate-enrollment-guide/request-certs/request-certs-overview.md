@@ -1,20 +1,19 @@
 ---
-title: 请求证书概述
-description: 请求证书概述
+title: 要求憑證概述
+description: 要求憑證概述
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 4ecdc3be-7db3-494c-af9e-fd4d57b988e4
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '82'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#request-certificates-overview}
 
-# 概述{#request-certificates-overview}
-
-要使用Adobe Primetime DRM Production SDK，请重复以下步骤以请求每个证书（License Server、Packager和Transport）。 评估版SDK和试用版SDK使用单个证书。
+若要使用Adobe Primetime DRM Production SDK，請重複下列步驟以請求每個憑證（License Server、Packager和Transport）。 Evaluation SDK和Trial SDK使用單一憑證。
 
 >[!NOTE]
 >
->本文档中提供的示例使用OpenSSL。 您还可以使用其他实用程序。 请仅参考这些示例。 有关在硬件安全模块(HSM)中生成密钥对和存储密钥和证书的信息，请参阅HSM的文档。
+>本檔案中提供的範例使用OpenSSL。 您也可以使用其他公用程式。 這些範例僅供參考。 如需有關在Hardware Security Module (HSM)中產生金鑰組以及儲存金鑰和憑證的資訊，請參閱HSM的檔案。

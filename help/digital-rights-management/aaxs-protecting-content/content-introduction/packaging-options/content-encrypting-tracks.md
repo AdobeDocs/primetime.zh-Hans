@@ -1,18 +1,17 @@
 ---
-title: 加密音轨
-description: 加密音轨
+title: 正在加密曲目
+description: 正在加密曲目
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: affb8e10-f07c-4c15-ad0f-26489c0fa417
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '44'
 ht-degree: 0%
 
 ---
 
+# 正在加密曲目{#encrypting-tracks}
 
-# 正在加密轨道{#encrypting-tracks}
+指定加密內容的哪些部分：音訊、視訊或兩者。
 
-指定加密的内容的哪些部分：音频和/或视频。
-
-示例用例：允许仅加密需要保护的内容的轨道，从而减少客户端的解密开销并提高回放性能。
+使用案例範例：允許僅加密需要保護的內容磁軌，因此減少使用者端的解密開銷並改善播放效能。

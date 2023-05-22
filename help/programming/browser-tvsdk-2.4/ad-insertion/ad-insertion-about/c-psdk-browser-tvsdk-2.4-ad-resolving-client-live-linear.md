@@ -1,36 +1,34 @@
 ---
-description: 对于实时/线性内容，Browser TVSDK将主流内容的块替换为相同持续时间的广告中断，以便时间线持续时间保持不变。
-title: 实时/线性广告解析和插入
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 對於即時/線性內容，瀏覽器TVSDK會以相同持續時間的廣告插播取代主要串流內容的區塊，讓時間軸持續時間維持不變。
+title: 即時/線性廣告解析和插入
+exl-id: 5d5954c6-9d1c-4900-9813-d3248fd61911
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '266'
 ht-degree: 0%
 
 ---
 
+# 即時/線性廣告解析和插入{#live-linear-ad-resolving-and-insertion}
 
-# 实时/线性广告解析和插入{#live-linear-ad-resolving-and-insertion}
+對於即時/線性內容，瀏覽器TVSDK會以相同持續時間的廣告插播取代主要串流內容的區塊，讓時間軸持續時間維持不變。
 
-对于实时/线性内容，Browser TVSDK将主流内容的块替换为相同持续时间的广告中断，以便时间线持续时间保持不变。
+在播放之前和期間，瀏覽器TVSDK會解析已知廣告、以相同持續時間的廣告插播取代主要內容的部分，並在必要時重新計算虛擬時間軸。 廣告插播的位置由資訊清單定義的提示點指定。
 
-在播放之前和播放过程中，Browser TVSDK会解析已知广告，用相同持续时间的广告中断替换部分主内容，并在必要时重新计算虚拟时间轴。 广告断点的位置由清单定义的提示点指定。
+瀏覽器TVSDK會以下列方式插入廣告：
 
-浏览器TVSDK以下列方式插入广告：
+* **前置滾動**，位於內容的開頭。
 
-* **前置**，内容的开头。
-
-即使持续时间长于或短于提示点替换持续时间，浏览器TVSDK也接受广告中断。 默认情况下，Browser TVSDK在解析和放置广告时支持将`#EXT-X-CUE`提示作为有效的广告标记。 此标记要求元数据字段`DURATION`（以秒为单位）和提示的唯一ID。 例如：
+即使持續時間長於或短於提示點取代持續時間，瀏覽器TVSDK也會接受廣告插播。 依預設，瀏覽器TVSDK支援 `#EXT-X-CUE` 解析和放置廣告時，提示為有效的廣告標籤。 此標籤需要中繼資料欄位 `DURATION` 秒數和提示的唯一ID。 例如：
 
 ```
 #EXT-X-CUE:DURATION=27,ID="..."
 ```
 
-您可以定义和订阅其他提示（标记）。
+您可以定義並訂閱其他提示（標籤）。
 
-播放开始后，视频引擎会定期刷新清单文件。 浏览器TVSDK解析任何新广告，并在清单中定义的实时或线性流中遇到提示点时插入广告。 解析并插入广告后，Browser TVSDK将再次计算虚拟时间轴并调度`AdobePSDK.PSDKEventType.TIMELINE_UPDATED`事件。
+播放開始後，視訊引擎會定期重新整理資訊清單檔案。 瀏覽器TVSDK會解析任何新廣告，並在資訊清單中定義的即時或線性資料流中遇到提示點時插入廣告。 解析並插入廣告後，瀏覽器TVSDK會再次計算虛擬時間軸並傳送 `AdobePSDK.PSDKEventType.TIMELINE_UPDATED` 事件。
 
 >[!TIP]
 >
->对于直播流，浏览器TVSDK仅支持MP4和HLS前摄和中摄广告。
-
+>對於即時串流，瀏覽器TVSDK僅支援MP4和HLS前段和中段廣告。

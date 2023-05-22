@@ -1,25 +1,24 @@
 ---
-title: 网络拓扑概述
-description: 网络拓扑概述
+title: 網路拓撲概觀
+description: 網路拓撲概觀
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: a4737ea3-407a-48fd-ae3e-4df56a4c1812
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#network-topology-overview}
 
-# 概述{#network-topology-overview}
-
-成功部署Adobe Primetime DRM后，您必须保持Primetime DRM制作服务器的安全性。
+成功部署Adobe Primetime DRM後，您必須維護Primetime DRM生產伺服器的安全性。
 
 >[!NOTE]
 >
->Primetime DRM以前称为Adobe访问，在此之前称为Flash Access。
+>Primetime DRM先前稱為「Adobe存取」，之前稱為「Flash Access」。
 
-您可以使用&#x200B;*反向代理*&#x200B;来确保外部和内部用户可以使用Primetime DRM Web应用程序的不同URL集。 *反向* 代理比允许用户直接连接到运行Primetime DRM的应用程序服务器更安全，此配置为运行Primetime DRM的应用程序服务器执行所有HTTP请求。用户只能访问反向代理，并只能尝试反向代理支持的URL连接。
+您可以使用 *反向Proxy* 確保外部和內部使用者可以使用Primetime DRM Web應用程式的不同URL集。 *反向Proxy* 比允許使用者直接連線到執行Primetime DRM的應用程式伺服器更安全，而且此組態會針對執行Primetime DRM的應用程式伺服器執行所有HTTP要求。 使用者只能存取反向Proxy，而且只能嘗試反向Proxy支援的URL連線。
 
 <!--<a id="fig_8083A8C794B646CD87985EC891B60663"></a>-->
 

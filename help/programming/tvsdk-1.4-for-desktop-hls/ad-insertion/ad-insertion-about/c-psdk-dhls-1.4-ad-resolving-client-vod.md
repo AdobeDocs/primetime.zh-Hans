@@ -1,38 +1,36 @@
 ---
-description: 对于视频点播(VOD)内容，TVSDK通过在主内容中拼接广告来插入广告分段，从而延长时间线持续时间。
-title: VOD广告解析和插入
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 針對隨選影片(VOD)內容，TVSDK會在主要內容中拼接廣告，插入廣告插播，以增加時間軸持續時間。
+title: VOD廣告解析和插入
+exl-id: 6f02c7fc-028d-442f-92d4-9efa671b7f02
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '195'
 ht-degree: 0%
 
 ---
 
+# VOD廣告解析和插入{#vod-ad-resolving-and-insertion}
 
-# VOD广告解析和插入{#vod-ad-resolving-and-insertion}
+針對隨選影片(VOD)內容，TVSDK會在主要內容中拼接廣告，插入廣告插播，以增加時間軸持續時間。
 
-对于视频点播(VOD)内容，TVSDK通过在主内容中拼接广告来插入广告分段，从而延长时间线持续时间。
+在播放之前，TVSDK會解析已知廣告、依照TVSDK傳回之時間軸的說明，在主要內容中插入廣告插播，並在必要時重新計算虛擬時間軸。
 
-在播放之前，TVSDK会解析已知广告，在TVSDK返回的时间轴所描述的主内容中插入广告中断，并在必要时重新计算虚拟时间轴。
+TVSDK會以下列方式插入廣告：
 
-TVSDK通过以下方式插入广告：
-
-* **前滚**，内容之前。
-* **中间版**，内容中。
-* **后滚**，内容之后。
+* **前置滾動**，即內容之前。
+* **中間滾動**，即位於內容中。
+* **後置滾動**，在內容之後。
 
 >[!IMPORTANT]
 >
->在实施自定义`AdPolicySelector`时，可以根据`AdBreakTimelineItem`的类型，为`AdPolicyInfo`中的每种类型`AdBreakTimelineItem`（前滚、中滚或后滚）提供不同的策略。 例如，您可以在播放中间卷内容后保留该内容，但在播放后删除前置卷内容。
+>實作自訂時 `AdPolicySelector`，則可以為每種型別指定不同的原則 `AdBreakTimelineItem` （前段、中段或後段） `AdPolicyInfo`，根據 `AdBreakTimelineItem`. 例如，您可以在播放後保留中段內容，但在播放後移除前段內容。
 
-播放开始后，内容中不会发生其他更改。 广告不能：
+播放開始後，內容中不會發生其他變更。 廣告不可為：
 
 * 已插入
-* 已删除
+* 已刪除
 
-   例如，您无法从内容中删除内置广告以优惠免费广告体验。
-* 已替换
+   例如，您無法從內容中刪除內建廣告以提供無廣告體驗。
+* 已取代
 
-   例如，您无法将内置广告替换为目标广告。
-
+   例如，您無法將內建廣告取代為目標廣告。

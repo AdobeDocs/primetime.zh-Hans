@@ -1,8 +1,7 @@
 ---
-title: 处理实时流中的封锁
-description: 处理实时流中的封锁
+title: 處理即時資料流中的中斷
+description: 處理即時資料流中的中斷
 copied-description: true
-translation-type: tm+mt
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '15'
@@ -11,4 +10,4 @@ ht-degree: 0%
 ---
 
 
-# 处理实时流中的封锁{#handle-blackouts-in-live-streams}
+# 處理即時資料流中的中斷{#handle-blackouts-in-live-streams}

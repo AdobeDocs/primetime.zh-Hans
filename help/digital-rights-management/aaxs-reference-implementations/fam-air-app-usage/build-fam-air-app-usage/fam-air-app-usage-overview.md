@@ -1,21 +1,20 @@
 ---
-title: 构建Packager Server和AIR应用程序
-description: 构建Packager Server和AIR应用程序
+title: 建置Packager伺服器和AIR應用程式
+description: 建置Packager伺服器和AIR應用程式
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 7f2333ef-bd6b-414a-834f-5c6a9e2b6610
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '55'
 ht-degree: 0%
 
 ---
 
+# 建置Packager伺服器和AIR應用程式 {#building-the-packager-server-and-air-application}
 
-# 构建Packager Server和AIR应用程序{#building-the-packager-server-and-air-application}
+使用「Flash Access管理員」需要兩個元件：
 
-使用Flash Access管理器需要两个组件：
+* Flash Access管理員AIR應用程式
+* 封裝程式伺服器( [!DNL flashaccess-packager.war])
 
-* Flash Access Manager AIR应用程序
-* Packager服务器([!DNL flashaccess-packager.war])
-
-这两个组件都通过引用实现以源和二进制形式分发。
+這兩個元件會隨參考實作以原始碼和二進位格式散發。

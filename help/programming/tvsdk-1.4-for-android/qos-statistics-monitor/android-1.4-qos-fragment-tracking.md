@@ -1,89 +1,88 @@
 ---
-description: 服务质量(QoS)将详细视图优惠到视频引擎的性能。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
-title: 使用加载信息在片段级别跟踪
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 服務品質(QoS)提供視訊引擎執行狀況的詳細檢視。 TVSDK提供有關播放、緩衝和裝置的詳細統計資料。
+title: 使用載入資訊在片段層級追蹤
+exl-id: 29e82a93-783f-4e32-ab5e-12713a60cfec
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '326'
 ht-degree: 0%
 
 ---
 
+# 使用載入資訊在片段層級追蹤{#track-at-the-fragment-level-using-load-information}
 
-# 使用加载信息{#track-at-the-fragment-level-using-load-information}在片段级别跟踪
+服務品質(QoS)提供視訊引擎執行狀況的詳細檢視。 TVSDK提供有關播放、緩衝和裝置的詳細統計資料。
 
-服务质量(QoS)将详细视图优惠到视频引擎的性能。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
+TVSDK也提供下列已下載資源的相關資訊：
 
-TVSDK还提供有关以下下载资源的信息：
+1. 播放清單/資訊清單檔案
+1. 檔案片段
+1. 檔案的追蹤資訊
 
-1. 播放列表/清单文件
-1. 文件片段
-1. 文件的跟踪信息
+   您可以閱讀服務品質(QoS)資訊，瞭解下載的資源，例如片段和曲目，網址為 `LoadInfo` 類別。
 
-   您可以从`LoadInfo`类读取有关下载资源（如片段和轨道）的服务质量(QoS)信息。
-
-1. 实现`onLoadInfo`回调事件侦听器。
-1. 注册事件侦听器，TVSDK每次下载片段时都会调用它。
-1. 从传递到回调的`LoadInfo`参数中读取所关注的数据。
+1. 實作 `onLoadInfo` 回呼事件監聽器。
+1. 註冊事件監聽器，TVSDK在每次下載片段時都會呼叫此監聽器。
+1. 從讀取感興趣的資料 `LoadInfo` 傳遞至回呼的引數。
 
    <table id="table_06BD536A23AB4A73B510998426BAE143"> 
     <thead> 
       <tr> 
-      <th colname="col01" class="entry"> 属性 </th> 
-      <th colname="col1" class="entry"> 类型 </th> 
-      <th colname="col2" class="entry"> 说明 </th> 
+      <th colname="col01" class="entry"> 屬性 </th> 
+      <th colname="col1" class="entry"> 型別 </th> 
+      <th colname="col2" class="entry"> 說明 </th> 
       </tr> 
     </thead>
     <tbody> 
       <tr> 
-      <td colname="col01"> <span class="codeph"> downloadDuration  </span> </td> 
-      <td colname="col1"> <span class="codeph"> 长  </span> </td> 
-      <td colname="col2"> <p>下载的持续时间（以毫秒为单位）。 </p> <p>TVSDK并不区分客户端连接到服务器的时间和下载完整片段所花费的时间。 例如，如果10 MB区段需要8秒钟才能下载，则TVSDK会提供该信息，但不会告诉您直到第一个字节之前需要4秒，下载整个片段还需要4秒。 </p> </td> 
+      <td colname="col01"> <span class="codeph"> downloadduration </span> </td> 
+      <td colname="col1"> <span class="codeph"> long </span> </td> 
+      <td colname="col2"> <p>下載持續時間（毫秒）。 </p> <p>TVSDK不會區分使用者端連線至伺服器所花的時間與下載完整片段所花的時間。 例如，如果下載10 MB的區段需要8秒，TVSDK會提供該資訊，但不會告訴您直到第一個位元組花了4秒，然後又花了4秒來下載整個片段。 </p> </td> 
       </tr> 
       <tr> 
-      <td colname="col01"> <span class="codeph"> mediaDuration  </span> </td> 
-      <td colname="col1"> <span class="codeph"> 长  </span> </td> 
-      <td colname="col2"> 已下载片段的媒体持续时间（以毫秒为单位）。 </td> 
+      <td colname="col01"> <span class="codeph"> mediaDuration </span> </td> 
+      <td colname="col1"> <span class="codeph"> long </span> </td> 
+      <td colname="col2"> 下載片段的媒體持續時間（毫秒）。 </td> 
       </tr> 
       <tr> 
-      <td colname="col01"> <span class="codeph"> periodIndex  </span> </td> 
-      <td colname="col1"> <span class="codeph"> int  </span> </td> 
-      <td colname="col2"> 与下载的资源关联的时间轴期间索引。 </td> 
+      <td colname="col01"> <span class="codeph"> periodindex </span> </td> 
+      <td colname="col1"> <span class="codeph"> int </span> </td> 
+      <td colname="col2"> 與下載的資源關聯的時間軸期間索引。 </td> 
       </tr> 
       <tr> 
-      <td colname="col01"> <span class="codeph"> 大小  </span> </td> 
-      <td colname="col1"> <span class="codeph"> 长  </span> </td> 
-      <td colname="col2"> 已下载资源的大小（以字节为单位）。 </td> 
+      <td colname="col01"> <span class="codeph"> 大小 </span> </td> 
+      <td colname="col1"> <span class="codeph"> long </span> </td> 
+      <td colname="col2"> 已下載資源的大小（位元組）。 </td> 
       </tr> 
       <tr> 
-      <td colname="col01"> <span class="codeph"> trackIndex  </span> </td> 
-      <td colname="col1"> <span class="codeph"> int  </span> </td> 
-      <td colname="col2"> 相应轨道的索引（如果已知）；否则，为0。 </td> 
+      <td colname="col01"> <span class="codeph"> trackIndex </span> </td> 
+      <td colname="col1"> <span class="codeph"> int </span> </td> 
+      <td colname="col2"> 對應曲目的索引（如果已知）；否則為0。 </td> 
       </tr> 
       <tr> 
-      <td colname="col01"> <span class="codeph"> trackName  </span> </td> 
-      <td colname="col1"> <span class="codeph"> 字符串  </span> </td> 
-      <td colname="col2"> 相应轨道的名称（如果已知）；否则，为null。 </td> 
+      <td colname="col01"> <span class="codeph"> trackName </span> </td> 
+      <td colname="col1"> <span class="codeph"> 字串 </span> </td> 
+      <td colname="col2"> 對應曲目的名稱（如果已知）；否則為null。 </td> 
       </tr> 
       <tr> 
-      <td colname="col01"> <span class="codeph"> trackType  </span> </td> 
-      <td colname="col1"> <span class="codeph"> 字符串  </span> </td> 
-      <td colname="col2"> 相应轨道的类型（如果已知）；否则，为null。 </td> 
+      <td colname="col01"> <span class="codeph"> trackType </span> </td> 
+      <td colname="col1"> <span class="codeph"> 字串 </span> </td> 
+      <td colname="col2"> 對應曲目的型別（如果已知）；否則為null。 </td> 
       </tr> 
       <tr> 
-      <td colname="col01"> <span class="codeph"> 类型  </span> </td> 
-      <td colname="col1"> <span class="codeph"> 字符串  </span> </td> 
-      <td colname="col2"> TVSDK下载的内容。 以下任一： 
+      <td colname="col01"> <span class="codeph"> type </span> </td> 
+      <td colname="col1"> <span class="codeph"> 字串 </span> </td> 
+      <td colname="col2"> 下載的TVSDK。 下列其中一項： 
       <ul id="ul_9C3BDEBD878544DA95C7FF81114F9B5C"> 
-      <li id="li_A093552B492A44FD8B30785E465F6886">MANIFEST — 播放列表/清单 </li> 
+      <li id="li_A093552B492A44FD8B30785E465F6886">資訊清單 — 播放清單/資訊清單 </li> 
       <li id="li_DEF9AC71AA564F9BB4C5D4E834432EE5">片段 — 片段 </li> 
-      <li id="li_57821F47B6F04CD38570BCE6447A01B8">TRACK — 与特定轨道关联的片段 </li> 
-      </ul> 有时，可能无法检测资源的类型。 如果发生这种情况，则返回FILE。 </td> 
+      <li id="li_57821F47B6F04CD38570BCE6447A01B8">TRACK — 與特定曲目相關聯的片段 </li> 
+      </ul> 有時可能無法偵測資源的型別。 如果發生此情況，則會傳回FILE。 </td> 
       </tr> 
       <tr> 
-      <td colname="col01"> <span class="codeph"> url  </span> </td> 
-      <td colname="col1"> <span class="codeph"> 字符串  </span> </td> 
-      <td colname="col2"> 指向已下载资源的URL。 </td> 
+      <td colname="col01"> <span class="codeph"> url </span> </td> 
+      <td colname="col1"> <span class="codeph"> 字串 </span> </td> 
+      <td colname="col2"> 指向已下載資源的URL。 </td> 
       </tr> 
     </tbody> 
    </table>

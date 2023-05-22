@@ -1,18 +1,17 @@
 ---
-title: 使用由Adobe发布的CRL
-description: 使用由Adobe发布的CRL
+title: 使用Adobe發佈的CRL
+description: 使用Adobe發佈的CRL
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: b7f68a29-f834-4613-b64d-e610f660e6fc
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '83'
 ht-degree: 0%
 
 ---
 
+# 使用Adobe發佈的CRL{#consume-crls-published-by-adobe}
 
-# 使用由Adobe{#consume-crls-published-by-adobe}发布的CRL
+SDK會定期下載Adobe發佈的CRL。 請勿封鎖對這些檔案的存取，或阻止這些CRL的強制執行。
 
-SDK会定期下载由Adobe发布的CRL。 请勿阻止访问这些文件或阻止强制执行这些CRL。
-
-SDK具有一个配置选项，可在检索AdobeCRL时忽略错误。 此选项只能用于开发环境。 在生产环境中，许可证服务器必须能够从Adobe检索CRL。 无法获取有效的CRL是错误。
+SDK有設定選項，可在擷取AdobeCRL時忽略錯誤。 此選項只能用於開發環境。 在生產環境中，授權伺服器必須能夠從Adobe擷取CRL。 無法取得有效的CRL是錯誤。

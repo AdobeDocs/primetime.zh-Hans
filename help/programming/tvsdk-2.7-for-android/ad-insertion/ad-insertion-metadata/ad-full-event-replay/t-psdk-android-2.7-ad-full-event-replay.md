@@ -1,40 +1,39 @@
 ---
-description: 全事件重播(FER)是一个VOD资产，充当实时/DVR资产，因此您的应用程序必须采取步骤以确保正确放置广告。
-title: 实现全事件重播
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 完整事件重播(FER)是一種可作為即時/DVR資產的VOD資產，因此您的應用程式必須採取措施以確保廣告正確放置。
+title: 啟用完整事件重播中的廣告
+exl-id: 866a696d-0c5e-4665-8890-cbbaed3e7a04
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '319'
 ht-degree: 0%
 
 ---
 
+# 啟用完整事件重播中的廣告 {#enable-ads-in-full-event-replay-overview}
 
-# 启用全事件重播{#enable-ads-in-full-event-replay-overview}中的广告
+完整事件重播(FER)是一種可作為即時/DVR資產的VOD資產，因此您的應用程式必須採取措施以確保廣告正確放置。
 
-全事件重播(FER)是一个VOD资产，充当实时/DVR资产，因此您的应用程序必须采取步骤以确保正确放置广告。
+對於即時內容，TVSDK會使用資訊清單中的中繼資料/提示來決定放置廣告的位置。 不過，有時即時/線性內容可能會類似VOD內容。 例如，當即時內容完成時， `EXT-X-ENDLIST` 標籤會附加至即時資訊清單。 若為HLS，則 `EXT-X-ENDLIST` 標籤表示資料流是VOD資料流。 若要正確插入廣告，TVSDK無法自動區分此串流與典型VOD串流。
 
-对于实时内容，TVSDK使用清单中的元数据/提示确定放广告的位置。 但是，有时实时/线性内容可能与VOD内容相似。 例如，当活动内容完成时，将向活动清单附加一个`EXT-X-ENDLIST`标记。 对于HLS，`EXT-X-ENDLIST`标记表示流是VOD流。 要正确插入广告，TVSDK无法自动区分此流与典型VOD流。
+您的應用程式必須透過指定 `AdSignalingMode`.
 
-应用程序必须通过指定`AdSignalingMode`来告诉TVSDK内容是实时的还是VOD的。
-
-对于FER流，Adobe Primetime广告决策服务器不应提供在开始播放之前需要在时间轴上插入的广告中断的列表。 这是VOD内容的典型过程。 相反，通过指定不同的信令模式，TVSDK从FER清单读取所有提示点并转到每个提示点的广告服务器以请求广告中断。 此过程类似于实时/DVR内容。
+對於FER資料流，Adobe Primetime ad decisioning伺服器不應提供在開始播放之前需要插入時間軸上的廣告插播清單。 這是VOD內容的典型程式。 相反地，透過指定不同的訊號模式，TVSDK會從FER資訊清單中讀取所有提示點，並前往每個提示點的廣告伺服器，以請求廣告插播。 此程式類似於即時/DVR內容。
 
 >[!TIP]
 >
->除了与提示点关联的每个请求外，TVSDK还对前放广告发出额外的广告请求。
+>除了與提示點關聯的每個請求之外，TVSDK還會針對前段廣告提出額外的廣告請求。
 
-1. 从外部源（如vCMS）获得应使用的信令模式。
-1. 创建与广告相关的元数据。
-1. 如果必须覆盖默认行为，请使用`AdvertisingMetadata.setSignalingMode`指定`AdSignalingMode`。
+1. 從外部來源（例如vCMS）取得應使用的訊號模式。
+1. 建立廣告相關中繼資料。
+1. 如果必須覆寫預設行為，請指定 `AdSignalingMode` 透過使用 `AdvertisingMetadata.setSignalingMode`.
 
-   有效值为`DEFAULT`、`SERVER_MAP`和`MANIFEST_CUES`。
+   有效值為 `DEFAULT`， `SERVER_MAP`、和 `MANIFEST_CUES`.
 
    >[!IMPORTANT]
    >
-   >在调用`prepareToPlay`之前，必须设置广告信令模式。 在TVSDK开始解析广告并将其放置到时间轴上后，将忽略对广告信号模式的更改。 在创建`AuditudeSettings`对象时设置模式。
+   >呼叫之前，您必須設定廣告訊號模式 `prepareToPlay`. 在TVSDK開始解析廣告並將廣告置於時間軸上後，廣告訊號模式的變更會被忽略。 建立時設定模式 `AuditudeSettings` 物件。
 
-1. 继续播放。
+1. 繼續播放。
 
 <!--<a id="example_6DECA71C3C3B4551805C09A80686552F"></a>-->
 

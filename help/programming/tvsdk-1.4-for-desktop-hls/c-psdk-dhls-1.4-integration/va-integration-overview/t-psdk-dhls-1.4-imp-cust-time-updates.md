@@ -1,24 +1,23 @@
 ---
-description: 在某些分析实施中，客户端应用程序可能希望提供与TVSDK localTime值所报告的播放头位置不同的播放头位置。 例如，在LINEAR流播放期间，可以相对于每个项目的开始时间提供其播放头。
-title: 实施自定义时间更新
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 在某些Analytics實作中，使用者端應用程式可能會想要提供與TVSDK localTime值所回報位置不同的播放點位置。 例如，在LINEAR串流播放期間，每個程式的播放點都可以相對於其開始時間來提供。
+title: 實作自訂時間更新
+exl-id: be0f2684-6a17-4d99-8875-7f404ce8a656
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '135'
 ht-degree: 0%
 
 ---
 
+# 實作自訂時間更新{#implement-custom-time-updates}
 
-# 实现自定义时间更新{#implement-custom-time-updates}
-
-在某些分析实施中，客户端应用程序可能希望提供与TVSDK localTime值所报告的播放头位置不同的播放头位置。 例如，在LINEAR流播放期间，可以相对于每个项目的开始时间提供其播放头。
+在某些Analytics實作中，使用者端應用程式可能會想要提供與TVSDK localTime值所回報位置不同的播放點位置。 例如，在LINEAR串流播放期間，每個程式的播放點都可以相對於其開始時間來提供。
 
 >[!TIP]
 >
->仅当要提供与默认位置不同的播放头位置时，才覆盖此方法。
+>唯有當您想提供預設位置以外的其他播放點位置時，才能覆寫此方法。
 
-1. 要覆盖默认播放指示器位置，请执行以下操作：
+1. 覆寫預設播放點位置：
 
    ```
    vaMetadata.currentTimeUpdateBlock = function():Number { 
@@ -31,5 +30,4 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   >此代码片断中的值只是示例。 您需要对自定义播放头位置使用不同的值。
-
+   >此程式碼片段中的值僅為範例。 您需要對自訂播放點位置使用不同的值。

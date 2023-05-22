@@ -1,42 +1,41 @@
 ---
-description: 适用于Android的MediaPlayer界面封装了媒体播放器的功能和行为。
-title: 设置MediaPlayer
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: Android的MediaPlayer介面會封裝媒體播放器的功能和行為。
+title: 設定MediaPlay
+exl-id: 2698fe8d-0b73-4aad-9fee-55d034d8ca64
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '119'
 ht-degree: 0%
 
 ---
 
+# 設定MediaPlay {#set-up-the-mediaplayer}
 
-# 设置MediaPlayer {#set-up-the-mediaplayer}
+Android的MediaPlayer介面會封裝媒體播放器的功能和行為。
 
-适用于Android的MediaPlayer界面封装了媒体播放器的功能和行为。
-
-TVSDK提供`MediaPlayer`接口`DefaultMediaPlayer`类的一个实现。 当您需要视频播放功能时，请实例化`DefaultMediaPlayer`。
+TVSDK提供 `MediaPlayer` 介面， `DefaultMediaPlayer` 類別。 當您需要視訊播放功能時，請具現化 `DefaultMediaPlayer`.
 
 >[!TIP]
 >
->仅与`MediaPlayer`接口公开的方法与`DefaultMediaPlayer`实例交互。
+>與 `DefaultMediaPlayer` 執行個體只能使用下列專案公開的方法： `MediaPlayer` 介面。
 
-1. 使用公共`DefaultMediaPlayer.create`工厂方法实例化MediaPlayer，同时传递Java Android应用程序上下文对象。
+1. 使用公用程式例項化MediaPlayer `DefaultMediaPlayer.create` factory方法，傳遞Java Android應用程式內容物件。
 
    ```java
    public static MediaPlayer create(Context context) 
    ```
 
-1. 调用`MediaPlayer.getView`以获取对`MediaPlayerView`实例的引用。
+1. 呼叫 `MediaPlayer.getView` 以取得 `MediaPlayerView` 執行個體。
 
    ```java
    MediaPlayerView getView() throws IllegalStateException; 
    ```
 
-1. 将`MediaPlayerView`实例放在`FrameLayout`实例中，该实例将视频放在设备的屏幕上。
+1. 放置 `MediaPlayerView` 中的執行個體 `FrameLayout` 例項，將視訊放在裝置的熒幕上。
 
    ```java
    FrameLayout playerFrame = (FrameLayout) view.findViewById(R.id.playerFrame); 
    playerFrame.addView(mediaPlayer.getView()); 
    ```
 
-`MediaPlayer`实例现已可用，并已正确配置以在设备屏幕上显示视频内容。
+此 `MediaPlayer` 執行個體現在可供使用，並已正確設定為在裝置畫面上顯示視訊內容。

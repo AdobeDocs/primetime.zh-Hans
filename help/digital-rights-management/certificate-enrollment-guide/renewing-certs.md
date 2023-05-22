@@ -1,40 +1,38 @@
 ---
-title: 续订证书
-description: 续订证书
+title: 更新憑證
+description: 更新憑證
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: db130ca5-4e26-447f-b2f4-4eee0838fd56
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '295'
 ht-degree: 0%
 
 ---
 
+# 更新憑證{#renew-certificates}
 
-# 续订证书{#renew-certificates}
+請注意以下根據您Adobe Primetime DRM SDK設定的憑證續約限制：
 
-您应注意以下基于Adobe Primetime DRM SDK配置的证书续订限制：
+* Primetime DRM Production SDK
 
-* Primetime DRM制作SDK
+   當您購買支援合約時，Adobe會為Primetime DRM Production SDK提供初始的免費憑證集。 如果您沒有支援合約，您可以購買一組有效期為兩年的續約憑證。
+* Primetime DRM評估SDK
 
-   Adobe在您购买支持合同时为Primetime DRM Production SDK提供初始的免费证书集。 如果您没有支持合同，则可以购买一组有效期为两年的续订证书。
-* Primetime DRM评估SDK
+   此SDK的憑證集有效期為一年，無法續約。
+* Primetime DRM試用版SDK
 
-   此SDK的证书集的有效期为一年，无法续订。
-* Primetime DRM试用版SDK
+   Primetime DRM試用版SDK的有效期為三個月，而Adobe則提供一組免費的續約憑證。
 
-   Primetime DRM试用版SDK的有效期为三个月，且Adobe提供一套免费的续订证书。
+## 實作新憑證並對現有內容使用舊憑證 {#section_345C92D1C9794B0BBB9A9B0702EC95FF}
 
-## 为现有内容{#section_345C92D1C9794B0BBB9A9B0702EC95FF}实施新证书和使用旧证书
+在Primetime DRM中，您可以允許授權伺服器為使用先前封裝器憑證（甚至過期）封裝的內容發行授權。 若要設定您的伺服器以接受來自先前封裝內容的授權要求，請將您的舊憑證提供給伺服器並更新伺服器的設定檔案，讓伺服器知道在哪裡可以找到舊憑證。 如需詳細資訊，請參閱 *在Adobe發行的憑證過期時處理憑證更新* 在 *使用Adobe Primetime DRM SDK保護內容*.
 
-在Primetime DRM中，您可以允许许可服务器为与先前（甚至过期）包装程序证书一起打包的内容颁发许可证。 要将服务器配置为接受来自先前打包内容的许可证请求，请向服务器提供您的旧证书并更新服务器的配置文件，以便服务器知道在哪里可以找到旧证书。 有关详细信息，请参阅&#x200B;*使用Adobe Primetime DRM SDK保护内容*&#x200B;中的&#x200B;*当Adobe颁发的证书过期*&#x200B;时处理证书更新。
+如果您的伺服器應用程式是以Primetime DRM Reference Implementation為基礎，則不必更新伺服器端程式。 在 `flashaccess-refimpl.properties` 檔案中，有些欄位可讓您指定其他傳輸和授權伺服器憑證。 如果您只有一個憑證，則不需要填入這些屬性。 如果您有過期的憑證，並且想要在發行授權回應時使用這些憑證，則必須將這些憑證提供給設定檔案並重新啟動伺服器。
 
-如果您的服务器应用程序基于Primetime DRM参考实施，则不必更新服务器端项目。 在`flashaccess-refimpl.properties`文件中，有一些字段可在其中指定其他传输和许可证服务器证书。 如果您只有一个证书，则不必填充这些属性。 如果您已过期的证书，并且想在您发出许可证响应时使用这些证书，则必须向配置文件提供这些证书并重新启动服务器。
-
-要指定旧证书，请使用以下属性：
+若要指定舊憑證，請使用下列屬性：
 
 * `#HandlerConfiguration.AdditionalServerTransportCredential.1=transport.pfx`
 * `#HandlerConfiguration.AdditionalServerTransportCredential.1.password=[password]`
 * `#AsymmetricKeyRetrieval.ServerCredential.1=license_server.pfx`
 * `#AsymmetricKeyRetrieval.ServerCredential.1.password=[password]`
-

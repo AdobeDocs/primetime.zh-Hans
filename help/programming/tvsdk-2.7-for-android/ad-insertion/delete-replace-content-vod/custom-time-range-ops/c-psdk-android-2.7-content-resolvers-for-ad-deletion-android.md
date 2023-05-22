@@ -1,18 +1,17 @@
 ---
-description: 您可以使用多个内容解析器来处理不同的时间轴操作。
-title: 广告删除/替换的内容解析器
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以使用多個內容解析器來處理不同的時間軸操作。
+title: 廣告刪除/取代的內容解析器
+exl-id: 62184c6a-0da6-47da-9799-47d6cce0ed3f
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '34'
 ht-degree: 0%
 
 ---
 
+# 廣告刪除/取代的內容解析器  {#content-resolvers-for-ad-deletion-replacement}
 
-# 广告删除/替换{#content-resolvers-for-ad-deletion-replacement}的内容解析器
-
-您可以使用多个内容解析器来处理不同的时间轴操作。
+您可以使用多個內容解析器來處理不同的時間軸操作。
 
 ```java
 public List<ContentResolver> retrieveResolvers(MediaPlayerItem item) { 
@@ -39,4 +38,3 @@ public List<ContentResolver> retrieveResolvers(MediaPlayerItem item) {
     return resolvers; 
 } 
 ```
-

@@ -1,24 +1,22 @@
 ---
-title: 加密口令
-description: 加密口令
+title: 加密密碼
+description: 加密密碼
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 97b78e00-e5e3-4a9d-8eab-fcf96d3b1219
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '54'
 ht-degree: 0%
 
 ---
 
+# 加密密碼{#encrypt-passwords}
 
-# 加密口令{#encrypt-passwords}
-
-属性文件包含多个不应以纯文本形式输入的口令值。 使用以下命令加密这些值：
+屬性檔案包含數個密碼值，您不應該輸入為純文字。 使用以下命令加密這些值：
 
 `java -jar adobe-flashaccess-i15n-setup.jar password`
 
-此命令将输出加密密码，然后在属性文件中使用。
+此命令將輸出加密的密碼，然後您將其用於屬性檔案中。
 
 >[!NOTE]
->这不是用于加密许可证服务器密码的实用程序。
-
+>這不是用來加密授權伺服器密碼的公用程式。

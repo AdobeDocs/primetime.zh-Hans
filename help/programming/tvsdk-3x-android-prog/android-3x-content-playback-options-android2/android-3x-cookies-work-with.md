@@ -1,33 +1,32 @@
 ---
-description: 您可以使用TVSDK在Cookie标头中发送任意数据，以进行会话管理、门访问等。
+description: 您可以使用TVSDK在Cookie標頭中傳送任意資料，以進行工作階段管理、閘道存取等。
 title: 使用Cookie
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 7f0e7d77-0718-4df7-8380-0e9351f588bc
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '380'
 ht-degree: 0%
 
 ---
 
-
 # 使用Cookie {#work-with-cookies}
 
-您可以使用TVSDK在Cookie标头中发送任意数据，以进行会话管理、门访问等。
+您可以使用TVSDK在Cookie標頭中傳送任意資料，以進行工作階段管理、閘道存取等。
 
-下面是对密钥服务器进行身份验证的示例请求：
+以下是透過某些驗證向金鑰伺服器提出的請求範例：
 
-1. 您的客户在浏览器中登录到您的网站，其登录表明允许此客户视图内容。
-1. 根据许可证服务器的预期，您的应用程序将生成一个身份验证令牌。
+1. 您的客戶透過瀏覽器登入您的網站，其登入顯示允許此客戶檢視內容。
+1. 您的應用程式會根據授權伺服器的預期，產生驗證Token。
 
-   此值将传递给TVSDK。
-1. TVSDK在cookie头中设置此值。
-1. 当TVSDK向密钥服务器发出请求以获取密钥以解密内容时，该请求在cookie头中包含身份验证值。
+   此值會傳遞至TVSDK。
+1. TVSDK會在Cookie標頭中設定此值。
+1. 當TVSDK請求金鑰伺服器取得金鑰以解密內容時，該請求在Cookie標頭中包含驗證值。
 
-   密钥服务器知道请求有效。
+   金鑰伺服器知道要求有效。
 
-要使用Cookie，请执行以下操作：
+若要使用Cookie：
 
-1. 创建`cookieManager`并将URI的Cookie添加到CookieStore。
+1. 建立 `cookieManager` 並將URI的Cookie新增至CookieStore。
 
    例如：
 
@@ -43,32 +42,32 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   >启用302重定向后，广告请求可以重定向到不同于Cookie所属域的域。
+   >啟用302重新導向時，廣告請求可能會被重新導向到與Cookie所屬網域不同的網域。
 
-   TVSDK在运行时查询此`cookieManager`，检查是否有任何与URL关联的Cookie，并自动使用这些Cookie。
+   TVSDK對此進行查詢 `cookieManager` 在執行階段中，檢查是否有任何Cookie與URL相關聯，並自動使用這些Cookie。
 
-   如果在播放过程中需要在应用程序中更新Cookie，请不要使用`networkConfiguration.setCookieHeaders` API，因为更新将在JAVA Cookie存储中发生。
+   如果在播放期間需要更新應用程式中的Cookie，請勿使用 `networkConfiguration.setCookieHeaders` 作為更新的API將出現在JAVA Cookie存放區中。
 
-   `networkConfiguration.setCookieHeaders` API将Cookie设置为TVSDK的C++ CookieStore。
+   `networkConfiguration.setCookieHeaders` API會為TVSDK的C++ CookieStore設定Cookie。
 
-   当使用JAVA cookies并在应用程序和TVSDK之间共享它们时，请使用JAVA CookieStore仅管理cookies。
+   使用JAVA Cookie並在應用程式和TVSDK之間共用時，請使用JAVA CookieStore來單獨管理Cookie。
 
-   在初始化播放之前，如上所述，使用Cookie管理器将Cookie设置为CookieStore。
+   在初始化播放之前，請使用Cookie管理員將Cookie設定為CookieStore，如上所述。
 
-   TVSDK将自动拾取存储在CookieStore中的Cookie。
+   TVSDK會自動擷取儲存在CookieStore中的Cookie。
 
-   如果稍后需要在播放期间更新Cookie值，请使用相同的键和新值字段调用CookieStore的相同添加方法。
+   如果需要稍後在播放期間更新Cookie值，請使用相同的索引鍵和新的值欄位來呼叫CookieStore的相同新增方法。
 
-   还设置
-   `networkConfiguration.setReadSetCookieHeader`(false)
+   也設定
+   `networkConfiguration.setReadSetCookieHeader`(false)呼叫前
    `config.setNetworkConfiguration(networkConfiguration)`
 
    >[!NOTE]
    >
-   >将此“setReadSetCookieHeader”设置为false后，使用JAVA Cookie管理器为键请求设置Cookie。
+   >將此「setReadSetCookieHeader」設定為false後，請使用JAVA Cookie管理員設定主要要求的Cookie。
 
    `onCookiesUpdated(CookiesUpdatedEvent cookiesUpdatedEvent)`
-只要C++ Cookie（来自http响应的cookie）中有更新，将触发此回调API。应用程序需要侦听此回调，并可以相应地更新其JAVA CookieStore，以便其JAVA网络调用可以使用以下Cookie:
+每當C++ Cookie （來自http回應的Cookie）中有更新時，就會觸發此回呼API。 應用程式需要監聽此回呼，並可據此更新其JAVA CookieStore，以便其JAVA中的網路呼叫能夠利用Cookie，如下所示：
 
    ```
    private final CookiesUpdatedEventListener cookiesUpdatedEventListener = new CookiesUpdatedEventListener() {

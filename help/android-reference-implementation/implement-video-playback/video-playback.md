@@ -1,21 +1,20 @@
 ---
-title: 视频播放的基本操作
-description: PlaybackManager提供HLS流的基本操作
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+title: 視訊播放的基本作業
+description: PlaybackManager提供HLS串流的基本操作
+exl-id: b4d1b41a-7a16-47f5-be88-6b52f0451813
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '115'
 ht-degree: 0%
 
 ---
 
+# 視訊播放的基本作業 {#essential-operations-of-video-playback}
 
-# 视频播放的基本操作{#essential-operations-of-video-playback}
+PlaybackManager提供HLS串流的基本操作：
 
-PlaybackManager提供HLS流的基本操作：
-
-* 调用能够对视频事件做出相应响应的[PlaybackManagerEventListener](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/PlaybackManager.PlaybackManagerEventListener.html)。
-* 提供播放操作，如播放、暂停和搜索。
-* 返回有关播放器的信息，如播放器状态、播放范围和视频直播流。
-* 确定是否启用了ABR，并根据提供的配置数据设置ABR和缓冲区控制参数。
-* 确定是否启用缓冲区控制，并根据提供的配置数据设置缓冲区控制参数。
+* 叫用 [PlaybackManagerEventListener](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/PlaybackManager.PlaybackManagerEventListener.html)，可適當回應視訊事件。
+* 提供播放、暫停和搜尋等播放作業。
+* 傳回播放器的相關資訊，例如播放器狀態、播放範圍和視訊即時資料流。
+* 判斷是否已啟用ABR，並根據提供的組態資料設定ABR和緩衝區控制引數。
+* 判斷是否已啟用緩衝區控制，並根據提供的組態資料設定緩衝區控制引數。

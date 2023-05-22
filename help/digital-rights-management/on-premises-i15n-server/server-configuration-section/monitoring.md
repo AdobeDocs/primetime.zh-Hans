@@ -1,37 +1,35 @@
 ---
-title: 监控
-description: 监控
+title: 監視
+description: 監視
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: edf62298-4082-4ac1-b2b7-8d0e0959ed04
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '164'
 ht-degree: 0%
 
 ---
 
+# 監視{#monitoring}
 
-# 监视{#monitoring}
+「個人化」伺服器和「金鑰產生」伺服器各自都有狀態頁面，您可以使用此頁面來判斷伺服器的健康狀態。
 
-个性化服务器和密钥生成服务器均具有状态页，您可以使用它确定服务器的运行状况。
+* **個人化狀態頁面：** [!DNL https://SERVER:PORT/flashaccess/status]
 
-* **个性化状态页：** [!DNL https://SERVER:PORT/flashaccess/status]
+   * 如果應用程式伺服器執行中，且應用程式可向金鑰產生伺服器發出GET要求，則會回報「使用中」
+   * 頁面會報告「使用中」或沒有任何內容。 應用程式的相關資訊未顯示，因此此頁面可用於從防火牆外部進行監視。
 
-   * 如果应用程序服务器正在运行且应用程序可以向密钥生成服务器发出GET请求，则报告“活动”
-   * 该页面报告“活”或不报告任何内容。 没有显示有关应用程序的信息，因此此页可用于从防火墙外部进行监视。
+* **金鑰產生狀態頁面：** [!DNL https://SERVER:PORT/flashaccess-kgs/status]
 
-* **“密钥生成状态”页：** [!DNL https://SERVER:PORT/flashaccess-kgs/status]
+   * 如果應用程式伺服器執行中，則報告「使用中」
+   * 所有金鑰產生URL都只能由內部存取
 
-   * 如果应用程序服务器正在运行，则报告“活动”
-   * 所有密钥生成URL必须只能在内部访问
+* **「個人化統計資料」頁面：** [!DNL https://SERVER:PORT/flashaccess/admin/appstats]
 
-* **“个性化统计信息”页：** [!DNL https://SERVER:PORT/flashaccess/admin/appstats]
+   * 包含有關個人化伺服器的統計資料，例如提供的請求數和快取中可用的金鑰數
+   * 此頁面只能供內部存取
 
-   * 包括有关个性化服务器的统计信息，如已服务的请求数和缓存中可用的密钥数
-   * 此页面必须只能在内部访问
+* **金鑰產生統計值頁面：** [!DNL https://SERVER:PORT/flashaccess-kgs/appstats]
 
-* **“密钥生成统计信息”页：** [!DNL https://SERVER:PORT/flashaccess-kgs/appstats]
-
-   * 包括关于密钥生成服务器的统计信息，例如提供的请求数和磁盘上可用的密钥文件数
-   * 所有密钥生成URL必须只能在内部访问
-
+   * 包括有關「金鑰產生」伺服器的統計資料，例如已服務的請求數和磁碟上可用的金鑰檔案數
+   * 所有金鑰產生URL都只能由內部存取

@@ -1,26 +1,25 @@
 ---
-description: 默认情况下，TVSDK在用户搜索广告时强制播放广告中断。 如果上一个中断完成所经过的时间在特定分钟内，则可以自定义该行为以跳过广告中断。
-title: 跳过一段时间内的广告分段
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 依預設，當使用者搜尋廣告插播時，TVSDK會強製播放廣告插播。 如果從前一個插播完成經過的時間是在特定分鐘數內，您可以自訂略過廣告插播的行為。
+title: 略過一段時間的廣告插播
+exl-id: 7d5ee788-4a67-4c70-acc7-a950e6b2db8a
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '181'
 ht-degree: 0%
 
 ---
 
+# 略過一段時間的廣告插播{#skip-ad-breaks-for-a-period-of-time}
 
-# 跳过一段时间内的广告中断{#skip-ad-breaks-for-a-period-of-time}
-
-默认情况下，TVSDK在用户搜索广告时强制播放广告中断。 如果上一个中断完成所经过的时间在特定分钟内，则可以自定义该行为以跳过广告中断。
+依預設，當使用者搜尋廣告插播時，TVSDK會強製播放廣告插播。 如果從前一個插播完成經過的時間是在特定分鐘數內，您可以自訂略過廣告插播的行為。
 
 >[!IMPORTANT]
 >
->当内部搜索跳过广告时，播放时可能稍微暂停。
+>當有要略過廣告的內部搜尋時，播放中可能會稍微暫停。
 
-以下自定义广告策略选择器示例在用户观看广告中断后的五分钟（观看时钟）内跳过广告。
+以下自訂廣告原則選擇器的範例會在使用者觀看廣告插播後5分鐘（牆上時鐘時間）內略過廣告。
 
-1. 扩展默认广告策略选择器以覆盖默认行为。
+1. 擴充預設廣告原則選擇器以覆寫預設行為。
 
    ```
    /** 
@@ -79,7 +78,7 @@ ht-degree: 0%
    }
    ```
 
-1. 创建使用自定义选择器的新广告工厂。
+1. 建立使用自訂選擇器的新Advertising Factory。
 
    ```
    public class CustomAdPolicyContentFactory extends DefaultContentFactory { 
@@ -106,7 +105,7 @@ ht-degree: 0%
    }
    ```
 
-1. 注册要与MediaPlayer一起使用的新广告工厂类。
+1. 註冊與MediaPlayer搭配使用的新Advertising Factory類別。
 
    ```
    var mediaResource:MediaResource =  
@@ -116,4 +115,3 @@ ht-degree: 0%
    mediaPlayerItemConfig.advertisingFactory = new CustomAdPolicyContentFactory(); 
    player.replaceCurrentResource(mediaResource, mediaPlayerItemConfig);
    ```
-

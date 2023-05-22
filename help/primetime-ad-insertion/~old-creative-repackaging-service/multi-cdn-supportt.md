@@ -1,7 +1,6 @@
 ---
-description: Multi CDN允许设置一个或多个CDN位置以提供转码广告。
-title: 多CDN支持
-translation-type: tm+mt
+description: Multi CDN允許設定一或多個CDN位置以提供轉碼廣告。
+title: 多CDN支援
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '304'
@@ -10,30 +9,30 @@ ht-degree: 0%
 ---
 
 
-# 多CDN支持{#multi-cdn-support}
+# 多CDN支援 {#multi-cdn-support}
 
-Multi CDN允许设置一个或多个CDN位置以提供转码广告。
+Multi CDN允許設定一或多個CDN位置以提供轉碼廣告。
 
-默认情况下，所有转码资源都托管在Adobe拥有的Akamai CDN上。 但是，您可以选择您自己的零个或多个附加CDN位置，CRS将在其中托管转码资源。 因此，在这种情况下，可以从同一CDN提供转码资源和内容。
+依預設，所有轉碼資產都由Adobe擁有的Akamai CDN代管。 不過，您可以自行選擇零個或多個其他CDN位置，讓CRS代管轉碼資產。 因此，在此情況下，您可以從相同的CDN提供轉碼資產和內容。
 
-当清单服务器查找转码请求时，它使用包含许多查询参数的引导URL。 如果已设置多CDN环境，引导URL还需要包含`ptcdn`参数。清单服务器使用此参数标识从中获取转码版本广告的CDN服务器。
+資訊清單伺服器查詢轉碼請求時，會使用包含許多查詢引數的啟動程式URL。 如果您已設定多CDN環境，啟動程式URL也需要包含 `ptcdn` parameter.資訊清單伺服器會使用此引數來識別要從中取得轉碼版廣告的CDN伺服器。
 
-还为以下Primetime解决方案提供多CDN支持：
+下列Primetime解決方案也提供多CDN支援：
 
-1. 适用于Android的TVSDK
-1. 桌面HLS的TVSDK
-1. 适用于iOS的TVSDK
+1. 適用於Android的TVSDK
+1. 適用於案頭HLS的TVSDK
+1. 適用於iOS的TVSDK
 
-## 启用CDN支持{#section_1BA344F2300B49F291865A7461EDFEAE}
+## 啟用CDN支援 {#section_1BA344F2300B49F291865A7461EDFEAE}
 
-默认情况下，CRS对所有客户都处于禁用状态
+預設情況下，所有客戶的CRS皆停用
 
-请与您的Adobe技术客户经理联系，将您的CRS帐户配置为使用其他CDN托管转码广告资产。您需要提供CRS将转码广告资产上传到CDN所需的以下信息
+請聯絡您的Adobe技術客戶經理，設定您的CRS帳戶以使用其他CDN來託管轉碼廣告資產。您將需要提供CRS上傳轉碼廣告資產至CDN所需的下列資訊
 
 1. CDN URL
-1. 身份验证详细信息
-1. 输出URL格式
+1. 驗證詳細資料
+1. 輸出URL格式
 
-此外，您的Adobe技术客户经理将为您提供此CDN的昵称。您需要将此昵称作为BootstrapURL中`ptcdn`参数的值进行传递。
+此外，您的Adobe技術客戶經理將為您提供此CDN的暱稱。您需要將此作為 `ptcdn` BootstrapURL中的引數。
 
-您可以通过Adobe支持在CRS端配置多个CDN。 但是，用于选择要通过清单服务器拼接广告资源的CDN必须是作为BootstrapURL中`ptcdn`参数值传递的CDN。
+您可以透過Adobe支援，在CRS端上設定多個CDN。 不過，用來挑選要透過資訊清單伺服器連結的廣告資產的CDN，必須傳遞為的值 `ptcdn` BootstrapURL中的引數。

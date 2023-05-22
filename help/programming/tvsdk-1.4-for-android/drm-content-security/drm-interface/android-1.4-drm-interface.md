@@ -1,32 +1,31 @@
 ---
-description: 您可以使用PrimetimeDigital Rights Management(DRM)系统的功能来提供对视频内容的安全访问。 或者，您可以使用第三方DRM解决方案作为Adobe集成Primetime DRM解决方案的替代方案。
-title: Primetime DRM界面概述
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以使用PrimetimeDigital Rights Management(DRM)系統的功能，提供對視訊內容的安全存取。 或者，您也可以使用協力廠商DRM解決方案，作為Adobe整合式Primetime DRM解決方案的替代方案。
+title: Primetime DRM介面概觀
+exl-id: 2f6e50e6-39f0-4939-bb9b-6c46e34bab7e
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '388'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#primetime-drm-interface-overview}
 
-# 概述{#primetime-drm-interface-overview}
-
-您可以使用PrimetimeDigital Rights Management(DRM)系统的功能来提供对视频内容的安全访问。 或者，您可以使用第三方DRM解决方案作为Adobe集成Primetime DRM解决方案的替代方案。
+您可以使用PrimetimeDigital Rights Management(DRM)系統的功能，提供對視訊內容的安全存取。 或者，您也可以使用協力廠商DRM解決方案，作為Adobe整合式Primetime DRM解決方案的替代方案。
 
 <!--<a id="section_4DD54E085AB345FE9BE00865E56B28DB"></a>-->
 
-请咨询您的Adobe代表，了解有关第三方DRM解决方案可用性的最新信息。
+請洽詢您的Adobe代表，以取得有關第三方DRM解決方案可用性的最新資訊。
 
-Primetime数字版权管理(DRM)系统的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序包含一个`DRMHelper`类，它演示了如何使某些DRM操作更易于实现。
+Primetime數位版權管理(DRM)系統的關鍵使用者端元素是DRM管理員。 Android SDK隨附的範例應用程式包含 `DRMHelper` 類別，說明如何讓特定DRM作業更容易實作。
 
-Primetime DRM提供可扩展、高效的工作流，可在TVSDK应用程序中实施内容保护。 您可以通过为每个数字媒体文件创建许可证来保护和管理视频内容的权利。
+Primetime DRM提供可擴充、有效率的工作流程，以在TVSDK應用程式中實作內容保護。 您可以為每個數位媒體檔案建立授權，藉此保護和管理視訊內容的許可權。
 
-请参阅TVSDK包中包含的DRM示例播放器代码。
+請參閱TVSDK套件中包含的DRM範例播放器程式碼。
 
-以下是使用DRM时最重要的API元素：
+以下是使用DRM時最重要的API元素：
 
-* 媒体播放器中对实现DRM子系统的DRM管理器对象的引用：
+* 在媒體播放器中對實作DRM子系統的DRM管理員物件的參考：
 
    ```java
    MediaPlayer.getDRMManager();
@@ -34,13 +33,13 @@ Primetime DRM提供可扩展、高效的工作流，可在TVSDK应用程序中�
 
    >[!TIP]
    >
-   >仅当`MediaPlayerEvent.DRM_METADATA`被触发后，此API才会返回有效的`DRMManager`对象。 如果在此事件触发之前调用`getDRMManager()`，它可能返回NULL。
+   >此API將傳回有效的 `DRMManager` 物件僅位於 `MediaPlayerEvent.DRM_METADATA` 觸發。 如果您呼叫 `getDRMManager()` 觸發此事件之前，可能會傳回NULL。
 
-* `DRMHelper`帮助类，在实现DRM工作流时非常有用。
+* 此 `DRMHelper` helper類別，在實作DRM工作流程時很有用。
 
-   您可以在`ReferencePlayer`中看到`DRMHelper`。
+   您可以看到 `DRMHelper` 在 `ReferencePlayer`.
 
-* `DRMHelper`元数据加载器方法，当DRM元数据位于与媒体分离的URL中时，加载该元数据。
+* A `DRMHelper` 中繼資料載入器方法，當DRM中繼資料位於與媒體不同的獨立URL中時，就會載入中繼資料。
 
    ```java
    public static void loadDRMMetadata(final DRMManager drmManager,  
@@ -48,7 +47,7 @@ Primetime DRM提供可扩展、高效的工作流，可在TVSDK应用程序中�
       final DRMLoadMetadataListener loadMetadataListener);
    ```
 
-* 用于检查DRM元数据以确定是否需要身份验证的`DRMHelper`方法。
+* A `DRMHelper` 檢查DRM中繼資料以確定是否需要驗證的方法。
 
    ```java
    /** 
@@ -62,7 +61,7 @@ Primetime DRM提供可扩展、高效的工作流，可在TVSDK应用程序中�
    public static boolean isAuthNeeded(DRMMetadata drmMetadata);
    ```
 
-* `DRMHelper` 方法。
+* `DRMHelper` 執行驗證的方法。
 
    ```java
    /** 
@@ -87,15 +86,15 @@ Primetime DRM提供可扩展、高效的工作流，可在TVSDK应用程序中�
    final DRMAuthenticationListener authenticationListener);
    ```
 
-* 事件，通知您的应用程序各种DRM活动和状态。
+* 通知應用程式各種DRM活動和狀態的事件。
 
 <!--<a id="section_899BD9061D484E1BBA46E84617C36867"></a>-->
 
-其他相关API元素：
+其他相關API元素：
 
-* [com.adobe.ave.drm.DRMManager](https://help.adobe.com/en_US/primetime/api/drm/com/adobe/ave/drm/DRMManager.html)
+* [com.adobe.ave.drm.DRManager](https://help.adobe.com/en_US/primetime/api/drm/com/adobe/ave/drm/DRMManager.html)
 * [com.adobe.ave.drm.DRMMetdata](https://help.adobe.com/en_US/primetime/api/drm/com/adobe/ave/drm/DRMMetadata.html)
-* [com.adobe.ave.drm.DRMPolicy](https://help.adobe.com/en_US/primetime/api/drm/com/adobe/ave/drm/DRMPolicy.html)
+* [com.adobe.ave.drm.DRMPpolicy](https://help.adobe.com/en_US/primetime/api/drm/com/adobe/ave/drm/DRMPolicy.html)
 * [com.adobe.ave.drm.DRMAuthenticationMethod](https://help.adobe.com/en_US/primetime/api/drm/com/adobe/ave/drm/DRMAuthenticationMethod.html)
 * [com.adobe.ave.drm.DRMAuthenticationCompleteCallback](https://help.adobe.com/en_US/primetime/api/drm/com/adobe/ave/drm/DRMAuthenticationCompleteCallback.html)
 * [com.adobe.ave.drm.DRMOperationErrorCallback](https://help.adobe.com/en_US/primetime/api/drm/com/adobe/ave/drm/DRMOperationErrorCallback.html)
@@ -108,4 +107,4 @@ Comment Type: draft
 -->
 <!--<a id="section_F58941D68EB94A5EBD1C7454D2A1B17A"></a>-->
 
-有关DRM的详细信息，请参阅[Adobe Primetime DRM文档](https://helpx.adobe.com/primetime/user-guide.html)。
+如需DRM的詳細資訊，請參閱 [Adobe Primetime DRM檔案](https://helpx.adobe.com/primetime/user-guide.html).

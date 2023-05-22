@@ -1,51 +1,50 @@
 ---
-description: MediaPlayer提供设置和获取初始缓冲时间和回放缓冲时间的方法。
-title: 设置缓冲时间
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: MediaPlayer提供方法來設定及取得初始緩衝時間和播放緩衝時間。
+title: 設定緩衝時間
+exl-id: d2fbae05-2190-4acc-ae63-561db030608a
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '191'
 ht-degree: 0%
 
 ---
 
+# 設定緩衝時間{#set-buffering-times}
 
-# 设置缓冲时间{#set-buffering-times}
-
-MediaPlayer提供设置和获取初始缓冲时间和回放缓冲时间的方法。
+MediaPlayer提供方法來設定及取得初始緩衝時間和播放緩衝時間。
 
 >[!TIP]
 >
->如果在开始播放之前未设置缓冲区控制参数，则媒体播放器默认初始缓冲区为2秒，当前播放缓冲区时间为30秒。
+>如果您在開始播放之前未設定緩衝控制引數，媒體播放器預設為初始緩衝時間為2秒，持續播放緩衝時間則為30秒。
 
-1. 设置`BufferControlParameters`对象，该对象封装初始缓冲时间和播放缓冲时间控制参数：
+1. 設定 `BufferControlParameters` 物件，封裝初始緩衝時間和播放緩衝時間控制引數：
 
-       此类提供以下工厂方法：
+       此類別提供下列Factory方法：
    
-   * 要将初始缓冲时间设置为等于播放缓冲时间：
+   * 若要將初始緩衝時間設定為等於播放緩衝時間：
 
       ```
       createSimple(bufferTime:uint):BufferControlParameters
       ```
 
-   * 设置初始和播放缓冲时间：
+   * 若要同時設定初始和播放緩衝時間：
 
       ```
       createDual(initialBufferTime:uint, playbackBufferTime:uint):BufferControlParameters 
       ```
 
-      如果参数无效，则这些方法将引发`IllegalArgumentException`，例如：
+      這些方法會擲回 `IllegalArgumentException` 如果引數無效，例如：
 
-   * 初始缓冲时间小于零。
-   * 初始缓冲时间大于缓冲时间。
+   * 初始緩衝時間小於零。
+   * 初始緩衝時間大於緩衝時間。
 
-1. 要设置缓冲区参数值，请使用以下`MediaPlayer`方法：
+1. 若要設定緩衝區引數值，請使用這個 `MediaPlayer` 方法：
 
    ```
    public function set bufferControlParameters(value:BufferControlParameters):void
    ```
 
-1. 要获取当前缓冲区参数值，请使用以下`MediaPlayer`方法：
+1. 若要取得目前的緩衝區引數值，請使用這個 `MediaPlayer` 方法：
 
    ```
    public function get bufferControlParameters():BufferControlParameters
@@ -53,10 +52,10 @@ MediaPlayer提供设置和获取初始缓冲时间和回放缓冲时间的方法
 
 <!--<a id="example_B5C5004188574D8D8AB8525742767280"></a>-->
 
-例如，要将初始缓冲区设置为2秒，将播放缓冲区时间设置为30秒：
+例如，若要將初始緩衝設定為2秒，並將播放緩衝時間設定為30秒，請執行下列動作：
 
 ```
 mediaPlayer.bufferControlParameters = BufferControlParameters.createDual(2000, 30000); 
 ```
 
-`psdkdemo`演示了此功能；使用应用程序的设置设置缓冲区值。
+此 `psdkdemo` 示範此功能；使用應用程式的設定來設定緩衝值。

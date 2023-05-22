@@ -1,28 +1,27 @@
 ---
-description: 如果要设置Primetime DRM，请从DVD中复制文件。 这些文件包括包含代码、证书和第三方类的JAR文件。 此外，您还需要向Adobe Systems, Incorporated申请证书。 然后，Adobe会向您发出多个凭据，用于保护打包内容、许可证的完整性以及客户端与服务器之间的通信。
-title: 设置开发环境
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 如果要設定Primetime DRM，請從DVD複製檔案。 這些檔案包含JAR檔案，其中包含程式碼、憑證和協力廠商類別。 此外，您需要向Adobe Systems， Incorporated索取憑證。 然後Adobe會向您發出多個認證，用於保護封裝內容、授權以及使用者端與伺服器之間通訊的完整性。
+title: 設定您的開發環境
+exl-id: c10f85b6-84bc-444f-9001-f49dc88cf99c
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '320'
 ht-degree: 0%
 
 ---
 
+# 設定您的開發環境 {#set-up-your-development-environment}
 
-# 设置开发环境{#set-up-your-development-environment}
+如果要設定Primetime DRM，請從DVD複製檔案。 這些檔案包含JAR檔案，其中包含程式碼、憑證和協力廠商類別。 此外，您需要向Adobe Systems， Incorporated索取憑證。 然後Adobe會向您發出多個認證，用於保護封裝內容、授權以及使用者端與伺服器之間通訊的完整性。
 
-如果要设置Primetime DRM，请从DVD中复制文件。 这些文件包括包含代码、证书和第三方类的JAR文件。 此外，您还需要向Adobe Systems, Incorporated申请证书。 然后，Adobe会向您发出多个凭据，用于保护打包内容、许可证的完整性以及客户端与服务器之间的通信。
+Adobe在DVD上提供Primetime DRM SDK：
 
-Adobe提供Primetime DRM SDK的DVD:
+1. 從[！DNL]複製下列檔案 [DRM DVD]/SDK/]至您的開發系統（在您的Java類別路徑上）：
 
-1. 将以下文件从[!DNL [DRM DVD]/SDK/]复制到开发系统（在Java类路径上）：
+   * [!DNL adobe-flashaccess-certs.jar]  — 包含Adobe根憑證
+   * [!DNL adobe-flashaccess-sdk.jar]  — 包含Primetime DRM核心SDK類別
+   * [!DNL adobe-flashaccess-sdk-pro.jar]  — 包含Primetime DRM Professional SDK類別，僅適用於Professional功能
 
-   * [!DNL adobe-flashaccess-certs.jar]  — 包括Adobe根证书
-   * [!DNL adobe-flashaccess-sdk.jar]  — 包括Primetime DRM核心SDK类
-   * [!DNL adobe-flashaccess-sdk-pro.jar]  — 包括Primetime DRM Professional SDK课程，仅专业版功能需要
-
-1. 将以下文件从[!DNL [DRM DVD]/SDK/thirdparty]复制到开发系统：
+1. 從[！DNL]複製下列檔案 [DRM DVD]/SDK/thirdparty]至您的開發系統：
 
    * [!DNL bcmail-jdk15-141.jar]
    * [!DNL bcprov-jdk15-141.jar]
@@ -39,15 +38,15 @@ Adobe提供Primetime DRM SDK的DVD:
    * [!DNL jackson-core--2.4.0-rc4-20140529.184520-13.jar]
    * [!DNL jackson-databind-2.4.0-rc4-20140603.005043-38.jar]
 
-1. （可选）为了提高性能，您可以通过将相应的平台特定库从[!DNL [DRM DVD]/SDK/thirdparty/cryptoj/]复制到您的开发系统中，来启用对加密操作的本机支持（请记住将位置放在路径上）：
+1. （可選）為改善效能，您可以從[！DNL]複製適當的平台特定程式庫，以啟用密碼編譯作業的原生支援 [DRM DVD]/SDK/thirdparty/cryptoj/]到您的開發系統（記得將位置放在您的路徑上）：
 
    * [!DNL jsafe.dll] - Windows
    * [!DNL libjsafe.so] - Linux
 
       >[!NOTE]
       >
-      >提供这些库的32位和64位版本。 如果您有64位操作系统，并且运行64位版本的Java，则您应该只使用64位版本。
+      >這些程式庫的32位元和64位元版本可供使用。 如果您有64位元作業系統，而且您執行64位元版本的Java，則應該只使用64位元版本。
 
-1. （可选）对于与Adobe Flash Media Direver(FMRMS)1.x兼容性相关的功能，请将`[DRM DVD]/SDK/adobe-flashaccess-lcrm.jar]`复制到您的开发系统：
+1. （選用）如需AdobeFlash媒體Rights Management伺服器(FMRMS) 1.x相容性的相關功能，請複製 `[DRM DVD]/SDK/adobe-flashaccess-lcrm.jar]` 至您的開發系統：
 
-   仅当您之前部署了FMRMS 1.x并且不想重新打包受FMRMS保护的内容时，才部署此组件。 在这种情况下，您必须将此支持添加到您的许可证服务器，以便它可以管理旧内容和客户端。
+   僅當您先前已部署FMRMS 1.x且不想重新封裝受FMRMS保護的內容時，才部署此專案。 在此情況下，您必須將此支援新增至您的授權伺服器，以便其管理舊的內容和使用者端。

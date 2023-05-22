@@ -1,26 +1,25 @@
 ---
-description: 302重定向优化可将302个重定向响应的数量减至最少，这使您的应用程序能够更有效地平衡负载。
-title: 禁用或启用302重定向优化
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 302重新導向最佳化可將302重新導向回應的數量降至最低，讓您的應用程式更有效率地平衡負載。
+title: 停用或啟用302重新導向最佳化
+exl-id: b1bdb6d6-b34d-4e0a-8c96-7fd4ce77b5c9
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '104'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
+# HTTP 302重新導向最佳化 {#http-302-redirect-optimization}
 
-# HTTP 302重定向优化{#http-302-redirect-optimization}
+302重新導向最佳化可將302重新導向回應的數量降至最低，讓您的應用程式更有效率地平衡負載。
 
-302重定向优化可将302个重定向响应的数量减至最少，这使您的应用程序能够更有效地平衡负载。
+如果重新導向主要資訊清單請求，並在播放器中啟用302最佳化，則從該資訊清單對資產發出的後續請求將使用最終網域位置，這會避免額外302個回應。
 
-如果重定向主清单请求，并且您的播放器中启用了302优化，则从该清单对资产发出的后续请求将使用最终的域位置，从而避免额外的302个响应。
+此功能預設為啟用，您可以變更此設定。
 
-此功能默认为启用状态，您可以更改此设置。
+## 停用或啟用302重新導向最佳化{#disable-or-enable-redirect-optimization}
 
-## 禁用或启用302重定向优化{#disable-or-enable-redirect-optimization}
-
-使用`useRedirectedUrl`属性打开(true)或关闭(false)302重定向。
+使用 `useRedirectedUrl` 屬性以開啟302重新導向(true)或關閉(false)。
 例如：
 
 ```java
@@ -39,4 +38,3 @@ MediaResource resource = MediaResource.createFromURL(url, resourceMetadata);
 //Load the resource 
 mediaPlayer.replaceCurrentItem(resource);
 ```
-

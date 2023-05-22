@@ -1,6 +1,6 @@
 ---
-title: 适用于Android的TVSDK 2.4.1发行说明
-description: 适用于Android的TVSDK 2.4.1发行说明介绍了TVSDK Android 2.4.1中新增和支持的功能以及已知问题和限制。
+title: Android適用的TVSDK 2.4.1發行說明
+description: Android適用的TVSDK 2.4.1發行說明說明TVSDK Android 2.4.1中的新功能和支援功能，以及已知問題和限制。
 topic-tags: release-notes
 products: SG_PRIMETIME
 exl-id: 3de09048-ae32-43b4-a019-34b217931a4c
@@ -11,399 +11,399 @@ ht-degree: 0%
 
 ---
 
-# 适用于Android的TVSDK 2.4.1发行说明 {#tvsdk-for-android-release-notes}
+# Android適用的TVSDK 2.4.1發行說明 {#tvsdk-for-android-release-notes}
 
-适用于Android的TVSDK 2.4.1发行说明介绍了TVSDK Android 2.4.1中新增和支持的功能以及已知问题和限制。
+Android適用的TVSDK 2.4.1發行說明說明TVSDK Android 2.4.1中的新功能和支援功能，以及已知問題和限制。
 
 ## TVSDK Android 2.4.1 {#tvsdk-android}
 
-Adobe将发布适用于Android的TVSDK 2.4.1。
+Adobe即將發行適用於Android的TVSDK 2.4.1。
 
-要使用此版本的TVSDK，请确保您的系统满足 [系统要求](https://helpx.adobe.com/content/dam/help/en/primetime/programming-guides/psdk_android_2.5.pdf#page=6).
+若要使用此版本的TVSDK，請確保您的系統符合以下說明的要求： [系統需求](https://helpx.adobe.com/content/dam/help/en/primetime/programming-guides/psdk_android_2.5.pdf#page=6).
 
-您可以在此处找到文档：
+您可以在這裡找到檔案：
 
-·用于Android的联机帮助系统TVSDK 2.4
+·線上說明系統TVSDK 2.4 for Android說明
 
-· [适用于Android Java API的Javaocs TVSDK 2.4](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_2.4/index.html)
+· [Android Java API適用的Javadocs TVSDK 2.4](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_2.4/index.html)
 
-Javaoc是最终的权威，因为它们是直接从TVSDK源代码自动生成的。
+Javadocs是最終權威，因為它們是直接從TVSDK原始程式碼自動產生的。
 
-· [C++ API文档TVSDK 2.4，用于Android C++ API](https://help.adobe.com/en_US/primetime/api/psdk/cpp_2.4/namespaces.html)
+· [Android C++ API適用的C++ API檔案TVSDK 2.4](https://help.adobe.com/en_US/primetime/api/psdk/cpp_2.4/namespaces.html)
 
-每个Java类都具有相应的C++类，并且C++文档包含比Javaoc更多的解释性材料，因此请查阅C++文档，以更深入地了解Java API。
+每個Java類別都有對應的C++類別，且C++檔案包含的說明資料比Javadocs更多，因此請參閱C++檔案，深入瞭解Java API。
 
-·迁移指南([适用于Android的TVSDK 2.4迁移指南](../migration-guides/tvsdk-14-25-android.md))
+·移轉指南([Android適用的TVSDK 2.4移轉指南](../migration-guides/tvsdk-14-25-android.md))
 
-本指南介绍了将基于TVSDK 1.4的应用程序迁移到基于TVSDK 2.4的应用程序时需要进行哪些修改。
+本指南說明您需要修改哪些內容，才能將以TVSDK 1.4為基礎的應用程式移轉至以TVSDK 2.4為基礎的應用程式。
 
-## 新增功能 {#new-features}
+## 新功能 {#new-features}
 
-与早期版本相比，适用于Android的TVSDK 2.4.1提供了许多性能改进。 它提供了高质量的观看体验。
+相較於舊版，適用於Android的TVSDK 2.4.1提供許多效能改善專案。 提供高品質的觀賞體驗。
 
-此版本包含版本2.4和2.4.1的所有功能，且未弃用任何功能。
+此版本包含2.4版和2.4.1版的所有功能，且沒有已棄用的功能。
 
-以下是版本2.4.1中的主要新增功能：
+以下是2.4.1版的主要新功能：
 
-* HLS版本4功能
+* HLS 4版功能
 
-   * **视频播放** （播放、暂停、搜寻）与播放器控件（实时、线性和VOD流）结合使用。
-   * **隐藏式字幕。** TVSDK可以显示包含选608/708字体、字体大小、颜色和背景的隐藏式字幕。 它还可以支持带有汇总字幕的视频，并在语言跟踪之间（如果可用）切换。
-   * **特技播放模式** 支持使用I帧的HLS流的快速转发和倒带。 所有视频播放控件均可在内容中正常运行。 慢动作（前进）适用于速率介于0和1之间的外部视频播放模式。
-   * **自适应比特率(ABR)** 允许播放器根据网络和其他条件动态选择要播放的同一内容流的多个版本中的哪一个。 您可以动态设置参数或在清单文件中设置参数，以在激进的、温和的和保守的选择策略中进行选择。
-   * **字节范围** 允许单个TS文件包含多个TS区段。
-   * **替代音频演绎版** 使播放器能够在可用的音轨之间切换。
-   * **ID3支持。** TVSDK可以播放包含ID3音频元数据（如艺术家姓名、标题和专辑）的HLS音频和视频流。
-   * **故障转移。 **尽管主机服务器、播放列表文件和区段出现故障，TVSDK仍使用策略来继续无中断播放。
-   * **多声道音频传递(DD+)。** TVSDK可以将杜比数字+音频(E-AC3)数据传递到支持硬件。
+   * **視訊播放** （播放、暫停、搜尋）搭配播放器控制，適用於即時、線性和VOD資料流。
+   * **隱藏式字幕。** TVSDK可以顯示608/708隱藏式字幕，其中包含字型、字型大小、顏色和背景選擇。 它也可以支援有彙總字幕的視訊，並在語言曲目之間切換（如果有的話）。
+   * **特技播放模式** 支援使用I-Frame的HLS資料流的快速前進和倒帶。 內容上的所有視訊播放控制項都可運作。 慢動作（前進）適用於速率介於0和1之間的外部視訊播放模式。
+   * **最適化位元速率(ABR)** 可讓播放器根據網路和其他條件，動態選取要播放的相同內容資料流的多個版本。 您可以動態設定引數或在資訊清單檔案中設定引數，以在積極主動、溫和和保守的選取原則中選取。
+   * **位元組範圍** 啟用單一TS檔案以包含多個TS區段。
+   * **替代音訊轉譯** 啟用播放器以切換可用的音軌。
+   * **ID3支援。** TVSDK可以播放包含ID3音訊中繼資料的HLS音訊和視訊串流，例如藝人姓名、標題和相簿。
+   * **容錯移轉。 儘管主機伺服器、播放清單檔案和區段失敗，**TVSDK仍會使用策略來繼續不中斷播放。
+   * **多聲道音訊傳遞(DD+)。** TVSDK可將Dolby Digital Plus音訊(E-AC3)資料傳送至支援的硬體。
 
-* 内容保护功能
+* 內容保護功能
 
-   * **HLS的DRM。** 所有视频播放API均可处理受Adobe访问保护的加密视频内容。 支持以下DRM功能：
+   * **HLS的DRM。** 所有視訊播放API都可搭配受Adobe存取保護的加密視訊內容運作。 支援下列DRM功能：
 
-      * 许可证轮换
-      * 键旋转
-      * 许可证缓存
-      * 策略时间
-      * 四轮
+      * 授權輪換
+      * 金鑰輪換
+      * 授權快取
+      * 原則時間
+      * IV旋轉
 
-* **AES 128播放。** TVSDK可以播放密钥大小为128位的高级加密标准(AES)HLS内容。
-* **受保护的HLS(PHLS)** 提供一组有限的预建DRM策略(即Adobe访问提供的子集)，以便在实时流和VOD流的HLS上实现轻量级DRM。
+* **AES 128播放。** TVSDK可以播放金鑰大小為128位元的進階加密標準(AES) HLS內容。
+* **受保護的HLS (PHL)** 提供有限的一組預先建立的DRM原則(Adobe存取提供的子集)，以啟用即時和VOD資料流的輕量型DRM over HLS。
 
-* 广告/备用内容和盈利功能
+* 廣告/替代內容和營利功能
 
-   * **跟踪服务器端插入的广告。** TVSDK可以跟踪由Adobe云广告插入服务插入的广告。 它支持VAST2、VAST3和VMAP格式中的线性广告，用于VOD和实时/线性流。
-   * **自定义HLS标记。** TVSDK使用其 `MediaPlayerConfig` 类，以在流中显示自定义HLS标记时通知播放器应用程序。
-   * **客户端广告插入。** Auditude广告插入库可与Adobe Auditude服务器配合使用，以解析广告，以便在前置、中置或后置位置动态插入到实时、线性和VOD内容中。
-   * **自定义广告解析器。** 的 `ContentResolver, OpportunityGenerator,` 和 `MediaPlayerClientFactory` 通过界面，您可以实施自定义ad/alternate内容解析程序并注册自定义机会检测器以与TVSDK一起使用。 的 `TestAdResolver` 和 `AuditudeResolver` 类提供了实施内容解析程序的C++示例。 您可以在 `samples/jspsdk/testapp/psdk.js`.
-   * **一致的广告行为。** 使用 `AdPolicySelector` 界面，以便当内容中存在广告时，在所有播放器中执行搜寻和特技播放等操作时，能够保持一致的行为。 如果您不实施自己的实施，TVSDK会使用 `DefaultAdPolicySelector`.
-   * **删除/替换C3广告。** 使用相应的TVSDK API删除自定义内容范围并动态插入新广告，而无需额外的准备工作。 当直播/线性内容，然后立即按需提供而无需清理时，这会很方便。
+   * **追蹤伺服器端插入的廣告。** TVSDK可追蹤Adobe雲端廣告插入服務所插入的廣告。 它支援VAST2、VAST3和VMAP格式的線性廣告，適用於VOD和即時/線性資料流。
+   * **自訂HLS標籤。** TVSDK使用 `MediaPlayerConfig` 類別，以在自訂HLS標籤出現在資料流中時通知播放器應用程式。
+   * **使用者端廣告插入。** Auditude廣告插入程式庫可與Adobe Auditude伺服器搭配使用，在前置、中置或後置位置動態解析要插入即時、線性和VOD內容的廣告。
+   * **自訂廣告解析程式。** 此 `ContentResolver, OpportunityGenerator,` 和 `MediaPlayerClientFactory` 介面可讓您實作自訂廣告/替代內容解析器，並註冊自訂機會偵測器以搭配TVSDK使用。 此 `TestAdResolver` 和 `AuditudeResolver` 類別提供實作內容解析器的C++範例。 如需Javascript範例，請前往 `samples/jspsdk/testapp/psdk.js`.
+   * **一致的廣告行為。** 使用 `AdPolicySelector` 介面，可在內容中出現廣告時，針對搜尋和特技播放等操作，啟用所有播放器的一致行為。 若您未實作自己的，TVSDK會使用 `DefaultAdPolicySelector`.
+   * **移除/取代C3廣告。** 使用適當的TVSDK API移除自訂內容範圍，並動態插入新廣告，無需額外的準備工作。 直播內容/線性內容播出時，這會很方便，然後可立即隨選使用，無需清理。
 
-以下是2.4版的主要新增功能：
+以下是2.4版的主要新功能：
 
-* **适用于VOD和直播的即时视频播放** 启用“即时”时，TVSDK会在播放开始之前初始化和缓冲媒体。 因为您可以启动多个 `MediaPlayerItemLoader` 实例同时位于后台，您可以缓冲多个流。 当用户更改渠道，并且流已正确缓冲时，新渠道上的播放会立即开始。 TVSDK 2.4还支持适用于实时流的即时开启。 当实时窗口移动时，会重新缓冲实时流。
+* **立即開啟VOD和即時** 當您啟用立即開啟時，TVSDK會在播放開始之前初始化並緩衝媒體。 因為您可以啟動多個 `MediaPlayerItemLoader` 您可以同時在背景執行個體，緩衝多個串流。 當使用者變更頻道，並且資料流已正確緩衝時，新頻道上的播放會立即開始。 TVSDK 2.4也支援即時上線串流。 即時視窗移動時會重新緩衝即時資料流。
 
-* **性能改进**新的TVSDK 2.4架构改进了各种性能：
+* **效能改良**新的TVSDK 2.4架構提供各種效能改良：
 
-   * **子分段** - TVSDK会进一步减小每个片段的大小，以便尽快开始播放。
-   * **并行广告下载** - TVSDK在点击广告中断之前预取与内容播放并行的广告，从而实现广告和内容的无缝播放。
-   * **延迟广告解析**  — 使用此功能，我们无需等待非前置广告的分辨率即可开始播放，从而缩短启动时间。 在解决所有广告之前，仍不允许使用搜寻和特技播放等API。
+   * **子細分** - TVSDK進一步縮小每個片段的大小，以儘快開始播放。
+   * **平行廣告下載** - TVSDK會在點選廣告插播前，與內容播放同時預先擷取廣告，因此可順暢地播放廣告和內容。
+   * **延遲廣告解析度**  — 使用此功能，我們並不會等到非前段廣告解決後再開始播放，因此縮短了啟動時間。 除非解決所有廣告，否則仍不允許搜尋和特技播放等API。
 
-* **MP4内容播放**
+* **MP4內容播放**
 
-此版本的TVSDK支持播放MP4作为主内容。
+此版本的TVSDK支援播放MP4作為主要內容。
 
-* **永久网络连接**
+* **持續性網路連線**
 
-TVSDK维护一组可重用的网络连接，因此不会产生为每个网络请求创建和销毁网络连接的开销。
+TVSDK會維護一組可重複使用的網路連線，因此不會產生為每個網路要求建立和摧毀網路連線的額外負荷。
 
-* **基于分辨率的输出保护**
+* **以解析度為基礎的輸出保護**
 
-此功能将播放限制与特定分辨率绑定，从而提供更细粒度的DRM控件。
+此功能將播放限制繫結至特定解析度，提供更精細的DRM控制項。
 
-* **使用自适应比特率(ABR)进行特技播放**
+* **使用最適化位元速率(ABR)的特技播放**
 
-此功能允许TVSDK在特技播放模式下在iFrame流之间切换。 您可以使用非iFrame配置文件以较低的速度进行特技播放。
+此功能可讓TVSDK在特技播放模式中切換iFrame資料流。 您可以使用非iFrame設定檔，以較慢的速度進行特技播放。
 
-* **更流畅的戏法游戏**
+* **更流暢的戲法遊戲**
 
-这些改进可增强用户体验：
+這些改善專案可增強使用者體驗：
 
-·在特技播放期间，根据带宽和缓冲配置文件选择自适应比特率和帧速率
+·在特技播放期間，根據頻寬和緩衝區設定檔選擇最適化位元速率和影格速率
 
-·使用主流而不是IDR流，可快速播放多达30 fps。
+·使用主要資料流而非IDR資料流，以取得最高30 fps的快速播放。
 
-* **改进的ABR逻辑**
+* **改善ABR邏輯**
 
-新的ABR逻辑基于缓冲长度、缓冲长度变化率和测量的带宽。 这确保ABR在带宽波动时选择正确的比特率，并且还通过监视缓冲长度变化的速率来优化比特率切换实际发生的次数。
+新的ABR邏輯是以緩衝區長度、緩衝區長度變更速率和測量到的頻寬為基礎。 這可確保ABR在頻寬波動時選擇正確的位元速率，並透過監控緩衝區長度變更的速率，最佳化位元速率切換的實際發生次數。
 
-* **帐单**
+* **帳單**
 
-TVSDK会自动收集量度，并遵守客户销售合同，以生成计费所需的定期使用报告。 在每个流开始事件中，TVSDK都使用Adobe Analytics数据插入API将计费量度（如内容类型、广告插入启用标记和基于可计费流持续时间的DRM启用标记）发送到Adobe Analytics Primetime拥有的报表包。 这不会妨碍或包含在客户自己的Adobe Analytics报表包或服务器调用中。 此账单使用情况报表会根据请求定期发送给客户。 这是付费功能的第一阶段，仅支持使用计费。 可以使用文档中描述的API根据销售合同进行配置。
+TVSDK會根據客戶銷售合約自動收集量度，以產生開立帳單所需的定期使用報告。 在每個資料流開始事件上，TVSDK會使用Adobe Analytics資料插入API來傳送計費量度，例如內容型別、啟用廣告插入的旗標及啟用drm的旗標（根據可計費資料流的持續時間）至Adobe Analytics Primetime擁有的報表套裝。 這不會干擾或納入客戶自己的Adobe Analytics報表套裝或伺服器呼叫。 系統會根據要求定期傳送此計費使用情況報告給客戶。 這是計費功能的第一個階段，僅支援使用計費。 您可以使用檔案中描述的API，根據銷售合約進行設定。
 
-## 支持的功能 {#supported-features}
+## 支援的功能 {#supported-features}
 
-适用于Android 2.4的TVSDK支持许多可实施的功能，以向视频应用程序添加功能。
+Android 2.4適用的TVSDK支援許多您可實作的功能，以將功能新增至視訊應用程式。
 
 >[!NOTE]
 >
->在以下功能矩阵表中，√表示当前版本支持该功能。
+>在下方的功能矩陣表格中，√表示目前版本支援該功能。
 
 ### 核心播放功能 {#core-playback-features}
 
-| **功能** | **内容类型** | **HLS** | **短划线** |
+| **功能** | **內容型別** | **HLS** | **虛線** |
 |---|---|---|---|
-| 常规播放（播放、暂停、搜寻） | VOD +实时 | √ | √（仅VOD） |
-| FER — 常规播放（播放、暂停、搜寻） | 层VOD | √ | 不支持 |
-| MP3 | VOD | 不支持 | 不支持 |
-| MP4内容播放 | VOD | √ | √ |
-| 自适应比特率切换逻辑 | VOD +实时 | √ | 不支持 |
-| 仅音频播放 | VOD +实时 | √ | 不支持 |
-| 隐藏式字幕 — 608/708 | VOD +实时 | √ | √（仅VOD） |
-| 隐藏式字幕 — WebVTT | VOD +实时 | √ | √（仅VOD） |
-| 清单故障转移 | VOD +实时 | √ | √（仅VOD） |
-| 高级故障切换 | VOD +实时 | √ | √（仅VOD） |
-| QoS和播放器通知 | VOD +实时 | √ | √（仅VOD） |
-| 支持Cookie标头 | VOD +实时 | √ | √（仅VOD） |
-| 支持自定义标头 | VOD +实时 | 不支持 | 不支持 |
-| 设置缓冲控制参数 | VOD +实时 | √ | √（仅VOD） |
-| 设置自适应比特率控制 | VOD +实时 | √ | √（仅VOD） |
-| 自定义清单标记(HLS)/事件流(DASH) | VOD +实时 | √ | √（仅VOD） |
-| 迟到的音频 | VOD +实时 | √ | √（仅VOD） |
-| 302重定向 | VOD +实时 | √ | √（仅VOD） |
+| 一般播放（播放、暫停、搜尋） | VOD +即時 | √ | √ （僅限VOD） |
+| FER — 一般播放（播放、暫停、搜尋） | FER VOD | √ | 不支援 |
+| MP3 | VOD | 不支援 | 不支援 |
+| MP4內容播放 | VOD | √ | √ |
+| 最適化位元速率切換邏輯 | VOD +即時 | √ | 不支援 |
+| 僅限音訊的播放 | VOD +即時 | √ | 不支援 |
+| 隱藏式字幕 — 608/708 | VOD +即時 | √ | √ （僅限VOD） |
+| 隱藏式字幕 — WebVTT | VOD +即時 | √ | √ （僅限VOD） |
+| 資訊清單容錯移轉 | VOD +即時 | √ | √ （僅限VOD） |
+| 進階容錯移轉 | VOD +即時 | √ | √ （僅限VOD） |
+| QoS和播放器通知 | VOD +即時 | √ | √ （僅限VOD） |
+| 支援Cookie標頭 | VOD +即時 | √ | √ （僅限VOD） |
+| 支援自訂標頭 | VOD +即時 | 不支援 | 不支援 |
+| 設定緩衝區控制引數 | VOD +即時 | √ | √ （僅限VOD） |
+| 設定最適化位元速率控制項 | VOD +即時 | √ | √ （僅限VOD） |
+| 自訂資訊清單標籤(HLS) /事件資料流（虛線） | VOD +即時 | √ | √ （僅限VOD） |
+| 延遲的音訊 | VOD +即時 | √ | √ （僅限VOD） |
+| 302重新導向 | VOD +即時 | √ | √ （僅限VOD） |
 
-### 高级播放功能 {#advanced-playback-features}
+### 進階播放功能 {#advanced-playback-features}
 
 <table> 
  <tbody>
   <tr>
    <td><strong>功能</strong></td> 
-   <td><strong>内容类型</strong></td> 
+   <td><strong>內容型別</strong></td> 
    <td><strong>HLS</strong></td> 
-   <td><strong>短划线</strong></td> 
+   <td><strong>虛線</strong></td> 
   </tr>
   <tr>
-   <td>带偏移的播放</td> 
-   <td>实时</td> 
+   <td>有位移的播放</td> 
+   <td>即時</td> 
    <td>√</td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>仅音频播放</td> 
-   <td>VOD +实时</td> 
+   <td>僅限音訊的播放</td> 
+   <td>VOD +即時</td> 
    <td>√</td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>技巧游戏 </td> 
-   <td>VOD +实时</td> 
+   <td>特技播放 </td> 
+   <td>VOD +即時</td> 
    <td>√</td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>平滑技巧播放（使用ABR）</td> 
-   <td>VOD +实时</td> 
+   <td>Smooth Trick Play （使用ABR）</td> 
+   <td>VOD +即時</td> 
    <td>√</td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>ID3解析(HLS)/定时元数据（短划线）</td> 
-   <td>VOD +实时</td> 
+   <td>ID3剖析(HLS) /計時中繼資料(DASH)</td> 
+   <td>VOD +即時</td> 
    <td>√</td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>封锁 </td> 
-   <td>VOD +实时</td> 
-   <td>不支持</td> 
-   <td>不支持</td> 
+   <td>中斷 </td> 
+   <td>VOD +即時</td> 
+   <td>不支援</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>即时启用</td> 
-   <td>VOD +实时</td> 
+   <td>立即開啟</td> 
+   <td>VOD +即時</td> 
    <td>√</td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
    <td>
     <ul> 
-     <li>中断标记支持(HLS) </li> 
-     <li>多时段（短划线）</li> 
+     <li>不連續標籤支援(HLS) </li> 
+     <li>多句點（虛線）</li> 
     </ul> </td> 
-   <td>VOD +实时</td> 
+   <td>VOD +即時</td> 
    <td>√</td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>302重定向粘性</td> 
-   <td>VOD +实时</td> 
+   <td>302重新導向粘性</td> 
+   <td>VOD +即時</td> 
    <td>√</td> 
-   <td>√（仅VOD）</td> 
+   <td>√ （僅限VOD）</td> 
   </tr>
   <tr>
-   <td>缩览图推移(Iframe和JPEG)</td> 
-   <td>VOD +实时</td> 
-   <td>不支持</td> 
-   <td>不支持</td> 
+   <td>縮圖清除(Iframe和JPEG)</td> 
+   <td>VOD +即時</td> 
+   <td>不支援</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>流完整性 </td> 
-   <td>VOD +实时</td> 
+   <td>串流完整性 </td> 
+   <td>VOD +即時</td> 
    <td>√</td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
  </tbody>
 </table>
 
 ### 核心Ad Insertion功能(CSAI) {#core-ad-insertion-features-csai}
 
-| **功能** | **内容类型** | **HLS** | **短划线** |
+| **功能** | **內容型別** | **HLS** | **虛線** |
 |---|---|---|---|
-| 常规播放，已启用广告 | VOD +实时 | √ | √（仅限VOD预转换） |
-| 启用广告的FER内容 | VOD | √ | 不支持 |
-| 默认广告行为 | VOD +实时 | √ | √（仅限VOD预转换） |
-| VAST 2.0/3.0 | VOD +实时 | √ | √（仅限VOD预转换） |
-| VMAP 1.0 | VOD +实时 | √ | √（仅限VOD预转换） |
-| MP4广告 | VOD +实时 | √（来自CRS） | √（来自CRS，仅预滚动） |
+| 一般播放，啟用廣告 | VOD +即時 | √ | √ （僅限VOD前段） |
+| 已啟用廣告的FER內容 | VOD | √ | 不支援 |
+| 預設廣告行為 | VOD +即時 | √ | √ （僅限VOD前段） |
+| VAST 2.0/3.0 | VOD +即時 | √ | √ （僅限VOD前段） |
+| VMAP 1.0 | VOD +即時 | √ | √ （僅限VOD前段） |
+| MP4廣告 | VOD +即時 | √ （來自CRS） | √ （來自CRS，僅限前段） |
 
-### 高级Ad Insertion功能(CSAI) {#advanced-ad-insertion-features-csai}
+### 進階Ad Insertion功能(CSAI) {#advanced-ad-insertion-features-csai}
 
 <table> 
  <tbody>
   <tr>
    <td><strong>功能</strong></td> 
-   <td><strong>内容类型</strong></td> 
+   <td><strong>內容型別</strong></td> 
    <td><strong>HLS</strong></td> 
-   <td><strong>短划线</strong></td> 
+   <td><strong>虛線</strong></td> 
   </tr>
   <tr>
-   <td>启用广告的特技播放</td> 
-   <td>VOD +实时</td> 
+   <td>啟用廣告的Trick Play</td> 
+   <td>VOD +即時</td> 
    <td>√</td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>仅限广告 </td> 
+   <td>僅限廣告 </td> 
    <td>VOD</td> 
-   <td>不支持</td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>定位参数</td> 
-   <td>VOD +实时</td> 
+   <td>目標定位引數</td> 
+   <td>VOD +即時</td> 
    <td>√</td> 
-   <td>√（仅限VOD预转换）</td> 
+   <td>√ （僅限VOD前段）</td> 
   </tr>
   <tr>
-   <td>自定义参数</td> 
-   <td>VOD +实时</td> 
+   <td>自訂引數</td> 
+   <td>VOD +即時</td> 
    <td>√</td> 
-   <td>√（仅限VOD预转换）</td> 
+   <td>√ （僅限VOD前段）</td> 
   </tr>
   <tr>
-   <td>自定义广告行为</td> 
-   <td>VOD +实时</td> 
+   <td>自訂廣告行為</td> 
+   <td>VOD +即時</td> 
    <td>√</td> 
-   <td>√（仅限VOD预转换）</td> 
+   <td>√ （僅限VOD前段）</td> 
   </tr>
   <tr>
-   <td>自定义广告标记</td> 
-   <td>实时</td> 
+   <td>自訂廣告標籤</td> 
+   <td>即時</td> 
    <td>√ </td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>自定义广告解析器</td> 
-   <td>VOD +实时</td> 
+   <td>自訂廣告解析程式</td> 
+   <td>VOD +即時</td> 
    <td>√ </td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>自由轮自定义广告解析程序</td> 
+   <td>Freewheel自訂廣告解析程式</td> 
    <td>VOD</td> 
-   <td>不支持</td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>C3广告替换 </td> 
-   <td>VOD +实时</td> 
+   <td>C3廣告取代 </td> 
+   <td>VOD +即時</td> 
    <td>√ </td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>延迟广告加载</td> 
+   <td>延遲廣告載入</td> 
    <td>VOD</td> 
    <td>√ </td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
    <td>
     <ul> 
-     <li>不连续标记支持 — SSAI(HLS) </li> 
-     <li>多时段（短划线）</li> 
+     <li>不連續標籤支援 — SSAI (HLS) </li> 
+     <li>多句點（虛線）</li> 
     </ul> </td> 
-   <td>VOD +实时</td> 
+   <td>VOD +即時</td> 
    <td>√ </td> 
    <td> </td> 
   </tr>
   <tr>
-   <td>伴随广告、横幅广告和可点击广告</td> 
-   <td>VOD +实时</td> 
+   <td>隨附廣告、橫幅廣告和可點按廣告</td> 
+   <td>VOD +即時</td> 
    <td>√ </td> 
-   <td>√（仅限VOD预转换）</td> 
+   <td>√ （僅限VOD前段）</td> 
   </tr>
   <tr>
    <td>VPAID 2.0</td> 
-   <td>VOD +实时</td> 
-   <td>√(JS) </td> 
-   <td>√（仅限VOD预转换）</td> 
+   <td>VOD +即時</td> 
+   <td>√ (JS) </td> 
+   <td>√ （僅限VOD前段）</td> 
   </tr>
   <tr>
-   <td>抢先广告退出</td> 
-   <td>实时</td> 
+   <td>早期廣告退出</td> 
+   <td>即時</td> 
    <td>√ </td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>基于规则的创意VOD +实时优先级设置</td> 
-   <td>VOD +实时</td> 
+   <td>規則型Creative VOD +即時優先順序</td> 
+   <td>VOD +即時</td> 
    <td>√ </td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
   <tr>
-   <td>CRS规则 </td> 
-   <td>VOD +实时</td> 
+   <td>CRS規則 </td> 
+   <td>VOD +即時</td> 
    <td>√ </td> 
-   <td>不支持</td> 
+   <td>不支援</td> 
   </tr>
  </tbody>
 </table>
 
-## 内容保护功能 {#content-protection-features}
+## 內容保護功能 {#content-protection-features}
 
-| **功能** | **内容类型** | **HLS** | **短划线** |
+| **功能** | **內容型別** | **HLS** | **虛線** |
 |---|---|---|---|
-| AES加密 | VOD +实时 | √ | √（仅VOD） |
-| 示例AES加密 | VOD +实时 | √ |  |
-| 标记化流 | VOD +实时 | √ |  |
-| DRM | VOD +实时 | 仅限Primetime DRM(未来：维德维内) | 仅限Widevine |
-| 外部播放(RBOP) | VOD +实时 | 仅限Primetime DRM | 不支持 |
-| 许可证轮换 | VOD +实时 | 仅限Primetime DRM | 不支持 |
-| 键旋转 | VOD +实时 | 仅限Primetime DRM | 不支持 |
+| AES加密 | VOD +即時 | √ | √ （僅限VOD） |
+| AES加密範例 | VOD +即時 | √ |  |
+| 代碼化的資料流 | VOD +即時 | √ |  |
+| DRM | VOD +即時 | 僅限Primetime DRM （未來：Widevine） | 僅限Widevine |
+| 外部播放(RBOP) | VOD +即時 | 僅限Primetime DRM | 不支援 |
+| 授權輪換 | VOD +即時 | 僅限Primetime DRM | 不支援 |
+| 金鑰輪換 | VOD +即時 | 僅限Primetime DRM | 不支援 |
 
-### 集成功能 {#integration-features}
+### 整合功能 {#integration-features}
 
-| **功能** | **内容类型** | **HLS** | **短划线** |
+| **功能** | **內容型別** | **HLS** | **虛線** |
 |---|---|---|---|
-| Adobe Analytics VHL集成 | VOD +实时 | √ | √ |
-| 帐单 | VOD +实时 | √ | 不支持 |
+| Adobe Analytics VHL整合 | VOD +即時 | √ | √ |
+| 帳單 | VOD +即時 | √ | 不支援 |
 
-## 不支持的功能 {#features-not-supported}
+## 不支援的功能 {#features-not-supported}
 
-此版本的TVSDK不支持：
+此版本的TVSDK不支援：
 
-* 广告封锁。
-* 玩魔术的慢动作。
-* 查找并滴答不漏的MP4内容。
-* 包含MP4主内容的广告插入。
-* 在广告播放时进行搜寻。
-* 使用纯音频媒体播放广告。
+* 廣告中斷。
+* 戲法遊戲中的慢動作。
+* 使用MP4內容進行搜尋和點播。
+* 以MP4主要內容插入廣告。
+* 在播放廣告時搜尋。
+* 使用純音訊媒體播放廣告。
 
-## 已知问题和限制 {#known-issues-and-limitations}
+## 已知問題和限制 {#known-issues-and-limitations}
 
-此版本的TVSDK存在以下问题：
+此版本的TVSDK有下列問題：
 
-* 特定于设备(Samsung Galaxy Tab 4)的VOD DRM LBA（带有auditude）崩溃并单击广告
-* 不会为特定内容播放后置广告。
-* 无法将隐藏式字幕设置为CJK语言。
-* 视频可以在VOD和实时视频之间自动脱离特技模式。
-* VHL — 当我们从偏移量中启动内容时，发送错误的心率调用。
-* 当播放VPAID广告时，事件的VHL心率调用:type:播放广告缺失。
-* 即使选择了adBreakPolicy SKIP，也会播放前置广告。
-* 进入“完整”状态播放器后，对于后置广告，使用SKIP adBreakPolicy返回到“正在播放”状态。
+* 裝置特定(Samsung Galaxy Tab 4)當機VOD DRM LBA，具有稽核並點選廣告
+* 不會針對特定內容播放後段廣告。
+* 將隱藏式字幕設定為CJK語言無法運作。
+* 影片可以從Trick模式自動在VOD和即時之間播放。
+* VHL — 從位移開始內容時，會傳送錯誤的心率呼叫。
+* 播放VPAID廣告時，事件的VHL心率呼叫:type:播放廣告遺失。
+* 即使選擇adBreakPolicy SKIP，也會播放前段廣告。
+* 進入完成狀態後，播放器會針對後置廣告返回具有SKIP adBreakPolicy的播放狀態。
 
-没有视频，就没有视区尺寸，没有视区尺寸，就无法显示字幕的任何图形。
+如果沒有視訊，就沒有檢視區尺寸，如果沒有檢視區尺寸，就無法顯示註解的任何圖形。
 
-## 有用资源 {#helpful-resources}
+## 實用資源 {#helpful-resources}
 
-* 请参阅以下完整帮助文档： [Adobe Primetime学习与支持](https://experienceleague.adobe.com/docs/primetime.html) 页面。
+* 如需完整說明檔案，請前往 [Adobe Primetime學習與支援](https://experienceleague.adobe.com/docs/primetime.html) 頁面。

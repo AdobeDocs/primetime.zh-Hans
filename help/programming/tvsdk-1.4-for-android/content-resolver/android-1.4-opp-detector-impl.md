@@ -1,20 +1,19 @@
 ---
-description: 您可以通过实现接口PlacementOpportunityDetector来实现您自己的机会检测器。
-title: 实施自定义机会检测器
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以實作介面PlacementOpportunityDetector來實作自己的機會偵測器。
+title: 實作自訂機會偵測器
+exl-id: d78949a0-2c76-4976-9358-05f3db86781e
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '135'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
+# 實作自訂機會偵測器 {#implement-a-custom-opportunity-detector}
 
-# 实现自定义机会检测器{#implement-a-custom-opportunity-detector}
+您可以實作介面PlacementOpportunityDetector來實作自己的機會偵測器。
 
-您可以通过实现接口PlacementOpportunityDetector来实现您自己的机会检测器。
-
-1. 创建自定义`AdvertisingFactory`实例并覆盖`createOpportunityDetector`。 例如：
+1. 建立自訂 `AdvertisingFactory` 執行個體和覆寫 `createOpportunityDetector`. 例如：
 
    ```java
    new AdvertisingFactory() { 
@@ -27,7 +26,7 @@ ht-degree: 2%
    }
    ```
 
-1. 向`MediaPlayer`注册广告客户端工厂。 例如：
+1. 將廣告使用者端工廠註冊至 `MediaPlayer`. 例如：
 
    ```java
    // register the custom advertising factory with media player 
@@ -35,16 +34,16 @@ ht-degree: 2%
    mediaPlayer.registerAdClientFactory(advertisingFactory);
    ```
 
-1. 创建扩展`PlacementOpportunityDetector`类的自定义机会检测器类。
-   1. 在自定义机会检测器中，覆盖此函数：
+1. 建立可延伸的自訂機會偵測器類別 `PlacementOpportunityDetector` 類別。
+   1. 在自訂機會偵測器中，覆寫此函式：
 
       ```java
       public List<PlacementOpportunity> process(List<TimedMetadata> timedMetadataList, Metadata metadata)
       ```
 
-      `timedMetadataList`包含可用`TimedMetadata`的列表，该字段已排序。 元数据包含要发送到广告提供者的定位参数和自定义参数。
+      此 `timedMetadataList` 包含可用清單 `TimedMetadata`，已排序。 中繼資料包含要傳送給廣告提供者的目標定位引數和自訂引數。
 
-   1. 对于每个`TimedMetadata`，创建一个`List<PlacementOpportunity>`。 列表可以为空，但不能为null。 `PlacementOpportunity` 应具有以下属性：
+   1. 針對每個 `TimedMetadata`，建立 `List<PlacementOpportunity>`. 清單可以是空的，但不可以是Null。 `PlacementOpportunity` 應該具有下列屬性：
 
       ```java
       PlacementOpportunity( 
@@ -54,9 +53,9 @@ ht-degree: 2%
       )
       ```
 
-   1. 为检测到的所有定时元数据对象创建放置机会后，只需返回`PlacementOpportunity`列表。
+   1. 為所有偵測到的定時中繼資料物件建立位置機會後，只要傳回 `PlacementOpportunity` 清單。
 
-这是一个自定义放置机会检测器示例：
+這是自訂位置機會偵測器的範例：
 
 ```java
 public class CustomPlacementOpportunityDetector implements PlacementOpportunityDetector { 
@@ -82,4 +81,3 @@ public class CustomPlacementOpportunityDetector implements PlacementOpportunityD
     ... 
 } 
 ```
-

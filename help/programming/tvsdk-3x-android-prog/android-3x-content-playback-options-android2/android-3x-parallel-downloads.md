@@ -1,20 +1,19 @@
 ---
-description: 并行下载视频和音频（而不是串行下载）可减少启动延迟。
-title: 并行下载
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 同時下載視訊和音訊（而非串連）可減少啟動延遲。
+title: 平行下載
+exl-id: 7cc9afbf-e495-40b0-a8ff-86d4939d1b15
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '304'
 ht-degree: 0%
 
 ---
 
+# 平行下載 {#parallel-downloads}
 
-# 并行下载{#parallel-downloads}
+同時下載視訊和音訊（而非串連）可減少啟動延遲。
 
-并行下载视频和音频（而不是串行下载）可减少启动延迟。
-
-并行下载允许播放视频点播(VOD)文件，优化来自服务器的可用带宽使用，降低在运行不足情况下进入缓冲区的可能性，并最小化下载和回放之间的延迟。
+平行下載可播放隨選影片(VOD)檔案、最佳化伺服器的可用頻寬使用量、降低進入緩衝區執行不足的機率，以及將下載和播放之間的延遲降至最低。
 
 <!-- 
 
@@ -23,11 +22,11 @@ Removed as part of "no DASH use cases" for 2.5.1, May 31st, 2017 release.
 
  -->
 
-如果没有并行下载，TVSDK会发出对视频段的请求，在加载视频段后，它会请求一个或两个音频段。 通过并行下载，音频和视频段可以同时下载，而不是按顺序下载。 此外，由于每个区段有两个连接和两个HTTP请求并行，因此数据可以更快地到达屏幕。
+若沒有平行下載，TVSDK會向視訊區段發出請求，而在視訊區段載入後，它會請求一或兩個音訊區段。 透過平行下載，音訊和視訊區段會同時下載，而非依序下載。 此外，由於每個區段有兩個連線和兩個HTTP請求並行，因此資料到達熒幕的速度會更快。
 
 >[!NOTE]
 >
->此功能仅适用于将音频和视频编码为不同文件（未混合内容）的内容，不适用于始终混合的MP4内容。 HLS内容通常是未混合的，尤其是具有替代音频的内容。
+>此功能僅適用於將音訊和視訊編碼為不同檔案（未混合的內容）的內容，而不適用於MP4內容，MP4內容一律混合在一起。 HLS內容通常會取消混音，尤其是使用替代音訊時。
 
 <!-- 
 
@@ -36,11 +35,11 @@ See comment above (DASH use case removed).
   This feature applies only to content where the audio and video are encoded into different files (unmuxed content) and does not apply to MP4 content, which is always muxed. Most DASH content is unmuxed, and HLS content is often unmuxed, especially with alternate audio. 
 -->
 
-HTTP连接可能在以下阶段遇到延迟：
+HTTP連線可能會在以下階段遇到延遲：
 
-* 在与服务器建立TCP/IP连接时
+* 建立與伺服器的TCP/IP連線時
 
-   虽然客户端和服务器已同意进行通信，但尚未进行HTTP通信。 这种类型的延迟取决于客户端和服务器之间的基础架构。 此过程要求在客户端和服务器之间找到一条通过互联网的路径，并确保路由上的所有设备（如路由器和防火墙）都同意数据传输。
-* 通过TCP/IP连接发送段或清单的HTTP请求时。
+   雖然使用者端和伺服器已同意通訊，但尚未發生HTTP通訊。 這種延遲型別取決於使用者端和伺服器之間的基礎結構。 此程式需要找到使用者端與伺服器之間的網際網路路徑，並確保路由上的所有裝置（例如路由器和防火牆）都同意資料傳輸。
+* 透過TCP/IP連線傳送區段或資訊清單的HTTP要求時。
 
-   服务器接收请求，处理请求，并将数据发送回客户端的开始。 延迟的程度取决于服务器上软件的负载和复杂性，在某种程度上取决于客户端发送请求时的上载连接速度。
+   伺服器會接收請求、處理請求，然後開始將資料傳回使用者端。 延遲的程度取決於伺服器上軟體的負載和複雜性，並且在某種程度上取決於使用者端傳送請求時的上傳連線速度。

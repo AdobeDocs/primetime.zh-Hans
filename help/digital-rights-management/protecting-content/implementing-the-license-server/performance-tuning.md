@@ -1,49 +1,48 @@
 ---
-title: 性能调整
-description: 性能调整
+title: 效能調整
+description: 效能調整
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 1b54b7c2-da32-47db-b57f-b2afbaf386c4
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '404'
 ht-degree: 0%
 
 ---
 
+# 效能調整{#performance-tuning}
 
-# 性能调整{#performance-tuning}
+使用下列提示來協助提高效能：
 
-使用以下提示帮助提高性能：
-
-* 使用网络HSM比使用直接连接的HSM要慢得多。
-* 为了提高性能，您可以通过部署位于SDK的[!DNL thirdparty/cryptoj]文件夹中的特定平台库，选择启用对加密操作的本机支持。 要启用本机支持，请将平台的库（适用于Windows的jsafe.dll或适用于Linux的libjsafe.so）添加到路径中。
+* 使用網路HSM比使用直接連線的HSM要慢得多。
+* 為改善效能，您可以部署位於以下位置的平台特定程式庫，選擇性地啟用密碼編譯作業的原生支援： [!DNL thirdparty/cryptoj] SDK的資料夾。 若要啟用原生支援，請將您平台的程式庫（適用於Windows的jsafe.dll或適用於Linux的libjsafe.so）新增至路徑。
 
    >[!NOTE]
    >
-   >如果在同一Tomcat实例中运行多个Web应用程序，并且路径上有`jsafe.dll`，则只有加载的第一个Web应用程序能够加载`jsafe.dll`库。 因此，只有第一个Web应用程序能够从本机支持中受益。 在这种情况下，要提高所有Web应用程序的性能，请将`cryptoj.jar`放在WAR文件之外。 例如，在`<tomcat_installation_folder>/lib`目录中。
+   >如果您在同一Tomcat執行個體中執行多個Web應用程式並擁有 `jsafe.dll` 在路徑上，只有第一個載入的Web應用程式才能載入 `jsafe.dll` 資料庫。 因此，只有第一個Web應用程式才能享受原生支援的好處。 在這種情況下，若要改善所有網頁應用程式的效能，請放置 `cryptoj.jar`在WAR檔案外部。 例如，在 `<tomcat_installation_folder>/lib` 目錄。
 
-* 64位操作系统（如64位版本的Red Hat®或Windows）比32位操作系统提供更好的性能。
+* 64位元作業系統(例如64位元版本的Red Hat®或Windows)比32位元作業系統提供更優異的效能。
 
-## 生成随机数(Linux){#section_3E2E936A538F40B7BF8892C65E117907}
+## 產生隨機數字(Linux) {#section_3E2E936A538F40B7BF8892C65E117907}
 
-在某些情况下，Linux环境在执行需要随机数生成的与Primetime DRM相关的操作时可能会暂停，包括：
+在某些情況下，Linux環境在執行需要隨機數字產生的Primetime DRM相關作業時可能會暫停，包括：
 
-* 启动Adobe Primetime DRM许可证服务器
-* 使用[!DNL AdobePolicyManager]实用程序生成策略
-* 将受DRM保护的内容与Adobe Medium服务器或Primetime OfflinePackager打包
+* 啟動Adobe Primetime DRM License Server
+* 使用產生原則 [!DNL AdobePolicyManager] 公用程式
+* 使用Adobe Medium伺服器或Primetime OfflinePackager封裝受DRM保護的內容
 
-这些操作中的延迟通常是Linux服务器上熵值池低的结果。
+這些作業期間的延遲通常是因為Linux伺服器上的低平均資訊量集區。
 
-在Linux中，随机数从服务器环境的熵池中产生。 熵池通常通过Linux内核接收硬件中断来维护。 如果服务器被隔离并且没有从HW资源（例如鼠标或键盘）接收常规输入，则等待重新填充熵池可以扩展。 在此方案中，等待[!DNL /dev/random]数据的操作可能会暂停。
+在Linux上，隨機數字是從伺服器環境的平均資訊量集區產生的。 平圴資訊量集區通常是透過接收Linux核心的硬體中斷來維護。 如果伺服器被隔離且未收到硬體資源（例如滑鼠或鍵盤）的定期輸入，則重新填滿平均資訊量集區的等待時間可能會延長。 在此案例中，等待資料來自的作業 [!DNL /dev/random] 可能會暫停。
 
-您可以在Linux服务器上使用硬件随机数生成器来确保生成足够的熵。 但是，如果在给定部署方案中没有硬件随机数生成器，则可以使用基于软件的解决方案来增加熵池刷新率。 在Linux上，这样的软件解决方案之一是[!DNL haveged]（HArdware Volatile Entropy Gagering and Expansion守护程序）。
+您可以在Linux伺服器上使用硬體隨機數字產生器，以確保產生足夠的平均資訊量。 不過，如果指定的部署案例中沒有硬體隨機數字產生器，您可以使用軟體式解決方案來增加平均資訊量集區重新整理率。 在Linux上，這類軟體解決方案之一是 [!DNL haveged] (Hardware Volatile Entropy Gathering and Expansion daemon)。
 
-## 确定可用熵{#section_686B311FE6144566B6939E9F20915ADC}
+## 決定可用的平均資訊量 {#section_686B311FE6144566B6939E9F20915ADC}
 
-要在意外延迟期间验证给定服务器的熵池中可用的位数，请执行以下命令：
+若要驗證在意外的延遲期間，指定伺服器的平均資訊量集區中可用的位元數，請執行以下命令：
 
 ```
 cat /proc/sys/kernel/random/entropy_avail 
 ```
 
-一个健康的Linux系统，有大量可用的熵值，将返回接近整个4,096位熵值。 如果返回的值小于200，则系统在熵值上运行得非常低。
+健全的Linux系統，若有大量的可用平均資訊量，將會回覆接近完整的4,096位元平均資訊量。 如果傳回的值小於200，則系統的平均資訊量會非常低。

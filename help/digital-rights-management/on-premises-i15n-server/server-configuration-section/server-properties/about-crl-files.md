@@ -1,42 +1,42 @@
 ---
-title: 关于CRL文件
-description: 关于CRL文件
+title: 關於CRL檔案
+description: 關於CRL檔案
 copied-description: true
 exl-id: 126a323d-9433-4a1e-a617-2d3bbf717cce
 source-git-commit: 6a00df9c061da43f6efa49d927873db629568597
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '270'
 ht-degree: 0%
 
 ---
 
-# 关于CRL文件 {#about-crl-files}
+# 關於CRL檔案 {#about-crl-files}
 
-为了正常运行，个性化和许可证服务器需要将多个证书撤销列表(CRL)文件缓存到运行的应用程序服务器（例如Tomcat）上的磁盘中。 必须定期在磁盘上下载和缓存新的CRL文件。 如果允许磁盘上CRL文件的有效期失效，则个性化服务器将拒绝个性化客户端，许可证服务器将拒绝颁发许可证。
+為了正常運作，個人化和授權伺服器需要有多個「憑證撤銷清單」(CRL)檔案快取到執行應用程式伺服器（例如Tomcat）上的磁碟。 新的CRL檔案必須定期在磁碟上下載和快取。 如果允許磁碟上的CRL檔案的有效期過期，Individualization Server將拒絕個人化使用者端，而License Server將拒絕簽發授權。
 
-缓存到磁盘的CRL必须具有与相应URL匹配的文件名。 在文件名中，冒号“：”和“/”等特殊字符将转换为下划线“_”。
+快取至磁碟的CRL必須具有符合對應URL的檔案名稱。 特殊字元（例如冒號「：」和「/」斜線）在檔案名稱中會轉換為底線「_」。
 
-以下是个性化和许可证服务器所使用的外部托管CRL列表：
+以下為個人化和授權伺服器使用的外部託管CRL清單：
 
-* **中间CRL:**
+* **中級CRL：**
 
-   * URL: [!DNL <ht<span></span>tps://crl2.adobe.com/Adobe/FlashAccessIntermediateCA.crl>]
-   * 文件： [!DNL http___crl2.adobe.com_Adobe_FlashAccessIntermediateCA.crl]
-   * 有效期：自创建以来大约12个月
+   * URL： [!DNL <ht<span></span>tps://crl2.adobe.com/Adobe/FlashAccessIntermediateCA.crl>]
+   * 檔案： [!DNL http___crl2.adobe.com_Adobe_FlashAccessIntermediateCA.crl]
+   * 有效性：在建立後約12個月內有效
 
-* **根CRL:**
+* **根CRL：**
 
-   * URL: [!DNL <ht<span></span>tps://crl2.adobe.com/Adobe/FlashAccessRootCA.crl>]
-   * 文件： [!DNL http___crl2.adobe.com_Adobe_FlashAccessRootCA.crl]
-   * 有效期：自创建后大约5年
+   * URL： [!DNL <ht<span></span>tps://crl2.adobe.com/Adobe/FlashAccessRootCA.crl>]
+   * 檔案： [!DNL http___crl2.adobe.com_Adobe_FlashAccessRootCA.crl]
+   * 有效性：從建立起約5年有效
 
-* **最新CRL:**
+* **最新CRL：**
 
-   * URL: [!DNL <ht<span></span>tps://crl3.adobe.com/AdobeSystemsIncorporatedFlashAccessRuntime/LatestCRL.crl>]
-   * 文件： [!DNL http___crl3.adobe.com_AdobeSystemsIncorporatedFlashAccessRuntime_LatestCRL.crl]
-   * 有效期：自创建后大约3个月有效
+   * URL： [!DNL <ht<span></span>tps://crl3.adobe.com/AdobeSystemsIncorporatedFlashAccessRuntime/LatestCRL.crl>]
+   * 檔案： [!DNL http___crl3.adobe.com_AdobeSystemsIncorporatedFlashAccessRuntime_LatestCRL.crl]
+   * 有效性：有效期限為建立後約3個月
 
-要了解许可证服务器可以使用的外部托管CRL，请联系Adobe支持。
+若要瞭解授權伺服器可使用的外部託管CRL，請聯絡Adobe支援。
 
 <!---
 
@@ -64,6 +64,6 @@ The following are externally hosted CRLs that are used only by the License Serve
 
 --->
 
-除了外部托管的CRL之外，您还可以创建和维护附加的CRL。 这是个性化CA CRL，在 [创建个性化CA CRL](../../../on-premises-i15n-server/server-configuration-section/server-properties/create-i15n-ca-crl.md) 文档的部分。
+除了外部託管的CRL之外，您還可以建立和維護其他CRL。 這是個人化CA CRL，如 [建立個人化CA CRL](../../../on-premises-i15n-server/server-configuration-section/server-properties/create-i15n-ca-crl.md) 區段。
 
-CRL计划在过期前45天进行更新。 这样，您就有足够的时间从Internet获取和安装新生成的CRL。 您必须在CRL文件过期之前对其进行更新。
+CRL排程在到期前45天更新。 這樣您應該有足夠的時間從網際網路取得並安裝新產生的CRL。 您必須小心更新CRL檔案，才能使其過期。

@@ -1,37 +1,36 @@
 ---
-description: 如果您使用Adobe Primetime DRM Professional，则可以在内容中预生成许可证并嵌入许可证。 此功能可以与增强许可证链结合使用，这样Leaf许可证就预生成并嵌入到内容中，并且客户端可以从许可证服务器请求根许可证（绑定到计算机或域）。 或者，客户端应用程序可以实现一个工作流，其中设备预注册到服务器，服务器预生成绑定到该设备的许可证，并且客户端从简单的HTTP Web服务器检索其许可证。
-title: 预生成许可证
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 如果您使用Adobe Primetime DRM Professional，可以在內容中預先產生授權和內嵌授權。 此功能可與增強型授權鏈結結合，以便Leaf授權可預先產生並內嵌於內容中，使用者端可從授權伺服器要求根授權（繫結至電腦或網域）。 或者，使用者端應用程式可以實作一個工作流程，讓裝置預先註冊到伺服器，伺服器預先產生繫結到該裝置的授權，使用者端從簡單的HTTP Web伺服器擷取其授權。
+title: 預先產生授權
+exl-id: 6ced7dde-b4bb-470d-bdae-3042f5577b67
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '611'
 ht-degree: 0%
 
 ---
 
+# 預先產生授權 {#pre-generating-licenses}
 
-# 预生成许可证{#pre-generating-licenses}
+如果您使用Adobe Primetime DRM Professional，可以在內容中預先產生授權和內嵌授權。 此功能可與增強型授權鏈結結合，以便Leaf授權可預先產生並內嵌於內容中，使用者端可從授權伺服器要求根授權（繫結至電腦或網域）。 或者，使用者端應用程式可以實作一個工作流程，讓裝置預先註冊到伺服器，伺服器預先產生繫結到該裝置的授權，使用者端從簡單的HTTP Web伺服器擷取其授權。
 
-如果您使用Adobe Primetime DRM Professional，则可以在内容中预生成许可证并嵌入许可证。 此功能可以与增强许可证链结合使用，这样Leaf许可证就预生成并嵌入到内容中，并且客户端可以从许可证服务器请求根许可证（绑定到计算机或域）。 或者，客户端应用程序可以实现一个工作流，其中设备预注册到服务器，服务器预生成绑定到该设备的许可证，并且客户端从简单的HTTP Web服务器检索其许可证。
+如果您想要預先產生授權，您必須使用 `com.adobe.flashaccess.sdk.license.pregen.LicenseFactory.getInstance()` 若要取得「 」的例項 `LicenseFactory`. 您必須指定License Server認證，才能簽署此工廠產生的授權。 此類別支援不使用授權鏈結來產生Leaf授權，以及使用 [增強授權鏈結](../../protecting-content/implementing-the-license-server/license-chaining/gen-enhanced-license-chaining.md).
 
-如果要预生成许可证，则必须使用`com.adobe.flashaccess.sdk.license.pregen.LicenseFactory.getInstance()`获取`LicenseFactory`的实例。 必须指定License Server凭据才能对此工厂生成的许可证进行签名。 此类支持生成无许可证链接的Leaf许可证，以及使用[增强许可证链接](../../protecting-content/implementing-the-license-server/license-chaining/gen-enhanced-license-chaining.md)的Leaf和Root许可证。
+產生Leaf授權時，您必須指定套用的內容中繼資料 `initContentInfo()`. 如果中繼資料包含多個DRM原則，或者如果您想要使用尚未包含在中繼資料中的DRM原則，則必須使用 `setSelectedPolicy()` 指定DRM原則以產生許可證。 如果您使用「DRM原則更新清單」來追蹤DRM原則的更新，則可以在初始化中繼資料之前，先將「DRM原則更新清單」提供給「授權工廠」 `setPolicyUpdateList()`.
 
-生成Leaf许可证时，必须指定应用`initContentInfo()`的内容元数据。 如果元数据包括多个DRM策略，或者如果要使用尚未包含在元数据中的DRM策略，则必须使用`setSelectedPolicy()`指定DRM策略以生成许可证。 如果您使用DRM策略更新列表来跟踪DRM策略的更新，则在使用`setPolicyUpdateList()`初始化元数据之前，可以向许可证工厂提供DRM策略更新列表。
-
-生成根许可证时，必须指定上述内容元数据。 或者，您也可以通过应用DRM策略(`setSelectedPolicy()`)和许可证服务器URL(`setLicenseServerURL()`)（而非元数据）来生成根许可证。
+產生Root授權時，您必須如上所述指定內容中繼資料。 或者，您可以套用DRM原則來產生Root授權( `setSelectedPolicy()`)和授權伺服器URL ( `setLicenseServerURL()`)而非中繼資料。
 
 >[!NOTE]
 >
->即使没有Adobe Primetime DRM许可证服务器，客户端也可以从中请求许可证，也需要许可证服务器URL。 在这种情况下，许可证服务器URL应指定标识许可证颁发者的URL。
+>即使沒有使用者端可請求授權的Adobe Primetime DRM License Server，也需要License Server URL。 在此情況下，授權伺服器URL應指定識別授權簽發者的URL。
 
-如果DRM策略使用“增强的许可证链”，则必须指定许可证服务器凭据才能在DRM策略(`setRootKeyRetrievalInfo()`)中解密根加密密钥。
+如果DRM原則使用增強型授權鏈結，您必須指定授權伺服器認證，才能在DRM原則中解密根加密金鑰( `setRootKeyRetrievalInfo()`)。
 
-如果DRM策略需要域绑定的许可证，则必须使用`setDomainCAs()`指定许可证服务器从中接受域令牌的域发行商。 必须提供一个或多个域CA证书以验证许可收件人。
+如果DRM原則需要領域繫結授權，您必須使用 `setDomainCAs()` 以指定授權伺服器接受網域權杖的網域發行者。 必須提供一個或多個網域CA憑證才能驗證授權收件者。
 
-如果DRM策略要求对iOS设备进行远程密钥投放，则必须通过应用`setKeyServerCertificate()`来提供密钥服务器证书，除非生成链式Leaf。
+如果DRM原則要求iOS裝置的遠端金鑰傳遞，您必須透過套用提供「金鑰伺服器憑證」 `setKeyServerCertificate()` 除非產生鏈結的葉。
 
-如果要生成许可证，必须调用`generateLicense()`并指定许可证类型（Leaf或Root）和一个或多个收件人证书。 收件人证书表示计算机证书或域证书，具体取决于在DRM策略中指定的要求。 如果生成链式叶，则不需要收件人。 生成许可证后，您可以覆盖在DRM策略中指定的使用规则。 最后，您需要调用`signLicense()`对许可证进行签名并获取`PreGeneratedLicense`的实例。 现在可以保存许可证（使用`getBytes()`检索序列化许可证或嵌入加密内容中）。
+如果您想要產生授權，則必須叫用 `generateLicense()` 和指定授權型別（分葉或根）和一個或多個收件者憑證。 根據DRM原則中指定的要求，收件者憑證代表電腦憑證或網域憑證。 如果您產生鏈結分葉，則不需要收件者。 產生授權後，您可以覆寫DRM原則中指定的使用規則。 最後，您需要叫用 `signLicense()` 以簽署授權並取得 `PreGeneratedLicense`. 現在可以儲存授權(使用 `getBytes()` 以擷取序列化授權或內嵌於加密內容中。
 
-请参阅[嵌入许可证](../../protecting-content/pre-generating-and-embedded-licenses/embedding-licenses.md)。
+另請參閱 [內嵌授權](../../protecting-content/pre-generating-and-embedded-licenses/embedding-licenses.md).
 
-请参见参考实施命令行工具“samples”目录中的`com.adobe.flashaccess.samples.licensegen.GenerateLicense`，了解有关如何演示预生成许可证的示例代码。
+另請參閱 `com.adobe.flashaccess.samples.licensegen.GenerateLicense` 在參考實作命令列工具「範例」目錄中，取得如何示範預先產生之授權的範常式式碼。

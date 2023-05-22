@@ -1,25 +1,24 @@
 ---
-description: 您可以从当前可用的隐藏字幕轨道的列表中选择轨道。 这将成为当前轨道，当可见性打开时显示。 某些轨道最初可能不可用，因此请侦听指示有更多轨道可用的事件。
-title: 从可用轨道中选择当前字幕轨道
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以從目前可用的隱藏式字幕曲目清單中選取曲目。 這會變成目前軌跡，當可見性開啟時就會顯示。 有些曲目最初可能不可用，因此請聆聽表示有更多曲目可用的事件。
+title: 從可用曲目中選取目前的註解曲目
+exl-id: d604dedc-f3c3-4c97-9b0f-84da326c0678
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '198'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
+# 從可用曲目中選取目前的註解曲目 {#select-a-current-caption-track-from-among-available-tracks}
 
-# 从可用轨道{#select-a-current-caption-track-from-among-available-tracks}中选择当前字幕轨道
+您可以從目前可用的隱藏式字幕曲目清單中選取曲目。 這會變成目前軌跡，當可見性開啟時就會顯示。 有些曲目最初可能不可用，因此請聆聽表示有更多曲目可用的事件。
 
-您可以从当前可用的隐藏字幕轨道的列表中选择轨道。 这将成为当前轨道，当可见性打开时显示。 某些轨道最初可能不可用，因此请侦听指示有更多轨道可用的事件。
+1. 等候媒體播放器至少在 `PREPARED` 狀態。
+1. 接聽這些事件：
 
-1. 等待媒体播放器至少处于`PREPARED`状态。
-1. 聆听以下事件:
+   * `MediaPlayerEvent.STATUS_CHANGED` 具有狀態 `MediaPlayerStatus.INITIALIZED`：可以使用隱藏式字幕曲目的初始清單。
 
-   * `MediaPlayerEvent.STATUS_CHANGED` 状态 `MediaPlayerStatus.INITIALIZED`:隐藏字幕轨道的初始列表可用。
-
-1. 获取所有当前可用的隐藏字幕轨道的列表。
+1. 取得所有目前可用的隱藏式字幕曲目的清單。
 
    例如：
 
@@ -28,7 +27,7 @@ ht-degree: 2%
      mediaPlayer.getCurrentItem().getClosedCaptionsTracks();
    ```
 
-1. 选择可用轨道作为当前轨道。
+1. 選取可用曲目作為目前曲目。
 
    例如：
 
@@ -43,6 +42,6 @@ ht-degree: 2%
    }
    ```
 
-1. 为事件实现一个侦听器，它指示有更多的轨道可用。 当TVSDK分派事件时，检索可用轨道的当前列表。
+1. 實作事件的接聽程式，指出有更多可用的追蹤。 當TVSDK傳送事件時，擷取可用磁軌的目前清單。
 
-   每次发生列表时检索事件，以确保您始终拥有最新列表。
+   每次發生事件時擷取清單，以確保您始終擁有最新的清單。

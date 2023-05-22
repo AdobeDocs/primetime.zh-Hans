@@ -1,55 +1,54 @@
 ---
-description: Primetime DRM的主要组件包括Java SDK以及Flash Player和Adobe AIR客户端运行时环境。
-title: Java SDK、Flash Player和Adobe AIR客户端
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: Primetime DRM的主要元件包括Java SDK、Flash Player和Adobe AIR使用者端執行階段環境。
+title: Java SDK、Flash Player和Adobe AIR使用者端
+exl-id: 5422d282-da9c-4810-a782-3c3af5fdeb3f
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '433'
 ht-degree: 0%
 
 ---
 
+# ADOBE PRIMETIME DRM SDK {#section_522E57DFEEFF4794978FF2D366B83690}
 
-# Adobe Primetime DRM SDK {#section_522E57DFEEFF4794978FF2D366B83690}
+Primetime DRM是以Java SDK的形式提供，可提供建置區塊，供您建立伺服器實作。 使用SDK，您可以建立適合您組織商業模式的Primetime DRM解決方案。
 
-Primetime DRM以Java SDK的形式提供，它提供可创建服务器实施的构件块。 利用SDK，您可以创建适合贵组织业务模式的Primetime DRM解决方案。
+以下小節將說明SDK中提供的Java API。
 
-SDK中提供的Java API在以下子部分中进行说明。
+## 用於管理裝置群組網域的Java API{#java-apis-for-managing-device-group-domains}
 
-## 用于管理设备组域的Java API{#java-apis-for-managing-device-group-domains}
+這些API用於允許伺服器處理加入和離開裝置群組網域的使用者端請求。
 
-这些API用于允许服务器处理加入和离开设备组域的客户端请求。
+裝置群組網域是可彼此共用授權之裝置的邏輯集合。 為了達到此目的，每個裝置都必須先加入/註冊至相同的網域。 在伺服器上執行的Primetime DRM SDK必須處理裝置網域加入（註冊）請求以及裝置網域離開（取消註冊）請求。 未加入任何網域的裝置將獲得繫結至該裝置的授權，該授權無法與任何其他裝置共用。
 
-设备组域是能够彼此共享许可证的设备的逻辑集合。 为了实现此目的，每台设备必须先加入/注册到同一域。 在服务器上运行的Primetime DRM SDK必须处理设备域加入（注册）请求以及设备域离开（注销）请求。 未加入任何域的设备将获得绑定到该设备的许可证，无法共享到任何其他设备。
+## 用於保護內容的Java API{#java-apis-for-protecting-content}
 
-## 用于保护内容的Java API{#java-apis-for-protecting-content}
+這些API用於定義許可權及準備內容以進行分發。 內容保護API為：
 
-这些API用于定义权限并准备要分发的内容。 内容保护API包括：
+* 原則管理
 
-* 策略管理
+   原則管理API可用來建立和修改要套用至內容的原則。 您可以建立或更新原則，包括取得/設定所有使用規則，以及允許自訂名稱空間中的其他引數。
 
-   策略管理API用于创建和修改要应用于内容的策略。 可以创建或更新策略，包括获取/设置所有使用规则以及允许自定义命名空间中的其他参数。
+* 內容封裝
 
-* 内容打包
+   內容封裝API用於加密內容，以及從封裝內容中擷取中繼資料。
 
-   内容打包API用于加密内容并从打包内容中检索元数据。
+## 用於發行授權的Java API{#java-apis-for-issuing-licenses}
 
-## 用于颁发许可证的Java API{#java-apis-for-issuing-licenses}
+當使用者端向伺服器請求授權時，會使用這些API。 SDK支援使用者端的下列要求：
 
-当客户端从服务器请求许可证时，会使用这些API。 SDK支持来自客户端的以下请求：
+* 驗證
 
-* 身份验证
+   驗證API可用於處理驗證請求並產生驗證Token。
 
-   身份验证API可用于处理身份验证请求和生成身份验证令牌。
+* 授權產生與贏取
 
-* 许可证生成和获取
+   授權產生和贏取API用於為使用者產生授權。
 
-   许可证生成和获取API用于为用户生成许可证。
+* 支援Adobe AIR 1.5版本的使用者端和內容
 
-* 支持Adobe AIR 1.5版客户端和内容
+   為了回溯相容性，SDK具有API可處理來自AIR應用程式的請求，這些應用程式是為了與AIR 1.5版及舊版使用者端和受保護內容一起使用而建立的。
 
-   为了向后兼容，SDK有API来处理来自AIR应用程序的请求，这些应用程序创建为与AIR版本1.5及更早版本的客户端及受保护的内容一起使用。
+## 參考實作 {#reference-implementation}
 
-## 参考实现{#reference-implementation}
-
-SDK包括一个参考实现，一个演示如何使用Java API的简单Adobe Primetime DRM部署。 该参考实施为基于Java API的内容打包和策略管理提供了许可证服务器、监视文件夹打包程序、Primetime DRM Manager AIR应用程序和命令行工具。 要进一步了解Primetime DRM参考实施，请参阅保护内容。
+SDK包含參考實作、簡單的Adobe Primetime DRM部署，示範如何使用Java API。 參考實作提供許可證伺服器、Watched Folder Packager、Primetime DRM Manager AIR應用程式，以及根據Java API進行內容封裝和原則管理的命令列工具。 若要進一步瞭解Primetime DRM參考實作，請參閱保護內容。

@@ -1,31 +1,31 @@
 ---
-title: 避免在/authenticate请求中使用'&'reg_code
-description: 避免在/authenticate请求中使用'&'reg_code
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 避免在/authenticate請求中使用'&'reg_code
+description: 避免在/authenticate請求中使用'&'reg_code
+exl-id: c0ecb6f9-2167-498c-8a2d-a692425b31c5
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '235'
 ht-degree: 0%
 
 ---
 
-
-# 避免在/authenticate请求中使用&#39;&amp;&#39;reg_code {#clientless-avoid-using-reg_code-in-authenticate-request}
+# 避免在/authenticate請求中使用&#39;&amp;&#39;reg_code {#clientless-avoid-using-reg_code-in-authenticate-request}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
 </br>
 
 
 
-## 问题
+## 問題
 
-IE 9浏览器将“\®”解释为特殊命令，并将其转换为®。 
+IE 9瀏覽器將&#39;\®&#39;解譯為特殊命令，並將其轉換為®。 
 
-## 说明
+## 說明
 
-如果 `/authenticate` 请求的组成如下所示……
+如果 `/authenticate` 請求的構成如下……
 
  
 
@@ -34,7 +34,7 @@ IE 9浏览器将“\®”解释为特殊命令，并将其转换为®。 
 ```
  
 
-...它将由IE浏览器（如下所示）进行解释，并将以以下格式发送到Adobe:
+...將由IE瀏覽器解譯，如下所示，並會以此格式傳送至Adobe：
 
  
 
@@ -43,23 +43,22 @@ IE 9浏览器将“\®”解释为特殊命令，并将其转换为®。 
 ```
  
 
-请求者\_id将被解释为univision®\_code=EKAFMFI，因为不存在“&amp;”，并且Adobe将找不到 `regCode` 参数将令牌与关联。  可能根本无法创建AuthN令牌，在这种情况下 `/checkauthn` 调用将无法找到任何令牌。
+請求者\_id將解譯為univision®\_code=EKAFMFI，因為沒有「&amp;」，而Adobe找不到 `regCode` 與權杖建立關聯的引數。  AuthN權杖有可能完全不會建立，在此情況下 `/checkauthn` 呼叫將找不到任何Token。
 
 
 
-## 解决方案
+## 解決方案
 
-以下选项之一应该可以解决此问题：
+下列其中一個選項應該可以解決此問題：
 
-1. 避免使用 `&reg_code` 参数之间的其他查询字符串参数。  请改为将其移动到请求URL中的第一个查询字符串参数，从而使请求URL如下所示：\
+1. 避免使用 `&reg_code` 其他查詢字串引數之間的引數。  請改為將其移至請求URL中的第一個查詢字串引數，使請求URL如下所示：\
     
 
-       &lt;fqdn>authenticate?reg_code =EKAFMFI&amp;requestor_id=someRequestor&amp;domain_name=someRequestor.com&amp;noflash=true&amp;mso_id=someMvpd&amp;redirect_url=someRequestor.redirect.url.html
+       &lt;fqdn>authenticate？reg_code =EKAFMFI&amp;requestor_id=someRequestor&amp;domain_name=someRequestor.com&amp;noflash=true&amp;mso_id=someMvpd&amp;redirect_url=someRequestor.redirect.url.html
    
 
-   这样， `&reg` 参数将不会被错误解释。
+   如此一來， `&reg` 不會錯誤解譯引數。
 
-1. 标准化 `&reg_code` 使用 `&amp;reg_code`.
+1. 標準化 `&reg_code` 如使用 `&amp;reg_code`.
 
-1. 如果AuthN令牌创建失败，Adobe可能会引入新功能，以响应身份验证调用将错误代码发送回第2个屏幕。
-
+1. 如果AuthN權杖建立失敗，Adobe可能會引入新功能，將錯誤代碼傳回第2個畫面以回應驗證呼叫。

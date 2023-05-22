@@ -1,27 +1,26 @@
 ---
-description: 下面是一个示例，说明用户如何选择隐藏字幕轨道。
-title: 允许用户更改轨道
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 以下範例說明使用者如何選取隱藏式字幕追蹤。
+title: 允許使用者變更曲目
+exl-id: 103ca0ad-2707-4e4f-87ee-f55041e4527a
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '77'
 ht-degree: 0%
 
 ---
 
+# 允許使用者變更曲目{#allow-the-user-to-change-the-track}
 
-# 允许用户更改轨道{#allow-the-user-to-change-the-track}
+以下範例說明使用者如何選取隱藏式字幕追蹤。
 
-下面是一个示例，说明用户如何选择隐藏字幕轨道。
-
-1. 要显示可用的隐藏字幕轨道，请使用`MediaPlayerItem.closedCaptionsTracks`属性。
+1. 若要顯示可用的隱藏式字幕曲目，請使用 `MediaPlayerItem.closedCaptionsTracks` 屬性。
 
    ```js
    var tracks = item.closedCaptionsTracks;
    ```
 
-1. 要设置当前的隐藏字幕轨道，请使用`MediaPlayerItem.selectClosedCaptionsTrack`方法。
-1. 准备媒体播放器项后，使用` MediaPlayer.  currentItem `方法从媒体播放器中检索它。
+1. 若要設定目前的隱藏式字幕追蹤，請使用 `MediaPlayerItem.selectClosedCaptionsTrack` 方法。
+1. 媒體播放器專案準備就緒後，請使用 ` MediaPlayer.  currentItem ` 方法。
 
    ```js
    // Select the cc track with index k. 
@@ -32,4 +31,3 @@ ht-degree: 0%
        item.selectClosedCaptionsTrack(tracks[k]); 
    }
    ```
-

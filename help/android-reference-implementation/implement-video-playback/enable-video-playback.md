@@ -1,20 +1,19 @@
 ---
-description: 创建一个PlaybackManager，它处理HLS流设置和播放操作。 不需要任何其他配置。
-title: 启用视频播放
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 建立處理HLS資料流設定和播放作業的PlaybackManager。 不需要其他設定。
+title: 啟用視訊播放
+exl-id: b53f602b-5752-4471-9905-2e4351dfc8d3
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '165'
 ht-degree: 0%
 
 ---
 
+# 啟用視訊播放 {#enable-video-playback}
 
-# 启用视频播放{#enable-video-playback}
+建立處理HLS資料流設定和播放作業的PlaybackManager。 不需要其他設定。
 
-创建一个PlaybackManager，它处理HLS流设置和播放操作。 不需要任何其他配置。
-
-1. 通过确保[!DNL PlayerFragment.java]中存在以下代码，创建媒体播放器对象：
+1. 建立媒體播放器物件，確認下列程式碼存在於中 [!DNL PlayerFragment.java]：
 
    ```java
    private MediaPlayer createMediaPlayer() { 
@@ -24,32 +23,32 @@ ht-degree: 0%
 
    <!-- I've duplicated this information. It also exists in the PlayerFragment section, just before the Feature manager section. I figured that I should have it here as well, in case they jump directly to this section.-->
 
-1. 通过`ManagerFactory`创建播放管理器：
+1. 透過建立播放管理器 `ManagerFactory`：
 
    ```java
    playbackManager = ManagerFactory.getPlaybackManager(config, mediaPlayer);
    ```
 
-1. 在`PlayerFragment`中实现`PlaybackManagerEventListener`以处理播放事件:
+1. 實作 `PlaybackManagerEventListener` 在 `PlayerFragment` 若要處理播放事件：
 
    ```java
    private final PlaybackManagerEventListener playbackManagerEventListener =  
      new PlaybackManagerEventListener() 
    ```
 
-1. 在`PlayerFragment`中注册事件侦听器：
+1. 在中註冊事件監聽器 `PlayerFragment`：
 
    ```
    playbackManager.addEventListener(playbackManagerEventListener);
    ```
 
-1. 设置视频资源：
+1. 設定視訊資源：
 
    ```
    playbackManager.setupVideo(url, adsManager); 
    ```
 
-1. 在`PlayerFragment`中设置控制栏操作：
+1. 在中設定控制列作業 `PlayerFragment`：
 
    ```
    controlBar.pressPlay() { 
@@ -57,9 +56,9 @@ ht-degree: 0%
    }
    ```
 
-## 相关API文档{#related-api-documentation}
+## 相關API檔案 {#related-api-documentation}
 
-* [类PlaybackManager](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/PlaybackManager.html)
+* [類別PlaybackManager](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/PlaybackManager.html)
 * [PlaybackManagerEventListener](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/PlaybackManager.PlaybackManagerEventListener.html)
 * [mediacore.utils.TimeRange](https://help.adobe.com/en_US/primetime/api/psdk/javadoc/com/adobe/mediacore/utils/TimeRange.html)
 * [mediacore.BufferControlParameters](https://help.adobe.com/en_US/primetime/api/psdk/javadoc/com/adobe/mediacore/BufferControlParameters.html)

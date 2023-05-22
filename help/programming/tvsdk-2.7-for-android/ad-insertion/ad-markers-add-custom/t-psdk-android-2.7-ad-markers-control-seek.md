@@ -1,28 +1,27 @@
 ---
-description: 在使用自定义广告标记时，您可以覆盖TVSDK处理如何搜索广告的默认行为。
-title: 控制通过自定义广告标记进行搜索的播放行为
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 使用自訂廣告標籤時，您可以覆寫TVSDK處理方式搜尋廣告的預設行為。
+title: 控制搜尋自訂廣告標籤的播放行為
+exl-id: 5c17809b-f78b-49f7-85a4-9072502f4a24
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '122'
 ht-degree: 0%
 
 ---
 
+# 控制搜尋自訂廣告標籤的播放行為 {#control-playback-behavior-for-seeking-over-custom-ad-markers}
 
-# 控制搜索自定义广告标记{#control-playback-behavior-for-seeking-over-custom-ad-markers}的播放行为
+使用自訂廣告標籤時，您可以覆寫TVSDK處理方式搜尋廣告的預設行為。
 
-在使用自定义广告标记时，您可以覆盖TVSDK处理如何搜索广告的默认行为。
+根據預設，當使用者搜尋或經過自訂廣告標籤放置造成的廣告區段時，TVSDK會略過廣告。 這可能與標準廣告插播目前的播放行為不同。 您可以設定TVSDK，當使用者搜尋超過一個或多個自訂廣告時，將播放點重新定位到最近略過的自訂廣告的開頭。
 
-默认情况下，当用户在放置自定义广告标记后搜索或查看过去的广告部分时，TVSDK会跳过广告。 这可能与标准广告中断的当前播放行为不同。 您可以设置TVSDK将播放头重新定位到用户搜索超过一个或多个自定义广告时最近跳过的自定义广告的开头。
-
-1. 用`true`调用`CustomRangeMetadata.setAdjustSeekPosition`。
+1. 呼叫 `CustomRangeMetadata.setAdjustSeekPosition` 替換為 `true`.
 
    ```java
    customRangeMetadata.setAdjustSeekPosition (true);
    ```
 
-1. 在`MediaPlayerItemConfig`中使用`customRangeMetadata`。
+1. 使用 `customRangeMetadata` 在 `MediaPlayerItemConfig`.
 
    ```java
    // Set customRangeMetadata 
@@ -31,4 +30,3 @@ ht-degree: 0%
    // prepare the content for playback by calling replaceCurrentResource 
    mediaPlayer.replaceCurrentResource(mediaResource, config); 
    ```
-

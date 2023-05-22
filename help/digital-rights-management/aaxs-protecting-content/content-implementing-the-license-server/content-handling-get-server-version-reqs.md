@@ -1,22 +1,21 @@
 ---
-title: 处理获取服务器版本请求
-description: 处理获取服务器版本请求
+title: 處理Get Server版本要求
+description: 處理Get Server版本要求
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 125b0111-17e9-4f6f-954b-6975048cd2fa
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '102'
 ht-degree: 0%
 
 ---
 
+# 處理Get Server版本要求{#handling-get-server-version-requests}
 
-# 正在处理获取服务器版本请求{#handling-get-server-version-requests}
+Adobe Access client 3.0和更新版本會傳送Get Server Version要求，以判斷伺服器的功能。 所有使用Adobe存取SDK 3.0及更新版本的伺服器都必須實作支援，才能取得伺服器版本要求。
 
-Adobe Access客户端3.0及更高版本会发送Get Server版本请求，以确定服务器的功能。 所有使用Adobe Access SDK 3.0及更高版本的服务器都必须实现对获取服务器版本请求的支持。
+* 要求處理常式類別為 `com.adobe.flashaccess.sdk.protocol.getversion.GetServerVersionHandler`
+* 請求訊息類別為 `com.adobe.flashaccess.sdk.protocol.getversion.GetServerVersionRequestMessage`
+* 請求URL必須是「中繼資料中的授權伺服器URL」+「/flashaccess/getServerVersion/v3」
 
-* 请求处理程序类为`com.adobe.flashaccess.sdk.protocol.getversion.GetServerVersionHandler`
-* 请求消息类为`com.adobe.flashaccess.sdk.protocol.getversion.GetServerVersionRequestMessage`
-* 请求URL必须是“元数据中的许可证服务器URL”+“/flashaccess/getServerVersion/v3”
-
-对于Adobe Access SDK 4.0及更高版本，对“获取服务器版本”请求的响应向客户端指示服务器支持Adobe Access协议的版本3和4。
+若是Adobe存取SDK 4.0和更新版本，Get Server Version要求的回應會向使用者端指出伺服器支援Adobe存取通訊協定版本3和4。

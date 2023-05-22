@@ -1,70 +1,68 @@
 ---
-title: 创建辅助管理员
-description: 创建辅助管理员
+title: 建立二級管理員
+description: 建立二級管理員
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: c3c58361-d173-425c-b59d-ab4427640cdf
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '355'
 ht-degree: 0%
 
 ---
 
+# 建立二級管理員{#create-a-secondary-administrator}
 
-# 创建辅助管理员{#create-a-secondary-administrator}
+帳戶管理員可以建立二級管理員。 只能有一個次要管理員。 帳戶管理員可將次要管理員升級為帳戶管理員。 此動作會將「帳戶管理員」降級為「次要管理員」角色。
 
-帐户管理员可以创建辅助管理员。 只能有一个辅助管理员。 帐户管理员可以将辅助管理员提升为帐户管理员。 此操作将帐户管理员降级为辅助管理员角色。
-
-1. 帐户管理员使用包含被许可人域名的有效Adobe ID登录到证书注册站点。
-1. 在&#x200B;**[!UICONTROL User accounts]**&#x200B;选项卡上，执行下列操作之一：
+1. 帳戶管理員使用包含被授權者網域名稱的有效Adobe ID登入憑證註冊網站。
+1. 於 **[!UICONTROL User accounts]** 索引標籤中，執行下列任一項作業：
 
    * **[!UICONTROL Add user]**.
 
-      如果员工有Adobe帐户，请输入电子邮件地址。 单击&#x200B;**[!UICONTROL Add]**&#x200B;并继续。
+      如果員工有Adobe帳戶，請輸入電子郵件地址。 按一下 **[!UICONTROL Add]** 並繼續。
 
-   * **[!UICONTROL Invite user]** 如果员工没有Adobe帐户，请邀请他们创建一个帐户。输入员工的电子邮件地址和姓名，然后单击&#x200B;**[!UICONTROL Send an invitation]**。 站点向被邀请者发送电子邮件邀请。 该电子邮件包含一个指向adobe.com的链接，被邀请者可在此创建帐户。 被邀请者必须使用向其发送邀请的电子邮件地址。
-
-      >[!NOTE]
-      >
-      >管理员在用户创建帐户时不会收到通知。 检查证书登记站点上的&#x200B;**[!UICONTROL User accounts]**&#x200B;选项卡，以查看被邀请者是否已创建帐户。
-
-1. 如果添加了用户，将打开&#x200B;**[!UICONTROL User accounts]**&#x200B;选项卡中的角色部分屏幕。 执行以下操作：
-
-   1. 确认用户信息正确。
-   1. 输入公司电话号码和质询短语。
-
-      用户必须知道此短语才能验证其帐户。
-   1. 对于“用户类型”，选择&#x200B;**[!UICONTROL Administrator]**。
+   * **[!UICONTROL Invite user]** 如果員工沒有Adobe帳戶，請邀請他們建立帳戶。 輸入員工的電子郵件地址和名稱，然後按一下 **[!UICONTROL Send an invitation]**. 網站會傳送電子郵件邀請給受邀者。 電子郵件包含adobe.com的連結，受邀者可以在這裡建立帳戶。 被邀請者必須使用傳送邀請的電子郵件地址。
 
       >[!NOTE]
       >
-      >要交换帐户管理员和辅助管理员角色，请选择&#x200B;**[!UICONTROL Make default administrator]**。
+      >當使用者已建立帳戶時，管理員未收到通知。 檢查 **[!UICONTROL User accounts]** 憑證註冊網站上的索引標籤，以檢視受邀者是否已建立帳戶。
 
-   1. 单击 **[!UICONTROL Save]**.
+1. 如果您新增了使用者，角色區段畫面會顯示 **[!UICONTROL User accounts]** 標籤開啟。 執行下列動作：
 
-      管理员收到一封电子邮件，声明其Adobe Primetime DRM帐户注册已完成。
+   1. 確認使用者的資訊正確。
+   1. 輸入公司電話號碼和挑戰片語。
 
-1. 如果您邀请了用户，请执行以下操作：
-
-   1. 登录到证书注册站点。
-   1. 选择&#x200B;**[!UICONTROL User accounts]**&#x200B;选项卡。
-   1. 在&#x200B;**[!UICONTROL Invitations Sent]**&#x200B;部分中找到用户，然后单击&#x200B;**[!UICONTROL Authorize]**。
+      使用者必須知道此片語才能驗證其帳戶。
+   1. 若為使用者型別，請選取 **[!UICONTROL Administrator]**.
 
       >[!NOTE]
       >
-      >如果“操作”列中没有“授权”链接，则被邀请者尚未创建Adobe帐户。
+      >若要交換帳戶管理員和次要管理員角色，請選取 **[!UICONTROL Make default administrator]**.
 
-   1. 确认用户信息正确。
-   1. 输入公司电话号码和质询短语。
+   1. 按一下 **[!UICONTROL Save]**.
 
-      用户必须知道此短语才能验证其帐户。
-   1. 对于“用户类型”，选择&#x200B;**[!UICONTROL Administrator]**。
+      管理員會收到電子郵件，指出已完成其Adobe Primetime DRM帳戶註冊。
+
+1. 如果您邀請了使用者，請執行下列動作：
+
+   1. 登入憑證註冊網站。
+   1. 選取 **[!UICONTROL User accounts]** 標籤。
+   1. 在中找出使用者 **[!UICONTROL Invitations Sent]** 區段並按一下 **[!UICONTROL Authorize]**.
 
       >[!NOTE]
       >
-      >要交换帐户管理员和辅助管理员角色，请选择&#x200B;**[!UICONTROL Make default administrator]**。
+      >如果「動作」欄中沒有「授權」連結，則被邀請者尚未建立Adobe帳戶。
 
-   1. 单击“保存”。
+   1. 確認使用者的資訊正確。
+   1. 輸入公司電話號碼和挑戰片語。
 
-      用户收到一封电子邮件，声明其Primetime DRM帐户注册已完成。
+      使用者必須知道此片語才能驗證其帳戶。
+   1. 若為使用者型別，請選取 **[!UICONTROL Administrator]**.
 
+      >[!NOTE]
+      >
+      >若要交換帳戶管理員和次要管理員角色，請選取 **[!UICONTROL Make default administrator]**.
+
+   1. 按一下「儲存」。
+
+      使用者會收到電子郵件，指出其Primetime DRM帳戶註冊已完成。

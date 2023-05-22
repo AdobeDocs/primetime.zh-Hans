@@ -1,46 +1,44 @@
 ---
-description: 通过直接实例化MediaResource并加载要播放的视频内容来加载资源。 这是加载媒体资源的一种方式。
-title: 在MediaPlayer中加载媒体资源
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 透過直接例項化MediaResource並載入要播放的視訊內容來載入資源。 這是載入媒體資源的其中一種方式。
+title: 在MediaPlayer中載入媒體資源
+exl-id: 2d5e95bc-3962-4356-b90f-e550066f7a70
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '220'
 ht-degree: 0%
 
 ---
 
+# 在MediaPlayer中載入媒體資源 {#load-a-media-resource-in-the-mediaplayer}
 
-# 在MediaPlayer中加载媒体资源{#load-a-media-resource-in-the-mediaplayer}
+透過直接例項化MediaResource並載入要播放的視訊內容來載入資源。 這是載入媒體資源的其中一種方式。
 
-通过直接实例化MediaResource并加载要播放的视频内容来加载资源。 这是加载媒体资源的一种方式。
+1. 使用要播放的新資源設定MediaPlayer的可播放專案。
 
-1. 使用要播放的新资源设置MediaPlayer的可播放项。
+   呼叫，取代您現有的MediaPlayer目前可播放的專案 `MediaPlayer.replaceCurrentItem` 並傳遞現有 `MediaResource` 執行個體。
 
-   通过调用`MediaPlayer.replaceCurrentItem`并传递现有`MediaResource`实例，替换现有MediaPlayer的当前可播放项。
-
-1. 使用`MediaPlayer`实例注册`MediaPlayer.PlaybackEventListener`接口的实现。
+1. 註冊實作 `MediaPlayer.PlaybackEventListener` 與的介面 `MediaPlayer` 執行個體。
 
    * `onPrepared`
-   * `onStateChanged`，并检查INITIALIZED和ERROR。
+   * `onStateChanged`，並檢查「已初始化」和「錯誤」。
 
-1. 当媒体播放器的状态更改为INITIALIZED时，您可以调用`MediaPlayer.prepareToPlay`
+1. 當媒體播放器的狀態變更為「已初始化」時，您可以呼叫 `MediaPlayer.prepareToPlay`
 
-   INITIALIZED状态表示媒体已成功加载。 调用`prepareToPlay`将开始广告分辨率和投放过程（如果有）。
+   INITIALIZED狀態表示媒體已成功載入。 通話 `prepareToPlay` 開始廣告解析度和刊登版位程式（如果有的話）。
 
-1. 当TVSDK调用`onPrepared`回调时，媒体流已成功加载并准备好回放。
+1. 當TVSDK呼叫 `onPrepared` callback，媒體資料流已成功載入，並準備好播放。
 
-   加载媒体流时，将创建`MediaPlayerItem`。
+   載入媒體資料流時， `MediaPlayerItem` 「 」已建立。
 
->如果发生故障，`MediaPlayer`将切换到“ERROR”状态。 它还会通过调用`PlaybackEventListener.onStateChanged`回调来通知您的应用程序。
+>如果失敗， `MediaPlayer` 切換至ERROR狀態。 此外，也會透過呼叫 `PlaybackEventListener.onStateChanged`callback。
 >
->这传递了几个参数：
->* `MediaPlayer.PlayerState.ERROR`值为`MediaPlayer.PlayerState`类型的`state`参数。
-   >
-   >
-* 类型`MediaPlayerNotification`的`notification`参数，包含有关错误事件的诊断信息。
+>這會傳遞數個引數：
+>* A `state` 引數型別 `MediaPlayer.PlayerState` ，其值為 `MediaPlayer.PlayerState.ERROR`.
+>
+>* A `notification` 引數型別 `MediaPlayerNotification` 包含有關錯誤事件的診斷資訊。
 
 
-以下简化的示例代码说明了加载媒体资源的过程：
+下列簡化的範常式式碼說明載入媒體資源的程式：
 
 ```java
 // mediaResource is a properly configured MediaResource instance 

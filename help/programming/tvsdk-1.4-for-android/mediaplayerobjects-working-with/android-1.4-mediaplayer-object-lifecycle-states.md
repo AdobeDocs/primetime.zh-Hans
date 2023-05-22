@@ -1,96 +1,95 @@
 ---
-description: 从您创建MediaPlayer实例到您终止（重用或删除）它的那一刻，该实例将完成状态之间的一系列过渡。
-title: MediaPlayer对象生命周期
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 從您建立MediaPlayer例項的那一刻到您終止（重複使用或移除）該例項的那一刻，此例項會完成狀態之間的一系列轉換。
+title: MediaPlayer物件生命週期
+exl-id: efb39fea-1050-41e5-93d8-1175a54f81e5
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '446'
 ht-degree: 0%
 
 ---
 
+# MediaPlayer物件生命週期{#mediaplayer-object-lifecycle}
 
-# MediaPlayer对象生命周期{#mediaplayer-object-lifecycle}
+從您建立MediaPlayer例項的那一刻到您終止（重複使用或移除）該例項的那一刻，此例項會完成狀態之間的一系列轉換。
 
-从您创建MediaPlayer实例到您终止（重用或删除）它的那一刻，该实例将完成状态之间的一系列过渡。
+只有播放器處於特定狀態時，才允許進行某些操作。 例如，呼叫 `play` 在 `IDLE` 不允許。 只有在播放器到達 `PREPARED` 州別。
 
-某些操作仅在播放器处于特定状态时才允许。 例如，不允许在`IDLE`中调用`play`。 只有在播放器达到`PREPARED`状态后，才可以调用此状态。
+若要使用狀態：
 
-要使用状态，请执行以下操作：
-
-* 可以检索`MediaPlayer.getStatus`对象的当前状态。`MediaPlayer`
+* 您可以擷取 `MediaPlayer` 物件與 `MediaPlayer.getStatus`.
 
    ```java
    PlayerState getStatus() throws IllegalStateException;
    ```
 
-* 状态列表在`MediaPlayer.PlayerState`中定义。
+* 狀態清單定義於 `MediaPlayer.PlayerState`.
 
-`MediaPlayer`实例生命周期的状态过渡图：
+生命週期的狀態轉換圖 `MediaPlayer` 例項：
 <!--<a id="fig_1C55DE3F186F4B36AFFDCDE90379534C"></a>-->
 
 ![](assets/player-state-transitions-diagram-android_1.2_web.png)
 
-下表提供了更多详细信息：
+下表提供其他詳細資訊：
 
 <table id="table_426F0093E4214EA88CD72A7796B58DFD"> 
  <thead> 
   <tr> 
    <th colname="col1" class="entry"> MediaPlayer.PlayerState </th> 
-   <th colname="col2" class="entry"> 在 </th> 
+   <th colname="col2" class="entry"> 發生於 </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 空闲  </span> </td> 
-   <td colname="col2"> <p>您的应用程序通过调用<span class="codeph"> DefaultMediaPlayer.create </span>请求新的媒体播放器。 新创建的播放器正在等待您指定媒体播放器项。 这是媒体播放器的初始状态。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 閒置 </span> </td> 
+   <td colname="col2"> <p>您的應用程式呼叫來要求新的媒體播放器 <span class="codeph"> DefaultMediaPlayer.create </span>. 新建立的播放器正等待您指定媒體播放器專案。 這是媒體播放器的初始狀態。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 初始化  </span> </td> 
-   <td colname="col2"> <p>您的应用程序名为<span class="codeph"> MediaPlayer.replaceCurrentItem </span>，媒体播放器正在加载。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 正在初始化 </span> </td> 
+   <td colname="col2"> <p>您的應用程式已呼叫 <span class="codeph"> MediaPlayer.replaceCurrentItem </span>，且媒體播放器正在載入。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 已初始化  </span> </td> 
-   <td colname="col2"> <p>TVSDK成功设置媒体播放器项。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 已初始化 </span> </td> 
+   <td colname="col2"> <p>TVSDK已成功設定媒體播放器專案。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 准备  </span> </td> 
-   <td colname="col2"> <p>您的应用程序名为<span class="codeph"> MediaPlayer.prepareToPlay </span>。 媒体播放器正在加载媒体播放器项和相关资源。 </p> <p>提示： 可能会对主媒体进行一些缓冲。 </p> <p>TVSDK正在准备媒体流并尝试执行广告解析和广告插入（如果已启用）。 </p> <p>提示： 要将开始时间设置为非零值，请调用<span class="codeph"> prepareToPlay(startTime)</span>，以毫秒为单位。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 正在準備 </span> </td> 
+   <td colname="col2"> <p>您的應用程式已呼叫 <span class="codeph"> MediaPlayer.prepareToPlay </span>. 媒體播放器正在載入媒體播放器專案和相關資源。 </p> <p>提示：可能會發生主要媒體的某些緩衝。 </p> <p>TVSDK正在準備媒體串流，並嘗試執行廣告解析和廣告插入（如果已啟用）。 </p> <p>提示：若要將開始時間設定為非零值，請呼叫 <span class="codeph"> prepareToPlay(startTime) </span> 以毫秒為單位的時間。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 准备  </span> </td> 
-   <td colname="col2"> <p>准备内容并将广告插入时间轴，或广告过程失败。 可以开始缓冲或播放。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 已準備 </span> </td> 
+   <td colname="col2"> <p>內容已準備好，且廣告已插入時間軸中，或廣告程式失敗。 緩衝或播放可以開始。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 播放  </span> </td> 
-   <td colname="col2"> <p>您的应用程序已调用<span class="codeph"> play </span>，因此TVSDK正在尝试播放视频。 在视频实际播放之前可能会发生一些缓冲。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 正在播放 </span> </td> 
+   <td colname="col2"> <p>您的應用程式已呼叫 <span class="codeph"> play </span>，因此TVSDK正嘗試播放視訊。 某些緩衝可能會發生在視訊實際播放之前。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 已暂停  </span> </td> 
-   <td colname="col2"> <p>当应用程序播放和暂停媒体时，媒体播放器会在此状态和播放之间移动。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 已暫停 </span> </td> 
+   <td colname="col2"> <p>當您的應用程式播放和暫停媒體時，媒體播放器會在此狀態和「正在播放」之間移動。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 已挂起  </span> </td> 
-   <td colname="col2"> <p>在播放器播放或暂停时，您的应用程序从播放中导航离开，关闭设备或切换应用程序。 媒体播放器已挂起，资源已释放。 要继续，请恢复媒体播放器。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 已暫停 </span> </td> 
+   <td colname="col2"> <p>您的應用程式在播放器播放或暫停時離開播放、關閉裝置或切換應用程式。 媒體播放器已暫停，資源已釋放。 若要繼續，請還原媒體播放器。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 完成  </span> </td> 
-   <td colname="col2"> <p>播放器到达流的末尾，播放已停止。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 完成 </span> </td> 
+   <td colname="col2"> <p>播放器到達串流結尾，且播放已停止。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 已发布  </span> </td> 
-   <td colname="col2"> <p>您的应用程序已发布媒体播放器，该播放器也会发布任何相关资源。 您不能再使用此实例 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 已發行 </span> </td> 
+   <td colname="col2"> <p>您的應用程式已發行媒體播放器，也會發行任何相關資源。 您無法再使用此執行個體 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 错误  </span> </td> 
-   <td colname="col2"> <p>进程期间发生错误。 错误还可能影响应用程序下一步的操作。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 錯誤 </span> </td> 
+   <td colname="col2"> <p>處理期間發生錯誤。 錯誤也可能會影響您的應用程式接下來可以執行的動作。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
 >[!TIP]
 >
->您可以使用状态来提供对进程的反馈（例如，等待下一个状态更改时的微调框）或在播放媒体时采取下一步，例如在调用下一个方法之前等待适当的状态。
+>您可以使用狀態來提供程式的意見回饋（例如，在等待下一個狀態變更時執行旋轉圖示），或是在播放媒體時執行下一個步驟，例如在呼叫下一個方法之前等待適當的狀態。
 
 例如：
 
@@ -113,4 +112,3 @@ public void onStateChanged(MediaPlayer.PlayerState state,
     } 
 }
 ```
-

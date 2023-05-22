@@ -1,23 +1,21 @@
 ---
-description: MediaResource表示MediaPlayer实例将要加载的内容。
-title: MediaPlayer和MediaResource类
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: MediaResource代表即將由MediaPlayer例項載入的內容。
+title: MediaPlayer和MediaResource類別
+exl-id: c4219dff-de75-4b8a-ad33-e0a721c38de7
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '86'
 ht-degree: 0%
 
 ---
 
+# MediaPlayer和MediaResource類別 {#mediaplayer-and-mediaresource-classes}
 
-# MediaPlayer和MediaResource类{#mediaplayer-and-mediaresource-classes}
-
-MediaResource表示MediaPlayer实例将要加载的内容。
+MediaResource代表即將由MediaPlayer例項載入的內容。
 
 <!--<a id="section_431AB7221E0249BF949EC72EEB9B428A"></a>-->
 
-TVSDK提供了使用`MediaPlayer`中的`replaceCurrentResource`方法加载和准备要回放的内容的方法。 此方法采用两个参数，一个是`MediaPlayerResource`的实例，另一个是`MediaPlayerItemConfig`的实例，您可以使用它传递应用程序定义的自定义参数。
+TVSDK提供載入及準備內容以供播放的方法，方法是使用 `replaceCurrentResource` 中的方法 `MediaPlayer`. 此方法會採用兩個引數，一個例項 `MediaPlayerResource` 以及（選擇性）的執行個體 `MediaPlayerItemConfig`，可用來傳遞應用程式定義的自訂引數。
 
-* 有关详细信息，请参阅mediaplayer-reuse-or-remove。
-* 有关`MediaPlayerResource`的详细信息，请参阅media-resource-create
-
+* 如需詳細資訊，請參閱mediaplayer-reuse-or-remove 。
+* 詳細資訊： `MediaPlayerResource`，請參閱media-resource-create

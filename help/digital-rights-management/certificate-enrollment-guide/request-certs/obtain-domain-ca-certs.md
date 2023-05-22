@@ -1,28 +1,27 @@
 ---
-title: 获取域CA证书
-description: 获取域CA证书
+title: 取得網域CA憑證
+description: 取得網域CA憑證
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: cad233e0-41f7-4897-ab5f-d5a098c37306
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '115'
 ht-degree: 0%
 
 ---
 
+# 取得網域CA憑證{#obtain-domain-ca-certificates}
 
-# 获取域CA证书{#obtain-domain-ca-certificates}
+與License Server、Packager或Transport憑證不同，網域CA憑證不是由Adobe發行。 您可以從憑證授權單位取得此憑證，也可以產生自我簽署憑證以用於此用途。
 
-与许可证服务器、包装程序或传输证书不同，域CA证书不是由Adobe颁发的。 您可以从证书颁发机构获得此证书，也可以生成用于此目的的自签名证书。
+網域CA憑證應使用1024位元金鑰，並包含CA憑證中所需的標準屬性：
 
-域CA证书应使用1024位密钥并包含CA证书中所需的标准属性：
+* CA標幟設為true的基本限制擴充功能
+* 指定允許憑證簽章的金鑰使用延伸模組
 
-* 将CA标志设置为true时的基本约束扩展
-* 允许使用指定证书签名的密钥使用扩展
+例如，使用OpenSSL時，可以產生自我簽署CA憑證，如下所示：
 
-例如，使用OpenSSL，可以生成自签名CA证书，如下所示：
-
-1. 创建名为[!DNL ca-extensions.txt]的文件，其中包含：
+1. 建立名為的檔案 [!DNL ca-extensions.txt] 包含：
 
    ```
    keyUsage=critical,keyCertSign  
@@ -30,35 +29,34 @@ ht-degree: 0%
    subjectKeyIdentifier=hash 
    ```
 
-1. 生成密钥：
+1. 產生金鑰：
 
    ```
    openssl genrsa -des3 -out domain-ca.key 1024 
    ```
 
-1. 生成CSR:
+1. 產生CSR：
 
    ```
    openssl req -new -key domain-ca.key -out domain-ca.csr 
    ```
 
-1. 生成证书：
+1. 產生憑證：
 
    ```
    openssl x509 -req -days 365 -in domain-ca.csr -signkey domain-ca.key \ 
      -out domain-ca.cer -extfile ca-extensions.txt 
    ```
 
-1. 生成密码：
+1. 產生密碼：
 
    ```
    openssl rand -base64 8 
    ```
 
-1. 生成PFX:
+1. 產生PFX：
 
    ```
    openssl pkcs12 -export -inkey domain-ca.key \ 
    -in domain-ca.cer -out domain-ca.pfx
    ```
-

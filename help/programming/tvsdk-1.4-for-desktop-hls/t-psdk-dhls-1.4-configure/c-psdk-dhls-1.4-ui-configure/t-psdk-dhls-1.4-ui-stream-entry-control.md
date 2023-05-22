@@ -1,22 +1,21 @@
 ---
-description: 默认情况下，在开始播放时，VOD媒体开始为0，实时媒体开始为客户端实时点(DefaultMediaPlayer.LIVE_POINT)。
-title: 在特定时间输入流
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 根據預設，開始播放時，VOD媒體從0開始，而即時媒體從使用者端即時點(DefaultMediaPlayer.LIVE_POINT)開始。
+title: 在特定時間輸入資料流
+exl-id: b97dbabf-e2ab-4669-a9f3-9129af938a40
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '91'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
+# 在特定時間輸入資料流{#enter-a-stream-at-a-specific-time}
 
-# 在特定时间输入流{#enter-a-stream-at-a-specific-time}
+根據預設，開始播放時，VOD媒體從0開始，而即時媒體從使用者端即時點(DefaultMediaPlayer.LIVE_POINT)開始。
 
-默认情况下，在开始播放时，VOD媒体开始为0，实时媒体开始为客户端实时点(DefaultMediaPlayer.LIVE_POINT)。
+傳遞位置至 `MediaPlayer.prepareToPlay`.
 
-将位置传递到`MediaPlayer.prepareToPlay`。
-
-TVSDK将给定位置视为资产的起点。 无需执行搜索操作。 如果位置不在可搜索范围内，则使用默认位置。
+TVSDK會將指定位置視為資產的起點。 不需要搜尋作業。 如果位置不在可搜尋範圍內，則使用預設位置。
 
 例如：
 

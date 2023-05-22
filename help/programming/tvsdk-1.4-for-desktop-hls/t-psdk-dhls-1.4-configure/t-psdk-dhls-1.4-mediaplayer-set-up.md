@@ -1,57 +1,56 @@
 ---
-description: MediaPlayer界面封装媒体播放器的功能和行为。
-title: 设置MediaPlayer
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: MediaPlayer介面會封裝媒體播放器的功能和行為。
+title: 設定MediaPlay
+exl-id: eec51f3e-4779-4fb5-b735-d5be412de64e
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '202'
 ht-degree: 0%
 
 ---
 
+# 設定MediaPlay {#set-up-the-mediaplayer}
 
-# 设置MediaPlayer {#set-up-the-mediaplayer}
+TVSDK提供建立進階視訊播放器應用程式（您的Primetime播放器）的工具，您可以將其與其他Primetime元件整合。
 
-TVSDK提供用于创建高级视频播放器应用程序（您的Primetime播放器）的工具，您可以将该应用程序与其他Primetime组件集成。
+使用平台的工具來建立播放器，並將其連線至TVSDK中的媒體播放器檢視，該檢視具有播放和管理視訊的方法。 例如，TVSDK提供播放和暫停方法。 您可以在平台上建立使用者介面按鈕，並設定按鈕以呼叫這些TVSDK方法。MediaPlayer介面會封裝媒體播放器的功能和行為。
 
-使用您平台的工具创建播放器并将其连接到TVSDK中的媒体播放器视图,TVSDK中有播放和管理视频的方法。 例如，TVSDK提供播放和暂停方法。 您可以在平台上创建用户界面按钮并设置按钮以调用这些TVSDK方法。MediaPlayer界面封装媒体播放器的功能和行为。
-
-TVSDK提供`MediaPlayer`接口的单个实现：DefaultMediaPlayer类。 当您需要视频播放功能时，请实例化`DefaultMediaPlayer`。
+TVSDK提供 `MediaPlayer` 介面： DefaultMediaPlayer類別。 當您需要視訊播放功能時，請具現化 `DefaultMediaPlayer`.
 
 >[!NOTE]
 >
->仅与`MediaPlayer`接口公开的方法与`DefaultMediaPlayer`实例交互。
+>與 `DefaultMediaPlayer` 執行個體只能使用下列專案公開的方法： `MediaPlayer` 介面。
 
-1. 使用应用程序加载的`authorizedFeatures`实例实例化`MediaPlayerContext`（请参阅[加载已签名的令牌](../../tvsdk-1.4-for-desktop-hls/t-psdk-dhls-1.4-configure/t-psdk-dhls-1.4-get-signed-token.md)）。
+1. 例項化 `MediaPlayerContext` 使用已載入的應用程式 `authorizedFeatures` 執行個體(請參閱 [載入您的簽署Token](../../tvsdk-1.4-for-desktop-hls/t-psdk-dhls-1.4-configure/t-psdk-dhls-1.4-get-signed-token.md))。
 
    ```
    var context:MediaPlayerContext =  
        new MediaPlayerContext(authorizedFeatures)
    ```
 
-1. 使用公共创建工厂方法实例化`MediaPlayer`，传递`MediaPlayerContext`上下文对象：
+1. 例項化 `MediaPlayer` 使用public create factory方法，傳遞 `MediaPlayerContext` 內容物件：
 
    ```
    public static function create(context:Context):MediaPlayer
    ```
 
-   这将返回通用`MediaPlayer`接口。 1.实例化`MediaPlayerView`并指定要使用的StageVideo实例：
+   這會傳回泛型 `MediaPlayer` 介面。 1.例項化 `MediaPlayerView` 並指定要使用的StageVideo例項：
 
    ```
    var view:MediaPlayerView =  
        MediaPlayerView.create(stage.stageVideos[0] )
    ```
 
-1. 将`MediaPlayerView`实例与新创建的视图关联：
+1. 建立關聯 `MediaPlayerView` 具有新建立檢視的例項：
 
    ```
    mediaPlayer.view = view;
    ```
 
-1. 将`MediaPlayerView`实例放在设备的屏幕上：
+1. 放置 `MediaPlayerView` 裝置熒幕上的執行個體：
 
    ```
    container.addChild(view)
    ```
 
-`MediaPlayer`实例现已可用，并已正确配置以在设备屏幕上显示视频内容。
+此 `MediaPlayer` 執行個體現在可供使用，並已正確設定為在裝置畫面上顯示視訊內容。

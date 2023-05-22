@@ -1,58 +1,57 @@
 ---
-title: DRM 5.3.1发行说明
-description: DRM 5.3.1发行说明描述了DRM 5.3.1中的新增功能和已知问题。
+title: DRM 5.3.1發行說明
+description: DRM 5.3.1發行說明說明DRM 5.3.1的新功能和已知問題。
 contentOwner: dekalra
 topic-tags: release-notes
 products: SG_PRIMETIME
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: e4e0a933-cfc6-4713-ae13-5df11cfc1aad
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '527'
 ht-degree: 0%
 
 ---
 
+# DRM 5.3.1發行說明 {#drm-release-notes}
 
-# DRM 5.3.1发行说明{#drm-release-notes}
+DRM 5.3.1發行說明說明DRM 5.3.1的新功能和已知問題。
 
-DRM 5.3.1发行说明描述了DRM 5.3.1中的新增功能和已知问题。
+## 5.3版中的新功能 {#new-features}
 
-## 5.3 {#new-features}版中的新增功能
+* **安全停止 —** 您可以指定在播放視窗結束時是否停止或繼續播放。
+* **以解析度為基礎的輸出保護(RBOP) -** 您可以根據畫素解析度來指定輸出限制。
+* **CDM閘道 —** 為了支援HTML5，Adobe更新了Adobe Primetime DRM (原稱Adobe Access DRM) Java SDK隨附的參考實作授權伺服器，以便能夠在單一URL端點使用所有DRM通訊協定訊息。 為了遵循CDM （內容解密模組） DRM廠商實作的HTML5 EME （加密媒體擴充功能）規格，必須合併HTTP URL方法。 之前，這些是Reference Implementation授權伺服器公開的唯一一個URL端點：
 
-* **安全停止 —** 您可以指定在播放窗口的末尾停止还是继续播放。
-* **基于分辨率的输出保护(RBOP)-** 您可以根据像素分辨率指定输出约束。
-* **CDM门控 —** 为了支持HTML5,Adobe已更新Adobe Primetime DRM(以前称为Adobe Access DRM)Java SDK附带的参考实施许可证服务器，以便能够在单个URL端点使用所有DRM协议消息。为了符合HTML5 EME（加密媒体扩展）规范，必须对HTTP URL方法进行这种整合，而CDM（内容解密模块）DRM供应商又需要实施该规范。 以前，这些是引用实施许可证服务器公开的唯一URL端点：
+   * /flashaccess/i15n/v3 （個人化）
+   * /flashaccess/license/v5 （授權要求）
+   * /flashaccess/licenseRet/v5 （授權退回）
+   * /flashaccess/getServerVersion/v5 （取得伺服器版本）
 
-   * /flashaccess/i15n/v3（个性化）
-   * /flashaccess/license/v5（许可证请求）
-   * /flashaccess/licenseRet/v5（许可证退回）
-   * /flashaccess/getServerVersion/v5（获取服务器版本）
+現在，所有請求(源自HTML5 CDM)都可以被導向到單一端點：/req
 
-现在，所有请求（源自HTML5 CDM）都可定向到单个端点：/req
+此變更可回溯相容於非CDM平台，例如Flash Player、Android、iOS。
 
-此更改与非CDM平台(如Flash Player、Android、iOS)向后兼容。
+* **RBOP縮減比例 —** 特定於HTML5空間，RBOP包含自動縮減縮放功能，其中如果位元速率超過DRM原則中指定的允許位元速率，內容將會縮減到允許的最大解析度。 例如，如果將1080p資料流傳輸至在非HDCP相容監視器上顯示內容的使用者端，DRM原則可能會指出最大解析度應為720p。 Primetime DRM會解碼1080p資料流，然後在熒幕上呈現之前將其縮小至720p。 如果播放視訊的瀏覽器接著被拖曳到支援HDCP的監視器上，Primetime DRM就會停止縮減內容縮放並允許1080重播。
 
-* **RBOP缩减缩放 —** 特定于HTML5空间，RBOP包含自动缩减缩放功能，其中，如果比特率超过DRM策略中指定的允许比特率，则内容将缩减到最大允许分辨率。例如，如果1080p流流流式传输到在非HDCP兼容监视器上显示内容的客户端，则DRM策略可能指示最大分辨率应为720p。 Primetime DRM将解码1080p流，然后将其缩小到720p，然后再将其呈现在屏幕上。 如果播放视频的浏览器随后被拖动到支持HDCP的监视器上，Primetime DRM将停止缩放内容，并允许在1080时播放。
+## 5.3版中的已知問題 {#known-issues}
 
-## 版本5.3 {#known-issues}中的已知问题
+* `Hasher.bat (flashaccess-hasher.jar)` 將記錄訊息輸出至 `flashaccess-global.log.`您必須確保 `flashaccess-global.log` 檔案與Hasher.bat位於相同目錄中。
 
-* `Hasher.bat (flashaccess-hasher.jar)` 将日志消息输 `flashaccess-global.log.`出到您必须确 `flashaccess-global.log` 保文件与Hasher.bat位于同一目录中。
+* 部分「 」的 `toJSON()`呼叫傳回 `Strings` 非完全符合JSON規範或以獨立方式完全符合（即沒有JSON結構組成）的檔案。
 
-* 某些`toJSON()`调用的输出会以独立方式返回`Strings`，这些调用不完全符合JSON或完全符合JSON（即，不合成JSON结构）。
+* Xbox金鑰伺服器接受版本值不等於1的金鑰要求。
 
-* Xbox密钥服务器接受版本值不等于1的密钥请求。
+Xbox金鑰伺服器應僅支援版本等於1的關鍵要求，但目前，伺服器接受版本不是1的關鍵要求。
 
-Xbox密钥服务器应仅支持版本等于1的密钥请求，但目前，服务器接受版本不为1的密钥请求。
+* Xbox金鑰伺服器無法正確驗證原則。
 
-* Xbox密钥服务器无法正确验证策略。
+Xbox金鑰伺服器不應該接受超過有效日期的原則，但是目前，伺服器無論如何都會接受這些原則。
 
-Xbox密钥服务器不应接受在有效日期以外的策略，但目前，服务器接受这些策略，无论如何。
+* Xbox金鑰伺服器應拒絕金鑰要求，該金鑰要求包含使用錯誤的封裝程式憑證建立的中繼資料。
+* 部分JSON結構的傳回值格式不正確，無法用於以解析度為基礎的輸出保護相關類別。
 
-* Xbox密钥服务器应拒绝包含使用错误打包程序证书创建的元数据的密钥请求。
-* 某些JSON结构的返回值的格式不正确，无法用于与Resolution Output Protection相关的类。
+有幾個類別實作toJSON()方法，該方法應該會將該物件的JSON相容表示傳回為String，但目前傳回的值不完全符合JSON。
 
-几个类实现一个toJSON()方法，该方法应将该对象的符合JSON的表示形式返回为String，但当前返回的值不完全符合JSON。
+## 實用資源 {#helpful-resources}
 
-## 有用资源{#helpful-resources}
-
-* 请参阅[Adobe Primetime学习和支持](https://helpx.adobe.com/support/primetime.html)页面上的完整帮助文档。
+* 如需完整說明檔案，請前往 [Adobe Primetime學習與支援](https://helpx.adobe.com/support/primetime.html) 頁面。

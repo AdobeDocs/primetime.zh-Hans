@@ -1,89 +1,87 @@
 ---
-description: Adobe Primetime DRM解决方案中包含操作系统和应用程序服务器。
-title: 特定于供应商的安全信息
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: Adobe Primetime DRM解決方案包含作業系統和應用程式伺服器。
+title: 廠商特定安全性資訊
+exl-id: 4cc39414-cab5-4282-825d-64651d9b03e1
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '371'
 ht-degree: 0%
 
 ---
 
+# 廠商特定安全性資訊{#vendor-specific-security-information}
 
-# 供应商特定安全信息{#vendor-specific-security-information}
+Adobe Primetime DRM解決方案包含作業系統和應用程式伺服器。
 
-Adobe Primetime DRM解决方案中包含操作系统和应用程序服务器。
+若要尋找您作業系統和應用程式伺服器的廠商特定安全性資訊，請參閱使用Adobe Primetime DRM金鑰伺服器。
 
-要查找操作系统和应用程序服务器的供应商特定安全信息，请参阅使用Adobe Primetime DRM密钥服务器。
+## 作業系統安全性資訊 {#section_53CAD802FCA54C4D8CE0C4E1B3045E52}
 
-## 操作系统安全信息{#section_53CAD802FCA54C4D8CE0C4E1B3045E52}
-
-保护操作系统时，必须实施操作系统供应商描述的措施。
+保護作業系統時，您必須實作作業系統供應商所說明的措施。
 
 以下是一些措施：
 
-* 定义和控制用户、角色和权限
-* 监视日志和审计跟踪
-* 删除不必要的服务和应用程序
-* 备份文件
+* 定義和控制使用者、角色和許可權
+* 監控日誌和稽核追蹤
+* 移除不必要的服務和應用程式
+* 備份檔案
 
-以下是有关Adobe Primetime DRM支持的操作系统的一些信息：
+以下是Adobe Primetime DRM支援之作業系統的相關資訊：
 
 <table frame="all" colsep="1" rowsep="1" class="+ topic/table adobe-d/table " id="table_ugl_kjz_n4"> 
  <thead class="- topic/thead "> 
   <tr rowsep="1" class="- topic/row "> 
-   <th colname="1" class="- topic/entry entry"> <p class="- topic/p ">操作系统 </p> </th> 
-   <th colname="2" class="- topic/entry entry"> <p class="- topic/p ">安全资源 </p> </th> 
+   <th colname="1" class="- topic/entry entry"> <p class="- topic/p ">作業系統 </p> </th> 
+   <th colname="2" class="- topic/entry entry"> <p class="- topic/p ">安全性資源 </p> </th> 
   </tr> 
  </thead>
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <p class="- topic/p ">Microsoft® Windows Server® 2008 Enterprise或Standard Edition </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p "><i class="+ topic/ph hi-d/i ">Windows Server 2008安全指南</i> </p> </td> 
+   <td colname="1" class="- topic/entry "> <p class="- topic/p ">Microsoft® Windows Server® 2008企業版或標準版 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p "><i class="+ topic/ph hi-d/i ">Windows Server 2008安全性指南</i> </p> </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <p class="- topic/p ">Red Hat® Enterprise Linux® 5.4、5.5和5.6。 </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p "><i class="+ topic/ph hi-d/i ">Red Hat Enterprise Linux 5安全指南</i> </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p "><i class="+ topic/ph hi-d/i ">Red Hat Enterprise Linux 5安全性指南</i> </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-以下是一些有关最小化操作系统中安全漏洞的方法的信息：
+以下提供作業系統中最大程度降低安全性弱點的方法相關資訊：
 
 <table frame="all" colsep="1" rowsep="1" class="+ topic/table adobe-d/table " id="table_whl_kjz_n4"> 
  <thead class="- topic/thead "> 
   <tr rowsep="1" class="- topic/row "> 
-   <th colname="1" class="- topic/entry entry"> <p class="- topic/p ">项目 </p> </th> 
-   <th colname="2" class="- topic/entry entry"> <p class="- topic/p ">说明 </p> </th> 
+   <th colname="1" class="- topic/entry entry"> <p class="- topic/p ">專案 </p> </th> 
+   <th colname="2" class="- topic/entry entry"> <p class="- topic/p ">說明 </p> </th> 
   </tr> 
  </thead>
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <p class="- topic/p ">安全修补程序 </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">如果供应商安全补丁和升级不能及时应用，则未授权用户可能获得对应用程序服务器的访问权限的风险增加。 </p> <p>注意： 请确保在将安全修补程序应用到生产服务器之前先测试这些修补程序。 </p> <p class="- topic/p ">您必须创建策略和过程来定期检查和安装修补程序。 </p> </td> 
+   <td colname="1" class="- topic/entry "> <p class="- topic/p ">安全性修補程式 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">如果未及時套用廠商安全性修補程式和升級，未經授權的使用者可能會取得應用程式伺服器的存取權，此風險會增加。 </p> <p>注意：請確定您在將安全性修補程式套用至生產伺服器之前，先測試這些修補程式。 </p> <p class="- topic/p ">您必須建立原則和程式，以定期檢查並安裝修補程式。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <p class="- topic/p ">病毒防护软件 </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">病毒扫描器可以通过扫描签名或异常行为来识别受感染的文件。 </p> <p>扫描程序将其病毒签名保留在文件中，该文件通常存储在本地硬盘上。 新病毒经常被发现，因此您必须确保定期更新此文件。 这样，病毒扫描器就可以始终识别所有当前病毒。 </p> </td> 
+   <td colname="1" class="- topic/entry "> <p class="- topic/p ">病毒防護軟體 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">病毒掃描程式可透過掃描特徵碼或異常行為來識別受感染的檔案。 </p> <p>掃描器會將其病毒簽章儲存在檔案中，檔案通常會儲存在本機硬碟中。 新病毒經常被發現，因此您必須確保此檔案定期更新。 如此一來，病毒掃描程式就能夠識別所有目前的病毒。 </p> </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <p class="- topic/p ">网络时间协议(NTP) </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">为获得正确的操作和取证分析，请准确掌握Primetime DRM服务器和打包程序。 使用安全版NTP来同步所有连接到因特网的系统上的Primetime DRM时间。 </p> </td> 
+   <td colname="1" class="- topic/entry "> <p class="- topic/p ">網路時間通訊協定(NTP) </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">為了正確操作及進行鑑證分析，請保持Primetime DRM伺服器和封裝器的正確時間。 使用安全的NTP版本，同步所有連線至網際網路的系統上的Primetime DRM時間。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-## 应用程序服务器安全信息{#section_22986936F1A547CEAB2D97E9E9D4825C}
+## 應用程式伺服器安全性資訊 {#section_22986936F1A547CEAB2D97E9E9D4825C}
 
-保护应用程序服务器时，必须实施服务器供应商描述的度量。
+保護應用程式伺服器時，您必須實作伺服器供應商所述的措施。
 
-以下是一些措施：
+以下是其中一些測量：
 
-* 使用非明显的管理员用户名
-* 禁用不必要的服务
-* 保护控制台管理器
-* 启用安全Cookie
-* 关闭不需要的端口
-* 通过IP地址或域限制管理接口
-* 使用Java™ Security Manager
-
+* 使用不顯眼的管理員使用者名稱
+* 停用不必要的服務
+* 保護主控台管理員
+* 啟用安全Cookie
+* 關閉不需要的連線埠
+* 依IP位址或網域限制管理介面
+* 使用Java™安全管理員

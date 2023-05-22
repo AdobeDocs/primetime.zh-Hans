@@ -1,48 +1,47 @@
 ---
-title: 预授权Android
-description: 预授权Android
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 預先授權Android
+description: 預先授權Android
+exl-id: b5337595-135f-4981-a578-2da432f125d6
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '195'
 ht-degree: 0%
 
 ---
 
-
-
-# 预授权 {#preuthorize-android}
+# 預先授權 {#preuthorize-android}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
 </br>
 
 
-应用程序需要使用预授权API方法，以获取一个或多个资源的预授权决策。 预授权API请求应用于UI提示和/或内容过滤。 必须在授予用户对指定资源的访问权限之前发出实际的授权API请求。
+應用程式需要使用預先授權API方法，才能取得一或多個資源的預先授權決定。 預先授權API請求應該用於UI提示和/或內容篩選。 在授與使用者對指定資源的存取權之前，必須先提出實際的授權API要求。
 
 
 
-出现意外错误（例如，网络问题、MVPD授权端点不可用等） 当Adobe Primetime身份验证服务处理预授权API请求时，作为预授权API响应结果的一部分，将为受影响的资源包含一个或多个单独的错误信息。
+萬一發生意外錯誤（例如網路問題、無法使用MVPD授權端點等）， 當Adobe Primetime Authentication Services處理預先授權API要求時，受影響資源的一或多個分隔的錯誤資訊將會包含在預先授權API回應結果中。
 
 
 ## `public void preauthorize(PreauthorizeRequest request, AccessEnablerCallback<PreauthorizeResponse> callback);`
 
 
-**描述：** 
+**說明：** 
 
 **可用性：** v3.6.0+
 
-**参数：**
+**引數：**
 
-- *PreauthorizeRequest*:用于定义请求的生成器对象
-- AccessEnablerCallback :用于返回API响应的回调
-- PreauthorizeResponse :用于返回API响应内容的对象
+- *PreauthorizeRequest*：用於定義請求的產生器物件
+- AccessEnablerCallback ：用於傳回API回呼的回呼
+- PreauthorizeResponse ：用來傳回API回應內容的物件
 
 
-### public类PreauthorizeRequest {#androidpreauthorizerequest}
+### 公用類別PreauthorizeRequest {#androidpreauthorizerequest}
 
-**类PreauthorizeRequest.Builder**\
+**類別PreauthorizeRequest.Builder**\
  
 
 ```java
@@ -64,7 +63,7 @@ ht-degree: 0%
     ///
 ```
 
-**public Builder setResources(List\&lt;string> 资源)**
+**公用產生器setResources(List\&lt;string> resources)**
 
 ```
     ///
@@ -86,7 +85,7 @@ ht-degree: 0%
 ```
 
 
-**public Builder disableFeatures(Set\&lt;preauthorizerequest.feature>
+**公用產生器disableFeatures(Set\&lt;preauthorizerequest.feature>
 功能)**
 
 ```
@@ -109,7 +108,7 @@ ht-degree: 0%
 
 **public PreauthorizeRequest build()**
 
-**enum PreauthorizeRequest.Feature**
+**列舉PreauthorizeRequest.Feature**
 
 ```java
     ///
@@ -143,7 +142,7 @@ ht-degree: 0%
 
  
 
-### 类PreauthorizeResponse {#preauthorizeresponse}
+### 類別PreauthorizeResponse {#preauthorizeresponse}
 
 ```java
     ///
@@ -164,7 +163,7 @@ ht-degree: 0%
 ```
 
 
-**类状态** {#status}
+**類別狀態** {#status}
 
 ```java
 ///
@@ -228,7 +227,7 @@ ht-degree: 0%
 
 </br>
 
->**类决策** {#decision}
+>**類別決定** {#decision}
 
 ```
     ///
@@ -265,7 +264,7 @@ ht-degree: 0%
 
 
 
-示例： 
+範例： 
 
 
 ```java
@@ -289,4 +288,3 @@ ht-degree: 0%
         }
     });
 ```
-

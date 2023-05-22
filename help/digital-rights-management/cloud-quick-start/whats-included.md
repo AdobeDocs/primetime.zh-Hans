@@ -1,40 +1,38 @@
 ---
-description: Adobe为不想开发和维护自己的Primetime DRM许可证服务器的Adobe Primetime DRM客户提供云DRM服务。 通过利用此服务，客户可以降低DRM许可证发行的操作和开发复杂性。 Primetime Cloud DRM可向所有能运行支持Primetime浏览器TVSDK的视频应用程序（如iOS、Android、桌面和Xbox360）的设备颁发DRM许可证。 此DRM服务由Adobe托管和维护，可全天候正常运行。
+description: Adobe提供雲端DRM服務給不想開發及維護自己的Primetime DRM授權伺服器的Adobe Primetime DRM客戶。 利用這項服務，客戶可以減少DRM授權發行相關的運作和開發複雜性。 Primetime Cloud DRM可以向所有能夠執行啟用Primetime瀏覽器TVSDK之視訊應用程式的裝置發放DRM授權，例如iOS、Android、桌上型電腦和Xbox360。 此DRM服務由Adobe託管及維護，全年無休運作。
 title: 背景
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: bb5ad080-5b1d-43a6-8d0e-9b5735c82d96
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '364'
 ht-degree: 0%
 
 ---
 
+# 背景 {#background}
 
-# 背景{#background}
-
-Adobe为不想开发和维护自己的Primetime DRM许可证服务器的Adobe Primetime DRM客户提供云DRM服务。 通过利用此服务，客户可以降低DRM许可证发行的操作和开发复杂性。 Primetime Cloud DRM可向所有能运行支持Primetime浏览器TVSDK的视频应用程序（如iOS、Android、桌面和Xbox360）的设备颁发DRM许可证。 此DRM服务由Adobe托管和维护，可全天候正常运行。
+Adobe提供雲端DRM服務給不想開發及維護自己的Primetime DRM授權伺服器的Adobe Primetime DRM客戶。 利用這項服務，客戶可以減少DRM授權發行相關的運作和開發複雜性。 Primetime Cloud DRM可以向所有能夠執行啟用Primetime瀏覽器TVSDK之視訊應用程式的裝置發放DRM授權，例如iOS、Android、桌上型電腦和Xbox360。 此DRM服務由Adobe託管及維護，全年無休運作。
 
 >[!NOTE]
 >
->Adobe Primetime DRM以前称为Adobe访问，在此之前称为Flash Access。
+>Adobe Primetime DRM先前稱為Adobe存取，之前稱為Flash Access。
 
-## Primetime Cloud DRM {#section_788D0DD5F6DB41678FD87CFBD21B25FD}包含什么
+## Primetime Cloud DRM包含哪些功能 {#section_788D0DD5F6DB41678FD87CFBD21B25FD}
 
-* 自定义身份验证/授权模块以及有关如何对您的内容使用自定义身份验证的说明。 有关详细文档，请参阅[!DNL Custom Authentication Entitlement]目录。
-* 云DRM特定的许可证服务器证书([!DNL .pem/.cer/.der])
+* 自訂驗證/軟體權利檔案模組和如何參與內容自訂驗證的指示。 如需更多檔案，請參閱 [!DNL Custom Authentication Entitlement] 目錄。
+* Cloud DRM專用授權伺服器憑證( [!DNL .pem/.cer/.der])
 
-* 特定于云DRM的许可证服务器传输证书([!DNL .pem/.cer/.der])
+* 雲端DRM專屬授權伺服器傳輸憑證( [!DNL .pem/.cer/.der])
 
-* Primetime Java Offline Packager
-* 打包的DRM策略示例
+* Primetime Java離線封裝程式
+* 封裝的DRM原則範例
 
-   * **policy_24hr-**  Licenses cache on disk 24 hors.24小时后，必须获得新许可才能视图内容。 此工具包中的所有其他策略也具有24小时许可证缓存。
-   * **policy_ios_remotekeyserver**  — 在iOS设备上，将从Cloud DRM获取DRM许可证。此外，客户端将从云DRM获取所有AES解密密钥。 在越狱的iOS设备上不允许播放。
+   * **policy_24hr**  — 授權磁碟快取24小時。 24小時後，必須取得新授權才能檢視內容。 此套件中的所有其他原則也具有24小時授權快取。
+   * **policy_ios_remotekeyserver**  — 在iOS裝置上，DRM授權將從Cloud DRM取得。 此外，使用者端會從Cloud DRM取得所有AES解密金鑰。 在遭監禁的iOS裝置上不允許播放。
 
-   * **policy_ios_localkeyserver**  — 在iOS设备上，将从Cloud DRM获取DRM许可证。此外，客户端将从本地HTTP服务器（而非云DRM）获取所有HLS AES解密密钥。 在越狱的iOS设备上不允许播放。
+   * **policy_ios_localkeyserver**  — 在iOS裝置上，DRM授權將從Cloud DRM取得。 此外，使用者端會從本機HTTP伺服器（而非雲端DRM）取得所有HLS AES解密金鑰。 在遭監禁的iOS裝置上不允許播放。
 
-   * **policy_adobePass**  — 客户端必须先进行身份验证(以前称为Adobe Pass)，否则许可证将被拒绝。
+   * **policy_adobePass**  — 使用者端必須先使用(先前稱為Adobe Pass)進行驗證，否則授權會被拒絕。
 
-* Adobe策略管理器工具，用于创建其他DRM策略
-* 用于打包的视频内容示例
-
+* 建立其他DRM原則的Adobe原則管理員工具
+* 封裝時使用的視訊內容範例

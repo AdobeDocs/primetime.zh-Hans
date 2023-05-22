@@ -1,24 +1,23 @@
 ---
-description: 使用NotificationEvent，可以跟踪从Adobe视频引擎(AVE)传递的警告。
-title: 跟踪播放器中的AVE警告
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以使用NotificationEvent追蹤從Adobe視訊引擎(AVE)傳遞的警告。
+title: 追蹤播放器中的AVE警告
+exl-id: 49118d7f-ed79-4d22-ba91-8929f97c7256
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '165'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
+# 追蹤播放器中的AVE警告{#track-ave-warnings-in-your-player}
 
-# 跟踪播放器{#track-ave-warnings-in-your-player}中的AVE警告
+您可以使用NotificationEvent追蹤從Adobe視訊引擎(AVE)傳遞的警告。
 
-使用NotificationEvent，可以跟踪从Adobe视频引擎(AVE)传递的警告。
+您的播放器應用程式可以追蹤播放警告和AVE產生的錯誤，例如容錯移轉或網路關閉事件，這些事件不會暫停播放且不需要應用程式採取任何動作。 雖然部分AVE錯誤會由TVSDK處理， `NotificationEvent` 可作為AVE警告的一般傳遞機制至應用程式層。 收到AVE警告後，您可能會選擇採取某些動作，例如主動停止播放、啟動應急計畫、記錄訊息等。
 
-您的播放器应用程序可以跟踪由AVE生成的播放警告和错误，例如故障转移或网络关闭事件，这些错误不会停止播放，并且不需要您的应用程序执行任何操作。 虽然TVSDK会处理某些AVE错误，但`NotificationEvent`将作为AVE警告的通用传递机制，传递给应用程序层。 在收到AVE警告后，您可以选择采取一些措施，如主动停止播放、激活应急计划、记录消息等。
+使用下列API元素來追蹤播放器中的AVE警告：
 
-使用以下API元素跟踪播放器中的AVE警告：
-
-**NotificationCode**
+**通知代碼**
 
 ```
 public final class NotificationCode { 
@@ -29,7 +28,7 @@ public final class NotificationCode {
 }
 ```
 
-**NotificationEvent**
+**通知事件**
 
 ```
 /** 
@@ -76,7 +75,7 @@ public class NotificationEvent extends Event {
 }
 ```
 
-向播放器添加事件侦听器以捕获AVE警告。
+將事件接聽程式新增至播放器，以捕捉AVE警告。
 
 例如：
 
@@ -99,7 +98,7 @@ private function onWarningAvailable(event:NotificationEvent):void {
 
 <!--<a id="example_C35262605D394718B40C084B569A5052"></a>-->
 
-以下是使用`NotificationEvent`跟踪的AVE警告示例：
+以下是使用追蹤的AVE警告範例 `NotificationEvent`：
 
 ```
 [WARN ] [psdkdemo::PSDKDemo] #onWarningAvailable metadata [resourceType:HLS] 

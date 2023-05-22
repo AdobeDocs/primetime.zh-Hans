@@ -1,61 +1,60 @@
 ---
-title: NATIVE_ERROR通知的详细信息
-description: NATIVE_ERROR通知的详细信息
+title: NATIVE_ERROR通知的詳細資料
+description: NATIVE_ERROR通知的詳細資料
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 3819b932-47a2-4adb-830b-0a95a5fec70b
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '212'
 ht-degree: 0%
 
 ---
 
+# NATIVE_ERROR通知的詳細資料 {#details-for-the-native-error-notification}
 
-# NATIVE_ERROR通知{#details-for-the-native-error-notification}的详细信息
-
-当TVSDK处理本机错误时，它将设置以下部分或全部元数据键值。
+TVSDK處理原生錯誤時，會設定下列部分或全部中繼資料索引鍵值。
 
 <table id="table_86A21619515B435DBB65DC4DFBB64B29"> 
  <thead> 
   <tr> 
-   <th colname="col1" class="entry"> 元数据键名 </th> 
-   <th colname="col2" class="entry"> 元数据值 </th> 
+   <th colname="col1" class="entry"> 中繼資料金鑰名稱 </th> 
+   <th colname="col2" class="entry"> 中繼資料值 </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> NATIVE_ERROR_CODE  </span> </td> 
+   <td colname="col1"> <span class="codeph"> NATIVE_ERROR_CODE </span> </td> 
    <td colname="col2"> 
     <pre>
-      AVE中的本机错误代码。 
-    </pre> 这些代码表示： 
+      來自AVE的原生錯誤代碼。 
+    </pre> 這些程式碼代表下列內容： 
     <ul id="ul_330C626DE27B45A09E8851CC24768A07"> 
-     <li id="li_0845A9BBB55545BDB49BD4F4802C0E54">DRM错误（代码3300到3367）。 这些代码与等效的Flash Player错误代码相同。 </li> 
-     <li id="li_98A571480C154CF0AE1DC101FF0834C4">视频播放错误（–1到89）。 </li> 
-     <li id="li_D7C19955DEF94DA88B822C8C57D6D2F4">密码错误（300到307）。 </li> 
+     <li id="li_0845A9BBB55545BDB49BD4F4802C0E54">DRM錯誤（代碼3300至3367）。 這些與同等的Flash Player錯誤碼相同。 </li> 
+     <li id="li_98A571480C154CF0AE1DC101FF0834C4">視訊播放錯誤（–1到89）。 </li> 
+     <li id="li_D7C19955DEF94DA88B822C8C57D6D2F4">加密錯誤（300到307）。 </li> 
     </ul> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> NATIVE_ERROR_NAME  </span> </td> 
-   <td colname="col2"> 包含错误名称的字符串；例如，<span class="codeph"> AAXS_InvalidVoucher </span>或<span class="codeph"> DECODER_FAILED </span>。 </td> 
+   <td colname="col1"> <span class="codeph"> NATIVE_ERROR_NAME </span> </td> 
+   <td colname="col2"> 包含錯誤名稱的字串；例如， <span class="codeph"> AAXS_InvalidVoucher </span> 或 <span class="codeph"> DECODER_FAILED </span>. </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> NATIVE_SUBERROR_CODE  </span> </td> 
-   <td colname="col2"> 对于DRM错误，还会返回子错误代码。 这些代码与Flash Player返回的<span class="codeph"> DRMErrorEvents </span>子错误代码相对应。 当将错误报告到Adobe时，请包含此数值以获得疑难解答帮助。 </td> 
+   <td colname="col1"> <span class="codeph"> NATIVE_SUBERROR_CODE </span> </td> 
+   <td colname="col2"> 若是DRM錯誤，也會傳回子錯誤代碼。 這些程式碼對應至 <span class="codeph"> DRMErrorEvents </span> Flash Player傳回的子錯誤碼。 向Adobe報告錯誤時，請包含此數值以獲得疑難排解協助。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> DRM_ERROR_STRING  </span> </td> 
-   <td colname="col2"> 对于DRM，这是您在DRM服务器部署中自定义的错误字符串（如果您定义了）。 当将错误报告到Adobe时，也应包含此选项。 </td> 
+   <td colname="col1"> <span class="codeph"> drm_ERROR_STRING </span> </td> 
+   <td colname="col2"> 對於DRM，這是來自您的DRM伺服器部署的自訂錯誤字串（如果定義了）。 向Adobe報告錯誤時也包含此內容。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 说明  </span> </td> 
-   <td colname="col2"> 错误的字符串描述。 通常是媒体的URL。 </td> 
+   <td colname="col1"> <span class="codeph"> 說明 </span> </td> 
+   <td colname="col2"> 錯誤的字串說明。 通常是媒體的URL。 </td> 
   </tr> 
  </tbody> 
 </table>
 
-TVSDK从视频引擎接收这些错误代码和字符串。
+TVSDK會從視訊引擎接收這些錯誤碼和字串。
 
 >[!IMPORTANT]
 >
->有关Adobe Primetime DRM客户端错误代码的完整列表，请参阅[DRM客户端错误消息引用](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_client_error_message_reference.pdf)。
+>如需Adobe Primetime DRM使用者端錯誤碼的完整清單，請參閱 [DRM使用者端錯誤訊息參考](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_client_error_message_reference.pdf).

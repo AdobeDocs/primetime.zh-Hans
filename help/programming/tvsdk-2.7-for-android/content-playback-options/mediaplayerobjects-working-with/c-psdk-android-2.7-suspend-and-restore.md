@@ -1,25 +1,24 @@
 ---
-description: 当设备屏幕关闭且必须由应用程序处理时，挂起和恢复TVSDK MediaPlayer。
-keywords: SurfaceView；挂起；恢复；广播接收器
-title: 挂起和恢复MediaPlayer
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 裝置熒幕關閉和開啟時，暫停及還原TVSDK MediaPlayer必須由應用程式處理。
+keywords: SurfaceView；暫停；還原；BroadcastReceiver
+title: 暫停和還原MediaPlayer
+exl-id: 159f0f4f-2bb7-40a1-9747-be970dfbb04d
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '159'
 ht-degree: 0%
 
 ---
 
+# 暫停和還原MediaPlayer {#suspend-and-restore-mediaplayer}
 
-# 挂起和恢复MediaPlayer {#suspend-and-restore-mediaplayer}
+裝置熒幕關閉和開啟時，暫停及還原TVSDK MediaPlayer必須由應用程式處理。
 
-当设备屏幕关闭且必须由应用程序处理时，挂起和恢复TVSDK MediaPlayer。
+您可以處理暫停和還原操作 `MediaPlayer` 在Android的廣播接收器內，用於開啟/關閉熒幕。
 
-您可以在Android的广播接收器内的`MediaPlayer`上处理挂起和恢复操作，以便打开/关闭屏幕。
+TVSDK無法判斷片段（或活動）何時在背景或前景。 此外，Android `SurfaceView` 裝置畫面關閉時不會遭到破壞（但活動已暫停）。 不過， `SurfaceView` *會* 當裝置將您的應用程式置於背景時，就會遭到破壞。 TVSDK無法偵測到任何這些變更，因此必須由您的應用程式處理。
 
-TVSDK无法确定片段(或活动)何时在后台或前台。 此外，当设备屏幕关闭(但活动暂停)时，Android `SurfaceView`不会被销毁。 但是，当设备将应用程序置于后台时， `SurfaceView` *确实*&#x200B;会被销毁。 TVSDK无法检测任何这些更改，因此必须由您的应用程序处理它们。
-
-下面的示例代码，说明应用程序在应用程序级别打开和关闭设备屏幕时如何处理挂起和恢复`MediaPlayer`:
+以下範常式式碼您的應用程式如何處理暫停和還原 `MediaPlayer` 在應用程式層級開啟和關閉裝置畫面時：
 
 ```java
 // Track the state of a fragment to determine if it is PAUSED or RESUMED 

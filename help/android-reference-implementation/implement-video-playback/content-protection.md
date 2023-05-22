@@ -1,36 +1,35 @@
 ---
-description: Primetime播放器支持Primetime DRM集成作为自定义DRM工作流。 这意味着您的应用程序必须在播放流之前实施DRM身份验证工作流。
-title: DRM内容保护
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: Primetime播放器支援Primetime DRM整合作為自訂DRM工作流程。 這表示您的應用程式必須先實作DRM驗證工作流程，才能播放資料流。
+title: DRM內容保護
+exl-id: c1904d15-023f-49fb-95f9-d157d17b3516
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '366'
 ht-degree: 0%
 
 ---
 
+# DRM內容保護 {#drm-content-protection}
 
-# DRM内容保护{#drm-content-protection}
+Primetime播放器支援Primetime DRM整合作為自訂DRM工作流程。 這表示您的應用程式必須先實作DRM驗證工作流程，才能播放資料流。
 
-Primetime播放器支持Primetime DRM集成作为自定义DRM工作流。 这意味着您的应用程序必须在播放流之前实施DRM身份验证工作流。
+若要啟用此功能，TVSDK會提供DRM管理員以進行驗證。 參考實作提供下列工作流程的範例：
 
-要启用此功能，TVSDK会为您提供DRM管理器以进行身份验证。 引用实现提供了以下工作流的示例：
+* 如何載入和播放HLS串流並提供Access內容保護，針對低錯誤率和快速啟動進行最佳化。
+* 如何載入及播放具有AES128內容保護的HLS資料流。
+* 如何載入及播放具有PHLS內容保護的HLS資料流，針對低錯誤率和快速啟動進行最佳化。
 
-* 如何使用Access内容保护来加载和播放HLS流，该内容保护针对低错误率和快速开始进行了优化。
-* 如何使用AES128内容保护加载和播放HLS流。
-* 如何使用PHLS内容保护来加载和播放HLS流，该保护针对低错误率和快速开始进行了优化。
+所有受DRM保護的內容都會由內建在TVSDK中的DRM程式庫自動處理。 不過，您可以使用TVSDK API回呼，公開錯誤處理、裝置個人化最佳化和授權贏取。
 
-所有受DRM保护的内容都由TVSDK中内置的DRM库自动处理。 但是，您可以使用TVSDK API回调公开错误处理、设备个性化优化和许可证获取。
+## 為播放器新增內容保護 {#section_F1FC4322C35C4FE8A3B47FDC0A74221B}
 
-## 为播放器{#section_F1FC4322C35C4FE8A3B47FDC0A74221B}添加内容保护
+您可以建立播放管理員或使用管理員處理站，將內容保護新增至播放器。
 
-可以通过创建播放管理器或使用管理器工厂为播放器添加内容保护。
+若要建立內容保護管理員：
 
-要创建内容保护管理器，请执行以下操作：
+* 初始化DRM系統。
 
-* 初始化DRM系统。
-
-   下面的代码示例显示了如何在应用程序`onCreate()`函数中调用`loadDRMServices`，以确保在播放启动之前启动DRM系统所需的任何初始化。
+   下列程式碼範例顯示呼叫 `loadDRMServices` 在應用程式中 `onCreate()` 函式，以確保在開始播放之前啟動DRM系統所需的任何初始化。
 
    ```java
    @Override 
@@ -40,9 +39,9 @@ Primetime播放器支持Primetime DRM集成作为自定义DRM工作流。 这意
     }
    ```
 
-* 预载DRM许可证。
+* 預先載入DRM授權。
 
-   下面的代码示例显示当内容列表完成加载时加载`VideoItems`。 这将导致从许可证服务器获取DRM许可证并在本地缓存，这样，在播放开始时，内容将以最小延迟加载。
+   下列程式碼範例說明如何載入 `VideoItems` 內容清單載入完成時。 這將導致DRM授權從授權伺服器取得並在本機快取，因此當播放開始時，內容將以最小的延遲載入。
 
    ```java
    DrmManager.preLoadDrmLicenses(item.getUrl(),  
@@ -62,17 +61,17 @@ Primetime播放器支持Primetime DRM集成作为自定义DRM工作流。 这意
 
    >[!NOTE]
    >
-   >您可以在“设置”用户界面中将Precache DRM许可证设置为“打开”，以在加载内容时预缓存DRM许可证。 但是，最佳实践是预载特定项目，而不是预先预定目录中的所有许可证。
+   >您可以在「設定」使用者介面中，將Precache DRM授權設定為ON，以便在載入內容時預先快取DRM授權。 不過，最佳實務是預先載入特定專案，而非預先載入目錄中的所有授權。
    >
    >![](assets/precache-drm-licenses.jpg)
 
-* 要使用`ManagerFactory`实现DRM错误处理，请确保在[!DNL PlayerFragment.java]文件中包含以下代码行：
+* 使用 `ManagerFactory` 若要實作DRM錯誤處理，請確定下列程式碼行位於 [!DNL PlayerFragment.java] 檔案：
 
    ```java
    drmManager = ManagerFactory.getDrmManager(config, mediaPlayer);
    ```
 
-**相关API文档**
+**相關API檔案**
 
-* [类DrmManager](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/DrmManager.html)
+* [類別DrmManager](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/DrmManager.html)
 * [DrmManagerEventListener](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/DrmManager.DrmManagerEventListener.html)

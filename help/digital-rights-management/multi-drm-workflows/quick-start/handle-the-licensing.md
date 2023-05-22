@@ -1,35 +1,34 @@
 ---
-description: 许可是允许用户播放受保护视频内容或拒绝用户播放这些内容的主要机制。 合法（已授权）用户可以获得许可证（密钥）以解密和播放其内容提供商的加密内容的特定部分。
-title: 许可
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 授權是允許或拒絕使用者播放受保護視訊內容的主要機制。 合法（有權利）的使用者可以獲發授權（金鑰），以解密和播放其內容提供者的加密內容中的特定片段。
+title: 授權
+exl-id: 60aa3e77-f821-41b3-ba0e-1a2c05b2bb1a
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 0%
 
 ---
 
+# 授權{#licensing}
 
-# 许可{#licensing}
+授權是允許或拒絕使用者播放受保護視訊內容的主要機制。 合法（有權利）的使用者可以獲發授權（金鑰），以解密和播放其內容提供者的加密內容中的特定片段。
 
-许可是允许用户播放受保护视频内容或拒绝用户播放这些内容的主要机制。 合法（已授权）用户可以获得许可证（密钥）以解密和播放其内容提供商的加密内容的特定部分。
+在使用者裝置上的應用程式或網頁可以播放受DRM保護的內容之前，必須從您（客戶）所操作的權利或店面伺服器取得Token。 Adobe為此目的提供範例參考伺服器： [參考伺服器：範例ExpressPlay軟體權利檔案伺服器(SEES)](../../multi-drm-workflows/feature-topics/sees-reference-server.md).
 
-在最终用户设备上的应用程序或网页播放受DRM保护的内容之前，它必须从您（客户）操作的授权或店面服务器获取令牌。 Adobe为此提供了示例参考服务器：[参考服务器：示例ExpressPlay授权服务器(SEES)](../../multi-drm-workflows/feature-topics/sees-reference-server.md)。
-
-您的授权或店面服务器仅在与您自己的后端系统检查后，才会从相关的ExpressPlay服务器请求许可证令牌，以确定特定用户是否有权观看请求的内容。 从许可证令牌请求返回的响应是许可证服务器的可用URL，或者响应包含JSON结构中的URL，具体取决于您使用的DRM解决方案。
+您的軟體權利檔案或店面伺服器會向相關的ExpressPlay伺服器要求授權權杖，但必須先檢查您自己的後端系統，以判斷特定使用者是否有權觀看要求的內容。 從授權權杖請求傳回的回應是許可證伺服器的現成可用URL，或者回應包含JSON結構的URL，具體取決於您使用的DRM解決方案。
 
 >[!NOTE]
 >
->无法从客户端本身发出许可证令牌请求：
->1. 必须在可信任的环境中检查授权；和
->1. 客户身份验证器必须保密。
+>無法從使用者端本身提出授權權杖請求：
+>1. 必須在受信任的環境中檢查權益；以及
+>1. 客戶驗證者必須保密。
 
 
-1. 发出许可证令牌请求。
+1. 提出授權Token要求。
 
-   对于快速开始方案，您只希望确保所涉及的各个组件能够协同工作，您可能希望使用[!DNL curl]之类的功能来发出许可证令牌请求（与最初启动应用程序并运行和测试来自该应用程序的调用相比）。 例如：
+   對於快速入門案例，您只想確保所涉及的各種元件能夠協同運作，您可能會想使用類似以下的工具 [!DNL curl] 提出您的授權Token要求（而不是讓應用程式初次啟動，並從那裡執行及測試呼叫）。 例如：
 
-   * 维德维内：
+   * Widevine：
 
    ```
    curl "https://wv-gen.test.expressplay.com/hms/wv/token?customerAuthenticator= 
@@ -57,7 +56,7 @@ ht-degree: 0%
       &<Any additional licensing attributes desired>" >>WidevineToken 
    ```
 
-   Widevine测试令牌示例：
+   範例Widevine測試Token：
 
    ```
    https://wv.test.expressplay.com/widevine/RightsManager.asmx?ExpressPlayToken= 
@@ -66,9 +65,9 @@ ht-degree: 0%
       O1PqRkx59Q2q1s2cFNrqfml8Y3RQ 
    ```
 
-   请注意，Widevine响应是“就绪”URL字符串。
+   請注意，Widevine回應是「準備使用」的URL字串。
 
-   * 播放就绪：
+   * PlayReady：
 
    ```
    curl "https://pr-gen.test.expressplay.com/hms/pr/token?customerAuthenticator= 
@@ -96,7 +95,7 @@ ht-degree: 0%
       &<Any additional licensing attributes desired>" >>playreadyToken
    ```
 
-   示例PlayReady测试令牌：
+   範例PlayReady測試Token：
 
    ```
    {"licenseAcquisitionUrl":"https://pr.test.expressplay.com/playready/RightsManager.asmx", 
@@ -104,9 +103,9 @@ ht-degree: 0%
    G_2Qt8RdTGJ2_Q_xtRfnj7H6C-yt6By40IhNaSQ0nNYUsY1_MtCrHXIltlVhN2Ekr_RNyTNvCjYs0V5TqzOPY"} 
    ```
 
-   请注意，PlayReady响应是一个JSON对象，包含单独的URL和令牌元素。
+   請注意，PlayReady回應是JSON物件，有個別的URL和權杖元素。
 
-   * FairPlay:
+   * 公平遊戲：
 
    ```
    curl "https://fp-gen.test.expressplay.com/hms/fp/token?customerAuthenticator= 
@@ -135,7 +134,7 @@ ht-degree: 0%
     &<Any additional licensing attributes desired>"
    ```
 
-   示例FairPlay测试令牌：
+   範例FairPlay測試權杖：
 
    ```
    https://{expressplay_test_domain_license_url}/?ExpressPlayToken= 
@@ -144,4 +143,4 @@ ht-degree: 0%
    O1PqRkx59Q2q1s2cFNrqfml8Y3RQ
    ```
 
-   请注意，FairPlay响应是一个“随时可用”的URL字符串。
+   請注意，FairPlay回應是「準備使用」的URL字串。

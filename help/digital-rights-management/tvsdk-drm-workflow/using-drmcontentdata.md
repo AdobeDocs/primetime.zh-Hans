@@ -1,16 +1,15 @@
 ---
-title: 使用DRMContentData类
-description: 使用DRMContentData类
+title: 使用DRMContentData類別
+description: 使用DRMContentData類別
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 97428f1c-4335-4c1c-a0dc-249b6a333c02
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '86'
 ht-degree: 0%
 
 ---
 
+# 使用DRMContentData類別 {#using-the-drmcontentdata-class}
 
-# 使用DRMContentData类{#using-the-drmcontentdata-class}
-
-`DRMContentData`对象包含受Adobe Access保护的内容的元数据属性。 `DRMContentData`属性包含获取查看内容的许可证所需的信息。 可以使用`DRMContentData`类获取与内容关联的元数据文件，如&#x200B;*内容保护过程概述*&#x200B;中所述。 有关详细信息，请参阅《Adobe Flash PlatformActionScript3.0参考》中的[DRMContentData类](https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/net/drm/DRMContentData.html)。
+此 `DRMContentData` 物件包含受Adobe存取保護之內容的中繼資料屬性。 此 `DRMContentData` 屬性包含取得檢視內容之授權所需的資訊。 您可以使用 `DRMContentData` 類別來取得與內容相關聯的中繼資料檔案，如 *內容保護程式概觀*. 如需詳細資訊，請參閱 [DRMContentData類別](https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/net/drm/DRMContentData.html) 在Adobe Flash Platform的ActionScript3.0參考中。

@@ -1,22 +1,21 @@
 ---
-keywords: setSecure;VideoEngineView
-title: 启用屏幕捕捉
-description: 启用屏幕捕捉
+keywords: setSecure；VideoEngineView
+title: 啟用熒幕擷取
+description: 啟用熒幕擷取
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 5dd1bf4e-ab50-4b57-89e4-eacc291a9fe3
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '59'
 ht-degree: 0%
 
 ---
 
+# 啟用熒幕擷取{#enable-screen-capture}
 
-# 启用屏幕捕捉{#enable-screen-capture}
+TVSDK預設不允許熒幕擷取。 播放器呼叫 `setSecure(true)` 於 `com.adobe.ave.VideoEngineView` 建構時的物件。 由於您必須建構 `VideoEngineView` 物件並提供給 `VideoEngine` 物件。
 
-默认情况下，TVSDK不允许屏幕捕捉。 播放器在构建时对`com.adobe.ave.VideoEngineView`对象调用`setSecure(true)`。 您有权访问此对象，因为您必须构建一个`VideoEngineView`对象并将其提供给`VideoEngine`对象。
+若要在您的應用程式中啟用熒幕擷取：
 
-要在应用程序中启用屏幕捕捉，请执行以下操作：
-
-1. 构造`com.adobe.ave.VideoEngineView`对象。
-1. 调用`VideoEngineView`对象上的`setSecure(false)`。
+1. 建構 `com.adobe.ave.VideoEngineView` 物件。
+1. 呼叫 `setSecure(false)` 在您的 `VideoEngineView` 物件。

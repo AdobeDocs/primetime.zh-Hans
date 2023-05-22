@@ -1,33 +1,33 @@
 ---
-title: iOS/tvOS API预授权
-description: iOS/tvOS API预授权
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: iOS/tvOS API預先授權
+description: iOS/tvOS API預先授權
+exl-id: 79c596a4-0e38-4b6c-bb85-f97c6af45ed8
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '391'
 ht-degree: 0%
 
 ---
 
-
-# 预授权 {#preauthorize}
+# 預先授權 {#preauthorize}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-预授权API可用于获取一个或多个资源的预授权决策，这样应用程序可以实施UI提示和/或内容过滤。
-
->[!IMPORTANT]
->
->授权API **必须** 在授予用户对指定资源的访问权限之前使用。
-
-如果预授权API响应结果包含一个或多个具有拒绝的预授权决定的资源，则可以包括其他错误信息 **（请参阅下文附注）** 每个受影响的资源。
+預先授權API可用於取得一或多個資源的預先授權決定，如此一來，應用程式便可實作UI提示和/或內容篩選。
 
 >[!IMPORTANT]
 >
->增强的错误报告功能为拒绝的预授权决策添加其他错误信息，该功能可在请求时使用，因为必须在Adobe Primetime身份验证配置端启用它。
+>授權API **必須** 在授與使用者對指定資源的存取權之前使用。
 
-如果由于Adobe Primetime身份验证SDK错误或发生Adobe Primetime身份验证服务错误而无法提供预授权API请求，则附加错误信息（与上述配置无关）和资源将不会作为预授权API响应结果的一部分包含在内。
+如果Preauthorize API回應結果包含一或多個資源且預先授權決定遭拒，則可包含其他錯誤資訊 **（請參閱下面的附註）** 每個受影響的資源。
+
+>[!IMPORTANT]
+>
+>增強的錯誤報告功能會為被拒絕的預先授權決定新增其他錯誤資訊，此功能必須在Adobe Primetime驗證設定端啟用，因此可應請求使用。
+
+如果因為Adobe Primetime Authentication SDK錯誤或Adobe Primetime Authentication Services錯誤而導致Preauthorize API請求無法提供服務，則會在預先授權API回應結果中納入其他錯誤資訊（無論上述設定為何）和任何資源。
 
 </br>
 
@@ -36,18 +36,18 @@ ht-degree: 0%
 
 **可用性：** v3.6.0+
 
-**参数：**
+**引數：**
 
-- PreauthorizeRequest:用于传递API请求内容的请求对象；
-- AccessEnablerCallback:用于返回API响应的回调对象；
-- 预授权响应：用于返回API响应内容的响应对象；
+- PreauthorizeRequest：用來傳遞API要求內容的要求物件；
+- AccessEnablerCallback：用於傳回API回應的回呼物件；
+- PreauthorizeResponse：用來傳回API回應內容的回應物件；
 
  
 </br>
 
 ## `class PreauthorizeRequest`{#androidpreauthorizerequest}
 
-### **类PreauthorizeRequest.Builder**
+### **類別PreauthorizeRequest.Builder**
 
 ```
     ///
@@ -111,7 +111,7 @@ ht-degree: 0%
 ```
  
 
-## **enum PreauthorizeRequest.Feature**
+## **列舉PreauthorizeRequest.Feature**
 
 ```
     ///
@@ -159,21 +159,21 @@ ht-degree: 0%
     public List<Decision> getDecisions()
 ```
 
-### 示例：
+### 範例：
 
-本节重点介绍一些可能的PreauthorizeResponse对象的JSON结构。
-
->[!IMPORTANT]
->
->以下示例提供的JSON只能通过本文档中显示的模型类访问。 除非通过公共方法的媒介，否则您将无法访问此类JSON的属性。
+本節著重說明一些可能的PreauthorizeResponse物件的JSON結構。
 
 >[!IMPORTANT]
 >
->通过增强错误报告功能的媒介检索到的可能的其他错误列表记录在 [高级错误报告](/help/authentication/enhanced-error-codes.md).
+>以下範例顯示的JSON只能透過本檔案中顯示的模型類別存取。 除非透過公用方法，否則您將無法存取此類JSON的屬性。
+
+>[!IMPORTANT]
+>
+>透過增強錯誤報告功能的媒體擷取的可能其他錯誤清單記錄在 [進階錯誤報告](/help/authentication/enhanced-error-codes.md).
 
 #### 成功
 
-所有被请求的资源都有积极的授权决定
+所有請求的資源都有正面的預先授權決定
 
 ```JSON
     {
@@ -195,7 +195,7 @@ ht-degree: 0%
 ```
  
 
-一个或多个资源具有拒绝的预授权决策，并且在Adobe Primetime身份验证配置中未启用增强的错误报告功能
+一或多個資源具有遭拒絕的預先授權決定，且Adobe Primetime驗證設定中未啟用增強錯誤報告功能
 
 ```JSON
     {
@@ -218,7 +218,7 @@ ht-degree: 0%
 ```
  
 
-一个或多个资源具有拒绝的预授权决策，并且在Adobe Primetime身份验证配置中启用增强的错误报告功能
+一或多個資源具有遭拒絕的預先授權決定，且已在Adobe Primetime驗證設定中啟用增強型錯誤報告功能
 
 ```JSON
     {
@@ -249,11 +249,11 @@ ht-degree: 0%
 ```
  
 
-#### 错误
+#### 錯誤
 
  
 
-Adobe Primetime身份验证服务在为预授权API请求提供服务时遇到错误
+為Preauthorize API請求提供服務時，Adobe Primetime驗證服務發生錯誤
 
 ```JSON
     {
@@ -271,9 +271,9 @@ Adobe Primetime身份验证服务在为预授权API请求提供服务时遇到�
 ```
  
 
-#### 失败
+#### 失敗
 
-Adobe Primetime Authentication SDK在为预授权API请求提供服务时遇到错误
+為Preauthorize API請求提供服務時，Adobe Primetime Authentication SDK發生錯誤
 
 ```JSON
     {
@@ -321,7 +321,7 @@ Adobe Primetime Authentication SDK在为预授权API请求提供服务时遇到�
 
 </br>
 
-## **类状态** {#status}
+## **類別狀態** {#status}
 
 ```
     ///
@@ -377,7 +377,7 @@ Adobe Primetime Authentication SDK在为预授权API请求提供服务时遇到�
 
 <br>
 
-## **类决策** {#decision}
+## **類別決定** {#decision}
 
 ```
     ///
@@ -406,7 +406,7 @@ Adobe Primetime Authentication SDK在为预授权API请求提供服务时遇到�
 </br>
 
 
-## **示例代码** {#sample}
+## **程式碼範例** {#sample}
 
 ```
 let resources: [String] = ["resource_1", "resource_2", "resource_3"];

@@ -1,37 +1,36 @@
 ---
-title: 在实时／线性流中使用Ad Insertion
-description: 在实时／线性流中使用Ad Insertion
-translation-type: tm+mt
-source-git-commit: 0f98b9848f1764e7c66e3692d8a845513493597f
+title: 在即時/線性資料流中使用Ad Insertion
+description: 在即時/線性資料流中使用Ad Insertion
+exl-id: d56ed723-ec72-4bbd-befc-6858c7c9d800
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '274'
 ht-degree: 0%
 
 ---
 
+# 在即時/線性資料流中使用Ad Insertion {#ad-insertion-live-linear-stream}
 
-# 在实时／线性流{#ad-insertion-live-linear-stream}中使用Ad Insertion
+PrimetimeAd Insertion可讓發佈者處理在即時/線性串流期間發生的標準和複雜廣告插入情況。
 
-PrimetimeAd Insertion使出版商能够处理实时／线性流中出现的标准和复杂的广告插入情况。
+## 支援的提示格式 {#cue-formats-supported}
 
-## 支持的Cue格式{#cue-formats-supported}
+PrimetimeAd Insertion支援各種標準和非標準提示格式，包括：
 
-PrimetimeAd Insertion支持各种标准和非标准提示格式，包括：
+* DPI SCTE-35 （SCTE-35增強型廣告標籤）
 
-* DPI SCTE-35（SCTE-35增强的广告标记）
+* [Adobe數位程式插入訊號規格](https://www.adobe.com/content/dam/acom/en/devnet/primetime/PrimetimeDigitalProgramInsertionSignalingSpecification.pdf)
 
-* [Adobe数字项目插入信令规范](https://www.adobe.com/content/dam/acom/en/devnet/primetime/PrimetimeDigitalProgramInsertionSignalingSpecification.pdf)
+* 二進位SCTE-35 （HLS和DASH）
 
-* 二进制SCTE-35（HLS和DASH）
+* 文字SCTE-35 （HLS和DASH）
 
-* 文本SCTE-35（HLS和DASH）
+如需其他詳細資訊或其他支援的提示格式，請聯絡您的Primetime支援代表。
 
-有关更多详细信息或其他支持的提示格式，请与Primetime支持代表联系。
+## 部分廣告插播支援 {#partial-ad-break-support}
 
-## 部分广告中断支持{#partial-ad-break-support}
+部分廣告插播可用於觀看者在廣告插播開始後進入即時/線性資料流的情況。  例如，如果檢視者在1:00標籤處輸入2:00的廣告插播，則部分廣告插播可確保將在剩餘時間提供廣告。 如果沒有插入部分廣告插播，插播期間將不會對此檢視者提供任何廣告。 如果媒體串流中存在適當的標籤，PrimetimeAd Insertion會預設啟用部分廣告插播插入。
 
-在广告中断开始后，查看器进入实时／线性流时，可使用部分广告中断。  例如，如果观众在1:00处输入2:00长的广告中断，则部分广告中断插入可确保广告在剩余时间内投放。 如果不插入部分广告中断，则在中断期间不会向此查看者投放任何广告。 如果媒体流中存在相应的标记，PrimetimeAd Insertion将默认启用部分广告中断插入。
+## 提早回訪（提前廣告退出） {#early-return-early-ad-exit}
 
-## 提前退货（提前广告退出）{#early-return-early-ad-exit}
-
-在某些情况下，可能需要从实时／线性流中的广告中断中提前返回，例如当体育事件突然恢复行动时。 每种广告决策格式都包含一个“提示”（广告）或“提示”（内容）的标签。  如果在广告结束前遇到“提示”标签，Adobe PrimetimeAd Insertion将遵守提示。  请联系您的内容包装程序以启用提前返回。
+在某些情況下，您可能需要從即時/線性資料流的廣告插播中提早返回，例如當體育賽事突然恢復運作時。 每個廣告決策格式都包含「提示」（廣告）或「提示」（內容）的標籤。  如果在廣告插播結束前遇到「提示加入」標籤，Adobe PrimetimeAd Insertion會依照該提示加入。  請聯絡您的內容封裝程式以啟用提早傳回。

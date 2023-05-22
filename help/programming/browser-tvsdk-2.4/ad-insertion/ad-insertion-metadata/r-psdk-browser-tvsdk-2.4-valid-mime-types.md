@@ -1,22 +1,21 @@
 ---
-description: 一个广告可能有多个创意，其中一个被选中播放。
-title: 有效的MIME类型
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 一個廣告可能有多項創意，其中一項已選取播放。
+title: 有效的MIME型別
+exl-id: 878cae20-2a94-4795-8908-be7daffefb41
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '138'
 ht-degree: 0%
 
 ---
 
+# 有效的MIME型別{#valid-mime-types}
 
-# 有效的MIME类型{#valid-mime-types}
+一個廣告可能有多項創意，其中一項已選取播放。
 
-一个广告可能有多个创意，其中一个被选中播放。
+對於MIME型別，您可以指定使用者可優先處理哪些創意型別。 使用者指定的MIME型別以及瀏覽器TVSDK支援的MIME型別，可用來判斷將優先處理哪些創意。
 
-使用MIME类型，您可以指定用户可以优先处理的创意类型。 用户指定的MIME类型和浏览器TVSDK支持的MIME类型用于确定将优先顺序排列哪些创意。
-
-要在浏览器TVSDK中设置有效的MIME类型：
+若要在瀏覽器TVSDK中設定有效的MIME型別：
 
 ```js
 var auditudeSettings = new AdobePSDK.AuditudeSettings(); 
@@ -24,6 +23,6 @@ var mimeTypes = [“video/mp4”, “application/x-mpegURL”];
 auditudeSettings.validMimeTypes = mimeTypes; 
 ```
 
-其中`mimeTypes`是字符串数组，每个字符串表示mime类型。
+位置 `mimeTypes` 是一個字串陣列，而每個字串都代表mime型別。
 
-如果为广告返回多个媒体文件，则选择取决于媒体文件在`validMimeTypes`阵列中的显示顺序。 具有较低索引的MIME类型比具有较高索引的MIME类型具有首选项。
+如果針對廣告傳回多個媒體檔案，則選取範圍取決於媒體檔案出現的順序 `validMimeTypes` 陣列。 索引較低的MIME型別會比索引較高的型別獲得優先權。

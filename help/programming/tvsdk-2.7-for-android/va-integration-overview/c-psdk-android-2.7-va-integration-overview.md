@@ -1,32 +1,30 @@
 ---
-description: 您可以通过将TVSDK与Adobe Analytics集成来跟踪视频使用情况。
-title: 视频分析
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以整合TVSDK與Adobe Analytics以追蹤視訊使用情況。
+title: 視訊分析
+exl-id: 424bfa42-5838-4716-bdd2-65947b9645d6
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '121'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#video-analytics-overview}
 
-# 概述{#video-analytics-overview}
+您可以整合TVSDK與Adobe Analytics以追蹤視訊使用情況。
 
-您可以通过将TVSDK与Adobe Analytics集成来跟踪视频使用情况。
+TVSDK中的視訊追蹤會使用 **Adobe Analytics Video Essentials** 此服務提供視訊參與量度，例如視訊觀看次數、視訊完成次數、廣告曝光數、視訊逗留時間等。 如需此服務的詳細資訊，請聯絡您的Adobe代表。
 
-TVSDK中的视频跟踪使用&#x200B;**Adobe Analytics Video Essentials**&#x200B;服务，该服务提供视频参与度量，如视频视图、视频完成、广告印象、视频逗留时间等。 有关此服务的详细信息，请与Adobe代表联系。
+下列程式總結列出在播放器中啟動視訊追蹤的步驟：
 
-以下过程总结了在播放器中激活视频跟踪的步骤：
-
-1. 初始化和/或配置以下视频跟踪组件：
+1. 初始化及/或設定下列視訊追蹤元件：
 
    >[!TIP]
    >
-   >在Android中，这些组件是TVSDK的一部分。
+   >在Android中，這些元件是TVSDK的一部分。
 
-   * JSON配置文件
-   * 视频分析元数据对象
-   * 全局元数据对象
+   * JSON設定檔案
+   * 視訊分析中繼資料物件
+   * 全域中繼資料物件
 
-1. 使用Adobe Analytics管理工具在服务器端设置视频分析报告。
-
+1. 使用Adobe Analytics管理工具在伺服器端設定視訊分析報告。

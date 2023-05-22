@@ -1,34 +1,34 @@
 ---
-title: 动态客户端注册
-description: 动态客户端注册
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 動態使用者端註冊
+description: 動態使用者端註冊
+exl-id: 9bc2597d-b634-4542-849b-8e91a76cb8da
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '265'
 ht-degree: 0%
 
 ---
 
-
-# 动态客户端注册 {#dynamic-client-registration}
+# 動態使用者端註冊 {#dynamic-client-registration}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-## 上下文 {#context}
+## 內容 {#context}
 
-为了与现代安全实践、改进的UX和平台所有者要求保持一致，Adobe Primetime身份验证Android SDK和iOS SDK正朝着采用的方向发展 [Android Chrome自定义选项卡](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} and [Apple Safari view controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}.
+為符合現代安全性實務、改良UX和平台擁有者的要求，Adobe Primetime Authentication Android SDK和iOS SDK正朝著採用方向前進 [Android Chrome自訂標籤](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} and [Apple Safari view controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}.
 
-当前的AdobePass实施使用平台特定的Web视图，以便提供Web环境来显示MVPD登录页面。 这些Web视图与平台浏览器不共享凭据管理，因此在使用Adobe Primetime身份验证应用程序时，用户无法使用浏览器保存的密码。 此外，出于安全原因，一些平台正在弃用WebView控制器以执行身份验证任务。 Google和Apple均提供替代选项，如“Chrome自定义选项卡”和“Safari视图控制器”。 这些基本上是各自浏览器的单用选项卡。 Adobe Primetime身份验证将在2018年采用这些新组件。
+目前的AdobePass實作使用平台特定的Web檢視，以提供顯示MVPD登入頁面的Web環境。 這些網頁檢視不會與平台瀏覽器共用認證管理，因此使用者在使用Adobe Primetime驗證應用程式時無法使用瀏覽器儲存的密碼。 此外，基於安全考量，有些平台正逐步淘汰WebView控制器以進行驗證工作。 Google和Apple都提供替代選項，例如「Chrome自訂標籤」和「Safari檢視控制器」。 這些基本上是其各自瀏覽器的單一使用標籤。 Adobe Primetime驗證將在2018年採用這些新元件。
 
-## 详细信息 {#details}
+## 詳細資料 {#details}
 
-目前，Adobe Pass身份验证可通过两种方式来识别和注册应用程序：
+目前，Adobe Pass驗證識別及註冊應用程式的方式有兩種：
 
-* 基于浏览器的客户端通过允许的域列表进行注册
-* 本机应用程序客户端(如iOS和Android应用程序)通过签名请求者机制进行注册
+* 瀏覽器型使用者端會透過允許的網域清單進行註冊
+* 原生應用程式使用者端(例如iOS和Android應用程式)會透過已簽署的請求者機制進行註冊
 
-为了解决Chrome自定义选项卡和Safari视图控制器的新流程，Adobe Pass提出了用于注册新应用程序的新客户端注册机制。 此机制将允许更安全、更精细地控制您的应用程序，并可用于在所有平台上注册应用程序。
+為了處理Chrome自訂標籤和Safari檢視控制器新的流程，Adobe Pass建議新的使用者端註冊機制來註冊新的應用程式。 此機制可讓您對應用程式進行更安全和精細的控制，並可用於在所有平台上註冊應用程式。
 
 <!--
 ## Related Information

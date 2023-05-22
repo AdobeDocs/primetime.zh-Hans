@@ -1,6 +1,6 @@
 ---
-title: 清单服务器调试工具
-description: 清单服务器调试工具
+title: 資訊清單伺服器偵錯工具
+description: 資訊清單伺服器偵錯工具
 products: SG_PRIMETIME
 topic-tags: ad-insertion
 discoiqdonotlocalize: false
@@ -8,7 +8,6 @@ moreHelpPaths: /content/help/en/primetime/morehelp/ad-insertion;/content/help/en
 pagecreatedat: en
 pagelayout: video
 sidecolumn: left
-translation-type: tm+mt
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '2414'
@@ -17,37 +16,37 @@ ht-degree: 0%
 ---
 
 
-# 清单服务器调试工具{#manifest-server-debugging-tool}
+# 資訊清單伺服器偵錯工具 {#manifest-server-debugging-tool}
 
-该调试工具使发行商能够通过检查HTTP头中清单服务器实时返回的调试信息来调查可能代价高昂的广告插入问题，或者，当需要更详细的信息时，检查事实后的会话日志。 Adobe合作伙伴（如Akamai）可以使用该工具调试与Primetime广告决策的集成。
+偵錯工具可讓發佈者檢查資訊清單伺服器在HTTP標題中即時傳回的偵錯資訊，或在需要更詳細資訊時，在事後檢查工作階段記錄，藉此調查可能較昂貴的廣告插入問題。 Akamai等Adobe合作夥伴可以使用此工具來偵錯他們與Primetime ad decisioning的整合。
 
-该工具支持在任何主清单服务器和跟踪配置中调试和插入问题：
+此工具支援在任何主要資訊清單伺服器和追蹤設定中進行偵錯和插入問題：
 
-* 使用基于TVSDK的播放器进行客户端跟踪。
-* 使用不基于TVSDK的播放器进行客户端跟踪。
-* 服务器端跟踪。
+* 透過基於TVSDK的播放器進行使用者端追蹤。
+* 使用非以TVSDK為基礎的播放器的使用者端追蹤。
+* 伺服器端追蹤。
 
-要支持所有这些情况，该工具不需要或使用播放器发布者代码。
+為了支援所有這些情況，該工具不需要或使用播放器發佈程式碼。
 
-启动清单服务器会话时，可以在请求URL上设置一个参数，要求它记录调试信息。 使用该参数的不同值，您还可以要求清单服务器返回HTTP头中指定的调试信息，但标头只能包含有限量的信息。 您可以从Adobe获取凭据，以访问完整的日志文件，清单服务器会定期（例如，每小时）保存在存档服务器上。 拥有该服务器的凭据后，您可以随时直接访问它。
+當您啟動資訊清單伺服器工作階段時，可以在請求URL上設定引數，以要求它記錄偵錯資訊。 若使用該引數的不同值，您也可以要求資訊清單伺服器傳回HTTP標頭中的指定偵錯資訊片段，但標頭只能包含有限數量的資訊。 您可以從Adobe取得認證，以存取資訊清單伺服器定期（例如，每小時）儲存於封存伺服器上的完整記錄檔。 一旦您擁有該伺服器的認證，您就可以隨時直接存取它。
 
 <!-- You can also see the [server side event tracking captured in the SSAI dashboard](ssai-debugging-dashboard.md).-->
 
-## 调试工具选项{#debugging-tool-options}
+## 偵錯工具選項 {#debugging-tool-options}
 
-调用调试工具时，对于清单服务器在HTTP头中返回的信息，您有几个选项。 这些选项不会影响清单服务器在日志文件中的位置。
+叫用偵錯工具時，資訊清單伺服器會在HTTP標頭中傳回哪些資訊，有幾個選項。 選項不會影響資訊清單伺服器放置在記錄檔中的內容。
 
 ### 指定ptdebug {#specifying-ptdebug}
 
-在为清单服务器会话启动调试日志记录时，可以将ptdebug参数添加到请求URL，以指定清单服务器在HTTP头中返回的信息的以下选项：
+起始資訊清單伺服器工作階段的偵錯記錄時，您可以將ptdebug引數新增至要求URL，為資訊清單伺服器傳回的HTTP標頭資訊指定下列選項：
 
-* ptdebug=true除`TRACE_HTTP_HEADER`和`TRACE_AD_CALL`记录中的大多数`call/response data`之外的所有记录。
-* ptdebug=AdCall Only TRACE_AD_*type*(例如，TRACE_AD_CALL)记录。
-* ptdebug=仅标头TRACE_HTTP_HEADER记录。
+* ptdebug=true所有記錄，除了 `TRACE_HTTP_HEADER` 和最多 `call/response data` 從 `TRACE_AD_CALL` 記錄。
+* ptdebug=AdCall OnlyTRACE_AD_*type* (例如TRACE_AD_CALL)記錄。
+* ptdebug=Header OnlyTRACE_HTTP_HEADER記錄。
 
-这些选项不会影响清单服务器在日志文件中的位置。 您对此没有控制权，但日志文件是文本文件，因此您可以应用各种工具来提取您感兴趣的信息并重新设置其格式。
+選項不會影響資訊清單伺服器放置在記錄檔中的內容。 您對此沒有控制權，但記錄檔是文字檔，因此您可以套用各種工具來擷取和重新格式化您感興趣的資訊。
 
-以下是`ptdebug=Header`时返回的HTTP头示例。 某些十六进制数字的长字符串替换为`. . .`以便清晰起见。
+以下範例為以下情況下傳回的HTTP標頭： `ptdebug=Header`. 某些十六進位數字的長字串會取代為 `. . .` 以求清晰明瞭。
 
 ```
 X-ADBE-AI-DBG-1 TRACE_MISC    HTTP request received
@@ -76,45 +75,45 @@ X-ADBE-AI-DBG-16 TRACE_HTTP_HEADER  MAIN  RESPONSE Access-Control-Allow-Origin  
 X-ADBE-AI-DBG-17 TRACE_MISC   Done
 ```
 
-## 日志记录的格式{#formats-of-log-records}
+## 記錄檔記錄格式 {#formats-of-log-records}
 
-每个日志记录都有一个类型和一组字段，其中有些字段可能是可选的。 直到记录类型的所有记录的字段都相同。 它们提供有关会话的时间戳和信息。 记录类型标识所记录的事件类型，后续字段提供有关所记录事件的信息。
+每個記錄檔記錄都有一個型別和一組欄位，其中一些可能是選擇性的。 記錄型別之前的所有記錄的欄位都是相同的。 它們會提供工作階段的時間戳記和資訊。 記錄型別會識別所記錄的事件的型別，而後續欄位會提供有關所記錄事件的資訊。
 
-日志记录的结构如下：
+記錄檔記錄的結構如下：
 
-`datetime request_id session_id zone_id record_type` *其他字段。*
+`datetime request_id session_id zone_id record_type` *其他欄位。*
 
-| 字段 | 类型 | 说明 |
+| 欄位 | 型別 | 說明 |
 |--- |--- |--- |
-| date | 字符串 | 时间戳 |
-| request_id | 字符串 | 清单服务器使用的请求ID（unix时间戳） |
-| session_id | 字符串 | 清单服务器使用的会话ID |
-| zone_id | 整数 | 区域ID |
-| record_type | 字符串 | 正在记录的事件类型 |
-| 其他字段 | *** | 取决于事件类型 |
+| 日期時間 | 字串 | 時間戳記 |
+| request_id | 字串 | 資訊清單伺服器使用的請求ID （unix時間戳記） |
+| session_id | 字串 | 資訊清單伺服器使用的工作階段ID |
+| zone_id | 整數 | 區域ID |
+| record_type | 字串 | 所記錄的事件的型別 |
+| 其他欄位 | *** | 視事件型別而定 |
 
-### TRACE_REQUEST_INFO记录{#trace-request-info-records}
+### TRACE_請求_資訊記錄 {#trace-request-info-records}
 
-此类型的记录记录HTTP请求的结果。 超出TRACE_REQUEST_INFO的字段按表中显示的顺序显示，以制表符分隔。
+此型別的記錄會記錄HTTP請求的結果。 超出TRACE_REQUEST_INFO的欄位會以表格中所示的順序顯示，並以標籤分隔。
 
-| 字段 | 类型 | 说明 |
+| 欄位 | 型別 | 說明 |
 |--- |--- |--- |
-| 状态 | 字符串 | 返回的HTTP状态代码 |
-| request_method | 字符串 | HTTP方法(GET或POST) |
-| request_uri | 字符串 | HTTP请求URI（无主机） |
-| request_length | 整数 | 请求长度（字节） |
-| response_length | 整数 | 响应长度（字节） |
-| δ | 整数 | 处理请求的时间（毫秒） |
-| module_type | 字符串 | 变体、流或VOD |
-| remote_address_aud_client_ip | 字符串 | （请参阅附注） |
-| remote_address_x_fwd_for_hdr_key | 字符串 | （请参阅附注） |
-| remote_host_port | 字符串 | （请参阅附注） |
+| 狀態 | 字串 | 傳回HTTP狀態代碼 |
+| request_method | 字串 | HTTP方法(GET或POST) |
+| request_uri | 字串 | HTTP要求URI （不含主機） |
+| request_length | 整數 | 要求長度（位元） |
+| response_length | 整數 | 回應長度（位元） |
+| delta | 整數 | 處理要求的時間（毫秒） |
+| 模組型別 | 字串 | 變體、資料流或VOD |
+| remote_address_aud_client_ip | 字串 | （請見附註） |
+| remote_address_x_fwd_for_hdr_key | 字串 | （請見附註） |
+| remote_host_port | 字串 | （請見附註） |
 
 >[!NOTE]
 >
->最后三个字段为可选字段。
+>最後三個欄位是選用欄位。
 
-示例：
+範例：
 
 ```
 1427263800524 6495aafc-3f34-4047-ad36-350d4f056eb4 189938
@@ -122,22 +121,22 @@ TRACE_REQUEST_INFO 301 GET /auditude/variant/pubAsset/aHR0cDov. . ..m3u8
 ?u=cecebae72a919de350b9ac52602623f3&z=189938&ptcueformat=turner& sid =yk-cnnlive-003 &ptdebug=true 0 0 0 Variant 111.22.3.44 111.22.3.45 127.0.0.1:46383
 ```
 
-### TRACE_HTTP_HEADER记录{#trace-http-header-records}
+### TRACE_HTTP_HEADER記錄 {#trace-http-header-records}
 
-在清单服务器与客户端、广告服务器或内容服务器之间的HTTP调用期间交换的此类记录记录日志HTTP头。 超出TRACE_HTTP_HEADER的字段按表中显示的顺序显示，以制表符分隔。
+此型別的記錄會記錄資訊清單伺服器與使用者端、廣告伺服器或內容伺服器之間的HTTP呼叫期間交換的HTTP標頭。 TRACE_HTTP_HEADER以外的欄位會依表格中所示的順序顯示（以索引標籤分隔）。
 
-| 字段 | 类型 | 说明 |
+| 欄位 | 型別 | 說明 |
 |--- |--- |--- |
-| request_type | 字符串 | 请求类型（MAIN或UNKNOWN） |
-| request_response | 字符串 | 响应标头（请求或响应） |
-| header_name | 字符串 | HTTP头名称 |
-| header_value | 字符串 | Base64编码的HTTP头值 |
+| request_type | 字串 | 請求型別（主要或未知） |
+| request_response | 字串 | 回應標頭（請求或回應） |
+| header_name | 字串 | HTTP標頭名稱 |
+| header_值 | 字串 | Base64編碼的HTTP標頭值 |
 
 >[!NOTE]
 >
->request_type和header_value字段为可选字段。
+>request_type和header_value欄位是選用欄位。
 
-示例：
+範例：
 
 ```
 2015-03-25T06:10:00.927Z  1427263800573  6495aa. . .  189938 TRACE_MISC
@@ -168,53 +167,53 @@ TRACE_REQUEST_INFO 301 GET /auditude/variant/pubAsset/aHR0cDov. . ..m3u8
     UNKNOWN RESPONSE  Via MS4xIH. . .
 ```
 
-### TRACE_AD_CALL记录{#trace-ad-call-records}
+### TRACE_AD_CALL記錄 {#trace-ad-call-records}
 
-此类型的记录记录清单服务器和请求的结果。 超出TRACE_AD_CALL的字段按表中显示的顺序显示，以制表符分隔。
+此型別的記錄記錄會記錄資訊清單伺服器和要求的結果。 TRACE_AD_CALL以外的欄位會以表格中顯示的順序顯示，並以索引標籤分隔。
 
-| 字段 | 类型 | 说明 |
+| 欄位 | 型別 | 說明 |
 |--- |--- |--- |
-| 状态 | 字符串 | 返回的HTTP状态代码 |
-| request_duration | 整数 | 请求到响应的时间（毫秒） |
-| ad_server_查询_url | 字符串 | 广告调用的URL，包括查询参数 |
-| ad_system_id | 字符串 | 广告系统，从广告服务器响应（如果未指定，则为Auditude） |
-| avail_id | 字符串 | 可用的ID，来自内容清单文件（VOD为N/A）中的ad提示 |
-| avail_duration | number | 可用的持续时间（秒），从内容清单文件中的广告提示（VOD为N/A） |
-| ad_server_response | 字符串 | 来自广告服务器的Base64编码响应 |
+| 狀態 | 字串 | 傳回HTTP狀態代碼 |
+| request_duration | 整數 | 從要求到回應的時間（毫秒） |
+| ad_server_query_url | 字串 | 廣告呼叫的URL，包括查詢引數 |
+| ad_system_id | 字串 | 廣告系統，來自廣告伺服器回應（若未指定，則為稽核） |
+| avail_id | 字串 | 從內容資訊清單檔案中的廣告提示取得的有效的ID （VOD不適用） |
+| avail_duration | 數字 | 從內容資訊清單檔案中的廣告提示取得廣告的持續時間（秒） （VOD不適用） |
+| ad_server_response | 字串 | 來自廣告伺服器的Base64編碼回應 |
 
-示例：
+範例：
 
 ```
 2015-03-25T06:13:31.271Z 14272. . . 189938 TRACE_AD_CALL
 200 8 https://ad.stg2.auditude.com/adserver/a?cip=0.0.0.0&g=1000012&of=1.5 &ptcueformat=turner&ptdebug=true&tl=l,150,30,m&tm=63&u=ceceb. . . Auditude IvpIyC. . . 150 PD94bWw. . .
 ```
 
-### TRACE_AD_INSERT、TRACE_AD_RESOLVE和TRACE_AD_REDIRECT记录{#trace-ad-insert-trace-ad-resolve-and-trace-ad-redirect-records}
+### TRACE_AD_INSERT、TRACE_AD_RESOLVE和TRACE_AD_REDIRECT記錄 {#trace-ad-insert-trace-ad-resolve-and-trace-ad-redirect-records}
 
-此类型的记录记录记录类型指示的广告请求的结果。 记录类型以外的字段按表中显示的顺序显示，以制表符分隔。
+此型別的記錄會記錄記錄該記錄型別所指示的廣告請求的結果。 記錄型別以外的欄位會以表格中顯示的順序顯示（以索引標籤分隔）。
 
-| 字段 | 类型 | 说明 |
+| 欄位 | 型別 | 說明 |
 |--- |--- |--- |
-| 状态 | 字符串 | 返回的HTTP状态代码 |
-| avail_id | 字符串 | 可用的ID，从内容清单文件（实时）中的ad提示或从清单服务器(VOD) |
-| ad_type | 字符串 | 广告类型（直接或重定向） |
-| ad_duration | 整数 | 广告持续时间（秒），来自广告服务器响应 |
-| ad_content_url | 字符串 | 广告的清单文件的URL，来自广告服务器响应 |
-| ad_content_url_actual | 字符串 | 插入广告的清单文件的URL。 对于TRACE_AD_REDIRECT为空。 |
-| ad_system_id | 字符串 | 广告系统，从广告服务器响应（如果未指定，则为Auditude） |
-| ad_id | 字符串 | 广告的ID，来自广告服务器响应 |
-| creative_id | 字符串 | 创意的ID，从广告节点，从广告服务器响应 |
-| ad_call_id | 字符串 | 未使用。 保留供将来使用。 |
-| δ | 整数 | 此事件所花费的时间（毫秒） |
-| mis | 字符串 | 跳过广告的原因 |
+| 狀態 | 字串 | 傳回HTTP狀態代碼 |
+| avail_id | 字串 | 從內容資訊清單檔案（即時）中的廣告提示或來自資訊清單伺服器(VOD)的可用的ID |
+| ad_type | 字串 | 廣告型別（直接或重新導向） |
+| ad_duration | 整數 | 廣告持續時間（秒），來自廣告伺服器回應 |
+| ad_content_url | 字串 | 廣告資訊清單檔案的URL，來自廣告伺服器回應 |
+| ad_content_url_actual | 字串 | 插入廣告資訊清單檔案的URL。 留空表示TRACE_AD_REDIRECT。 |
+| ad_system_id | 字串 | 廣告系統，來自廣告伺服器回應（若未指定，則為稽核） |
+| ad_id | 字串 | 廣告ID，來自廣告伺服器回應 |
+| creative_id | 字串 | 廣告節點和廣告伺服器回應中的創意ID |
+| ad_call_id | 字串 | 未使用。 保留以供日後使用。 |
+| delta | 整數 | 此事件花費的時間（毫秒） |
+| 雜項 | 字串 | 略過廣告的原因 |
 
 >[!NOTE]
 >
->ad_content_url_actual、ad_call_id和misc字段为可选字段。
+>ad_content_url_actual、ad_call_id和其他欄位是選用欄位。
 
-对于TRACE_AD_RESOLVE和TRACE_AD_INSERT，ad_content_url_actual字段中的URL用于转码广告（如果有）。 否则，TRACE_AD_RESOLVE的字段为空，或者TRACE_AD_INSERT的ad_content_url相同。
+對於TRACE_AD_RESOLVE和TRACE_AD_INSERT，ad_content_url_actual欄位中的URL適用於轉碼廣告（如果可用）。 否則，TRACE_AD_RESOLVE的欄位為空白，或者與TRACE_AD_INSERT的ad_content_url相同。
 
-示例：
+範例：
 
 ```
 2015-03-18T22:25:36.229-07:00 1426742736208 1120feb. . . 147465 TRACE_AD_RESOLVE
@@ -231,18 +230,18 @@ Auditude 308008 0 cecebae72a919de350b9ac52602623f3 0 NA
 Auditude 308008 0 cecebae72a919de350b9ac52602623f3 0 NA
 ```
 
-### TRACE_TRACKING_URL记录{#trace-tracking-url-records}
+### TRACE_追蹤_URL記錄 {#trace-tracking-url-records}
 
-此类型的记录记录清单服务器和请求的结果。 超出TRACE_TRACKING_URL的字段按表中显示的顺序显示，以制表符分隔。
+此型別的記錄記錄會記錄資訊清單伺服器和要求的結果。 TRACE_TRACKING_URL以外的欄位會以表格中顯示的順序顯示，並以索引標籤分隔。
 
-| 字段 | 类型 | 说明 |
+| 欄位 | 型別 | 說明 |
 |--- |--- |--- |
-| pts | number | 项目时间戳。 在视频中调用URL的时间。 |
-| ad_system | 字符串 | 广告系统（auditude或自由轮） |
-| url | 字符串 | URL已pinged |
-| 状态 | 字符串 | 从ping命令返回的HTTP状态 |
+| 分 | 數字 | 程式時間戳記。 在視訊中呼叫URL的時間。 |
+| ad_system | 字串 | 廣告系統（auditude或任意輪） |
+| url | 字串 | 已釘選的URL |
+| 狀態 | 字串 | 從ping傳回的HTTP狀態 |
 
-示例：
+範例：
 
 ```
 2015-06-04T23:24:42.000-0700    1426742736208     3086f5cd . . .    12345    TRACE_TRACKING_URL
@@ -250,181 +249,181 @@ Auditude 308008 0 cecebae72a919de350b9ac52602623f3 0 NA
     sid:3086f5cd . . .;pts:0    200
 ```
 
-### TRACE_TRANSCODE_NO_MEDIA_TO_TRANSCODE记录{#trace-transcoding-no-media-to-transcode-records}
+### TRACE_TRANSCODING_NO_MEDIA_TO_TRANSCODE記錄 {#trace-transcoding-no-media-to-transcode-records}
 
-此类型的记录记录缺少广告创意。 表中显示唯一超出TRACE_TRANSCODE_NO_MEDIA_TO_TRANSCODE的字段。
+此型別的記錄會記錄缺少的廣告創意。 除了TRACE_TRANSCODING_NO_MEDIA_TO_TRANSCODE之外，表格中唯一出現一個欄位。
 
-| 字段 | 类型 | 说明 |
+| 欄位 | 型別 | 說明 |
 |--- |--- |--- |
-| ad_id | 字符串 | 完全限定的广告ID `(FQ_AD_ID: Q_AD_ID\[;Q_AD_ID\[;Q_AD_ID...\]\]` Q_AD_ID:`PROTOCOL:AD_SYSTEM:AD_ID\[:CREATIVE_ID\[:MEDIA_ID\]\]`协议：AUDITUDE， VAST) |
+| ad_id | 字串 | 完整廣告ID `(FQ_AD_ID: Q_AD_ID\[;Q_AD_ID\[;Q_AD_ID...\]\]` Q_AD_ID： `PROTOCOL:AD_SYSTEM:AD_ID\[:CREATIVE_ID\[:MEDIA_ID\]\]` 通訊協定：AUDITUDE，VAST) |
 
-### TRACE_CRONDING_REQUESTED记录{#trace-transcoding-requested-records}
+### TRACE_轉碼_要求的記錄 {#trace-transcoding-requested-records}
 
-此类型的记录记录清单服务器发送给CRS的转码请求的结果。 超出TRACE_CRONDING_REQUESTED的字段以表中显示的顺序显示，以制表符分隔。
+此型別的記錄會記錄資訊清單伺服器傳送至CRS的轉碼請求結果。 超出TRACE_TRANSCODING_REQUESTED的欄位會以表格中所示的順序顯示，並以索引標籤分隔。
 
-| 字段 | 类型 | 说明 |
+| 欄位 | 型別 | 說明 |
 |--- |--- |--- |
-| ad_id | 字符串 | 完全限定的广告ID |
-| ad_manifest_url | 字符串 | 广告的清单文件的URL，来自广告服务器响应 |
-| creative_type | 字符串 | 媒体类型 |
-| 标志 | 字符串 | ID3指示转码请求是否包括添加ID3标记的请求 |
-| 目标_duration | 字符串 | 转码创意的目标持续时间（秒） |
+| ad_id | 字串 | 完整廣告ID |
+| ad_manifest_url | 字串 | 廣告資訊清單檔案的URL，來自廣告伺服器回應 |
+| creative_type | 字串 | 媒體型別 |
+| 標幟 | 字串 | ID3指出轉碼請求是否包含新增ID3標籤的請求 |
+| target_duration | 字串 | 轉碼創意的目標持續時間（秒） |
 
-### TRACE_TRACKING_REQUEST记录{#trace-tracking-request-records}
+### TRACE_TRACKING_REQUEST記錄 {#trace-tracking-request-records}
 
-此类型的记录指示执行服务器端跟踪的请求。 超出TRACE_TRACKING_REQUEST的字段按表中显示的顺序显示，以制表符分隔。
+此型別的記錄表示執行伺服器端追蹤的請求。 超出TRACE_TRACKING_REQUEST的欄位會以表格中所示的順序顯示，並以索引標籤分隔。
 
-| 字段 | 类型 | 说明 |
+| 欄位 | 型別 | 說明 |
 |--- |--- |--- |
-| tracking_url_count | 整数 | 跟踪URL的数量 |
-| 开始 | 浮 | PTS片段开始时间（秒，精确到毫秒） |
-| 结束 | 浮 | PTS片段结束时间（秒，精确到毫秒） |
+| tracking_url_count | 整數 | 追蹤URL |
+| 開始 | 浮點數 | PTS片段開始時間（以毫秒為精確度計算，以秒為單位） |
+| 結束 | 浮點數 | PTS片段結束時間（以毫秒為精確度計算，以秒為單位） |
 
-### TRACE_TRACKING_REQUEST_URL记录{#trace-tracking-request-url-records}
+### TRACE_TRACKING_REQUEST_URL記錄 {#trace-tracking-request-url-records}
 
-此类型的记录为服务器端跟踪提供跟踪URL。 超出TRACE_TRACKING_REQUEST_URL的字段按表中显示的顺序显示，以制表符分隔。
+此型別的記錄會提供伺服器端追蹤的追蹤URL。 超出TRACE_TRACKING_REQUEST_URL的欄位會以表格中的順序顯示，並以索引標籤分隔。
 
-| 字段 | 类型 | 说明 |
+| 欄位 | 型別 | 說明 |
 |--- |--- |--- |
-| 时间戳 | 浮 | 播放会话中ping跟踪URL的时间（秒，精度为。001） |
-| ad_system | 字符串 | 广告系统（例如，auditude） |
-| url | 字符串 | 要ping的URL |
+| timestamp | 浮點數 | 在播放工作階段內偵測追蹤URL的時間（秒，精確度為。001） |
+| ad_system | 字串 | 廣告系統（例如auditude） |
+| url | 字串 | 要偵測的URL |
 
-### TRACE_WEBVTT_REQUEST记录{#trace-webvtt-request-records}
+### TRACE_WEBVTT_REQUEST記錄 {#trace-webvtt-request-records}
 
-清单服务器为WEBVTT题注请求此类型日志的记录。 超出TRACE_WEBVTT_REQUEST的字段按表中显示的顺序显示，以制表符分隔。
+此記錄型別的記錄要求資訊清單伺服器製作WEBVTT註解。 超出TRACE_WEBVTT_REQUEST的欄位會以表格中的順序顯示，並以索引標籤分隔。
 
-| 字段 | 类型 | 说明 |
+| 欄位 | 型別 | 說明 |
 |--- |--- |--- |
-| 状态 | 字符串 | 返回的HTTP状态代码 |
-| vtt_uri | 字符串 | 请求的URL |
-| 开始 | 浮 | 分割开始时间（秒，毫秒精度） |
-| 结束 | 浮 | 分段结束时间（秒，精确到毫秒） |
+| 狀態 | 字串 | 傳回HTTP狀態代碼 |
+| vtt_uri | 字串 | 請求的URL |
+| 開始 | 浮點數 | 分割開始時間（以毫秒精確度計算，以秒為單位） |
+| 結束 | 浮點數 | 分割結束時間（以毫秒精確度計算，以秒為單位） |
 
-### TRACE_WEBVTT_RESPONSE记录{#trace-webvtt-response-records}
+### TRACE_WEBVTT_RESPONSE記錄 {#trace-webvtt-response-records}
 
-记录``of ``此``type ``将``manifest ``服务器``sends ``记录到`` `answer` ``中的``clients ````requests `` `for` ``WEBVTT ``字幕。 ``responses ``超出TRACE_WEBVTT_RESPONSE&#39;&#39;的字段按表中显示的顺序显示，分隔的`by`选项卡。
+記錄 ``of ``此 ``type ``記錄 ``responses ``此 ``manifest ``伺服器 ``sends ``至 ``clients ``在 `` `answer` ``至 ``requests `` `for` ``WEBVTT ``註解。 TRACE_WEBVTT_RESPONSE以外的欄位會以表格中顯示的順序顯示，並以分隔符號分隔 `by`索引標籤。
 
-| 字段 | 类型 | 说明 |
+| 欄位 | 型別 | 說明 |
 |--- |--- |--- |
-| 状态 | 字符串 | 返回的HTTP状态代码 |
-| 响应 | 字符串 | 发送到客户端的Base64编码响应 |
+| 狀態 | 字串 | 傳回HTTP狀態代碼 |
+| 回應 | 字串 | 傳送至使用者端的Base64編碼回應 |
 
-### TRACE_WEBVTT_SOURCE记录{#trace-webvtt-source-records}
+### TRACE_WEBVTT_SOURCE記錄 {#trace-webvtt-source-records}
 
-此类型的记录记录对清单服务器为WEBVTT题注发出的请求进行日志响应。 超出TRACE_WEBVTT_SOURCE的字段按表中显示的顺序显示，以制表符分隔。
+此型別的記錄會回應資訊清單伺服器對WEBVTT註解發出的要求。 超出TRACE_WEBVTT_SOURCE的欄位會以表格中所示的順序顯示，並以索引標籤分隔。
 
-| 字段 | 类型 | 说明 |
+| 欄位 | 型別 | 說明 |
 |--- |--- |--- |
-| 状态 | 字符串 | 返回的HTTP状态代码 |
-| 源 | 字符串 | 基于64编码的原始VTT内容 |
+| 狀態 | 字串 | 傳回HTTP狀態代碼 |
+| source | 字串 | Base64編碼原始VTT內容 |
 
 
-### TRACE_MISC记录{#trace-misc-records}
+### TRACE_MISC記錄 {#trace-misc-records}
 
-此类型的记录使清单服务器能够记录事件和在收录广告时未计划的信息。 TRACE_MISC之外的字段由消息字符串组成。 可能显示的消息包括：
+此型別的記錄可讓資訊清單伺服器記錄事件和資訊，而這些資訊不是為擷取廣告而計畫的。 TRACE_MISC以外的欄位包含訊息字串。 可能顯示的訊息包括：
 
-* 已忽略广告：AdPlacement `[adManifestURL=https://cdn2.auditude.com/assets/3p/v2/8c/2b/8c2bb. . . .m3u8, durationSeconds=15.0, ignore=false, redirectAd=false, priority=1]`
-* AdPlacement adManifestURL=*adManifestURL*,durationSeconds=*seconds*, ignore=*ignore*, redirectAd=*, priority=* priority **
-* 广告投放返回null。
-* 已成功拼接广告。
-* 广告呼叫失败：*错误消息*。
-* 添加User-Agent以获取原始清单：*user-agent*。
-* 添加Cookie以获取原始清单：[cookie]
-* 错误的URL *请求的URL错误消息*。 （无法分析变体URL）
-* 调用的url:URL *已返回：响应代码*。 （实时URL）
-* 调用的url:URL *返回代码：响应代码*。 (VOD URL)
-* 解决广告时发现冲突：中间辊开始或中间辊端之一位于中间辊(VOD)中包含的预辊或预辊内。
-* 检测到处理函数为URI引发的未处理异常：*请求URL*。
-* 已完成生成变型清单。 （变量）
-* 已完成生成变型清单。
-* 处理VAST重定向*重定向URL时出现异常*错误：*错误消息*。
-* 无法获取&#x200B;*广告清单URL*&#x200B;的广告播放列表。
-* 无法生成目标清单。 (HLSManifestResolver)
-* 无法分析第一个广告调用响应：*错误消息*。
-* 无法处理*GET|POST*路径请求：*请求URL*。 （实时/VOD）
-* 无法处理Live Manifest请求：*请求URL*。 （实时）
-* 无法返回变量清单：*错误消息*。
-* 无法验证组ID:*组ID*。
-* 正在获取原始清单：*内容URL*。 （实时）
-* 在VAST重定向后：*重定向URL*。
-* 找到空的可用。 (VOD)
-* 找到*号*广告。 (VOD)
-* 收到HTTP请求。 （第一条消息）
-* 将忽略广告，因为广告响应持续时间（*广告响应持续时间*秒）和实际广告持续时间（*实际持续时间*秒）之间的差异大于限制。 (HLSManifestResolver)
-* 将忽略未提供ID值的可用值。 (GroupAdResolver.java)
-* 忽略提供无效时间值的有用值：*time *for availId = *avail ID*。
-* 忽略提供无效持续时间值的有用值：*持续时间*for availId = *avail ID*。
-* 初始化新会话。 （变量）
-* HTTP方法无效。 一定是GET。 (VOD)
-* HTTP方法无效。 跟踪请求必须是GET。 （实时）
-* URL *请求的URL错误消息*&#x200B;无效。 （变量）
-* 组无效。 (HLSManifestResolver)
-* 请求无效。 题注不是有效的跟踪请求。 (VOD)
-* 请求无效。 必须在会话建立后发出题注请求。 (VOD)
-* 请求无效。 必须在会话建立后发出跟踪请求。 (VOD)
-* 超载组ID的服务器实例无效：*组ID*。 （实时）
-* 已达到VAST重定向的限制 — *number*。
-* 进行广告通话：*广告呼叫URL*。
-* 找不到以下对象的清单：*内容URL*。 （实时）
-* 找不到适用ID的匹配用项：*可用ID*。 (HLSManifestResolver)
-* 未找到播放会话。 (HLSManifestResolver)
-* 正在处理清单&#x200B;*内容URL*&#x200B;的VOD请求。
-* 正在处理变量。
-* 正在处理清单&#x200B;*内容URL*&#x200B;的题注请求。
-* 正在处理跟踪请求。 (VOD)
-* 重定向广告响应为空。 (VASTStAX)
-* 请求：*URL*。
-* 返回GET请求的错误响应，因为未找到播放会话。 (VOD)
-* 因内部服务器错误而返回GET请求的错误响应。
-* 为指定无效资产的GET请求返回错误响应：*广告请求ID*。 (VOD)
-* 为指定无效或空组ID的GET请求返回错误响应：*组ID*。 (VOD)
-* 为指定无效跟踪位置值的GET请求返回错误响应。 (VOD)
-* 对语法无效的GET请求返回错误响应 — *请求URL*。 （实时/VOD）
-* 使用不支持的HTTP方法返回请求的错误响应：*GET|POST*。 （实时/VOD）
-* 从缓存返回清单。 (VOD)
-* 服务器已过载。 无需广告拼合请求即可继续。 （变量）
-* 开始生成目标清单。 (HLSManifestResolver)
-* 开始生成变型清单自：*内容URL*。 （变量）
-* 开始将广告拼接到清单中。 (VODHLSResolver)
-* 尝试在`HH:MM:SS`处缝合广告：AdPlacement \[adManifestURL=*广告清单URL*,durationSeconds=*seconds*, ignore=*ignore*, redirectAd=*, priority=*&#x200B;优先级&#x200B;*。]*
-* 由于时间轴无效，无法获取广告 — 返回不含广告的内容。 (VOD)
-* 无法获取广告 — 返回不含广告的内容。 (VOD)
-* 无法获取广告查询，未提供内容URL。 (VOD)
-* 收到有效的URL。 (VOD/Variant)
-* 找不到变体M3U8。 （变量）
+* 已忽略的廣告：AdPlacement `[adManifestURL=https://cdn2.auditude.com/assets/3p/v2/8c/2b/8c2bb. . . .m3u8, durationSeconds=15.0, ignore=false, redirectAd=false, priority=1]`
+* AdPlacement adManifestURL=*adManifestURL*， durationSeconds=*秒*，忽略=*忽略*，redirectAd=*redirectadad*，優先順序=*優先順序*
+* 廣告放置傳回null。
+* 廣告已成功拼接。
+* 廣告呼叫失敗： *錯誤訊息*.
+* 正在新增使用者代理程式以擷取原始資訊清單： *user-agent*.
+* 新增Cookie以擷取原始資訊清單： [Cookie]
+* 錯誤的URL *請求的URL錯誤訊息*. （無法剖析變體URL）
+* 呼叫的URL： URL *Got return： response code*. （即時URL）
+* 呼叫的URL： URL *傳回碼：回應碼*. ( VOD URL)
+* 解決廣告時發現衝突：其中一個 — 中段開始或中段結束落在中段(VOD)中包含的前段或前段。
+* 偵測到URI的處理常式擲回未處理的例外狀況： *請求URL*.
+* 完成產生變體資訊清單。 （變體）
+* 完成產生變體資訊清單。
+* 處理VAST重新導向*重新導向URL *錯誤時發生例外狀況： *錯誤訊息*.
+* 無法擷取廣告的播放清單 *廣告資訊清單URL*.
+* 無法產生目標資訊清單。 (HLSManifestResolver)
+* 無法剖析第一個廣告呼叫回應： *錯誤訊息*.
+* 無法處理路徑的*GET|POST*要求： *請求URL*. （即時/VOD）
+* 無法處理即時資訊清單要求： *請求URL*. （即時）
+* 無法傳回變體資訊清單： *錯誤訊息*.
+* 無法驗證群組ID： *群組識別碼*.
+* 正在擷取原始資訊清單： *內容URL*. （即時）
+* 下列VAST重新導向： *重新導向URL*.
+* 找到空的可用性。 (VOD)
+* 找到*number *ads。 (VOD)
+* 已收到HTTP要求。 （第一則訊息）
+* 略過廣告，因為廣告回應持續時間（*廣告回應持續時間*秒）與實際廣告持續時間（*實際持續時間*秒）之間的差異大於限制。 (HLSManifestResolver)
+* 忽略未提供ID值的可用性。 (GroupAdResolver.java)
+* 忽略提供無效時間值的可用性： *time *for availId = *可用ID*.
+* 忽略提供無效持續時間值的可用性： *duration *若為availId = *可用ID*.
+* 初始化新工作階段。 （變體）
+* 無效的HTTP方法。 它必須是GET。 (VOD)
+* 無效的HTTP方法。 追蹤要求必須是GET。 （即時）
+* 無效的URL *請求的URL錯誤訊息*. （變體）
+* 無效的群組。 (HLSManifestResolver)
+* 無效的請求。 註解不是有效的追蹤要求。 (VOD)
+* 無效的請求。 註解請求必須在工作階段建立後發出。 (VOD)
+* 無效的請求。 追蹤要求必須在工作階段建立後提出。 (VOD)
+* 多載群組ID的伺服器執行個體無效： *群組識別碼*. （即時）
+* 已達到VAST重新導向限制 —  *數字*.
+* 進行廣告呼叫： *廣告呼叫URL*.
+* 找不到下列專案的資訊清單： *內容URL*. （即時）
+* 找不到可用ID的相符可用性： *可用ID*. (HLSManifestResolver)
+* 找不到播放工作階段。 (HLSManifestResolver)
+* 正在處理資訊清單的VOD請求 *內容URL*.
+* 正在處理變體。
+* 正在處理資訊清單的標題要求 *內容URL*.
+* 正在處理追蹤要求。 (VOD)
+* 重新導向廣告回應為空白。 ( VASTStAX)
+* 請求： *URL*.
+* 傳回GET要求的錯誤回應，因為找不到播放工作階段。 (VOD)
+* 因內部伺服器錯誤而傳回GET要求的錯誤回應。
+* 針對指定無效資產的GET請求傳回錯誤回應： *廣告請求ID*. (VOD)
+* 針對指定無效或空白群組ID的GET要求傳回錯誤回應： *群組識別碼*. (VOD)
+* 針對指定無效追蹤位置值的GET要求傳回錯誤回應。 (VOD)
+* 使用無效語法傳回GET請求的錯誤回應 —  *請求URL*. （即時/VOD）
+* 使用不支援的HTTP方法傳回要求的錯誤回應： *GET|POST*. （即時/VOD）
+* 正在從快取傳回資訊清單。 (VOD)
+* 伺服器超載。 繼續進行而不需廣告拼接請求。 （變體）
+* 開始產生目標資訊清單。 (HLSManifestResolver)
+* 開始從下列來源產生變體資訊清單： *內容URL*. （變體）
+* 開始將廣告拼接至資訊清單。 (VODHLSResolver)
+* 嘗試拼接廣告 `HH:MM:SS`：AdPlacement \[adManifestURL=*廣告資訊清單URL*， durationSeconds=*秒*，忽略=*忽略*，redirectAd=*重新導向廣告*，優先順序=*優先順序*.\]
+* 因為無效的時間軸而無法取得廣告 — 傳回了沒有廣告的內容。 (VOD)
+* 無法取得廣告 — 傳回不含廣告的內容。 (VOD)
+* 無法取得廣告查詢，且未提供內容URL。 (VOD)
+* 收到有效的URL。 （VOD/變體）
+* 找不到變體M3U8。 （變體）
 
-### TRACE_TRACKING_URL记录{#trace-tracking-url-records-1}
+### TRACE_追蹤_URL記錄 {#trace-tracking-url-records-1}
 
-清单服务器在服务器端跟踪工作流期间调用跟踪URL后生成此类记录。 超出TRACE_TRACKING_URL的字段按表中显示的顺序显示，以制表符分隔。
+資訊清單伺服器會在伺服器端追蹤工作流程期間呼叫追蹤URL後，產生此類記錄。 TRACE_TRACKING_URL以外的欄位會以表格中顯示的順序顯示，並以索引標籤分隔。
 
-| 字段 | 类型 | 说明 |
+| 欄位 | 型別 | 說明 |
 |--- |--- |--- |
-| pts | number | 流中的PTS时间 |
-| ad_system | 字符串 | 广告系统（auditude或freewheel） |
-| url | 字符串 | URL已pinged |
-| 状态 | 字符串 | HTTP状态代码 |
+| 分 | 數字 | 串流中的PTS時間 |
+| ad_system | 字串 | 廣告的廣告系統（auditude或freewheel） |
+| url | 字串 | 已釘選的URL |
+| state | 字串 | HTTP狀態代碼 |
 
-### TRACE_PLAYBACK_PROGRESS记录{#trace-playback-progress-records}
+### TRACE_播放_進度記錄 {#trace-playback-progress-records}
 
-清单服务器在服务器端跟踪工作流期间接收关于播放进度的信号时生成这种记录。 超出TRACE_PLAYBACK_PROGRESS的字段按表中显示的顺序显示，以制表符分隔。
+資訊清單伺服器會在伺服器端追蹤工作流程期間收到有關播放進度的訊號時，產生此類記錄。 TRACE_PLAYBACK_PROGRESS以外的欄位會以表格中顯示的順序顯示，並以標籤分隔。
 
-| 字段 | 类型 | 说明 |
+| 欄位 | 型別 | 說明 |
 |--- |--- |--- |
-| 状态 | 字符串 | HTTP状态代码 |
-| 带宽 | 整数 | 流的带宽 |
-| pts | 整数 | 流中的PTS时间 |
-| ms_time | 整数 | 清单服务器生成跟踪URL的时间 |
-| url | 字符串 | 重定向URL |
-| header_user_agent | 字符串 | HTTP用户代理头 |
-| header_dnt | 整数 | HTTP do-not-track头 |
-| effective_remote_address | 字符串 | IPv4有效远程地址 |
-| remote_address | 字符串 | IPv4远程地址 |
+| 狀態 | 字串 | HTTP狀態代碼 |
+| 頻寬 | 整數 | 串流的頻寬 |
+| 分 | 整數 | 串流中的PTS時間 |
+| ms_time | 整數 | 資訊清單伺服器產生追蹤URL的時間 |
+| url | 字串 | 重新導向URL |
+| header_user_agent | 字串 | HTTP User-Agent標頭 |
+| header_dnt | 整數 | HTTP do-not-track標頭 |
+| effective_remote_address | 字串 | IPv4有效的遠端位址 |
+| remote_address | 字串 | Ipv4遠端位址 |
 
 >[!NOTE]
 >
->最后四个字段为可选字段。
+>最後四個欄位是選用欄位。
 
-## 有用资源{#helpful-resources}
+## 實用資源 {#helpful-resources}
 
-* 请参阅[Adobe Primetime学习和支持](https://helpx.adobe.com/support/primetime.html)页面上的完整帮助文档。
+* 如需完整說明檔案，請前往 [Adobe Primetime學習與支援](https://helpx.adobe.com/support/primetime.html) 頁面。

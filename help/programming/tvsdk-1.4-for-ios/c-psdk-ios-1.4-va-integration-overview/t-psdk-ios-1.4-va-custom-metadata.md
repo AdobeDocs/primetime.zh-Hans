@@ -1,22 +1,21 @@
 ---
-description: 您可以使用回调函数为内容、广告和章节跟踪调用提供自定义元数据。
-title: 实现自定义元数据支持
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以使用回撥函式，針對內容、廣告和章節追蹤呼叫提供自訂中繼資料。
+title: 實作自訂中繼資料支援
+exl-id: c7478578-7f49-4fd0-b381-c558888401aa
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '74'
 ht-degree: 0%
 
 ---
 
+# 實作自訂中繼資料支援{#implement-custom-metadata-support}
 
-# 实现自定义元数据支持{#implement-custom-metadata-support}
+您可以使用回撥函式，針對內容、廣告和章節追蹤呼叫提供自訂中繼資料。
 
-您可以使用回调函数为内容、广告和章节跟踪调用提供自定义元数据。
+回呼函式會在進行追蹤呼叫之前叫用，因此您的應用程式可以附加廣告或章節專屬的中繼資料。
 
-在进行跟踪调用之前调用回调函数，因此应用程序可以附加特定于广告或章节的元数据。
-
-调用内容、广告和章节的回调函数。
+為內容、廣告和章節叫用回呼函式。
 
 ```
 // Video Metadata Block 
@@ -46,4 +45,3 @@ ht-degree: 0%
                  }; 
     };
 ```
-

@@ -1,48 +1,46 @@
 ---
-description: 授权管理器是支持Primetime身份验证实施的功能管理器。
-title: Entitlement Manager概述
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 權利管理員是功能管理員，可支援Primetime驗證實作。
+title: 軟體權利檔案管理員概述
+exl-id: a66e131e-283f-4378-b834-7cfa887b3ec9
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '518'
 ht-degree: 0%
 
 ---
 
+# 軟體權利檔案管理員概述 {#entitlement-manager-overview}
 
-# Entitlement Manager概述{#entitlement-manager-overview}
-
-授权管理器是支持Primetime身份验证实施的功能管理器。
+權利管理員是功能管理員，可支援Primetime驗證實作。
 
 ## 功能概述
 
-Primetime身份验证与Android Primetime SDK参考实施的集成为应用程序添加了一个新功能管理器。 但是，与许多其他功能管理器不同，*EntitlementManager用于应用程序中的多个位置*。 以下概述了为支持Primetime身份验证而对参考实施所做的更改和添加：
+Primetime驗證與Android Primetime SDK Reference實作整合，為應用程式新增了功能管理員。 不過，與其他許多功能管理員不同， *EntitlementManager會在整個應用程式的多個位置使用*. 以下提供支援Primetime驗證的「參考實作」變更和新增內容的概觀：
 
-### EntitlementManager类
+### EntitlementManager類別
 
-`EntitlementManager`类处理与Primetime身份验证SDK的所有通信，并封装授权工作流所需的应用程序逻辑。 应用程序使用`EntitlementManager`的公共API启动授权工作流，而`EntitlementMangerListener`接口为应用程序提供了处理`EntitlementManger`事件的回调机制。
+此 `EntitlementManager` 類別會處理與Primetime驗證SDK的所有通訊，而且會封裝權利工作流程所需的應用程式邏輯。 此 `EntitlementManager`應用程式會使用公開API來起始權益工作流程，而 `EntitlementMangerListener` 介面為應用程式處理提供回呼機制 `EntitlementManger` 事件。
 
-### EntitlementManger回调
+### EntitlementManger回呼
 
-引用实现的主活动`CatalogActivity`创建了`EntitlementManagerListener`的实例，并将其注册到`EntitlementManager`。 这样，`EntitlementManager`可以向应用程序的其余部分发出所需UI更新的信号。 回调包括显示/隐藏加载对话框、显示状态对话框、更新授权和身份验证图标以及在成功授权时启动视频回放。
+參考實作的主要活動 `CatalogActivity`，建立例項 `EntitlementManagerListener` 並註冊給 `EntitlementManager`. 如此一來， `EntitlementManager` 可能表示應用程式的其餘部分需要進行UI更新。 回撥包括顯示/隱藏載入對話方塊、顯示狀態對話方塊、更新授權和驗證圖示，以及在成功授權後開始播放視訊。
 
-### 授权对话框
+### 權益對話方塊
 
-`EntitlementDialogFragment`类根据传递给类构造函数的授权状态生成对话框消息。 此类用于身份验证成功消息和所有错误消息。 当`CatalogActivity`从`EntitlementManager`收到特定事件时，将显示授权对话框。 此外，`CatalogActivity`实现`EntitlementDialogListener`接口，该接口包括在关闭对话框或用户从Primetime身份验证服务注销时发出信号的回调方法。
+此 `EntitlementDialogFragment` 類別會根據傳遞至類別建構函式的權利狀態產生對話方塊訊息。 此類別用於驗證成功訊息以及所有錯誤訊息。 此 `CatalogActivity` 當從以下位置收到特定事件時顯示軟體權利檔案對話方塊： `EntitlementManager`. 此外， `CatalogActivity` 實作 `EntitlementDialogListener` 介面，包括回呼方法，以在對話方塊關閉或使用者從Primetime驗證服務登出時傳送訊號。
 
-### 内容提供商选择和登录
+### 內容提供者選擇與登入
 
-在使用Primetime身份验证进行身份验证期间，两个新活动`MvpdPickerActivity`和`MvpdLoginActivity`允许用户选择其内容提供商并登录。 这两个活动都通过`EntitlementManager`从`CatalogActivity`启动。 此外，`MvpdPickerActivity`和`MvpdLoginActivity`都将结果返回至`CatalogActivity`，因此`CatalogActivity`必须覆盖`Activity.onActivityResult`方法。
+在使用Primetime驗證期間，有兩個新活動， `MvpdPickerActivity` 和 `MvpdLoginActivity`，可讓使用者選取其內容提供者並登入。 這兩個活動都是從 `CatalogActivity` 透過 `EntitlementManager`. 此外， `MvpdPickerActivity` 和 `MvpdLoginActivity` 將結果傳回 `CatalogActivity` 及因此而 `CatalogActivity` 必須覆寫 `Activity.onActivityResult` 方法。
 
-### “登录”按钮
+### 登入按鈕
 
-参考实施的主活动`CatalogActivity`在其操作栏中包含一个新的“登录”按钮。 “登录”按钮允许用户使用Primetime身份验证启动身份验证。 此外，用户可以通过选择用于回放的受保护视频来启动身份验证。 “登录”按钮的图标和文本会根据用户的身份验证状态而更改，并且`CatalogActivity`包含用于在页面刷新时更新按钮图标和文本的代码。 为此，当`CatalogActivity`开始时，它将调用`EntitlementManager.checkAuthentication()`以更新用户的身份验证状态。
+參考實作的主要活動 `CatalogActivity`，在動作列中放入新的「登入」按鈕。 「登入」按鈕可讓使用者啟動具有Primetime驗證的驗證。 此外，使用者可以選取要播放的受保護視訊來起始驗證。 登入按鈕的圖示和文字會隨著使用者的驗證狀態和 `CatalogActivity` 包含頁面重新整理時更新按鈕圖示和文字的程式碼。 若要這麼做，當 `CatalogActivity` 開始，它會呼叫 `EntitlementManager.checkAuthentication()` 更新使用者的驗證狀態。
 
-### 内容授权
+### 內容權利
 
-在`CatalogView`中，新图标显示在内容图标的上方，以指示用户对该内容的授权状态。 例如，如果用户已获得视图视频的预授权，则内容上方会显示一个绿色圆圈图标。 但是，如果用户未获得视图视频的预授权，则会显示一个键图标。 这些图标的显示在`ContentTileAdapter`中处理，但当调用`EntitlementManagerListener`中的回调时，会从`CatalogActivity`启动其状态的更新。
+在內 `CatalogView`，內容圖示上方會顯示新圖示，以表示該內容的使用者授權狀態。 例如，如果使用者預先獲得觀看視訊的授權，則內容上方會顯示綠色圓圈圖示。 但是，如果使用者未獲得檢視視訊的預授權，則會顯示一個鍵圖示。 這些圖示的顯示方式處理於 `ContentTileAdapter`但是，其狀態的更新是從以下專案啟動： `CatalogActivity` 當回呼位於 `EntitlementManagerListener` 稱為。
 
-### 内容播放
+### 內容播放
 
-现在，视频播放需要`EntitlementManager`的授权检查。 对`EntitlementManager.getAuthorization()`的调用发生在`CatalogView`中。 如果视频需要授权，且用户已获得授权，则从`CatalogActivity`启动`PlayerActivity`。
-
+視訊播放現在需要由進行授權檢查 `EntitlementManager`. 對的呼叫 `EntitlementManager.getAuthorization()` 發生於 `CatalogView`. 如果影片需要授權且使用者已獲得授權， `PlayerActivity` 開始於 `CatalogActivity`.

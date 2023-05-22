@@ -1,22 +1,21 @@
 ---
-title: 后续步骤
-description: 后续步骤
+title: 後續步驟
+description: 後續步驟
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 9a6ab5e7-7d72-43d3-bbe4-784d0b8ebcd5
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '77'
 ht-degree: 0%
 
 ---
 
+# 後續步驟 {#next-steps}
 
-# 后续步骤{#next-steps}
+您可以完成下列選擇性步驟：
+1. 使用Hardware Security Module (HSM)提高穩健性。
+1. 設定Reference License Server並修改其原始程式碼以符合您的業務需求。
 
-您可以完成以下可选步骤：
-1. 通过使用硬件安全模块(HSM)提高健壮性。
-1. 设置参考许可证服务器并修改其源代码以满足您的业务需求。
-
-   有关详细信息，请参阅&#x200B;*使用Adobe Primetime DRM参考实现。*
-1. 使用Flash Media Server(FMS)进行内容流。
-1. 使用Adobe Open Screen Media Framework创建支持DRM的视频播放器，获得更具吸引力的用户体验。
+   如需詳細資訊，請參閱 *使用Adobe Primetime DRM參考實作。*
+1. 使用Flash Media Server(FMS)進行內容串流。
+1. 使用Adobe Open Screen Media Framework建立啟用Primetime DRM的視訊播放器，以獲得更吸引人的使用者體驗。

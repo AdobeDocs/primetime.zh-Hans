@@ -1,26 +1,25 @@
 ---
-description: 您可以设置用户界面控件来调整视频的音量。
+description: 您可以設定使用者介面控制項來調整視訊的音量。
 title: 提供音量控制
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 0daa87e2-51aa-4459-9a67-135dc54d09c7
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '98'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
+# 提供音量控制 {#provide-volume-control}
 
-# 提供卷控件{#provide-volume-control}
+您可以設定使用者介面控制項來調整視訊的音量。
 
-您可以设置用户界面控件来调整视频的音量。
-
-1. 在卷控制接口元素的回调例程中，确保播放器处于此命令的有效状态。
+1. 在音量控制介面元素的回呼常式中，確定播放器處於這個命令的有效狀態。
 
    >[!TIP]
    >
-   >除“已释放”之外的任何状态都有效。
+   >除「已核發」以外的任何狀態都有效。
 
-1. 调用`setVolume`设置音频音量。
+1. 呼叫 `setVolume` 設定音量。
 
    例如：
 
@@ -28,5 +27,4 @@ ht-degree: 2%
    void setVolume(int volume) throws MediaPlayerException;
    ```
 
-   卷的值表示请求的卷占最大卷的比例，其中`0`为静音，`1`为最大卷。
-
+   磁碟區的值代表要求的磁碟區，以最大磁碟區的比例表示，其中 `0` 是靜音且 `1` 是最大磁碟區。

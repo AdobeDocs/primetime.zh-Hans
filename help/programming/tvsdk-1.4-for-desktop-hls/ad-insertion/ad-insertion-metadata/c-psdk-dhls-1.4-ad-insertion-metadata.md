@@ -1,48 +1,47 @@
 ---
-description: 要允许广告解析程序工作，广告提供商(如Adobe Primetime广告决策)需要配置值以启用与提供商的连接。
-title: 广告插入元数据
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 為了讓廣告解析程式運作，廣告提供者(例如Adobe Primetime ad decisioning)需要設定值來啟用您與提供者的連線。
+title: 廣告插入中繼資料
+exl-id: 83c0fd25-dbc3-4529-b81a-16ff78012c80
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '397'
 ht-degree: 0%
 
 ---
 
+# 廣告插入中繼資料 {#ad-insertion-metadata}
 
-# 广告插入元数据{#ad-insertion-metadata}
+為了讓廣告解析程式運作，廣告提供者(例如Adobe Primetime ad decisioning)需要設定值來啟用您與提供者的連線。
 
-要允许广告解析程序工作，广告提供商(如Adobe Primetime广告决策)需要配置值以启用与提供商的连接。
+TVSDK包含Primetime廣告決策程式庫。 若要讓您的內容包含來自Primetime廣告決策伺服器的廣告，您的應用程式必須提供下列必要專案 `AuditudeSettings` 資訊：
 
-TVSDK包括Primetime广告决策库。 要使您的内容包括来自Primetime广告决策服务器的广告，您的应用程序必须提供以下必需的`AuditudeSettings`信息：
+* `mediaID`，此為要播放之視訊的唯一識別碼。
 
-* `mediaID`，这是要播放的视频的唯一标识符。
+   發佈者在將視訊內容和廣告資訊提交至Adobe Primetime廣告決策伺服器時，會指派mediaID。 Primetime廣告決策會使用此ID從伺服器擷取視訊的相關廣告資訊。
 
-   发布者在向Adobe Primetime广告决策服务器提交视频内容和广告信息时分配mediaID。 此ID由Primetime广告决策用来从服务器检索视频的相关广告信息。
+* 您的 `zoneID`由Adobe指派，可識別您的公司或網站。
+* 您指派的廣告伺服器的網域。
+* 其他目標定位引數。
 
-* 由Adobe分配的`zoneID`标识您的公司或网站。
-* 您分配的广告服务器的域。
-* 其他定位参数。
+   您可以根據自己的需求和廣告提供者的需求包含這些引數。
 
-   您可以根据您的需求和广告提供商的需求包含这些参数。
+## 設定廣告插入中繼資料 {#set-up-ad-insertion-metadata}
 
-## 设置广告插入元数据{#set-up-ad-insertion-metadata}
-
-使用帮助类AuditudeSettings（它扩展了MetadataNode类）设置Adobe Primetime和决策元数据。
+使用helper類別AuditudeSettings （這會擴充MetadataNode類別）來設定Adobe Primetime ad decisioning中繼資料。
 
 >[!TIP]
 >
->Adobe Primetime广告决策之前称为Auditude。
+>Adobe Primetime ad decisioning先前稱為Auditude。
 
-广告元数据位于`MediaResource.metadata`属性中。 开始播放新视频时，您的应用程序负责设置正确的广告元数据。
+廣告中繼資料位於 `MediaResource.metadata` 屬性。 開始播放新視訊時，您的應用程式負責設定正確的廣告中繼資料。
 
-1. 构建`AuditudeSettings`实例。
+1. 建置 `AuditudeSettings` 執行個體。
 
    ```
    var auditudeSettings:AuditudeSettings = new AuditudeSettings();
    ```
 
-1. 设置Adobe Primetime广告决策媒体ID、zoneID、domain和可选定位参数。
+1. 設定Adobe Primetime ad decisioning mediaID、zoneID、網域，以及選用的鎖定目標引數。
 
    ```
    auditudeSettings.zoneId = "yourZoneID"; 
@@ -55,12 +54,12 @@ TVSDK包括Primetime广告决策库。 要使您的内容包括来自Primetime�
 
    >[!TIP]
    >
-   >媒体ID由TVSDK使用为字符串，它被转换为md5值，并用于Primetime广告决策URL请求中的`u`值。 例如：
+   >媒體ID會由TVSDK作為字串使用，然後轉換為一個md5值，並用於 `u` Primetime廣告決策URL請求中的值。 例如：
    >
    >
    >` https://ad.auditude.com/adserver? **u**=c76d04ee31c91c4ce5c8cee41006c97d &z=114100&l=20150206141527&of=1.4&tm=15&g=1000002`
 
-1. 使用媒体流URL和之前创建的广告元数据创建`MediaResource`实例。
+1. 建立 `MediaResource` 使用媒體串流URL和先前建立的廣告中繼資料，執行個體。
 
    ```
    var mediaResourceMetadata:MetadataNode = new MetadataNode(); 
@@ -71,17 +70,17 @@ TVSDK包括Primetime广告决策库。 要使您的内容包括来自Primetime�
          mediaResourceMetadata);
    ```
 
-1. 通过`MediaPlayer.replaceCurrentResource`方法加载`MediaResource`对象。
+1. 載入 `MediaResource` 物件穿過 `MediaPlayer.replaceCurrentResource` 方法。
 
-   `MediaPlayer`开始加载和处理媒体流清单。
+   此 `MediaPlayer` 開始載入及處理媒體資料流資訊清單。
 
-1. （可选）查询`MediaPlayerItem`实例以查看流是否是实时的，而不管它是否具有替代音轨，或者流是否受到保护。
+1. （選用）查詢 `MediaPlayerItem` 執行個體以檢視資料流是否為即時，不論其是否有替代音軌，或資料流是否受到保護。
 
-   此信息可帮助您为播放准备UI。 例如，如果您知道有两个音轨，则可以包含在这些音轨之间切换的UI控件。
+   此資訊可協助您為播放準備UI。 例如，如果您知道有兩個音軌，您可以包含可在這些音軌之間切換的UI控制項。
 
-1. 致电`MediaPlayer.prepareToPlay`开始广告工作流程。
+1. 呼叫 `MediaPlayer.prepareToPlay` 以開始廣告工作流程。
 
-   在解析广告并将其放置到时间轴上后，`MediaPlayer`过渡到PREPARED状态。
-1. 调用`MediaPlayer.play`以开始播放。
+   解析廣告並放置在時間軸上後， `MediaPlayer` 轉換為「已準備」狀態。
+1. 呼叫 `MediaPlayer.play` 以開始播放。
 
-TVSDK现在在播放媒体时包含广告。
+TVSDK現在會在您的媒體播放時包含廣告。

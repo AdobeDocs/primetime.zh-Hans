@@ -1,30 +1,29 @@
 ---
-title: 信令模式和时间范围
-description: 信令模式和时间范围
+title: 訊號模式和時間範圍
+description: 訊號模式和時間範圍
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: ccaf345f-63f2-42f1-8558-65c7e0dffa89
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '89'
 ht-degree: 0%
 
 ---
 
-
-# 信令模式和时间范围{#signaling-mode-and-time-range}
+# 訊號模式和時間範圍 {#signaling-mode-and-time-range}
 
 <table> 
  <thead> 
   <tr> 
    <th class="entry"> </th> 
-   <th class="entry"> MARK </th> 
+   <th class="entry"> 標籤 </th> 
    <th class="entry"> DELETE </th> 
-   <th class="entry"> 替换 </th> 
+   <th class="entry"> REPLACE </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
-   <td> <span class="codeph"> CustomRange OpportunityGenerator  </span> </td> 
+   <td> <span class="codeph"> CustomRange機會產生器 </span> </td> 
    <td> 
     <code>
       (range.begin,&nbsp; 
@@ -43,7 +42,7 @@ ht-degree: 0%
     </code> </td> 
   </tr> 
   <tr> 
-   <td> <span class="codeph"> ServerMap信 </span> 令模式 </td> 
+   <td> <span class="codeph"> ServerMap </span> 訊號模式 </td> 
    <td> 
     <code>
       placement&nbsp;=&nbsp; 
@@ -63,10 +62,10 @@ ht-degree: 0%
      &nbsp;&nbsp;&nbsp;&nbsp;range.end&nbsp;-&nbsp;range.begin,&nbsp; 
      &nbsp;&nbsp;&nbsp;&nbsp;PlacementMode.DELETE&nbsp;); 
     </code> </td> 
-   <td> N/A（自动CustomRange信令模式） </td> 
+   <td> N/A （自動CustomRange訊號模式） </td> 
   </tr> 
   <tr> 
-   <td> <span class="codeph"> ManifestCue信 </span> 令模式 </td> 
+   <td> <span class="codeph"> ManifestCue </span> 訊號模式 </td> 
    <td> 
     <code>
       placement&nbsp;=&nbsp; 
@@ -87,10 +86,10 @@ ht-degree: 0%
      &nbsp;&nbsp;&nbsp;&nbsp;PlacementMode.DELETE 
      ); 
     </code> </td> 
-   <td> N/A（自动CustomRange信令模式） </td> 
+   <td> N/A （自動CustomRange訊號模式） </td> 
   </tr> 
   <tr> 
-   <td> <span class="codeph"> CustomRange信 </span> 令模式 </td> 
+   <td> <span class="codeph"> CustomRange </span> 訊號模式 </td> 
    <td> 
     <code>
       placement&nbsp;=&nbsp; 
@@ -136,14 +135,14 @@ ht-degree: 0%
  <thead> 
   <tr> 
    <th class="entry"> </th> 
-   <th class="entry"> MARK </th> 
+   <th class="entry"> 標籤 </th> 
    <th class="entry"> DELETE </th> 
-   <th class="entry"> 替换 </th> 
+   <th class="entry"> REPLACE </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
-   <td> <span class="codeph"> AdSigningMode OpportunityGenerator  </span> </td> 
+   <td> <span class="codeph"> AdSignalingMode OpportunityGenerator </span> </td> 
    <td> 
     <code>
       (range.begin,&nbsp; 
@@ -162,8 +161,8 @@ ht-degree: 0%
     </code> </td> 
   </tr> 
   <tr> 
-   <td> <span class="codeph"> ServerMap信 </span> 令模式 </td> 
-   <td> 不存在（已禁用广告）。 </td> 
+   <td> <span class="codeph"> 伺服器地圖 </span> 訊號模式 </td> 
+   <td> 不存在（廣告已停用）。 </td> 
    <td> 
     <code>
       placement&nbsp;=&nbsp; 
@@ -173,11 +172,11 @@ ht-degree: 0%
      Placement.UNKNOWN_DURATION, 
      PlacementMode.DEFAULT); 
     </code> </td> 
-   <td> N/A（自动<span class="codeph"> CustomRange </span>信令模式） </td> 
+   <td> 不適用(自動 <span class="codeph"> CustomRange </span> 訊號模式) </td> 
   </tr> 
   <tr> 
-   <td> <span class="codeph"> ManifestCue信 </span> 令模式 </td> 
-   <td> 不存在（已禁用广告）。 </td> 
+   <td> <span class="codeph"> ManifestCue </span> 訊號模式 </td> 
+   <td> 不存在（廣告已停用）。 </td> 
    <td> 
     <code>
       placement&nbsp;=&nbsp; 
@@ -187,13 +186,13 @@ ht-degree: 0%
      Placement.UNKNOWN_DURATION, 
      PlacementMode.DEFAULT); 
     </code> </td> 
-   <td> N/A（自动<span class="codeph"> CustomRange </span>信令模式） </td> 
+   <td> 不適用(自動 <span class="codeph"> CustomRange </span> 訊號模式) </td> 
   </tr> 
   <tr> 
-   <td> <span class="codeph"> CustomRange信 </span> 令模式 </td> 
-   <td> 不存在（已禁用广告）。 </td> 
-   <td> 无 </td> 
-   <td> 无（已在<span class="codeph"> CustomRangeOpportunityGenerator </span>中处理） </td> 
+   <td> <span class="codeph"> CustomRange </span> 訊號模式 </td> 
+   <td> 不存在（廣告已停用）。 </td> 
+   <td> 無 </td> 
+   <td> 無（在中已處理） <span class="codeph"> CustomRangeOpportunityGenerator </span>) </td> 
   </tr> 
  </tbody> 
 </table>

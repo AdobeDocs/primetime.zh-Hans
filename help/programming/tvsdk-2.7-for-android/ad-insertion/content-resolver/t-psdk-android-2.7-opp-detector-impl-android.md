@@ -1,20 +1,19 @@
 ---
-description: 您可以通过实施OpportunityGenerator类来实施您自己的机会生成器。
-title: 实施自定义机会生成器
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以實作OpportunityGenerator類別來實作自己的機會產生器。
+title: 實作自訂機會產生器
+exl-id: 8fa97515-692c-4e34-9afb-17a5409228db
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '100'
-ht-degree: 4%
+ht-degree: 0%
 
 ---
 
+# 實作自訂機會產生器 {#implement-a-custom-opportunity-generator}
 
-# 实现自定义机会生成器{#implement-a-custom-opportunity-generator}
+您可以實作OpportunityGenerator類別來實作自己的機會產生器。
 
-您可以通过实施OpportunityGenerator类来实施您自己的机会生成器。
-
-1. 通过实现`ContentFactory`接口并覆盖`retrieveGenerators`来实现您的自定义`ContentFactory`。
+1. 實作您的自訂 `ContentFactory` 實作 `ContentFactory` 介面和覆寫 `retrieveGenerators`.
 
    例如：
 
@@ -30,7 +29,7 @@ ht-degree: 4%
    }
    ```
 
-1. 将`ContentFactory`注册到`MediaPlayer`。
+1. 註冊 `ContentFactory` 至 `MediaPlayer`.
 
    例如：
 
@@ -47,14 +46,14 @@ ht-degree: 4%
    itemLoader.load(resource, id, config);
    ```
 
-1. 创建实现`OpportunityGenerator`类的自定义机会生成器类。
+1. 建立實作的自訂機會產生器類別 `OpportunityGenerator` 類別。
 
    ```java
    public class CustomOpportunityGenerator implements OpportunityGenerator  
    {...}
    ```
 
-   1. 在自定义机会生成器中，覆盖`doConfigure`、`doUpdate`和`doCleanup`:
+   1. 在自訂機會產生器中，覆寫 `doConfigure`， `doUpdate` 和 `doCleanup`：
 
       ```java
       @Override 
@@ -69,13 +68,13 @@ ht-degree: 4%
       }
       ```
 
-      要获取定时元数据，请执行以下操作：
+      若要取得定時中繼資料：
 
       ```java
       List<TimedMetadata> tList = getItem().getTimedMetadata(); 
       ```
 
-   1. 对于每个`TimedMetadata`或`TimedMetadata`组，创建具有以下属性的业务机会：
+   1. 針對每個 `TimedMetadata` 或群組 `TimedMetadata`，使用下列屬性建立機會：
 
       ```java
       Opportunity( 
@@ -86,11 +85,11 @@ ht-degree: 4%
       ); 
       ```
 
-   1. 对于创建的每个机会，请在`OpportunityGeneratorClient:getClient().resolve(opportunity);`上调用`resolve`。
+   1. 針對每個建立的商機，呼叫 `resolve` 於 `OpportunityGeneratorClient:getClient().resolve(opportunity);`.
 
 <!--<a id="example_7A46377EBE79458E87423EB95D0568D4"></a>-->
 
-这是一个自定义放置机会检测器示例：
+這是自訂位置機會偵測器的範例：
 
 ```java
 public class MyOpportunityGenerator implements OpportunityGenerator {
@@ -150,4 +149,3 @@ public class MyOpportunityGenerator implements OpportunityGenerator {
     protected void cleanup() {} 
 }
 ```
-

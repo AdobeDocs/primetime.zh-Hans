@@ -1,25 +1,24 @@
 ---
-title: BEES错误代码
-description: BEES错误代码
+title: BEES錯誤代碼
+description: BEES錯誤代碼
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 36c83ee9-7e28-442e-8076-691a1bd43a01
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '211'
 ht-degree: 0%
 
 ---
 
-
-# BEES错误代码{#bees-error-codes}
+# BEES錯誤代碼 {#bees-error-codes}
 
 <!--<a id="section_81946679E1114DBA9FE173D0AA9E2F09"></a>-->
 
-如果在BEES检查期间出错，将向客户端返回`DRMErrorEvent`。 您可以分析此事件的属性，以查找有关失败性质的详细信息。 以下列出了可能的错误代码的子集。
+如果在BEES檢查期間發生錯誤， `DRMErrorEvent` 將會傳回給使用者端。 您可以剖析此事件的屬性，以尋找有關失敗性質的詳細資訊。 下面列出了可能錯誤碼的子集。
 
-| 错误 | 说明 |
+| 錯誤 | 說明 |
 |---|---|
-| `3304:305` | 尝试处理身份验证/授权请求的Primetime Cloud DRM中的常规授权错误。 通常与BEES问题无关。 如果遇到此错误，您应将故障单连同诊断信息一起提交到Primetime Cloud DRM团队。 |
-| `3329:0` | 应用程序特定错误（来自BEES授权程序）。 如果未返回子错误代码，则错误文本将显示问题的详细信息。 例如，分析响应时出现问题，或者BEES服务器不可到达。 |
-| `3329:<HTTP error code>` | BEES服务器发出的HTTP响应不是200。 HTTP错误代码将返回到子错误代码字段中的客户端。 这可能表示配置问题或BEES服务器中断。 |
-| `3329:<x>` | BEES服务器不允许许可证请求。 子错误代码和错误文本由JSON响应的`error`和`errorText`属性中的BEES服务器指定。 此类响应不应被视为错误，而应视为来自BEES服务器的定期拒绝响应。 |
+| `3304:305` | Primetime Cloud DRM嘗試處理驗證/授權請求時出現一般授權錯誤。 通常與BEES問題無關。 如果持續遇到此錯誤，您應該將問題票證連同診斷資訊一起提交給Primetime Cloud DRM團隊。 |
+| `3329:0` | 應用程式特定錯誤（來自BEES授權者）。 如果未傳回子錯誤代碼，錯誤文字會顯示問題的詳細資料。 例如，剖析回應時發生問題，或無法連線BEES伺服器。 |
+| `3329:<HTTP error code>` | BEES伺服器已發出200以外的HTTP回應。 HTTP錯誤碼會在子錯誤碼欄位中傳回給使用者端。 這可能表示設定問題或BEES伺服器中斷。 |
+| `3329:<x>` | BEES伺服器不允許授權要求。 子錯誤碼和錯誤文字由BEES伺服器在JSON回應的 `error` 和 `errorText` 屬性。 此類回應不應視為錯誤，而應視為來自BEES伺服器的定期拒絕回應。 |

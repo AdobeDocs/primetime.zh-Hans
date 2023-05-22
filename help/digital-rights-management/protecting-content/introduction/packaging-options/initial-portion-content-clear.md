@@ -1,18 +1,17 @@
 ---
-title: 清晰内容的初始部分
-description: 清晰内容的初始部分
+title: 清除內容的初始部分
+description: 清除內容的初始部分
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: f291e0f5-ce26-41c4-b468-36b111cb7a1c
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '113'
 ht-degree: 0%
 
 ---
 
+# 清除內容的初始部分{#initial-portion-of-content-in-the-clear}
 
-# clear{#initial-portion-of-content-in-the-clear}中内容的初始部分
+此選擇性引數會指定從內容開頭開始保持未加密的時間量（以秒為單位）。
 
-此可选参数指定从未加密的内容开始的时间（以秒为单位）。
-
-示例用例：这样，在Primetime DRM客户端后台下载许可证时，可缩短播放启动时间。 当初始化和许可证获取在后台进行时，视频的未加密部分立即开始播放。 关闭此功能后，用户可能会注意到播放体验有延迟，因为客户端计算机会在执行所有许可步骤之前执行任何视频播放。
+範例使用案例：當Primetime DRM使用者端在背景下載授權時，這可讓播放啟動時間更快。 當在背景進行初始化和取得授權時，視訊的未加密部分會立即開始播放。 當此功能關閉時，使用者可能會注意到播放體驗的延遲，因為使用者端電腦會在任何視訊播放發生之前執行所有授權步驟。

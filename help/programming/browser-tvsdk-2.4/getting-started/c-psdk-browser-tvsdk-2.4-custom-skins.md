@@ -1,51 +1,49 @@
 ---
-description: 要使用自定义外观，您必须编写类似于default-video-controls.css的自定义内容，并在播放器中引用此新自定义内容。
-title: 自定义外观
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 若要使用自訂外觀元素，您必須撰寫類似於default-video-controls.css的自訂專案，並在播放器中參照此新自訂專案。
+title: 自訂外觀元素
+exl-id: 4d627545-942d-4883-a010-afddcffb8dd5
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '218'
 ht-degree: 0%
 
 ---
 
+# 自訂外觀元素{#custom-skins}
 
-# 自定义外观{#custom-skins}
+若要使用自訂外觀元素，您必須撰寫類似於default-video-controls.css的自訂專案，並在播放器中參照此新自訂專案。
 
-要使用自定义外观，您必须编写类似于default-video-controls.css的自定义内容，并在播放器中引用此新自定义内容。
-
-例如，您可以使用以下选项之一：
+例如，您可以使用下列其中一個選項：
 
 * `<link rel="stylesheet" href="css/common_style.css">`
 * `<link rel="stylesheet" href="css/custom-video-controls1.css">`
 
-您可以进行以下类型的更改：
+您可以進行下列型別的變更：
 
-* 按钮和文本的前景色
+* 按鈕和文字的前景色彩
 
-   具有前景的所有控件都使用`vid-skin-fgcolor`类。 要更改所有控件的前景，请使用`vid-skin-fgcolor`类遍历所有元素并指定所需的颜色。
-* 按钮和文本的背景颜色
+   所有具有前景的控制項都使用 `vid-skin-fgcolor` 類別。 若要變更所有控制項的前台，請使用 `vid-skin-fgcolor` 類別並指定所要的顏色。
+* 按鈕和文字的背景色彩
 
-   具有前景的所有控件都使用`vid-skin-bgcolor`类。 要更改所有控件的前景，请使用`vid-skin-bgcolor`类遍历所有元素并指定所需的颜色。
-* 播放头的形状
+   所有具有前景的控制項都使用 `vid-skin-bgcolor` 類別。 若要變更所有控制項的前台，請透過以下方式逐一檢視所有元素 `vid-skin-bgcolor` 類別並指定所要的顏色。
+* 播放點形狀
 
-   游戏头可以是方形或圆形。 要更改播放头，请向`playhead`元素添加`square`或`round`类。
-* 缓冲旋转器的样式
+   播放磁頭可以是方形或圓形。 若要變更播放點，請新增 `square` 或 `round` 類別至 `playhead` 元素。
+* 緩衝迴轉器的樣式
 
-   引用播放器提供以下旋转器样式，可在播放器缓冲内容时显示：
+   參考播放器提供下列的迴轉器樣式，可在播放器緩衝內容時顯示：
 
-   * 叠加文本(`overlay-text`)
-   * 矩形微调框(`spinner`)
-   * 信号(`signal`)
-   * 竖条(`vertical`)
+   * 覆蓋文字( `overlay-text`)
+   * 矩形旋轉圖示( `spinner`)
+   * 訊號( `signal`)
+   * 垂直條( `vertical`)
 
       >[!TIP]
       >
-      >要使用任何缓冲旋转器，必须在buffering-overlay元素中添加类。 例如，要使用`overlay-text`，请在`BufferOverlay.js`文件中添加以下行：
+      >若要使用任何緩衝迴轉器，您必須在buffering-overlay元素中新增類別。 例如，若要使用 `overlay-text`，在中新增下列行 `BufferOverlay.js` 檔案：
       >
       >
       ```js
       >var overlay = document.getElementById("buffering-overlay"); 
       >overlay.classList.add ("spinner");
       >```
-

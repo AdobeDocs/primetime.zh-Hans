@@ -1,22 +1,21 @@
 ---
-description: 在AdobeTVSDKConfig.json中，您可以指定特定区域的默认规则和规则。
-title: 创意选择规则示例
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 在AdobeTVSDKConfig.json中，您可以指定預設規則以及特定區域的規則。
+title: 創意選取規則範例
+exl-id: 30580890-933f-4fd4-86fe-e766ac02dca4
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '85'
 ht-degree: 0%
 
 ---
 
+# 創意選取規則範例{#sample-creative-selection-rules}
 
-# 创意选择规则示例{#sample-creative-selection-rules}
+在AdobeTVSDKConfig.json中，您可以指定預設規則以及特定區域的規則。
 
-在AdobeTVSDKConfig.json中，您可以指定特定区域的默认规则和规则。
+## 預設規則範例 {#section_xy4_3fx_hz}
 
-## 默认规则示例{#section_xy4_3fx_hz}
-
-以下是仅定义默认规则的[!DNL AdobeTVSDKConfig.json]文件示例：
+以下範例為 [!DNL AdobeTVSDKConfig.json] 僅定義預設規則的檔案：
 
 ```
 {
@@ -64,9 +63,9 @@ ht-degree: 0%
 }
 ```
 
-## 附加区域规则{#section_ocv_3fx_hz}的默认规则示例
+## 具有其他區域規則的預設規則範例 {#section_ocv_3fx_hz}
 
-以下是定义默认规则的[!DNL AdobeTVSDKConfig.json]文件的示例，此文件加上特定区域ID的其他规则（在此例中，区域&#x200B;**&quot;1234&quot;**）：
+以下範例為 [!DNL AdobeTVSDKConfig.json] 定義預設規則的檔案，加上特定區域ID的其他規則（在此例中是區域） **「1234」**)：
 
 ```
 {
@@ -135,4 +134,3 @@ ht-degree: 0%
     }
 }
 ```
-

@@ -1,18 +1,17 @@
 ---
-title: 部署证书
-description: 部署证书
+title: 部署憑證
+description: 部署憑證
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 649c4f24-f74e-4529-84a2-65bcd6d7677c
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '114'
 ht-degree: 0%
 
 ---
 
+# 部署憑證{#deploy-certificates}
 
-# 部署证书{#deploy-certificates}
+為了避免在「授權伺服器」上以純文字形式提供PFX密碼，「參考實作」和Adobe Primetime DRM Server for Protected Streaming在組態檔中指定時要求加密密碼。 另請參閱 *使用Primetime DRM參考實作* 或 *使用Primetime DRM伺服器* （適用於受保護的串流），以取得執行擾頻公用程式的指示。 其中每個都包含自己的擾碼公用程式，而且加密的密碼在這兩個授權伺服器實作之間不可互換。
 
-为避免许可证服务器上以明文形式提供PFX密码，Reference Implementation和Adobe Primetime DRM Server for Protected Streaming要求在配置文件中指定时加密该密码。 有关运行扰频实用程序的说明，请参阅&#x200B;*使用Primetime DRM参考实现*&#x200B;或&#x200B;*使用Primetime DRM Server*&#x200B;获取受保护流。 每个密码都包含自己的扰码实用程序，并且加密密码不能在这两个许可服务器实现之间互换。
-
-要将证书和加扰的密码部署到您的许可证服务器，请参阅&#x200B;*使用Primetime DRM参考实现*&#x200B;或&#x200B;*使用Primetime DRM服务器进行受保护流*。
+若要將憑證和加擾密碼部署至您的授權伺服器，請參閱 *使用Primetime DRM參考實作* 或 *使用Primetime DRM伺服器進行受保護的串流*.

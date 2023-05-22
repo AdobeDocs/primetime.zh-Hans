@@ -1,56 +1,55 @@
 ---
-description: TVSDK可以播放具有不同位速率的多个用户档案的视频，在它们之间切换，以根据可用带宽提供多个质量级别。
-title: 多位速率
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: TVSDK可以播放具有多個設定檔且位元速率不同的影片，在它們之間切換以根據可用頻寬提供多個品質等級。
+title: 多位元速率
+exl-id: 5f71d69e-993a-4985-accd-7ce2104f837e
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '767'
 ht-degree: 0%
 
 ---
 
+# 多位元速率 {#multiple-bit-rates}
 
-# 多位速率{#multiple-bit-rates}
+TVSDK可以播放具有多個設定檔且位元速率不同的影片，在它們之間切換以根據可用頻寬提供多個品質等級。
 
-TVSDK可以播放具有不同位速率的多个用户档案的视频，在它们之间切换，以根据可用带宽提供多个质量级别。
+您可以設定起始位元速率、最小位元速率和最大位元速率，以及多位元速率(MBR)資料流的最適化位元速率(ABR)切換原則。 TVSDK會自動切換至在指定設定中提供最佳播放體驗的位元速率。
 
-可以设置初始、最小和最大比特率，以及多比特率(MBR)流的自适应比特率(ABR)切换策略。 TVSDK自动切换到在指定配置中提供最佳播放体验的比特率。
+參考實作會在中設定下列ABR引數 [IPlaybackConfig](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/config/IPlaybackConfig.html).
 
-引用实现在[IPlaybackConfig](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/config/IPlaybackConfig.html)中配置以下ABR参数。
-
-| 参数 | 说明 |
+| 引數 | 說明 |
 |--- |--- |
-| 初始比特率： getABRInitialBitRate | 第一段的所需回放比特率（以位/秒为单位）。 当播放开始时，第一段使用最接近的用户档案（等于或大于初始比特率）。  如果定义了最小比特率并且初始比特率低于最小比特率，则TVSDK选择具有高于最小比特率的最低比特率的用户档案。 同样，如果初始速率高于最大速率，则TVSDK将选择低于最大速率的最高速率。 如果初始比特率为零或未定义，则初始比特率由ABR策略确定。  返回一个整数值，它表示每秒字节用户档案。 |
-| 最低比特率： getABRMinBitRate | ABR可切换到的允许的最低位速率。 ABR切换会忽略比特率低于此的用户档案。 返回一个整数值，它表示每秒位用户档案。 |
-| 最大比特率： getABRMaxBitRate | ABR可切换到的最高允许位速率。 ABR切换会忽略比特率高于此的用户档案。 返回一个整数值，它表示每秒位用户档案。 |
-| ABR切换策略： getABRPolicy | 如果可能，回放将逐渐切换到最高位速率用户档案。 您可以设置ABR切换策略，该策略确定TVSDK在用户档案之间切换的速度。 默认为“中级”。 <ul><li>*保守*:当带宽比当前比特率高50%时，切换到具有下一个较高比特率的用户档案。 </li><li>*适中*:当带宽比当前比特率高20%时，切换到下一个较高的比特率用户档案。</li><li>*咄咄逼人*:当带宽高于当前比特率时，立即切换到最高比特率用户档案</li></ul><br/>如果初始位速率为零或未指定策略，则播放开始的比特率用户档案为Consurative最低，用户档案最接近Medore可用用户档案的中位速率，而Accorsive用户档案的比特率为最高。<br/><br/>策略在最小和最大比特率的限制内有效（如果已指定）。从ABRControlParameters枚举返回当前设置： <ul><li>ABR_CONSURAL</li><li>ABR_MEODE </li><li>ABR_ACCORSIVE</li></ul><br>另请参 [阅ABRPolicy](https://help.adobe.com/en_US/primetime/api/psdk/javadoc/com/adobe/mediacore/ABRControlParameters.ABRPolicy.html)。 |
+| 初始位元速率： getABRIinitialBitRate | 第一個區段的所需播放位元速率（以位元/秒為單位）。 當播放開始時，最接近的設定檔（等於或大於初始位元速率）會用於第一個區段。  如果已定義最低位元速率，且初始位元速率低於最低位元速率，TVSDK會選取最低位元速率高於最低位元速率的設定檔。 同樣地，如果初始速率高於最大速率，TVSDK會選取低於最大速率的最高速率。 如果初始位元速率為零或未定義，初始位元速率會由ABR原則決定。  傳回代表每秒位元組設定檔的整數值。 |
+| 最小位元速率： getABRMinBitRate | ABR可切換的最低位元速率。 ABR切換會忽略位元速率低於此的設定檔。 傳回代表每秒位元設定檔的整數值。 |
+| 最大位元速率： getABRMaxBitRate | ABR可切換的最高允許位元速率。 ABR切換會忽略位元速率高於此的設定檔。 傳回代表每秒位元設定檔的整數值。 |
+| ABR切換原則： getABRPolicy | 播放會儘可能逐漸切換至最高位元速率設定檔。 您可以設定ABR切換原則，以決定TVSDK在設定檔之間切換的速度。 預設值為「稽核」。 <ul><li>*保守*：當頻寬比目前的位元速率高50%時，切換至具有更高位元速率的設定檔。 </li><li>*稽核*：當頻寬比目前的位元速率高20%時，切換至下一個較高的位元速率設定檔。</li><li>*積極進取*：當頻寬高於目前的位元速率時，會立即切換至最高位元速率設定檔</li></ul><br/>如果初始位元速率為零或未指定，且已指定原則，則播放會從「保守」的最低位元速率設定檔、「中等」最接近可用設定檔的中位元速率的設定檔，以及「激進」的最高位元速率設定檔開始。<br/><br/>原則會在最小和最大位元速率的限制內運作（如果已指定）。  從ABRControlParameters列舉傳回目前設定： <ul><li>ABR_保守</li><li>ABR_MODERE </li><li>ABR_AGGRESSIVE</li></ul><br>另請參閱 [ABRP政策](https://help.adobe.com/en_US/primetime/api/psdk/javadoc/com/adobe/mediacore/ABRControlParameters.ABRPolicy.html). |
 
 >[!NOTE]
 >
->* TVSDK故障转移机制可能会覆盖这些设置，因为TVSDK更青睐连续播放体验，而不是严格遵守控制参数。
->* 当位速率更改时，TVSDK在`PlaybackEventListener`中调度`onProfileChanged`事件。
+>* TVSDK容錯移轉機制可能會覆寫這些設定，因為TVSDK偏好持續播放體驗，而非嚴格遵守控制引數。
+>* 當位元速率變更時，TVSDK會傳送 `onProfileChanged` 中的事件 `PlaybackEventListener`.
 
 
-## 在引用实现{#section_72A6E7263E1441DD8D7E0690285515E6}中启用自定义ABR控件
+## 在參考實作中啟用自訂ABR控制 {#section_72A6E7263E1441DD8D7E0690285515E6}
 
-自适应比特率(ABR)默认在TVSDK中处于启用状态。 您可以通过配置自定义ABR控件，使用Primetime设置用户界面来覆盖参考实现中的默认TVSDK行为。
+TVSDK預設會啟用最適化位元速率(ABR)。 您可以藉由設定自訂ABR控制項，使用Primetime設定使用者介面來覆寫參考實作中的預設TVSDK行為。
 
-要通过“设置”用户界面启用自定义ABR，请执行以下操作：
+若要透過「設定」使用者介面啟用自訂ABR：
 
-* 打开“Primetime设置”对话框。
-* 选择&#x200B;**[!UICONTROL ABR controls]**。
+* 開啟Primetime設定對話方塊。
+* 選取 **[!UICONTROL ABR controls]**.
 
    ![](assets/abr-configuration.jpg)
 
-* 点按[!UICONTROL Enable ON]控件，以便它显示`OFF`。
+* 點選 [!UICONTROL Enable ON] 控制，使其顯示 `OFF`.
 
-`PlaybackManager`仅在[isABRControlEnabled](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/config/IPlaybackConfig.html)返回true(ON)时设置ABR参数。 如果返回false(OFF),`PlaybackManager`将使用默认的ABR控件，因此初始、最小和最大比特率都将为0，而ABR策略将为`ABR_MODERATE`。
+此 `PlaybackManager` 僅在下列情況下設定ABR引數 [isABRControlEnabled](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/config/IPlaybackConfig.html) 傳回true （開啟）。 如果傳回false （關閉），則 `PlaybackManager` 使用預設的ABR控制，所以初始、最小和最大位元速率都將為0，而ABR原則將為 `ABR_MODERATE`.
 
-## 配置低位速率{#section_5451691CBBD24542AD54A474D222CD39}
+## 針對低位元速率進行設定 {#section_5451691CBBD24542AD54A474D222CD39}
 
-对于某些低比特率的播放速率，默认情况下，TVSDK切换到纯音频流，并且播放显示冻结。 您可以配置播放器，使其不会遇到切换到纯音频的情况。
+對於某些低位元速率播放速率，TVSDK預設會切換為僅限音訊的資料流，播放似乎已凍結。 您可以設定播放器，讓播放器絕不會切換為僅限音訊。
 
-* 实现[ IPlaybackConfig](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/config/IPlaybackConfig.html)接口：
+* 實作 [IPlaybackConfig](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/config/IPlaybackConfig.html) 介面：
 
-* 确保[getABRMinBitRate](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/config/IPlaybackConfig.html#getABRMinBitRate())高于纯音频比特率(高于64000)。
-* 确保[isABRControlEnabled](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/config/IPlaybackConfig.html#isABRControlEnabled())已打开。
+* 確定 [Getabriminbitrate](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/config/IPlaybackConfig.html#getABRMinBitRate()) 高於純音訊位元速率(高於64000)。
+* 確定 [isABRControlEnabled](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/config/IPlaybackConfig.html#isABRControlEnabled()) 已開啟。

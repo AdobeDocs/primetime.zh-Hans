@@ -1,49 +1,48 @@
 ---
-title: 打包加密内容
-description: 打包加密内容
+title: 封裝加密的內容
+description: 封裝加密的內容
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: e5792917-8172-48b0-8792-7a7e942596c5
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '227'
 ht-degree: 0%
 
 ---
 
+# 封裝加密的內容{#package-encrypted-content}
 
-# 打包加密内容{#package-encrypted-content}
+1. 複製 `<Primetime DRM DVD>\Reference Implementation\Command Line Tools\` 目錄至您的本機檔案系統。
+1. 在您的本機 `Command Line Tools\` 資料夾，更新 `flashaccesstools.properties` 使用伺服器的檔案。
 
-1. 将`<Primetime DRM DVD>\Reference Implementation\Command Line Tools\`目录复制到本地文件系统。
-1. 在您的本地`Command Line Tools\`文件夹中，更新`flashaccesstools.properties`文件以与服务器一起使用。
+   您必須至少修改下列屬性：
 
-   您必须至少修改以下属性：
+   * `encrypt.keys.asymmetric.certfile=[license-server-certificate.cer]`：您的License Server憑證的路徑(通常結尾為 [!DNL .cer]， [!DNL .der] 或 [!DNL .pem])。
 
-   * `encrypt.keys.asymmetric.certfile=[license-server-certificate.cer]`:您的许可证服务器证书的路径(通常以或 [!DNL .cer]结尾 [!DNL .der] 为 [!DNL .pem]结尾)。
+   * `encrypt.license.serverurl=[license-server-url]`：您的授權伺服器URL，例如：    `https://<License Server Hostname>:8080/flashaccessserver/sampletenant`.
 
-   * `encrypt.license.serverurl=[license-server-url]`:您的许可证服务器URL，例如：    `https://<License Server Hostname>:8080/flashaccessserver/sampletenant`.
+   * `encrypt.license.servercert=[transport-certificate.cer]`：傳輸憑證的路徑(通常結尾為 [!DNL .cer]， [!DNL .der]，或 [!DNL .pem])。
 
-   * `encrypt.license.servercert=[transport-certificate.cer]`:传输证书的路径(通常以、 [!DNL .cer]或 [!DNL .der]结尾 [!DNL .pem])。
+   * `encrypt.sign.certfile=[packager-credentials.pfx]`：Packager憑證的路徑(結尾為 [!DNL .pfx])。
 
-   * `encrypt.sign.certfile=[packager-credentials.pfx]`:Packager证书的路径(以下结 [!DNL .pfx]尾)。
-
-   * `encrypt.sign.certpass=[password]`:Packager证书的密码。
+   * `encrypt.sign.certpass=[password]`：您的Packager憑證的密碼。
    >[!NOTE]
    >
-   >请确保不要对密码进行扰乱。
+   >確定您未加擾密碼。
 
-1. 创建策略。
+1. 建立原則。
 
-   在本地`Command Line Tools\`文件夹中，运行以下命令：
+   在您的本機 `Command Line Tools\` 資料夾，執行以下命令：
 
    ```
    java -jar libs/AdobePolicyManager.jar new examplepolicy.pol -n examplepolicy -x
    ```
 
-   此命令创建一个名为[!DNL examplepolicy.pol]的策略文件，该文件使用匿名许可证服务器身份验证（`-x`选项）。
-1. 将要加密的MP4、FLV或F4V视频文件复制到本地`Command Line Tools\`文件夹中。
-1. 打包您的内容。
+   這個命令會建立名為的原則檔 [!DNL examplepolicy.pol] 使用匿名授權伺服器驗證的 `-x` 選項)。
+1. 將您要加密的MP4、FLV或F4V視訊檔案複製到本機 `Command Line Tools\` 資料夾。
+1. 封裝您的內容。
 
-   假设源视频文件为[!DNL sample.mp4]。 在本地`Command Line Tools\`文件夹中，运行以下命令：
+   假設您的來源視訊檔案為 [!DNL sample.mp4]. 在您的本機 `Command Line Tools\` 資料夾，執行以下命令：
 
    ```
    java -jar libs/AdobePackager.jar sample.mp4 sample_encrypted.mp4 -p examplepolicy.pol
@@ -51,12 +50,12 @@ ht-degree: 0%
 
    >[!NOTE]
    >
-   >如果要打包HLS、HDS或DASH内容，必须使用其他打包程序工具，如[Adobe Primetime Offline Packager](https://helpx.adobe.com/content/dam/help/en/primetime/guides/offline_packager_getting_started.pdf)。
+   >如果要封裝HLS、HDS或DASH內容，必須使用不同的封裝工具，例如 [Adobe Primetime離線封裝程式](https://helpx.adobe.com/content/dam/help/en/primetime/guides/offline_packager_getting_started.pdf).
 
-1. 将加密的文件伪像（在本例中为[!DNL sample_encrypted.mp4]和[!DNL sample_encrypted.mp4.metadata]）复制到`<Your Content Server - Tomcat Install Dir>\webapps\ROOT`。
+1. 複製加密的檔案成品（在此案例中） [!DNL sample_encrypted.mp4] 和 [!DNL sample_encrypted.mp4.metadata])至 `<Your Content Server - Tomcat Install Dir>\webapps\ROOT`.
 
-此时，您已完成了该过程的打包阶段。
+此時，您已完成流程的封裝階段。
 
 >[!NOTE]
 >
->有关用于打包内容、创建策略等的命令行工具的详细信息，请参阅[Adobe Primetime DRM命令行工具](../drm-reference-implementations/command-line-tools/command-line-tools-overview.md)。
+>如需封裝內容、建立原則等命令列工具的詳細資訊，請參閱 [Adobe Primetime DRM命令列工具](../drm-reference-implementations/command-line-tools/command-line-tools-overview.md).

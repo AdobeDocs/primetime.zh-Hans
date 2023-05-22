@@ -1,21 +1,20 @@
 ---
-description: 要升级运行Adobe Access Server的受保护流服务器，请将部署在应用程序服务器上的flashaccessserver.war文件替换为最新Adobe访问中包含的文件。 如果您希望使用上述新配置选项，请更新服务器的flashaccess-tenant.xml。 您还需要将jsafe.dll或libjsafe.so更新到最新Adobe访问附带的版本。
-title: 运行Adobe Access Server以实现受保护流
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 若要升級執行Adobe Access Server for Protected Streaming的伺服器，請將部署在應用程式伺服器上的flashaccessserver.war檔案，取代為包含最新Adobe存取權的檔案。 如果您想要使用上述新設定選項，請更新伺服器的flashaccess-tenant.xml。 您也需要將jsafe.dll或libjsafe.so更新為包含於最新Adobe存取中的版本。
+title: 執行適用於受保護串流的Adobe Access Server
+exl-id: 02ba87c9-d4ec-4d39-926e-5d98b1858349
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '227'
 ht-degree: 0%
 
 ---
 
+# 執行適用於受保護串流的Adobe Access Server{#running-the-adobe-access-server-for-protected-streaming}
 
-# 为受保护流{#running-the-adobe-access-server-for-protected-streaming}运行Adobe Access Server
+若要升級執行Adobe Access Server for Protected Streaming的伺服器，請將部署在應用程式伺服器上的flashaccessserver.war檔案，取代為包含最新Adobe存取權的檔案。 如果您想要使用上述新設定選項，請更新伺服器的flashaccess-tenant.xml。 您也需要將jsafe.dll或libjsafe.so更新為包含於最新Adobe存取中的版本。
 
-要升级运行Adobe Access Server的受保护流服务器，请将部署在应用程序服务器上的flashaccessserver.war文件替换为最新Adobe访问中包含的文件。 如果您希望使用上述新配置选项，请更新服务器的flashaccess-tenant.xml。 您还需要将jsafe.dll或libjsafe.so更新到最新Adobe访问附带的版本。
+在執行Adobe Access Server for Protected Streaming之前，Adobe建議您使用授權伺服器隨附的公用程式來驗證設定檔是否有效。 如需詳細資訊，請參閱「[設定驗證器](../../aaxs-protected-streaming/aaxs-protected-streaming-utilities/configuration-validator.md)「。
 
-在为受保护流运行Adobe Access Server之前，Adobe建议您使用随许可证服务器提供的实用程序验证配置文件是否有效。 有关详细信息，请参阅“[配置验证程序](../../aaxs-protected-streaming/aaxs-protected-streaming-utilities/configuration-validator.md)”。
+若要啟動Tomcat和授權伺服器，請從Tomcat的bin目錄執行「catalina.bat start」或「catalina.sh start」。
 
-要开始Tomcat和许可证服务器，请从Tomcat的bin目录运行“catalina.bat开始”或“catalina.sh开始”。
-
-启动服务器后，请通过在浏览器窗口中打开&#x200B;*https:// license-server-host:port/flashaccessserver/tenant-name/flashaccess/license/v1*&#x200B;验证是否正确配置了该服务器。 如果租户配置成功加载，将显示确认消息。
+伺服器啟動後，請開啟「 」，確認伺服器已正確設定 *https:// license-server-host：port/flashaccessserver/tenant-name/flashaccess/license/v1* 在瀏覽器視窗中。 如果租使用者設定已成功載入，則會顯示確認訊息。

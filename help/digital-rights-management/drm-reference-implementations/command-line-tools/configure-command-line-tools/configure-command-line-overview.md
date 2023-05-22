@@ -1,8 +1,7 @@
 ---
-title: 概述
-description: 概述
+title: 概觀
+description: 概觀
 copied-description: true
-translation-type: tm+mt
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '94'
@@ -11,17 +10,17 @@ ht-degree: 0%
 ---
 
 
-# 概述{#overview}
+# 概觀{#overview}
 
-命令行工具具有关联的属性，您必须在[!DNL flashaccesstools.properties] *中设置值，然后才能运行工具*。 某些命令行工具还允许您从命令行指定属性值。 从命令行指定的值优先于从[!DNL flashaccesstools.properties]提供的值。
+命令列工具具有關聯的屬性，您必須為它們設定值 [!DNL flashaccesstools.properties] *早於* 您可以執行工具。 有些命令列工具也可讓您從命令列指定屬性值。 您從命令列指定的值優先於您提供的值 [!DNL flashaccesstools.properties].
 
-您必须修改[!DNL flashaccesstools.properties]下几节中的设置，以启用您要使用的相应命令行工具：
+您必須修改以下各節中的設定： [!DNL flashaccesstools.properties] 若要啟用您要使用的對應命令列工具：
 
-* **Media Packager属性** -(适 [!DNL AdobePackager.jar]用)
+* **媒體封裝程式屬性** - (適用於 [!DNL AdobePackager.jar])
 
-* **策略更新列表管理器和吊销列表管理器属性** -(对于 [!DNL AdobePolicyUpdateListManager.jar] 和 [!DNL AdobeRevocationListManager.jar])
+* **原則更新清單管理員和撤銷清單管理員屬性** - (適用於 [!DNL AdobePolicyUpdateListManager.jar] 和 [!DNL AdobeRevocationListManager.jar])
 
-* **策略管理器属性** -(适用于 [!DNL AdobePolicyManager.jar])
+* **原則管理員屬性** - (適用於 [!DNL AdobePolicyManager.jar])
 
-* **License Generator Properties** -(for  [!DNL AdobeLicenseGenerator.jar])
+* **授權產生器屬性** - (適用於 [!DNL AdobeLicenseGenerator.jar])
 

@@ -1,16 +1,15 @@
 ---
-title: 使用策略管理器
-description: 使用策略管理器
+title: 使用原則管理員
+description: 使用原則管理員
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: c93a729d-19d0-46ac-995a-bfefb940f1e7
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '58'
 ht-degree: 0%
 
 ---
 
+# 使用原則管理員 {#using-policy-manager}
 
-# 使用策略管理器{#using-policy-manager}
-
-使用策略管理器，您可以创建和管理策略。 在运行策略管理器之前，可以在配置文件中为策略管理器属性设置值。 配置文件指定将应用于所有策略的信息。 也可以在命令行上指定所有策略管理器属性。
+您可以使用Policy Manager來建立和管理原則。 執行Policy Manager之前，您可以選擇在組態檔中設定Policy Manager屬性的值。 組態檔會指定將套用至所有原則的資訊。 也可以在命令列上指定所有Policy Manager屬性。

@@ -1,22 +1,21 @@
 ---
-title: 处理域取消注册请求
-description: 处理域取消注册请求
+title: 處理網域取消註冊請求
+description: 處理網域取消註冊請求
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: f29507b5-d32a-4b22-a02e-6701b86db133
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 0%
 
 ---
 
+# 處理網域取消註冊請求{#handling-domain-de-registration-requests}
 
-# 处理域取消注册请求{#handling-domain-de-registration-requests}
+如果使用者端應用程式需要離開網域，它會叫用 `DRMManager.removeFromDeviceGroup()`ActionScriptAPI或 `leaveLicenseDomain()` iOS API可起始網域註銷程式。 網域解除註冊是兩個階段的程式。 使用者端會先傳送取消註冊預覽請求。 網域伺服器會檢查要求，並判斷是否允許使用者端離開網域（如果電腦目前不是網域的一部分，可能會傳回錯誤）。 成功回應後，使用者端會刪除其網域認證及發行給該網域的任何授權，然後傳送取消註冊請求。
 
-如果客户端应用程序需要离开域，它将调用`DRMManager.removeFromDeviceGroup()`ActionScriptAPI或`leaveLicenseDomain()` iOS API来启动域取消注册过程。 域取消注册是一个两阶段过程。 客户端首先发送取消注册预览请求。 域服务器检查该请求并确定是否允许客户端离开域（如果计算机当前不是域的一部分，则可能返回错误）。 在成功响应时，客户端删除其域凭据和颁发给该域的任何许可证，然后发送取消注册请求。
+* 要求處理常式類別為 `com.adobe.flashaccess.sdk.protocol.domain.DomainDeRegistrationHandler`
+* 請求訊息類別為 `com.adobe.flashaccess.sdk.protocol.domain.DomainDeRegistrationRequestMessage`
+* 如果使用者端和伺服器都支援通訊協定版本5，則請求URL是「中繼資料中的網域伺服器URL： + &quot;/flashaccess/dereg/v4」。 否則，請求URL是中繼資料中的網域伺服器URL&quot; + &quot;/flashaccess/dereg/v3&quot;
 
-* 请求处理程序类为`com.adobe.flashaccess.sdk.protocol.domain.DomainDeRegistrationHandler`
-* 请求消息类为`com.adobe.flashaccess.sdk.protocol.domain.DomainDeRegistrationRequestMessage`
-* 如果客户端和服务器都支持协议版本5，则请求URL为“元数据中的域服务器URL:+ &quot;/flashaccess/dereg/v4&quot;。 否则，请求URL为元数据&quot; + &quot;/flashaccess/dereg/v3&quot;中的域服务器URL
-
-在处理域取消注册请求时，服务器使用`getRequestPhase()`确定客户端是处于预览还是取消注册阶段。 在预览阶段，域服务器检查该请求并确定是否允许客户端离开该域（例如，如果计算机当前不是域的一部分，则可以拒绝该请求）。 在取消注册阶段，服务器记录计算机离开域的事实。 强烈建议服务器评估预览请求中与实际取消注册请求中相同的逻辑，以最大限度地降低第二阶段失败的可能性。
+處理網域取消註冊請求時，伺服器會使用 `getRequestPhase()` 以判斷使用者端是否處於預覽或取消註冊階段。 在預覽階段中，網域伺服器會檢查要求，並判斷是否允許使用者端離開網域（例如，如果電腦目前不是網域的一部分，則可能會拒絕要求）。 在取消註冊階段，伺服器會記錄電腦已離開網域的事實。 強烈建議伺服器評估預覽請求中的邏輯，與實際取消註冊請求中的邏輯相同，以將第二階段失敗的可能性降至最低。

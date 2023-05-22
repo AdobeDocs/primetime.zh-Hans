@@ -1,9 +1,8 @@
 ---
-title: 即时转码
-description: 即时转码
+title: 即時轉碼
+description: 即時轉碼
 copied-description: true
 exl-id: 9577e1d5-1462-49d6-9d24-94e74dc9c019
-translation-type: tm+mt
 source-git-commit: 3e63c187f12d1bff53370bbcde4d6a77f58f3b4f
 workflow-type: tm+mt
 source-wordcount: '177'
@@ -11,17 +10,17 @@ ht-degree: 0%
 
 ---
 
-# 即时转码{#just-in-time-transcoding}
+# 即時轉碼 {#just-in-time-transcoding}
 
-PrimetimeAd Insertion具有即时转码和打包功能，可确保在内容流中正确播放不兼容的广告创意。 它还可以将ID3数据包注入可用于客户端广告跟踪的广告片段中。
-典型的工作流如下：
+PrimetimeAd Insertion提供即時轉碼和封裝功能，以確保不相容的廣告創意內容可在內容串流中正確播放。 它也可以將ID3封包插入可用於使用者端廣告追蹤的廣告片段中。
+典型的工作流程如下：
 
-1. Adobe Primetime Ad Insertion从客户的广告服务器获取广告/创意。
+1. Adobe PrimetimeAd Insertion會從客戶的廣告伺服器擷取廣告/創意。
 
-1. 如果广告的创意格式与内容流本机兼容，则创意将插入清单。
+1. 如果廣告的創意格式與內容串流原生相容，則會將創意插入資訊清單中。
 
-1. 如果广告的创意格式本机不兼容（例如.mp4、.mov、.webm），PrimetimeAd Insertion会从指定CDN中搜索预转码版本的广告。 如果找到一则广告，则插入该广告；否则，广告将排队等待转码。
+1. 如果廣告的創意格式本身不相容（例如.mp4、.mov、.webm），PrimetimeAd Insertion會從指定的CDN搜尋預先轉碼版本的廣告。 如果找到，則會插入該廣告；否則，會將該廣告排入轉碼佇列。
 
-1. 转码广告创意后，PrimetimeAd Insertion会将该广告资产的所有后续请求整合到清单中。
+1. 轉碼廣告創意後，PrimetimeAd Insertion會將該廣告資產的所有後續請求拼接到資訊清單中。
 
-PrimetimeAd Insertion支持大多数视频和线性格式的转码。 广告创意转码通常在三分钟内完成。 有关更多详细信息，请联系您的Primetime支持代表。
+PrimetimeAd Insertion支援大多數視訊和線性格式的轉碼。 廣告創意轉碼通常會在三分鐘內發生。 如需詳細資訊，請聯絡您的Primetime支援代表。

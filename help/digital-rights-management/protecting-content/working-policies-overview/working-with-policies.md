@@ -1,36 +1,35 @@
 ---
-title: 使用DRM策略概述
-description: 使用DRM策略概述
+title: 使用DRM原則概觀
+description: 使用DRM原則概觀
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 734d0be3-2abe-400c-bc34-00046ec52f4c
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '304'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#working-with-drm-policies-overview}
 
-# 概述{#working-with-drm-policies-overview}
+內容提供者可以使用Primetime DRM SDK將DRM原則套用至媒體檔案。 然後，管理員可以使用原則管理API來建立、檢視詳細資訊和更新DRM原則。
 
-内容提供商可以使用Primetime DRM SDK将DRM策略应用于媒体文件。 然后，管理员可以使用策略管理API创建、视图DRM策略的详细信息和更新DRM策略。
+A *`DRM policy`* 是包含安全性設定、驗證要求和使用許可權的資訊集合。 此原則會定義使用者檢視內容的方式。 DRM原則、加密和簽署允許內容提供者維持對其內容的控制，無論內容散佈的範圍有多廣。
 
-*`DRM policy`*&#x200B;是包含安全性设置、身份验证要求和使用权限的信息集合。 策略定义用户如何视图内容。 DRM策略、加密和签名允许内容提供商保持对其内容的控制，无论内容分发的范围有多广。
+DRM原則可作為許可證伺服器產生許可證時使用的範本。 使用者端在請求授權之前也可以參考DRM原則，以決定使用者端在向伺服器發出授權請求之前是否需要提示使用者進行驗證。
 
-DRM策略用作许可证服务器在生成许可证时使用的模板。 客户端还可以在请求许可证之前参考DRM策略，以确定客户端是否需要在向服务器发出许可证请求之前提示用户进行身份验证。
+您可以使用AdobeFlash Media Server或HTTP伺服器來傳送受保護的內容。 使用者可在以Primetime DRM SDK建置的自訂播放器中下載和播放受保護的內容。
 
-您可以使用AdobeFlash Media Server或HTTP服务器交付受保护的内容。 用户可以在使用Primetime DRM SDK构建的自定义播放器中下载和播放受保护的内容。
+DRM原則指定授予使用者端的一或多個許可權。 通常，DRM政策至少包含 *`Play Right`*. 您也可以指定多個播放許可權，每個許可權都有不同的限制。 使用者端收到具有多項播放許可權的授權時，會使用符合所有限制的第一個授權。 例如，您可以在不同平台上強制執行不同的輸出保護設定。
 
-DRM策略指定授予客户端的一个或多个权限。 通常，DRM策略至少包括&#x200B;*`Play Right`*。 您还可以指定多个播放权限，每个播放权限具有不同的限制。 当客户端收到具有多个播放权限的许可证时，它使用第一个满足所有限制的许可证。 例如，您可以在不同平台上实施不同的输出保护设置。
+另請參閱 `CreatePolicyWithOutputProtection.java` 在參考實作命令列工具中 [!DNL samples] 說明此範例的範常式式碼目錄。
 
-有关说明此示例的示例代码，请参见Reference Implementation命令行工具[!DNL samples]目录中的`CreatePolicyWithOutputProtection.java`。
+您可以使用Primetime DRM原則管理API完成下列工作：
 
-您可以使用Primetime DRM策略管理API完成以下任务:
+* 建立和更新原則
+* 檢視DRM原則詳細資訊
+* 管理DRM原則更新清單
 
-* 创建和更新策略
-* 视图DRM策略详细信息
-* 管理DRM策略更新列表
+請參閱 *Primetime DRM API參考* 以取得有關Java API的詳細資訊。
 
-有关Java API的详细信息，请参阅&#x200B;*Primetime DRM API参考*。
-
-有关Primetime DRM策略管理器的信息，请参阅&#x200B;*使用Primetime DRM参考实施*&#x200B;指南。
+請參閱 *使用Primetime DRM參考實作* 有關Primetime DRM Policy Manager的資訊指南。

@@ -1,27 +1,26 @@
 ---
-title: 标记范围
-description: 标记范围
+title: 標籤範圍
+description: 標籤範圍
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: b3314ee5-bb30-4b25-beff-ff810eff06b2
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '203'
 ht-degree: 0%
 
 ---
 
+# 刪除和取代廣告的使用案例 {#use-cases-delete-replace-ads}
 
-# 用例删除和替换广告{#use-cases-delete-replace-ads}
+以下是刪除和取代廣告的使用案例：
 
-以下是删除和替换广告的用例：
+## 標籤範圍 {#mark-ranges}
 
-## 标记范围{#mark-ranges}
+實作 `PTTimeRangeCollection` 並將內容範圍標示為廣告：
+1. 準備 `PTTimeRangeCollection`.
+1. 設定 `PTTimeRangeCollection` 至 `PTTimeRangeCollectionTypeMarkRanges`.
 
-要实施`PTTimeRangeCollection`并将内容范围标记为广告，请执行以下操作：
-1. 准备`PTTimeRangeCollection`。
-1. 将`PTTimeRangeCollection`的类型设置为`PTTimeRangeCollectionTypeMarkRanges`。
-
-   此步骤通知TVSDK必须将自定义范围视为广告。
+   此步驟會通知TVSDK自訂範圍必須視為廣告。
 
    ```
    #define PSDK_TIMESCALE 100000 
@@ -40,7 +39,7 @@ ht-degree: 0%
        type:PTTimeRangeCollectionTypeMarkRanges];
    ```
 
-1. 创建`PTAdMetadata`并设置`PTTimeRangeCollection`。
+1. 建立 `PTAdMetadata` 並設定 `PTTimeRangeCollection`.
 
    ```
    // Create the PTPlayerItem metadata 
@@ -59,7 +58,7 @@ ht-degree: 0%
                                                                   metadata:metadata];
    ```
 
-1. 创建播放器和开始播放。
+1. 建立播放器並開始播放。
 
    ```
    //Create PTMediaPlayer using the created PTMediaPlayer 
@@ -72,13 +71,13 @@ ht-degree: 0%
    [player play];
    ```
 
-## 替换范围{#replace-ranges}
+## 取代範圍 {#replace-ranges}
 
-要实施`PTTimeRangeCollection`并将内容范围作为广告删除，请执行以下操作：
-1. 准备`PTTimeRangeCollection`。
-1. 将`PTTimeRangeCollection`的类型设置为`PTTimeRangeCollectionTypeReplaceRanges`。
+實作 `PTTimeRangeCollection` 並刪除作為廣告的內容範圍：
+1. 準備 `PTTimeRangeCollection`.
+1. 設定 `PTTimeRangeCollection` 至 `PTTimeRangeCollectionTypeReplaceRanges`.
 
-   此步骤通知TVSDK需要用替代内容（广告）替换提供的范围。
+   此步驟會通知TVSDK提供的範圍需要取代為替代內容（廣告）。
 
    ```
    #define PSDK_TIMESCALE 100000 
@@ -99,9 +98,9 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   >参数`replacementDuration`为可选参数。 如果未定义，`AdServer`将确定广告中断的持续时间。
+   >引數 `replacementDuration` 是選用專案。 如果未定義， `AdServer` 決定廣告插播的持續時間。
 
-1. 创建`PTAdMetadata`并设置`PTTimeRangeCollection`。
+1. 建立 `PTAdMetadata` 並設定 `PTTimeRangeCollection`.
 
    ```
    //Create the PTPlayerItem metadata 
@@ -125,9 +124,9 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   >尽管`signalingMode`设置为`PTAdSignalingModeCustomRanges`，但在设置`PTTimeRangeCollectionTypeReplace`类型的`PTTimeRangeCollection`时，会自动设置此广告信令模式。
+   >雖然 `signalingMode` 設為 `PTAdSignalingModeCustomRanges`，此廣告訊號模式會在設定 `PTTimeRangeCollection` 型別 `PTTimeRangeCollectionTypeReplace`.
 
-1. 创建播放器和开始播放。
+1. 建立播放器並開始播放。
 
    ```
    //Create PTMediaPlayer using the created PTMediaPlayer 
@@ -140,11 +139,11 @@ ht-degree: 0%
    [player play];
    ```
 
-## 删除范围{#delete-ranges}
+## 刪除範圍 {#delete-ranges}
 
-要实施`PTTimeRangeCollection`并将内容范围作为广告删除，请执行以下操作：
-1. 准备`PTTimeRangeCollection`。
-1. 将`PTTimeRangeCollection`的类型设置为`PTTimeRangeCollectionTypeDeleteRanges`，这会通知TVSDK需要删除提供的范围。
+實作 `PTTimeRangeCollection` 並刪除作為廣告的內容範圍：
+1. 準備 `PTTimeRangeCollection`.
+1. 設定 `PTTimeRangeCollection` 至 `PTTimeRangeCollectionTypeDeleteRanges`，會通知TVSDK提供的範圍需要刪除。
 
    ```
    #define PSDK_TIMESCALE 100000 
@@ -161,7 +160,7 @@ ht-degree: 0%
                                               type:PTTimeRangeCollectionTypeDeleteRanges];
    ```
 
-1. 创建`PTAdMetadata`并设置`PTTimeRangeCollection`。
+1. 建立 `PTAdMetadata` 並設定 `PTTimeRangeCollection`.
 
    ```
    //Create the PTPlayerItem metadata 
@@ -185,9 +184,9 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   >广告插入是在基于`PTAdMetadata`和当前`PTAdSignalingMode`删除自定义范围之后发生的。
+   >廣告插入會在刪除自訂範圍後發生，根據 `PTAdMetadata` 和目前的 `PTAdSignalingMode`.
 
-1. 创建播放器和开始播放。
+1. 建立播放器並開始播放。
 
    ```
    //Create PTMediaPlayer using the created PTMediaPlayer 

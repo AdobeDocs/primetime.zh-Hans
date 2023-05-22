@@ -1,98 +1,96 @@
 ---
-description: 这些类提供有关时间轴内发生的广告的信息。
-title: 时间轴广告课程
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 這些類別會提供發生在時間軸內之廣告的相關資訊。
+title: 時間表廣告類別
+exl-id: 004c706a-55cc-446a-93b1-c5c7c011ba42
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '515'
 ht-degree: 0%
 
 ---
 
+# 時間表廣告類別{#timeline-advertising-classes}
 
-# 时间轴广告类{#timeline-advertising-classes}
-
-这些类提供有关时间轴内发生的广告的信息。
+這些類別會提供發生在時間軸內之廣告的相關資訊。
 
 <table frame="all" colsep="1" rowsep="1" id="table_1A59E777BA99466793D586286F19E933"> 
  <thead> 
   <tr rowsep="1"> 
-   <th colname="1" class="entry"> 名称 </th> 
-   <th colname="2" class="entry"> 说明 </th> 
+   <th colname="1" class="entry"> 名稱 </th> 
+   <th colname="2" class="entry"> 說明 </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr rowsep="1"> 
    <td colname="1"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTAd.html" format="html" scope="external"> PTAd</a> </td> 
-   <td colname="2">定义广告抽象并包含所有广告信息的类。 它由唯一ID、持续时间和MediaResource定义。 MediaResource包含实际广告内容所在的URL。 
+   <td colname="2">定義廣告抽象並保留所有廣告資訊的類別。 它由唯一ID、持續時間和MediaResource定義。 MediaResource包含實際廣告內容所在的URL。 
     <pre>
-      表示与内容拼接的主线性资源。 它可以选择包含必须与线性资产一起显示的配套资源的数组。
+      代表連結至內容的主要線性資產。 它可選擇包含一系列必須隨線性資產一起顯示的隨附資產。
     </pre> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTAdAsset.html" format="html" scope="external"> PTAdAsset</a> </td> 
-   <td colname="2">表示要显示的资产的类。 
+   <td colname="2">代表要顯示之資產的類別。 
     <pre>
-      表示要显示的资产。
+      代表要顯示的資產。
     </pre> 
     <pre>
-      表示广告资产的类。
+      代表廣告資產的類別。
     </pre> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTAdBannerView.html" format="html" scope="external"> PTAdBannerView</a> </td> 
    <td colname="2">
     <pre>
-      显示横幅资源。 您的应用程序必须创建此实用程序类的新实例，设置横幅资源，并将其添加到视图。 横幅的印象和点击跟踪由此类在内部管理。
+      顯示橫幅資產。 您的應用程式必須建立此公用程式類別的新執行個體、設定橫幅資產，並將其新增至檢視。 橫幅的曝光和點選追蹤功能是由此類別內部管理。
     </pre> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTAdBreak.html" format="html" scope="external"> PTAdBreak</a> </td> 
-   <td colname="2">在播放过程中某个点将播放的多个广告上提供统一视图的类。 
+   <td colname="2">在播放期間某個時間點播放的數個廣告上提供統一檢視的類別。 
     <pre>
-      表示拼接到内容中的连续广告序列。
+      代表插入內容中的連續廣告順序。
     </pre> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTAdClick.html" format="html" scope="external"> PTAdClick</a> </td> 
-   <td colname="2">表示与资产关联的单击实例的类。 此实例包含有关点进URL和标题的信息，这些信息可用于向用户提供其他信息。 
+   <td colname="2">代表與資產相關聯之點選例項的類別。 此執行個體包含點進URL和標題的相關資訊，可用於向使用者提供其他資訊。 
     <pre>
-      表示与资产关联的单击实例。 此实例包含有关点进URL和标题的信息，这些信息可用于向用户提供其他信息。
+      代表與資產相關聯的點選執行個體。 此執行個體包含點進URL和標題的相關資訊，可用於向使用者提供其他資訊。
     </pre> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTAdPolicyInfo.html" format="html" scope="external"> PTAdPolicyInfo</a> </td> 
-   <td colname="2"> 定义AdPolicySelector API调用属性的协议。 这些属性提供了用于强制实施每个广告行为的上下文。 </td> 
+   <td colname="2"> 定義AdPolicySelector API呼叫屬性的通訊協定。 這些屬性提供強制實行每個廣告行為的內容。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1">PTAdPolicySelector</td> 
-   <td colname="2"> 用于强制广告行为的广告策略选择器协议。 通过实现所有所需的方法或通过扩展现有默认策略选择器类来自定义特定行为，应用程序可以符合此协议。 </td> 
+   <td colname="1">ptadPolicySelector</td> 
+   <td colname="2"> 用於強制實施廣告行為的廣告原則選擇器通訊協定。 應用程式可以透過實作所有必要的方法或擴充現有的預設原則選擇器類別來自訂特定行為，來符合此通訊協定。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> PTAdTimeline</td> 
-   <td colname="2"> 表示内容中分页时间轴的类。 </td> 
+   <td colname="1"> PTAd時間軸</td> 
+   <td colname="2"> 代表內容中分行時間軸的類別。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 
     <pre>
-     <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTContentResolver.html" format="html" scope="external"> PTContentResolverclass </a> 、PTContentResolver 
-     <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Protocols/PTContentResolver.html" format="html" scope="external"> </a> 协议
+     <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTContentResolver.html" format="html" scope="external"> PTContentResolver</a> 類別， 
+     <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Protocols/PTContentResolver.html" format="html" scope="external"> PTContentResolver</a> 通訊協定
     </pre> </td> 
-   <td colname="2"> 在Adobe Primetime广告决策过程中处理广告解析部分的类。 </td> 
+   <td colname="2"> 在Adobe Primetime廣告決策程式中處理廣告解析部分的類別。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Protocols/PTContentResolverDelegate.html" format="html" scope="external"> PTContentResolverDelegate</a> </td> 
-   <td colname="2"> 描述自定义内容解析程序(<span class="codeph"> PTContentResolver</span>)用来向委派内容解析状态的方法的协议。 </td> 
+   <td colname="2"> 說明自訂內容解析器( <span class="codeph"> PTContentResolver</span> )應該使用向委派通訊內容解析的狀態。 </td> 
   </tr> 
   <tr rowsep="0"> 
    <td colname="1"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Constants/PTPlacementType.html" format="html" scope="external"> PTPlacementType</a> </td> 
-   <td colname="2">抽象版面信息请求的类。 每个已解析的广告都必须附加一个位置信息。 版面信息描述广告在时间轴上的放置位置。 它包含以下信息： 
+   <td colname="2">抽象位置資訊請求的類別。 每個已解析廣告都必須附加一個版位資訊。 位置資訊說明廣告在時間軸上的放置位置。 其中包含下列資訊： 
     <ul id="ul_A9105A78F0C24488BCD5E3F2EE62A3EE"> 
-     <li id="li_01E968A4330D4B40BA1EB6F4A6000FFD">位置（毫秒） </li> 
-     <li id="li_A3DC9498BEE14FBA9E7A5D26874F3984">放置的类型（前滚、中滚或后滚） </li> 
-     <li id="li_4B9094DD318B4792854A377CC6064232">将要替换的主内容块的持续时间 </li> 
+     <li id="li_01E968A4330D4B40BA1EB6F4A6000FFD">位置位置（以毫秒為單位） </li> 
+     <li id="li_A3DC9498BEE14FBA9E7A5D26874F3984">位置型別（前段、中段或後段） </li> 
+     <li id="li_4B9094DD318B4792854A377CC6064232">即將取代之主要內容區塊的持續時間 </li> 
     </ul> </td> 
   </tr> 
  </tbody> 
 </table>
-

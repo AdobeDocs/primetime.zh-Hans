@@ -1,58 +1,57 @@
 ---
-description: 视频播放器广告服务界面定义(VPAID)2.0提供了播放视频广告的通用界面。 它为用户提供丰富的媒体体验，并允许出版商更好地目标广告、跟踪广告印象和从视频内容受益。
-title: VPAID 2.0广告支持
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 影片播放器廣告服務介面定義(VPAID) 2.0提供播放影片廣告的通用介面。 它為使用者提供豐富的媒體體驗，並允許發佈者更好地鎖定廣告、追蹤廣告印象，以及從視訊內容獲利。
+title: VPAID 2.0廣告支援
+exl-id: ea3dcd1d-c4e2-46c6-b613-e86c3e161ca8
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '351'
 ht-degree: 0%
 
 ---
 
+# VPAID 2.0廣告支援 {#vpaid-ad-support}
 
-# VPAID 2.0广告支持{#vpaid-ad-support}
+影片播放器廣告服務介面定義(VPAID) 2.0提供播放影片廣告的通用介面。 它為使用者提供豐富的媒體體驗，並允許發佈者更好地鎖定廣告、追蹤廣告印象，以及從視訊內容獲利。
 
-视频播放器广告服务界面定义(VPAID)2.0提供了播放视频广告的通用界面。 它为用户提供丰富的媒体体验，并允许出版商更好地目标广告、跟踪广告印象和从视频内容受益。
+支援下列功能：
 
-支持以下功能：
+* VPAID規格的2.0版
 
-* VPAID规范的2.0版
+   如需詳細資訊，請參閱 [IAB VPAID 2.0](https://www.iab.com/guidelines/digital-video-player-ad-interface-definition-vpaid-2-0/).
+* 具有隨選影片(VOD)內容的線性VPAID廣告
+* 在即時內容中，瀏覽器TVSDK支援前段JavaScript VPAID廣告。
+* 在Flash遞補模式中，瀏覽器TVSDK僅支援Flash型VPAID廣告。
+* 線性JavaScript VPAID廣告
 
-   有关详细信息，请参阅[IAB VPAID 2.0](https://www.iab.com/guidelines/digital-video-player-ad-interface-definition-vpaid-2-0/)。
-* 具有视频点播(VOD)内容的线性VPAID广告
-* 在实时内容中，浏览器TVSDK支持预放JavaScript VPAID广告。
-* 在Flash回退模式下，Browser TVSDK仅支持基于Flash的VPAID广告。
-* 线性JavaScript VPAID广告
+   VPAID廣告必須以JavaScript為基礎，且廣告回應必須將VPAID廣告的媒體型別識別為 `application/javascript`.
 
-   VPAID广告必须基于JavaScript，且广告响应必须将VPAID广告的媒体类型标识为`application/javascript`。
+不支援下列功能：
 
-不支持以下功能：
-
-* VPAID规范的版本1.0
-* 可跳过的广告
-* 非线性广告，如叠加广告、动态伴侣广告、可最小化广告、可折叠广告和可扩展广告。
-* 预载VPAID广告
-* 实时内容中的VPAID广告
-* Flash付费广告
+* VPAID規格的1.0版
+* 可略過的廣告
+* 非線性廣告，例如覆蓋廣告、動態隨附廣告、可最小化廣告、可摺疊廣告和可展開廣告。
+* 預先載入VPAID廣告
+* 即時內容中的VPAID廣告
+* FlashVPAID廣告
 
 ## API {#section_0DB1D383CA5047B281BC808BC082C69B}
 
-以下API元素支持VPAID 2.0广告：
+下列API元素支援VPAID 2.0廣告：
 
-* `MediaPlayer`的`getCustomAdView`方法返回`CustomAdView`对象，该对象表示呈现VPAID广告的Web视图。
+* 此 `getCustomAdView` 方法 `MediaPlayer` 傳回 `CustomAdView` 物件，代表轉譯VPAID廣告的Web檢視。
 
-   有关`getCustomAdView`方法的详细信息，请参阅[MediaPlayer API文档](https://help.adobe.com/en_US/primetime/api/psdk/browser_tvsdk/AdobePSDK.MediaPlayer.html)。
+   如需更多有關「 」的資訊， `getCustomAdView` 方法，請參閱 [MediaPlayer API檔案](https://help.adobe.com/en_US/primetime/api/psdk/browser_tvsdk/AdobePSDK.MediaPlayer.html).
 
-* `MediaPlayer.setCustomAdTimeout(int milliseconds)` 设置VPAID加载过程的超时。
+* `MediaPlayer.setCustomAdTimeout(int milliseconds)` 設定VPAID載入程式的逾時。
 
-   默认超时值为10秒。
+   預設逾時值為10秒。
 
-* API `auditudeSettings.ignoreVPAIDAds`允许您忽略从Auditude服务器接收的VPAID广告。 API不适用于Flash回退。
+* API、 `auditudeSettings.ignoreVPAIDAds`，可讓您忽略從Auditude伺服器接收的VPAID廣告。 API無法用於Flash遞補。
 
-播放VPAID广告时：
+當VPAID廣告播放時：
 
-* VPAID广告显示在播放器视图上方的视图容器中，因此依赖用户点击播放器视图的代码不起作用。
-* 暂停和播放播放播放器实例暂停和恢复VPAID广告的调用。
-* VPAID广告没有预定义的持续时间，因为该广告可以是交互式广告。
+* VPAID廣告會顯示在播放器檢視上方的檢視容器中，因此依賴播放器檢視上使用者點選的程式碼無法運作。
+* 在播放器例項暫停和播放以及繼續VPAID廣告的呼叫。
+* VPAID廣告沒有預先定義的持續時間，因為廣告可以是互動式。
 
-   广告服务器响应中指定的广告持续时间和广告中断总持续时间可能不准确。
+   在廣告伺服器回應中指定的廣告持續時間和廣告插播總持續時間可能不準確。

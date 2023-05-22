@@ -1,31 +1,30 @@
 ---
-title: 加密内容
-description: 加密内容
+title: 加密內容
+description: 加密內容
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: c6b5d8c7-eda4-40c0-a609-0ebfeba90c04
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '223'
 ht-degree: 0%
 
 ---
 
+# 加密內容{#encrypting-content}
 
-# 正在加密内容{#encrypting-content}
+您使用加密視訊內容 `MediaEncrypter` 物件。 您可以加密僅包含音訊曲目的媒體檔案。 您也可以僅套用部分加密；例如，針對低端裝置加密H.264內容時，可提升效能。
 
-使用`MediaEncrypter`对象加密视频内容。 可以加密仅包含音轨的媒体文件。 您也只能应用部分加密；例如，在为低端设备加密H.264内容时，要提高性能。
+若要使用Java API加密媒體檔案：
 
-要使用Java API加密媒体文件，请执行以下操作：
+1. 設定您的開發環境，並包含中提到的所有JAR檔案 *設定開發環境* 在您的專案中。
+1. 建立 `ServerCredential` 執行個體以載入簽署所需的認證。
+1. 建立 `MediaEncrypter` 執行個體。 使用 `MediaEncryperFactory` 如果您不知道您有哪種檔案型別。
 
-1. 设置开发环境，并包含项目&#x200B;*设置开发环境*&#x200B;中提及的所有JAR文件。
-1. 创建一个`ServerCredential`实例以加载签名所需的凭据。
-1. 创建`MediaEncrypter`实例。 如果您不知道您拥有的文件类型，请使用`MediaEncryperFactory`。
+1. 使用指定加密選項 `DRMParameters` 物件。
+1. 使用設定簽名選項 `SignatureParameters` 物件並傳遞 `ServerCredential` 執行個體至其 `setServerCredentials` 方法。
 
-1. 使用`DRMParameters`对象指定加密选项。
-1. 使用`SignatureParameters`对象设置签名选项，并将`ServerCredential`实例传递给其`setServerCredentials`方法。
+1. 使用設定金鑰和授權資訊 `V2KeyParameters` 物件。 使用設定DRM政策 `setPolicies` 方法。 透過呼叫 `setLicenseServerUrl` 和 `setLicenseServerTransportCertificate` 方法。 使用設定CEK加密選項 `setKeyProtectionOptions` 方法，及其自訂屬性 `setCustomProperties` 方法。 最後，視所使用的加密型別而定，將 `DRMKeyParameters` 物件至適當的型別( `VideoDRMParameters`， `AudioDRMParameters`)，並設定加密選項。
 
-1. 使用`V2KeyParameters`对象设置密钥和许可证信息。 使用`setPolicies`方法设置DRM策略。 通过调用`setLicenseServerUrl`和`setLicenseServerTransportCertificate`方法，设置客户端联系许可证服务器所需的信息。 使用`setKeyProtectionOptions`方法设置CEK加密选项，使用`setCustomProperties`方法设置其自定义属性。 最后，根据所使用的加密类型，将`DRMKeyParameters`对象转换为相应的类型(`VideoDRMParameters`、`AudioDRMParameters`)并设置加密选项。
+1. 將輸入和輸出檔案及加密選項傳遞至 `MediaEncrypter.encryptContent` 方法。
 
-1. 通过将输入和输出文件以及加密选项传递到`MediaEncrypter.encryptContent`方法来加密内容。
-
-有关说明如何加密内容的示例代码，请参阅Reference Implementation Command Line Tools [!DNL samples/]目录中的`com.adobe.flashaccess.samples.mediapackager.EncryptContent`。
+如需顯示如何加密內容的範常式式碼，請參閱 `com.adobe.flashaccess.samples.mediapackager.EncryptContent` 在參考實作命令列工具中 [!DNL samples/] 目錄。

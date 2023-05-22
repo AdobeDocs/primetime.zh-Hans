@@ -1,35 +1,34 @@
 ---
-description: TVSDK支持解析和插入VOD和实时/线性流的广告。
-title: Primetime广告服务器元数据
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: TVSDK支援解析和插入VOD和即時/線性資料流的廣告。
+title: Primetime廣告伺服器中繼資料
+exl-id: f27657ac-4037-45e5-a658-ad9a783dd990
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '137'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#primetime-ad-server-metadata-overview}
 
-# 概述{#primetime-ad-server-metadata-overview}
+TVSDK支援解析和插入VOD和即時/線性資料流的廣告。
 
-TVSDK支持解析和插入VOD和实时/线性流的广告。
+## 先決條件
 
-## 先决条件
+在視訊內容中加入廣告之前，請提供下列中繼資料資訊：
 
-在视频内容中包含广告之前，请提供以下元数据信息：
+* A `mediaID`，可識別要播放的特定內容。
+* 您的 `zoneID`，可識別您的公司或網站。
+* 您的廣告伺服器網域，這會指定您指派的廣告伺服器網域。
+* 其他目標定位引數。
 
-* `mediaID`，用于标识要播放的特定内容。
-* 您的`zoneID`，用于标识您的公司或网站。
-* 您的广告服务器域，它指定您分配的广告服务器的域。
-* 其他定位参数。
+## 設定Primetime廣告伺服器中繼資料 {#section_86C4A3B2DF124770B9B7FD2511394313}
 
-## 设置Primetime广告服务器元数据{#section_86C4A3B2DF124770B9B7FD2511394313}
+您的應用程式必須向TVSDK提供所需的 `PTAuditudeMetadata` 連線至廣告伺服器的資訊。
 
-您的应用程序必须向TVSDK提供连接到广告服务器所需的`PTAuditudeMetadata`信息。
+若要設定廣告伺服器中繼資料：
 
-设置广告服务器元数据：
-
-1. 创建[PTAuditudeMetadata](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTAuditudeMetadata.html)的实例并设置其属性。
+1. 建立例項 [PTAuditudeMetadata](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTAuditudeMetadata.html) 並設定其屬性。
 
    ```
    PTAuditudeMetadata *adMetadata = [[PTAuditudeMetadata alloc] init];  
@@ -39,7 +38,7 @@ TVSDK支持解析和插入VOD和实时/线性流的广告。
    adMetadata.userAgent = @"INSERT_AGENT_NAME_HERE; 
    ```
 
-1. 使用`PTAdResolvingMetadataKey`将`PTAuditudeMetadata`实例设置为当前`PTMediaPlayerItem`元数据的元数据。
+1. 設定 `PTAuditudeMetadata` 執行個體作為目前的中繼資料 `PTMediaPlayerItem` 中繼資料（使用） `PTAdResolvingMetadataKey`.
 
    ```
    // Metadata is an instance of PTMetadata that is used to create the PTMediaPlayerItem 
@@ -47,7 +46,7 @@ TVSDK支持解析和插入VOD和实时/线性流的广告。
    [adMetadata release];
    ```
 
-   以下是一个示例：
+   範例如下：
 
    ```
    PTMetadata *metadata = [self createMetadata]; 

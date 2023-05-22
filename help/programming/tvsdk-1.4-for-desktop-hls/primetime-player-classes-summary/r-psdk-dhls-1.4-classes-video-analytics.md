@@ -1,23 +1,22 @@
 ---
-description: 这些类提供TVSDK与Adobe Video Analytics之间的接口。
-title: 视频分析类
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 這些類別提供TVSDK與Adobe Video Analytics之間的介面。
+title: 視訊分析類別
+exl-id: 980d8e36-cfd1-45d4-8c40-f3c53e29b6f6
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 0%
 
 ---
 
+# 視訊分析類別{#video-analytics-classes}
 
-# 视频分析类{#video-analytics-classes}
+這些類別提供TVSDK與Adobe Video Analytics之間的介面。
 
-这些类提供TVSDK与Adobe Video Analytics之间的接口。
+封裝： [com.adobe.mediacore.videoanalytics](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/videoanalytics/package-detail.html)
 
-包：[com.adobe.mediacore.videoanalytics](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/videoanalytics/package-detail.html)
-
-| 名称 | 说明 |
+| 名稱 | 說明 |
 |---|---|
-| [VideoAnalyticsConfigParameters](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/videoanalytics/VideoAnalyticsConfigParameters.html) | 包含TVSDK中特定于视频分析跟踪的属性元数据。 |
-| [VideoAnalyticsProvider](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/videoanalytics/VideoAnalyticsProvider.html) | 将`MediaPlayer`实例附加到VideoHeartbeat模块以跟踪播放。 |
-| [VideoAnalytics元数据](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/videoanalytics/VideoAnalyticsMetadata.html) | 包含特定于视频分析的属性元数据。 |
+| [VideoAnalyticsConfigParameters](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/videoanalytics/VideoAnalyticsConfigParameters.html) | 包含TVSDK中視訊分析追蹤專用的屬性中繼資料。 |
+| [videoanalyticsProvider](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/videoanalytics/VideoAnalyticsProvider.html) | 附加 `MediaPlayer` 用於追蹤播放的VideoHeartbeat模組例項。 |
+| [videoanalyticsMetadata](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/videoanalytics/VideoAnalyticsMetadata.html) | 包含Video Analytics專用的屬性中繼資料。 |

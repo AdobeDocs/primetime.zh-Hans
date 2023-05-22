@@ -1,72 +1,71 @@
 ---
-title: 部署Adobe访问
-description: 部署Adobe访问
+title: 部署Adobe存取權
+description: 部署Adobe存取權
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: bebf02d5-897e-4007-8c5c-1c91186fdc51
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '762'
 ht-degree: 0%
 
 ---
 
+# 部署Adobe存取權 {#deploy-adobe-access}
 
-# 部署Adobe访问{#deploy-adobe-access}
+Adobe存取SDK的主要優點在於您可以將其安裝在任何Java™應用程式伺服器或servlet容器，例如Tomcat。 您也需要JDK™ 1.5或更新版本。 如需軟體需求的詳細資訊，請參閱Adobe存取SDK平台需求： [： https://www.adobe.com/products/flashaccess/systemreqs/](https://www.adobe.com/products/flashaccess/systemreqs/).
 
-Adobe Access SDK的一个关键优势是，您可以将它安装在任何Java™应用程序服务器或Servlet容器（如Tomcat）上。 您还需要JDK™ 1.5或更高版本。 有关软件要求的更多信息，请参阅Adobe Access SDK平台要求：[:https://www.adobe.com/products/flashaccess/systemreqs/](https://www.adobe.com/products/flashaccess/systemreqs/)。
+部署「Adobe存取」的高階步驟為：
 
-部署Adobe访问的高级步骤有：
+1. 安裝及設定Adobe存取SDK。
+1. 從Adobe取得數位憑證。
+1. 使用SDK建立License Server，或部署Adobe Access Server for Protected Streaming。
+1. 建立內容封裝和原則管理工具，以封裝內容、使用提供的內容準備工具，或授權其中一個AdobeHTTP Dynamic Streaming封裝者。
+1. 為您的內容定義使用規則，並建立原則以支援這些規則。
+1. 使用封裝和原則管理工具封裝您的內容。
+1. 開發視訊應用程式，讓消費者能夠使用Flash Player或Adobe AIR檢視您的受保護內容，或使用支援Adobe存取的已建立OVP （線上視訊平台）。
+1. 將SWF檔案部署至您的網站以用於Flash Player，或發佈Adobe AIR安裝程式以供下載。
 
-1. 安装和配置Adobe Access SDK。
-1. 从Adobe获取数字证书。
-1. 使用SDK创建许可证服务器，或部署Adobe Access Server以用于受保护流。
-1. 创建内容打包和策略管理工具以打包内容、使用提供的内容准备工具或许可某个Adobe HTTP Dynamic Streaming打包程序。
-1. 定义内容的使用规则，并创建支持这些规则的策略。
-1. 使用打包和策略管理工具打包您的内容。
-1. 开发视频应用程序，消费者可以使用Flash Player或Adobe AIR来视图您受保护的内容，或使用支持Adobe访问的已建立的OVP（在线视频平台）。
-1. 将SWF文件部署到您的网站中以与Flash Player一起使用，或发布Adobe AIR安装程序进行下载。
+以下各節將展開這些步驟，並參考包含其他資訊的其他檔案。
 
-这些步骤在以下几节中进行了扩展，并引用了包含其他信息的其他文档。
+## 在64位元作業系統上部署 {#deploying-on-a-bit-operating-system}
 
-## 部署在64位操作系统{#deploying-on-a-bit-operating-system}上
+64位元作業系統（例如64位元版的RedHat或Windows）比32位元作業系統提供更好的效能。
 
-64位操作系统，如64位版本的RedHat或Windows，与32位操作系统相比，其性能要好得多。
+## 安裝Adobe存取SDK {#install-adobe-access-sdk}
 
-## 安装Adobe Access SDK {#install-adobe-access-sdk}
+Adobe存取SDK會以Java封存(JAR)檔案提供。 若要進一步瞭解安裝Adobe存取，請參閱 *使用Adobe存取SDK保護內容*&#x200B;和&#x200B;*安全部署准則*.
 
-Adobe Access SDK以Java归档文件(JAR)文件的形式提供。 要了解有关安装Adobe Access的更多信息，请参阅&#x200B;*使用Adobe Access SDK保护内容*&#x200B;和&#x200B;*安全部署准则*。
+## 實作授權伺服器 {#implement-a-license-server}
 
-## 实施许可证服务器{#implement-a-license-server}
+您必須使用Adobe存取SDK建立授權伺服器。 使用「Adobe存取」保護內容時，除非授權伺服器核發給消費者，否則無法檢視內容。 如果使用以身分為基礎的授權，以密碼為基礎的驗證可確保只有經過授權的消費者才能開啟和檢視內容。
 
-使用Adobe Access SDK，您必须创建许可证服务器。 使用Adobe Access保护内容时，只有通过许可证服务器向消费者颁发许可证后，才能查看内容。 如果使用基于身份的许可，则基于密码的身份验证可确保只有经过授权的消费者才能打开和视图内容。
+實作License Server時，您必須從Adobe取得必要的數位憑證。 請參閱Adobe存取憑證註冊檔案，以取得請求憑證的詳細說明。
 
-实施许可证服务器时，必须从Adobe获得必要的数字证书。 有关申请证书的详细说明，请参阅Adobe访问证书注册文档。
+若要深入瞭解如何實作License Server及取得數位憑證，請參閱*使用Adobe存取SDK保護內容。*
 
-要了解有关实施许可证服务器和获取数字证书的更多信息，请参阅*使用Adobe Access SDK保护内容。*
+## 建立內容封裝和原則管理工具 {#create-content-packaging-and-policy-management-tools}
 
-## 创建内容打包和策略管理工具{#create-content-packaging-and-policy-management-tools}
+您可以使用Adobe存取SDK建立內容封裝和原則管理工具。 原則管理API可讓管理員建立、檢視詳細資料和更新原則。 封裝API會將原則內嵌至FLV或F4V檔案中，並使用內容加密金鑰來加密檔案。
 
-使用Adobe Access SDK，您可以创建内容打包和策略管理工具。 策略管理API允许管理员创建、视图策略的详细信息和更新策略。 打包API将策略嵌入到FLV或F4V文件中，并使用内容加密密钥加密文件。
+Adobe存取SDK包含參考實作( [!DNL AdobePackager.jar])提供內容封裝和原則管理工具的範例( [!DNL AdobePolicyManager.jar])。
 
-Adobe Access SDK包含一个引用实现([!DNL AdobePackager.jar])，它提供内容打包和策略管理工具([!DNL AdobePolicyManager.jar])的示例。
+若要深入瞭解如何建立內容封裝和原則管理工具，請參閱 *使用Adobe存取SDK保護內容*.
 
-要了解有关创建内容打包和策略管理工具的更多信息，请参阅&#x200B;*使用Adobe Access SDK保护内容*。
+## 建立原則和封裝內容 {#create-policies-and-package-content}
 
-## 创建策略和包内容{#create-policies-and-package-content}
+您必須使用SDK支援的使用規則，定義並建立原則以支援貴組織的商業模式，然後使用這些原則封裝您的內容。 在封裝期間將原則套用至內容後，無論內容散佈的範圍有多廣，您都可以維持對內容的控制。
 
-使用SDK支持的使用规则，您必须定义和创建支持贵组织业务模型的策略，然后使用这些策略打包您的内容。 在打包期间对内容应用策略后，无论内容的分发范围有多广，您都可以保持对内容的控制。
+Adobe存取中的原則支援各種不同的使用規則，包括：
 
-Adobe Access中的策略支持各种不同的使用规则，包括：
+* 指定消費者開始觀看內容後，授權的有效天數。
+* 允許授權快取。
+* 指定可存取內容的使用者端執行階段和版本(例如，使用者必須具有特定Adobe AIR應用程式或特定版本的Flash Player)。
+* 要求消費者在檢視受保護內容之前使用使用者名稱和密碼驗證自己，或允許匿名存取。
 
-* 指定消费者开始观看内容后许可证有效的天数。
-* 允许许可证缓存。
-* 指定可访问内容的客户端运行时和版本(例如，用户必须具有某个Adobe AIR应用程序或特定版本的Flash Player)。
-* 要求消费者在查看受保护的内容或允许匿名访问之前使用用户名和密码进行身份验证。
+若要進一步了解封裝內容，請參閱 *保護內容*. 若要進一步瞭解使用規則及其支援的商業模式，請參閱 *使用規則*.
 
-要了解有关打包内容的更多信息，请参阅&#x200B;*保护内容*。 要了解有关使用规则及其支持的业务模型的更多信息，请参阅&#x200B;*使用规则*。
+## 開發視訊播放應用程式 {#develop-applications-for-video-playback}
 
-## 开发用于视频播放的应用程序{#develop-applications-for-video-playback}
+若要讓消費者能夠存取及檢視內容，請使用Flash Player或Adobe AIR開發視訊播放應用程式。 開發視訊播放應用程式後，您必須將其部署給消費者。 如果您使用Flash Player開發應用程式，請將其託管在您組織的網站上。 如果您使用Adobe® AIR®開發應用程式，請發佈AIR應用程式安裝程式，讓消費者可以下載應用程式並安裝在自己的電腦上。
 
-要使消费者能够访问和视图内容，请使用Flash Player或Adobe AIR开发视频播放应用程序。 开发视频播放应用程序后，您必须将其部署到消费者。 如果您使用Flash Player开发应用程序，请将其托管在您组织的网站上。 如果您使用Adobe® AIR®开发应用程序，请发布AIR应用程序安装程序，以便消费者可以在其计算机上安装该应用程序。
-
-要进一步了解如何开发与Adobe Access一起使用的自定义视频播放应用程序，请参阅[ActionScript 3.0开发人员指南](https://help.adobe.com/en_US/as3/dev/WS9936fa0d5984e93b3f4f38ec1272a447844-8000.html)*、*[Adobe视频技术中心](https://www.adobe.com/devnet/video/)和Open Source Media Framework中的“使用视频”一章。
+若要進一步瞭解如何開發自訂視訊播放應用程式以搭配Adobe存取，請參閱以下主題中的「使用視訊」一章： [ActionScript 3.0開發人員指南](https://help.adobe.com/en_US/as3/dev/WS9936fa0d5984e93b3f4f38ec1272a447844-8000.html)*， *此 [Adobe視訊技術中心](https://www.adobe.com/devnet/video/)和Open Source Media Framework。

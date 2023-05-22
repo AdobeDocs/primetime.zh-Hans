@@ -1,7 +1,6 @@
 ---
-description: 通过向清单服务器发送新的广告插入请求来替换VOD时间轴，并使用相应设置的时间轴查询参数。
-title: 替换VOD时间轴
-translation-type: tm+mt
+description: 使用適當設定的時間表查詢引數，將新的廣告插入請求傳送至資訊清單伺服器，以取代VOD時間表。
+title: 取代VOD時間表
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '173'
@@ -10,29 +9,29 @@ ht-degree: 0%
 ---
 
 
-# 替换VOD时间轴{#replace-a-vod-timeline}
+# 取代VOD時間表 {#replace-a-vod-timeline}
 
-通过向清单服务器发送新的广告插入请求来替换VOD时间轴，并使用相应设置的时间轴查询参数。
+使用適當設定的時間表查詢引數，將新的廣告插入請求傳送至資訊清單伺服器，以取代VOD時間表。
 
-1. 按常规方式准备广告插入请求。
-1. 将`ptcueformat`查询参数设置为DPIScte35。
-1. 根据需要将`enableC3`查询参数设置为true或false。
-1. 使用VOD时间轴格式创建`pttimeline`参数：
-   1. 使用`duration = 0`和`number_of_lots = 1`指定每个内容块（章节）。
-   1. 按常规方式指定每个广告块，但设置`lots = 0`以删除中断。 设置`duration = 0`以使用广告中断的持续时间（来自M3U8文件）。
+1. 以一般方式準備廣告插入請求。
+1. 設定 `ptcueformat` dpiscte35的查詢引數。
+1. 設定 `enableC3` 將查詢引數設為true或false （視情況而定）。
+1. 建立 `pttimeline` 使用VOD時間軸格式的引數：
+   1. 指定每個內容區塊（章節），使用 `duration = 0` 和 `number_of_lots = 1`.
+   1. 照常指定每個廣告區塊，但設定 `lots = 0` 以移除破斷。 設定 `duration = 0` 以使用廣告插播的持續時間（來自M3U8檔案）。
 
-## 示例：替换VOD时间轴
+## 範例：取代VOD時間表
 
-此示例假定VOD内容位于时间轴为`C,120,1;B,60,2,m;C,120,1;B,60,2,m;C,120,1;`的`Original.m3u8`中
+此範例假設VOD內容位於 `Original.m3u8` 時間軸為 `C,120,1;B,60,2,m;C,120,1;B,60,2,m;C,120,1;`
 
-以下清单服务器请求用30秒的预卷替换`Original.m3u8`中的分段，然后是两个持续时间的分段，每分钟两分钟。
+以下資訊清單伺服器請求會取代中的中斷 `Original.m3u8` 前置時間為30秒，接著是兩個工期中斷，每次中斷兩分鐘。
 
 ```
 https://manifest.auditude.com/auditude/variant/pubAsset/Original.m3u8?. . .&enableC3=false 
 &pttimeline=B,30,2,p;C,0,1;B,120,4,m;C,0,1;B,120,4,m;C,0,1;
 ```
 
-以下清单服务器请求删除`Original.m3u8`中的中断，并添加30秒前滚和30秒后滚。
+以下資訊清單伺服器要求移除中的中斷點 `Original.m3u8` 和會新增30秒的前段和30秒的後段影片。
 
 ```
 https://manifest.auditude.com/auditude/variant/pubAsset/Original.m3u8?. . .&enableC3=false 

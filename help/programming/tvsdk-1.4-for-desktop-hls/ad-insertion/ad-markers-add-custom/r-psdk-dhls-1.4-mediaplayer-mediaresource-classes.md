@@ -1,29 +1,28 @@
 ---
-description: MediaResource表示MediaPlayer实例将要加载的内容。
-title: MediaPlayer和MediaResource类
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: MediaResource代表即將由MediaPlayer例項載入的內容。
+title: MediaPlayer和MediaResource類別
+exl-id: c431c9f9-98a3-402c-b799-450f30f668dd
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '232'
 ht-degree: 0%
 
 ---
 
+# MediaPlayer和MediaResource類別{#mediaplayer-and-mediaresource-classes}
 
-# MediaPlayer和MediaResource类{#mediaplayer-and-mediaresource-classes}
-
-MediaResource表示MediaPlayer实例将要加载的内容。
+MediaResource代表即將由MediaPlayer例項載入的內容。
 
 <!--<a id="section_B09A012C97454AF58CE2269B800D8027"></a>-->
 
-TVSDK库提供了一种简单的方法，可使用`MediaPlayer`接口中的`replaceCurrentResource`方法加载和准备要回放的内容。 此方法接收作为唯一输入参数的`MediaResource`类的实例。 `MediaResource`类由以下信息组成：
+TVSDK程式庫提供簡單方法，讓您載入及準備內容以供播放，方法是使用 `replaceCurrentResource` 中的方法 `MediaPlayer` 介面。 此方法接收 `MediaResource` 類別作為唯一的輸入引數。 此 `MediaResource` class由下列資訊組成：
 
-* 一个URL，它表示要加载的内容的位置。
-* 一种类型，即要加载的内容的类型。
+* URL，代表即將載入之內容的位置。
+* 型別，即將載入的內容型別。
 
-   这是一个字符串，它定义了`MediaPlayer`可加载的内容类型。 可能的值是HLS和HDS。 每个值都与表示常用文件扩展名的字符串关联，即HLS的“m3u8”和HDS的“f4m”。
-* 某些元数据，它是`Metadata`类的实例。
+   這是字串，定義可由 `MediaPlayer`. 可能的值包括HLS和HDS。 每個值都與代表常用副檔名的字串相關聯，「m3u8」代表HLS，「f4m」代表HDS。
+* 部分中繼資料，這是 `Metadata` 類別。
 
-   此类似词典的结构可能包含有关要加载的内容的其他信息，例如关于应放置在主内容中的备用/广告内容的信息。
+   此類似字典的結構可能包含即將載入之內容的額外資訊，例如應放置在主要內容中的替代/廣告內容的資訊。
 
-元数据是与替代内容相关的信息传递到TVSDK的媒介。 `Metadata`接口为通用key-value存储定义API，其中键和值都是纯字符串。
+中繼資料是將與替代內容相關的資訊傳遞至TVSDK的媒體。 此 `Metadata` 介面會定義一般金鑰值存放區的API，其中金鑰和值都是純字串。

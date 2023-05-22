@@ -1,29 +1,28 @@
 ---
-description: 每次在内容清单中遇到订阅标记时，TVSDK都会为这些对象准备TimedMetadata对象。
-title: 订阅自定义标记
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: TVSDK會在每次訂閱標籤物件出現在內容資訊清單中時，為這些物件準備TimedMetadata物件。
+title: 訂閱自訂標籤
+exl-id: 7a3021cc-d2ba-4a70-9c1f-59766b848a62
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '266'
 ht-degree: 0%
 
 ---
 
+# 訂閱自訂標籤{#subscribe-to-custom-tags}
 
-# 订阅自定义标记{#subscribe-to-custom-tags}
+TVSDK會在每次訂閱標籤物件出現在內容資訊清單中時，為這些物件準備TimedMetadata物件。
 
-每次在内容清单中遇到订阅标记时，TVSDK都会为这些对象准备TimedMetadata对象。
+在播放開始之前，您必須訂閱標籤。
+若要訂閱標籤，請將包含自訂標簽名稱的向量指派給 `subscribedTags` 屬性。 如果您也需要變更預設機會產生器使用的廣告標籤，請將包含自訂廣告標簽名稱的向量指派給 `adTags` 屬性。
 
-在播放开始之前，您必须订阅这些标记。
-要订阅标记，请为`subscribedTags`属性指定包含自定义标记名称的矢量。 如果您还需要更改默认业务机会生成器使用的广告标签，请为`adTags`属性指定包含自定义广告标签名称的矢量。
+若要接收有關HLS資訊清單中自訂標籤的通知：
 
-要通知有关HLS清单中的自定义标记：
-
-1. 通过将包含自定义标记的矢量分配给`MediaPlayerItemConfig`中的`subscribeTags`，全局设置自定义广告标记名称。
+1. 透過指派包含自訂標籤的向量來全域設定自訂廣告標簽名稱 `subscribeTags` 在 `MediaPlayerItemConfig`.
 
    >[!IMPORTANT]
    >
-   >处理HLS流时必须包含`#`前缀。
+   >您必須包含 `#` 使用HLS資料流時的首碼。
 
    例如：
 
@@ -34,7 +33,7 @@ ht-degree: 0%
    PSDKConfig.subscribedTags = subscribedTags;
    ```
 
-1. 要全局更改默认业务机会生成器使用的广告标签，请将包含自定义广告标签名称的矢量分配给`PSDKConfig`中的`adTags`属性。
+1. 若要全域變更預設機會產生器使用的廣告標籤，請將包含自訂廣告標籤名稱的向量指派給 `adTags` 中的屬性 `PSDKConfig`.
 
    ```
    var adTags:Vector.<String> = new Vector.<String>(); 
@@ -42,20 +41,20 @@ ht-degree: 0%
    PSDKConfig.adTags = adTags; 
    ```
 
-1. 要使所有全局设置生效，请替换当前资源。
+1. 若要讓所有全域設定生效，請取代目前的資源。
 
    ```
    player.replaceCurrentResource(mediaResource);
    ```
 
-1. 如果需要，要设置流的订阅标记名称：
-   1. 创建媒体播放器项配置。
+1. 若要設定串流的訂閱標籤名稱（如有需要）：
+   1. 建立媒體播放器專案設定。
 
       >[!TIP]
       >
-      >最简单的方法是创建默认媒体播放器项配置。
+      >最簡單的方式是建立預設媒體播放器專案設定。
 
-   1. 将包含自定义标记的矢量指定到`MediaPlayerItemConfig`中的`subscribeTags`。
+   1. 將包含自訂標籤的向量指派給 `subscribeTags` 在 `MediaPlayerItemConfig`.
 
    ```
    var mediaPlayerItemConfig:MediaPlayerItemConfig =  
@@ -67,7 +66,7 @@ ht-degree: 0%
    mediaPlayerItemConfig.subscribeTags = subscribedTags;
    ```
 
-1. 要更改指定流中默认机会生成器使用的广告标签，请将包含自定义广告标签名称的矢量分配给`mediaPlayerItemConfig`中的`adTags`属性
+1. 若要變更指定串流中預設機會產生器使用的廣告標籤，請將包含自訂廣告標籤名稱的向量指派給 `adTags` 中的屬性 `mediaPlayerItemConfig`
 
    ```
    var adTags:Vector.<String> = new Vector.<String>(); 
@@ -75,9 +74,8 @@ ht-degree: 0%
    mediaPlayerItemConfig.adTags = adTags;
    ```
 
-1. 要使流的更改生效，请在加载媒体流时使用媒体播放器项配置。
+1. 若要讓串流的變更生效，請在載入媒體串流時，使用媒體播放器專案設定。
 
    ```
    player.replaceCurrentResource(mediaResource, mediaPlayerItemConfig);
    ```
-

@@ -1,45 +1,44 @@
 ---
-title: 程序员集成指南概述
-description: 程序员集成指南的描述
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 程式設計師整合指南概觀
+description: 程式設計師整合指南說明
+exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '117'
 ht-degree: 0%
 
 ---
 
-
-
-# 程序员集成指南 {#programmer-integration-guide}
+# 程式設計師整合指南 {#programmer-integration-guide}
 
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-## 指南 {#cookbooks}
+## 逐步指南 {#cookbooks}
 
-* AccessEnabler JavaScript SDK指南 
-* AccessEnabler iOS/tvOS SDK指南
-* AccessEnabler Android SDK指南
-* REST API指南（服务器到服务器）
-* REST API指南（客户端到服务器）
+* AccessEnabler JavaScript SDK逐步指南 
+* AccessEnabler iOS/tvOS SDK逐步指南
+* AccessEnabler Android SDK逐步指南
+* REST API逐步指南（伺服器對伺服器）
+* REST API逐步指南（使用者端對伺服器）
 
-## API参考 {#api-references}
+## API參考 {#api-references}
 
-* AccessEnabler JavaScript SDK API参考
-* AccessEnabler iOS/tvOS SDK API参考
-* AccessEnabler Android SDK API参考
-* REST API引用
+* AccessEnabler JavaScript SDK API參考
+* AccessEnabler iOS/tvOS SDK API參考
+* AccessEnabler Android SDK API參考
+* REST API參考
 
-## 技术概述 {#technical-overviews}
+## 技術概覽 {#technical-overviews}
 
-* AccessEnabler JavaScript SDK概述
-* AccessEnabler iOS/tvOS SDK概述
-* AccessEnabler Android SDK概述
-* REST API概述
+* AccessEnabler JavaScript SDK概觀
+* AccessEnabler iOS/tvOS SDK概覽
+* AccessEnabler Android SDK概觀
+* REST API概觀
 
-这些配置适用于负责处理Adobe Primetime身份验证集成技术方面的软件工程师。
+這些範本適用於將處理Adobe Primetime驗證整合技術層面的軟體工程師。
 
 <!--
 

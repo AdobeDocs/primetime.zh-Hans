@@ -1,27 +1,26 @@
 ---
-title: 远程和本地iOS密钥投放
-description: 远程和本地iOS密钥投放
+title: 遠端和本機iOS金鑰傳遞
+description: 遠端和本機iOS金鑰傳遞
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: de9c7070-46a9-453c-9d98-a9f161282cfa
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '229'
 ht-degree: 0%
 
 ---
 
+# 遠端和本機iOS金鑰傳遞{#remote-and-local-ios-key-delivery}
 
-# 远程和本地iOS密钥投放{#remote-and-local-ios-key-delivery}
+Adobe Primetime支援兩種將金鑰傳送至iOS使用者端的選項：
 
-Adobe Primetime支持两种选项，用于iOS客户端的密钥投放:
+* 遠端 — M3U8資訊清單指定的HTTPS路徑會包含AES金鑰，應該用來解密資料流中的下列加密區段，與HLS規格中指定的完全相同。 指定「遠端」時，使用者端裝置會連線至遠端HTTPS伺服器以擷取AES金鑰。
+* 本機 — 指定「本機」時，本機HTTPS伺服器會內嵌至iOS應用程式，以處理所有AES金鑰要求，而不是透過網際網路/網路連線取得AES金鑰。 內嵌HTTPS伺服器會在Primetime應用程式中自動設定和設定。 應用程式開發人員不需要介入。
 
-* 远程 — M3U8清单与HLS规范中指定的完全相同，指定包含AES密钥的HTTPS路径，该密钥应用于解密流中的以下加密段。 指定“远程”时，客户端设备将连接到远程HTTPS服务器以获取AES密钥。
-* 本地 — 当指定“本地”时，本地HTTPS服务器将嵌入到iOS应用程序中，iOS应用程序将处理所有AES密钥请求，而不是通过Internet/网络访问AES密钥。 嵌入式HTTPS服务器在Primetime应用程序中自动设置和配置。 应用程序开发人员无需干预。
-
-远程密钥投放是通过用于打包内容的策略启用的（更改此设置需要重新打包内容）。启用远程密钥投放后，必须部署Adobe访问密钥服务器以处理来自iOS客户端的密钥请求，但对其他平台上的客户端的工作流没有更改。
+透過用來封裝內容的原則來啟用遠端金鑰傳遞（變更此設定需要重新封裝內容）。啟用遠端金鑰傳遞時，必須部署Adobe存取金鑰伺服器來處理來自iOS使用者端的金鑰請求，但其他平台的使用者端的工作流程不會變更。
 
 >[!NOTE]
 >
->键投放选择仅影响iOS客户端。 使用HLS内容的所有其他设备将始终使用“本地”键投放，即使已指定“远程”。
+>金鑰傳遞選擇只會影響iOS使用者端。 所有使用HLS內容的其他裝置將一律使用「本機」金鑰傳遞，即使已指定「遠端」。
 
-有关信息，请参阅&#x200B;*使用Adobe访问密钥服务器*。
+如需詳細資訊，請參閱 *使用Adobe存取金鑰伺服器*.

@@ -1,27 +1,26 @@
 ---
-description: 默认情况下，当播放开始时，VOD媒体开始为0，实时媒体开始为客户端实时点(MediaPlayer.LIVE_POINT)。 您可以覆盖默认行为。
-title: 在特定时间输入流
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 依預設，當播放開始時，VOD媒體從0開始，而即時媒體從使用者端即時點(MediaPlayer.LIVE_POINT)開始。 您可以覆寫預設行為。
+title: 在特定時間輸入資料流
+exl-id: 2fb361c1-7133-4e17-a12b-e11f6f7c5479
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '103'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
+# 在特定時間輸入資料流{#enter-a-stream-at-a-specific-time}
 
-# 在特定时间输入流{#enter-a-stream-at-a-specific-time}
+依預設，當播放開始時，VOD媒體從0開始，而即時媒體從使用者端即時點(MediaPlayer.LIVE_POINT)開始。 您可以覆寫預設行為。
 
-默认情况下，当播放开始时，VOD媒体开始为0，实时媒体开始为客户端实时点(MediaPlayer.LIVE_POINT)。 您可以覆盖默认行为。
-
-1. 将位置传递到`MediaPlayer.prepareToPlay`。
-1. 浏览器TVSDK使用此位置作为资产的起点。
+1. 傳遞位置至 `MediaPlayer.prepareToPlay`.
+1. 瀏覽器TVSDK會使用此位置作為資產的起點。
 
    >[!NOTE]
    >
-   >无需执行搜索操作。
+   >不需要搜尋作業。
 
-1. 如果位置不在可搜索范围内，则使用默认位置。
+1. 如果位置不在可搜尋範圍內，則會使用預設位置。
 
    例如：
 
@@ -34,4 +33,3 @@ ht-degree: 1%
            break; 
    } 
    ```
-

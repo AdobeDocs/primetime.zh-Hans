@@ -1,20 +1,19 @@
 ---
-description: 客户端代码将数据传递到Android API。
-title: Android PSDK上的密钥请求工作流
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 使用者端代碼會將資料傳遞至Android API。
+title: Android PSDK上的重要請求工作流程
+exl-id: 3ff52c0d-0789-4fe5-bf9d-f03184bad488
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '142'
 ht-degree: 0%
 
 ---
 
+# Android PSDK上的重要請求工作流程{#key-request-workflow-on-android-psdk}
 
-# Android PSDK{#key-request-workflow-on-android-psdk}上的密钥请求工作流
+使用者端代碼會將資料傳遞至Android API。
 
-客户端代码将数据传递到Android API。
-
-在Android上，您的客户端代码应使用以下API传入许可证服务器URL和随附的许可证获取数据：
+在Android上，您的使用者端代碼應使用下列API傳入授權伺服器URL和隨附的授權贏取資料：
 
 ```
 class DRMManager 
@@ -32,9 +31,9 @@ class DRMManager
     }
 ```
 
-成功调用此API后，您的代码便可以按常规方式开始内容播放。 如果您使用的是Expressplay，则可以将令牌作为许可证服务器URL的一部分或作为请求属性进行传递，并从许可证服务器URL中删除令牌。
+成功呼叫此API後，您的程式碼就可以照常開始播放內容。 如果您正在使用Expressplay，您可以將權杖當作授權伺服器URL的一部分或作為請求屬性傳遞，並從授權伺服器URL中移除權杖。
 
-某些Android设备同时支持Widevine和PlayReady。 在此类设备上，如果内容具有多个DRM头，则客户可能希望强制PSDK使用特定DRM解密内容。 这可以通过在播放前调用以下API来实现：
+部分Android裝置同時支援Widevine和PlayReady。 在這類裝置上，如果內容有多個DRM標頭，客戶可能會想要強制PSDK使用特定DRM解密內容。 您可在播放前呼叫下列API來達成此目的：
 
 ```
 class MediaPlayer 
@@ -48,4 +47,3 @@ class MediaPlayer
    public void setDRMScheme(String drm) throws MediaPlayerException 
    }
 ```
-

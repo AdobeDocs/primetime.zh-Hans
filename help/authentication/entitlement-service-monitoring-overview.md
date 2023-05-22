@@ -1,126 +1,126 @@
 ---
-title: 授权服务监控概述
-description: 授权服务监控概述
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 軟體權利檔案服務監控概述
+description: 軟體權利檔案服務監控概述
+exl-id: ebd5d650-0a32-4583-9045-5156356494e2
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '1179'
 ht-degree: 0%
 
 ---
 
-
-# 授权服务监控概述 {#entitlement-service-monitoring-overview}
+# 軟體權利檔案服務監控概述 {#entitlement-service-monitoring-overview}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-## 简介 {#introduction}
+## 簡介 {#introduction}
 
-TVE网站和应用程序需要24/7可用，因此客户需要实时分析权利事件，以便尽快发现和纠正问题。 他们还需要分析每月数据，以确定哪些平台提供了大量流量，哪些平台的实施情况可能不佳且转化率较低。
+TVE網站和應用程式需要全天候運作，因此客戶需要即時洞察軟體權利檔案事件，以儘快偵測和修正問題。 他們也需要分析每月資料，以判斷哪些平台提供大部分的流量，以及哪些平台可能有不良的實作和不良的轉換率。
 
-授权服务监控(ESM)为程序员和MVPD提供数据馈送，以便实时查看其身份验证和授权事件。 数据从Adobe Primetime身份验证系统收集，并通过RESTful API提供。  客户可以直接使用数据，也可以从他们自己自定义的操作功能板中使用数据。
+軟體權利檔案服務監控(ESM)為程式設計人員和MVPD提供資料摘要，可即時檢視其驗證和授權事件。 資料是從Adobe Primetime驗證系統收集，並透過RESTful API提供。  客戶可以直接使用資料，或是從他們自己的自訂操作儀表板中使用資料。
 
-ESM系统的核心要素是其指标和维度。 ESM根据维度选择生成包含聚合量度的报表。 当Adobe Pass事件以PST时区记录时，ESM报告也以PST时区提供。 
+ESM系統的核心元素是其量度和維度。 ESM會根據維度選擇產生包含彙總量度的報表。 由於Adobe Pass事件是以PST時區記錄，因此ESM報表也以PST時區提供。 
 
-ESM API通常不可用。  有关可用性问题，请联系您的Adobe代表。
+ESM API並非一般可用功能。  如需瞭解可用性相關問題，請聯絡您的Adobe代表。
 
-## 面向程序员的ESM {#esm-for-programmers}
+## 適用於程式設計師的ESM {#esm-for-programmers}
 
-### 程序员可以监控以下量度： {#programmers-monitor-metrics}
+### 程式設計師可以監控以下量度： {#programmers-monitor-metrics}
 
 
-| *量度名称* | *描述* |
+| *量度名稱* | *說明* |
 |-------------------------|--------------------------|
-| authn-attempts | 启动的身份验证流数 |
-| authn-successful | 客户端成功获取的身份验证令牌数量 |
-| authn-pending | 成功生成的身份验证令牌数量（无论客户端是否实际获取了该令牌） |
-| authn-failed | 通过外部系统执行的失败身份验证数。 |
-| 无客户端令牌 | 已成功发出无客户端令牌的数量 |
-| 无客户端故障 | 尝试从无客户端API接收令牌失败的次数 |
-| authz-attempts | 尝试的授权数 |
-| authz successful | 成功授权的数量 |
-| authz-failed | MVPD在应用程序级别拒绝的授权数 |
-| authz-rejected | 由于DoS攻击预防而被Adobe服务提供商视为恶意并被拒绝的授权尝试次数 |
-| authz-latency | 在MVPD端点上花费的总毫秒数 |
-| media-tokens | 生成的短媒体令牌数（与播放请求数同化） |
-| 独特帐户 | 在选定时间间隔内执行授权(AuthN / AuthZ)操作的独特用户数。 （此量度仅在请求每日值时才显示。） </br> 这是针对每个数据中心计算的。 未请求“dc”维度时，将不显示此量度。 |
-| 独特会话 | 在选定时间间隔内对Adobe Primetime身份验证服务执行身份验证流程调用的唯一会话数。 （此量度仅在请求每日值时才显示。） </br> 这是针对每个数据中心计算的。 未请求“dc”维度时，将不显示此量度。 |
-| 计数 | 面向事件的报表中使用的简单计数器 |
+| authn-attempts | 已起始的驗證流程數 |
+| 驗證成功 | 使用者端成功取得的驗證權杖數目 |
+| authn-pending | 成功產生的驗證Token數量（無論使用者端是否實際取得） |
+| 驗證失敗 | 透過外部系統執行的失敗驗證數目。 |
+| 無使用者端代號 | 成功發出的無使用者端權杖數量 |
+| 無使用者端失敗 | 嘗試從無使用者端API接收權杖失敗的次數 |
+| authz-attempts | 嘗試授權的數量 |
+| authz成功 | 成功的授權數目 |
+| authz失敗 | 應用程式層級的MVPD拒絕授權數目 |
+| authz-rejected | Adobe服務提供者視為惡意且因DoS攻擊預防而拒絕的授權嘗試次數 |
+| authz延遲 | 在MVPD端點上花費的總毫秒數 |
+| media-token | 產生的簡短媒體權杖數量（與播放要求數量相同） |
+| 不重複帳戶 | 在選取的時間間隔內執行權利(AuthN / AuthZ)動作的不重複使用者數目。 （此量度僅在請求每日值時顯示。） </br> 每個個別資料中心都會計算此值。 未請求「dc」維度時，此量度不會顯示。 |
+| 不重複工作階段 | 在選取的時間間隔內對Adobe Primetime驗證服務執行驗證流程呼叫的唯一工作階段數。 （此量度僅在請求每日值時顯示。） </br> 每個個別資料中心都會計算此值。 未請求「dc」維度時，此量度不會顯示。 |
+| count | 事件導向報表中使用的簡單計數器 |
 
 </br>
 
-### 程序员可以按以下维度过滤上述量度： {#progr-filter-metrics}
+### 程式設計師可依下列維度篩選上方列出的量度： {#progr-filter-metrics}
 
 
-| *Dimension名称* | *描述* |
+| *Dimension名稱* | *說明* |
 |---|---|
-| 年 | 4位数年份 |
-| 月份 | 月份(1-12) |
-| 天 | 当月(1-31) |
-| 小时 | 一天中的小时 |
-| 分钟 | 小时的分钟 |
-| media-company | 拥有启动用户授权流程的网站的媒体公司 |
-| dc | （数据中心）收到请求的主区域。 |
-| 代理 | 代理MVPD（将“直接”用于直接集成） |
-| mvpd | 负责向用户授予权限的MVPD |
-| requestor-id | 用于执行授权请求的请求者ID |
-| 频道 | 从资源字段提取的渠道网站（如果提供，则从MRSS有效负载提取为渠道/标题，或者如果它不是RSS格式，则映射到资源值）。 |
-| resource-id | 授权请求中涉及的实际资源标题（如果提供，则从MRSS有效负载中提取为项目/标题） |
-| 设备 | 设备平台（PC、移动设备、控制台等） |
-| eap | 当通过外部系统执行验证流时，外部验证提供器。 </br> 值可以是： </br>  — 不适用 — 身份验证由Primetime身份验证提供 </br> - Apple — 提供身份验证的外部系统为Apple |
-| os系列 | 在设备上运行的操作系统 |
-| 浏览器系列 | 用于访问Adobe Primetime身份验证的用户代理 |
-| cdt | 当前用于无客户端的设备平台（替代）。 </br>  值可以是： </br>  — 不适用 — 事件并非源自无客户端SDK </br>  — 未知 — 由于无客户端API中的deviceType参数是可选的，因此有一些调用不包含任何值。 </br>  — 通过无客户端API发送的任何其他值，如xbox、appletv、roku等。 </br> |
-| platform-version | 无客户端SDK的版本 |
-| os-type | 在设备上运行的操作系统，备用（当前未使用） |
-| browser-version | 用户代理版本 |
-| sdk-type | 使用的客户端SDK(Flash、HTML5、Android本机、iOS、无客户端等) |
-| sdk-version | Adobe Primetime身份验证客户端SDK的版本 |
-| 事件 | Adobe Primetime身份验证事件名称 |
-| 原因 | 失败的原因(由Adobe Primetime身份验证报告) |
-| sso-type | 底层SSO机制：platform/passive/adobe. 表示授权令牌是通过在其他应用程序中重用AuthN而发出的 |
+| 年 | 4位數的年份 |
+| 月 | 月份(1-12) |
+| 日 | 當月日期(1-31) |
+| 小時 | 一天中的第幾個小時 |
+| 分鐘 | 一小時中的第幾分鐘 |
+| media-company | 擁有啟動使用者權益程式的網站的媒體公司 |
+| dc | （資料中心）收到請求的本位區域。 |
+| proxy | Proxy MVPD （對於直接整合而言將是「直接」的） |
+| mvpd | 負責將權利授予使用者的MVPD |
+| requestor-id | 用來執行軟體權利檔案要求的要求者ID |
+| 頻道 | 頻道網站，從資源欄位擷取（從MRSS裝載擷取並作為頻道/標題，如果提供，或如果它不是RSS格式，則對應到資源值）。 |
+| resource-id | 授權請求中涉及的實際資源標題（從MRSS裝載擷取，作為專案/標題，如果提供） |
+| 裝置 | 裝置平台（個人電腦、行動裝置、主控台等） |
+| eap | 透過外部系統執行驗證流程時的外部驗證提供者。 </br> 值可以是： </br> - N/A - Primetime驗證會提供驗證 </br> - Apple — 提供驗證的外部系統為Apple |
+| os系列 | 裝置上執行的作業系統 |
+| browser-family | 用於存取Adobe Primetime驗證的使用者代理 |
+| cdt | 裝置平台（替代方案），目前用於無使用者端。 </br>  值可以是： </br> - N/A — 事件並非源自無使用者端SDK </br>  — 未知 — 由於無使用者端API中的deviceType引數是選用的，因此有些呼叫不包含任何值。 </br>  — 透過無使用者端API傳送的任何其他值，例如xbox、appletv、roku等。 </br> |
+| platform-version | Clientless SDK的版本 |
+| os-type | 裝置上執行的作業系統，替代方案（目前未使用） |
+| browse-version | 使用者代理程式版本 |
+| sdk-type | 使用的使用者端SDK (Flash、HTML5、Android原生、iOS、無使用者端等) |
+| sdk-version | Adobe Primetime驗證使用者端SDK的版本 |
+| 事件 | Adobe Primetime驗證事件名稱 |
+| 原因 | 失敗的原因，如Adobe Primetime驗證所報告 |
+| sso-type | 底層SSO機制： platform/passive/adobe。 表示授權權杖是在其他應用程式中重複使用AuthN所發出 |
 
-## 适用于MVPD的ESM {#esm-for-mvpds}
+## MVPD的ESM {#esm-for-mvpds}
 
-### MVPD可以监控以下量度：
+### MVPD可以監視下列測量結果：
 
-| *量度名称* | *描述* |
+| *量度名稱* | *說明* |
 |---|---|
-| authn-attempts | 启动的身份验证流数 |
-| authn-successful | 客户端成功获取的身份验证令牌数量 |
-| authn-pending | 成功生成的身份验证令牌数量（无论客户端是否实际获取了该令牌） |
-| authn-failed | 通过外部系统执行的失败身份验证数。 |
-| authz-attempts | 尝试的授权数 |
-| authz successful | 成功授权的数量 |
-| authz-failed | MVPD在应用程序级别拒绝的授权数 |
-| authz-rejected | 由于DoS攻击预防而被Adobe服务提供商视为恶意并被拒绝的授权尝试次数 |
-| authz-latency | 在MVPD端点上花费的总毫秒数 |
+| authn-attempts | 已起始的驗證流程數 |
+| 驗證成功 | 使用者端成功取得的驗證權杖數目 |
+| authn-pending | 成功產生的驗證Token數量（無論使用者端是否實際取得） |
+| 驗證失敗 | 透過外部系統執行的失敗驗證數目。 |
+| authz-attempts | 嘗試授權的數量 |
+| authz成功 | 成功的授權數目 |
+| authz失敗 | 應用程式層級的MVPD拒絕授權數目 |
+| authz-rejected | Adobe服務提供者視為惡意且因DoS攻擊預防而拒絕的授權嘗試次數 |
+| authz延遲 | 在MVPD端點上花費的總毫秒數 |
 
-### MVPD可以按以下维度过滤上面列出的量度：
+### MVPD可依下列維度篩選上述量度：
 
-| *Dimension名称* | *描述* |
+| *Dimension名稱* | *說明* |
 |---|---|
-| 年 | 4位数年份 |
-| 月份 | 月份(1-12) |
-| 天 | 当月(1-31) |
-| 小时 | 一天中的小时 |
-| 分钟 | 小时的分钟 |
-| requestor-id | 用于执行授权请求的请求者ID |
-| eap | 当通过外部系统执行验证流时，外部验证提供器。 </br> 值可以是： </br>  — 不适用 — 身份验证由Primetime身份验证提供 </br> - Apple — 提供身份验证的外部系统为Apple |
-| cdt | 当前用于无客户端的设备平台（替代）。 </br>  值可以是： </br>  — 不适用 — 事件并非源自无客户端SDK </br>  — 未知 — 由于无客户端API中的deviceType参数是可选的，因此有一些调用不包含任何值。 </br>  — 通过无客户端API发送的任何其他值，如xbox、appletv、roku等。 </br> |
-| sdk-type | 使用的客户端SDK(Flash、HTML5、Android本机、iOS、无客户端等) |
+| 年 | 4位數的年份 |
+| 月 | 月份(1-12) |
+| 日 | 當月日期(1-31) |
+| 小時 | 一天中的第幾個小時 |
+| 分鐘 | 一小時中的第幾分鐘 |
+| requestor-id | 用來執行軟體權利檔案要求的要求者ID |
+| eap | 透過外部系統執行驗證流程時的外部驗證提供者。 </br> 值可以是： </br> - N/A - Primetime驗證會提供驗證 </br> - Apple — 提供驗證的外部系統為Apple |
+| cdt | 裝置平台（替代方案），目前用於無使用者端。 </br>  值可以是： </br> - N/A — 事件並非源自無使用者端SDK </br>  — 未知 — 由於無使用者端API中的deviceType引數是選用的，因此有些呼叫不包含任何值。 </br>  — 透過無使用者端API傳送的任何其他值，例如xbox、appletv、roku等。 </br> |
+| sdk-type | 使用的使用者端SDK (Flash、HTML5、Android原生、iOS、無使用者端等) |
 
 
-## 用例 {#use-cases}
+## 使用案例 {#use-cases}
 
-您可以将ESM数据用于以下用例：
+您可以將ESM資料用於下列使用案例：
 
-- **监控**  — 运营或监控团队可以创建每分钟调用API的功能板或图表。 使用显示的信息，他们可以在出现问题时（通过Primetime身份验证或通过MVPD）检测到问题。  
+- **監視**  — 作業或監控團隊可建立每分鐘呼叫API的儀表板或圖表。 使用顯示的資訊，他們可以在問題出現的一分鐘偵測問題（使用Primetime驗證或MVPD）。  
 
-- **调试/质量测试**  — 由于数据也按平台、设备、浏览器和操作系统进行划分，因此分析使用模式可以发现特定组合（例如，OSX上的Safari）上的问题。  
+- **偵錯/品質測試**  — 由於資料也會依平台、裝置、瀏覽器和OS劃分，因此分析使用模式可以查明特定組合上的問題（例如OSX上的Safari）。  
 
-- **Analytics**  — 提供的数据可用于补充/审核通过Adobe Analytics或其他分析工具收集的客户端数据。
+- **分析**  — 提供的資料可用於補充/稽核透過Adobe Analytics或其他分析工具收集的使用者端資料。
 
 <!--
 ## Related Information {#related-information}

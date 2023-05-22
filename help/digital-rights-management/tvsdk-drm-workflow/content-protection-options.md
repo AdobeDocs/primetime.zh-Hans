@@ -1,22 +1,21 @@
 ---
-title: Primetime DRM内容保护选项
-description: Primetime DRM内容保护选项
+title: Primetime DRM內容保護選項
+description: Primetime DRM內容保護選項
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: fb73caf8-a542-4ca6-a5ea-3cd633b2495b
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '107'
 ht-degree: 0%
 
 ---
 
+# Primetime DRM內容保護選項{#primetime-drm-content-protection-options}
 
-# Primetime DRM内容保护选项{#primetime-drm-content-protection-options}
+Primetime DRM為內容擁有者提供許多保護其內容的選項：
 
-Primetime DRM为内容所有者提供了多种保护其内容的选项：
+* **SDK** - [ADOBE PRIMETIME DRM SDK](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_sdk_overview.pdf)
 
-* **SDK** -  [Adobe Primetime DRM SDK](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_sdk_overview.pdf)
+* **命令列工具** - [Primetime離線封裝程式](https://helpx.adobe.com/content/dam/help/en/primetime/guides/offline_packager_getting_started.pdf)、和 [Primetime DRM參考實作](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_reference_implementations.pdf).
 
-* **命令行工具** - Primetime [ Offline](https://helpx.adobe.com/content/dam/help/en/primetime/guides/offline_packager_getting_started.pdf) Packager和 [Primetime DRM Reference Implementation](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_reference_implementations.pdf)。
-
-* **硬件和软件编码器**  — 实现Adobe Primetime DRM SDK或Adobe [](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_sdk_overview.pdf) 广播SDK(HDKb)的编码器。
+* **硬體與軟體編碼器**  — 實作此功能的編碼器 [ADOBE PRIMETIME DRM SDK](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_sdk_overview.pdf) 或Adobe廣播SDK (HDKb)。

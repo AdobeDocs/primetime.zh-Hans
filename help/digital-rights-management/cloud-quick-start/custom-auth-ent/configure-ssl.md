@@ -1,21 +1,20 @@
 ---
-title: 在BEES服务器上配置SSL
-description: 在BEES服务器上配置SSL
+title: 在您的BEES伺服器上設定SSL
+description: 在您的BEES伺服器上設定SSL
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 6823a71c-3be6-4c07-a3e6-e16bd931deaf
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '78'
 ht-degree: 0%
 
 ---
 
+# 在您的BEES伺服器上設定SSL {#configure-ssl-on-your-bees-server}
 
-# 在BEES服务器{#configure-ssl-on-your-bees-server}上配置SSL
+1. 將您的伺服器SSL憑證提供給提供此軟體的Adobe連絡人。
 
-1. 向提供此软件的Adobe联系人提供您的服务器SSL证书。
-
-   该证书将作为受信任证书添加到Primetime Cloud DRM信任存储。
-1. 要启用SSL连接的客户端身份验证（在此版本中禁用）：
-   1. 将`[!DNL clouddrm-transport.cer]`和`[!DNL AdobeFlashAccessIntermediateCA.cer]`证书添加到用于客户端身份验证的信任存储中。
-   1. 在SSL配置中启用客户端身份验证。
+   此憑證將作為受信任的憑證新增到Primetime Cloud DRM信任存放區。
+1. 啟用SSL連線的使用者端驗證（在此版本中停用）：
+   1. 新增 `[!DNL clouddrm-transport.cer]` 和 `[!DNL AdobeFlashAccessIntermediateCA.cer]` 用於使用者端驗證之信任存放區的憑證。
+   1. 在您的SSL設定中啟用使用者端驗證。

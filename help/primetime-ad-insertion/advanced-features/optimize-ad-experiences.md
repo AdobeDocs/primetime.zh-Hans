@@ -1,9 +1,8 @@
 ---
-title: 优化广告体验
-description: 优化广告体验
+title: 最佳化廣告體驗
+description: 最佳化廣告體驗
 copied-description: true
 exl-id: 0cdfbfe5-95f2-4509-8a67-623b77febbc8
-translation-type: tm+mt
 source-git-commit: 3e63c187f12d1bff53370bbcde4d6a77f58f3b4f
 workflow-type: tm+mt
 source-wordcount: '148'
@@ -11,14 +10,14 @@ ht-degree: 0%
 
 ---
 
-# 优化广告体验{#optimizing-ad-experiences}
+# 最佳化廣告體驗 {#optimizing-ad-experiences}
 
-在决定哪个广告是广告服务器的域时，PrimetimeAd Insertion还包含一个高级广告决策引擎，可优化每个查看者的整体广告体验。 例如，对于那些被认为拥有高终身价值或已经连续观看超过3个小时的观众，广告载量可以减少。
+在決定要將哪個廣告提供給檢視者屬於廣告伺服器的網域時，PrimetimeAd Insertion也提供進階廣告決定引擎，可最佳化每個檢視者的整體廣告體驗。 例如，對於被視為擁有高期限值或沈迷觀看超過3小時的檢視者，廣告載入量可能會降低。
 
-在广告加载尚未预定义的情况下（例如，在VOD编程中），客户可以使用PrimetimeAd Insertion根据有关查看器、其查看会话、内容或其他因素的信息自定义查看器广告加载。
+在廣告載入尚未預先定義的情況下（例如，在VOD程式設計中），客戶可以使用PrimetimeAd Insertion，根據有關檢視器、其檢視工作階段、內容或其他因素的資訊來自訂檢視器廣告載入。
 
-广告加载设置可在PrimetimeAd Insertion控制台的“会话广告规则”部分（“管理”选项卡下）中进行配置。
+廣告載入設定可在PrimetimeAd Insertion主控台的「工作階段廣告規則」區段（在「管理」標籤下）中設定。
 
-![在Ad Insertion控制台的“会话广告规则”部分配置广告加载设置](/help/primetime-ad-insertion/assets/ad-insertion-console.png)
+![在Ad Insertion主控台的「工作階段廣告規則」區段中設定廣告載入設定](/help/primetime-ad-insertion/assets/ad-insertion-console.png)
 
-*图：PrimetimeAd Insertion控制台*
+*圖： PrimetimeAd Insertion主控台*

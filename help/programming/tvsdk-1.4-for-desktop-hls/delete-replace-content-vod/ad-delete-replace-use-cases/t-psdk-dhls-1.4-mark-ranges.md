@@ -1,21 +1,20 @@
 ---
-title: 标记范围
-description: 标记范围
+title: 標籤範圍
+description: 標籤範圍
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 173769cd-6580-4461-9dbc-5bb2fed346d2
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '24'
 ht-degree: 0%
 
 ---
 
+# 標籤範圍{#mark-ranges}
 
-# 标记范围{#mark-ranges}
+標籤 `TimeRanges` 介於 `begin` 和 `end` 在 `localTime` as a `AdBreak` 從時間軸。 其他廣告設定會被忽略。
 
-将`localTime`中的`begin`和`end`之间的`TimeRanges`标记为时间轴中的`AdBreak`。 其他广告设置将被忽略。
-
-1. 标记时间范围。
+1. 標示時間範圍。
 
    ```
    {   
@@ -58,4 +57,3 @@ ht-degree: 0%
        "id": "vod_004"
    }
    ```
-

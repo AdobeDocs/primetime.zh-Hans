@@ -1,20 +1,18 @@
 ---
-title: 如何使用功能管理器
-description: 如何使用功能管理器
+title: 如何使用功能管理員
+description: 如何使用功能管理員
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: b85e78f3-992e-4ebe-b9ee-f138db760304
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '66'
 ht-degree: 0%
 
 ---
 
+# 如何使用功能管理員 {#how-to-use-feature-managers}
 
-# 如何使用功能管理器{#how-to-use-feature-managers}
+可使用功能管理員來啟用、停用及設定功能，方法有兩種：
 
-有两种方法可使用功能管理器启用、禁用和配置功能：
-
-* 您可以通过将配置信息从配置文件传递到媒体播放器来创建和配置功能管理器。
-* 您无需使用管理器工厂完成代码即可启用和禁用功能。
-
+* 您可以將設定檔案中的設定資訊傳遞至媒體播放器，藉此建立及設定功能管理員。
+* 您可以使用管理員處理站來啟用和停用功能，而不需瀏覽程式碼。

@@ -1,21 +1,20 @@
 ---
-title: 使用UI框架创建基本播放器
-description: 使用UI框架创建基本播放器
+title: 使用UI架構建立基本播放器
+description: 使用UI架構建立基本播放器
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 78629042-fd87-406b-af42-229e34d48162
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '134'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
+# 使用UI架構建立基本播放器{#create-a-basic-player-using-the-ui-framework}
 
-# 使用UI Framework{#create-a-basic-player-using-the-ui-framework}创建基本播放器
+若要使用UI Framework建立基本播放器：
 
-要使用UI框架创建基本播放器，请执行以下操作：
-
-1. 为播放器实例创建`<div>`。
+1. 建立 `<div>` 您的播放器執行個體的。
 
    例如：
 
@@ -24,7 +23,7 @@ ht-degree: 1%
     </div>
    ```
 
-1. 加载播放器。
+1. 載入播放器。
 
    ```js
    <script> 
@@ -34,7 +33,7 @@ ht-degree: 1%
    </script>
    ```
 
-   创建播放器时，指定的`<div>`元素将获得`ptp-main-video-div-style`的CSS类。 生成的DOM如下所示：
+   建立播放器時，指定的 `<div>` 元素的CSS類別指定為 `ptp-main-video-div-style`. 產生的DOM如下所示：
 
    ```
    <div id="video1" class="ptp-main-video-div-style"> 
@@ -42,9 +41,9 @@ ht-degree: 1%
    </div>
    ```
 
-1. 添加UI控件。
+1. 新增UI控制項
 
-   例如，添加当鼠标悬停在播放器上时显示的控制栏：
+   例如，新增當滑鼠停留在播放器上時顯示的控制列：
 
    ```js
    <script> 
@@ -62,7 +61,7 @@ ht-degree: 1%
    </script>
    ```
 
-   生成的DOM如下所示：
+   產生的DOM如下所示：
 
    ```
    <div id="video1" class="ptp-main-video-div-style"> 
@@ -71,7 +70,7 @@ ht-degree: 1%
    </div>
    ```
 
-调用`ptp.videoPlayer()`返回的对象提供了一种行为，该行为将TVSDK媒体播放器API封装起来，并允许对回放进行编程控制。 当您对媒体播放器实例进行调用时，用户界面会根据媒体播放器触发的事件自我更新：
+呼叫傳回的物件 `ptp.videoPlayer()` 提供包裝TVSDK媒體播放器API的行為，並可程式化控制播放。 在媒體播放器例項上呼叫時，使用者介面會根據媒體播放器觸發的事件自行更新：
 
 ```js
 <script> 

@@ -1,43 +1,43 @@
 ---
-title: iOS SDK 3.2+上的SFSafariViewController支持
-description: iOS SDK 3.2+上的SFSafariViewController支持
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: iOS SDK 3.2+上的SFSafariViewController支援
+description: iOS SDK 3.2+上的SFSafariViewController支援
+exl-id: 6691550f-c36f-4fae-aa77-082ca7d8a60a
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '405'
 ht-degree: 0%
 
 ---
 
-
-# iOS SDK 3.2+上的SFSafariViewController支持 {#sfsafariviewcontroller-support-on-ios-sdk-3.2}
+# iOS SDK 3.2+上的SFSafariViewController支援 {#sfsafariviewcontroller-support-on-ios-sdk-3.2}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
 </br>
 
 
-**由于安全性要求，某些MVPD的登录页面必须显示在SFSafariViewController中，而不是Web视图中。**
+**由於安全性需求，某些MVPD的登入頁面必須以SFSafariViewController呈現，而非Web檢視。**
 
-某些MVPD要求在诸如SFSafariViewController之类的安全浏览器控件中显示其登录页面。 它们会主动阻止Web视图，因此为了能够使用它们进行身份验证，我们必须使用SVC。 
+有些MVPD會要求其登入頁面以安全的瀏覽器控制項（如SFSafariViewController）顯示。 它們會主動封鎖Web檢視，因此為了能夠使用它們進行驗證，我們必須使用SVC。 
 
-## 兼容性 {#compatiblity}
+## 相容性 {#compatiblity}
 
-从iOS SDK版本3.1开始，AccessEnabler SDK会根据服务器配置，在SFSafariViewController中自动显示特定MVPD的登录页面。
+從iOS SDK 3.1版開始，AccessEnabler SDK會根據伺服器設定，自動顯示SFSafariViewController中特定MVPD的登入頁面。
 
-SDK的3.1版本自动显示来自应用程序根视图控制器的SFSafariViewController。 虽然这简化了实施人员的登录页面管理，但在某些情况下，由于应用程序的特定实施（如已显示的模态控制器），无法从根视图控制器显示SFSafariViewController。
+SDK 3.1版會自動從應用程式的根檢視控制器顯示SFSafariViewController。 雖然這可簡化實作人員的登入頁面管理，但在某些情況下，由於應用程式的特定實作（例如已可見的強制回應視窗），無法從根檢視控制器呈現SFSafariViewController。
 
-对于此类情况，3.2版本引入了程序员手动管理SVC的功能。
+在這種情況下，3.2版引進了程式設計師手動管理SVC的功能。
 
-## 手动SVC管理 {#manual-svc-management}
+## 手動SVC管理 {#manual-svc-management}
 
-为了手动管理SVC，实施者必须执行以下步骤：
+若要手動管理SVC，實作人員必須執行下列步驟：
  
 
-1. 调用 **setOptions([&quot;handleSVC&quot;:true])** 在AccessEnabler初始化之后（确保在身份验证开始之前执行此调用）。 这将启用“手动”SVC管理， SDK不会自动显示SVC，而是在需要时调用 **navigate(toUrl:*{url}* useSVC:true)**.  
+1. 呼叫 **setOptions([&quot;handleSVC&quot;：true])** AccessEnabler初始化之後（請確定在驗證開始前執行此呼叫）。 這將啟用「手動」SVC管理，SDK不會自動呈現SVC，而是在需要時呼叫 **navigate(toUrl：*{url}* useSVC：true)**.  
 
-1. 实施可选回调 **navigateToUrl:useSVC:** 在实施中，必须使用提供的url使用SFSafariViewController实例创建svc实例，并将其显示在屏幕上：
+1. 實作選擇性回呼 **navigateToUrl:useSVC:** 在實施內，您必須使用提供的URL使用SFSafariViewController執行個體建立svc執行個體，並將其顯示在畫面上：
 
    ```obj-c
    func navigate(toUrl url: String!, useSVC: Bool) {
@@ -47,14 +47,14 @@ SDK的3.1版本自动显示来自应用程序根视图控制器的SFSafariViewCo
        }
    ```
 
-   ***注意：***
+   ***附註：***
 
-   - *您可以根据需要自定义SFSafariViewController。 例如，在iOS 11+上，您可以将“完成”标签更改为“取消”。*
-   - *为了能够取消svc，您需要引用它，请不要在 **navigateToUrl:useSVC***
-   - *将您自己的视图控制器用于“myController”*\
+   - *您可以按您想要的任何方式自訂SFSafariViewController。 例如，在iOS 11+上，您可以將「完成」標籤變更為「取消」。*
+   - *為了能夠關閉svc，您需要它的參考，請勿在 **navigateToUrl：useSVC***
+   - *對「myController」使用您自己的檢視控制器*\
        
 
-1. 在应用程序的委托实施中 **application(\_app):UIApplication，打开url:URL，选项：\[UIApplicationOpenURLOptionsKey:Any\])-\>布尔**，添加代码以关闭svc。 您应该已经有一些代码可调用 **accessEnabler.handleExternalURL()**. 在下面添加：
+1. 在您的應用程式委派實作中 **application（\_app： UIAapplication，開啟URL： URL，選項： \[UIAapplicationOpenURLOptionsKey： Any\]） -\> Bool**，新增程式碼以關閉svc。 您應該已經有可呼叫的程式碼 **accessEnabler.handleExternalURL()**. 新增以下專案：
 
    ```obj-c
    if(svc != nil) {
@@ -62,12 +62,11 @@ SDK的3.1版本自动显示来自应用程序根视图控制器的SFSafariViewCo
    }
    ```
 
-   同样，svc是对您在步骤2中创建的SFSafariViewController的引用。\
+   同樣地，svc是您在步驟2建立的SFSafariViewController的參照。\
     
 
-1. 实施 **safariViewControllerDidFinish(\_ controller:SFSafariViewController)** 从 **SFSafariViewControllerDelegate** 以便在用户使用“完成”按钮取消svc时捕获。 在此函数中，为了告知SDK身份验证已取消，您需要调用：
+1. 實作 **safariViewControllerDidFinish（\_控制器： SFSafariViewController）** 從 **SFSafariViewControllerDelegate** 以便擷取使用者何時使用「完成」按鈕取消了svc。 在此函式中，若要通知SDK驗證已取消，您必須呼叫：
 
    ```obj-c
    accessEnabler.setSelectedProvider(nil)
    ```
-

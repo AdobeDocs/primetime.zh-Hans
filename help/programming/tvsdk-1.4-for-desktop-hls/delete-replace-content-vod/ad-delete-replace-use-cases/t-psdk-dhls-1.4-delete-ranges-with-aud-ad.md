@@ -1,20 +1,19 @@
 ---
-description: 从时间轴中删除以localTime开头和结尾之间的TimeRange。
-title: 通过Primetime广告决策广告删除范围
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 從時間軸移除localTime中開始和結束之間的TimeRanges。
+title: 刪除具有Primetime廣告決策廣告的範圍
+exl-id: e097f92e-b4ce-4e33-9a71-213cf19188fb
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '42'
 ht-degree: 0%
 
 ---
 
+# 刪除具有Primetime廣告決策廣告的範圍{#delete-ranges-with-primetime-ad-decisioning-ad}
 
-# 使用Primetime广告决策广告{#delete-ranges-with-primetime-ad-decisioning-ad}删除范围
+從時間軸移除localTime中開始和結束之間的TimeRanges。
 
-从时间轴中删除以localTime开头和结尾之间的TimeRange。
-
-使用短语广告删除范围。
+刪除包含片語廣告的範圍。
 
 ```
 {   
@@ -66,4 +65,3 @@ ht-degree: 0%
     "id": "vod_003"
 }
 ```
-

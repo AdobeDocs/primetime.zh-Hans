@@ -1,18 +1,17 @@
 ---
-title: 多个策略
-description: 多个策略
+title: 多個原則
+description: 多個原則
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 4b06ef24-f282-45cb-9251-314751edd8a2
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '80'
 ht-degree: 0%
 
 ---
 
+# 多個原則{#multiple-policies}
 
-# 多个策略{#multiple-policies}
+指定要與單一內容關聯的多個原則。 要使用的具體原則由授權伺服器決定。
 
-指定要与单个内容关联的多个策略。 要使用的特定策略由许可证服务器确定。
-
-示例用例：如果同一资产同时用于电子售出和租赁模型，则此选项允许您为每个业务模型指定不同的使用规则集。 许可证服务器可以根据客户是购买还是租用内容来选择要使用的策略。
+使用案例範例：如果相同的資產同時用於電子銷售模式與租賃模式，此選項可讓您為每個業務模式指定不同的使用規則集。 授權伺服器可以根據客戶是否購買或租借內容來選擇使用哪種原則。

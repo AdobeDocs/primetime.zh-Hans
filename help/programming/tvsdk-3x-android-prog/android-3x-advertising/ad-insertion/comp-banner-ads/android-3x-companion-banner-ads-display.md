@@ -1,38 +1,37 @@
 ---
-description: 要显示横幅广告，您需要创建横幅实例并允许TVSDK监听广告相关事件。
-title: 显示横幅广告
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 若要顯示橫幅廣告，您必須建立橫幅例項，並允許TVSDK接聽與廣告相關的事件。
+title: 顯示橫幅廣告
+exl-id: 3ccf6525-ffc1-4f45-a662-8b53cab0f448
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '249'
 ht-degree: 0%
 
 ---
 
+# 顯示橫幅廣告 {#display-banner-ads}
 
-# 显示横幅广告{#display-banner-ads}
+若要顯示橫幅廣告，您必須建立橫幅例項，並允許TVSDK接聽與廣告相關的事件。
 
-要显示横幅广告，您需要创建横幅实例并允许TVSDK监听广告相关事件。
+TVSDK提供透過與線性廣告相關聯的隨附橫幅廣告清單 `AdPlaybackEventListener.onAdBreakStart` 事件。
 
-TVSDK通过`AdPlaybackEventListener.onAdBreakStart`事件提供与线性广告关联的配套横幅广告列表。
-
-清单可以通过以下方式指定配套横幅广告：
+資訊清單可透過以下方式指定隨附橫幅廣告：
 
 * HTML片段
-* iFrame页面的URL
-* 静态图像或Adobe Flash SWF文件的URL
+* iFrame頁面的URL
+* 靜態影像或AdobeFlashSWF檔案的URL
 
-对于每个配套广告，TVSDK会指示哪些类型可用于您的应用程序。
+對於每個隨附廣告，TVSDK會指出您的應用程式可用的型別。
 
-1. 为`AdPlaybackEventListener.onAdBreakStart`事件添加一个侦听器，它执行以下操作：
+1. 新增監聽器 `AdPlaybackEventListener.onAdBreakStart` 具有以下動作的事件：
 
-   * 清除横幅实例中的现有广告。
-   * 从`Ad.getCompanionAssets`获取伴侣广告的列表。
-   * 如果附属广告的列表不是空的，请在横幅实例的列表上迭代。
+   * 清除橫幅例項中的現有廣告。
+   * 從取得隨附廣告清單 `Ad.getCompanionAssets`.
+   * 如果隨附廣告清單不是空的，請在清單上反複檢視橫幅例項。
 
-      每个横幅实例(`AdAsset`)都包含宽度、高度、资源类型（html、iframe或static）等信息以及显示配套横幅所需的数据。
-   * 如果视频广告没有随其预订的配套广告，则配套资产的列表不包含该视频广告的数据。
-   * 要显示独立的显示广告，请向脚本添加逻辑以在相应的横幅实例中运行普通DFP（针对发布者的DoubleClick）显示广告标记。
-   * 将横幅信息发送到页面上显示横幅的相应位置的函数。
+      每個橫幅例項(一個 `AdAsset`)包含寬度、高度、資源型別（html、iframe或靜態）等資訊，以及顯示隨附橫幅所需的資料。
+   * 如果視訊廣告沒有隨附廣告，隨附資產清單則不包含該視訊廣告的資料。
+   * 若要顯示獨立顯示廣告，請在指令碼中新增邏輯，以在適當的橫幅例項中執行一般DFP (DoubleClick for Publishers)顯示廣告標籤。
+   * 將橫幅資訊傳送至頁面上會在適當位置顯示橫幅的函式。
 
-      这通常是`div`，您的函数使用`div ID`显示横幅。
+      這通常是 `div`，而您的函式會使用 `div ID` 以顯示橫幅。

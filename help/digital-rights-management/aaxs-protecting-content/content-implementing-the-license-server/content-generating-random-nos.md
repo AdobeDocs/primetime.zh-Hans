@@ -1,16 +1,15 @@
 ---
-title: 生成随机数
-description: 生成随机数
+title: 產生隨機數字
+description: 產生隨機數字
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 9a816570-753e-4b05-a6ea-2d4b20ffa3d4
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '49'
 ht-degree: 0%
 
 ---
 
+# 產生隨機數字{#generating-random-numbers}
 
-# 生成随机数{#generating-random-numbers}
-
-硬件随机数生成器可用于Linux服务器，以确保生成足够的熵。 如果计算机无法生成足够的熵，则需要随机性源的Adobe访问操作将在等待`/dev/random`中的数据时阻塞。
+硬體隨機數字產生器可用於Linux伺服器，以確保產生足夠的平均資訊量。 如果電腦無法產生足夠的平均資訊量，在等待來自的資料時，需要隨機性來源的Adobe存取操作將會封鎖 `/dev/random`.

@@ -1,25 +1,24 @@
 ---
-description: 即时转码功能可以将ID3定时元数据注入广告创意，以便于客户端广告跟踪。
-title: 使用即时转码来插入ID3定时元数据标记
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 即時轉碼可將ID3計時中繼資料插入Ad Creative，以促進使用者端廣告追蹤。
+title: 使用即時轉碼來插入ID3計時中繼資料標籤
+exl-id: 6171223a-71f9-45a2-a3f5-7ede4a9b101a
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '97'
 ht-degree: 0%
 
 ---
 
+# 使用即時轉碼插入ID3計時中繼資料標籤 {#using-crs-to-inject-id-timed-metadata-tags}
 
-# 使用即时转码来插入ID3定时元数据标记{#using-crs-to-inject-id-timed-metadata-tags}
+CRS可以將ID3定時中繼資料插入廣告創意，以促進使用者端廣告追蹤。
 
-CRS可以将ID3定时元数据注入广告创意，以便于客户端广告跟踪。
-
-客户端播放器读取ID3元数据以启用帧精确广告跟踪。
+使用者端播放器會讀取ID3中繼資料，以啟用精確影格的廣告追蹤。
 
 >[!NOTE]
 >
->ID3定时元数据注入功能仅适用于Safari/iOS。
+>ID3定時中繼資料插入功能僅適用於Safari/iOS。
 
-## ID3注入{#workflow-for-crs-for-id3-injection}的CRS工作流
+## ID3注入的CRS工作流程 {#workflow-for-crs-for-id3-injection}
 
-如果PrimetimeAd Insertion收到`ptplayer=ios-mobileweb`参数，它将在上传到相应的广告存储CDN之前，将ID3数据包注入转码广告创意。
+如果PrimetimeAd Insertion收到 `ptplayer=ios-mobileweb` 引數，它會先將ID3封包插入TRANSCODED廣告創意，然後再上傳至適當的廣告儲存CDN。

@@ -1,22 +1,21 @@
 ---
-title: 构建许可证服务器
-description: 构建许可证服务器
+title: 建置授權伺服器
+description: 建置授權伺服器
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 0535f1e4-9f63-47a0-b55c-45c32ba0d15e
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '156'
 ht-degree: 0%
 
 ---
 
+# 建置授權伺服器 {#building-the-license-server}
 
-# 构建许可证服务器{#building-the-license-server}
-
-参考实施许可证服务器包括用于部署许可证服务器的WAR文件。 它还包含所有许可证服务器源代码和Ant构建脚本(参考Implementation\Server\refimpl\build-refimpl.xml)，因此您可以轻松更改代码。
+參考實作許可證伺服器包含用於部署許可證伺服器的WAR檔案。 它也包含所有授權伺服器原始程式碼和Ant建置指令碼(參考Implementation\Server\refimpl\build-refimpl.xml)，因此您可以輕鬆變更程式碼。
 
 >[!NOTE]
 >
->仅当要修改源代码时才需要此步骤。 出于评估目的，您可以跳过此步骤，使用发运的WAR文件。
+>只有在您要修改原始程式碼時，才需要執行此步驟。 為了評估目的，您可以略過此步驟，並在出貨時使用WAR檔案。
 
-在运行Ant脚本之前，请修改脚本以指定Adobe Access SDK、Tomcat、MySQL和Log4J的位置。 在文本编辑器中打开build-refimpl.xml，并编辑属性`sdkdir, tomcatdir, mysqldir, and log4jdir`的值。 要编译源代码并创建用于参考实现的WAR文件，请使用包含Ant脚本的目录中的`ant -f build-refimpl.xml all`运行脚本。 脚本完成后，将创建一个[!DNL refimpl-build/wars]目录，其中包含服务器WAR文件。
+在執行Ant指令碼之前，請修改指令碼以指定Adobe存取SDK、Tomcat、MySQL和Log4J的位置。 在文字編輯器中開啟build-refimpl.xml並編輯屬性的值 `sdkdir, tomcatdir, mysqldir, and log4jdir`. 若要編譯原始程式碼並建立參考實作的WAR檔案，請使用以下指令碼執行： `ant -f build-refimpl.xml all` 在包含Ant指令碼的目錄中。 指令碼完成時， [!DNL refimpl-build/wars] 將會建立包含伺服器WAR檔案的目錄。

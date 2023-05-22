@@ -1,23 +1,22 @@
 ---
-title: 特殊用例
-description: 特殊用例
+title: 特殊使用案例
+description: 特殊使用案例
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 33aad8cc-5939-4890-bc89-32d6bbf1fa4c
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '86'
 ht-degree: 0%
 
 ---
 
+# 特殊使用案例{#special-use-cases}
 
-# 特殊用例{#special-use-cases}
+TVSDK偏好自訂範圍設定，而非標準廣告設定。 例如，如果已定義MARK範圍，則會忽略廣告的插入設定。 如果已定義REPLACE範圍，TVSDK會自動使用 `CustomRanges` 訊號模式。
 
-TVSDK偏好自定义范围设置而非标准广告设置。 例如，如果定义了MARK范围，则广告的插入设置将被忽略。 如果定义了REPLACE范围，TVSDK将自动使用`CustomRanges`信令模式。
+1. `ReplaceRange` 無替代期間
 
-1. `ReplaceRange` 无更换持续时间
-
-   如果缺少替换持续时间，则实际替换持续时间由服务器确定。 此`AdBreak`中放置的广告数量也由服务器确定。
+   如果缺少取代期間，實際的取代期間由伺服器決定。 置入此的廣告數量 `AdBreak` 也由伺服器決定。
 
    ```
    {
@@ -61,6 +60,6 @@ TVSDK偏好自定义范围设置而非标准广告设置。 例如，如果定�
    }
    ```
 
-1. 具有替换持续时间的MARK和DELETE范围
+1. 以取代持續時間標籤和DELETE範圍
 
-   忽略额外的替换持续时间。
+   會忽略額外的取代期間。

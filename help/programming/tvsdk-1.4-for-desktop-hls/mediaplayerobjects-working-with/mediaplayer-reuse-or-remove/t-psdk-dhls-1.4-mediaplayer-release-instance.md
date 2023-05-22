@@ -1,30 +1,29 @@
 ---
-description: 当您不再需要MediaResource时，您应释放MediaPlayer实例和资源。
-title: 发布MediaPlayer实例和资源
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 當您不再需要MediaResource時，應該發行MediaPlayer例項和資源。
+title: 發行MediaPlayer例項和資源
+exl-id: 2a802754-5c51-4e5f-8c36-843074b487b5
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '120'
 ht-degree: 0%
 
 ---
 
+# 發行MediaPlayer例項和資源{#release-a-mediaplayer-instance-and-resources}
 
-# 释放MediaPlayer实例和资源{#release-a-mediaplayer-instance-and-resources}
+當您不再需要MediaResource時，應該發行MediaPlayer例項和資源。
 
-当您不再需要MediaResource时，您应释放MediaPlayer实例和资源。
+當您發行時 `MediaPlayer` 物件，與此物件關聯的基礎硬體資源 `MediaPlayer` 物件會取消配置。
 
-释放`MediaPlayer`对象时，将取消分配与此`MediaPlayer`对象关联的基础硬件资源。
+以下是發行「 」的一些理由 `MediaPlayer`：
 
-以下是释放`MediaPlayer`的一些原因：
+* 保留不必要的資源可能會影響效能。
+* 如果裝置不支援相同視訊轉碼器的多個執行個體，其他應用程式可能會發生播放失敗。
 
-* 持有不必要的资源会影响性能。
-* 如果设备上不支持同一视频编解码器的多个实例，则其他应用程序可能会出现播放失败。
-
-1. 释放`MediaPlayer`。
+1. 發行 `MediaPlayer`.
 
    ```
    function release():void;
    ```
 
-释放`MediaPlayer`实例后，您不能再使用它。 如果在释放`MediaPlayer`接口后调用其任何方法，则引发`IllegalStateException`。
+晚於 `MediaPlayer` 執行個體已發行，您無法再使用它。 若有任何方法 `MediaPlayer` 介面在發行後呼叫，這是 `IllegalStateException` 擲回。

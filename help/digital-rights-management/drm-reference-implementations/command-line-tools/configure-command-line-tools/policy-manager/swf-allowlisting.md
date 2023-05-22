@@ -1,23 +1,22 @@
 ---
-title: SWF应用程序允许列表
-description: SWF应用程序允许列表
+title: SWF應用程式允許清單
+description: SWF應用程式允許清單
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: ae8b7f52-897f-43f9-ac7b-665d4b8c16b8
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '186'
 ht-degree: 0%
 
 ---
 
+# SWF應用程式允許清單 {#swf-application-allowlisting}
 
-# SWF应用程序允许列出{#swf-application-allowlisting}
+若要允許列出SWF應用程式，您可以遵循以下兩種策略之一：
 
-要允许列表SWF应用程序，可以遵循以下两种策略之一：
+* 您可以指定SWF的URL。 這是一種非常靈活的方法，尤其是在您定期重建SWF的開發環境中。
+* 您可以指定SWF雜湊。 這是您SWF的密碼編譯摘要值。 此方法較不靈活（但更為嚴格），因為應用程式變更並重新建置時，SWFHASH會變更。 在此情況下，所有繫結至先前HASH的內容將無法在新播放器上播放，且必須重新封裝。 此 [!DNL PolicyManager.jar] 如果您指定 [!DNL .swf] 檔案。
 
-* 可以指定SWF的URL。 这是一种非常灵活的方法，尤其是在您定期重建SWF的开发环境中。
-* 可以指定SWF哈希。 这是SWF的加密摘要值。 此方法不那么灵活（但要严格得多），因为当应用程序发生更改并重建时，SWF哈希会发生更改。 在这种情况下，绑定到上一个HASH的所有内容都将无法在新播放器上播放，并且必须重新打包。 如果指定[!DNL .swf]文件，[!DNL PolicyManager.jar]工具将自动计算哈希。
+   另一方面，如果您透過Flash/Adobe Medium伺服器(FMS/AMS)使用Primetime DRM，您可以提供特定SWF的路徑，FMS/AMS會自動雜湊這些SWF，供您插入用來封裝FMS/AMS串流內容的DRM原則。
 
-   另一方面，如果您通过Flash/Adobe Medium服务器(FMS/AMS)使用Primetime DRM，则可以提供特定SWF的路径，FMS/AMS会自动对SWF进行哈希处理，以便您插入DRM策略，该策略用于打包由FMS/AMS流传输的内容。
-
-有关详细信息，请参阅&#x200B;*配置属性*&#x200B;中的`policy.allowedSWFApplication.n`。
+另請參閱 `policy.allowedSWFApplication.n` 在 *設定屬性* 以取得詳細資訊。

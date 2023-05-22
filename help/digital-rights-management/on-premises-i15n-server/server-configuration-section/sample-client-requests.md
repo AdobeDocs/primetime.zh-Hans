@@ -1,25 +1,24 @@
 ---
-title: 客户端请求示例
-description: 客户端请求示例
+title: 範例使用者端請求
+description: 範例使用者端請求
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 2b6a1349-aafc-4222-9081-525662f62961
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '105'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
+# 範例使用者端請求{#sample-client-requests}
 
-# 客户端请求示例{#sample-client-requests}
-
-您可以使用Charles Proxy或Wireshark等工具收集示例客户端请求库。 在设置个性化服务器后，您应使用个性化传输凭据来捕获客户端请求。 然后，您可以将这些客户端请求（通过&#x200B;*curl*&#x200B;或其他工具）发送到个性化服务器的端点，以验证服务器是否已启动并正常运行。 例如：
+您可以使用Charles Proxy或Wireshark等工具收集範例使用者端請求的資料庫。 您應使用個人化傳輸認證，在設定個人化伺服器後擷取使用者端請求。 然後，您可以傳送這些使用者端請求(透過 *curl* 或其他工具)，驗證伺服器是否正常運作。 例如：
 
 ```
 curl https://<<yourindivserver:port>>/flashaccess/i15n/v5 -­data-binary  
 @sample_client_request.bin > sample_client_response.ber
 ```
 
-您还可能希望在任何服务器配置更改或ECI / CRL更新后再次发送这些请求。
+您也可以在伺服器設定變更或ECI / CRL更新後，再次傳送這些要求。
 
-您还应使用成功的个性化事务处理相应地更新“个性化统计信息”页。
+您也應使用成功的個人化交易適當地更新「個人化統計資料」頁面。

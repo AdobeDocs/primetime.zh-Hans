@@ -1,36 +1,37 @@
 ---
-title: 查看特定程序员的帐户共享报告
-description: 查看特定程序员的帐户共享报告
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 檢視特定程式設計師的帳戶共用報告
+description: 檢視特定程式設計師的帳戶共用報告
+exl-id: 34b198e1-dbb9-4486-b688-92780eec0a56
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '105'
 ht-degree: 0%
 
 ---
 
-# 查看特定程序员的帐户共享报告 {#report-sp-programmers}
+# 檢視特定程式設計師的帳戶共用報告 {#report-sp-programmers}
 
-要在帐户IQ中查看报表，请在您以MVPD的形式成功登录应用程序后：
+若要在「帳戶IQ」中檢視報表，當您以MVPD成功登入應用程式後：
 
-1. 在定义订阅者区段时，选择特定的程序员，以便使用 [如何定义区段](/help/AccountIQ/howto-select-segment-timeframe.md).
+1. 當您使用中的步驟定義要分析和檢視報表的訂閱者區段時，請選取特定的程式設計師 [如何定義區段](/help/AccountIQ/howto-select-segment-timeframe.md).
 
-   ![选择渠道](assets/programmer-selection.png)
+   ![選取頻道](assets/programmer-selection.png)
 
 
-1. 从左侧导航中选择所需的报表页面：
+1. 從左側導覽中選取所需的報表頁面：
 
-* [一般用法](/help/AccountIQ/general-usage-reports.md)
+* [一般使用](/help/AccountIQ/general-usage-reports.md)
 
    ![](assets/specific-mvpd-gen-usage.png)
-* [共享帐户](/help/AccountIQ/shared-acc-reports.md)
+* [共用帳戶](/help/AccountIQ/shared-acc-reports.md)
 
    ![](assets/specific-mvpd-shared-acc.png)
 * [使用模式](/help/AccountIQ/usage-patterns.md)
 
    ![](assets/specific-mvpd-usage-pattern.png)
 
-* [功能板](/help/AccountIQ/dashboard.md) （功能板可让您一瞥来自不同报表页面的选定图形）。
+* [儀表板](/help/AccountIQ/dashboard.md) （控制面板可讓您從不同的報表頁面中一覽選取的圖形）。
 
    ![](assets/specific-mvpd-dashboard.png)
 
-其中每个页面将反映选定区段的活动。
+每個頁面都會反映所選區段的活動。

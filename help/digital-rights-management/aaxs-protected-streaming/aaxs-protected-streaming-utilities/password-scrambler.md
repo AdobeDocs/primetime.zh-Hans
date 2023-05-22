@@ -1,19 +1,18 @@
 ---
-title: 密码剪贴器
-description: 密码剪贴器
+title: 密碼加擾器
+description: 密碼加擾器
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: ceedd61e-918b-453f-8d21-628b2d8713ff
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '80'
 ht-degree: 0%
 
 ---
 
+# 密碼加擾器 {#password-scrambler}
 
-# 密码剪贴器{#password-scrambler}
-
-密码剪贴器实用程序加密密码，以便在Adobe Access Server中对受保护流配置文件使用。 要运行scrambler，请运行命令：
+Password Scrambler公用程式會加密密碼，以便用於Adobe Access Server的Protected Streaming設定檔。 若要執行擾碼器，請執行以下命令：
 
 ```
 Scrambler.bat password 
@@ -25,15 +24,14 @@ Scrambler.bat password
 java -jar libs/flashaccess-scrambler.jar password  
 ```
 
-实用程序输出以下消息：
+公用程式輸出下列訊息：
 
 ```
 Encrypted password: scrambled-password 
 ```
 
-在flashaccess-global.xml和flashaccess-tenant.xml中指定的所有口令都必须加密。
+flashaccess-global.xml和flashaccess-tenant.xml中指定的所有密碼都必須加密。
 
 >[!NOTE]
 >
->Adobe Access Server中用于受保护流的密码扰码器实用程序不能与随参考实施许可证服务器提供的扰码器互换。
-
+>適用於受保護串流的Adobe Access Server中的Password Scrambler公用程式不可與參考實作授權伺服器隨附的Scrambler互換。

@@ -1,21 +1,20 @@
 ---
-title: 命令行使用
-description: 命令行使用
+title: 命令列使用方式
+description: 命令列使用方式
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 55b18fee-b7d8-4a5a-91a7-a08cd23e7866
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '567'
 ht-degree: 0%
 
 ---
 
+# 命令列使用方式 {#command-line-usage}
 
-# 命令行使用{#command-line-usage}
+使用Media Packager之前，請確定您符合需求中所列的要求，而且組態檔包含必要的資訊(請參閱 *使用Adobe存取參考實作*.
 
-在使用Media Packager之前，请确保满足“要求”中列出的要求，且配置文件包含所需信息(请参阅&#x200B;*使用Adobe访问参考实现*&#x200B;中的配置文件。
-
-Media Packager位于DVD上的[!DNL \Reference Implementation\Command Line tools]目录中。 要加密单个文件，请使用以下语法：
+Media Packager位於 [!DNL \Reference Implementation\Command Line tools] 目錄。 若要加密單一檔案，請使用下列語法：
 
 ```
 java -jar AdobePackager.jar  
@@ -30,10 +29,10 @@ java -jar AdobePackager.jar
 </i class="+ topic>
 ```
 
-* `source` 是要加密的文件。
-* `dest` 指定加密内容的写入位置。如果指定了目录，则加密文件将使用与源文件相同的文件名保存在此文件夹中，但该目录不得是包含源文件的目录。
+* `source` 是要加密的檔案。
+* `dest` 指定將寫入加密內容的位置。 如果指定目錄，加密的檔案將會使用與來源檔案相同的檔案名稱儲存在此資料夾中，但目錄不能是包含來源檔案的目錄。
 
-要使用相同的密钥加密多个文件（用于多位速率支持），请使用以下语法：
+若要使用相同的金鑰加密多個檔案（支援多位元速率），請使用下列語法：
 
 ```
 java -jar AdobePackager.jar  
@@ -48,10 +47,10 @@ java -jar AdobePackager.jar
 </i class="+ topic>
 ```
 
-* `sourcefiles` 是一系列以空格分隔的源条目，表示要加密的文件。
-* `dest-directory` 指定加密内容的写入位置。加密的文件将使用与源文件相同的文件名保存在此文件夹中，但目录不能是包含源文件的目录。
+* `sourcefiles` 是以空格分隔的一系列來源專案，代表要加密的檔案。
+* `dest-directory` 指定將寫入加密內容的位置。 加密的檔案會使用與來源檔案相同的檔案名稱儲存在此資料夾中，但目錄不能是包含來源檔案的目錄。
 
-要视图有关加密文件的信息，请使用以下语法：
+若要檢視加密檔案的相關資訊，請使用下列語法：
 
 ```
 java -jar AdobePackager.jar -d  
@@ -60,74 +59,73 @@ java -jar AdobePackager.jar -d
 </i class="+ topic>
 ```
 
-* `encryptedfile` 是加密文件。
+* `encryptedfile` 是加密的檔案。
 
-要视图有关元数据文件的信息，请使用以下语法：
+若要檢視中繼資料檔案的相關資訊，請使用下列語法：
 
 ```
 java -jar AdobePackager.jar -dm <metadatafile> [-e]
 ```
 
-* `metadatafile` 是包 [!DNL .metadata] 含DRM元数据的文件。
+* `metadatafile` 是 [!DNL .metadata] 包含DRM中繼資料的檔案。
 
 >[!NOTE]
 >
->在打包过程中，默认情况下，Media Packager将不再生成.header文件。 要生成此文件，请在打包过程中使用`-h`选项。
+>封裝期間，Media Packager預設不再產生.header檔案。 若要產生此檔案，請使用 `-h` 封裝期間選項。
 
-下表包含上述语法中所示命令行选项的说明：
+下表包含上述語法中所顯示的命令列選項說明：
 
 <table frame="all" colsep="1" rowsep="1" class="+ topic/table adobe-d/table " id="table_wgz_spy_n4"> 
  <thead class="- topic/thead "> 
   <tr rowsep="1" class="- topic/row "> 
-   <th colname="1" class="- topic/entry entry"> <p class="- topic/p ">命令行选项 </p> </th> 
-   <th colname="2" class="- topic/entry entry"> <p class="- topic/p ">说明 </p> </th> 
+   <th colname="1" class="- topic/entry entry"> <p class="- topic/p ">命令列選項 </p> </th> 
+   <th colname="2" class="- topic/entry entry"> <p class="- topic/p ">說明 </p> </th> 
   </tr> 
  </thead>
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <p class="- topic/p ">-c <span class="+ topic/ph pr-d/codeph codeph"></span> </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">指定配置文件的位置。 如果未使用此选项，Media Packager将在工作目录中查找<span class="filepath"> flashaccessools.properties </span>。 </p> </td> 
+   <td colname="1" class="- topic/entry "> <p class="- topic/p ">-c <span class="+ topic/ph pr-d/codeph codeph"> configfile </span> </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">指定組態檔的位置。 如果未使用此選項，「媒體封裝程式」將會尋找 <span class="filepath"> flashaccesstools.properties </span> 於工作目錄中。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <p class="- topic/p ">-d <span class="+ topic/ph pr-d/codeph codeph">加密文件</span> </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">显示有关已打包的文件的信息。 源文件和目标文件不是必需的。 </p> </td> 
+   <td colname="1" class="- topic/entry "> <p class="- topic/p ">-d <span class="+ topic/ph pr-d/codeph codeph"> encryptedfile </span> </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">顯示已封裝檔案的相關資訊。 來源和目的地檔案並非必要檔案。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <p class="- topic/p ">-dm <span class="+ topic/ph pr-d/codeph codeph"> metadatafile </span> </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">显示有关现有元数据的信息。 源文件和目标文件不是必需的。 </p> </td> 
+   <td colname="1" class="- topic/entry "> <p class="- topic/p ">-dm <span class="+ topic/ph pr-d/codeph codeph"> 中繼資料檔 </span> </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">顯示現有中繼資料的相關資訊。 來源和目的地檔案並非必要檔案。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <p class="- topic/p ">-e </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">将此选项与<span class="codeph"> -d </span>一起使用，从打包文件中提取策略。 将使用文件名和策略标识符在与加密文件相同的目录中创建文件。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">使用此選項搭配 <span class="codeph"> -d </span> 從封裝檔案擷取原則。 將使用檔案名稱和原則識別碼，在加密檔案的相同目錄中建立檔案。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <p class="- topic/p ">-h </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">与<span class="codeph"> -d </span>一起使用，从打包的文件中提取DRM头。 使用文件名和扩展名<span class="filepath"> .header </span>在与加密文件相同的目录中创建文件 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">搭配使用 <span class="codeph"> -d </span> 從封裝檔案中擷取DRM標頭。 檔案會使用檔案名稱和副檔名，在與加密檔案相同的目錄中建立 <span class="filepath"> .header </span> </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <p class="- topic/p ">-i <span class="+ topic/ph pr-d/codeph codeph"> contentID </span> </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">指定此内容段的唯一标识符。 如果未指定标识符，则将使用目标文件名。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">指定此內容片段的唯一識別碼。 如果未指定識別碼，將會使用destfile檔案名稱。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <p class="- topic/p ">-k <span class="+ topic/ph pr-d/codeph codeph">键</span>= <span class="+ topic/ph pr-d/codeph codeph">值</span> </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">指定要添加到内容元数据的自定义键/值。 可以指定多个<span class="codeph"> -k </span>选项。 </p> </td> 
+   <td colname="1" class="- topic/entry "> <p class="- topic/p ">-k <span class="+ topic/ph pr-d/codeph codeph"> 金鑰 </span>= <span class="+ topic/ph pr-d/codeph codeph"> 值 </span> </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">指定要新增至內容中繼資料的自訂索引鍵/值。 多個 <span class="codeph"> -k </span> 可指定選項。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <p class="- topic/p ">-m </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">将此选项与<span class="codeph"> -d </span>一起使用，从打包的文件中提取元数据。 将使用文件名和扩展名<span class="codeph"> .metadata </span>在与加密文件相同的目录中创建文件。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">使用此選項搭配 <span class="codeph"> -d </span> 以從封裝檔案擷取中繼資料。 將使用檔案名稱和副檔名在與加密檔案相同的目錄中建立檔案 <span class="codeph"> .metadata </span>. </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <p class="- topic/p ">-noprompt </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">不要询问是否应覆盖目标文件。 如果目标文件已存在且未设置<span class="codeph"> -o </span>，则将返回一个错误。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">不要詢問是否應該覆寫目的地檔案。 如果目的地檔案已存在且 <span class="codeph"> -o </span> 未設定，則會傳回錯誤。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <p class="- topic/p ">-o </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">如果目标文件已存在，则在不进行提示的情况下覆盖它。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">覆寫目的地檔案（如果已經存在），而不提示使用者。 </p> </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <p class="- topic/p ">-p <span class="+ topic/ph pr-d/codeph codeph">文件名[domain-transport-cert] </span> </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">指定包含策略的文件的名称。 如果策略要求向使用与属性文件中指定的传输证书不同的传输证书的服务器进行域注册，则还需要提供域传输证书。 </p> <p class="- topic/p ">可以指定多个<span class="codeph"> -p </span>选项，默认情况下，客户端将使用第一个选项。 在命令行上指定的值优先于在配置文件中指定的值。 </p> </td> 
+   <td colname="1" class="- topic/entry "> <p class="- topic/p ">-p <span class="+ topic/ph pr-d/codeph codeph"> 檔案名稱[domain-transport-cert] </span> </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">指定包含原則的檔案名稱。 如果原則要求使用屬性檔案中指定的傳輸憑證以外的其他傳輸憑證的伺服器進行網域註冊，則還需要提供網域傳輸憑證。 </p> <p class="- topic/p ">多個 <span class="codeph"> -p </span> 可指定選項，使用者端預設會使用第一個選項。 命令列上指定的值優先於組態檔中指定的值。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
-

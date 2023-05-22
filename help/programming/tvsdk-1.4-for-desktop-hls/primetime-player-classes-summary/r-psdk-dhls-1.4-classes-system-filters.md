@@ -1,24 +1,23 @@
 ---
-description: 这些类实现媒体资源过滤。
-title: 系统过滤器类
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 這些類別會實作媒體資源篩選。
+title: 系統篩選器類別
+exl-id: edc38a86-3fdf-4ee2-b87e-2c6af0c9d540
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '111'
 ht-degree: 0%
 
 ---
 
+# 系統篩選器類別{#system-filters-classes}
 
-# 系统过滤器类{#system-filters-classes}
+這些類別會實作媒體資源篩選。
 
-这些类实现媒体资源过滤。
+封裝： [com.adobe.mediacore.system.filters](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/system/filters/package-detail.html)
 
-包：[com.adobe.mediacore.system.过滤器s](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/system/filters/package-detail.html)
-
-| 名称 | 说明 |
+| 名稱 | 說明 |
 |---|---|
-| [DefaultMediaResourceFilter](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/system/filters/DefaultMediaResourceFilter.html) | 课。 |
-| [DefaultTimedMetadataFilter](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/system/filters/DefaultTimedMetadataFilter.html) | 课。 |
-| [MediaResourceFilter](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/system/filters/MediaResourceFilter.html) | 实现基本媒体资源过滤实现的类。 |
-| [TimedMetadataFilter](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/system/filters/TimedMetadataFilter.html) | 所有标记过滤器的基类。 |
+| [DefaultmediaResourceFilter](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/system/filters/DefaultMediaResourceFilter.html) | 類別。 |
+| [DefaultTimedMetadataFilter](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/system/filters/DefaultTimedMetadataFilter.html) | 類別。 |
+| [MediaResourceFilter](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/system/filters/MediaResourceFilter.html) | 實作基本媒體資源篩選實作的類別。 |
+| [TimedMetadataFilter](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/system/filters/TimedMetadataFilter.html) | 所有標籤篩選器的基底類別。 |

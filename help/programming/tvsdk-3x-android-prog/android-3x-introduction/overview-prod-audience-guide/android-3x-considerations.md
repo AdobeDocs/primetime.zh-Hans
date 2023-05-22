@@ -1,52 +1,51 @@
 ---
-description: 要最有效地使用TVSDK，您应考虑其操作的某些细节并遵循某些最佳实践。
-title: 注意事项和最佳实践
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 若要以最有效的方式使用TVSDK，您應考慮其運作的特定細節，並遵循某些最佳實務。
+title: 考量事項和最佳作法
+exl-id: c53b3e13-246b-4224-9751-0bc88fad12ed
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 0%
 
 ---
 
+# 考量事項和最佳作法 {#considerations-and-best-practices}
 
-# 注意事项和最佳做法{#considerations-and-best-practices}
+若要以最有效的方式使用TVSDK，您應考慮其運作的特定細節，並遵循某些最佳實務。
 
-要最有效地使用TVSDK，您应考虑其操作的某些细节并遵循某些最佳实践。
+## 考量事項 {#section_tvsdk_considerations}
 
-## 注意事项{#section_tvsdk_considerations}
+使用TVSDK時，請記住下列資訊：
 
-使用TVSDK时，请记住以下信息：
+* TVSDK API實作於Java。
+* Adobe Primetime目前無法在Android模擬器上運作。
 
-* TVSDK API是在Java中实现的。
-* Adobe Primetime当前在Android模拟器上不工作。
+   您必須使用真實裝置進行測試。
+* 僅HTTP即時資料流(HLS)內容支援播放。
+* 主要視訊內容可以多工（相同轉譯中的視訊和音訊資料流）或非多工（不同轉譯中的視訊和音訊資料流）。
+* 目前，您需要在UI執行緒（主要Android執行緒）上執行大多數TVSDK API作業。
 
-   必须使用真正的设备进行测试。
-* 仅支持HTTP实时流(HLS)内容播放。
-* 主视频内容可以多路复用（在同一再现中的视频和音频流）或非多路复用（在单独再现中的视频和音频流）。
-* 当前，您需要在UI线程（主Android线程）上运行大多数TVSDK API操作。
+   在主執行緒上正確執行的作業可能會在背景執行緒上執行時擲回錯誤並退出。
+* 視訊播放需要Adobe Video Engine (AVE)。 這會影響存取媒體資源的方式和時間：
 
-   在主线程上正确运行的操作可能会引发错误，并在后台线程上运行时退出。
-* Adobe播放需要视频引擎(AVE)。 这会影响访问媒体资源的方式和时间：
+   * AVE提供的範圍內支援隱藏式字幕。
+   * 根據編碼器精確度，實際的編碼媒體持續時間可能與串流資源資訊清單中記錄的持續時間不同。
 
-   * 在AVE提供的范围内支持隐藏式字幕。
-   * 根据编码器精度，实际编码媒体持续时间可能不同于流资源清单中记录的持续时间。
-
-      在理想的虚拟时间线和实际播放时间线之间重新同步没有可靠的方法。 用于广告管理和视频分析的流播放的进度跟踪必须使用实际播放时间，因此报告和用户界面行为可能无法精确跟踪媒体和广告内容。
-   * 此平台上TVSDK的所有媒体请求的传入用户代理名称分配了以下字符串模式：
+      在理想的虛擬時間軸和實際的播放時間軸之間，沒有可靠的方法可重新同步。 廣告管理和視訊分析的串流播放進度追蹤必須使用實際播放時間，因此報告和使用者介面行為可能無法準確追蹤媒體和廣告內容。
+   * 來自此平台TVSDK之所有媒體要求的傳入使用者代理程式名稱會指派為下列字串模式：
 
       ```
       "Adobe Primetime/" + originalUserAgent
       ```
 
-      如果您在设置广告插入元数据时设置了所有广告相关调用，则使用Android默认用户代理或自定义用户代理。
+      如果您在設定廣告插入中繼資料時設定Android預設使用者代理或自訂使用者代理，則所有與廣告相關的呼叫都會使用Android預設使用者代理或自訂使用者代理。
 
-## 最佳实践{#section_tvsdk_best_practices}
+## 最佳實務 {#section_tvsdk_best_practices}
 
-以下是TVSDK的推荐做法：
+以下是TVSDK的建議作法：
 
-* 将HLS 3.0版或更高版本用于项目内容。
-* 在主(UI)线程（而非后台线程）上运行大多数TVSDK操作。
-* 对于适用于Android的TVSDK 3.0，默认情况下启用延迟广告解析。
+* 針對程式內容使用HLS 3.0版或更新版本。
+* 在主(UI)執行緒上執行大多數TVSDK操作，而不是在背景執行緒上執行。
+* 若是Android適用的TVSDK 3.0，系統會預設開啟延遲廣告解析功能。
 
-对于没有前置或中置的内容，可使用`AdvertisingMetadata.setPreroll(false)`加快内容加载。
+對於沒有前段或中段的內容，您可以使用 `AdvertisingMetadata.setPreroll(false)` 以加速內容載入。

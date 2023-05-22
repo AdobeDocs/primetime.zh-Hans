@@ -1,39 +1,36 @@
 ---
-description: TVSDK支持解析和插入VOD和实时/线性流的广告。
-title: Primetime广告服务器元数据
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: TVSDK支援解析和插入VOD和即時/線性資料流的廣告。
+title: Primetime廣告伺服器中繼資料
+exl-id: 3723dd2f-292c-4ce5-9670-fda1b1f2b5df
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '427'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#primetime-ad-server-metadata-overview}
 
-# 概述{#primetime-ad-server-metadata-overview}
-
-TVSDK支持解析和插入VOD和实时/线性流的广告。
+TVSDK支援解析和插入VOD和即時/線性資料流的廣告。
 
 >[!NOTE]
 >
->在视频内容中包含广告之前，请提供以下元数据信息：
+>在視訊內容中加入廣告之前，請提供下列中繼資料資訊：
 >
->* `mediaID`，用于标识要播放的特定内容。
->* 您的`zoneID`，用于标识您的公司或网站。
->* 您的广告服务器域，它指定您分配的广告服务器的域。
->* 其他定位参数。
-
+>* A `mediaID`，可識別要播放的特定內容。
+>* 您的 `zoneID`，可識別您的公司或網站。
+>* 您的廣告伺服器網域，這會指定您指派的廣告伺服器網域。
+>* 其他目標定位引數。
 >
 
 
+## 設定Primetime廣告伺服器中繼資料 {#section_86C4A3B2DF124770B9B7FD2511394313}
 
-## 设置Primetime广告服务器元数据{#section_86C4A3B2DF124770B9B7FD2511394313}
+您的應用程式必須向TVSDK提供所需的 `PTAuditudeMetadata` 連線至廣告伺服器的資訊。
 
-您的应用程序必须向TVSDK提供连接到广告服务器所需的`PTAuditudeMetadata`信息。
+若要設定廣告伺服器中繼資料：
 
-设置广告服务器元数据：
-
-1. 创建[PTAuditudeMetadata](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTAuditudeMetadata.html)的实例并设置其属性。
+1. 建立例項 [PTAuditudeMetadata](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTAuditudeMetadata.html) 並設定其屬性。
 
    ```
    PTAuditudeMetadata *adMetadata = [[PTAuditudeMetadata alloc] init];  
@@ -43,7 +40,7 @@ TVSDK支持解析和插入VOD和实时/线性流的广告。
    adMetadata.userAgent = @"INSERT_AGENT_NAME_HERE; 
    ```
 
-1. 使用`PTAdResolvingMetadataKey`将`PTAuditudeMetadata`实例设置为当前`PTMediaPlayerItem`元数据的元数据。
+1. 設定 `PTAuditudeMetadata` 執行個體作為目前的中繼資料 `PTMediaPlayerItem` 中繼資料（使用） `PTAdResolvingMetadataKey`.
 
    ```
    // Metadata is an instance of PTMetadata that is used to create the PTMediaPlayerItem 
@@ -51,7 +48,7 @@ TVSDK支持解析和插入VOD和实时/线性流的广告。
    [adMetadata release];
    ```
 
-   以下是一个示例：
+   範例如下：
 
    ```
    PTMetadata *metadata = [self createMetadata]; 
@@ -71,27 +68,27 @@ TVSDK支持解析和插入VOD和实时/线性流的广告。
    }
    ```
 
-## 启用全事件重播{#section_6016E1DAF03645C8A8388D03C6AB7571}中的广告
+## 啟用完整事件重播中的廣告 {#section_6016E1DAF03645C8A8388D03C6AB7571}
 
-全事件重播(FER)是一个VOD资产，充当实时/DVR资产，因此您的应用程序必须采取步骤以确保正确放置广告。
+完整事件重播(FER)是一種可作為即時/DVR資產的VOD資產，因此您的應用程式必須採取措施以確保廣告正確放置。
 
-对于实时内容，TVSDK使用清单中的元数据/提示确定放广告的位置。 但是，有时实时/线性内容可能与VOD内容相似。 例如，当活动内容完成时，将向活动清单附加一个`EXT-X-ENDLIST`标记。 对于HLS，`EXT-X-ENDLIST`标记表示流是VOD流。 TVSDK无法自动区分此流与普通VOD流，以正确插入广告。
+對於即時內容，TVSDK會使用資訊清單中的中繼資料/提示來決定放置廣告的位置。 不過，有時即時/線性內容可能會類似VOD內容。 例如，當即時內容完成時， `EXT-X-ENDLIST` 標籤會附加至即時資訊清單。 若為HLS，則 `EXT-X-ENDLIST` 標籤表示資料流是VOD資料流。 TVSDK無法自動區分此串流和一般VOD串流，以正確插入廣告。
 
-应用程序必须通过指定`PTAdSignalingMode`来告诉TVSDK内容是实时的还是VOD的。
+您的應用程式必須透過指定 `PTAdSignalingMode`.
 
-对于FER流，Adobe Primetime广告决策服务器不应提供在开始播放之前需要在时间轴上插入的广告中断的列表。 这是VOD内容的典型过程。 相反，通过指定不同的信令模式，TVSDK从FER清单读取所有提示点并转到每个提示点的广告服务器以请求广告中断。 此过程类似于实时/DVR内容。
+對於FER資料流，Adobe Primetime ad decisioning伺服器不應提供在開始播放之前需要插入時間軸上的廣告插播清單。 這是VOD內容的典型程式。 相反地，透過指定不同的訊號模式，TVSDK會從FER資訊清單中讀取所有提示點，並前往每個提示點的廣告伺服器，以請求廣告插播。 此程式類似於即時/DVR內容。
 
-除了与提示点关联的每个请求外，TVSDK还对前放广告发出额外的广告请求。
+除了與提示點關聯的每個請求之外，TVSDK還會針對前段廣告提出額外的廣告請求。
 
-1. 从外部源（如vCMS）获得应使用的信令模式。
-1. 创建与广告相关的元数据。
-1. 如果必须覆盖默认行为，请使用`PTAdMetadata.signalingMode`指定`PTAdSignalingMode`。
+1. 從外部來源（例如vCMS）取得應使用的訊號模式。
+1. 建立廣告相關中繼資料。
+1. 如果必須覆寫預設行為，請指定 `PTAdSignalingMode` 透過使用 `PTAdMetadata.signalingMode`.
 
-   有效值为`PTAdSignalingModeDefault`、`PTAdSignalingModeManifestCues`和`PTAdSignalingModeServerMap`。
+   有效值為 `PTAdSignalingModeDefault`， `PTAdSignalingModeManifestCues`、和 `PTAdSignalingModeServerMap`.
 
-   在调用`prepareToPlay`之前，必须设置广告信令模式。 在TVSDK开始解析广告并将其放置到时间轴上后，将忽略对广告信号模式的更改。 在为资源创建广告元数据时设置模式。
+   呼叫之前，您必須設定廣告訊號模式 `prepareToPlay`. 在TVSDK開始解析廣告並將廣告置於時間軸上後，廣告訊號模式的變更會被忽略。 為資源建立廣告中繼資料時設定模式。
 
-1. 继续播放。
+1. 繼續播放。
 
    ```
       PTMetadata *metadata = [[[PTMetadata alloc] init] autorelease]; 
@@ -111,4 +108,3 @@ TVSDK支持解析和插入VOD和实时/线性流的广告。
    adMetadata.customParameters = customParameters; 
    [metadata setMetadata:adMetadata forKey:PTAdResolvingMetadataKey]; 
    ```
-

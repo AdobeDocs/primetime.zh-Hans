@@ -1,53 +1,52 @@
 ---
-description: 参考实施服务器可以帮助您创建一个使用Adobe Primetime DRM Java SDK的所有功能的全功能许可证服务器。
-title: 许可证服务器
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 參考實作伺服器可協助您建立完整功能的授權伺服器，該伺服器會使用Adobe Primetime DRM Java SDK的所有功能。
+title: 授權伺服器
+exl-id: a928b7ac-9191-4b8c-b038-eb92a09286fa
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '269'
 ht-degree: 0%
 
 ---
 
+# 授權伺服器 {#license-server}
 
-# 许可证服务器{#license-server}
+參考實作伺服器可協助您建立完整功能的授權伺服器，該伺服器會使用Adobe Primetime DRM Java SDK的所有功能。
 
-参考实施服务器可以帮助您创建一个使用Adobe Primetime DRM Java SDK的所有功能的全功能许可证服务器。
+在此實作中，會根據資料庫中的使用者專案來驗證使用者。 此伺服器包含用於發行授權的示範商業邏輯，並提供Flash MediaRights Management伺服器1.0和1.5的相容性支援。
 
-在此实现中，根据数据库中的用户条目对用户进行身份验证。 该服务器包括用于颁发许可证的演示业务逻辑，并为Flash Media Rights Management Server 1.0和1.5提供兼容性支持。
+## 授權伺服器需求 {#license-server-requirements}
 
-## 许可证服务器要求{#license-server-requirements}
+授權伺服器需求：
 
-许可证服务器要求：
+* 安裝Tomcat 6.0或更新版本
+* 安裝資料庫，例如MySQL (可在DVD上取得，位於 [!DNL Third Party\MySQL])
+* 確保您已安裝Java 1.6或更新版本
+* 若要執行範例建置指令碼，請確定您有Ant 1.8或更新版本
 
-* 安装Tomcat 6.0或更高版本
-* 安装数据库，例如MySQL（在DVD上提供，位于[!DNL Third Party\MySQL]中）
-* 确保您已安装Java 1.6或更高版本
-* 要运行示例构建脚本，请确保您有Ant 1.8或更高版本
+安裝Tomcat和MySQL之後，請連絡Adobe取得一組必要的DRM認證。
 
-安装Tomcat和MySQL后，请与Adobe联系以获取所需的DRM凭据集。
-
-## 构建许可证服务器{#build-the-license-server}
+## 建置授權伺服器 {#build-the-license-server}
 
 >[!NOTE]
 >
->仅当您要修改源代码时，才需要构建许可证服务器。 出于评估目的，您只需使用随附的WAR文件。
+>只有在您想要修改原始程式碼時，才需要建立授權伺服器。 為了評估目的，您只需在出貨時使用WAR檔案。
 
-参考实施许可证服务器包括所有许可证服务器源代码(`([DRM SDK DVD]\Reference Implementation\Server\Reference Implementation Server\src/`)以及Ant构建脚本(`[DRM SDK DVD]\Reference Implementation\Server\Reference Implementation Server\refimpl/build-refimpl.xml`)，您可以使用该脚本自定义许可证服务器以满足您的业务需求。
+參考實作授權伺服器包含所有授權伺服器原始碼( `([DRM SDK DVD]\Reference Implementation\Server\Reference Implementation Server\src/`)以及Ant建置指令碼( `[DRM SDK DVD]\Reference Implementation\Server\Reference Implementation Server\refimpl/build-refimpl.xml`)可讓您根據業務需求自訂授權伺服器。
 
-1. 修改Ant构建脚本以指定Primetime DRM SDK、Tomcat、MySQL和Log4J的位置。
+1. 修改Ant建置指令碼，以指定Primetime DRM SDK、Tomcat、MySQL和Log4J的位置。
 
-   在文本编辑器中打开[!DNL build-refimpl.xml]文件并设置以下属性值：
+   開啟 [!DNL build-refimpl.xml] 檔案的文字編輯器中，並設定這些屬性值：
 
    * `sdkdir`
    * `tomcatdir`
    * `mysqldir`
    * `log4jdir`
 
-1. 使用`all`属性在Ant构建脚本所在的目录中运行Ant构建脚本。
+1. 使用執行Ant建置指令碼 `all` 屬性，在Ant建置指令碼所在的目錄中。
 
    ```
    ant -f build-refimpl.xml all
    ```
 
-   Ant构建脚本创建一个[!DNL refimpl-build/wars]目录，其中包含服务器WAR文件。
+   Ant建置指令碼會建立 [!DNL refimpl-build/wars] 包含伺服器WAR檔案的目錄。

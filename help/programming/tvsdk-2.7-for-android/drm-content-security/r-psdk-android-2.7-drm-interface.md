@@ -1,28 +1,27 @@
 ---
-description: Primetime DRM解决方案的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序还包含一个DRMHelper类，可用于使某些DRM操作更易于实现。
-title: Primetime DRM界面概述
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: Primetime DRM解決方案的關鍵使用者端元素是DRM管理員。 Android SDK隨附的範例應用程式也包含DRMHelper類別，可用來讓特定DRM作業更容易實作。
+title: Primetime DRM介面概觀
+exl-id: 37037419-fe3d-4e9e-a35d-e0accfba4e80
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '257'
 ht-degree: 0%
 
 ---
 
+# Primetime DRM介面概觀 {#primetime-drm-interface-overview}
 
-# Primetime DRM接口概述{#primetime-drm-interface-overview}
-
-Primetime DRM解决方案的关键客户端元素是DRM管理器。 Android SDK附带的范例应用程序还包含一个DRMHelper类，可用于使某些DRM操作更易于实现。
+Primetime DRM解決方案的關鍵使用者端元素是DRM管理員。 Android SDK隨附的範例應用程式也包含DRMHelper類別，可用來讓特定DRM作業更容易實作。
 
 <!--<a id="section_4DD54E085AB345FE9BE00865E56B28DB"></a>-->
 
-Primetime DRM提供可扩展、高效的工作流，可在TVSDK应用程序中实施内容保护。 您可以通过为每个数字媒体文件创建许可证来保护和管理视频内容的权利。
+Primetime DRM提供可擴充、有效率的工作流程，以在TVSDK應用程式中實作內容保護。 您可以為每個數位媒體檔案建立授權，藉此保護和管理視訊內容的許可權。
 
-有关详细信息，请参阅TVSDK包中包含的DRM示例播放器代码。
+如需詳細資訊，請參閱TVSDK套件中包含的DRM範例播放器程式碼。
 
-以下是使用DRM时最重要的API元素：
+以下是使用DRM時最重要的API元素：
 
-* 媒体播放器中对实现DRM子系统的DRM管理器对象的引用：
+* 在媒體播放器中對實作DRM子系統的DRM管理員物件的參考：
 
    ```java
    MediaPlayer.getDRMManager();
@@ -30,10 +29,10 @@ Primetime DRM提供可扩展、高效的工作流，可在TVSDK应用程序中�
 
    >[!TIP]
    >
-   >仅当`MediaPlayerEvent.DRM_METADATA`被触发后，此API才会返回有效的`DRMManager`对象。 如果在此事件触发之前调用`getDRMManager()`，它可能返回NULL。
+   >此API將傳回有效的 `DRMManager` 物件僅位於 `MediaPlayerEvent.DRM_METADATA` 觸發。 如果您呼叫 `getDRMManager()` 觸發此事件之前，可能會傳回NULL。
 
-* `DRMHelper`帮助类，在实现DRM工作流时非常有用。
-* `DRMHelper`元数据加载器方法，当DRM元数据位于与媒体分离的URL中时，加载该元数据。
+* 此 `DRMHelper` helper類別，在實作DRM工作流程時很有用。
+* A `DRMHelper` 中繼資料載入器方法，當DRM中繼資料位於與媒體不同的獨立URL中時，就會載入中繼資料。
 
    ```java
    public static void loadDRMMetadata(final DRMManager drmManager,  
@@ -41,7 +40,7 @@ Primetime DRM提供可扩展、高效的工作流，可在TVSDK应用程序中�
       final DRMLoadMetadataListener loadMetadataListener);
    ```
 
-* 一种`DRMHelper`方法，用于检查DRM元数据并确定是否需要身份验证。
+* A `DRMHelper` 檢查DRM中繼資料並確定是否需要驗證的方法。
 
    ```java
    /** 
@@ -55,7 +54,7 @@ Primetime DRM提供可扩展、高效的工作流，可在TVSDK应用程序中�
    public static boolean isAuthNeeded(DRMMetadata drmMetadata);
    ```
 
-* `DRMHelper` 方法。
+* `DRMHelper` 執行驗證的方法。
 
    ```java
    /** 
@@ -80,8 +79,8 @@ Primetime DRM提供可扩展、高效的工作流，可在TVSDK应用程序中�
    final DRMAuthenticationListener authenticationListener);
    ```
 
-* 事件，通知您的应用程序各种DRM活动和状态。
+* 通知應用程式各種DRM活動和狀態的事件。
 
 <!--<a id="section_F58941D68EB94A5EBD1C7454D2A1B17A"></a>-->
 
-有关DRM的详细信息，请参阅[DRM文档](https://helpx.adobe.com/primetime/user-guide.html)。
+如需DRM的詳細資訊，請參閱 [DRM檔案](https://helpx.adobe.com/primetime/user-guide.html).

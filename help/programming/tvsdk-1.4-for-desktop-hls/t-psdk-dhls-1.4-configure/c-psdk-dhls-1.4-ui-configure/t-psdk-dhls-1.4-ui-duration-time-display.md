@@ -1,46 +1,45 @@
 ---
-description: 您可以使用TVSDK检索可在搜索栏上显示的媒体的相关信息。
-title: 显示视频的持续时间、当前时间和剩余时间
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以使用TVSDK來擷取可以顯示在搜尋列上的媒體資訊。
+title: 顯示視訊的持續時間、目前時間和剩餘時間
+exl-id: 490bfa22-6df6-44a3-8e0d-9bb5939ae881
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '292'
 ht-degree: 0%
 
 ---
 
+# 顯示視訊的持續時間、目前時間和剩餘時間{#display-the-duration-current-time-and-remaining-time-of-the-video}
 
-# 显示视频的持续时间、当前时间和剩余时间{#display-the-duration-current-time-and-remaining-time-of-the-video}
+您可以使用TVSDK來擷取可以顯示在搜尋列上的媒體資訊。
 
-您可以使用TVSDK检索可在搜索栏上显示的媒体的相关信息。
+1. 等候播放器處於INITIALIZED狀態。
+1. 使用擷取目前的播放點時間 `MediaPlayer.currentTime` 屬性。
 
-1. 等待播放器处于“已初始化”状态。
-1. 使用`MediaPlayer.currentTime`属性检索当前播放头时间。
-
-   这将返回虚拟时间线上的当前播放头位置（以毫秒为单位）。 时间是相对于可能包含多个替代内容实例（如多个广告或拼接到主流中的广告中断）的已解析流计算的。 对于实时/线性流，返回的时间始终在播放窗口范围内。
+   這會傳回虛擬時間軸上目前的播放點位置（以毫秒為單位）。 此時間是相對於已解析資料流來計算的，該資料流可能包含替代內容的多個例項，例如拼接至主資料流的多個廣告或廣告插播。 對於即時/線性串流，傳回的時間一律在播放視窗範圍內。
 
    ```
    function get currentTime():Number;
    ```
 
-1. 检索流的播放范围并确定持续时间。
-   1. 使用`mediaPlayer.playbackRange`属性获取虚拟时间线时间范围。
+1. 擷取資料流的播放範圍並決定持續時間。
+   1. 使用 `mediaPlayer.playbackRange` 屬性以取得虛擬時間軸時間範圍。
 
       ```
       function get playbackRange():TimeRange;
       ```
 
-   1. 使用`mediacore.utils.TimeRange`分析时间范围。
-   1. 要确定持续时间，请从范围的末尾减去开始。
+   1. 剖析時間範圍，使用 `mediacore.utils.TimeRange`.
+   1. 若要判斷持續時間，請從範圍的結尾減去開始時間。
 
-      这包括插入流（广告）的其他内容的持续时间。
+      這包括插入資料流（廣告）中之其他內容的持續時間。
 
-      对于VOD，范围始终以零开头，且结束值等于在流（广告）中插入的主内容持续时间和附加内容的持续时间之和。
+      對於VOD，範圍一律從零開始，而結束值等於主要內容持續時間與插入串流（廣告）中之其他內容持續時間的總和。
 
-      对于线性/实时资产，该范围表示播放窗口范围，且该范围在播放期间会更改。
+      對於線性/即時資產，範圍表示播放視窗範圍，此範圍在播放期間會變更。
 
-      TVSDK调度`MediaPlayerItemEvent.ITEM_UPDATED`事件以指示媒体项已刷新，其属性（包括播放范围）已更新。
+      TVSDK會傳送 `MediaPlayerItemEvent.ITEM_UPDATED` 表示媒體專案已重新整理及其屬性（包括播放範圍）已更新的事件。
 
-1. 使用Flex SDK中公开的`MediaPlayer`和`HSlider`类上的可用方法设置搜索栏参数。
+1. 使用上的可用方法 `MediaPlayer` 和 `HSlider` 在Flex SDK中公開可用以設定搜尋列引數的類別。
 
-1. 使用计时器定期检索当前时间并更新`SeekBar`。
+1. 使用計時器定期擷取目前時間並更新 `SeekBar`.

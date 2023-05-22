@@ -1,7 +1,6 @@
 ---
-description: 使用可选的pttrackingmode、pttrackingversion和pttrackingposition查询参数可获取要向其发送有关当前视频的广告跟踪信息的URL。 响应因跟踪版本以及视频流是实时的还是点播(VOD)而异。
-title: 用于播放器与清单服务器交互的API
-translation-type: tm+mt
+description: 使用選用的pttrackingmode、pttrackingversion和pttrackingposition查詢引數來取得URL，以將目前視訊的廣告追蹤資訊傳送至此。 回應會因追蹤版本以及視訊串流為即時或隨選(VOD)而異。
+title: 播放器的API可與資訊清單伺服器互動
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '260'
@@ -10,26 +9,26 @@ ht-degree: 0%
 ---
 
 
-# 播放器与清单服务器{#api-for-players-to-interact-with-the-manifest-server}交互的API
+# 播放器的API可與資訊清單伺服器互動 {#api-for-players-to-interact-with-the-manifest-server}
 
-使用可选的`pttrackingmode`、`pttrackingversion`和`pttrackingposition`查询参数可获取要向其发送有关当前视频的广告跟踪信息的URL。 响应因跟踪版本以及视频流是实时的还是点播(VOD)而异。
+使用選填的 `pttrackingmode`， `pttrackingversion`、和 `pttrackingposition` 查詢引數以取得要傳送目前視訊廣告追蹤資訊的URL。 回應會因追蹤版本以及視訊串流為即時或隨選(VOD)而異。
 
-## 查询参数{#query-parameters}
+## 查詢引數 {#query-parameters}
 
 **pttrackingmode**
 
-示例：`pttrackingmode=simple`
-指定“简单”会通知清单服务器您想要跟踪信息。
-请在请求跟踪信息之前在请求中指定获取M3U8的请求。如果未指定，清单服务器将返回#EXT-X-MARKER标记中的跟踪信息。
-或者，如果指定除简单之外的有效值，则调用服务器端跟踪。
+範例： `pttrackingmode=simple`
+指定simple會告訴資訊清單伺服器您要追蹤資訊。
+在您要求追蹤資訊之前，在要求擷取M3U8時指定它。若您未指定，資訊清單伺服器會傳回#EXT-X-MARKER標籤中的追蹤資訊。
+或者，如果您指定簡單以外的有效值，則會叫用伺服器端追蹤。
 
 **pttrackingversion**
 
-示例：`pttrackingversion=v2`
-此参数告知清单服务器要使用哪种格式返回跟踪信息（请参阅[文件格式](/help/primetime-ad-insertion/~old-msapi-topics/ms-list-file-formats/ms-api-file-formats.md)）。
-请在请求跟踪信息之前在请求中指定它以获取M3U8。如果未指定它或指定无效值，则清单服务器将使用v1。
+範例： `pttrackingversion=v2`
+此引數會告訴資訊清單伺服器使用哪種格式來傳回追蹤資訊(請參閱 [檔案格式](/help/primetime-ad-insertion/~old-msapi-topics/ms-list-file-formats/ms-api-file-formats.md))。
+在要求擷取M3U8的請求中指定它，然後再要求追蹤資訊。若未指定它或指定無效值，資訊清單伺服器會使用v1。
 
-**pttrackposition**
+**pttrackingposition**
 
-示例：`pttrackingposition`
-此参数告知清单服务器将视频的跟踪信息作为M3U8文件中的JSON或VMAP对象返回。清单服务器将忽略指定值并发送它为该会话拥有的所有跟踪信息。 如果未传递任何值，则清单服务器返回所请求的M3U8文件。
+範例： `pttrackingposition`
+此引數會告訴資訊清單伺服器傳回視訊的追蹤資訊，作為M3U8檔案中的JSON或VMAP物件。資訊清單伺服器會忽略指定的值，並傳送其對於該工作階段擁有的所有追蹤資訊。 如果未傳遞任何值，資訊清單伺服器會傳回請求的M3U8檔案。

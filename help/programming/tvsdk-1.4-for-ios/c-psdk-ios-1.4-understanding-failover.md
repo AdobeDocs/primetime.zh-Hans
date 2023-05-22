@@ -1,20 +1,19 @@
 ---
-description: 当变量播放列表具有多个位速率相同的演绎版，并且其中一个演绎版停止工作时，将发生故障转移处理。 TVSDK在再现之间切换。
-title: 故障转移
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 當變體播放清單中有多個相同位元速率的轉譯，且其中一個轉譯停止運作時，就會進行容錯移轉處理。 TVSDK會在轉譯之間切換。
+title: 容錯移轉
+exl-id: 8c215e2b-e601-4991-a66f-0e810176a511
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '222'
 ht-degree: 0%
 
 ---
 
+# 容錯移轉{#failover}
 
-# 故障转移{#failover}
+當變體播放清單中有多個相同位元速率的轉譯，且其中一個轉譯停止運作時，就會進行容錯移轉處理。 TVSDK會在轉譯之間切換。
 
-当变量播放列表具有多个位速率相同的演绎版，并且其中一个演绎版停止工作时，将发生故障转移处理。 TVSDK在再现之间切换。
-
-以下示例显示了具有相同比特率的故障转移URL的变体播放列表：
+以下範例顯示具有相同位元速率之容錯移轉URL的變體播放清單：
 
 ```
 #EXTM3U
@@ -25,14 +24,13 @@ https://sj2slu225.corp.adobe.com:8090/_default_/_default_/livestream.m3u8
 https://sj2slu225.corp.adobe.com:8091/_default_/_default_/livestream.m3u8
 ```
 
-当TVSDK加载变体播放列表时，它会创建一个队列，该队列保存相同比特率的内容所有再现的URL。 当URL请求失败时，TVSDK使用故障转移队列中相同比特率的下一个URL。 在任何特定的故障时间，TVSDK循环一次访问所有可用的URL，直到它找到一个正常工作的URL，或直到它尝试了所有可用的URL。 如果TVSDK已尝试使用所有可用的URL，而且这些URL都不起作用，则TVSDK将停止尝试播放内容。
+當TVSDK載入變體播放清單時，它會建立一個佇列，以相同的位元速率儲存內容的所有轉譯的URL。 對URL的請求失敗時，TVSDK會使用容錯移轉佇列中具有相同位元速率的下一個URL。 TVSDK會在任何特定失敗時間，循環瀏覽所有可用的URL，直到找到運作正常的URL或嘗試使用所有可用的URL為止。 如果TVSDK嘗試了所有可用的URL，但所有URL都無法運作，則TVSDK會停止嘗試播放內容。
 
-故障转移仅在M3U8级别发生，这意味着：
+容錯移轉僅在M3U8層級進行，這表示：
 
-* 对于VOD，仅当开始尝试播放时才能进行故障转移，而在开始播放后不能进行故障转移。
-* 对于实时流，故障转移可能发生在流的中间。
+* 對於VOD，容錯移轉只會在開始嘗試播放時發生，而不是在開始播放後發生。
+* 對於即時串流，容錯移轉可能會發生在串流的中間。
 
 >[!TIP]
 >
->TVSDK（而非Apple AV Foundation播放器）提供故障转移处理。
-
+>TVSDK (而非Apple AV Foundation播放器)提供容錯移轉處理功能。

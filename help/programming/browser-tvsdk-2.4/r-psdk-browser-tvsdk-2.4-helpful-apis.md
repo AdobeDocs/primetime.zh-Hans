@@ -1,18 +1,17 @@
 ---
-description: 某些API可以帮助您使用AdobeFlash Player。
-title: 有用的API，用于AdobeFlash Player
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 有些API可以協助您使用AdobeFlash Player。
+title: AdobeFlash Player的實用API
+exl-id: 3a80088b-382e-4624-bbaa-6d7e9f0126e2
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '64'
 ht-degree: 0%
 
 ---
 
+# AdobeFlash Player的實用API{#helpful-apis-for-the-adobe-flash-player}
 
-# AdobeFlash Player{#helpful-apis-for-the-adobe-flash-player}的有用API
-
-某些API可以帮助您使用AdobeFlash Player。
+有些API可以協助您使用AdobeFlash Player。
 
 ## AdobePSDK.MediaResource {#section_8C339FA1386D4B1A926A1459B2619E5E}
 
@@ -20,7 +19,7 @@ ht-degree: 0%
 new MediaResource(url, type, metadata, forceFlash)
 ```
 
-如果支持，可以使用`forceFlash`参数覆盖回放技术确定序列并强制实现使用Flash Player。
+如果支援，您可以使用 `forceFlash` 引數來覆寫播放技術決定順序，並強制實作使用Flash Player。
 
 <!--<a id="section_FEE3205B532446498771F7DD55B5E79F"></a>-->
 
@@ -69,4 +68,3 @@ AdobePSDK.setAuthorizationTokenFilename(authorizationTokenFilename);
 */ 
 AdobePSDK.setAuthorizationTokenType(authorizationTokenType);
 ```
-

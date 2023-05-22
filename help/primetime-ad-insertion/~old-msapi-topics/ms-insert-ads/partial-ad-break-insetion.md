@@ -1,7 +1,6 @@
 ---
-description: “部分广告中断插入”(PABI)功能模仿电视的体验，在这种体验中，如果用户在中间广告时段内加入实时流，则用户将显示中间广告，而不是前置广告或插图。
-title: 部分广告中断插入
-translation-type: tm+mt
+description: 部分廣告插播(PABI)功能模仿電視體驗，如果使用者在中段插播中加入即時資料流，使用者會看到中段廣告，而不是前段廣告或石板。
+title: 部分廣告插播插入
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '314'
@@ -10,27 +9,27 @@ ht-degree: 0%
 ---
 
 
-# 部分广告中断插入{#partial-ad-break-insertion}
+# 部分廣告插播插入 {#partial-ad-break-insertion}
 
-“部分广告中断插入”(PABI)功能模仿电视的体验，在这种体验中，如果用户在中间广告时段内加入实时流，则用户将显示中间广告，而不是前置广告或插图。
+部分廣告插播(PABI)功能模仿電視體驗，如果使用者在中段插播中加入即時資料流，使用者會看到中段廣告，而不是前段廣告或石板。
 
-当广告服务器返回实时流的前滚广告时，清单服务器将在实时点之前插入前滚广告中断，并插入EXT-X-开始标签，其TIMEOFFSET值指向前滚广告中断的开始。 此默认行为确保在实时点上的内容之前播放整个前滚广告片段。 如果用户在实况点附近加入流，则在实况点前向用户显示中间广告中断。
+當廣告伺服器傳回即時資料流的前段廣告時，資訊清單伺服器會在即時點之前插入前段廣告插播，並插入EXT-X-START標籤，其TIMEOFFSET值指向前段廣告插播的開始。 此預設行為可確保整個前段廣告插播會在即時點的內容之前播放。 如果使用者在即時點接近中段廣告插播時加入串流，則會在即時點處在中段廣告插播之前向使用者顯示前段廣告插播。
 
-PABI功能指示清单服务器忽略前滚和中断，并将EXT-X-开始:TIMEOFFSET值设置为中间卷的开头，该中间卷在实时点出现。 这可确保用户无需视图前置广告中断即可看到整个中间广告当前在实时点播放。
-
->[!NOTE]
->
->此功能仅对实时流可用。 默认情况下，清单服务器将前置和中断插入VOD播放列表之上。
+PABI功能會指示資訊清單伺服器忽略前段廣告插播，並將EXT-X-START：TIMEOFFSET值設定為存在於即時點的中段廣告的開頭。 這可確保使用者看到目前在即時點播放的整個中段廣告，而不必檢視前段廣告插播。
 
 >[!NOTE]
 >
->要启用PABI，您需要在引导URL中指定[查询_params](/help/primetime-ad-insertion/~old-msapi-topics/ms-getting-started/ms-api-query-params.md)。
+>此功能僅適用於即時資料流。 根據預設，資訊清單伺服器會將前段廣告插播插入VOD播放清單上方。
 
 >[!NOTE]
 >
->[EXT-X-开始](https://tools.ietf.org/html/rfc8216#section-4.3.5.2)是标准HLS标记，指示播放列表中的首选起始点。
+>若要啟用PABI，您必須指定 [query_params](/help/primetime-ad-insertion/~old-msapi-topics/ms-getting-started/ms-api-query-params.md) 啟動程式URL中的。
+
+>[!NOTE]
+>
+>此 [EXT-X-START](https://tools.ietf.org/html/rfc8216#section-4.3.5.2) 是標準HLS標籤，可指出播放清單中偏好的起點。
 
 ## Recommendations {#section_4CF0733B14504F2A99690310B9F3B130}
 
-* 使用客户端跟踪，因为客户端对触发跟踪信标有更多控制。
-* 如果播放器支持EXT-X-开始，则部分广告分段仅应与服务器端跟踪模式一起使用。
+* 使用使用者端追蹤，因為使用者端對追蹤信標的引發擁有更多控制權。
+* 如果播放器支援EXT-X-START，部分廣告插播應僅用於伺服器端追蹤模式。

@@ -1,28 +1,27 @@
 ---
-title: 实现匿名域注册
-description: 实现匿名域注册
+title: 實作匿名網域註冊
+description: 實作匿名網域註冊
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 304cfe6f-0917-42ef-a49a-e6c4bc9c10d0
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '37'
 ht-degree: 0%
 
 ---
 
+# 實作匿名網域註冊{#implement-anonymous-domain-registration}
 
-# 实现匿名域注册{#implement-anonymous-domain-registration}
-
-1. 创建指定需要域注册的DRM策略。
-1. 将域服务器URL指定为：
+1. 建立DRM原則，指定需要登入網域。
+1. 將網域伺服器URL指定為：
 
    ```
    https://[host:port]/flashaccess/domainserver/domainname/
    ```
 
-1. 强制要求匿名身份验证。
+1. 將匿名驗證設為必要。
 
-   在[!DNL .properties]文件中，设置：
+   在您的 [!DNL .properties] 檔案，設定：
 
    ```
    policy.domain.anonymous=true 

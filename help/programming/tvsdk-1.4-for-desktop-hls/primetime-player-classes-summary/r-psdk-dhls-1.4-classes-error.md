@@ -1,23 +1,21 @@
 ---
-description: 这些类在TVSDK被滥用时提供信息。
-title: 错误类
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 這些類別會在TVSDK遭濫用時提供資訊。
+title: 錯誤類別
+exl-id: 7194d967-45d9-4654-8833-99b3256574c8
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '93'
 ht-degree: 0%
 
 ---
 
+# 錯誤類別 {#error-classes}
 
-# 错误类{#error-classes}
+這些類別會在TVSDK遭濫用時提供資訊。
 
-这些类在TVSDK被滥用时提供信息。
+封裝： [com.adobe.mediacore.errors](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/errors/package-detail.html)
 
-包：[com.adobe.mediacore.errors](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/errors/package-detail.html)
-
-| 名称 | 说明 |
+| 名稱 | 說明 |
 |---|---|
-| [IllegalStateException](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/errors/IllegalStateException.html) | 描述API被滥用时TVSDK类引发的错误的类。 |
-| [MediaError](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/errors/MediaError.html) | 课。 提供有关媒体错误的通知代码和其他元数据。 |
-
+| [IllegalState例外狀況](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/errors/IllegalStateException.html) | 說明當誤用API時，TVSDK類別所擲回錯誤的類別。 |
+| [媒體錯誤](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/errors/MediaError.html) | 類別。 提供有關媒體錯誤的通知代碼和其他中繼資料。 |

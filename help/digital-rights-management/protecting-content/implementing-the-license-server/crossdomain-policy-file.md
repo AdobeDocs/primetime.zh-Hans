@@ -1,8 +1,7 @@
 ---
-title: 跨域DRM策略文件
-description: 跨域DRM策略文件
+title: 跨網域DRM原則檔
+description: 跨網域DRM原則檔
 copied-description: true
-translation-type: tm+mt
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '178'
@@ -11,14 +10,14 @@ ht-degree: 0%
 ---
 
 
-# 跨域DRM策略文件{#crossdomain-drm-policy-file}
+# 跨網域DRM原則檔 {#crossdomain-drm-policy-file}
 
-如果许可证服务器托管在与视频播放SWF不同的域上，则需要跨域DRM策略文件([!DNL crossdomain.xml])，以使SWF能够从许可证服务器请求许可证。 跨域DRM策略文件由XML文件表示，该文件使服务器能够指示其数据和文档对从其他域提供的SWF文件可用。 允许从许可证服务器的跨域DRM策略文件中指定的域提供的任何SWF文件访问该许可证服务器中的数据或资源。
+如果授權伺服器託管在與視訊播放SWF不同的網域上，則為跨網域DRM原則檔( [!DNL crossdomain.xml])才能讓SWF向授權伺服器要求授權。 跨網域DRM原則檔案以XML檔案表示，可讓伺服器指出其資料和檔案可用於SWF從其他網域提供的檔案。 從授權伺服器的跨網域DRM原則檔中指定的網域提供的任何SWF檔，都允許從該授權伺服器存取資料或資產。
 
-Adobe建议开发人员在部署跨域策略文件时遵循最佳做法，方法是仅允许受信任的域访问许可证服务器并限制对Web服务器上许可证子目录的访问。
+Adobe建議開發人員在部署跨網域原則檔案時，僅允許受信任的網域存取授權伺服器，並限制對Web伺服器上授權子目錄的存取，以遵循最佳實務。
 
-有关跨域DRM策略文件的详细信息，请参阅以下位置：
+如需有關跨領域DRM原則檔案的詳細資訊，請參閱下列位置：
 
-* 网站控制（DRM策略文件）
-* 跨域DRM策略文件规范：[https://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html](https://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html)
+* 網站控制（DRM原則檔）
+* 跨網域DRM原則檔案規格： [https://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html](https://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html)
 

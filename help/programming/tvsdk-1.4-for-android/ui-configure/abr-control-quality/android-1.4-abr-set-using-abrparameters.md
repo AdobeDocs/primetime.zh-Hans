@@ -1,33 +1,32 @@
 ---
-description: 您只能使用ABRControlParameters设置ABR控制值，但可以随时构建一个新值。
-title: 使用ABRControlParameters配置自适应比特率
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您只能使用ABRControlParameters設定ABR控制值，但您可以隨時建構新的控制值。
+title: 使用ABRControlParameters設定最適化位元速率
+exl-id: 787e962c-371f-4ac8-ae13-8b38a230593f
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '115'
 ht-degree: 0%
 
 ---
 
+# 使用ABRControlParameters設定最適化位元速率{#configure-adaptive-bit-rates-using-abrcontrolparameters}
 
-# 使用ABRControlParameters{#configure-adaptive-bit-rates-using-abrcontrolparameters}配置自适应比特率
+您只能使用ABRControlParameters設定ABR控制值，但您可以隨時建構新的控制值。
 
-您只能使用ABRControlParameters设置ABR控制值，但可以随时构建一个新值。
+下列條件適用於 `ABRControlParameters`：
 
-以下条件适用于`ABRControlParameters`:
+* 您必須在建構時提供所有引數的值。
+* 您無法在建構時間之後變更個別值。
+* 如果您指定的引數超出允許的範圍，則 `ArgumentError` 擲回。
 
-* 必须在构造时为所有参数提供值。
-* 在构建时间后不能更改单个值。
-* 如果您指定的参数超出允许的范围，将引发`ArgumentError`。
-
-1. 确定初始、最小和最大比特率。
-1. 确定ABR策略：
+1. 決定初始、最小和最大位元速率。
+1. 確定ABR原則：
 
    * `ABR_CONSERVATIVE`
    * `ABR_MODERATE`
    * `ABR_AGGRESSIVE`
 
-1. 在`ABRControlParameters`构造函数中设置ABR参数值，并将它们分配给媒体播放器。
+1. 將ABR引數值設定在 `ABRControlParameters` 建構函式並將它們指派給媒體播放器。
 
    ```java
    public ABRControlParameters(int initialBitRate, 
@@ -39,4 +38,3 @@ ht-degree: 0%
      int maxTrickPlayBandwidthUsage, 
      int maxPlayoutRate);
    ```
-

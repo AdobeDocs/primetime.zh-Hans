@@ -1,61 +1,58 @@
 ---
-title: Adobe Primetime authentication 2.63发行说明
-description: Adobe Primetime authentication 2.63发行说明
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: Adobe Primetime authentication 2.63發行說明
+description: Adobe Primetime authentication 2.63發行說明
+exl-id: 40987328-6d41-4948-aa4a-bab31f98a18a
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '296'
 ht-degree: 0%
 
 ---
 
-
-# Adobe Primetime Authentication 2.63发行说明 {#pt-authn-263-rn}
+# Adobe Primetime Authentication 2.63發行說明 {#pt-authn-263-rn}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-本页介绍此版本的新增功能、更改和已知问题：
+本頁說明此版本的新功能、變更和已知問題：
 
-## 服务器端和Web客户端 {#server-side-web-clients-263}
+## 伺服器端和Web使用者端 {#server-side-web-clients-263}
 
-* [内部版本号](#build-number)
-* [新增功能](#new-features)
+* [建置編號](#build-number)
+* [新功能](#new-features)
 
-### 内部版本号 {#build-number-263}
+### 建置編號 {#build-number-263}
 
-Adobe Primetime身份验证：adobe-pass-**2.63**
-发行日期： **09/20/2022 - 09/22/2022**
+Adobe Primetime驗證： adobe-pass-**2.63**
+發行日期： **09/20/2022 - 09/22/2022**
 
-### 新增功能 {#new-features-263}
+### 新功能 {#new-features-263}
 
-#### 改进平台识别机制 {#pf-identification-mech}
+#### 改善平台識別機制 {#pf-identification-mech}
 
-* 从此版本开始，我们改进了用于识别设备的机制，并且不再依赖于客户端实施。 这样，在平台级别应用业务规则时，将提供更准确的粒度，并更好地了解ESM报表中的流量值。
+* 自此發行版本開始，我們改進了用於識別裝置的機制，不再依賴使用者端實施。 這樣可在平台層級套用商業規則時，提供更準確的詳細程度，並可更清楚瞭解ESM報表中的流量值。
 
-* 随后将发布新的ESM版本，新的和经过改进的报告将公布平台相关领域。
+* 隨後將推出新的ESM版本，其中包含公開平台相關欄位的全新及改進報告。
 
-* 有关计划更改的更多详细信息，请联系您的TAM。
+* 如需計畫變更的詳細資訊，請洽詢您的TAM。
 
-#### MVPD自退化 {#mvpd-self-degradation}
+#### MVPD自我降級 {#mvpd-self-degradation}
 
-此功能为MVPD提供了在相应端点的负载过高时，临时绕过其自身的身份验证和授权端点的功能，以满足高流量情况。
-
-
-#### 在授权调用的标头中添加代理ID {#add-proxied-id}
-
-此功能可在授权调用的标头中添加代理的同步MVPD的ID。 这样，Synacor就可以为每个代理(例如， 按代理MVPD路由到不同域)。
+此功能可讓MVPD在流量高的狀況下，當個別端點的負載變得過高時，暫時略過自己的驗證和授權端點。
 
 
-#### TVE功能板 {#tve-dashboard}
+#### 在授權呼叫的標頭中新增代理的ID {#add-proxied-id}
 
-在此版本中，我们修复了配置报表中未正确计算MVPD级别设置的authN或authZ TTL的问题。
+此功能會在授權呼叫的標頭中新增Synacor代理MVPD的ID。 如此一來，Synacor就能為每個代理的個人(例如 路由至不同的網域（根據代理的MVPD）。
+
+
+#### TVE儀表板 {#tve-dashboard}
+
+在這個版本中，我們修正了設定報表中未正確計算在MVPD層級設定的authN或authZ TTL的問題。
 
 
 #### JavaScript SDK 4.6.0 {#js-sdk}
 
-* 删除了 `eval` 函数，从而使SDK符合内容安全策略。
-* 修复了当浏览器的本地存储被合作伙伴应用程序明确清除时，身份验证流程无法成功完成的问题。
-
-
-
+* 已移除的 `eval` 函式，藉此讓SDK符合內容安全性原則。
+* 修正合作夥伴應用程式明確清除瀏覽器的本機儲存時，驗證流程無法成功完成的問題。

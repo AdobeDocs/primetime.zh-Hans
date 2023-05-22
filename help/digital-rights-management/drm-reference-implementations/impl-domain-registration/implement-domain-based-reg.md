@@ -1,30 +1,29 @@
 ---
-title: 实现基于身份的域注册
-description: 实现基于身份的域注册
+title: 實作以身分為基礎的網域註冊
+description: 實作以身分為基礎的網域註冊
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: e2f826a8-eea5-4d5f-ac4d-401d7a6c5373
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '47'
 ht-degree: 0%
 
 ---
 
+# 實作以身分為基礎的網域註冊{#implement-identity-based-domain-registration}
 
-# 实现基于身份的域注册{#implement-identity-based-domain-registration}
+1. 建立具有強制網域註冊的DRM原則。
+1. 指定網域伺服器URL的伺服器主機和連線埠。
 
-1. 创建具有强制域注册的DRM策略。
-1. 指定域服务器URL的服务器主机和端口。
-
-   在[!DNL .properties]文件中，设置：
+   在您的 [!DNL .properties] 檔案，設定：
 
    ```
    policy.domain.url=https://[server:port] 
    ```
 
-1. 强制使用用户名和密码进行身份验证。
+1. 強制使用使用者名稱和密碼進行驗證。
 
-   在[!DNL .properties]文件中，设置：
+   在您的 [!DNL .properties] 檔案，設定：
 
    ```
    policy.domain.anonymous=false 

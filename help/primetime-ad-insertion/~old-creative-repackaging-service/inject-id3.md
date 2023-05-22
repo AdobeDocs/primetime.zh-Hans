@@ -1,7 +1,6 @@
 ---
-description: CRS可以将ID3定时元数据注入HLS格式广告创意，以便于客户端广告跟踪。
-title: 使用CRS插入ID3定时元数据标记
-translation-type: tm+mt
+description: CRS可以將ID3定時中繼資料插入HLS格式廣告創意，以促進使用者端廣告追蹤。
+title: 使用CRS插入ID3計時中繼資料標籤
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '141'
@@ -10,20 +9,20 @@ ht-degree: 0%
 ---
 
 
-# 使用CRS插入ID3定时元数据标记{#using-crs-to-inject-id-timed-metadata-tags}
+# 使用CRS插入ID3計時中繼資料標籤 {#using-crs-to-inject-id-timed-metadata-tags}
 
-CRS可以将ID3定时元数据注入HLS格式广告创意，以便于客户端广告跟踪。
+CRS可以將ID3定時中繼資料插入HLS格式廣告創意，以促進使用者端廣告追蹤。
 
-客户端播放器读取ID3元数据以启用帧精确广告跟踪。
-
->[!NOTE]
->
->ID3定时元数据注入仅在iOS上的Safari上有效。
-
-## ID3注入{#workflow-for-crs-for-id3-injection}的CRS工作流
-
-ID3注入的工作流与[ JIT重新打包的详细工作流相同。](../~old-creative-repackaging-service/jit-repackage.md) 如果清单服务器收 `ptplayer=ios-mobileweb` 到该参数，它会告知CRS在将ID3数据包上载到CDN服务器之前将其注入转码广告创意。
+使用者端播放器會讀取ID3中繼資料，以啟用精確影格的廣告追蹤。
 
 >[!NOTE]
 >
->在多CDN设置中，清单服务器使用引导URL中的`ptcdn`参数来标识CDN服务器以上传广告创意。
+>ID3定時中繼資料插入僅適用於iOS上的Safari。
+
+## ID3注入的CRS工作流程 {#workflow-for-crs-for-id3-injection}
+
+ID3插入的工作流程與中的相同 [JIT重新封裝的詳細工作流程。](../~old-creative-repackaging-service/jit-repackage.md) 如果資訊清單伺服器收到 `ptplayer=ios-mobileweb` 引數，它會告知CRS先將ID3封包插入CRS轉碼廣告創意，然後再上傳至CDN伺服器。
+
+>[!NOTE]
+>
+>在多CDN設定中，資訊清單伺服器會使用 `ptcdn` 啟動程式URL中的引數，用於識別要上傳廣告創意的CDN伺服器。

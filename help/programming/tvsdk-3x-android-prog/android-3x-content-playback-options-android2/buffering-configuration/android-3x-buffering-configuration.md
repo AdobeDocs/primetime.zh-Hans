@@ -1,75 +1,74 @@
 ---
-description: 为了提供更流畅的查看体验，TVSDK有时会缓冲视频流。 您可以配置播放器缓冲的方式。
-title: 缓冲
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 為了提供更流暢的檢視體驗，TVSDK有時會緩衝視訊資料流。 您可以設定播放器緩衝的方式。
+title: 緩衝
+exl-id: 3b706420-878d-487a-8db7-cff2a12c2660
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '500'
 ht-degree: 0%
 
 ---
 
+# 概觀 {#buffering-overview}
 
-# 概述{#buffering-overview}
+為了提供更流暢的檢視體驗，TVSDK有時會緩衝視訊資料流。 您可以設定播放器緩衝的方式。
 
-为了提供更流畅的查看体验，TVSDK有时会缓冲视频流。 您可以配置播放器缓冲的方式。
+TVSDK定義播放緩衝長度至少30秒，以及媒體開始播放前的初始緩衝時間至少2秒。 應用程式呼叫之後 `play`但是在播放開始之前，TVSDK會緩衝媒體至初始時間，以便在媒體實際開始播放時提供順暢的開始。
 
-TVSDK定义至少30秒的播放缓冲长度和至少2秒的媒体开始播放前的初始缓冲时间。 在应用程序调用`play`后，但在播放开始之前，TVSDK会将媒体缓冲到初始时间，以在实际播放开始时提供平滑开始。
+您可以定義新的緩衝原則來變更緩衝時間，也可以使用立即開啟來變更初始緩衝發生的時間。
 
-您可以通过定义新的缓冲策略来更改缓冲时间，也可以通过使用“即时开”来更改初始缓冲的时间。
+## 緩衝時間原則 {#section_9B3407D52F1E4CB48E7A4836EBDA8F70}
 
-## 缓冲时间策略{#section_9B3407D52F1E4CB48E7A4836EBDA8F70}
+根據您的環境（包括裝置、作業系統或網路條件），您可以為播放器設定不同的緩衝原則，例如變更初始緩衝和持續播放緩衝的最短持續時間。
 
-根据您的环境（包括设备、操作系统或网络条件），可以为播放器设置不同的缓冲策略，如更改初始缓冲和当前播放缓冲的最短持续时间。
+在您呼叫之後 `play`，媒體播放器會開始緩衝視訊。 當媒體播放器已緩衝由初始緩衝時間指定的視訊量時，就會開始播放。 此程式可改善啟動時間，因為播放器不會等待整個播放緩衝區填滿後再開始播放。 相反地，在緩衝了數秒的初始時間後，開始播放。
 
-调用`play`后，媒体播放器开始缓冲视频。 当媒体播放器缓冲了初始缓冲时间指定的视频量时，播放开始。 此过程会缩短开始启动时间，因为播放器不会等待整个播放缓冲区填充，然后开始播放。 相反，在缓冲几秒后，播放开始。
-
-在渲染视频时，TVSDK继续缓冲新片段，直到它缓冲了播放缓冲时间指定的量。 如果当前缓冲区长度低于播放缓冲区时间，播放器将下载其他片段。 当当前缓冲区长度超过播放缓冲时间几秒后，TVSDK将停止下载片段。
-
->[!TIP]
->
->如果初始缓冲区值较高，则可能会在开始前为用户提供较长的初始缓冲时间。 这可能会让播放更加流畅；但是，如果网络条件较差，初始播放可能会延迟。
-
-如果通过调用`prepareBuffer`启用即时，则初始缓冲将从该刻开始，而不是等待`play`。
-
-## 设置缓冲时间{#section_05CDD927869D47EBA1D2069B1416B2E4}
-
-`MediaPlayer`提供了设置和获取初始缓冲时间和回放缓冲时间的方法。
+在轉譯視訊時，TVSDK會繼續緩衝新片段，直到緩衝了播放緩衝時間所指定的量為止。 如果目前的緩衝長度低於播放緩衝時間，播放器將會下載其他片段。 一旦目前的緩衝區長度超過播放緩衝區時間幾秒鐘，TVSDK就會停止下載片段。
 
 >[!TIP]
 >
->如果在开始播放之前未设置缓冲区控制参数，则媒体播放器默认初始缓冲区为2秒，当前播放缓冲区时间为30秒。
+>如果初始緩衝值很高，可能會在開始前給使用者一段較長的初始緩衝時間。 這樣可以提供更長時間的流暢播放；但是，如果網路狀況不佳，初始播放可能會延遲。
 
-1. 设置`BufferControlParameters`对象，该对象封装初始缓冲时间和回放缓冲时间控制参数。
+如果您透過呼叫啟用立即開啟 `prepareBuffer`，初始緩衝會在此時開始，而不是等候 `play`.
 
-   此类提供以下工厂方法：
+## 設定緩衝時間 {#section_05CDD927869D47EBA1D2069B1416B2E4}
 
-   * 要将初始缓冲时间设置为等于播放缓冲时间：
+此 `MediaPlayer` 提供設定和取得初始緩衝時間和播放緩衝時間的方法。
+
+>[!TIP]
+>
+>如果您在開始播放之前未設定緩衝控制引數，媒體播放器預設為初始緩衝時間為2秒，持續播放緩衝時間則為30秒。
+
+1. 設定 `BufferControlParameters` 物件，可封裝初始緩衝時間和播放緩衝時間控制引數。
+
+   此類別提供下列Factory方法：
+
+   * 若要將初始緩衝時間設定為等於播放緩衝時間：
 
       ```
       public static BufferControlParameters createSimple(long bufferTime)
       ```
 
-   * 设置初始和播放缓冲时间：
+   * 若要設定初始和播放緩衝時間：
 
       ```
       public static BufferControlParameters createDual( 
         long initialBuffer,  
         long bufferTime)
       ```
-   如果参数无效，则这些方法将引发错误代码为`PSDKErrorCode.INVALID_ARGUMENT`的`MediaPlayerException`，例如当满足以下条件时：
+   如果引數無效，這些方法會擲回 `MediaPlayerException` 含錯誤代碼 `PSDKErrorCode.INVALID_ARGUMENT`，例如當符合下列條件時：
 
-   * 初始缓冲时间小于零。
-   * 初始缓冲时间大于缓冲时间。
+   * 初始緩衝時間小於零。
+   * 初始緩衝時間大於緩衝時間。
 
 
-1. 要设置缓冲区参数值，请使用以下`MediaPlayer`方法：
+1. 若要設定緩衝區引數值，請使用這個 `MediaPlayer` 方法：
 
    ```java
    void setBufferControlParameters(BufferControlParameters params)
    ```
 
-1. 要获取当前缓冲区参数值，请使用以下`MediaPlayer`方法：
+1. 若要取得目前的緩衝區引數值，請使用這個 `MediaPlayer` 方法：
 
    ```java
       BufferControlParameters getBufferControlParameters()  
@@ -77,7 +76,7 @@ TVSDK定义至少30秒的播放缓冲长度和至少2秒的媒体开始播放前
 
 <!--<a id="example_DE0580B3AD404635825D3301C1F096B6"></a>-->
 
-例如，要将初始缓冲区设置为5秒，将播放缓冲区时间设置为30秒：
+例如，若要將初始緩衝設定為5秒，播放緩衝時間設定為30秒：
 
 ```java
 mediaPlayer.setBufferControlParameters(BufferControlParameters.createDual(5000, 30000));

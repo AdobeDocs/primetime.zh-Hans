@@ -1,49 +1,47 @@
 ---
-description: 可将HTML叠加与StageVideo一起使用，以在Flash显示列表视频平面中显示UI元素。 此平面位于StageVideo平面之上，因此StageVideo始终显示在任何Flash显示列表元素之后。
-title: StageVideo和HTML叠加
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以搭配StageVideo使用HTML覆蓋圖，在Flash顯示清單視訊平面中顯示UI元素。 此平面位於StageVideo平面上方，因此StageVideo一律會顯示在任何Flash顯示清單元素後面。
+title: StageVideo和HTML覆蓋圖
+exl-id: 6beda4c8-0981-4a38-bd5e-5714b9ec7efa
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '260'
 ht-degree: 0%
 
 ---
 
+# StageVideo和HTML覆蓋圖{#stagevideo-and-html-overlays}
 
-# StageVideo和HTML叠加{#stagevideo-and-html-overlays}
+您可以搭配StageVideo使用HTML覆蓋圖，在Flash顯示清單視訊平面中顯示UI元素。 此平面位於StageVideo平面上方，因此StageVideo一律會顯示在任何Flash顯示清單元素後面。
 
-可将HTML叠加与StageVideo一起使用，以在Flash显示列表视频平面中显示UI元素。 此平面位于StageVideo平面之上，因此StageVideo始终显示在任何Flash显示列表元素之后。
-
-HTML叠加是UI元素，可在Flash显示平面中显示在由`StageVideo`在其自身平面上呈现的视频上。 在Flash 15之前，当硬件加速不可用时，您无法使用HTML叠加。 从Flash 15开始，当`StageVideo`回退到软件渲染时，HTML叠加将显示。
+HTML覆蓋圖是UI元素，您可以在轉譯的視訊的Flash顯示平面中顯示 `StageVideo` 在它自己的平面上。 在Flash15之前，如果硬體加速不可用，則無法使用HTML覆蓋。 從Flash15開始，HTML覆蓋圖會在下列情況下顯示： `StageVideo` 退回至軟體轉譯。
 
 >[!IMPORTANT]
 >
->使用HTML叠加时，性能可能会大大或小程度地降低，具体取决于系统的功能。
+>當您使用HTML覆蓋圖時，效能可能會或多或少地降低，這取決於您的系統功能。
 
-请考虑以下信息：
+請考量下列資訊：
 
-* 在Flash Player 15中：
+* 在Flash Player15中：
 
-   * 无论硬件加速是否可用，您都可以使用HTML叠加。
-   * 要使用HTML叠加，请将`wmode`设置为`opaque`。
+   * 無論硬體加速是否可用，您都可以使用HTML覆蓋圖。
+   * 若要使用HTML覆蓋圖，請設定 `wmode` 至 `opaque`.
 
-* 在Flash Player 14中：
+* 在Flash Player14中：
 
-   * 当硬件加速可用时，`StageVideo`位于Flash显示列表下，因此您可以使用HTML叠加。
-   * 当硬件加速不可用时，视频将呈现在浏览器中所有其他元素的上方，这会阻止使用HTML叠加。
+   * 當硬體加速可用時， `StageVideo` 位在Flash顯示清單下方，因此您可以使用HTML覆蓋圖。
+   * 無法使用硬體加速時，視訊會呈現至瀏覽器中所有其他元素上方，以防止使用HTML覆蓋圖。
 
-以下是将HTML叠加与`StageVideo`一起使用的最低浏览器要求：
+以下為搭配使用HTML覆蓋圖的最低瀏覽器需求 `StageVideo`：
 
-* Firefox版本4及更高版本
-* Safari版本4及更高版本
-* Internet Explorer:
+* Firefox版本4和更新版本
+* Safari版本4和更新版本
+* Internet Explorer：
 
-   * Windows 7及更高版本上的9+版
+   * Windows 7及更新版本上的9+
    * Windows XP上的10+版
 
-* Chrome 26及更高版本
+* Chrome 26版和更新版本
 
    >[!IMPORTANT]
    >
-   >Windows XP和Windows Vista上不支持Chrome Pepper。
-
+   >不支援Windows XP和Windows Vista上的Chrome Pepper。

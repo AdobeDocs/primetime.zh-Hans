@@ -1,63 +1,63 @@
 ---
-title: Roku SSO概述
-description: 关于Roku SSO
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: Roku SSO概觀
+description: 關於Roku SSO
+exl-id: 77b154bc-c09f-49d4-b1af-cc33bc6dd22b
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
 source-wordcount: '507'
 ht-degree: 0%
 
 ---
 
-
-# Roku SSO概述 {#overview}
+# Roku SSO概觀 {#overview}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要获得Adobe的当前许可证。 不允许未经授权使用。
+>此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
 
-## 简介 {#roku-sso-intro}
+## 簡介 {#roku-sso-intro}
 
-本文档介绍在Roku设备上利用单点登录功能所需的信息。 Adobe Primetime身份验证与Roku协作，以改善登录用户体验，并为电视订阅者提供跨TV Everywhere应用程序的单点登录。
+本檔案說明在Roku裝置上利用單一登入功能所需的資訊。 Adobe Primetime Authentication與Roku共同作業，改善登入使用者體驗，並促進電視訂閱者在TV Everywhere應用程式上的單一登入。
 
-此解决方案基于Adobe Primetime身份验证的无客户端REST API，因此大多数程序员无需更新其应用程序即可从单点登录中受益。
+此解決方案是以Adobe Primetime驗證的Clienless REST API為基礎，因此大多數程式設計師不需要更新其應用程式即可從單一登入中獲益。
 
-## 启用Roku SSO {#enable-roku-sso}
+## 啟用Roku SSO {#enable-roku-sso}
 
-默认情况下，Roku SSO处于启用状态，除非程序员或MVPD请求禁用SSO。
+Roku SSO預設為啟用，除非程式設計師或MVPD要求停用SSO。
 
-每个程序员都可以在Roku平台上启用/禁用单点登录(SSO)，以进行特定集成。
+每個程式設計師都可以在Roku平台上針對特定整合啟用/停用SSO。
 
-### 程序员应该如何使Roku SSO工作 {#make-roku-sso-work}
+### 程式設計師應該如何做才能讓Roku SSO運作 {#make-roku-sso-work}
 
-对于在客户端设备上实施REST API的程序员应用程序，Roku SSO将可以正常工作，而无需进行任何更改。 Roku OS将在任何请求中向Adobe Primetime身份验证端点添加两个HTTP标头。
+對於在使用者端裝置上實作REST API的程式設計師應用程式，Roku SSO將無任何變更即可運作。 Roku OS會對任何傳送至Adobe Primetime驗證端點的請求新增兩個HTTP標頭。
 
-对于为REST api实施服务器到服务器解决方案的程序员应用程序，程序员应与Roku团队联系，并请求进行配置，以在所有api流中将这两个标头发送到其域。
+若是程式設計師的應用程式實作適用於REST api的伺服器對伺服器解決方案，程式設計師應聯絡Roku團隊並要求設定以將這兩個標頭傳送至所有api流程上的網域。
 
-Roku提供的订阅者ID，将用来代替应用程序传递的任何设备ID，以确保跨应用程序（和跨设备）SSO。
+使用Roku提供的訂閱者ID，而非應用程式傳遞的任何裝置ID，以確保跨應用程式（和跨裝置） SSO。
 
-有关所需标头格式的具体详细信息，请联系您的Adobe代表。
+如需所需標題格式的特定詳細資訊，請聯絡您的Adobe代表。
 
-### 可能的问题 {#possible-issues}
+### 可能的問題 {#possible-issues}
 
-程序员应检查其当前基于Adobe无客户端REST API的实施是否不会妨碍Roku的平台SSO。 请参见下面的问题列表，以及应如何解决这些问题。
+程式設計師應確認其目前根據Adobe的無客戶端REST API進行的實施不會妨礙Roku的平台 — SSO。 請參閱以下的可能問題清單以及應如何解決這些問題。
 
-|问题 |可能的原因 |可能的解决方案 | |-|-|-| |未将Roku SSO标头发送到Adobe|对Adobe Primetime身份验证域调用使用HTTP而不是HTTPS|使用HTTPS| |未显示/未更新SSO令牌的MVPD徽标|UI依赖于本地存储|应用程序应在检查身份验证后更新UI(和本地存储（如果需要）)| |在无AuthZ时触发注销|应用程序设计|应更新应用程序，以免在后台执行注销|
+|問題 |可能的原因 |可能的解決方案 | |-|-|-| |沒有傳送至Adobe的Roku SSO標頭|對Adobe Primetime驗證網域呼叫使用HTTP而非HTTPS|使用HTTPS| |SSO權杖未顯示/未更新MVPD標誌|UI依賴本機儲存|應用程式應在檢查驗證後更新UI （和本機儲存，如有需要）| |無AuthZ時觸發的登出|應用程式設計應更新為永不於背景執行登出|
 
-## 常见问题解答 {#faq}
+## 常見問題集 {#faq}
 
-* **单点登录将如何工作？**
+* **SSO如何運作？**
 
-   SSO将在与同一Roku用户关联的所有Roku设备上跨所有由Adobe Primetime身份验证提供支持的程序员应用程序工作。
-并非所有MVPD都允许使用Roku SSO。
+   SSO將在與同一Roku使用者相關聯的所有Roku裝置上，跨由Adobe Primetime驗證提供支援的所有程式設計人員應用程式運作。
+並非所有MVPD都允許Roku SSO。
 
-* **验证TTL是否有任何更改？**
+* **驗證TTL是否有任何變更？**
 
-   第一个有效的身份验证令牌将用于执行SSO，在这种情况下，所有将通过SSO进行身份验证的其他应用程序将使用相同的TTL，直到其过期。 因此，当从一个应用程序导航到另一个应用程序时，第二个应用程序将共享经验证的第一个应用程序的TTL。
+   第一個有效的驗證Token將用於執行SSO，在此情況下，所有其他將透過SSO驗證的應用程式將使用相同的TTL，直到它過期為止。 因此，從一個應用程式導覽至另一個應用程式時，第二個應用程式會共用第一個驗證之應用程式的TTL。
 
-* **其他Adobe功能是否可以像以前一样工作？**
+* **其他Adobe功能會如以前般運作嗎？**
 
-   所有Primetime身份验证功能将像以前一样正常工作。
+   所有Primetime驗證功能都將像之前一樣運作。
 
-* **在Roku平台上，是否有程序员选择加入/选择退出流程可从单点登录(SSO)中受益？**
+* **Roku平台上的SSO是否會讓程式設計師選擇加入/選擇退出程式受益？**
 
-   这将是AdobeTVE功能板中的配置更改。 每个程序员都可以在Roku平台上启用/禁用单点登录(SSO)，以进行特定集成。
+   這將是AdobeTVE儀表板中的設定變更。 每個程式設計師都可以在Roku平台上針對特定整合啟用/停用SSO。

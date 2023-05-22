@@ -1,7 +1,6 @@
 ---
-description: 允许列表是可信实体的列表。
-title: 维护可信内容打包者的允许列表
-translation-type: tm+mt
+description: 允許清單是受信任實體的清單。
+title: 維護受信任內容封裝者的允許清單
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '134'
@@ -10,10 +9,10 @@ ht-degree: 0%
 ---
 
 
-# 维护受信任内容包装程序的允许列表{#maintain-a-allowlist-of-trusted-content-packagers}
+# 維護受信任內容封裝者的允許清單 {#maintain-a-allowlist-of-trusted-content-packagers}
 
-允许列表是可信实体的列表。
+允許清單是受信任實體的清單。
 
-对于内容打包者，实体是内容所有者信任的组织，可以打包（或加密）视频文件并创建DRM保护的内容。 部署Adobe Primetime DRM时，应保持受信任内容包装程序的允许列表。 在颁发许可证之前，还必须验证受DRM保护的文件的DRM元数据中内容打包程序的身份。
+對於內容封裝者而言，實體是內容擁有者信任用來封裝（或加密）視訊檔案並建立受DRM保護內容的組織。 部署Adobe Primetime DRM時，您應保留受信任內容封裝器的允許清單。 您還必須先在受DRM保護的檔案的DRM中繼資料中驗證內容封裝者的身份，然後再簽發授權。
 
-要了解如何获取有关打包内容的实体的信息，请参阅[V2ContentMetaData.getPackagerInfo()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/media/drm/keys/v2/V2ContentMetaData.html#getPackagerInfo())。
+若要瞭解如何取得封裝內容的實體相關資訊，請參閱 [V2ContentMetaData.getPackagerInfo()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/media/drm/keys/v2/V2ContentMetaData.html#getPackagerInfo()).

@@ -1,20 +1,19 @@
 ---
-title: 使用计算机标识符
-description: 使用计算机标识符
+title: 使用電腦識別碼
+description: 使用電腦識別碼
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 61ff9240-0c29-437e-b676-7983e2cc5f7b
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '207'
 ht-degree: 0%
 
 ---
 
+# 使用電腦識別碼{#using-machine-identifiers}
 
-# 使用计算机标识符{#using-machine-identifiers}
+所有Adobe存取要求（支援FMRMS相容性的要求除外）都包含在個人化期間核發給使用者端的電腦權杖相關資訊。 電腦Token包含電腦ID，這是個人化期間指派的識別碼。 使用此識別碼可計算使用者已要求授權或加入網域的電腦數量。
 
-所有Adobe访问请求（支持FMRMS兼容性的请求除外）都包含有关在个性化过程中向客户端发布的计算机令牌的信息。 计算机令牌包含一个计算机ID，在个性化过程中分配的标识符。 使用此标识符可计算用户从中请求许可证或加入域的计算机数。
+識別碼的使用方式有兩種。 此 `getUniqueId()` 方法會傳回在個人化期間指派給裝置的字串。 您可以將字串儲存在資料庫中並按識別碼搜尋。 但是，如果使用者重新格式化硬碟並再次個人化，此識別碼將會變更。 此識別碼在相同電腦上不同瀏覽器中的Adobe® AIR®與Adobe® Flash®播放器之間也有不同的值。
 
-使用标识符有两种方式。 `getUniqueId()`方法返回在个性化期间分配给设备的字符串。 可以将字符串存储在数据库中并按标识符进行搜索。 但是，如果用户重新设置硬盘的格式并重新进行个性化，则此标识符将会更改。 此标识符在同一台计算机上的不同浏览器中的Adobe® AIR®和Adobe® Flash® Player之间也具有相同的值。
-
-要更准确地计算计算机，可使用`getBytes()`存储整个标识符。 要确定以前是否看到该计算机，请获取用户名的所有标识符并调用`matches()`检查是否有匹配项。 因为必须使用`matches()`方法来比较`MachineId.getBytes`返回的值，所以只有在要比较的值数较少时（例如，与特定用户关联的计算机），此选项才实用。
+若要更準確地計算電腦，您可以使用 `getBytes()` 以儲存整個識別碼。 若要判斷電腦之前是否曾出現過，請取得使用者名稱的所有識別碼，並呼叫 `matches()` 以檢查是否有任何相符專案。 因為 `matches()` 方法必須用來比較下列專案傳回的值： `MachineId.getBytes`，此選項只有在要比較的值數目較少時（例如，與特定使用者相關聯的電腦）才切實可行。

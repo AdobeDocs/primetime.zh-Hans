@@ -1,6 +1,6 @@
 ---
-title: TVSDK 2.1 PlayStation 4发行说明
-description: 适用于PlayStation 4的TVSDK 2.1发行说明介绍了TVSDK 2.1 PlayStation 4中受支持的功能和已知问题。
+title: TVSDK 2.1 PlayStation 4發行說明
+description: PlayStation 4適用的TVSDK 2.1發行說明說明TVSDK 2.1 PlayStation 4的支援功能和已知問題。
 contentOwner: dekalra
 topic-tags: release-notes
 products: SG_PRIMETIME
@@ -12,129 +12,129 @@ ht-degree: 0%
 
 ---
 
-# TVSDK 2.1 PlayStation 4发行说明 {#tvsdk-playstation-release-notes}
+# TVSDK 2.1 PlayStation 4發行說明 {#tvsdk-playstation-release-notes}
 
-适用于PlayStation 4的TVSDK 2.1发行说明介绍了TVSDK 2.1 PlayStation 4中受支持的功能和已知问题。
+PlayStation 4適用的TVSDK 2.1發行說明說明TVSDK 2.1 PlayStation 4的支援功能和已知問題。
 
-## 已解决的问题 {#resolved-issues}
+## 已解決的問題 {#resolved-issues}
 
-以下是适用于PlayStation 4的TVSDK 2.1的已解决问题：
+以下是適用於PlayStation 4的TVSDK 2.1已解決的問題：
 
 **版本2.1.0.638**
 
-* **PTPLAY-10439:**
-当VMAP包装器广告链接断开时，播放器陷入“正在准备”状态（未发送） 
-`onComplete` )。
+* **PTPLAY-10439：**
+當VMAP包裝函式廣告連結中斷時，播放器卡在準備狀態（未傳送） 
+`onComplete` 給其呼叫者)。
 
-* **PTPLAY-10179:**
+* **PTPLAY-10179：**
 
-   `creativeRepackaging` 和 `fallbackOnInvalidCreative` 默认情况下，值处于关闭状态。 此外，当 `creativeRepackaging` 已设置标志，但无 `creativeRepackaging` 格式， `onRepackagingComplete` 被调用的次数与广告时间中的广告次数相同，从而导致多次创建广告时间。
+   `creativeRepackaging` 和 `fallbackOnInvalidCreative` 值現在預設為關閉。 此外，當 `creativeRepackaging` 標幟已設定但無 `creativeRepackaging` 已提供格式， `onRepackagingComplete` 由於廣告插播中有廣告，因此系統多次呼叫廣告插播。
 
-* **森德克#10304**:未初始化广告发送打开/关闭变量。 我们现在从初始化变量 `DataSetEntry's` 矢量。
+* **Zendesk #10304**：未初始化ad forveness on/off變數。 我們現在從下列位置初始化變數： `DataSetEntry's` ctor.
 
-* **PTPLAY-10318:**
-引入了对后台模式的支持。
-* **Zendesk # 17409:**
-进入特技播放模式后，再回到正常播放模式，再进入特技播放模式时，播放位置出现跳转。
-* **PTPLAY-9552:**
-现在，解析响应XML文件后，当没有广告时，就会对错误代码1108进行ping。
-* **PTPLAY-9551:**
-当Auditude处理后没有广告时间时，CRS调用 
-**onPrefetchComplete** 这会减少groupCount。 因为没有广告时间， **groupCount** 为0，减1。 以前， **groupCount** was **uint32_t** 因此，它会更改为最大值。 现在 **int32_t**.
+* **PTPLAY-10318：**
+已引入對背景模式的支援。
+* **Zendesk # 17409：**
+進入特技播放模式時，然後回到正常播放模式，然後再次進入特技播放模式時，播放位置會跳躍。
+* **PTPLAY-9552：**
+剖析回應XML檔案後，現在只要沒有廣告出現，就會釘選錯誤代碼1108。
+* **PTPLAY-9551：**
+當稽核處理後沒有廣告插播時，CRS會呼叫 
+**onPrefetchComplete** 會遞減groupCount。 由於沒有廣告插播， **群組計數** 為0並以1遞減。 先前 **群組計數** 為 **uint32_t** 因此過去會變更為最大值。 這是現在 **int32_t**.
 
 **版本2.1.0.621**
 
-* **森德克#4555**
-内存问题即时导致加载错误 —  
-`MediaItemLoader` 修复了在释放时发生崩溃的问题 `mediaitemloader`
+* **Zendesk #4555**
+立即記憶體問題導致載入錯誤 —  
+`MediaItemLoader` 針對釋放時發生當機的修正 `mediaitemloader`
 
-* **森德克#17223**
-2.x CSAI:并非所有广告跟踪URL都触发
-   * 一些VAST广告反过来指向内联广告，缺少跟踪URL。
-   * 当VAST XML中的广告中存在多个展示标记时，只会保存第一次展示URL，而其余的则会被忽略。 现在，将保存所有展示url，并稍后对其进行ping。
-* **森德克#17224**
-PS4用户代理将黄金时段信息移至UAString的末尾
-* **森德克#17226**
-2.x CSAI:并非所有广告都拼合在中。
+* **Zendesk #17223**
+2.x CSAI：並非所有廣告追蹤URL都會引發
+   * 部分VAST廣告進而指向內嵌廣告，導致遺失追蹤URL。
+   * 當VAST XML的廣告中有多個曝光標籤時，只會儲存第一印象url，而忽略其餘部分。 現在，將會儲存所有印象URL並於稍後釘選。
+* **Zendesk #17224**
+PS4使用者代理程式會將primetime資訊移至UAString結尾
+* **Zendesk #17226**
+2.x CSAI：並非所有廣告都已連結。
 \
-   修复是指由于insertBy或eraseBy操作，时间轴已发生更改，并相应地执行期间切换。
+   「修復」表示時間軸因insertBy或eraseBy操作而變更，並相應地執行週期切換。
 
-* **森德克#17284**
-   [所有平台] 隐藏式字幕不显示。\
-   HLS — 支持 `EXT-X-MEDIA-TIME` 标记。
+* **Zendesk #17284**
+   [所有平台] 隱藏式字幕未顯示。\
+   HLS — 支援 `EXT-X-MEDIA-TIME` VTT註解檔案的標籤。
 
-* **森德克#17889**
-在PS4上播放“乳状”
+* **Zendesk #17889**
+在PS4上播放「Milky」
 \
-   应用了正确的yoffset（用于颜色转换）
+   已套用正確的偏移量（用於色彩轉換）
 
-* **森德克#17954**
-广告回退逻辑+处理空vast
+* **Zendesk #17954**
+廣告遞補邏輯+處理空白vast
 \
-   修复了当其中一个Vast包装器为空时，用于继续处理包装器的Vast解析器的问题。
+   修正當其中一個Vast包裝函式為空白時，用於繼續處理包裝函式的Vast剖析器問題。
 
-* **森德克#17807**
-无法与Zendesk #3103一样通过空的vast
+* **Zendesk #17807**
+無法通過與Zendesk #3103相同的空白vast
 
-* **森德克#17865**
-PS4和XBox One上的回退逻辑
+* **Zendesk #17865**
+PS4和XBox One上的遞補邏輯
 \
-   与森德克一样#3103
+   與Zendesk #3103相同
 
 **版本2.1.0.591**
 
-* **森德克#3767**
-PS4广告代码段，处理VMAP重定向时，广告解析失败。
-* **森德克#4096**
-PS4 CSAI:分段错误修复了在广告库处理VMAP响应时，TVSDK引发分段错误时的崩溃。
+* **Zendesk #3767**
+PS4廣告程式碼片段，處理VMAP重新導向時，廣告解析失敗。
+* **Zendesk #4096**
+PS4 CSAI：分段錯誤修正當廣告程式庫處理VMAP回應時，TVSDK擲回分段錯誤時的當機問題。
 
-* **森德克#4161**
-影片结尾的trickplay 16x冻结修复了trickplay返回正常播放时出现的死锁
+* **Zendesk #4161**
+影片結尾的Trickplay 16x會凍結修正當Trickplay恢復正常播放時發生鎖死的問題
 
-* **森德克#4208**
-启用隐藏式字幕时随机崩溃固定内存泄漏启用隐藏式字幕时
+* **Zendesk #4208**
+開啟隱藏式字幕時的隨機當機啟用隱藏式字幕時修復記憶體流失
 
-* **森德克#4213**
-PS4 CSAI:更改所有与广告相关的调用的默认用户代理字符串使用浏览器使用+添加Primetime字符串的相同UA字符串创建用户代理字符串
+* **Zendesk #4213**
+PS4 CSAI：變更所有廣告相關呼叫的預設使用者代理字串使用者代理字串是使用瀏覽器所使用的相同UA字串建立+ Primetime字串
 
-* **PTPLAY-7675** （内部）转码广告在VMAP或VAST响应中调用时，未播放Creative Repackaging失败。 修复是，在广告广告中，只从广告中读取媒体文件，而不是从资产中读取。
+* **PTPLAY-7675** （內部）轉碼廣告不會播放Creative Repackaging在VMAP或VAST回應中呼叫時失敗。 Fix是在大型廣告的情況下，從廣告讀取媒體檔案，而不是從資產讀取。
 
-* **PTPLAY-7895** （内部） `allowMultipleAds=false`，无广告播放修复了 `allowMultipleAds` 参数未正确跟踪。
+* **PTPLAY-7895** （內部）時間 `allowMultipleAds=false`，無廣告播放已修正的錯誤，其中 `allowMultipleAds` 未正確遵循引數。
 
-* **PTPLAY-7896** （内部）广告在PS4上的播放顺序不正确的问题修复了广告未按广告在XML响应中显示的顺序播放的问题。
+* **PTPLAY-7896** （內部）廣告在PS4上的播放順序不同已修正廣告在XML回應中並非出現順序的問題。
 
-* PS4 TVSDK在微型应用程序（而不是游戏）中重新测试。
+* PS4 TVSDK已在迷你應用程式（而非遊戲）中重新測試。
 
 **版本2.1.0.563**
 
-* **森德克#3868**
-TVSDK是否支持Playstation SDK 2.5现在，TVSDK是通过2.5 Playstation SDK构建的。
+* **Zendesk #3868**
+TVSDK是否支援Playstation SDK 2.5此TVSDK現以2.5版Playstation SDK建置。
 
-* **森德克#4093**
-targetingInfo键值对。
+* **Zendesk #4093**
+Pt Ads請求中的targetingInfo索引鍵值配對。
 \
-   添加了分隔键/值对的换行符。
+   已新增分隔索引鍵/值配對的新行字元。
 
-## 支持的功能 {#supported-features}
+## 支援的功能 {#supported-features}
 
-适用于PlayStation 4的TVSDK 2.1支持以下功能：
+PlayStation 4的TVSDK 2.1支援下列功能：
 
 **版本2.1.0.621**
 
-* 广告回退，在广告选择逻辑中以菊花链(Zendesk #3103)对于启用回退规则的VAST广告（创意），TVSDK会将MIME类型无效的广告视为空广告，并尝试使用回退广告来替换广告。您可以配置回退行为的某些方面
+* 廣告遞補、在廣告選擇邏輯中鏈結的雛菊(Zendesk #3103)對於已啟用遞補規則的VAST廣告（創意），TVSDK會將具有無效MIME型別的廣告視為空白廣告，並嘗試在其位置使用遞補廣告。您可以設定遞補行為的某些方面
 
 **版本2.1.0.538**
 
-* HLS VOD播放，包括播放、暂停、搜寻
-* 自适应比特率流
-* 使用Primetime DRM和原有AES保护内容的加密内容播放
-* 具有默认广告行为和广告原理的客户端广告插入
-* 创意重新打包
-* WebVTT隐藏式字幕
-* 具有自定义开始位置的即时启动
-* 快进快退的特技游戏
-* 302重定向
+* HLS VOD播放，包括播放、暫停、搜尋
+* 最適化位元速率串流
+* 使用Primetime DRM和受Vanilla AES保護的內容進行加密內容播放
+* 具有預設廣告行為和廣告寬恕的使用者端廣告插入
+* 創意重新封裝
+* WebVTT隱藏式字幕
+* 使用自訂開始位置立即開啟
+* 快速前進和快速倒帶的特技遊戲
+* 302重新導向
 
-## 有用资源 {#helpful-resources}
+## 實用資源 {#helpful-resources}
 
-* 请参阅以下完整帮助文档： [Adobe Primetime学习与支持](https://experienceleague.adobe.com/docs/primetime.html) 页面。
+* 如需完整說明檔案，請前往 [Adobe Primetime學習與支援](https://experienceleague.adobe.com/docs/primetime.html) 頁面。

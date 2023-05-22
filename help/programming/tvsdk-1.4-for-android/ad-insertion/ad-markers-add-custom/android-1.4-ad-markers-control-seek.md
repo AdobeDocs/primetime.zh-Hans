@@ -1,35 +1,33 @@
 ---
-description: 在使用自定义广告标记时，您可以覆盖TVSDK如何搜索广告的默认行为。
-title: 控制通过自定义广告标记进行搜索的播放行为
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 使用自訂廣告標籤時，您可以覆寫TVSDK搜尋廣告的預設行為。
+title: 控制搜尋自訂廣告標籤的播放行為
+exl-id: 83faa5a4-4416-499e-8cf2-d016cd9a379d
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '155'
 ht-degree: 0%
 
 ---
 
+# 控制搜尋自訂廣告標籤的播放行為{#control-playback-behavior-for-seeking-over-custom-ad-markers}
 
-# 控制搜索自定义广告标记的播放行为{#control-playback-behavior-for-seeking-over-custom-ad-markers}
+使用自訂廣告標籤時，您可以覆寫TVSDK搜尋廣告的預設行為。
 
-在使用自定义广告标记时，您可以覆盖TVSDK如何搜索广告的默认行为。
+根據預設，當使用者搜尋或經過自訂廣告標籤放置造成的廣告區段時，TVSDK會略過廣告。 這可能與標準廣告插播目前的播放行為不同。
 
-默认情况下，当用户在放置自定义广告标记后搜索或查看过去的广告部分时，TVSDK会跳过广告。 这可能与标准广告中断的当前播放行为不同。
+當使用者搜尋超過一個或多個自訂廣告時，您可以指示TVSDK將播放點重新定位到最近略過的自訂廣告的開頭。
 
-当用户搜索超过一个或多个自定义广告时，您可以告诉TVSDK将播放头重新定位到最近跳过的自定义广告的开头。
-
-1. 将`DefaultMetadataKeys.METADATA_KEY_ADJUST_SEEK_ENABLED`明细列表设置为字符串值“true”（不是布尔`true`）的Metadata实例进行配置。
+1. 使用設定中繼資料例項 `DefaultMetadataKeys.METADATA_KEY_ADJUST_SEEK_ENABLED` 列舉設定為字串值「true」（不是布林值） `true`)。
 
    ```java
    Metadata metadata = new MetadataNode(); 
    metadata.setValue(DefaultMetadataKeys.METADATA_KEY_ADJUST_SEEK_ENABLED.getValue(),"true");
    ```
 
-1. 创建并配置`MediaResource`实例，将其他配置选项传递给`TimeRangeCollection.toMetadata`。 此方法通过另一个通用元数据结构接收其他配置选项。
+1. 建立及設定 `MediaResource` 執行個體，將其他設定選項傳遞至 `TimeRangeCollection.toMetadata`. 此方法會透過其他一般中繼資料結構接收其他設定選項。
 
    ```java
    MediaResource mediaResource =  
      MediaResource.createFromUrl("www.example.com/video/test_video.m3u8", 
                                  timeRanges.toMetadata(metadata));
    ```
-

@@ -1,21 +1,19 @@
 ---
-title: 日志文件
-description: 日志文件
+title: 記錄檔
+description: 記錄檔
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 23de35da-1583-4718-ba35-e9d4bf750239
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '56'
 ht-degree: 0%
 
 ---
 
+# 記錄檔{#log-files}
 
-# 日志文件{#log-files}
-
-由Adobe Access Server为受保护流应用程序生成的日志文件将位于由&#x200B;*LicenseServer.LogRoot*&#x200B;指定的目录中。
+Adobe Access Server為受保護的串流應用程式產生的記錄檔將位於指定的目錄中 *LicenseServer.LogRoot*.
 
 >[!NOTE]
 >
->如果在服务器运行时删除或移动当前日志文件，则可能无法重新创建日志文件，并且某些日志信息将丢失。
-
+>如果在伺服器執行期間刪除或移動目前的記錄檔，則可能無法重新建立記錄檔，並且某些記錄資訊將會遺失。

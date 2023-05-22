@@ -1,25 +1,24 @@
 ---
-description: 您可以根据默认解析器实现您自己的内容解析器。
-title: 实现自定义内容解析器
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以根據預設解析器來實作您自己的內容解析器。
+title: 實作自訂內容解析程式
+exl-id: abe967a5-ced3-4e23-8671-065e256974d3
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '169'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
+# 實作自訂內容解析程式{#implement-a-custom-content-resolver}
 
-# 实现自定义内容解析器{#implement-a-custom-content-resolver}
+您可以根據預設解析器來實作您自己的內容解析器。
 
-您可以根据默认解析器实现您自己的内容解析器。
+當TVSDK偵測到新的商機時，它會透過註冊的內容解析程式反複尋找，以使用來尋找能夠解析該商機的內容。 `canResolve` 方法。 系統會選取傳回true的第一個來解析商機。 如果沒有內容解析程式可用，則會略過該機會。 由於內容解析程式通常是非同步的，內容解析程式負責在程式完成時通知TVSDK。
 
-当TVSDK检测到新机会时，它会循环访问注册的内容解析器，寻找能够使用`canResolve`方法解决该机会的内容解析器。 选择返回true的第一个以解决该机会。 如果没有内容解析程序可用，则跳过该机会。 由于内容解析过程通常是异步的，因此内容解析程序负责在进程完成时通知TVSDK。
+* 內容解析程式呼叫 `client.place` 以指定TVSDK需要執行的時間軸操作（通常是廣告插播位置）。
+* 內容解析程式呼叫 `client.notifyCompleted` 如果解決程式成功，或 `client.notifyFailed` 如果程式失敗。
 
-* 内容解析程序调用`client.place`以指定TVSDK需要执行的时间线操作（通常是广告中断放置）。
-* 如果解析进程成功，则内容解析程序将调用`client.notifyCompleted`；如果进程失败，则调用`client.notifyFailed`。
-
-1. 创建自定义业务机会解析器。
+1. 建立自訂機會解析程式。
 
    ```
    public class CustomResolver extends ContentResolver { 
@@ -90,7 +89,7 @@ ht-degree: 2%
    }
    ```
 
-1. 创建自定义内容工厂，它使用自定义内容解析器。
+1. 建立使用自訂內容解析程式的自訂內容處理站。
 
    例如：
 
@@ -119,7 +118,7 @@ ht-degree: 2%
    }
    ```
 
-1. 为要播放的媒体流注册自定义内容工厂。
+1. 註冊自訂內容處理站，以便播放媒體資料流。
 
    例如：
 
@@ -138,4 +137,3 @@ ht-degree: 2%
    
    player.replaceCurrentResource(mediaResource, mediaPlayerItemConfig);
    ```
-

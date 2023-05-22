@@ -1,23 +1,21 @@
 ---
-title: 策略更新列表首选项
-description: 策略更新列表首选项
+title: 原則更新清單喜好設定
+description: 原則更新清單喜好設定
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: bca45ad8-8cc2-48cb-8d83-0fb77da11489
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '73'
 ht-degree: 0%
 
 ---
 
+# 原則更新清單喜好設定 {#policy-update-list-preferences}
 
-# 策略更新列表首选项{#policy-update-list-preferences}
+此標籤包含建立原則更新清單所需的設定。 下表說明偏好設定：
 
-此选项卡包含创建策略更新列表所需的设置。 下表介绍了首选项：
-
-| 首选项 | 说明 |
+| 偏好設定 | 說明 |
 |---|---|
-| 许可证服务器凭据 | 由Adobe颁发的License Server凭据。 此凭据用于签署策略更新列表。 |
-| 文件名 | 包含证书和私钥的PKCS#12([!DNL .pfx])文件。 文件必须位于[!DNL Resource]目录中。 |
-| 文件密码 | [!DNL .pfx]文件的口令 |
-
+| 授權伺服器認證 | 授權伺服器認證，由Adobe簽發。 此認證用於簽署原則更新清單。 |
+| 檔案名稱 | PKCS#12 ( [!DNL .pfx])檔案，包含憑證和私密金鑰。 檔案必須位於 [!DNL Resource] 目錄。 |
+| 檔案密碼 | 的密碼 [!DNL .pfx] 檔案 |

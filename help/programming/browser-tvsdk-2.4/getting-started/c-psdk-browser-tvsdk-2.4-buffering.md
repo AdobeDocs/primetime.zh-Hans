@@ -1,20 +1,19 @@
 ---
-description: 您可以配置视觉元素以通知用户内容正在缓冲。
-title: 缓冲
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 您可以設定視覺效果來通知使用者內容正在緩衝中。
+title: 緩衝
+exl-id: 1b2f32b4-1839-4256-82d6-b262569aa751
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '56'
-ht-degree: 3%
+ht-degree: 0%
 
 ---
 
+# 緩衝{#buffering}
 
-# 缓冲{#buffering}
+您可以設定視覺效果來通知使用者內容正在緩衝中。
 
-您可以配置视觉元素以通知用户内容正在缓冲。
-
-侦听`AdobePSDK.PSDKEventType.BUFFERING_BEGIN`和`AdobePSDK.PSDKEventType.BUFFERING_END`事件。 例如：
+聆聽 `AdobePSDK.PSDKEventType.BUFFERING_BEGIN` 和 `AdobePSDK.PSDKEventType.BUFFERING_END` 事件。 例如：
 
 ```js
 player.addEventListener(AdobePSDK.PSDKEventType.BUFFERING_BEGIN,  
@@ -30,7 +29,7 @@ player.addEventListener(AdobePSDK.PSDKEventType.BUFFERING_END,
                         });
 ```
 
-UI框架提供默认缓冲叠加行为实现，可进行如下扩展：
+UI Framework提供預設緩衝覆蓋行為實施，可擴充如以下所示：
 
 ```js
 // Using UI Framework 
@@ -49,7 +48,7 @@ var playerWrapper = ptp.videoPlayer('.videoDiv', {
 }); 
 ```
 
-以下是DOM的结果：
+以下是結果DOM的外觀：
 
 ```
 <div id=" videoDiv" class="ptp-root-element"> 
@@ -58,4 +57,3 @@ var playerWrapper = ptp.videoPlayer('.videoDiv', {
 </div> 
 </div> 
 ```
-

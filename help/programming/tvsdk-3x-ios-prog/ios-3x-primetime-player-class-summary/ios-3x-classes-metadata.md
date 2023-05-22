@@ -1,23 +1,22 @@
 ---
-description: 这些类为广告、命名空间和跟踪提供元数据。
-title: 元数据类
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: 這些類別提供廣告、名稱空間和追蹤的中繼資料。
+title: 中繼資料類別
+exl-id: cd4f96d1-d8ee-4008-b35f-60b797a34b85
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '196'
 ht-degree: 0%
 
 ---
 
+# 中繼資料類別 {#metadata-classes}
 
-# 元数据类{#metadata-classes}
+這些類別提供廣告、名稱空間和追蹤的中繼資料。
 
-这些类为广告、命名空间和跟踪提供元数据。
-
-| **名称** | **说明** |
+| **名稱** | **說明** |
 |---|---|
-| [PTAdMetadata](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTAdMetadata.html) | 类，它提供应配置用于解析给定媒体项的广告的属性。 必须设置所有必需属性才能配置播放器以成功解析广告。 |
-| [PTAuditudeMetadata](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTAuditudeMetadata.html) | 专门用于Adobe Primetime广告决策的`PTAdMetadata`扩展的类。 提供要配置的属性，用于解决给定媒体项目的Adobe Primetime广告决策广告。 您必须设置所有必需属性，包括区域ID、媒体ID和广告服务器URL，才能配置播放器以成功解析广告。 |
-| [PTMetadata](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTMetadata.html) | 定义基类，用于为播放器和其他对象配置所有可用元数据。 |
-| [PTTimedMetadata](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTTimedMetadata.html) | 表示流中的自定义HLS标记的类。 |
-| [PTTrakingMetadata](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTTrackingMetadata.html) | 为所有跟踪和分析相关元数据定义基类。 |
+| [PTAdMetadata](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTAdMetadata.html) | 提供應針對指定媒體專案解析廣告而設定的屬性的類別。 必須設定所有必要屬性，才能設定播放器以成功解析廣告。 |
+| [PTAuditudeMetadata](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTAuditudeMetadata.html) | 擴充的類別 `PTAdMetadata` 專門用於Adobe Primetime ad decisioning。 提供要設定的屬性，用於解析給定媒體專案的Adobe Primetime ad decisioning廣告。 您必須設定所有必要的屬性（包括區域ID、媒體ID和廣告伺服器URL），才能設定播放器以成功解析廣告。 |
+| [PTMetadata](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTMetadata.html) | 定義基底類別，用於設定播放器和其他物件所有可用的中繼資料。 |
+| [Ptimedmetadata](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTTimedMetadata.html) | 在資料流中代表自訂HLS標籤的類別。 |
+| [PTTrackingMetadata](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTTrackingMetadata.html) | 為所有追蹤和分析相關中繼資料定義基底類別。 |

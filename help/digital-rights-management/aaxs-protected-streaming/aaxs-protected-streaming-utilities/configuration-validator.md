@@ -1,21 +1,20 @@
 ---
-title: 配置验证程序
-description: 配置验证程序
+title: 設定驗證器
+description: 設定驗證器
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 9b73e107-6ab7-4089-b415-0af8c9f86995
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '185'
 ht-degree: 0%
 
 ---
 
+# 設定驗證器 {#configuration-validator}
 
-# 配置验证程序{#configuration-validator}
+Adobe建議您在變更組態檔之前，先執行Configuration Validator公用程式，再啟動伺服器。 此公用程式可及早偵測到大部分的設定錯誤，以免在要求處理期間導致失敗。
 
-Adobe建议在对配置文件进行任何更改之前，先运行Configuration Validator实用程序，然后再启动服务器。 此实用程序可以在请求处理过程中导致故障之前，及早检测大多数配置错误。
-
-要运行验证程序，请使用命令：
+若要執行驗證器，請使用命令：
 
 ```
 Validator.bat options  
@@ -27,29 +26,28 @@ Validator.bat options
 java -jar libs/flashaccess-validator.jar options 
 ```
 
-对于每个许可证服务器配置文件，验证程序可以执行基于文件的验证，这可确保XML文件格式良好，并符合配置文件模式。 要对全局配置文件执行基于文件的验证，请运行以下命令：
+對於每個許可證伺服器組態檔，「驗證器」都可以執行檔案型驗證，以確保XML檔案的格式正確，並且符合組態檔案架構。 若要對全域組態檔案執行檔案式驗證，請執行以下命令：
 
 ```
 Validator --file path/flashaccess-global.xml --global
 ```
 
-要对租户配置文件执行基于文件的验证，请运行以下命令：
+若要對租使用者設定檔案執行檔案式驗證，請執行以下命令：
 
 ```
 Validator --file path/flashaccess-tenant.xml --tenant
 ```
 
-验证程序还可以执行基于部署的验证；除了检查是否符合模式之外，此验证级别还检查指定的值是否有效（例如，它确保引用的文件存在）。 基于部署的验证可以在两个级别执行：
+驗證器也可以執行部署型驗證；除了檢查是否符合結構描述之外，此層級的驗證還會檢查指定的值是否有效（例如，它確保參考的檔案存在）。 部署型驗證可在兩個層級執行：
 
-* 租户 — 验证特定租户的配置文件和凭据。 要验证“tenant1”的配置，请运行以下命令：
+* 租使用者 — 驗證特定租使用者的組態檔和認證。 若要驗證「tenant1」的設定，請執行命令：
 
 ```
 Validator --root-path-to-LicenseServer.ConfigRoot -d flashaccessserver/tenant1 -t 
 ```
 
-* 全局 — 验证所有租户的全局配置文件和租户验证。 要执行基于部署的全局验证，请运行以下命令：
+* 全域 — 驗證所有租使用者的全域組態檔和租使用者驗證。 若要執行全域部署型驗證，請執行以下命令：
 
 ```
 Validator --root-path-to-LicenseServer.ConfigRoot -g 
 ```
-

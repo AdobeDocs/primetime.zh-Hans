@@ -1,21 +1,19 @@
 ---
-title: 许可证服务器部署选项
-description: 许可证服务器部署选项
+title: 授權伺服器部署選項
+description: 授權伺服器部署選項
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: c7422a8f-2cd1-4ace-8706-eb3e5a55eac6
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '254'
 ht-degree: 0%
 
 ---
 
+# 授權伺服器部署選項{#license-server-deployment-options}
 
-# 许可证服务器部署选项{#license-server-deployment-options}
+可使用下列其中一個選項來部署License Server：
 
-可以使用以下选项之一部署许可证服务器：
-
-* **Adobe Access Server for Protected Streaming**  — 此许可证服务器针对流进行了优化。例如，您可以设置服务器，使用“Adobe访问”进行AdobeHTTP Dynamic Streaming。 此服务器可以轻松部署，只需很少的配置，并支持多个租户，并可实现高级的可扩展性。 但是，由于此实施针对流进行了优化，因此它不支持完整的Adobe访问功能。 例如，用户名/密码身份验证、域和许可证链接不受支持。 此服务器颁发的许可证中的使用规则通过服务器配置文件控制，该配置文件将覆盖打包时使用的策略。 有关此服务器支持的使用规则的详细信息，请参阅&#x200B;*Adobe Access Server for Protected Streaming Guide*。
-* **参考实施许可证服务器**  — 将此设置用作自定义服务器实施的起点。这是一个许可证服务器实现的示例，包括源代码，它演示了如何使用Adobe Access SDK中的API处理所有类型的请求以及如何实现由数据库支持的自定义业务逻辑。 此服务器颁发的许可证中的使用规则通过与打包时的内容相关联的策略进行控制。
-* **自定义服务器实施**  — 您还可以使用SDK实现您自己的许可服务器。本章中的信息描述了用于实现许可证服务器的API。
-
+* **適用於受保護串流的Adobe Access Server**  — 此License Server已針對串流最佳化。 例如，您可以設定伺服器以使用「Adobe存取」進行AdobeHTTP Dynamic Streaming。 此伺服器部署簡單，只需很少的設定，可支援多個租使用者，並可達到高水準的擴充性。 不過，由於此實作已針對串流最佳化，因此不支援完整的Adobe存取功能。 例如，不支援使用者名稱/密碼驗證、網域和授權鏈結。 此伺服器所核發的授權中的使用規則，是由伺服器設定檔所控制，該設定檔會覆寫封裝時所使用的原則。 請參閱 *適用於受保護串流的Adobe Access Server指南* 此伺服器支援之使用規則的詳細資訊。
+* **參考實作授權伺服器**  — 使用此設定作為自訂伺服器實作的起點。 這是授權伺服器實作的範例，包括原始程式碼，示範如何使用Adobe存取SDK中的API處理所有型別的請求，以及如何實作資料庫支援的自訂商業邏輯。 此伺服器所核發的授權中的使用規則，是由封裝時與內容相關的原則所控制。
+* **自訂伺服器實作**  — 您也可以使用SDK實作自己的授權伺服器。 本章中的資訊說明用於實作授權伺服器的API。

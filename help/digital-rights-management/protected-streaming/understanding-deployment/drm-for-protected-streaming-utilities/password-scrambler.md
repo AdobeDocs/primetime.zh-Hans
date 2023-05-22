@@ -1,20 +1,19 @@
 ---
-description: 密码剪贴器实用程序为Adobe Primetime DRM Server的受保护流配置文件加密密码。
-title: 密码剪贴器
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+description: Password Scrambler公用程式會加密Adobe Primetime DRM伺服器的Protected Streaming組態檔密碼。
+title: 密碼加擾器
+exl-id: 9cedd3e5-01db-4ea9-bf23-8767987fc26c
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '92'
 ht-degree: 0%
 
 ---
 
+# 密碼加擾器 {#password-scrambler}
 
-# 密码剪贴器{#password-scrambler}
+Password Scrambler公用程式會加密Adobe Primetime DRM伺服器的Protected Streaming組態檔密碼。
 
-密码剪贴器实用程序为Adobe Primetime DRM Server的受保护流配置文件加密密码。
-
-要运行剪贴器，请键入：
+若要執行擾碼器，請輸入：
 
 ```
 Scrambler.bat  
@@ -32,7 +31,7 @@ java -jar libs/flashaccess-scrambler.jar
 </i class="+ topic>
 ```
 
-实用程序显示以下消息：
+公用程式會顯示下列訊息：
 
 ```
 Encrypted password:  
@@ -41,8 +40,8 @@ Encrypted password:
 </i class="+ topic>
 ```
 
-必须在[!DNL flashaccess-global.xml]和[!DNL flashaccess-tenant.xml]文件中指定的所有口令都必须加密。
+您指定的所有密碼 [!DNL flashaccess-global.xml] 和 [!DNL flashaccess-tenant.xml] 檔案必須加密。
 
 >[!NOTE]
 >
->Primetime DRM Server for Protected Streaming中的密码扰码器实用程序不能与随参考实施许可证服务器提供的扰码器互换。
+>Primetime DRM Server for Protected Streaming中的Password Scrambler公用程式不可與Reference Implementation License Server隨附的Scrambler交換。

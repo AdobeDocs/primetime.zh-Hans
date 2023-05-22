@@ -1,27 +1,26 @@
 ---
-title: 实施章节支持
-description: 实施章节支持
+title: 實作章節支援
+description: 實作章節支援
 copied-description: true
-translation-type: tm+mt
-source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
+exl-id: 4d1b3488-88c9-49ff-9e54-f78aacdabf6e
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
 source-wordcount: '60'
 ht-degree: 0%
 
 ---
 
+# 實作章節支援 {#implement-chapter-support}
 
-# 实施章节支持{#implement-chapter-support}
+您可以定義並追蹤 *自訂* TVSDK型應用程式中視訊追蹤的章節。
 
-您可以在基于TVSDK的应用程序中定义和跟踪用于视频跟踪的&#x200B;*自定义*&#x200B;章节。
-
-自定义章节由应用程序管理，并基于CMS数据或应用程序用于定义章节的其他方式。
+自訂章節由應用程式管理，且以CMS資料或應用程式用來定義章節的其他方式為基礎。
 
 >[!CAUTION]
 >
->2.5 Android TVSDK不支持默认章节。
+>2.5 Android TVSDK不支援預設章節。
 
-1. 定义和跟踪自定义章节。
+1. 定義及追蹤自訂章節。
 
    ```java
    // First, enable chapter tracking by setting   
@@ -45,4 +44,3 @@ ht-degree: 0%
    
    vaMetadata.setChapters(chapters); 
    ```
-
