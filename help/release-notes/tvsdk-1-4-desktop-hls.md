@@ -1,741 +1,741 @@
 ---
-title: TVSDK 1.4 for Desktop HLS發行說明
-description: TVSDK for Desktop HLS發行說明說明TVSDK DHLS的新增或變更專案、已解決的問題和已知問題。
+title: 适用于桌面HLS的TVSDK 1.4发行说明
+description: 《TVSDK for Desktop HLS发行说明》介绍了TVSDK DHLS的新增或更改内容、已解决的问题和已知问题。
 contentOwner: asgupta
 products: SG_PRIMETIME
 topic-tags: release-notes
 exl-id: 5e227c99-acf6-4b16-a35a-68e2928fdbfd
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 1bc2f6c230c262babf2958c32fee31afcad04c2f
 workflow-type: tm+mt
-source-wordcount: '5195'
+source-wordcount: '5194'
 ht-degree: 0%
 
 ---
 
-# TVSDK 1.4 for Desktop HLS發行說明 {#tvsdk-for-desktop-hls-release-notes}
+# 适用于桌面HLS的TVSDK 1.4发行说明 {#tvsdk-for-desktop-hls-release-notes}
 
-TVSDK for Desktop HLS發行說明說明TVSDK DHLS的新增或變更專案、已解決的問題和已知問題。
+《TVSDK for Desktop HLS发行说明》介绍了TVSDK DHLS中的新增或更改内容、已解决问题和已知问题。
 
-## 新功能 {#new-features}
+## 新增功能 {#new-features}
 
 **1.4.31**
 
-* **CRS Ads的多重CDN支援**
+* **对CRS广告的多CDN支持**
 
-   * 依預設，所有轉碼資產都會在Akamai上Adobe擁有的CDN上託管。 在最新版本中，Adobe Creative Repackaging Service (CRS)可讓您將轉碼創意內容上傳至客戶指定的多個CDN。
-   * 新API會新增至TVSDK，以便在不使用預設URL時指定最終CRS創意URL。 請參閱檔案以瞭解如何使用這些新API。
+   * 默认情况下，所有转码资产将托管在Akamai上Adobe拥有的CDN上。 在最新版本中，Adobe创意重新打包服务(CRS)允许将转码创意内容上传到客户指定的多个CDN。
+   * 新API会添加到TVSDK中，以便能够在不使用默认URL时指定最终CRS创意URL。 请参阅文档以了解如何使用这些新API。
 
-### 舊版中的新功能 {#new-features-previous}
+### 以前版本中的新增功能 {#new-features-previous}
 
 **1.4.30**
 
-* **計費量度**
+* **计费量度**
 
-為因應客戶只想依使用量付款，而不想依實際使用量支付固定費率的需求，Adobe會收集使用量度並使用這些量度來決定向客戶收費的金額。
+为了适应那些只想按客户所使用内容支付而不是按固定费率支付而不想实际使用的客户，Adobe会收集使用情况量度，并使用这些量度来确定向客户收取多少费用。
 
 **1.4.24**
 
-* **持續性網路連線**
+* **永久网络连接**
 
-重要：您必須至少安裝AdobeFlash Player版本22或更新版本。
-持續性網路連線會建立並儲存可重複用於多個要求的網路連線內部清單，而不是為每個網路要求開啟新連線。 持續性的網路連線應該能提高效率，並減少網路程式碼的延遲。
+重要信息：您必须至少安装AdobeFlash Player版本22或更高版本。
+持久网络连接创建并存储可重复用于多个请求的网络连接的内部列表，而不是为每个网络请求打开一个新连接。 持久网络连接应该可以提高网络代码的效率并减少延迟。
 
-在這個版本中，Mac上的Apple Safari和Mozilla Firefox不支援此功能。
+在此版本中，Mac上的Apple Safari和Mozilla Firefox不支持此功能。
 
 **1.4.19**
 
-* VPAID廣告的資料流完整性支援。
-* 修正擱置問題，以啟用Firefox 42和更新版本的Flash播放器FP 20.0.0.267中的靜音索引標籤選項。
+* VPAID广告的流完整性支持。
+* 通过修复挂起问题，为Firefox 42及更高版本启用了Flash播放器FP 20.0.0.267中的静音选项卡选项。
 
 **1.4.18**
 
-* Primetime Desktop HLS TVSDK現在支援VPAID 2.0線性SWF創意，以提供豐富的互動式串流廣告體驗。
+* Primetime Desktop HLS TVSDK现在支持VPAID 2.0线性SWF创意，以实现丰富的交互式流中广告体验。
 
 **1.4.10**
 
-* **廣告遞補、廣告選擇邏輯中的Daisy鏈結(Zendesk #3103)** 對於已啟用遞補規則的VAST廣告（創意內容），TVSDK會將具有無效MIME型別的廣告視為空白廣告，並嘗試在其位置使用遞補廣告。 您可以設定遞補行為的某些方面。
+* **广告回退，广告选择逻辑中的Daisy链接(Zendesk #3103)** 对于启用了回退规则的VAST广告（创意），TVSDK会将具有无效MIME类型的广告视为空广告，并尝试使用回退广告来替换该广告。 您可以在某些方面配置回退行为。
 
-如需詳細資訊，請參閱 [VAST和VMAP廣告的廣告遞補](../programming/tvsdk-1.4-for-android/ad-insertion/ad-fallback/android-1.4-ad-fallback.md).
+有关更多信息，请参阅 [VAST和VMAP广告的广告回退](../programming/tvsdk-1.4-for-android/ad-insertion/ad-fallback/android-1.4-ad-fallback.md).
 
 **1.4.8**
 
-* **視訊心率程式庫(VHL)更新至1.5版**
+* **视频心率库(VHL)已更新至版本1.5**
 
-   * 能夠連同視訊開始和/或視訊/廣告/章節開始一起傳送中繼資料作為內容資料
-   * 網路流量更少 — 心率平均而言更少，大小也更小。
+   * 能够发送包含视频开始和/或视频/广告/章节开始作为上下文数据的元数据
+   * 网络流量更少 — 心跳平均更少，大小更小。
 
 **1.4.7**
 
-* **內部部署個人化支援**
+* **内部部署个性化支持**
 
-支援Adobe個人化伺服器的內部部署安裝，可自訂使用者端的個人化請求，以移至其他端點。
+支持AdobeIndividualization Server的内部部署，以自定义客户端的个性化请求，从而转到其他端点。
 
 **1.4.6**
 
-* **範例AES加密(需要Flash Player版本17.0.0.134)**
+* **示例AES加密(需要Flash Player版本17.0.0.134)**
 
-現在支援以範例為基礎的AES加密。
+现在支持基于示例的AES加密。
 
 **1.4.2**
 
-* **視訊心率程式庫(VHL)更新至1.4.0.1版**
+* **视频心率库(VHL)已更新至版本1.4.0.1**
 
-   * 新增將其他SDK或播放器中的不同Analytics使用案例與Adobe Analytics Video Essentials搭配的功能。
-   * 已透過移除trackAdBreakStart和trackAdBreakComplete方法最佳化廣告追蹤。 廣告插播是從trackAdStart和trackAdComplete方法呼叫中推斷出來的。
-   * 追蹤廣告時不再需要播放點屬性。
+   * 添加了将其他SDK或播放器中的不同Analytics用例捆绑到Adobe Analytics Video Essentials的功能。
+   * 通过移除trackAdBreakStart和trackAdBreakComplete方法，广告跟踪已得到优化。 广告时间是从trackAdStart和trackAdComplete方法调用推断出的。
+   * 跟踪广告时不再需要播放头属性。
 
 **1.4.0**
 
-* **使用替代內容取代發出中斷訊號** 在1.4 TVSDK更新中，TVSDK現在也支援進入及從線性內容的區域中斷返回。 TVSDK現在可以並行處理兩個資訊清單檔案（主要和替代），以監控中斷訊號，即使替代程式設計正在取代原始程式設計。
+* **使用替代内容替换发出封锁信号** 在1.4 TVSDK更新中，TVSDK现在还支持进入线性内容区域封锁或从该区域封锁回访。 TVSDK现在可以并行处理两个清单文件（主文件和备用文件），以监控中断信号，即使备用程序正在被显示来代替原始程序。
 
-* **移除/取代C3廣告** 現在，不需要額外的準備工作，即可動態地將新廣告插入從C3視窗傳出的隨選影片(VOD)資產。 TVSDK現在提供API來移除自訂內容範圍並動態插入新廣告。 在廣播期間播放即時/線性內容，並立即下拉以供隨選內容使用（沒有適當的時間來「清除」資產）的情況下，這項強大的新功能也很有用。
+* **删除/替换C3广告** 现在，无需额外的准备工作即可将新广告动态插入到从C3窗口出来的视频点播(VOD)资产中。 TVSDK现在提供了一个API，用于删除自定义内容范围并动态插入新广告。 此强大的新功能在以下情况下也很有用：在广播期间播放实时/线性内容，并且在没有适当的时间来“清理”资源的情况下立即下拉内容以用作按需内容。
 
-## 已解決的問題 {#resolved-issues}
+## 已解决的问题 {#resolved-issues}
 
 >[!NOTE]
 >
->強烈建議所有使用CRS的TVSDK客戶，在iOS、Android和案頭HLS上至少升級至TVSDK 1.4.32。 此升級會取代現有應用程式實作。 升級後，請在Proxy工具（例如Charles）中檢查CRS創意URL請求，以驗證路徑中的版本是否反映3.1版。例如，
+>强烈建议所有使用CRS的TVSDK客户在iOS、Android和桌面HLS上至少升级到TVSDK 1.4.32。 此升级将替代现有应用程序实施。 升级后，在代理工具（例如，Charles）中检查CRS创意URL请求，验证路径中的版本是否反映了3.1版。例如，
 >
 >`https://adunit.cdn.auditude.com/assets/3p/v3.1/218747/94b/c1b/94bc1b964cc67e115a5a6781c7329b90_ee92607938ffff46b083121f044c2746.m3u8`
 
 **版本1.4.41**
 
-* Zendesk #33777 - DHLS散發組建的Localhost權杖SWF已過期。
+* Zendesk #33777 - DHLS分发内部版本的Localhost令牌SWF已过期。
 
-   正在更新DHLS上PMP示範的localhost權杖。
+  正在更新DHLS上PMP演示的localhost令牌。
 
-### 舊版中的已解決問題 {#resolved-issues-previous}
+### 以前版本中已解决的问题 {#resolved-issues-previous}
 
 **版本1.4.38** (891)
 
-* Zendesk #30731 - TVSDK不會在AdBreak中播放多個VPAID廣告。
+* Zendesk #30731 - TVSDK不会在AdBreak中播放多个VPAID广告。
 
-   修正AdBreak中的多個VPAID廣告播放。
+  修复了AdBreak中的多个VPAID广告播放。
 
-* Zendesk #29968 — 雙告示牌。
+* Zendesk #29968 — 双告示牌。
 
-   當發生ABR切換時，視訊播放器可以重複該時段的最後一個區段。 因此，有時會重複前段的最後一個區段。 此問題已修正。
+  当发生ABR切换时，视频播放器可以重复时段的最后一个区段。 因此，有时会重复最后一个预滚区段。 此问题已得到修复。
 
 **版本1.4.35** (879)
 
-* Zendesk #26058 — 支援原生VPAID事件
+* Zendesk #26058 — 支持本机VPAID事件
 
 **版本1.4.33** (873)
 
-* Zendesk #21701 — 傳送1401 CRS請求的原始創意URL，而不是標準化的URL。
+* Zendesk #21701 — 发送1401 CRS请求的原始创意URL，而不是规范化URL。
 
-   已根據CRS後端要求，修正要求重新封裝的URL進行轉碼的問題。
-* Zendesk #26197 — 未以所需的顯示解析度重播變形壓縮。
+  已根据CRS后端要求，修复了请求将已重新打包的URL进行转码的问题。
+* Zendesk #26197 — 未以所需的显示分辨率重播变形压缩。
 
-   **注意**：此問題需要Flash播放器24.0.0.194或更新版本。
+  **注释**：此问题需要Flash播放器24.0.0.194或更高版本。
 
-   已修正使用長寬比表格中缺少的專案來計算輸出寬度的問題。
+  修复了使用宽高比表中缺少的条目计算输出宽度的问题。
 
-* Zendesk #26840 — 第二次嘗試後，IE11 + Windows7上的HDCP偵測失敗。
+* Zendesk #26840 — 第二次尝试后，IE11 + Windows7上的HDCP检测失败。
 
-   **注意**：此問題需要Flash播放器24.0.0.218或更新版本。
+  **注释**：此问题需要Flash播放器24.0.0.218或更高版本。
 
-   此問題已透過修改AdobeCP的主要訊息佇列處理來解決，以循環處理整個佇列，而不是僅封鎖第一則訊息。
+  通过修改AdobeCP的主消息队列处理以循环处理整个队列，而不是简单地阻止第一条消息，此问题得以解决。
 
-* Zendesk #27460 — 新的Akamai帳戶無法處理POSTCDN請求。
+* Zendesk #27460 — 新的Akamai帐户无法处理POSTCDN请求。
 
-   新的CDN帳戶無法處理POST CDN請求。 此問題已透過更新程式碼來解決，以使cdn.auditude.com廣告請求是GET而非POST。
-* Zendesk #27619 - Windows 10上的Flash當機
+  新的CDN帐户无法处理POSTCDN请求。 通过更新代码以使cdn.auditude.com广告请求成为GET而不是POST，此问题得以解决。
+* Zendesk #27619 - Windows 10上的Flash崩溃
 
-   **注意**：此問題需要Flash播放器24.0.0.218或更新版本。
+  **注释**：此问题需要Flash播放器24.0.0.218或更高版本。
 
-   此問題已藉由防止長URL造成的錯誤而解決。
+  通过防止长URL导致错误，此问题得以解决。
 
-* Zendesk #28218 — 從恢復點回撥時未觸發追蹤事件
+* Zendesk #28218 — 在从恢复点回放时不会触发跟踪事件
 
-   此問題與Zendesk #26592中的問題相同。 已修正當媒體播放器處於VOD資料流的「已準備」狀態時，允許搜尋作業的問題。
+  此问题与Zendesk #26592中的问题相同。 修复了当媒体播放器处于VOD流的准备状态时允许进行搜寻操作的问题。
 
 **版本1.4.32** (867)
 
-* 當播放從繼續點開始時，Zendesk #26592追蹤事件不會引發
+* 当播放从恢复点开始时，Zendesk #26592跟踪事件不会触发
 
-當繼續點不是零時，程式碼未更新前段廣告插播專案。 此問題已透過新增邏輯解決，以在範圍開始時間不符時重新整理程式碼。
+当恢复点不为零时，代码未更新前置广告时间项。 通过添加逻辑以在范围开始时间不匹配时刷新代码，解决了此问题。
 
-* 資產第二次播放時，Zendesk #27022 Ads未播放
+* 第二次播放资产时，未播放Zendesk #27022广告
 
-已修正陣列方法的例外狀況。
+修复了数组方法中的异常。
 
-**1.4.30版** (855)
+**版本1.4.30** (855)
 
-此版本解決了TVSDK的下列問題：
+此版本中解决了TVSDK的以下问题：
 
-* Zendesk #22898 — 缺少字幕不應導致播放失敗。
+* Zendesk #22898 — 缺少字幕不应导致播放失败。
 
-**注意**：此問題需要Flash播放器23.0.0.185或更新版本。
+**注释**：此问题需要Flash播放器23.0.0.185或更高版本。
 
-即使資訊清單遺失WebVTT M3U8，但允許TVSDK繼續播放，並註冊警告，此問題已解決。
+通过允许TVSDK继续播放（即使清单缺少WebVTT M3U8），并只注册警告，该问题已得到解决。
 
-* Zendesk #23454 — 無法正確處理協力廠商廣告(VPAID)
+* Zendesk #23454 — 无法正确处理第三方广告(VPAID)
 
-透過根據內容ID而不是時間範圍正確處理VPAID廣告，此問題得以解決。
+通过根据内容ID而不是时间范围正确处理VPAID广告，此问题得以解决。
 
-* Zendesk #24528 — 計費的TVSDK使用量度。
+* Zendesk #24528 — 计费的TVSDK使用量度。
 
-重要：此問題需要Flash播放器23.0.0.185或更新版本。
+重要：此问题需要Flash播放器23.0.0.185或更高版本。
 
-* Zendesk #在調整播放器大小期間25432現隱藏式字幕問題。
+* Zendesk #在调整播放器大小期间25432现隐藏式字幕问题。
 
-重要：此問題需要Flash播放器23.0.0.185或更新版本。
+重要：此问题需要Flash播放器23.0.0.185或更高版本。
 
-註解顯示紋理對應程式碼已修正，可在播放器調整大小期間正確處理座標。
+已修复字幕显示纹理映射代码，以便在播放器调整大小期间正确处理坐标。
 
-視訊心率程式庫(VHL)已更新至1.5.9版，以解決下列問題：
+视频心率库(VHL)已更新至版本1.5.9，以解决以下问题：
 
-* Zendesk #23730 — 位元速率量度是空的
+* Zendesk #23730 — 比特率量度为空
 
-此問題可透過追蹤VideoAnalyticsTracker中的位元速率變更而解決。
+通过跟踪VideoAnalyticsTracker中的比特率更改，此问题得以解决。
 
-* 在PTVideoAnalyticsTrackingMetadata中新增API assetDuration，以更新即時/線性資料流的資產持續時間。
+* 向PTVideoAnalyticsTrackingMetadata添加了一个新的API assetDuration ，以更新实时/线性流的资源持续时间。
 
 **版本1.4.28** (848)
 
-* Zendesk #25027 - Auditude在1.4.27桌上型電腦版本中無法運作
+* Zendesk #25027 - Auditude在1.4.27台式机版本中不起作用
 
-此問題已透過新增代碼以檢查AUDITUDE_METADATA_KEY以及讓AUDITUDE_METADATA_KEY和ADVERTISING_METADATA_KEY可互換而解決。
+通过添加代码以检查AUDITUDE_METADATA_KEY以及使AUDITUDE_METADATA_KEY和ADVERTISING_METADATA_KEY可互换来解决此问题。
 
-* Zendesk #24428 — 使用TVSDK播放DRM HLS的常見緩衝問題
+* Zendesk #24428 — 使用TVSDK播放DRM HLS时经常出现缓冲问题
 
-當沒有廣告設定時，TVSDK可以消除專案時間表上的前段廣告保留和即時保留保留（旨在同步廣告插入），以加快處理速度，此問題因此得以解決。
+在考虑到没有广告设置时，TVSDK可以通过消除为同步广告插入而设计的时间线上的前置广告保留和实时保留保留保留来加快处理速度，从而解决了此问题。
 
-* Zendesk #24344 — 停用WebVTT檔案以縮短啟動時間。
+* Zendesk #24344 — 禁用WebVTT文件以缩短启动时间。
 
-**注意**：此問題需要Flash播放器23或更新版本。
+**注释**：此问题需要Flash播放器23或更高版本。
 
-只有在需要顯示註解時，才載入WebVTT檔案來解決此問題。
+仅当需要显示字幕时才通过加载WebVTT文件解决了此问题。
 
-* Zendesk #24994 — 從商業休假返回時，隱藏式字幕會從播放器上卸下
+* Zendesk #24994 — 从商业休息时间返回时，隐藏式字幕会从播放器中丢弃
 
-**注意**：此問題需要Flash播放器23或更新版本。
+**注释**：此问题需要Flash播放器23或更高版本。
 
-虛假的EOC程式碼導致註解顯示消失。 此問題已透過強制608字幕代碼RU2、RU3和RU4在目前作用中視窗中提供正確的可見度來解決。
+虚假的EOC代码导致字幕显示消失。 通过强制608字幕代码RU2、RU3和RU4在当前活动窗口中提供正确的可见性，解决了此问题。
 
 **版本1.4.27** (844)
 
-* Zendesk #21554 — 未針對application-type = video/mp4觸發TVSDK錯誤信標
+* Zendesk #21554 — 应用程序类型= video/mp4未触发TVSDK错误信标
 
-此問題可透過啟用TVSDK Ping在無效資產格式上的正確錯誤追蹤URL來解決。
+通过启用TVSDK ping无效资源格式上的正确错误跟踪URL，此问题得以解决。
 
-* Zendesk #23402 — 不完整的廣告播放
+* Zendesk #23402 — 广告播放不完整
 
-**注意**：此問題需要Flash播放器23或更新版本。
+**注释**：此问题需要Flash播放器23或更高版本。
 
-在某些要求上收到404錯誤後，可能會發生當機。 此問題已透過確保連線在處理回應時不會關閉而解決。 解決方法可確保VPAID廣告檔案計數不正確，因此不會在下載時將其釋放。
+在某些请求中收到404错误后，可能会发生崩溃。 通过确保连接在处理响应时不会关闭，此问题已得到解决。 该方案确保VPAID广告文件不会被错误地计数，因此在下载时不会被释放。
 
-* Zendesk #23621 — 在400和404上重試失敗
+* Zendesk #23621 — 在400和404上重试失败
 
-**注意**：此問題需要Flash播放器23或更新版本。
+**注释**：此问题需要Flash播放器23或更高版本。
 
-修正在不同設定檔之間切換時，造成DRM中繼資料損毀的問題。
+修复了在不同用户档案之间切换时导致DRM元数据损坏的问题。
 
-* Zendesk #23705 — 廣告拼接插播期間影片廣告凍結
+* Zendesk #23705 — 视频广告在广告拼接时间冻结
 
-**注意**：此問題需要Flash播放器23或更新版本。
+**注释**：此问题需要Flash播放器23或更高版本。
 
-此問題與Zendesk #23621中的問題相同。
+此问题与Zendesk #23621中的问题相同。
 
-* Zendesk #23905 — 廣告插播會略過一些廣告插播
+* Zendesk #23905 — 一些广告时间会在广告时间跳过
 
-**注意**：此問題需要Flash播放器23或更新版本。
+**注释**：此问题需要Flash播放器23或更高版本。
 
-Windows原生網路程式碼已修正，以確保連線不會關閉其他連線目前正在使用的控制代碼。
+Windows本机网络代码已修复，以确保连接不会关闭其他连接当前正在使用的句柄。
 
-* 票證#24029 - HLS FER資料流不會播放中段.json檔案中的所有中段廣告。
+* 票证#24029 - HLS FER流不会播放中置.json文件中的所有中置广告。
 
-此問題已透過允許使用者端在Opportunity例項上個別設定自訂引數來解決，因此使用者端不必覆寫OpportunityGenerator。
+通过允许客户端在Opportunity实例上单独设置自定义参数，以使客户端不必覆盖OpportunityGenerator，该问题已得到解决。
 
 **版本1.4.26** (839)
 
-* Zendesk #18854 — 根據CRS規則更新創意選擇邏輯
-   * 支援根據CRS規則更新創意選擇邏輯
+* Zendesk #18854 — 根据CRS规则更新创意选择逻辑
+   * 支持根据CRS规则更新创意选择逻辑
 
-* Zendesk #22725 — 案頭範例應用程式中的playbackManager.beginPlayback()實作
+* Zendesk #22725 — 桌面示例应用程序中的playbackManager.beginPlayback()实施
 
-   * 透過在startPlaybackFromFlashVars結尾移除這個備援呼叫來修正，因為方法是從setupVideo()呼叫
+   * 修复了此问题，方法是在startPlaybackFromFlashVars结束时删除此冗余调用，因为从setupVideo()中调用方法
 
-* Zendesk #22807 - SeekManager null參考例外狀況
+* Zendesk #22807 - SeekManager null引用异常
 
-   * 透過在SeekManager內提供與_dispatcher相關的必要NULL指標保護來修正
+   * 通过在与_dispatcher相关的SeekManager内提供必要的NULL指针保护来修复此问题
 
-* Zendesk #22822 — 使用TVSDK播放清晰HLS時的頻繁緩衝
+* Zendesk #22822 — 使用TVSDK播放清晰HLS时频繁缓冲
 
-   * 已藉由在沒有ad時移除adSignalingModeOpportunityGenerator產生的初始機會來修正
+   * 通过删除adSigningModeOpportunityGenerator生成的初始机会来修复此问题（如果没有ad）
 
-* Zendesk #23378 — 資料流完整性區塊rules.xml
+* Zendesk #23378 — 流完整性阻止rules.xml
 
-   * 透過串流完整性工作流程載入rules.xml檔案來修正
+   * 通过流完整性工作流加载rules.xml文件修复了此问题
 
 **版本1.4.24** (817)
 
-* Zendesk #19851 — 當播放器適應不同的位元速率時，會在新的位元速率上跳回幾個時間格，造成尷尬的體驗
+* Zendesk #19851 — 当播放器适应不同的比特率时，它会在新比特率上及时跳回几帧，这会造成尴尬的体验
 
-**注意**：此問題需要Flash播放器22.0.0.175或更新版本。
+**注释**：此问题需要Flash播放器22.0.0.175或更高版本。
 
-已解決DRM介面卡在下載一小部分割槽段後無法正確還原的問題。
+解决了下载区段的一小部分后无法正确恢复的DRM适配器重置问题。
 
-* Zendesk #20784 - Analytics：觸發即時視訊轉換的內容完成
+* Zendesk #20784 - Analytics：触发实时视频过渡的内容完成
 
-此問題已透過新增API (trackVideoComplete)來解決，以便在LINEAR/LIVE視訊追蹤工作階段期間手動觸發內容完成。
+通过添加API (trackVideoComplete)在LINEAR/LIVE视频跟踪会话期间手动触发内容完成，解决了此问题。
 
-下列程式庫已更新：
+已更新以下库：
 
-* Zendesk #21643 - VPAID廣告未完整播放
+* Zendesk #21643 - VPAID广告无法完全播放
 
-   * AdobeMobile資料庫至4.10.0
-   * VHL資料庫至1.5.6
-   * VHL-Nielsen資料庫至1.6.7
+   * AdobeMobile库到4.10.0
+   * VHL库到1.5.6
+   * VHL-Nielsen库到1.6.7
 
-此問題已藉由在VPAID廣告播放時使用零高度檢視區來填滿舞台來解決。
+此问题可通过在播放VPAID广告时使用零高度视区填充舞台来解决。
 
-* Zendesk #22110 - Analytics：新增:sc:心率追蹤呼叫的ssl欄位
+* Zendesk #22110 - Analytics：添加:sc:用于心跳跟踪调用的ssl字段
 
-已修正SSL相關問題，且TVSDK中使用的VHL程式庫已更新至最新版本。
+修复了SSL相关问题，并将TVSDK中使用的VHL库更新到最新版本。
 
-* Zendesk #22608 — 影片間歇性地顯示黑色熒幕(需要Flash Player22.0.0.175或更新版本)
+* Zendesk #22608 — 视频间歇性显示黑屏(需要Flash Player22.0.0.175或更高版本)
 
-在適用性位元速率期間（具有最大位元速率限制），即使使用者端看到位置的更新，且使用者端的行為就像在播放內容，重新載入視訊時斷時續會顯示黑色畫面。
+在最大比特率限制的自适应比特率期间，即使客户端看到位置的更新，并且客户端的行为就像在播放内容，视频的重新加载间歇性地显示黑屏。
 
 **版本1.4.23** (809)
 
-* Zendesk #2887 — 將廣告規則邏輯套用至TVSDK時，出現後置廣告略過問題
+* Zendesk #2887 — 将广告规则逻辑应用于TVSDK时，出现后置广告跳过问题
 
-**注意**：此問題需要Flash播放器21.0.0.240或更新版本。
+**注释**：此问题需要Flash播放器21.0.0.240或更高版本。
 
-修正將廣告規則邏輯套用至TVSDK時略過後置廣告的問題。
+修复了将广告规则逻辑应用于TVSDK时跳过后置广告的问题。
 
-* Zendesk #19863 — 已捨棄VPAID媒體檔案的廣告
+* Zendesk #19863 — 已丢弃VPAID媒体文件的广告
 
-如果大型內嵌廣告具有多個媒體檔案，且VPAID廣告是第一個廣告，則不會為即時資料流播放內嵌廣告。 此問題已改為選擇其他媒體檔案來解決。
+如果大型内联广告具有多个媒体文件，并且其中一个VPAID广告是第一个广告，则不会为实时流播放内联广告。 此问题通过取用其他媒体文件而得以解决。
 
-* Zendesk #21021 — 延遲繫結音訊，造成音訊區段重複
+* Zendesk #21021 — 延迟绑定音频，导致音频区段重复
 
-**注意**：此問題需要Flash播放器21.0.0.240或更新版本。
+**注释**：此问题需要Flash播放器21.0.0.240或更高版本。
 
-音訊重複問題已修正。
+音频重复问题已修复。
 
-* Zendesk #21125 — 從即時/線性廣告插播提早返回
+* Zendesk #21125 — 提前结束实时/线性广告时间
 
-**注意**：此問題需要Flash播放器21.0.0.240或更新版本。
+**注释**：此问题需要Flash播放器21.0.0.240或更高版本。
 
-此版本支援在廣告插播播放至完成之前從廣告插播回訪。 透過自訂資訊清單標籤指示提早傳回。
+此版本支持在广告时间播放到完成之前从广告时间返回。 通过自定义清单标记指示提前返回。
 
-* Zendesk # 21369延遲繫結音訊導致時間不一致
+* Zendesk # 21369延迟绑定音频导致时间不一致
 
-**注意**：此問題需要Flash播放器21.0.0.240或更新版本。
+**注释**：此问题需要Flash播放器21.0.0.240或更高版本。
 
-已修正的音訊重複問題也已修正此問題。
+已修复的音频重复问题也已修复此问题。
 
-* Zendesk #21760， 20921 — 搜尋時取消同步音訊視訊。
+* Zendesk #21760， 20921 — 在搜寻时取消音频视频同步。
 
-**注意**：此問題需要Flash播放器21.0.0.240或更新版本。
+**注释**：此问题需要Flash播放器21.0.0.240或更高版本。
 
-音訊重複問題已修正。
+音频重复问题已修复。
 
-* Zendesk #22024 — 執行TVSDK時發生錯誤
+* Zendesk #22024 — 运行TVSDK时出错
 
-已修正參考播放器啟動時未播放任何資料流並擲回例外狀況的問題。
+修复了引用播放器未播放任何流并在启动时抛出异常的问题。
 
 **版本1.4.22** (791)
 
-* Zendesk #17580 - Primetime執行階段錯誤，代碼為3357
+* Zendesk #17580 - Primetime运行时错误，代码为3357
 
-**注意**：此問題需要Flash播放器21.0.0.197或更新版本。
+**注释**：此问题需要Flash播放器21.0.0.197或更高版本。
 
-已修正呼叫storeVoucher()時正確初始化deviceID而發生的隨機3357錯誤。
+修复了在调用storeVoucher()时通过正确初始化deviceID发生的随机3357错误。
 
-* Zendesk #21334 — 第三方廣告請求的TVSDK廣告請求逾時值
+* Zendesk #21334 — 第三方广告请求的TVSDK广告请求超时值
 
-在此版本中，已新增全域廣告請求逾時。
+在此版本中，添加了全局广告请求超时。
 
-**1.4.21版** (782)
+**版本1.4.21** (782)
 
-* Zendesk #19580 TVSDK會等待內容解析程式完成後再傳送 `PTTimedMetadataChangedNotification` 通知
+* Zendesk #19580 TVSDK会等待内容解析程序完成后再发送 `PTTimedMetadataChangedNotification` 通知
 
-**注意**：此問題需要Flash播放器21.0.0.182或更新版本。
+**注释**：此问题需要Flash播放器21.0.0.182或更高版本。
 
-此問題已透過提供設定廣告標籤和新增自訂機會產生器的功能在Desktop Reference Player中解決，該自訂機會產生器會顯示如何訂閱自訂提示以及如何在VOD檔案中處理這些提示。
+通过提供设置广告标记并添加自定义机会生成器的功能，此问题在桌面引用播放器中得以解决，自定义机会生成器可显示如何订阅自定义提示以及如何在VOD文件中处理这些提示。
 
-* Zendesk #20806 DVR視窗中的未來中段廣告在交換露營後不會觸發
+* Zendesk #20806 DVR窗口中的未来中置广告在交换摄像头后不会触发
 
-**注意**：此問題需要Flash播放器21.0.0.182或更新版本。
+**注释**：此问题需要Flash播放器21.0.0.182或更高版本。
 
-此問題已透過更新應用程式以設定_resource.metadata.setValue(DefaultMetadataKeys.ENABLE_LIVE_PREROLL， &quot;false&quot;)來解決，以停用PIP交換中的前段廣告插入，因此不會產生任何前段機會。
+通过更新应用程序以设置_resource.metadata.setValue(DefaultMetadataKeys.ENABLE_LIVE_PREROLL， &quot;false&quot;)来禁用PIP交换中的前置广告插入，从而不生成前置广告机会，从而解决了此问题。
 
-已引入排序功能來修正導致主內容持續時間為負數的順序錯亂的廣告投放位置。
+引入了排序功能，以修复导致主内容持续时间为负的乱序广告投放位置。
 
-* Zendesk #20522：無法略過VPAID 2.0廣告
+* Zendesk #20522：无法跳过VPAID 2.0广告
 
-**注意**：此問題需要Flash播放器21.0.0.182或更新版本。
+**注释**：此问题需要Flash播放器21.0.0.182或更高版本。
 
-* 在廣告寬恕期間略過VPAID廣告即可解決此問題。
-* 當廣告插播原則設為略過時，仍會傳送廣告和廣告插播事件。 播放器狀態不一致。
+* 在广告宽恕期间跳过VPAID广告，解决了此问题。
+* 当广告时间策略设置为跳过时，仍会调度广告和广告时间事件。 播放器状态不一致。
 
-此問題已解決，在略過廣告插播時行為正確且不會傳送事件。
+此问题已得到解决，在跳过广告时间时，表现正确且不会调度事件。
 
-* Zendesk #20955透過機會產生器在customParameters屬性中設定機碼值組
+* Zendesk #20955通过机会生成器在customParameters属性中设置键值对
 
-**注意**：此問題需要Flash播放器21.0.0.182或更新版本。
+**注释**：此问题需要Flash播放器21.0.0.182或更高版本。
 
-為廣告請求建立廣告單位時，Auditude請求會剖析自訂引數的AuditudeSettings 。
+在为广告请求创建广告单元时，Auditude请求会解析自定义参数的AuditudeSettings 。
 
-此行為已變更為在請求中包含來自Opportunity物件的自訂引數。 此外，多個具有不同自訂引數的商機無法封裝在一個Auditude請求中。
+此行为已更改为将来自Opportunity对象的自定义参数包含在请求中。 此外，不能将具有不同自定义参数的多个机会打包到一个Auditude请求中。
 
-* Zendesk #21227 - m3u8無法持續播放
+* Zendesk #21227 - m3u8无法持续播放
 
-**注意**：此問題需要Flash播放器21.0.0.211或更新版本。
+**注释**：此问题需要Flash播放器21.0.0.211或更高版本。
 
-此問題可透過允許TVSDK忽略資訊清單（HLS子設定檔）來解決，該資訊清單包含TVSDK不支援的AC3轉碼器（環繞）。
+通过允许TVSDK忽略清单（HLS子配置文件），解决了此问题，该清单包含TVSDK不支持的AC3编解码器（环绕）。
 
-**1.4.20版** (762)
+**版本1.4.20** (762)
 
-* Zendesk #19181 — 快速向前玩耍以鎖定資料流。
+* Zendesk #19181 — 快速向前播放到实时点锁定流。
 
-**注意**：此問題需要Flash播放器20.0.0.306或更新版本。
+**注释**：此问题需要Flash播放器20.0.0.306或更高版本。
 
-* Zendesk #19286 — 在FER資料流中來回搜尋時發生Flash Player當機。
+* Zendesk #19286 — 在FER流中来回搜索时发生Flash Player崩溃。
 
-**注意**：此問題需要Flash播放器20.0.0.306或更新版本。
+**注释**：此问题需要Flash播放器20.0.0.306或更高版本。
 
-如果查詢需要太長的時間才能取得回應，或如果通訊端已關閉，則關閉查詢即可解決在Google Chrome中搜尋時偶爾發生的當機問題。
+如果查询获取响应耗时过长或者套接字被关闭，则通过关闭查询解决了在Google Chrome中查找时发生的偶尔挂起问题。
 
-* Zendesk #19305 — 播放具有A/V中斷的資料流時遇到斷斷續續的播放。
+* Zendesk #19305 — 播放具有A/V不连续性的流时遇到断断续续的播放。
 
-**注意**：此問題需要Flash播放器20.0.0.306或更新版本。
+**注释**：此问题需要Flash播放器20.0.0.306或更高版本。
 
-此問題已藉由報告警告而解決。
+通过报告警告解决了此问题。
 
-* Zendesk # 19359 — 由於#EXT-X-FAXS-CM：屬性在設定層級資訊清單中的位置，Flash Player當機。
+* Zendesk # 19359 — 由于#EXT-X-FAXS-CM：属性在集级别清单中的位置，Flash Player崩溃。
 
-當#EXT-X-FAXS-CM標籤出現在播放清單中個別位元速率或區段之前的排名最前的播放清單時，此問題已解決。
+当#EXT-X-FAXS-CM标记显示在播放列表中的单个比特率或区段之前的顶部播放列表时，此问题已得到解决。
 
-* Zendesk #19489 - Fast Forward to Live Point stalls plugin (live stream)
+* Zendesk #19489 - Fast Forward to Live Point停止插件（实时流）
 
-此問題與Zendesk #19181相同。
+此问题与Zendesk #19181相同。
 
-* Zendesk #19699 - TVSDK無法在WebVTT字幕曲目之間切換
+* Zendesk #19699 - TVSDK无法在WebVTT字幕跟踪之间切换
 
-此問題已解決，方法是在追蹤變更時讓播放器傾印並重新載入資訊清單，以及修正影響雙位元組WebVTT插圖示題追蹤名稱的UTF8字串轉換問題。
+通过在跟踪更改时进行播放器转储并重新加载清单，并更正影响双字节WebVTT字幕跟踪名称的UTF8字符串转换问题，此问题得以解决。
 
 **版本1.4.19** (1.4.19.738)
 
-* Zendesk #18234 — 使用CC中的Unicode字串播放Streams的Flash Player當機
+* Zendesk #18234 -Flash Player崩溃，在CC中使用Unicode字符串回放流
 
-此問題需要Flash PlayerFP 20.0.0.267或更新版本，並透過正確處理Unicode字串來解決。
+此问题需要Flash PlayerFP 20.0.0.267或更高版本，并且可以通过正确处理Unicode字符串来解决。
 
-* Zendesk #18304 - VPAID廣告的串流完整性支援
+* Zendesk #18304 — 对VPAID广告的流完整性支持
 
-此功能需要Flash PlayerFP 20.0.0.267或更新版本，已在1.4.19版中推出。
+此功能需要Flash PlayerFP 20.0.0.267或更高版本，并已在1.4.19版中引入。
 
-* Zendesk #18766 — 參考播放器無法在CC曲目名稱中顯示非拉丁Unicode字元
+* Zendesk #18766 — 引用播放器无法在CC曲目名称中显示非拉丁Unicode字符
 
-此功能需要Flash PlayerFP 20.0.0.267或更新版本，並已透過正確處理Unicode字串加以修正。
+此功能需要Flash PlayerFP 20.0.0.267或更高版本，并通过正确处理Unicode字符串修复了此功能。
 
-* Zendesk #18804 - Firefox 42中的播放器當機
+* Zendesk #18804 — 播放器在Firefox 42中崩溃
 
-此問題需要Flash PlayerFP 20.0.0.235或更新版本，且與Zendesk #18723的問題相同。
+此问题需要Flash PlayerFP 20.0.0.235或更高版本，并且与Zendesk #18723的问题相同。
 
-* Zendesk #18864 -Flash Player完整外掛程式當機
+* Zendesk #18864 -Flash Player完全插件崩溃
 
-此問題需要Flash PlayerFP 20.0.0.235或更新版本，與Zendesk #18723相同。
+此问题需要Flash PlayerFP 20.0.0.235或更高版本，与Zendesk #18723相同。
 
-* Zendesk #18998 — 如果音訊和視訊時間戳記不相符，就會發生因中斷而無休止下載區段的情況。
+* Zendesk #18998 — 如果音频和视频时间戳不匹配，则会发生因中断而不断下载区段的情况。
 
-此問題已透過忽略時間戳記之間的間隔並只播放下載內容來解決。
+通过忽略时间戳之间的间隔并只播放下载的内容，此问题得以解决。
 
-* Zendesk #19093 — 只能觀看一次具有即時和完整事件重播(FER)內容的中段廣告，但在快速轉寄或搜尋超過廣告時無法再次觀看這些廣告
+* Zendesk #19093 — 中置广告只能通过实时和完整事件重播(FER)内容观看一次，但在快速转发或搜寻超过广告时无法再次观看这些广告
 
-在Primetime的預設adPolicy選擇器中，如果觀看了中段廣告，當您完成搜尋時，adBreak不會移動到搜尋的位置。 若要再次播放廣告，在搜尋之後，應用程式需要覆寫selectAdBreaksToPlay()函式。
+在Primetime的默认adPolicy选择器中，如果观看了中置广告，则当您完成搜寻时，adBreak不会移动到搜索的位置。 要再次播放广告，在搜寻之后，应用程序需要覆盖selectAdBreaksToPlay()函数。
 
-* Zendesk #19101 — 倒退到無法解析的Midroll廣告會移除廣告位置。
+* Zendesk #19101 — 退回未解析的Midroll广告会删除广告投放。
 
-此問題可透過允許播放器更新playbackMetrics時間、minimumOpportunityTime和時間表來解決。
+通过允许播放器更新playbackMetrics time、minimumOpportunityTime和Timeline，此问题得以解决。
 
-* Zendesk #19102 - FER和trick模式問題
+* Zendesk #19102 - FER和特技模式问题
 
-此問題需要Flash PlayerFP 20.0.0.267或更新版本，並透過正確設定advertisingMetadata.adSignalingMode來解決。
+此问题需要Flash PlayerFP 20.0.0.267或更高版本，可通过正确设置advertisingMetadata.adSignalingMode来解决。
 
-* Zendesk #19175 — 有時在第一次播放資料流時不會顯示前段廣告。
+* Zendesk #19175 — 有时，在首次播放流时，前置广告不会显示。
 
-針對廣告要求逾時，將新的API adRequestTimeout新增至AuditudeSettings即可解決此問題。 使用者現在可以覆寫預設的10s廣告請求逾時。
+通过为Ad请求超时向AuditudeSettings添加新的API adRequestTimeout，此问题得以解决。 用户现在可以覆盖默认的10s广告请求超时。
 
 **版本1.4.18** (1.4.18.722)
 
-* Zendesk #3324 - VMAP中沒有廣告媒體時，Primetime廣告報告不會追蹤廣告插播。
+* Zendesk #3324 — 当VMAP中没有广告媒体时，Primetime广告报告不会跟踪广告时间。
 
-當廣告插播為空白時，系統未偵測到廣告插播開始和完成追蹤事件。 此問題已透過在空白廣告插播（例如VMAP AdBreak）上使用有效的AdSource節點傳送廣告插播開始Ping來解決。
+当广告时间为空时，未触发广告时间开始和完成跟踪事件。 通过以有效的AdSource节点在空的广告时间（例如VMAP AdBreak）上发送广告时间开始Ping，此问题得以解决。
 
 **版本1.4.17** (1.4.17.702)
 
-* Zendesk #17168 — 切換可見度後，字幕不會出現10秒左右
+* Zendesk #17168 — 切换可见性后，字幕不会出现10秒左右
 
-此問題已透過為vtt註解檔案提供EXT-X-MEDIA-TIME標籤支援來解決。
+通过为vtt字幕文件提供EXT-X-MEDIA-TIME标记支持，此问题得以解决。
 
-* Zendesk #17983 — 如果無法為資訊清單下載任何金鑰，會導致整個資訊清單播放失敗
+* Zendesk #17983 — 未能下载清单的任何键会导致整个清单播放失败
 
-**注意**：您必須至少Flash PlayerFP 19.0.0.245或更高版本。
+**注释**：您必须至少具有Flash PlayerFP 19.0.0.245或更高版本。
 
-有時播放即時內容時，資訊清單中可能有無效的索引鍵（例如，中斷期間），但其他時間範圍可能有有效的索引鍵，仍可播放。 先前，當無法下載資訊清單中列出的索引鍵時，整個資訊清單會失敗。 現在，資訊清單只有在無法下載所有列出的金鑰時才會失敗。 如果部分金鑰有效，但部分金鑰無法下載，則會播放內容。 如果我們嘗試播放的區段需要我們未有的金鑰，仍然會失敗。
+有时在播放实时内容时，清单中可能包含无效的键（例如，对于封锁期），但其他时间范围可能包含有效的键，并且仍会播放。 以前，当无法下载清单中列出的键时，整个清单失败。 现在，清单仅在无法下载列出的所有键值时失败。 如果某些密钥有效，但无法下载其中的某些密钥，则将播放内容。 如果我们尝试播放一个需要我们不具备的键的区段，我们仍然会失败。
 
-* Zendesk #18554 — 在某些情況下，串流完整性會減少Cookie
+* Zendesk #18554 — 在某些情况下，流完整性会对Cookie进行修剪
 
-**注意**：您必須至少Flash PlayerFP 19.0.0.245或更高版本。
+**注释**：您必须至少具有Flash PlayerFP 19.0.0.245或更高版本。
 
-已修正可能截斷Cookie值的Cookie操作程式碼錯誤。
+修复了Cookie操作代码中可能截断Cookie值的错误。
 
 **版本1.4.16** (1.4.16.684)
 
-* Zendesk #3732 — 在Chrome中為串流完整性新增代理支援(需要Flash PlayerFP 19.0.0.207或更高版本)
+* Zendesk #3732 — 在Chrome中添加对代理的支持，以实现流完整性(需要Flash PlayerFP 19.0.0.207或更高版本)
 
-此為增強功能。
+这是一项增强功能。
 
-* Zendesk #4244 - PTS滑鼠指向效果時的串流問題
+* Zendesk #4244 - PTS滚动时的流问题
 
-此問題已透過偵測滑鼠指向效果並管理每個承載型別的不連續性來解決，而不具有一般性。
+通过检测变换并管理每个有效负载类型的不连续性（而不是通用的），此问题得以解决。
 
-* Zendesk #4487 — 追蹤線性內容頻道
+* Zendesk #4487 — 跟踪线性内容渠道
 
-此問題已透過線上性資料流播放工作階段期間重新初始化視訊心率追蹤器來解決。
+通过在线性流播放会话期间重新初始化视频心率跟踪器，解决了此问题。
 
-* Zendesk #17427 - Chrome (Win7)上的Proxy無法運作Adobe資料流完整性()
+* Zendesk #17427 -Adobe流完整性无法通过Chrome (Win7)上的代理工作()
 
-**注意**：解析度需要Flash PlayerFP 19.0.0.207或更高版本。
+**注释**：分辨率需要Flash PlayerFP 19.0.0.207或更高版本。
 
-此問題與Zendesk #3732相同。
+此问题与Zendesk #3732相同。
 
-* Zendesk #17907 - pHLS即時資料流上的延遲，Flash Player為19
+* Zendesk #17907 - pHLS Live Stream上的滞后，Flash Player为19
 
-**注意**：解析度需要Flash PlayerFP 19.0.0.207或更高版本。
+**注释**：分辨率需要Flash PlayerFP 19.0.0.207或更高版本。
 
-此問題已透過處理即時資料流解決，其中重新載入即時資訊清單時TS檔案的網域會變更，且檔案下載兩次。
+通过处理实时流（重新加载实时清单时TS文件的域发生更改，并且文件下载了两次），解决了此问题。
 
-* Zendesk #17931 — 開頭為石板的HLS內容無法播放
+* Zendesk #17931 — 开头为盖板的HLS内容无法播放
 
-**注意**：解析度需要Flash PlayerFP 19.0.0.207或更高版本。
+**注释**：分辨率需要Flash PlayerFP 19.0.0.207或更高版本。
 
-此問題已透過在第一個TS檔案的前2秒內處理沒有音訊的資料流而解決。
+通过在第一个TS文件的前2秒内处理没有音频的流来解决此问题。
 
-* Zendesk #17934 — 即時資料流失敗，Flash為19.0.0.185
+* Zendesk #17934 -Flash为19.0.0.185的直播流失败
 
-**注意**：解析度需要Flash PlayerFP 19.0.0.207或更高版本。
+**注释**：分辨率需要Flash PlayerFP 19.0.0.207或更高版本。
 
-透過在區段邊界上處理音訊和視訊影格之間具有時間交錯的即時資料流，此問題已解決。
+通过在区段边界上处理音频帧和视频帧之间具有时间交错的实时流，解决了此问题。
 
-* Zendesk #17973 — 中段期間最新Flash Player19.0.0.185當機
+* Zendesk #17973 — 最新Flash Player在中置时崩溃19.0.0.185
 
-**注意**：解析度需要Flash PlayerFP 19.0.0.207或更高版本。
+**注释**：分辨率需要Flash PlayerFP 19.0.0.207或更高版本。
 
-透過處理具有中段廣告插入的未設為靜音的音訊，此問題已解決。 （剖析器開關會發生，並且在播放的任何時刻，內容會轉換為中段廣告、或是在廣告播放中間，以此類推。）
+通过处理带有中置广告插入的未设为静音的音频，解决了此问题。 （发生解析器切换，并且在播放过程中的任何时刻，内容将转换为中置广告，或者在广告播放过程中转换，依此类推。）
 
-* Zendesk #18049 — 使用Firefox 42 Beta版Flash19當機
+* Zendesk #18049 — 使用Firefox 42 Beta实现Flash19崩溃
 
-此問題與Zendesk #17973相同。
+此问题与Zendesk #17973相同。
 
 **版本1.4.15** (1.4.15.678)
 
-* Zendesk #4377：因廣告原則而略過廣告插播時引發AD_BREAK_SKIPPED事件。
+* Zendesk #4377：由于广告策略而跳过广告时间时触发AD_BREAK_SKIPPED事件。
 
-修正方法是在略過廣告時新增AD_BREAK_SKIPPED。
+修复了跳过广告时添加的AD_BREAK_SKIPPED。
 
-* Zendesk #4496 — 資料流完整性：重新導向至Tokenized資料流時發102100錯誤。
+* Zendesk #4496 — 流完整性：重定向到令牌化的流时出102100错误。
 
-修正是新增支援透過TVSDK設定AVNetworkConfiguration屬性useCookieHeaderForAllRequests。
+修复了以下问题：添加对通过TVSDK设置AVNetworkConfiguration属性useCookieHeaderForAllRequests的支持。
 
-* Zendesk #17179 -Flash播放器因加密內容的多個SAP變更而當機。
+* Zendesk #17179 -Flash播放器对加密内容的多个SAP更改发生崩溃。
 
-部分加密內容錄放期間的當機已修正。
+修复了在播放某些加密内容期间的崩溃。
 
-**注意**：此修正需要Flash Player19.0.0.200或更新版本。
+**注释**：此修补程序需要Flash Player19.0.0.200或更高版本。
 
-* Zendesk #17499 — 我們如何在觀看後移除midrolls，但從選件內容中移除preroll
+* Zendesk #17499 — 我们如何在观看后删除midroll，但从fer内容中删除preroll
 
-已新增型別至AdBreakTimelineItem (AdBreakTimelineItem.placementType)，這樣AdPolicySelector就可以針對前段、中段和後段內容傳回不同的原則。
+向AdBreakTimelineItem (AdBreakTimelineItem.placementType)添加了一种类型，以便AdPolicySelector可以返回用于前置、中置和后置内容的不同策略。
 
-* Zendesk #17665 — 頻寬節流
+* Zendesk #17665 — 带宽调节
 
-修正的作法是移除邏輯，以便在緩衝開始時將目標緩衝區大小變更為初始緩衝區大小。
+修复了以下问题：在缓冲开始时，删除逻辑以将目标缓冲区大小更改为初始缓冲区大小。
 
-**1.14.14版** (1.4.14.771)
+**版本1.14.14** (1.4.14.771)
 
-* Zendesk #17363 — 修正參考播放器的README檔案
+* Zendesk #17363 — 修复参考播放器的自述文件
 
-   * 釐清下載和安裝playerglobal.swc的說明。
-   * 新增使用特定flash player版本更新專案設定的指示。
-   * 更新AdvertisingOverlay專案設定以使用最低播放器版本。
-   * 更新ReferenceCore專案設定以使用特定播放器11.9版
+   * 阐明有关下载和安装playerglobal.swc的说明。
+   * 添加使用特定flash player版本更新项目配置的说明。
+   * 更新AdvertisingOverlay项目配置以使用最低播放器版本。
+   * 更新ReferenceCore项目配置以使用特定的播放器版本11.9
 
-* Zendesk #17471 — 播放器凍結
+* Zendesk #17471 — 播放器冻结
 
-部分修正搜尋後廣告沒有從頭開始播放的問題。
+部分修复了搜索后广告不会从头开始播放的问题。
 
-* Zendesk #17496 — 在DVR視窗中搜尋時，未解析Podbuster
+* Zendesk #17496 — 在DVR窗口中重新搜索时，未解析Podbuster
 
-為每個廣告插播提供自訂引數。
+为每个广告时间提供自定义参数。
 
 **版本1.4.13** (1.4.13.660)
 
-* Zendesk #4037 — 無可用設定檔錯誤(需要Flash Player18.0.0.232或更高版本)
+* Zendesk #4037 — 无可用配置文件错误(需要Flash Player18.0.0.232或更高版本)
 
-修正查詢引數包含「http」時的url剖析問題
+修复了查询参数包含“http”时的url解析问题
 
-* Zendesk #4260 — 在IE11中Flash Player18次當機(需要Flash Player18.0.0.232或更新版本)
+* Zendesk #4260 - IE11中的Flash Player18次崩溃(需要Flash Player18.0.0.232或更高版本)
 
-修正使用IE11以全熒幕模式播放視訊時的當機問題
+修复了使用IE11以全屏模式播放视频时的崩溃
 
-* Zendesk #4262 - Adobe Primetime播放器在Windows 10上當機(需要Flash Player18.0.0.232或更高版本)
+* Zendesk #4262 - Adobe Primetime播放器在windows 10上崩溃(需要Flash Player18.0.0.232或更高版本)
 
-修正在Windows上使用FireFox以全熒幕模式播放視訊時的當機問題。
+修复了在Windows上使用FireFox以全屏模式播放视频时的崩溃。
 
-* Zendesk #4279 - iOS和案頭上的HLS TVSDK廣告插入–302重新導向問題
+* iOS和桌面上的Zendesk #4279 - HLS TVSDK广告插入–302重定向问题
 
-修正URL沒有副檔名而無法正確辨識其型別的問題
+修复了URL没有扩展名而无法正确识别其类型的问题
 
-* Zendesk #4306 — 僅在Win上全熒幕時發生Flash Player當機(需要Flash Player18.0.0.232或更高版本)
+* Zendesk #4306 — 仅在Win上全屏运行时Flash Player崩溃(需要Flash Player18.0.0.232或更高版本)
 
-修正Windows上以全熒幕模式播放視訊時的當機問題。
+修复了在Windows上以全屏模式播放视频时的崩溃。
 
-* Zendesk #4480 — 遺失ID3標籤事件(需要Flash Player18.0.0.232或更新版本)
+* Zendesk #4480 — 缺少ID3标记事件(需要Flash Player18.0.0.232或更高版本)
 
 **1.4.12 **(1.4.12.656)
 
-* Zendesk #2751 - CSAI和CRS |增強：處理特定媒體檔案URL中的動態元素。
+* Zendesk #2751 - CSAI和CRS |增强：处理某些媒体文件URL中的动态元素。
 
-更新Creative重新封裝服務，以正確處理具有動態創意URL的廣告。
+更新了Creative重新打包服务，以正确处理带有动态创意URL的广告。
 
-* ptplay - 2114 - MP4播放支援。
+* ptplay - 2114 - MP4播放支持。
 
-現在支援基本播放MP4內容，包括播放、暫停和搜尋。
+现在支持MP4内容的基本播放，包括播放、暂停和搜寻。
 
-下列專案需要Flash Player18.0.0.225或更高版本：
+以下内容需要Flash Player18.0.0.225或更高版本：
 
-* Zendesk #3992 — 額外的TrickPlay速度。
+* Zendesk #3992 — 额外的TrickPlay速度。
 
-TrickPlay現在接受高於16x的比率：+/- 32、+/-64和+/-128。
+TrickPlay现在接受高于16x的速率：+/- 32、+/-64和+/-128。
 
-* Zendesk #3113 -Flash Player外掛程式當機
+* Zendesk #3113 -Flash Player插件崩溃
 
-修正嘗試在Mac Firefox上播放重新導向廣告時的當機問題。
+修复了尝试在Mac Firefox上播放重定向广告时的崩溃问题。
 
-* Zendesk #4037 — 無可用的設定檔錯誤
-* Zendesk #4262 - Adobe Primetime播放器在Windows 10上當機
+* Zendesk #4037 — 无可用配置文件错误
+* Zendesk #4262 - Adobe Primetime播放器在Windows 10上崩溃
 
-已修正在全熒幕播放期間於Windows Firefox中當機的問題。
+修复了全屏播放期间在Windows Firefox中崩溃的问题。
 
 **版本1.4.11** (1.4.11.648)
 
-* Zendesk #1869 — 變更字型大小的問題(需要Flash Player18.0.0.200)
+* Zendesk #1869 — 更改字体大小时出现问题(需要Flash Player18.0.0.200)
 
-允許在WebVTT註解程式碼中使用註解大小。
+允许在WebVTT字幕代码中使用字幕大小。
 
-* Zendesk #3113 -Flash Player外掛程式當機(需要Flash Player18.0.0.200)
-* Zendesk #3268 — 桌上型：視訊播放器在+- 40/50秒後開始閃爍，並在+- 90秒後開始變黑(需要Flash Player18.0.0.200)
+* Zendesk #3113 -Flash Player插件崩溃(需要Flash Player18.0.0.200)
+* Zendesk #3268 — 台式机：视频播放器在+- 40/50秒后开始闪烁，并在+- 90秒后开始变黑(需要Flash Player18.0.0.200)
 
-修正中繼視訊錯誤。
+修复暂存视频错误。
 
-* Zendesk #3670 — 在參考播放器中搜尋時，VOD中出現INVALID_PARAMETER錯誤(需要Flash Player18.0.0.200)
+* Zendesk #3670 — 在引用播放器中查找时，VOD中出现INVALID_PARAMETER错误(需要Flash Player18.0.0.200)
 
-偵測到新期間時，ThreadSeek中的InvalidateProfiles。
+检测到新时段时ThreadSeek中的InvalidateProfiles。
 
-* Zendesk #3896 — 在Chrome上將資料流完整性設定為「開啟」的Flash Player當機(需要Flash Player18.0.0.200)
+* Zendesk #3896 — 在Chrome上，将Stream Integrity设置为ON的Flash Player崩溃(需要Flash Player18.0.0.200)
 
-修正Pepper原生網路模式中的當機
+修复了Pepper本机联网模式下的崩溃
 
-* Zendesk #3905 — 在CDN上託管時未載入TVSDK播放器
+* Zendesk #3905 — 在CDN上托管时，未加载TVSDK播放器
 
-修正pageDomain與swf網域不同時尋找萬用字元Token的問題。
+修复了pageDomain与swf域不同时查找通配符令牌的问题。
 
-**1.4.10版** (1.4.10.642)
+**版本1.4.10** (1.4.10.642)
 
-* Zendesk #3249 - TVSDK網路播放器在Firefox上讓Flash當機
+* Zendesk #3249 - TVSDK Web Player在Firefox上使Flash崩溃
 
-修正了Mac上Firefox偶爾造成的Flash Player當機，這是因為在外部監視器上播放的資料流會切換至較高的位元速率資料流。(需要Flash Player18.0.0.160)
+修复了Mac上Firefox偶尔发生的Flash Player崩溃问题，当时，在外部监视器上播放的流将切换到更高的比特率流。(需要Flash Player18.0.0.160)
 
-* Zendesk #3268 — 桌上型電腦：視訊播放器在 `+-` 40/50秒後開始變黑 `+-` 90秒
+* Zendesk #3268 — 台式机：视频播放器在 `+-` 40/50秒后开始变黑 `+-` 90秒
 
-修正Mac Chrome上串流開始忽隱忽現，最終變成黑色的問題。 (需要Flash Player18.0.0.161)
+修复了Mac Chrome上流开始闪烁并最终变黑的问题。 (需要Flash Player18.0.0.161)
 
-* Zendesk #3304 - VAST 3.0 `[ERRORCODE]` 未填入巨集
+* Zendesk #3304 - VAST 3.0 `[ERRORCODE]` 未填充宏
 
-   * 如果內嵌廣告具有不良創意，則會顯示錯誤代碼400。
-   * `[ERRORCODE]` 巨集將會進行URL編碼
+   * 如果内联广告的创意效果不佳，则会显示错误代码400。
+   * `[ERRORCODE]` 宏将进行URL编码
 
-* Zendesk #3601 — 增強功能請求：包裝函式隨附管理
+* Zendesk #3601 — 增强请求：包装器配套管理
 
-   * TVSDK將顯示包含資源（html、iframe或靜態）的包裝函式隨附，且會關閉至內嵌。 （如果內嵌不包含該大小的）
-   * 除非用於顯示，否則將忽略具有資源的包裝函式。 （不用於追蹤）
-   * 只有沒有資源的包裝函式隨附才會用於追蹤目的。 （僅包含追蹤的包裝函式隨附）
+   * TVSDK将显示包含资源（html、iframe或static ）的包装器伴随，以接近内联的方式关闭。 （如果内联不包含该大小的URL）
+   * 除非用于显示，否则将忽略包含资源的包装器。 （不用于跟踪）
+   * 只有没有资源的包装器同类才会用于跟踪目的。 （仅包含跟踪的包装器伴随）
 
 **版本1.4.9**
 
-* Zendesk #2615 — 從桌上型電腦顯示器移除HLS檢視的問題
+* Zendesk #2615 — 从桌面显示中删除HLS视图的问题
 
-已將clearVideo()方法新增至MediaPlayer。 從StageVideo物件中清除AVStream，以清除顯示的視訊影格。 只有在影片暫停時才應呼叫，而且必須先呼叫replaceCurrentResource或replaceCurrentItem，才能再次呼叫play()。
+向MediaPlayer添加了clearVideo()方法。 通过从StageVideo对象中清除AVStream来清除显示的视频帧。 仅当视频已暂停时才应调用，并且必须先调用replaceCurrentResource或replaceCurrentItem，然后才能再次调用play()。
 
-* Zendesk #3169 — 透過Adobe Analytics整合更新參考播放器
+* Zendesk #3169 — 通过Adobe Analytics集成更新引用播放器
 
-參考播放器已更新並整合Adobe Analytics
+引用播放器已通过Adobe Analytics集成进行更新
 
-* Zendesk #3296 — 桌上型HLS TVSDK — 未播放VAST第三方廣告
+* Zendesk #3296 — 桌面HLS TVSDK — 未播放大型第三方广告
 
-HLS格式的MIME型別區分大小寫，這不正確，已變更為不再區分大小寫
+HLS格式的MIME类型区分大小写，这不正确，已更改以便它们不再区分大小写
 
 **版本1.4.8**
 
-* Zendesk #2737 — 案頭播放器 — 錯誤106000 (需要Flash Player17.0.0.184)
-* Zendesk #3007 — 更新至Flash Player17後未出現前段廣告(需要Flash Player17.0.0.184)
-* Zendesk #3085 — 案頭HLS播放器在60秒後擲回106000錯誤(需要Flash Player17.0.0.184)
+* Zendesk #2737 — 桌面播放器 — 错误106000(需要Flash Player17.0.0.184)
+* Zendesk #3007 — 更新到Flash Player17后未出现前置广告(需要Flash Player17.0.0.184)
+* Zendesk #3085 — 桌面HLS播放器在60秒后引发106000错误(需要Flash Player17.0.0.184)
 
 **版本1.4.7**
 
-* Zendesk #2760 — 在TrickPlay模式期間忽略DISCONTINUITY標籤(需要Flash Player版本17.0.0.158)
-* Zendesk #2760 — 在TrickPlay模式期間忽略DISCONTINUITY標籤(需要Flash Player版本17.0.0.158)
+* Zendesk #2760 — 在TrickPlay模式下忽略不连续标记(需要Flash Player版本17.0.0.158)
+* Zendesk #2760 — 在TrickPlay模式下忽略不连续标记(需要Flash Player版本17.0.0.158)
 
 **版本1.4.6**
 
-* Zendesk #2652 — 適用於案頭HLS的Auditude檔案，適用於案頭HLS檔案的Artificate Auditude media_id
+* Zendesk #2652 — 桌面HLS的Auditude文档，阐明桌面HLS的Auditudemedia_id文档
 
 **版本1.4.5**
 
-* Zendesk #2256 — 存取主要播放清單，更新PSDK以傳送主要播放清單上訂閱標籤的timedMetadata事件。 (需要Flash Player版本17.0.0.134)
-* Zendesk #2417 — 播放器嘗試在播放開始前下載字幕，WebVTT使用錯誤的區段號碼變數進行區段號碼比對。 只有區段索引從零開始的媒體才會顯示錯誤。 (需要Flash Player版本17.0.0.134)
-* Zendesk #2537 — 搭配Chrome使用Pepper外掛程式時，Flash播放器當機(需要Flash Player版本17.0.0.134)
-* Zendesk #2547 — 阿拉伯字幕：文字應靠右對齊(需要Flash Player版本17.0.0.134)
+* Zendesk #2256 — 访问主控播放列表，更新了PSDK以为主控播放列表上订阅的标记调度timedMetadata事件。 (需要Flash Player版本17.0.0.134)
+* Zendesk #2417 — 播放器尝试在播放开始之前下载字幕，WebVTT使用了错误的区段编号变量进行区段编号匹配。 只有区段索引从零开始的媒体才会显示错误。 (需要Flash Player版本17.0.0.134)
+* Zendesk #2537 — 将Pepper插件与Chrome结合使用时，Flash播放器崩溃(需要Flash Player版本17.0.0.134)
+* Zendesk #2547 — 阿拉伯字幕：文本应右对齐(需要Flash Player版本17.0.0.134)
 
 **版本1.4.4**
 
-* Zendesk #1561 — 回覆： `[Adobe Primetime]` 更新：HLS使用者端容錯移轉支援案頭PSDK中的PROGRAM-DATE-TIME (需要Flash Player版本16.0.0.305或更新版本)
-* Zendesk #2197 - `[Ads]` 追蹤廣告錯誤
-* Zendesk #2286 — 功能要求：提供有關廣告載入狀態的資訊(VPAID)
-* Zendesk #2285 — 功能請求：在指定的逾時期間後略過廣告
-* 錯誤#3921755 - OpenSSL程式庫更新至Flash Player的1.0.1L版(需要Flash Player版本16.0.0.305或更新版本)
+* Zendesk #1561 — 回复： `[Adobe Primetime]` 更新：对桌面PSDK中的PROGRAM-DATE-TIME的基于HLS客户端的故障转移支持(需要Flash Player版本16.0.0.305或更高版本)
+* Zendesk #2197 - `[Ads]` 跟踪广告错误
+* Zendesk #2286 — 功能请求：提供有关广告加载状态的信息(VPAID)
+* Zendesk #2285 — 功能请求：在指定的超时持续时间后跳过广告
+* 错误#3921755 — 将OpenSSL库更新到Flash Player中的1.0.1L版本(需要Flash Player版本16.0.0.305或更高版本)
 
 **版本1.4.2**
 
-* Zendesk #1303 — 隱藏式字幕的垂直偏移(需要Flash Player版本16.0.0.235或更高版本，預計發行日期：2014年12月)
-* Zendesk #1870 — 開啟和關閉隱藏式字幕(需要Flash Player版本16.0.0.235或更高版本，預計發行日期： 2014年12月)
-* Zendesk #2110 — 在VPAID廣告期間嘗試進入全熒幕後播放卡住(需要Flash Player版本16.0.0.235或更高版本，預計發行日期： 2014年12月)
-* Zendesk #2199 - `[VPAID]` 搜尋過去的廣告插播時，播放器未回應
-* Zendesk #2358 — 回覆： `[Analytics]` 不正確的章節資料
+* Zendesk #1303 — 隐藏式字幕的垂直偏移(需要Flash Player版本16.0.0.235或更高版本，预计发行日期：2014年12月)
+* Zendesk #1870 — 隐藏式字幕打开和关闭(需要Flash Player版本16.0.0.235或更高版本，预计发行日期：2014年12月)
+* Zendesk #2110 — 在VPAID广告期间尝试进入全屏后播放卡住(需要Flash Player版本16.0.0.235或更高版本，预计发行日期：2014年12月)
+* Zendesk #2199 - `[VPAID]` 搜索过去的广告时间时，播放器未响应
+* Zendesk #2358 — 回复： `[Analytics]` 章节数据不正确
 
 **版本1.4.1**
 
-* 更新「中斷API」，以符合Android和iOS實作。
+* 更新了封锁API以使其与Android和iOS实施保持一致。
 
-**1.4.0版**
+**版本1.4.0**
 
-* Zendesk #1024 — 透過資訊清單從資料流中移除廣告的功能
-* Zendesk #1423 - HLS播放失敗正在鎖定Flash Player（未報告錯誤）
-* Zendesk #1674 — 未顯示ClosedCaption，遺失0x03 ETX程式碼時顯示正確的708字幕。
+* Zendesk #1024 — 通过清单从流中删除广告的功能
+* Zendesk #1423 - HLS播放失败锁定Flash Player（未报告错误）
+* Zendesk #1674 — 未显示ClosedCaption，在缺少0x03 ETX代码时显示正确的708字幕。
 
-## 已知問題 {#known-issues}
+## 已知问题 {#known-issues}
 
-* 隱藏式字幕無法搭配純音訊內容使用，因為字幕系統需要視訊才能運作。
-如果沒有視訊，就沒有檢視區尺寸，如果沒有檢視區尺寸，就無法顯示註解的任何圖形。
-* 由於Chrome沙箱限制，Google Chrome中的資料流完整性稍微變慢。
-* 在TVSDK 1.4中，如果您停用自動播放，當播放器閒置至少一分鐘時，可能會發生DRM錯誤。 若要解決此問題，當您停用自動播放但預先載入資產時，請修改 `ReferenceCore.as` 透過變更內容 `onPlaybackManagerPrepared`：
+* 隐藏式字幕不适用于纯音频内容，因为字幕系统需要视频才能工作。
+如果没有视频，则没有视区尺寸；如果没有视区尺寸，则无法显示任何用于字幕的图形。
+* 由于Chrome沙盒限制，Google Chrome中的流完整性稍微变慢。
+* 在TVSDK 1.4中，如果禁用自动播放，则当播放器保持空闲至少一分钟时，可能会发生DRM错误。 要解决此问题，当您禁用自动播放但预加载资产时，请修改 `ReferenceCore.as` 通过更改 `onPlaybackManagerPrepared`：
 
 ```
 if (_playbackManager.autoPlay) {
@@ -746,22 +746,22 @@ _playbackManager.pause();
 }
 ```
 
-* **版本1.4.13** PTPLAY-8501 — 當VMAP傳回兩個直接MP4非轉碼廣告時，相同的後援廣告會播放兩次。
+* **版本1.4.13** PTPLAY-8501 — 当VMAP返回两个直接MP4非转码广告时，相同的回退广告会播放两次。
 
-* **版本1.4.2** 在Flash Player版本16發行版本中，當播放器進入空白緩衝事件後，發現了ABR「關機」邏輯的問題。 此問題會導致在播放器進入緩衝狀態後，位元速率無法在不良的頻寬環境中關閉。 若要解決此問題，請由您的應用程式設定 `BufferControlParameters.initialBufferTime` 與相同 `BufferControlParameters.playbackBufferTime` 在緩衝狀態期間暫時(即 `BufferEvent.BUFFERING_BEGIN` 事件)，然後將其重設為上的設定值 `BufferEvent.BUFFERING_END` 事件。 此問題的修正將在Flash Player版本16的下一個修補程式版本中提供。
+* **版本1.4.2** 在Flash Player版本16发行版中，当播放器进入空缓冲事件后，发现了ABR“downiting”（关机）逻辑存在的问题。 该问题会阻止在播放器进入缓冲状态后，比特率在带宽较差环境中发生切换。 要解决此问题，请让您的应用程序设置 `BufferControlParameters.initialBufferTime` 与相同 `BufferControlParameters.playbackBufferTime` 在缓冲状态期间暂时(即 `BufferEvent.BUFFERING_BEGIN` 事件)，然后将其重置回设置的值 `BufferEvent.BUFFERING_END` 事件。 此问题的修复程序将在Flash Player版本16的下一个补丁版本中提供。
 
-* **1.4.0版**
+* **版本1.4.0**
 
-   * PTPLAY-1634 — 相同的訂閱標籤在不同的即時視窗中具有不同的時間戳記。 當Live Windows移動時，每個視窗中的相同標籤應該有相同的時間戳記。 但有時候，相同的標籤會有不同的時間戳記。
-   * PTPLAY-28 - MediaPlayer時間軸不包含空白分行符號。
-   * 需要跨網域原則檔案(crossdomain.xml)，才能從不同網域串流內容。 [設定用於HTTP串流的crossdomain.xml檔案](https://www.adobe.com/devnet/adobe-media-server/articles/cross-domain-xml-for-streaming.html).
-   * 錯誤#3694203 — 在DVR串流中，從播放中段搜尋另一個中段廣告提示可能會導致瀏覽器凍結
-   * 錯誤#3753725 — 如果已觀看廣告插播，則未考慮selectPolicyForSeekIntoAd
-   * 錯誤#3754529 — 在即時DVR資料流中搜尋時，不會從資料流中移除前段廣告
-   * 錯誤#3761896 — 如果在廣告播放期間允許搜尋，則廣告標籤將在搜尋後重新調整。 因應措施是在搜尋期間不使用ITEM_UPDATED回呼
-   * 錯誤#3779889 — 在Video Analytics中到達特技播放結尾時，不會進行完整呼叫
-   * 錯誤#VA-779 — 未針對具有心率支援參考實作的Enhanced Video Analytics傳送位元速率變更事件心率 — 未在範例應用程式中實作特技播放。
+   * PTPLAY-1634 — 同一订阅标记在不同的实时窗口中具有不同的时间戳。 当Live Windows移动时，其中的同一标记应具有相同的时间戳。 但是，有时候，相同的标记具有不同的时间戳。
+   * PTPLAY-28 - MediaPlayer时间轴不包含空分隔符。
+   * 需要跨域策略文件(crossdomain.xml)才能从其他域流式传输内容。 [为HTTP流设置crossdomain.xml文件](https://helpx.adobe.com/adobe-media-server/dev/configure-dynamic-streaming-live-streaming.html).
+   * 错误#3694203 — 在DVR流中，从播放中置广告内部搜索另一个中置广告提示可能会导致浏览器冻结
+   * 错误#3753725 — 如果观看了广告时间，则selectPolicyForSeekIntoAd不予以考虑
+   * 错误#3754529 — 在实时DVR流中重新搜寻时，不会从流中删除前置广告
+   * 错误#3761896 — 如果在广告播放期间允许搜寻，则广告标记将在搜寻后重新调整。 解决方法是在搜寻期间不使用ITEM_UPDATED回调
+   * 错误#3779889 — 在Video Analytics中，当到达特技播放的结尾时，不进行完整调用
+   * 错误#VA-779 — 没有为具有心率支持参考实施的增强型视频分析发送比特率更改事件心率 — 在示例应用程序中不实施特技播放。
 
-## 實用資源 {#helpful-resources}
+## 有用资源 {#helpful-resources}
 
-* 如需完整說明檔案，請前往 [Adobe Primetime學習與支援](https://helpx.adobe.com/support/primetime.html) 頁面。
+* 请参阅完整的帮助文档，网址为 [Adobe Primetime学习与支持](https://helpx.adobe.com/support/primetime.html) 页面。

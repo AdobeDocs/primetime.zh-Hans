@@ -1,36 +1,36 @@
 ---
-title: 在即時/線性資料流中使用Ad Insertion
-description: 在即時/線性資料流中使用Ad Insertion
+title: 在实时/线性流中使用Ad Insertion
+description: 在实时/线性流中使用Ad Insertion
 exl-id: d56ed723-ec72-4bbd-befc-6858c7c9d800
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 1bc2f6c230c262babf2958c32fee31afcad04c2f
 workflow-type: tm+mt
-source-wordcount: '274'
+source-wordcount: '265'
 ht-degree: 0%
 
 ---
 
-# 在即時/線性資料流中使用Ad Insertion {#ad-insertion-live-linear-stream}
+# 在实时/线性流中使用Ad Insertion {#ad-insertion-live-linear-stream}
 
-PrimetimeAd Insertion可讓發佈者處理在即時/線性串流期間發生的標準和複雜廣告插入情況。
+PrimetimeAd Insertion使发布者能够处理在实时/线性流期间发生的标准和复杂的广告插入情况。
 
-## 支援的提示格式 {#cue-formats-supported}
+## 支持的提示格式 {#cue-formats-supported}
 
-PrimetimeAd Insertion支援各種標準和非標準提示格式，包括：
+PrimetimeAd Insertion支持各种标准和非标准提示格式，包括：
 
-* DPI SCTE-35 （SCTE-35增強型廣告標籤）
+* DPI SCTE-35（SCTE-35增强型广告标记）
 
-* [Adobe數位程式插入訊號規格](https://www.adobe.com/content/dam/acom/en/devnet/primetime/PrimetimeDigitalProgramInsertionSignalingSpecification.pdf)
+* [Adobe数字节目插入信令规范](assets/PrimetimeDigitalProgramInsertionSignalingSpecification.pdf)
 
-* 二進位SCTE-35 （HLS和DASH）
+* 二进制SCTE-35（HLS和DASH）
 
-* 文字SCTE-35 （HLS和DASH）
+* 文本SCTE-35（HLS和DASH）
 
-如需其他詳細資訊或其他支援的提示格式，請聯絡您的Primetime支援代表。
+有关其他详细信息或其他支持的提示格式，请联系您的Primetime支持代表。
 
-## 部分廣告插播支援 {#partial-ad-break-support}
+## 部分广告时间支持 {#partial-ad-break-support}
 
-部分廣告插播可用於觀看者在廣告插播開始後進入即時/線性資料流的情況。  例如，如果檢視者在1:00標籤處輸入2:00的廣告插播，則部分廣告插播可確保將在剩餘時間提供廣告。 如果沒有插入部分廣告插播，插播期間將不會對此檢視者提供任何廣告。 如果媒體串流中存在適當的標籤，PrimetimeAd Insertion會預設啟用部分廣告插播插入。
+部分广告时间可用于查看者在广告时间开始后进入实时/线性流的情况。  例如，如果观看者在1:00标记处输入2:00的广告时间，则插入部分广告时间可确保广告在剩余时间内提供。 如果没有插入部分广告时间，则不会在广告时间期间向此查看者提供任何广告。 如果媒体流中存在适当的标记，则默认情况下PrimetimeAd Insertion会启用部分广告时间插入。
 
-## 提早回訪（提前廣告退出） {#early-return-early-ad-exit}
+## 提前返回（提前广告退出） {#early-return-early-ad-exit}
 
-在某些情況下，您可能需要從即時/線性資料流的廣告插播中提早返回，例如當體育賽事突然恢復運作時。 每個廣告決策格式都包含「提示」（廣告）或「提示」（內容）的標籤。  如果在廣告插播結束前遇到「提示加入」標籤，Adobe PrimetimeAd Insertion會依照該提示加入。  請聯絡您的內容封裝程式以啟用提早傳回。
+在某些情况下，可能有必要从实时/线性流中的广告时间提前返回，例如，当体育赛事突然恢复活动时。 每个广告决策格式都包含一个标记，用于“提示输出”（广告）或“提示输入”（内容）。  如果在广告时间结束之前遇到“提示加入”标记，Adobe PrimetimeAd Insertion将遵循该提示加入。  请联系您的内容包管理器以提早返回。
