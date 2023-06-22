@@ -1,6 +1,6 @@
 ---
-description: 此表格證明WARN型別通知的詳細資訊。
-title: 警告通知代碼
+description: 此表证明有关WARN类型通知的详细信息。
+title: 警告通知代码
 exl-id: 15f99d89-6f68-476e-a5d3-09c579486920
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,27 +9,27 @@ ht-degree: 4%
 
 ---
 
-# 警告通知代碼{#warning-notification-codes}
+# 警告通知代码{#warning-notification-codes}
 
-此表格證明WARN型別通知的詳細資訊。
+此表证明有关WARN类型通知的详细信息。
 
 <!--<a id="section_F25366B6703040E3ADA993C113618F01"></a>-->
 
-大多數警告包含相關的中繼資料，例如下載失敗的資源的URL。 某些通知包含中繼資料，用於指定問題發生在主要視訊內容、替代音訊內容還是廣告中。
+大多数警告包含相关元数据，例如下载失败的资源的URL。 某些通知包含元数据，用于指定问题出现在主视频内容、备用音频内容还是广告中。
 
 <table frame="all" colsep="1" rowsep="1" id="table_C24772DF203B4DB2ACE6B475698C4C58"> 
  <thead> 
   <tr rowsep="1"> 
-   <th colname="1" class="entry"> 程式碼 </th> 
-   <th colname="2" class="entry"> 名稱 </th> 
+   <th colname="1" class="entry"> 代码 </th> 
+   <th colname="2" class="entry"> 名称 </th> 
    <th colname="3" class="entry"> InnerNotification </th> 
-   <th colname="4" class="entry"> 中繼資料索引鍵 </th> 
-   <th colname="5" class="entry"> 註解 </th> 
+   <th colname="4" class="entry"> 元数据键 </th> 
+   <th colname="5" class="entry"> 注释 </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr rowsep="1"> 
-   <td colname="1"><b>廣告解析</b> </td> 
+   <td colname="1"><b>广告解析</b> </td> 
    <td colname="2"> </td>
    <td colname="3"> </td>
    <td colname="4"> </td>
@@ -38,19 +38,19 @@ ht-degree: 4%
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 201002</span> </td> 
    <td colname="2"><span class="codeph"> AD_ASSET_ FAILED_TO_LOAD</span> </td> 
-   <td colname="3"> <p>無 </p> </td> 
+   <td colname="3"> <p>无 </p> </td> 
    <td colname="4"><span class="codeph"> AD_ASSET， INTERNAL_ERROR</span> </td> 
-   <td colname="5"> <p>嘗試載入廣告創意時發生錯誤。 </p> </td> 
+   <td colname="5"> <p>尝试加载广告创意时出错。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 201003</span> </td> 
-   <td colname="2"><span class="codeph"> AD_RESOLVER_ RETURNED_NO_ADS</span> </td> 
-   <td colname="3"> <p>無 </p> </td> 
-   <td colname="4"><span class="codeph"> INTERNAL_ERROR， AD_ID，說明</span> </td> 
-   <td colname="5"> <p>廣告解析失敗，因為VAST URL無效，或因為VAST包裝函式未傳回任何廣告。 </p> </td> 
+   <td colname="2"><span class="codeph"> AD_RESOLVER_返回_NO_ADS</span> </td> 
+   <td colname="3"> <p>无 </p> </td> 
+   <td colname="4"><span class="codeph"> INTERNAL_ERROR， AD_ID，描述</span> </td> 
+   <td colname="5"> <p>广告解析失败，因为VAST URL无效，或者因为VAST包装中未返回任何广告。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>背景資訊清單</b> </td> 
+   <td colname="1"><b>背景清单</b> </td> 
    <td colname="2"> </td>
    <td colname="3"> </td>
    <td colname="4"> </td>
@@ -59,19 +59,19 @@ ht-degree: 4%
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 204000 </span> </td> 
    <td colname="2"><span class="codeph"> BACKGROUND_MANIFEST_警告</span> </td> 
-   <td colname="3"> <p>無 </p> </td> 
-   <td colname="4"><span class="codeph"> BACKGROUND_MANIFEST_ WARNING_ERROR</span> <span class="codeph"> BACKGROUND_MANIFEST_ WARNING_NAME</span> <span class="codeph"> 說明</span> </td> 
-   <td colname="5"> <p> 背景資訊清單下載發生錯誤。 更新背景資訊清單的任何問題都會以TVSDK警告傳送，而不會導致播放停止。 </p> </td> 
+   <td colname="3"> <p>无 </p> </td> 
+   <td colname="4"><span class="codeph"> BACKGROUND_MANIFEST_WARNING_ERROR</span> <span class="codeph"> BACKGROUND_MANIFEST_WARNING_NAME</span> <span class="codeph"> 描述</span> </td> 
+   <td colname="5"> <p> 后台清单下载出错。 更新后台清单时出现的任何问题都会作为TVSDK警告调度，而不会导致播放停止。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 204001 </span> </td> 
    <td colname="2"><span class="codeph"> INVALID_SEEK_警告</span> </td> 
-   <td colname="3"> <p>無 </p> </td> 
-   <td colname="4"><span class="codeph"> 說明</span> </td> 
+   <td colname="3"> <p>无 </p> </td> 
+   <td colname="4"><span class="codeph"> 描述</span> </td> 
    <td colname="5"> <p></p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>TimeRangeCollection</b> </td> 
+   <td colname="1"><b>时间范围集合</b> </td> 
    <td colname="2"> </td>
    <td colname="3"> </td>
    <td colname="4"> </td>
@@ -79,20 +79,20 @@ ht-degree: 4%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 210000 </span> </td> 
-   <td colname="2"><span class="codeph"> 未定義_時間範圍 </span> </td> 
-   <td colname="3"> <p>無 </p> </td> 
-   <td colname="4"> 無 </td> 
-   <td colname="5"> 廣告訊號模式定義為自訂範圍，但沒有定義任何範圍。 </td> 
+   <td colname="2"><span class="codeph"> 未定义_时间范围 </span> </td> 
+   <td colname="3"> <p>无 </p> </td> 
+   <td colname="4"> 无 </td> 
+   <td colname="5"> 广告信令模式被定义为自定义范围，但没有定义任何范围。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 210001 </span> </td> 
-   <td colname="2"><span class="codeph"> INVALID_TIME_範圍 </span> </td> 
-   <td colname="3"> <p>無 </p> </td> 
-   <td colname="4"><span class="codeph"> 說明 </span> </td> 
-   <td colname="5"> <p> 一個或多個時間範圍無效，將被忽略或修改。 </p> <p> DESCRIPTION是包含無效範圍說明的字串。 </p> </td> 
+   <td colname="2"><span class="codeph"> INVALID_TIME_范围 </span> </td> 
+   <td colname="3"> <p>无 </p> </td> 
+   <td colname="4"><span class="codeph"> 描述 </span> </td> 
+   <td colname="5"> <p> 一个或多个时间范围无效，将被忽略或修改。 </p> <p> DESCRIPTION是包含无效范围说明的字符串。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>iOS特定</b> </td> 
+   <td colname="1"><b>特定于iOS</b> </td> 
    <td colname="2"> </td>
    <td colname="3"> </td>
    <td colname="4"> </td>
@@ -100,66 +100,66 @@ ht-degree: 4%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 270000 </span> </td> 
-   <td colname="2"><span class="codeph"> PLAYER_NOT_READY </span> </td> 
-   <td colname="3"> <p>無 </p> </td> 
-   <td colname="4"><span class="codeph"> 說明 </span> </td> 
+   <td colname="2"><span class="codeph"> 播放器_NOT_READY </span> </td> 
+   <td colname="3"> <p>无 </p> </td> 
+   <td colname="4"><span class="codeph"> 描述 </span> </td> 
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 270001 </span> </td> 
    <td colname="2"><span class="codeph"> AD_NOT_INSERTED </span> </td> 
-   <td colname="3"> <p>無 </p> </td> 
-   <td colname="4"> <p>無 </p> </td> 
-   <td colname="5"> <p>未在資料流上插入AD。 </p> </td> 
+   <td colname="3"> <p>无 </p> </td> 
+   <td colname="4"> <p>无 </p> </td> 
+   <td colname="5"> <p>未在流上插入AD。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 270002 </span> </td> 
    <td colname="2"><span class="codeph"> AD_HLS_AUDIOONLY_MISSING </span> </td> 
    <td colname="3"><span class="codeph"> AD_NOT_INSERTED </span> </td> 
-   <td colname="4"> <p>無 </p> </td> 
-   <td colname="5"> <p>廣告不包含純音訊資料流 </p> </td> 
+   <td colname="4"> <p>无 </p> </td> 
+   <td colname="5"> <p>广告不包含纯音频流 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 270003 </span> </td> 
    <td colname="2"><span class="codeph"> AD_HLS_MATCHING_BITRATE_MISSING </span> </td> 
    <td colname="3"><span class="codeph"> AD_NOT_INSERTED </span> </td> 
-   <td colname="4"> <p>無 </p> </td> 
-   <td colname="5"> <p>找不到與內容目前位元速率相符的廣告資料流。 </p> <p>  </p> </td> 
+   <td colname="4"> <p>无 </p> </td> 
+   <td colname="5"> <p>未找到与内容的当前比特率匹配的广告流。 </p> <p>  </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 270005 </span> </td> 
    <td colname="2"><span class="codeph"> AVASSET_FAILED_TO_CREATE </span> </td> 
    <td colname="3"><span class="codeph"> PLAYBACK_ERROR </span> </td> 
-   <td colname="4"> <p>無 </p> </td> 
-   <td colname="5"> <p>建立AVAset時發生錯誤。 </p> </td> 
+   <td colname="4"> <p>无 </p> </td> 
+   <td colname="5"> <p>创建AVAset时出错。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 270006 </span> </td> 
-   <td colname="2"><span class="codeph"> SiteCatalyst_警告 </span> </td> 
-   <td colname="3"> <p>無 </p> </td> 
-   <td colname="4"><span class="codeph"> 說明 </span> </td> 
-   <td colname="5"> <p>警告：請參閱sitecatalyst警告說明。 </p> </td> 
+   <td colname="2"><span class="codeph"> SiteCatalyst警告 </span> </td> 
+   <td colname="3"> <p>无 </p> </td> 
+   <td colname="4"><span class="codeph"> 描述 </span> </td> 
+   <td colname="5"> <p>警告：请参阅sitecatalyst警告说明。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 270007 </span> </td> 
    <td colname="2"><span class="codeph"> NETWORK_ERROR </span> </td> 
-   <td colname="3"> <p>無 </p> </td> 
+   <td colname="3"> <p>无 </p> </td> 
    <td colname="4"><span class="codeph"> URL </span> </td> 
-   <td colname="5"> <p>從網路取得資料時發生錯誤。 </p> </td> 
+   <td colname="5"> <p>从网络获取数据时出错。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 270002</span> </td> 
    <td colname="2"><span class="codeph"> AD_HLS_AUDIOONLY_MISSING</span> </td> 
-   <td colname="3"> <p>無 </p> </td> 
+   <td colname="3"> <p>无 </p> </td> 
    <td colname="4"><span class="codeph"> AD_ASSET</span> </td> 
-   <td colname="5"> <p>因為遺失此廣告的音訊，所以無法聽到 </p> </td> 
+   <td colname="5"> <p>无法听到此广告的音频，因为它丢失 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 270003</span> </td> 
    <td colname="2"><span class="codeph"> AD_HLS_MATCHING_BITRATE_MISSING</span> </td> 
-   <td colname="3"> <p>無 </p> </td> 
+   <td colname="3"> <p>无 </p> </td> 
    <td colname="4"><span class="codeph"> AD_ASSET</span> </td> 
-   <td colname="5"> <p>缺少相符的位元速率。 </p> <p>  </p>
+   <td colname="5"> <p>缺少匹配比特率。 </p> <p>  </p>
     <!-- workaround for PDF having too much negative kerning in column 2 --> </td> 
   </tr> 
  </tbody> 
@@ -167,4 +167,4 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->adID和來源(URL)可透過通知中繼資料中的PTAdAsset擷取，並具有 `AD_ASSET` 金鑰。
+>adID和源(URL)可以通过通知元数据中的PTAdAsset进行检索，并使用 `AD_ASSET` 键。

@@ -1,6 +1,6 @@
 ---
-title: 部分廣告插播插入
-description: 部分廣告插播插入
+title: 部分广告时间插入
+description: 部分广告时间插入
 copied-description: true
 exl-id: bcd4b108-9b91-479e-8147-ec4d24862e37
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,25 +10,25 @@ ht-degree: 0%
 
 ---
 
-# 部分廣告插播插入 {#partial-ad-break-insertion}
+# 部分广告时间插入 {#partial-ad-break-insertion}
 
-您可以啟用類似電視的體驗，即能夠在廣告中間、在直播串流中加入。 部分廣告插播功能可讓您模擬類似電視的體驗，如果客戶在中間版本內開始即時資料流，它會從該中間版本內開始。 這類似於切換至電視頻道，而商業廣告則順暢運作。
+您可以启用类似电视的体验，即能够在广告中间、直播中加入。 部分广告时间功能允许您模拟类似电视的体验，如果客户端在中间轴内启动实时流，它将在该中间轴内启动。 它类似于切换到电视频道，广告也无缝运行。
 
-例如，如果使用者在90秒的廣告插播（3個30秒的廣告）中間、第二個廣告的10秒（亦即廣告插播的40秒）中加入，會發生下列情況：
+例如，如果用户在90秒广告时间（3个30秒广告）的中间、第二个广告10秒（即广告时间的40秒）加入，则会发生以下情况：
 
-* 第二個廣告會播放剩餘的持續時間（20秒），然後是第三個廣告。
-* 部分播放的廣告（第二個廣告）的廣告追蹤器不會觸發。 僅觸發第三個廣告的追蹤器。
+* 第二个广告的播放持续了剩余的时间（20秒），随后是第三个广告。
+* 不触发部分播放的广告（第二个广告）的广告跟踪器。 仅触发第三个广告的跟踪器。
 
-預設不會啟用此行為。 若要在應用程式中啟用此功能，請執行以下操作：
+默认情况下不启用此行为。 要在应用程序中启用此功能，请执行以下操作：
 
-1. 使用AdvertisingMetadata類別的方法setEnableLivePrerroll停用即時預列。
+1. 使用AdvertisingMetadata类的方法setEnableLivePreroll禁用实时预留。
 
    ```
    advertisingMetadata.setLivePreroll(false)  
    advertisingMetadata.setPreroll(false)
    ```
 
-1. 開啟「部分廣告插播插入」的偏好設定。 使用MediaPlayer介面中的新方法setPartialAdBreakPref，將此功能切換為ON。 使用getPartialAdBreakPref方法尋找此偏好設定的目前狀態。
+1. 打开“部分广告时间插入”的首选项。 使用MediaPlayer界面中的新方法setPartialAdBreakPref将此功能切换为ON。 使用getPartialAdBreakPref方法查找此首选项的当前状态。
 
    ```
    MediaPlayer mediaPlayer = new MediaPlayer(getActivity().getApplicationContext()); 

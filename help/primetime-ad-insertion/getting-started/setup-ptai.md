@@ -1,6 +1,6 @@
 ---
-title: 設定Adobe PrimetimeAd Insertion
-description: 設定Adobe PrimetimeAd Insertion
+title: 设置Adobe PrimetimeAd Insertion
+description: 设置Adobe PrimetimeAd Insertion
 exl-id: 3720c4b3-08d0-48b8-bb4b-24449e453263
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,20 +9,20 @@ ht-degree: 0%
 
 ---
 
-# 設定Adobe PrimetimeAd Insertion {#ptai-setup}
+# 设置Adobe PrimetimeAd Insertion {#ptai-setup}
 
-設定PrimetimeAd Insertion的程式如下：
+设置PrimetimeAd Insertion的过程如下：
 
-1. 登入PrimetimeAd Insertion主控台並設定重新導向規則，將您的廣告伺服器整合至PrimetimeAd Insertion。 如需詳細資訊，請參閱 [整合您的廣告伺服器](/help/primetime-ad-insertion/getting-started/integrate-ad-server.md).
+1. 通过登录PrimetimeAd Insertion控制台并设置重定向规则，将广告服务器集成到PrimetimeAd Insertion。 有关更多信息，请参阅 [集成广告服务器](/help/primetime-ad-insertion/getting-started/integrate-ad-server.md).
 
-1. 在PrimetimeAd Insertion控制檯中設定管道或平台，以確保有足夠的報表維度。
+1. 在PrimetimeAd Insertion控制台中配置渠道或平台，以确保有足够的报表维度。
 
-1. 在PrimetimeAd Insertion中設定並整合您的CDN。 如需詳細資訊，請參閱 [整合您的CDN](integrate-cdn.md).
+1. 在PrimetimeAd Insertion中配置和集成CDN。 有关更多信息，请参阅 [集成CDN](integrate-cdn.md).
 
-1. 判斷您的廣告工作流程是否需要即時廣告重新封裝。 請聯絡您的Primetime支援代表以啟用服務。
+1. 确定广告工作流是否需要实时广告重新打包。 请联系您的Primetime支持代表以启用该服务。
 
-1. 更新您的應用程式以使用 [BOOTSTRAPAPI](/help/primetime-ad-insertion/technical-reference/bootstrap-api.md) 提出和接收PrimetimeAd Insertion請求，並將您的應用程式設定為支援。 如需詳細資訊，請參閱 [廣告追蹤](set-up-ad-tracking.md).
+1. 更新您的应用程序以使用 [BOOTSTRAPAPI](/help/primetime-ad-insertion/technical-reference/bootstrap-api.md) 发出和接收PrimetimeAd Insertion请求，并将您的应用程序配置为支持。 有关更多信息，请参阅 [广告跟踪](set-up-ad-tracking.md).
 
-1. 測試您的應用程式，以確保使用播放正確的廣告 [偵錯工具](/help/primetime-ad-insertion/performance-monitoring-debugging-reporting/troubleshoot-and-debug.md).
+1. 测试您的应用程序以确保使用正确播放广告 [调试工具](/help/primetime-ad-insertion/performance-monitoring-debugging-reporting/troubleshoot-and-debug.md).
 
-1. 測試您的應用程式，以確保正確觸發廣告追蹤和曝光信標。 [報告](/help/primetime-ad-insertion/performance-monitoring-debugging-reporting/reporting-and-billing.md).
+1. 测试您的应用程序以确保正确触发广告跟踪和展示信标 [报告](/help/primetime-ad-insertion/performance-monitoring-debugging-reporting/reporting-and-billing.md).

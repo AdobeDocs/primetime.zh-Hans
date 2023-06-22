@@ -1,6 +1,6 @@
 ---
-title: 處理Adobe Primetime DRM請求
-description: 處理Adobe Primetime DRM請求
+title: 处理Adobe Primetime DRM请求
+description: 处理Adobe Primetime DRM请求
 copied-description: true
 exl-id: ca9c2ccc-b848-4271-88bc-e7e3ced135ce
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,64 +10,64 @@ ht-degree: 0%
 
 ---
 
-# 處理Adobe Primetime DRM請求 {#process-adobe-primetime-drm-requests}
+# 处理Adobe Primetime DRM请求 {#process-adobe-primetime-drm-requests}
 
-管理請求的一般方法是建立處理常式、剖析請求、設定回應資料或錯誤代碼，以及關閉處理常式。
+管理请求的一般方法是创建处理程序、解析请求、设置响应数据或错误代码，以及关闭处理程序。
 
-處理單一請求/回應互動的基底類別為 `com.adobe.flashaccess.sdk.protocol.MessageHandlerBase`. 的例項 `HandlerConfiguration` 類別用來初始化處理常式。 `HandlerConfiguration` 儲存伺服器組態資訊，包括傳輸認證、時間戳記公差、原則更新清單和撤銷清單。處理常式會讀取要求資料，並將要求剖析成的執行個體。 `RequestMessageBase`. 呼叫者可以檢查要求中的資訊，並決定是傳回錯誤還是成功回應(的子類別 `RequestMessageBase` 提供設定回應資料的方法)。
+用于处理单个请求/响应交互的基类是 `com.adobe.flashaccess.sdk.protocol.MessageHandlerBase`. 的实例 `HandlerConfiguration` 类用于初始化处理程序。 `HandlerConfiguration` 存储服务器配置信息，包括传输凭据、时间戳公差、策略更新列表和吊销列表。处理程序读取请求数据并将请求解析为的实例 `RequestMessageBase`. 调用方可以检查请求中的信息，并决定是返回错误还是成功响应（的子类） `RequestMessageBase` 提供了一种设置响应数据的方法)。
 
-如果要求成功，請設定回應資料；否則會叫用 `RequestMessageBase.setErrorData()` 失敗時。 一律叫用「 」以結束實施 `close()` 方法(建議您 `close()` 在中呼叫 `finally` 區塊 `try` 陳述式)。 請參閱 `MessageHandlerBase` API參考檔案以取得如何叫用處理常式的範例。
+如果请求成功，则设置响应数据；否则，调用 `RequestMessageBase.setErrorData()` 失败时。 始终通过调用 `close()` 方法(建议您 `close()` 在中调用 `finally` 块 `try` 语句)。 请参阅 `MessageHandlerBase` 有关如何调用处理程序的示例的API参考文档。
 
 >[!NOTE]
 >
->應該傳送HTTP狀態碼200 （確定）以回應處理常式處理的所有要求。 如果因為伺服器錯誤而無法建立處理常式，伺服器可能會以其他狀態碼回應，例如500 （內部伺服器錯誤）。
+>应发送HTTP状态代码200 (OK)以响应处理程序处理的所有请求。 如果由于服务器错误而无法创建处理程序，则服务器可能会以其他状态代码响应，例如500（内部服务器错误）。
 
-使用者端使用封裝時指定的授權伺服器URL，作為傳送至授權伺服器之所有要求的基礎URL。 例如，如果將伺服器URL指定為&lt;[!DNL ht<span></span>tps://licenseserver.com/path]>，使用者端接著傳送要求給&lt;[!DNL ht<span></span>tps://licenseserver.com/path/flashaccess/...]>請參閱以下章節，瞭解用於每種請求型別的特定路徑的詳細資訊。 實作您的授權伺服器時，請確定伺服器會回應每種型別要求所需的路徑。
+客户端使用打包时指定的许可证服务器URL作为发送到许可证服务器的所有请求的基本URL。 例如，如果将服务器URL指定为&lt;[!DNL ht<span></span>tps://licenseserver.com/path]>，客户端随后将请求发送至&lt;[!DNL ht<span></span>tps://licenseserver.com/path/flashaccess/...]>有关用于每种类型请求的特定路径的详细信息，请参阅以下部分。 实施许可证服务器时，请确保服务器响应每种类型请求所需的路径。
 
-授權請求可包含驗證權杖。 如果使用使用者名稱/密碼驗證，請求可能包含 `AuthenticationToken` 產生者： `AuthenticationHandler`，且SDK會在核發授權之前確保權杖有效。
+许可证请求可以包含身份验证令牌。 如果使用用户名/密码身份验证，请求可能包含 `AuthenticationToken` 生成者 `AuthenticationHandler`，并且SDK将确保令牌在颁发许可证之前有效。
 
-## 使用機器識別碼 {#use-machine-identifiers}
+## 使用计算机标识符 {#use-machine-identifiers}
 
-所有Adobe Primetime DRM請求（支援FMRMS相容性的請求除外）都包含已在個人化期間核發給使用者端之機器權杖的相關資訊。 電腦Token包含電腦ID，這是已在個人化期間指派的識別碼。 您可以使用此識別碼來計算使用者已要求授權或加入網域的電腦數量。
+所有Adobe Primetime DRM请求（支持FMRMS兼容性的请求除外）都包含有关在个性化过程中颁发给客户端的计算机令牌的信息。 计算机令牌包括计算机ID，它是已在个性化期间分配的标识符。 您可以使用此标识符计算用户从中请求许可证或加入域的计算机数量。
 
-您可以使用識別碼，如下所示：
+您可以使用标识符，如下所示：
 
-* 此 `getUniqueId()` 方法會傳回在個人化期間指派給裝置的字串。 您可以將字串儲存在資料庫中並按識別碼搜尋。 但是，如果使用者重新格式化硬碟並再次個人化，此識別碼會變更。 在相同電腦上的不同瀏覽器中，此識別碼在Adobe AIR和AdobeFlash Player之間也有不同的值。
-* 如果您想要更準確地計算電腦，可以使用 `getBytes()` 以儲存整個識別碼。 若要判斷電腦之前是否曾出現過，請取得使用者名稱的所有識別碼，並呼叫 `matches()` 以檢查是否有任何相符專案。 因為 `matches()` 方法必須用來比較下列專案傳回的值： `MachineId.getBytes`，此選項只有在要比較的值數目較少時（例如，與特定使用者相關聯的電腦）才切實可行。
+* 此 `getUniqueId()` 方法会返回在个性化过程中分配给设备的字符串。 您可以将字符串存储在数据库中，并按标识符进行搜索。 但是，如果用户重新格式化硬盘驱动器并再次进行个性化，则此标识符会发生变化。 同一台计算机上不同浏览器中的Adobe AIR和AdobeFlash Player之间，此标识符的值也各不相同。
+* 如果要更准确地计算计算机数，可以使用 `getBytes()` 以存储整个标识符。 要确定以前是否曾看到过该计算机，请获取用户名的所有标识符并调用 `matches()` 以检查是否匹配。 因为 `matches()` 方法必须用于比较返回的值 `MachineId.getBytes`，此选项仅在要比较的值数量较少时（例如，与特定用户关联的计算机）才切实可行。
 
-## 使用者驗證 {#user-authentication}
+## 用户身份验证 {#user-authentication}
 
-Adobe Primetime DRM請求可包含驗證權杖。
+Adobe Primetime DRM请求可以包含身份验证令牌。
 
-如果使用使用者名稱/密碼驗證，請求可能包含 `AuthenticationToken` 產生者： `AuthenticationHandler`. 如果您想要存取及驗證Token，您需要使用 `RequestMessageBase.getAuthenticationToken()`. 若要在使用者端上起始使用者名稱/密碼請求，請使用 `DRMManager.authenticate()` ActionScript或iOS API。
+如果使用用户名/密码身份验证，请求可能包含 `AuthenticationToken` 生成者 `AuthenticationHandler`. 如果要访问和验证令牌，则需要使用 `RequestMessageBase.getAuthenticationToken()`. 要在客户端上启动用户名/密码请求，请使用 `DRMManager.authenticate()` ActionScript或iOS API。
 
-如果使用者端和伺服器使用自訂驗證機制，使用者端會透過其他通道取得驗證權杖，並使用設定自訂驗證權杖 `DRMManager.setAuthenticationToken` ActionScript3.0 API。 使用 `RequestMessageBase.getRawAuthenticationToken()` 以取得自訂驗證Token。 伺服器實作會判斷自訂驗證權杖是否有效。
+如果客户端和服务器使用自定义身份验证机制，则客户端通过其他渠道获取身份验证令牌，并使用设置自定义身份验证令牌 `DRMManager.setAuthenticationToken` ActionScript3.0 API。 使用 `RequestMessageBase.getRawAuthenticationToken()` 以获取自定义身份验证令牌。 服务器实施确定自定义身份验证令牌是否有效。
 
-## 重播保護 {#replay-protection}
+## 重播保护 {#replay-protection}
 
-針對重播保護，您可能想要透過呼叫檢查最近是否看到訊息識別碼 `RequestMessageBase.getMessageId()`. 若是如此，攻擊者可能會嘗試重新執行要求，但應予以拒絕。 若要偵測重播嘗試，伺服器可以儲存最近檢視的訊息ID清單，並根據快取清單檢查每個傳入請求。 若要限制需要儲存訊息識別碼的時間長度，請呼叫 `HandlerConfiguration.setTimestampTolerance()`. 若此屬性已設定，則SDK會拒絕任何包含時間戳記超過伺服器時間指定秒數的請求。
+对于重播保护，您可能希望通过调用来检查最近是否看到消息标识符 `RequestMessageBase.getMessageId()`. 如果是这样，攻击者可能会尝试重播该请求，而应拒绝该请求。 为了检测重放尝试，服务器可以存储最近查看的邮件ID列表，并根据缓存列表检查每个传入请求。 要限制需要存储消息标识符的时间，请调用 `HandlerConfiguration.setTimestampTolerance()`. 如果设置了此属性，则SDK会拒绝任何包含时间戳且时间戳超过服务器时间指定秒数的请求。
 
-## 復原偵測 {#rollback-detection}
+## 回滚检测 {#rollback-detection}
 
-對於復原偵測，某些使用規則會要求使用者端維護執行許可權的狀態資訊。 例如，若要強制執行播放視窗使用規則，使用者端會儲存使用者首次開始檢視內容的日期和時間。 此事件會觸發播放視窗的開始。 為了安全地強制執行播放視窗，伺服器需要確保使用者沒有備份及還原使用者端狀態，以移除儲存在使用者端上的播放視窗開始時間。 伺服器透過追蹤使用者端復原計數器的值來執行此操作。
+对于回滚检测，某些使用规则要求客户端维护用于实施权限的状态信息。 例如，要强制实施播放窗口使用规则，客户端将存储用户首次开始查看内容的日期和时间。 此事件触发播放窗口的启动。 要安全地强制执行播放窗口，服务器需要确保用户没有备份和恢复客户端状态，以删除存储在客户端上的播放窗口开始时间。 服务器通过跟踪客户端回滚计数器的值来执行此操作。
 
-伺服器會針對每個要求呼叫，以取得計數器的值 `RequestMessageBase.getClientState()` 以取得 `ClientState` 物件，然後呼叫 `ClientState.getCounter()` 以取得使用者端狀態計數器的目前值。 伺服器應該為每個使用者端儲存此值(使用 `MachineId.getUniqueId()` 以識別與倒回計數器值相關聯的使用者端)，然後呼叫 `ClientState.incrementCounter()` 將計數器值增加1。 如果伺服器偵測到計數器值小於伺服器看到的最後一個值，則使用者端狀態可能已復原。
+对于每个请求，服务器通过调用获取计数器的值 `RequestMessageBase.getClientState()` 以获取 `ClientState` 对象，然后调用 `ClientState.getCounter()` 以获取客户端状态计数器的当前值。 服务器应该为每个客户端存储此值(使用 `MachineId.getUniqueId()` 以标识与回退计数器值关联的客户端)，然后调用 `ClientState.incrementCounter()` 将计数器值增加1。 如果服务器检测到计数器值小于服务器看到的最后一个值，则客户端状态可能已回滚。
 
-請參閱 `ClientState` API參考檔案，以取得使用者端狀態篡改偵測的詳細資訊。
+请参阅 `ClientState` 有关客户端状态篡改检测的更多信息，请参阅API参考文档。
 
-## 全域伺服器設定資料{#global-server-configuration-data}
+## 全局服务器配置数据{#global-server-configuration-data}
 
-除了授權伺服器使用的設定， `HandlerConfiguration` 儲存可傳送給使用者端的設定資訊，以控制如何強制執行授權。 這是透過建立 `ServerConfigData` 類別和呼叫 `HandlerConfiguration.setServerConfigData()`. 這些設定僅套用至此授權伺服器所發行的授權。
+除了许可证服务器使用的配置外， `HandlerConfiguration` 存储可以发送到客户端的配置信息，以控制许可证的实施方式。 这是通过创建 `ServerConfigData` 类和调用 `HandlerConfiguration.setServerConfigData()`. 这些设置仅适用于此许可证服务器颁发的许可证。
 
-時鐘回溯容許度是授權伺服器可以設定的一個屬性，用來控制使用者端執行授權的方式。 依預設，使用者可將電腦時鐘設定回4小時，而不會讓授權失效。 如果授權伺服器操作員想要使用不同的設定，則可以在以下位置設定新值： `ServerConfigData` 類別。 當您變更其中任何設定的值時，請務必透過呼叫來增加版本號碼 `setVersion()`. 只有在使用者端上的版本比目前的版本舊時，才會將新值傳送給使用者端 `ServerConfigData` 版本。
+时钟回溯容限是许可证服务器可以设置的一个属性，用于控制客户端强制执行许可证的方式。 默认情况下，用户可以将其计算机时钟向后设置4小时，而不会使许可证失效。 如果许可证服务器操作员希望使用其他设置，则可以在以下位置设置新值： `ServerConfigData` 类。 在更改其中任何设置的值时，请确保通过调用递增版本号 `setVersion()`. 仅当客户端上的版本比当前版本旧时，才会向客户端发送新值 `ServerConfigData` 版本。
 
-## 跨網域DRM原則檔 {#crossdomain-drm-policy-file}
+## 跨域DRM策略文件 {#crossdomain-drm-policy-file}
 
-如果授權伺服器託管在與視訊播放SWF不同的網域上，則為跨網域DRM原則檔( [!DNL crossdomain.xml])才能讓SWF向授權伺服器要求授權。 跨網域DRM原則檔案以XML檔案表示，可讓伺服器指出其資料和檔案可用於SWF從其他網域提供的檔案。 從授權伺服器的跨網域DRM原則檔中指定的網域提供的任何SWF檔，都允許從該授權伺服器存取資料或資產。
+如果许可证服务器托管在视频播放SWF以外的域上，则跨域DRM策略文件( [!DNL crossdomain.xml])以使SWF能够向许可证服务器请求许可证。 跨域DRM策略文件由XML文件表示，它使服务器能够指示其数据和文档可用于SWF从其他域提供的文件。 允许从许可证服务器的跨域DRM策略文件中指定的域提供的任何SWF文件访问该许可证服务器中的数据或资产。
 
-Adobe建議開發人員在部署跨網域原則檔案時，僅允許受信任的網域存取授權伺服器，並限制對Web伺服器上授權子目錄的存取，以遵循最佳實務。
+Adobe建议开发人员在部署跨域策略文件时遵循最佳实践，仅允许受信任的域访问许可证服务器，并限制对Web服务器上许可证子目录的访问。
 
-如需有關跨領域DRM原則檔案的詳細資訊，請參閱下列位置：
+有关跨域DRM策略文件的详细信息，请参阅以下位置：
 
-* 網站控制（DRM原則檔）
-* 跨網域DRM原則檔案規格： [https://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html](https://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html)
+* 网站控件（DRM策略文件）
+* 跨域DRM策略文件规范： [https://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html](https://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html)

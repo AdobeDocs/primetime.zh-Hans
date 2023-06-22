@@ -1,6 +1,6 @@
 ---
-description: 您可以使用TVSDK來擷取可以顯示在搜尋列上的媒體資訊。
-title: 顯示視訊的持續時間、目前時間和剩餘時間
+description: 您可以使用TVSDK检索有关可在搜寻栏上显示的媒体的信息。
+title: 显示视频的持续时间、当前时间和剩余时间
 exl-id: 490bfa22-6df6-44a3-8e0d-9bb5939ae881
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,37 +9,37 @@ ht-degree: 0%
 
 ---
 
-# 顯示視訊的持續時間、目前時間和剩餘時間{#display-the-duration-current-time-and-remaining-time-of-the-video}
+# 显示视频的持续时间、当前时间和剩余时间{#display-the-duration-current-time-and-remaining-time-of-the-video}
 
-您可以使用TVSDK來擷取可以顯示在搜尋列上的媒體資訊。
+您可以使用TVSDK检索有关可在搜寻栏上显示的媒体的信息。
 
-1. 等候播放器處於INITIALIZED狀態。
-1. 使用擷取目前的播放點時間 `MediaPlayer.currentTime` 屬性。
+1. 等待播放器处于INITIALIZED状态。
+1. 使用检索当前播放头时间 `MediaPlayer.currentTime` 属性。
 
-   這會傳回虛擬時間軸上目前的播放點位置（以毫秒為單位）。 此時間是相對於已解析資料流來計算的，該資料流可能包含替代內容的多個例項，例如拼接至主資料流的多個廣告或廣告插播。 對於即時/線性串流，傳回的時間一律在播放視窗範圍內。
+   这将返回虚拟时间轴上的当前播放头位置（以毫秒为单位）。 计算的时间相对于已解析的流（可能包含替代内容的多个实例，例如拼接到主流的多个广告或广告插播）。 对于实时/线性流，返回的时间始终在播放窗口范围内。
 
    ```
    function get currentTime():Number;
    ```
 
-1. 擷取資料流的播放範圍並決定持續時間。
-   1. 使用 `mediaPlayer.playbackRange` 屬性以取得虛擬時間軸時間範圍。
+1. 检索流的播放范围并确定持续时间。
+   1. 使用 `mediaPlayer.playbackRange` 属性以获取虚拟时间线时间范围。
 
       ```
       function get playbackRange():TimeRange;
       ```
 
-   1. 剖析時間範圍，使用 `mediacore.utils.TimeRange`.
-   1. 若要判斷持續時間，請從範圍的結尾減去開始時間。
+   1. 使用以下方式解析时间范围 `mediacore.utils.TimeRange`.
+   1. 要确定持续时间，请从范围的末尾减去起始值。
 
-      這包括插入資料流（廣告）中之其他內容的持續時間。
+      这包括插入到流（广告）中的附加内容的持续时间。
 
-      對於VOD，範圍一律從零開始，而結束值等於主要內容持續時間與插入串流（廣告）中之其他內容持續時間的總和。
+      对于VOD，范围始终以零开头，并且结束值等于主内容持续时间和插入到流（广告）中的其他内容持续时间的总和。
 
-      對於線性/即時資產，範圍表示播放視窗範圍，此範圍在播放期間會變更。
+      对于线性/实时资源，范围表示播放窗口范围，并且此范围在播放期间会更改。
 
-      TVSDK會傳送 `MediaPlayerItemEvent.ITEM_UPDATED` 表示媒體專案已重新整理及其屬性（包括播放範圍）已更新的事件。
+      TVSDK调度 `MediaPlayerItemEvent.ITEM_UPDATED` 指示媒体项目已刷新并且其属性（包括播放范围）已更新的事件。
 
-1. 使用上的可用方法 `MediaPlayer` 和 `HSlider` 在Flex SDK中公開可用以設定搜尋列引數的類別。
+1. 使用上的可用方法 `MediaPlayer` 和 `HSlider` 在Flex SDK中公开可用以设置搜寻栏参数的类。
 
-1. 使用計時器定期擷取目前時間並更新 `SeekBar`.
+1. 使用计时器定期检索当前时间并更新 `SeekBar`.

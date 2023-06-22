@@ -1,6 +1,6 @@
 ---
-description: TVSDK目前為TVSDK廣告、直接廣告插播和自訂廣告標籤提供內建廣告提供者中繼資料支援。
-title: 廣告插入型別
+description: TVSDK当前为TVSDK广告、直接广告插播和自定义广告标记提供内置广告提供商元数据支持。
+title: 广告插入类型
 exl-id: 1634ff41-8a8f-4f34-9685-149ec58518ba
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,35 +9,35 @@ ht-degree: 0%
 
 ---
 
-# 廣告插入型別 {#ad-insertion-types}
+# 广告插入类型 {#ad-insertion-types}
 
-TVSDK目前為TVSDK廣告、直接廣告插播和自訂廣告標籤提供內建廣告提供者中繼資料支援。
+TVSDK当前为TVSDK广告、直接广告插播和自定义广告标记提供内置广告提供商元数据支持。
 
-它支援下列VOD和即時/線性內容的廣告插入工作流程型別。
+它支持以下类型的VOD和实时/线性内容的广告插入工作流。
 
 <table id="table_1C3A659BDDB7453CA953A103045FCA01"> 
  <thead> 
   <tr> 
-   <th colname="col1" class="entry"> 插入型別 </th> 
-   <th colname="col2" class="entry"> 支援…… </th> 
-   <th colname="col3" class="entry"> 說明 </th> 
+   <th colname="col1" class="entry"> 插入类型 </th> 
+   <th colname="col2" class="entry"> 支持…… </th> 
+   <th colname="col3" class="entry"> 描述 </th> 
   </tr>
  </thead>
  <tbody> 
   <tr> 
    <td colname="col1"> Adobe Primetime ad decisioning ads </td> 
-   <td colname="col2">VOD <p>即時 </p> <p>線性 </p> </td> 
-   <td colname="col3">參考實作提供 <span class="codeph"> AuditudeMetadata</span> 根據Primetime廣告部分提供的資訊，連線到伺服器以進行Primetime廣告決策（先前稱為Auditude）的資訊</a> JSON設定檔案的</a>. </td> 
+   <td colname="col2">VOD <p>实时 </p> <p>线性 </p> </td> 
+   <td colname="col3">参考实施提供了 <span class="codeph"> AuditudeMetadata</span> 用于根据Primetime广告部分中提供的信息连接到Primetime广告决策（以前称为Auditude）服务器的信息</a> JSON配置文件的</a>. </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 直接廣告插播 </td> 
+   <td colname="col1"> 直接广告时间 </td> 
    <td colname="col2"> VOD </td> 
-   <td colname="col3">您必須在輸入JSON檔案中提供廣告URL。 當TVSDK嘗試解析廣告時，會呼叫直接廣告插播解析器，並根據JSON設定檔案中提供的直接廣告插播資訊來解析廣告</a>. </td> 
+   <td colname="col3">您必须在输入JSON文件中提供广告URL。 当TVSDK尝试解析广告时，它会调用直接广告时间解析程序，并根据JSON配置文件中提供的直接广告时间信息解析广告</a>. </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 自訂廣告標籤 </td> 
+   <td colname="col1"> 自定义广告标记 </td> 
    <td colname="col2"> VOD </td> 
-   <td colname="col3">當視訊串流同時包含主要內容和廣告，但不包含與廣告位置和時間相關的資訊時，自訂廣告標籤很有用。 如果廣告定位資訊是以其他方式取得（例如透過外部CMS），您可以定義自訂廣告標籤，並將其傳遞給播放器時間軸。 <p>若要設定廣告插入的播放器，您需要在JSON設定檔案的自訂廣告中繼資料區段中傳遞廣告中繼資料</a>，在參考實作中具有支援的廣告提供者實作。 </p> </td>
+   <td colname="col3">当视频流同时包含主内容和广告，但不包括与广告位置和时间相关的信息时，自定义广告标记很有用。 如果广告定位信息是以其他方式获取的（例如，通过外部CMS），您可以定义自定义广告标记并将其传递到播放器时间轴。 <p>要设置广告插入播放器，您需要在JSON配置文件的自定义广告元数据部分中传递广告元数据</a>，在引用实现中具有支持的广告提供程序实现。 </p> </td>
   </tr>
  </tbody>
 </table>

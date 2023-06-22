@@ -1,6 +1,6 @@
 ---
-title: Safari瀏覽器的JS SDK限制
-description: Safari瀏覽器的JS SDK限制
+title: 适用于Safari浏览器的JS SDK限制
+description: 适用于Safari浏览器的JS SDK限制
 exl-id: 5e5c3b36-ee09-49e0-b5b7-83b24854d69d
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# Safari瀏覽器的JS SDK限制 {#js-sdk-limitations-for-safari-browser}
+# 适用于Safari浏览器的JS SDK限制 {#js-sdk-limitations-for-safari-browser}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
 <!--
 >[!IMPORTANT] 
@@ -23,148 +23,148 @@ ht-degree: 0%
 
 ## Safari 10 {#safari10}
 
-**詳細資料**
+**详细信息**
 
-* 從Safari 10開始，預設的瀏覽器隱私權設定會導致單一登入(SSO)、單一登出(SLO)和被動驗證功能停止運作。 單一登入(SSO)和被動驗證將無法運作，即使是在多個分頁或瀏覽器視窗之間的相同工作階段中。
+* 从Safari 10开始，默认的浏览器隐私设置将导致单点登录(SSO)、单点注销(SLO)和被动身份验证功能停止工作。 即使是在多个选项卡或浏览器窗口之间的同一会话中，单点登录(SSO)和被动身份验证也无法工作。
 
-* 這些變更會影響並影響下列AccessEnabler JavaScript SDK版本的Adobe Primetime驗證程式： v2 （2.x版）、v3 （3.x版）、v4 （4.x版）。
+* 这些更改会影响AccessEnabler JavaScript SDK的以下版本的Adobe Primetime身份验证进程，并且正在对这些进程产生影响：v2（版本2.x）、v3（版本3.x）、v4（版本4.x）。
 
-### 減輕影響 {#mitigation-safari10}
+### 缓解 {#mitigation-safari10}
 
-* 為了減輕這些限制，您可以指示使用者變更Safari 10瀏覽器隱私權設定，並使用「**永遠允許**「 」的「 」選項&#x200B;**Cookie和網站資料**「偏好設定」中瀏覽器的「隱私權」標籤內的「 」專案，如下圖所示。
+* 为了减轻这些限制，您可以指示用户更改Safari 10浏览器隐私设置，并使用“**始终允许**“”的“ ”选项&#x200B;**Cookie和网站数据**”条目（位于浏览器的“隐私”选项卡中的“首选项”），如下图所示。
 
    ![](assets/always-allow-safari10.png)
 
 
 ## Safari 11 {#safari11}
 
-**詳細資料**
+**详细信息**
 
 >[!IMPORTANT]
 >
->Safari 10區段的所有上述詳細資料仍適用於Safari 11。
+>Safari 10部分的所有上述详细信息仍适用于Safari 11。
 
-* 從Safari 11開始，瀏覽器推出 [智慧型追蹤預防](https://webkit.org/blog/7675/intelligent-tracking-prevention/)(ITP)機制，這項技術使用啟發式來防止跨網站追蹤。 這些啟發式會影響到第三方Cookie在網路呼叫上儲存和重播的方式，這表示根據ITP機制啟動，Safari瀏覽器會封鎖使用者端 — 伺服器模式通訊中的第三方Cookie。
+* 从Safari 11开始，浏览器引入了 [智能防跟踪](https://webkit.org/blog/7675/intelligent-tracking-prevention/)(ITP)机制，一种使用启发式技术来防止跨站点跟踪的技术。 这些启发式方法会影响在网络调用中存储和重播第三方Cookie的方式，这意味着根据ITP机制激活，Safari浏览器将在客户端 — 服务器模型通信中阻止第三方Cookie。
 
-* Adobe Primetime驗證服務使用並仰賴Cookie作為驗證程式的一部分 **才能運作**. 在驗證程式自動發生（例如Temp Pass）或使用iFrames或「無重新整理」功能的實作中，Adobe的Cookie會被視為第三方Cookie且預設為封鎖。 對於任何其他情況，Safari會使用機器學習演演算法，可能會將所有Adobe的Primetime驗證服務Cookie標幟為追蹤Cookie，因此會受到ITP的封鎖。  
+* Adobe Primetime身份验证服务使用并依赖于Cookie作为身份验证过程的一部分 **为了正常运行**. 在身份验证过程自动发生（例如，临时通过）或使用iFrame或“无刷新”功能的实施中，Adobe的Cookie会被视为第三方Cookie，并且默认情况下会被阻止。 对于任何其他情况，Safari都使用机器学习算法，该算法可能会将所有Adobe的Primetime身份验证服务Cookie标记为跟踪Cookie，因此会受到ITP的阻止。  
 
-* 總而言之，Safari 11瀏覽器的使用者在智慧型追蹤預防(ITP)機制啟用後，可能無法驗證已啟用Adobe Primetime驗證的網站，尤其是當使用者使用已啟用多個Adobe主要驗證的網站時。 因此，使用者的驗證體驗可能是未預期或未定義的，從無法登入到比預期短的驗證期間。
+* 总之，Safari 11浏览器的用户在激活智能防跟踪(ITP)机制后可能无法在启用Adobe Primetime身份验证的网站上进行身份验证，尤其是当用户使用启用了多个Adobe主身份验证的网站时。 因此，用户的身份验证体验可能是意外的，并且未定义，从无法登录到比预期的身份验证持续时间更短不等。
 
-* 這些變更會影響並影響下列AccessEnabler JavaScript SDK版本的Adobe Primetime驗證程式： v2 （2.x版）、v3 （3.x版）。
+* 这些更改会影响AccessEnabler JavaScript SDK的以下版本的Adobe Primetime身份验证进程，并且正在对这些进程产生影响：v2（版本2.x）、v3（版本3.x）。
 
-### 減輕影響 {#mitigation-safari11}
+### 缓解 {#mitigation-safari11}
 
-* 對於AccessEnabler JavaScript SDK v3 （3.x版）和AccessEnabler JavaScript SDK v4 （4.x版），程式庫都包含能夠識別使用者驗證因缺少必要Cookie而被封鎖的狀況的機制。 在這些情況下，程式庫會觸發特定錯誤回呼 [N130](/help/authentication/error-reporting.md#advanced-error-codes-reference)，此資訊會傳回啟用Adobe Primetime驗證的網站，以用作指示使用者採取可以減輕問題的動作的訊號。 為了受益於此機制，網站必須實施 [錯誤報告](/help/authentication/error-reporting.md) 規格。
+* 对于AccessEnabler JavaScript SDK v3（版本3.x）和AccessEnabler JavaScript SDK v4（版本4.x），该库都包含一个能够识别用户身份验证因缺少所需的Cookie而被阻止的机制。 在这些情况下，库会触发特定错误回调 [N130](/help/authentication/error-reporting.md#advanced-error-codes-reference)，此信息将传递回启用Adobe Primetime身份验证的网站，以便用作指示用户采取可以缓解此问题的操作的信号。 为了从这一机制中获益，网站必须实施 [错误报告](/help/authentication/error-reporting.md) 规范。
 
-* 就AccessEnabler JavaScript SDK v2 （版本2.x）而言，程式庫不提供上述機制，因此無法在指示使用者採取行動來緩解問題時，顯示已啟用Adobe Primetime驗證的網站。
+* 对于AccessEnabler JavaScript SDK v2（版本2.x），库不提供上述机制，因此当指示用户采取措施缓解问题时，无法向启用Adobe Primetime身份验证的网站发出信号。
 
-* 可緩解上述問題的動作清單 **適用於所有三個版本** AccessEnabler JavaScript SDK的。
+* 可缓解上述问题的行动清单 **适用于所有三个版本** AccessEnabler JavaScript SDK的。
 
-* 時間 [N130](/help/authentication/error-reporting.md#advanced-error-codes-reference) 實作者的網站收到錯誤回呼，應指示使用者透過以下方式停用智慧追蹤預防(ITP)並啟用第三方Cookie：
+* 时间 [N130](/help/authentication/error-reporting.md#advanced-error-codes-reference) 实施者的网站收到了错误回调，应指示用户禁用智能防跟踪(ITP)并通过以下方式启用第三方Cookie：
 
-* 若是Mac OS X High Sierra和更新版本：取消勾選「**防止跨網站追蹤**「 」的「 」選項&#x200B;**網站追蹤**「偏好設定」中瀏覽器的「隱私權」標籤內的「 」專案，如下圖所示。
+* 对于Mac OS X High Sierra和更高版本：取消选中&quot;**防止跨站点跟踪**“ ”的“ ”选项&#x200B;**网站跟踪**”条目（位于浏览器的“隐私”选项卡中的“首选项”），如下图所示。
 
    ![](assets/uncheck-prvnt-cr-st-tr-safari11.png)
 
-* 若是Mac OS X Sierra和先前版本：檢查&quot;**永遠允許**「 」的「 」選項&#x200B;**Cookie和網站資料**「偏好設定」中瀏覽器的「隱私權」標籤內的「 」專案，如下圖所示。
+* 对于Mac OS X Sierra和之前的版本：检查&quot;**始终允许**“”的“ ”选项&#x200B;**Cookie和网站数据**”条目（位于浏览器的“隐私”选项卡中的“首选项”），如下图所示。
 
    ![](assets/always-allow-safari11.png)
 
 ## Safari 12 {#safari12}
 
-**詳細資料**
+**详细信息**
 
 >[!IMPORTANT]
 >
->Safari 10區段和Safari 11區段的所有上述詳細資訊，仍適用於Safari 12。
+>Safari 10部分和Safari 11部分的所有上述详细信息仍然适用于Safari 12。
 
-本節詳細說明的相容性問題 **AccessEnabler JavaScript SDK 4.x版** 在Safari 12上。
-
->[!NOTE]
->
->請記住，如果是AccessEnabler JavaScript SDK 2.x版和AccessEnabler JavaScript SDK 3.x版，兩者都會使用第三方Cookie進行驗證程式，而且由於ITP和從Safari 11開始的第三方Cookie原則，使用者的驗證體驗可能是未預期和未定義的，從無法登入到比預期的驗證持續時間更短。
-
-
-### 在Safari 12上通過AccessEnabler JavaScript SDK v4 （4.x版）功能認證 {#certified-functionality-of-accessenabler-javacscript=sdk-v4}
-
-* **驗證** 使用使用者互動的流程將一律有效，即使使用者的瀏覽器已停用第三方Cookie，因為從4.0版開始，AccessEnabler JavaScript SDK不再將第三方Cookie用於驗證程式。
+此部分详细介绍 **AccessEnabler JavaScript SDK版本4.x** 在Safari 12上。
 
 >[!NOTE]
 >
->使用者必須與網站互動，才能開啟登入快顯視窗和/或與MVPD登入頁面互動。
+>请记住，对于AccessEnabler JavaScript SDK版本2.x和AccessEnabler JavaScript SDK版本3.x，它们都使用第三方Cookie进行身份验证，并且由于ITP和从Safari 11开始的第三方Cookie策略，用户的身份验证体验可能是意外且未定义的，从无法登录到比预期的身份验证持续时间更短。
 
-* **授權/預檢/使用者中繼資料** 只要使用者已驗證，操作即可完全運作。
 
-### Safari 12上的AccessEnabler JavaScript SDK v4 （4.x版）已知問題 {#known-issues-of-accessenabler-javascript-sdk-4}
+### Safari 12上的AccessEnabler JavaScript SDK v4（4.x版）的认证功能 {#certified-functionality-of-accessenabler-javacscript=sdk-v4}
+
+* **身份验证** 使用用户交互的流将始终有效，即使用户的浏览器禁用了第三方Cookie，因为从4.0版开始，AccessEnabler JavaScript SDK不再将第三方Cookie用于身份验证过程。
+
+>[!NOTE]
+>
+>用户必须与站点交互才能打开登录弹出窗口和/或与MVPD登录页面交互。
+
+* **授权/预检/用户元数据** 操作完全有效，前提是用户已经过身份验证。
+
+### Safari 12上AccessEnabler JavaScript SDK v4（4.x版）的已知问题 {#known-issues-of-accessenabler-javascript-sdk-4}
 
 * SSO和SLO
 
-   * 由於從Safari 10開始在Safari中實施localStorage的方式，JS SDK無法再透過通用網域iFrame共用登入狀態。 這表示使用者需要登入使用AccessEnabler JavaScript SDK的每個網站。 登出也不會刪除網站間的驗證Token，因此使用者需要從每個啟用Adobe Primetime Authentication的網站登出。
+   * 由于从Safari 10开始在Safari中实施localStorage的方式，JS SDK无法再通过通用域iFrame共享登录状态。 这意味着用户需要登录到使用AccessEnabler JavaScript SDK的每个站点。 注销也不会删除网站间的身份验证令牌，因此用户需要从每个启用Adobe Primetime身份验证的网站注销。
 
-* 暫時通過
+* 临时传递
 
-   * 對於暫時傳遞，AccessEnabler JavaScript SDK會使用個人化機制，以將驗證權杖鎖定至特定裝置（瀏覽器執行個體）。 由於Safari 12中旨在防止追蹤的新機制，我們正在個人化機制中運算和使用的指紋 **對於擁有相同IP位址的所有使用者來說，都是相同的**. 我們確實會根據個人化目的考量使用者端IP，但即使如此，影響也會影響到共用相同公用IP位址的使用者。 對於這些使用者，我們會計算相同的個人化ID，而臨時通行證將繫結至此。 這表示一旦這類使用者使用臨時通行證，其他人就無法存取\！ 這尤其會影響企業使用者、教育機構，或任何其他擁有多位使用者使用NAT或通用Proxy來存取網際網路的組織。
+   * 对于临时传递，AccessEnabler JavaScript SDK使用个性化机制，以将身份验证令牌锁定到特定设备（浏览器实例）。 由于Safari 12中旨在防止跟踪的新机制，我们正在计算指纹并将其用于个性化机制中 **对于具有相同IP地址的所有用户都是相同的**. 出于个性化目的，我们确实会考虑客户端IP，但即使这样，影响也会影响共享同一公共IP地址的用户。 对于这些用户，我们将计算相同的个性化ID，并且临时密码将绑定到该用户。 这意味着，一旦此类用户使用临时通行证，则任何其他用户都将无权访问该通行证\！ 这尤其会对企业用户、教育机构或任何拥有多个用户使用NAT或公共代理访问Internet的其他组织造成影响。
 
 >[!NOTE]
 >
->此問題僅會在實作者因使用者互動而使用暫時通過驗證時，才會影響使用者，否則暫時通過驗證受限於以下情況 **自動流程** 下方的。
+>仅当实施者因用户交互而使用临时密码时，此问题才会影响用户，否则临时密码身份验证将受限于此 **自动流量** 下面的。
 
-* 自動流程
+* 自动流量
 
-   * 使用JS SDK 4.0時，在自動模式下嘗試驗證流程（沒有任何使用者互動）在Safari 12中無法成功。請注意，即將推出的JS SDK 4.1修正了自動化流程的所有問題。
+   * 使用JS SDK 4.0时，在自动模式下尝试的身份验证流（没有任何用户交互）在Safari 12中将不会成功。请注意，即将发布的JS SDK 4.1修复了所有自动化流问题。
 
-受此問題影響的使用案例：
+受此问题影响的用例：
 
-* 自動TempPass （免費預覽）驗證 — 對於這類流程，SDK會擲回N130錯誤。
+* 自动TempPass（自由预览）身份验证 — 对于此类流，SDK将引发N130错误。
 
-* 被動驗證（無訊息失敗） — 要求使用者選取此MVPD並輸入認證
+* 被动身份验证（静默失败） — 要求用户选择此MVPD并输入凭据
 
-### 減輕影響 {#mitigation-safari12}
+### 缓解 {#mitigation-safari12}
 
 **SSO和SLO**
 
-目前沒有已知的緩解方法可供使用，或撰寫時沒有可能使用。 Apple確實在Safari 12中推出「Storage Access API」(`https://webkit.org/blog/8124/introducing-storage-access-api`)，但目前的實作不適用於localStorage，而僅適用於Cookie。 此外，API需要使用者互動才能使用，一旦您使用，也會透過與以下對話方塊類似的許可權對話方塊提示使用者。
+在撰写本文时，没有已知的缓解措施或可能的缓解措施。 Apple确实在Safari 12中引入了“Storage Access API”(`https://webkit.org/blog/8124/introducing-storage-access-api`)，但当前实施不适用于localStorage，而只适用于Cookie。 此外，此API需要用户交互才能使用，并且在您使用它后，还会提示用户一个权限对话框，类似于下面的对话框。
 
 ![](assets/permission-dialog-apple.png)
 
 
-此時，這些Safari需求/提示不符合我們的UX需求，而且我們的行為與其他瀏覽器不一致，在前者中，只要我們在通用網域localStorage中儲存Token，SSO就「有效」。
+此时，这些Safari要求/提示与我们的UX要求不一致，并且我们在其他浏览器上的行为也不一致，在这些浏览器中，一旦我们在公共域localStorage中保存了令牌，SSO“就管用”。
 
-**暫時通過**
+**临时传递**
 
-為了緩解個人化問題並讓使用者互動，我們建議您使用 **[促銷臨時傳遞 ](/help/authentication/promotional-temp-pass.md)** 互動方式，並提供至少一項有關使用者的額外資訊（例如電子郵件地址）。
+为了缓解个性化问题并让用户进行交互，我们建议您使用 **[促销临时传递 ](/help/authentication/promotional-temp-pass.md)** 和至少一个关于用户的附加信息（例如，电子邮件地址）。
 
 ## Safari 13 {#safari13}
 
-**詳細資料**
+**详细信息**
 
 >[!IMPORTANT]
 >
->以上從Safari 10區段到Safari 12區段的所有詳細資訊，仍適用於Safari 13。
+>从Safari 10部分到Safari 12部分的所有上述详细信息仍然适用于Safari 13。
 
 
-從Safari 13開始，瀏覽器對 [智慧型追蹤預防](https://webkit.org/blog/7675/intelligent-tracking-prevention/) (ITP)，將第三方Cookie標幟為追蹤Cookie的程式中，使該機制背後的啟發式規則更為嚴格，以防止跨網站追蹤。
+从Safari 13开始，浏览器对 [智能防跟踪](https://webkit.org/blog/7675/intelligent-tracking-prevention/) (ITP)，在将第三方Cookie标记为跟踪Cookie的过程中使机制背后的启发式更严格，以防止跨站点跟踪。
 
-如先前各節所述，當實作人員使用AccessEnabler JavaScript SDK v2 （版本2.x）和AccessEnabler JavaScript SDK v3 （版本3.x）時，Adobe Primetime驗證服務會使用並依賴第三方Cookie作為驗證程式的一部分。 相較於舊版Safari瀏覽器，在ITP花了一些時間「瞭解」使用者與相關各方之間的互動(程式設計人員的網站和Adobe)後開始使用時，Safari 13瀏覽器會從一開始封鎖第三方Cookie，而這些Cookie被視為追蹤使用者端 — 伺服器模型通訊中的Cookie。
+如前几节所述，当实施者使用AccessEnabler JavaScript SDK v2（版本2.x）和AccessEnabler JavaScript SDK v3（版本3.x）时，Adobe Primetime身份验证服务使用并依赖第三方Cookie作为身份验证流程的一部分。 与Safari浏览器的早期版本相比，在ITP花了一点时间“了解”用户与相关各方之间的交互(程序员的网站和Adobe)后进入时，Safari 13浏览器从一开始就阻止第三方Cookie，而后者在客户端 — 服务器模型通信中被视为跟踪Cookie。
 
-總而言之，Safari 13瀏覽器的使用者很可能無法在已啟用Adobe Primetime驗證的網站上起始新的驗證，該網站使用舊版AccessEnabler JavaScript SDK、v2 （版本2.x）或v3 （版本3.x）。 發生此狀況的原因是ITP已封鎖所有必要Adobe的Primetime驗證服務Cookie，因此導致服務無法完成驗證要求。
+总之，Safari 13浏览器的用户很可能无法在启用了Adobe Primetime身份验证的网站上启动新的身份验证，该网站使用的是旧版AccessEnabler JavaScript SDK、v2（版本2.x）或v3（版本3.x）。 发生这种情况的原因是，ITP阻止了所有必需的AdobePrimetime身份验证服务Cookie，从而导致该服务无法完成身份验证请求。
 
-AccessEnabler JavaScript SDK v4 （4.x版）程式庫不會使用第三方Cookie進行驗證程式，因此其作業不會受到Safari 13變更的影響。
+AccessEnabler JavaScript SDK v4（4.x版）库不使用第三方Cookie进行身份验证，因此其操作不会以任何方式受到Safari 13更改的影响。
 
-### 減輕影響 {#mitigation-safari13}
+### 缓解 {#mitigation-safari13}
 
-首先，我們強烈建議 **移轉至AccessEnabler JavaScript SDK 4.x版** 在Safari瀏覽器上擁有穩定且可預測的行為。
+首先，我们强烈建议 **迁移到AccessEnabler JavaScript SDK 4.x版** 在Safari浏览器上拥有稳定且可预测的行为。
 
-其次，對於AccessEnabler JavaScript SDK v3 （3.x版），資料庫包含的機制能夠識別使用者驗證因缺少必要的Cookie而被封鎖的情況。 在這些情況下，程式庫會觸發特定錯誤回呼([N130](/help/authentication/error-reporting.md#advanced-error-codes-reference))會傳回至啟用Adobe Primetime驗證的網站，以用作指示使用者採取可以減輕問題的動作的訊號。 為了受益於此機制，網站必須實施 [錯誤報告](/help/authentication/error-reporting.md) 規格。
+其次，对于AccessEnabler JavaScript SDK v3（3.x版），该库包含一种机制，能够识别由于缺少所需的Cookie而阻止用户身份验证的情况。 在这些情况下，库会触发特定错误回调([N130](/help/authentication/error-reporting.md#advanced-error-codes-reference)Adobe Primetime )，以便用作指示用户采取可以缓解此问题的操作的信号。 为了从这一机制中获益，网站必须实施 [错误报告](/help/authentication/error-reporting.md) 规范。
 
-就AccessEnabler JavaScript SDK v2 （版本2.x）而言，程式庫不提供上述機制，因此無法在指示使用者採取行動來緩解問題時，顯示已啟用Adobe Primetime驗證的網站。
+对于AccessEnabler JavaScript SDK v2（版本2.x），库不提供上述机制，因此当指示用户采取措施缓解问题时，无法向启用Adobe Primetime身份验证的网站发出信号。
 
-時間 [N130](/help/authentication/error-reporting.md#advanced-error-codes-reference) 實作者的網站收到錯誤回呼，應指示使用者透過以下方式停用智慧追蹤預防(ITP)並啟用第三方Cookie：
+时间 [N130](/help/authentication/error-reporting.md#advanced-error-codes-reference) 实施者的网站收到了错误回调，应指示用户禁用智能防跟踪(ITP)并通过以下方式启用第三方Cookie：
 
-* 若是Mac OS X High Sierra和更新版本：取消勾選「**防止跨網站追蹤**「 」的「 」選項&#x200B;**網站追蹤**「偏好設定」中瀏覽器的「隱私權」標籤內的「 」專案，如下圖所示。
+* 对于Mac OS X High Sierra和更高版本：取消选中&quot;**防止跨站点跟踪**“ ”的“ ”选项&#x200B;**网站跟踪**”条目（位于浏览器的“隐私”选项卡中的“首选项”），如下图所示。
 
    ![](assets/prvnt-cross-site-tr-safari13.png)
 
-* 若是Mac OS X Sierra和先前版本：檢查</span>他」**永遠允許**「 」的「 」選項&#x200B;**Cookie和網站資料**「偏好設定」中瀏覽器的「隱私權」標籤內的「 」專案，如下圖所示。
+* 对于Mac OS X Sierra和以前的：检查</span>他”**始终允许**“”的“ ”选项&#x200B;**Cookie和网站数据**”条目（位于浏览器的“隐私”选项卡中的“首选项”），如下图所示。
 
    ![](assets/always-allow-safari13.png)

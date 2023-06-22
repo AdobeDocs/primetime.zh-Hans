@@ -1,6 +1,6 @@
 ---
-description: 後期繫結音訊使用PTMediaPlayer來播放在M3U8 HLS播放清單中指定，並且可以包含數個替代音訊資料流的視訊。
-title: 存取替代音軌
+description: 后期捆绑音频使用PTMediaPlayer播放在M3U8 HLS播放列表中指定的视频，该视频可以包含多个替代音频流。
+title: 访问备用音轨
 exl-id: c95e2bae-fcf3-4ae2-be11-fb3191b380f1
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,14 +9,14 @@ ht-degree: 0%
 
 ---
 
-# 存取替代音軌 {#access-alternate-audio-tracks}
+# 访问备用音轨 {#access-alternate-audio-tracks}
 
-後期繫結音訊使用PTMediaPlayer來播放在M3U8 HLS播放清單中指定，並且可以包含數個替代音訊資料流的視訊。
+后期捆绑音频使用PTMediaPlayer播放在M3U8 HLS播放列表中指定的视频，该视频可以包含多个替代音频流。
 
-1. 等待MediaPlayer至少在 `PTMediaPlayerStatusReady` 狀態。
-1. 接聽此事件：
+1. 等待MediaPlayer至少处于 `PTMediaPlayerStatusReady` 状态。
+1. 收听此事件：
 
-   通知 `PTMediaPlayerItemMediaSelectionOptionsAvailable`：音訊曲目的初始清單可供使用。
+   通知 `PTMediaPlayerItemMediaSelectionOptionsAvailable`：可用初始音频曲目列表。
 
    ```
    [[NSNotificationCenter defaultCenter] addObserver:self 
@@ -25,7 +25,7 @@ ht-degree: 0%
         object:self.player];
    ```
 
-1. 從取得可用的音軌 `PTMediaPlayerItem` 執行個體。
+1. 从获取可用的音频曲目 `PTMediaPlayerItem` 实例。
 
    ```
    - (void) onMediaPlayerItemMediaSelectionOptionsAvailable:(NSNotification *) notification { 
@@ -34,5 +34,5 @@ ht-degree: 0%
    }
    ```
 
-1. （選用）向使用者展示可用的曲目。
-1. 將選取的音軌設定在 `PTMediaPlayerItem` 執行個體。
+1. （可选）向用户显示可用曲目。
+1. 将选定的音轨设置为 `PTMediaPlayerItem` 实例。

@@ -1,6 +1,6 @@
 ---
-description: 您可以使用Adobe Primetime廣告決策介面，在VOD和即時/線性內容中插入廣告。
-title: 廣告需求
+description: 您可以使用Adobe Primetime广告决策界面在VOD和实时/线性内容中插入广告。
+title: 广告要求
 exl-id: b162e5b0-9f6c-46de-85de-97cec009a9b7
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,15 +9,15 @@ ht-degree: 0%
 
 ---
 
-# 廣告逾時 {#ad-timeout}
+# 广告超时 {#ad-timeout}
 
-## AV基礎需求 {#av-foundation-requirements}
+## AV基础要求 {#av-foundation-requirements}
 
-若為VOD內容，播放清單彙整（涉及主要內容資訊清單載入、廣告解析和廣告資訊清單載入）應在35秒內完成。
+对于VOD内容，应在35秒内完成播放列表拼接，其中涉及主内容清单加载、广告解析和广告清单加载。
 
-如果是即時內容，每次更新播放清單時，播放清單拼接應在20秒內完成
+对于实时内容，每次更新播放列表时，播放列表拼接应在20秒内完成
 
-**與AdResolution逾時相關的API**
+**与AdResolution超时相关的API**
 
 ```
 /** @name Properties */
@@ -28,7 +28,7 @@ ht-degree: 0%
 @property (notatomic, assign) double adResolutionTimeout;
 ```
 
-設定廣告中繼資料時，您可以透過設定PTAdMetadata：：adResolutionTimeout來設定adResolutionTimeout。
+在设置广告元数据时，您可以通过设置PTAdMetadata：：adResolutionTimeout来设置adResolutionTimeout。
 
 ```
 // Create an instance of PTAuditudeMetadata and set its property
@@ -36,9 +36,9 @@ PTAuditudeMetadata *adMetadata = [[[PTAuditudeMetadata alloc] init]autorelease];
 adMetadata.adResolutionTimeout = 15 seconds
 ```
 
-接著，請遵循以下章節： [Primetime廣告伺服器中繼資料](/help/programming/tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-primetime-ad-serving-metadata/ios-3x-primetime-ad-serving-metadata.md).
+随后在本节中讲述： [Primetime广告服务器元数据](/help/programming/tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-primetime-ad-serving-metadata/ios-3x-primetime-ad-serving-metadata.md).
 
-**與AdManifest逾時相關的API**
+**与AdManifest超时相关的API**
 
 ```
 /** @name Properties */
@@ -49,7 +49,7 @@ adMetadata.adResolutionTimeout = 15 seconds
  @property (notatomic, assign) double adManifestTimeout; 
 ```
 
-設定廣告中繼資料時，您可以透過設定PTAdMetadata：：adManifestTimeout來設定adManifestTimeout。
+在设置广告元数据时，您可以通过设置PTAdMetadata：：adManifestTimeout来设置adManifestTimeout。
 
 
 ```
@@ -58,4 +58,4 @@ PTAuditudeMetadata *adMetadata = [[[PTAuditudeMetadata alloc] init]autorelease];
 adMetadata.adManifestTimeout = 5 seconds
 ```
 
-接著，請遵循以下章節： [Primetime廣告伺服器中繼資料](/help/programming/tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-primetime-ad-serving-metadata/ios-3x-primetime-ad-serving-metadata.md).
+随后在本节中讲述： [Primetime广告服务器元数据](/help/programming/tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-primetime-ad-serving-metadata/ios-3x-primetime-ad-serving-metadata.md).

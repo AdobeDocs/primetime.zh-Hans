@@ -1,6 +1,6 @@
 ---
-description: 服務品質(QoS)提供視訊引擎執行狀況的詳細檢視。 TVSDK提供有關播放、緩衝和裝置的詳細統計資料。
-title: 服務品質統計資料
+description: 服务质量(QoS)提供了有关视频引擎执行情况的详细视图。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
+title: 服务质量统计数据
 exl-id: 084b5aa7-1eea-464b-a425-1da7b9fa1731
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,37 +9,37 @@ ht-degree: 0%
 
 ---
 
-# 服務品質統計資料 {#quality-of-service-statistics}
+# 服务质量统计数据 {#quality-of-service-statistics}
 
-服務品質(QoS)提供視訊引擎執行狀況的詳細檢視。 TVSDK提供有關播放、緩衝和裝置的詳細統計資料。
+服务质量(QoS)提供了有关视频引擎执行情况的详细视图。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
 
-TVSDK也提供下列已下載資源的相關資訊：
+TVSDK还提供了有关以下已下载资源的信息：
 
-* 播放清單/資訊清單檔案
-* 檔案片段
-* 檔案的追蹤資訊
+* 播放列表/清单文件
+* 文件片段
+* 文件的跟踪信息
 
-## 使用載入資訊在片段層級追蹤 {#section_4439D91E8EDC45588EF1D7BE25697350}
+## 使用加载信息在片段级别跟踪 {#section_4439D91E8EDC45588EF1D7BE25697350}
 
-您可以閱讀服務品質(QoS)資訊，瞭解下載的資源，例如片段和曲目，網址為 `LoadInformation` 類別。
+您可以从以下位置读取有关已下载资源（如片段和跟踪）的服务质量(QoS)信息 `LoadInformation` 类。
 
-1. 實作並註冊 `MediaPlayerEvent.LOAD_INFORMATION_AVAILABLE` 事件監聽器。
-1. 呼叫 `event.getLoadInformation()` 以從讀取相關資料 `event` 傳遞至回呼的引數。
+1. 实施并注册 `MediaPlayerEvent.LOAD_INFORMATION_AVAILABLE` 事件侦听器。
+1. 调用 `event.getLoadInformation()` 以从 `event` 传递给回调的参数。
 
    >[!NOTE]
    >
-   >深入瞭解 `LoadInformation`，請參閱 [2.7 for Android (Java)](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_2.7/index.html) API檔案
+   >了解更多关于 `LoadInformation`，请参见 [2.7 for Android (Java)](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_2.7/index.html) API文档。
 
-## 讀取QOS播放、緩衝和裝置統計資料 {#section_D21722600F324E67A9F06234D338B243}
+## 读取QOS播放、缓冲和设备统计信息 {#section_D21722600F324E67A9F06234D338B243}
 
-您可以讀取播放、緩衝和裝置統計資料，從 `QOSProvider` 類別。
+您可以从中读取播放、缓冲和设备统计信息 `QOSProvider` 类。
 
-此 `QOSProvider` class提供各種統計資料，包括關於緩衝、位元速率、影格速率、時間資料等的資訊。 此外也提供裝置的相關資訊，例如製造商、型號、作業系統、SDK版本、製造商的裝置ID以及熒幕大小/密度。
+此 `QOSProvider` 类提供了各种统计信息，包括有关缓冲、比特率、帧率、时间数据等的信息。 它还提供有关设备的信息，例如制造商、型号、操作系统、SDK版本、制造商的设备ID和屏幕大小/密度。
 
-1. 例項化媒體播放器。
-1. 建立 `QOSProvider` 物件並將其附加至媒體播放器。
+1. 实例化媒体播放器。
+1. 创建 `QOSProvider` 对象并将其附加到媒体播放器。
 
-   此 `QOSProvider` 建構函式會擷取播放器內容，以便擷取裝置特定資訊。
+   此 `QOSProvider` 构造函数采用播放器上下文，以便可以检索特定于设备的信息。
 
    ```java
    // Create Media Player. 
@@ -47,9 +47,9 @@ TVSDK也提供下列已下載資源的相關資訊：
    _mediaQosProvider.attachMediaPlayer(_mediaPlayer);
    ```
 
-1. （選用）讀取播放統計資料。
+1. （可选）读取播放统计数据。
 
-   讀取播放統計資料的解決方案之一，是讓計時器定期從擷取新的QoS值 `QOSProvider`.
+   读取播放统计数据的一种解决方案是设置一个计时器，该计时器定期从以下位置提取新的QoS值： `QOSProvider`.
 
    例如：
 
@@ -81,7 +81,7 @@ TVSDK也提供下列已下載資源的相關資訊：
    }; 
    ```
 
-1. （選擇性）讀取裝置特定資訊。
+1. （可选）读取特定于设备的信息。
 
    ```java
    // Show device information 

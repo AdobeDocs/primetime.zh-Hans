@@ -1,6 +1,6 @@
 ---
-title: 支援的格式
-description: 支援的格式
+title: 支持的格式
+description: 支持的格式
 copied-description: true
 source-git-commit: f0e58c59e5f71ff79861dc634d9c9b3364e49db6
 workflow-type: tm+mt
@@ -10,19 +10,19 @@ ht-degree: 0%
 ---
 
 
-# 支援的格式 {#supported-formats}
+# 支持的格式 {#supported-formats}
 
-PrimetimeAd Insertion會攔截並支援將廣告插入下列媒體串流：
+PrimetimeAd Insertion拦截并支持将广告插入以下媒体流：
 
 ## HLS {#hls}
 
-- 將音訊/視訊片段播放清單設為靜音
-- CMAF和已取消連結的音訊/視訊播放清單，包括僅限音訊的播放清單
+- 音频/视频片段播放列表设为静音
+- CMAF和去模化的音频/视频播放列表，包括纯音频播放列表
 - WebVTT
-- I-Frame串流播放清單(#EXT-X-I-FRAME-STREAM-INF)
-- Thubmanil影像播放清單(#EXT-X-IMAGE-STREAM-INF)
+- I-Frame流播放列表(#EXT-X-I-FRAME-STREAM-INF)
+- 缩略图图像播放列表(#EXT-X-IMAGE-STREAM-INF)
 
-## 虛線 {#dash}
+## 短划线 {#dash}
 
-- CMAF和已取消連結的音訊/視訊播放清單，包括僅限音訊的播放清單
+- CMAF和去模化的音频/视频播放列表，包括纯音频播放列表
 - WebVTT

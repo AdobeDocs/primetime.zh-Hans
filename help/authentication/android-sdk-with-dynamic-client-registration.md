@@ -1,6 +1,6 @@
 ---
-title: 具有動態使用者端註冊的Android SDK
-description: 具有動態使用者端註冊的Android SDK
+title: 带有动态客户端注册的Android SDK
+description: 带有动态客户端注册的Android SDK
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,182 +9,182 @@ ht-degree: 0%
 
 ---
 
-# 具有動態使用者端註冊的Android SDK {#android-sdk-with-dynamic-client-registration}
+# 带有动态客户端注册的Android SDK {#android-sdk-with-dynamic-client-registration}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-## 簡介 {#Intro}
+## 介绍 {#Intro}
 
-Android適用的Android AccessEnabler SDK已修改為啟用驗證，而不使用工作階段Cookie。 隨著越來越多瀏覽器限制對Cookie的存取，需要使用其他方法允許驗證。
+Android AccessEnabler SDK for Android已修改为在不使用会话Cookie的情况下启用身份验证。 随着越来越多的浏览器限制对Cookie的访问，需要使用其他方法允许身份验证。
 
-對於Android，使用Chrome自訂標籤會限制從其他應用程式存取Cookie。
+对于Android，使用Chrome自定义选项卡会限制从其他应用程序访问Cookie。
 
->**Android SDK 3.0.0** 介紹：
+>**Android SDK 3.0.0** 介绍：
 
-- 動態使用者端註冊會以簽署的請求者ID與工作階段Cookie驗證，取代目前的應用程式註冊機制
-- 驗證流程的Chrome自訂標籤
+- 动态客户端注册取代了基于已签名请求者ID和会话Cookie身份验证的当前应用程序注册机制
+- 用于身份验证流程的Chrome自定义选项卡
 
 >[!NOTE]
 >
->對於沒有Chrome自訂分頁支援的舊版Android，將使用WebView驗證，就像在舊版AccessEnabler SDK中一樣。
+>对于不支持Chrome自定义选项卡的较旧Android版本，将使用WebView身份验证，这一点与较旧AccessEnabler SDK版本中类似。
 
 
-## 動態使用者端註冊 {#DCR}
+## 动态客户端注册 {#DCR}
 
-Android SDK v3.0+將使用「動態使用者端註冊」程式，如 [動態使用者端註冊](/help/authentication/dynamic-client-registration.md).
+Android SDK v3.0+将使用“动态客户端注册”过程，如 [动态客户端注册](/help/authentication/dynamic-client-registration.md).
 
 
-## 功能示範 {#Demo}
+## 功能演示 {#Demo}
 
-請觀看 [此網路研討會](https://my.adobeconnect.com/pzkp8ujrigg1/) 其中提供更多功能的內容，並包含如何使用TVE儀表板管理軟體陳述式，以及如何使用Adobe提供的示範應用程式來測試產生的陳述式（做為Android SDK的一部分）。
+请观看 [此网络研讨会](https://my.adobeconnect.com/pzkp8ujrigg1/) 其中提供了该功能的更多上下文，并包含有关如何使用TVE仪表板管理软件语句，以及如何使用Adobe作为Android SDK的一部分提供的演示应用程序测试生成的语句的演示。
 
-## API變更 {#API}
+## API更改 {#API}
 
 
 ### Factory.getInstance
 
-**說明：** 具現化Access Enabler物件。 每個應用程式執行個體應有一個存取啟用程式執行個體。
+**描述：** 实例化访问启用程序对象。 每个应用程序实例应有一个访问启用程序实例。
 
-| API呼叫：建構函式 |
+| API调用：构造函数 |
 | --- |
-| 公用靜態AccessEnabler getInstance(Context appContext、String softwareStatement、String redirectUrl)<br>        擲回AccessEnablerException |
+| 公共静态AccessEnabler getInstance（上下文appContext、字符串softwareStatement、字符串redirectUrl）<br>        引发AccessEnablerException |
 
 
 **可用性：** v3.0+
 
-**引數：**
+**参数：**
 
-- *appContext*：Android應用程式內容
-- softwareStatement：從TVE Dashboard或 *null* 如果在strings.xml中設定&quot;software\_statement&quot;
-- redirectUrl ：唯一的url，反向順序的網域之一，已明確新增至TVE儀表板或 *null* 如果在strings.xml中設定&quot;redirect\_uri&quot;
+- *appContext*：Android应用程序上下文
+- softwareStatement：从TVE Dashboard或 *null* 如果在strings.xml中设置了“software\_statement”
+- redirectUrl ：唯一url，它是在TVE功能板中明确添加的反向顺序域之一，或者 *null* 如果在strings.xml中设置了“redirect\_uri”
 
-注意：無效的softwareStatement或redirectUrl將導致應用程式無法初始化AccessEnabler或註冊Adobe Pass驗證和授權的應用程式
+注意：无效的softwareStatement或redirectUrl将导致应用程序无法初始化AccessEnabler或注册Adobe Pass身份验证和授权的应用程序
 </br>
-注意： strings.xml中的redirectUrl引數或redirect\_uri應為應用程式在TVE儀表板中以相反順序新增的網域值(例如：若為TVE儀表板中新增的網域「adobe.com」，redirectUrl應為「com.adobe」。
+注意：strings.xml中的redirectUrl参数或redirect\_uri应为应用程序在TVE功能板中添加的域的值（顺序相反）(例如：对于在TVE功能板中添加的域“adobe.com”，redirectUrl应为“com.adobe”。
  
 
 ### setRequestor
 
-**說明：** 建立管道的身分。 每個管道在為Adobe Primetime驗證系統向Adobe註冊後都會獲得一個唯一的ID。 處理SSO和遠端Token時，驗證狀態會在應用程式於背景時變更，當應用程式進入前景時可再次呼叫setRequestor，以便與系統狀態同步（如果SSO已啟用，請擷取遠端Token，如果同時發生登出，請刪除本機Token）。
+**描述：** 建立渠道标识。 在为Adobe Primetime身份验证系统注册Adobe后，每个渠道都会分配一个唯一的ID。 在处理SSO和远程令牌时，身份验证状态会在应用程序处于后台时更改，当应用程序进入前台时，可以再次调用setRequestor以便与系统状态同步（如果启用了SSO，则获取远程令牌，如果同时发生注销，则删除本地令牌）。
 
-伺服器回應包含MVPD清單，以及附加到通道身分識別的一些設定資訊。 伺服器回應由Access Enabler程式碼在內部使用。 只有作業的狀態（即SUCCESS/FAIL）會透過setRequestorComplete()回呼顯示給您的應用程式。
+服务器响应包含MVPD列表以及附加到通道标识的一些配置信息。 服务器响应由访问启用码在内部使用。 通过setRequestorComplete()回调只向应用程序显示操作的状态（即SUCCESS/FAIL）。
 
-如果 *url* 不會使用引數，因此產生的網路呼叫會鎖定預設服務提供者URL：Adobe版本/生產環境。
+如果 *url* 未使用参数，生成的网络调用将定位默认服务提供商URL：Adobe版本/生产环境。
 
-如果提供的值用於 *url* 引數，則所產生的網路呼叫會鎖定中提供的所有URL *url* 引數。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD，「存取啟用程式」會記住相關服務提供者的URL。 所有後續的軟體權利檔案要求都會導向至與設定階段期間與目標MVPD配對的服務提供者相關聯的URL。
+如果为提供了值 *url* 参数，则生成的网络调用将定向于 *url* 参数。 所有配置请求都在单独的线程中同时触发。 在编译MVPD列表时，优先使用第一个响应程序。 对于列表中的每个MVPD， Access Enabler记住关联服务提供商的URL。 所有后续授权请求都定向到与服务提供程序关联的URL，该URL在配置阶段与目标MVPD配对。
 
-| API呼叫：要求者設定 |
+| API调用：请求者配置 |
 | --- |
 | ```public void setRequestor(String requestorId)``` |
 
 **可用性：** v3.0+
 
-| API呼叫：要求者設定 |
+| API调用：请求者配置 |
 | --- |
 | ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
 
 **可用性：** v3.0+
 
-**引數：**
+**参数：**
 
-- *請求者ID*：與管道相關聯的唯一ID。 當您首次向Adobe Primetime驗證服務註冊時，請將Adobe指派的唯一ID傳遞至您的網站。
-- *url*：選用引數；預設會使用Adobe服務提供者 [http://sp.auth.adobe.com/](http://sp.auth.adobe.com/). 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可用於偵錯）。 您可以使用此選項來指定多個Adobe Primetime驗證服務提供者執行個體。 如此一來，MVPD清單就會由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯，也就是首先回應並支援該MVPD的提供者。
+- *请求者ID*：与渠道关联的唯一ID。 首次向Adobe Primetime身份验证服务注册时，将Adobe分配的唯一ID传递到您的网站。
+- *url*：可选参数；默认情况下，使用Adobe服务提供程序 [http://sp.auth.adobe.com/](http://sp.auth.adobe.com/). 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（其他实例可能用于调试目的）。 您可以使用此选项指定多个Adobe Primetime身份验证服务提供程序实例。 在执行此操作时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供程序相关联；即首先响应并支持该MVPD的服务提供程序。
 
-已棄用：
+已弃用：
 
-- *signedRequestorID*：以私密金鑰數位簽署的請求者ID復本。 <!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
+- *signedRequestorID*：使用您的私钥进行数字签名的请求者ID的副本。 <!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
 
-**觸發的回呼：** `setRequestorComplete()`
+**触发的回调：** `setRequestorComplete()`
 
-### 登出
+### 注销
 
-**說明：** 使用此方法可起始登出流程。 登出是一系列HTTP重新導向作業的結果，因為使用者需要同時從Adobe Primetime驗證伺服器和MVPD的伺服器登出。 因此，此流程將開啟ChromeCustomTab視窗以執行登出。
+**描述：** 使用此方法可启动注销流程。 注销操作是一系列HTTP重定向操作的结果，这是因为用户需要同时从Adobe Primetime身份验证服务器和MVPD服务器注销。 因此，此流程将打开一个ChromeCustomTab窗口以执行注销。
 
-| API呼叫：起始登出流程 |
+| API调用：启动注销流程 |
 | --- |
 | public void logout() |
 
 **可用性：** v3.0+
 
-**引數：** 無
+**参数：** 无
 
-**觸發的回呼：** `setAuthenticationStatus()`
+**触发的回调：** `setAuthenticationStatus()`
 </br></br>
 
-## 程式設計師實作流程 {#Progr}
+## 程序员实施流程 {#Progr}
 
-### **1. 註冊應用程式** 
+### **1. 注册应用程序** 
 
-a.從Adobe Pass （ TVE控制面板）取得software\_statement和redirect\_uri
+a.从Adobe Pass获取software\_statement和redirect\_uri （ TVE功能板）
 
-b.有兩個選項可將這些值傳遞至Adobe Pass SDK：
+b.可使用以下两个选项将这些值传递到Adobe Pass SDK：
 
-在strings.xml中新增： 
+在strings.xml中，添加： 
 
 ```XML
 <string name="software_statement">[softwarestatement value]</string>
 <string name="redirect_uri">application_url.com</string>
 ```
 
-呼叫AccessEnabler.getInstance(appContext，softwareStatement， redirectUrl)
+调用AccessEnabler.getInstance(appContext，softwareStatement， redirectUrl)
 
 
-### 2.設定應用程式
+### 2.配置应用程序
 
 a. setRequestor(requestor\_id) 
 
-SDK會執行下列操作： 
+SDK将执行以下操作： 
 
-- 註冊應用程式：使用 **software\_statement**，SDK將取得 **client\_id， client\_secret， client\_id\_issued\_at， redirect\_uris， grant\_types**. 此資訊會儲存在應用程式的內部儲存空間中。
+- 注册应用程序：使用 **software\_statement**，SDK将获得 **client\_id， client\_secret， client\_id\_issued\_at， redirect\_uris， grant\_types**. 此信息将存储在应用程序的内部存储中。
 
-- 取得 **access\_token** 使用client\_id、client\_secret和grant\_type=&quot;client\_credentials&quot; 。 此access\_token將用於SDK對Adobe Pass伺服器進行的每次呼叫 
+- 获取 **access\_token** 使用client\_id、client\_secret和grant\_type=&quot;client\_credentials&quot; 。 此access\_token将用于SDK对Adobe Pass服务器进行的每次调用 
 
-**權杖錯誤回應：**
+**令牌错误响应：**
 
-| 錯誤回應 |  |  |
+| 错误响应 |  |  |
 | --- | --- | --- |
-| HTTP 400 （錯誤請求） | {&quot;error&quot;： &quot;invalid\_request&quot;} | 請求缺少必要的引數、包含不受支援的引數值（授權型別除外）、重複引數、包含多個認證、使用多個機制來驗證使用者端，或格式錯誤。 |
-| HTTP 400 （錯誤請求） | {&quot;error&quot;： &quot;invalid\_client&quot;} | 使用者端驗證失敗，因為使用者端不明。 SDK必須再次向授權伺服器註冊。 |
-| HTTP 400 （錯誤請求） | {&quot;error&quot;： &quot;unauthorized\_client&quot;} | 已驗證的使用者端無權使用此授權授予型別。 |
+| HTTP 400（错误请求） | {&quot;error&quot;： &quot;invalid\_request&quot;} | 请求缺少必需的参数，包括不受支持的参数值（授权类型除外），重复参数，包括多个凭据，使用多个机制来验证客户端，或者格式不正确。 |
+| HTTP 400（错误请求） | {&quot;error&quot;： &quot;invalid\_client&quot;} | 客户端身份验证失败，因为客户端未知。 SDK必须再次向授权服务器注册。 |
+| HTTP 400（错误请求） | {&quot;error&quot;： &quot;unauthorized\_client&quot;} | 经过身份验证的客户端无权使用此授权授予类型。 |
 
-- 如果MVPD需要被動驗證，會開啟Chrome自訂標籤以使用該MVPD執行被動驗證，並在完成後關閉
+- 如果MVPD需要被动身份验证，将打开一个Chrome自定义选项卡，以使用该MVPD被动执行，并在完成后关闭
 
-b. checkAuthorization()
+b. checkAuthentication()
 
-- true ：前往授權
-- false ：前往Select MVPD
+- true ：转至授权
+- false ：转到选择MVPD
 
-c. getAuthentication ： SDK將包含 **access_token** 在呼叫引數中 
+c. getAuthentication ： SDK将包含 **access_token** 在调用参数中 
 
-- 記憶的mvpd ：前往setSelectedProvider(mvpd_id)
-- 未選取mvpd ： displayProviderDialog
-- 已選取mvpd ：前往setSelectedProvider(mvpd_id)
+- mvpd已记忆：转到setSelectedProvider(mvpd_id)
+- 未选择mvpd ：displayProviderDialog
+- 已选择mvpd ：转到setSelectedProvider(mvpd_id)
 
 d. setSelectedProvider
 
-- mvpd\_id驗證url已載入ChromeCustomTabs中
-- 登入成功： delegate.setAuthenticationStatus ( SUCCESS )
-- 登入已取消：重設MVPD選擇
-- URL配置會建立為「adobepass://redirect_uri」，以便在驗證完成時擷取
+- mvpd\_id身份验证url已加载到ChromeCustomTabs中
+- 登录成功：delegate.setAuthenticationStatus ( SUCCESS )
+- 登录已取消：重置MVPD选择
+- URL方案将建立为“adobepass://redirect_uri”，以便在身份验证完成时捕获
 
-e. get/checkAuthorization ： SDK將包含 **access_token** 標頭中為Authorization： Bearer **access_token**
+e. get/checkAuthorization ： SDK将包含 **access_token** 在标头中作为授权：持有者 **access_token**
 
-- 如果授權成功，將會呼叫以取得媒體權杖
+- 如果授权成功，将调用以获取媒体令牌
 
-f.登出： 
+f.注销： 
 
-- SDK將會刪除目前請求者的有效Token （由其他應用程式取得而非透過SSO取得的驗證將保持有效）
-- SDK將開啟Chrome自訂標籤以存取mvpd_id登出端點。 完成後，Chrome自訂標籤將關閉
-- URL配置會建立為「adobepass://logout」，以擷取登出完成時的時間
-- 登出將會觸發sendTrackingData(new Event(EVENT_LOGOUT，USER_NOT_AUTHENTICATED_ERROR)和回呼：setAuthenticationStatus(0，&quot;Logout&quot;)
+- SDK将删除当前请求者的有效令牌（由其他应用程序获得而不是通过SSO获得的身份验证将保持有效）
+- SDK将打开Chrome自定义选项卡以访问mvpd_id注销端点。 完成后，Chrome自定义选项卡将关闭
+- 将URL方案建立为“adobepass://logout”，以捕获注销完成时的时间
+- 注销将触发sendTrackingData(new Event(EVENT_LOGOUT，USER_NOT_AUTHENTICATED_ERROR)和回调：setAuthenticationStatus(0，&quot;Logout&quot;)
 
-**注意：** 因為每個呼叫都需要 **access_token，** 以下可能的錯誤碼會在SDK中處理。 
+**注意：** 因为每个调用需要 **access_token，** 以下可能的错误代码在SDK中进行处理。 
 
 
-| 錯誤回應 |  |  |
+| 错误响应 |  |  |
 | --- | ---|--- |
-| invalid_request | 400 | 要求的格式錯誤。 SDK應停止執行對伺服器的呼叫。 |
-| invalid_client | 403 | 不再允許使用者端ID執行要求。 sdk必須再次執行使用者端註冊。 |
-| access_denied | 401 | access\_token無效。 sdk必須要求新的access_token。 |
+| invalid_request | 400 | 请求的格式不正确。 SDK应停止执行对服务器的调用。 |
+| invalid_client | 403 | 不再允许客户端ID执行请求。 sdk必须再次执行客户端注册。 |
+| access_denied | 401 | access\_token无效。 sdk必须请求新的access_token。 |

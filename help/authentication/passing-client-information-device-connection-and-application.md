@@ -1,6 +1,6 @@
 ---
-title: 傳遞使用者端資訊（裝置、連線和應用程式）
-description: 傳遞使用者端資訊（裝置、連線和應用程式）
+title: 传递客户端信息（设备、连接和应用程序）
+description: 传递客户端信息（设备、连接和应用程序）
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,160 +9,160 @@ ht-degree: 0%
 
 ---
 
-# 傳遞使用者端資訊（裝置、連線和應用程式） {#pass-client-info}
+# 传递客户端信息（设备、连接和应用程序） {#pass-client-info}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
 
-## 範圍 {#pass-client-info-scope}
+## 范围 {#pass-client-info-scope}
 
-本檔案彙總了從程式設計人員應用程式傳遞使用者端資訊（裝置、連線和應用程式）至Adobe Primetime Authentication REST API或SDK的詳細資訊和逐步指南。
+本文档汇总有关将客户端信息（设备、连接和应用程序）从程序员应用程序传递到Adobe Primetime身份验证REST API或SDK的详细信息和Cookbook。
 
-提供使用者端資訊的好處包括：
+提供客户信息的好处包括：
 
-* 在某些裝置型別和可支援HBA的MVPD的情況下，能夠正確啟用Home Base Authentication (HBA)。
-* 在某些裝置型別的情況下正確套用TTL的功能（例如，為電視連線裝置上的驗證工作階段設定較長的TTL）。
-* 能夠使用Entitlement Service Monitoring (ESM)在各種裝置型別的劃分報表中正確彙總業務量度。
-* 解除封鎖正確套用各種商業規則(例如： 降級)。
+* 在某些设备类型和可支持HBA的MVPD的情况下，能够正确启用Home Base Authentication (HBA)。
+* 能够在某些设备类型的情况下正确应用TTL（例如，为电视连接设备上的身份验证会话配置较长的TTL）。
+* 能够使用Entitlement Service Monitoring (ESM)跨设备类型在细分报告中正确聚合业务量度。
+* 取消阻止正确应用各种业务规则(例如 降级)。
 
-## 概觀 {#pass-client-info-overview}
+## 概述 {#pass-client-info-overview}
 
-使用者端資訊包含：
+客户端信息包括：
 
-* **裝置** 使用者嘗試使用程式設計人員內容的裝置之軟硬體屬性的相關資訊。
-* **連線** 使用者連線至Adobe Primetime Authentication Services及/或程式設計人員服務時所使用之裝置的連線屬性相關資訊（例如伺服器對伺服器實作）。
-* **應用** 有關使用者嘗試使用程式設計人員內容的註冊應用程式的資訊。
+* **设备** 有关用户试图从中使用程序员内容的设备的硬件和软件属性的信息。
+* **连接** 有关用户从中连接到Adobe Primetime Authentication Services和/或程序员服务的设备的连接属性的信息（例如，服务器到服务器实施）。
+* **应用程序** 有关用户从中尝试使用程序员内容的已注册应用程序的信息。
 
-使用者端資訊是JSON物件，使用下表所示的金鑰建置。
+客户端信息是使用下表提供的密钥构建的JSON对象。
 
 >[!NOTE]
 >
->下列專案 **金鑰** 是 **強制** 要在使用者端資訊JSON物件中傳送： **模型**， **osName**.
+>以下各项 **键** 是 **必需** 要在客户端信息JSON对象中发送，请执行以下操作： **模型**， **操作系统名称**.
 >
->下列鍵具有 **受限制** 值： `primaryHardwareType`， `osName`， `osFamily`， `browserName`， `browserVendor`， `connectionSecure`.
+>以下键具有 **受限** 值： `primaryHardwareType`， `osName`， `osFamily`， `browserName`， `browserVendor`， `connectionSecure`.
 
-|  | 金鑰 | 受限制 | 說明 | 可能的值 |
+|  | 键 | 受限 | 描述 | 可能值 |
 |---|---|---|---|---|
-|  | primaryHardwareType | #是 | 裝置的主要硬體型別。 | #值受限： Camera DataCollectionTerminal Desktop EmbeddedNetworkModule eReader遊戲主機GeolocationTracker Glass MediaPlayer MobilePhone PaymentTerminal PluginModem SetTopBox TV Tablet WirelessHotspot腕錶未知 |
-| #mandatory | 模型 | 否 | 裝置的型號名稱。 | 例如iPhone、SM-G930V、AppleTV等。 |
-|  | 版本 | 否 | 裝置的版本。 | 例如2.0.1等。 |
-|  | 製造商 | 否 | 裝置的製造公司/組織。 | 例如三星、LG、中興、華為、摩托羅拉、Apple等。 |
-|  | 廠商 | 否 | 裝置的銷售公司/組織。 | 例如Apple、Samsung、LG、Google等。 |
-| #mandatory | osName | #是 | 裝置的作業系統(OS)名稱。 | #限制的值： Android Chrome作業系統Linux Mac作業系統X OpenBSD Roku作業系統Windows iOS tvOS webOS |
-|  | osFamily | 是 | 裝置的作業系統(OS)群組名稱。 | #限制的值： Android BSD Linux PlayStation OS Roku OS Symbian Tizen Windows iOS macOS tvOS webOS |
-|  | osVendor | 否 | 裝置的作業系統(OS)供應商。 | Amazon Apple Google LG Microsoft Mozilla Nintendo Nokia Roku Samsung Sony Tizen Project |
-|  | osVersion | 否 | 裝置的作業系統(OS)版本。 | 例如10.2、9.0.1等。 |
-|  | browserName | #是 | 瀏覽器的名稱。 | #限制的值： Android瀏覽器Chrome Edge Firefox Internet Explorer Opera Safari SeaMonkey Symbian瀏覽器 |
-|  | browserVendor | #是 | 瀏覽器的建置公司/組織。 | #值受限： Amazon Apple Google Microsoft Motorola Mozilla Netscape Nintendo Nokia Samsung Sony Ericsson |
-|  | browserVersion | 否 | 裝置的瀏覽器版本。 | 例如60.0.3112 |
-|  | userAgent | 否 | 裝置的使用者代理。 | 例如Mozilla/5.0 (Macintosh；Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 （KHTML，如Gecko）版本/10.0.3 Safari/602.4.8 |
-|  | displaywidth | 否 | 裝置的實體熒幕寬度。 |  |
-|  | displayheight | 否 | 裝置的實體熒幕高度。 |  |
-|  | displayPpi | 否 | 裝置的實體熒幕畫素密度。 | 例如294 |
-|  | 對角熒幕大小 | 否 | 裝置的實體熒幕對角尺寸（英吋）。 | 例如5.5、10.1 |
-|  | connectionIp | 否 | 用於傳送HTTP要求的裝置IP。 | 例如8.8.4.4 |
-|  | connectionPort | 否 | 用於傳送HTTP要求的裝置連線埠。 | 例如53124 |
-|  | connectionType | 否 | 網路連線型別。 | 例如WiFi、LAN、3G、4G、5G |
-|  | connectionSecure | #是 | 網路連線安全性狀態。 | #值會受到限制： true — 若是安全網路false — 若是公用連結區 |
-|  | applicationId | 否 | 應用程式的唯一識別碼。 | 例如CNN |
+|  | 主要硬件类型 | #是 | 设备的主要硬件类型。 | #值受限： Camera DataCollectionTerminal Desktop EmbeddedNetworkModule电子阅读器游戏控制台地理位置跟踪器眼镜媒体播放器手机支付终端插件调制解调器机顶盒TV平板电脑无线热点腕表未知 |
+| #mandatory | 模型 | 否 | 设备的型号名称。 | 例如iPhone、SM-G930V、AppleTV等。 |
+|  | version | 否 | 设备的版本。 | 例如2.0.1等。 |
+|  | 制造商 | 否 | 设备的制造公司/组织。 | 例如，三星、LG、中兴通讯、华为、摩托罗拉、Apple等。 |
+|  | 供应商 | 否 | 设备的销售公司/组织。 | 例如Apple、Samsung、LG、Google等。 |
+| #mandatory | 操作系统名称 | #是 | 设备的操作系统(OS)名称。 | #值受限制： Android Chrome OS Linux Mac OS X OpenBSD Roku OS Windows iOS tvOS webOS |
+|  | 操作系统系列 | 是 | 设备的操作系统(OS)组名称。 | #值受限制： Android BSD Linux PlayStation OS Roku OS Symbian Tizen Windows iOS macOS tvOS webOS |
+|  | 操作系统供应商 | 否 | 设备的操作系统(OS)供应商。 | Amazon Apple Google LG Microsoft Mozilla Nintendo Nokia Roku Samsung Sony Tizen Project |
+|  | osVersion | 否 | 设备的操作系统(OS)版本。 | 例如10.2、9.0.1等。 |
+|  | browserName | #是 | 浏览器的名称。 | #值受到限制： Android浏览器Chrome Edge Firefox Internet Explorer Opera Safari SeaMonkey Symbian浏览器 |
+|  | browserVendor | #是 | 浏览器的构建公司/组织。 | #值受到限制： Amazon Apple Google Microsoft Motorola Mozilla Netscape Nintendo Nokia Samsung Sony Ericsson |
+|  | browseVersion | 否 | 设备的浏览器版本。 | 例如60.0.3112 |
+|  | userAgent | 否 | 设备的用户代理。 | 例如，Mozilla/5.0(Macintosh；英特尔Mac OS X 10_12_3) AppleWebKit/602.4.8（KHTML，如Gecko）版本/10.0.3 Safari/602.4.8 |
+|  | displaywidth | 否 | 设备的物理屏幕宽度。 |  |
+|  | displayheight | 否 | 设备的物理屏幕高度。 |  |
+|  | displayPpi | 否 | 设备的物理屏幕像素密度。 | 例如294 |
+|  | 对角屏幕大小 | 否 | 设备的物理屏幕对角尺寸（英寸）。 | 例如5.5、10.1 |
+|  | connectionIp | 否 | 用于发送HTTP请求的设备的IP。 | 例如8.8.4.4 |
+|  | connectionPort | 否 | 用于发送HTTP请求的设备的端口。 | 例如53124 |
+|  | connectionType | 否 | 网络连接类型。 | 例如WiFi、LAN、3G、4G、5G |
+|  | connectionSecure | #是 | 网络连接安全状态。 | #限制值： true — 在安全网络false — 在公共热点的情况下 |
+|  | applicationId | 否 | 应用程序的唯一标识符。 | 例如CNN |
 
-## API參考 {#api-ref}
+## API引用 {#api-ref}
 
-本節介紹負責在使用Adobe Primetime驗證REST API或SDK時處理使用者端資訊的API。
+本节介绍在使用Adobe Primetime身份验证REST API或SDK时负责处理客户端信息的API。
 
 ### REST API {#rest-api}
 
-Adobe Primetime驗證服務支援以下列方式接收使用者端資訊：
+Adobe Primetime Authentication Services支持通过以下方式接收客户端信息：
 
-* As a **標頭： &quot;X-Device-Info&quot;**
-* As a **查詢引數： &quot;device_info&quot;**
-* As a **post引數： &quot;device_info&quot;**
+* As a **标头： &quot;X-Device-Info&quot;**
+* As a **查询参数： &quot;device_info&quot;**
+* As a **post参数： &quot;device_info&quot;**
 
 >[!IMPORTANT]
 >
->在所有三個案例中，標頭或引數的裝載必須是 **Base64編碼和URL編碼**.
+>在所有三种方案中，标头或参数的有效负载必须为 **Base64编码和URL编码**.
 
 **SDK**
 
 #### JavaScript SDK {#js-sdk}
 
-AccessEnabler JavaScript SDK預設會建置使用者端資訊JSON物件，除非覆寫，否則會傳遞至Adobe Primetime驗證服務。
+默认情况下，AccessEnabler JavaScript SDK构建一个客户端信息JSON对象，该对象将被传递到Adobe Primetime身份验证服务，除非覆盖。
 
-AccessEnabler JavaScript SDK支援 **僅覆寫** 「applicationId」金鑰從使用者端資訊JSON物件透過 [setRequestor](/help/authentication/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options))的 *applicationId* options引數。
+AccessEnabler JavaScript SDK支持 **仅覆盖** 来自客户端信息JSON对象的“applicationId”密钥，通过 [setRequestor](/help/authentication/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options))的 *applicationId* 选项参数。
 
 >[!CAUTION]
 >
->此 `applicationId` 引數值必須是純文字字串值。
->如果程式設計師應用程式決定傳遞applicationId，其餘的使用者端資訊金鑰仍會由AccessEnabler JavaScript SDK計算。
+>此 `applicationId` 参数值必须是纯文本字符串值。
+>如果程序员应用程序决定传递applicationId，则其余的客户端信息密钥仍将由AccessEnabler JavaScript SDK计算。
 
 #### iOS/tvOS SDK {#ios-tvos-sdk}
 
-AccessEnabler iOS/tvOS SDK預設會建置使用者端資訊JSON物件，除非覆寫，否則會傳遞至Adobe Primetime驗證服務。
+默认情况下，AccessEnabler iOS/tvOS SDK构建一个客户端信息JSON对象，除非覆盖，否则该对象将传递到Adobe Primetime身份验证服务。
 
-AccessEnabler iOS/tvOS SDK支援 **覆寫整個** 使用者端資訊JSON物件，透過 [setOptions](/help/authentication/iostvos-sdk-api-reference.md#setoptions)的裝置資訊引數。
+AccessEnabler iOS/tvOS SDK支持 **覆盖整个** 客户端信息JSON对象，通过 [setOptions](/help/authentication/iostvos-sdk-api-reference.md#setoptions)的device_info参数。
 
 >[!CAUTION]
 >
->此 *device_info* 引數值必須是 **Base64編碼** *NSString* 值。
+>此 *device_info* 参数值必须为 **Base64编码** *NSString* 值。
 >
->如果程式設計師應用程式決定傳遞 *device_info*，則由AccessEnabler iOS/tvOS SDK運算出的所有使用者端資訊金鑰將會覆寫。 因此，請務必計算並傳遞儘可能多的索引鍵的值。 如需實作的詳細資訊，請參閱 [概觀](#pass-client-info-overview) 表格和 [iOS/tvOS逐步指南](#ios-tvos).
+>如果程序员应用程序决定通过 *device_info*，则由AccessEnabler iOS/tvOS SDK计算的所有客户端信息密钥将被覆盖。 因此，计算并传递尽可能多的键的值非常重要。 有关实施的更多详细信息，请参阅 [概述](#pass-client-info-overview) 表格和 [iOS/tvOS指南](#ios-tvos).
 
 #### Android/FireOS SDK {#and-fire-os-sdk}
 
-此 `AccessEnabler` Android/FireOS SDK預設會建置使用者端資訊JSON物件，除非覆寫，否則會傳遞至Adobe Primetime驗證服務。
+此 `AccessEnabler` 默认情况下，Android/FireOS SDK会生成一个客户端信息JSON对象，该对象将被传递到Adobe Primetime身份验证服务，除非覆盖。
 
-此 `AccessEnabler` Android/FireOS SDK支援 **覆寫整個** 使用者端資訊JSON物件，透過 [setOptions](/help/authentication/android-sdk-api-reference.md#setOptions)的/[setOptions](/help/authentication/amazon-fireos-native-client-api-reference.md#fire_setOption)的 `device_info` 引數。
+此 `AccessEnabler` Android/FireOS SDK支持 **覆盖整个** 客户端信息JSON对象，通过 [setOptions](/help/authentication/android-sdk-api-reference.md#setOptions)的/[setOptions](/help/authentication/amazon-fireos-native-client-api-reference.md#fire_setOption)的 `device_info` 参数。
 
 >[!NOTE]
 >
->此 `device_info` 引數值必須是 **Base64編碼** 字串值。
+>此 `device_info` 参数值必须为 **Base64编码** 字符串值。
 
 >[!IMPORTANT]
 >
->如果程式設計師應用程式決定傳遞 `device_info`，然後由計算的所有使用者端資訊金鑰 `AccessEnabler` 將覆寫Android/FireOS SDK。 因此，請務必計算並傳遞儘可能多的索引鍵的值。 如需實作的詳細資訊，請參閱 [概觀](#pass-client-info-overview) 表格和 [Android](#android) 和 [FireOS](#fire-tv) 逐步指南。
+>如果程序员应用程序决定通过 `device_info`，则由计算的所有客户端信息密钥 `AccessEnabler` 将覆盖Android/FireOS SDK。 因此，计算并传递尽可能多的键的值非常重要。 有关实施的更多详细信息，请参阅 [概述](#pass-client-info-overview) 表格和 [Android](#android) 和 [FireOS](#fire-tv) 指南。
 
-## 逐步指南 {#cookbooks}
+## 指南 {#cookbooks}
 
-本節提供在不同裝置型別情況下建立使用者端資訊JSON物件的逐步指南。
+本节介绍了一本指南，用于在不同的设备类型的情况下构建客户端信息JSON对象。
 
 >[!IMPORTANT]
 >
->標示為的金鑰  **！** 為必填，才能傳送。
+>标记有以下内容的键：  **！** 是必须发送的。
 
 ### Android {#android}
 
-裝置資訊的建構方式如下：
+设备信息的构造方式如下：
 
-|  | 金鑰 | 來源 | 值（範例） |
+|  | 键 | 来源 | 值（示例） |
 |---|---------------|-----------------------------|---------------|
 | ! | 模型 | Build.MODEL | GT-I9505 |
-|  | 廠商 | Build.BRAND | samsung |
-|  | 製造商 | Build.MANUFACTURER | samsung |
-| ! | 版本 | Build.DEVICE | jflte |
+|  | 供应商 | Build.BRAND | 三星 |
+|  | 制造商 | Build.MANUFACTURER | 三星 |
+| ! | version | Build.DEVICE | jflte |
 |  | displaywidth | DisplayMetrics.widthPixels | 600 |
 |  | displayheight | DisplayMetrics.heightPixels | 800 |
-| ! | osName | 硬式編碼 | Android |
+| ! | 操作系统名称 | 硬编码 | Android |
 | ! | osVersion | Build.VERSION.RELEASE | 5.0.1 |
 
-連線資訊的建構方式如下：
+连接信息的构造方式如下：
 
-|  | 金鑰 | 來源 | 值（範例） |
+|  | 键 | 来源 | 值（示例） |
 |---|---|---|---|
 | ! | connectionType | `<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>` `getSystemService(Context.CONNECTIVITY_SERVICE).getActiveNetworkInfo().getType()` | `"WIFI","BLUETOOTH","MOBILE","ETHERNET","VPN","DUMMY","MOBILE_DUN","WIMAX","notAccessible"` |
 |  | connectionSecure |  |  |
 
-應用程式資訊的建構方式如下：
+应用程序信息可通过以下方式构建：
 
-|  | 金鑰 | 來源 | 值（範例） |
+|  | 键 | 来源 | 值（示例） |
 |---|---------------|-----------|--------------|
-|  | applicationId | 硬式編碼 | CNN |
+|  | applicationId | 硬编码 | 美国有线新闻网 |
 
 >[!IMPORTANT]
-裝置、連線和應用程式資訊必須新增至相同的JSON物件。 之後，產生的物件必須 **Base64編碼**. 此外，若是Adobe Primetime驗證REST API，該值必須為 **URL已編碼**.
+必须将设备、连接和应用程序信息添加到同一JSON对象中。 之后，生成的对象必须 **Base64编码**. 此外，对于Adobe Primetime身份验证REST API，该值必须为 **URL已编码**.
 
-**程式碼範例**
+**示例代码**
 
 ```JAVA
 private JSONObject computeClientInformation() {
@@ -238,80 +238,80 @@ private JSONObject computeClientInformation() {
 ```
 
 >[!NOTE]
-**資源：**
-* 公用類別 [建置](https://developer.android.com/reference/android/os/Build.html){target=_blank} （在Java開發人員檔案中）。
+**资源：**
+* 公共类 [生成](https://developer.android.com/reference/android/os/Build.html){target=_blank} （位于Java开发人员文档中）。
 
 
 ### FireTV {#fire-tv}
 
-裝置資訊的建構方式如下：
+设备信息的构造方式如下：
 
-|  | 金鑰 | 來源 | 值（例如） |
+|  | 键 | 来源 | 值（例如） |
 |---|---------------|-----------------------------|--------------|
 | ! | 模型 | Build.MODEL | AFTM |
-|  | 廠商 | Build.BRAND | Amazon |
-|  | 製造商 | Build.MANUFACTURER | Amazon |
-| ! | 版本 | Build.DEVICE | montoya |
+|  | 供应商 | Build.BRAND | Amazon |
+|  | 制造商 | Build.MANUFACTURER | Amazon |
+| ! | version | Build.DEVICE | 蒙托亚 |
 |  | displaywidth | DisplayMetrics.widthPixels |  |
 |  | displayheight | DisplayMetrics.heightPixels |  |
-| ! | osName | 硬式編碼 | Android |
+| ! | 操作系统名称 | 硬编码 | Android |
 | ! | osVersion | Build.VERSION.RELEASE | 5.1.1 |
 
-連線資訊的建構方式如下：
+连接信息的构造方式如下：
 
-|  | 金鑰 | 來源 | 值（範例） |
+|  | 键 | 来源 | 值（示例） |
 |---|------------------|--------|---------------|
 | ! | connectionType |  |  |
 |  | connectionSecure |  |  |
 
-應用程式資訊的建構方式如下：
+应用程序信息可通过以下方式构建：
 
-|  | 金鑰 | 來源 | 值（範例） |
+|  | 键 | 来源 | 值（示例） |
 |---|---------------|-----------|--------------|
-|  | applicationId | 硬式編碼 | CNN |
+|  | applicationId | 硬编码 | 美国有线新闻网 |
 
 >[!IMPORTANT]
-裝置、連線和應用程式資訊必須新增至相同的JSON物件。 之後，產生的物件必須 **Base64編碼**. 此外，若是Adobe Primetime驗證REST API，該值必須為 **URL已編碼**.
+必须将设备、连接和应用程序信息添加到同一JSON对象中。 之后，生成的对象必须 **Base64编码**. 此外，对于Adobe Primetime身份验证REST API，该值必须为 **URL已编码**.
 
 >[!NOTE]
-**資源：**
-* 公用類別 [建置](https://developer.android.com/reference/android/os/Build.html){target=_blank} （位於Android開發人員檔案中）。
-* [識別FireTV裝置](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html){target=_blank}
+**资源：**
+* 公共类 [生成](https://developer.android.com/reference/android/os/Build.html){target=_blank} Android开发人员文档中的内容。
+* [识别FireTV设备](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html){target=_blank}
 
 
 ### iOS/tvOS {#ios-tvos}
 
-裝置資訊的建構方式如下：
+设备信息的构造方式如下：
 
-|  | 金鑰 | 來源 | 值（範例） |
+|  | 键 | 来源 | 值（示例） |
 |---|---------------|------------------------|--------------|
 | ! | 模型 | uname.machine | iPhone |
-|  | 廠商 | 硬式編碼 | Apple |
-|  | 製造商 | 硬式編碼 | Apple |
-| ! | 版本 | uname.machine | 8,1 |
+|  | 供应商 | 硬编码 | Apple |
+|  | 制造商 | 硬编码 | Apple |
+| ! | version | uname.machine | 8,1 |
 |  | displaywidth | UIScreen.mainScreen | 320 |
 |  | displayheight | UIScreen.mainScreen | 568 |
-| ! | osName | UIDevice.systemName | iOS |
+| ! | 操作系统名称 | UIDevice.systemName | iOS |
 | ! | osVersion | UIDevice.systemVersion | 10.2 |
 
-連線資訊的建構方式如下：
+连接信息的构造方式如下：
 
-|  | 金鑰 | 來源 | 值（範例） |
+|  | 键 | 来源 | 值（示例） |
 |---|------------------|-------------------------------------------|--------------|
-| ! | connectionType | [連線能力currentReachabilityStatus] |  |
+| ! | connectionType | [可达性currentReachabilityStatus] |  |
 |  | connectionSecure |  |  |
 
 
-應用程式資訊的建構方式如下：
+应用程序信息可通过以下方式构建：
 
-|  | 金鑰 | 來源 | 值（範例） |
+|  | 键 | 来源 | 值（示例） |
 |---|---------------|-----------|--------------|
-|  | applicationId | 硬式編碼 | CNN |
+|  | applicationId | 硬编码 | 美国有线新闻网 |
 
 >[!IMPORTANT]
-裝置、連線和應用程式資訊必須新增至相同的JSON物件。 之後，產生的物件必須經過Base64編碼。 此外，若是Adobe Primetime驗證REST API，值必須經過URL編碼。
+必须将设备、连接和应用程序信息添加到同一JSON对象中。 之后，生成的对象必须经过Base64编码。 此外，对于Adobe Primetime身份验证REST API，该值必须经过URL编码。
 
-**程式碼範例**
+**示例代码**
 
 ```C
 + (NSString *)computeClientInformation {        
@@ -380,78 +380,78 @@ private JSONObject computeClientInformation() {
 ```
 
 >[!NOTE]
-**資源：**
+**资源：**
 * [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice){target=_blank}
 * [uname](https://man7.org/linux/man-pages/man2/uname.2.html){target=_blank}
-* [關於連線能力](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html){target=_blank}
+* [关于可达性](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html){target=_blank}
 
 
 ### Roku {#roku}
 
-裝置資訊的建構方式如下：
+设备信息的构造方式如下：
 
-| 金鑰 | 來源 | 值（範例） |  |
+| 键 | 来源 | 值（示例） |  |
 |-----|---------------|--------------------------------------------|-----------------|
-| ! | 模型 | 硬式編碼 | &quot;Roku&quot; |
-|  | 廠商 | ifDeviceInfo.GetModelDetails().VendorName | &quot;Sharp&quot;、&quot;Roku&quot; |
-|  | 製造商 | ifDeviceInfo.GetModelDetails().VendorName | &quot;Sharp&quot;、&quot;Roku&quot; |
-| ! | 版本 | ifDeviceInfo.GetModelDetails().ModelNumber | 「5303X」 |
+| ! | 模型 | 硬编码 | “Roku” |
+|  | 供应商 | ifDeviceInfo.GetModelDetails().VendorName | “Sharp”、“Roku” |
+|  | 制造商 | ifDeviceInfo.GetModelDetails().VendorName | “Sharp”、“Roku” |
+| ! | version | ifDeviceInfo.GetModelDetails().ModelNumber | “5303X” |
 |  | displaywidth | ifDeviceInfo.GetDisplaySize().w | 1920 |
 |  | displayheight | ifDeviceInfo.GetDisplaySize().h | 1080 |
-| ! | osName | 硬式編碼 | &quot;Roku&quot; |
+| ! | 操作系统名称 | 硬编码 | “Roku” |
 | ! | osVersion | ifDeviceInfo.getVersion() |  |
 
-連線資訊的建構方式如下：
+连接信息的构造方式如下：
 
-|  | 金鑰 | 來源 | 值（範例） |
+|  | 键 | 来源 | 值（示例） |
 |---|---|---|---|
-| ! | connectionType | ifDeviceInfo.GetConnectionType() | 「WifiConnection」、「WiredConnection」 |
-|  | connectionSecure | 硬式編碼 | 如果連線有線，則為true |
+| ! | connectionType | ifDeviceInfo.GetConnectionType() | “WifiConnection”、“WiredConnection” |
+|  | connectionSecure | 硬编码 | 如果连接是有线的，则为true |
 
-應用程式資訊的建構方式如下：
+应用程序信息可通过以下方式构建：
 
-|  | 金鑰 | 來源 | 值（範例） |
+|  | 键 | 来源 | 值（示例） |
 |---|---------------|-----------|--------------|
-|  | applicationId | 硬式編碼 | CNN |
+|  | applicationId | 硬编码 | 美国有线新闻网 |
 
 >[!IMPORTANT]
-裝置、連線和應用程式資訊必須新增至相同的JSON物件。 之後，產生的物件必須 **Base64編碼**. 此外，若是Adobe Primetime驗證REST API，值必須經過URL編碼。
+必须将设备、连接和应用程序信息添加到同一JSON对象中。 之后，生成的对象必须 **Base64编码**. 此外，对于Adobe Primetime身份验证REST API，该值必须经过URL编码。
 
 >[!NOTE]
-如需詳細資訊，請參閱 [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md)
+有关更多信息，请参阅 [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md)
 
 ### XBOX 1/360 {#xbox}
 
-裝置資訊的建構方式如下：
+设备信息的构造方式如下：
 
-|  | 金鑰 | 來源 | 值（範例） |
+|  | 键 | 来源 | 值（示例） |
 |---|---|---|---|
 | ! | 模型 | EasClientDeviceInformation.SystemProductName |  |
-|  | 廠商 | 硬式編碼 | Microsoft |
-|  | 製造商 | 硬式編碼 | Microsoft |
-| ! | 版本 | EasClientDeviceInformation.SystemHardwareVersion |  |
+|  | 供应商 | 硬编码 | Microsoft |
+|  | 制造商 | 硬编码 | Microsoft |
+| ! | version | EasClientDeviceInformation.SystemHardwareVersion |  |
 |  | displaywidth | DisplayInformation.ScreenWidthInRawPixels | 1920 |
 |  | displayheight | DisplayInformation.ScreenHeightInRawPixels | 1080 |
-| ! | osName | EasClientDeviceInformation.OperatingSystem |  |
+| ! | 操作系统名称 | EasClientDeviceInformation.OperatingSystem |  |
 | ! | osVersion | EasClientDeviceInformation.SystemFirmwareVersion |  |
 
-連線資訊的建構方式如下：
+连接信息的构造方式如下：
 
-|  | 金鑰 | 來源 | 範例 |
+|  | 键 | 来源 | 示例 |
 |---|---|---|---|
 | ! | connectionType |  |  |
-|  | connectionSecure | NetworkAuthenticationType | 「無」、「Wpa」等 |
+|  | connectionSecure | 网络验证类型 | “无”、“Wpa”等 |
 
-應用程式資訊的建構方式如下：
+应用程序信息可通过以下方式构建：
 
-| 金鑰 | 來源 | 值（範例） |
+| 键 | 来源 | 值（示例） |
 |---|---|---|
-| applicationId | 硬式編碼 | CNN |
+| applicationId | 硬编码 | 美国有线新闻网 |
 
 >[!IMPORTANT]
-裝置、連線和應用程式資訊必須新增至相同的JSON物件。 之後，產生的物件必須 **Base64編碼**. 此外，若是Adobe Primetime驗證REST API，該值必須為 **URL已編碼**.
+必须将设备、连接和应用程序信息添加到同一JSON对象中。 之后，生成的对象必须 **Base64编码**. 此外，对于Adobe Primetime身份验证REST API，该值必须为 **URL已编码**.
 
-**資源**
+**资源**
 
-* [EasClientDeviceInformation類別](https://docs.microsoft.com/en-us/uwp/api/windows.security.exchangeactivesyncprovisioning.easclientdeviceinformation?view=winrt-22000)
-* [顯示資訊類別](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.display.displayinformation?view=winrt-22000)
+* [EasClientDeviceInformation类](https://docs.microsoft.com/en-us/uwp/api/windows.security.exchangeactivesyncprovisioning.easclientdeviceinformation?view=winrt-22000)
+* [显示信息类](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.display.displayinformation?view=winrt-22000)

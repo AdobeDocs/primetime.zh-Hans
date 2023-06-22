@@ -1,6 +1,6 @@
 ---
-title: Primetime移轉說明
-description: Primetime移轉說明
+title: Primetime迁移帮助
+description: Primetime迁移帮助
 copied-description: true
 exl-id: 1f3f1a5b-95c7-4d47-a36f-7ad934a7d49d
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,30 +10,30 @@ ht-degree: 0%
 
 ---
 
-# Primetime移轉和轉換說明
+# Primetime迁移和转换帮助
 
-歡迎使用Adobe Primetime的移轉和轉換說明。 左側導覽列示的檔案說明從您現有的Primetime TVSDK套裝轉換和移轉至新一代套裝的程式。
+欢迎访问Adobe Primetime的迁移和转化帮助。 左侧导航中列出的文档说明了从现有Primetime TVSDK套件迁移到下一代套件的转换和迁移过程。
 
-## 另請參閱
+## 另请参阅
 
-| 使用手冊 | 說明 |
+| 用户指南 | 描述 |
 |--- |--- |
-| [Primetime發行說明](/help/release-notes/home.md) | 提供版本特定資訊、系統需求、限制、已修正問題和已知問題。 |
-| [Primetime程式設計說明](/help/programming/home.md) | 可讓您在Android裝置上使用Java以及在iOS裝置上使用Objective-C來學習開發應用程式和影片播放程式。 |
-| [參考實作](/help/android-reference-implementation/home.md) | 協助瞭解TVSDK並修改功能管理員，以自訂您的個人播放器。 |
-| [PrimetimeAd Insertion說明](/help/primetime-ad-insertion/home.md) | 說明如何透過在伺服器上插入以使用者為目標的動態廣告，從內容創造營收，並透過個人化廣告吸引對象。 |
-| [Digital Rights Management](/help/digital-rights-management/home.md) | 協助您進一步瞭解Digital Rights Management(DRM)中的各種使用者情境 |
-| [Primetime API參考](/help/reference/api-references.md) | 提供有關TVSDK函式、資料結構和其他程式設計建構的詳細資訊。 |
-| [封存](https://helpx.adobe.com/primetime/archives.html) | 下載封存檔案的PDF。 |
+| [Primetime发行说明](/help/release-notes/home.md) | 提供特定于发行版的信息、系统要求、限制、已修复问题和已知问题。 |
+| [Primetime编程帮助](/help/programming/home.md) | 允许您学习在Android设备上使用Java以及在iOS设备上使用Objective-C开发应用程序和视频播放器。 |
+| [参考实施](/help/android-reference-implementation/home.md) | 帮助了解TVSDK并修改功能管理器以自定义您的个人播放器。 |
+| [PrimetimeAd Insertion帮助](/help/primetime-ad-insertion/home.md) | 介绍如何通过在服务器上插入面向用户的动态广告来从内容获利，以及如何通过个性化广告吸引受众。 |
+| [Digital Rights Management](/help/digital-rights-management/home.md) | 帮助您进一步了解Digital Rights Management(DRM)中的各种用户场景 |
+| [Primetime API引用](/help/reference/api-references.md) | 提供有关TVSDK函数、数据结构和其他编程结构的详细信息。 |
+| [归档](https://helpx.adobe.com/primetime/archives.html) | 下载已存档文档的PDF。 |
 
-## 實用資源
+## 有用资源
 
-* [瞭解Adobe Primetime](https://www.adobe.com/in/marketing/primetime.html)
+* [了解Adobe Primetime](https://www.adobe.com/in/marketing/primetime.html)
 
-* [並行監視](https://tve.helpdocsonline.com/concurrency-monitoring-introduction)
+* [并发监测](https://tve.helpdocsonline.com/concurrency-monitoring-introduction)
 
-* [Primetime驗證](https://tve.helpdocsonline.com/home)
+* [Primetime身份验证](https://tve.helpdocsonline.com/home)
 
-* [Adobe Primetime DRM論壇](https://forums.adobe.com/community/adobe_access)
+* [Adobe Primetime DRM论坛](https://forums.adobe.com/community/adobe_access)
 
-* [Adobe Primetime開發人員資源](https://www.adobe.com/devnet/primetime.html)
+* [Adobe Primetime开发人员资源](https://www.adobe.com/devnet/primetime.html)

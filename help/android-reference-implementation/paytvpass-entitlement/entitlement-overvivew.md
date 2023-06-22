@@ -1,6 +1,6 @@
 ---
-description: 權利管理員是功能管理員，可支援Primetime驗證實作。
-title: 軟體權利檔案管理員概述
+description: 权利管理器是支持Primetime身份验证实施的功能管理器。
+title: 授权管理器概述
 exl-id: a66e131e-283f-4378-b834-7cfa887b3ec9
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,38 +9,38 @@ ht-degree: 0%
 
 ---
 
-# 軟體權利檔案管理員概述 {#entitlement-manager-overview}
+# 授权管理器概述 {#entitlement-manager-overview}
 
-權利管理員是功能管理員，可支援Primetime驗證實作。
+权利管理器是支持Primetime身份验证实施的功能管理器。
 
 ## 功能概述
 
-Primetime驗證與Android Primetime SDK Reference實作整合，為應用程式新增了功能管理員。 不過，與其他許多功能管理員不同， *EntitlementManager會在整個應用程式的多個位置使用*. 以下提供支援Primetime驗證的「參考實作」變更和新增內容的概觀：
+与Android Primetime SDK参考实施的Primetime身份验证集成向应用程序添加了一个新的功能管理器。 但是，与许多其他功能管理器不同， *EntitlementManager在整个应用程序中的多个位置中使用*. 下面概述了为支持Primetime身份验证而对Reference Implementation所做的更改和添加：
 
-### EntitlementManager類別
+### EntitlementManager类
 
-此 `EntitlementManager` 類別會處理與Primetime驗證SDK的所有通訊，而且會封裝權利工作流程所需的應用程式邏輯。 此 `EntitlementManager`應用程式會使用公開API來起始權益工作流程，而 `EntitlementMangerListener` 介面為應用程式處理提供回呼機制 `EntitlementManger` 事件。
+此 `EntitlementManager` 类处理与Primetime身份验证SDK的所有通信，并且封装权利工作流所需的应用程序逻辑。 此 `EntitlementManager`的公共API由应用程序用于启动授权工作流，而 `EntitlementMangerListener` 接口为应用程序提供回调机制以处理 `EntitlementManger` 事件。
 
-### EntitlementManger回呼
+### EntitlementManger回调
 
-參考實作的主要活動 `CatalogActivity`，建立例項 `EntitlementManagerListener` 並註冊給 `EntitlementManager`. 如此一來， `EntitlementManager` 可能表示應用程式的其餘部分需要進行UI更新。 回撥包括顯示/隱藏載入對話方塊、顯示狀態對話方塊、更新授權和驗證圖示，以及在成功授權後開始播放視訊。
+参考实施的主要活动 `CatalogActivity`，创建实例 `EntitlementManagerListener` 并在 `EntitlementManager`. 通过这种方式， `EntitlementManager` 可能会向应用程序的其余部分发出所需的UI更新的信号。 回调包括显示/隐藏加载对话框、显示状态对话框、更新授权和身份验证图标以及在成功授权后开始视频播放。
 
-### 權益對話方塊
+### 权利对话框
 
-此 `EntitlementDialogFragment` 類別會根據傳遞至類別建構函式的權利狀態產生對話方塊訊息。 此類別用於驗證成功訊息以及所有錯誤訊息。 此 `CatalogActivity` 當從以下位置收到特定事件時顯示軟體權利檔案對話方塊： `EntitlementManager`. 此外， `CatalogActivity` 實作 `EntitlementDialogListener` 介面，包括回呼方法，以在對話方塊關閉或使用者從Primetime驗證服務登出時傳送訊號。
+此 `EntitlementDialogFragment` 类根据传递给类构造函数的权利状态生成对话框消息。 此类用于身份验证成功消息以及所有错误消息。 此 `CatalogActivity` 当从以下位置收到特定事件时显示权利文件对话框： `EntitlementManager`. 此外， `CatalogActivity` 实施 `EntitlementDialogListener` 界面，包括回调方法，用于在对话框关闭或用户从Primetime身份验证服务注销时发出信号。
 
-### 內容提供者選擇與登入
+### 内容提供商选择和登录
 
-在使用Primetime驗證期間，有兩個新活動， `MvpdPickerActivity` 和 `MvpdLoginActivity`，可讓使用者選取其內容提供者並登入。 這兩個活動都是從 `CatalogActivity` 透過 `EntitlementManager`. 此外， `MvpdPickerActivity` 和 `MvpdLoginActivity` 將結果傳回 `CatalogActivity` 及因此而 `CatalogActivity` 必須覆寫 `Activity.onActivityResult` 方法。
+在使用Primetime身份验证期间，有两个新的活动， `MvpdPickerActivity` 和 `MvpdLoginActivity`，允许用户选择其内容提供商并登录。 这两个活动都是从以下位置开始的： `CatalogActivity` 通过 `EntitlementManager`. 此外， `MvpdPickerActivity` 和 `MvpdLoginActivity` 将结果返回到 `CatalogActivity` 及因此，本公 `CatalogActivity` 必须覆盖 `Activity.onActivityResult` 方法。
 
-### 登入按鈕
+### 登录按钮
 
-參考實作的主要活動 `CatalogActivity`，在動作列中放入新的「登入」按鈕。 「登入」按鈕可讓使用者啟動具有Primetime驗證的驗證。 此外，使用者可以選取要播放的受保護視訊來起始驗證。 登入按鈕的圖示和文字會隨著使用者的驗證狀態和 `CatalogActivity` 包含頁面重新整理時更新按鈕圖示和文字的程式碼。 若要這麼做，當 `CatalogActivity` 開始，它會呼叫 `EntitlementManager.checkAuthentication()` 更新使用者的驗證狀態。
+参考实施的主要活动 `CatalogActivity`，在其操作栏中包含一个新的“登录”按钮。 “登录”按钮允许用户使用Primetime身份验证启动身份验证。 此外，用户可以通过选择用于播放的受保护视频来启动身份验证。 登录按钮的图标和文本会根据用户的身份验证状态以及 `CatalogActivity` 包含用于在页面刷新时更新按钮图标和文本的代码。 要执行此操作，当 `CatalogActivity` 开始，它调用 `EntitlementManager.checkAuthentication()` 更新用户的身份验证状态。
 
-### 內容權利
+### 内容权利
 
-在內 `CatalogView`，內容圖示上方會顯示新圖示，以表示該內容的使用者授權狀態。 例如，如果使用者預先獲得觀看視訊的授權，則內容上方會顯示綠色圓圈圖示。 但是，如果使用者未獲得檢視視訊的預授權，則會顯示一個鍵圖示。 這些圖示的顯示方式處理於 `ContentTileAdapter`但是，其狀態的更新是從以下專案啟動： `CatalogActivity` 當回呼位於 `EntitlementManagerListener` 稱為。
+在 `CatalogView`时，新图标会显示在内容图标的顶部，表示该内容的用户授权状态。 例如，如果用户获得了查看视频的预授权，则内容上方会显示一个绿色圆圈图标。 但是，如果用户未获得查看视频的预授权，则会显示一个键图标。 这些图标的显示在中处理 `ContentTileAdapter`但是，其状态的更新是从以下位置启动的： `CatalogActivity` 当回调位于 `EntitlementManagerListener` 称为。
 
-### 內容播放
+### 内容播放
 
-視訊播放現在需要由進行授權檢查 `EntitlementManager`. 對的呼叫 `EntitlementManager.getAuthorization()` 發生於 `CatalogView`. 如果影片需要授權且使用者已獲得授權， `PlayerActivity` 開始於 `CatalogActivity`.
+现在，视频播放需要由进行授权检查 `EntitlementManager`. 对的调用 `EntitlementManager.getAuthorization()` 发生于 `CatalogView`. 如果视频需要授权并且用户已获得授权，则 `PlayerActivity` 开始于 `CatalogActivity`.

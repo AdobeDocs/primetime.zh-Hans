@@ -1,7 +1,7 @@
 ---
-description: 您可以使用PrimetimeDigital Rights Management(DRM)系統的功能，提供對視訊內容的安全存取。 或者，您也可以使用協力廠商DRM解決方案，作為Adobe整合式Primetime DRM解決方案的替代方案。
-keywords: DRM；破折號；HLS
-title: Primetime DRM介面概觀
+description: 您可以使用PrimetimeDigital Rights Management(DRM)系统的功能来提供对视频内容的安全访问。 或者，您可以使用第三方DRM解决方案作为Adobe的集成Primetime DRM解决方案的替代方案。
+keywords: DRM；短划线；HLS
+title: Primetime DRM界面概述
 exl-id: e07c1551-5a9b-4907-94ea-6b7536918b91
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -10,25 +10,25 @@ ht-degree: 0%
 
 ---
 
-# Primetime DRM介面概觀 {#primetime-drm-interface-overview}
+# Primetime DRM界面概述 {#primetime-drm-interface-overview}
 
-您可以使用PrimetimeDigital Rights Management(DRM)系統的功能，提供對視訊內容的安全存取。 或者，您也可以使用協力廠商DRM解決方案，作為Adobe整合式Primetime DRM解決方案的替代方案。
+您可以使用PrimetimeDigital Rights Management(DRM)系统的功能来提供对视频内容的安全访问。 或者，您可以使用第三方DRM解决方案作为Adobe的集成Primetime DRM解决方案的替代方案。
 
 <!--<a id="section_4DD54E085AB345FE9BE00865E56B28DB"></a>-->
 
-請洽詢您的Adobe代表，以取得有關第三方DRM解決方案可用性的最新資訊。
+有关第三方DRM解决方案可用性的最新信息，请咨询您的Adobe代表。
 
-Primetime數位版權管理(DRM)系統的關鍵使用者端元素是DRM管理員。
+Primetime数字版权管理(DRM)系统的关键客户端元素是DRM管理器。
 
-Primetime DRM提供可擴充、有效率的工作流程，以在TVSDK應用程式中實作內容保護。 您可以為每個數位媒體檔案建立授權，藉此保護和管理視訊內容的許可權。
+Primetime DRM提供了一个可扩展的高效工作流，用于在TVSDK应用程序中实施内容保护。 通过为每个数字媒体文件创建许可证，您可以保护和管理视频内容的权限。
 
-TVSDK支援Primetime DRM整合作為自訂DRM工作流程。 這表示您的應用程式必須先實作DRM驗證工作流程，才能使用FlashDRMManager播放資料流。 若要啟用此功能，MediaPlayer會提供DRM管理員以進行驗證。
+TVSDK支持将Primetime DRM集成作为自定义DRM工作流。 这意味着您的应用程序必须先实施DRM验证工作流，然后才能使用FlashDRMManager播放流。 要启用此功能，MediaPlayer将为您提供用于身份验证的DRM管理器。
 
-請參閱TVSDK套件中包含的DRM範例播放器程式碼。
+请参阅TVSDK包中包含的DRM示例播放器代码。
 
-以下是使用DRM時最重要的API元素：
+以下是使用DRM时最重要的API元素：
 
-* 在媒體播放器中對實作DRM子系統的DRM管理員物件的參考：
+* 媒体播放器中对实现DRM子系统的DRM管理器对象的引用：
 
    ```
    @property (readonly, nonatomic) DRMManager *drmManager
@@ -36,26 +36,26 @@ TVSDK支援Primetime DRM整合作為自訂DRM工作流程。 這表示您的應�
 
 <!--<a id="section_F986DB1EDD6F44CD8E57419CCA0921E8"></a>-->
 
-TVSDK問題 `PTMediaPlayerItemDRMMetadataChanged` DRM中繼資料變更時通知。 此中繼資料會用作的幾乎所有函式的輸入 `DRMManager` 類別。
+TVSDK问题 `PTMediaPlayerItemDRMMetadataChanged` DRM元数据更改时通知。 此元数据用作的几乎所有函数的输入 `DRMManager` 类。
 
 <!--<a id="section_223DCF63BAB6438792A85352A79044CC"></a>-->
 
-如果受DRM保護的資料流是多位元速率(MBR)編碼，則用於變體播放清單的DRM中繼資料應與用於所有位元速率資料流的中繼資料相同。
+如果受DRM保护的流是多比特率(MBR)编码的，则用于变体播放列表的DRM元数据应当与用于所有比特率流中的元数据相同。
 
 >[!TIP]
 >
->在您的iOS應用程式中參照受DRM保護的資產URL時，查詢字串引數 `?faxs=1` 必須附加至(MBR)設定層級M3U8 URL。 例如：
+>在iOS应用程序中引用受DRM保护的资源URL时，查询字符串参数 `?faxs=1` 必须附加到(MBR)设置级别的M3U8 URL。 例如：
 
 ```
 https://your.domain.com/hls/[...]/index.m3u8?faxs=1
 ```
 
-此 `faxs=1` 查詢字串引數會指出內容受到DRM保護，並在iOS TVSDK中相應地觸發DRM解密工作流程。 您也可以附加 `faxs=1` 標籤位於受動態隨機存取機制保護的HLS資產URL上，且目的地為其他平台；系統視需要在iOS上觀察該標籤，或將其視為其他平台上的播放器中的非作業專案。
+此 `faxs=1` 查询字符串参数指示内容受DRM保护，并在iOS TVSDK中相应地触发DRM解密工作流。 您还可以附加 `faxs=1` 标记位于受DRM保护的HLS资产URL上，且这些URL将发往其他平台；在iOS上会根据需要观察该标记，或者在其他平台上的播放器中将其视为非操作。
 
-## 在TSVDK應用程式中實作Primetime DRM {#implement-primetime-drm-in-a-tsvdk-application}
+## 在TSVDK应用程序中实施Primetime DRM {#implement-primetime-drm-in-a-tsvdk-application}
 
-Primetime DRM已整合至TVSDK，這簡化了TVSDK應用程式中實施內容保護的流程。
+Primetime DRM集成到TVSDK中，这简化了TVSDK应用程序中内容保护的实施。
 
-如需使用Primetime DRM在TVSDK應用程式中實作內容保護的概述和詳細資訊，請參閱：
+有关使用Primetime DRM在TVSDK应用程序中实施内容保护的概述和详细信息，请参阅：
 
-* [Adobe Primetime TVSDK-DRM工作流程(PDF)](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_tvsdk_drm_workflow.pdf)
+* [Adobe Primetime TVSDK-DRM工作流(PDF)](https://helpx.adobe.com/content/dam/help/en/primetime/drm/drm_tvsdk_drm_workflow.pdf)

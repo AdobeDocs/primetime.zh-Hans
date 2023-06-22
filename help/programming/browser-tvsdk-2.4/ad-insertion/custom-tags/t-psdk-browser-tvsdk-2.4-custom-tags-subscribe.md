@@ -1,6 +1,6 @@
 ---
-description: 每次在媒體簡報說明(MPD)檔案中遇到訂閱的標籤時，瀏覽器TVSDK都會準備這些物件的TimedMetadata物件。
-title: 訂閱自訂廣告標籤
+description: 每次在媒体呈现说明(MPD)文件中遇到订阅的标记时，浏览器TVSDK都会为这些对象准备TimedMetadata对象。
+title: 订阅自定义广告标记
 exl-id: d4b9ec3a-9c3f-4adf-984e-b45862e97140
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,63 +9,63 @@ ht-degree: 0%
 
 ---
 
-# 訂閱自訂廣告標籤{#subscribe-to-custom-ad-tags}
+# 订阅自定义广告标记{#subscribe-to-custom-ad-tags}
 
-每次在媒體簡報說明(MPD)檔案中遇到訂閱的標籤時，瀏覽器TVSDK都會準備這些物件的TimedMetadata物件。
+每次在媒体呈现说明(MPD)文件中遇到订阅的标记时，浏览器TVSDK都会为这些对象准备TimedMetadata对象。
 
-您必須在播放開始前訂閱標籤。
-若要訂閱標籤，請將包含自訂標簽名稱的向量設定為 `subscribedTags` 屬性。 如果您也需要變更預設機會產生器使用的廣告標籤，請將包含自訂廣告標簽名稱的向量設定為 `adTags` 屬性。
+在开始播放之前，您必须订阅标记。
+要订阅标记，请将包含自定义标记名称的矢量设置为 `subscribedTags` 属性。 如果您还需要更改默认机会生成器使用的广告标记，请将包含自定义广告标记名称的矢量设置为 `adTags` 属性。
 
-若要訂閱自訂標籤：
+要订阅自定义标记，请执行以下操作：
 
-1. 建立新的媒體播放器專案設定。
+1. 创建新的媒体播放器项目配置。
 
    ```js
    var mediaPlayerItemConfig = new AdobePSDK.MediPlayerItemConfig();
    ```
 
-1. 建立空的字串向量。
+1. 创建一个空字符串矢量。
 
    ```js
    var subscribeTags = [];
    ```
 
-1. 將自訂標簽名稱新增至此向量。
+1. 将自定义标记名称添加到此矢量中。
 
    >[!IMPORTANT]
    >
-   >如果您要處理HLS資料流，請記得加入 `#` 前置詞。
+   >如果您要处理HLS流，请记住包含 `#` 前缀。
 
    ```js
    subscribeTags.push("urn:mpeg:dash:event:2012"); 
    subscribeTags.push("urn:com:adobe:dpi:simple:2015"); 
    ```
 
-1. 將更新的向量指派給 `mediaPlayerItemConfig.subscribeTags` 屬性。
+1. 将更新后的矢量分配给 `mediaPlayerItemConfig.subscribeTags` 属性。
 
    ```js
    mediaPlayerItemConfig.subscribeTags = subscribeTags;
    ```
 
-1. 建立空的字串向量。
+1. 创建一个空字符串矢量。
 
    ```js
    var adTags= [];
    ```
 
-1. 將自訂廣告標簽名稱新增至此向量。
+1. 将自定义广告标记名称添加到此矢量中。
 
    ```js
    adTags.push("urn:com:adobe:dpi:simple:2015");
    ```
 
-1. 將更新的向量指派給 `mediaPlayerItemConfig.adTags` 屬性。
+1. 将更新后的矢量分配给 `mediaPlayerItemConfig.adTags` 属性。
 
    ```js
    mediaPlayerItemConfig.adTags = adTags;
    ```
 
-1. 載入媒體資料流時，請使用媒體播放器專案設定。
+1. 加载媒体流时使用媒体播放器项目配置。
 
    ```js
    player.replaceCurrentResource(mediaResource,mediaPlayerItemConfig);

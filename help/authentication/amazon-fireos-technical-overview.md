@@ -1,6 +1,6 @@
 ---
-title: Amazon FireOS技術概覽
-description: Amazon FireOS技術概覽
+title: Amazon FireOS技术概述
+description: Amazon FireOS技术概述
 exl-id: 939683ee-0dd9-42ab-9fde-8686d2dc0cd0
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,115 +9,115 @@ ht-degree: 0%
 
 ---
 
-# Amazon FireOS技術概覽 {#amazon-fireos-technical-overview}
+# Amazon FireOS技术概述 {#amazon-fireos-technical-overview}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
 </br>
 
-## 簡介 {#intro}
+## 介绍 {#intro}
 
-Amazon FireOS AccessEnabler由兩個元件表示：一個是應用程式使用的AccessEnabler存根程式庫，另一個是系統層級的Java Android程式庫，可讓行動應用程式使用Adobe Primetime驗證進行TV Everywhere的軟體權利檔案服務。 Amazon FireOS的Android實作包含定義權益API的AccessEnabler介面，以及描述程式庫觸發之回撥的EntitlementDelegate通訊協定。 系統層級AccessEnabler Android資料庫可讓您存取Amazon服務，以在平台層級啟用Single Sing On。
+Amazon FireOS AccessEnabler由两个组件表示：一个是应用程序使用的AccessEnabler桩模块库，另一个是系统级别的Java Android库，它使移动应用程序能够将Adobe Primetime身份验证用于TV Everywhere的授权服务。 Amazon FireOS的Android实施包括定义权利API的AccessEnabler接口以及描述库触发的回调的EntitlementDelegate协议。 系统级别的AccessEnabler Android库允许访问Amazon服务，从而在平台级别启用Single Sing On。
 
-## 瞭解原生使用者端工作流程 {#native_client_workflows}
+## 了解本机客户端工作流 {#native_client_workflows}
 
-原生使用者端工作流程通常與瀏覽器型Primetime驗證使用者端的工作流程相同或非常類似。 不過，有一些例外情況，如下所述。
-
-
-### 初始化後工作流程 {#post-init}
-
-AccessEnabler支援的所有軟體權利檔案工作流程都假設您先前已呼叫 [`setRequestor()`](#setRequestor) 以建立您的身分。 您進行此呼叫是為了只提供請求者ID一次，通常是在應用程式的初始化/設定階段。
-
-與原生使用者端（例如AmazonFireOS）搭配使用，在您初次呼叫 [`setRequestor()`](#setRequestor)，您可以選擇如何繼續：
-
-- 您可以立即開始發出軟體權利檔案呼叫，並視需要允許以靜默方式將其排入佇列。
-- 或者，您可以收到成功/失敗的確認 [`setRequestor()`](#setRequestor) 實作setRequestorComplete()回呼。
-- 或者，兩者都執行。
-
-至於是否要等待成功的通知，則由您決定。 [`setRequestor()`](#setRequestor) 或依賴AccessEnabler的呼叫佇列機制。 由於所有後續授權和驗證請求都需要請求者ID和相關聯的設定資訊， [`setRequestor()`](#setRequestor) 在初始化完成之前，方法會有效地封鎖所有驗證和授權API呼叫。
-
-### 通用初始驗證工作流程 {#generic}
-
-此工作流程的目的是使用使用者的MVPD登入使用者。  成功登入後，後端伺服器會向使用者發出驗證權杖。 雖然驗證通常作為授權流程的一部分完成，但以下說明如何單獨進行驗證，並且不包括任何授權步驟。
-
-請注意，雖然下列原生使用者端工作流程與典型的瀏覽器驗證工作流程不同，但步驟1-5對原生使用者端和瀏覽器使用者端都相同：
-
-1. 您的頁面或播放器透過呼叫來啟動驗證工作流程 [getAuthentication()](#getAuthN)，會檢查是否有有效的快取驗證Token。 此方法有一個選擇性 `redirectURL` 引數；如果您未提供 `redirectURL`，在成功驗證後，使用者會傳回至初始化驗證的URL。
-1. AccessEnabler會判斷目前的驗證狀態。 如果使用者目前已驗證，AccessEnabler會呼叫 `setAuthenticationStatus()` 回呼函式，傳遞表示成功的驗證狀態（下面的步驟7）。
-1. 如果使用者未驗證，AccessEnabler會透過判斷使用者的上次驗證嘗試是否在指定的MVPD上成功來繼續驗證流程。 如果已快取MVPD ID且 `canAuthenticate` 標幟為true或選取的MVPD是使用 [`setSelectedProvider()`](#setSelectedProvider)，則不會使用MVPD選取對話方塊提示使用者。 驗證流程會繼續使用MVPD的快取值（即上次成功驗證期間使用的MVPD）。 系統會呼叫後端伺服器，並將使用者重新導向至MVPD登入頁面（下方的步驟6）。
-1. 如果未快取MVPD ID且未使用選取MVPD [`setSelectedProvider()`](#setSelectedProvider) 或 `canAuthenticate` 標幟設為false，則 [`displayProviderDialog()`](#displayProviderDialog) 已呼叫callback。 此回呼會引導您的頁面或播放器建立UI，向使用者顯示可從中進行選擇的MVPD清單。 提供了一個MVPD物件陣列，其中包含建立MVPD選擇器所需的資訊。 每個MVPD物件都描述一個MVPD實體，並包含MVPD的ID等資訊（例如XFINITY、AT\&amp;T等） 和可以找到MVPD標誌的URL。
-1. 選取特定MVPD後，您的頁面或播放器必須通知AccessEnabler使用者的選擇。 對於非Flash使用者端，一旦使用者選取所需的MVPD，您就會透過呼叫 [`setSelectedProvider()`](#setSelectedProvider) 方法。 Flash使用者端改為傳送共用的 `MVPDEvent` 屬於「」型別`mvpdSelection`&quot;，傳遞選取的提供者。
-1. 若為Amazon應用程式， [`navigateToUrl()`](#navigagteToUrl) 將忽略callback。 Access Enabler程式庫有助於存取常見的WebView控制項，以驗證使用者。
-1. 透過 `WebView`，使用者就會進入MVPD的登入頁面並輸入其認證。 請注意，在此傳輸期間會發生數個重新導向操作。 
-1. 一旦WebView完成驗證，就會關閉並通知AccessEnabler使用者已成功登入，AccessEnabler就會從後端伺服器擷取實際的驗證Token。 AccessEnabler會呼叫 [`setAuthenticationStatus()`](#setAuthNStatus) 狀態碼為1的callback，表示成功。 如果在執行這些步驟期間發生錯誤， [`setAuthenticationStatus()`](#setAuthNStatus) 系統會以狀態碼0觸發回呼，並顯示對應的錯誤代碼，指出使用者未驗證。
-
-### 登出工作流程 {#logout}
-
-對於原生使用者端，登出的處理與上述驗證程式類似。 依照此模式，AccessEnabler將建立 `WebView` 控制和將會在後端伺服器上使用登出端點的URL載入控制。 登出程式完成後，系統會清除Token。
-
-請注意，登出流程與驗證流程不同，因為使用者不需要與 `WebView` 任何方式。 登出完成後，AccessEnabler會呼叫 `setAuthenticationStatus()` 狀態碼為0的callback，表示使用者未驗證。
-
-## Token {#tokens}
-
-### 定義和使用情況 {#definitions}
-
-Primetime驗證許可權解決方案圍繞著產生特定資料片段（代號），Primetime驗證會在成功完成驗證和授權工作流程時產生。 這些Token儲存在使用者端的Amazon FireOS裝置上。
-
-權杖的生命週期有限；到期時，需要透過重新起始驗證和/或授權工作流程重新發行權杖。
-
-在權益工作流程期間會核發三種型別的Token：
-
-- **驗證Token**  — 使用者驗證工作流程的最終結果將是一個驗證GUID，AccessEnabler可以使用它來代表使用者進行授權查詢。 此驗證GUID將具有關聯的存留時間(TTL)值，該值可能與使用者的驗證工作階段本身不同。 Primetime驗證會將驗證GUID繫結至起始驗證要求的裝置，藉此產生驗證權杖。
-- **授權權杖**  — 授予對由唯一識別的特定受保護資源的存取權 `resourceID`. 它是由授權方核發的授權授與原始檔案 `resourceID`. 此資訊會繫結至起始請求的裝置。
-- **短期媒體權杖** - AccessEnabler會傳回短期的Media Token，授與特定資源之託管應用程式的存取權。 此Token是根據先前為該特定資源取得的授權Token而產生。 此外，此Token不會繫結至裝置，而且關聯的存留期會明顯縮短（預設為： 5分鐘）。
-
-在成功驗證和授權後，Primetime驗證將發佈驗證、授權和短暫的媒體權杖。 這些權杖應在使用者裝置上快取，並用於其相關存留期的持續時間。
-
-### 快取准則 {#caching}
+本机客户端工作流通常与基于浏览器的Primetime身份验证客户端的工作流相同或非常相似。 但是，有一些例外，如下所述。
 
 
-#### 驗證Token
+### 初始化后工作流 {#post-init}
 
-- **FireOS適用的AccessEnabler 1.10.1 **以Android 1.9.1適用的AccessEnabler為基礎 — 此SDK推出新的權杖儲存方法，可啟用多個程式設計人員 — MVPD貯體，因此可啟用多個驗證權杖。 
+AccessEnabler支持的所有授权工作流都假定您之前调用了 [`setRequestor()`](#setRequestor) 以确立你的身份。 进行此调用以仅提供请求者ID一次，通常在应用程序的初始化/设置阶段进行。
 
-#### 授權Token
+在本机客户端（例如AmazonFireOS）中，在首次调用 [`setRequestor()`](#setRequestor)，您可以选择如何继续：
 
-在任何指定時刻，AccessEnabler只會快取每個資源一個授權權杖。 可以快取多個授權權杖，但它們與不同資源相關聯。 每當核發新的授權權杖且同一資源已存在舊權杖時，新權杖就會覆寫現有的快取值。
+- 您可以立即开始发出授权调用，并在需要时允许以静默方式将调用排入队列。
+- 或者，您可以收到成功/失败的确认 [`setRequestor()`](#setRequestor) 实现setRequestorComplete()回调。
+- 或者，两者兼而有之。
 
-#### 媒體Token 
+至于是否等待成功的通知，由您自行决定。 [`setRequestor()`](#setRequestor) 或依赖AccessEnabler的呼叫队列机制。 由于所有后续授权和身份验证请求都需要请求者ID和相关配置信息， [`setRequestor()`](#setRequestor) 方法会有效地阻止所有身份验证和授权API调用，直到初始化完成。
 
-不應快取短暫的媒體權杖。 每次呼叫授權API時，應該從伺服器擷取媒體權杖，因為它僅限於一次性使用。
+### 通用初始身份验证工作流 {#generic}
 
-### 持續性 {#persistence}
+此工作流的目的是使用用户的MVPD登录用户。  成功登录后，后端服务器会向用户颁发身份验证令牌。 虽然身份验证通常作为授权过程的一部分完成，但以下内容描述了身份验证如何单独工作，并且不包括任何授权步骤。
 
-Token必須持續存在於相同應用程式的連續執行中。 這表示取得驗證和授權權杖且使用者關閉應用程式後，當使用者重新開啟應用程式時，應用程式可使用相同的權杖。 此外，這些代號最好在多個應用程式中持續存在。 換言之，當使用者使用一個應用程式來登入特定的身分提供者（成功取得驗證和授權權杖）後，相同的權杖便可以透過不同的應用程式使用，而且當使用者透過相同的身分提供者登入時，不再提示使用者輸入認證。
+请注意，虽然以下本机客户端工作流与典型的基于浏览器的身份验证工作流不同，但步骤1-5对于本机客户端和基于浏览器的客户端都是相同的：
 
-正是這種無縫的驗證/授權工作流程，使得Primetime驗證解決方案成為真正的TV-Everywhere實施。 從純粹的工程角度來看，Android AccessEnabler程式庫會將代號資料儲存至位於外部儲存裝置的資料庫檔案中，以解決跨應用程式資料共用問題。 此系統層級的共用資源提供可啟用所需永久權杖使用案例實施的關鍵要素：
+1. 您的页面或播放器通过调用启动身份验证工作流 [getAuthentication()](#getAuthN)，检查有效的缓存身份验证令牌。 此方法有一个可选的 `redirectURL` 参数；如果不提供值 `redirectURL`，在成功进行身份验证后，用户将返回到初始化身份验证的URL。
+1. AccessEnabler确定当前的身份验证状态。 如果用户当前已通过身份验证，AccessEnabler将调用 `setAuthenticationStatus()` 回调函数，传递表示成功的身份验证状态（下面的步骤7）。
+1. 如果用户未经身份验证，AccessEnabler将通过确定用户的最后一次身份验证尝试是否成功使用给定的MVPD来继续身份验证流程。 如果缓存了MVPD ID，并且 `canAuthenticate` 标志为true或选择的MVPD使用 [`setSelectedProvider()`](#setSelectedProvider)，则不会使用MVPD选择对话框提示用户。 身份验证流继续使用MVPD的缓存值（即在上次成功身份验证期间使用的MVPD）。 对后端服务器进行网络调用，并将用户重定向到MVPD登录页面（下面的步骤6）。
+1. 如果未缓存MVPD ID，并且未使用选择MVPD [`setSelectedProvider()`](#setSelectedProvider) 或 `canAuthenticate` 标志设置为false，则 [`displayProviderDialog()`](#displayProviderDialog) 调用回调。 此回调会指示您的页面或播放器创建UI，为用户显示可从中进行选择的MVPD列表。 提供了一个MVPD对象数组，其中包含构建MVPD选择器所需的信息。 每个MVPD对象描述一个MVPD实体，并包含MVPD的ID等信息（例如XFINITY、AT\&amp;T等） 以及可以找到MVPD徽标的URL。
+1. 选择特定的MVPD后，您的页面或播放器必须通知AccessEnabler用户的选择。 对于非Flash客户端，一旦用户选择了所需的MVPD，您就可以通过调用 [`setSelectedProvider()`](#setSelectedProvider) 方法。 Flash客户端改为发送共享的 `MVPDEvent` 属于“”类型`mvpdSelection`“”，传递选定的提供程序。
+1. 对于Amazon应用程序， [`navigateToUrl()`](#navigagteToUrl) 将忽略回调。 Access Enabler库便于访问通用WebView控件来验证用户。
+1. 通过 `WebView`，用户将访问MVPD的登录页面并输入其凭据。 请注意，在此传输过程中会执行多个重定向操作。 
+1. 一旦WebView完成身份验证，它将关闭并通知AccessEnabler用户已成功登录，AccessEnabler将从后端服务器检索实际的身份验证令牌。 AccessEnabler调用 [`setAuthenticationStatus()`](#setAuthNStatus) 状态代码为1的回调，表示成功。 如果在执行这些步骤的过程中出现错误， [`setAuthenticationStatus()`](#setAuthNStatus) 使用状态代码0以及相应的错误代码触发回调，指示用户未经过身份验证。
 
-- 支援結構化儲存 — Primetime驗證Token儲存不僅僅是簡單的線性緩衝記憶體結構。 它提供類似字典的儲存機制，允許根據使用者指定的索引鍵值索引資料。
-- 支援使用基礎檔案系統的資料持續性 — 預設會持續儲存資料庫檔案的內容，且資料會儲存在裝置的外部記憶體中。
+### 注销工作流 {#logout}
 
-一旦特定權杖放入權杖快取中，AccessEnabler程式庫就會在不同的時間檢查其有效性。  有效的Token定義為：
+对于本机客户端，注销的处理方式类似于上述身份验证过程。 按照此模式，AccessEnabler将创建 `WebView` 控件并将使用注销端点的URL在后端服务器上加载控件。 注销过程完成后，令牌将被清除。
 
-- 權杖的TTL尚未過期
-- 權杖的簽發者包含在允許的身分提供者清單中
+请注意，注销流与身份验证流不同，因为用户不需要与 `WebView` 不管怎么说。 注销完成后， AccessEnabler将调用 `setAuthenticationStatus()` 带状态代码0的callback，表示用户未经过身份验证。
 
-權杖儲存可支援多個Programmer-MVPD組合，仰賴可容納多個驗證權杖的多層級巢狀對應結構。 此新儲存裝置不會以任何方式影響AccessEnabler公用API，而且程式設計人員不需要變更。 以下範例說明這項較新功能：
+## 令牌 {#tokens}
 
-1. 開啟App1 （由程式設計人員1開發）。
-1. 使用MVPD1 （與程式設計人員1整合）進行驗證。
-1. 暫停/關閉目前的應用程式，然後開啟App2 （由程式設計人員2開發）。
-1. 假設程式設計師2未與MVPD2整合；因此，使用者將不會在App2中驗證。
-1. 在App2中使用MVPD2 （與程式設計人員2整合）進行驗證。
-1. 切換回App1；使用者仍將透過程式設計人員1進行驗證。
+### 定义和使用情况 {#definitions}
+
+Primetime身份验证授权解决方案围绕生成特定数据段（令牌）而展开，Primetime身份验证会在身份验证和授权工作流成功完成后生成这些数据。 这些令牌存储在客户端的Amazon FireOS设备本地。
+
+令牌的生命周期有限；过期时，需要通过重新启动身份验证和/或授权工作流重新颁发令牌。
+
+在授权工作流中颁发了三种类型的令牌：
+
+- **身份验证令牌**  — 用户身份验证工作流的最终结果将是一个身份验证GUID，AccessEnabler可以使用它代表用户进行授权查询。 此身份验证GUID将具有关联的生存时间(TTL)值，该值可能与用户的身份验证会话本身不同。 Primetime身份验证通过将身份验证GUID绑定到启动身份验证请求的设备来生成身份验证令牌。
+- **授权令牌**  — 授予对由唯一标识的特定受保护资源的访问权限 `resourceID`. 它包括授权方颁发的授权证书以及原件 `resourceID`. 此信息将绑定到启动请求的设备。
+- **短期媒体令牌** - AccessEnabler通过返回短期媒体令牌授予对给定资源的托管应用程序的访问权限。 此令牌基于之前为该特定资源获取的授权令牌生成。 此外，此令牌不会绑定到设备，并且关联的生命周期会显着缩短（默认值： 5分钟）。
+
+成功进行身份验证和授权后，Primetime身份验证将颁发身份验证、授权和短期媒体令牌。 这些令牌应缓存在用户设备上，并用于其相关生命周期的持续时间。
+
+### 缓存准则 {#caching}
+
+
+#### 身份验证令牌
+
+- **适用于FireOS的AccessEnabler 1.10.1 **基于Android 1.9.1的AccessEnabler — 此SDK引入了一种新的令牌存储方法，可启用多个程序员 — MVPD存储桶，从而支持多个身份验证令牌。 
+
+#### 授权令牌
+
+在任何给定时刻，AccessEnabler只缓存每个资源一个授权令牌。 可以缓存多个授权令牌，但它们与不同的资源相关联。 每当颁发了新授权令牌并且同一资源已存在旧授权令牌时，新令牌就会覆盖现有的缓存值。
+
+#### 媒体令牌 
+
+不应缓存短暂的媒体令牌。 每次调用授权API时，应从服务器检索媒体令牌，因为它仅限于一次性使用。
+
+### 持久性 {#persistence}
+
+令牌需要在同一应用程序的连续运行中保持持久性。 这意味着，一旦获取了身份验证和授权令牌，并且用户关闭了应用程序，则当用户重新打开应用程序时，应用程序可以使用相同的令牌。 此外，还希望这些令牌在多个应用程序中持续存在。 换言之，当用户使用一个应用程序与特定的身份提供者登录后（成功获取身份验证和授权令牌），可以通过不同的应用程序使用相同的令牌，并且在通过同一身份提供者登录时不再提示用户输入凭据。
+
+正是这种无缝身份验证/授权工作流程使得Primetime身份验证解决方案成为真正的TV-Everywhere实施。 从纯工程的角度来看，Android AccessEnabler库通过将令牌数据存储到位于外部存储上的数据库文件中来解决跨应用程序数据共享问题。 此系统级别的共享资源提供了支持实施所需永久令牌用例的关键组件：
+
+- 支持结构化存储 — Primetime身份验证令牌存储不仅仅是一种简单的线性缓冲存储器结构。 它提供了一种类似字典的存储机制，允许根据用户指定的键值进行数据索引。
+- 使用底层文件系统支持数据持久性 — 默认情况下保留数据库文件的内容，并将数据保存在设备的外部内存中。
+
+一旦将特定令牌放入令牌缓存中，AccessEnabler库将在不同时间检查其有效性。  有效的令牌定义为：
+
+- 令牌的TTL未过期
+- 令牌的颁发者包含在允许的身份提供程序列表中
+
+令牌存储可支持多个Programmer-MVPD组合，依赖于可保存多个身份验证令牌的多级嵌套映射结构。 此新存储不会以任何方式影响AccessEnabler公共API，并且不需要程序员进行更改。 以下示例说明了这项较新的功能：
+
+1. 打开应用程序1（由程序员1开发）。
+1. 使用MVPD1（与程序员1集成）进行身份验证。
+1. 暂停/关闭当前应用程序，然后打开App2（由程序员2开发）。
+1. 我们假设Programmer2未与MVPD2集成；因此，用户不会在App2中进行身份验证。
+1. 在App2中使用MVPD2（与程序员2集成）进行身份验证。
+1. 切换回App1；用户仍将通过Programmer1进行身份验证。
 
 ### 格式 {#format}
 
-#### 驗證Token {#authn_token}
+#### 身份验证令牌 {#authn_token}
 
-以下清單顯示驗證Token的格式：
+下表显示了身份验证令牌的格式：
 
 ```JSON
     <signatureInfo>base64(...)<signatureInfo>
@@ -136,9 +136,9 @@ Token必須持續存在於相同應用程式的連續執行中。 這表示取�
 ```
  
 
-#### 授權Token {#authz_token}
+#### 授权令牌 {#authz_token}
 
-以下清單顯示授權權杖的格式：
+下表显示了授权令牌的格式：
 
 ```JSON
     <signatureInfo>base64(...)<signatureInfo>
@@ -156,9 +156,9 @@ Token必須持續存在於相同應用程式的連續執行中。 這表示取�
 ```
 
 
-#### 短媒體Token {#short_media_token}
+#### 短媒体令牌 {#short_media_token}
 
-以下清單顯示短媒體權杖的格式。  此Token會公開給程式設計師的應用程式。  它會在成功的軟體權利檔案程式結束時傳遞給程式設計師的應用程式：
+以下列表显示了短媒体令牌的格式。  此令牌对程序员的应用程序公开。  在成功的授权流程结束时，它会传递给程序员应用程序：
 
 ```JSON
     <signatureInfo>signature<signatureInfo>
@@ -174,10 +174,10 @@ Token必須持續存在於相同應用程式的連續執行中。 這表示取�
 ```
  
 
-#### 裝置繫結 {#device_binding}
+#### 设备绑定 {#device_binding}
 
-在上面的XML清單中，記下標題為 `simpleTokenFingerprint`. 此標籤的用途是儲存原生裝置ID個人化資訊。 AccessEnabler程式庫可取得這類個人化資訊，並在軟體權利檔案呼叫期間提供給Primetime驗證服務。 此服務會使用此資訊，並將其內嵌於實際Token中，以有效地將Token繫結至特定裝置。 此動作的最終目標是讓代號無法跨裝置傳輸。
+在上面的XML列表中，请注意标题为 `simpleTokenFingerprint`. 此标记的目的是保存本机设备ID个性化信息。 AccessEnabler库能够获得此类个性化信息，并在授权调用期间将其提供给Primetime身份验证服务。 该服务将使用此信息并将其嵌入实际令牌，从而有效地将令牌绑定到特定设备。 这样做的最终目标是使令牌无法跨设备传输。
 
-在上述XML清單中，請注意名為simpleTokenFingerprint的標籤。 此標籤的用途是儲存原生裝置ID個人化資訊。 AccessEnabler程式庫可取得這類個人化資訊，並在軟體權利檔案呼叫期間提供給Primetime驗證服務。 此服務會使用此資訊，並將其內嵌於實際Token中，以有效地將Token繫結至特定裝置。 此動作的最終目標是讓代號無法跨裝置傳輸。
+在上面的XML列表中，请注意名为simpleTokenFingerprint的标记。 此标记的目的是保存本机设备ID个性化信息。 AccessEnabler库能够获得此类个性化信息，并在授权调用期间将其提供给Primetime身份验证服务。 该服务将使用此信息并将其嵌入实际令牌，从而有效地将令牌绑定到特定设备。 这样做的最终目标是使令牌无法跨设备传输。
 
-由於這明顯是一項安全性相關功能，因此從安全性角度來看，此資訊原本就具有「敏感性」。 因此，需要保護此資訊不被竄改和竊聽。 透過透過HTTPS通訊協定傳送驗證/授權請求，即可解決竊聽問題。 篡改保護是透過數位簽署裝置識別資訊來處理。 AccessEnabler程式庫會從裝置提供的資訊計算裝置ID，然後將裝置ID「完全清除」傳送至Primetime驗證伺服器，作為要求引數。  Primetime驗證伺服器會使用Adobe的私密金鑰數位簽署裝置ID，並將其新增至傳回AccessEnabler的驗證權杖。 因此，裝置ID會與驗證Token繫結。  在授權流程期間，AccessEnabler會再次在清除中傳送裝置ID以及驗證Token。  驗證程式的失敗將自動導致驗證/授權工作流程失敗。  Primetime驗證伺服器會將私密金鑰套用至裝置ID，並將其與驗證權杖中的值比較。  如果兩者不相符，該權益流程就會失敗。
+由于这显然是一项安全相关功能，因此从安全角度来看，此信息本身就具有“敏感性”。 因此，需要保护此信息以防篡改和窃听。 通过通过HTTPS协议发送身份验证/授权请求来解决窃听问题。 通过数字签名设备标识信息来处理篡改保护。 AccessEnabler库根据设备提供的信息计算设备ID，然后将设备ID“完全清除”作为请求参数发送到Primetime身份验证服务器。  Primetime身份验证服务器使用Adobe的私钥对设备ID进行数字签名，并将其添加到返回到AccessEnabler的身份验证令牌。 因此，设备ID与身份验证令牌绑定。  在授权流期间，AccessEnabler再次发送设备ID和身份验证令牌。  验证过程失败将自动导致身份验证/授权工作流失败。  Primetime身份验证服务器将私钥应用于设备ID，并将其与身份验证令牌中的值进行比较。  如果二者不匹配，则权利流将失败。

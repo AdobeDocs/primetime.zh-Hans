@@ -1,6 +1,6 @@
 ---
-title: 關於命令列工具組態檔
-description: 關於命令列工具組態檔
+title: 关于命令行工具配置文件
+description: 关于命令行工具配置文件
 copied-description: true
 exl-id: 0ec4917e-7c70-4b84-86ac-c34c8a522018
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,15 +10,15 @@ ht-degree: 0%
 
 ---
 
-# 關於命令列工具組態檔{#about-command-line-tools-configuration-files}
+# 关于命令行工具配置文件{#about-command-line-tools-configuration-files}
 
-命令列工具會尋找 [!DNL flashaccesstools.properties] 執行工具的目錄中。 不過，您可以使用 `-c` 選項（當您執行命令列工具以指定不同的預設位置時） [!DNL flashaccesstools.properties]. 您也可以使用 `-c` 以指定不同的組態檔。
+命令行工具查找 [!DNL flashaccesstools.properties] 运行工具的目录中。 但是，您可以使用 `-c` 选项。 [!DNL flashaccesstools.properties]. 您还可以使用 `-c` 以指定其他配置文件。
 
-命令列工具組態檔案使用 *Java屬性檔案* 格式，適用於下列規則：
+命令行工具配置文件使用 *Java属性文件* 格式，适用于以下规则：
 
-* 使用其他反斜線逸出反斜線。
+* 使用其他反斜杠转义反斜杠。
 
-   例如，在Windows電腦上，若要指定 [!DNL C:\credentials.pfx] 檔案，您必須輸入它作為 [!DNL C:\\credentials.pfx] 或 `C:/credentials.pfx`. 若要在Windows網路伺服器上指定檔案，您必須輸入 `\\\\server\\folder\\filename.pfx`
-* 僅包含 *Latin-1* 個字元。
+   例如，在Windows计算机上，指定 [!DNL C:\credentials.pfx] 文件，您需要输入它为 [!DNL C:\\credentials.pfx] 或 `C:/credentials.pfx`. 若要在Windows网络服务器上指定文件，您需要输入 `\\\\server\\folder\\filename.pfx`
+* 仅包括 *Latin-1* 个字符。
 
-   使用非&#x200B;*Latin-1* 個字元之間，您必須使用適當的Unicode逸出順序。 您可以選擇套用 [!DNL native2ascii] 工具（隨Java提供）至您的設定檔案專案。
+   要使用非&#x200B;*Latin-1* 字符，则需要使用相应的Unicode转义序列。 您可以选择应用 [!DNL native2ascii] 工具（随Java提供）添加到配置文件条目中。

@@ -1,6 +1,6 @@
 ---
-description: 您可以使用Primetime播放器Objective-C API來自訂播放器的行為。
-title: 媒體播放器類別
+description: 您可以使用Primetime播放器Objective-C API自定义播放器的行为。
+title: 媒体播放器类
 exl-id: b58efff0-2455-4db5-93a0-4624291dc526
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,24 +9,24 @@ ht-degree: 0%
 
 ---
 
-# 媒體播放器類別 {#media-player-classes}
+# 媒体播放器类 {#media-player-classes}
 
-您可以使用Primetime播放器Objective-C API來自訂播放器的行為。
+您可以使用Primetime播放器Objective-C API自定义播放器的行为。
 
-這些類別會說明您的媒體播放器及其資源。
+这些类描述您的媒体播放器及其资源。
 
-| 類別 | 說明 |
+| 类 | 描述 |
 |---|---|
-| PTABRControlParameters | 封裝所有自適應位元速率控制引數。 支援的引數包括：<ul><li>minBitRate</li><li>maxBitRate</li><li>initialBitrate</li></ul> |
-| PTDefaultMediaPlayerClientFactory | TVSDK中PTMediaPlayerClientFactory的預設實作。 它提供availablePTOpportunityResolver、PTContentResolver和PTAdPolicySelector執行個體。 |
-| PTMediaPlayer | 定義Primetime播放器架構的根元件。應用程式會建立此類別的執行個體來播放媒體。 此元件會傳送通知，讓您的應用程式隨時知道播放器的狀態。 |
-| PTMediaPlayerClientFactory | 描述自訂媒體播放器使用者端工廠應實作的方法，以提供可用的PTOpportunityResolver、PTContentResolver和PTAdPolicySelector執行個體的通訊協定。 |
-| PTMediaPlayerItem | 代表特定的音訊 — 視訊媒體。 |
-| PTMediaPlayerView | 管理Primetime播放器架構的檢視元件。 |
-| PTMediaProfile | 代表變體播放清單中單一資料流的設定檔。 |
-| PTMediaSelectionOption | 代表視聽媒體資源，可因應不同的語言偏好設定、協助工具要求或自訂應用程式設定。 有效的選項型別：<ul><li>字幕(PTMediaSelectionOptionTypeSubtitle)</li><li>替代音訊(PTMediaSelectionOptionTypeAudio)</li><li>隱藏式字幕(PTMediaSelectionOptionTypeCC)</li><li>未定義(PTMediaSelectionOptionTypeUndefined)</li></ul> |
-| PTOpportunityResolver類別，PTOpportunityResolver通訊協定 | 用於處理資訊清單內提示的類別，這些提示將用作Adobe Primetime廣告決策程式的版位。 |
-| PTOpportunityResolverDelegate | 說明自訂機會解析器( PTOpportunityResolver )應該用來與委派通訊機會解析狀態的通訊協定。 |
-| PTSDK | 說明TVSDK的版本及其功能。 |
-| PTSDKConfig | 公開TVSDK全域設定，並允許應用程式訂閱自訂HLS標籤。 |
-| PTTextStyleRule | 定義組成規則字典的文字樣式屬性索引鍵的常數。 |
+| PTABRControlParameters | 封装所有自适应比特率控制参数。 支持的参数包括：<ul><li>minBitRate</li><li>maxBitRate</li><li>初始比特率</li></ul> |
+| PTDefaultMediaPlayerClientFactory | TVSDK中PTMediaPlayerClientFactory的默认实现。 它提供availablePTOpportunityResolver、PTContentResolver和PTAdPolicySelector实例。 |
+| PTMediaPlayer | 定义Primetime播放器框架的根组件。应用程序创建此类的实例以播放媒体。 此组件会发送通知，让您的应用程序随时了解播放器的状态。 |
+| PTMediaPlayerClientFactory | 描述自定义媒体播放器客户端工厂应实施哪些方法来提供可用的PTOpportunityResolver 、 PTContentResolver和PTAdPolicySelector实例的协议。 |
+| PTMediaPlayerItem | 表示特定的音频 — 视频媒体。 |
+| PTMediaPlayerView | 管理Primetime播放器框架的视图组件。 |
+| PTMediaProfile | 表示变量播放列表中单个流的配置文件。 |
+| PTMediaSelectionOption | 表示用于满足不同语言首选项、辅助功能要求或自定义应用程序配置的视听媒体资源。 有效的选项类型：<ul><li>字幕(PTMediaSelectionOptionTypeSubtitle)</li><li>备用音频(PTMediaSelectionOptionTypeAudio)</li><li>隐藏式字幕(PTMediaSelectionOptionTypeCC)</li><li>未定义(PTMediaSelectionOptionTypeUndefined)</li></ul> |
+| PTOpportunityResolver类，PTOpportunityResolver协议 | 用于处理清单内提示的类，这些提示将用作Adobe Primetime广告决策过程的投放位置。 |
+| PTOpportunityResolverDelegate | 描述自定义机会解析器( PTOpportunityResolver )应用于向委托者传达机会解析状态的方法的协议。 |
+| PTSDK | 介绍TVSDK的版本及其功能。 |
+| PTSDKConfig | 公开TVSDK全局设置，并允许应用程序订阅自定义HLS标记。 |
+| PTTextStyleRule | 定义代表构成规则字典的文本样式属性键的常量。 |

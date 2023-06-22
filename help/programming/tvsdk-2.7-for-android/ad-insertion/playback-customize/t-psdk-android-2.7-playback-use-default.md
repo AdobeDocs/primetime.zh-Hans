@@ -1,6 +1,6 @@
 ---
-description: 您可以選擇使用預設廣告行為。
-title: 使用預設播放行為
+description: 您可以选择使用默认广告行为。
+title: 使用默认播放行为
 exl-id: eb4ce0b4-9dfd-4de8-8cbf-8aba093a5ddd
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,38 +9,38 @@ ht-degree: 0%
 
 ---
 
-# 使用預設播放行為  {#use-the-default-playback-behavior}
+# 使用默认播放行为  {#use-the-default-playback-behavior}
 
-您可以選擇使用預設廣告行為。
+您可以选择使用默认广告行为。
 
-1. 若要使用預設行為，請完成下列其中一項工作：
+1. 要使用默认行为，请完成以下任务之一：
 
-   * 如果您實作自己的 `AdvertisingFactory` 類別，傳回null `createAdPolicySelector`.
+   * 如果您实施自己的 `AdvertisingFactory` 类，返回null `createAdPolicySelector`.
 
-   * 如果您沒有的自訂實作 `AdvertisingFactory` 類別，TVSDK會使用預設的廣告原則選擇器。
+   * 如果您没有的自定义实施 `AdvertisingFactory` 类，TVSDK使用默认广告策略选择器。
 
-## 設定自訂播放 {#set-up-customized-playback}
+## 设置自定义播放 {#set-up-customized-playback}
 
-您可以自訂或覆寫廣告行為。
+您可以自定义或覆盖广告行为。
 
-在您自訂或覆寫廣告行為之前，請先使用TVSDK註冊廣告原則執行個體。
+在自定义或覆盖广告行为之前，请使用TVSDK注册广告策略实例。
 
-* 實作 `AdPolicySelector` 介面及其所有方法。
+* 实施 `AdPolicySelector` 接口及其所有方法。
 
-   如果您需要覆寫，建議使用此選項 **全部** 預設廣告行為。
+   如果需要覆盖，建议使用此选项 **所有** 默认广告行为。
 
-* 擴充 `DefaultAdPolicySelector` 類別並提供僅用於需要自訂之行為的實作。
+* 扩展 `DefaultAdPolicySelector` 类，并仅为那些需要自定义的行为提供实现。
 
-   如果您只需要覆寫，則建議使用此選項 **部分** 預設行為的ID。
+   如果您只需要覆盖，则建议使用此选项 **部分** 缺省行为的URL值。
 
-若要自訂廣告行為：
+要自定义广告行为，请执行以下操作：
 
-1. 實作 `AdPolicySelector` 介面及其所有方法。
-1. 透過Advertising Factory指派TVSDK使用的原則執行個體。
+1. 实施 `AdPolicySelector` 接口及其所有方法。
+1. 通过广告工厂分配TVSDK要使用的策略实例。
 
    >[!NOTE]
    >
-   >播放開始時註冊的自訂廣告原則會在以下情況下清除： `MediaPlayer` 執行個體已取消配置。 您的應用程式必須在每次建立新播放工作階段時註冊原則選擇器執行個體。
+   >在播放开始时注册的自定义广告策略在以下情况下被清除： `MediaPlayer` 实例已取消分配。 每次创建新播放会话时，您的应用程序都必须注册一个策略选择器实例。
 
    例如：
 
@@ -62,4 +62,4 @@ ht-degree: 0%
    mediaPlayer.replaceCurrentResource(resource, config);
    ```
 
-1. 實作您的自訂。
+1. 实施您的自定义项。

@@ -1,6 +1,6 @@
 ---
-description: 這些類別可讓您自訂記錄。
-title: 記錄類別
+description: 这些类使您能够自定义日志记录。
+title: 日志记录类
 exl-id: e420f557-eb4f-4adf-9b87-1cffc6b36d53
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,35 +9,35 @@ ht-degree: 0%
 
 ---
 
-# 記錄類別{#logging-classes}
+# 日志记录类{#logging-classes}
 
-這些類別可讓您自訂記錄。
+这些类使您能够自定义日志记录。
 
-封裝： [com.adobe.mediacore.logging](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/logging/package-summary.html)
+包： [com.adobe.mediacore.logging](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/logging/package-summary.html)
 
 <table frame="all" colsep="1" rowsep="1" id="table_389797D3CEF14EA2862E0B20C6E6CC41"> 
  <thead> 
   <tr rowsep="1"> 
-   <th colname="1" class="entry"> <p>名稱 </p> </th> 
-   <th colname="2" class="entry"> <p>說明 </p> </th> 
+   <th colname="1" class="entry"> <p>名称 </p> </th> 
+   <th colname="2" class="entry"> <p>描述 </p> </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/logging/Log.html" format="html" scope="external"> 記錄</a> </span></td> 
-   <td colname="2"> 類別。 提供記錄系統的存取權。 </td> 
+   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/logging/Log.html" format="html" scope="external"> 日志</a> </span></td> 
+   <td colname="2"> 班级。 提供对日志系统的访问。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1" rowsep="0"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/logging/LogEntry.html" format="html" scope="external"> LogEntry</a> </span></td> 
-   <td colname="2" rowsep="0"> 類別。 定義專案記錄並保留有關記錄訊息的資訊。 </td> 
+   <td colname="2" rowsep="0"> 班级。 定义条目日志并保存有关日志消息的信息。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/logging/LogFactory.html" format="html" scope="external"> logfactory</a> </span></td> 
-   <td colname="2"> 介面。 啟用自訂記錄。 </td> 
+   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/logging/LogFactory.html" format="html" scope="external"> LogFactory</a> </span></td> 
+   <td colname="2"> 界面。 启用自定义日志记录。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/logging/Logger.html" format="html" scope="external"> Logger</a> </span></td> 
-   <td colname="2">介面。 為實作自訂記錄器所需的方法 <code>primetime-sdk-name</code> 片語。 </td> 
+   <td colname="2">界面。 为实施自定义记录器所需的方法 <code>primetime-sdk-name</code> 短语。 </td> 
   </tr> 
  </tbody>
 </table>

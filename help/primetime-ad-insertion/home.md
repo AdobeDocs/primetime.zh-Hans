@@ -1,6 +1,6 @@
 ---
 title: Adobe PrimetimeAd Insertion
-description: Adobe PrimetimeAd Insertion說明
+description: Adobe PrimetimeAd Insertion帮助
 exl-id: e758044e-a1f5-498a-a809-b6a351dfe8f0
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,44 +9,44 @@ ht-degree: 0%
 
 ---
 
-# 概觀 {#ptai-overview}
+# 概述 {#ptai-overview}
 
-PrimetimeAd Insertion是伺服器端營利解決方案，具備使用者端廣告追蹤功能，可協助發佈者在即時、線性和VOD串流中建立新一代電視體驗。
+PrimetimeAd Insertion是一种服务器端货币化解决方案，具有客户端广告跟踪功能，可帮助出版商在直播、线性和VOD流中创建新一代电视体验。
 
-## PrimetimeAd Insertion說明 {#ad-insertion-user-guide}
+## PrimetimeAd Insertion帮助 {#ad-insertion-user-guide}
 
-本指南說明PrimetimeAd Insertion如何透過跨裝置為其觀眾提供個人化、電視品質的廣告體驗，來協助發佈者最大化廣告收入，即使在現場活動等複雜情況下或在使用即時程式化決策時也是如此。
+本指南演示了PrimetimeAd Insertion如何通过跨设备为观众提供个性化、电视质量的广告体验，从而帮助出版商最大限度地增加广告收入，即使在现场活动等复杂情况下或者在使用实时程序化决策时也是如此。
 
-## 另請參閱 {#ptai-see-also}
+## 另请参阅 {#ptai-see-also}
 
-| 使用手冊 | 說明 |
+| 用户指南 | 描述 |
 |---|---|
-| [開始使用PrimetimeAd Insertion](getting-started/get-started-overview.md) | 提供有關如何開始使用PrimetimeAd Insertion的詳細資訊 |
-| [PrimetimeAd Insertion公告](announcements/overview.md) | 提供與PrimetimeAd Insertion相關的最新文章和公告 |
-| [PrimetimeAd Insertion發行說明](../release-notes/ptai-20x-release-notes.md) | 提供版本特定資訊、系統需求、限制、已修正問題和已知問題。 |
-| [Just-in-Time Ad Transcoding](just-in-time-transcoding/jit-transcoding-overview.md) | 說明即時編碼如何確保不相容的創意內容會在HLS/DASH資料流中正確播放。 |
-| [PrimetimeAd Insertion技術參考](/help/primetime-ad-insertion/technical-reference/bootstrap-api.md) | PrimetimeAd Insertion的技術和BootstrapAPI參考。 |
-| [監視和偵錯](/help/primetime-ad-insertion/performance-monitoring-debugging-reporting/performance-overview.md) | 提供PrimetimeAd Insertion監控和偵錯工具的深入分析。 |
+| [PrimetimeAd Insertion入门](getting-started/get-started-overview.md) | 提供有关如何开始使用PrimetimeAd Insertion的详细信息 |
+| [PrimetimeAd Insertion公告](announcements/overview.md) | 提供与PrimetimeAd Insertion相关的最新文章和注释 |
+| [PrimetimeAd Insertion发行说明](../release-notes/ptai-20x-release-notes.md) | 提供特定于发行版的信息、系统要求、限制、已修复问题和已知问题。 |
+| [Just-in-Time Ad Transcoding](just-in-time-transcoding/jit-transcoding-overview.md) | 解释实时编码如何确保不具竞争性的创意内容在HLS/DASH流中正确播放。 |
+| [PrimetimeAd Insertion技术参考](/help/primetime-ad-insertion/technical-reference/bootstrap-api.md) | 适用于PrimetimeAd Insertion的技术和BootstrapAPI参考。 |
+| [监控和调试](/help/primetime-ad-insertion/performance-monitoring-debugging-reporting/performance-overview.md) | 深入了解PrimetimeAd Insertion监控和调试工具。 |
 
-## 使用者端程式庫的Primetime使用手冊 {#other-primetime-helps}
+## 适用于客户端库的Primetime用户指南 {#other-primetime-helps}
 
-| 使用手冊 | 說明 |
+| 用户指南 | 描述 |
 |---|---|
-| [Primetime程式設計說明](../programming/home.md) | 可讓您在Android裝置上使用Java以及在iOS裝置上使用Objective-C來學習開發應用程式和影片播放程式。 |
-| [Primetime移轉與轉換說明](../migration-guides/home.md) | 說明從您現有的Primetime TVSDK套裝轉換和移轉至新一代套裝的程式。 |
-| [參考實作](../android-reference-implementation/home.md) | 協助瞭解TVSDK並修改功能管理員，以自訂您的個人播放器。 |
-| [Digital Rights Management](../digital-rights-management/home.md) | 協助您進一步瞭解Digital Rights Management(DRM)中的各種使用者情境 |
-| [Primetime API參考](../reference/api-references.md) | 提供有關TVSDK函式、資料結構和其他程式設計建構的詳細資訊。 |
-| [封存](https://helpx.adobe.com/primetime/archives.html) | 下載封存檔案的PDF。 |
+| [Primetime编程帮助](../programming/home.md) | 允许您学习在Android设备上使用Java以及在iOS设备上使用Objective-C开发应用程序和视频播放器。 |
+| [Primetime迁移和转换帮助](../migration-guides/home.md) | 介绍从现有Primetime TVSDK包到下一代包的转换和迁移过程。 |
+| [参考实施](../android-reference-implementation/home.md) | 帮助了解TVSDK并修改功能管理器以自定义您的个人播放器。 |
+| [Digital Rights Management](../digital-rights-management/home.md) | 帮助您进一步了解Digital Rights Management(DRM)中的各种用户场景 |
+| [Primetime API引用](../reference/api-references.md) | 提供有关TVSDK函数、数据结构和其他编程结构的详细信息。 |
+| [归档](https://helpx.adobe.com/primetime/archives.html) | 下载已存档文档的PDF。 |
 
-## 實用資源 {#helpful-resources}
+## 有用资源 {#helpful-resources}
 
-* [瞭解Adobe Primetime](https://www.adobe.com/in/marketing/primetime.html)
+* [了解Adobe Primetime](https://www.adobe.com/in/marketing/primetime.html)
 
-* [並行監視](https://tve.helpdocsonline.com/concurrency-monitoring-introduction)
+* [并发监测](https://tve.helpdocsonline.com/concurrency-monitoring-introduction)
 
-* [Primetime驗證](https://tve.helpdocsonline.com/home)
+* [Primetime身份验证](https://tve.helpdocsonline.com/home)
 
-* [Adobe Primetime DRM論壇](https://forums.adobe.com/community/adobe_access)
+* [Adobe Primetime DRM论坛](https://forums.adobe.com/community/adobe_access)
 
-* [Adobe Primetime開發人員資源](https://www.adobe.com/devnet/primetime.html)
+* [Adobe Primetime开发人员资源](https://www.adobe.com/devnet/primetime.html)

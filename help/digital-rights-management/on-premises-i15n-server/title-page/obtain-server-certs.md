@@ -1,6 +1,6 @@
 ---
-title: 取得個人化伺服器憑證
-description: 取得個人化伺服器憑證
+title: 获取个性化服务器证书
+description: 获取个性化服务器证书
 copied-description: true
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
@@ -10,14 +10,14 @@ ht-degree: 0%
 ---
 
 
-# 取得個人化伺服器憑證{#obtain-individualization-server-certificates}
+# 获取个性化服务器证书{#obtain-individualization-server-certificates}
 
-若要使用On Premises Individualization Server，您必須先取得兩個數位憑證（憑證）：
+要使用On Premise Individualization Server，您必须首先获取两个数字凭据（证书）：
 
-* *個人化傳輸認證*  — 由Adobe簽發
-* *個人化CA認證*  — 由Symantec (VeriSign)發行
+* *个性化传输凭据*  — 由Adobe颁发
+* *个性化CA凭据*  — 由Symantec (VeriSign)颁发
 
-若要取得這些憑證：
+要获取这些证书：
 
-1. 請透過Zendesk票證將請求提交至： [https://adobeprimetime.zendesk.com](https://adobeprimetime.zendesk.com)
-請注意，這些認證是操作Primetime DRM授權伺服器所需的認證以外的認證。
+1. 请通过Zendesk票证将请求提交到： [https://adobeprimetime.zendesk.com](https://adobeprimetime.zendesk.com)
+请注意，这些凭据是操作Primetime DRM许可证服务器所需的凭据之外的凭据。

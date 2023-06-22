@@ -1,6 +1,6 @@
 ---
-description: 當使用者在媒體中快速前進或快速倒帶時，他們處於特技播放模式。 若要進入特技播放模式，請將MediaPlayer播放速率設定為1以外的值。
-title: 實作快速前進和倒帶
+description: 当用户快进或快退通过媒体时，他们处于特技播放模式。 要进入特技播放模式，请将MediaPlayer播放速率设置为1以外的值。
+title: 实现快速前进和倒带
 exl-id: 569fe22c-b1d8-46db-ab29-a50652413072
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,20 +9,20 @@ ht-degree: 0%
 
 ---
 
-# 概觀 {#implement-fast-forward-and-rewind-overview}
+# 概述 {#implement-fast-forward-and-rewind-overview}
 
-當使用者在媒體中快速前進或快速倒帶時，他們處於特技播放模式。 若要進入特技播放模式，請將MediaPlayer播放速率設定為1以外的值。
+当用户快进或快退通过媒体时，他们处于特技播放模式。 要进入特技播放模式，请将MediaPlayer播放速率设置为1以外的值。
 
-若要切換速度，您必須設定一個值。
+要切换速度，必须设置一个值。
 
-1. 從一般播放模式(1x)移至特技播放模式，方法是在 `MediaPlayer` 至允許的值。
+1. 通过将速率设置为从正常播放模式(1x)移动到特技播放模式 `MediaPlayer` 到允许的值。
 
-       請記住以下資訊：
+       请记住以下信息：
    
-   * 此 `MediaPlayerItem` 類別會定義允許的播放速率。
-   * 如果不允許指定的速率，TVSDK會選取最接近的允許速率。
+   * 此 `MediaPlayerItem` 类定义允许的播放速率。
+   * 如果不允许指定的速率，则TVSDK会选择允许的最接近的速率。
 
-      下列範例會將播放器的內部播放速率設定為要求的速率：
+      以下示例将播放器的内部播放速率设置为请求的速率：
 
       ```
       import com.adobe.mediacore.MediaPlayer; 
@@ -48,12 +48,12 @@ ht-degree: 0%
       }
       ```
 
-1. 您可以選擇接聽匯率變更事件，這會在您要求匯率變更時以及實際發生匯率變更時通知您。
+1. 您可以选择监听速率更改事件，这会在您请求速率更改时以及实际发生速率更改时通知您。
 
-       TVSDK會傳送以下與特技播放相關的事件：
+       TVSDK调度以下与特技播放相关的事件：
    
-   * `MediaPlayerEvent.RATE_SELECTED`，當 `rate` 值會變更為其他值。
+   * `MediaPlayerEvent.RATE_SELECTED`，当 `rate` 值会更改为其他值。
 
-   * `MediaPlayerEvent.RATE_PLAYING`，即以選取的速率繼續播放時。
+   * `MediaPlayerEvent.RATE_PLAYING`，以选定的速率继续播放时。
 
-      當播放器從特技播放模式返回正常播放模式時，TVSDK會傳送這些事件。
+      当播放器从特技播放模式返回到正常播放模式时，TVSDK会调度这些事件。

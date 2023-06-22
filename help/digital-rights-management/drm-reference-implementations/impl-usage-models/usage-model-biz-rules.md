@@ -1,6 +1,6 @@
 ---
-title: 使用模式示範商業規則
-description: 使用模式示範商業規則
+title: 使用模型演示业务规则
+description: 使用模型演示业务规则
 copied-description: true
 exl-id: 689a0335-55e9-427a-bc27-3a69e37ef0b5
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,31 +10,31 @@ ht-degree: 0%
 
 ---
 
-# 使用模式示範商業規則{#usage-model-demo-business-rules}
+# 使用模型演示业务规则{#usage-model-demo-business-rules}
 
-當使用者請求授權時，Reference Implementation Server會檢查使用者端已傳送的中繼資料，以判斷內容是否已透過以下方式封裝 `RI_UsageModelDemo` 屬性。 如果是這種情況，伺服器會套用以下商業規則。
+当用户请求许可证时，参考实施服务器会检查客户端已发送的元数据，以确定内容是否通过使用 `RI_UsageModelDemo` 属性。 如果是这种情况，服务器将应用以下业务规则。
 
-* 如果其中一個DRM原則需要驗證：
+* 如果其中一个DRM策略需要身份验证：
 
-   * 如果請求包含有效的驗證Token，請在Customer資料庫表格中搜尋使用者名稱。
+   * 如果请求包含有效的身份验证令牌，请在Customer数据库表中搜索用户的名称。
 
-      如果您找不到使用者名稱，請完成下列工作：
+      如果找不到用户的名称，请完成以下任务：
 
-      * 如果 `Customer.IsSubscriber` 屬性已設定為 `true`，您需要為產生授權 *`Subscription`* 使用模式，並將其傳送給使用者。
+      * 如果 `Customer.IsSubscriber` 属性设置为 `true`，您需要为生成许可证 *`Subscription`* 使用模型并将其发送给用户。
 
-      * 搜尋中的記錄 `CustomerAuthorization` 使用者名稱和內容ID的資料庫表格。
+      * 在中搜索记录 `CustomerAuthorization` 用户名称和内容ID的数据库表。
 
-      如果您可以找到使用者的記錄，請完成下列工作：
+      如果可以找到用户的记录，请完成以下任务：
 
-      * 如果 `CustomerAuthorization.UsageType` 屬性已設定為 `DTO`，為DTO使用模式產生授權，並傳送給使用者。
+      * 如果 `CustomerAuthorization.UsageType` 属性设置为 `DTO`，为DTO使用模型生成许可证并将其发送给用户。
 
-      * 如果 `CustomerAuthorization.UsageType` 屬性已設定為 `VOD`，產生VOD使用模式的授權並傳送給使用者。
+      * 如果 `CustomerAuthorization.UsageType` 属性设置为 `VOD`，为VOD使用模型生成许可证并将其发送给用户。
 
-      如果任何DRM原則都不允許匿名存取，請完成下列工作：
+      如果任何DRM策略都不允许匿名访问，请完成以下任务：
 
-      * 如果請求中沒有有效的驗證Token，則需要傳回「需要驗證」錯誤。
-      * 否則會傳回「未授權」錯誤。
+      * 如果请求中没有有效的身份验证令牌，则需要返回“需要身份验证”错误。
+      * 否则，返回“未授权”错误。
 
 
 
-* 如果其中一個DRM原則允許匿名存取，請為廣告資助的使用模式產生授權，並將其傳送給使用者。
+* 如果其中一个DRM策略允许匿名访问，则为广告资助的使用模型生成许可证并将其发送给用户。

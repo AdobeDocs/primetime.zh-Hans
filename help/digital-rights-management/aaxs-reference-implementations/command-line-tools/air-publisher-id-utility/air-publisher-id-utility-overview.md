@@ -1,6 +1,6 @@
 ---
-title: AIR Publisher ID公用程式概述
-description: AIR Publisher ID公用程式概述
+title: AIR Publisher ID实用程序概述
+description: AIR Publisher ID实用程序概述
 copied-description: true
 exl-id: ad982ec8-0180-4185-8752-08592cabef3d
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,10 +10,10 @@ ht-degree: 0%
 
 ---
 
-# AIR Publisher ID公用程式概述 {#air-publisher-id-utility-overview}
+# AIR Publisher ID实用程序概述 {#air-publisher-id-utility-overview}
 
-在建置AIR檔案的過程中，AIR Developer Tool (ADT)會產生發佈者ID。 這是用來建置AIR檔案之憑證的唯一識別碼。 如果您在多個AIR應用程式中重複使用相同的憑證，這些應用程式將擁有相同的發行者ID。AIR發行者ID公用程式是用來計算AIR應用程式的發行者ID。 1.5.2之後的AIR發行版本不會將產生的發行者ID寫入檔案，因此如果您使用AIR應用程式允許清單，則必須使用此工具來判斷發行者ID。
+在构建AIR文件的过程中，AIR开发人员工具(ADT)会生成发布者ID。 这是用于构建AIR文件的证书的唯一标识符。 如果您在多个AIR应用程序上重复使用相同的证书，则它们将具有相同的发布者ID。AIR发布者ID实用程序用于计算AIR应用程序的发布者ID。 1.5.2之后的AIR版本不会将生成的发布者ID写入文件，因此如果您使用的是AIR应用程序允许列表，则必须使用此工具来确定发布者ID。
 
 >[!NOTE]
 >
->用於AIR允許清單執行的發行者ID與應用程式中的應用程式發行者指定的發行者ID不同 [!DNL application.xml] 檔案。
+>用于AIR允许列表实施的发布者ID与应用程序发布者在应用程序的 [!DNL application.xml] 文件。

@@ -1,6 +1,6 @@
 ---
-title: 依第二熒幕Web應用程式擷取預先授權資源清單
-description: 依第二熒幕Web應用程式擷取預先授權資源清單
+title: 按第二屏Web应用程序检索预授权资源的列表
+description: 按第二屏Web应用程序检索预授权资源的列表
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,45 +9,45 @@ ht-degree: 0%
 
 ---
 
-# 依第二熒幕Web應用程式擷取預先授權資源清單 {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
+# 按第二屏Web应用程序检索预授权资源的列表 {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-## REST API端點 {#clientless-endpoints}
+## REST API端点 {#clientless-endpoints}
 
 &lt;reggie_fqdn>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 &lt;sp_fqdn>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
-## 說明 {#description}
+## 描述 {#description}
 
-要求Adobe Primetime驗證以取得預先授權資源清單。
+请求Adobe Primetime身份验证以获取预授权资源的列表。
 
-有兩組API：一組用於串流應用程式或程式設計人員服務，另一組用於第二熒幕網頁應用程式。 本頁面說明AuthN應用程式的API。
+有两组API：一组用于流应用程序或程序员服务，另一组用于第二屏幕Web应用程序。 本页介绍了用于身份验证应用程序的API。
 
  \
-|端點 |已呼叫  </br>作者： |輸入   </br>引數 | HTTP  </br>方法 |回應 | HTTP  </br>回應 | | — | — | — | — | — | — | | &lt;sp_fqdn>/api/v1/preauthorize/{註冊代碼} |驗證模組 | 1.  註冊代碼  </br>    （路徑元件）</br>2.  請求者（必要）</br>3.  資源清單（必要） |GET |包含個別預先授權決定或錯誤詳細資料的XML或JSON。 請參閱下列範例。 | 200 — 成功</br></br>400 — 錯誤請求</br></br>401 — 未獲授權</br></br>405 — 不允許的方法  </br></br>412 — 先決條件失敗</br></br>500 — 內部伺服器錯誤 |
+|端点 |已调用  </br>按 |输入   </br>参数 | HTTP  </br>方法 |响应 | HTTP  </br>响应 | | — | — | — | — | — | — | | &lt;sp_fqdn>/api/v1/preauthorize/{注册码} | AuthN模块 | 1.  注册码  </br>    （路径组件）</br>2.  请求者（必需）</br>3.  资源列表（必需） |GET |包含各个预授权决策或错误详细信息的XML或JSON。 请参阅下面的示例。 | 200 — 成功</br></br>400 — 错误请求</br></br>401 — 未授权</br></br>405 — 不允许使用该方法  </br></br>412 — 前提条件失败</br></br>500 — 内部服务器错误 |
 
 
 
-| 輸入引數 | 說明 |
+| 输入参数 | 描述 |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 註冊代碼 | 使用者在驗證流程開始時提供的註冊代碼值。 |
-| 請求者 | 此作業有效的程式設計員requestorId。 |
-| 資源清單 | 一個字串，包含以逗號分隔的resourceId清單，可識別使用者可存取且可由MVPD授權端點辨識的內容。 |
+| 注册码 | 用户在身份验证流程开始时提供的注册代码值。 |
+| 请求者 | 此操作有效的程序员requestorId。 |
+| 资源列表 | 一个字符串，其中包含以逗号分隔的resourceId列表，该resourceId列表标识用户可能可以访问并被MVPD授权端点识别的内容。 |
 
 
-### 範例回應 {#sample-response}
+### 示例响应 {#sample-response}
 
 **XML：**
 

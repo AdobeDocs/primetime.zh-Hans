@@ -1,6 +1,6 @@
 ---
-title: 為Xbox 360和XboxOne無使用者端上的程式設計人員啟用Primetime軟體權利檔案服務
-description: 為Xbox 360和XboxOne無使用者端上的程式設計人員啟用Primetime軟體權利檔案服務
+title: 为Xbox 360和XboxOne无客户端程序员启用Primetime授权服务
+description: 为Xbox 360和XboxOne无客户端程序员启用Primetime授权服务
 exl-id: ff7254de-9ea4-4c27-a186-d1c2eea12222
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,42 +9,42 @@ ht-degree: 0%
 
 ---
 
-# 為Xbox 360和XboxOne無使用者端上的程式設計人員啟用Primetime軟體權利檔案服務 {#enabling-primetime-entitlement-services-for-a-programer-on-xbox-360-and-xboxone-clientless}
+# 为Xbox 360和XboxOne无客户端程序员启用Primetime授权服务 {#enabling-primetime-entitlement-services-for-a-programer-on-xbox-360-and-xboxone-clientless}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
 
 
 
-1. 程式設計師會建立Zendesk票證，以提供下列資訊來啟用Xbox 360/One for Primetime驗證無使用者端解決方案：
+1. 该程序员通过提供以下信息创建Zendesk票证，以启用Xbox 360/One用于Primetime身份验证无客户端解决方案：
 
-   1. 平台：例如Xbox 360、Xbox One
+   1. 平台：如Xbox 360、Xbox One
 
-   1. 請求者ID：例如netgeo、CNN等。
+   1. 请求者ID：例如netgeo、CNN等。
 
-1. Adobe將會建立X509憑證，並在其結尾設定私密金鑰和密碼。
+1. Adobe将创建X509证书，并在其末尾配置私钥和口令。
 
-1. Adobe會在票證中或透過電子郵件向程式設計師提供公開憑證（X509憑證）。
+1. Adobe将在票证中或通过电子邮件向程序员提供公共证书（X509证书）。
 
-1. 接著，程式設計師需要在GDNP入口網站，為註冊至Microsoft的應用程式安裝該公開憑證。
+1. 然后，程序员需要在GDNP门户上为注册到Microsoft的应用程序安装该公共证书。
 
-1. 然後程式設計師會分別向Microsoft Xbox Live服務請求XboxOne或360的JWT （Java Web權杖）或STS權杖，該服務將使用步驟3提供的X509公開憑證加密。
+1. 然后，程序员将分别从Microsoft Xbox Live服务为XboxOne或360请求JWT （Java Web令牌）或STS令牌，该服务将使用步骤3中提供的X509公共证书进行加密。
 
-1. 這些是包含Xbox裝置唯一deviceId的Token。 使用「x」引數在授權標頭中包含權杖（JWT或STS），如下所示：
+1. 这些令牌包含Xbox设备的唯一deviceId。 使用“x”参数在授权标头中包含令牌（JWT或STS），如下所示：
 
-   1. 對於Xbox 360，在傳送到Primetime付費電視驗證之前，XSTS權杖必須為Base64編碼。
-   1. 對於Xbox One，JWT已經正確編碼，因此不應該進行額外編碼。 
+   1. 对于Xbox 360，在发送到Primetime付费电视身份验证之前，XSTS令牌必须经过Base64编码。
+   1. 对于Xbox One，JWT已正确编码，因此不应进行额外编码。 
 
-1. 所有來自Xbox裝置的API呼叫都應該包含在x引數中具有上述權杖的授權標頭。
+1. 从Xbox设备发出的所有API调用都应在x参数中包含具有上述令牌的授权标头。
 
  
 
 >[!NOTE]
 >
->尤其是Xbox有一些與數位簽署相關的獨特要求。 XBox主控台的裝置ID包含在XSTS權杖中。  對於Xbox 360，這是加密的SAML判斷提示；對於Xbox One，這是加密的JWT。 XBox主控台應用程式會將整個XSTS權杖傳送到Primetime付費電視驗證。 Primetime付費電視驗證會使用其公開金鑰來解密Token、剖析Token，然後從中擷取deviceId。
+>特别是Xbox有一些与数字签名相关的独特要求。 XBox控制台的设备ID包含在XSTS令牌中。  对于Xbox 360，这是一个加密的SAML断言；对于Xbox One，这是一个加密的JWT。 XBox控制台应用程序将整个XSTS令牌发送到Primetime付费电视身份验证。 Primetime付费电视身份验证使用令牌的公共密钥解密令牌，解析令牌，然后从令牌中提取deviceId。
 
 >[!NOTE]
 >
->由於XSTS權杖的長度很大，因此XBox主控台有技術限制：它無法將權杖作為HTTPGET引數傳送到Primetime付費電視驗證API。 為了解決這個問題，Primetime付費電視驗證允許在呼叫API時傳送XSTS權杖作為HTTP標頭「授權」的一部分。 XSTS權杖必須使用從Primetime付費電視驗證核發給程式設計師的X.509憑證中的公開金鑰加密。 Primetime付費電視驗證會儲存關聯的私密金鑰，並使用它來解密XSTS權杖並從中擷取deviceId。
+>由于XSTS令牌的长度过大，XBox控制台存在技术限制：它无法将令牌作为HTTPGET参数发送到Primetime付费电视身份验证API。 为了解决这个问题，Primetime付费电视身份验证允许在调用API时发送XSTS令牌作为HTTP标头“授权”的一部分。 XSTS令牌必须使用从Primetime付费电视身份验证颁发给程序员的X.509证书中的公钥进行加密。 Primetime付费电视身份验证存储关联的私钥，并使用它解密XSTS令牌并从中提取deviceId。

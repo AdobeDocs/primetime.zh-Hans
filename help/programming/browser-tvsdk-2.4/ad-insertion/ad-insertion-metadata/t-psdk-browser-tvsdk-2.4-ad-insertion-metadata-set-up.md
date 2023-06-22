@@ -1,6 +1,6 @@
 ---
-description: 使用協助程式類別AuditudeSettings來設定Adobe Primetime ad decisioning中繼資料。
-title: 設定廣告插入中繼資料
+description: 使用帮助程序类AuditudeSettings设置Adobe Primetime ad decisioning元数据。
+title: 设置广告插入元数据
 exl-id: 03b2237b-6b3b-46cf-bc0b-691513033463
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,21 +9,21 @@ ht-degree: 0%
 
 ---
 
-# 設定廣告插入中繼資料{#set-up-ad-insertion-metadata}
+# 设置广告插入元数据{#set-up-ad-insertion-metadata}
 
-使用協助程式類別AuditudeSettings來設定Adobe Primetime ad decisioning中繼資料。
+使用帮助程序类AuditudeSettings设置Adobe Primetime ad decisioning元数据。
 
 >[!TIP]
 >
->Adobe Primetime ad decisioning先前稱為Auditude 。
+>Adobe Primetime ad decisioning以前称为Auditude 。
 
-1. 建置 `AuditudeSettings` 執行個體。
+1. 构建 `AuditudeSettings` 实例。
 
    ```java
    AuditudeSettings auditudeSettings = new AuditudeSettings();
    ```
 
-1. 設定Adobe Primetime ad decisioning mediaID、zoneID、網域，以及選用的鎖定目標引數。
+1. 设置Adobe Primetime ad decisioning mediaID、zoneID、域和可选的定位参数。
 
    ```js
    auditudeSettings.domain = "yourdomain"; 
@@ -31,7 +31,7 @@ ht-degree: 0%
    auditudeSettings.zoneId = "zoneid";
    ```
 
-1. 建立 `MediaResource` 使用媒體串流URL和先前建立的廣告中繼資料，執行個體。
+1. 创建 `MediaResource` 使用媒体流URL和之前创建的广告元数据来创建实例。
 
    ```js
    mediaResource = new AdobePSDK.MediaResource ( 
@@ -40,17 +40,17 @@ ht-degree: 0%
          auditudeSettings);
    ```
 
-1. 載入 `MediaResource` 物件穿過 `MediaPlayer.replaceCurrentResource(resource)` 方法。
+1. 加载 `MediaResource` 对象通过 `MediaPlayer.replaceCurrentResource(resource)` 方法。
 
-   此 `MediaPlayer` 開始載入及處理媒體資料流資訊清單。
+   此 `MediaPlayer` 开始加载和处理媒体流清单。
 
-1. 當 `MediaPlayer` 轉換到INITIALIZED狀態，以的格式取得媒體資料流特性 `MediaPlayerItem` 執行個體透過 `MediaPlayer.CurrentItem` 屬性。
-1. （選用）查詢 `MediaPlayerItem` 執行個體以檢視串流是否為即時，無論是否有替代音軌。
+1. 当 `MediaPlayer` 转换为INITIALIZED状态，以a的形式获取媒体流特征 `MediaPlayerItem` 实例通过 `MediaPlayer.CurrentItem` 属性。
+1. （可选）查询 `MediaPlayerItem` 实例以查看流是否处于实时状态，而不管它是否具有替代音频轨道。
 
-   此資訊可協助您為播放準備UI。 例如，如果您知道有兩個音軌，您可以包含可在這些音軌之間切換的UI控制項。
+   此信息可帮助您为播放准备UI。 例如，如果您知道有两个音轨，则可以包含一个UI控件来在这些音轨之间切换。
 
-1. 呼叫 `MediaPlayer.prepareToPlay` 以開始廣告工作流程。
+1. 调用 `MediaPlayer.prepareToPlay` 以启动广告工作流。
 
-   解析廣告並放置在時間軸上後， `  MediaPlayer ` 轉換為「已準備」狀態。
-1. 呼叫 `MediaPlayer.play` 以開始播放。
-瀏覽器TVSDK現在會在您的媒體播放時包含廣告。
+   解析广告并将其放到时间轴上后， `  MediaPlayer ` 转换为“已准备”状态。
+1. 调用 `MediaPlayer.play` 以开始播放。
+现在，浏览器TVSDK在媒体播放时包含广告。

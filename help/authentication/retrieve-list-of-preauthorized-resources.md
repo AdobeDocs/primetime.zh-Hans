@@ -1,6 +1,6 @@
 ---
-title: 擷取預先授權的資源清單
-description: 擷取預先授權的資源清單
+title: 检索预授权资源的列表
+description: 检索预授权资源的列表
 exl-id: 3821378c-bab5-4dc9-abd7-328df4b60cc3
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,51 +9,51 @@ ht-degree: 0%
 
 ---
 
-# 擷取預先授權的資源清單 {#retrieve-list-of-preauthorized-resources}
+# 检索预授权资源的列表 {#retrieve-list-of-preauthorized-resources}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-## REST API端點 {#clientless-endpoints}
+## REST API端点 {#clientless-endpoints}
 
 &lt;reggie_fqdn>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 &lt;sp_fqdn>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
-## 說明 {#description}
+## 描述 {#description}
 
-要求Adobe Primetime驗證以取得預先授權資源清單。
+请求Adobe Primetime身份验证以获取预授权资源的列表。
 
-有兩組API：一組用於串流應用程式或程式設計人員服務，另一組用於第二熒幕網頁應用程式。 本頁面說明串流應用程式或程式設計人員服務的API。
+有两组API：一组用于流应用程序或程序员服务，另一组用于第二屏幕Web应用程序。 本页介绍了适用于流应用程序或程序员服务的API。
 
 
-| 端點 | 已呼叫  </br>作者： | 輸入   </br>引數 | HTTP  </br>方法 | 回應 | HTTP  </br>回應 |
+| 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/preauthorize | 串流應用程式</br></br>或</br></br>程式設計師服務 | 1.請求者（必要）</br>2.  deviceId （必要）</br>3.  資源清單（必要）</br>4.  device_info/X-Device-Info （必要）</br>5.  _deviceType_</br> 6.  _deviceuser_ （已棄用）</br>7.  _appId_ （已棄用） | GET | 包含個別預先授權決定或錯誤詳細資料的XML或JSON。 請參閱下列範例。 | 200 — 成功</br></br>400 — 錯誤請求</br></br>401 — 未獲授權</br></br>405 — 不允許的方法  </br></br>412 — 先決條件失敗</br></br>500 — 內部伺服器錯誤 |
+| &lt;sp_fqdn>/api/v1/preauthorize | 流应用程序</br></br>或</br></br>程序员服务 | 1.申请人（必填）</br>2.  deviceId（必需）</br>3.  资源列表（必需）</br>4.  device_info/X-Device-Info（必需）</br>5.  _设备类型_</br> 6.  _设备用户_ （已弃用）</br>7.  _appId_ （已弃用） | GET | 包含各个预授权决策或错误详细信息的XML或JSON。 请参阅下面的示例。 | 200 — 成功</br></br>400 — 错误请求</br></br>401 — 未授权</br></br>405 — 不允许使用该方法  </br></br>412 — 前提条件失败</br></br>500 — 内部服务器错误 |
 
 
-| 輸入引數 | 說明 |
+| 输入参数 | 描述 |
 | --- | --- |
-| 請求者 | 此作業有效的程式設計員requestorId。 |
-| deviceId | 裝置ID位元組。 |
-| 資源清單 | 一個字串，包含以逗號分隔的resourceId清單，可識別使用者可存取且可由MVPD授權端點辨識的內容。 |
-| device_info/</br></br>X-Device-Info | 串流裝置資訊。</br></br>**注意**：此引數可以作為URL引數傳遞，但由於此引數潛在的大小以及GETURL的長度限制，它應該在http標頭中作為X-Device-Info傳遞。 </br></br><!--See the full details in [Passing Device and Connection Information](http://tve.helpdocsonline.com/passing-device-information)-->. |
-| _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>如果此引數設定正確，ESM會提供 [依裝置型別劃分](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) 使用Clienless時，以便執行不同型別的分析，例如Roku、AppleTV和Xbox。</br></br>請參閱， [在pass量度中使用無使用者端裝置型別引數的好處&#x200B;](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**：此 `device_info` 會取代此引數。 |
-| _deviceuser_ | 裝置使用者識別碼。 |
-| _appId_ | 應用程式id/名稱。 </br></br>**注意**：device_info會取代此引數。 |
+| 请求者 | 此操作有效的程序员requestorId。 |
+| deviceId | 设备ID字节。 |
+| 资源列表 | 一个字符串，其中包含以逗号分隔的resourceId列表，该resourceId列表标识用户可能可以访问并被MVPD授权端点识别的内容。 |
+| device_info/</br></br>X-Device-Info | 流设备信息。</br></br>**注释**：可以将此device_info作为URL参数传递，但由于此参数可能的大小以及GETURL的长度限制，它应该作为X-Device-Info传递到http标头。 </br></br><!--See the full details in [Passing Device and Connection Information](http://tve.helpdocsonline.com/passing-device-information)-->. |
+| _设备类型_ | 设备类型（例如，Roku、PC）。</br></br>如果此参数设置正确，则ESM提供的量度可以 [按设备类型划分](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) 使用无客户端时，以便执行不同类型的分析，例如Roku、AppleTV和Xbox。</br></br>参见， [在pass量度中使用无客户端设备类型参数的好处&#x200B;](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注释**：和 `device_info` 将替换此参数。 |
+| _设备用户_ | 设备用户标识符。 |
+| _appId_ | 应用程序id/名称。 </br></br>**注释**：device_info将替换此参数。 |
 
 
 
-### 範例回應 {#sample-response}
+### 示例响应 {#sample-response}
 
  
 

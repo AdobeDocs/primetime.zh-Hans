@@ -1,6 +1,6 @@
 ---
-description: 瀏覽器TVSDK提供DRM介面，您可以使用它來播放受不同DRM解決方案（包括FairPlay、PlayReady和Widevine）保護的內容。
-title: DRM介面概觀
+description: 浏览器TVSDK提供了一个DRM界面，您可以使用它来播放受不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
+title: DRM界面概述
 exl-id: aa13f042-4472-4fc3-b7ba-61746b8e024a
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,26 +9,26 @@ ht-degree: 0%
 
 ---
 
-# DRM介面概觀{#drm-interface-overview}
+# DRM界面概述{#drm-interface-overview}
 
-瀏覽器TVSDK提供DRM介面，您可以使用它來播放受不同DRM解決方案（包括FairPlay、PlayReady和Widevine）保護的內容。
+浏览器TVSDK提供了一个DRM界面，您可以使用它来播放受不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
 
 <!--<a id="section_59994F2059B245E996E0776214804A0A"></a>-->
 
 >[!IMPORTANT]
 >
->DRM支援適用於受Microsoft PlayReady （在Windows 8.1和Edge的Internet Explorer上）以及Widevine (在Google Chrome) DRM系統所保護的MPEG-Dash資料流。 DRM支援適用於受FairPlay保護的Safari上的HLS資料流。
+>DRM支持适用于受Microsoft PlayReady（在Windows 8.1和Edge上的Internet Explorer上）和Widevine(在Google Chrome上) DRM系统保护的MPEG-Dash流。 DRM支持适用于受FairPlay保护的Safari上的HLS流。
 
-DRM工作流程的關鍵介面是 `DRMManager`. 對的參照 `DRMManager` 可以透過MediaPlayer例項取得例項：
+DRM工作流的关键界面是 `DRMManager`. 对的引用 `DRMManager` 可通过MediaPlayer实例获取实例：
 
 * `var mediaPlayer = new AdobePSDK.MediaPlayer();`
 * `var drmManager = mediaPlayer.drmManager;`
 
 <!--<a id="section_B7E8AD9A4D4F4BD9BA2A67ABC135D6F9"></a>-->
 
-以下是受DRM保護內容錄放的高階工作流程：
+以下是受DRM保护内容的播放的高级工作流：
 
-1. 若要附加瀏覽器TVSDK在受保護資料流的授權取得程式中將會使用的DRM系統特定資料，請在叫用前進行下列呼叫 `mediaPlayer.replaceCurrentResource`：
+1. 要附加浏览器TVSDK将在受保护流的许可证获取过程中使用的DRM系统特定数据，请在调用之前进行以下调用 `mediaPlayer.replaceCurrentResource`：
 
    ```js
    var protectionData = { 
@@ -46,7 +46,7 @@ DRM工作流程的關鍵介面是 `DRMManager`. 對的參照 `DRMManager` 可以
    drmManager.setProtectionData(protectionData);
    ```
 
-1. 如果相同的內容預期可在不同的瀏覽器中搭配不同的DRM系統使用，則可以為多個DRM系統指定保護資料。
+1. 如果相同的内容预期在不同浏览器中可以与不同的DRM系统一起使用，则可以为多个DRM系统指定保护数据。
 
    ```js
    var protectionData = { 
@@ -91,22 +91,22 @@ DRM工作流程的關鍵介面是 `DRMManager`. 對的參照 `DRMManager` 可以
    drmManager.setProtectionData(protectionData);
    ```
 
-1. 如果未設定保護資料，則會從DRM系統的PSSH方塊中擷取必要資訊（例如授權URL）。
+1. 如果未设置保护数据，则会从DRM系统的PSSH框中检索必要信息（如许可证URL）（如果适用）。
 
    >[!TIP]
    >
-   >指定保護資料會覆寫PSSH方塊中指定的授權URL。
+   >指定保护数据将覆盖PSSH框中指定的许可证URL。
 
-1. 依照預設，DRM許可證的工作階段型別是暫時的，這表示在工作階段關閉後不會儲存許可證。
+1. 默认情况下，DRM许可证的会话类型是临时的，这意味着在会话关闭后不会存储许可证。
 
-   您可以使用API指定工作階段型別，位置在： `DRMManager`.  為了回溯相容性，工作階段型別包括 `temporary`， `persistent-license`， `persistent-usage-record`、和 `persistent`.
+   您可以在以下位置使用API指定会话类型： `DRMManager`.  为了向后兼容，会话类型包括 `temporary`， `persistent-license`， `persistent-usage-record`、和 `persistent`.
 
    ```js
    var drmManager = mediaPlayer.drmManager; 
     drmManager.setEMESessionType(“<YOUR_SESSION_TYPE>”); 
    ```
 
-1. 當 `sessionType` 已使用的是 `persistent-license` 或 `persistent`，可透過叫用傳回DRM授權 `DRMManager.returnLicense`.
+1. 当 `sessionType` 已使用 `persistent-license` 或 `persistent`，可以通过调用 `DRMManager.returnLicense`.
 
    ```js
    var onLicenseReturnFunc = function () { 

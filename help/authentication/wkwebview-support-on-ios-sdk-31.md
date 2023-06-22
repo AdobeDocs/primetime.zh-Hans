@@ -1,6 +1,6 @@
 ---
-title: iOS SDK 3.1+上的WKWebView支援
-description: iOS SDK 3.1+上的WKWebView支援
+title: iOS SDK 3.1+上的WKWebView支持
+description: iOS SDK 3.1+上的WKWebView支持
 exl-id: 90062be0-1a0a-44ae-8d8e-f4d97a92b17a
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,26 +9,26 @@ ht-degree: 0%
 
 ---
 
-# iOS SDK 3.1+上的WKWebView支援 {#wkwebview-support-on-ios-sdk-3.1}
+# iOS SDK 3.1+上的WKWebView支持 {#wkwebview-support-on-ios-sdk-3.1}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
 </br>
 
-**由於Apple在iOS上淘汰UIWebView，我們已更新iOS SDK 3.1並支援WKWebView。**
+**由于Apple在iOS上弃用UIWebView，我们更新了iOS SDK 3.1并支持WKWebView。**
 
-## 相容性 {#compatibility}
+## 兼容性 {#compatibility}
 
-從iOS SDK 3.1版開始，實作者現在可以交換使用WKWebView或UIWebView。 由於Apple已棄用UIWebView，應用程式應移轉至WKWebView，以避免未來iOS版本發生問題。
+从iOS SDK版本3.1开始，实施人员现在可以交替使用WKWebView或UIWebView。 由于Apple已弃用UIWebView，因此应用程序应迁移到WKWebView，以避免未来的iOS版本出现问题。
 
-請注意，移轉僅表示使用WKWebView切換UIWebView類別，無需針對Adobe的AccessEnabler執行任何特定工作。
+请注意，迁移仅意味着使用WKWebView切换UIWebView类，对于Adobe的AccessEnabler，没有具体工作要做。
 
-## 已知問題 {#known-issues}
+## 已知问题 {#known-issues}
 
-Adobe的AccessEnabler使用隱藏的內部UIWebView執行個體來執行»[被動驗證](/help/authentication/sso-passive-authn.md)&quot; （適用於特定MVPD）。 「被動」流程對於需要針對每個請求者ID進行驗證的MVPD很有用，並且此流程使在多個iOS應用程式中使用相同團隊ID以模擬SSO體驗(AdobeSSO)的程式設計師受益。 此功能目前僅供有限數量的MVPD使用。
+Adobe的AccessEnabler使用隐藏的内部UIWebView实例执行&quot;[被动认证](/help/authentication/sso-passive-authn.md)”进行标识。 “被动”流对于需要针对每个请求者ID进行身份验证的MVPD非常有用，并且通过该流，那些在多个iOS应用程序中使用同一团队ID以模拟SSO体验(AdobeSSO)的程序员将从中受益。 此功能当前由有限数量的MVPD使用。
 
-此功能使用的UIWebView行為允許Adobe擷取驗證Cookie，並在「被動」流程中重新執行。 WKWebView引進了更強大的安全性，可防止Adobe擷取登入時設定的Cookie，並使用WKWebView的隱藏執行個體來重播它們。 由於此安全性改善，且考慮到「被動」流程僅對非常特定實作情境中的有限一組MVPD有利（多個應用程式使用相同的團隊ID），Adobe移除了MVPD使用網頁檢視進行驗證的「被動驗證」功能。
+该功能使用了UIWebView的行为，允许Adobe捕获身份验证Cookie并在“被动”流期间重放它们。 WKWebView引入了更强的安全性，可阻止Adobe捕获在登录时设置的Cookie，并使用WKWebView的隐藏实例重放它们。 由于此安全改进，并且考虑到“被动”流仅使非常有限的一组MVPD在非常特定的实施方案（多个应用程序使用相同的团队ID）中受益，Adobe删除了使用Web视图进行身份验证的MVPD的“被动身份验证”功能。
 
-此功能仍適用於設定為使用SFSafariViewController的MVPD，但請注意，在此情況下，使用者將可看到「被動」驗證，因為SFSafariViewController無法以「隱藏」方式使用。
+该功能仍然适用于配置为使用SFSafariViewController的MVPD，但请注意，在这种情况下，“被动”身份验证对用户可见，因为SFSafariViewController不能以“隐藏”方式使用。

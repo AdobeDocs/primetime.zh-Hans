@@ -1,6 +1,6 @@
 ---
-title: 設定授權伺服器資料庫
-description: 設定授權伺服器資料庫
+title: 设置许可证服务器数据库
+description: 设置许可证服务器数据库
 copied-description: true
 exl-id: be6232b4-bf51-486f-9c85-ab6f6ec6d9bd
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,38 +10,38 @@ ht-degree: 0%
 
 ---
 
-# 設定授權伺服器資料庫{#set-up-the-license-server-database}
+# 设置许可证服务器数据库{#set-up-the-license-server-database}
 
-參考實作授權伺服器需要資料庫來支援下列專案：
+参考实施许可证服务器要求数据库支持以下内容：
 
-* 使用者驗證
-* 使用模式示範商業規則
-* 中繼資料轉換
-* 網域支援
+* 用户身份验证
+* 使用模型演示业务规则
+* 元数据转换
+* 域支持
 
-匿名授權贏取不要求資料庫必須執行。
+匿名许可证获取不要求数据库正在运行。
 
 >[!NOTE]
 >
->此程式僅適用於Microsoft Windows。 若為其他作業系統，請參閱作業系統的說明檔案，或參閱MySQL說明檔案。
+>此过程仅适用于Microsoft Windows。 对于其他操作系统，请参阅适用于您的操作系统的文档或参阅MySQL文档。
 
-若要執行授權伺服器，您必須安裝並設定MySQL：
+要运行许可证服务器，您需要安装和配置MySQL：
 
-1. 在DVD上，前往 [!DNL Third Party\MySQL\Installer\5.1] 資料夾並啟動安裝程式。
-1. 完成MySQL安裝。
-1. 選取 **[!UICONTROL Configure MySQL Server Now]** 以啟動設定精靈。
-1. 在第五個畫面之前，請使用預設設定或選取測試的特定設定。
-1. 在第五個畫面中，選取 **[!UICONTROL Online Transaction Processing (OLTP)]** 或 **[!UICONTROL Manual Setting]** 並輸入允許的連線數目上限。
-1. 記下根密碼。
-1. 若要重新安裝MySQL，如果您需要稍後啟動伺服器，請完成下列步驟：
-   1. 刪除 *系統磁碟機：* 資料夾。
+1. 在DVD上，转到 [!DNL Third Party\MySQL\Installer\5.1] 文件夹并启动安装程序。
+1. 完成MySQL安装。
+1. 选择 **[!UICONTROL Configure MySQL Server Now]** 以启动配置向导。
+1. 在进入第五个屏幕之前，请使用默认设置或选择特定设置进行测试。
+1. 在第五个屏幕上，选择 **[!UICONTROL Online Transaction Processing (OLTP)]** 或 **[!UICONTROL Manual Setting]** 并输入允许的最大连接数。
+1. 记下root密码。
+1. 要重新安装MySQL，如果需要稍后启动服务器，请完成以下步骤：
+   1. 删除 *系统驱动器：* 文件夹。
 
-      此資料夾位於 [!DNL \Documents and Settings\All Users\Application Data\MySQL].
-   1. 刪除舊的MySQL安裝資料夾。
+      此文件夹位于 [!DNL \Documents and Settings\All Users\Application Data\MySQL].
+   1. 删除旧的MySQL安装文件夹。
 
-      例如， *系統磁碟機：*，此區域位於 [!DNL \Program Files\MySQL\MySQL Server 5.1].
-1. 若要安裝MySQL JDBC驅動程式5.1.7，請複製 [!DNL mysql-connector-java-5.1.7-bin.jar] 中的檔案 [!DNL Third Party\MySQL\Installer\5.1] DVD上的資料夾 [!DNL ...\Tomcat6.0\lib] 目錄。
+      例如， *系统驱动器：*，它位于 [!DNL \Program Files\MySQL\MySQL Server 5.1].
+1. 要安装MySQL JDBC驱动程序5.1.7，请复制 [!DNL mysql-connector-java-5.1.7-bin.jar] 中的文件 [!DNL Third Party\MySQL\Installer\5.1] 在DVD上的文件夹 [!DNL ...\Tomcat6.0\lib] 目录。
 
    >[!NOTE]
    >
-   >MySQL JDBC驅動程式5.1.7可搭配Tomcat 6.0使用。不再支援舊版Tomcat。
+   >MySQL JDBC驱动程序5.1.7适用于Tomcat 6.0。不再支持旧版本的Tomcat。

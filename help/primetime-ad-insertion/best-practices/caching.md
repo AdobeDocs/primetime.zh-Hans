@@ -1,6 +1,6 @@
 ---
-title: 快取
-description: 快取
+title: 缓存
+description: 缓存
 copied-description: true
 exl-id: c12c2345-db55-468a-b4b5-5a9e1364a46d
 source-git-commit: 3e63c187f12d1bff53370bbcde4d6a77f58f3b4f
@@ -10,16 +10,16 @@ ht-degree: 0%
 
 ---
 
-# http快取 {#caching}
+# HTTP缓存 {#caching}
 
-擷取廣告創意和內容時，PrimetimeAd Insertion預設會遵循HTTP快取控制標頭。  這可大幅減少PrimetimeAd Insertion跨所有使用者端向CDN發出的網路要求數量。  對於快取，Adobe會建議進行下列設定，並且需要傳送HTTP標頭 `max-age` 從您的CDN.  請聯絡您的CDN代表，在您的視訊串流和廣告串流上啟用這些標頭。
+默认情况下，PrimetimeAd Insertion在获取广告创意以及内容时遵循HTTP缓存控制标头。  这可以显着减少PrimetimeAd Insertion跨所有客户端向CDN发出的网络请求量。  对于缓存，Adobe建议进行以下设置并涉及发送HTTP标头 `max-age` 从您的CDN.  请联系您的CDN代表，以在您的视频流和广告流上启用这些标头。
 
-## 適用於即時/線性內容 {#caching-live-linear-content}
+## 对于实时/线性内容 {#caching-live-linear-content}
 
-* 主要資訊清單：24小時，或Cache-Control： max-age=86400
-* 媒體資訊清單： 1秒，或Cache-Control： max-age=1
+* 主控清单：24小时，或Cache-Control： max-age=86400
+* 媒体清单： 1秒，或Cache-Control： max-age=1
 
-## 針對VOD內容 {#caching-vod-content}
+## 对于VOD内容 {#caching-vod-content}
 
-* 主要資訊清單：24小時，或Cache-Control： max-age=86400
-* 媒體資訊清單： 24小時或Cache-Control： max-age=86400
+* 主控清单：24小时，或Cache-Control： max-age=86400
+* 媒体清单：24小时，或Cache-Control： max-age=86400

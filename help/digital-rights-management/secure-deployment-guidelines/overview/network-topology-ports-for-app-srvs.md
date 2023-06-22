@@ -1,6 +1,6 @@
 ---
-description: 您可以將Adobe Primetime DRM授權伺服器設定為使用任何網路連線埠。
-title: 應用程式伺服器的連線埠
+description: 您可以将Adobe Primetime DRM许可证服务器配置为使用任何网络端口。
+title: 应用程序服务器的端口
 exl-id: a482c54a-5f26-43c0-8fd7-c517ab296924
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,8 +9,8 @@ ht-degree: 0%
 
 ---
 
-# 應用程式伺服器的連線埠{#ports-for-application-servers}
+# 应用程序服务器的端口{#ports-for-application-servers}
 
-您可以將Adobe Primetime DRM授權伺服器設定為使用任何網路連線埠。
+您可以将Adobe Primetime DRM许可证服务器配置为使用任何网络端口。
 
-這些連線埠必須在內部防火牆上啟用或停用，具體取決於您要允許連線到執行Primetime DRM的應用程式伺服器的使用者端使用的網路功能。
+必须在内部防火墙上启用或禁用这些端口，具体取决于您要允许连接到运行Primetime DRM的应用程序服务器的客户端使用的网络功能。

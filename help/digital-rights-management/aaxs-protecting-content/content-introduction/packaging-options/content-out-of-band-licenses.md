@@ -1,6 +1,6 @@
 ---
-title: 頻外授權
-description: 頻外授權
+title: 带外许可证
+description: 带外许可证
 copied-description: true
 exl-id: 90206bd8-d3a4-4b8a-ab9b-83adff4c5d09
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,8 +10,8 @@ ht-degree: 0%
 
 ---
 
-# 頻外授權 {#out-of-band-licenses}
+# 带外许可证 {#out-of-band-licenses}
 
-使用AdobeAccess 3.0 Professional，可以實作客戶在頻外取得預先產生授權的工作流程，而不需要部署授權伺服器。 若要支援此工作流程，封裝時應指定表示沒有可用的授權伺服器選項。 這將阻止Adobe存取使用者端嘗試從授權伺服器要求此內容的授權。
+使用AdobeAccess 3.0 Professional，可以实施一个工作流程，其中客户端在带外获取预生成的许可证，从而无需部署许可证服务器。 要支持此工作流，应在打包时指定指示没有许可证服务器可用的选项。 这将阻止Adobe访问客户端尝试从许可证服务器请求此内容的许可证。
 
-指出沒有可用的授權伺服器的內容，只能在Adobe存取使用者端3.0版及更高版本上播放。 較舊的使用者端需要升級才能播放此內容。
+指示无许可证服务器可用的内容，只能在Adobe访问客户端3.0版及更高版本上播放。 较旧的客户端需要升级才能播放此内容。

@@ -1,6 +1,6 @@
 ---
-title: 安全透過HTTPS載入廣告
-description: 安全透過HTTPS載入廣告
+title: 通过HTTPS的安全广告加载
+description: 通过HTTPS的安全广告加载
 copied-description: true
 exl-id: d43418e9-631b-4344-a5b3-0a6154a325d4
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,15 +10,15 @@ ht-degree: 0%
 
 ---
 
-# 安全透過HTTPS載入廣告{#secure-ad-loading-over-https}
+# 通过HTTPS的安全广告加载{#secure-ad-loading-over-https}
 
-即使播放器託管於http，Adobe Primetime仍可透過https要求協力廠商廣告伺服器。 只有這些廣告伺服器呼叫會升級為使用者端在稽核廣告解析程式階段搜尋的https。
+即使播放器托管在http上，Adobe Primetime也可以通过https请求第三方广告服务器。 在审核广告解析程序阶段，只有这些广告服务器调用会升级到客户端查找的https。
 
 >[!NOTE]
 >
->Flash不支援此功能。
+>Flash不支持此功能。
 
-使用以下專案來啟用安全廣告載入。 預設不會啟用。
+使用以下内容启用安全广告加载。 默认情况下不启用该功能。
 
 ```
 var auditudeSettings = new AdobePSDK.AuditudeSettings(); 

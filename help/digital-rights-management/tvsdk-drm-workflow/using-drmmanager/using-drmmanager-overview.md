@@ -1,6 +1,6 @@
 ---
-title: 使用DRMManager類別概觀
-description: 使用DRMManager類別概觀
+title: 使用DRMManager类概述
+description: 使用DRMManager类概述
 copied-description: true
 exl-id: 941a69fb-3085-45d6-9176-08ebb93cada4
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,28 +10,28 @@ ht-degree: 0%
 
 ---
 
-# 使用DRMManager類別 {#using-the-drmmanager-class}
+# 使用DRMManager类 {#using-the-drmmanager-class}
 
-使用 `DRMManager` 類別以管理應用程式中的授權和Primetime DRM授權伺服器工作階段。
+使用 `DRMManager` 类管理应用程序中的许可证和Primetime DRM许可证服务器会话。
 
-**授權管理**
+**许可证管理**
 
-每當裝置播放受保護的內容時，執行階段就會取得並快取檢視內容所需的授權。 如果應用程式將內容儲存在本機，且授權允許離線播放，則使用者無需網路連線即可檢視應用程式中的內容。 使用 `DRMManager`，您可以預先快取授權。 應用程式不需要取得檢視內容所需的授權。 例如，您的應用程式可以下載媒體檔案，然後在使用者仍然線上上時取得授權。
+每当设备播放受保护的内容时，运行时都会获取并缓存查看内容所需的许可证。 如果应用程序将内容保存在本地，并且许可证允许离线播放，则用户无需网络连接即可查看应用程序中的内容。 使用 `DRMManager`，您可以预缓存许可证。 应用程序无需获取查看内容所需的许可证。 例如，您的应用程序可以下载媒体文件，然后在用户仍处于在线状态时获取许可证。
 
-若要預先載入授權，請使用 `DRMContentData` 物件。 此 `DRMContentData` 物件包含Primetime DRM許可證伺服器的URL，可提供許可證並描述是否需要使用者驗證。 有了這些資訊，您可以呼叫 `DRMManager` `loadVoucher()` 取得和快取授權的方法。 如需預先載入授權的工作流程，請參閱以下章節： *預先載入離線播放的授權*.
+要预载许可证，请使用 `DRMContentData` 对象。 此 `DRMContentData` 对象包含可以提供许可证的Primetime DRM许可证服务器的URL，并描述是否需要用户身份验证。 有了这些信息，您可以调用 `DRMManager` `loadVoucher()` 获取和缓存许可证的方法。 有关预加载许可证的工作流的详细说明，请参阅 *为离线播放预先加载许可证*.
 
-**工作階段管理**
+**会话管理**
 
-您也可以使用 `DRMManager` 驗證使用者對Primetime DRM授權伺服器的身份並管理持續工作階段。 呼叫 `DRMManager` `authenticate()` 與Primetime DRM授權伺服器建立工作階段的方法。 成功完成驗證時， `DRMManager` 傳送 `DRMAuthenticationCompleteEvent` 物件。 此物件包含工作階段權杖。 您可以儲存此Token以建立未來的工作階段，讓使用者不必提供其帳戶認證。 將權杖傳遞至 `setAuthenticationToken()` 建立新的已驗證工作階段的方法。 （產生權杖的伺服器的設定會決定權杖到期日和其他屬性）。
+您还可以使用 `DRMManager` 验证用户对Primetime DRM许可证服务器的身份并管理持续会话。 调用 `DRMManager` `authenticate()` 建立与Primetime DRM许可证服务器的会话的方法。 成功完成身份验证后， `DRMManager` 调度 `DRMAuthenticationCompleteEvent` 对象。 此对象包含一个会话令牌。 您可以保存此令牌以建立未来的会话，这样用户就不必提供其帐户凭据。 将令牌传递到 `setAuthenticationToken()` 用于建立新的经过身份验证的会话的方法。 （生成令牌的服务器的设置决定令牌过期时间和其他属性）。
 
-## 處理DRMStatus事件 {#handling-drmstatus-events}
+## 处理DRMStatus事件 {#handling-drmstatus-events}
 
-此 `DRMManager` 傳送 `DRMStatusEvent` 呼叫後的物件 `loadVoucher()` 方法成功完成。 如果取得授權，則事件物件的detail屬性的值如下： `DRM.voucherObtained`，而voucher屬性包含 `DRMVoucher` 物件。 如果未取得授權，則detail屬性仍有值： `DRM.voucherObtained`；不過，憑單屬性為null。 例如，如果您使用 `LoadVoucherSetting` 之 `localOnly` 而且沒有本機快取的授權。 如果 `loadVoucher()` 呼叫未成功完成，可能是因為驗證或通訊錯誤，然後 `DRMManager` 傳送 `DRMErrorEvent` 或 `DRMAuthenticationErrorEvent` 物件。
+此 `DRMManager` 调度 `DRMStatusEvent` 调用后的对象 `loadVoucher()` 方法成功完成。 如果获得了许可证，则事件对象的detail属性的值为： `DRM.voucherObtained`，并且优惠券属性包含 `DRMVoucher` 对象。 如果未获得许可证，则detail属性仍具有值： `DRM.voucherObtained`；但是， voucher属性为空。 例如，如果您使用 `LoadVoucherSetting` 之 `localOnly` 并且没有本地缓存的许可证。 如果 `loadVoucher()` 调用未成功完成，可能是由于身份验证或通信错误，然后 `DRMManager` 调度 `DRMErrorEvent` 或 `DRMAuthenticationErrorEvent` 对象。
 
-## 處理DRMAuthenticationComplete事件{#handling-drmauthenticationcomplete-events}
+## 处理DRMAuthenticationComplete事件{#handling-drmauthenticationcomplete-events}
 
-此 `DRMManager` 傳送 `DRMAuthenticationCompleteEvent` 物件（當透過呼叫成功驗證使用者時） `authenticate()` 方法。 此 `DRMAuthenticationCompleteEvent` 物件包含可重複使用的權杖，可用於跨應用程式工作階段儲存使用者驗證。 將此權杖傳遞至 `DRMManager` `setAuthenticationToken()` 重新建立工作階段的方法。 (權杖建立者會設定權杖屬性，例如到期。 Adobe未提供用於檢查Token屬性的API。)
+此 `DRMManager` 调度 `DRMAuthenticationCompleteEvent` 对象。 `authenticate()` 方法。 此 `DRMAuthenticationCompleteEvent` 对象包含一个可重复使用的令牌，该令牌可用于跨应用程序会话保留用户身份验证。 将此令牌传递到 `DRMManager` `setAuthenticationToken()` 重新建立会话的方法。 (令牌创建者设置令牌属性，例如过期。 Adobe不提供用于检查令牌属性的API。)
 
-## 處理DRMAuthenticationError事件{#handling-drmauthenticationerror-events}
+## 处理DRMAuthenticationError事件{#handling-drmauthenticationerror-events}
 
-此 `DRMManager` 傳送 `DRMAuthenticationErrorEvent` 當無法透過對的呼叫成功驗證使用者時的物件 `authenticate()` 或 `setAuthenticationToken()` 方法。
+此 `DRMManager` 调度 `DRMAuthenticationErrorEvent` 对象。 `authenticate()` 或 `setAuthenticationToken()` 方法。

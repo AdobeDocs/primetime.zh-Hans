@@ -1,6 +1,6 @@
 ---
-title: 建立區段
-description: 如何在帳戶IQ中建立區段。
+title: 生成区段
+description: 如何在帐户IQ中构建区段。
 exl-id: 93b7fc6a-e15a-441a-aaa1-2d6d7aed6e0b
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,9 +9,9 @@ ht-degree: 0%
 
 ---
 
-# 在帳戶IQ中建立區段 {#build-segment}
+# 在帐户IQ中生成区段 {#build-segment}
 
-若要建置新區段以供分析：
+要构建新区段以供分析，请执行以下操作：
 
-1. 選取 **建立新區段** 選項於 **區段** 頁面。
-1. 在中新增區段的名稱 **區段名稱**.
+1. 选择 **创建新区段** 选项于 **区段** 页面。
+1. 在中为区段添加名称 **区段名称**.

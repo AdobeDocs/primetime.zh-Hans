@@ -1,6 +1,6 @@
 ---
-description: TVSDK支援隨附橫幅廣告，這是線性廣告隨附的廣告，通常線上性廣告結束後仍會留在頁面上。 您的應用程式負責顯示隨線性廣告提供的隨附橫幅。
-title: 隨附橫幅廣告
+description: TVSDK支持随附横幅广告，这些广告是线性广告伴随的广告，通常在线性广告结束后保留在页面上。 您的应用程序负责显示随线性广告一起提供的随附横幅。
+title: 随附横幅广告
 exl-id: c10a38ec-acbb-4e84-aff2-c93c9b1cec81
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,108 +9,108 @@ ht-degree: 0%
 
 ---
 
-# 隨附橫幅廣告 {#companion-banner-ads}
+# 随附横幅广告 {#companion-banner-ads}
 
-TVSDK支援隨附橫幅廣告，這是線性廣告隨附的廣告，通常線上性廣告結束後仍會留在頁面上。 您的應用程式負責顯示隨線性廣告提供的隨附橫幅。
+TVSDK支持随附横幅广告，这些广告是线性广告伴随的广告，通常在线性广告结束后保留在页面上。 您的应用程序负责显示随线性广告一起提供的随附横幅。
 
-顯示隨附廣告時，請遵循下列建議：
+显示伴随广告时，请遵循以下建议：
 
-* 嘗試儘可能多地呈現視訊廣告的隨附橫幅廣告，以符合您的播放器版面配置。
-* 只有在您的位置完全符合其指定高度和寬度時，才會顯示隨附橫幅。
+* 尝试在播放器的布局中尽可能多地展示视频广告的伴随横幅广告。
+* 仅当您的位置与其指定的高度和宽度完全匹配时，才会显示随附横幅。
 
    >[!TIP]
    >
-   >請勿調整橫幅大小。
+   >不要调整横幅的大小。
 
-* 在廣告開始後儘快提供隨附橫幅。
-* 請勿以隨附橫幅覆蓋主要廣告/視訊容器。
-* 在廣告結束後繼續顯示隨附橫幅。
+* 在广告开始后尽快提供随附横幅。
+* 不要用随附横幅覆盖主广告/视频容器。
+* 在广告结束后继续显示随附横幅。
 
-   標準是顯示每個隨附橫幅，直到您有此橫幅的替代橫幅為止。
+   标准是显示每个随附横幅，直到您有此横幅的替代横幅为止。
 
-## 隨附橫幅資料 {#companion-banner-data}
+## 随附横幅数据 {#companion-banner-data}
 
-AdBannerAsset的內容會說明隨附橫幅。
+AdBannerAsset的内容描述随附横幅。
 
 <!--<a id="section_D730B4FD6FD749E9860B6A07FC110552"></a>-->
 
-此 `AdPlaybackEvent.AD_STARTED` 事件傳回 `Ad` 包含 `companionAssets` 屬性( `Vector.<AdAsset>`)。
-每個 `AdAsset` 提供有關顯示資產的資訊。
+此 `AdPlaybackEvent.AD_STARTED` 事件返回 `Ad` 包含 `companionAssets` 属性( `Vector.<AdAsset>`)。
+每个 `AdAsset` 提供了有关显示资产的信息。
 
 <table id="table_760C885E2DCA4BE983CC57FDA7BD5B14"> 
  <thead> 
   <tr> 
-   <th colname="col1" class="entry"> 可用資訊 </th> 
-   <th colname="col2" class="entry"> 說明 </th> 
+   <th colname="col1" class="entry"> 可用信息 </th> 
+   <th colname="col2" class="entry"> 描述 </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
-   <td colname="col1"> 寬度 </td> 
-   <td colname="col2"> 隨附橫幅的寬度（畫素）。 </td> 
+   <td colname="col1"> 宽度 </td> 
+   <td colname="col2"> 随附横幅的宽度（以像素为单位）。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 高度 </td> 
-   <td colname="col2"> 隨附橫幅的高度（畫素）。 </td> 
+   <td colname="col2"> 随附横幅的高度（以像素为单位）。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 資源型別 </td> 
-   <td colname="col2">此隨附橫幅的資源型別： 
+   <td colname="col1"> 资源类型 </td> 
+   <td colname="col2">此随附横幅的资源类型： 
     <ul id="ul_A067787FE49E4B6095BE0AC1D447DBB3"> 
-     <li id="li_02B7224C67004095B3F6E50FD21E507E">html：資料採用HTML程式碼。 </li> 
-     <li id="li_5F37E14472424F808C6094F42009E676">iframe：資料是iframe URL (src)。 </li> 
+     <li id="li_02B7224C67004095B3F6E50FD21E507E">html：数据采用HTML代码。 </li> 
+     <li id="li_5F37E14472424F808C6094F42009E676">iframe：数据是iframe URL (src)。 </li> 
     </ul> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 橫幅資料 </td> 
-   <td colname="col2"> 指定的型別資料 <span class="codeph"> resourceType</span> 以取得此隨附橫幅。 </td> 
+   <td colname="col1"> 横幅数据 </td> 
+   <td colname="col2"> 由指定的类型的数据 <span class="codeph"> resourceType</span> 为这个随附横幅准备的。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 靜態URL </td> 
-   <td colname="col2"> <p>有時候，隨附橫幅也會有一個staticURL，它是影像或的直接網址。 <span class="filepath"> .swf</span> （flash橫幅）。 </p> <p>如果您不想要使用html或iframe，可以使用影像或swf的直接URL來顯示Flash舞台中的橫幅。 在此情況下，您可以使用staticURL來顯示橫幅。 </p> <p>重要：您必須檢查靜態URL是否為有效的字串，因為此屬性可能並不一定都可用。 </p> </td> 
+   <td colname="col1"> 静态URL </td> 
+   <td colname="col2"> <p>有时，随附横幅还包含一个staticURL，它是到图像或的直接URL <span class="filepath"> .swf</span> (flash banner)。 </p> <p>如果不想使用html或iframe，则可以使用图像的直接URL或swf来显示Flash舞台中的横幅。 在这种情况下，您可以使用staticURL显示横幅。 </p> <p>重要信息：您必须检查静态URL是否为有效字符串，因为此属性可能并非始终可用。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-## 顯示橫幅廣告 {#display-banner-ads}
+## 显示横幅广告 {#display-banner-ads}
 
-若要顯示橫幅廣告，您必須建立橫幅例項，並允許TVSDK接聽與廣告相關的事件。
+要显示横幅广告，您需要创建横幅实例并允许TVSDK侦听与广告相关的事件。
 
-TVSDK提供透過與線性廣告相關聯的隨附橫幅廣告清單 `AdPlaybackEvent.AD_STARTED` 事件事件。
+TVSDK提供了通过关联线性广告的随附横幅广告列表 `AdPlaybackEvent.AD_STARTED` 事件事件。
 
-資訊清單可透過以下方式指定隨附橫幅廣告：
+清单可通过以下方式指定随附横幅广告：
 
 * HTML片段
-* iFrame頁面的URL
-* 靜態影像或AdobeFlashSWF檔案的URL
+* iFrame页面的URL
+* 静态图像或AdobeFlashSWF文件的URL
 
-對於每個隨附廣告，TVSDK會指出您的應用程式可用的型別。
+对于每个伴随广告，TVSDK会指示您的应用程序可用的类型。
 
-新增監聽器 `AdPlaybackEvent.AD_STARTED` 具有以下動作的事件：
+为以下对象添加监听程序： `AdPlaybackEvent.AD_STARTED` 事件具有以下行为：
 
-1. 清除橫幅例項中的現有廣告。
+1. 清除横幅实例中的现有广告。
 
-1. 從取得隨附廣告清單 `Ad.companionAssets`.
+1. 从获取伴随广告列表 `Ad.companionAssets`.
 
-1. 如果隨附廣告清單不是空的，請在清單上反複檢視橫幅例項。
+1. 如果伴随广告列表不为空，则对横幅实例的列表进行迭代。
 
-   每個橫幅例項( `AdBannerAsset`)包含寬度、高度、資源型別（html、iframe或靜態）等資訊，以及顯示隨附橫幅所需的資料。
+   每个横幅实例( `AdBannerAsset`)包含宽度、高度、资源类型（html、iframe或静态）等信息，以及显示随附横幅所需的数据。
 
-1. 如果視訊廣告沒有隨附廣告，隨附資產清單則不包含該視訊廣告的資料。
+1. 如果视频广告没有使用它预订的伴随广告，则伴随资产列表不包含该视频广告的数据。
 
-   若要顯示獨立顯示廣告，請在指令碼中新增邏輯，以在適當的橫幅例項中執行一般DFP (DoubleClick for Publishers)顯示廣告標籤。
+   要显示独立显示广告，请将逻辑添加到脚本中，以在相应的横幅实例中运行常规DFP（发布者的DoubleClick）显示广告标记。
 
-1. 使用將橫幅資訊傳送至頁面上的函式（通常是JavaScript） `ExternalInterface`，會在適當的位置顯示橫幅。
+1. 使用将横幅信息发送到页面上的函数（通常是JavaScript） `ExternalInterface`，会在适当的位置显示横幅。
 
-   這通常是 `div`，而您的函式會使用 `div ID` 以顯示橫幅。 例如：
+   这通常是 `div`，而您的函数会使用 `div ID` 以显示横幅。 例如：
 
-   新增事件接聽程式：
+   添加事件侦听器：
 
    ```js
    _player.addEventListener(AdobePSDK.PSDKEventType.AD_STARTED, onAdStarted);
    ```
 
-   實作接聽程式處理常式：
+   实施侦听器处理程序：
 
    ```js
    private function onAdStarted(event:AdPlaybackEvent):void { 
@@ -129,7 +129,7 @@ TVSDK提供透過與線性廣告相關聯的隨附橫幅廣告清單 `AdPlayback
    }
    ```
 
-   處理顯示的JavaScript範例：
+   用于处理显示的JavaScript示例：
 
    ```js
    function addBanner(resourceType, width, height, data) { 

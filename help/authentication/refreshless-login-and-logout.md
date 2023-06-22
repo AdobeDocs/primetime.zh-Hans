@@ -1,6 +1,6 @@
 ---
-title: 不需重新整理的登入和登出
-description: 不需重新整理的登入和登出
+title: 无刷新登录和注销
+description: 无刷新登录和注销
 exl-id: 3ce8dfec-279a-4d10-93b4-1fbb18276543
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,75 +9,75 @@ ht-degree: 0%
 
 ---
 
-# 不需重新整理的登入和登出 {#tefresh-less-login-and-logout}
+# 无刷新登录和注销 {#tefresh-less-login-and-logout}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-## 概觀 {#overview}
+## 概述 {#overview}
 
-針對Web應用程式，您必須考慮驗證和登出使用者的某些不同可能情況。  MVPD要求使用者登入MVPD的網頁以進行驗證，並且會涉及到以下其他因素：
+对于Web应用程序，您必须考虑一些身份验证和注销用户的不同可能方案。  MVPD要求用户登录MVPD的网页进行身份验证，同时还会涉及以下其他因素：
 
-- 有些MVPD需要從您的網站完全重新導向至其登入頁面
-- 有些MVPD會要求您在網站上開啟iFrame，以顯示MVPD的登入頁面
-- 有些瀏覽器無法妥善處理iFrame案例，因此對於這些瀏覽器，更好的選擇是使用快顯視窗而非iFrame
+- 某些MVPD要求从您的站点完全重定向到其登录页面
+- 某些MVPD要求您在网站上打开iFrame以显示MVPD的登录页面
+- 某些浏览器无法很好地处理iFrame场景，因此对于这些浏览器，更好的替代方法是使用弹出窗口而不是iFrame
 
-在Adobe Primetime 2.7驗證之前，所有這些驗證使用者的案例都會涉及程式設計師頁面的完整頁面重新整理。對於2.7和後續版本，Adobe Primetime驗證團隊改善了這些流程，讓使用者不必在登入和登出期間在您的應用程式上體驗頁面重新整理。  
+在Adobe Primetime 2.7之前，所有这些用于验证用户的场景都涉及到程序员页面的完整页面刷新。对于2.7及后续版本，Adobe Primetime身份验证团队改进了这些流程，使用户不必在登录和注销期间在应用程序上经历页面刷新。  
 
 
-## 詳細說明 {#detailed_description}
+## 详细说明 {#detailed_description}
 
-讓我們從原始驗證和登出流程的摘要開始，然後接著改進驗證和登出流程。 請注意，前四個區段會處理一般MVPD （非TempPass），而最後一個區段則說明需要套用至TempPass的特殊實作：
+让我们从最初的身份验证和注销流程总结开始，然后使用改进的身份验证和注销流程进行总结。 请注意，前四个部分解决常规MVPD（非TempPass），而最后一部分描述需要应用于TempPass的特殊实施：
 
-- [原始驗證流程](#orig_authn)
-- [原始登出流程](#orig_logout)
-- [已改善驗證流程](#improved_authn)
-- [已改善登出流程](#improved_logout)
-- [TempPass流程](#improved_temppass)
-
-</br>
-
-## 原始驗證/登出流程 {#orig_authn}
-
-**驗證**
-
-Adobe Primetime驗證Web使用者端有兩種驗證方式，具體取決於MVPD的需求：
-
-1. **整頁重新導向 —** 使用者從程式設計師網站上的MVPD選擇器選取提供者（設定了全頁重新導向）後， `setSelectedProvider(<mvpd>)` 會在AccessEnabler上叫用，使用者會被重新導向至MVPD的登入頁面。 使用者提供有效認證後，系統會將他重新導向回程式設計師的網站。 AccessEnabler已初始化，而且驗證權杖是從Adobe Primetime驗證期間擷取 `setRequestor`.
-1. **iFrame/彈出式視窗 —** 使用者選取提供者（以iFrame設定）後， `setSelectedProvider(<mvpd>)` 會在AccessEnabler上叫用。 此動作會觸發 `createIFrame(width, height)` 回呼，通知程式設計師以名稱建立iFrame （或快顯視窗，視瀏覽器/偏好設定而定） `"mvpdframe"` 以及提供的維度。 建立iFrame/彈出式視窗後，AccessEnabler會在iFrame/彈出式視窗中載入MVPD的登入頁面。 使用者提供有效的認證，而iFrame/快顯視窗會重新導向至Adobe Primetime驗證，而後者會傳回JS程式碼片段，進而關閉iFrame/快顯視窗並重新載入上層頁面（程式設計人員網站）。 與流程1類似，驗證權杖是在以下期間擷取： `setRequestor`. 
-
-此 `displayProviderDialog` 回呼(觸發者： `getAuthentication`/`getAuthorization`)會傳回MVPD清單及其適當的設定。 此 `iFrameRequired` MVPD的屬性可讓程式設計師知道它應該啟動流程1還是流程2。 請注意，程式設計師僅需對流程2採取額外動作（建立iFrame/快顯視窗）。
-
-**取消驗證**
-
-此外，在某些情況下，使用者會關閉登入頁面，以明確取消驗證流程。 以下是案例和給程式設計人員的建議解決方案：
-
-1. **整頁重新導向 —** 登入頁面關閉時，使用者需要再次導覽至程式設計師的網站，並從頭開始啟動整個流程。 在此案例中，程式設計人員不需要執行任何明確的動作。
-1. **iFrame -** 建議程式設計師將iFrame託管於 `div` （或類似的UI元件）附加了關閉按鈕。 當使用者按下「關閉」按鈕時，程式設計師會毀壞iFrame及相關聯的UI並執行 `setSelectedProvider(null)`. 此呼叫可讓AccessEnabler清除其內部狀態，並讓使用者啟動後續驗證流程。 `setAuthenticationStatus` 和 `sendTrackingData(AUTHENTICATION_DETECTION...)` 將會觸發，以指出失敗的驗證流程（兩者皆開啟） `getAuthentication` 和 `getAuthorization`)。
-1. **快顯視窗 —** 有些瀏覽器無法準確偵測視窗關閉事件，因此這裡需要採取不同的方法（與上述iFrame流程相反）。 Adobe建議程式設計師初始化計時器，定期驗證登入快顯視窗是否存在。 如果視窗不存在，程式設計師可以確定使用者手動取消登入流程，並且程式設計師可以繼續呼叫 `setSelectedProvider(null)`. 觸發的回呼與上面流程2中的相同。
+- [原始身份验证流程](#orig_authn)
+- [原始注销流程](#orig_logout)
+- [身份验证流程得到改进](#improved_authn)
+- [改进的注销流程](#improved_logout)
+- [TempPass流](#improved_temppass)
 
 </br>
 
-## 原始登出流程 {#orig_logout}
+## 原始身份验证/注销流程 {#orig_authn}
 
-AccessEnabler的登出API會清除程式庫的本機狀態，並在目前的索引標籤/視窗中載入MVPD的登出URL。 瀏覽器會導覽至MVPD的登出端點，在程式完成後，會將使用者重新導向回程式設計人員的網站。 使用者唯一需要執行的動作是按下「登出」按鈕/連結並起始流程；MVPD的登出端點上不需要使用者互動。
+**身份验证**
 
-**具有頁面重新整理的原始驗證/登出流程**
+Adobe Primetime身份验证Web客户端有两种身份验证方式，具体取决于MVPD的要求：
+
+1. **整页重定向 —** 用户从程序员网站上的MVPD选取器中选择提供程序（配置了全页重定向）后， `setSelectedProvider(<mvpd>)` 将在AccessEnabler上调用，用户将被重定向到MVPD的登录页面。 用户提供有效凭据后，他将被重定向回程序员网站。 初始化AccessEnabler，并在以下期间从Adobe Primetime身份验证中检索身份验证令牌： `setRequestor`.
+1. **iFrame/弹出窗口 —** 用户选择提供程序（使用iFrame配置）后， `setSelectedProvider(<mvpd>)` 将在AccessEnabler上调用。 此操作将触发 `createIFrame(width, height)` callback，通知程序员使用名称创建iFrame（或弹出窗口，具体取决于浏览器/首选项） `"mvpdframe"` 以及提供的尺寸。 创建iFrame/弹出窗口后，AccessEnabler会在iFrame/弹出窗口中加载MVPD的登录页面。 用户提供有效凭据，iFrame/弹出窗口被重定向到Adobe Primetime身份验证，该身份验证返回一个JS代码片段，该代码片段关闭iFrame/弹出窗口并重新加载父页面（程序员网站）。 与流程1类似，验证令牌是在以下期间检索的： `setRequestor`. 
+
+此 `displayProviderDialog` callback(触发方式 `getAuthentication`/`getAuthorization`)返回MVPD列表及其相应的设置。 此 `iFrameRequired` MVPD的属性允许程序员知道它应激活流1还是流2。 请注意，程序员仅需要对流程2采取额外操作（创建iFrame/弹出窗口）。
+
+**取消身份验证**
+
+还有一种情况，用户通过关闭登录页面来显式取消身份验证流程。 以下是面向程序员的场景和建议的解决方案：
+
+1. **全页重定向 —** 当登录页面关闭时，用户将需要再次导航到程序员网站，并从头启动整个流程。 在此场景中，程序员无需执行任何显式操作。
+1. **iFrame -** 建议程序员将iFrame托管在 `div` （或类似的UI组件）中附加了关闭按钮。 当用户按下“关闭”按钮时，程序员将销毁iFrame以及关联的UI，并执行 `setSelectedProvider(null)`. 此调用允许AccessEnabler清除其内部状态，并允许用户启动后续身份验证流程。 `setAuthenticationStatus` 和 `sendTrackingData(AUTHENTICATION_DETECTION...)` 将被触发以指示失败的身份验证流程(两者均在 `getAuthentication` 和 `getAuthorization`)。
+1. **弹出窗口 —** 某些浏览器无法准确检测窗口关闭事件，因此需要在此处采取不同的方法（与上面的iFrame流程相反）。 Adobe建议程序员初始化一个计时器，定期验证登录弹出窗口是否存在。 如果窗口不存在，程序员可以确保用户手动取消登录流程，并且程序员可以继续调用 `setSelectedProvider(null)`. 触发的回调与上面流程2中的相同。
+
+</br>
+
+## 原始注销流程 {#orig_logout}
+
+AccessEnabler的注销API会清除库的本地状态，并在当前选项卡/窗口中加载MVPD的注销URL。 浏览器导航到MVPD的注销端点，并在该过程完成后，用户将被重定向回程序员网站。 代表用户只需按下“注销”按钮/链接并启动流即可；无需在MVPD的注销端点上进行用户交互。
+
+**页面刷新时的原始身份验证/注销流程**
 
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/AE_with_refresh_web.png)
 
 </br>
 
-## 改善（不需重新整理）驗證 {#improved_authn}
+## 改进了（无刷新）身份验证 {#improved_authn}
 
 >[!NOTE]
 >
->改良的免重新整理登入和登出流程需要瀏覽器支援現代化的HTML5技術，包括網頁傳訊。
+>改进的无刷新登录和注销流程要求浏览器支持包括Web消息在内的现代HTML5技术。
 
-上述驗證（登入）和登出流程都可在每個流程完成後重新載入首頁面，以提供類似的使用者體驗。  目前的功能旨在提供不需重新整理（背景）的登入和登出，以改善使用者體驗。 程式設計師可以透過傳遞兩個布林值旗標(`backgroundLogin` 和 `backgroundLogout`)重新命名為 `configInfo` 的引數 `setRequestor` API。 預設會停用背景登入/登出（這樣可提供與先前實作的相容性）。
+上述身份验证（登录）和注销流程均会在每个流程完成后重新加载主页，从而提供类似的用户体验。  当前功能旨在通过提供无刷新（后台）登录和注销来改善用户体验。 程序员可以通过传递两个布尔标记(`backgroundLogin` 和 `backgroundLogout`)到 `configInfo` 的参数 `setRequestor` API。 默认情况下，后台登录/注销处于禁用状态（这将提供与以前的实施兼容）。
 
-**範例：**
+**示例：**
 
 ```JSON
     var configInfo = {
@@ -88,75 +88,75 @@ AccessEnabler的登出API會清除程式庫的本機狀態，並在目前的索�
     accessEnabler.setRequestor(REQUESTOR_ID, null, configInfo);
 ```
 
-**驗證**
+**身份验证**
 
-以下幾點說明原始驗證流程與改進流程之間的轉變：
+以下几点描述了原始身份验证流程和改进流程之间的过渡：
 
-1. 全頁重新導向會以執行MVPD登入的新瀏覽器標籤取代。 程式設計師必須建立新標籤(透過 `window.open`)已命名 `mvpdwindow` 當使用者選取MVPD時(使用 `iFrameRequired = false`)。 然後程式設計師執行 `setSelectedProvider(<mvpd>)`，可讓AccessEnabler在新標籤中載入MVPD登入URL。 使用者提供有效認證後，Adobe Primetime驗證將關閉索引標籤，並傳送window.postMessage至程式設計師的網站，以通知AccessEnabler驗證流程已完成。 系統會觸發下列回呼：
+1. 全页重定向将被一个执行MVPD登录的新浏览器选项卡替换。 需要程序员创建新选项卡(通过 `window.open`)已命名 `mvpdwindow` 当用户选择MVPD时(使用 `iFrameRequired = false`)。 然后程序员执行 `setSelectedProvider(<mvpd>)`，从而允许AccessEnabler在新选项卡中加载MVPD登录URL。 在用户提供有效凭据后，Adobe Primetime身份验证将关闭选项卡，并向程序员网站发送window.postMessage，以向AccessEnabler发出身份验证流程已完成的信号。 将触发以下回调：
 
-   - 如果流程是由以下人員啟動： `getAuthentication`： `setAuthenticationStatus` 和 `sendTrackingData(AUTHENTICATION_DETECTION...)` 將會觸發，以表示驗證成功/失敗。
+   - 如果流由启动， `getAuthentication`： `setAuthenticationStatus` 和 `sendTrackingData(AUTHENTICATION_DETECTION...)` 将被触发以表示身份验证成功/不成功。
 
-   - 如果流程是由以下人員啟動： `getAuthorization`： `setToken/tokenRequestFailed` 和 `sendTrackingData(AUTHORIZATION_DETECTION...)` 將會觸發，以表示授權成功/失敗。
+   - 如果流由启动， `getAuthorization`： `setToken/tokenRequestFailed` 和 `sendTrackingData(AUTHORIZATION_DETECTION...)` 将被触发以表示授权成功/不成功。
 
-1. iFrame/彈出式視窗流程大多保持不變，差異在於使用者提供有效認證後，不會重新載入上層頁面。 iFrame/快顯視窗會在登入後自動關閉，而且 `window.postMessage` 會傳送至上層頁面，通知AccessEnabler流程已完成。 會觸發與上一個流程相同的回呼， **加上下列新回呼： `destroyIFrame`**. 此 `destroyIFrame` callback可讓程式設計師移除任何相關聯的iFrame/輔助元件，例如UI裝飾。 舊驗證流程中不需要存在此回呼，因為在登入完成後，Adobe Primetime驗證會重新載入程式設計人員的頁面，因此會摧毀該頁面上的所有UI元件。
+1. iFrame/弹出窗口流程大致保持不变，区别在于用户提供有效凭据后，不会重新加载父页面。 登录后，iFrame/弹出窗口将自动关闭， `window.postMessage` 将发送到父页面，通知AccessEnabler流已完成。 触发的回调与上一个流程中的相同， **加上以下新回调： `destroyIFrame`**. 此 `destroyIFrame` callback允许程序员删除任何关联的iFrame/辅助组件，例如UI装饰。 旧身份验证流程中不需要存在此回调，因为登录完成后，Adobe Primetime身份验证将重新加载程序员页面，从而破坏该页面上的所有UI组件。
 
 </br>     
 
 >[!IMPORTANT]
 > 
->您必須將MVPD登入iFrame或彈出式視窗載入為包含AccessEnabler執行個體的頁面的直接子系。 如果MVPD登入iFrame或彈出式視窗在包含AccessEnabler執行個體的頁面下方巢狀內嵌兩個或多個層級，則流程可能會擱置。 例如，如果您在主要頁面和MVPD iFrame (Page =\> iFrame =\> MVPD iFrame)之間有iFrame，登入流程可能會失敗。
+>必须将MVPD登录iFrame或弹出窗口作为包含AccessEnabler实例的页面的直接子级加载。 如果MVPD登录iFrame或弹出窗口嵌套在包含AccessEnabler实例的页面下方的两个或多个级别，则流可能会挂起。 例如，如果在主页面和MVPD iFrame(Page =\> iFrame =\> MVPD iFrame)之间有一个iFrame，则登录流可能会失败。
 
 </br>
 
- **取消驗證**
+ **取消身份验证**
 
-以下是取消驗證的流程：
+以下是取消身份验证的流程：
 
-1. **瀏覽器索引標籤 —** 由於索引標籤基本上是新視窗，因此擷取其關閉事件的限制與情境3中從舊驗證流程討論的限制相同。 此外，這裡無法使用計時器方法，因為無法區分使用者手動關閉的標籤和在登入流程結束時自動關閉的標籤。 此處的解決方案是讓AccessEnabler在使用者取消流程時保持「無訊息」（不觸發回呼）。 此外，程式設計師不需要採取任何特定動作。 使用者將能夠啟動另一個驗證流程，而不會收到「多個驗證請求錯誤」錯誤（此錯誤已在背景登入的AccessEnabler中停用）。
+1. **浏览器选项卡 —** 由于选项卡基本上是一个新窗口，因此捕获其关闭事件的限制与场景3中从旧身份验证流中讨论的限制相同。 此外，计时器方法在此处不可用，因为无法区分用户手动关闭的选项卡和在登录流结束时自动关闭的选项卡。 此处的解决方案是，当用户取消流时，AccessEnabler保持“静默”（不触发回调）。 此外，程序员无需采取任何具体操作。 用户将能够启动另一个身份验证流程，而不会收到“多个身份验证请求错误”错误（此错误已在后台登录的AccessEnabler中禁用）。
 
-1. **iFrame -** 程式設計師可以從舊的驗證流程（從iFrame建立包裝函式UI和觸發的相關「關閉」按鈕）中採取情境2中討論的方法 `setSelectedProvider(null)`. 雖然此方法已不再是強烈的要求（如上述情境1所述，背景登入允許多個驗證流程），但Adobe仍建議使用。
+1. **iFrame -** 程序员可以使用场景2中讨论的旧身份验证流程（从iFrame创建包装器UI和触发的相关“关闭”按钮）的方法 `setSelectedProvider(null)`. 尽管这种方法已不再强烈要求（后台登录允许使用多个身份验证流程，如上面的场景1中所述），但Adobe仍建议这样做。
 
-1. **快顯視窗 —** 這等同於上方的「瀏覽器」索引標籤流程。
+1. **弹出窗口 —** 这与上面的“浏览器”选项卡流程相同。
 
 </br>
 
-## 已改善登出流程 {#improved_logout}
+## 改进的注销流程 {#improved_logout}
 
-新的登出流程將在隱藏的iFrame中執行，因此會消除完整頁面重新導向。  這是可行的，因為使用者不需要在MVPD的登出頁面上採取特定動作。
+新的注销流将在隐藏的iFrame中执行，从而消除完整页面重定向。  这是可能的，因为用户不需要在MVPD的注销页面上执行特定操作。
 
-登出流程完成後，系統會將iFrame重新導向至自訂Adobe Primetime驗證端點。 這會提供執行 `window.postMessage` 通知父系，通知AccessEnabler登出已完成。 系統會觸發下列回呼： `setAuthenticationStatus()` 和 `sendTrackingData(AUTHENTICATION_DETECTION ...)`，表示使用者已不再驗證。 
+注销流程完成后，它会将iFrame重定向到自定义Adobe Primetime身份验证端点。 这将提供一个JS代码片段，该代码片段执行 `window.postMessage` 通知父级，通知AccessEnabler注销已完成。 将触发以下回调： `setAuthenticationStatus()` 和 `sendTrackingData(AUTHENTICATION_DETECTION ...)`，表示用户不再进行身份验证。 
 
-下圖顯示不需重新整理的流程，此流程可讓使用者登入其MVPD，而不需重新整理應用程式的首頁：
+下图显示了无刷新流，通过该流，用户无需刷新应用程序的主页即可登录到其MVPD：
 
-**改善（不需重新整理）驗證/登出流程**
+**改进了（无刷新）身份验证/注销流程**
 
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/AE_with_no_refresh_web.png)
 
 </br>
 
-## TempPass流程 {#improved_temppas}
+## TempPass流 {#improved_temppas}
 
-不需重新整理的登入方式會針對TempPass型別的MVPD採取不同方法。
+无刷新登录对TempPass类型的MVPD采用不同的方法。
 
-由於TempPass流程需要自動建立視窗，並在沒有明確使用者互動的情況下關閉，因此可能會對某些瀏覽器（快顯視窗封鎖程式）造成問題。 因此，AccessEnabler會在幕後實作登入階段，而不需要程式設計師建立的Web容器。
+由于TempPass流要求自动创建窗口并在没有明确用户交互的情况下将其关闭，因此它可能会给某些浏览器（弹出窗口阻止程序）带来问题。 因此，AccessEnabler在后台实施登录阶段，而不需要由程序员创建的Web容器。
 
-以下為程式設計師在實作TempPass以進行不需重新整理的登入和登出時需要注意的事項：
+以下是程序员在实施TempPass以进行无刷新登录和注销时需要注意的一些方面：
 
-- 在開始驗證之前，只需要為非TempPass MVPD建立iFrame或快顯視窗。 程式設計師可藉由讀取 `tempPass` MVPD物件的屬性(傳回 `setConfig()` / `displayProviderDialog()`)。
+- 在开始身份验证之前，只需要为非TempPass MVPD创建iFrame或弹出窗口。 程序员可以通过读取 `tempPass` MVPD对象的属性(返回自 `setConfig()` / `displayProviderDialog()`)。
 
-- 此 `createIFrame()` callback必須包含TempPass的檢查，且僅在MVPD不是TempPass時執行其邏輯。
+- 此 `createIFrame()` callback必须包含对TempPass的检查，并且仅在MVPD不是TempPass时执行其逻辑。
 
-- 此 `destroyIFrame()` callback必須包含TempPass的檢查，且僅在MVPD不是TempPass時執行其邏輯。
+- 此 `destroyIFrame()` callback必须包含对TempPass的检查，并且仅在MVPD不是TempPass时执行其逻辑。
 
-- 此 `setAuthenticationStatus()` 和 `sendTrackingData()` 在驗證完成後叫用回呼（與正常MVPD的無重新整理流程完全相同）。
+- 此 `setAuthenticationStatus()` 和 `sendTrackingData()` 在身份验证完成后调用回调（与普通MVPD的无刷新流中完全相同）。
 
 >[!NOTE]
 >
->此流程僅適用於無重新整理的TempPass。 對於重新整理流程，需要明確處理TempPass （當TempPass需要iFrame/快顯視窗時）
+>此流程仅适用于无刷新的TempPass。 对于刷新流，需要显式处理TempPass（当TempPass需要iFrame/弹出窗口时）
 
 </br>
 
-下列程式碼範例示範如何處理程式設計師網站上的MVPD視窗（適用於一般MVPD和TempPass）：
+以下代码示例演示了如何处理程序员网站上的MVPD窗口（适用于普通MVPD和TempPass）：
 
 ```javascript
     var aeHostname = "https://entitlement.auth.adobe.com";

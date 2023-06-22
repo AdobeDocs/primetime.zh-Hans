@@ -1,6 +1,6 @@
 ---
-description: 當VMAP內嵌廣告包含無效的媒體型別時，您可以啟用遞補。
-title: 定義VMAP內嵌廣告的遞補廣告行為
+description: 当VMAP内联广告包含无效的媒体类型时，您可以启用回退。
+title: 为VMAP内联广告定义后备广告行为
 exl-id: 50de85b0-df2b-422f-893c-dfa641b4901e
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,13 +9,13 @@ ht-degree: 0%
 
 ---
 
-# 定義VMAP內嵌廣告的遞補廣告行為 {#define-fallback-ad-behavior-for-vmap-inline-ads}
+# 为VMAP内联广告定义后备广告行为 {#define-fallback-ad-behavior-for-vmap-inline-ads}
 
-當VMAP內嵌廣告包含無效的媒體型別時，您可以啟用遞補。
+当VMAP内联广告包含无效的媒体类型时，您可以启用回退。
 
-1. 設定 `setFallbackOnInvalidCreativeEnabled` 至 `true` 線性廣告/內嵌廣告的媒體型別對HLS無效時，讓VMAP後援。
+1. 设置 `setFallbackOnInvalidCreativeEnabled` 到 `true` 当线性/内联广告的媒体类型对HLS无效时，让VMAP回退。
 
-   預設值為 `false`. 如果線性廣告因媒體型別無效或無法重新封裝而失敗，此標幟可讓Primetime廣告決策遵循相同的遞補行為，就像廣告是空的VAST包裝函式。
+   默认值为 `false`. 如果线性广告由于媒体类型无效或由于无法重新打包而失败，则此标记允许Primetime广告决策遵循相同的回退行为，就像广告是空的VAST包装一样。
 
    ```java
    AuditudeSettings result = new AuditudeSettings(); 

@@ -1,6 +1,6 @@
 ---
-title: MVPD IP位址清單
-description: MVPD IP位址清單
+title: IP地址的MVPD列表
+description: IP地址的MVPD列表
 exl-id: be18084c-22f5-47b5-b088-d9032681113d
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,13 +9,13 @@ ht-degree: 24%
 
 ---
 
-# MVPD IP位址清單
+# IP地址的MVPD列表
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-對於MVPD / Adobe Primetime驗證整合，某些IP必須允許在MVPD的防火牆中。 這些是輸出IP：
+对于MVPD/Adobe Primetime身份验证集成，必须允许在MVPD防火墙中使用某些IP。 以下是出口IP：
 
 * 34.233.60.171
 * 34.233.163.243

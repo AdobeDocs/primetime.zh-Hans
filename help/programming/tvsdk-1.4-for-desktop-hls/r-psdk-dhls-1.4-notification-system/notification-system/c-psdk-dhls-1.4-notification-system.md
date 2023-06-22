@@ -1,6 +1,6 @@
 ---
-description: MediaPlayerNotification物件提供有關播放器狀態變更、警告和錯誤的資訊。 停止播放視訊的錯誤也會造成播放器狀態的變更。
-title: 播放器狀態、活動、錯誤和記錄的通知
+description: MediaPlayerNotification对象提供有关播放器状态更改、警告和错误的信息。 停止播放视频的错误也会导致播放器状态发生变化。
+title: 播放器状态、活动、错误和日志记录的通知
 exl-id: cce634aa-5394-46c0-a031-70d6fc1b754b
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,10 +9,10 @@ ht-degree: 0%
 
 ---
 
-# 概觀 {#notifications-for-player-status-activity-errors-and-logging-overview}
+# 概述 {#notifications-for-player-status-activity-errors-and-logging-overview}
 
-MediaPlayerNotification物件提供有關播放器狀態變更、警告和錯誤的資訊。 停止播放視訊的錯誤也會造成播放器狀態的變更。
+MediaPlayerNotification对象提供有关播放器状态更改、警告和错误的信息。 停止播放视频的错误也会导致播放器状态发生变化。
 
-您的應用程式可以擷取通知和狀態資訊。 您也可以使用通知資訊，建立用於診斷和驗證的記錄系統。
+您的应用程序可以检索通知和状态信息。 您还可以使用通知信息创建用于诊断和验证的日志记录系统。
 
-您可以實作事件接聽程式來擷取和回應事件。 許多事件提供 `MediaPlayerNotification` 狀態通知。
+您可以实施事件侦听器来捕获和响应事件。 许多事件都提供 `MediaPlayerNotification` 状态通知。

@@ -1,6 +1,6 @@
 ---
-title: 組態檔屬性
-description: 組態檔屬性
+title: 配置文件属性
+description: 配置文件属性
 copied-description: true
 exl-id: ac118ae5-7099-49de-8fc0-7ed001d610a7
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,9 +10,9 @@ ht-degree: 0%
 
 ---
 
-# 組態檔屬性 {#configuration-file-properties}
+# 配置文件属性 {#configuration-file-properties}
 
-下列是「撤銷清單管理員」屬性，這些屬性會指定包含簽署撤銷清單（授權伺服器憑證）認證的PKCS12檔案：
+以下是“吊销列表管理器”属性，这些属性指定包含签名吊销列表（许可证服务器证书）凭据的PKCS12文件：
 
 * `revocation.sign.certfile=license-server-credentials.pfx`
 * `revocation.sign.certpass=password`

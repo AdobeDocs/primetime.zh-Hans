@@ -1,6 +1,6 @@
 ---
-title: 產生憑證簽署要求（請求者）
-description: 產生憑證簽署要求（請求者）
+title: 生成证书签名请求（请求者）
+description: 生成证书签名请求（请求者）
 copied-description: true
 exl-id: 4f8dae3d-da56-453d-b3c4-e67fe4f37064
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,9 +10,9 @@ ht-degree: 0%
 
 ---
 
-# 產生憑證簽署要求（請求者） {#generate-a-certificate-signing-request-requester}
+# 生成证书签名请求（请求者） {#generate-a-certificate-signing-request-requester}
 
-1. 產生金鑰組。 若要使用OpenSSL等公用程式，請開啟「命令視窗」並輸入下列內容：
+1. 生成密钥对。 要使用OpenSSL等实用程序，请打开命令窗口并输入以下内容：
 
    ```
    openssl genrsa -des3 -out mycompany-license.key 1024
@@ -20,29 +20,29 @@ ht-degree: 0%
 
    >[!NOTE]
    >
-   >Adobe建議在金鑰名稱中包含憑證型別（lic、pkgr、trans、trial或eval）。 此命名慣例可讓您在授權伺服器上部署這些裝置時更輕鬆。 此範例使用「mycompany-license.key」。 對於評估和試用版，請使用「mycompany-eval.key」和「mycompany-trial.key」。
+   >Adobe建议在密钥名称中包含证书类型（lic、pkgr、trans、trial或eval）。 此命名约定使您在许可证服务器上部署它们时更轻松。 此示例使用“mycompany-license.key”。 对于试用版和评估版，请使用“mycompany-eval.key”和“mycompany-trial.key”。
 
-1. 輸入密碼以保護私密金鑰。
+1. 输入密码以保护私钥。
 
-   密碼應至少包含12個字元。 字元應混合使用大寫和小寫ASCII字元和數字。 若要使用OpenSSL產生強式密碼，請開啟[命令視窗]並輸入下列內容：
+   密码应至少包含12个字符。 字符应混合使用大写和小写ASCII字符和数字。 要使用OpenSSL生成强密码，请打开命令窗口并输入以下内容：
 
    ```
    openssl rand -base64 8
    ```
 
-1. 產生憑證申請檔(CSR)。
+1. 生成证书签名请求(CSR)。
 
-   若要使用OpenSSL來產生CSR，請開啟「命令視窗」並輸入下列內容：
+   要使用OpenSSL生成CSR，请打开命令窗口并输入以下内容：
 
    ```
    openssl req -new -key mycompany-license.key -out mycompany-license.csr -batch 
    ```
 
-1. 系統會提示您輸入私密金鑰的密碼。
-1. 建立您的私密金鑰和密碼的備份復本。
+1. 系统会提示您输入私钥的密码。
+1. 创建私钥和密码的备份副本。
 
-   如果您遺失私密金鑰或該私密金鑰遭到破壞，請聯絡Adobe憑證管理員以撤銷您的憑證並請求新的憑證。
+   如果您丢失私钥或私钥已被泄露，请联系Adobe证书管理员以撤销您的证书并申请新证书。
 
    >[!NOTE]
    >
-   >Adobe建議使用HSM來保護您的私密金鑰和密碼。
+   >Adobe建议使用HSM来保护您的私钥和密码。

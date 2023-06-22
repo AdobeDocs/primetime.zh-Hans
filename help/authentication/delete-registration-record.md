@@ -1,6 +1,6 @@
 ---
-title: 刪除註冊記錄
-description: 刪除註冊資源
+title: 删除注册记录
+description: 删除注册资源
 exl-id: 42707070-2e1f-4847-93fd-30025aef56c1
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,46 +9,46 @@ ht-degree: 0%
 
 ---
 
-# 刪除註冊記錄 {#delete-registration-record}
+# 删除注册记录 {#delete-registration-record}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-## REST API端點 {#clientless-endpoints}
+## REST API端点 {#clientless-endpoints}
 
 &lt;reggie_fqdn>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 &lt;sp_fqdn>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
 
-## 說明 {#delete-record}
+## 描述 {#delete-record}
 
-刪除登入程式碼記錄，並釋出登入程式碼以供重複使用。 
+删除注册代码记录并释放注册代码以供重用。 
 
-| 端點 | 已呼叫  </br>作者： | 輸入   </br>引數 | HTTP  </br>方法 | 回應 | HTTP  </br>回應 |
+| 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;reggie_fqdn>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>例如：</br></br>&lt;reggie_fqdn>/reggie/v1/regcode/ER45RTY | 串流應用程式</br></br>或</br></br>程式設計師服務 | 1.請求者ID  </br>    （路徑元件）</br>2.  註冊代碼  </br>    （路徑元件） | DELETE | 無 | 204 |
+| &lt;reggie_fqdn>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>例如：</br></br>&lt;reggie_fqdn>/reggie/v1/regcode/ER45RTY | 流应用程序</br></br>或</br></br>程序员服务 | 1.请求者ID  </br>    （路径组件）</br>2.  注册码  </br>    （路径组件） | DELETE | 无 | 204 |
 
 {style="table-layout:auto"}
 
 </br>
 
-| 輸入引數 | 說明 |
+| 输入参数 | 描述 |
 | --- | --- |
-| 請求者 | 此作業有效的程式設計員requestorId。 |
-| 註冊代碼 | 串流裝置上顯示的註冊代碼值（要輸入驗證流程中）。 |
+| 请求者 | 此操作有效的程序员requestorId。 |
+| 注册码 | 将在流设备上显示的注册码值（要输入到身份验证流程中）。 |
 
 {style="table-layout:auto"}
 
 </br>
 
-### [返回REST API參考](/help/authentication/rest-api-reference.md)
+### [返回REST API参考](/help/authentication/rest-api-reference.md)

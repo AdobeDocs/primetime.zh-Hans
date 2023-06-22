@@ -1,6 +1,6 @@
 ---
-title: 如何針對特定MVPD使用Account IQ量度
-description: 如何使用及理解Account IQ報表。
+title: 如何使用特定MVPD的帐户IQ指标
+description: 如何使用并理解帐户IQ报表。
 exl-id: ada9a80a-b31b-4bdc-838c-dcd94a0a6c59
 source-git-commit: 5963c55d87385fbd92646bfc45a3650fb568bca5
 workflow-type: tm+mt
@@ -9,37 +9,37 @@ ht-degree: 0%
 
 ---
 
-# 檢視特定MVPD的帳戶共用報告 <!--and programmer--> {#report-sp-mvpd}
+# 查看特定MVPD的帐户共享报告 <!--and programmer--> {#report-sp-mvpd}
 
-如果您以身分登入帳戶IQ應用程式 [程式設計師](/help/AccountIQ/product-concepts.md#programmer-def)，然後您可以針對特定專案，檢視您管道上的共用報表 [MVPD](/help/AccountIQ/product-concepts.md#mvpd-def) 訂閱者。
+如果您以的身份登录到帐户IQ应用程序 [程序员](/help/AccountIQ/product-concepts.md#programmer-def)，则可以在您的渠道上查看针对特定的 [MVPD](/help/AccountIQ/product-concepts.md#mvpd-def) 订阅者。
 
-若要在Account IQ中檢視報表，當您以程式設計師的身分成功登入應用程式後：
+要在Account IQ中查看报表，当您以程序员的身份成功登录到应用程序后：
 
-1. 當您使用中的步驟定義要分析和檢視報表的訂閱者區段時，請選取特定的MVPD [如何定義區段](/help/AccountIQ/howto-select-segment-timeframe.md).
+1. 使用中的步骤定义要分析和查看报表的订户区段时，请选择特定的MVPD [如何定义区段](/help/AccountIQ/howto-select-segment-timeframe.md).
 
 
    >[!NOTE]
    >
-   >您可以選取一個、兩個或多個管道，或甚至是前10個管道的預設選擇（透過共用分數、使用情況或帳戶）。
+   >您可以选择一个、两个或多个渠道，甚至可以默认选择前10个渠道（通过共享得分、使用情况或帐户）。
    >
    >
-   >不過，您可以選取 [最多10個管道](/help/AccountIQ/limitations.md) 從「 」中的「 」管道選擇器 [區段和時間範圍面板](/help/AccountIQ/segments-timeframe.md).
+   >但是，您可以选择 [最多10个渠道](/help/AccountIQ/limitations.md) 从渠道选择器 [区段和时间范围面板](/help/AccountIQ/segments-timeframe.md).
 
-1. 從左側導覽中選取所需的報表頁面：
+1. 从左侧导航中选择所需的报表页面：
 
-* [一般使用](/help/AccountIQ/general-usage-reports.md)
+* [常规用法](/help/AccountIQ/general-usage-reports.md)
 
    ![](assets/specific-mvpd-gen-usage.png)
-* [共用帳戶](/help/AccountIQ/shared-acc-reports.md)
+* [共享帐户](/help/AccountIQ/shared-acc-reports.md)
 
    ![](assets/specific-mvpd-shared-acc.png)
 * [使用模式](/help/AccountIQ/usage-patterns.md)
 
    ![](assets/specific-mvpd-usage-pattern.png)
 
-* [儀表板](/help/AccountIQ/dashboard.md) （控制面板可讓您從不同的報表頁面中一覽選取的圖形）。
+* [仪表板](/help/AccountIQ/dashboard.md) （仪表板可让您从不同的报表页面中一览选定的图表）。
 
    ![](assets/specific-mvpd-dashboard.png)
 
-每個頁面都會反映所選區段的活動。
+每个页面都将反映选定区段的活动。
 

@@ -1,6 +1,6 @@
 ---
-description: 您可以重設、重複使用或釋放不再需要的MediaPlayer執行個體。
-title: 重複使用或移除MediaPlayer執行個體
+description: 您可以重置、重用或释放不再需要的MediaPlayer实例。
+title: 重用或删除MediaPlayer实例
 exl-id: 2403e6dd-74c4-43fb-913a-d04e61041628
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,56 +9,56 @@ ht-degree: 0%
 
 ---
 
-# 重複使用或移除MediaPlayer執行個體{#reuse-or-remove-a-mediaplayer-instance}
+# 重用或删除MediaPlayer实例{#reuse-or-remove-a-mediaplayer-instance}
 
-您可以重設、重複使用或釋放不再需要的MediaPlayer執行個體。
+您可以重置、重用或释放不再需要的MediaPlayer实例。
 
-## 重設或重複使用MediaPlayer執行個體 {#section_C183E6164C184C3CBC5321FC6A2528EA}
+## 重置或重用MediaPlayer实例 {#section_C183E6164C184C3CBC5321FC6A2528EA}
 
-您可以重設 `MediaPlayer` 執行個體，使其回到未初始化的IDLE狀態，如中所定義 `MediaPlayerStatus`. 您也可以取代目前的媒體專案，或使用先前載入的媒體資源來設定新的媒體專案。
+您可以重置 `MediaPlayer` 实例以将其返回到在中定义的未初始化空闲状态 `MediaPlayerStatus`. 也可以替换当前媒体项目，或使用之前加载的媒体资源设置新媒体项目。
 
-此作業適用於下列情況：
+此操作在以下情况下很有用：
 
-* 您想要重複使用 `MediaPlayer` 執行個體，但需要載入新的 `MediaResource` （視訊內容）並取代上一個例項。
+* 您希望重用 `MediaPlayer` 实例，但需要加载新的 `MediaResource` （视频内容）并替换上一个实例。
 
-   重設可讓您重複使用 `MediaPlayer` 執行環境，而不需要核發資源的間接費用，重新建立 `MediaPlayer`，並重新分配資源。 此 `replaceCurrentItem` 方法會自動為您執行這些步驟。
+   通过重置，您可以重复使用 `MediaPlayer` 实例无需释放资源，重新创建 `MediaPlayer`，并重新分配资源。 此 `replaceCurrentItem` 方法会自动为您执行这些步骤。
 
-* 當 `MediaPlayer` 處於ERROR狀態，需要清除。
+* 当 `MediaPlayer` 处于错误状态，需要清除。
 
    >[!IMPORTANT]
    >
-   >這是從ERROR狀態復原的唯一方法。
+   >这是从ERROR状态恢复的唯一方法。
 
-1. 呼叫 `MediaPlayer.reset()` 以傳回 `MediaPlayer` 執行個體變更為其未初始化狀態：
+1. 调用 `MediaPlayer.reset()` 以返回 `MediaPlayer` 实例恢复到其未初始化状态：
 
    ```js
    reset(); // returns AdobePSDK.PSDKErrorCode.SUCCESS 
             // on successful reset
    ```
 
-1. 呼叫 `MediaPlayer.replaceCurrentItem()` 以載入另一個 `MediaResource`
+1. 调用 `MediaPlayer.replaceCurrentItem()` 加载另一个 `MediaResource`
 
    >[!TIP]
    >
-   >若要清除錯誤，請載入相同的 `MediaResource`.
+   >要清除错误，请加载相同的 `MediaResource`.
 
-1. 呼叫 `prepareToPlay()` 方法。
+1. 调用 `prepareToPlay()` 方法。
 
    >[!NOTE]
    >
-   >當您收到 `MediaPlaybackStatusChangeEvent.STATUS_CHANGED` 事件具有「已準備」狀態，您可以開始播放。
+   >当您收到 `MediaPlaybackStatusChangeEvent.STATUS_CHANGED` 事件处于已准备状态，您可以开始播放。
 
-## 發行MediaPlayer例項和資源 {#section_2D159975C82245098E7078FE0B1578CE}
+## 发布MediaPlayer实例和资源 {#section_2D159975C82245098E7078FE0B1578CE}
 
-您應發行 `MediaPlayer` 例項和資源。
+您应该发布 `MediaPlayer` 实例和资源。
 
-以下是發行「 」的一些理由 `MediaPlayer`：
+以下是发布的原因 `MediaPlayer`：
 
-* 保留不必要的資源可能會影響效能。
-* 留下不必要的 `MediaPlayer` 物件可能導致行動裝置持續消耗電池。
-* 如果裝置不支援相同視訊轉碼器的多個執行個體，其他應用程式可能會發生播放失敗。
+* 持有不必要的资源可能会影响性能。
+* 保留不必要的 `MediaPlayer` 对象会导致移动设备持续消耗电池。
+* 如果同一设备不支持同一视频编解码器的多个实例，则其他应用程序可能会发生播放失败。
 
-* 發行 `MediaPlayer`.
+* 发布 `MediaPlayer`.
 
    ```js
    void release()
@@ -66,4 +66,4 @@ ht-degree: 0%
 
    >[!NOTE]
    >
-   >晚於 `MediaPlayer` 執行個體已發行，您無法再使用它。 若有任何方法 `MediaPlayer` 介面在發行後呼叫，這是 `IllegalStateException` 擲回。
+   >在 `MediaPlayer` 实例已发布，您无法再使用它。 如果使用的任何方法 `MediaPlayer` 界面在发布后调用，即 `IllegalStateException` 被抛出。

@@ -1,6 +1,6 @@
 ---
-description: MediaPlayerItem類別中的方法可讓您取得由載入的MediaResource所代表之內容資料流的相關資訊。
-title: 用於存取MediaResource資訊的MediaPlayerItem方法
+description: MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表示的内容流的信息。
+title: 用于访问MediaResource信息的MediaPlayerItem方法
 exl-id: 5e4434ce-d2b1-4b7b-b3d1-77f62ff46d36
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,145 +9,145 @@ ht-degree: 0%
 
 ---
 
-# 用於存取MediaResource資訊的MediaPlayerItem方法 {#mediaplayeritem-methods-for-accessing-mediaresource-information}
+# 用于访问MediaResource信息的MediaPlayerItem方法 {#mediaplayeritem-methods-for-accessing-mediaresource-information}
 
-MediaPlayerItem類別中的方法可讓您取得由載入的MediaResource所代表之內容資料流的相關資訊。
+MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表示的内容流的信息。
 
 <table frame="all" colsep="1" rowsep="1" id="table_F6006A9167044AC087A6ECB20B8CCD5D"> 
  <thead> 
   <tr rowsep="1"> 
    <th colname="2" class="entry"> 方法 </th> 
-   <th colname="3" class="entry"> 說明 </th> 
+   <th colname="3" class="entry"> 描述 </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr rowsep="1"> 
-   <td colname="2"> <b>廣告標籤</b> </td> 
+   <td colname="2"> <b>广告标记</b> </td> 
    <td colname="3"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 清單&lt;string&gt; getAdTags() </span> </td> 
-   <td colname="3"> 提供用於廣告投放流程的廣告標籤清單。 </td> 
+   <td colname="2"> <span class="codeph"> 列表&lt;string&gt; getAdTags() </span> </td> 
+   <td colname="3"> 提供用于广告投放流程的广告标记列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <b>即時資料流</b> </td> 
+   <td colname="2"> <b>实时流</b> </td> 
    <td colname="3"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 布林值isLive()； </span> </td> 
-   <td colname="3"> 如果資料流為即時，則為True；如果為VOD，則為False。 </td> 
+   <td colname="2"> <span class="codeph"> 布尔值isLive()； </span> </td> 
+   <td colname="3"> 如果流是实时的，则为true；如果是VOD，则为false。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <b>受DRM保護</b> </td> 
+   <td colname="2"> <b>受DRM保护</b> </td> 
    <td colname="3"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 布林值isProtected()； </span> </td> 
-   <td colname="3"> 如果資料流受到DRM保護，則為True。 </td> 
+   <td colname="2"> <span class="codeph"> 布尔值isProtected()； </span> </td> 
+   <td colname="3"> 如果流受DRM保护，则为True。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 清單&lt;drmmetadatainfo&gt; getDRMMetadataInfos()； </span> </td> 
-   <td colname="3"> 列出資訊清單中發現的所有DRM中繼資料物件。 </td> 
+   <td colname="2"> <span class="codeph"> 列表&lt;drmmetadatainfo&gt; getDRMMetadataInfos()； </span> </td> 
+   <td colname="3"> 列出清单中发现的所有DRM元数据对象。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <b>隱藏式字幕</b> </td> 
+   <td colname="2"> <b>隐藏字幕</b> </td> 
    <td colname="3"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 布林值hasClosedCaptions()； </span> </td> 
-   <td colname="3"> 如果隱藏式字幕追蹤可供使用，則為True。 </td> 
+   <td colname="2"> <span class="codeph"> 布尔型hasClosedCaptions()； </span> </td> 
+   <td colname="3"> 如果隐藏式字幕跟踪可用，则为True。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 清單&lt;closedcaptionstrack&gt; getClosedCationsTracks()； </span> </td> 
-   <td colname="3"> 提供可用隱藏式字幕追蹤的清單。 </td> 
+   <td colname="2"> <span class="codeph"> 列表&lt;closedcaptionstrack&gt; getClosedCationsTracks()； </span> </td> 
+   <td colname="3"> 提供可用隐藏式字幕字幕的列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> ClosedCaptionsTrack get SelectedClosedCaptionsTrack()； </span> </td> 
-   <td colname="3"> 擷取目前隱藏式字幕追蹤，選取方式為 <span class="codeph"> SelectClosedCaptionsTrack </span>. </td> 
+   <td colname="3"> 检索当前选定的隐藏式字幕跟踪 <span class="codeph"> SelectClosedCaptionsTrack </span>. </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> selectClosedCaptionsTrack ( ClosedCaptionsTrack closedCaptionsTrack) </span> </td> 
-   <td colname="3"> 將隱藏式字幕軌跡設為目前的隱藏式字幕軌跡。 </td> 
+   <td colname="3"> 将隐藏式字幕轨迹设置为当前的隐藏式字幕轨迹。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <b>替代音軌</b> </td> 
+   <td colname="2"> <b>备用音轨</b> </td> 
    <td colname="3"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 布林值hasAlternateAudio()； </span> </td> 
-   <td colname="3"> 如果資料流有替代音訊曲目，則為True。 <p>注意：主要（預設）音軌也是替代音軌清單的一部分。 </p> <p>Android適用的TVSDK會將主要音軌視為替代音軌清單中的專案之一。 因此，只有在 <span class="codeph"> MediaPlayerItem.hasAlternateAudio </span> 傳回false表示串流完全沒有音訊。 如果內容只有一個音軌，則此方法會傳回true，並且 <span class="codeph"> MediaPlayerItem.getAudioTracks </span> 傳回含有單一元素的清單（預設音軌）。 </p> </td> 
+   <td colname="2"> <span class="codeph"> 布尔值hasAlternateAudio()； </span> </td> 
+   <td colname="3"> 如果流具有备用音轨，则为True。 <p>注意：主（默认）音轨也是备用音轨列表的一部分。 </p> <p>适用于Android的TVSDK将主音频轨道视为备用音频轨道列表中的项目之一。 正因为如此，只有这样 <span class="codeph"> MediaPlayerItem.hasAlternateAudio </span> 如果流完全没有音频，则返回false。 如果内容只有一个音轨，则此方法返回true，并且 <span class="codeph"> MediaPlayerItem.getAudioTracks </span> 返回带有单个元素（默认音轨）的列表。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 清單&lt;audiotrack&gt; getAudioTracks()； </span> </td> 
-   <td colname="3"> 提供可用替代音訊曲目的清單。 </td> 
+   <td colname="2"> <span class="codeph"> 列表&lt;audiotrack&gt; getAudioTracks()； </span> </td> 
+   <td colname="3"> 提供可用备用音轨的列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> AudioTrack getSelectedAudioTrack()； </span> </td> 
-   <td colname="3"> 擷取選取的音軌，並附上 <span class="codeph"> selectAudioTrack </span>. </td> 
+   <td colname="3"> 检索选择的音轨，并显示 <span class="codeph"> selectAudioTrack </span>. </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> selectAudioTrack ( AudioTrack audioTrack ) </span> </td> 
-   <td colname="3"> 選取音軌作為目前的音軌。 </td> 
+   <td colname="3"> 选择一个音轨作为当前音轨。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <b>定時中繼資料</b> </td> 
+   <td colname="2"> <b>定时元数据</b> </td> 
    <td colname="3"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 布林值hasTimedMetadata()； </span> </td> 
-   <td colname="3"> 如果串流有關聯的計時中繼資料，則為True。 </td> 
+   <td colname="2"> <span class="codeph"> 布尔型hasTimedMetadata()； </span> </td> 
+   <td colname="3"> 如果流具有关联的定时元数据，则为True。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 清單&lt;timedmetadata&gt; getTimedMetadata()； </span> </td> 
-   <td colname="3"> 提供與資料流相關聯的計時中繼資料物件清單。 </td> 
+   <td colname="2"> <span class="codeph"> 列表&lt;timedmetadata&gt; getTimedMetadata()； </span> </td> 
+   <td colname="3"> 提供与流关联的定时元数据对象列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <b>多個設定檔（位元速率）</b> </td> 
+   <td colname="2"> <b>多个配置文件（比特率）</b> </td> 
    <td colname="3"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 布林值isDynamic()； </span> </td> 
-   <td colname="3"> 如果資料流是多位元速率(MBR)資料流，則為True。 </td> 
+   <td colname="2"> <span class="codeph"> 布尔值isDynamic()； </span> </td> 
+   <td colname="3"> 如果流是多比特率(MBR)流，则为True。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 清單&lt;profile&gt; getProfiles()； </span> </td> 
-   <td colname="3"> 提供相關位元速率設定檔的清單。 對於每個設定檔，您可以擷取其位元速率以及設定檔的高度和寬度。 </td> 
+   <td colname="2"> <span class="codeph"> 列表&lt;profile&gt; getProfiles()； </span> </td> 
+   <td colname="3"> 提供相关比特率配置文件的列表。 对于每个配置文件，您可以检索其比特率以及配置文件的高度和宽度。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 設定檔getSelectedProfile() </span> </td> 
-   <td colname="3"> 擷取目前選取的設定檔。 </td> 
+   <td colname="2"> <span class="codeph"> 配置文件getSelectedProfile() </span> </td> 
+   <td colname="3"> 检索当前选定的配置文件。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <b>特技播放</b> </td> 
+   <td colname="2"> <b>特技游戏</b> </td> 
    <td colname="3"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 布林值isTrickPlaySupported()； </span> </td> 
-   <td colname="3"> 如果播放器支援快進、倒轉和恢復，則為True。 </td> 
+   <td colname="2"> <span class="codeph"> 布尔值isTrickPlaySupported()； </span> </td> 
+   <td colname="3"> 如果播放器支持快进、倒带和恢复，则为True。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> List&lt; Float&gt; getAvailablePlaybackRates() </span> </td> 
-   <td colname="3"> 提供特技播放功能內容中的可用播放率清單。 </td> 
+   <td colname="3"> 提供特技播放功能上下文中的可用播放速率列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 浮點數getSelectedPlaybackRate() </span> </td> 
-   <td colname="3"> 擷取目前選取的播放速率。 </td> 
+   <td colname="2"> <span class="codeph"> 浮点数getSelectedPlaybackRate() </span> </td> 
+   <td colname="3"> 检索当前选定的播放速率。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> MediaPlayerItemConfig getConfig() </span> </td> 
-   <td colname="3"> 傳回 <span class="codeph"> MediaPlayerItemConfig </span> 與此專案相關聯的例項。 </td> 
+   <td colname="3"> 返回 <span class="codeph"> MediaPlayerItemConfig </span> 与此项目关联的实例。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <b>媒體資源</b> </td> 
+   <td colname="2"> <b>媒体资源</b> </td> 
    <td colname="3"> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> MediaResource getResource()； </span> </td> 
-   <td colname="3"> 傳回與此專案關聯的媒體資源。 </td> 
+   <td colname="3"> 返回与此项目关联的媒体资源。 </td> 
   </tr> 
   <tr rowsep="0"> 
    <td colname="2"> <span class="codeph"> int getResourceId() </span> </td> 
-   <td colname="3"> 傳回與此專案關聯的媒體識別碼。 使用載入專案時設定此ID <span class="codeph"> MediaPlayerItemLoader.load </span>. </td> 
+   <td colname="3"> 返回与此项目关联的媒体标识符。 此ID在使用加载项时设置 <span class="codeph"> MediaPlayerItemLoader.load </span>. </td> 
   </tr> 
  </tbody> 
 </table>

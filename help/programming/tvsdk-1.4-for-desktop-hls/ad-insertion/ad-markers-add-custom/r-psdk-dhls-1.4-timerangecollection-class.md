@@ -1,6 +1,6 @@
 ---
-description: TimeRangeCollection公用程式類別會擷取TimeRange規格的有序集合的概念，並提供將自身轉譯為Metadata例項的服務。
-title: TimeRangeCollection類別
+description: TimeRangeCollection实用程序类抽象TimeRange规范有序集合的概念，并提供将自身转换为元数据实例的服务。
+title: TimeRangecollection类
 exl-id: 2e5160b0-2254-4a40-8c32-fe3e05b9fc30
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,9 +9,9 @@ ht-degree: 0%
 
 ---
 
-# TimeRangeCollection類別{#timerangecollection-class}
+# TimeRangecollection类{#timerangecollection-class}
 
-TimeRangeCollection公用程式類別會擷取TimeRange規格的有序集合的概念，並提供將自身轉譯為Metadata例項的服務。
+TimeRangeCollection实用程序类抽象TimeRange规范有序集合的概念，并提供将自身转换为元数据实例的服务。
 
 <!--<a id="section_D87AA7BC628D458DAB12D5247AD34B41"></a>-->
 
@@ -25,4 +25,4 @@ public final class TimeRangeCollection {
 }
 ```
 
-集合型別的已定義值為 `MARK_RANGES`， `DELETE_RANGES`、和 `REPLACE_RANGES`. 您可以建立 `TimeRangeCollection`使用這三種型別。
+集合类型的定义值为 `MARK_RANGES`， `DELETE_RANGES`、和 `REPLACE_RANGES`. 您可以创建 `TimeRangeCollection`使用这三种类型。

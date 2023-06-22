@@ -1,6 +1,6 @@
 ---
-title: 部署Adobe Primetime DRM Server for Protected Streaming
-description: 部署Adobe Primetime DRM Server for Protected Streaming
+title: 为受保护的流部署Adobe Primetime DRM服务器
+description: 为受保护的流部署Adobe Primetime DRM服务器
 copied-description: true
 exl-id: 814c08e6-5d09-495b-b529-cedc9b9c02a7
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,23 +10,23 @@ ht-degree: 0%
 
 ---
 
-# 部署Adobe Primetime DRM Server for Protected Streaming{#deploying-the-adobe-primetime-drm-server-for-protected-streaming}
+# 为受保护的流部署Adobe Primetime DRM服务器{#deploying-the-adobe-primetime-drm-server-for-protected-streaming}
 
-您必須先安裝「需求」主題中所列的Java和Tomcat版本，才能部署Adobe Primetime DRM Server for Protected Streaming。
+在部署Adobe Primetime DRM Server for Protected Streaming之前，您必须安装“要求”主题中列出的Java和Tomcat版本。
 
-Primetime DRM Server for Protected Streaming套件包含 [!DNL flashaccesserver.war]. 如果您：
+Primetime DRM Server for Protected Streaming包包括 [!DNL flashaccesserver.war]. 如果您：
 
-* 若要部署此WAR檔案，您必須將其複製到Tomcat的 [!DNL webapps] 目錄。
-* 先前已部署WAR檔案，您可能需要刪除解壓縮的WAR目錄( [!DNL flashaccessserver] 在Tomcat的 [!DNL webapps] 目錄)。
+* 要部署此WAR文件，您需要将其复制到Tomcat的 [!DNL webapps] 目录。
+* 以前部署过WAR文件，您可能需要删除解压缩的WAR目录( [!DNL flashaccessserver] 在Tomcat的 [!DNL webapps] 目录)。
 
-* 若要防止Tomcat解壓縮WAR檔案，請編輯 [!DNL server.xml] tomcat中的檔案 [!DNL conf] 目錄並設定 `unpackWARs` 屬性（透過將其設定為） `false`.
-
->[!NOTE]
->
->如果您已將Tomcat設定為包含 [!DNL commons-logging.jar] 在系統類別路徑上（Primetime DRM伺服器不需要Protected Streaming），您必須設定commons-logging才能使用Log4J。
-
-伺服器可選擇使用平台專屬的程式庫( [!DNL jsafe.dll] 在Microsoft Windows上或 [!DNL libjsafe.so] 在Linux上以取得最佳效能。 您可以從以下位置複製適合您平台的程式庫： [!DNL thirdparty/cryptoj/]*平台* 至指定的位置 `PATH` 環境變數或 `LD_LIBRARY_PATH` 在Linux上。
+* 要防止Tomcat解压缩WAR文件，请编辑 [!DNL server.xml] tomcat中的文件 [!DNL conf] 目录并配置 `unpackWARs` 属性，方法是将其设置为 `false`.
 
 >[!NOTE]
 >
->如果作業系統和JDK都支援64位元，您應該只使用64位元版本。 否則，您需要使用32位元版本。
+>如果已将Tomcat配置为包含 [!DNL commons-logging.jar] 在系统类路径上（Primetime DRM Server for Protected Streaming不需要），必须配置commons-logging以使用Log4J。
+
+服务器可以选择使用平台特定的库( [!DNL jsafe.dll] 在Microsoft Windows上或 [!DNL libjsafe.so] 在Linux上以获得最佳性能。 您可以从以下位置复制适合您平台的库： [!DNL thirdparty/cryptoj/]*平台* 到由指定的位置 `PATH` 环境变量或 `LD_LIBRARY_PATH` 在Linux上。
+
+>[!NOTE]
+>
+>仅当操作系统和JDK都支持64位时，才应使用64位版本。 否则，您需要使用32位版本。

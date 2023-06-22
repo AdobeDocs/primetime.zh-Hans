@@ -1,6 +1,6 @@
 ---
-description: 若要開始使用由ExpressPlay支援的Primetime DRM Cloud，您需要在Adobe代表的協助下設定AdobeCert和ExpressPlay帳戶。
-title: 布建（帳戶等）
+description: 要开始使用由ExpressPlay提供支持的Primetime DRM Cloud，您需要在Adobe代表的帮助下设置Adobe证书和ExpressPlay帐户。
+title: 进行配置（帐户等）
 exl-id: 2543d997-3495-4545-9395-072c07431aba
 source-git-commit: a0917e128862184ce18050792c2ee2ac265050d2
 workflow-type: tm+mt
@@ -9,47 +9,47 @@ ht-degree: 0%
 
 ---
 
-# 布建（帳戶等） {#get-provisioned-accounts-etc}
+# 进行配置（帐户等） {#get-provisioned-accounts-etc}
 
-若要開始使用由ExpressPlay支援的Primetime DRM Cloud，您需要在Adobe代表的協助下設定AdobeCert和ExpressPlay帳戶。
+要开始使用由ExpressPlay提供支持的Primetime DRM Cloud，您需要在Adobe代表的帮助下设置Adobe证书和ExpressPlay帐户。
 
-1. 請連絡您的Adobe代表，要求您提供使用TVSDK實作多DRM所需的AdobeCert和ExpressPlay帳戶。
+1. 请联系您的Adobe代表，并申请使用TVSDK实施多DRM所需的AdobeCert和ExpressPlay帐户。
 
-   提供您的Adobe代表您將用來作為聯絡視窗的電子郵件地址。 Adobe接著會為您建立兩個帳戶：
+   向您的Adobe代表提供您将用作联系点的电子邮件地址。 然后，Adobe会为您创建两个帐户：
 
-   * ***憑證入口網站帳戶*** - ( https://certportal.primetime.adobe.com) ：此 *Adobe存取/Primetime DRM憑證註冊管理團隊* 會傳送電子郵件至您提供的地址。 該電子郵件包含Adobe憑證入口網站的URL，以及Adobe憑證註冊檔案的連結(最新檔案列於此處： [憑證註冊指南](../../../digital-rights-management/certificate-enrollment-guide/about-certs.md))。
+   * ***证书门户帐户*** - ( https://certportal.primetime.adobe.com) ：此 *Adobe访问/Primetime DRM证书注册管理团队* 会向您提供的地址发送电子邮件。 该电子邮件包含Adobe证书门户的URL，以及指向Adobe证书注册文档的链接(此处为最新文档： [证书注册指南](../../../digital-rights-management/certificate-enrollment-guide/about-certs.md))。
 
-   * ***ExpressPlay帳戶*** -Adobe傳送電子郵件給您，其中包含您用來註冊ExpressPlay管理員帳戶的連結。
+   * ***ExpressPlay帐户*** -Adobe向您发送一封电子邮件，其中包含用于注册ExpressPlay管理员帐户的链接。
 
-1. 使用您的Adobe ID登入Adobe憑證入口網站(使用您提供給Adobe代表的相同電子郵件地址)。 如果您還沒有Adobe ID，您可以依照以下步驟快速建立 *取得Adobe ID* 憑證入口網站的連結：
+1. 使用您的Adobe ID登录Adobe证书门户(使用您向Adobe代表提供的相同电子邮件地址)。 如果您还没有Adobe ID，则可以按照以下步骤快速创建一个插件 *获取Adobe ID* 证书门户中的链接：
 
    <!--<a id="fig_mst_gtj_wv"></a>-->
 
    ![](assets/cert_portal_sign-in-page-web.png)
 
-1. 在Adobe憑證入口網站上，請求 *試用版* 憑證。
+1. 在Adobe证书门户上，请求 *试用版* 证书。
 
-   對於多DRM試用版，單一試用憑證將涵蓋內容保護的所有方面：包裝、授權和運輸。 您需要提供您自己的 [CSR](../../../digital-rights-management/certificate-enrollment-guide/request-certs/gen-cert-signing-req.md) 若要要求憑證：
+   对于Multi-DRM试用版，单一试用证书将涵盖内容保护的所有方面：包装、许可和运输。 您需要提供您自己的 [CSR](../../../digital-rights-management/certificate-enrollment-guide/request-certs/gen-cert-signing-req.md) 要请求证书，请执行以下操作：
    <!--<a id="fig_op1_xwj_wv"></a>-->
 
    ![](assets/cert_portal_trial_request-web.png)
 
-   Adobe會傳送電子郵件給您，指出您接受或拒絕憑證要求。 您可以在以下網址檢視憑證要求的狀態： *請求歷史記錄* 憑證入口網站上的標籤：
+   Adobe将向您发送一封电子邮件，指明是接受还是拒绝您的证书请求。 您可以在上查看证书请求的状态 *请求历史记录* 选项卡：
    <!--<a id="fig_gkl_myj_wv"></a>-->
 
    ![](assets/cert_portal_request_history-web.png)
 
-1. 建立您的ExpressPlay管理員帳戶。
+1. 创建您的ExpressPlay管理员帐户。
 
-   按照提供給您的Adobe連結進入ExpressPlay。 如此將可開啟 *建立帳戶* ExpressPlay頁面。 填寫必填資訊並提交表單。 您將會收到一封來自的電子郵件 `operations@expressplay.com` 包含一週有效的啟用連結。 啟用後，請設定您的ExpressPlay服務：
+   按照提供给您的Adobe链接进入ExpressPlay。 这将打开 *创建帐户* 在ExpressPlay上翻页。 填写所需信息并提交表单。 您将收到一封来自 `operations@expressplay.com` 包含一个有效期为一周的激活链接。 激活后，请设置您的ExpressPlay服务：
    <!--<a id="fig_cjl_ztk_wv"></a>-->
 
    ![](assets/expressplay_create_service-web.png)
 
-   建立服務後，系統會顯示您專屬的「管理員」頁面。 除了一些活動追蹤欄位，您將會看到您的生產和測試 *客戶驗證者* （API金鑰），以及您的生產與測試服務URL：
+   创建服务后，将显示您自己的“管理员”页面。 除了一些活动跟踪字段外，您还将看到生产和测试 *客户验证者* （API密钥），以及您的生产和测试服务URL：
 
    <!--<a id="fig_c5h_xdl_wv"></a>-->
 
    ![](assets/expressplay_admin_dashboard_2-web.png) ![](assets/expressplay_admin_dashboard-web.png)
 
-1. 如果您使用FairPlay，則在Apple開發人員網站上設定使用ExpressPlay時，會涉及其他步驟。 另請參閱 [啟用FairPlay的ExpressPlay服務](../../multi-drm-workflows/p-l-and-p/fairplay-workflow.md#enable-expressplay-service-for-fairplay) 以取得指示。
+1. 如果您使用的是FairPlay，则在Apple开发人员网站上，还需要执行其他步骤来设置ExpressPlay。 参见 [为FairPlay启用ExpressPlay服务](../../multi-drm-workflows/p-l-and-p/fairplay-workflow.md#enable-expressplay-service-for-fairplay) 以获取说明。

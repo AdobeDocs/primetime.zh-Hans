@@ -1,6 +1,6 @@
 ---
-description: 若要接收資訊清單中標籤的相關通知，您必須實作適當的事件接聽程式。
-title: 為定時中繼資料通知新增接聽程式
+description: 要接收有关清单中标记的通知，您需要实施相应的事件侦听器。
+title: 为定时元数据通知添加侦听器
 exl-id: e38f2a25-3379-4132-a8de-6703dc564ed4
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,13 +9,13 @@ ht-degree: 0%
 
 ---
 
-# 為定時中繼資料通知新增接聽程式 {#add-listeners-for-timed-metadata-notifications}
+# 为定时元数据通知添加侦听器 {#add-listeners-for-timed-metadata-notifications}
 
-若要接收資訊清單中標籤的相關通知，您必須實作適當的事件接聽程式。
+要接收有关清单中标记的通知，您需要实施相应的事件侦听器。
 
-您可以透過監聽以下專案來監視定時中繼資料： `onTimedMetadata`，會通知您的應用程式相關活動。 每次在剖析內容期間識別出不重複的訂閱標籤時，TVSDK都會準備新的 `TimedMetadata` 物件並傳送此事件。 物件包含您訂閱的標簽名稱、此標籤出現所在的播放本地時間以及其他資料。
+您可以通过侦听定时元数据来监视定时元数据 `onTimedMetadata`，通知应用程序相关活动。 每次在解析内容期间标识唯一订阅的标记时，TVSDK都会准备一个新的 `TimedMetadata` 对象并调度此事件。 对象包含您订阅的标记的名称、播放中将显示此标记的本地时间以及其他数据。
 
-1. 接聽事件。
+1. 听听事件。
 
    ```java
    private final TimedMetadataEventListener timedMetadataEventListener = new TimedMetadataEventListener() { 
@@ -37,4 +37,4 @@ ht-degree: 0%
    }; 
    ```
 
-ID3中繼資料使用相同的 `onTimedMetadata` 接聽程式來指示是否存在ID3標籤。 不過，這應該不會造成任何混淆，因為您可以使用 `TimedMetadata` `type` 屬性以區分TAG和ID3。 如需ID3標籤的詳細資訊，請參閱  [ID3標籤](../../content-playback-options/t-psdk-android-2.7-id3-metadata-retrieve.md).
+ID3元数据使用相同的 `onTimedMetadata` 侦听器指示存在ID3标记。 但是，这应该不会导致任何混淆，因为您可以使用 `TimedMetadata` `type` 属性，用于区分TAG和ID3。 有关ID3标记的详细信息，请参阅  [ID3标记](../../content-playback-options/t-psdk-android-2.7-id3-metadata-retrieve.md).

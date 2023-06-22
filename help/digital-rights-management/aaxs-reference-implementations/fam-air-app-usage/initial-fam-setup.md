@@ -1,6 +1,6 @@
 ---
-title: 初始Flash Access管理員設定
-description: 初始Flash Access管理員設定
+title: 初始Flash Access管理器设置
+description: 初始Flash Access管理器设置
 copied-description: true
 exl-id: 880822f3-0d21-42fc-889e-7375a2aab11a
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,19 +10,19 @@ ht-degree: 0%
 
 ---
 
-# 初始Flash Access管理員設定 {#initial-flash-access-manager-setup}
+# 初始Flash Access管理器设置 {#initial-flash-access-manager-setup}
 
-請使用下列步驟來設定Flash Access管理員：
+请按下列步骤设置Flash Access管理器：
 
-1. 部署Packager伺服器。 此伺服器應該僅供防火牆內的使用者使用（請勿將此軟體部署在公開的電腦上）。 如需部署伺服器的詳細資訊，請參閱 [部署授權伺服器和Watched資料夾封裝程式](../../aaxs-reference-implementations/deploying-license-server-and-wfp/deploying-license-server-wfp-overview.md).
+1. 部署Packager服务器。 此服务器应该仅对防火墙内的用户可用（不要在面向公众的计算机上部署此软件）。 有关部署服务器的详细信息，请参见 [部署许可证服务器和观察文件夹打包程序](../../aaxs-reference-implementations/deploying-license-server-and-wfp/deploying-license-server-wfp-overview.md).
 
-   * 複製 [!DNL flashaccess-packager.war] 至Tomcat的webapps資料夾。
-   * 複製 [!DNL flashaccess-refimpl-packager.properties] 從資源移至類別路徑上的位置。
-   * 啟動伺服器。 由於屬性檔案發生問題，您會看到一些錯誤；由於屬性尚未填入，這是預期情況。
+   * 复制 [!DNL flashaccess-packager.war] 到Tomcat的webapps文件夹。
+   * 复制 [!DNL flashaccess-refimpl-packager.properties] 从资源到类路径上的某个位置。
+   * 启动服务器。 由于属性文件中的问题，您将看到一些错误；由于属性尚未填写，这是正常情况。
 
-1. 啟動Flash Access管理員AIR應用程式 [!DNL .air] 檔案(需要AIR 1.5或更新版本)。
-1. 啟動Flash Access管理員AIR應用程式。
+1. Flash Access AIR通过启动 [!DNL .air] 文件(需要AIR 1.5或更高版本)。
+1. 启动Flash Access管理器AIR应用程序。
 
-   如果您的伺服器執行於 `https://localhost:8080*`，您會看到錯誤，指出應用程式無法連線到伺服器。 關閉錯誤對話方塊，並在「偏好設定」索引標籤中填入Packager伺服器URL的正確URL。 如果伺服器是在指定的URL上執行，而且屬性檔案位於類別路徑上，則「偏好設定」畫面會填入屬性檔案中的值。 在您設定封裝程式伺服器URL後，AIR應用程式會記住此設定，而您下次啟動應用程式時不必再輸入此設定。
-1. 在「偏好設定」標籤中填入值，然後按一下 **[!UICONTROL Save]**.
-1. 如果要使用Watched資料夾，您必須重新啟動伺服器，才能從您在步驟3中看到的錯誤中復原。 如果正確設定了偏好設定，啟動期間應該不會出現任何錯誤。
+   如果您的服务器运行在 `https://localhost:8080*`，您会看到指示应用程序无法连接到服务器的错误。 关闭错误对话框，然后在“首选项”选项卡中填写Packager服务器URL的正确URL。 如果服务器在指定的URL上运行，并且属性文件位于类路径上，则“首选项”屏幕将使用属性文件中的值填充。 在设置Packager服务器URL后，AIR应用程序会记住此设置，并且下次启动应用程序时不必输入它。
+1. 在“首选项”选项卡中填写值并单击 **[!UICONTROL Save]**.
+1. 如果要使用Watched文件夹，则需要重新启动服务器以从您在步骤3中看到的错误中恢复。 如果首选项配置正确，则启动期间不会显示任何错误。

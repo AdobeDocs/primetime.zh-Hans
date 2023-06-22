@@ -1,6 +1,6 @@
 ---
-description: 若要以最有效的方式使用TVSDK，您應考慮其運作的特定細節，並遵循某些最佳實務。
-title: 考量事項和最佳作法
+description: 为了最有效地使用TVSDK，您应考虑其操作的某些详细信息并遵循某些最佳实践。
+title: 注意事项和最佳实践
 exl-id: 5e1e09e1-f22e-4797-807a-14dbf50bb835
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,37 +9,37 @@ ht-degree: 0%
 
 ---
 
-# 考量事項和最佳作法{#considerations-and-best-practices}
+# 注意事项和最佳实践{#considerations-and-best-practices}
 
-若要以最有效的方式使用TVSDK，您應考慮其運作的特定細節，並遵循某些最佳實務。
+为了最有效地使用TVSDK，您应考虑其操作的某些详细信息并遵循某些最佳实践。
 
-## 考量事項 {#section_tvsdk_considerations}
+## 注意事项 {#section_tvsdk_considerations}
 
-使用TVSDK時，請記住下列資訊：
+使用TVSDK时，请记住以下信息：
 
-* Adobe Primetime無法用於模擬器或模擬器。
+* Adobe Primetime不适用于模拟器或模拟器。
 
-   您必須使用真實裝置進行測試。
-* 僅HTTP即時資料流(HLS)內容支援播放。
-* 主要視訊內容可以多工處理，其中視訊和音訊資料流位於相同的轉譯中；也可以非多工處理，其中視訊和音訊資料流位於不同的轉譯中。
-* TVSDK API已實作ActionScript。
-* 視訊播放需要Adobe Video Engine (AVE)。 這會影響存取媒體資源的方式和時間：
+   您必须使用真实设备进行测试。
+* 仅HTTP实时流(HLS)内容支持播放。
+* 主视频内容可以多路复用，其中视频和音频流位于同一演绎版；也可以非多路复用，其中视频和音频流位于单独的演绎版。
+* TVSDK API采用ActionScript实现。
+* 视频播放需要Adobe视频引擎(AVE)。 这会影响访问媒体资源的方式和时间：
 
-   * AVE提供的範圍內支援隱藏式字幕。
-   * 根據編碼器精確度，實際的編碼媒體持續時間可能與串流資源資訊清單中記錄的持續時間不同。
+   * 在AVE提供的范围内支持隐藏式字幕。
+   * 根据编码器精度，实际的编码媒体持续时间可能与流资源清单中记录的持续时间不同。
 
-      在理想的虛擬時間軸和實際的播放時間軸之間，沒有可靠的方法可重新同步。 廣告管理和視訊分析的串流播放進度追蹤必須使用實際播放時間，因此報告和使用者介面行為可能無法準確追蹤媒體和廣告內容。
-   * 來自此平台TVSDK之所有HTTP要求的傳入使用者代理程式名稱會指派以下字串模式：
+      没有可靠的方法可以在理想的虚拟时间轴和实际的播放时间轴之间重新同步。 广告管理和视频分析的流播放进度跟踪必须使用实际播放时间，因此报告和用户界面行为可能无法准确跟踪媒体和广告内容。
+   * 来自此平台TVSDK的所有HTTP请求的传入用户代理名称分配了以下字符串模式：
 
       ```
       "Adobe Flash Player"
       ```
 
-## 最佳實務 {#section_tvsdk_best_practices}
+## 最佳实践 {#section_tvsdk_best_practices}
 
-以下是TVSDK的建議作法：
+以下是TVSDK的建议实践：
 
-* 針對程式內容使用HLS 3.0版或更新版本。
-* TVSDK 1.4 for DHLS預設會啟用延遲廣告載入。
+* 对程序内容使用HLS版本3.0或更高版本。
+* 对于DHLS的TVSDK 1.4，默认启用延迟广告加载。
 
-   對於沒有前段或中段的內容，您可以使用 `AdvertisingMetadata.delayAdLoading` 以加速內容載入。
+   对于没有前置或中置的内容，您可以使用 `AdvertisingMetadata.delayAdLoading` 以进一步加快内容加载。

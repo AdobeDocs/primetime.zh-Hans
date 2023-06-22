@@ -1,6 +1,6 @@
 ---
-description: 您可以控制隱藏式字幕的可見度。 當可見性開啟時，會顯示目前選取的軌跡。
-title: 控制隱藏式字幕可見度
+description: 您可以控制隐藏式字幕的可见性。 当可见性打开时，将显示当前选定的轨道。
+title: 控制隐藏式字幕可见性
 exl-id: e74c0344-43f3-4ed7-bbf2-d89dd3df8a33
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,18 +9,18 @@ ht-degree: 0%
 
 ---
 
-# 控制隱藏式字幕可見度{#control-closed-caption-visibility}
+# 控制隐藏式字幕可见性{#control-closed-caption-visibility}
 
-您可以控制隱藏式字幕的可見度。 當可見性開啟時，會顯示目前選取的軌跡。
-
->[!TIP]
->
->如果變更目前哪個軌跡，可視性設定會維持不變。
-
-如果在播放器進入搜尋模式時顯示隱藏式字幕文字，搜尋完成後文字將不再顯示。 而是在幾秒後，瀏覽器TVSDK會在搜尋結束位置後，在視訊中顯示下一個隱藏式字幕文字。
+您可以控制隐藏式字幕的可见性。 当可见性打开时，将显示当前选定的轨道。
 
 >[!TIP]
 >
->隱藏式字幕的可見度值由控制 `MediaPlayer.VISIBLE` 和 `MediaPlayer.INVISIBLE`.
+>如果更改哪个轨道为当前轨道，可见性设置将保持不变。
 
-1. 使用 `MediaPlayer.ccVisibility` 屬性以存取隱藏式字幕的目前可見度設定。
+如果在播放器进入搜寻模式时显示隐藏式字幕文本，则搜寻完成后不再显示文本。 相反，几秒钟后，浏览器TVSDK会在视频中在结束搜寻位置后显示下一个隐藏式字幕文本。
+
+>[!TIP]
+>
+>隐藏式字幕的可见度值由以下控制 `MediaPlayer.VISIBLE` 和 `MediaPlayer.INVISIBLE`.
+
+1. 使用 `MediaPlayer.ccVisibility` 属性，用于访问隐藏式字幕的当前可见性设置。

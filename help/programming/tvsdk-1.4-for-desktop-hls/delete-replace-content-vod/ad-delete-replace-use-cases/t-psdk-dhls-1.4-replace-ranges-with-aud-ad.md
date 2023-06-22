@@ -1,6 +1,6 @@
 ---
-title: 以Adobe Primetime廣告決策廣告取代時間範圍
-description: 以Adobe Primetime廣告決策廣告取代時間範圍
+title: 用Adobe Primetime广告决策广告替换时间范围
+description: 用Adobe Primetime广告决策广告替换时间范围
 copied-description: true
 exl-id: 263274b7-4602-4be0-b0ad-040f6f0f2fae
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,11 +10,11 @@ ht-degree: 0%
 
 ---
 
-# 以Adobe Primetime廣告決策廣告取代時間範圍{#replace-time-ranges-with-an-adobe-primetime-ad-decisioning-ad}
+# 用Adobe Primetime广告决策广告替换时间范围{#replace-time-ranges-with-an-adobe-primetime-ad-decisioning-ad}
 
-移除 `TimeRanges` 介於 `begin` 和 `end` 在 `localTime` 從時間軸。 將其取代為 `begin` 至 `begin+replaceDuration`.
+移除 `TimeRanges` 介于 `begin` 和 `end` 在 `localTime` 从时间线。 将其替换为的广告时间 `begin` 到 `begin+replaceDuration`.
 
-以Primetime廣告決策廣告取代範圍。
+将范围替换为Primetime广告和决策广告。
 
 ```
 {   

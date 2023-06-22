@@ -1,6 +1,6 @@
 ---
-description: Primetime數位版權管理(DRM)系統的關鍵使用者端元素是DRM管理員。
-title: Primetime DRM介面概觀
+description: Primetime数字版权管理(DRM)系统的关键客户端元素是DRM管理器。
+title: Primetime DRM界面概述
 exl-id: 8d6b9416-5d8a-4d1e-b8e6-47c43389f079
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,19 +9,19 @@ ht-degree: 0%
 
 ---
 
-# Primetime DRM介面概觀{#primetime-drm-interface-overview}
+# Primetime DRM界面概述{#primetime-drm-interface-overview}
 
-Primetime數位版權管理(DRM)系統的關鍵使用者端元素是DRM管理員。
+Primetime数字版权管理(DRM)系统的关键客户端元素是DRM管理器。
 
 <!--<a id="section_4DD54E085AB345FE9BE00865E56B28DB"></a>-->
 
-Primetime DRM提供可擴充、有效率的工作流程，以在TVSDK應用程式中實作內容保護。 您可以為每個數位媒體檔案建立授權，藉此保護和管理視訊內容的許可權。
+Primetime DRM提供了一个可扩展的高效工作流，用于在TVSDK应用程序中实施内容保护。 通过为每个数字媒体文件创建许可证，您可以保护和管理视频内容的权限。
 
-TVSDK支援Primetime DRM整合作為自訂DRM工作流程。 這表示您的應用程式必須先實作DRM驗證工作流程，才能使用Flash播放資料流 `DRMManager`. 若要啟用此功能， `MediaPlayer` 為您提供用於驗證的DRM管理員。
+TVSDK支持将Primetime DRM集成作为自定义DRM工作流。 这意味着您的应用程序必须先实施DRM身份验证工作流，然后才能使用Flash播放流 `DRMManager`. 要启用此功能，请 `MediaPlayer` 为您提供用于身份验证的DRM管理器。
 
-以下是使用DRM時最重要的API元素：
+以下是使用DRM时最重要的API元素：
 
-* 在媒體播放器中對實作DRM子系統的DRM管理員物件的參考：
+* 媒体播放器中对实现DRM子系统的DRM管理器对象的引用：
 
    ```
    public function get drmManager():DRMManager 
@@ -29,15 +29,15 @@ TVSDK支援Primetime DRM整合作為自訂DRM工作流程。 這表示您的應�
 
 <!--<a id="section_4204CE2731A44F67A3664AEDE8CCCA47"></a>-->
 
-其他相關API元素：
+其他相关API元素：
 
 * [flash.net.drm.DRMManager](https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/net/drm/DRMManager.html)
 * [flash.net.drm.DRMContentData](https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/net/drm/DRMContentData.html)
-* [flash.net.drm.DRMVoucher](https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/net/drm/DRMVoucher.html)
+* [flash.net.drm.DRMVucher](https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/net/drm/DRMVoucher.html)
 * [flash.net.drm.AuthenticationMethod](https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/net/drm/AuthenticationMethod.html)
 * [flash.events.DRMStatusEvent](https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/events/DRMStatusEvent.html)
 * [flash.events.DRMErrorEvent](https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/events/DRMErrorEvent.html)
 
 <!--<a id="section_F58941D68EB94A5EBD1C7454D2A1B17A"></a>-->
 
-如需DRM的詳細資訊，請參閱Adobe Primetime DRM檔案。
+有关DRM的更多信息，请参阅Adobe Primetime DRM文档。

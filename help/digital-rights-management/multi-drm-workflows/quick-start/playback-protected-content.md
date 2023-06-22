@@ -1,6 +1,6 @@
 ---
-description: 若要測試您的DRM解決方案，您需要一個視訊應用程式，該應用程式可以處理您正在使用的特定DRM解決方案。 此播放器可能是Adobe提供的範例播放器，或是您自己的以TVSDK為基礎的視訊應用程式。
-title: 播放您的受保護內容
+description: 要测试DRM解决方案，您需要一个视频应用程序，该应用程序可以处理您正在使用的特定DRM解决方案。 此播放器可以是Adobe提供的示例播放器，也可以是您自己的基于TVSDK的视频应用程序。
+title: 播放受保护的内容
 exl-id: b0e09474-f752-495f-a702-93f288535403
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,25 +9,25 @@ ht-degree: 0%
 
 ---
 
-# 播放您的受保護內容 {#playback-your-protected-content}
+# 播放受保护的内容 {#playback-your-protected-content}
 
-若要測試您的DRM解決方案，您需要一個視訊應用程式，該應用程式可以處理您正在使用的特定DRM解決方案。 此播放器可能是Adobe提供的範例播放器，或是您自己的以TVSDK為基礎的視訊應用程式。
+要测试DRM解决方案，您需要一个视频应用程序，该应用程序可以处理您正在使用的特定DRM解决方案。 此播放器可以是Adobe提供的示例播放器，也可以是您自己的基于TVSDK的视频应用程序。
 
-1. 使用您從ExpressPlay伺服器回傳的權杖回應中的授權伺服器URL，測試您是否可以播放受保護的內容。
+1. 使用从ExpressPlay服务器返回的令牌响应中的许可证服务器URL测试是否可以播放受保护的内容。
 
-   * **Widevine**  — 直接使用從您的ExpressPlay授權Token請求收到的Widevine回應。
-   * **PlayReady**  — 從授權權杖請求傳回的JSON物件取得授權伺服器URL和權杖。
-   * **Fairplay**  — 直接使用從您的ExpressPlay授權Token請求收到的FairPlay回應。
+   * **Widevine**  — 直接使用从您的ExpressPlay许可证令牌请求收到的Widevine响应。
+   * **PlayReady**  — 从许可证令牌请求返回的JSON对象中获取许可证服务器URL和令牌。
+   * **公平竞争**  — 直接使用从ExpressPlay许可证令牌请求收到的FairPlay响应。
 
-1. 使用您自己的播放器或現有的Adobe範例播放器，測試受保護內容的播放。
+1. 使用您自己的播放器或现有的Adobe示例播放器来测试受保护内容的播放。
 
-   提供受保護內容的URL （M3U8或MPD資訊清單的位置，視您測試的DRM解決方案而定）。
+   提供受保护内容的URL（M3U8或MPD清单的位置，具体取决于您测试的DRM解决方案）。
 
-   根據您測試所用的播放器所提供的介面，系統可能會要求您提供授權URL和權杖，並在輸入欄位中將其分隔為字串、或貼上到文字方塊中的JSON物件，或在URL中將其分隔為查詢引數。
+   根据您测试的播放器提供的界面，可能会要求您提供许可证URL和令牌，并将其作为输入字段中的字符串、粘贴到文本框中的JSON对象，或者作为URL中的查询参数。
 
-   以下列出測試播放器的一些可能性：
+   此处列出了测试播放器的一些可能性：
 
-   * HTML5參考播放器：
+   * HTML5引用播放器：
 
       ```
       https://ptdemos.com/html5/internal/1_2/2.4_GM/samples/reference/reference_player.html
@@ -39,20 +39,20 @@ ht-degree: 0%
       https://shaka-player-demo.appspot.com
       ```
 
-   * 範例TVSDK播放器（開發中） -
+   * 示例TVSDK播放器（开发中） — 
 
    ```
    https://drmtest2.adobe.com/TVSDK_HTML5/samples/reference/reference_player.html
    ```
 
-   **測試FairPlay設定時檢查播放：** 使用ExpressPlay授權伺服器時，FairPlay需要一些額外的步驟來播放內容。 如果您使用 [!DNL curl] 以測試連線（如所述） [授權](../../multi-drm-workflows/quick-start/handle-the-licensing.md))，您需要 *編輯您的M3U8資訊清單* （您的封裝內容）如下所示：
+   **在测试FairPlay设置时检查播放：** 使用ExpressPlay许可证服务器时，FairPlay需要一些额外的步骤来回放内容。 如果您使用 [!DNL curl] 以测试连接（如中所述） [许可](../../multi-drm-workflows/quick-start/handle-the-licensing.md))，您需要 *编辑M3U8清单* （您的已打包内容）如下所示：
 
-1. 將授權權杖請求傳回的回應新增至 `#EXT-X-KEY:` 標籤進行標籤；及
-1. 從回應（現在在資訊清單中）變更該URL的通訊協定，從 `https://` 至 `skd://`.
+1. 将许可证令牌请求返回的响应添加到 `#EXT-X-KEY:` 标签进行识别；及
+1. 从响应（现位于清单中）中更改该URL的协议，从 `https://` 到 `skd://`.
 
-   以下是使用FairPlay測試播放的完整範例，包括授權步驟：
+   以下是使用FairPlay测试播放的完整示例，包括许可步骤：
 
-1. 使用FairPlay授權權杖請求來取得您的授權權杖URL。 (使用您自己的生產客戶驗證器，並確保使用相同的CEK和 `iv` 用來封裝您的FairPlay內容)。 執行以下命令以取得範例內容的授權權杖URL：
+1. 使用FairPlay许可证令牌请求获取您的许可证令牌URL。 (使用您自己的生产客户验证器，并确保使用相同的CEK和 `iv` 用来打包你的FairPlay内容。) 运行以下命令以获取示例内容的许可证令牌URL：
 
    ```
    curl -v "https://fp-gen.service.expressplay.com/hms/fp/token? 
@@ -61,7 +61,7 @@ ht-degree: 0%
    =[YOUR CONTENT KEY]&iv=[YOUR IV]"
    ```
 
-   您應該會以授權權杖URL得到回應，如下所示：
+   您应该使用许可证令牌URL返回响应，该URL如下所示：
 
    ```
    https://fp.service.expressplay.com:80/hms/fp/rights/? 
@@ -70,7 +70,7 @@ ht-degree: 0%
    SSwcDq1ZnRtXunFLueTw6LAL52aZllMLasCSzYRMaAVHw 
    ```
 
-1. 將傳回的授權權杖URL回應放入您的M3U8資訊清單，並且 *將授權權杖URL的方案變更為* `sdk://` 從 `https://`. 以下是M3U8資訊清單中#EXT-X-KEY標籤的範例：
+1. 将返回的许可证令牌URL响应放入您的M3U8清单中，并且 *将许可证令牌URL的方案更改为* `sdk://` 起始日期 `https://`. 以下是M3U8清单中的#EXT-X-KEY标记示例：
 
    ```
    #EXT-X-KEY:METHOD=SAMPLE-AES, 
@@ -83,13 +83,13 @@ ht-degree: 0%
 
    >[!NOTE]
    >
-   >上述資訊僅適用於FairPlay設定的測試。 它可能不適用於您的生產設定，具體取決於您設定FairPlay處理常式的方式。 另請參閱 [在iOS應用程式中啟用Apple FairPlay](../../../programming/tvsdk-3x-ios-prog/ios-3x-drm-content-security/ios-3x-apple-fairplay-tvsdk.md) 以取得詳細資訊。
+   >上述信息仅适用于测试FairPlay设置。 它可能不适用于您的生产设置，具体取决于您配置FairPlay处理程序的方式。 参见 [在iOS应用程序中启用Apple FairPlay](../../../programming/tvsdk-3x-ios-prog/ios-3x-drm-content-security/ios-3x-apple-fairplay-tvsdk.md) 了解详细信息。
 
-如果您的影片播放，表示您已成功封裝並授權您的內容。 如果影片無法播放，請前往疑難排解頁面，尋找問題的可能解決方案。
+如果您的视频播放，则表示您已成功打包您的内容并授予许可。 如果视频无法播放，请查看故障排除页面，以了解针对您的问题的一些可能解决方案。
 
 <!--<a id="example_603D92A1F3924467B5D66EC862B8F59C"></a>-->
 
-例如，以下是上述第一個測試播放器中的UI部分，您可在其中提供從ExpressPlay伺服器取得的授權資訊：
+例如，下面是上面列出的第一个测试播放器中的UI部分，其中提供了从ExpressPlay服务器获得的许可信息：
 
 <!--<a id="fig_zjy_q2c_rw"></a>-->
 

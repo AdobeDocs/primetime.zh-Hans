@@ -1,6 +1,6 @@
 ---
-title: 使用協力廠商編碼器
-description: 使用協力廠商編碼器
+title: 使用第三方编码器
+description: 使用第三方编码器
 copied-description: true
 exl-id: 565f69db-8595-4f78-b1e6-26f277a3784a
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,13 +10,13 @@ ht-degree: 0%
 
 ---
 
-# 使用協力廠商編碼器{#use-a-third-party-encoder}
+# 使用第三方编码器{#use-a-third-party-encoder}
 
-有些客戶可能已經使用硬體或軟體視訊編碼器(或Adobe Medium伺服器)進行內容準備。 如果是這種情況，任何目前可以建立Primetime DRM保護內容的產品，都可以使用與Primetime Cloud DRM Protection Kit相同的組態設定，封裝Primetime Cloud DRM的內容。 所需資訊可從套件中包含的任何現有組態檔中取得： [!DNL config_hls.xml] 或 [!DNL config_hds.xml].
+某些客户可能已使用硬件或软件视频编码器(或Adobe Medium服务器)设置了内容准备管道。 如果是这种情况，任何当前可创建受Primetime DRM保护内容的产品都可以使用与Primetime Cloud DRM保护工具包相同的配置设置来为Primetime Cloud DRM打包内容。 所需信息可从套件中包含的任何现有配置文件中获取： [!DNL config_hls.xml] 或 [!DNL config_hds.xml].
 
-相關設定專案包括：
+相关配置项目包括：
 
-* 授權伺服器URL
-* 金鑰伺服器URL
-* 授權伺服器憑證
-* 傳輸憑證
+* 许可证服务器URL
+* 密钥服务器URL
+* 许可证服务器证书
+* 传输证书

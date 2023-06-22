@@ -1,6 +1,6 @@
 ---
-title: 建立DRMErrorEvent處理常式
-description: 建立DRMErrorEvent處理常式
+title: 创建DRMErrorEvent处理程序
+description: 创建DRMErrorEvent处理程序
 copied-description: true
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
@@ -10,11 +10,11 @@ ht-degree: 0%
 ---
 
 
-# 建立DRMErrorEvent處理常式{#create-a-drmerrorevent-handler}
+# 创建DRMErrorEvent处理程序{#create-a-drmerrorevent-handler}
 
-建立事件處理常式，在嘗試播放受保護內容時遇到錯誤時，處理從Primetime傳送的錯誤事件。
+创建一个事件处理程序，以便在尝试播放受保护内容时遇到错误时处理从Primetime调度的错误事件。
 
-通常，當應用程式遇到錯誤時，它會執行任意數量的清理任務。 然後它會通知使用者該錯誤，並提供解決問題的選項。
+通常，当应用程序遇到错误时，它会执行任意数量的清理任务。 然后，它会通知用户该错误，并提供解决问题的选项。
 
 ```
 private function drmErrorEventHandler(event:DRMErrorEvent):void {  

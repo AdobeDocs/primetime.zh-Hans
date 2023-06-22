@@ -1,6 +1,6 @@
 ---
-description: 服務品質(QoS)提供視訊引擎執行狀況的詳細檢視。 TVSDK提供有關播放、緩衝和裝置的詳細統計資料。
-title: 服務品質統計資料
+description: 服务质量(QoS)提供了有关视频引擎执行情况的详细视图。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
+title: 服务质量统计数据
 exl-id: 7684605f-e049-47bf-8073-155d1ff000e0
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,34 +9,34 @@ ht-degree: 0%
 
 ---
 
-# 服務品質統計資料{#quality-of-service-statistics}
+# 服务质量统计数据{#quality-of-service-statistics}
 
-服務品質(QoS)提供視訊引擎執行狀況的詳細檢視。 TVSDK提供有關播放、緩衝和裝置的詳細統計資料。
+服务质量(QoS)提供了有关视频引擎执行情况的详细视图。 TVSDK提供有关播放、缓冲和设备的详细统计信息。
 
-## 讀取QOS播放、緩衝和裝置統計資料 {#section_9996406E2D814FA382B77E3041CB02BC}
+## 读取QOS播放、缓冲和设备统计信息 {#section_9996406E2D814FA382B77E3041CB02BC}
 
-您可以讀取播放、緩衝和裝置統計資料，從 `PTQOSProvider` 類別。
+您可以从中读取播放、缓冲和设备统计信息 `PTQOSProvider` 类。
 
-此 `PTQOSProvider` class提供各種統計資料，包括關於緩衝、位元速率、影格速率、時間資料等的資訊。
+此 `PTQOSProvider` 类提供了各种统计信息，包括有关缓冲、比特率、帧率、时间数据等的信息。
 
-它也提供裝置的相關資訊，例如型號、作業系統和製造商的裝置ID。
+它还提供有关设备的信息，如型号、操作系统和制造商的设备ID。
 
 >[!TIP]
 >
->您無法變更播放緩衝區大小，但可以監控緩衝區大小的狀態，以便進行偵錯或分析。 `PTPlaybackInformation` 包括以下屬性 `playbackBufferFull` 和 `playbackLikelyToKeepUp`.
+>不能更改播放缓冲区大小，但可以监视缓冲区大小的状态以进行调试或分析。 `PTPlaybackInformation` 包括以下属性 `playbackBufferFull` 和 `playbackLikelyToKeepUp`.
 
-1. 例項化媒體播放器。
-1. 建立 `PTQOSProvider` 物件並將其附加至媒體播放器。
+1. 实例化媒体播放器。
+1. 创建 `PTQOSProvider` 对象并将其附加到媒体播放器。
 
-   此 `PTQOSProvider` 建構函式會擷取播放器內容，以便擷取裝置特定資訊。
+   此 `PTQOSProvider` 构造函数采用播放器上下文，以便可以检索特定于设备的信息。
 
    ```
    qosProvider = [[PTQOSProvider alloc]initWithPlayer:self.player]; 
    ```
 
-1. （選用）讀取播放統計資料。
+1. （可选）读取播放统计数据。
 
-   讀取播放統計資料的解決方案之一，就是使用計時器，例如 `NSTimer`，會定期從擷取新的QoS值 `PTQOSProvider`. 例如：
+   读取播放统计数据的一种解决方案是设置计时器，例如 `NSTimer`，定期从获取新的QoS `PTQOSProvider`. 例如：
 
    ```
    - (void)printPlaybackInfoLog { 
@@ -50,7 +50,7 @@ ht-degree: 0%
    }
    ```
 
-1. （選擇性）讀取裝置特定資訊。
+1. （可选）读取特定于设备的信息。
 
    ```
     PTDeviceInformation *devInfo = qosProvider.deviceInformation; 

@@ -1,6 +1,6 @@
 ---
-description: 您必須先將播放器設為有效狀態，才能使用大部分的TVSDK播放器方法。
-title: 等待有效的狀態
+description: 在使用大多数TVSDK播放器方法之前，播放器必须处于有效状态。
+title: 等待有效的状态
 exl-id: 150b37b8-c36d-4143-bead-ddc601bba6fe
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,10 +9,10 @@ ht-degree: 0%
 
 ---
 
-# 等待有效的狀態{#wait-for-a-valid-state}
+# 等待有效的状态{#wait-for-a-valid-state}
 
-您必須先將播放器設為有效狀態，才能使用大部分的TVSDK播放器方法。
+在使用大多数TVSDK播放器方法之前，播放器必须处于有效状态。
 
-播放器會移動各種狀態。 等候播放器處於正確狀態可確保媒體資源已成功載入。 如果播放器未處於至少必要的狀態，許多播放器方法會擲回 `IllegalStateException`.
+播放器会经历各种状态。 等待播放器处于正确状态可确保媒体资源已成功加载。 如果播放器未至少处于所需的状态，则许多播放器方法会引发 `IllegalStateException`.
 
-所需的狀態通常是 `PTMediaPlayerStatusReady`.
+所需的状态通常为 `PTMediaPlayerStatusReady`.

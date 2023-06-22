@@ -1,6 +1,6 @@
 ---
-description: 您可以在授權伺服器上設定數個Java系統屬性，以控制設定和記錄檔的位置。
-title: Java系統屬性
+description: 您可以在许可证服务器上配置多个Java系统属性，以控制配置和日志文件的位置。
+title: Java系统属性
 exl-id: 08fe6910-9d58-41c3-91d3-514406bedf05
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,21 +9,21 @@ ht-degree: 0%
 
 ---
 
-# Java系統屬性{#java-system-properties}
+# Java系统属性{#java-system-properties}
 
-您可以在授權伺服器上設定數個Java系統屬性，以控制設定和記錄檔的位置。
+您可以在许可证服务器上配置多个Java系统属性，以控制配置和日志文件的位置。
 
-您可以選擇設定下列Java系統屬性：
+您可以选择配置以下Java系统属性：
 
-* *`LicenseServer.ConfigRoot`*  — 包含許可證伺服器組態檔案的目錄名稱。
+* *`LicenseServer.ConfigRoot`*  — 包含许可证服务器的配置文件的目录的名称。
 
-   另請參閱 *授權伺服器組態檔* 這些檔案內容的詳細資訊。 若未設定，預設值為 `CATALINA_BASE/licenseserver`.
+   参见 *许可证服务器配置文件* 以了解有关这些文件内容的详细信息。 如果未配置，默认值为 `CATALINA_BASE/licenseserver`.
 
-* *LicenseServer.LogRoot*  — 的名稱 [!DNL logs] license server應用程式記錄所在的目錄。 如果您尚未修改此目錄的名稱，則會將此目錄名稱設定為 *LicenseServer.ConfigRoot* 依預設。
+* *LicenseServer.LogRoot*  — 的名称 [!DNL logs] 许可证服务器应用程序日志所在的目录。 如果尚未修改此目录的名称，则此目录名称将配置为 *LicenseServer.ConfigRoot* 默认情况下。
 
-如果您使用 [!DNL catalina.bat] 或 [!DNL catalina.sh] 檔案啟動Tomcat時，您可以使用 `JAVA_OPTS` 環境變數。 您設定的任何Java選項都會在Tomcat啟動時自動套用。
+如果您使用 [!DNL catalina.bat] 或 [!DNL catalina.sh] 文件启动Tomcat时，可以使用 `JAVA_OPTS` 环境变量。 Tomcat启动时，将自动应用您配置的任何Java选项。
 
-例如，您可以設定 `JAVA_OPTS` 環境變數，如下所示：
+例如，您可以配置 `JAVA_OPTS` 环境变量，如下所示：
 
 ```
 JAVA_OPTS=-DLicenseServer.ConfigRoot="absolute-path-to-config-folder" 

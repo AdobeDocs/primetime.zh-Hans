@@ -1,6 +1,6 @@
 ---
-description: 您可以使用PTSDKConfig類別在TVSDK中全域設定自訂標籤名稱。
-title: 標籤的設定類別方法
+description: 您可以使用PTSDKConfig类在TVSDK中全局配置自定义标记名称。
+title: 标记的配置类方法
 exl-id: 017b766e-a6aa-4c14-af9a-2c88746e22c0
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,27 +9,27 @@ ht-degree: 0%
 
 ---
 
-# 標籤的設定類別方法 {#config-class-methods-for-tags}
+# 标记的配置类方法 {#config-class-methods-for-tags}
 
-您可以使用PTSDKConfig類別在TVSDK中全域設定自訂標籤名稱。
+您可以使用PTSDKConfig类在TVSDK中全局配置自定义标记名称。
 
-TVSDK會自動將全域設定套用至未指定資料流特定設定的任何媒體資料流。
+TVSDK会自动将全局配置应用于未指定流特定配置的任何媒体流。
 
-`PTSDKConfig` 公開這些方法來管理自訂標籤：
+`PTSDKConfig` 显示以下方法以管理自定义标记：
 
-| **訂閱特定自訂標籤** |  |
+| **订阅特定的自定义标记** |  |
 |---|---|
-| `subscribedTags` | 擷取訂閱標籤的目前清單。 |
-| `setSubscribedTags` | 設定將公開給應用程式的訂閱標籤清單。 |
-| **自訂預設機會偵測器使用的廣告標籤** |
-| `adTags` | 擷取目前的廣告標籤清單。 |
-| `setAdTags` | 設定預設機會產生器將使用的廣告標籤清單。 |
+| `subscribedTags` | 检索订阅标签的当前列表。 |
+| `setSubscribedTags` | 设置将向应用程序公开的订阅标记的列表。 |
+| **自定义默认机会检测器使用的广告标记** |
+| `adTags` | 检索广告标记的当前列表。 |
+| `setAdTags` | 设置默认机会生成器将使用的广告标记列表。 |
 
 
-請記住以下事項：
+请记住以下内容：
 
-* setter方法不允許tags引數包含null值。
-* 自訂標籤名稱必須包含#首碼。
+* setter方法不允许tags参数包含null值。
+* 自定义标记名称必须包含#前缀。
 
-   例如，#EXT-X-ASSET是正確的自訂標籤名稱，但EXT-X-ASSET不正確。
-* 媒體資料流載入後，您就無法變更設定。
+   例如，#EXT-X-ASSET是正确的自定义标记名称，但EXT-X-ASSET不正确。
+* 加载媒体流后，无法更改配置。

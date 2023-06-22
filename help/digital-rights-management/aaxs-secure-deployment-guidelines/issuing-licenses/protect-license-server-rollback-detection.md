@@ -1,6 +1,6 @@
 ---
-title: 復原偵測
-description: 復原偵測
+title: 回滚检测
+description: 回滚检测
 copied-description: true
 exl-id: 054d3634-5ce9-4a51-ac91-e6ae60a1fd6e
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,8 +10,8 @@ ht-degree: 0%
 
 ---
 
-# 復原偵測 {#rollback-detection}
+# 回滚检测 {#rollback-detection}
 
-如果您實作Adobe存取時所使用的商業規則要求使用者端維持狀態（例如播放視窗間隔），Adobe強烈建議伺服器追蹤倒回計數器，並使用AIR或SWF允許清單。
+如果您的Adobe访问实施使用要求客户端保持状态的业务规则（例如，播放窗口间隔），Adobe强烈建议服务器跟踪回滚计数器，并使用AIR或SWF允许列表。
 
-在使用者端的大部分要求中，都會將回覆計數器傳送至伺服器。 如果您的Adobe存取實作不需要倒回計數器，則可忽略。 否則，Adobe建議伺服器儲存隨機機器ID （透過取得） `MachineToken.getMachineId().getUniqueId()` — 和資料庫中目前的計數器值。 如需增加和追蹤倒回計數器的詳細資訊，請參閱以下內容中的ClientState： *Adobe存取API參考* 和 *復原偵測* 在 *使用Adobe存取SDK保護內容*.
+回滚计数器在来自客户端的大多数请求中发送到服务器。 如果您实施的Adobe访问不需要回滚计数器，则可以忽略该计数器。 否则，Adobe建议服务器存储随机计算机ID，该ID是使用获取的 `MachineToken.getMachineId().getUniqueId()` — 和数据库中的当前计数器值。 有关递增和跟踪回滚计数器的更多信息，请参阅中的ClientState *Adobe访问API参考* 和 *回滚检测* 在 *使用Adobe访问SDK保护内容*.

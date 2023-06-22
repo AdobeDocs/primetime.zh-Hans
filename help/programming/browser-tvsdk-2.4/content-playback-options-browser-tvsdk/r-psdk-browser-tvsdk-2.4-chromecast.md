@@ -1,6 +1,6 @@
 ---
-description: 您可以從以TVSDK為基礎的傳送器應用程式中轉換任何資料流，並使用瀏覽器TVSDK在Chromecast上播放資料流。
-title: 瀏覽器TVSDK的Google Cast應用程式
+description: 您可以从基于TVSDK的发件人应用程序中转换任何流，并使用浏览器TVSDK在Chromecast上播放该流。
+title: 适用于浏览器TVSDK的Google Cast应用程序
 exl-id: 71077467-8040-4f04-a43b-cc963701c426
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,38 +9,38 @@ ht-degree: 0%
 
 ---
 
-# 瀏覽器TVSDK的Google Cast應用程式{#google-cast-app-for-browser-tvsdk}
+# 适用于浏览器TVSDK的Google Cast应用程序{#google-cast-app-for-browser-tvsdk}
 
-您可以從以TVSDK為基礎的傳送器應用程式中轉換任何資料流，並使用瀏覽器TVSDK在Chromecast上播放資料流。
+您可以从基于TVSDK的发件人应用程序中转换任何流，并使用浏览器TVSDK在Chromecast上播放该流。
 
 <!--<a id="section_87CE5D6D46F0439EB6E63A742D6DD9C8"></a>-->
 
-啟用鑄造的應用程式有兩個元件：
+启用了铸造的应用程序由两个组件组成：
 
-* 傳送者應用程式，可作為遠端控制項。
+* 发件人应用程序，充当远程控制项。
 
-   傳送者應用程式包括智慧型手機、個人電腦等。 您可以使用適用於iOS、Android和Chrome的原生SDK來開發應用程式。
-* 在Chromecast上執行並播放內容的接收者應用程式。
+   发件人应用程序包括智能手机、个人计算机等。 可以使用适用于iOS、Android和Chrome的本机SDK来开发应用程序。
+* 接收方应用程序，在Chromecast上运行并播放内容。
 
    >[!IMPORTANT]
    >
-   >此應用程式只能是HTML5應用程式。
+   >此应用程序只能是HTML5应用程序。
 
-傳送者與接收者使用Cast SDK傳遞訊息來進行通訊。
+发送者和接收者使用Cast SDK传递消息进行通信。
 
-## 基本工作流程 {#section_FAF680FF29DA4D24A50AC0A2B6402B58}
+## 基本工作流 {#section_FAF680FF29DA4D24A50AC0A2B6402B58}
 
-以下是此程式的概述：
+以下是此过程的概述：
 
-1. 傳送者應用程式會建立與接收者應用程式的連線。
-1. 傳送者應用程式會傳送訊息，以便在接收者應用程式上載入媒體。
-1. 接收方應用程式會開始播放。
-1. 傳送者應用程式會將播放控制訊息（例如，播放、暫停、搜尋、快速前進、快速倒帶、倒帶、音量變更等）傳送至接收者應用程式。
-1. 接收者應用程式會回應這些訊息。
+1. 发件人应用程序与接收人应用程序建立连接。
+1. 发送方应用程序发送消息以在接收方应用程序上加载媒体。
+1. 接收方应用程序开始播放。
+1. 发送方应用程序向接收方应用程序发送播放控制消息，如播放、暂停、搜寻、快速前进、快速倒带、倒带、音量更改等。
+1. 接收方应用程序对这些消息做出反应。
 
-## 訊息格式 {#section_1624159DD51D4C87B3E5803DEEBCB6B7}
+## 消息格式 {#section_1624159DD51D4C87B3E5803DEEBCB6B7}
 
-您必須定義訊息，讓傳送者與接收者能夠瞭解。 以下是搜尋訊息的範例：
+您必须定义报文，以便发送者和接收者能够理解。 以下是搜寻消息的示例：
 
 ```js
 { 
@@ -49,23 +49,23 @@ ht-degree: 0%
 } 
 ```
 
-透過Cast SDK傳送自訂訊息（例如搜尋訊息）時，需要自訂訊息名稱空間。 以下是JavaScript中的範例：
+通过Cast SDK发送自定义消息（如搜寻消息）时，需要自定义消息命名空间。 以下是JavaScript中的示例：
 
 ```js
 Custom Message Namespace 
 var MSG_NAMESPACE = "urn:x-cast:com.adobe.primetime"; 
 ```
 
-## 建立連線 {#section_B4D40CABDD3E46FDBE7B5651DFF91653}
+## 建立连接 {#section_B4D40CABDD3E46FDBE7B5651DFF91653}
 
 >[!IMPORTANT]
 >
->建立連線時未涉及瀏覽器TVSDK API。
+>建立连接时未涉及浏览器TVSDK API。
 
-若要建立連線，傳送者與接收者必須完成下列工作：
+要建立连接，发送者和接收者必须完成以下任务：
 
-* 寄件者必須檢閱平台說明檔案，網址為 [寄件者應用程式開發](https://developers.google.com/cast/docs/sender_apps).
-* 接收者會使用Cast接收者API來建立與傳送者應用程式的連線。 例如：
+* 发件人必须查看位于以下位置的Platform文档 [发件人应用程序开发](https://developers.google.com/cast/docs/sender_apps).
+* 接收方使用Cast接收方API与发送方应用程序建立连接。 例如：
 
    ```js
    window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance(); 
@@ -80,25 +80,25 @@ var MSG_NAMESPACE = "urn:x-cast:com.adobe.primetime";
    window.castReceiverManager.start(); 
    ```
 
-## 訊息處理 {#section_3E4814546F5946C9B3E7A1AE384B4FF8}
+## 消息处理 {#section_3E4814546F5946C9B3E7A1AE384B4FF8}
 
-若要傳送訊息給接收者，請參閱寄件者平台的檔案。
+要向接收者发送邮件，请参阅有关发件人平台的文档。
 
 >[!IMPORTANT]
 >
->您必須包含自訂訊息名稱空間， `MSG_NAMESPACE` 所有訊息中。
+>您必须包括自定义消息命名空间， `MSG_NAMESPACE` 所有消息中。
 
-對於接收方應用程式，請遵循轉換接收方API的檔案。
+对于接收器应用程序，请遵循铸造接收器API的文档。
 
-**Chrome型寄件者訊息的範例**
+**基于Chrome的发件人消息示例**
 
 ```js
 window.session.sendMessage(MSG_NAMESPACE, message, successCallback, errorCallback); //https://developers.google.com/cast/docs/reference/chrome/chrome.cast.Session#sendMessage
 ```
 
-**Chrome型傳送者事件處理**
+**基于Chrome的发件人事件处理**
 
-將事件處理常式繫結至您的UI元素，以便在觸發對應的事件時傳送訊息。 例如，對於以Chrome為基礎的傳送者應用程式，搜尋事件可能會傳送如下：
+将事件处理程序绑定到将在触发相应事件时发送消息的UI元素。 例如，对于基于Chrome的发件人应用程序，可能会发送如下搜寻事件：
 
 ```js
 document.getElementById("#seekBar").addEventListener("click", seekEventHandler); 
@@ -109,9 +109,9 @@ function seekEventHandler(event) {
 } 
 ```
 
-**接收者訊息處理**
+**接收方消息处理**
 
-在接收者應用程式中，以下是如何處理搜尋訊息的範例：
+在接收方应用程序中，以下是如何处理搜寻消息的示例：
 
 ```js
 customMessageBus.onMessage = function (event) { 

@@ -1,6 +1,6 @@
 ---
-title: 建立內容封裝和原則管理工具
-description: 建立內容封裝和原則管理工具
+title: 创建内容打包和策略管理工具
+description: 创建内容打包和策略管理工具
 copied-description: true
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
@@ -10,10 +10,10 @@ ht-degree: 0%
 ---
 
 
-# 建立內容封裝和原則管理工具{#create-content-packaging-and-policy-management-tools}
+# 创建内容打包和策略管理工具{#create-content-packaging-and-policy-management-tools}
 
-您可以使用Adobe Primetime DRM SDK建立內容封裝和原則管理工具。 原則管理API可讓管理員建立、檢視詳細資料和更新原則。 封裝API會將原則內嵌到視訊檔案中，並使用內容加密金鑰加密檔案。
+使用Adobe Primetime DRM SDK，您可以创建内容打包和策略管理工具。 策略管理API允许管理员创建、查看策略详情和更新策略。 打包API将策略嵌入到视频文件中，并使用内容加密密钥加密文件。
 
-Primetime DRM SDK包含參考實作( [!DNL AdobePackager.jar])提供內容封裝和原則管理工具的範例( [!DNL AdobePolicyManager.jar])。
+Primetime DRM SDK包括参考实施( [!DNL AdobePackager.jar])提供了内容打包和策略管理工具的示例( [!DNL AdobePolicyManager.jar])。
 
-若要深入瞭解如何建立內容封裝和原則管理工具，請參閱 *使用Adobe Primetime DRM SDK保護內容*.
+要了解有关创建内容打包和策略管理工具的更多信息，请参阅 *使用Adobe Primetime DRM SDK保护内容*.

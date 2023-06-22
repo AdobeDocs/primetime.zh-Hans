@@ -1,6 +1,6 @@
 ---
-title: 支援的CDN
-description: 支援的CDN
+title: 支持的CDN
+description: 支持的CDN
 copied-description: true
 exl-id: 4620c84d-965d-4ecd-b17e-e21c74427282
 source-git-commit: 3e63c187f12d1bff53370bbcde4d6a77f58f3b4f
@@ -10,12 +10,12 @@ ht-degree: 2%
 
 ---
 
-# 支援的CDN {#cdn-supported}
+# 支持的CDN {#cdn-supported}
 
-Adobe Primetime Ad Insertion支援從任何CDN擷取內容和片段，但已擴充對許多主要CDN的驗證/代碼化支援。  如需其他CDN支援或驗證/授權需求的詳細資訊，請聯絡我們。
+Adobe PrimetimeAd Insertion支持从任何CDN获取内容和片段，但扩展了对许多主要CDN的身份验证/标记化支持。  有关其他CDN支持或身份验证/授权需求的更多信息，请与我们联系。
 
 * Akamai
-* 聚光燈
+* Limelight
 * Limelight Networks
 * Level3
-* 世紀連結
+* 世纪链接

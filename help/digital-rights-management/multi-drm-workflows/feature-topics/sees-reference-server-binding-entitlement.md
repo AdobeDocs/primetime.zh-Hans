@@ -1,6 +1,6 @@
 ---
-description: SEES參考伺服器會示範如何使用ExpressPlay啟用裝置繫結軟體權利檔案服務。
-title: 參考服務裝置繫結權益
+description: SEES参考服务器显示如何使用ExpressPlay启用设备绑定权利服务。
+title: 参考服务设备绑定授权
 exl-id: 91f9d406-f3f9-47d3-aa50-f47c4e81b9fc
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,24 +9,24 @@ ht-degree: 0%
 
 ---
 
-# 參考服務：裝置繫結權益 {#reference-service-device-binding-entitlement}
+# 引用服务：设备绑定授权 {#reference-service-device-binding-entitlement}
 
-SEES參考伺服器會示範如何使用ExpressPlay啟用裝置繫結軟體權利檔案服務。
+SEES参考服务器显示如何使用ExpressPlay启用设备绑定权利服务。
 
 >[!NOTE]
 >
->裝置繫結權益服務也可以是時間繫結或提供租用期間。
+>设备绑定权利服务也可以是时间绑定或提供租赁期限。
 
-若要啟動 `device_id` 資訊，播放虛擬M3U8內容。 然後，您可以在ExpressPlay權杖中內嵌Cookie，產生SPC (其中包含 `device_id`)，並傳送 `getToken` 至ExpressPlay伺服器。
+要引导 `device_id` 信息，播放一个虚拟M3U8内容。 然后，您可以在ExpressPlay令牌中嵌入Cookie，并生成SPC(其中包含 `device_id`)，并发送 `getToken` 到ExpressPlay服务器。
 
 ![](assets/fees-device-binding.png)
 
-此序列會先播放一個虛擬M3U8。 Cookie會傳送至SEES伺服器，以取得ExpressPlay權杖URL。 在收到Cookie繫結的ExpressPlay權杖URL後，下一步是產生SPC並將其傳送到ExpressPlay伺服器。 ExpressPlay伺服器會提取 `device_id` 從SPC、ExpressPlay權杖URL的Cookie，並將Cookie和 `device_id` 在交易記錄中。
+该序列首先播放一个虚拟M3U8。 Cookie将发送到SEES服务器以获取ExpressPlay令牌URL。 在收到Cookie绑定的ExpressPlay令牌URL后，下一步是生成SPC并将其发送到ExpressPlay服务器。 ExpressPlay服务器提取 `device_id` 来自SPC的ExpressPlay令牌URL的Cookie，并将Cookie和 `device_id` 在事务日志中。
 
-使用者端會向傳送相同Cookie的SEES提出真正的授權請求。 SEES會採用Cookie來擷取 `device_id` 從ExpressPlay伺服器。
+客户端向SEES发出一个真正的许可证请求，以发送相同的Cookie。 SEES使用Cookie检索 `device_id` 从ExpressPlay服务器。
 
-SEES會要求裝置界限和時間界限的ExpressPlay權杖，並將該Token傳回使用者端。
+SEES请求设备绑定和时间绑定的ExpressPlay令牌，并将该令牌返回给客户端。
 
-使用者端使用ExpressPlay權杖提出授權請求。
+客户端使用ExpressPlay令牌发出许可证请求。
 
-ExpressPlay伺服器會比較 `device_id` 在SPC中，使用 `device_id` 在ExpressPlay權杖中。 ExpressPlay伺服器只會在兩者 `device_id` 值相符。
+ExpressPlay服务器比较 `device_id` 在SPC中 `device_id` 在ExpressPlay令牌中。 ExpressPlay服务器仅在以下情况下颁发许可证： `device_id` 值匹配。

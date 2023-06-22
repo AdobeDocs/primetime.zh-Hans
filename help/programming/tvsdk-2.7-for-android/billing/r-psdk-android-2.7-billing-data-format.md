@@ -1,6 +1,6 @@
 ---
-description: TVSDK會以XML格式將計費量度傳送至Adobe。
-title: 傳輸計費量度
+description: TVSDK以XML格式将计费指标发送到Adobe。
+title: 传输计费指标
 exl-id: 5f42d032-cd2c-4e5e-8960-db555ba75626
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,13 +9,13 @@ ht-degree: 0%
 
 ---
 
-# 傳輸計費量度 {#transmit-billing-metrics}
+# 传输计费指标 {#transmit-billing-metrics}
 
-TVSDK會以XML格式將計費量度傳送至Adobe。
+TVSDK以XML格式将计费指标发送到Adobe。
 
 <!--<a id="example_13ABDB1CC0B549968A534765378DA3A0"></a>-->
 
-如果您使用網路擷取工具來監視TVSDK傳輸至Adobe的統計資料，您應該會看到如下的單位：
+如果使用网络捕获工具监视TVSDK传输到Adobe的统计信息，您应看到如下单位：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -39,4 +39,4 @@ TVSDK會以XML格式將計費量度傳送至Adobe。
 </request>
 ```
 
-布林值屬性 `drmProtected`， `adsEnabled`、和 `midrollEnabled` 只有在為true時才會出現。
+布尔属性 `drmProtected`， `adsEnabled`、和 `midrollEnabled` 仅在为真时显示。

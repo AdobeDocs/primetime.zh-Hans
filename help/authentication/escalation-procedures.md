@@ -1,6 +1,6 @@
 ---
-title: 向上呈報程式
-description: 向上呈報程式
+title: 上报程序
+description: 上报程序
 exl-id: 1d754e5a-d5fa-4411-8932-2a36294da6eb
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,95 +9,95 @@ ht-degree: 0%
 
 ---
 
-# 向上呈報程式 {#escalation-procedures}
+# 上报程序 {#escalation-procedures}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
 >[!IMPORTANT]
 > 
->撥打熱線： **+1-205-693-9813** 並傳送電子郵件至 **tve-support@adobe.com** 包括 **緊急 — 事件** 主旨列中的。
+>拨打热线： **+1-205-693-9813** 并发送电子邮件至 **tve-support@adobe.com** 包括 **紧急 — 事件** 在主题行中。
 
-## 簡介 {#introduction}
+## 介绍 {#introduction}
 
-本檔案說明重大事件的支援程式(**嚴重程度1** 會影響Adobe Primetime驗證、Primetime並行監控及其合作夥伴的。\
+本文档介绍了严重事件的支持步骤(**严重程度1** 级别)影响Adobe Primetime身份验证、Primetime并发监控及其合作伙伴。\
  
 
-## 嚴重程度1層級事件的定義 {#definition-of-a-severity-1-level-incident}
+## 严重级别1事件定义 {#definition-of-a-severity-1-level-incident}
 
-A **嚴重程度1** 事件層級為 **LIVE** 狀況， **在生產環境中發生**，這不允許完成一個管道和一個MVPD的驗證和/或授權流程，這會影響執行流程的MVPD的大量訂閱者。
-
-
-## 嚴重程度1事件的範例 {#examples-of-severity-1-incidentcs}
-
-* 生產存取啟用程式託管於  `https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js` (或 `https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js`)無法使用。
-
-* 對於特定MVPD，使用者選取MVPD （在任何支援的瀏覽器中）後，Adobe不再重新導向/顯示登入頁面。
-
-* 合作夥伴會收到大量報告，指出使用者無法透過特定MVPD進行驗證/授權。
-
-* 在驗證過程中，使用者卡在Adobe錯誤頁面上，無法重新啟動驗證/授權流程。
+A **严重程度1** 事件级别为 **实时** 情况， **在生产环境中发生**，不允许完成一个渠道和一个MVPD的身份验证和/或授权流，这会影响执行该流的MVPD的大量订阅者。
 
 
-| 的範例 **NOT** 嚴重程度1的事件 |
+## 严重级别1事件的示例 {#examples-of-severity-1-incidentcs}
+
+* 生产访问启用码托管在  `https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js` (或 `https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js`)不可用。
+
+* 对于特定的MVPD，Adobe选择MVPD（在任何支持的浏览器中）后，不再重定向/显示登录页。
+
+* 合作伙伴会收到大量报告，指出用户无法通过特定MVPD进行身份验证/授权。
+
+* 在身份验证过程中，用户卡在Adobe错误页面上，无法重新启动身份验证/授权流程。
+
+
+| 示例 **NOT** 严重级别1事件 |
 |---|
-| 對於這些型別的問題，Adobe將提供調查支援，但不是嚴重程度為1的事件：<ul><li>由於Flash版本問題(缺少Flash、Flash封鎖程式、Flash版本錯誤)，一個或幾個訂閱者無法執行流量。</li><li>有一或數個訂閱者無法驗證並停留在MVPD登入頁面上。</li><li>一位或幾位訂閱者已經過驗證，但無法播放視訊。</li><li>一個/少數/所有訂閱者在程式設計師網站上遇到JavaScript錯誤</li></ul> |
+| 对于这些类型的问题，Adobe将为调查提供支持，但不是严重级别为1的事件：<ul><li>由于Flash版本问题(缺少Flash、Flash阻止程序、Flash版本错误)，一个或几个订阅者无法执行流。</li><li>一个或多个订阅者无法进行身份验证并停留在MVPD登录页面上。</li><li>一个或几个用户已经过身份验证，但无法播放视频。</li><li>一个/少数/所有订阅者在程序员网站上遇到JavaScript错误</li></ul> |
 
-## 嚴重程度1提升流程 {#severity-1-escalation-flows}
+## 严重级别1升级流程 {#severity-1-escalation-flows}
 
-嚴重程度1的事件可能會由Adobe或Adobe Primetime驗證合作夥伴發起。 每個專案的步驟如下所示。
+严重级别1事件可能由Adobe或Adobe Primetime身份验证合作伙伴启动。 每个页面的步骤如下所示。
 
-### 合作夥伴起始的流程 {#partner-initiated-flow}
+### 合作伙伴启动的流程 {#partner-initiated-flow}
 
-1. 合作夥伴會識別需要Adobe立即關注的Severity 1事件（如上所述）。
-1. 合作夥伴傳送電子郵件至 **tve-support@adobe.com** 包括 **緊急 — 事件** 並新增下列資訊：
-   * 標題
-   * 說明和重現步驟
-   * 作業系統/瀏覽器
-   * SDK與版本
-   * 受影響的裝置
-   * 受影響的使用者百分比
-   * 說明問題的HTTP追蹤或裝置記錄
-   * （選用）任何可用的熒幕擷取畫面或影片擷取畫面，示範問題
-1. 如果Adobe在30分鐘內未回應票證，合作夥伴會呼叫以下號碼：
+1. 合作伙伴发现需要Adobe立即注意的严重程度为1的事件（如上所述）。
+1. 合作伙伴发送电子邮件至 **tve-support@adobe.com** 包括 **紧急 — 事件** 并添加以下信息：
+   * 标题
+   * 描述和重现步骤
+   * 操作系统/浏览器
+   * SDK和版本
+   * 受影响的设备
+   * 受影响的用户百分比
+   * 说明问题的HTTP跟踪或设备日志
+   * （可选）任何可用于演示问题的屏幕截图或视频截图
+1. 如果Adobe在30分钟内未响应票证，则合作伙伴会调用以下数字：
    **1-205-693-9813**
 
    >[!IMPORTANT]
-   >如果您的票證標題中未包含「URGENT-INCIDENT」（緊急事件），則我們的通知系統**將不會擷取該事件。
+   >如果票证的标题中未包含“URGENT-INCIDENT”（紧急事件），我们的通知系统**将不会提取该事件。
 
-### Adobe起始的流量 {#adobe-initiated-flow}
+### Adobe启动的流 {#adobe-initiated-flow}
 
-#### ...針對Adobe Primetime驗證問題 {#adobe-initiated-flow-authn-issue}
+#### ...对于Adobe Primetime身份验证问题 {#adobe-initiated-flow-authn-issue}
 
-1. Adobe會識別內部問題，並透過我們的追蹤系統開啟票證。
+1. Adobe识别内部问题并通过我们的跟踪系统打开票证。
 
-1. Adobe會通知合作夥伴的計畫經理和技術聯絡人，指定票證號碼和問題的估計影響。
+1. Adobe会通知合作伙伴的项目经理和技术联系人，并指明票证编号和问题的预计影响。
 
-1. Adobe致力於解決事件，並隨時通知所有受影響的合作夥伴。
+1. Adobe致力于解决该事件，并随时向所有受影响的合作伙伴通报情况。
 
-#### ...針對合作夥伴問題（程式設計師/MVPD） {#adobe-initiated-flow-partner-issue}
+#### ...对于合作伙伴问题（程序员/MVPD） {#adobe-initiated-flow-partner-issue}
 
-1. Adobe會識別與MVPD或程式設計師網站上整合相關的問題。
+1. Adobe标识了与与MVPD集成或程序员网站集成相关的问题。
 
-1. Adobe會通知受影響的合作夥伴 <u>遵循與該合作夥伴建立的支援程式</u> 並開啟合作夥伴支援組織的票證。
+1. Adobe通知受影响的合作伙伴 <u>遵循与该合作伙伴一起制定的支持流程</u> 并打开一个包含合作伙伴支持组织的票证。
 
-1. 在影響分析期間，如果Adobe發現問題屬於事件情境的預先商定決定之一，請參閱 **事件情境的預先同意決策**，它就會據此行動，不必等待合作夥伴的輸入。
+1. 在影响分析期间，如果Adobe确定问题属于预先商定的事件场景决策之一，请参阅 **关于事件场景的预先商定决策**，它将相应地执行操作，而无需等待合作伙伴的输入。
 
-1. 當服務還原後，Adobe將等待合作夥伴的更新和合作夥伴的通知。
+1. 当服务恢复后，Adobe将等待合作伙伴的更新和合作伙伴的通知。
 
-## 事件情境的預先同意決策 {#pre-agreed-descn}
+## 关于事件场景的预先商定决策 {#pre-agreed-descn}
 
-在某些情況下，在該案例的出現情況下，將會執行預設動作：
+在某些情况下，当场景出现时，将执行默认操作：
 
-|  | 情境 | 說明 | 動作 |
+|  | 方案 | 描述 | 操作 |
 |---|---|---|---|
-| S1 | Adobe會識別MVPD在正常生產作業期間整合的問題。 | 在一般生產作業期間，Adobe會識別其中一個MVPD的問題，導致無法執行驗證/授權流程（例如，過期的憑證、過期的SAML回應、關閉的連線埠、變更的引數等） | -Adobe會通知受影響的MVPD和程式設計師。  </br> </br> -Adobe將會為所有受影響的程式設計師停用此MVPD。 </br> </br> -Adobe會依照該MVPD的協定支援程式，透過MVPD開啟票證 |
-| S2 | Adobe會為程式設計師啟動新的MVPD，而程式設計師在啟動日期之前允許MVPD。 | Adobe正在為程式設計師的網站啟用新的MVPD，而且該網站已在選取器中顯示新的MVPD，即使它不應該顯示。 | -Adobe會在排程日期之前，將新MVPD出現在選擇器中的情況通知程式設計師。 </br> </br>   — 如有必要，程式設計師會採取動作將其從選擇器中移除。 |
-| S3 | Adobe會為程式設計師啟用新的MVPD，即使MVPD尚未準備好投入生產 | Adobe正在為程式設計師啟用新的MVPD，但MVPD尚未部署整合支援，因此無法執行驗證/授權流程 |  — 只有程式設計師要求，Adobe才會進行部署 </br> </br>  — 一旦執行了所有測試，程式設計師將負責確保MVPD的許可。 |
+| S1 | Adobe标识了正常生产操作期间MVPD集成出现的问题。 | 在正常生产操作期间，Adobe识别一个MVPD的问题，该问题使得无法执行身份验证/授权流（例如，过期的证书、过期的SAML响应、端口关闭、改变的参数等） | -Adobe将通知受影响的MVPD和程序员。  </br> </br> -Adobe将为所有受影响的程序员取消激活此MVPD。 </br> </br> -Adobe将按照与该MVPD商定的支持过程，向该MVPD开立一个票证 |
+| S2 | Adobe为程序员激活新的MVPD，而程序员在启动日期之前允许MVPD。 | Adobe正在为程序员站点激活新的MVPD，并且该站点已在选取器中显示新的MVPD，即使不应显示它。 | -Adobe将在预定日期之前通知程序员在选取器中出现新的MVPD。 </br> </br>   — 如有必要，程序员将采取措施将其从选取器中移除。 |
+| S3 | Adobe为程序员激活新的MVPD，即使MVPD未准备好投入生产 | Adobe正在为程序员激活新的MVPD，但MVPD尚未部署对集成的支持，因此无法执行身份验证/授权流 |  — 仅当程序员询问时，Adobe才会执行部署 </br> </br>  — 一旦执行了所有测试，程序员将负责确保MVPD的许可。 |
 
-## 嚴重性1事件的回應期望 {#response-expectations-for-severity-one-incidents}
+## 严重级别1事件的响应预期 {#response-expectations-for-severity-one-incidents}
 
-* 初始回應： 30分鐘(24/7)
-* 行動計畫：1小時(24/7)
-* 解析度：儘快(24/7)
+* 初始响应：30分钟(24/7)
+* 行动计划：1小时(24/7)
+* 决议：ASAP (24/7)

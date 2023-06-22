@@ -1,6 +1,6 @@
 ---
-description: 您可以設定隱藏式字幕文字的格式，例如字型、大小、顏色、邊緣和不透明度。
-title: 設定隱藏式字幕樣式
+description: 可以设置隐藏式字幕文本的格式，如字体、大小、颜色、边缘和不透明度。
+title: 设置隐藏式字幕样式
 exl-id: 7ece68ce-0dc5-4899-9834-39940bbd0332
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,16 +9,16 @@ ht-degree: 0%
 
 ---
 
-# 設定隱藏式字幕樣式{#set-closed-caption-styles}
+# 设置隐藏式字幕样式{#set-closed-caption-styles}
 
-您可以設定隱藏式字幕文字的格式，例如字型、大小、顏色、邊緣和不透明度。
+可以设置隐藏式字幕文本的格式，如字体、大小、颜色、边缘和不透明度。
 
-1. 等候 `MediaPlayer` 至少處於「已準備」狀態。
+1. 等待 `MediaPlayer` 至少处于“已准备”状态。
 
-   如需狀態的詳細資訊，請參閱 [等待有效的狀態](../../../content-playback-options-browser-tvsdk/ui-configure/t-psdk-browser-tvsdk-2.4-ui-state-prepared-wait-for.md).
-1. 建立 `TextFormat` 執行個體。
+   有关状态的更多信息，请参阅 [等待有效的状态](../../../content-playback-options-browser-tvsdk/ui-configure/t-psdk-browser-tvsdk-2.4-ui-state-prepared-wait-for.md).
+1. 创建 `TextFormat` 实例。
 
-   您可以現在提供所有隱藏式字幕樣式引數，或稍後再設定。
+   您可以现在提供所有隐藏式字幕样式参数，也可以稍后设置它们。
 
    ```js
    new TextFormat( 
@@ -36,19 +36,19 @@ ht-degree: 0%
        safeArea) → {AdobePSDK.TextFormat}
    ```
 
-1. （可選）透過取得目前的隱藏式字幕樣式設定 `MediaPlayer.ccStyle`.
+1. （可选）使用以下方式获取当前隐藏式字幕样式设置 `MediaPlayer.ccStyle`.
 
-   傳回值是 `TextFormat` 介面。
+   返回值是 `TextFormat` 界面。
 
-   如果先前未設定任何樣式，則會傳回TextFormat物件，其中包含每個屬性的預設值：
+   如果以前未设置任何样式，则它会返回一个TextFormat对象，并为每个属性设置默认值：
 
    ```js
    ccStyle :AdobePSDK.TextFormat
    ```
 
-1. 若要變更樣式設定，請使用 `MediaPlayer.ccStyle`，傳遞的例項 `TextFormat` 介面。
+1. 要更改样式设置，请使用 `MediaPlayer.ccStyle`，传递的实例 `TextFormat` 界面。
 
-   即使目前的媒體資料流沒有隱藏式字幕，您也可以使用此方法。
+   即使当前媒体流没有隐藏式字幕，您也可以使用此方法。
 
    ```js
    ccStyle :AdobePSDK.TextFormat 
@@ -56,4 +56,4 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   >設定隱藏式字幕樣式為非同步，因此可能需要幾秒鐘才能讓變更顯示在畫面上。
+   >隐藏式字幕样式的设置是异步的，因此更改可能需要几秒钟才能显示在屏幕上。

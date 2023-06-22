@@ -1,6 +1,6 @@
 ---
-description: 當您的播放包含廣告時，瀏覽器TVSDK會以通常預期的順序傳送事件/通知。 您的播放器可以根據預期序列中的事件實作動作。
-title: 廣告活動的順序
+description: 当您的播放包含广告时，浏览器TVSDK会按照通常预期的顺序发送事件/通知。 您的播放器可以按照预期顺序基于事件实施操作。
+title: 广告事件的顺序
 exl-id: fcc40aa8-9364-40a8-b2f2-9327e24819af
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,24 +9,24 @@ ht-degree: 0%
 
 ---
 
-# 廣告活動的順序{#order-of-advertising-events}
+# 广告事件的顺序{#order-of-advertising-events}
 
-當您的播放包含廣告時，瀏覽器TVSDK會以通常預期的順序傳送事件/通知。 您的播放器可以根據預期序列中的事件實作動作。
+当您的播放包含广告时，浏览器TVSDK会按照通常预期的顺序发送事件/通知。 您的播放器可以按照预期顺序基于事件实施操作。
 
 <!--<a id="section_69E3CCBC57BB48399799876E83908348"></a>-->
 
-播放廣告時，事件的順序為：
+在播放广告时，事件的顺序为：
 
 * `AdobePSDK.PSDKEventType.AD_BREAK_STARTED`
-* 系統會為廣告插播中的每個廣告傳送以下內容：
+* 将为广告时间中的每个广告调度以下内容：
 
    * `AdobePSDK.PSDKEventType.AD_STARTED`
-   * `AdobePSDK.PSDKEventType.AD_PROGRESS` （在廣告播放期間多次）
+   * `AdobePSDK.PSDKEventType.AD_PROGRESS` （在广告播放期间多次）
    * `AdobePSDK.PSDKEventType.AD_COMPLETED`
 
 * `AdobePSDK.PSDKEventType.AD_BREAK_COMPLETED`
 
-以下範例顯示廣告播放事件的典型進度：
+以下示例显示了广告播放事件的典型进度：
 
 ```js
 player.addEventListener(AdobePSDK.PSDKEventType.AD_BREAK_STARTED, onAdbreakStarted); 

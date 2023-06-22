@@ -1,6 +1,6 @@
 ---
-title: 使用Java API建立DRM原則
-description: 使用Java API建立DRM原則
+title: 使用Java API创建DRM策略
+description: 使用Java API创建DRM策略
 copied-description: true
 exl-id: fcae76c3-4e51-449d-b6d5-2138bf1c583e
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,12 +10,12 @@ ht-degree: 0%
 
 ---
 
-# 使用Java API建立DRM原則 {#creating-a-drm-policy-with-the-java-api}
+# 使用Java API创建DRM策略 {#creating-a-drm-policy-with-the-java-api}
 
-使用Java API建立DRM原則：
+要使用Java API创建DRM策略，请执行以下操作：
 
-1. 設定您的開發環境，並將中列出的所有JAR檔案包含在您的專案中 [設定您的開發環境。](../../protecting-content/setting-up-the-sdk/setup-dev-env.md).
-1. 建立 `com.adobe.flashaccess.sdk.policy.Policy` 物件並指定其屬性，包括許可權、授權快取持續時間和DRM原則結束日期。
+1. 设置开发环境，并将中列出的所有JAR文件包含在您的项目中 [设置开发环境。](../../protecting-content/setting-up-the-sdk/setup-dev-env.md).
+1. 创建 `com.adobe.flashaccess.sdk.policy.Policy` 对象并指定其属性，包括权限、许可证缓存持续时间和DRM策略结束日期。
 
    ```java
    // Create a new DRM policy object.  
@@ -50,7 +50,7 @@ ht-degree: 0%
    } 
    ```
 
-1. 序列化DRM `Policy` 物件並將其儲存在檔案或資料庫中。
+1. 序列化DRM `Policy` 对象并将其存储在文件或数据库中。
 
    ```java
    // Serialize the DRM policy  
@@ -64,4 +64,4 @@ ht-degree: 0%
    out.close(); 
    ```
 
-另請參閱 [!DNL com.adobe.flashaccess.samples.policy.CreatePolicy] 在參考實作命令列工具中 [!DNL samples] 此範常式式碼的完整原始碼目錄。
+参见 [!DNL com.adobe.flashaccess.samples.policy.CreatePolicy] 在参考实施命令行工具中 [!DNL samples] 目录，以获取此示例代码的完整源。

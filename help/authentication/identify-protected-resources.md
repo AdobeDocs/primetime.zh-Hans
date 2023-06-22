@@ -1,6 +1,6 @@
 ---
-title: 識別受保護的資源
-description: 識別受保護的資源
+title: 识别受保护的资源
+description: 识别受保护的资源
 exl-id: e96aea02-54b2-491d-ba91-253c0d0e681c
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,31 +9,31 @@ ht-degree: 0%
 
 ---
 
-# 識別受保護的資源 {#identifying-protected-resources}
+# 识别受保护的资源 {#identifying-protected-resources}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-## 概觀 {#overview}
+## 概述 {#overview}
 
-每個授權請求（或檢查授權的請求）都必須包含使用者請求存取之受保護資源的唯一識別碼。 受保護的資源可以是任何層級的授權內容，如MVPD和參與的程式設計人員所協定。 潛在受保護資源必須適合此樹狀結構，且粒度越來越具體：
+每个授权请求（或检查授权的请求）都必须包含用户请求访问的受保护资源的唯一标识符。 根据MVPD和参与程序员的协议，受保护资源可以是任何级别的授权内容。 潜在受保护资源必须适应这种粒度越来越具体的树结构：
 
-- 網路
-   - 頻道
-      - 顯示
-         - 集數
-            - 資產\
+- 网络
+   - 渠道
+      - 显示
+         - 集
+            - 资产\
                 
 
 </br>
 
-## 媒體RSS格式 {#media_rss}
+## 媒体RSS格式 {#media_rss}
 
-資源可由簡單字串（管道的唯一識別碼）識別，或以Media RSS格式(MRSS)表示，如Adobe(或Adobe Primetime驗證授權合作夥伴)與參與的MVPD和程式設計人員所協定。 用作資源規範的RSS字串可以包含其他資訊，例如分級和家長監護中繼資料。\
+资源可以通过简单字符串（渠道的唯一标识符）进行标识，也可以以Media RSS格式(MRSS)表示，如Adobe(或Adobe Primetime身份验证授权合作伙伴)与参与的MVPD和程序员之间商定的那样。 用作资源说明符的RSS字符串可以包含其他信息，例如分级和家长控制元数据。\
  
 
-如果您使用簡單資源識別碼（例如「TNT」），則會假設它代表管道，並轉譯成此RSS資源規範：
+如果您使用简单资源标识符（如“TNT”），则假定它代表一个渠道，并将其转换为此RSS资源说明符：
 
 ```RSS
     <rss version="2.0"> 
@@ -44,7 +44,7 @@ ht-degree: 0%
 ```
  
 
-例如，更複雜的規範可能包含其他評等資訊。 您可以將整個RSS字串傳遞至需要資源ID的Access Enabler函式，例如 [`getAuthorization()`](/help/authentication/rest-api-reference.md)：
+例如，更复杂的说明符可能包括其他评级信息。 您可以将整个RSS字符串传递到需要资源ID的Access Enabler函数，例如 [`getAuthorization()`](/help/authentication/rest-api-reference.md)：
 
 ```rss
     var resource = 
@@ -57,7 +57,7 @@ ht-degree: 0%
     getAuthorization(resource);
 ```
 
-資源指定字元對Adobe Primetime驗證而言是不透明的；它們只會傳遞到MVPD。 如果MVPD無法辨識或無法剖析您的資源規範，則會傳回Adobe Primetime驗證錯誤，並將錯誤傳回 `tokenRequestFailed()` callback。
+资源说明符对Adobe Primetime身份验证是不透明的；它们只是传递到MVPD。 如果MVPD无法识别或无法解析您的资源说明符，则会向Adobe Primetime身份验证返回错误，该错误会将返回给 `tokenRequestFailed()` 回调。
 
 <!--
 ## Related Information {#related}

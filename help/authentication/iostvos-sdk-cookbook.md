@@ -1,6 +1,6 @@
 ---
-title: iOS/tvOS逐步指南
-description: iOS/tvOS逐步指南
+title: iOS/tvOS指南
+description: iOS/tvOS指南
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,101 +9,101 @@ ht-degree: 0%
 
 ---
 
-# iOS/tvOS SDK逐步指南 {#iostvos-sdk-cookbook}
+# iOS/tvOS SDK指南 {#iostvos-sdk-cookbook}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-## 簡介 {#intro}
+## 介绍 {#intro}
 
-本檔案說明程式設計師的上層應用程式可透過iOS/tvOS AccessEnabler資料庫公開的API實施的權益工作流程。
+本文档描述了程序员的上层应用程序可以通过iOS/tvOS AccessEnabler库公开的API实施的授权工作流。
 
-iOS/tvOS的Adobe Primetime驗證許可權解決方案最終分為兩個網域：
+适用于iOS/tvOS的Adobe Primetime身份验证权利解决方案最终分为两个域：
 
-* UI網域 — 這是實作UI並使用AccessEnabler資料庫所提供之服務來提供對受限制內容的存取的上層應用程式層。
+* UI域 — 这是上层应用程序层，它实施UI并使用AccessEnabler库提供的服务来提供对受限内容的访问。
 
-* AccessEnabler網域 — 這是軟體權利檔案工作流程的實作方式，其形式為：
+* AccessEnabler域 — 这是权利工作流的实施形式：
 
-   * 對Adobe後端伺服器發出的網路呼叫
-   * 與驗證和授權工作流程相關的商業邏輯規則
-   * 管理各種資源及處理工作流程狀態（例如權杖快取）
+   * 向Adobe后端服务器发出的网络调用
+   * 与身份验证和授权工作流相关的业务逻辑规则
+   * 各种资源的管理和工作流状态的处理（如令牌缓存）
 
-AccessEnabler網域的目標是隱藏軟體權利檔案工作流程的所有複雜性，並（透過AccessEnabler資料庫）提供一組簡單軟體權利檔案原件，供您實作軟體權利檔案工作流程：
+AccessEnabler域的目标是隐藏授权工作流的所有复杂内容，并（通过AccessEnabler库）向上层应用程序提供一组用于实施授权工作流的简单授权基元：
 
-1. 設定要求者身分
-1. 檢查並取得特定身分提供者的驗證
-1. 檢查並取得特定資源的授權
-1. 登出
-1. Apple SSO會藉由代理Apple VSA架構來流程
+1. 设置请求者身份
+1. 检查并获取针对特定身份提供者的身份验证
+1. 检查并获取特定资源的授权
+1. 注销
+1. 通过代理Apple VSA框架，Apple SSO流程
 
-AccessEnabler的網路活動在其自己的執行緒中進行，因此不會封鎖UI執行緒。 因此，兩個應用程式網域之間的雙向通訊通道必須遵循完全非同步模式：
+AccessEnabler的网络活动在其自己的线程中进行，因此从不阻止UI线程。 因此，两个应用程序域之间的双向通信信道必须遵循完全异步模式：
 
-* UI應用程式層透過AccessEnabler程式庫公開的API呼叫，將訊息傳送至AccessEnabler網域。
-* AccessEnabler會透過AccessEnabler通訊協定（UI層向AccessEnabler程式庫註冊）中包含的回呼方法回應UI層。
+* UI应用层通过AccessEnabler库公开的API调用将消息发送到AccessEnabler域。
+* AccessEnabler通过UI层向AccessEnabler库注册的AccessEnabler协议中包含的回调方法响应UI层。
 
-## 設定訪客ID {#visitorIDSetup}
+## 配置访客Id {#visitorIDSetup}
 
-設定 [Marketing CloudvisitorID](https://marketing.adobe.com/resources/help/en_US/mcvid/) 從analytics的角度來看，值非常重要。 設定visitorID值後，SDK會連同每個網路呼叫傳送此資訊，而Adobe Primetime驗證伺服器會收集此資訊。 將來，您可以將Adobe Primetime Authentication服務的分析與其他應用程式或網站的任何其他分析報表建立關聯。 如需如何設定visitorID的相關資訊，請參閱 [此處](#setOptions).
+配置 [visitorIDMarketing Cloud](https://marketing.adobe.com/resources/help/en_US/mcvid/) 值从Analytics的角度非常重要。 设置visitorID值后，SDK会随每个网络调用发送此信息，而Adobe Primetime身份验证服务器会收集此信息。 将来，您可以将Adobe Primetime Authentication服务中的分析与其他应用程序或网站中的任何其他分析报表相关联。 有关如何设置visitorID的信息，请参阅 [此处](#setOptions).
 
-## 權益流程 {#entitlement}
+## 权利流 {#entitlement}
 
-答：  [必要條件](#prereqs) </br>
-B.  [啟動流程](#startup_flow) </br>
-C.  [沒有Apple SSO的驗證流程](#authn_flow_wo_applesso)  </br>
-D.  [在iOS上使用Apple SSO的驗證流程](#authn_flow_with_applesso) </br>
-E.  [使用tvOS上的Apple SSO驗證流程](#authn_flow_with_applesso_tvOS) </br>
-F.  [授權流程](#authz_flow) </br>
-G.  [檢視媒體流程](#media_flow) </br>
-高  [不使用Apple SSO的登出流程](#logout_flow_wo_AppleSSO) </br>
-I.  [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
+答：  [先决条件](#prereqs) </br>
+B.  [启动流程](#startup_flow) </br>
+C.  [不使用Apple SSO的身份验证流程](#authn_flow_wo_applesso)  </br>
+D.  [iOS上使用Apple SSO的身份验证流程](#authn_flow_with_applesso) </br>
+E.  [tvOS上使用Apple SSO的身份验证流程](#authn_flow_with_applesso_tvOS) </br>
+F.  [授权流程](#authz_flow) </br>
+G.  [查看媒体流](#media_flow) </br>
+H.  [不使用Apple SSO的注销流程](#logout_flow_wo_AppleSSO) </br>
+我。  [使用Apple SSO的注销流程](#logout_flow_with_AppleSSO) </br>
 
 
-### A.必要條件 {#prereqs}
+### A.先决条件 {#prereqs}
 
-1. 建立回呼函式：
+1. 创建回调函数：
    * `setRequestorComplete()` </br>
-   * 觸發者 [setRequestor()](#$setReq)，會傳回成功或失敗。 </br>
-   * 「成功」表示您可以繼續權益呼叫。
+   * 触发者 [setRequestor()](#$setReq)，返回成功或失败。 </br>
+   * 成功表示您可以继续权利调用。
 
    * [`displayProviderDialog(mvpds)`](#$dispProvDialog) </br>
-      * 觸發者 [`getAuthentication()`](#$getAuthN) 只有當使用者尚未選取提供者(MVPD)且尚未驗證時。 </br>
-      * 此 `mvpds` parameter是使用者可用的提供者陣列。
+      * 触发者 [`getAuthentication()`](#$getAuthN) 仅当用户尚未选择提供程序(MVPD)且尚未进行身份验证时。 </br>
+      * 此 `mvpds` parameter是用户可用的提供程序数组。
    * `setAuthenticationStatus(status, errorcode)` </br>
-      * 觸發者 `checkAuthentication()` 每次。 </br>
-      * 觸發者 [`getAuthentication()`](#$getAuthN) 僅當使用者已經驗證並已選取提供者時。 </br>
-      * 傳回的狀態是成功或失敗，錯誤碼說明失敗的型別。
+      * 触发者 `checkAuthentication()` 每次。 </br>
+      * 触发者 [`getAuthentication()`](#$getAuthN) 仅当用户已经过身份验证并已选择提供商时。 </br>
+      * 返回的状态是成功还是失败，错误码描述失败的类型。
    * [`navigateToUrl(url)`](#$nav2url) </br>
-      * 觸發者 [`getAuthentication()`](#$getAuthN) 在使用者選取MVPD之後。 此 `url` 引數會提供MVPD登入頁面的位置。
+      * 触发者 [`getAuthentication()`](#$getAuthN) 在用户选择MVPD之后。 此 `url` 参数提供MVPD登录页面的位置。
    * `sendTrackingData(event, data)` </br>
-      * 觸發者 `checkAuthentication()`， [`getAuthentication()`](#$getAuthN)， `checkAuthorization()`， [`getAuthorization()`](#$getAuthZ)， `setSelectedProvider()`.
-      * 此 `event` 引數指出已發生的權益事件； `data` parameter是與事件相關的值清單。 
+      * 触发者 `checkAuthentication()`， [`getAuthentication()`](#$getAuthN)， `checkAuthorization()`， [`getAuthorization()`](#$getAuthZ)， `setSelectedProvider()`.
+      * 此 `event` 参数指示发生的权利事件； `data` parameter是与事件相关的值的列表。 
    * `setToken(token, resource)`
 
-      * 觸發者 [checkAuthorization()](#checkAuthZ) 和 [getAuthorization()](#$getAuthZ) 成功授權後檢視資源。
-      * 此 `token` 引數是短期媒體權杖； `resource` 引數是使用者有權檢視的內容。
+      * 触发者 [checkAuthorization()](#checkAuthZ) 和 [getAuthorization()](#$getAuthZ) 成功授权查看资源后。
+      * 此 `token` 参数是短期媒体令牌； `resource` 参数是用户有权查看的内容。
    * `tokenRequestFailed(resource, code, description)` </br>
-      * 觸發者 [checkAuthorization()](#checkAuthZ) 和 [getAuthorization()](#$getAuthZ) 授權失敗後。
-      * 此 `resource` 引數是使用者嘗試檢視的內容； `code` parameter是錯誤碼，指出發生的失敗型別； `description` 引數說明與錯誤碼相關的錯誤。
+      * 触发者 [checkAuthorization()](#checkAuthZ) 和 [getAuthorization()](#$getAuthZ) 授权失败后。
+      * 此 `resource` 参数是用户尝试查看的内容； `code` 参数是错误代码，指示发生了什么类型的失败； `description` 参数描述与错误代码关联的错误。
    * `selectedProvider(mvpd)` </br>
-      * 觸發者 [`getSelectedProvider()`](#getSelProv).
-      * 此 `mvpd` parameter提供使用者選取之提供者的相關資訊。
+      * 触发者 [`getSelectedProvider()`](#getSelProv).
+      * 此 `mvpd` 参数提供有关用户选择的提供程序的信息。
    * `setMetadataStatus(metadata, key, arguments)`
-      * 觸發者 `getMetadata().`
-      * 此 `metadata` 引數會提供您要求的特定資料； `key` parameter是中使用的金鑰 [getMetadata()](#getMeta) 要求；以及 `arguments` parameter是傳遞至的相同字典 [getMetadata()](#getMeta).
+      * 触发者 `getMetadata().`
+      * 此 `metadata` 参数提供您请求的特定数据； `key` 参数是中使用的键 [getMetadata()](#getMeta) 请求；以及 `arguments` 参数是传递到的相同字典 [getMetadata()](#getMeta).
    * [&#39;preauthorizedResources(authorizedResources)&#39;](#preauthResources)
 
-      * 觸發者 [`checkPreauthorizedResources()`](#checkPreauth).
+      * 触发者 [`checkPreauthorizedResources()`](#checkPreauth).
 
-      * 此 `authorizedResources` 引數會顯示使用者有權檢視的資源。
+      * 此 `authorizedResources` 参数表示用户有权查看的资源。
    * [&#39;presentTvProviderDialog(viewController)&#39;](#presentTvDialog)
 
-      * 觸發者 [getAuthentication()](#getAuthN) 目前要求者至少支援具有SSO支援的MVPD時。
-      * viewController引數是Apple SSO對話方塊，需要顯示在主檢視控制器上。
+      * 触发者 [getAuthentication()](#getAuthN) 当前请求者至少支持具有SSO支持的MVPD时。
+      * viewController参数是Apple SSO对话框，需要显示在主视图控制器上。
    * [&#39;dissistTvProviderDialog(viewController)&#39;](#dismissTvDialog)
 
-      * 由使用者動作觸發(從Apple SSO對話方塊中選取「取消」或「其他電視提供者」)。
-      * viewController引數是Apple SSO對話方塊，需要從主檢視控制器中解除。
+      * 由用户操作触发(通过从Apple SSO对话框中选择“取消”或“其他电视提供商”)。
+      * viewController参数是Apple SSO对话框，需要从主视图控制器中取消。
 
 
 
@@ -117,156 +117,156 @@ I.  [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
 
 ![](assets/iOS-flows.png)
 
-### B.啟動流程 {#startup_flow}
+### B.启动流程 {#startup_flow}
 
-1. 啟動上層應用程式。</br>
-1. 啟動Adobe Primetime驗證 </br>
+1. 启动上层应用程序。</br>
+1. 启动Adobe Primetime身份验证 </br>
 
-   a.呼叫 [`init`](#$init) 建立Adobe Primetime驗證AccessEnabler的單一執行個體。
-   * **相依性：** Adobe Primetime驗證原生iOS/tvOS資料庫(AccessEnabler)
-   b.呼叫 `setRequestor()` 建立程式設計師的身分；傳入程式設計師的 `requestorID` 和（可選）Adobe Primetime驗證端點的陣列。 若是tvOS，您還需要提供公開金鑰和密碼。 另請參閱 [無使用者端檔案](#create_dev) 以取得詳細資訊。
+   a.呼叫 [`init`](#$init) 创建一个Adobe Primetime身份验证AccessEnabler实例。
+   * **依赖关系：** Adobe Primetime身份验证本机iOS/tvOS库(AccessEnabler)
+   b.呼叫 `setRequestor()` 建立程序员身份，传给程序员 `requestorID` 和（可选）Adobe Primetime身份验证端点数组。 对于tvOS，您还需要提供公钥和密钥。 参见 [无客户端文档](#create_dev) 了解详细信息。
 
-   * **相依性：** 有效的Adobe Primetime驗證請求者ID (請洽詢Adobe Primetime驗證帳戶管理員以安排此作業)。
+   * **依赖关系：** 有效的Adobe Primetime身份验证请求者ID(请与Adobe Primetime身份验证客户经理合作安排此过程)。
 
-   * **觸發器：**
-      [setRequestorComplete()](#$setReqComplete) callback。
+   * **触发器：**
+      [setRequestorComplete()](#$setReqComplete) 回调。
    >[!NOTE]
    >
-   >在完全建立請求者身分之前，無法完成任何權益請求。 這實際上意味著 [`setRequestor()`](#$setReq)  仍在執行中，所有後續的權益請求。 例如， [`checkAuthentication()`](#checkAuthN) 已封鎖。
+   >在完全建立请求者身份之前，无法完成任何授权请求。 这实际上意味着 [`setRequestor()`](#$setReq)  仍在运行，所有后续权利请求。 例如， [`checkAuthentication()`](#checkAuthN) 被阻止。
 
-   您有兩個實作選項：請求者識別資訊傳送至後端伺服器後，UI應用程式層可以選擇下列兩種方法之一： </br>
+   您有两个实施选项：在将请求者标识信息发送到后端服务器后，UI应用程序层可以选择以下两种方法之一： </br>
 
-   1. 等待觸發 [`setRequestorComplete()`](#setReqComplete) 回呼（AccessEnabler委派的一部分）。 此選項最能確定 [`setRequestor()`](#$setReq) 已完成，因此建議用於大部分實作。
+   1. 等待触发 [`setRequestorComplete()`](#setReqComplete) callback（AccessEnabler委托的一部分）。 此选项最能确定 [`setRequestor()`](#$setReq) 已完成，因此建议在大多数实施中使用该选项。
 
-   1. 繼續而不等待觸發 [`setRequestorComplete()`](#setReqComplete) 回撥，並開始發出軟體權利檔案請求。 這些呼叫(checkAuthentication、checkAuthorization、getAuthentication、getAuthorization、checkPreauthorizedResource、getMetadata、logout)會由AccessEnabler程式庫排入佇列，這會在以下動作之後進行實際的網路呼叫： [`setRequestor()`](#$setReq). 例如，如果網路連線不穩定，此選項偶爾會中斷。
-
-
-
-1. 呼叫 `checkAuthentication()` 檢查現有的驗證，而不啟動完整的驗證流程。  如果此呼叫成功，您可以直接繼續進行授權流程。 如果沒有，請繼續進行驗證流程。
-
-   * **相依性：** 成功呼叫 [setRequestor()](#$setReq) （此相依性也適用於所有後續呼叫）。
-
-   * **觸發器：** [setAuthenticationStatus()](#$setAuthNStatus) callback。
+   1. 继续操作，无需等待触发 [`setRequestorComplete()`](#setReqComplete) 回调，并开始发出授权请求。 这些调用(checkAuthentication、checkAuthorization、getAuthentication、getAuthorization、checkPreauthorizedResource、getMetadata、logout)由AccessEnabler库排队，该库将在 [`setRequestor()`](#$setReq). 例如，如果网络连接不稳定，此选项有时可能会中断。
 
 
-### C.沒有Apple SSO的驗證流程 {#authn_flow_wo_applesso}
 
-1. 呼叫 [`getAuthentication()`](#$getAuthN) 以啟動驗證流程，或取得使用者已驗證的確認。
+1. 调用 `checkAuthentication()` 检查现有身份验证，而不启动完整的身份验证流程。  如果此调用成功，您可以直接进入授权流程。 如果不能，请继续进入身份验证流程。
 
-   **觸發器：**
+   * **依赖关系：** 成功调用了 [setRequestor()](#$setReq) （此依赖关系也适用于所有后续调用）。
 
-   * 此 [setAuthenticationStatus()](#$setAuthNStatus) 回撥（若使用者已驗證）。 在此情況下，請直接前往 [授權流程](#authz_flow).
+   * **触发器：** [setAuthenticationStatus()](#$setAuthNStatus) 回调。
 
-   * 此 [displayProviderDialog()](#$dispProvDialog) 回撥（如果使用者尚未驗證）。
 
-1. 向使用者呈現傳送至的提供者清單
+### C.没有Apple SSO的身份验证流程 {#authn_flow_wo_applesso}
+
+1. 调用 [`getAuthentication()`](#$getAuthN) 启动身份验证流程，或获取用户已进行身份验证的确认。
+
+   **触发器：**
+
+   * 此 [setAuthenticationStatus()](#$setAuthNStatus) 回调（如果用户已经过身份验证）。 在这种情况下，请直接转到 [授权流程](#authz_flow).
+
+   * 此 [displayProviderDialog()](#$dispProvDialog) 回调（如果用户尚未进行身份验证）。
+
+1. 向用户显示已发送到的提供商列表
    [`displayProviderDialog()`](#dispProvDialog).
 
-1. 使用者選取提供者後，請由下列網址取得使用者MVPD的URL： `navigateToUrl:` 或 `navigateToUrl:useSVC:` 回呼並開啟 `UIWebView/WKWebView` 或 `SFSafariViewController` 並導向該控制器至URL。
+1. 用户选择提供程序后，请从获取用户MVPD的URL `navigateToUrl:` 或 `navigateToUrl:useSVC:` 回调并打开 `UIWebView/WKWebView` 或 `SFSafariViewController` 控制器并将该控制器定向到URL。
 
-1. 透過 `UIWebView/WKWebView` 或 `SFSafariViewController` 在上一步中具現化，使用者登入MVPD的登入頁面並輸入登入認證。 控制器內會執行數個重新導向操作。</br>
+1. 通过 `UIWebView/WKWebView` 或 `SFSafariViewController` 在上一步中实例化后，用户登录到MVPD的登录页面并输入登录凭据。 在控制器内执行了若干重定向操作。</br>
 
 >[!NOTE]
 >
->此時，使用者有機會取消驗證流程。 如果發生這種狀況，您的UI層會負責呼叫，將此事件通知AccessEnabler [setSelectedProvider()](#setSelProv) 替換為 `null` 作為引數。 這可讓AccessEnabler清除其內部狀態並重設驗證流程。
+>此时，用户有机会取消身份验证流程。 如果发生这种情况，UI层负责通过调用，向AccessEnabler通知此事件 [setSelectedProvider()](#setSelProv) 替换为 `null` 作为参数。 这允许AccessEnabler清理其内部状态并重置身份验证流程。
 
-1. 使用者成功登入後，您的應用程式層就會偵測到特定自訂URL的載入。 請注意，這個特定自訂URL實際上無效，控制器並非打算實際載入此URL。 您應用程式只能將其解譯為驗證流程已完成，且關閉是安全的訊號 `UIWebView/WKWebView` 或 `SFSafariViewController` 控制器。 如果是 `SFSafariViewController`必須使用控制器。特定的自訂URL是由 **`application's custom scheme`** (例如：`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`)，否則此特定自訂URL會由 **`ADOBEPASS_REDIRECT_URL`** 常數(即 `adobepass://ios.app`)。
+1. 用户成功登录后，应用程序层将检测特定自定义URL的加载。 请注意，此特定自定义URL实际上无效，控制器并不打算实际加载该URL。 它只能由应用程序解释为身份验证流程已完成，关闭是安全的信号。 `UIWebView/WKWebView` 或 `SFSafariViewController` 控制器。 如果是 `SFSafariViewController`需要使用控制器。特定的自定义URL由 **`application's custom scheme`** (例如，`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`)，否则此特定自定义URL将由 **`ADOBEPASS_REDIRECT_URL`** 常量(即， `adobepass://ios.app`)。
 
-1. 關閉UIWebView/WKWebView或SFSafariViewController控制器，並呼叫AccessEnabler的 `handleExternalURL:url` API方法，會指示AccessEnabler從後端伺服器擷取驗證Token。
+1. 关闭UIWebView/WKWebView或SFSafariViewController控制器并调用AccessEnabler的 `handleExternalURL:url` API方法，指示AccessEnabler从后端服务器检索身份验证令牌。
 
-1. （選用）呼叫 [`checkPreauthorizedResources(resources)`](#$checkPreauth) 以檢查使用者有權檢視哪些資源。 此 `resources` parameter是與使用者的驗證Token相關聯的受保護資源陣列。 從使用者的MVPD取得的授權資訊的一種用途是裝飾您的UI （例如，受保護內容旁的鎖定/解鎖符號）。
+1. （可选）调用 [`checkPreauthorizedResources(resources)`](#$checkPreauth) 以检查用户有权查看哪些资源。 此 `resources` parameter是与用户的身份验证令牌关联的受保护资源数组。 从用户的MVPD获得的授权信息的一个用途是装饰您的UI（例如，受保护内容旁边的锁定/解锁符号）。
 
-   * **觸發器：** [`preauthorizedResources()`](#preauthResources) callback
-   * **執行點：** 完成驗證流程後
+   * **触发器：** [`preauthorizedResources()`](#preauthResources) callback
+   * **执行点：** 完成身份验证流程后
 
-1. 如果驗證成功，請繼續進行授權流程。
+1. 如果身份验证成功，请转到授权流。
 
-### D.在iOS上使用Apple SSO的驗證流程 {#authn_flow_with_applesso}
+### D.在iOS上使用Apple SSO的身份验证流程 {#authn_flow_with_applesso}
 
-1. 呼叫 [`getAuthentication()`](#$getAuthN) 以啟動驗證流程，或取得使用者已驗證的確認。
-   **觸發器：**
+1. 调用 [`getAuthentication()`](#$getAuthN) 启动身份验证流程，或获取用户已进行身份验证的确认。
+   **触发器：**
 
-   * 此 [presentTvProviderDialog()](#presentTvDialog) 回呼（若使用者未經驗證，且目前要求者至少擁有支援SSO的MVPD）。 如果沒有任何MVPD支援SSO，則會使用傳統驗證流程。
+   * 此 [presentTvProviderDialog()](#presentTvDialog) 回调（如果用户未经过身份验证，并且当前请求者至少具有支持SSO的MVPD）。 如果没有任何MVPD支持SSO，则使用经典身份验证流程。
 
-1. 使用者選取提供者後，AccessEnabler程式庫會取得驗證權杖，其中包含Apple VSA架構提供的資訊。
+1. 用户选择提供商后，AccessEnabler库将获得一个身份验证令牌，该令牌包含Apple VSA框架提供的信息。
 
-1. 此 [setAuthenticationStatus()](#setAuthNStatus) 將會觸發callback。 此時，應該使用Apple SSO驗證使用者。
+1. 此 [setAuthenticationStatus()](#setAuthNStatus) 将触发回调。 此时，应使用Apple SSO对用户进行身份验证。
 
-1. [可選] 呼叫 [`checkPreauthorizedResources(resources)`](#$checkPreauth) 以檢查使用者有權檢視哪些資源。 此 `resources` parameter是與使用者的驗證Token相關聯的受保護資源陣列。 從使用者的MVPD取得的授權資訊的一種用途是裝飾您的UI （例如，受保護內容旁的鎖定/解鎖符號）。
+1. [可选] 调用 [`checkPreauthorizedResources(resources)`](#$checkPreauth) 以检查用户有权查看哪些资源。 此 `resources` parameter是与用户的身份验证令牌关联的受保护资源数组。 从用户的MVPD获得的授权信息的一个用途是装饰您的UI（例如，受保护内容旁边的锁定/解锁符号）。
 
-   * **觸發器：** [`preauthorizedResources()`](#preauthResources) callback
-   * **執行點：** 完成驗證流程後
+   * **触发器：** [`preauthorizedResources()`](#preauthResources) callback
+   * **执行点：** 完成身份验证流程后
 
-1. 如果驗證成功，請繼續進行授權流程。
+1. 如果身份验证成功，请转到授权流。
 
-### E.在tvOS上使用Apple SSO的驗證流程 {#authn_flow_with_applesso_tvOS}
+### E.使用tvOS上的Apple SSO的身份验证流程 {#authn_flow_with_applesso_tvOS}
 
-1. 呼叫 [`getAuthentication()`](#$getAuthN) 以啟動驗證流程，或取得使用者已驗證的確認。
-   **觸發器：**
-   * 此 [`presentTvProviderDialog()`](#presentTvDialog) 回呼（若使用者未經驗證，且目前要求者至少擁有支援SSO的MVPD）。 如果沒有任何MVPD支援SSO，則會使用傳統驗證流程。
+1. 调用 [`getAuthentication()`](#$getAuthN) 启动身份验证流程，或获取用户已进行身份验证的确认。
+   **触发器：**
+   * 此 [`presentTvProviderDialog()`](#presentTvDialog) 回调（如果用户未经过身份验证，并且当前请求者至少具有支持SSO的MVPD）。 如果没有任何MVPD支持SSO，则使用经典身份验证流程。
 
-1. 使用者選取提供者後， [`status()`](#status_callback_implementation) 將會呼叫callback。 將會提供註冊碼，且AccessEnabler程式庫會開始輪詢伺服器，以順利完成第二個熒幕驗證。
+1. 用户选择提供商后， [`status()`](#status_callback_implementation) 将调用callback。 将提供注册码，AccessEnabler库将开始轮询服务器以获得成功的第二个屏幕身份验证。
 
-1. 如果提供的註冊碼已用於在第二個畫面上成功驗證， [`setAuthenticatiosStatus()`](#setAuthNStatus) 將會觸發callback。 此時，應該使用Apple SSO驗證使用者。
-1. [可選] 呼叫 [`checkPreauthorizedResources(resources)`](#$checkPreauth) 以檢查使用者有權檢視哪些資源。 此 `resources` parameter是與使用者的驗證Token相關聯的受保護資源陣列。 從使用者的MVPD取得的授權資訊的一種用途是裝飾您的UI （例如，受保護內容旁的鎖定/解鎖符號）。
+1. 如果提供的注册码用于在第二个屏幕上成功进行身份验证， [`setAuthenticatiosStatus()`](#setAuthNStatus) 将触发回调。 此时，应使用Apple SSO对用户进行身份验证。
+1. [可选] 调用 [`checkPreauthorizedResources(resources)`](#$checkPreauth) 以检查用户有权查看哪些资源。 此 `resources` parameter是与用户的身份验证令牌关联的受保护资源数组。 从用户的MVPD获得的授权信息的一个用途是装饰您的UI（例如，受保护内容旁边的锁定/解锁符号）。
 
-   * **觸發器：** [`preauthorizedResources()`](#preauthResources) callback
+   * **触发器：** [`preauthorizedResources()`](#preauthResources) callback
 
-   * **執行點：** 完成驗證流程後
-1. 如果驗證成功，請繼續進行授權流程。
+   * **执行点：** 完成身份验证流程后
+1. 如果身份验证成功，请转到授权流。
 
-### F.授權流程 {#authz_flow}
+### F.授权流程 {#authz_flow}
 
-1. 呼叫 [getAuthorization()](#$getAuthZ) 以啟動授權流程。
+1. 调用 [getAuthorization()](#$getAuthZ) 以启动授权流。
 
-   * **相依性：** 與MVPD議定的有效ResourceID。
-   * 資源ID應與任何其他裝置或平台上使用的資源ID相同，且在MVPD間將相同。 如需資源ID的詳細資訊，請參閱 [識別受保護的資源](/help/authentication/identify-protected-resources.md)
+   * **依赖关系：** 与MVPD商定的有效ResourceID。
+   * 资源ID应当与在任何其他设备或平台上使用的资源ID相同，并且在MVPD中也将相同。 有关资源ID的信息，请参见 [识别受保护的资源](/help/authentication/identify-protected-resources.md)
 
-1. 驗證驗證和授權。
+1. 验证身份验证和授权。
 
-   * 如果 [getAuthorization()](#$getAuthZ) 呼叫成功：使用者擁有有效的AuthN和AuthZ權杖（使用者已驗證並獲授權觀看要求的媒體）。
+   * 如果 [getAuthorization()](#$getAuthZ) 调用成功：用户具有有效的AuthN和AuthZ令牌（用户已经过身份验证并有权观看请求的媒体）。
 
-   * 若 [getAuthorization()](#$getAuthZ) 失敗：檢查擲回的例外狀況，以判斷其型別（AuthN、AuthZ或其他專案）：
-      * 如果是驗證(AuthN)錯誤，則重新啟動驗證流程。
-      * 如果是授權(AuthZ)錯誤，則使用者無權觀看請求的媒體，並且應向使用者顯示某種錯誤訊息。
-      * 如果有其他型別的錯誤（連線錯誤、網路錯誤等） 然後向使用者顯示適當的錯誤訊息。
+   * 如果 [getAuthorization()](#$getAuthZ) 失败：检查引发的异常以确定其类型（AuthN、AuthZ或其他内容）：
+      * 如果这是身份验证(AuthN)错误，则重新启动身份验证流程。
+      * 如果这是授权(AuthZ)错误，则用户无权观看请求的媒体，应向用户显示某种错误消息。
+      * 是否存在其他类型的错误（连接错误、网络错误等） 然后向用户显示相应的错误消息。
 
-1. 驗證短媒體權杖。\
-   使用Adobe Primetime驗證媒體權杖驗證器程式庫，驗證從傳回的短期媒體權杖 [getAuthorization()](#$getAuthZ) 以上呼叫：
+1. 验证短媒体令牌。\
+   使用Adobe Primetime身份验证媒体令牌验证器库验证从返回的短暂媒体令牌 [getAuthorization()](#$getAuthZ) 调用：
 
-   * 如果驗證成功：為使用者播放要求的媒體。
-   * 如果驗證失敗： AuthZ權杖無效，應拒絕媒體請求，並向使用者顯示錯誤訊息。
+   * 如果验证成功：为用户播放请求的媒体。
+   * 如果验证失败： AuthZ令牌无效，应拒绝媒体请求，并向用户显示错误消息。
 
 
-1. 返回正常的應用程式流程。
+1. 返回到正常应用程序流程。
 
-### G.檢視媒體流程 {#media_flow}
+### G.查看媒体流 {#media_flow}
 
-1. 使用者選取要檢視的媒體。
-1. 媒體是否受到保護？ 您的應用程式會檢查選取的媒體是否受到保護：
+1. 用户选择要查看的媒体。
+1. 媒体是否受保护？ 您的应用程序会检查所选媒体是否受保护：
 
-   * 如果選取的媒體受到保護，您的應用程式會啟動 [授權流程](#authz_flow) 以上。
+   * 如果所选媒体受保护，您的应用程序将启动 [授权流程](#authz_flow) 上面。
 
-   * 如果選取的媒體未受到保護，則播放該使用者的媒體。
+   * 如果所选媒体未受保护，则为用户播放该媒体。
 
-### H.不使用Apple SSO的登出流程 {#logout_flow_wo_AppleSSO}
+### H.不使用Apple SSO的注销流程 {#logout_flow_wo_AppleSSO}
 
-1. 呼叫 [`logout()`](#$logout) 將使用者登出。 AccessEnabler會清除所有快取的值和Token。 清除快取之後，AccessEnabler會進行伺服器呼叫以清除伺服器端工作階段。 請注意，由於伺服器呼叫可能會導致SAML重新導向至IdP （這允許IdP端的工作階段清理），此呼叫必須在所有重新導向之後。 因此，必須在UIWebView/WKWebView或SFSafariViewController控制器內處理此呼叫。
+1. 调用 [`logout()`](#$logout) 以注销用户。 AccessEnabler清除所有缓存的值和令牌。 清除缓存后，AccessEnabler会进行服务器调用以清除服务器端会话。 请注意，由于服务器调用可能会导致到IdP的SAML重定向（这允许IdP端的会话清理），因此此调用必须在所有重定向之后进行。 因此，必须在UIWebView/WKWebView或SFSafariViewController控制器中处理此调用。
 
-   a.遵循與驗證工作流程相同的模式，AccessEnabler網域會透過 `navigateToUrl:` 或 `navigateToUrl:useSVC:` 回呼，建立UIWebView/WKWebView或SFSafariViewController控制器，並指示載入回呼中提供的URL `url` 引數。 這是後端伺服器上登出端點的URL。
+   a.遵循与身份验证工作流相同的模式，AccessEnabler域通过 `navigateToUrl:` 或 `navigateToUrl:useSVC:` callback，用于创建UIWebView/WKWebView或SFSafariViewController控制器，并指示加载回调中提供的URL `url` 参数。 这是后端服务器上注销端点的URL。
 
-   b.您的應用程式必須監視活動 `UIWebView/WKWebView or SFSafariViewController` 並偵測載入特定自訂URL的時刻，因為它經過多次重新導向。 請注意，這個特定自訂URL實際上無效，控制器並非打算實際載入此URL。 應用程式必須將其解譯為登出流程已完成，且關閉是安全的訊號 `UIWebView/WKWebView` 或 `SFSafariViewController` 控制器。 當控制器載入這個特定的自訂URL時，您的應用程式必須關閉 `UIWebView/WKWebView or SFSafariViewController` 控制器並呼叫AccessEnabler的 `handleExternalURL:url`api方法。 如果是 `SFSafariViewController`必須使用控制器。特定的自訂URL是由 **`application's custom scheme`** (例如， `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`)，否則此特定自訂URL會由 **`ADOBEPASS_REDIRECT_URL`**  常數(即 `adobepass://ios.app`)。
+   b.您的应用程序必须监控 `UIWebView/WKWebView or SFSafariViewController` 并检测加载特定自定义URL的时刻，因为它将经历多次重定向。 请注意，此特定自定义URL实际上无效，控制器并不打算实际加载该URL。 它只能由应用程序解释为注销流程已完成，关闭是安全的信号。 `UIWebView/WKWebView` 或 `SFSafariViewController` 控制器。 当控制器加载此特定自定义URL时，应用程序必须关闭 `UIWebView/WKWebView or SFSafariViewController` 控制器和调用AccessEnabler的 `handleExternalURL:url`api方法。 如果是 `SFSafariViewController`需要使用控制器。特定的自定义URL由 **`application's custom scheme`** (例如， `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`)，否则此特定自定义URL将由 **`ADOBEPASS_REDIRECT_URL`**  常量(即， `adobepass://ios.app`)。
 
    >[!NOTE]
    >
-   >登出流程與驗證流程的不同之處在於，使用者不需要以任何方式與UIWebView/WKWebView或SFSafariViewController互動。 UI應用程式層會使用UIWebView/WKWebView或SFSafariViewController來確保遵循所有的重新導向。 因此，可以（而且建議）在登出過程中隱藏控制器。
+   >注销流与身份验证流的不同之处在于，用户无需以任何方式与UIWebView/WKWebView或SFSafariViewController进行交互。 UI应用层使用UIWebView/WKWebView或SFSafariViewController来确保遵循所有重定向。 因此，可以（并且建议）在注销过程中使控制器不可见（即隐藏）。
 
 
-### I.使用Apple SSO的登出流程 {#logout_flow_with_AppleSSO}
+### I.使用Apple SSO的注销流程 {#logout_flow_with_AppleSSO}
 
-1. 呼叫 [`logout()`](#$logout) 將使用者登出。
-1. 此 [status()](#status_callback_implementation) 將使用ID VSA203呼叫callback。
-1. 使用者也應被指示從系統設定登入。 若未通過，應用程式重新啟動時，將會導致重新驗證。
+1. 调用 [`logout()`](#$logout) 以注销用户。
+1. 此 [status()](#status_callback_implementation) 将使用ID VSA203调用callback。
+1. 还应指示用户从系统设置登录。 如果失败，则会在应用程序重新启动时重新进行身份验证。
 
 
 

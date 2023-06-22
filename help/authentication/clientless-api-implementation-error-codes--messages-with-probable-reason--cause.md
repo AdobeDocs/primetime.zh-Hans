@@ -1,6 +1,6 @@
 ---
-title: 無使用者端API實作 — 錯誤代碼/訊息的可能原因/原因
-description: 無使用者端API實作 — 錯誤代碼/訊息的可能原因/原因
+title: 无客户端API实施 — 错误代码/消息及可能的原因/原因
+description: 无客户端API实施 — 错误代码/消息及可能的原因/原因
 exl-id: 616e35fc-9b72-422b-9a05-e6248bd52490
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,51 +9,51 @@ ht-degree: 0%
 
 ---
 
-# 無使用者端API實作 — 錯誤代碼/訊息的可能原因/原因 {#clientless-api-implementation--error-codes-messages-with-probable-reason-cause}
+# 无客户端API实施 — 错误代码/消息及可能的原因/原因 {#clientless-api-implementation--error-codes-messages-with-probable-reason-cause}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
 </br>
 
 
-## 錯誤：未獲授權
+## 错误：未授权
 
 ### 原因：
 
-1. POST中缺少授權標頭
-1. 授權標頭問題 — 檢查要求時間是否以毫秒為單位。
+1. POST中缺少授权标头
+1. 授权标头问题 — 检查请求时间是否以毫秒为单位。
 
-## 錯誤：驗證期間為SC 400
-
-### 原因：
-
-1. 伺服器找不到為特定請求者和環境建立的註冊代碼。
-1. 您可能會遇到跨網域指令碼問題
-1. /etc/hosts檔案中應加入適當的偽造
-
-## 錯誤： 400錯誤請求
+## 错误：SC 400正在进行身份验证
 
 ### 原因：
 
-1. POST/GET的格式錯誤url
-1. SAMLAssertionParserException — 加密的SAML宣告無法在Adobe結尾解密
+1. 服务器未找到为特定请求者和环境创建的注册码。
+1. 您可能会遇到跨域脚本问题
+1. 应向/etc/hosts文件中添加适当的欺骗
 
-## 錯誤： 403禁止
-
-### 原因：
-
-1. 太多快速請求 — API管理功能，可防止DoS攻擊。
-2. 如果使用先決條件環境，則新增假冒，否則請確定已從/etc/hosts檔案中移除假冒
-
-## 錯誤：無法登入MVPD頁面
+## 错误： 400错误请求
 
 ### 原因：
 
-1. 使用者名稱和密碼不符 
-2. 登入可能已停用
-3. 檢查登入是用於生產或測試
+1. POST/GET的URL格式不正确
+1. SAMLAssertionParserException — 加密的SAML断言无法在Adobe末尾解密
+
+## 错误： 403禁止访问
+
+### 原因：
+
+1. 快速请求过多 — API管理的一项功能，用于防御DoS攻击。
+2. 如果使用前驱环境，请添加欺骗，否则请确保已从/etc/hosts文件中删除欺骗
+
+## 错误：无法登录到MVPD页
+
+### 原因：
+
+1. 用户名和密码不匹配 
+2. 登录可能已被禁用
+3. 检查登录是用于生产还是暂存
 
 
 <!--

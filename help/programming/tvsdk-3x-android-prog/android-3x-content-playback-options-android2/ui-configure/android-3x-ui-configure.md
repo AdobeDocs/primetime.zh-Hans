@@ -1,6 +1,6 @@
 ---
-description: 透過TVSDK，您可以控制即時和隨選視訊(VOD)的基本播放體驗。 TVSDK提供播放器例項上的方法和屬性，可用來設定播放器使用者介面。
-title: 設定播放器使用者介面
+description: 借助TVSDK，您可以控制实时和视频点播(VOD)的基本播放体验。 TVSDK提供了播放器实例上的方法和属性，您可以使用这些方法和属性来配置播放器用户界面。
+title: 配置播放器用户界面
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '45'
@@ -9,4 +9,4 @@ ht-degree: 0%
 ---
 
 
-# 設定播放器使用者介面 {#configure-the-player-user-interface}
+# 配置播放器用户界面 {#configure-the-player-user-interface}

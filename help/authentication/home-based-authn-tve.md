@@ -1,6 +1,6 @@
 ---
-title: 適用於所有地方的電視家用驗證
-description: 適用於所有地方的電視家用驗證
+title: 基于家庭的TV身份验证（所有位置）
+description: 基于家庭的TV身份验证（所有位置）
 exl-id: abdc7724-4290-404a-8f93-953662cdc2bc
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,152 +9,152 @@ ht-degree: 0%
 
 ---
 
-# 適用於所有地方的電視家用驗證
+# 基于家庭的TV身份验证（所有位置）
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-## 何謂家用驗證？ {#whatis-home-based-authn}
+## 什么是基于主页的身份验证？ {#whatis-home-based-authn}
 
-家用驗證(HBA)是TV Everywhere功能，可讓付費電視訂閱者在家中，無需輸入MVPD憑證即可線上上檢視電視內容，大幅改善驗證流程的使用者體驗。
+基于家庭身份的身份验证(HBA)是TV Everywhere功能，它使付费电视订阅者能够在家里在线查看电视内容，而无需输入MVPD凭据，从而显着改善身份验证流程的用户体验。
 
-開放式驗證技術委員會(OATC)的家庭驗證定義：「家庭內自動驗證是MVPD/OVD使用家庭網路的特性（或家庭網路裝置之間可自動存取的識別碼）來驗證哪個訂閱者帳戶與該家庭網路相關聯，以便使用者在建立用於存取TVE受保護內容的TVE工作階段時不需要手動輸入認證。」
+开放式身份验证技术委员会(OATC)的基于主页的身份验证定义：“主页的自动身份验证是MVPD/OVD使用主网络的特征（或主网络上设备之间自动可访问的标识符）来身份验证哪个订户帐户与该主网络相关联，以便用户在建立TVE会话时无需手动输入凭据来访问TVE受保护的内容。”
 
 
 
-如需HBA和業界標準的詳細資訊，請閱讀 [OATC使用案例與需求](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/Defining%20TVE%20Home-Based%20Authentication%20(HBA)%20%20Use%20Cases%20and%20Requirements%20Recommended%20Practice%20Version%201_0%20FINAL%20DRAFT%20FOR%20BOARD%20APPROVAL.pdf){target=_blank} 檔案和 **HBA的OATC使用者體驗准則**.
+有关HBA和行业标准的详细信息，请阅读 [OATC用例和要求](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/Defining%20TVE%20Home-Based%20Authentication%20(HBA)%20%20Use%20Cases%20and%20Requirements%20Recommended%20Practice%20Version%201_0%20FINAL%20DRAFT%20FOR%20BOARD%20APPROVAL.pdf){target=_blank} 文档和 **HBA的OATC用户体验准则**.
 
 >[!NOTE]
 >
->部分HBA流程是Premium Workflow套件的一部分。 如果您有興趣使用此功能，請聯絡您的Primetime銷售代表。
+>某些HBA流是Premium Workflow包的一部分。 如果您有兴趣使用此功能，请联系您的Primetime销售代表。
 
-## 為什麼HBA對您很重要 {#why-hba}
+## 为什么HBA对您很重要 {#why-hba}
 
-HBA很重要，因為它實際上移除了您在家中、已有纜線訂閱的檢視器的登入障礙。 此外，家用驗證可大幅提升觀眾的參與度，並為您所有位置的電視內容提供更佳的使用者體驗。
+HBA非常重要，因为它实际上消除了家庭中已有电缆订阅的查看器的登录障碍。 此外，基于家庭的身份验证可以显着增加查看者的参与度，并为您随时随地播放的电视内容提供更好的用户体验。
 
-目前，幾乎一半的登入嘗試都未成功。
+目前，几乎一半的登录尝试都未成功。
 
-當HBA由前5大MVPD之一啟動時，其驗證轉換率 **增加40%** （從45%到63%）
+一旦HBA被前5大MVPD之一激活，其身份验证转换率 **增加了40%** （从45%到63%）
 
 ![](assets/authn-conv-pre-post.png)
 
-此外，在下方您還可以看到與不同MVPD整合之通道的登入轉換率：已為其啟用HBA的通道和沒有HBA的通道。 配備HBA的轉換率比配備HBA的轉換率高很多。
+此外，您还可以看到与不同MVPD集成的通道的登录转换率：已为其启用HBA的通道和没有HBA的通道。 使用HBA的转换率显着高于不使用HBA的转换率。
 
 ![](assets/hba-vs-non-hba.png)
 
-在針對與此MVPD整合的大多數頻道啟用HBA六個月後，我們注意到不重複使用者增加了82% （透過此MVPD存取TV Everywhere頻道的使用者人數幾乎翻了一番）。
+在为与此MVPD集成的大多数频道启用HBA六个月后，我们注意到独特用户增加了82% （通过此MVPD访问TV Everywhere频道的用户数量几乎翻了一番）。
 
-2w3對比之下，如下列圖表所示，其他未啟用HBA的MVPD在過去6個月中，不重複使用者僅增加26%。
+2w3相反，如以下图表所示，其他未启用HBA的MVPD在过去6个月中的独特用户数仅增加了26%。
 
 ![](assets/unique-visitors-incr.png)
 
-從啟用HBA前6個月和後6個月收集到的資料中，我們發現啟用HBA的頻道觀眾參與度大幅增加。 實際上，來自已啟用HBA之MVPD的使用者，觀看內容的次數一般比來自未啟用HBA之MVPD的使用者多30%。
+从启用HBA前六个月和启用HBA后6个月收集的数据中，我们发现启用HBA的渠道的查看者参与度大幅增加。 实际上，来自已启用HBA的MVPD的用户观看内容的次数一般比来自未启用HBA的MVPD的用户多30%。
 
 ![](assets/user-engagement-increase.png)
 
-## Primetime驗證HBA支援 {#auth-hba-support}
+## Primetime身份验证HBA支持 {#auth-hba-support}
 
-本節說明Primetime驗證所提供的HBA支援、Primetime驗證平台在HBA流程中的行為，並提供對實作HBA有用的技術細節。
+本节介绍了Primetime身份验证提供的HBA支持、Primetime身份验证平台在HBA流中的行为，还提供了对实施HBA有用的技术详细信息。
 
-支援HBA的Primetime驗證功能
+支持HBA的Primetime身份验证功能
 
-* 可為HBA與非HBA驗證設定不同的驗證TTL （也需要MVPD支援）
-* 在驗證過期時自動選取MVPD （略過MVPD選擇器）的功能。 這在HBA TTL較小的情況下特別有用。
-* 驗證是否為HBA （也需要MVPD支援）時能夠向程式設計人員公開
+* 能够为HBA和非HBA身份验证设置不同的身份验证TTL（还需要MVPD支持）
+* 能够在身份验证过期时自动选择MVPD（跳过MVPD选取器）。 这在HBA TTL较小的情况下尤其有用。
+* 能够向程序员公开验证是否为HBA（还需要MVPD支持）
 
-### Primetime驗證平台上的HBA使用者體驗 {#hba-user-exp}
+### Primetime身份验证平台上的HBA用户体验 {#hba-user-exp}
 
-下表提供啟用HBA和未啟用HBA時，支援平台的使用者體驗的相關資訊：
+下表提供了有关启用HBA和未启用HBA时支持的平台的用户体验的信息：
 
-| 使用者流程 — 平台型別 | swf、iOS、Android |
+| 用户流 — 平台类型 | swf、iOS、Android |
 |---|---|
-| 啟用HBA | 使用者在家中時，系統會自動驗證使用者。 HBA AuthN權杖過期後，使用者會自動重新驗證。 |
-| 不含HBA | 系統會要求使用者選取其MVPD並輸入其認證，即使他們是在家中。在AuthN權杖過期之後，使用者必須再次輸入其認證。 |
+| 启用HBA | 当用户在家时，他们会自动进行身份验证。 在HBA AuthN令牌过期后，将自动对用户进行重新身份验证。 |
+| 不使用HBA | 要求用户选择其MVPD并输入其凭据，即使他们位于主目录。AuthN令牌过期后，用户必须再次输入其凭据。 |
 
-| 使用者流程 — 平台型別 | js、Windows （原生） |
+| 用户流 — 平台类型 | js、Windows（本机） |
 |---|---|
-| 啟用HBA | 使用者在家中時，系統會自動驗證使用者。 HBA AuthN權杖過期後，使用者必須從選擇器重新選取其MVPD，並且會自動進行驗證。 |
-| 不含HBA | 系統會要求使用者選取其MVPD並輸入其認證，即使他們是在家中。 AuthN權杖過期後，使用者必須再次輸入其認證。 |
+| 启用HBA | 当用户在家时，他们会自动进行身份验证。 HBA AuthN令牌过期后，用户必须从选取器中重新选择其MVPD，并将自动进行身份验证。 |
+| 不使用HBA | 系统会要求用户选择其MVPD并输入其凭据，即使他们位于主目录。 AuthN令牌过期后，用户必须再次输入其凭据。 |
 
-| 使用者流程 — 平台型別 | 無使用者端REST API （第二熒幕驗證） |
+| 用户流 — 平台类型 | 无客户端REST API（第二个屏幕身份验证） |
 |---|---|
-| 啟用HBA | 當使用者在家中使用無使用者端REST API應用程式時，他們會在輸入註冊代碼並選取MVPD後，在第二個熒幕裝置上自動驗證。 HBA AuthN權杖過期後，使用者會自動重新驗證（在第二個熒幕裝置上）。 |
-| 不含HBA | 系統會要求使用者選取其MVPD並輸入其認證，即使他們是在家中。 AuthN權杖過期後，使用者必須再次輸入其認證。 |
+| 启用HBA | 当用户在家中使用无客户端REST API应用程序时，他们在输入注册码并选择其MVPD后，将自动在第二个屏幕设备上接受身份验证。 HBA AuthN令牌过期后，将自动重新验证用户（在第二个屏幕设备上）。 |
+| 不使用HBA | 系统会要求用户选择其MVPD并输入其凭据，即使他们位于主目录。 AuthN令牌过期后，用户必须再次输入其凭据。 |
 
-### 實作HBA的技術細節 {#tech-details-hba}
+### 实施HBA的技术详细信息 {#tech-details-hba}
 
-#### Oauth 2.0通訊協定 {#oauth-2-protocol}
+#### OAuth 2.0协议 {#oauth-2-protocol}
 
-在與OAuth 2.0驗證通訊協定整合之MVPD的HBA流程中，MVPD會發出重新整理權杖，而Adobe會發出HBA驗證權杖：
+在与OAuth 2.0身份验证协议集成的MVPD的HBA流中， MVPD会发出刷新令牌，而Adobe会发出HBA身份验证令牌：
 
-* 重新整理權杖的TTL取決於MVPD的業務需求。
-* HBA驗證權杖TTL **必須小於或等於** 重新整理權杖TTL。
-
-
-*OAuth 2.0通訊協定的HBA驗證流程說明*
+* 刷新令牌的TTL由MVPD的业务需求决定。
+* HBA身份验证令牌TTL **必须小于或等于** 刷新令牌TTL。
 
 
-| 使用者動作 | 系統動作 |
+*OAuth 2.0协议的HBA身份验证流的描述*
+
+
+| 用户操作 | 系统操作 |
 |---|---|
-| 使用者導覽至程式設計師的網站。 當嘗試播放視訊時，會顯示MVPD選擇器。 使用者選取其MVPD並按一下登入。 | 執行背景檢查。 MVPD會套用其規則集來偵測使用者(例如，將使用者的IP位址對應到散發者布建的數據機，或是寬頻連線的機上盒的MAC位址)。 |
-| 畫面會持續顯示約3秒。 可以顯示插入式頁面，通知使用者正在使用其MVPD帳戶自動登入。 | <ol><li>安裝在程式設計師端的AccessEnabler會將驗證請求（作為HTTP請求）傳送到Adobe Primetime驗證端點。</li><li>Primetime驗證端點會將要求重新導向至MVPD驗證端點。 <br />**注意：** 請求包含 `hba_flag` 引數（嘗試HBA = true），表示MVPD應該嘗試HBA驗證。</li><li>MVPD驗證端點會傳送授權代碼至Adobe Primetime驗證端點。</li><li>Adobe Primetime驗證會使用授權代碼，從MVPD的權杖端點要求重新整理權杖和存取權杖。</li><li>MVPD會傳送驗證決定，並且 `hba_status` (true/false)引數於 `id_token`.</li><li>會傳送對MVPD使用者設定檔端點的呼叫，以公開 [使用者中繼資料中的hba_status索引鍵](/help/authentication/user-metadata-feature.md#obtaining).</li><li>MVPD會將重新整理權杖TTL設定為MVPD同意的值，而Adobe會將AuthN權杖TTL設定為小於或等於重新整理權杖值的值。</li></ol> |
-| 使用者已經過驗證，現在可以瀏覽授權的TV Everywhere內容。 | 驗證Token會傳遞給使用者，讓他們現在可以成功瀏覽程式設計人員的網站。 |
+| 用户导航到程序员网站。 当尝试播放视频时，将显示MVPD选取器。 用户选择其MVPD并单击登录。 | 进行背景检查。 MVPD会应用其用户检测规则集(例如，将用户的IP地址映射到分发服务器提供的调制解调器或宽带连接的机顶盒的MAC地址)。 |
+| 此时会显示一个持续约3秒的屏幕。 可以显示插播式广告页，通知用户正在使用其MVPD帐户自动登录他/她。 | <ol><li>安装在程序员端的AccessEnabler将身份验证请求（作为HTTP请求）发送到Adobe Primetime身份验证端点。</li><li>Primetime身份验证端点将请求重定向到MVPD身份验证端点。 <br />**注意：** 该请求包含 `hba_flag` 参数（尝试HBA = true），表示MVPD应尝试HBA身份验证。</li><li>MVPD身份验证端点向Adobe Primetime身份验证端点发送授权代码。</li><li>Adobe Primetime身份验证使用授权代码从MVPD令牌端点请求刷新令牌和访问令牌。</li><li>MVPD发送一个身份验证决定，并且 `hba_status` (true/false)参数，位于 `id_token`.</li><li>将发送对MVPD用户配置文件端点的调用，以公开 [用户元数据中的hba_status密钥](/help/authentication/user-metadata-feature.md#obtaining).</li><li>MVPD将刷新令牌TTL设置为MVPD同意的值，Adobe将AuthN令牌TTL设置为小于或等于刷新令牌的值。</li></ol> |
+| 用户已经过身份验证，现在可以浏览授权的TV Everywhere内容。 | 身份验证令牌将传递到用户，该用户现在可以成功浏览程序员的网站。 |
 
-#### saml通訊協定 {#saml-protocol}
+#### SAML协议 {#saml-protocol}
 
-SAML驗證通訊協定的HBA驗證流程說明
+SAML身份验证协议的HBA身份验证流的说明
 
-| 使用者動作 | 系統動作 |
+| 用户操作 | 系统操作 |
 |---|---|
-| 使用者導覽至程式設計師的網站。 當嘗試播放視訊時，會顯示MVPD選擇器。 使用者選取其MVPD並按一下登入。 | 執行背景檢查。 MVPD會套用其規則集來偵測使用者(例如，將使用者的IP位址對應到散發者布建的數據機，或是寬頻連線的機上盒的MAC位址)。 |
-| 畫面會持續顯示約3秒。 可以顯示插入式頁面，通知使用者正在使用其MVPD帳戶自動登入。 | <ol><li>安裝在程式設計師端的AccessEnabler會將驗證請求（作為HTTP請求）傳送到Adobe Primetime驗證端點。</li><li>Primetime驗證端點會將要求重新導向至MVPD驗證端點。</li><li>MVPD應以SAML回應的形式傳送驗證決定，其中應包含HBA標幟： hba_status (true/false)。</li><li>會傳送對MVPD使用者設定檔端點的呼叫，以公開 [使用者中繼資料中的hba_status索引鍵](/help/authentication/user-metadata-feature.md#obtaining).</li></ol> |
-| 使用者已經過驗證，現在可以瀏覽授權的TV Everywhere內容。 | 驗證Token會傳遞給使用者，讓他們現在可以成功瀏覽程式設計人員的網站。 |
+| 用户导航到程序员网站。 当尝试播放视频时，将显示MVPD选取器。 用户选择其MVPD并单击登录。 | 进行背景检查。 MVPD会应用其用户检测规则集(例如，将用户的IP地址映射到分发服务器提供的调制解调器或宽带连接的机顶盒的MAC地址)。 |
+| 此时会显示一个持续约3秒的屏幕。 可以显示插播式广告页，通知用户正在使用其MVPD帐户自动登录他/她。 | <ol><li>安装在程序员端的AccessEnabler将身份验证请求（作为HTTP请求）发送到Adobe Primetime身份验证端点。</li><li>Primetime身份验证端点将请求重定向到MVPD身份验证端点。</li><li>MVPD应以SAML响应的形式发送身份验证决定，该响应应包含HBA标志： hba_status (true/false)。</li><li>将发送对MVPD用户配置文件端点的调用，以公开 [用户元数据中的hba_status密钥](/help/authentication/user-metadata-feature.md#obtaining).</li></ol> |
+| 用户已经过身份验证，现在可以浏览授权的TV Everywhere内容。 | 身份验证令牌将传递到用户，该用户现在可以成功浏览程序员的网站。 |
 
 
-## 如何啟動HBA {#how-to-activate-hba}
+## 如何激活HBA {#how-to-activate-hba}
 
-* **OAuth通訊協定：**
-   * 有關啟用HBA的說明，請參閱 [Primetime TVE儀表板使用手冊](/help/authentication/tve-dashboard-user-guide.md)
-* **SAML通訊協定：** MVPD端會啟用以家庭為基礎的驗證。 程式設計師或Adobe不需要採取任何動作。
-如需支援家用驗證的MVPD的詳細資訊，請參閱 [MVPD的HBA狀態](/help/authentication/hba-status-mvpds.md).
+* **OAuth协议：**
+   * 有关启用HBA的信息，请参见 [Primetime TVE仪表板用户指南](/help/authentication/tve-dashboard-user-guide.md)
+* **SAML协议：** 基于Home的身份验证在MVPD端激活。 程序员或Adobe无需执行任何操作。
+有关支持基于主页的身份验证的MVPD的详细信息，请参见 [MVPD的HBA状态](/help/authentication/hba-status-mvpds.md).
 
-## 常見問題集 {#faqs}
-
-
-**問題：** 為何使用SAML和OAuth2通訊協定的家用驗證之間會分開？
-
-**回答：** 兩種通訊協定的HBA流程不同。 從程式設計人員的角度來看，沒有必要採取任何動作來確保SAML MVPD已啟用HBA，但若是OAuth2 MVPD，則可以在Primetime TVE儀表板中開啟或關閉HBA。
+## 常见问题解答 {#faqs}
 
 
+**问题：** 为何使用SAML和OAuth2协议分离基于主页的身份验证？
 
-**問題：** 使用者第一次啟用HBA驗證時，是否需要填寫使用者名稱和密碼？
-
-**回答：** 否，不需要使用者名稱和密碼。
+**回答：** 两种协议的HBA流不同。 从程序员的角度来看，无需采取行动来确保为SAML MVPD启用了HBA，而对于OAuth2 MVPD，可以在Primetime TVE仪表板中打开或关闭HBA。
 
 
 
-**問題：** 您如何執行家長監護？
+**问题：** 启用HBA时，用户第一次进行身份验证时是否需要填写用户名和密码？
 
-**答案1：** Adobe可以停用HBA來與需要家長監護核准的通道整合。
-
-**答案2：** Adobe正在與OATC合作撰寫一份UX檔案，其中會建議如何使用家長監護設定HBA體驗。
+**回答：** 否，不需要用户名和密码。
 
 
 
-**問題：** 支援HBA的提供者對HBA的TTL視窗是否比一般驗證時短？
+**问题：** 如何执行家长监护？
 
-**回答：** TTL設定是可設定的。 建議您為HBA驗證Token設定較短的TTL，以防止處理錯誤。
+**答案1：** Adobe可以禁用HBA以便与需要家长控制批准的渠道集成。
+
+**答案2：** Adobe正在与OATC合作编写一份UX文档，该文档介绍了如何通过家长控制设置HBA体验。
 
 
-## 有用的資訊 {#useful-info}
 
-* [即時存取(HBA) Recommendations](http://www.ctamtve.com/instantaccess){target=_blank}  — 由CTAM
-* [在程式設計人員應用程式上實作HBA的範例](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/HBA_Flow_Sample.pdf?dc=201604222139-1346){target=_blank}  — 依Adobe
+**问题：** 支持HBA的提供商对HBA的TTL窗口是否比常规身份验证的更短？
+
+**回答：** TTL设置是可配置的。 我们建议为HBA身份验证令牌设置更短的TTL，以防止错误处理。
+
+
+## 有用信息 {#useful-info}
+
+* [即时访问(HBA) Recommendations](http://www.ctamtve.com/instantaccess){target=_blank}  — 由CTAM提供
+* [HBA在程序员应用程序上的实施示例](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/HBA_Flow_Sample.pdf?dc=201604222139-1346){target=_blank}  — 按Adobe
    <!--* [Home Based Authentication User Experience Guidelines for TV Everywhere](http://oatc.us/Standards/DownloadRecommendedPractices.aspx){target=_blank} - by OATC-->
-* [以住家為基礎的驗證使用案例和需求](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/Defining%20TVE%20Home-Based%20Authentication%20(HBA)%20%20Use%20Cases%20and%20Requirements%20Recommended%20Practice%20Version%201_0%20FINAL%20DRAFT%20FOR%20BOARD%20APPROVAL.pdf){target=_blank} 按OATC
-* [以首頁為基礎的驗證資訊圖](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf?dc=201604260953-2640){target=_blank}  — 依Adobe
-* [使用OAuth 2.0通訊協定進行驗證](/help/authentication/authn-oauth2-protocol.md)
-* [使用SAML MVPD進行驗證](/help/authentication/authn-usecase.md)
-* [Primetime TVE儀表板使用手冊](/help/authentication/tve-dashboard-user-guide.md)
-* [hba_status使用者中繼資料](/help/authentication/user-metadata-feature.md#obtaining)
+* [基于家庭的身份验证用例和要求](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/Defining%20TVE%20Home-Based%20Authentication%20(HBA)%20%20Use%20Cases%20and%20Requirements%20Recommended%20Practice%20Version%201_0%20FINAL%20DRAFT%20FOR%20BOARD%20APPROVAL.pdf){target=_blank} 由OATC提供
+* [基于主页的身份验证信息图](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf?dc=201604260953-2640){target=_blank}  — 按Adobe
+* [使用OAuth 2.0协议进行身份验证](/help/authentication/authn-oauth2-protocol.md)
+* [使用SAML MVPD进行身份验证](/help/authentication/authn-usecase.md)
+* [Primetime TVE仪表板用户指南](/help/authentication/tve-dashboard-user-guide.md)
+* [hba_status用户元数据](/help/authentication/user-metadata-feature.md#obtaining)

@@ -1,6 +1,6 @@
 ---
-title: 以身分為基礎的網域註冊邏輯
-description: 以身分為基礎的網域註冊邏輯
+title: 基于身份的域注册逻辑
+description: 基于身份的域注册逻辑
 copied-description: true
 exl-id: 6e391fce-00b4-45cf-b785-3b0ec734a11e
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,62 +10,62 @@ ht-degree: 0%
 
 ---
 
-# 以身分為基礎的網域註冊邏輯{#identity-based-domain-registration-logic}
+# 基于身份的域注册逻辑{#identity-based-domain-registration-logic}
 
-## 網域註冊邏輯 {#section_149C247458954877AF158B4A09A8526B}
+## 域注册逻辑 {#section_149C247458954877AF158B4A09A8526B}
 
-參考實作會套用下列邏輯進行身分型網域註冊：
+参考实施将以下逻辑应用于基于身份的域注册：
 
-1. 決定要指派給指定使用者的網域名稱。
+1. 确定要分配给指定用户的域名。
 
-   網域名稱( `namequalifier:username`)擷取自驗證Token。 如果Token無法使用，則會擲回錯誤。
-1. 在中查詢網域名稱 `DomainServerInfo` 表格。
+   域名( `namequalifier:username`)从身份验证令牌中提取。 如果令牌不可用，则会引发错误。
+1. 在中查找域名 `DomainServerInfo` 表格。
 
-   如果找不到專案，請插入一個專案。 預設值為：
+   如果未找到任何条目，则插入一个条目。 默认值为：
 
    * `authentication required`
    * `max domain membership=5`
 
    .
 
-1. 若要驗證裝置是否已向網域註冊：
+1. 验证设备是否已向域注册：
 
-   1. 查詢 `domainname` 在 `UserDomainMembership` 表格：
+   1. 查找 `domainname` 在 `UserDomainMembership` 表：
 
-      1. 針對找到的每個機器ID，將ID與請求中的機器ID進行比較。
-      1. 如果這是新電腦，請將專案新增至 `UserDomainMembership` 表格。
-      1. 在中搜尋相符的記錄 `UserDomainRefCount` 表格。
-      1. 如果此電腦GUID不存在專案，請新增記錄。
-   1. 如果是新裝置，且 `Max Membership` 已達到值，傳回錯誤。
+      1. 对于找到的每个计算机ID，将该ID与请求中的计算机ID进行比较。
+      1. 如果这是一台新计算机，请将一个条目添加到 `UserDomainMembership` 表格。
+      1. 在中搜索匹配记录 `UserDomainRefCount` 表格。
+      1. 如果此计算机GUID不存在条目，请添加记录。
+   1. 如果是新设备，并且 `Max Membership` 已达到值，返回错误。
 
 
-1. 在「 」中查詢此網域的所有網域金鑰 `DomainKeys` 表格：
+1. 在中查找此域的所有域密钥 `DomainKeys` 表：
 
-   1. 若 `DomainServerInfo` 表示金鑰必須翻轉，產生新的金鑰組，
-   1. 將配對儲存在 `DomainKeys` 資料表，其索引鍵版本比現有最高索引鍵高1。
-   1. 重設 `Key Rollover Required` 標幟於 `DomainServerInfo`.
+   1. 如果 `DomainServerInfo` 表示密钥需要滚动，生成新的密钥对，
+   1. 将配对保存在 `DomainKeys` 表，其键版本比现有的最高键高1。
+   1. 重置 `Key Rollover Required` 标记位置 `DomainServerInfo`.
 
-   1. 對於每個網域金鑰，產生網域認證。
+   1. 对于每个域密钥，生成域凭据。
 
-## 網域取消註冊邏輯 {#section_78AFA63D8F744BE6BCA10A51B4FCBA22}
+## 域注销逻辑 {#section_78AFA63D8F744BE6BCA10A51B4FCBA22}
 
-參考實作會套用下列邏輯進行身分型網域取消註冊：
+参考实施将以下逻辑应用于基于身份的域注销：
 
-1. 決定要指派給此使用者的網域名稱。
+1. 确定要分配给此用户的域名。
 
-   網域名稱是 `namequalifier:username`，此資訊會從驗證Token擷取。 如果沒有Token可用，則傳回錯誤 `DOM_AUTHENTICATION_REQUIRED (503)` 發生。
-1. 在中查詢要求的網域名稱 `DomainServerInfo` 表格。
-1. 在中查詢網域名稱 `UserDomainMembership` 表格。
-1. 將您找到的每個電腦ID與請求中的電腦ID進行比較。
-1. 在「 」中找到對應的專案 `UserDomainRefCount` 表格。
+   域名是 `namequalifier:username`，从身份验证令牌中提取。 如果没有可用的令牌，则返回错误 `DOM_AUTHENTICATION_REQUIRED (503)` 发生。
+1. 在中查找请求的域名 `DomainServerInfo` 表格。
+1. 在中查找域名 `UserDomainMembership` 表格。
+1. 将找到的每个计算机ID与请求中的计算机ID进行比较。
+1. 在中找到相应的条目 `UserDomainRefCount` 表格。
 
-   如果找不到相符的專案，則會傳回錯誤。
+   如果找不到匹配的条目，则返回错误。
 
-1. 如果這不是預覽請求，請從刪除專案 `UserDomainRefCount` 表格。
-1. 如果電腦的表格中沒有其他專案，請從刪除專案 `UserDomainMembership` 並設定 [!DNL Key Rollover Required] 中的標幟 `DomainServerInfo` 屬性。
+1. 如果这不是预览请求，请从以下位置删除该条目： `UserDomainRefCount` 表格。
+1. 如果该表中没有其他计算机条目，则从中删除该条目 `UserDomainMembership` 并设置 [!DNL Key Rollover Required] 中的标志 `DomainServerInfo` 属性。
 
-每位使用者可註冊少量電腦，因此您可以使用完整的電腦ID和 `matches()` 計數電腦的方法。 由於使用者可以多次註冊，透過多個AIR應用程式或不同瀏覽器中的播放器，伺服器需要維持參考計數，以便也可以計算取消註冊的數量。
+每个用户可以注册少量计算机，因此您可以使用完整的计算机ID和 `matches()` 计数计算机的方法。 由于用户可以通过多个AIR应用程序或不同浏览器中的播放器多次注册，因此服务器需要保持引用计数，以便注销也可以计数。
 
 >[!NOTE]
 >
->除非交出電腦上的所有網域權杖，否則取消註冊不會完成。
+>在移交计算机上的所有域令牌之前，注销不会完成。

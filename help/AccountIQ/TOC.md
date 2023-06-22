@@ -1,7 +1,7 @@
 ---
 product: adobe primetime
 audience: end-user
-user-guide-description: Primetime帳戶IQ可協助提供Account IQ元件的相關資訊，並逐步引導您瞭解使用各種元件的使用者歷程。
+user-guide-description: Primetime帐户IQ可帮助提供有关帐户IQ组件的信息，并引导您了解使用各种组件的用户旅程。
 source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
 workflow-type: tm+mt
 source-wordcount: '141'
@@ -9,40 +9,40 @@ ht-degree: 0%
 
 ---
 
-# Account IQ說明 {#aiq-help}
+# Account IQ帮助 {#aiq-help}
 
-+ [Account IQ概述](/help/AccountIQ/home.md)
-+ [開始使用帳戶IQ](/help/AccountIQ/get-started.md)
-+ Account IQ元件 {#account-iq-components}
-   + [區段和時間範圍](/help/AccountIQ/segments-timeframe.md)
-   + [儀表板](/help/AccountIQ/dashboard.md)
-   + 報表 {#reports-account-iq}
-   + [一般使用報告](/help/AccountIQ/general-usage-reports.md)
-   + [共用帳戶報表](/help/AccountIQ/shared-acc-reports.md)
-   + 共用元件 {#sharing-components}
++ [帐户IQ概述](/help/AccountIQ/home.md)
++ [Account IQ入门](/help/AccountIQ/get-started.md)
++ Account IQ组件 {#account-iq-components}
+   + [区段和时间范围](/help/AccountIQ/segments-timeframe.md)
+   + [仪表板](/help/AccountIQ/dashboard.md)
+   + 报告 {#reports-account-iq}
+   + [“常规使用情况”报表](/help/AccountIQ/general-usage-reports.md)
+   + [共享帐户报表](/help/AccountIQ/shared-acc-reports.md)
+   + 共享组件 {#sharing-components}
       + [使用模式](/help/AccountIQ/usage-patterns.md)
-   + 動作 {#further-next-steps-actions}
-      + [作業](/help/AccountIQ/operations.md)
-+ 操作說明 {#use-aiq}
-   + [建立區段](/help/AccountIQ/build-segment.md)
-   + [選取區段和時間範圍](/help/AccountIQ/howto-select-segment-timeframe.md)
-   + 匯出報告 {#export-reports}
-      + [程式設計師 — 匯出報表](/help/AccountIQ/export-segment-metrics-progr.md)
-      + [MVPD — 匯出報表](/help/AccountIQ/export-segment-metrics-mvpd.md)
-   + [匯出高度共用帳戶](/help/AccountIQ/export-acc-information.md)
-   + [在使用者區段上建立操作](/help/AccountIQ/operation-affecting-user-segment.md)
-   + 檢視帳戶共用報表 {#view-account-sharing-reports}
-      + 程式設計師 — 檢視帳戶共用報告 {#view-programmer-reports}
-         + [特定MVPD的報表](/help/AccountIQ/reports-for-specific-mvpds.md)
-         + [前10大MVPD報表](/help/AccountIQ/top-10-mvpd-reports.md)
-         + [多個MVPD的報表](viewrep-multiple-mvpd.md)
-         + [隔離模式和共用行為](/help/AccountIQ/isolation-mode.md)
-      + MVPD — 檢視帳戶共用報告 {#view-mvpd-reports}
-         + [特定程式設計師或管道的報表](/help/AccountIQ/reports-for-specific-programmers.md)
-         + [前10名程式設計師的報告](/help/AccountIQ/top-10-programmer-reports.md)
-         + [多個程式設計師和管道的報表](viewrep-multiple-programmer.md)
-+ [最佳實務](/help/AccountIQ/best-practices.md)
+   + 操作 {#further-next-steps-actions}
+      + [操作](/help/AccountIQ/operations.md)
++ 操作说明 {#use-aiq}
+   + [生成区段](/help/AccountIQ/build-segment.md)
+   + [选择区段和时间范围](/help/AccountIQ/howto-select-segment-timeframe.md)
+   + 导出报告 {#export-reports}
+      + [程序员 — 导出报表](/help/AccountIQ/export-segment-metrics-progr.md)
+      + [MVPD — 导出报告](/help/AccountIQ/export-segment-metrics-mvpd.md)
+   + [导出高共享帐户](/help/AccountIQ/export-acc-information.md)
+   + [在用户区段上创建操作](/help/AccountIQ/operation-affecting-user-segment.md)
+   + 查看帐户共享报告 {#view-account-sharing-reports}
+      + 程序员 — 查看帐户共享报告 {#view-programmer-reports}
+         + [特定MVPD的报告](/help/AccountIQ/reports-for-specific-mvpds.md)
+         + [前10个MVPD的报告](/help/AccountIQ/top-10-mvpd-reports.md)
+         + [多个MVPD的报告](viewrep-multiple-mvpd.md)
+         + [隔离模式和共享行为](/help/AccountIQ/isolation-mode.md)
+      + MVPD — 查看帐户共享报告 {#view-mvpd-reports}
+         + [特定程序员或渠道的报告](/help/AccountIQ/reports-for-specific-programmers.md)
+         + [前10名程序员的报告](/help/AccountIQ/top-10-programmer-reports.md)
+         + [面向多个程序员和渠道的报告](viewrep-multiple-programmer.md)
++ [最佳实践](/help/AccountIQ/best-practices.md)
 + [限制](/help/AccountIQ/limitations.md)
-+ [疑難排解](/help/AccountIQ/troubleshoot.md)
-+ [常見問題](/help/AccountIQ/faq.md)
-+ [產品概念字彙表](/help/AccountIQ/product-concepts.md)
++ [疑难解答](/help/AccountIQ/troubleshoot.md)
++ [常见问题解答](/help/AccountIQ/faq.md)
++ [产品概念术语表](/help/AccountIQ/product-concepts.md)

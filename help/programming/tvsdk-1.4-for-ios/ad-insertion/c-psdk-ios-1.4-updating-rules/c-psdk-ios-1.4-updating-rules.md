@@ -1,7 +1,7 @@
 ---
-description: 您可以使用TVSDK設定檔案(AdobeTVSDKConfig.json)來更新VAST/VMAP回應上廣告創意選擇的優先順序。 您也可以使用此設定檔來定義廣告創意的來源URL轉換規則。
-keywords: 創意內容選擇規則；AdobeTVSDKConfig；廣告創意優先順序；轉換規則
-title: 更新廣告創意選擇規則
+description: 您可以使用TVSDK配置文件(AdobeTVSDKConfig.json)更新VAST/VMAP响应上广告创意选择的优先级。 您还可以使用此配置文件为广告创意定义源URL转换规则。
+keywords: 创意选择规则；AdobeTVSDKConfig；广告创意优先级；转换规则
+title: 更新广告创意选择规则
 exl-id: b4249936-d658-49fb-85af-ebd8e1211d55
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -10,24 +10,24 @@ ht-degree: 0%
 
 ---
 
-# 概觀 {#update-ad-creative-selection-rules-overview}
+# 概述 {#update-ad-creative-selection-rules-overview}
 
-您可以使用TVSDK設定檔案(AdobeTVSDKConfig.json)來更新VAST/VMAP回應上廣告創意選擇的優先順序。 您也可以使用此設定檔來定義廣告創意的來源URL轉換規則。
+您可以使用TVSDK配置文件(AdobeTVSDKConfig.json)更新VAST/VMAP响应上广告创意选择的优先级。 您还可以使用此配置文件为广告创意定义源URL转换规则。
 
-當您的視訊播放器向廣告伺服器提出請求時，VAST/VMAP回應通常包括多個廣告創意( `MediaFile` 元素)，每個元素都會提供不同容器轉碼器版本的URL。 在某些情況下，VAST/VMAP回應中的廣告創意會分別為廣告提供不同的位元速率。 如果您想為這些廣告創意指定自己的優先順序和轉換規則，可以在 [!DNL AdobeTVSDKConfig.json] 設定檔。
+当视频播放器向广告服务器发出请求时，VAST/VMAP响应通常包括多个广告创意( `MediaFile` 元素)，每个元素都提供指向不同容器编解码器版本的URL。 在某些情况下，VAST/VMAP响应中的广告创意各自为广告提供不同的比特率。 如果要为这些广告创意指定自己的优先级和转换规则，可以在 [!DNL AdobeTVSDKConfig.json] 配置文件。
 
 >[!IMPORTANT]
 >
->* 請勿變更TVSDK設定檔的名稱。 名稱必須保留 [!DNL AdobeTVSDKConfig.json].
->* 您可以將此檔案放在您的套件可存取的任何地方。
+>* 请勿更改TVSDK配置文件的名称。 名称必须保留 [!DNL AdobeTVSDKConfig.json].
+>* 您可以将此文件放在包可访问的任何位置。
 >
 
 
-您可以在下列位置指定兩種規則： [!DNL AdobeTVSDKConfig.json]： *優先順序* 規則和 *標準化* 規則。
+您可以在中指定两种类型的规则 [!DNL AdobeTVSDKConfig.json]： *优先级* 规则和 *标准化* 规则。
 
 **[!UICONTROL Disabling Pre-Roll]**
 
-若要停用前段通話，您必須變更預設機會產生器，使其不進行前段通話。 根據預設，TVSDK會使用下列機會產生器：
+要禁用前置，您需要将默认机会生成器更改为不进行前置调用。 默认情况下，TVSDK使用以下机会生成器：
 
 ```
 /** 
@@ -41,7 +41,7 @@ override protected function doRetrieveGenerators(item:MediaPlayerItem):Vector.<O
 } 
 ```
 
-若要在即時資料流上停用前置滾動，這應該變更為僅包含SpliceOutOpportunityGenerator：
+要在实时流上禁用前置滚动，这应该更改为仅包含SpliceOutOpportunityGenerator：
 
 ```
 /** 

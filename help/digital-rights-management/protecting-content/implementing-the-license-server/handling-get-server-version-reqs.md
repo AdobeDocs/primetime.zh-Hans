@@ -1,6 +1,6 @@
 ---
-title: 處理取得伺服器版本要求
-description: 處理取得伺服器版本要求
+title: 处理获取服务器版本请求
+description: 处理获取服务器版本请求
 copied-description: true
 exl-id: 86a1bbe3-2ae4-4d4e-be51-fbbeb32147c8
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,12 +10,12 @@ ht-degree: 0%
 
 ---
 
-# 處理取得伺服器版本要求 {#handle-get-server-version-requests}
+# 处理获取服务器版本请求 {#handle-get-server-version-requests}
 
-Adobe Primetime DRM使用者端3.0或更新版本會傳送取得伺服器版本要求，以判斷伺服器的功能。 所有使用Primetime DRM SDK 3.0或更新版本的伺服器都必須實作取得伺服器版本要求的支援。
+Adobe Primetime DRM客户端3.0或更高版本发送一个Get Server Version请求，以确定服务器的功能。 所有使用Primetime DRM SDK 3.0或更高版本的服务器都必须实施对获取服务器版本请求的支持。
 
-* 要求處理常式類別為 `com.adobe.flashaccess.sdk.protocol.getversion.GetServerVersionHandler`
-* 請求訊息類別為 `com.adobe.flashaccess.sdk.protocol.getversion.GetServerVersionRequestMessage`
-* 請求URL必須是「中繼資料中的授權伺服器URL」+ &quot; [!DNL /flashaccess/getServerVersion/v3]&quot;
+* 请求处理程序类为 `com.adobe.flashaccess.sdk.protocol.getversion.GetServerVersionHandler`
+* 请求消息类为 `com.adobe.flashaccess.sdk.protocol.getversion.GetServerVersionRequestMessage`
+* 请求URL必须是“元数据中的许可证服务器URL”+“ [!DNL /flashaccess/getServerVersion/v3]”
 
-對於Primetime DRM SDK 4.0或更新版本，對「取得伺服器版本」要求的回應會向使用者端指出伺服器支援Primetime DRM通訊協定版本3和4。
+对于Primetime DRM SDK 4.0或更高版本，对Get Server Version请求的响应会向客户端指示服务器支持Primetime DRM协议版本3和4。

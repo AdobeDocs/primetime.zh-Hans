@@ -1,6 +1,6 @@
 ---
-description: 您可以自訂廣告插入中繼資料。
-title: 自訂廣告插入中繼資料
+description: 您可以自定义广告插入元数据。
+title: 自定义广告插入元数据
 exl-id: 4881ace6-e97b-448d-8fb4-64e7b69517f1
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,29 +9,29 @@ ht-degree: 0%
 
 ---
 
-# 自訂廣告插入中繼資料{#customize-ad-insertion-metadata}
+# 自定义广告插入元数据{#customize-ad-insertion-metadata}
 
-您可以自訂廣告插入中繼資料。
+您可以自定义广告插入元数据。
 
-1. 針對未解決的機會，在廣告中繼資料上設定逾時。
+1. 为未解析的机会设置广告元数据的超时。
 
-   此逾時的預設值為20秒。
-1. 若要將值變更為10秒，請輸入下列內容：
+   此超时的默认值为20秒。
+1. 要将值更改为10秒，请输入以下内容：
 
    ```js
    auditudeSettings.timeout = 10000; //this value is specified in milliseconds
    ```
 
-   此 `timeout` 屬性定義於 `AdvertisingMetadata` 類別，而且此逾時是針對任何衍生自的自訂廣告設定所設定。 `AdvertisingMetadata` 類別。 例如，如果使用者定義FreeWheel解析器的自訂設定，則他們可以使用這個設定來設定預設逾時。
+   此 `timeout` 属性定义于 `AdvertisingMetadata` 类中，并且可以为从派生的任何自定义广告设置设置此超时。 `AdvertisingMetadata` 类。 例如，如果用户为FreeWheel解析程序定义自定义设置，则可以使用此设置设置默认超时。
 
-1. 建立 `MediaPlayerItemConfig` ，並使用步驟2中的廣告設定。
+1. 创建 `MediaPlayerItemConfig` ，并使用步骤2中的广告设置。
 
    ```js
    var config = new AdobePSDK.MediaPlayerItemConfig(); 
    config.advertisingMetadata = auditudeSettings;
    ```
 
-1. 呼叫時使用此設定 `replaceCurrentResource` 於 `MediaPlayer`.
+1. 调用时使用此配置 `replaceCurrentResource` 日期 `MediaPlayer`.
 
    ```js
    player.replaceCurrentResource(mediaResource, config);

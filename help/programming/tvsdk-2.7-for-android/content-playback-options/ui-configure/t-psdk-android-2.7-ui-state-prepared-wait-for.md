@@ -1,6 +1,6 @@
 ---
-description: 您必須先將播放器設為有效狀態，才能使用大部分的TVSDK播放器方法。
-title: 等待有效的狀態
+description: 在使用大多数TVSDK播放器方法之前，播放器必须处于有效状态。
+title: 等待有效状态
 exl-id: fddb6696-9226-408d-be3c-58d4ce7db55d
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,14 +9,14 @@ ht-degree: 0%
 
 ---
 
-# 等待有效的狀態 {#wait-for-a-valid-state}
+# 等待有效的状态 {#wait-for-a-valid-state}
 
-透過TVSDK，您可以控制即時和隨選視訊(VOD)的基本播放體驗。 TVSDK提供播放器例項上的方法和屬性，可用來設定播放器使用者介面。
+借助TVSDK，您可以控制实时和视频点播(VOD)的基本播放体验。 TVSDK提供了播放器实例上的方法和属性，您可以使用这些方法和属性来配置播放器用户界面。
 
-您必須先將播放器設為有效狀態，才能使用大部分的TVSDK播放器方法。
+在使用大多数TVSDK播放器方法之前，播放器必须处于有效状态。
 
-等候播放器處於正確狀態可確保媒體資源已成功載入。 如果播放器未處於至少必要的狀態，許多播放器方法會擲回 `MediaPlayerException`.
+等待播放器处于正确状态可确保媒体资源已成功加载。 如果播放器未至少处于所需的状态，则许多播放器方法会引发 `MediaPlayerException`.
 
-所需的狀態通常是PREPARED。 發生此情況時，的回呼常式 `StatusChangeEventListener.onStatusChanged()` 執行。
+所需的状态通常为PREPARED。 发生此情况时，的回调例程 `StatusChangeEventListener.onStatusChanged()` 执行。
 
-1. 若要確認狀態為 `PREPARED`，檢查 `MediaPlayer.MediaPlayerStatus`.
+1. 要确认状态为 `PREPARED`，检查 `MediaPlayer.MediaPlayerStatus`.

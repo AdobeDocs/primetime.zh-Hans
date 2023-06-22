@@ -1,6 +1,6 @@
 ---
-description: 解析媒體資源的另一種方式是使用MediaPlayerItemLoader。 如果您想要取得特定媒體資料流的相關資訊，但不具現化MediaPlayer執行個體，這個功能會很有用。
-title: 使用MediaPlayerItemLoader載入媒體資源
+description: 解析媒体资源的另一种方法是使用MediaPlayerItemLoader。 当您希望获取有关特定媒体流的信息而不实例化MediaPlayer实例时，这将很有用。
+title: 使用MediaPlayerItemLoader加载媒体资源
 exl-id: 9d129497-8a71-433a-a542-f49be519893b
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,28 +9,28 @@ ht-degree: 0%
 
 ---
 
-# 使用MediaPlayerItemLoader載入媒體資源 {#load-a-media-resource-using-mediaplayeritemloader}
+# 使用MediaPlayerItemLoader加载媒体资源 {#load-a-media-resource-using-mediaplayeritemloader}
 
-解析媒體資源的另一種方式是使用MediaPlayerItemLoader。 如果您想要取得特定媒體資料流的相關資訊，但不具現化MediaPlayer執行個體，這個功能會很有用。
+解析媒体资源的另一种方法是使用MediaPlayerItemLoader。 当您希望获取有关特定媒体流的信息而不实例化MediaPlayer实例时，这将很有用。
 
-透過 `MediaPlayerItemLoader` 類別時，您可以交換媒體資源以取得對應的 `MediaPlayerItem` 而不將檢視附加至 `MediaPlayer` 執行個體，這會配置視訊解碼硬體資源。 取得「 」的程式 `MediaPlayerItem` 執行個體為非同步。
+通过 `MediaPlayerItemLoader` 类中，可以交换相应类的媒体资源 `MediaPlayerItem` 而不将视图附加到 `MediaPlayer` 实例计算，这会导致视频解码硬件资源的分配。 获取 `MediaPlayerItem` 实例是异步的。
 
-1. 實作 `MediaPlayerItemLoader.LoaderListener` 回呼介面。
+1. 实施 `MediaPlayerItemLoader.LoaderListener` 回调接口。
 
-       此介面會定義兩種方法：
+       此接口定义了两种方法：
    
-   * `LoaderListener.onError` 回呼函式
+   * `LoaderListener.onError` 回调函数
 
-      TVSDK會使用此功能，通知您的應用程式已發生錯誤。 TVSDK提供錯誤碼作為引數，以及包含診斷資訊的說明字串。
+      TVSDK将使用此项来通知您的应用程序发生了错误。 TVSDK提供错误代码作为参数，并提供包含诊断信息的描述字符串。
 
-   * `LoaderListener.onError` 回呼函式
+   * `LoaderListener.onError` 回调函数
 
-      TVSDK會使用此項來通知您的應用程式，請求的資訊會以下列形式提供： `MediaPlayerItem` 作為引數傳遞至callback的例項。
+      TVSDK将使用此项来通知您的应用程序，请求的信息将以下列形式提供 `MediaPlayerItem` 作为参数传递给回调的实例。
 
-1. 將此執行個體作為引數傳遞至的建構函式，以註冊至TVSDK。 `MediaPlayerItemLoader`.
-1. 呼叫 `MediaPlayerItemLoader.load`，傳遞例項 `MediaResource` 物件。
+1. 通过将此实例作为参数传递到TVSDK的构造函数，将其注册到 `MediaPlayerItemLoader`.
+1. 调用 `MediaPlayerItemLoader.load`，传递 `MediaResource` 对象。
 
-   的URL `MediaResource` 物件必須指向您要取得資訊的資料流。 例如：
+   的URL `MediaResource` 对象必须指向要获取其信息的流。 例如：
 
    ```java
    // instantiate the listener interface 

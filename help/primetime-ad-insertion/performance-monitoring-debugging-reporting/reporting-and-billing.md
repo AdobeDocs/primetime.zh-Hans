@@ -1,6 +1,6 @@
 ---
-title: 報告與帳單
-description: 報告與帳單
+title: 报告和账单
+description: 报告和账单
 copied-description: true
 exl-id: efe91d97-a429-448a-9b7f-cac50b850f35
 source-git-commit: 3e63c187f12d1bff53370bbcde4d6a77f58f3b4f
@@ -10,6 +10,6 @@ ht-degree: 0%
 
 ---
 
-# 報告與帳單 {#reporting-and-billing}
+# 报告和计费 {#reporting-and-billing}
 
-PrimetimeAd Insertion主控台包含報告和計費模組，可為您提供判斷廣告插入業務狀況所需的所有工具。 「報表」模組可讓您依時間範圍執行許多維度的曝光報表。 報表可以臨機執行和/或設定為排程傳送至特定電子郵件地址。 「帳單」報表可讓您準備自訂報表給您的客戶或合作夥伴，這些報表可用於帳單操作，例如對廣告插入收費。
+PrimetimeAd Insertion控制台包括“报表”和“计费”模块，可为您提供确定广告插入业务运行状况所需的所有工具。 通过报表模块，您可以按时间范围跨多个维度运行展示报表。 报表可以临时运行和/或设置为按计划传送到特定电子邮件地址。 账单报告允许您为客户或合作伙伴准备自定义报告，这些报告可用于账单操作，如对广告插入收费。

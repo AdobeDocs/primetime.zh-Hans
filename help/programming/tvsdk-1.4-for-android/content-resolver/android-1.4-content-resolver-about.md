@@ -1,6 +1,6 @@
 ---
-description: 機會偵測器是TVSDK元件，可偵測串流中的自訂標籤並識別放置機會。 這些機會會傳送給內容解析器，後者會根據版位機會屬性和中繼資料來自訂內容/廣告插入工作流程。
-title: 機會產生器和內容解析器
+description: 机会检测器是一个TVSDK组件，可检测流中的自定义标记并识别投放机会。 这些机会将发送给内容解析器，内容解析器根据版面机会属性和元数据自定义内容/广告插入工作流。
+title: 机会生成器和内容解析器
 exl-id: e396eaa9-444d-4173-a534-74b29309a151
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,35 +9,35 @@ ht-degree: 0%
 
 ---
 
-# 機會產生器和內容解析器 {#opportunity-generators-and-content-resolvers}
+# 机会生成器和内容解析器 {#opportunity-generators-and-content-resolvers}
 
-機會偵測器是TVSDK元件，可偵測串流中的自訂標籤並識別放置機會。 這些機會會傳送給內容解析器，後者會根據版位機會屬性和中繼資料來自訂內容/廣告插入工作流程。
+机会检测器是一个TVSDK组件，可检测流中的自定义标记并识别投放机会。 这些机会将发送给内容解析器，内容解析器根据版面机会属性和元数据自定义内容/广告插入工作流。
 
-TVSDK包含預設機會偵測器：
+TVSDK包含一个默认机会检测器：
 
-* `SpliceOutPlacementOpportunityDetector`，瞭解預設廣告提示
+* `SpliceOutPlacementOpportunityDetector`，了解默认广告提示
 
-TVSDK也包含預設內容解析器，這些解析器會根據播放器專案中的中繼資料索引鍵提供要插入的內容：
+TVSDK还包括默认内容解析器，这些解析器根据播放器项中的元数据键提供要插入的内容：
 
-* `AuditudeResolver` 的 `AUDITUDE_METADATA_KEY`，能夠與Adobe Primetime ad decisioning （先前稱為Auditude）伺服器通訊，並傳回要放置的廣告插播。
+* `AuditudeResolver` 对象 `AUDITUDE_METADATA_KEY`，能够与Adobe Primetime ad decisioning（以前称为Auditude）服务器通信并返回要投放的广告时间。
 
-* `MetadataResolver` 的 `JSON_METADATA_KEY`
+* `MetadataResolver` 对象 `JSON_METADATA_KEY`
 
-* `CustomAdMarkersContentResolver` 的 `TIME_RANGES_METADATA_KEY`
+* `CustomAdMarkersContentResolver` 对象 `TIME_RANGES_METADATA_KEY`
 
-您可以覆寫預設的機會偵測器和內容解析器，以透過以下方式自訂廣告工作流程：
+您可以通过以下方式覆盖默认机会检测器和内容解析器来自定义广告工作流：
 
-* 新增對自訂標籤偵測的支援
-* 識別廣告插入的自訂標籤
-* 建立自訂的廣告提供者
-* 封鎖內容
+* 添加对自定义标记检测的支持
+* 识别广告插入的自定义标记
+* 创建自定义的广告提供商
+* 禁止显示内容
 
-TVSDK提供在時間軸中放置廣告的預設機會產生器和內容解析器，這些產生器和解析器以資訊清單中的非標準標籤為基礎。 您的應用程式可能需要根據資訊清單中識別的機會（例如中斷期間的指標）來變更時間表。
+TVSDK提供了在时间轴中放置广告的默认机会生成器和内容解析器，这些生成器和解析器基于清单中的非标准标记。 您的应用程序可能需要根据清单中识别的机会（例如封锁期的指示器）更改时间线。
 
-一個 *`opportunity`* 代表時間軸上的興趣點，通常表示廣告投放機會。 此機會也可以指出可能影響時間表的自訂操作，例如中斷期間。 一個 *`opportunity generator`* 會識別時間軸中的特定機會（標籤），並通知TVSDK這些機會已標籤。 透過包含非標準（非HLS）標籤，可在的時間表中識別商機。
+An *`opportunity`* 表示时间轴上的目标点，通常指示广告投放机会。 此机会还可以指示可能影响时间线的自定义操作，例如封锁期。 An *`opportunity generator`* 识别时间线中的特定机会（标记），并通知TVSDK这些机会已标记。 在的时间表中通过包含非标准（非HLS）标记来识别机会。
 
-當您的應用程式收到有關商機（標籤）的通知時，您的應用程式可能會變更時間表，例如，透過插入一系列廣告、切換至替代資料流（中斷）或編輯時間表內容。 根據預設，TVSDK會呼叫適當的 *`content resolver`* 以實作必要的時間表變更或動作。 您的應用程式可以使用預設的TVSDK廣告內容解析程式或註冊自己的內容解析程式。
+当您的应用程序收到有关机会（标记）的通知时，您的应用程序可能会更改时间线，例如，通过插入一系列广告、切换到备用流（中断）或编辑时间线内容等。 默认情况下，TVSDK会调用相应的 *`content resolver`* 以实施所需的时间线更改或操作。 您的应用程序可以使用默认的TVSDK播发内容解析程序或注册自己的内容解析程序。
 
-您也可以使用 `MediaPlayerItemConfig.setAdTags` 以新增更多廣告標籤標籤/提示，讓TVSDK能夠辨識和使用 `MediaPlayerItemConfig.subscribedTags` 並通知您的應用程式有關可能包含廣告工作流程資訊的其他標籤。
+您还可以使用 `MediaPlayerItemConfig.setAdTags` 添加更多广告标记标记/提示，以便TVSDK能够识别和使用 `MediaPlayerItemConfig.subscribedTags` 并通知应用程序可能包含广告工作流信息的其他标记。
 
-自訂解析器的一種可能使用方式是中斷期間。 若要處理這些期間，您的應用程式可以實作並註冊負責處理中斷標籤的中斷機會偵測器。 當TVSDK遇到此標籤時，它會輪詢所有註冊的內容解析器，以尋找處理指定標籤的第一個。 在此範例中，它是中斷內容解析程式，舉例來說，它可以用播放器上的替代內容取代目前專案，持續時間由標籤指定。
+自定义解析器的一种可能用途是封锁期。 要处理这些时段，您的应用程序可以实施并注册一个负责处理中断标记的中断机会检测器。 当TVSDK遇到此标记时，它会轮询所有注册的内容解析器，以查找第一个处理指定标记的内容解析器。 在本例中，它就是封锁内容解析程序，例如，它可以用播放器上的替代内容替换当前项目，持续时间由标记指定。

@@ -1,6 +1,6 @@
 ---
-description: 您可以搭配StageVideo使用HTML覆蓋圖，在Flash顯示清單視訊平面中顯示UI元素。 此平面位於StageVideo平面上方，因此StageVideo一律會顯示在任何Flash顯示清單元素後面。
-title: StageVideo和HTML覆蓋圖
+description: 您可以使用带有StageVideo的HTML叠加图在Flash显示列表视频平面中显示UI元素。 此平面位于StageVideo平面的上方，因此StageVideo始终显示在任何Flash显示列表元素的后面。
+title: StageVideo和HTML叠加图
 exl-id: 6beda4c8-0981-4a38-bd5e-5714b9ec7efa
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,39 +9,39 @@ ht-degree: 0%
 
 ---
 
-# StageVideo和HTML覆蓋圖{#stagevideo-and-html-overlays}
+# StageVideo和HTML叠加图{#stagevideo-and-html-overlays}
 
-您可以搭配StageVideo使用HTML覆蓋圖，在Flash顯示清單視訊平面中顯示UI元素。 此平面位於StageVideo平面上方，因此StageVideo一律會顯示在任何Flash顯示清單元素後面。
+您可以使用带有StageVideo的HTML叠加图在Flash显示列表视频平面中显示UI元素。 此平面位于StageVideo平面的上方，因此StageVideo始终显示在任何Flash显示列表元素的后面。
 
-HTML覆蓋圖是UI元素，您可以在轉譯的視訊的Flash顯示平面中顯示 `StageVideo` 在它自己的平面上。 在Flash15之前，如果硬體加速不可用，則無法使用HTML覆蓋。 從Flash15開始，HTML覆蓋圖會在下列情況下顯示： `StageVideo` 退回至軟體轉譯。
+HTML叠加是UI元素，您可以在其渲染的视频的Flash显示平面中显示这些元素 `StageVideo` 自己搭的飞机。 在Flash15之前，当硬件加速不可用时，无法使用HTML叠加。 从Flash15开始，在以下情况下显示HTML叠加图： `StageVideo` 回退到软件渲染。
 
 >[!IMPORTANT]
 >
->當您使用HTML覆蓋圖時，效能可能會或多或少地降低，這取決於您的系統功能。
+>使用HTML叠加时，性能可能会或多或少地降低，具体取决于您的系统功能。
 
-請考量下列資訊：
+请考虑以下信息：
 
 * 在Flash Player15中：
 
-   * 無論硬體加速是否可用，您都可以使用HTML覆蓋圖。
-   * 若要使用HTML覆蓋圖，請設定 `wmode` 至 `opaque`.
+   * 无论硬件加速是否可用，您都可以使用HTML叠加图。
+   * 要使用HTML叠加图，请设置 `wmode` 到 `opaque`.
 
 * 在Flash Player14中：
 
-   * 當硬體加速可用時， `StageVideo` 位在Flash顯示清單下方，因此您可以使用HTML覆蓋圖。
-   * 無法使用硬體加速時，視訊會呈現至瀏覽器中所有其他元素上方，以防止使用HTML覆蓋圖。
+   * 当硬件加速可用时， `StageVideo` 位于Flash显示列表下方，因此您可以使用HTML叠加图。
+   * 当硬件加速不可用时，视频将在浏览器所有其他元素之上渲染，从而阻止使用HTML叠加图。
 
-以下為搭配使用HTML覆蓋圖的最低瀏覽器需求 `StageVideo`：
+以下是使用HTML叠加的浏览器最低要求 `StageVideo`：
 
-* Firefox版本4和更新版本
-* Safari版本4和更新版本
+* Firefox版本4及更高版本
+* Safari版本4及更高版本
 * Internet Explorer：
 
-   * Windows 7及更新版本上的9+
-   * Windows XP上的10+版
+   * Windows 7及更高版本上的版本9+
+   * Windows XP上的版本10+
 
-* Chrome 26版和更新版本
+* Chrome 26版及更高版本
 
    >[!IMPORTANT]
    >
-   >不支援Windows XP和Windows Vista上的Chrome Pepper。
+   >不支持Windows XP和Windows Vista上的Chrome Pepper。

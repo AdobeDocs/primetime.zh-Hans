@@ -1,6 +1,6 @@
 ---
-description: 透過內容傳遞網路(CDN)傳遞的HLS資料流有時可以使用資訊清單和區段請求上的驗證Token進行驗證。 這些權杖可以作為URL引數或Cookie標頭提供。
-title: 代碼化區段資料流
+description: 通过内容交付网络(CDN)交付的HLS流有时可以使用清单上的身份验证令牌和区段请求进行验证。 这些令牌可以作为URL参数或Cookie标头提供。
+title: 标记化的区段流
 exl-id: 20a3e8a2-2e9d-4c0d-abea-66edcbcf0003
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,19 +9,19 @@ ht-degree: 0%
 
 ---
 
-# 代碼化區段資料流{#tokenized-segment-streams}
+# 标记化的区段流{#tokenized-segment-streams}
 
-透過內容傳遞網路(CDN)傳遞的HLS資料流有時可以使用資訊清單和區段請求上的驗證Token進行驗證。 這些權杖可以作為URL引數或Cookie標頭提供。
+通过内容交付网络(CDN)交付的HLS流有时可以使用清单上的身份验证令牌和区段请求进行验证。 这些令牌可以作为URL参数或Cookie标头提供。
 
-主要資訊清單(m3u8)回應中以Cookie形式提供的Token不會與區段(ts)請求共用，即使區段請求是針對相同網域亦然。 若要在區段請求中啟用這些Cookie的分享，請在 `PTMetadata` 提供給播放器專案的例項： 
+即使区段请求是针对同一域的，主控清单(m3u8)响应中作为Cookie提供的令牌也不会与区段(ts)请求共享。 要在区段请求中启用这些Cookie共享，请在 `PTMetadata` 提供给播放器项目的实例： 
 
 ```
 PTMetadata *metadata = [[[PTMetadata alloc] init] autorelease]; 
 [metadata setValue:[NSNumber numberWithBool:YES] forKey:kSyncCookiesWithAVAsset]; 
 ```
 
-在資料流開始播放之前，系統會先對主要資訊清單(m3u8)提出其他要求。
+在开始播放流之前，会向主控清单(m3u8)发出附加请求。
 
 >[!IMPORTANT]
 >
->只有執行iOS 8或以上版本的裝置才支援此Cookie共用功能。
+>只有运行iOS 8或更高版本的设备才支持此Cookie共享功能。

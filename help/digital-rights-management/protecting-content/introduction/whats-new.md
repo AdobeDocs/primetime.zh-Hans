@@ -1,6 +1,6 @@
 ---
-description: Adobe Primetime DRM是適用於高價值視聽內容的進階Digital Rights Management(DRM)和內容保護解決方案。 在支援建立Java API的應用程式中，您可以使用Primetime DRM SDK來指定DRM原則、將這些原則套用至內容，以及加密該內容。
-title: Adobe Primetime DRM的新功能
+description: Adobe Primetime DRM是用于高价值视听内容的高级Digital Rights Management(DRM)和内容保护解决方案。 在支持创建Java API的应用程序中，您可以使用Primetime DRM SDK指定DRM策略、将这些策略应用于内容并对该内容进行加密。
+title: Adobe Primetime DRM的新增功能
 exl-id: 998dae80-b3d3-419e-8fd3-d925a83d8b53
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,33 +9,33 @@ ht-degree: 0%
 
 ---
 
-# Adobe Primetime DRM的新功能{#what-is-new-in-adobe-primetime-drm}
+# Adobe Primetime DRM的新增功能{#what-is-new-in-adobe-primetime-drm}
 
-Adobe Primetime DRM是適用於高價值視聽內容的進階Digital Rights Management(DRM)和內容保護解決方案。 在支援建立Java API的應用程式中，您可以使用Primetime DRM SDK來指定DRM原則、將這些原則套用至內容，以及加密該內容。
+Adobe Primetime DRM是用于高价值视听内容的高级Digital Rights Management(DRM)和内容保护解决方案。 在支持创建Java API的应用程序中，您可以使用Primetime DRM SDK指定DRM策略、将这些策略应用于内容并对该内容进行加密。
 
 >[!NOTE]
 >
->Primetime DRM以前稱為Adobe存取，之前稱為Flash Access。
+>Primetime DRM以前称为Adobe访问，在此之前称为Flash Access。
 
-以下是內容保護程式的高層級逐步解說：
+下面是内容保护过程的高级演练：
 
-1. 使用DRM Java API來設定DRM原則屬性和加密引數。
-1. 建立說明任何內容之使用角色的DRM原則。
+1. 使用DRM Java API设置DRM策略属性和加密参数。
+1. 创建描述任何内容的使用角色的DRM策略。
 
-   您可以建立任意數量的DRM原則。 大部分的使用者會建立少量原則，然後將其套用至許多檔案。
-1. 封裝媒體檔案。
+   您可以创建任意数量的DRM策略。 大多数用户会创建少量策略，然后将其应用于许多文件。
+1. 打包媒体文件。
 
-   *`Packaging a file`* 表示您先加密檔案，然後將DRM原則套用至檔案。
-1. 實作授權伺服器以核發授權給使用者。
+   *`Packaging a file`* 表示您先加密文件，然后将DRM策略应用到文件。
+1. 实施许可证服务器以向用户颁发许可证。
 
-完成這些步驟後，您的加密內容就可供部署。 部署後，使用者端可向授權伺服器要求授權，並在收到授權後播放內容。
+完成这些步骤后，您的加密内容即可进行部署。 在部署之后，客户端可以从许可证服务器请求许可证，并且在接收到时可以播放内容。
 
-Primetime DRM SDK提供Java API來完成這些工作。 SDK包含許可證伺服器和命令列工具的參考實作，兩者都以DRM SDK Java API為基礎。
+Primetime DRM SDK提供了一个Java API来完成这些任务。 SDK包括许可证服务器和命令行工具的引用实施，两者都基于DRM SDK Java API。
 
-以下說明的功能是此版本中的新增功能。
+下面介绍的功能是此版本中的新增功能。
 
-## 新功能 {#section_F6BA874CEAE24610920BC3A4C6D20EBA}
+## 新增功能 {#section_F6BA874CEAE24610920BC3A4C6D20EBA}
 
-* **硬式停止 —** 您可以指定在播放視窗結束時是否停止或繼續播放。
-* **解析度相依的輸出控制項 —** 您可以根據畫素解析度來指定輸出限制。
-* **授權伺服器回應的匿名化 —** 為了使用Primetime DRM授權伺服器通訊協定來增強隱私權，傳輸憑證序號將會歸零，以取得對支援使用者端的授權伺服器回應。
+* **硬停止 —** 您可以指定在播放窗口结束时是停止播放还是继续播放。
+* **取决于分辨率的输出控件 —** 可根据像素分辨率指定输出约束。
+* **许可证服务器响应的匿名化 —** 为了通过Primetime DRM许可证服务器协议增强隐私，传输证书序列号将清零，以便许可证服务器响应支持客户端。

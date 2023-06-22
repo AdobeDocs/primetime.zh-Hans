@@ -1,6 +1,6 @@
 ---
-title: 部署憑證概述
-description: 部署憑證概述
+title: 部署证书概述
+description: 部署证书概述
 copied-description: true
 exl-id: 45a4bc7e-f987-4b9a-885d-d989d09566c5
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,9 +10,9 @@ ht-degree: 0%
 
 ---
 
-# 概觀 {#deploy-certificates-overview}
+# 概述 {#deploy-certificates-overview}
 
-若要將憑證加入Adobe Primetime DRM屬性檔案，請使用私密金鑰將PKCS#7檔案轉換為PFX檔案，並產生PEM檔案或DER檔案。
+要将证书添加到Adobe Primetime DRM属性文件，请使用私钥将PKCS#7文件转换为PFX文件，并生成PEM文件或DER文件。
 
-* 當需要認證（憑證和私密金鑰）時，Primetime DRM命令列工具和AdobeHTTP Dynamic Streaming封裝程式需要PFX檔案。 SDK、Reference Implementation和Primetime DRM Server for Protected Streaming可以接受PFX檔案，也可以使用儲存在HSM上的認證。
-* 當只需要憑證時，大多數Primetime DRM元件都可以使用PEM檔案、DER檔案或HSM上的憑證。 AdobeHTTP Dynamic Streaming封裝程式只接受憑證的DER檔案。
+* 当需要凭据（证书和私钥）时，Primetime DRM命令行工具和AdobeHTTP Dynamic Streaming打包程序需要PFX文件。 SDK、参考实施和Primetime DRM Server for Protected Streaming可以接受PFX文件，也可以使用存储在HSM上的凭据。
+* 如果只需要证书，则大多数Primetime DRM组件都可以使用PEM文件、DER文件或HSM上的证书。 AdobeHTTP Dynamic Streaming打包程序仅接受证书的DER文件。

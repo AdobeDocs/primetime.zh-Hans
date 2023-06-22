@@ -1,6 +1,6 @@
 ---
-description: 您可以視需要設定播放器以經常從QoProvider讀取播放和裝置統計資料。
-title: 顯示QoS播放和裝置統計資料
+description: 您可以将播放器设置为根据需要经常从QoSProvider中读取播放和设备统计信息。
+title: 显示QoS播放和设备统计信息
 exl-id: 369b6e9a-70a2-4f62-a1bf-f69030c5d6c3
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,51 +9,51 @@ ht-degree: 0%
 
 ---
 
-# 顯示QoS播放和裝置統計資料 {#display-qos-playback-and-device-statistics}
+# 显示QoS播放和设备统计信息 {#display-qos-playback-and-device-statistics}
 
-您可以視需要設定播放器以經常從QoProvider讀取播放和裝置統計資料。
+您可以将播放器设置为根据需要经常从QoSProvider中读取播放和设备统计信息。
 
-此 `QoSProvider` class提供各種統計資料，包括影格速率、設定檔位元速率、緩衝花費的總時間、緩衝嘗試次數、從第一個視訊片段取得第一個位元組所花的時間、轉譯第一個影格所花的時間、目前緩衝的長度以及緩衝時間。
+此 `QoSProvider` class提供了各种统计信息，包括帧速率、配置文件比特率、缓冲所花费的总时间、缓冲尝试次数、从第一个视频片段获得第一个字节所需的时间、渲染第一个帧所需的时间、当前缓冲的长度以及缓冲时间。
 
-參考實作提供 `QoSManager` 可啟用顯示QoS覆蓋的類別。 您也可以在「設定」使用者介面中啟用QoS可見性：
+参考实施提供了 `QoSManager` 类可以启用显示QoS覆盖。 您还可以在“设置”用户界面中启用QoS可见性：
 
 ![](assets/qos-configuration.jpg)
 
-此 `QoSManager` 透過取得裝置資訊、附加至媒體播放器並使用最新的QoS資訊更新來追蹤QoS統計資料。
+此 `QoSManager` 通过获取设备信息、连接到媒体播放器并使用最新的QoS信息更新来跟踪QoS统计信息。
 
-**啟用或停用QoS統計資料報告**
+**启用或禁用QoS统计信息报告**
 
-1. 使用ManagerFactory建立QosManager或啟用QoS報告。
+1. 使用ManagerFactory创建QosManager或启用QoS报告。
 
-   * 若要建立QosManager：
-      * 此應用程式需要使用廣告工作流程功能
+   * 创建QosManager：
+      * 此应用程序需要使用广告工作流功能
 
-   QoSManager qosManager =新QosManagerOn()；
+   QoSManager qosManager =新的QosManagerOn()；
 
-   * 若要使用ManagerFactory來啟用QoS統計資料的顯示：
+   * 要使用ManagerFactory启用QoS统计信息的显示，请执行以下操作：
 
    qosManager = ManagerFactory.getQosManager(
-   <b>true</b>，設定， mediaPlayer)；
+   <b>true</b>，配置， mediaPlayer)；
 
    >[!NOTE]
    >
-   >將布林值變更為 `false` 停用QoS報告。
+   >将布尔值更改为 `false` 禁用QoS报告。
 
-2. 新增事件接聽程式：
+2. 添加事件侦听器：
 
    `qosManager.addEventListener(qosManagerEventListener);`
 
-3. 建立QoS提供者，並將其附加至播放器活動內容：
+3. 创建QoS提供程序，并将其附加到播放器活动上下文：
 
    `qosManager.createQOSProvider(getActivity());`
 
    >[!NOTE]
    >
-   >當播放器活動即將損毀時，請務必呼叫 [qosManager.destroyQOSProvider](https://help.adobe.com/en_US/primetime/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/QosManager.html#destroyQOSProvider()) 將QOS提供者從媒體播放器中斷連結，以清理它。
+   >当播放器活动将被破坏时，请确保调用 [qosManager.destroyQOSProvider](https://help.adobe.com/en_US/primetime/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/QosManager.html#destroyQOSProvider()) 通过从媒体播放器分离QOS提供程序来清理QOS提供程序。
 
-**相關API檔案**
+**相关API文档**
 
-* [類別QosManager](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/QosManager.html)
-* [類別QosManagerOn](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/QosManagerOn.html)
+* [类QosManager](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/QosManager.html)
+* [QosManagerOn类](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/QosManagerOn.html)
 * [QosManagerEventListener](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/QosManager.QosManagerEventListener.html)
 * [QosItem](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/QosManager.QosItem.html)

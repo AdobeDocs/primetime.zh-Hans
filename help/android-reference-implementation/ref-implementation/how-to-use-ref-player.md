@@ -1,6 +1,6 @@
 ---
-title: 如何使用Primetime參考實作
-description: 如何使用Primetime參考實作
+title: 如何使用Primetime参考实施
+description: 如何使用Primetime参考实施
 copied-description: true
 exl-id: 45145f0d-c0e4-4d36-94fd-72f07619dc91
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,17 +10,17 @@ ht-degree: 0%
 
 ---
 
-# 如何使用Primetime參考實作 {#how-to-use-the-primetime-reference-implementation}
+# 如何使用Primetime参考实施 {#how-to-use-the-primetime-reference-implementation}
 
-Primetime參考實作是一種模組化播放程式，已細分為個別功能，您可以透過專業功能管理員輕鬆加以修改。 這些功能管理員是連線應用程式和TVSDK程式庫的橋樑。
+Primetime参考实施是一个模块化播放器，已划分为多个功能，您可以通过专门的功能管理器轻松修改这些功能。 这些功能管理器用作连接应用程序和TVSDK库的桥梁。
 
-您可以透過下列方式使用參照實作：
+可通过以下方式使用引用实施：
 
-* 按原樣使用，而不變更任何程式碼（所有功能都會以預設值開啟）。
-* 請參考以瞭解如何使用TVSDK程式庫。
-* 關閉您未使用的功能，挑選並選取適用於您的應用程式的功能。
-* 自訂UI元件，而不需對功能進行任何變更。
+* 按原样使用，而不更改任何代码（所有功能都使用默认值打开）。
+* 可将其用作了解如何使用TVSDK库的参考。
+* 通过关闭不使用的功能，选择适用于您的应用程序的功能。
+* 自定义UI组件，而不对功能进行任何更改。
 
-我們提供Primetime參考實作，協助您瞭解TVSDK並輕鬆修改功能管理員，以自訂您的播放器。 然而，請參閱 [Android適用的TVSDK 1.4程式設計師指南](https://helpx.adobe.com/content/dam/help/en/primetime/programming-guides/psdk_android.pdf) 以取得有關TVSDK資料庫的詳細資訊。
+我们提供Primetime参考实施，以帮助您了解TVSDK并轻松修改功能管理器以自定义您的播放器。 然而，请参阅 [《 TVSDK 1.4 for Android程序员指南》](https://helpx.adobe.com/content/dam/help/en/primetime/programming-guides/psdk_android.pdf) 以了解有关TVSDK库的详细信息。
 
-若要輕鬆存取Javadoc格式的參考實作API檔案，請按一下 [此處](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/index.html).
+要轻松访问Javadoc格式的参考实施API文档，请单击 [此处](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/index.html).

@@ -1,6 +1,6 @@
 ---
-title: 封鎖應用程式執行階段清單
-description: 封鎖應用程式執行階段清單
+title: 应用程序运行时阻止列表
+description: 应用程序运行时阻止列表
 copied-description: true
 exl-id: f8d1d385-41d4-4361-82c1-417b2ff421c5
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,14 +10,14 @@ ht-degree: 0%
 
 ---
 
-# 封鎖應用程式執行階段清單 {#blocklist-of-application-runtimes}
+# 应用程序运行时阻止列表 {#blocklist-of-application-runtimes}
 
-應用程式執行階段的封鎖清單指定了無法存取內容的Primetime使用者端或Flash執行階段的版本。 指定限制的執行階段(Flash Player、AIR或iOS)、平台和版本。
+应用程序运行时阻止列表指定无法访问内容的Primetime客户端或Flash运行时的版本。 指定受限制的运行时(Flash Player、AIR或iOS)、平台和版本。
 
-使用案例範例：類似Primetime DRM使用者端封鎖清單，可將最新版本的Flash Player、AIR或iOS執行階段指定為授權取得和內容播放所需的最低版本。
+示例用例：与Primetime DRM客户端阻止列表类似，可以将最新版本的Flash Player、AIR或iOS运行时指定为许可证获取和内容播放所需的最低版本。
 
-除了下列屬性外，您還可以透過Primetime DRM使用者端版本支援的任何屬性來識別應用程式執行階段：
+除了以下属性外，还可以通过Primetime DRM客户端版本支持的任何属性来标识应用程序运行时：
 
-| **屬性** | **支援的值** | **符合條件** | **說明** |
+| **属性** | **支持的值** | **匹配条件** | **描述** |
 |---|---|---|---|
-| 應用 | `“FlashPlayer”, “AIR”, "DRM_Library", "AVE"` | 完全相符 | 識別應用程式執行階段的名稱。 |
+| 应用程序 | `“FlashPlayer”, “AIR”, "DRM_Library", "AVE"` | 完全匹配 | 标识应用程序运行时的名称。 |

@@ -1,6 +1,6 @@
 ---
-title: 在iOS上自動播放
-description: 在iOS上自動播放
+title: 在iOS上自动播放
+description: 在iOS上自动播放
 copied-description: true
 exl-id: 591e8f74-63c3-4f74-9df4-024eb8aab646
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,11 +10,11 @@ ht-degree: 0%
 
 ---
 
-# 在iOS上自動播放{#autoplay-on-ios}
+# 在iOS上自动播放{#autoplay-on-ios}
 
-AdobePSDK.MediaPlayer的磁碟區API實作可在執行iOS 10版或更新版本的裝置上自動播放內容。 iOS僅在音量靜音時允許自動播放。 當磁碟區設為0時，API會將 `muted` 的視訊標籤屬性 `true`，否則會 `muted` 屬性已設定為 `false`. 此 `play` API會啟動播放，而不需要任何使用者互動或使用者手勢。
+AdobePSDK.MediaPlayer的卷API的实现允许在运行iOS版本10或更高版本的设备上自动播放内容。 iOS仅在音量静音时允许自动播放。 当卷设置为零时，API将 `muted` 将视频标记属性设置为 `true`，否则 `muted` 属性设置为 `false`. 此 `play` API无需进行任何用户交互或用户手势即可开始播放。
 
-若要在iPhone上自動播放，請另外設定 `playsInline` 的屬性 `video` 標籤至 `true`.
+对于在iPhone上自动播放，请另外设置 `playsInline` 的属性 `video` 标记到 `true`.
 
 ```
 videoDiv.getElementsByTagName('video')[0].playsInline = true;
@@ -22,4 +22,4 @@ videoDiv.getElementsByTagName('video')[0].playsInline = true;
 
 >[!NOTE]
 >
->使用 `playsInline` 屬性會在沒有全熒幕模式的情況下開始播放。
+>使用 `playsInline` 属性在没有全屏模式的情况下启动播放。

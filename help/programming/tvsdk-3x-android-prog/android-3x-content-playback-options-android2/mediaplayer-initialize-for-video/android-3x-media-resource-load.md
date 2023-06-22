@@ -1,6 +1,6 @@
 ---
-description: 透過直接例項化MediaResource並載入要播放的視訊內容來載入資源。 這是載入媒體資源的其中一種方式。
-title: 在媒體播放器中載入媒體資源
+description: 通过直接实例化MediaResource并加载要播放的视频内容来加载资源。 这是加载媒体资源的方法之一。
+title: 在媒体播放器中加载媒体资源
 exl-id: f39d3aa2-8912-4dac-9f10-91b6d20395ea
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,30 +9,30 @@ ht-degree: 0%
 
 ---
 
-# 在媒體播放器中載入媒體資源 {#load-a-media-resource-in-the-media-player}
+# 在媒体播放器中加载媒体资源 {#load-a-media-resource-in-the-media-player}
 
-透過直接例項化MediaResource並載入要播放的視訊內容來載入資源。 這是載入媒體資源的其中一種方式。
+通过直接实例化MediaResource并加载要播放的视频内容来加载资源。 这是加载媒体资源的方法之一。
 
-1. 設定媒體播放器以播放新資源。
+1. 设置媒体播放器以播放新资源。
 
-   呼叫以取代目前可播放的專案 `MediaPlayer.replaceCurrentResource()` 並傳遞現有 `MediaResource` 執行個體。
+   通过调用替换当前可播放的项目 `MediaPlayer.replaceCurrentResource()` 并传递现有 `MediaResource` 实例。
 
-   這會啟動資源載入程式。
+   这将启动资源加载过程。
 
-1. 註冊 `MediaPlayerEvent.STATUS_CHANGED` 事件與 `MediaPlayer` 執行個體。 在回呼中，至少檢查下列狀態值：
+1. 注册 `MediaPlayerEvent.STATUS_CHANGED` 事件与 `MediaPlayer` 实例。 在回调中，至少检查以下状态值：
 
    * `MediaPlayerStatus.PREPARED`
    * `MediaPlayerStatus.INITIALIZED`
    * `MediaPlayerStatus.ERROR`
 
-   透過這些事件， `MediaPlayer` 物件會在應用程式成功載入媒體資源時通知您。
-1. 當媒體播放器的狀態變更為 `INITIALIZED`，您可以呼叫 `MediaPlayer.prepareToPlay()`.
+   通过这些事件， `MediaPlayer` 对象会在应用程序成功加载媒体资源后通知应用程序。
+1. 当媒体播放器的状态更改为 `INITIALIZED`，您可以调用 `MediaPlayer.prepareToPlay()`.
 
-   此狀態表示媒體已成功載入。 新 `MediaPlayerItem` 已準備好播放。 通話 `prepareToPlay()` 開始廣告解析度和刊登版位程式（如果有的話）。
+   此状态表示媒体已成功加载。 新 `MediaPlayerItem` 已准备好播放。 呼叫 `prepareToPlay()` 启动广告解析和投放流程（如果有）。
 
-如果發生失敗，媒體播放器會切換至 `ERROR` 狀態。
+如果失败，媒体播放器将切换到 `ERROR` 状态。
 
-下列簡化的範常式式碼說明載入媒體資源的程式：
+以下简化的示例代码说明了加载媒体资源的过程：
 
 ```java>
 // mediaResource is a properly configured MediaResource instance 

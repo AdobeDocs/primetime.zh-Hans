@@ -1,6 +1,6 @@
 ---
-title: 授權請求錯誤處理
-description: 授權請求錯誤處理
+title: 许可证请求错误处理
+description: 许可证请求错误处理
 copied-description: true
 exl-id: 7cfdebc5-db2b-4629-98e6-31ad71cb424c
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,8 +10,8 @@ ht-degree: 0%
 
 ---
 
-# 授權請求錯誤處理 {#license-request-error-handling}
+# 许可证请求错误处理 {#license-request-error-handling}
 
-如果在請求剖析期間發生錯誤， `HandlerParsingException` 發生。 此例外狀況包含傳回至使用者端的錯誤資訊。 如果您需要擷取錯誤資訊，則需呼叫 `HandlerParsingException.getErrorData()`. 如果由於DRM政策要求未得到滿足而在產生授權期間發生錯誤，則 `PolicyEvaluationException` 發生。 此例外狀況還包括 `ErrorData` 要傳回給使用者端。
+如果在请求解析过程中出现错误，则 `HandlerParsingException` 发生。 此异常包括返回到客户端的错误信息。 如果需要检索错误信息，则需要调用 `HandlerParsingException.getErrorData()`. 如果在生成许可证期间由于DRM策略要求未得到满足而发生错误， `PolicyEvaluationException` 发生。 此例外情况还包括 `ErrorData` 返回给客户端。
 
-請參閱API檔案以瞭解 `LicenseRequestMessage.generateLicense()` 瞭解如何在產生許可證期間評估DRM原則的詳細資訊。
+请参阅API文档，了解 `LicenseRequestMessage.generateLicense()` 有关如何在许可证生成期间评估DRM策略的详细信息。

@@ -1,6 +1,6 @@
 ---
-title: 概述 — 使用參考實作
-description: 概述 — 使用參考實作
+title: 概述 — 使用参考实施
+description: 概述 — 使用参考实施
 copied-description: true
 exl-id: 2a5075f4-3e7b-4e4c-b69d-c044b064e282
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,14 +10,14 @@ ht-degree: 0%
 
 ---
 
-# 概述 — 使用參考實作 {#overview-using-the-reference-implementations}
+# 概述 — 使用参考实施 {#overview-using-the-reference-implementations}
 
-Adobe存取產品隨附下列元件的參考實作：
+Adobe访问产品附带一个参考实施，用于以下组件：
 
-* 命令列工具
-* 授權伺服器和Watched資料夾封裝程式
-* Flash Access管理員AIR應用程式
+* 命令行工具
+* 许可证服务器和观察文件夹打包程序
+* Flash Access管理器AIR应用程序
 
 >[!NOTE]
 >
->您應部署適用於受保護串流的Adobe Access Server、參考實作或您自己的授權伺服器。
+>您应该部署Adobe Access Server for Protected Streaming、参考实施或您自己的许可证服务器。

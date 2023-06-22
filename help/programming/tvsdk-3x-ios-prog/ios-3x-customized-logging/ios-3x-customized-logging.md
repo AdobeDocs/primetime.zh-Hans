@@ -1,6 +1,6 @@
 ---
-title: 自訂記錄
-description: 自訂記錄
+title: 自定义日志记录
+description: 自定义日志记录
 copied-description: true
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
@@ -10,4 +10,4 @@ ht-degree: 0%
 ---
 
 
-# 自訂記錄 {#customized-logging}
+# 自定义日志记录 {#customized-logging}

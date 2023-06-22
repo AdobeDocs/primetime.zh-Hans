@@ -1,6 +1,6 @@
 ---
-description: 使用HTTPGET命令與資訊清單伺服器互動。
-title: 傳送命令至資訊清單伺服器
+description: 使用HTTPGET命令与清单服务器交互。
+title: 向清单服务器发送命令
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '235'
@@ -9,11 +9,11 @@ ht-degree: 0%
 ---
 
 
-# 傳送命令至資訊清單伺服器 {#send-a-command-to-the-manifest-server}
+# 向清单服务器发送命令 {#send-a-command-to-the-manifest-server}
 
-使用HTTPGET命令與資訊清單伺服器互動。
+使用HTTPGET命令与清单服务器交互。
 
-1. 傳送 `HTTP GET` 要求使用下列模式建構的啟動程式URL：
+1. 发送 `HTTP GET` 请求使用以下模式构建的引导URL：
 
    ```
    https://{manifest-server:port}/auditude/variant/
@@ -21,11 +21,11 @@ ht-degree: 0%
     ?{query parameters}
    ```
 
-* **PublisherAssetID** 必填。 特定內容的發行者唯一ID。
+* **PublisherAssetID** 必需。 特定内容的发布者唯一ID。
 
-* **內容URL** 必填。 內容M3U8檔案的URL，在資訊清單伺服器URL中編碼為安全的Base64。 內容URL必須指向變體M3U8檔案，即使只有一個位元速率資料流亦然。
+* **内容URL** 必需。 内容M3U8文件的URL，在清单服务器URL中编码为安全的Base64。 内容URL必须指向变体M3U8文件，即使只有一个比特率流也是如此。
 
-* **查詢引數** 部分為必要專案，部分為選用專案。 這些是請求中最具多樣性的部分。 它們告訴資訊清單伺服器哪個使用者端正在提出要求，以及它想要資訊清單伺服器做什麼。
+* **查询参数** 有些是必需的，有些是可选的。 这些构成了请求中最具多样性的部分。 它们告知清单服务器哪种客户端正在发出请求，以及它希望清单服务器做什么。
 
    例如：
 
@@ -36,10 +36,10 @@ ht-degree: 0%
    &pttrackingversion=v2&live=false
    ```
 
-   **HTTP與HTTPS要求**
+   **HTTP与HTTPS请求**
 
-   資訊清單伺服器會使用使用者端要求的相同HTTP通訊協定來建立URL。 如果播放器提出非安全HTTP (http)要求，資訊清單伺服器會傳回資訊清單URL和使用http通訊協定的稽核追蹤URL。 如果播放器透過安全HTTP (https)連線、資訊清單伺服器，會傳回資訊清單URL和使用https通訊協定的稽核追蹤URL。
+   清单服务器使用客户端请求的相同HTTP协议创建URL。 如果播放器发出非安全HTTP (http)请求，则清单服务器会使用http协议返回清单URL和审核跟踪URL。 如果播放器建立了安全HTTP (https)连接、清单服务器，则会通过https协议返回清单URL和审核跟踪URL。
 
    >[!NOTE]
    >
-   >資訊清單伺服器無法變更內容區段(.ts)和第三方追蹤信標的通訊協定（HTTP或HTTPS）。 您必須連絡內容與第三方廣告提供者，讓他們設定所需的通訊協定。
+   >清单服务器无法更改内容区段(.ts)和第三方跟踪信标的协议（HTTP或HTTPS）。 您必须联系内容和第三方广告提供商，以便他们配置所需的协议。

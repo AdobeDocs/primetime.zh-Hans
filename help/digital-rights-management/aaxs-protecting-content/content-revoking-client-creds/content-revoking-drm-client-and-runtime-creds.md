@@ -1,6 +1,6 @@
 ---
-title: 撤銷DRM使用者端和執行階段認證
-description: 撤銷DRM使用者端和執行階段認證
+title: 撤消DRM客户端和运行时凭据
+description: 撤消DRM客户端和运行时凭据
 copied-description: true
 exl-id: f39d6523-9215-49ec-bb3b-e60fe6690dca
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,14 +10,14 @@ ht-degree: 0%
 
 ---
 
-# 撤銷DRM使用者端和執行階段認證{#revoking-drm-client-and-runtime-credentials}
+# 撤消DRM客户端和运行时凭据{#revoking-drm-client-and-runtime-credentials}
 
-DRM/執行階段版本由安全性等級、版本編號和其他屬性（包括作業系統和執行階段）來識別。 若要限制允許的DRM/執行階段版本，請在原則或 `HandlerConfiguration`. 模組限制可能包括最低安全等級和不允許核發授權的模組版本清單。 另請參閱 [封鎖無法存取受保護內容的DRM使用者端清單](../../aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-blocklist-drm-clients.md) 有關用於識別DRM/執行階段模組的屬性的詳細資訊。
+DRM/运行时版本由安全级别、版本号和其他属性（包括操作系统和运行时）标识。 要限制允许的DRM/运行时版本，请在策略或 `HandlerConfiguration`. 模块限制可以包括最低安全级别和不允许颁发许可证的模块版本列表。 参见 [DRM客户端访问受保护内容时受限制的阻止列表](../../aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-blocklist-drm-clients.md) 有关用于标识DRM/运行时模块的属性的详细信息。
 
-如果已設定最低安全性層級，使用者端上的版本（在電腦權杖中指定）必須大於或等於指定的值。
+如果设置了最低安全级别，则客户端上的版本（在计算机令牌中指定）必须大于或等于指定的值。
 
-如果指定了排除版本的清單，並且使用者端的版本符合清單中的任何版本識別碼，則不允許使用者端使用包含此ModuleRequirements執行個體的許可權。 為了讓模組符合版本資訊，版本資訊中指定的所有引數（發行版本除外）都必須完全符合模組的值。 如果使用者端模組的值小於或等於版本資訊中的值，則發行版本會相符。
+如果指定了排除版本的列表，并且客户端的版本与列表中的任何版本标识符匹配，则将不允许客户端使用包含此ModuleRequirements实例的权限。 要使模块匹配版本信息，在版本信息中指定的所有参数（发行版本除外）必须与模块的值完全匹配。 如果客户端模块的值小于或等于版本信息中的值，则发行版本匹配。
 
-如果報告特定DRM使用者端或執行階段版本發生違規，內容擁有者和內容散發者（執行授權伺服器的人）可以設定伺服器，在Adobe沒有可用的修正期間拒絕簽發授權。 這可以透過以下方式設定： `HandlerConfiguration` 如上所述，或變更所有原則。 在後一種情況下，您可以維護原則更新清單，並使用它來檢查原則是否已更新或撤銷。
+如果报告特定DRM客户端或运行时版本发生违规，内容所有者和内容分发者（运行许可证服务器）可以配置服务器在Adobe没有可用的修补程序期间拒绝颁发许可证。 这可以通过以下方式配置 `HandlerConfiguration` 例，或透过更改所有政策而作出修订。 在后一种情况下，您可以维护策略更新列表，并使用它来检查策略是否已更新或撤消。
 
-如果您需要較新版本的Adobe®Flash®播放器/Adobe® AIR®執行階段或Adobe內容保護程式庫（DRM模組），請更新您的原則，如所示 [使用Java API更新原則](../../aaxs-protecting-content/content-working-with-policies/content-updating-policy-using-java-api.md) 並建立原則更新清單，或設定限制 `HandlerConfiguration` 透過叫用 `HandlerConfiguration.setRuntimeModuleRequirements()` 或 `HandlerConfiguration.setDRMModuleRequirements()`. 當使用者請求啟用這些封鎖清單的新授權時，必須先安裝更新的執行階段和程式庫，然後才能簽發授權。 如需列示DRM和執行階段版本的區塊範例，請參閱下列範常式式碼： [使用Java API更新原則](../../aaxs-protecting-content/content-working-with-policies/content-updating-policy-using-java-api.md).
+如果您需要更新版本的Adobe®Flash®播放器/Adobe® AIR®运行时或Adobe内容保护库（DRM模块），请更新策略，如所示 [使用Java API更新策略](../../aaxs-protecting-content/content-working-with-policies/content-updating-policy-using-java-api.md) 和创建策略更新列表，或设置限制 `HandlerConfiguration` 通过调用 `HandlerConfiguration.setRuntimeModuleRequirements()` 或 `HandlerConfiguration.setDRMModuleRequirements()`. 当用户请求启用这些阻止列表的新许可证时，必须先安装更新的运行时间和库，然后才能颁发许可证。 有关列出DRM和运行时版本的块的示例，请参阅中的示例代码 [使用Java API更新策略](../../aaxs-protecting-content/content-working-with-policies/content-updating-policy-using-java-api.md).

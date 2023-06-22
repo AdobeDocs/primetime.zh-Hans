@@ -1,6 +1,6 @@
 ---
-title: 全域設定檔
-description: 全域設定檔
+title: 全局配置文件
+description: 全局配置文件
 copied-description: true
 exl-id: 5a2f96fe-d39d-4391-a010-200a900b043b
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,12 +10,12 @@ ht-degree: 0%
 
 ---
 
-# 全域設定檔{#global-configuration-file}
+# 全局配置文件{#global-configuration-file}
 
-flashaccess-global.xml組態檔包含套用至授權伺服器所有租使用者的設定。 此檔案必須位於 *LicenseServer.ConfigRoot*. 如需範例全域組態檔，請參閱configs目錄。 全域組態檔包含下列內容：
+flashaccess-global.xml配置文件包含适用于许可证服务器所有租户的设置。 此文件必须位于 *LicenseServer.ConfigRoot*. 有关示例全局配置文件，请参阅configs目录。 全局配置文件包含以下内容：
 
-* 快取 — 控制記憶體中組態檔案的快取。 如需快取設定的說明，請參閱更新組態檔。
-* 記錄 — 指定記錄層級以及記錄檔的捲動頻率。
-* HSM密碼 — 只有在使用HSM儲存伺服器憑證時才需要。
+* 高速缓存 — 控制内存中配置文件的高速缓存。 有关缓存设置的说明，请参阅更新配置文件。
+* 事件记录 — 指定事件记录级别和日志文件的滚动频率。
+* HSM密码 — 仅当使用HSM存储服务器凭据时才需要。
 
-請參閱位於下列位置的範例全域組態檔中的註解： `<AdobeAccessDVD>\Adobe Access Server for Protected Streaming\configs` 以取得更多詳細資料。
+请参见位于以下位置的示例全局配置文件中的注释： `<AdobeAccessDVD>\Adobe Access Server for Protected Streaming\configs` 了解更多详细信息。

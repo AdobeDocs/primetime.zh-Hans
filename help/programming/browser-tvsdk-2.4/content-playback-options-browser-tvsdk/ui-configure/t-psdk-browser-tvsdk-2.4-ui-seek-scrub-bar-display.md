@@ -1,6 +1,6 @@
 ---
-description: 在瀏覽器TVSDK中，您可以搜尋資料流中的特定位置（時間）。 串流可以是滑動視窗播放清單或隨選影片(VOD)內容。
-title: 使用搜尋列時處理搜尋
+description: 在浏览器TVSDK中，您可以搜索流中的特定位置（时间）。 流可以是滑动窗口播放列表或视频点播(VOD)内容。
+title: 使用搜寻栏时处理搜寻
 exl-id: 4c09b218-917a-4318-82b0-c221d450a2c1
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,33 +9,33 @@ ht-degree: 0%
 
 ---
 
-# 使用搜尋列時處理搜尋{#handle-seek-when-using-the-seek-bar}
+# 使用搜寻栏时处理搜寻{#handle-seek-when-using-the-seek-bar}
 
-在瀏覽器TVSDK中，您可以搜尋資料流中的特定位置（時間）。 串流可以是滑動視窗播放清單或隨選影片(VOD)內容。
+在浏览器TVSDK中，您可以搜索流中的特定位置（时间）。 流可以是滑动窗口播放列表或视频点播(VOD)内容。
 
 >[!IMPORTANT]
 >
->只有DVR才允許搜尋即時資料流。
+>只有DVR才允许在实时流中进行搜寻。
 
-1. 等候瀏覽器TVSDK處於有效的搜尋狀態。
+1. 等待浏览器TVSDK处于有效的状态以进行搜寻。
 
-   有效狀態為「已準備」、「完成」、「已暫停」和「正在播放」。 處於有效狀態可確保媒體資源已成功載入。 如果播放器不是處於有效的可搜尋狀態，嘗試呼叫以下方法會擲回 `IllegalStateException`.
+   有效状态为“已准备”、“完成”、“已暂停”和“正在播放”。 处于有效状态可确保媒体资源已成功加载。 如果播放器未处于有效的可搜索状态，则尝试调用以下方法会引发 `IllegalStateException`.
 
-   例如，您可以等候瀏覽器TVSDK觸發  `AdobePSDK.MediaPlayerStatusChangeEvent`  具有 `event.status` 之 `AdobePSDK.MediaPlayerStatus.PREPARED`.
+   例如，您可以等待浏览器TVSDK触发  `AdobePSDK.MediaPlayerStatusChangeEvent`  带有 `event.status` 之 `AdobePSDK.MediaPlayerStatus.PREPARED`.
 
-1. 將請求的搜尋位置傳遞至 `MediaPlayer.seek` 方法（以毫秒為單位）。
+1. 将请求的搜寻位置传递给 `MediaPlayer.seek` 方法作为参数（以毫秒为单位）。
 
-   這會將播放磁頭移動到串流中的不同位置。
+   这会将播放头移动到流中的不同位置。
 
    >[!TIP]
    >
-   >要求的搜尋位置可能與實際計算的位置不一致。
+   >请求的搜寻位置可能与实际计算位置不一致。
 
    ```js
    void seek(long position) throws IllegalStateException;
    ```
 
-1. 等候瀏覽器TVSDK觸發  `AdobePSDK.PSDKEventType.SEEK_END`  事件，這會傳回事件中 `actualPosition` 屬性：
+1. 等待浏览器TVSDK触发  `AdobePSDK.PSDKEventType.SEEK_END`  事件，返回在事件的 `actualPosition` 属性：
 
    ```js
    player.addEventListener(AdobePSDK.PSDKEventType.SEEK_END, onSeekComplete); 
@@ -44,12 +44,12 @@ ht-degree: 0%
    }
    ```
 
-   這很重要，因為搜尋之後的實際開始位置可能與要求的位置不同。 可能適用下列部分規則：
+   这很重要，因为搜寻后的实际开始位置可能与请求的位置不同。 以下某些规则可能适用：
 
-   * 如果搜尋或其他重新定位在廣告插播中途結束，或略過廣告插播，則播放行為會受到影響。
-   * 您只能搜尋資產的可搜尋持續時間。 若為VOD，即從0到資產的持續時間。
+   * 如果搜寻或其他重新定位在广告时间中间终止或跳过广告时间，则播放行为会受到影响。
+   * 您只能在资产的可搜索持续时间内查找。 对于VOD，该值介于0和资产持续时间之间。
 
-1. 對於在上述範例中建立的搜尋列，請接聽 `setPositionChangeListener()` 若要檢視使用者何時拖曳：
+1. 对于上面示例中创建的搜索栏，侦听 `setPositionChangeListener()` 要查看用户何时进行清理，请执行以下操作：
 
    ```js
    seekBar.setPositionChangeListener(function (pos) { 
@@ -65,10 +65,10 @@ ht-degree: 0%
                }); 
    ```
 
-1. 設定使用者搜尋活動變更的事件接聽程式回呼。
+1. 设置事件侦听器回调，以跟踪用户搜寻活动中的更改。
 
-       搜尋作業為非同步，因此瀏覽器TVSDK會傳送這些與搜尋相關的事件：
+       搜寻操作是异步执行的，因此浏览器TVSDK会调度这些与搜寻相关的事件：
    
-   * `AdobePSDK.PSDKEventType.SEEK_BEGIN` 表示搜尋正在開始。
-   * `AdobePSDK.PSDKEventType.SEEK_END` 表示搜尋成功。
-   * `AdobePSDK.PSDKEventType.SEEK_POSITION_ADJUSTED` 表示媒體播放器已重新調整使用者提供的搜尋位置。
+   * `AdobePSDK.PSDKEventType.SEEK_BEGIN` 表示搜寻正在启动。
+   * `AdobePSDK.PSDKEventType.SEEK_END` 表示搜寻成功。
+   * `AdobePSDK.PSDKEventType.SEEK_POSITION_ADJUSTED` 指示媒体播放器已重新调整用户提供的搜寻位置。

@@ -1,6 +1,6 @@
 ---
-description: 您可以使用TVSDK來擷取有關播放器在媒體中位置的資訊，並在搜尋列上顯示。
-title: 顯示視訊的持續時間、目前時間和剩餘時間
+description: 您可以使用TVSDK检索有关播放器在媒体中的位置的信息，并在搜寻栏中显示该信息。
+title: 显示视频的持续时间、当前时间和剩余时间
 exl-id: d9832f19-c2d1-413a-b094-091052912c96
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,36 +9,36 @@ ht-degree: 0%
 
 ---
 
-# 顯示視訊的持續時間、目前時間和剩餘時間 {#display-the-duration-current-time-and-remaining-time-of-the-video}
+# 显示视频的持续时间、当前时间和剩余时间 {#display-the-duration-current-time-and-remaining-time-of-the-video}
 
-您可以使用TVSDK來擷取有關播放器在媒體中位置的資訊，並在搜尋列上顯示。
+您可以使用TVSDK检索有关播放器在媒体中的位置的信息，并在搜寻栏中显示该信息。
 
-1. 等候播放器至少處於PREPARED狀態。
-1. 使用擷取目前的播放點時間 `MediaPlayer.getCurrentTime` 方法。
+1. 等待播放器至少处于“已准备”状态。
+1. 使用检索当前播放头时间 `MediaPlayer.getCurrentTime` 方法。
 
-   這會傳回虛擬時間軸上目前的播放點位置（以毫秒為單位）。 此時間是相對於已解析資料流來計算的，該資料流可能包含替代內容的多個例項，例如拼接至主資料流的多個廣告或廣告插播。 對於即時/線性串流，傳回的時間一律在播放視窗範圍內。
+   这将返回虚拟时间轴上的当前播放头位置（以毫秒为单位）。 计算的时间相对于已解析的流（可能包含替代内容的多个实例，例如拼接到主流的多个广告或广告插播）。 对于实时/线性流，返回的时间始终在播放窗口范围内。
 
    ```java
    long getCurrentTime() throws MediaPlayerException;
    ```
 
-1. 擷取資料流的播放範圍並決定持續時間。
-   1. 使用 `MediaPlayer.getPlaybackRange` 取得虛擬時間軸時間範圍的方法。
+1. 检索流的播放范围并确定持续时间。
+   1. 使用 `MediaPlayer.getPlaybackRange` 方法获取虚拟时间轴的时间范围。
 
       ```java
       TimeRange getPlaybackRange() throws MediaPlayerException;
       ```
 
-   1. 使用 `MediaPlayer.getPlaybackRange` 取得虛擬時間軸時間範圍的方法。
+   1. 使用 `MediaPlayer.getPlaybackRange` 方法获取虚拟时间轴的时间范围。
 
-      * 對於VOD，範圍一律從零開始，而結束值等於主要內容持續時間與串流（廣告）中其他內容持續時間的和。
-      * 對於線性/即時資產，範圍表示播放視窗範圍。 此範圍會在播放期間變更。
+      * 对于VOD，范围始终从零开始，并且结束值等于主内容持续时间与流（广告）中其他内容的持续时间的总和。
+      * 对于线性/实时资源，范围表示播放窗口范围。 此范围在播放期间更改。
 
-         TVSDK呼叫 `ITEM_Updated` 回撥表示媒體專案已重新整理，而且其屬性（包括播放範圍）已更新。
+         TVSDK调用 `ITEM_Updated` 回调表示媒体项目已刷新，并且其属性（包括播放范围）已更新。
 
-1. 使用上的可用方法 `MediaPlayer` 並在 `SeekBar` 類別來設定搜尋列引數。
+1. 使用以下位置提供的方法： `MediaPlayer` 并在 `SeekBar` 类，用于设置搜寻栏参数。
 
-   例如，以下是可能的配置，其中包含搜尋列和兩個 `TextView` 元素。
+   例如，下面是一个可能的布局，该布局包含搜寻栏和两个 `TextView` 元素。
 
    ```xml
    <LinearLayout 
@@ -70,13 +70,13 @@ ht-degree: 0%
    </LinearLayout>
    ```
 
-1. 使用計時器定期擷取目前時間並更新搜尋列，如下圖所示：
+1. 使用计时器定期检索当前时间并更新搜寻栏，如下图所示：
 
    <!--<a id="fig_689CEDDD02094C0C8E91C5195F8EAD3F"></a>-->
 
    ![](assets/seek-bar.jpg){width="477.000pt"}
 
-   以下範例使用 `Clock.java` helper類別，可在 `ReferencePlayer`，做為計時器。 此類別會設定事件接聽程式，並觸發 `onTick` 事件每秒，或是您可以指定的另一個逾時值。
+   以下示例使用 `Clock.java` 帮助程序类，可在 `ReferencePlayer`，作为计时器。 此类设置事件侦听器，并触发 `onTick` 事件间隔，或您可以指定的另一个超时值。
 
    ```java
    playbackClock = new Clock(PLAYBACK_CLOCK, CLOCK_TIMER); 
@@ -89,7 +89,7 @@ ht-degree: 0%
    playbackClock.addClockEventListener(playbackClockEventListener);
    ```
 
-   在每個時鐘滴答中，此範例會擷取媒體播放器目前的位置，並更新搜尋列。 它會使用兩個 `TextView` 元素來將目前時間和播放範圍結束位置標示為數值。
+   在每个时钟滴答中，此示例检索媒体播放器的当前位置并更新搜寻栏。 它使用两个 `TextView` 元素，用于将当前时间和播放范围结束位置标记为数值。
 
    ```java
    @Override 

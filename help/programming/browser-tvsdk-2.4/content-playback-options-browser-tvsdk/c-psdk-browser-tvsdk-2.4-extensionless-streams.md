@@ -1,6 +1,6 @@
 ---
-description: 瀏覽器TVSDK目前支援播放資訊清單和片段不包含擴充功能的資料流。
-title: 無擴充功能資料流
+description: 浏览器TVSDK当前支持播放清单和片段不包含扩展的流。
+title: 无扩展性流
 exl-id: ef81bfd2-2bfa-4ff7-b826-fd80802b3c07
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,19 +9,19 @@ ht-degree: 0%
 
 ---
 
-# 無擴充功能資料流{#extensionless-streams}
+# 无扩展性流{#extensionless-streams}
 
-瀏覽器TVSDK目前支援播放資訊清單和片段不包含擴充功能的資料流。
+浏览器TVSDK当前支持播放清单和片段不包含扩展的流。
 
-## 片段層級 {#section_0E035129501D4A77BBC14192D8A53A86}
+## 片段级别 {#section_0E035129501D4A77BBC14192D8A53A86}
 
-瀏覽器TVSDK會剖析回應的前幾個位元組，以偵測無擴充功能片段的內容型別。 如果未偵測到有效的內容型別，瀏覽器TVSDK會擲回錯誤。
+浏览器TVSDK解析响应的前几个字节以检测无扩展片段的内容类型。 如果未检测到有效的内容类型，则浏览器TVSDK将引发错误。
 
-## 資訊清單層級 {#section_AAD9EBAC883D4CC3A0133A45B555EECF}
+## 清单级别 {#section_AAD9EBAC883D4CC3A0133A45B555EECF}
 
-瀏覽器TVSDK使用 `mediaResource.resourceType` 傳入的引數 `replaceCurrentResource` 偵測資訊清單URL內容型別的方法。 如需詳細資訊，請參閱 `AdobePSDK.MediaPlayer` 類別。
+浏览器TVSDK使用 `mediaResource.resourceType` 在中传递的参数 `replaceCurrentResource` 用于检测清单URL的内容类型的方法。 欲了解更多信息，请参见 `AdobePSDK.MediaPlayer` 类。
 
-在UI Framework播放器中，您可以在媒體資源中指定資源型別，如下所示：
+在UI Framework播放器中，您可以在媒体资源中指定资源类型，如下所示：
 
 ```js
 var playerWrapper = ptp.videoPlayer('.videoDiv', { 
@@ -34,8 +34,8 @@ var playerWrapper = ptp.videoPlayer('.videoDiv', {
 }); 
 ```
 
-若 `resourceType` ui Framework會從資源URL副檔名中判斷資源型別，然後將其傳遞至 `replaceCurrentResource` 方法。
+如果 `resourceType` 如果未提供，则UI框架会从资源URL扩展确定资源类型，然后将该资源类型传递到 `replaceCurrentResource` 方法。
 
 >[!TIP]
 >
->對於無擴充功能的資訊清單，請確定 `resourceType` 在UI Framework中載入資源時一律會傳遞。
+>对于无扩展清单，请确保 `resourceType` 始终在UI Framework中加载资源时传递。

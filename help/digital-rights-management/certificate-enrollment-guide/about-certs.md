@@ -1,6 +1,6 @@
 ---
-title: 關於憑證
-description: 關於憑證
+title: 关于证书
+description: 关于证书
 copied-description: true
 exl-id: 24ca19bb-a71e-461a-9c3c-558d650e2d99
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,31 +10,31 @@ ht-degree: 0%
 
 ---
 
-# 關於憑證 {#about-certificates}
+# 关于证书 {#about-certificates}
 
-Adobe Primetime DRM SDK提供下列設定：
+Adobe Primetime DRM SDK提供以下配置：
 
-* Primetime DRM Production SDK
-* Primetime DRM評估SDK
-* Primetime DRM試用版SDK
+* Primetime DRM生产SDK
+* Primetime DRM评估SDK
+* Primetime DRM试用版SDK
 
-若要使用Primetime DRM SDK建立授權伺服器，您必須從Adobe取得數位憑證。 數位憑證（也簡稱為憑證）會將實體（例如個人、組織或系統）與特定的公開和私密金鑰組繫結。 數位憑證可視為驗證個人、系統或組織身分的電子憑證。
+要使用Primetime DRM SDK创建授权服务器，您必须从Adobe获取数字证书。 数字证书（也简称为证书）将实体（例如个人、组织或系统）绑定到特定的公钥和私钥对。 数字证书可以被视为验证个人、系统或组织身份的电子证书。
 
-為了讓您在部署選項中擁有最大的彈性和增強的安全性，Primetime DRM SDK需要四個憑證：
+为了在部署选项中实现最大的灵活性和增强的安全性，Primetime DRM SDK需要四个证书：
 
-* 授權伺服器憑證
+* 许可证服务器证书
 
-   SDK會使用此憑證來簽署核發給使用者端的內容授權。
-* Packager憑證
+   SDK使用此证书来签署颁发给客户端的内容许可证。
+* Packager证书
 
-   封裝（加密）內容時，SDK會使用此憑證來產生DRM中繼資料。
-* 傳輸憑證
+   打包（加密）内容时，SDK使用此证书来生成DRM元数据。
+* 传输证书
 
-   SDK會使用此憑證來保護使用者端與授權伺服器之間的通訊。
-* 網域CA憑證
+   SDK使用此证书来保护客户端与许可证服务器之间的通信。
+* 域CA证书
 
-   想要實作網域伺服器的客戶需要網域CA憑證。 與其他憑證不同，網域CA憑證不是由Adobe發行。
+   想要实施域服务器的客户需要域CA证书。 与其他证书不同，域CA证书不是由Adobe颁发的。
 
 >[!NOTE]
 >
->對於Evaluation SDK和試用版SDK，授權伺服器、封裝程式和傳輸憑證會合併為單一憑證。
+>对于Evaluation SDK和Trial SDK，许可证服务器、Packager和传输证书将合并为单个证书。

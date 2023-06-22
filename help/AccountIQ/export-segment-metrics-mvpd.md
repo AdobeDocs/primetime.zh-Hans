@@ -1,6 +1,6 @@
 ---
-title: 匯出MVPD和選定程式設計員的量度
-description: 匯出MVPD和選定程式設計員的量度
+title: 导出MVPD和选定程序员的量度
+description: 导出MVPD和选定程序员的量度
 exl-id: 868016ec-71aa-44b9-a002-0d124a64c167
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,32 +9,32 @@ ht-degree: 0%
 
 ---
 
-# 匯出MVPD和選定程式設計員的量度 {#export-metric}
+# 导出MVPD和选定程序员的量度 {#export-metric}
 
-「科目IQ」中的「面板」會顯示所選節段中的訂戶科目之證明資料共用統計資料的表格與圖形。 除了檢視共用模式與分數之外，您也可以從這些表格匯出所選區段中MVPD和管道訂閱者的帳戶使用量度與共用分數。
+帐户IQ中的面板显示所选段中的订户帐户的身份证明共享统计信息的表和图形。 除了查看共享模式和分数之外，您还可以从这些表中导出所选区段中MVPD和渠道的订阅者的帐户使用情况指标和共享分数。
 
-若要匯出MVPD和所選程式設計人員的測量結果，在您以授權MVPD使用者身分登入後：
+要导出MVPD和选定程序员的量度，在您以授权MVPD用户身份登录后：
 
-1. 請依照中的步驟定義所需的區段 [如何定義區段並選取時間範圍](/help/AccountIQ/howto-select-segment-timeframe.md) 評估來源 [區段和時間範圍](/help/AccountIQ/segments-timeframe.md) 面板。
+1. 按照中的步骤定义所需的区段 [如何定义区段并选择时间范围](/help/AccountIQ/howto-select-segment-timeframe.md) 评估来源 [区段和时间范围](/help/AccountIQ/segments-timeframe.md) 面板。
 
-1. 前往下列其中一個面板：
+1. 转到以下面板之一：
 
-   * 區段中的程式設計師
+   * 区段中的程序员
       ![](assets/prog-segment-export-option.png)
 
-   * 共用機率層級的帳戶數量和使用狀況
+   * 通过共享概率级别进行的帐户数量和使用情况
 
       ![](assets/progr-usage-panel-export.png)
 
-1. 選取 **匯出** 面板右上角可用的選項。
+1. 选择 **导出** 选项在面板的右上角提供。
 
-資料會匯出為CSV格式，而檔案則會下載到您裝置上的本機。 您可以使用所需的CSV檢視器和編輯器來開啟匯出的報表。
+数据将以CSV格式导出，文件将在您的设备上本地下载。 您可以使用所需的CSV查看器和编辑器打开导出的报表。
 
-* 區段中的程式設計師
+* 区段中的程序员
 
    ![](assets/export-progr-in-seg.png)
 
 
-* 共用機率層級的帳戶數量和使用狀況
+* 通过共享概率级别进行的帐户数量和使用情况
 
    ![](assets/export-acc-usage.png)

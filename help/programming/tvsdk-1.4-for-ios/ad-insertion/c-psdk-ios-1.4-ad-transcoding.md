@@ -1,6 +1,6 @@
 ---
-description: 部分協力廠商廣告（或創意）無法結合至HTTP即時串流(HLS)內容資料流，因為其視訊格式與HLS不相容。 Primetime廣告插入和TVSDK可選擇嘗試將不相容的廣告重新封裝成相容的M3U8影片。
-title: 使用AdobeCreative重新封裝服務重新封裝不相容的廣告
+description: 某些第三方广告（或创意）无法拼合到HTTP实时流(HLS)内容流中，因为其视频格式与HLS不兼容。 Primetime广告插入和TVSDK可以选择尝试将不兼容的广告重新打包到兼容的M3U8视频中。
+title: 使用AdobeCreative Repackaging Service重新打包不兼容的广告
 exl-id: 6766bdf7-bffb-4dc1-bc8d-148a7f713f5f
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,42 +9,42 @@ ht-degree: 0%
 
 ---
 
-# 使用AdobeCreative重新封裝服務重新封裝不相容的廣告{#repackage-incompatible-ads-using-adobe-creative-repackaging-service}
+# 使用AdobeCreative Repackaging Service重新打包不兼容的广告{#repackage-incompatible-ads-using-adobe-creative-repackaging-service}
 
-部分協力廠商廣告（或創意）無法結合至HTTP即時串流(HLS)內容資料流，因為其視訊格式與HLS不相容。 Primetime廣告插入和TVSDK可選擇嘗試將不相容的廣告重新封裝成相容的M3U8影片。
+某些第三方广告（或创意）无法拼合到HTTP实时流(HLS)内容流中，因为其视频格式与HLS不兼容。 Primetime广告插入和TVSDK可以选择尝试将不兼容的广告重新打包到兼容的M3U8视频中。
 
-代理廣告伺服器、詳細目錄合作夥伴或廣告網路等各種協力廠商提供的廣告，通常會以不相容的格式傳送，例如漸進式下載MP4。
+由不同的第三方提供的广告，例如代理广告服务器、库存合作伙伴或广告网络，通常以不兼容的格式投放，例如渐进式下载MP4。
 
-當TVSDK首次遇到不相容的廣告時，播放器會忽略該廣告，並向創意重新封裝服務(CRS) （Primetime廣告插入後端的一部分）發出請求，以將廣告重新封裝為相容的格式。 CRS會嘗試產生廣告的多位元速率M3U8轉譯，並將這些轉譯儲存在Primetime內容傳遞網路(CDN)上。 下次TVSDK收到指向該廣告的廣告回應時，播放器會使用來自CDN的HLS相容M3U8版本。
+当TVSDK首次遇到不兼容的广告时，播放器会忽略该广告并向创意重新打包服务(CRS)（Primetime广告插入后端的一部分）发出请求，以将广告重新打包为兼容格式。 CRS会尝试生成广告的多比特率M3U8演绎版，并将这些演绎版存储在Primetime内容交付网络(CDN)上。 下次TVSDK收到指向该广告的广告响应时，播放器将使用来自CDN的HLS兼容M3U8版本。
 
-若要啟用此選擇性功能，請聯絡您的Adobe代表。
+要启用此可选功能，请联系您的Adobe代表。
 
-如需CRS的詳細資訊，請參閱 [Creative Packaging Service (CRS)](https://helpx.adobe.com/content/dam/help/en/primetime/guides/crs.pdf).
+有关CRS的详细信息，请参阅 [Creative Packaging Service (CRS)](https://helpx.adobe.com/content/dam/help/en/primetime/guides/crs.pdf).
 
-## CRS廣告傳遞的多重CDN支援 {#section_900FDDA5454143718F1EB4C9732C8E1C}
+## 对CRS广告投放的多个CDN支持 {#section_900FDDA5454143718F1EB4C9732C8E1C}
 
-雖然預設的Creative Repackaging Service (CRS)情境是使用一個Content Data Network (CDN)，但您可以在多個CDN上部署CRS資產。
+虽然默认的Creative Repackaging Service (CRS)方案是使用一个Content Data Network (CDN)，但您可以在多个CDN上部署CRS资产。
 
-基於以下原因，您可以使用多個CDN：
+由于以下原因，您可以使用多个CDN：
 
-* 針對大型檢視事件進行擴充的需求。
-* 必須符合CRS資產的CDN來源與主要內容的CDN來源。
+* 需要针对大型查看事件进行扩展。
+* 将CRS资产的CDN源与主内容的CDN源进行匹配的要求。
 
-您可以使用TVSDK URL Transformer API轉換CRS提供的預設URL。
+您可以使用TVSDK URL转换器API转换CRS提供的默认URL。
 
-以下是TVSDK中的API新增專案：
+以下是TVSDK中的API添加内容：
 
-* `PTURLTransformer` 此通訊協定說明轉換TVSDK所要求的CRS和URL所需的方法。 應用程式可以實作此通訊協定，並提供所需方法的實作。
+* `PTURLTransformer` 描述转换TVSDK请求的CRS和URL所需的方法的协议。 应用程序可以实施此协议并提供所需方法的实现。
 
-* `PTDefaultURLTransformer` 在TVSDK中建立且實作的預設URL轉換器例項 `PTURLTransformer` 通訊協定。 應用程式可以覆寫此類別或新增貼文URL轉換處理常式。 當應用程式想要在套用預設轉換後變更URL要求時，此處理常式會很有用。
+* `PTDefaultURLTransformer` 在TVSDK中创建并实施的默认URL转换器实例 `PTURLTransformer` 协议。 应用程序可以覆盖此类或添加后置URL转换处理程序。 当应用程序希望在应用默认转换后对URL请求进行更改时，此处理程序很有用。
 
-* `PTNetworkConfiguration setURLTransformer:defaultTransformer` 提供於 `PTNetworkConfiguration` 中繼資料例項，以設定 `PTURLTransformer` 實作。
+* `PTNetworkConfiguration setURLTransformer:defaultTransformer` Setter方法提供在 `PTNetworkConfiguration` 元数据实例，以设置 `PTURLTransformer` 实现。
 
 >[!IMPORTANT]
 >
->您的應用程式實作必須檢查 `PTURLTransformerInputType` 分項清單和僅轉換型別的URL `PTURLTransformerInputTypeCRSCreative` 適用於CRS。
+>您的应用程序实施必须检查 `PTURLTransformerInputType` 枚举和仅转换URL类型 `PTURLTransformerInputTypeCRSCreative` 用于CRS。
 
-下列程式碼範例說明應用程式如何將預設主機元件變更為不同的字串(例如 `cdn.mycrsdomain.com`)：
+以下代码示例显示了应用程序如何将默认主机组件更改为其他字符串(例如， `cdn.mycrsdomain.com`)：
 
 ```
 // The sample code below uses Non-ARC code 

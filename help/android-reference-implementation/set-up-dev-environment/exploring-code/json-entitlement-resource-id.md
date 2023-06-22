@@ -1,6 +1,6 @@
 ---
-title: 權利資源ID的JSON物件
-description: 下列程式碼區塊提供軟體權利資源ID為簡單文字字串時的JSON物件範例。
+title: 授权资源ID的JSON对象
+description: 以下代码块提供了权利资源ID为简单文本字符串时的JSON对象示例。
 exl-id: 396c43e7-404a-40f5-8113-a720e2c834e7
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,9 +9,9 @@ ht-degree: 0%
 
 ---
 
-# 權利資源ID的JSON物件 {#json-object-for-entitlement-resource-id}
+# 授权资源ID的JSON对象 {#json-object-for-entitlement-resource-id}
 
-下列程式碼區塊提供軟體權利資源ID為簡單文字字串時的JSON物件範例。 在此案例中，資源ID是字串「resource」。
+以下代码块提供了权利资源ID为简单文本字符串时的JSON对象示例。 在这种情况下，资源ID是字符串“resource”。
 
 ```
 "metadata" : { 
@@ -21,7 +21,7 @@ ht-degree: 0%
 }
 ```
 
-下列程式碼區塊提供權利資源ID為HTML編碼的mRSS字串時的JSON物件範例。
+以下代码块提供了授权资源ID是HTML编码的mRSS字符串时的JSON对象示例。
 
 ```
 <rss version="2.0" xmlns:media="https://search.yahoo.com/mrss/"> 
@@ -36,7 +36,7 @@ ht-degree: 0%
 </rss>
 ```
 
-下列mRSS字串會作為資源ID使用。
+以下mRSS字符串用作资源ID。
 
 ```
 "metadata" : { 

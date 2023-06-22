@@ -1,6 +1,6 @@
 ---
-title: 結束日期
-description: 結束日期
+title: 结束日期
+description: 结束日期
 copied-description: true
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
@@ -10,8 +10,8 @@ ht-degree: 0%
 ---
 
 
-# 結束日期{#end-date}
+# 结束日期{#end-date}
 
-結束日期指定授權到期的截止日期。
+结束日期指定许可证的过期日期。
 
-使用案例範例：使用絕對到期日來反映散佈許可權的結尾。
+示例用例：使用绝对到期日期反映分发权限的结束。

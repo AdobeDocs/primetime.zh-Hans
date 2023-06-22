@@ -1,6 +1,6 @@
 ---
-title: Apple SSO概觀
-description: Apple SSO概觀
+title: Apple SSO概述
+description: Apple SSO概述
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,113 +9,113 @@ ht-degree: 0%
 
 ---
 
-# Apple SSO概觀 {#apple-sso-overview}
+# Apple SSO概述 {#apple-sso-overview}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-## 簡介 {#Introduction}
+## 介绍 {#Introduction}
 
-Apple提供的API可讓使用者在裝置系統層級登入其電視提供者帳戶，而不需依個別應用程式進行驗證。
+Apple提供了一个API，允许用户在设备系统级别登录到电视提供商帐户，而无需逐个应用程序进行身份验证。
 
-因此，Apple與Adobe Primetime Authentication合作，在iPhone、iPad和Apple電視擁有者的TV Everywhere生態系統中，建立Platform Single Sign-On (SSO)使用者體驗。
+因此，Apple与Adobe Primetime身份验证合作，在TV Everywhere生态系统中为iPhone、iPad和Apple电视所有者创建平台单点登录(SSO)用户体验。
 
-若要在Apple裝置上享受單一登入(SSO)使用者體驗，您必須先完成一份先決條件清單。
-
-</br>
-
-## 必要條件 {#Prerequisites}
-
-必要條件可能適用於TVE業務中涉及的一或多個實體，例如程式設計師、MVPD、Adobe Primetime驗證或Apple。
+为了从Apple设备上的单点登录(SSO)用户体验中获益，必须完成一系列先决条件。
 
 </br>
 
-### 程式設計師 {#Programmer}
+## 先决条件 {#Prerequisites}
 
-若要從單一登入(SSO)使用者體驗中獲益，程式設計師必須：
+前提条件可能适用于TVE业务中涉及的一个或多个实体，例如程序员、MVPD、Adobe Primetime身份验证或Apple。
 
-1. 請至少使用Xcode 8版和iOS/tvOS 10版。
+</br>
 
-1. 擁有 [視訊訂閱者單一登入權益](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_video-subscriber-single-sign-on) 已設定至其Apple開發人員帳戶。 請聯絡Apple以啟用 [視訊訂閱者帳戶架構](https://developer.apple.com/documentation/videosubscriberaccount) 以取得您的Apple團隊ID。
+### 程序员 {#Programmer}
 
-1. 透過，為每個所需的整合(Channel x MVPD)和所需的平台(iOS / tvOS)啟用單一登入（是） [Adobe Primetime TVE Dashboard](https://console.auth.adobe.com/).
+为了从单点登录(SSO)用户体验中获益，一名程序员必须：
 
-1. 使用Apple驗證團隊提供的下列兩個解決方案之一，整合Adobe Primetime SSO工作流程：
+1. 请至少使用Xcode版本8和iOS/tvOS版本10。
 
-   - Adobe Primetime Authentication REST API可支援平台單一登入(SSO)驗證，適用於在iOS、iPadOS或tvOS上執行的使用者端應用程式一般使用者。 另請參閱 [Apple SSO逐步指南(REST API)](/help/authentication/apple-sso-cookbook-rest-api.md).
+1. 拥有 [视频订阅者单点登录授权](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_video-subscriber-single-sign-on) 已配置为他们的Apple开发人员帐户。 请联系Apple以启用 [视频订阅者帐户框架](https://developer.apple.com/documentation/videosubscriberaccount) 作为您的Apple团队ID。
 
-   - Adobe Primetime Authentication AccessEnabler iOS/tvOS SDK可支援平台單一登入(SSO)驗證，適用於在iOS、iPadOS或tvOS上執行的使用者端應用程式一般使用者。 另請參閱 [Apple SSO逐步指南(iOS/tvOS SDK)](/help/authentication/apple-sso-cookbook-iostvos-sdk.md).
+1. 通过，为每个所需的集成(Channel x MVPD)和所需的平台(iOS/tvOS)启用单点登录（是） [Adobe Primetime TVE功能板](https://console.auth.adobe.com/).
 
-   - **<u>專業秘訣：</u>** 為了存取使用者的訂閱資訊，使用者必須授予應用程式繼續的許可權，類似於提供裝置相機或麥克風的存取權。 必須為每個應用程式要求此許可權，裝置將儲存使用者的選擇。 請記住，使用者可以透過以下位置前往應用程式設定（電視提供者許可權存取）或區段來變更其決定 *`Settings -> TV Provider`* 在iOS/iPadOS上或 *`Settings -> Accounts -> TV Provider`* 在tvOS上。
+1. 使用Apple身份验证团队提供的以下两个解决方案之一集成Adobe Primetime SSO工作流：
 
-   - **<u>專業秘訣：</u>** 我們建議在應用程式進入前景狀態時要求使用者許可權，但這只是一個建議，因為應用程式可以檢查 [存取許可權](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) 要求使用者驗證之前的任何時候使用者的訂閱資訊。 此外，AccessEnabler iOS/tvOS SDK API也會在需要時自動要求使用者的許可權。
+   - Adobe Primetime身份验证REST API可以支持平台单点登录(SSO)身份验证，适用于在iOS、iPadOS或tvOS上运行的客户端应用程序的最终用户。 另请参阅 [Apple SSO指南(REST API)](/help/authentication/apple-sso-cookbook-rest-api.md).
 
-   - **<u>專業秘訣：</u>** 我們建議您說明單一登入(SSO)使用者體驗的優點，以鼓勵拒絕授予存取訂閱資訊許可權的使用者。 請記住，使用者可以透過以下位置前往應用程式設定（電視提供者許可權存取）或區段來變更其決定 *`Settings -> TV Provider`* 在iOS/iPadOS上或 *`Settings -> Accounts -> TV Provider`* 在tvOS上。
+   - Adobe Primetime Authentication AccessEnabler iOS/tvOS SDK可为在iOS、iPadOS或tvOS上运行的客户端应用程序的最终用户支持平台单点登录(SSO)身份验证。 另请参阅 [Apple SSO指南(iOS/tvOS SDK)](/help/authentication/apple-sso-cookbook-iostvos-sdk.md).
 
-此結果應會建立符合下列使用者流程的體驗，建議您先諮詢這些使用者流程，然後再開始開發應用程式：
+   - **<u>专业提示：</u>** 要访问用户的订阅信息，用户必须向应用程序授予继续操作的权限，类似于提供对设备摄像头或麦克风的访问权限。 必须为每个应用程序请求此权限，设备将保存用户的选择。 请记住，用户可以通过转到应用程序设置（电视提供商权限访问）或转到以下部分来更改其决策： *`Settings -> TV Provider`* 在iOS/iPadOS上或 *`Settings -> Accounts -> TV Provider`* 在tvOS上。
 
-- [IPHONE / IPAD](http://tve.zendesk.com/hc/article_attachments/205624966/User_flows_AppleSSO_iOS_v2.pdf) 使用者流程
-- [APPLE TV](http://tve.zendesk.com/hc/article_attachments/206669126/User_flows_tvOS.pdf) 使用者流程
+   - **<u>专业提示：</u>** 我们建议在应用程序进入前台状态时请求用户的权限，但这只是一个建议，因为应用程序可以检查 [访问权限](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) 用户在要求用户身份验证之前的任何时候的订阅信息。 此外，AccessEnabler iOS/tvOS SDK API将在需要时自动请求用户的权限。
 
+   - **<u>专业提示：</u>** 我们建议解释单点登录(SSO)用户体验的好处，以激励拒绝授予访问订阅信息权限的用户。 请记住，用户可以通过转到应用程序设置（电视提供商权限访问）或转到以下部分来更改其决策： *`Settings -> TV Provider`* 在iOS/iPadOS上或 *`Settings -> Accounts -> TV Provider`* 在tvOS上。
 
->[!IMPORTANT]
->
-> 當「單一登入」功能為 **已啟用** 適用於iOS/tvOS **和** 以Apple為例 **已上線（支援）或選擇器** MVPD來自Apple SSO工作流程的驗證/登出流程將同時涉及Apple和Adobe Primetime驗證解決方案，而所有其他流程（授權、預先授權、中繼資料等） 將僅由Adobe Primetime驗證提供服務。
+结果应会创建符合以下用户流程的体验，我们建议您在开始开发应用程序之前参考这些用户流程：
 
-
->[!IMPORTANT]
->
-> 當「單一登入」功能為 **已停用** 適用於iOS/tvOS **或** 以Apple為例 **未上線（不支援）** MVPD驗證/登出流程會從Apple SSO工作流程後援至僅由Adobe Primetime驗證服務的一般工作流程。
+- [IPHONE / IPAD](http://tve.zendesk.com/hc/article_attachments/205624966/User_flows_AppleSSO_iOS_v2.pdf) 用户流
+- [APPLE TV](http://tve.zendesk.com/hc/article_attachments/206669126/User_flows_tvOS.pdf) 用户流
 
 
 >[!IMPORTANT]
 >
-> Apple SSO工作流程的一個主要好處是以單熒幕驗證使用者流程表示，當單一登入功能為時，也可在Apple電視上傳送 **已啟用** 適用於tvOS **和** 以Apple為例 **已上線（支援）** MVPDs。
+> 单点登录功能为 **已启用** 适用于iOS/tvOS的 **和** 就Apple而言 **已载入（支持）或选取器** MVPD来自Apple SSO工作流的身份验证/注销流将同时涉及Apple和Adobe Primetime身份验证解决方案，而所有其他流（授权、预授权、元数据等） 将仅由Adobe Primetime身份验证提供服务。
+
+
+>[!IMPORTANT]
+>
+> 单点登录功能为 **已禁用** 适用于iOS/tvOS的 **或** 就Apple而言 **未载入（不支持）** MVPD身份验证/注销流将从Apple SSO工作流回退到仅由Adobe Primetime身份验证提供服务的常规工作流。
+
+
+>[!IMPORTANT]
+>
+> Apple Apple SSO工作流程的一个主要益处是由单屏身份验证用户流量表示的，当单点登录功能为 **已启用** 适用于tvOS的 **和** 就Apple而言 **已载入（支持）** MVPDs。
 
 
 ### MVPD {#MVPD}
 
-若要受益於單一登入(SSO)使用者體驗，一個MVPD必須：
+为了从单点登录(SSO)用户体验中获益，一个MVPD必须：
 
  
 
-1. 在Apple端上線至Apple SSO工作流程。 請聯絡Apple以加速入門流程。
-1. 提供可處理使用者登入表單的JavaScript TVML應用程式。 請聯絡Apple以取得適當的檔案。
-1. 提供字串值，代表Apple在上線流程中指派的提供者識別碼。 請聯絡Adobe Primetime驗證以執行設定變更。
+1. 在Apple端登记到Apple SSO工作流中。 请联系Apple以简化入门培训流程。
+1. 提供一个能够处理用户登录表单的JavaScript TVML应用程序。 请联系Apple以接收正确的文档。
+1. 提供一个字符串值，表示Apple在新用户引导过程中分配的提供商标识符。 请联系Adobe Primetime身份验证以执行配置更改。
 
 </br>
 
-## 常見問題集 {#FAQ}
+## 常见问题解答 {#FAQ}
 
-1. 萬一Apple SSO工作流程發生問題，使用AccessEnabler iOS/tvOS SDK的應用程式是否能夠回覆為一般驗證流程？
-   - 這是可行的，但需要對執行設定變更 [Adobe Primetime TVE Dashboard](https://console.auth.adobe.com/). 此 *啟用單一登入* 必須設定於 *否* ，以進行所需的整合(Channel x MVPD)和平台(iOS/tvOS)。
-   - 應用程式只有在呼叫後才會確認組態變更 [setRequestor](/help/authentication/iostvos-sdk-api-reference.md#setReqV3) API可在使用AccessEnabler iOS/tvOS SDK時使用。
-1. 應用程式會知道透過其他裝置或其他應用程式上的平台SSO登入導致驗證發生的時間嗎？
-   - 無法取得此資訊。
-1. 應用程式會知道透過相同裝置上的平台SSO登入而導致驗證發生的時間嗎？ 
-   - 此資訊是使用者中繼資料索引鍵的一部分： *tokenSource*，在此例中應傳回字串值： &quot;Apple&quot;。
-1. 如果使用者登入時前往「 」 *`Settings -> TV Provider`* 在iOS/iPadOS上或 *`Settings -> Accounts -> TV Provider`* 是否在tvOS區段上使用未與應用程式整合的MVPD？
-   - 當使用者啟動應用程式時，將不會透過Apple SSO工作流程驗證使用者。 因此，應用程式必須退回一般驗證流程，並顯示自己的MVPD選取器。
-1. 如果使用者登入時前往「 」 *`Settings -> TV Provider`* 在iOS/iPadOS上或 *`Settings -> Accounts -> TV Provider`* 在tvOS區段上，使用 *啟用單一登入* 設定於 *否* 於 [Adobe Primetime TVE Dashboard](https://console.auth.adobe.com/) 適用於iOS/tvOS平台？
-   - 當使用者啟動應用程式時，將不會透過Apple SSO工作流程驗證使用者。 因此，應用程式必須退回一般驗證流程，並顯示自己的MVPD選取器。
-1. 如果使用者的MVPD未由Apple上線（不支援），但存在於Apple選擇器中，會發生什麼情況？
-   - 當使用者啟動應用程式時，使用者將只會透過Apple SSO工作流程選取MVPD，而未完成驗證流程。 因此，應用程式必須退回一般驗證流程，但可以使用已選取的MVPD。
-1. 如果使用者有Apple未上線（不支援）的MVPD，會發生什麼情況？
-   - 當使用者啟動應用程式時，使用者將透過Apple SSO工作流程選取「其他電視提供者」選擇器。 因此，應用程式必須退回一般驗證流程，並顯示自己的MVPD選取器。
-1. 如果使用者的MVPD透過以下媒體降級 [Adobe Primetime TVE Dashboard](https://console.auth.adobe.com/)？
-   - 當使用者啟動應用程式時，將透過降級機制而不是透過Apple SSO工作流程來驗證使用者。
-   - 使用者應該可以順暢地使用體驗，而應用程式則會透過 *N010* 警告程式碼，以防它使用AccessEnabler iOS/tvOS SDK。
-1. MVPD使用者ID在Apple SSO和非Apple SSO驗證流程之間會變更嗎？
-   - 預期的使用者ID不會變更，但需要為每個選取的提供者驗證。 
-1. 驗證TTL是否有任何變更？
-   - Adobe Primetime驗證將繼續遵循程式設計師所需的TTL，以便與每個MVPD整合。
-   - 透過Apple SSO從一個程式設計人員應用程式導覽至另一個程式設計人員應用程式時，第二個應用程式將擁有其對應程式設計人員x MVPD整合的TTL （不會共用第一個驗證之應用程式的TTL）
+1. 如果Apple SSO工作流出现问题，使用AccessEnabler iOS/tvOS SDK的应用程序能否回退到常规身份验证流程？
+   - 这是可能的，但需要对执行配置更改 [Adobe Primetime TVE功能板](https://console.auth.adobe.com/). 此 *启用单点登录* 必须设置为 *否* (Channel x MVPD)和所需平台(iOS/tvOS)的集成。
+   - 应用程序仅在调用后确认配置更改 [setRequestor](/help/authentication/iostvos-sdk-api-reference.md#setReqV3) API，以防它使用AccessEnabler iOS/tvOS SDK。
+1. 当通过其他设备或其他应用程序上的平台SSO登录后，应用程序是否知道发生了身份验证？
+   - 此信息将不可用。
+1. 由于通过同一设备上的平台SSO登录，应用程序是否知道何时发生了身份验证？ 
+   - 此信息作为用户元数据键的一部分提供： *tokenSource*，在这种情况下，应当返回字符串值“Apple”。
+1. 如果用户登录到 *`Settings -> TV Provider`* 在iOS/iPadOS上或 *`Settings -> Accounts -> TV Provider`* 是否在tvOS部分使用未与应用程序集成的MVPD？
+   - 当用户启动应用程序时，不会通过Apple SSO工作流对用户进行身份验证。 因此，应用程序必须回退到常规身份验证流程，并显示自己的MVPD选取器。
+1. 如果用户登录到 *`Settings -> TV Provider`* 在iOS/iPadOS上或 *`Settings -> Accounts -> TV Provider`* 在tvOS部分中使用 *启用单点登录* 设置于 *否* 在 [Adobe Primetime TVE功能板](https://console.auth.adobe.com/) 用于iOS/tvOS平台？
+   - 当用户启动应用程序时，不会通过Apple SSO工作流对用户进行身份验证。 因此，应用程序必须回退到常规身份验证流程，并显示自己的MVPD选取器。
+1. 如果用户的MVPD不受Apple载入（不支持），但存在于Apple选取器中，会发生什么情况？
+   - 当用户启动应用程序时，用户将仅通过Apple SSO工作流选择MVPD，而不完成身份验证流程。 因此，应用程序必须回退到常规身份验证流程，但可以使用已选择的MVPD。
+1. 如果用户的MVPD不受Apple载入（不支持），会发生什么情况？
+   - 当用户启动应用程序时，用户将通过Apple SSO工作流选择“其他电视提供商”选取器选项。 因此，应用程序必须回退到常规身份验证流程，并显示自己的MVPD选取器。
+1. 如果用户的MVPD通过介质降级，会出现什么情况 [Adobe Primetime TVE功能板](https://console.auth.adobe.com/)？
+   - 当用户启动应用程序时，将通过降级机制而不是通过Apple SSO工作流对用户进行身份验证。
+   - 用户应该可以无缝地获得体验，同时应用程序将通过 *N010* 警告代码，以防它使用AccessEnabler iOS/tvOS SDK。
+1. Apple SSO和非Apple SSO身份验证流程之间的MVPD用户ID是否会更改？
+   - 预期用户ID不会更改，但需要为每个选定的提供商验证该ID。 
+1. 身份验证TTL是否有任何更改？
+   - Adobe Primetime身份验证将继续遵循程序员集成每个MVPD所需的TTL。
+   - 通过Apple SSO从一个程序员应用程序导航到另一个程序员应用程序时，第二个应用程序将拥有其相应程序员x MVPD集成的TTL（它不会共享验证的第一个应用程序的TTL）
 
-|  | Adobe Primetime驗證TTL已過期 | Adobe Primetime驗證TTL有效 |
+|  | Adobe Primetime身份验证TTL已过期 | Adobe Primetime身份验证TTL有效 |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| **Apple的裝置代號TTL已過期** | 使用者未驗證（MVPD選擇器應會出現） | 使用者已完成驗證，且TTL為其Adobe Primetime驗證Token的剩餘時間 |
-| **Apple的裝置代號TTL有效** | 使用者會以無訊息方式驗證，並以TVE儀表板中指定的TTL取得另一個Adobe Primetime驗證權杖 | 使用者已完成驗證，且TTL為其Adobe Primetime驗證Token的剩餘時間 |
+| **Apple的设备令牌TTL已过期** | 用户未验证（应显示MVPD选取器） | 用户已完成身份验证，TTL是其Adobe Primetime身份验证令牌的剩余时间 |
+| **Apple的设备令牌TTL有效** | 用户通过静默方式身份验证，并使用TVE仪表板中指定的TTL获取另一个Adobe Primetime身份验证令牌 | 用户已完成身份验证，TTL是其Adobe Primetime身份验证令牌的剩余时间 |
 
 <!--
 

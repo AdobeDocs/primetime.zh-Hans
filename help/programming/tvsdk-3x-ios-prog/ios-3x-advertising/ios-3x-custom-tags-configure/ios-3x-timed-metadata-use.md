@@ -1,6 +1,6 @@
 ---
-description: 當目前的播放時間符合開始時間時，您可以使用TimedMetadata。
-title: 使用定時中繼資料
+description: 当当前播放时间与开始时间匹配时，可以使用TimedMetadata。
+title: 使用定时元数据
 exl-id: e41718e0-2b6c-4353-a365-2d84ad4ac815
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,15 +9,15 @@ ht-degree: 0%
 
 ---
 
-# 使用定時中繼資料 {#use-timed-metadata}
+# 使用定时元数据 {#use-timed-metadata}
 
-當目前的播放時間符合開始時間時，您可以使用TimedMetadata。
+当当前播放时间与开始时间匹配时，可以使用TimedMetadata。
 
-若要使用這些已儲存的 `PTTimedMetadata` 物件時，使用儲存的字典： [在傳送時儲存定時中繼資料物件](../../../tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-custom-tags-configure/ios-3x-timed-metadata-store.md).
+要使用这些已保存的内容，请执行以下操作 `PTTimedMetadata` 对象，使用保存的词典 [在调度定时元数据对象时存储这些对象](../../../tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-custom-tags-configure/ios-3x-timed-metadata-store.md).
 
-1. 從此通知擷取並更新目前的播放時間，並尋找所有 `PTTimedMetadata` 開始時間符合目前播放時間的物件。
+1. 提取并更新此通知的当前播放时间，并查找所有 `PTTimedMetadata` 开始时间与当前播放时间匹配的对象。
 
-   您可以使用這些物件完成各種動作。
+   您可以使用这些对象完成各种操作。
 
    例如：
 
@@ -56,4 +56,4 @@ ht-degree: 0%
    }
    ```
 
-1. 定期排清陳舊 `PTTimedMetadata` 執行個體，以防止記憶體持續成長。
+1. 定期刷新陈旧 `PTTimedMetadata` 防止内存持续增长的实例。

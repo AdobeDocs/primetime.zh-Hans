@@ -1,6 +1,6 @@
 ---
-description: 替代音訊使用MediaPlayer來播放在M3U8 HLS播放清單中指定，並且可以包含多個替代音訊資料流的視訊。
-title: 存取替代音軌
+description: 备用音频使用MediaPlayer播放在M3U8 HLS播放列表中指定的视频，该视频可以包含多个备用音频流。
+title: 访问备用音轨
 exl-id: 88fa8f42-59d7-4a57-90c6-4c23b2ea7e00
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,23 +9,23 @@ ht-degree: 0%
 
 ---
 
-# 存取替代音軌{#access-alternate-audio-tracks}
+# 访问备用音轨{#access-alternate-audio-tracks}
 
-替代音訊使用MediaPlayer來播放在M3U8 HLS播放清單中指定，並且可以包含多個替代音訊資料流的視訊。
+备用音频使用MediaPlayer播放在M3U8 HLS播放列表中指定的视频，该视频可以包含多个备用音频流。
 
-1. 等候 `MediaPlayer` 至少處於 `MediaPlayerStatus.PREPARED` 狀態。
-1. 聆聽 `MediaPlayerEvent.STATUS_CHANGED` 具有狀態的事件 `MediaPlayerStatus.PREPARED`.
+1. 等待 `MediaPlayer` 至少在 `MediaPlayerStatus.PREPARED` 状态。
+1. 聆听 `MediaPlayerEvent.STATUS_CHANGED` 具有状态的事件 `MediaPlayerStatus.PREPARED`.
 
-   此步驟表示音訊曲目的初始清單可供使用。
+   此步骤表示声道的初始列表可用。
 
-1. 從取得可用的音軌 `MediaPlayerItem` 執行個體。
+1. 从获取可用的音频曲目 `MediaPlayerItem` 实例。
 
    ```java
    mediaPlayerItem.getAudioTracks()
    ```
 
-1. （選用）向使用者展示可用的曲目。
-1. 將選取的音軌設定在 `MediaPlayerItem` 執行個體。
+1. （可选）向用户显示可用曲目。
+1. 将选定的音轨设置为 `MediaPlayerItem` 实例。
 
    ```java
    mediaPlayerItem.selectAudioTrack(audioTrack)

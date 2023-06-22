@@ -1,6 +1,6 @@
 ---
-description: 當瀏覽器TVSDK請求不在主要廣告伺服器上的廣告時，播放器需要從次要伺服器請求廣告。 視訊廣告服務範本(VAST)會設定廣告伺服器和視訊播放器之間的通訊標準，以及次要廣告伺服器在請求廣告時傳送的回應。
-title: VAST廣告
+description: 当浏览器TVSDK请求的主广告服务器上未包含的广告时，播放器需要从辅助服务器请求该广告。 视频广告服务模板(VAST)设置广告服务器和视频播放器之间的通信标准，并且是辅助广告服务器在请求广告时发送的响应。
+title: VAST广告
 exl-id: b0ebade5-b5da-413d-84f4-abebac579f45
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,44 +9,44 @@ ht-degree: 0%
 
 ---
 
-# VAST廣告 {#vast-ads}
+# VAST广告 {#vast-ads}
 
-當瀏覽器TVSDK請求不在主要廣告伺服器上的廣告時，播放器需要從次要伺服器請求廣告。 視訊廣告服務範本(VAST)會設定廣告伺服器和視訊播放器之間的通訊標準，以及次要廣告伺服器在請求廣告時傳送的回應。
+当浏览器TVSDK请求的主广告服务器上未包含的广告时，播放器需要从辅助服务器请求该广告。 视频广告服务模板(VAST)设置广告服务器和视频播放器之间的通信标准，并且是辅助广告服务器在请求广告时发送的响应。
 
-如需VAST的詳細資訊，請參閱 [數位視訊廣告服務範本(VAST) 3.0](https://www.iab.com/wp-content/uploads/2015/06/VASTv3_0.pdf).
+有关VAST的详细信息，请参阅 [数字视频广告投放模板(VAST) 3.0](https://www.iab.com/wp-content/uploads/2015/06/VASTv3_0.pdf).
 
-瀏覽器TVSDK支援下列VAST廣告元素：
+浏览器TVSDK支持以下VAST广告元素：
 
-## 包裝函式和內嵌廣告 {#section_11B8A1A8F52F4F77981C6AAC02185087}
+## 包装器和内联广告 {#section_11B8A1A8F52F4F77981C6AAC02185087}
 
-支援下列元素：
+支持以下元素：
 
-* **`wrapper`** 當播放器需要聯絡次要廣告伺服器以請求廣告時，包裝函式元素會提供重新導向資訊。 一個包裝函式元素可以指向數個最終指向VAST廣告的包裝函式。
+* **`wrapper`** 当播放器需要联系辅助广告服务器以请求广告时，包装元素会提供重定向信息。 一个包装元素可以指向多个最终指向VAST广告的包装。
 
-* **`inline`** 支援下列必要元素：
+* **`inline`** 支持以下必需元素：
 
 * `AdSystem`
 * `AdTitle`
 * `Impression`
 
-   支援下列選用元素：
+   支持以下可选元素：
 
 * `Description`
 * `Survey`
 * `Error`
 
-## 創意 {#section_0121F948CB074E49A8132D202786CAA4}
+## 创意人员 {#section_0121F948CB074E49A8132D202786CAA4}
 
-此元素是屬於VAST廣告一部分的檔案，並包含 `creative` 可支援線性廣告、非線性廣告或隨附廣告的元素。 在 `creative` 元素， `id`， `sequence`、和 `adId` 支援元素。
+此元素是一个VAST广告中包含的文件 `creative` 可支持线性广告、非线性广告或伴随广告的元素。 在 `creative` 元素， `id`， `sequence`、和 `adId` 元素受支持。
 
-以下是有關廣告型別的詳細資訊：
+以下是有关广告类型的更多信息：
 
-* **線性廣告** 支援下列元素：
+* **线性广告** 支持以下元素：
 
    * `TrackingEvent`，其中包含 `Tracking` 元素。
       * `Duration`
       * `AdParameters`
-      * `VideoClicks`，包括下列專案：
+      * `VideoClicks`，包括以下各项：
 
       * `ClickThrough`
       * `ClickTracking`
@@ -58,15 +58,15 @@ ht-degree: 0%
 
          >[!TIP]
          >
-         >在此元素中， `id`， `bitrate`， `delivery`， `width`， `height`， `scalable`， `maintainAspectRatio`， `apiFramework`、和 `type` 屬性受到支援。
+         >在此元素中， `id`， `bitrate`， `delivery`， `width`， `height`， `scalable`， `maintainAspectRatio`， `apiFramework`、和 `type` 属性受支持。
 
-* **非線性廣告** 支援下列元素：
+* **非线性广告** 支持以下元素：
 
    * `Non-linear`
 
       >[!TIP]
       >
-      >在此元素中， `id`， `width`， `height`， `apiFramework`， `expandedWidth`， `expandedHeight`， `scalable`， `maintainAspectRatio`、和 `minSuggestedDuration` 屬性受到支援。
+      >在此元素中， `id`， `width`， `height`， `apiFramework`， `expandedWidth`， `expandedHeight`， `scalable`， `maintainAspectRatio`、和 `minSuggestedDuration` 属性受支持。
 
       * `StaticResource`
       * `IFrameResource`
@@ -74,23 +74,23 @@ ht-degree: 0%
       * `NonLinearClickThrough`
       * `AdParameters`
 
-* **隨附廣告** 支援下列元素：
+* **伴随广告** 支持以下元素：
 
    * `Companion`
 
       >[!TIP]
       >
-      >在此元素中， `id`， `width`， `height`， `apiFramework`， `expandedWidth`、和 `expandedHeight` 屬性受到支援。
+      >在此元素中， `id`， `width`， `height`， `apiFramework`， `expandedWidth`、和 `expandedHeight` 属性受支持。
 
       * `StaticResource`
       * `IFrameResource`
       * `HTMLResource`
       * `TrackingEvents`
 
-## 擴充功能 {#section_17401C75F419453BAE83637EEB6E1E60}
+## 扩展 {#section_17401C75F419453BAE83637EEB6E1E60}
 
 >[!TIP]
 >
->僅支援Auditude特定的擴充功能。
+>仅支持特定于Auditude的扩展。
 
 * `Extension`

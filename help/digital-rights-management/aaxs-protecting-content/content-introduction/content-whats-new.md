@@ -1,6 +1,6 @@
 ---
-description: Adobe® Access™是適用於高價值視聽內容的進階數位版權管理和內容保護解決方案。 使用您使用Java API建立的工具，您可以建立原則、將原則套用至包含音訊和視訊內容的檔案，以及加密這些檔案。 執行這些工作的高層級步驟如下
-title: 概觀
+description: Adobe® Access™是用于高价值视听内容的高级数字版权管理和内容保护解决方案。 使用您使用Java API创建的工具，您可以创建策略，将策略应用到包含音频和视频内容的文件，并对这些文件进行加密。 执行这些任务的高层次步骤如下
+title: 概述
 exl-id: cf081058-9b41-4b09-9258-a7d873799846
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,34 +9,34 @@ ht-degree: 0%
 
 ---
 
-# 概觀 {#overview}
+# 概述 {#overview}
 
-Adobe® Access™是適用於高價值視聽內容的進階數位版權管理和內容保護解決方案。 使用您使用Java API建立的工具，您可以建立原則、將原則套用至包含音訊和視訊內容的檔案，以及加密這些檔案。 執行這些工作的高層級步驟如下：
+Adobe® Access™是用于高价值视听内容的高级数字版权管理和内容保护解决方案。 使用您使用Java API创建的工具，您可以创建策略，将策略应用到包含音频和视频内容的文件，并对这些文件进行加密。 执行这些任务的高层次步骤如下：
 
-1. 使用Java API來設定原則屬性和加密引數。
-1. 建立說明內容使用角色的原則。 (請參閱 [使用原則](../../aaxs-protecting-content/content-working-with-policies/content-working-with-policies-overview.md))。
+1. 使用Java API设置策略属性和加密参数。
+1. 创建描述内容的使用角色的策略。 (请参阅 [使用策略](../../aaxs-protecting-content/content-working-with-policies/content-working-with-policies-overview.md))。
 
-   您可以建立任意數量的原則。 大部分使用者會建立少量原則，並將這些原則套用至許多檔案。
+   您可以创建任意数量的策略。 大多数用户会创建少量策略并将其应用于许多文件。
 
-1. 封裝媒體檔案。
+1. 打包媒体文件。
 
-   在此內容中， *封裝檔案* 表示要加密並套用原則。 (請參閱 [正在封裝媒體檔案](../../aaxs-protecting-content/content-packaging-media-files/content-packaging-media-files-overview.md).)
+   在这种情况下， *打包文件* 意味着加密它并对它应用策略。 (请参阅 [正在打包媒体文件](../../aaxs-protecting-content/content-packaging-media-files/content-packaging-media-files-overview.md).)
 
-1. 實作授權伺服器以核發授權給使用者。
+1. 实施许可证服务器以向用户颁发许可证。
 
-加密的內容現在已準備好部署，使用者端可以從伺服器要求授權。
+加密内容现在已准备好进行部署，客户端可以从服务器请求许可证。
 
-SDK提供Java API來完成這些工作，並包括許可證伺服器的參考實作，以及以Java API為基礎的命令列工具。 如需詳細資訊，請參閱 *使用Adobe存取參考實作*.
+SDK提供了一个Java API来完成这些任务，其中包括许可证服务器的参考实现以及基于Java API的命令行工具。 有关信息，请参阅 *使用Adobe访问引用实施*.
 
-## Adobe存取5.2的新增功能 {#section_06220EDE36B54DCB9CA7963B76DA8167}
+## Adobe访问5.2的新增功能 {#section_06220EDE36B54DCB9CA7963B76DA8167}
 
-* **外部CEK**：能夠將內容金鑰管理系統(CKMS)整合到DRM授權服務與內容封裝工作流程，而不是加密CEK並將其捆綁到內容的中繼資料中。 另請參閱 [Adobe存取DRM外部CEK概述](../../aaxs-drm-xkey-mgmt/aaxs-drm-using-external-cek-overview.md).
+* **外部CEK**：能够将内容密钥管理系统(CKMS)集成到DRM许可证服务和内容打包工作流，而不是加密CEK并将其捆绑到内容的元数据中。 参见 [Adobe访问DRM外部CEK概述](../../aaxs-drm-xkey-mgmt/aaxs-drm-using-external-cek-overview.md).
 
-* **授權（憑單）退貨**：使用者端傳回（或刪除）已核發至使用者端的授權的能力。
-* **Xbox Key Server**：可保護傳送至Xbox和Xbox 360的內容。 (需要Adobe Primetime使用者端。)
+* **许可证（优惠券）退货**：客户端返回（或删除）颁发给客户端的许可证的功能。
+* **Xbox Key Server**：能够保护发送到Xbox和Xbox 360的内容。 (需要Adobe Primetime客户端。)
 
-## 自訂使用規則 {#custom-usage-rules}
+## 自定义使用规则 {#custom-usage-rules}
 
-指定自訂使用規則。 自訂資料可包含在License Server簽發的授權中。 此資料的解釋/處理完全取決於使用者端應用程式和授權伺服器的實作。
+指定自定义使用规则。 自定义数据可包含在许可证服务器颁发的许可证中。 此数据的解释/处理完全取决于客户端应用程序和许可证服务器的实施。
 
-使用案例範例：透過允許作為原則及/或內容授權的一部分安全地傳送其他商業規則，實現使用規則的擴充性。 基於安全性理由，因為這些使用規則是在自訂使用者端應用程式程式碼中強制執行，此選項應與AIR應用程式或Flash PlayerSWF允許清單選項搭配使用。 如需詳細資訊，請參閱 [執行階段和應用程式限制](../../aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-allowlist-air.md).
+示例用例：通过允许作为策略和/或内容许可证的一部分安全地传输其他业务规则，实现了使用规则的扩展。 出于安全原因，由于在自定义客户端应用程序代码中强制实施这些使用规则，此选项应与AIR应用程序或Flash PlayerSWF允许列表选项结合使用。 有关更多信息，请参阅 [运行时和应用程序限制](../../aaxs-protecting-content/content-introduction/content-usage-rules/content-runtime-application-restrictions/content-allowlist-air.md).

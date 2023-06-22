@@ -1,6 +1,6 @@
 ---
-title: 加密內容
-description: 加密內容
+title: 加密内容
+description: 加密内容
 copied-description: true
 exl-id: 84a490ae-af0c-43c5-a849-ed832e83a28d
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,18 +10,18 @@ ht-degree: 0%
 
 ---
 
-# 加密內容{#encrypting-content}
+# 加密内容{#encrypting-content}
 
-加密FLV和F4V內容涉及使用 `MediaEncrypter` 物件。 您也可以封裝只包含音訊軌跡的FLV和F4V檔案。 針對低階裝置加密H.264內容時，可以只套用部分加密來改善效能。 在這種情況下，F4V檔案可能會使用 `F4VDRMParameters.setVideoEncryptionLevel`方法。
+加密FLV和F4V内容涉及使用 `MediaEncrypter` 对象。 您还可以打包仅包含音频轨道的FLV和F4V文件。 在为低端设备加密H.264内容时，可以只应用部分加密来提高性能。 在这种情况下，可以使用对F4V文件进行部分加密 `F4VDRMParameters.setVideoEncryptionLevel`方法。
 
-若要使用Java API加密FLV或F4V檔案，請執行以下步驟：
+要使用Java API加密FLV或F4V文件，请执行以下步骤：
 
-1. 設定您的開發環境，並在您的專案中包含設定開發環境中所提及的所有JAR檔案。
-1. 建立 `ServerCredential` 執行個體以載入簽署所需的認證。
-1. 建立 `MediaEncrypter` 執行個體。 使用 `MediaEncryperFactory` 如果您不知道您有哪種檔案型別。 否則，您可以建立 `FLVEncrypter` 或 `F4VEncrypter` 直接。
-1. 使用指定加密選項 `DRMParameters` 物件。
-1. 使用設定簽名選項 `SignatureParameters` 物件並傳遞 `ServerCredential` 執行個體至其 `setServerCredentials` 方法。
-1. 使用設定金鑰和授權資訊 `V2KeyParameters` 物件。 使用設定原則 `setPolicies` 方法。 透過呼叫 `setLicenseServerUrl` 和 `setLicenseServerTransportCertificate` 方法。 使用設定CEK加密選項 `setKeyProtectionOptions` 方法，及其自訂屬性 `setCustomProperties` 方法。 最後，視所使用的加密型別而定，將 `DRMKeyParameters` 物件變更為其中一項 `VideoDRMParameters`， `AudioDRMParameters`， `FLVDRMParameters`，或 `F4VDRMParameters`，並設定加密選項。
-1. 將輸入和輸出檔案及加密選項傳遞至 `MediaEncrypter.encryptContent` 方法。
+1. 设置开发环境，并在项目中包括设置开发环境中所述的所有JAR文件。
+1. 创建 `ServerCredential` 用于加载签名所需的凭据的实例。
+1. 创建 `MediaEncrypter` 实例。 使用 `MediaEncryperFactory` 如果您不知道您拥有的文件类型。 否则，您可以创建 `FLVEncrypter` 或 `F4VEncrypter` 直接。
+1. 通过使用 `DRMParameters` 对象。
+1. 使用设置签名选项 `SignatureParameters` 对象并传递 `ServerCredential` 实例到其 `setServerCredentials` 方法。
+1. 使用设置密钥和许可证信息 `V2KeyParameters` 对象。 使用设置策略 `setPolicies` 方法。 通过调用 `setLicenseServerUrl` 和 `setLicenseServerTransportCertificate` 方法。 使用设置CEK加密选项 `setKeyProtectionOptions` 方法，及其自定义属性 `setCustomProperties` 方法。 最后，根据使用的加密类型，强制转换 `DRMKeyParameters` 对象到其中之一 `VideoDRMParameters`， `AudioDRMParameters`， `FLVDRMParameters`，或 `F4VDRMParameters`，并设置加密选项。
+1. 通过将输入和输出文件以及加密选项传递到 `MediaEncrypter.encryptContent` 方法。
 
-如需示範如何加密內容的範常式式碼，請參閱 `com.adobe.flashaccess.samples.mediapackager.EncryptContent` 在「參考實作命令列工具」的「範例」目錄中。
+有关演示如何加密内容的示例代码，请参阅 `com.adobe.flashaccess.samples.mediapackager.EncryptContent` 在参考实施命令行工具“samples”目录中。

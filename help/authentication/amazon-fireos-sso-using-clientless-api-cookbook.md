@@ -1,6 +1,6 @@
 ---
-title: 使用無使用者端API逐步指南的Amazon FireOS SSO
-description: 使用無使用者端API逐步指南的Amazon FireOS SSO
+title: 使用无客户端API指南的Amazon FireOS SSO
+description: 使用无客户端API指南的Amazon FireOS SSO
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,46 +9,46 @@ ht-degree: 0%
 
 ---
 
-# 使用無使用者端API逐步指南的Amazon FireOS SSO {#amazon-fireos-sso-using-clientless-api-cookbook}
+# 使用无客户端API指南的Amazon FireOS SSO {#amazon-fireos-sso-using-clientless-api-cookbook}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
 </br>
 
-## 簡介 {#Introduction}
+## 介绍 {#Introduction}
 
-本檔案提供使用無使用者端API實作Amazon SSO版Adobe Primetime驗證流程的說明。 本檔案的第一部分著重於架構的Amazon版本特性，適合許多熟悉並熟悉其實作的合作夥伴使用。
+本文档提供了使用无客户端API实施Amazon SSO版本的Adobe Primetime身份验证流的说明。 本文档的第一部分侧重于架构的Amazon版本的特性，适用于许多已经熟悉并熟悉其实施的合作伙伴。
 
-本檔案的第二部分說明實作Adobe Primetime驗證無使用者端API的主要步驟。
+本文档的第二部分介绍了实施Adobe Primetime身份验证无客户端API的主要步骤。
 
-如需無使用者端解決方案運作方式的廣泛技術概覽，請參閱 [REST API概觀](/help/authentication/rest-api-overview.md). Adobe是取得整體架構和第一個實作相關支援的偏好連絡方式。
+有关无客户端解决方案的工作原理的广泛技术概述，请参阅 [REST API概述](/help/authentication/rest-api-overview.md). Adobe是获取有关整体架构和第一个实施支持的首选联系人。
 
-## Amazon無使用者端SSO {#AMZ-Clientless-SSO}
+## Amazon无客户端SSO {#AMZ-Clientless-SSO}
 
-### 高階架構 {#High-Level-Arch}
+### 高级体系结构 {#High-Level-Arch}
 
-Amazon無使用者端SSO實作相當簡單，且大多與一般Adobe Primetime驗證無使用者端API相同。
+Amazon无客户端SSO实施非常简单，并且大多与常规Adobe Primetime身份验证无客户端API相同。
 
-您將需要使用Amazon SDK來擷取個人化裝載，並在呼叫Adobe無使用者端API時使用。
+您将需要使用Amazon SDK检索个性化有效负载，并在调用Adobe无客户端API时使用它。
 
-如果可辨識裝載且對應至已驗證的工作階段，則無使用者端API會立即傳回工作階段的Token。
+如果有效负载被识别并且对应于经过身份验证的会话，则无客户端API将立即使用会话的令牌返回。
 
-### 如何建置應用程式以使用Amazon SDK {#Build-entries}
+### 如何构建应用程序以使用Amazon SDK {#Build-entries}
 
-* 下載並複製最新版 [Amazon Stub SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar) 併入/SSOEnabler資料夾，與app目錄平行
-* 更新資訊清單/Gradle檔案以使用程式庫：
+* 下载并复制最新版本 [Amazon桩模块SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar) 移入/SSOEnabler文件夹，与app目录平行
+* 更新manifest/gradle文件以使用库：
 
-   **將下列行新增至資訊清單檔案：**
+   **将以下行添加到清单文件：**
 
    ```Java
    <uses-library android:name="com.amazon.ottssotokenlib" android:required="false"/\>
    ```
 
-   **Gradle檔案專案：**
+   **Gradle文件条目：**
 
-   在存放庫下：
+   在存储库下：
 
    ```java
    flatDir {
@@ -56,30 +56,30 @@ Amazon無使用者端SSO實作相當簡單，且大多與一般Adobe Primetime�
    }
    ```
 
-   在相依性下方，新增：
+   在依赖项下，添加：
 
    ```Java
    provided fileTree(include: \['ottSSOTokenStub.jar'\], dir: '../SSOEnabler')
    ```
 
 
-* 處理缺少Amazon隨附應用程式的情況：
+* 处理Amazon配套应用程序缺失的问题：
 
-   雖然不太可能，但如果您的應用程式正在執行的Amazon裝置上沒有隨附，您應該會在下列類別的執行階段遇到ClassNotFoundException： `com.amazon.ottssotokenlib.SSOEnabler`.
+   虽然不太可能，但如果该随附程序不存在于应用程序正在运行的Amazon设备上，则您应在运行时遇到以下类的ClassNotFoundException： `com.amazon.ottssotokenlib.SSOEnabler`.
 
-   如果發生此情況，您只需要略過裝載步驟，然後回覆一般PrimeTime流程即可。 將不會啟用SSO，但正常會發生一般驗證流程。
+   如果发生这种情况，您只需跳过有效负载步骤并回退常规PrimeTime流。 将不会启用SSO，但常规身份验证流程将正常进行。
 
 </br>
 
-### 如何使用Amazon SDK取得Amazon SSO裝載 {#UseAmazonSSO}
+### 如何使用Amazon SDK获取Amazon SSO有效负载 {#UseAmazonSSO}
 
-在您的應用程式初始化期間，取得SSOEnabler的執行個體。 根據您的應用程式架構，您應決定是同步實施還是非同步實施。
+在应用程序初始化过程中，获取SSOEnabler的实例。 根据您的应用程序体系结构，您应该决定是同步实施还是异步实施。
 
-如果由於任何原因，API呼叫沒有傳回裝載，請使用正常的非SSO流程，並聯絡您的Amazon和Adobe合作夥伴以調查。
+如果由于任何原因，API调用未返回有效负载，请使用常规非SSO流程并联系您的Amazon和Adobe合作伙伴进行调查。
 
-**非同步API**
+**异步API**
 
-* 取得SSO啟用程式執行個體：
+* 获取SSO启用程序实例：
 
    ```Java
    ssoEnabler = SSOEnabler.getInstance(context);
@@ -88,7 +88,7 @@ Amazon無使用者端SSO實作相當簡單，且大多與一般Adobe Primetime�
    ```
 
 
-* 設定回撥 
+* 设置回调 
 
    ```java
    public static abstract class SSOEnablerCallback
@@ -98,22 +98,22 @@ Amazon無使用者端SSO實作相當簡單，且大多與一般Adobe Primetime�
    }
    ```
 
-   * 成功回應套件組合將包含：
-      * SSO權杖為具有索引鍵「SSOToken」的字串
-   * 失敗回應套件組合將包含：
-      * 錯誤碼為int，並附上索引鍵「ErrorCode」
-      * 錯誤說明（含索引鍵「ErrorDescription」的字串）
+   * 成功响应包将包含：
+      * SSO令牌作为带密钥“SSOToken”的字符串
+   * 故障响应包将包含：
+      * 错误代码作为int和键“ErrorCode”
+      * 错误描述作为带有键“ErrorDescription”的字符串
 
 
-* 取得SSO權杖
+* 获取SSO令牌
 
    ```JAVA
    Bundle getSSOTokenAsync(Void);
    ```
 
-* 此API將透過初始期間設定的回呼提供回應。
+* 此API将通过在初始化期间设置的回调提供响应。
 
-   **例如**. 使用在初始化期間建立的單一例項呼叫：
+   **例如**. 使用在初始化期间创建的单一实例调用：
 
    ```JAVA
    ssoEnabler.getSSOTokenAsync().
@@ -122,41 +122,41 @@ Amazon無使用者端SSO實作相當簡單，且大多與一般Adobe Primetime�
 
 **同步API**
 
-* 取得SSO Enabler執行個體並設定回呼
+* 获取SSO Enabler实例并设置回调
 
    ```JAVA
    ssoEnabler = SSOEnabler.getInstance(context);</span>
    ```
 
-* 取得SSO權杖
+* 获取SSO令牌
 
    ```JAVA
    Bundle getSSOTokenSync(Void);
    ```
 
-   * 此API將封鎖呼叫者對話串，並以結果套件回應。 由於這是同步呼叫，請勿在主執行緒上使用。
+   * 此API将阻止调用方线程并使用结果包进行响应。 由于这是同步调用，请确保不要在主线程中使用它。
 
    ```JAVA
    void setSSOTokenTimeout(long);
    ```
 
-   * 值（以毫秒為單位）。 如果設定，會覆寫同步API的預設逾時值1分鐘。
+   * 值（以毫秒为单位）。 如果设置，则覆盖同步API的默认超时值1分钟。
 
 
 
-### Adobe Primetime無使用者端API更新以使用動態使用者端註冊 {#clientlessdcr}
+### 更新了Adobe Primetime无客户端API以使用动态客户端注册 {#clientlessdcr}
 
-如果這是您的首次實作，請參閱 **無使用者端技術概覽** 並聯絡Adobe以備您需要支援時使用。
+如果这是您的第一个实施，请参阅 **无客户端技术概述** 并在您需要支持时联系Adobe。
 
-Adobe無使用者端API要求應用程式使用動態使用者端註冊，以便呼叫Adobe伺服器。
+Adobe无客户端API要求应用程序使用Dynamic Client Registration来调用Adobe服务器。
 
-* 若要在應用程式中使用Dynamic Client Registration，請依照下列指示操作： [ Dynamic Client Registration Management註冊應用程式](/help/authentication/dynamic-client-registration-management.md).
+* 要在应用程序中使用Dynamic Client Registration，请按照 [ 用于注册应用程序的动态客户端注册管理](/help/authentication/dynamic-client-registration-management.md).
 
-* 若要實作動態使用者端註冊API以對Adobe Primetime伺服器執行驗證和授權請求，請依照以下說明操作： [動態使用者端註冊API](/help/authentication/dynamic-client-registration-api.md) .
+* 要实施Dynamic Client Registration API以对Adobe Primetime服务器执行身份验证和授权请求，请按照 [动态客户端注册API](/help/authentication/dynamic-client-registration-api.md) .
 
-### Adobe Primetime無使用者端API更新以使用Amazon SSO {#clientlesssso}
+### 更新了Adobe Primetime无客户端API以使用Amazon SSO {#clientlesssso}
 
-向Amazon驗證端點提出的請求中，必須存在從Amazon SDK取得的Adobe Primetime SSO裝載：
+向Amazon身份验证端点发出的请求需要存在从Amazon SDK获取的Adobe Primetime SSO有效负载：
 
 ```
       /adobe-services/*
@@ -165,24 +165,24 @@ Adobe無使用者端API要求應用程式使用動態使用者端註冊，以便
 ```
 
 
-所有Primetime驗證端點都支援下列方法來接收裝置範圍識別碼或平台範圍識別碼(出現在Amazon SSO裝載中)：
+所有Primetime身份验证端点都支持以下方法来接收设备范围标识符或平台范围标识符(存在于Amazon SSO有效负载中)：
 
-* 作為標頭：&quot;Adobe-Subject-Token&quot;
-* 作為查詢引數：&quot;ast&quot;
-* 作為貼文引數：&quot;ast&quot;
+* 作为标头：&quot;Adobe-Subject-Token&quot;
+* 作为查询参数：&quot;ast&quot;
+* 作为post参数：&quot;ast&quot;
 
-
->[!NOTE]
->
->如果裝置範圍識別碼或平台範圍識別碼是以查詢/張貼引數的形式傳送，則產生請求籤章時必須包含此識別碼。
 
 >[!NOTE]
 >
->使用查詢引數&quot;ast&quot;，整個URL可能會變得非常長並被拒絕。 在/authenticate呼叫上，可以略過此引數，因為它是在/regcode呼叫上提供的
+>如果设备范围标识符或平台范围标识符作为查询/帖子参数发送，则在生成请求签名时必须包含该标识符。
 
-**範例：**
+>[!NOTE]
+>
+>使用查询参数“ast”，整个URL可能会变得非常长并被拒绝。 在/authenticate调用中，可以跳过此参数，因为它是在/regcode调用中提供的
 
-**以自訂標題傳送**
+**示例：**
+
+**作为自定义标头发送**
 
 ```HTTPS
 GET /adobe-services/config/requestor HTTP/1.1 Host: sp-preprod.auth.adobe.com
@@ -190,7 +190,7 @@ GET /adobe-services/config/requestor HTTP/1.1 Host: sp-preprod.auth.adobe.com
 Adobe-Subject-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.JlBFhNhNCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA
 ```
 
-**以查詢引數傳送**
+**作为查询参数发送**
 
 ```HTTPS
 GET /adobe-services/config/requestor?ast=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.JlBFhNhNCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA
@@ -200,7 +200,7 @@ Host: sp.auth.adobe.com
 ```
 
 
-**以張貼引數傳送**
+**作为post参数发送**
 
 
 ```HTTPS
@@ -213,4 +213,4 @@ boundary=---- WebKitFormBoundary7MA4YWxkTrZu0gW
 
 >[!NOTE]
 >
->如果Amazon SSO不存在或無效，Adobe Primetime驗證將會忽略屬性，並像SSO不存在一樣執行呼叫。
+>如果Amazon SSO不存在或无效，Adobe Primetime身份验证将忽略该属性，并像SSO不存在一样执行调用。

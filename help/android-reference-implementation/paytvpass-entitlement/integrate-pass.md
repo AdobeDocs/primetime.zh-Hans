@@ -1,6 +1,6 @@
 ---
-description: 自訂您的參考實作，以針對您的生產環境整合Adobe Primetime驗證。
-title: 整合Primetime驗證
+description: 自定义您的参考实施，以便为您的生产环境集成Adobe Primetime身份验证。
+title: 集成Primetime身份验证
 exl-id: ef6dc75d-d00f-481f-a620-4ec402cbebb6
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,34 +9,34 @@ ht-degree: 0%
 
 ---
 
-# 整合Primetime驗證 {#integrate-primetime-authentication}
+# 集成Primetime身份验证 {#integrate-primetime-authentication}
 
-自訂您的參考實作，以針對您的生產環境整合Adobe Primetime驗證。
+自定义您的参考实施，以便为您的生产环境集成Adobe Primetime身份验证。
 
-Primetime驗證服務的Reference Implementation整合可立即作為示範使用。 不過，若要在生產就緒播放器中使用整合，您必須實作下列自訂：
+Primetime身份验证服务的引用实施集成可开箱即用作为演示。 但是，要在生产就绪的播放器中使用集成，您必须实施以下自定义设置：
 
-1. 啟用或停用權利流程。
+1. 启用或禁用权利流。
 
-   此 `EntitlementManager` 必須先初始化並取得Primetime驗證SDK的執行個體，才能啟用。 如果 `EntitlementManager` 不會初始化此程式庫，管理員將會停用。
-1. 啟用 `EntitlementManger`，從您的主要應用程式類別：
+   此 `EntitlementManager` 必须首先初始化并获取要启用的Primetime身份验证SDK实例。 如果 `EntitlementManager` 不初始化此库，将禁用管理器。
+1. 启用 `EntitlementManger`，从主应用程序类中：
 
    ```java
    // initialize the AccessEnabler library, required for Primetime PayTV Pass entitlement workflows 
    EntitlementManager.initializeAccessEnabler(this); // comment out this line to disable entitlement workflows
    ```
 
-1. 使用 `ManagerFactory` 類別以取得 `EntitlementManager`.
+1. 使用 `ManagerFactory` 类以获取的实例 `EntitlementManager`.
 
-   您必須一律使用 `ManagerFactory` 以取得 `EntitlementManager`，作為 `ManagerFactory` 維護應用程式的單一EntitlementManager執行個體。 永遠不要例項化 `EntitlementManager` 或 `EntitlementManagerOn` 類別使用它們的建構函式。
+   您必须始终使用 `ManagerFactory` 以获取 `EntitlementManager`，作为 `ManagerFactory` 维护应用程序的单个EntitlementManager实例。 从不实例化 `EntitlementManager` 或 `EntitlementManagerOn` 类使用它们的构造函数。
 
    ```java
    EntitlementManager entitlementManager =  
    ManagerFactory.getEntitlementManager();
    ```
 
-   此 `ManagerFactory` 傳回例項 `EntitlementManagerOn`，並啟用權益流程（如果您先前呼叫） `EntitlementManager.initializeAccessEnabler`. 如果您沒有先呼叫 `EntitlementManager.initializeAccessEnabler`，然後 `ManagerFactory` 將傳回例項 `EntitlementManager`，並停用權益流程。 1.設定請求者ID。
+   此 `ManagerFactory` 返回实例 `EntitlementManagerOn`，并启用了权利流(如果您之前调用了 `EntitlementManager.initializeAccessEnabler`. 如果您不首先调用 `EntitlementManager.initializeAccessEnabler`，则 `ManagerFactory` 将返回实例 `EntitlementManager`，并禁用权利流。 1.配置请求者ID。
 
-   參考實作會預先設定測試請求者ID設為：「REF」。 您可以使用此請求者ID來測試您的應用程式。 當您準備好使用Primetime驗證代表提供給您的請求者ID時，請更新應用程式的 [!DNL res/values/strings.xml] 具有您的請求者ID的檔案。
+   参考实施中预先配置了测试请求者ID，并将其设置为：“REF”。 您可以使用此请求者ID来测试您的应用程序。 当您准备好使用Primetime身份验证代表提供给您的请求者ID时，请更新应用程序的 [!DNL res/values/strings.xml] 包含请求者ID的文件。
 
    ```xml
    <!-- Programmer Requestor ID, change to ID provided by your Adobe  
@@ -52,24 +52,24 @@ Primetime驗證服務的Reference Implementation整合可立即作為示範使�
    <string name="adobepass_sp_url_staging">sp.auth-staging.adobe.com</string>
    ```
 
-   此外，您可能需要變更應用程式用來連線至Primetime驗證服務的URL。 其中包括Primetime驗證預備和生產伺服器URL，以及權杖驗證服務的URL。 如需詳細資訊，請洽詢您的Adobe Primetime代表。 1.簽署請求者ID。
+   此外，您可能需要更改应用程序用于连接到Primetime身份验证服务的URL。 其中包括Primetime身份验证暂存和生产服务器URL，以及令牌验证服务的URL。 有关详细信息，请咨询您的Adobe Primetime代表。 1.签署请求者ID。
 
-   為了在Primetime驗證系統中建立程式設計人員的身分識別，會將程式設計人員的請求者ID傳送到Primetime驗證系統。 作為新增的安全性層，要求者ID在傳送給Adobe之前必須由程式設計師簽署。 Adobe建議程式設計師設定服務，在信任的網路上簽署請求者ID。
+   为了在Primetime认证系统中建立程序员的身份，将程序员的请求者ID发送到Primetime认证系统。 作为附加的安全层，请求者ID在发送给Adobe之前必须由程序员签名。 Adobe建议程序员设置一项服务，以便在受信任网络上签署请求者ID。
 
-   Primetime參考實作會示範如何簽署請求者ID，但這僅供示範之用。 Adobe強烈建議您將簽署憑證和簽名產生器程式碼放在 `com.adobe.primetime.reference.crypto`、不應包含在生產應用程式中。 您應該改為將它移至信任的網路服務。
+   Primetime参考实施演示了如何对请求者ID进行签名，但这仅用于演示目的。 Adobe强烈建议签名证书和签名生成器代码位于 `com.adobe.primetime.reference.crypto`、不应包含在生产应用程序中。 相反，您应该将其移动到受信任的网络服务。
 
-1. 設定伺服器環境。
+1. 配置服务器环境。
 
-   Primetime驗證服務可以在兩個不同的環境中執行：
+   Primetime身份验证服务可以在两个不同的环境中运行：
 
-   * 測試 — 測試環境用於測試您的應用程式。
-   * 生產 — 生產環境用於應用程式的即時部署。
+   * 暂存 — 暂存环境用于测试应用程序。
+   * 生产 — 生产环境用于应用程序的实时部署。
 
-   您可使用應用程式為中繼和生產環境設定URI，但您必須在程式碼中設定應用程式使用哪一個URI。 在 `com.adobe.primetime.reference.manager.EntitlementManger` 類別，設定 `environmentUri` 變數設為 `STAGING_URI` 或 `PRODUCTION_URI` 視您使用的Primetime驗證服務環境而定。
+   您可使用应用程序为暂存环境和生产环境设置URI，但您必须在代码中设置应用程序使用哪些URI。 在 `com.adobe.primetime.reference.manager.EntitlementManger` 类，设置 `environmentUri` 变量更改为 `STAGING_URI` 或 `PRODUCTION_URI` 根据您使用的Primetime身份验证服务环境。
 
    >[!NOTE]
    >
-   >提供的請求者ID (「REF」)應僅用於中繼環境。
+   >提供的请求者ID(“REF”)应仅用于暂存环境。
 
    `com.adobe.primetime.reference.manager.EntitlementManager`:
 
@@ -93,9 +93,9 @@ Primetime驗證服務的Reference Implementation整合可立即作為示範使�
      TVS_URL = "https://" + environmentUri + "/tvs/v1/validate";
    ```
 
-1. 自訂MVPD選取方格。
+1. 自定义MVPD选择网格。
 
-   「內容提供者選擇」頁面會顯示一個表格，內含使用者可選擇的前九個MVPD。 應用程式會從應用程式內的已排序清單中提取前九個MVPD，這些清單符合在Primetime驗證系統中與程式設計師整合的可用MVPD。 主要MVPD的排序清單是在Primetime驗證系統內的MVPD ID上輸入的，而不是MVPD顯示名稱。 務必確認主要MVPD清單中的MVPD ID符合與程式設計師帳戶整合的MVPD ID，因為在某些情況下，整合中的ID可能會不同。 以下是在類別中找到的主要MVPD的排序清單 `com.adobe.primetime.reference.ui.entitlement.MvpdPickerFragment`.
+   “内容提供方选择”页显示了用户可选择的前九个MVPD的表。 应用程序从应用程序内的有序列表中提取前九个MVPD，这些有序列表与Primetime身份验证系统中与程序员集成的可用MVPD匹配。 主MVPD的有序列表在Primetime身份验证系统内的MVPD ID上键入，而不是MVPD显示名称。 验证主MVPD列表中的MVPD ID是否与与与程序员帐户集成的MVPD ID匹配很重要，因为在某些情况下，ID在集成中可能不同。 以下是在类中找到的主要MVPD的排序列表 `com.adobe.primetime.reference.ui.entitlement.MvpdPickerFragment`.
 
    ```java
    /* Array of MVPDs to display in a Grid of icons 
@@ -130,10 +130,10 @@ Primetime驗證服務的Reference Implementation整合可立即作為示範使�
    };
    ```
 
-   下表提供如何使用主要MVPD的排序清單的範例。 第一欄列出與程式設計師整合的MVPD。 第二欄是MVPD的（縮短）排序清單。 第三欄是用來向使用者顯示前六個MVPD的結果清單。
+   下表提供了如何使用主MVPD的排序列表的示例。 第一列列出了与程序员集成的MVPD。 第二列是MVPD的（缩短的）排序列表。 第三列是用来向用户显示前六个MVPD的结果列表。
 
-   此範例使用前六個MVPD，而非實際的9個，只是為了讓範例維持簡單。 請注意結果清單如何包含前兩個清單的交集，並且其順序與第二個清單相同。 此外，請注意AT&amp;T U-verse不在最終清單中，因為只擷取第一個相符的6個MVPD。
+   此示例使用前六个MVPD而不是实际的9个，以简化示例。 请注意结果列表如何包含前两个列表的交集，并且其顺序与第二个列表相同。 此外，请注意AT&amp;T U版本不在最终列表中，因为只选择了第一个匹配的6个MVPD。
 
-| 可用的MVPD | 主要MVPD | 顯示6個MVPD |
+| 可用MVPD | 主MVPD | 显示了6个MVPD |
 |--- |--- |--- |
-| <ol><li>Comcast XFINITY</li><li>TWC</li><li>Mediacom</li><li>RCN</li><li>上菜</li><li>AT&amp;T反向</li><li>CableOne</li><li>Brighthouse</li><li>大西洋寬頻</li><li>哇！</li><li>Metrocast</li><li>DirectTV </li><li>Cox</li><li>Cablevision Optimum</li></ol> | <ol><li>Comcast XFINITY</li><li>DirectTV</li><li>上菜</li><li> TWC</li><li>Cox</li><li>憲章</li><li>Verizon FiOS</li><li>Cablevision Optimum</li><li>AT&amp;T反向</li></ol> | <ol><li>Comcast XFINITY</li><li>DirectTV</li><li>上菜</li><li>TWC</li><li>Cox</li><li>Cablevision Optimum</li></ol> |
+| <ol><li>Comcast XFINITY</li><li>TWC</li><li>Mediacom</li><li>RCN</li><li>菜肴</li><li>AT&amp;T反向</li><li>CableOne</li><li>Brighthouse</li><li>大西洋宽带</li><li>哇！</li><li>MetroCast</li><li>Directv </li><li>考克斯</li><li>Cablevision Optimum</li></ol> | <ol><li>Comcast XFINITY</li><li>Directv</li><li>菜肴</li><li> TWC</li><li>考克斯</li><li>宪章</li><li>Verizon FiOS</li><li>Cablevision Optimum</li><li>AT&amp;T反向</li></ol> | <ol><li>Comcast XFINITY</li><li>Directv</li><li>菜肴</li><li>TWC</li><li>考克斯</li><li>Cablevision Optimum</li></ol> |

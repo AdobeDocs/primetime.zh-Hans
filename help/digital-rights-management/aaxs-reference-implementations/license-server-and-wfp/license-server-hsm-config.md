@@ -1,6 +1,6 @@
 ---
-title: HSM組態
-description: HSM組態
+title: HSM配置
+description: HSM配置
 copied-description: true
 exl-id: 0418bcc1-0a85-4074-9616-915f77507bdd
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,17 +10,17 @@ ht-degree: 0%
 
 ---
 
-# HSM組態 {#hsm-configuration}
+# HSM配置 {#hsm-configuration}
 
-不要求使用HSM，但建議使用。 參照實作可設定為使用Sun PKCS11提供者來支援HSM。 若要在HSM上使用認證，您必須為Sun PKCS11提供者建立組態檔。 如需詳細資訊，請參閱Sun檔案。 若要確認您的HSM和Sun PKCS11組態檔已正確設定，您可以使用以下命令（keytool已隨Java JDK安裝）：
+不要求使用HSM，但建议使用。 参考实施可以配置为使用Sun PKCS11提供程序来支持HSM。 要在HSM上使用凭据，必须为Sun PKCS11提供程序创建配置文件。 有关详细信息，请参见Sun文档。 要验证HSM和Sun PKCS11配置文件是否正确配置，可以使用以下命令（keytool随Java JDK一起安装）：
 
 ```
     keytool -keystore NONE -storetype PKCS11 -providerClass sun.security.pkcs11.SunPKCS11 
         -providerArg pkcs11.cfg -list
 ```
 
-如果您在清單中看到您的憑證，表示HSM已正確設定。
+如果在列表中看到您的凭据，则表示HSM已正确配置。
 
 >[!NOTE]
 >
->自Java 1.7起，Windows適用的64位元Sun Java不支援Adobe存取DRM與HSM裝置通訊所需的PKCS11介面。 如果您打算使用HSM，請使用32位元版本的Java，或使用支援完整PKCS11介面的JDK。
+>从Java 1.7开始，64位Sun Java for Windows不支持Adobe访问DRM与HSM设备通信所需的PKCS11接口。 如果您计划使用HSM，请使用32位版本的Java，或使用支持完整PKCS11接口的JDK。

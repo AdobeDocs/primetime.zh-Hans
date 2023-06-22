@@ -1,6 +1,6 @@
 ---
-description: 瀏覽器TVSDK提供在時間軸中放置廣告的預設機會產生器和內容解析器，這些產生器和解析器會根據資訊清單中的非標準標籤。 您的應用程式可能需要根據資訊清單中識別的機會，變更時間表。
-title: 機會產生器和內容解析器
+description: 浏览器TVSDK提供了在时间轴中放置广告的默认机会生成器和内容解析器，这些生成器和解析器基于清单中的非标准标记。 您的应用程序可能需要根据清单中标识的机会更改时间线。
+title: 机会生成器和内容解析器
 exl-id: a47acd22-8b1b-4c66-a7eb-a4d99afb5f17
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,22 +9,22 @@ ht-degree: 0%
 
 ---
 
-# 機會產生器和內容解析器{#opportunity-generators-and-content-resolvers}
+# 机会生成器和内容解析器{#opportunity-generators-and-content-resolvers}
 
-瀏覽器TVSDK提供在時間軸中放置廣告的預設機會產生器和內容解析器，這些產生器和解析器會根據資訊清單中的非標準標籤。 您的應用程式可能需要根據資訊清單中識別的機會，變更時間表。
+浏览器TVSDK提供了在时间轴中放置广告的默认机会生成器和内容解析器，这些生成器和解析器基于清单中的非标准标记。 您的应用程序可能需要根据清单中标识的机会更改时间线。
 
-一個 *`opportunity`* 代表時間軸上的興趣點，通常表示廣告投放機會。 此機會也可以指出可能影響時間表的自訂操作。 一個 *`opportunity generator`* 會識別時間軸中的特定機會（標籤），並通知TVSDK這些機會已標籤。
+An *`opportunity`* 表示时间轴上的目标点，通常指示广告投放机会。 此机会还可以指示可能影响时间线的自定义操作。 An *`opportunity generator`* 识别时间线中的特定机会（标记），并通知TVSDK这些机会已标记。
 
-在的時間表中識別機會 `TimedMetata`. 此 `ManifestCuesOpportunityGenerator` 根據以下專案建立商機： `TimedMetadata` 為每個剪下廣告標籤建立的物件(在 `MediaPlayerItemConfig.adTags`)，此資訊清單中偵測到。 此 `AdSignalingModeOpportunityGenerator` 建立以「 」為基礎的初始商機 `MediaPlayerItem` 型別及其相關聯的廣告訊號模式。
-
->[!TIP]
->
->如果 `AdvertisingMetadata.livePreroll` 或 `AdvertisingMetadata.preroll` 屬性已設定， `AdSignalingModeOpportunityGenerator` 為即時資料流產生前段機會。
-
-當應用程式收到商機（標籤）通知時，應用程式可能會透過插入一系列廣告等方式變更時間表。 依預設，瀏覽器TVSDK會呼叫適當的 *`content resolver`* 以實作必要的時間表變更或動作。 您的應用程式可以使用預設的瀏覽器TVSDK廣告內容解析程式或註冊自己的內容解析程式。
-
-您也可以使用 `MediaPlayerItemConfig.adTags` 新增更多預設的廣告標籤標籤/提示 `ManifestCuesOpportunityGenerator` 類別與使用 `MediaPlayerItemConfig.subscribedTags` 以便TVSDK可以將可能含有廣告工作流程資訊的其他標籤通知給您的應用程式。
+在的时间表中识别机会 `TimedMetata`. 此 `ManifestCuesOpportunityGenerator` 根据以下内容创造机会 `TimedMetadata` 为每个接出广告标记创建的对象(在 `MediaPlayerItemConfig.adTags`)，在清单中检测到该错误。 此 `AdSignalingModeOpportunityGenerator` 创建基于 `MediaPlayerItem` 类型及其关联的广告信令模式。
 
 >[!TIP]
 >
->預設值 `MediaPlayerItemConfig.adTags` 和 `MediaPlayerItemConfig.subscribeTags` 是 `[MediaPlayerItemConfig.DEFAULT_AD_TAG]`.
+>如果 `AdvertisingMetadata.livePreroll` 或 `AdvertisingMetadata.preroll` 属性已设置， `AdSignalingModeOpportunityGenerator` 为实时流生成前置机会。
+
+当您的应用程序收到有关机会（标记）的通知时，您的应用程序可能会更改时间线，例如，通过插入一系列广告。 默认情况下，浏览器TVSDK调用相应的 *`content resolver`* 以实施所需的时间线更改或操作。 您的应用程序可以使用默认的浏览器TVSDK播发内容解析程序或注册自己的内容解析程序。
+
+您还可以使用 `MediaPlayerItemConfig.adTags` 为默认添加更多广告标记标记/提示 `ManifestCuesOpportunityGenerator` 类与使用 `MediaPlayerItemConfig.subscribedTags` 以便TVSDK可以将可能包含广告工作流信息的其他标记通知您的应用程序。
+
+>[!TIP]
+>
+>默认值 `MediaPlayerItemConfig.adTags` 和 `MediaPlayerItemConfig.subscribeTags` 是 `[MediaPlayerItemConfig.DEFAULT_AD_TAG]`.

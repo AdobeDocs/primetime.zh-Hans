@@ -1,6 +1,6 @@
 ---
-description: 設定處理錯誤的單一位置。
-title: 設定錯誤處理
+description: 设置单个位置以处理错误。
+title: 设置错误处理
 exl-id: ce4a2954-0166-43af-afdf-0aa24659f1ae
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,17 +9,17 @@ ht-degree: 0%
 
 ---
 
-# 設定錯誤處理{#set-up-error-handling}
+# 设置错误处理{#set-up-error-handling}
 
-設定處理錯誤的單一位置。
+设置单个位置以处理错误。
 
-1. 實作事件回呼函式 `MediaPlayerStatusChangeEvent.STATUS_CHANGED`.
+1. 为实施事件回调函数 `MediaPlayerStatusChangeEvent.STATUS_CHANGED`.
 
-   TVSDK會傳遞事件資訊，例如 `MediaPlayerStatusChangeEvent` 物件。
-1. 在回呼中，當來自事件引數的狀態為 `MediaPlayerStatus.ERROR`，提供邏輯以處理所有錯誤。
-1. 處理錯誤後，重設 `MediaPlayer` 物件或載入新媒體資源。
+   TVSDK传递事件信息，例如 `MediaPlayerStatusChangeEvent` 对象。
+1. 在回调中，当事件参数的状态为 `MediaPlayerStatus.ERROR`，提供逻辑以处理所有错误。
+1. 处理错误后，重置 `MediaPlayer` 对象或加载新媒体资源。
 
-   當 `MediaPlayer` 物件處於ERROR狀態，除非重設 `MediaPlayer` 物件(透過 `MediaPlayer.reset` 方法)或載入新媒體資源( `MediaPlayer.replaceCurrentItem`)。
+   当 `MediaPlayer` 对象处于ERROR状态，除非重置 `MediaPlayer` 对象(通过 `MediaPlayer.reset` 方法)或加载新媒体资源( `MediaPlayer.replaceCurrentItem`)。
 
 <!--<a id="example_49FF225E92EA494AA06B2E5F26101F4C"></a>-->
 

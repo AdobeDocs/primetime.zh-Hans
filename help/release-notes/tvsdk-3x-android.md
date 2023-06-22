@@ -1,6 +1,6 @@
 ---
-title: Android適用的TVSDK 3.15發行說明
-description: Android適用的TVSDK 3.15發行說明說明TVSDK Android 3.15的新增或變更專案、已解決和已知問題以及裝置問題
+title: Android版TVSDK 3.15发行说明
+description: 适用于Android的TVSDK 3.15发行说明介绍了TVSDK Android 3.15中的新增或更改内容、已解决问题和已知问题以及设备问题
 products: SG_PRIMETIME
 topic-tags: release-notes
 exl-id: cd2c64ef-dd42-4dc2-805f-eeb64a8a53d9
@@ -11,65 +11,65 @@ ht-degree: 0%
 
 ---
 
-# Android適用的TVSDK 3.15發行說明 {#tvsdk-for-android-release-notes}
+# Android版TVSDK 3.15发行说明 {#tvsdk-for-android-release-notes}
 
-Android適用的TVSDK 3.15發行說明說明TVSDK Android 3.15的新增或變更專案、已解決和已知問題以及裝置問題。
+适用于Android的TVSDK 3.15发行说明介绍了TVSDK Android 3.15中的新增或更改内容、已解决问题和已知问题以及设备问题。
 
-Android參考播放器隨Android TVSDK包含在您的發佈的範例/目錄中。 隨附的README.md檔案說明如何建立參考播放器。
+Android参考播放器随Android TVSDK一起包含在分发的samples/目录中。 随附的README.md文件介绍了如何构建参考播放器。
 
 >[!NOTE]
 >
->如發行版本隨附的README.md中所述，若要成功建置參考播放器，請務必執行下列操作：
+>要成功构建引用播放器（如随发行版一起分发的README.md中所述），请确保执行以下操作：
 >
->1. 從下載VideoHeartbeat.jar [https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases](https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases) （Android v2.0.0適用的VideoHeartbeat資料庫）
->1. 將VideoHeartbeat.jar解壓縮至libs/資料夾。
+>1. 从下载VideoHeartbeat.jar [https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases](https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases) （适用于Android v2.0.0的VideoHeartbeat库）
+>1. 将VideoHeartbeat.jar提取到libs/文件夹中。
 
 
-相較於舊版，適用於Android的TVSDK提供許多效能改善專案。 提供高品質的檢視體驗，並具備1.4版的所有功能，但不包括支援多CDN。
+与以前的版本相比，适用于Android的TVSDK提供了许多性能改进。 它提供高品质的观看体验，并包含版本1.4的所有功能，但多CDN支持除外。
 
-支援與不支援的完整功能集會顯示在 [功能對照表](#feature-matrix) 發行說明的區段。
+全面的支持和不支持功能集请参见 [功能表](#feature-matrix) 部分。
 
 ## Android TVSDK 3.15
 
-此版本修正了當缺少創意標籤或以下情況時，應用程式多次當機的問題： [!UICONTROL url CDATA] 在中為空白 [!UICONTROL VAST] 回應。
+此版本修复了以下问题：当缺少创意标记或以下情况时，应用程序会多次崩溃 [!UICONTROL url CDATA] 在中为空 [!UICONTROL VAST] 响应。
 
-若要瞭解此版本及先前版本中的錯誤修正，請參閱 [Android適用的TVSDK中已修正的問題](#resolved-issueszd).
+要了解此版本及更早版本中的错误修复，请参阅 [在TVSDK for Android中修复的问题](#resolved-issueszd).
 
-### 舊版中的新功能和增強功能
+### 以前版本中的新增功能和增强功能
 
 **Android TVSDK 3.14**
 
-此版本修正以下情況時應用程式當機的問題： [!UICONTROL CDATA] 任何下列專案的節點為空： [!UICONTROL ClickTracking]， [!UICONTROL CustomClick] 或 [!UICONTROL CompanionClickTracking] VAST回應中的元素。
+此版本修复了以下情况下应用程序崩溃的问题 [!UICONTROL CDATA] 对于任意，节点为空 [!UICONTROL ClickTracking]， [!UICONTROL CustomClick] 或 [!UICONTROL CompanionClickTracking] VAST响应中的元素。
 
 **Android TVSDK 3.13**
 
-Widevine DRM串流在FireTV裝置上的ABR開關上凍結或顯示黑色影格，這些裝置包括Fire TV第3代Pendant和Fire TV Cube第1代和第2代裝置。
+Widevine DRM流在FireTV设备（包括Fire TV第3代Pendant和Fire TV Cube第1代和第2代设备）上的ABR开关上冻结或显示黑色帧。
 
-若要解決此問題，請設定API `MediaPlayer.flushVideoDecoderOnHeaderChange(true)` 啟動播放之前，針對指定的Fire TV裝置。 預設值為false。
+要解决此问题，请设置API `MediaPlayer.flushVideoDecoderOnHeaderChange(true)` 在启动播放之前对于指定的Fire TV设备。 默认值为false。
 
 **Android TVSDK 3.12**
 
-Primetime參考應用程式的Gradle版本更新至5.6.4版。
+Primetime引用应用程序的Gradle版本已更新到版本5.6.4。
 
-若要使用Android Studio設定及執行參考應用程式，請依照以下網址提供的TVSDK zip檔案中的指示操作： `TVSDK_Android_x.x.x.x/samples/PrimetimeReference/src/README.md`.
+要使用Android Studio设置和运行参考应用程序，请按照TVSDK zip文件提供的自述文件中的说明操作： `TVSDK_Android_x.x.x.x/samples/PrimetimeReference/src/README.md`.
 
-目前版本中修正的主要客戶問題有 [已解決問題](#resolved-issues) 區段。
+有关当前版本中修复的常见客户问题，请参见 [已解决的问题](#resolved-issues) 部分。
 
 **Android TVSDK 3.11**
 
-* **允許擷取保護系統特定標頭(PSSH)方塊** - TVSDK可擷取與目前載入的媒體資源相關聯的Protection System專屬標題方塊。 新API `getPSSH()` 新增至 `com.adobe.mediacore.drm.DRMManager`.
+* **允许获取保护系统特定标头(PSSH)框** - TVSDK允许提取与当前加载的媒体资源关联的Protection System特定的标头框。 新API `getPSSH()` 已添加至 `com.adobe.mediacore.drm.DRMManager`.
 
-如需詳細資訊，請參閱 [Widevine DRM](../programming/tvsdk-3x-android-prog/android-3x-content-security/android-3x-drm-widevine.md).
+有关更多信息，请参阅 [Widevine DRM](../programming/tvsdk-3x-android-prog/android-3x-content-security/android-3x-drm-widevine.md).
 
 **Android TVSDK 3.10**
 
-此版本著重於修正中提及的常見客戶問題 [已解決問題](#resolved-issues) 區段。
+该版本重点修复了中提到的常见客户问题 [已解决的问题](#resolved-issues) 部分。
 
 **Android TVSDK 3.9**
 
-* **透過HTTPS的安全傳遞** - Android TVSDK 3.9透過HTTPS引入安全傳送功能，以無與倫比的規模與效能安全傳送內容。
+* **通过HTTPS的安全交付** - Android TVSDK 3.9引入了通过HTTPS的安全交付功能，以无与伦比的规模和性能安全地交付内容。
 
-   為了透過HTTPS啟用安全傳送，在中引入了新API `NetworkConfiguration` 類別。
+   为了通过HTTPS实现安全交付，在中引入了新的API `NetworkConfiguration` 类。
 
    `public void setForceHTTPS (boolean value)`
 
@@ -77,52 +77,52 @@ Primetime參考應用程式的Gradle版本更新至5.6.4版。
 
 **Android TVSDK 3.8**
 
-* **具有部分廣告插播功能的前置滾動支援**  — 透過此增強功能，TVSDK 3.8可支援具有部分廣告插播功能(PABI)的前段廣告。
+* **具有部分广告时间功能的前置支持**  — 通过此增强功能，TVSDK 3.8支持包含部分广告时间功能(PABI)的前置广告。
 
-播放前段廣告（如果有的話），然後從即時點播放內容，模擬直播電視的體驗。
+播放前置广告（如果可用），然后从直播点播放内容，模拟直播电视的体验。
 
 **Android TVSDK 3.7**
 
-* 針對Widevine測試內容，新增了API `setMediaDrmCallback` DRManager類別中的會顯示，以覆寫MediaDrmCallback介面的預設實作。
+* 对于Widevine测试内容，使用新的API `setMediaDrmCallback` DRManager类中的将覆盖MediaDrmCallback接口的缺省实现。
 
    `public static void setMediaDrmCallback(MediaDrmCallback callback)`
 
-* 修正未處理的AppCrash錯誤 `MediaPlayerEvent.ITEM_UPDATED` 在C++層（Android 64位元）中。
+* 修复了无法处理的AppCrash错误 `MediaPlayerEvent.ITEM_UPDATED` 在C++层（Android 64位）中。
 
 **Android TVSDK 3.6**
 
-* **提升應用程式以符合64位元需求**  — 原生程式庫 `(libAVEAndroid.so)` 現已升級，並提供兩個版本。 現有的Armeabi （32位元）原生程式庫位置已變更，從 `/framework/Player to /framework/Player/armeabi` 以及中引進了額外的arm64-v8a （64位元）程式庫 `/framework/Player/arm64-v8a.`
+* **增强您的应用程序以满足64位要求**  — 本机库 `(libAVEAndroid.so)` 现已升级，并提供两个版本。 现有armeabi（32位）本机库位置已从 `/framework/Player to /framework/Player/armeabi` 以及中另外引入了一个arm64-v8a（64位）库 `/framework/Player/arm64-v8a.`
 
 **版本3.5**
 
-* **即時的廣告解析度** - TVSDK 3.5從時間軸移除對已播放廣告的支援。
+* **刚好及时解决广告** - TVSDK 3.5从时间轴中删除对播放的广告的支持。
 
-* **啟用離線播放支援**  — 透過離線播放，使用者現在可以將視訊內容下載至其裝置，並在未連線時觀看。 如需詳細資訊，請參閱「[使用Android離線播放](https://helpx.adobe.com/content/dam/help/en/primetime/programming-guides/psdk_android_3.5.pdf).」
+* **启用对离线播放的支持**  — 通过离线播放，用户现在可以将视频内容下载到其设备并在未连接时观看。 有关详细信息，请参阅“[使用Android脱机播放](https://helpx.adobe.com/content/dam/help/en/primetime/programming-guides/psdk_android_3.5.pdf).”
 
 **版本3.4**
 
-* TVSDK現在支援CBC加密及純資料流的CMAF資料流播放。
+* TVSDK现在支持CBC加密流和纯流的CMAF流播放。
 
 **版本3.3**
 
-* **API變更**
+* **API更改**
 
-   * 新API已新增至 `NetworkConfiguration::setNumOfTimesManifestRetryBeforeError(n)*` 處理網路錯誤和逾時。
-      * 其中(n)是重試次數。
+   * 添加了一个新的API到 `NetworkConfiguration::setNumOfTimesManifestRetryBeforeError(n)*` 处理网络错误和超时。
+      * 其中，(n)是重试的次数。
 
 **版本3.2**
 
-* **平行廣告解析度和資訊清單下載支援**
+* **并行广告解析和清单下载支持**
 
-   * TVSDK 3.2支援同時解析度，而非所有廣告請求和廣告插播（VMAP除外）的順序解析度。
+   * TVSDK 3.2支持对所有广告请求和广告时间（VMAP除外）的同步分辨率，而不是顺序分辨率。
 
-   * 同時下載廣告插播中的所有廣告資訊清單。
+   * 同时下载广告时间中的所有广告清单。
 
-* **啟用對廣告解析和資訊清單下載逾時的支援。**
+* **启用了广告解析和清单下载超时支持。**
 
-   * 使用者現在可以為整體廣告解析度和資訊清單下載設定逾時值。  在VMAP中，逾時值適用於個別廣告插播，因為所有廣告插播都是依序解決的。
+   * 用户现在可以为整体广告解析和清单下载设置超时值。  对于VMAP，超时值适用于单个广告时间，因为所有广告时间都是按顺序解析的。
 
-* **在AdvertisingMetadata類別中推出新API：**
+* **在AdvertisingMetadata类中引入了新的API：**
 
    * `void setAdResolutionTimeout(int adResolutionTimeout)`
 
@@ -132,206 +132,206 @@ Primetime參考應用程式的Gradle版本更新至5.6.4版。
 
    * `int getAdManifestTimeout()`
 
-* **已從AdvertisingMetadata類別中移除下列API：**
+* **已从AdvertisingMetadata类中删除以下API：**
 
    * `void setAdRequestTimeout(int adRequestTimeout)`
 
    * `int getAdRequestTimeout()`
 
-* **使用AC3/EAC3音訊轉碼器啟用串流播放**
+* **通过AC3/EAC3音频编解码器启用流播放**
 
-   * `void alwaysUseAC3OnSupportedDevices(boolean val)` 在 `MediaPlayer` 類別
+   * `void alwaysUseAC3OnSupportedDevices(boolean val)` 在 `MediaPlayer` 类
 
-* **TVSDK支援加密的Widevine CTR的CMAF和純資料流播放。**
+* **TVSDK支持加密Widevine CTR的CMAF和纯流播放。**
 
-* **現在支援播放4K HEVC資料流。**
+* **现在支持播放4K HEVC流。**
 
-* **平行廣告呼叫請求** - TVSDK現在會同時預先擷取20個廣告呼叫請求。
+* **并行广告调用请求** - TVSDK现在并行预取20个广告调用请求。
 
 **版本3.0**
 
-* **TVSDK 3.0支援高效率的視訊編碼(HEVC)資料流。**
+* **TVSDK 3.0支持高效视频编码(HEVC)流。**
 
-* **即時 — 解決廣告更接近廣告標籤的問題**
-延遲廣告解決現在會單獨解決每個廣告插播。 過去，廣告解析是分兩階段的方法：在播放開始前解析前段落，並在播放開始後合併所有中段/後段落。 透過此增強功能，現在每個廣告插播都會在廣告提示點之前的特定時間解決。
+* **即时 — 解决广告更接近广告标记的问题**
+延迟广告解析现在可单独解析每个广告时间。 以前，广告解析是分两阶段进行的：在播放开始之前解析前置式广告，在播放开始之后合并所有中置/后置式广告插槽。 借助此增强功能，现在可以在广告提示点之前的特定时间解析每个广告时间。
 
 >[!NOTE]
 >
->延遲廣告解析現在已變更為預設關閉，並明確需要啟用。
+>延迟广告解析现在更改为默认关闭，明确需要启用。
 
-新API已新增至 `AdvertisingMetadata::setDelayAdLoadingTolerance` 以取得與此廣告中繼資料相關聯的延遲廣告載入容錯。\
-現在可在PREPARATION之後立即進行搜尋，搜尋廣告插播將會在搜尋完成之前立即解決問題。\
-訊號模式 `SERVER_MAP` 和 `MANIFEST_CUES` 支援。
+添加了一个新的API到 `AdvertisingMetadata::setDelayAdLoadingTolerance` 以获取与此广告元数据关联的延迟广告加载容差。\
+现在，在PREPARATION之后立即允许搜寻，搜寻广告时间将导致在完成搜寻之前立即解决。\
+信令模式 `SERVER_MAP` 和 `MANIFEST_CUES` 受支持。
 
-如需詳細資訊，請參閱 [Android適用的TVSDK 3.0程式設計師指南](../programming/tvsdk-3x-android-prog/android-3x-advertising/ad-insertion/c-lazy-ad-resolving/c-lazy-ad-resolving.md) API和事件變更的相關資訊。
+有关更多信息，请参阅 [《 TVSDK 3.0 for Android程序员指南》](../programming/tvsdk-3x-android-prog/android-3x-advertising/ad-insertion/c-lazy-ad-resolving/c-lazy-ad-resolving.md) 关于API和事件更改。
 
-* **已更新 `targetSdkVersion` 至最新版本**
+* **已更新 `targetSdkVersion` 到最新版本**
 
-已更新 `targetSdkVersion` 從19到27，順利運作。
+已更新 `targetSdkVersion` 从19到27，顺利运行。
 
-* **Placement.Type getPlacementType()現在是介面TimelineMarker上的方法**
+* **Placement.Type getPlacementType()现在是接口TimelineMarker上的方法**
 
-   此方法會傳回Placement.Type.PRE_ROLL、Placement.Type.MID_ROLL或Placement.Type.POST_ROLL等版位型別。 如果廣告插播未解析，TimelineMarker介面上的getDuration()方法將傳回0。
+   此方法将返回投放类型Placement.Type.PRE_ROLL、Placement.Type.MID_ROLL或Placement.Type.POST_ROLL。 如果广告时间未解析，则TimelineMarker界面上的getDuration()方法将返回0。
 
 **版本2.5.6。**
 
-* **TVSDK 2.5支援Android P。**
+* **TVSDK 2.5支持Android P。**
 
-* **啟用背景音訊**
+* **启用背景音频**
 
-   若要在應用程式從前景移至背景時啟用音訊播放，應用程式應呼叫 `enableAudioPlaybackInBackground` 當播放器處於已準備狀態時，具有true作為引數的MediaPlayer的API。
+   要在应用程序从前台移动到后台时启用音频播放，应用程序应调用 `enableAudioPlaybackInBackground` 当播放器处于“已准备”状态时，将true作为参数的MediaPlayer API。
 
-* **MediaPlayer類別中的alwaysUseAudioOutputLatency（布林值）**
+* **MediaPlayer类中的alwaysUseAudioOutputLatency(boolean val)**
 
-設定後，請在音訊時間戳記計算中使用輸出延遲。
-布林值引數val - True會在音訊時間戳記計算中使用音訊輸出延遲。
+设置后，在音频时间戳计算中使用输出延迟。
+布尔参数val - True将在音频时间戳计算中使用音频输出延迟。
 
-* **最佳化，即使頻寬速度突然下降，也能提供最佳播放體驗**
+* **优化后即使在带宽速度突然下降的情况下也能获得最佳播放体验**
 
-TVSDK現在會視需要取消進行中的區段下載，並動態切換至適當的轉譯。 這是透過順暢切換位元速率而不中斷來完成。
+现在，TVSDK会根据需要取消正在进行的区段下载，并动态切换到相应的演绎版。 这是通过在比特率之间无缝切换来实现的，而不会出现中断。
 
 **版本2.5.5**
 
-* **部分廣告插播插入**
+* **部分广告时间插入**
 
-   在廣告中間加入，而不引發部分觀看廣告追蹤的電視體驗。\
-   範例：使用者在包含三個30秒廣告的90秒廣告插播中間（在40秒）加入。 這是插播中第二個廣告的10秒。
+   类似于电视的体验：在广告中间加入，而不触发部分观看广告的跟踪。\
+   示例：用户在包含三个30秒广告的90秒广告时间的中间（40秒）加入。 此时是插播中第二个广告的10秒。
 
-   * 第二個廣告會播放剩餘的持續時間（20秒），接著是第三個廣告。
+   * 第二个广告播放剩余的时长（20秒），然后是第三个广告。
 
-   * 部分已播放廣告（第二個廣告）的廣告追蹤器未觸發。 只會觸發第三個廣告的追蹤器。
+   * 不触发播放的部分广告（第二个广告）的广告跟踪器。 仅触发第三个广告的跟踪器。
 
-* **安全透過HTTPS載入廣告**
+* **通过HTTPS的安全广告加载**
 
-   Adobe Primetime提供可透過https要求第一次呼叫primetime廣告伺服器和CRS的選項。
+   Adobe Primetime提供了一个选项，用于请求通过https对primetime广告服务器和CRS的首次调用。
 
-* **CRS請求中新增的AdSystem和Creative ID**
+* **向CRS请求添加了AdSystem和Creative Id**
 
-   現在包含 `AdSystem` 和 `CreativeId` 做為1401和1403要求中的新引數。
+   现在包括 `AdSystem` 和 `CreativeId` 作为1401和1403请求中的新参数。
 
-* **NetworkConfiguration類別中的API setEncodeUrlForTracking已移除** 因為URL中的不安全字元應經過編碼。
+* **删除了NetworkConfiguration类中的API setEncodeUrlForTracking** 因为URL中的不安全字符应该编码。
 
 **版本2.5.4**
 
-Android TVSDK v2.5.4提供下列更新和API變更：
+Android TVSDK v2.5.4提供了以下更新和API更改：
 
-* 預設值的變更 `WebViewDebbuging`
+* 默认值的更改 `WebViewDebbuging`
 
-   `WebViewDebbuging` 值設定為 `Fals`e預設為。 若要啟用，請呼叫 `setWebContentsDebuggingEnabled(true)` 應用程式中。
+   `WebViewDebbuging` 值设置为 `Fals`e默认设置。 要启用该功能，请调用 `setWebContentsDebuggingEnabled(true)` 在应用程序中。
 
-* **OpenSSL和Curl版本升級**
+* **OpenSSL和Curl版本升级**
 
-   將libcurl更新至v7.57.0，並將OpenSSL更新至v1.0.2k。
+   已将libcurl更新至v7.57.0，将OpenSSL更新至v1.0.2k。
 
-* VAST回應物件的應用程式層級存取
+* VAST响应对象的应用程序级别访问权限
 
-   推出新的API `NetworkAdInfo::getVastXml()` 可讓使用者存取VAST回應物件至應用程式。
+   引入了一个新的API `NetworkAdInfo::getVastXml()` 用于提供对应用程序的VAST响应对象的访问权限。
 
 **版本2.5.3**
 
-Android TVSDK v2.5.3提供下列更新和API變更。
+Android TVSDK v2.5.3提供了以下更新和API更改。
 
-* 鼓勵所有使用CRS的TVSDK客戶透過TVSDK 2.5.3.85或Android最新版本升級應用程式。 這將成為現有應用程式實作的下拉式替代專案。 TVSDK升級後，請在Proxy工具（例如：Charles）中檢查CRS創意URL請求，並確認路徑中的主機名稱和版本反映為如以下範例URL結構中所示。
+* 鼓励所有使用CRS的TVSDK客户使用TVSDK 2.5.3.85或最新的Android版升级其应用程序。 这将是现有应用程序实施的下拉式替代。 TVSDK升级后，在代理工具（例如：Charles）中检查CRS创意URL请求，并确认路径中的主机名和版本反映为如下面的示例URL结构中所示。
 
    `https://primetime-a.akamaihd.net/assets/3p/v3.1/222000/167/d77/167d775d00cbf7fd224b112sf5a4bc7d_0e34cd3ca5177fbc74d66d784 bf3586d.m3u8`
 
-* TVSDK的使用者代理程式可自訂：我們已新增一些新的API來自訂使用者代理。
+* TVSDK的用户代理可自定义：我们添加了一些新的API以自定义用户代理。
 
    * `setCustomUserAgent(String value)`
    * `getCustomUserAgent()`
 
-* 在Android應用程式和TVSDK之間共用Cookie： Android TVSDK現在支援在JAVA層（儲存在Android應用程式的CookieStore中）和C++ TVSDK層之間存取Cookie。 現在，您可以在原生C++層中設定及/或修改Cookie，因為這些會向Java Cookie Store顯示。
+* 在Android应用程序和TVSDK之间共享Cookie： Android TVSDK现在支持在JAVA层（存储在Android应用程序的CookieStore中）和C++ TVSDK层之间访问Cookie。 现在，可以设置和/或修改本机C++层中的Cookie，因为它们将向Java Cookie Store公开。
 
-* API變更：
+* API更改：
 
-   * 新事件 `CookiesUpdatedEvent` 已新增。 當媒體播放器的Cookie更新時，媒體播放器會傳送此訊息。
+   * 新事件 `CookiesUpdatedEvent` 添加了。 当媒体播放器的Cookie更新时，媒体播放器会调度该事件。
 
-   * 新API已新增至 `NetworkConfiguration::set/ getCustomUserAgent()` 以使用自訂使用者代理。
+   * 添加了一个新的API到 `NetworkConfiguration::set/ getCustomUserAgent()` 以使用自定义用户代理。
 
-   * 新API已新增至 `NetworkConfiguration::set/ getEncodedUrlForTracking` 以強制編碼不安全的字元。
+   * 添加了一个新的API到 `NetworkConfiguration::set/ getEncodedUrlForTracking` 强制编码不安全字符。
 
-   * 新API已新增至 `NetworkConfiguration::getNetworkDownVerificationUrl()` 設定容錯移轉時的網路驗證URL。
+   * 添加了一个新的API到 `NetworkConfiguration::getNetworkDownVerificationUrl()` 设置故障转移时的网络验证URL。
 
-   * 新屬性已新增至 `TextFormat::treatSpaceAsAlphaNum` 定義在顯示註解時是否將空格視為英數字元。
+   * 新资产将添加到 `TextFormat::treatSpaceAsAlphaNum` 定义在显示字幕时是否将空格视为字母数字。
 
-* 中的變更 `SizeAvailableEvent`. 先前， `getHeight()` 和 `getWidth()` 方法 `SizeAvailableEvent` 在2.5.2中，用來傳回由媒體格式傳回的影格高度和影格寬度。 現在，它會分別傳回解碼器傳回的輸出高度和輸出寬度。
+* 中的更改 `SizeAvailableEvent`. 以前， `getHeight()` 和 `getWidth()` 方法 `SizeAvailableEvent` 在2.5.2中，用于返回帧高度和帧宽度，该参数由媒体格式返回。 现在，它分别返回解码器返回的输出高度和输出宽度。
 
-* 緩衝行為的變更：緩衝行為已變更。 由應用程式開發人員自行決定緩衝區為空時該怎麼做。 2.5.3在緩衝區空白的情況下使用播放緩衝區大小。
+* 缓冲行为的更改：缓冲行为已更改。 由应用程序开发人员自行决定缓冲为空时要执行的操作。 2.5.3在缓冲区为空的情况下使用播放缓冲区大小。
 
 **版本2.5.2**
 
-Android TVSDK v2.5.2提供重要的錯誤修正和一些API變更。
+Android TVSDK v2.5.2提供了重要的错误修复和一些API更改。
 
 **版本2.5.1**
 
-Android 2.5.1版的重要新功能。
+Android 2.5.1中发布的重要新功能。
 
-* **效能改良 —** 新的TVSDK 2.5.1架構提供多項效能改善專案。 根據第三方基準測試研究的統計資料，新架構的啟動時間比業界平均水準縮短5倍，掉格數減少3.8倍：
+* **性能改进 —** 新的TVSDK 2.5.1架构带来了大量性能改进。 根据第三方基准测试研究的统计数据，与业界平均水平相比，新架构的启动时间减少了5倍，丢帧减少了3.8倍：
 
-* **立即開啟VOD和即時 —** 當您啟用立即開啟時，TVSDK會在播放開始之前初始化並緩衝媒體。 由於您可以在背景同時啟動多個MediaPlayerItemLoader執行個體，因此您可以緩衝多個串流。 當使用者變更頻道，並且資料流已正確緩衝時，新頻道上的播放會立即開始。 TVSDK 2.5.1也支援以下專案的立即開啟： **live** 串流也會。 即時視窗移動時會重新緩衝即時資料流。
+* **即时打开以进行VOD和直播 —** 启用“即时打开”后，TVSDK会在播放开始之前初始化并缓冲媒体。 由于您可以在后台同时启动多个MediaPlayerItemLoader实例，因此可以缓冲多个流。 当用户更改频道，并且流已正确缓冲时，新频道上的播放立即开始。 TVSDK 2.5.1还支持的“即时开启” **实时** 流也是如此。 当实时窗口移动时，实时流将被重新缓冲。
 
-* **改善ABR邏輯 —** 新的ABR邏輯是以緩衝區長度、緩衝區長度變更速率和測量到的頻寬為基礎。 這可確保ABR在頻寬波動時選擇正確的位元速率，並透過監控緩衝區長度變更的速率，最佳化位元速率切換的實際發生次數。
+* **改进了ABR逻辑 —** 该逻辑基于缓冲区长度、缓冲区长度变化率和测量带宽。 这样可以确保ABR在带宽波动时选择正确的比特率，并通过监控缓冲区长度变化的速率来优化比特率切换的实际次数。
 
-* **部分割槽段下載/細分 —** TVSDK進一步縮小每個片段的大小，以儘快開始播放。 ts片段必須每兩秒有一個關鍵影格。
+* **部分区段下载/子区段 —** TVSDK进一步减小了每个片段的大小，以尽快开始播放。 ts片段必须每两秒具有一个关键帧。
 
-* **延遲廣告解析度 —** TVSDK不會等到非前段廣告解決後再開始播放，因此縮短了啟動時間。 除非解決所有廣告，否則仍不允許搜尋和特技播放等API。 這適用於與CSAI搭配使用的VOD資料流。 在完成廣告解析之前，不允許搜尋和快速前進等操作。 對於直播串流，此功能無法在直播活動期間啟用廣告解析功能。
+* **延迟广告分辨率 —** TVSDK不会等待非前置广告解析后再开始播放，因此缩短了启动时间。 直到解决所有广告之后，才允许使用搜寻和特技播放等API。 这适用于与CSAI一起使用的VOD流。 在广告解析完成之前，不允许执行搜寻和快速前进等操作。 对于实时流，此功能无法在实时活动期间启用广告解析。
 
-* **持續性網路連線 —** 此功能可讓TVSDK建立並儲存持續性網路連線的內部清單。 這些連線會重複用於多個請求，而不是為每個網路請求開啟新的連線，然後將其銷毀。 這會提高網路程式碼的效率並減少延遲，進而加快播放效能。
-TVSDK開啟連線時，會要求伺服器輸入 *保持連線* 連線。 有些伺服器可能不支援這種連線型別，在這種情況下TVSDK會退回重新為每個要求建立連線。 此外，雖然持續連線預設為開啟，但TVSDK現在提供設定選項，讓應用程式可視需要關閉持續連線。
+* **永久网络连接 —** 此功能允许TVSDK创建和存储永久网络连接的内部列表。 这些连接可重复用于多个请求，而不是为每个网络请求打开一个新连接，然后将其销毁。 这会提高网络代码的效率并减少延迟，从而实现更快的播放性能。
+当TVSDK打开一个连接时，它要求服务器提供 *保持活动状态* 连接。 某些服务器可能不支持此类连接，在这种情况下，TVSDK将回退以再次为每个请求建立连接。 此外，尽管持久连接默认处于打开状态，但TVSDK现在提供了一个配置选项，以便应用程序可以根据需要关闭持久连接。
 
-* **平行下載 —** 同時下載視訊與音訊而非串列下載，可減少啟動延遲。 此功能可播放HLS Live和VOD檔案、最佳化伺服器的可用頻寬使用量、降低進入緩衝區執行不足的機率，以及將下載和播放之間的延遲降至最低。
+* **并行下载 —** 并行下载视频和音频而不是串行下载可减少启动延迟。 此功能允许播放HLS Live和VOD文件，优化服务器的可用带宽使用率，降低在运行时进入缓冲区的概率，并最大限度地减少下载和播放之间的延迟。
 
-* **平行廣告下載 —** TVSDK會在點選廣告插播前，與內容播放同時預先擷取廣告，因此可順暢地播放廣告和內容。
+* **并行广告下载 —** TVSDK会在点击广告时间之前与内容播放并行预取广告，从而实现广告和内容的无缝播放。
 
 * **播放**
 
-* **MP4內容播放 —** MP4短片不需要重新轉碼即可在TVSDK中播放。
+* **MP4内容播放 —** 在TVSDK中，MP4短剪辑无需重新编码即可播放。
 
    >[!NOTE]
    >
-   >MP4播放不支援ABR切換、特技播放、廣告插入、延遲音訊繫結和子區段。
+   >MP4播放不支持ABR切换、特技播放、广告插入、后期音频绑定和子分段。
 
-* **使用最適化位元速率(ABR)的特技播放 —** 此功能可讓TVSDK在特技播放模式中切換iFrame資料流。 您可以使用非iFrame設定檔，以較慢的速度進行特技播放。
+* **具有自适应比特率(ABR)的特技播放 —** 此功能允许TVSDK在特技播放模式中切换iFrame流。 您可以使用非iFrame配置文件以较低的速度进行特技播放。
 
-* **更流暢的戲法遊戲 —** 這些改善專案可增強使用者體驗：
+* **更流畅的戏法游戏。** 这些改进增强了用户体验：
 
-   * 在特技播放期間，根據頻寬和緩衝區設定檔選擇最適化位元速率和影格速率
+   * 在特技播放期间，基于带宽和缓冲器配置文件的自适应比特率和帧速率选择
 
-   * 使用主要資料流而不是IDR資料流，以取得最高30 fps的快速播放。
+   * 使用主流而不是IDR流获得最高30 fps的快速播放。
 
-* **內容保護**
+* **内容保护**
 
-   * **以解析度為基礎的輸出保護 —** 此功能將播放限制繫結至特定解析度，提供更精細的DRM控制項。
+   * **基于分辨率的输出保护 —** 此功能将播放限制绑定到特定分辨率，从而提供更细粒度的DRM控制。
 
-* **工作流程支援**
+* **工作流支持**
 
-   * **直接帳單整合 —** 這會將計費量度傳送至Adobe Analytics後端，該後端經Adobe Primetime針對客戶使用的資料流認證。
+   * **直接账单集成 —** 这会将计费量度发送到Adobe Analytics后端，该后端由Adobe Primetime针对客户使用的流进行认证。
 
-   TVSDK會根據客戶銷售合約自動收集量度，以產生開立帳單所需的定期使用報告。 在每個資料流開始事件上，TVSDK會使用Adobe Analytics資料插入API來傳送計費量度，例如內容型別、啟用廣告插入的旗標及啟用drm的旗標（根據可計費資料流的持續時間）至Adobe Analytics Primetime擁有的報表套裝。 這不會干擾或納入客戶自己的Adobe Analytics報表套裝或伺服器呼叫。 系統會根據要求定期傳送此計費使用情況報告給客戶。 這是計費功能的第一個階段，僅支援使用計費。 您可以使用檔案中描述的API，根據銷售合約進行設定。 此功能預設為啟用。 若要關閉此功能，請參閱參考播放器範例。
+   TVSDK根据客户销售合同自动收集量度，以生成计费所需的定期使用情况报告。 在每个流开始事件上，TVSDK使用Adobe Analytics数据插入API将计费指标（如内容类型、启用广告插入的标记和启用drm的标记）根据计费流的持续时间发送到Adobe Analytics Primetime拥有的报表包。 这不会干扰客户自己的Adobe Analytics报表包或服务器调用或使其包含在内。 根据请求，定期向客户发送此计费使用情况报告。 这是仅支持使用计费的计费功能的第一个阶段。 可以使用文档中描述的API，根据销售合同对其进行配置。 此功能默认处于启用状态。 要关闭此功能，请参阅参考播放器示例。
 
-   * **改善容錯移轉支援 —** 即使主機伺服器、播放清單檔案和區段失敗，仍實施其他策略以繼續不間斷播放。
+   * **改进的故障切换支持 —** 实施了其他策略以继续不间断播放，尽管主机服务器、播放列表文件和区段出现故障。
 
 
-* **廣告**
+* **广告**
 
-   * **Moat整合 —** 支援來自Moat的廣告可見度測量。
+   * **Moat集成 —** 支持从Moat测量广告可见性。
 
-   * **隨附橫幅 —** 隨附橫幅會與線性廣告一併顯示，且通常在廣告結束後繼續顯示在檢視上。 這些橫幅可能是html型別(HTML片段)或iframe型別（iframe頁面的URL）。
+   * **随附横幅 —** 随附横幅与线性广告一起显示，并且通常在广告结束后继续显示在视图中。 这些横幅可以是html类型(HTML片段)或iframe类型（iframe页面的URL）。
 
 * **分析**
 
-   * **VHL 2.0 -** 這是最新最佳化的視訊心率程式庫(VHL)整合，可自動收集Adobe Analytics的使用量資料。 API的複雜度已降低，以方便實作。 下載VHL程式庫 [Android適用的v2.0.0](https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases) 並解壓縮libs資料夾中的JAR檔案。
+   * **VHL 2.0 -** 这是最新的优化视频心率库(VHL)集成，可自动收集Adobe Analytics的使用情况数据。 API的复杂性已降低，以简化实施。 下载VHL库 [适用于Android的v2.0.0](https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases) 并提取libs文件夹中的JAR文件。
 
 * **SizeAvaliableEventListener**
 
-   * `getHeight()` 和 `getWidth()` 方法 `SizeAvailableEvent` 現在將分別傳回高度和寬度的輸出。 顯示外觀比例的計算方式如下：
+   * `getHeight()` 和 `getWidth()` 方法 `SizeAvailableEvent` 现在将分别返回高度和宽度的输出。 显示长宽比可按如下方式计算：
 
       ```java
       SizeAvailableEvent e;
       DAR = e.getWidth()/ e.getHeight();
       ```
 
-      以Sar寬度和Sar高度表示的儲存外觀比例也可用於計算影格寬度和影格高度：
+      以Sar宽度和Sar高度表示的存储宽高比还可用于计算帧宽度和帧高：
 
       ```java
       SAR = e.getSarWidth()/e.getSarHeight();
@@ -341,441 +341,441 @@ TVSDK開啟連線時，會要求伺服器輸入 *保持連線* 連線。 有些�
 
 * **Cookie**
 
-   * Android TVSDK現在支援存取Android應用程式CookieStore中儲存的JAVA Cookie。 每當新Cookie成為的一部分時，就會提供回呼API (onCookiesUpdated)來記錄 **Set-Cookie** 回應標頭。 透過CookieStore在特定URI/網域上設定這些Cookie值，可將這些Cookie作為用於不同URI/網域的HttpCookie清單使用。 同樣地，TVSDK中的Cookie值也是使用CookieStore add API來更新。
+   * Android TVSDK现在支持访问存储在Android应用程序的CookieStore中的JAVA Cookie。 提供一个回调API (onCookiesUpdated)，每当有新Cookie加入时便进行记录 **Set-Cookie** 响应标头。 通过使用CookieStore在该特定URI/域中设置这些Cookie值，这些Cookie可用作用于不同URI/域的HttpCookie的列表。 同样，TVSDK中的Cookie值也是使用CookieStore add API更新的。
 
-## 功能矩陣 {#feature-matrix}
+## 特征矩阵 {#feature-matrix}
 
-適用於Android的TVSDK支援許多您可實作的功能，以將功能新增至視訊應用程式。
+适用于Android的TVSDK支持许多功能，您可以实施这些功能向视频应用程序添加功能。
 
-在下列功能表中，「Y」表示目前版本支援該功能。
+在下面的功能表中，“Y”表示当前版本支持该功能。
 
-| 功能 | 內容型別 | HLS |
+| 功能 | 内容类型 | HLS |
 |---|---|---|
-| 一般播放（播放、暫停、搜尋） | VOD +即時 | Y |
-| FER — 一般播放（播放、暫停、搜尋） | FER VOD | Y |
-| 在廣告播放時搜尋 | VOD +即時 | 不支援 |
-| HEVC播放 | VOD +即時 | 僅限fMP4容器 |
-| AC3和EAC3 | VOD +即時 | 不支援 |
-| MP3 | VOD | 不支援 |
-| MP4內容播放 | VOD | Y |
-| 最適化位元速率切換邏輯 | VOD +即時 | Y |
-| 僅限音訊的播放 | VOD +即時 | Y |
-| 多CDN支援 | VOD +即時 | 不支援 |
-| 使用純音訊媒體播放廣告 | VOD +即時 | 不支援 |
-| 隱藏式字幕 — 608/708 | VOD +即時 | Y |
-| 隱藏式字幕 — WebVTT | VOD +即時 | Y |
-| 資訊清單容錯移轉 | VOD +即時 | Y |
-| 進階容錯移轉 | VOD +即時 | Y |
-| QoS和播放器通知 | VOD +即時 | Y |
-| 支援Cookie標頭 | VOD +即時 | Y |
-| 支援自訂HTTP標頭 | VOD +即時 | Y （需要允許清單） |
-| 設定緩衝區控制引數 | VOD +即時 | Y |
-| 設定最適化位元速率控制項 | VOD +即時 | Y |
-| 自訂資訊清單標籤 | VOD +即時 | Y |
-| 延遲音訊繫結 | VOD +即時 | Y |
-| 302重新導向 | VOD +即時 | Y |
-| 有位移的播放 | VOD +即時 | Y |
-| 特技播放 | VOD +即時 | Y |
-| 戲法遊戲中的慢動作 | VOD +即時 | 不支援 |
-| Smooth Trick Play （使用ABR） | VOD +即時 | Y |
-| ID3剖析 | VOD +即時 | Y |
-| 廣告中斷 | VOD +即時 | 不支援 |
-| 立即開啟 | VOD +即時 | 不支援 |
-| 不連續標籤支援 | VOD +即時 | Y |
-| 302重新導向粘著度 | VOD +即時 | Y |
+| 常规播放（播放、暂停、搜寻） | VOD +实时 | Y |
+| FER — 常规播放（播放、暂停、搜寻） | FER VOD | Y |
+| 在广告播放时搜寻 | VOD +实时 | 不支持 |
+| HEVC播放 | VOD +实时 | 仅限fMP4容器 |
+| AC3和EAC3 | VOD +实时 | 不支持 |
+| MP3 | VOD | 不支持 |
+| MP4内容播放 | VOD | Y |
+| 自适应比特率切换逻辑 | VOD +实时 | Y |
+| 纯音频播放 | VOD +实时 | Y |
+| 多CDN支持 | VOD +实时 | 不支持 |
+| 使用纯音频媒体播放广告 | VOD +实时 | 不支持 |
+| 隐藏字幕 — 608/708 | VOD +实时 | Y |
+| 隐藏式字幕 — WebVTT | VOD +实时 | Y |
+| 清单故障转移 | VOD +实时 | Y |
+| 高级故障切换 | VOD +实时 | Y |
+| QoS和播放器通知 | VOD +实时 | Y |
+| 支持Cookie标头 | VOD +实时 | Y |
+| 支持自定义HTTP标头 | VOD +实时 | Y（需要列入允许列表） |
+| 设置缓冲区控制参数 | VOD +实时 | Y |
+| 设置自适应比特率控制 | VOD +实时 | Y |
+| 自定义清单标记 | VOD +实时 | Y |
+| 延迟音频绑定 | VOD +实时 | Y |
+| 302重定向 | VOD +实时 | Y |
+| 偏移播放 | VOD +实时 | Y |
+| 特技游戏 | VOD +实时 | Y |
+| 戏法游戏中的慢动作 | VOD +实时 | 不支持 |
+| Smooth Trick Play（使用ABR） | VOD +实时 | Y |
+| ID3解析 | VOD +实时 | Y |
+| 广告封锁 | VOD +实时 | 不支持 |
+| 即时打开 | VOD +实时 | 不支持 |
+| 间断标记支持 | VOD +实时 | Y |
+| 302重定向粘性 | VOD +实时 | Y |
 
-| 功能 | 內容型別 | HLS |
+| 功能 | 内容类型 | HLS |
 |---|---|---|
-| 一般播放，啟用廣告 | VOD +即時 | Y |
-| 已啟用廣告的FER內容 | VOD | Y |
-| 預設廣告行為 | VOD +即時 | Y |
-| VAST 2.0/3.0 | VOD +即時 | Y |
-| VMAP 1.0 | VOD +即時 | Y |
-| MP4廣告 | VOD +即時 | Y （來自CRS） |
-| 啟用廣告的Trick Play | VOD +即時 | Y |
-| 僅限廣告 | VOD | Y |
-| 目標定位引數 | VOD +即時 | Y |
-| 自訂引數 | VOD +即時 | Y |
-| 自訂廣告行為 | VOD +即時 | Y |
-| 自訂廣告標籤 | 即時 | Y |
-| 自訂廣告解析程式 | VOD +即時 | Y |
-| Freewheel自訂廣告解析程式 | VOD | Y |
-| C3 | VOD +即時 | 不支援 |
-| 延遲廣告解決 | VOD | Y |
-| 不連續標籤支援 — SSAI | VOD +即時 | Y |
-| 隨附廣告、橫幅廣告和可點按廣告 | VOD +即時 | Y |
-| VPAID 2.0 | VOD +即時 | Y (JS) |
-| 早期廣告退出 | 即時 | Y |
-| 規則型創意優先順序 | VOD +即時 | Y |
-| CRS規則 | VOD +即時 | Y |
-| JSON Ad Resolver | VOD +即時 | 不支援 |
-| Moat整合 | VOD +即時 | Y |
-| 部分廣告插播插入 | 即時 | Y |
+| 常规播放，启用广告 | VOD +实时 | Y |
+| 启用了广告的FER内容 | VOD | Y |
+| 默认广告行为 | VOD +实时 | Y |
+| VAST 2.0/3.0 | VOD +实时 | Y |
+| VMAP 1.0 | VOD +实时 | Y |
+| MP4广告 | VOD +实时 | Y（来自CRS） |
+| 启用广告的Trick Play | VOD +实时 | Y |
+| 仅广告 | VOD | Y |
+| 定位参数 | VOD +实时 | Y |
+| 自定义参数 | VOD +实时 | Y |
+| 自定义广告行为 | VOD +实时 | Y |
+| 自定义广告标记 | 实时 | Y |
+| 自定义广告解析程序 | VOD +实时 | Y |
+| Freewheel自定义广告解析程序 | VOD | Y |
+| C3 | VOD +实时 | 不支持 |
+| 延迟广告解析 | VOD | Y |
+| 中断标记支持 — SSAI | VOD +实时 | Y |
+| 伴随广告、横幅广告和可点击广告 | VOD +实时 | Y |
+| VPAID 2.0 | VOD +实时 | Y (JS) |
+| 早期广告退出 | 实时 | Y |
+| 基于规则的创意优先级排序 | VOD +实时 | Y |
+| CRS规则 | VOD +实时 | Y |
+| JSON广告解析程序 | VOD +实时 | 不支持 |
+| Moat集成 | VOD +实时 | Y |
+| 部分广告时间插入 | 实时 | Y |
 
-| 功能 | 內容型別 | HLS |
+| 功能 | 内容类型 | HLS |
 |---|---|---|
-| AES加密 | VOD +即時 | Y |
-| AES加密範例 | VOD +即時 | Y |
-| 代碼化的資料流 | VOD +即時 | Y |
-| Widevine DRM | VOD +即時 | 僅限fMP4容器 |
-| Primetime DRM | VOD +即時 | Y |
-| 外部播放(RBOP) | VOD +即時 | 僅限Primetime DRM |
-| 授權輪換 | VOD +即時 | 僅限Primetime DRM |
-| 金鑰輪換 | VOD +即時 | 僅限Primetime DRM |
+| AES加密 | VOD +实时 | Y |
+| 示例AES加密 | VOD +实时 | Y |
+| 标记化的流 | VOD +实时 | Y |
+| Widevine DRM | VOD +实时 | 仅限fMP4容器 |
+| Primetime DRM | VOD +实时 | Y |
+| 外部播放(RBOP) | VOD +实时 | 仅限Primetime DRM |
+| 许可证轮换 | VOD +实时 | 仅限Primetime DRM |
+| 密钥轮替 | VOD +实时 | 仅限Primetime DRM |
 
-| 功能 | 內容型別 | HLS |
+| 功能 | 内容类型 | HLS |
 |---|---|---|
-| Adobe Analytics VHL整合 | VOD +即時 | Y |
-| 帳單 | VOD +即時 | Y |
+| Adobe Analytics VHL集成 | VOD +实时 | Y |
+| 计费 | VOD +实时 | Y |
 
-## 已解決的問題 {#resolved-issues}
+## 已解决的问题 {#resolved-issues}
 
-如果解決方法與報告的問題相關聯，則會顯示Zendesk參考，例如ZD#xxxxx。
+如果解决方法与报告的问题相关联，则会显示Zendesk引用，例如ZD#xxxxx。
 
 **Android TVSDK 3.15**
 
-本節提供TVSDK 3.14 Android版本中已解決的問題摘要。
+本节概述TVSDK 3.14 Android版本中已解决的问题。
 
-* ZD#46903 — 遺失創意標籤或發生下列情況時，應用程式當機多次 [!UICONTROL url CDATA] 在中為空白 [!UICONTROL VAST] 回應。
+* ZD#46903 — 当创意标记缺失或以下情况时，应用程序崩溃多次 [!UICONTROL url CDATA] 在中为空 [!UICONTROL VAST] 响应。
 
 **Android TVSDK 3.14**
 
-* ZD#46903 — 應用程式當下列情況發生時當機： [!UICONTROL CDATA] 任何下列專案的節點為空： [!UICONTROL ClickTracking]， [!UICONTROL CustomClick] 或 [!UICONTROL CompanionClickTracking] 中的元素 [!UICONTROL VAST] 回應。
+* ZD#46903 — 应用程序崩溃时 [!UICONTROL CDATA] 对于任意，节点为空 [!UICONTROL ClickTracking]， [!UICONTROL CustomClick] 或 [!UICONTROL CompanionClickTracking] 中的元素 [!UICONTROL VAST] 响应。
 
-### 舊版中的已解決問題
+### 以前版本中已解决的问题
 
 **Android TVSDK 3.12**
 
-* ZD#40584 - Primetime參考應用程式未使用最新Gradle版本建置。
+* ZD#40584 - Primetime引用应用程序未使用最新Gradle版本构建。
 
 **Android TVSDK 3.11**
 
-* ZD#41252 - WebVTT中的韓文字元在Android 7.1之後中斷。
+* ZD#41252 - Android 7.1之后，WebVTT中的韩文字符损坏。
 
 **Android TVSDK 3.10**
 
-* ZD#40340 — 在封鎖列出所有TS (TypeScript)檔案後，應用程式在嘗試播放時當機並出現「應用程式未回應」錯誤。
+* ZD#40340 — 在阻止列出所有TS (TypeScript)文件后，应用程序在尝试播放时崩溃，并显示“应用程序未响应”错误。
 
 **Android TVSDK 3.8**
 
-* 未新增任何新問題。
+* 未添加新问题。
 
 **Android TVSDK 3.7**
 
-* 未新增任何新問題。
+* 未添加新问题。
 
 **Android TVSDK 3.6**
 
-* 未新增任何新問題。
+* 未添加新问题。
 
 **版本3.5**
 
-* ZD#37503 — 快取CRS規則的JSON回應，以避免重複請求。
+* ZD#37503 — 将缓存CRS规则的JSON响应，以避免重复请求。
 
 **版本3.4**
 
-* ZD#37996 — 修正線性和VOD CMAF HEVC資料流的播放速度不一的問題。
-* ZD#37706 — 修正亂碼字幕的問題。
-* ZD#37622 — 修正特定廣告的嚴重URISyntaxErrors問題。
-* ZD#36938 — 修正位元速率切換至中間位元速率，然後在結束特技播放後恢復至最高位元速率的問題。
+* ZD#37996 — 修复了线性和VOD CMAF HEVC流播放时断续续的问题。
+* ZD#37706 — 修复了乱码字幕的问题。
+* ZD#37622 — 修复了关于特定广告的致命URISyntaxErrors的问题。
+* ZD#36938 — 修复了比特率向下切换到中间比特率，然后在退出特技播放后提取到最高比特率的问题。
 
 **版本3.3**
 
-* ZD#37394 - CMAF資產快速前進會在速度變更後造成人工因素。
-   * 修正了在特技播放期間發生設定檔變更的問題。
-* ZD#37396 — 某些中段和後段缺少廣告追蹤事件。
-   * 修正廣告追蹤事件的特定案例。
-* ZD#37491 — 沒有包含錯誤中繼資料的HTTP狀態代碼。
-   * 已處理在棧疊中較高位置傳播網路錯誤。
-* ZD#37808 — 允許列出新的自訂標頭。
-   * 在此修正中新增SSAI_TAG支援。
-* ZD#37622 — 來自特定Ad Pod的URISyntax錯誤。
-   * 修正當客戶Android應用程式收到包含未編碼%的廣告時，串流播放當機的問題
-* ZD#37631 - Android TVSDK的主要資訊清單重試機制。
-   * 已在網路設定中新增處理此增強功能的API。 如果未使用此API，則不會重試資訊清單。 若已使用，則會重試資訊清單來處理網路錯誤和逾時。
+* ZD#37394 - CMAF资源快速前进会在速度更改后导致伪像。
+   * 修复了在特技播放期间配置文件更改时出现的问题。
+* ZD#37396 — 某些中置工作流程和后置工作流程缺少广告跟踪事件。
+   * 修复了与广告跟踪事件有关的特定情况。
+* ZD#37491 — 没有包含错误元的HTTP状态代码。
+   * 已处理在栈栈中较高的位置传播网络错误。
+* ZD#37808 -允许列表新的自定义标头。
+   * SSAI_TAG支持作为此修复的一部分添加。
+* ZD#37622 — 特定Ad Pod中的URISyntax错误。
+   * 修复了向客户Android应用程序提供包含未编码%的广告时有关流播放崩溃的问题
+* ZD#37631 - Android TVSDK的主控清单重试机制。
+   * 在网络配置中添加了用于处理此增强功能的新API。 如果未使用此API，则不会重试清单。 如果使用，则将重试清单以处理网络错误和超时。
 
 **版本3.2**
 
-* ZD#37493 — 不會為序列中的第一個廣告間歇性地觸發即時播放的追蹤信標。
-* ZD#36985- VMAP回應中的空白廣告插播不會傳送追蹤信標。
-* ZD#37134 - TVSDK間歇性地擲回VMAP回應的錯誤ID。
+* ZD#37493 — 对于序列中的第一个广告，实时播放的跟踪信标不会间歇性地触发。
+* ZD#36985- VMAP响应中不发送空广告时间的跟踪信标。
+* ZD#37134 - TVSDK会间歇性地为VMAP响应抛出错误的ID。
 
 **版本3.0**
 
-* ZD#33740 — 建立MediaPlayer物件並呼叫replaceCurrentResource()後，TVSDK會擲回不需要的警告
+* ZD#33740 - TVSDK在创建MediaPlayer对象并调用replaceCurrentResource()后立即引发不需要的警告
 
-   * 改善先前的修正，只在播放器處於暫停狀態時呼叫restore
+   * 通过仅在播放器处于暂停状态时调用restore改进了之前的修复
 
-* ZD#36442 — 每次新播放都會中斷遠端偵錯工作階段的連線，導致無法偵錯。
+* ZD#36442 — 每次新播放都会断开远程调试会话的连接，导致无法调试。
 
-   * Web檢視預設無法偵錯，因為預設不會啟用偵錯。 應用程式應視需要啟用偵錯，方法是對MediaPlayer.getCustomAdView()傳回的物件呼叫setWebContentsDebuggingEnabled(true)。
+   * 默认情况下，无法在Web视图上进行调试，因为默认情况下未启用调试。 如果需要，应用程序应通过调用setWebContentsDebuggingEnabled(true)对从MediaPlayer.getCustomAdView()返回的对象启用调试。
 
-* ZD#33688 — 支援及時廣告解決
+* ZD#33688 — 支持及时广告解决
 
-   * 廣告插播會依廣告插播位置之前的指定間隔來解析。
+   * 广告时间是在广告时间位置之前的指定时间间隔解析的。
 
-* ZD#36441 — 即時視窗持續時間持續增加超過5分鐘，導致多個問題。
+* ZD#36441 — 实时时段的持续时间不断增加超过5分钟，从而导致出现多个问题。
 
-   * 修正在計算虛擬即時點時，virtualStartTime被新增兩次導致此問題的問題。
+   * 修复了在计算导致此问题的虚拟实时点时，virtualStartTime被添加两次的问题。
 
 **Android TVSDK 2.5.6**
 
-* ZD #34992 — 隱藏式字幕中的語言是空的。
+* ZD #34992 — 隐藏式字幕中的语言为空。
 
-   * 修正TVSDK未從主要資訊清單剖析#EXT-X-MEDIA：TYPE=CLOSED-CAPTIONS以取得標題追蹤詳細資料的情況。
+   * 修复了TVSDK未从主清单中解析#EXT-X-MEDIA：TYPE=CLOSED-CAPTIONS以获取字幕跟踪详细信息的问题。
 
-* ZD #35078 - Android P驗證。
+* ZD #35078 - Android P验证。
 
-   * TVSDK 2..5.6已通過最新Android P測試版組建驗證。 新Android作業系統未發現任何問題。
+   * TVSDK 2..5.6已通过最新Android P测试版内部版本验证。 由于新的Android操作系统，未发现任何问题。
 
-* ZD #34149 — 即使發生錯誤，播放器仍會繼續要求資訊清單。
+* ZD #34149 — 即使遇到错误，播放器仍会继续请求清单。
 
-   * 修正TVSDK進行重複呼叫的情況，即使所有設定檔都已關閉（404錯誤）。
+   * 修复了TVSDK进行重复调用的情况，即使所有用户档案都已关闭（404错误）。
 
-* ZD #31533 — 在應用程式傳送到背景後，在Android上播放音訊。
+* ZD #31533 — 在将应用程序发送到后台后，在Android上播放音频。
 
-   * 已新增 `enableAudioPlaybackInBackground` MediaPlayer的API，此類API應以「True」作為引數來呼叫（當播放器處於「已準備」狀態時），以便在應用程式於背景時啟用音訊播放。
+   * 已添加 `enableAudioPlaybackInBackground` MediaPlayer的API，应使用“True”作为参数（当播放器处于“已准备”状态时）调用，以便在应用程序处于后台时启用音频播放。
 
 **Android TVSDK 2.5.5**
 
-* ZD #21647 - Android TVSDK會在實際視訊大小為640x360時通知640x368。
+* ZD #21647 — 当实际视频大小为640x360时，Android TVSDK会通知640x368。
 
-   * 由於變數m_nOutputHeight （在AndroidMCVideoDecoder內）會以影格高度而非實際輸出高度更新。 在函式getVideoFrame中進行相關變更，以正確計算m_nOutputHeight。
+   * 由于变量m_nOutputHeight（在AndroidMCVideoDecoder内）使用帧高度而不是实际输出高度进行更新。 对函数getVideoFrame进行了相关更改，以正确计算m_nOutputHeight。
 
-* ZD #26614 — 緊急 — 第三方廣告服務/程式化 — 未能提供曝光數。
+* ZD #26614 — 紧急 — 第三方广告投放/编程 — 未能提供展示次数。
 
-   * 透過處理XML剖析中的案例，加強之前的修正，此問題可在「space」位於「equal」符號（例如）之前時重現 &lt;vast version=&quot;2.0&quot;>
+   * 通过处理XML解析中的案例，增强了以前的修复，在这种情况下，当“space”位于“equal”符号之前时，问题可重现，例如 &lt;vast version=&quot;2.0&quot;>
 
-* ZD #29296 - Android：將AdSystem和Creative ID新增至CRS請求。
+* ZD #29296 - Android：将AdSystem和Creative ID添加到CRS请求。
 
-   * 現在在1401和1403請求中包含&#39;AdSystem&#39;和&#39;CreativeId&#39;作為新引數。
+   * 现在，在1401和1403请求中包含“AdSystem”和“CreativeId”作为新参数。
 
-* ZD #33062 - TVSDK在CDATA節點下的VAST回應中發生垂直號字元時當機
+* ZD #33062 - TVSDK在CDATA节点下的VAST响应中发生管道字符时崩溃
 
-   * NetworkConfiguration類別中的API setEncodeUrlForTracking已移除，成為要編碼的URL中的不安全字元
+   * NetworkConfiguration类中的API setEncodeUrlForTracking已删除，显示为要编码的URL中的不安全字符
 
-* ZD #33063 - CRS檔案選擇邏輯損毀 — TVSDK未傳送webm格式的CRS請求，而是改為傳送3gpp檔案的請求。
+* ZD #33063 - CRS文件选择逻辑已损坏 — TVSDK未发送webm格式的CRS请求，而是改为发送3gpp文件。
 
-   * 現在已修正邏輯。 在搭配webm和3gpp格式使用媒體檔案時，會要求為webm傳送CRS。 而且在使用具有3gpp格式的兩個媒體檔案時，會針對最高位元速率3gpp檔案傳送CRS請求。
+   * 现在修复了逻辑。 在使用webm和3gpp格式的媒体文件时，会请求为webm发送CRS。 而在同时使用3gpp格式的媒体文件时，会请求为比特率最高的3gpp文件发送CRS。
 
-* ZD #33125 - Android應用程式當機，且VMAP中有特定的DoubleClick標籤。
+* ZD #33125 - Android应用程序崩溃，VMAP中包含特定的DoubleClick标记。
 
-   * 修正此情況以避免當機。
+   * 修复了相应情况以避免崩溃。
 
-* ZD #32256 — 授權輪換與金鑰輪換問題 — Adobe存取
+* ZD #32256 — 许可证轮换和密钥轮换问题 — Adobe访问
 
-   * 修正SampleAES內容使用DRM中繼資料進行區段初始化的問題。 適用於AES128內容。
+   * 修复了使用SampleAES内容的DRM元数据初始化区段的问题。 可对AES128内容正常使用。
 
-* ZD #33619 — 快速轉送在即時點附近陷入緩衝狀態的成長中播放清單內容。
+* ZD #33619 — 快速转发在实时点附近陷入缓冲状态的不断增长的播放列表内容。
 
-   * 處理在特技播放模式中跨過即時點時的情況
+   * 处理在特技播放模式下跨实时点时的情况
 
-* ZD #34151 - TimedMetadata物件順序錯誤。
+* ZD #34151 - TimedMetadata对象顺序错误。
 
-   * 兩個TimedMetadata事件如果屬於時間軸中的同一時間，則會以隨機順序出現。 維持資訊清單中的原始順序。
+   * 如果两个TimedMetadata事件在时间轴中属于同一时间，则它们将以随机顺序出现。 在清单中维护了原始顺序。
 
-* ZD #34189 — 搜尋廣告插播開始時發生問題。
+* ZD #34189 — 尝试开始广告时间时出现问题。
 
-   * 該問題與使用不連續拼接的SSAI廣告有關。 而原因則是當我們尋找這類廣告的開頭時，我們尋找關鍵影格，卻找不到它。 原因是廣告的最小音訊時間戳記在最小視訊時間戳記之前。 因此，我們最終會在錯誤的fragmentDump資料中搜尋關鍵框架。 現已修正。
+   * 该问题与使用不连续性拼合的SSAI广告有关。 原因就是当我们开始寻找这类广告时，我们寻找一个关键帧却找不到它。 原因是广告的最小音频时间戳在最小视频时间戳之前。 因此，我们最终在错误的fragmentDump数据处搜索关键帧。 现已修复。
 
-* ZD #34528 — 在FireTV第3代硬體鎖上，視訊解析度不會升級至640x360以上。
+* ZD #34528 - FireTV第3代转换器上的视频分辨率不能升级到640x360以上。
 
-   * 增強修正功能，包含最新的韌體更新
+   * 增强了修复以包含最新的固件更新
 
-* ZD #34793 - TVSDK 2.5.x過去會在VideoEngine假設auditudeSettings可用但無法使用時，在某些情況下與自訂內容解析程式當機。
+* ZD #34793 - TVSDK 2.5.x以前在VideoEngine假定auditudeSettings可用而不可用时，在某些情况下使用自定义内容解析器崩溃。
 
-   * 當機的發生是因為在Null共用指標(auditudeSettings)上呼叫函式。 在VideoEngineTimeline：：placeToSourceTimeline()中新增條件檢查，以確保在呼叫該物件上的任何內容之前，auditudeSettings都可供使用。
+   * 由于对Null共享指针(auditudeSettings)的函数调用而发生崩溃。 在VideoEngineTimeline：：placeToSourceTimeline()中添加了条件检查，以确保在调用该对象上的任何内容之前，auditudeSettings都可用。
 
-* ZD #32584 — 無法存取 &lt;extensions> vast回應的節點。
+* ZD #32584 — 无法访问 &lt;extensions> vast响应的节点。
 
-   * 已修正有關XML剖析的問題，現在NetworkAdInfo提供 &lt;extensions> 節點
+   * 修复了有关XML解析的问题，现在NetworkAdInfo提供了 &lt;extensions> 节点
 
-* ZD #35086 — 若為特定VMAP回應，無法從播放器取得完整的擴充功能資料。
+* ZD #35086 — 对于特定的VMAP响应，无法从播放器获取完整的扩展数据。
 
-   * 此問題特定於擴充功能xml，因為如果擴充功能xml在屬性值內有雙引號，則XML剖析無法運作。 已修正問題。
+   * 该问题特定于扩展xml，因为如果扩展xml的属性值中包含双引号，则XML解析将不起作用。 修复了问题。
 
 **Android TVSDK 2.5.4**
 
-* ZenDesk#33659 — 啟用Webview遠端偵錯的播放工作階段。
+* ZenDesk#33659 — 启用Webview远程调试的播放会话。
 
-WebViewDebugging預設為False。 若要啟用偵錯，請使用setWebContentsDebuggingEnabled(true)，透過應用程式設定為true。
+默认情况下，WebViewDebugging设置为False。 要启用调试，请使用setWebContentsDebuggingEnabled(true)通过应用程序将设置为true。
 
-* ZenDesk#33011 — 如果CRS請求失敗，廣告時間軸未解析。
+* ZenDesk#33011 — 如果CRS请求失败，广告时间轴未解析。
 
-   當對廣告的CRS請求失敗時，時間軸會解析並播放其餘廣告。
+   当对广告的CRS请求失败时，时间轴会得到解析并且会播放其余广告。
 
-* ZenDesk#34528 — 在FireTV第三代硬體鎖上，視訊解析度無法升級至640x360以上。
+* ZenDesk#34528 — 在FireTV第三代转换器上，视频分辨率不能升级到640x360以上。
 
-   視訊解析度會隨著位元速率切換而提高。
+   视频分辨率会随着比特率切换而提高。
 
-* ZenDesk#33192 — 透過AudioUpdatedEventListener：：onAudioUpdated擷取曲目時，AudioTrack的名稱為空。
+* ZenDesk#33192 — 通过AudioUpdatedEventListener：：onAudioUpdated检索曲目时，AudioTrack的名称为空。
 
-   在FireTV Stick的少數案例中，在沒有實際音訊更新時，就會觸發onAudioUpdate事件。 此問題已修正。
+   在FireTV Stick的少数场景中，在没有实际音频更新时，会触发onAudioUpdate事件。 此问题现已修复。
 
 **Android TVSDK 2.5.3**
 
-* Zendesk#32216 - TimedMetadata自訂標籤訂閱無法運作。
+* Zendesk#32216 - TimedMetadata自定义标记订阅不起作用。
 
-   我們將ID3資料以位元組陣列（以支援APIC或一般資料）傳回給使用者端，而傳回1.4字串中的資料。 位元組陣列本身不處理Null終止字元，因此會向使用者端顯示特殊字元。 此問題現已修正。
-* Zendesk#32670 — 播放器未容錯移轉至備援播放清單
+   我们将ID3数据作为字节数组（以支持APIC或通用数据）返回到客户端，而在1.4中返回字符串。 字节数组本身不处理null终止字符，因此，它向客户端显示的是特殊字符。 此问题现已修复。
+* Zendesk#32670 — 播放器未故障切换到冗余播放列表
 
-   現在此功能正常，setNetworkDownVerificationUrl可如預期運作。
-* Zendesk#32369 — 隱藏式字幕顯示不同的顏色垃圾或成品。
+   此项现在工作正常，setNetworkDownVerificationUrl按预期工作。
+* Zendesk#32369 — 隐藏式字幕显示不同的颜色垃圾或构件。
 
-   CC問題已在最新組建版本中修正
-* Zendesk#25590 — 增強功能：TVSDK Cookie存放區( C++至JAVA )
+   CC故障问题已在最新内部版本中修复
+* Zendesk#25590 — 增强： TVSDK Cookie存储(从C++到JAVA )
 
-   Android TVSDK現在支援存取JAVA層（儲存在Android應用程式的CookieStore中）與C++ TVSDK層之間的Cookie。
-* Zendesk#32252 - TVSDK_Android_2.5.2.12似乎沒有PTPLAY-20269的修正
+   Android TVSDK现在支持在JAVA层（存储在Android应用程序的CookieStore中）和C++ TVSDK层之间访问Cookie。
+* Zendesk#32252 - TVSDK_Android_2.5.2.12似乎没有针对PTPLAY-20269的修补程序
 
-   此問題已修正並整合至2.5.2分支。
-* Zendesk#31806 — 準備中的稽核杆
+   此问题已得到修复并集成到2.5.2分支。
+* Zendesk#31806 — 准备中的自大棒
 
-   播放器卡在準備狀態，因為回應xml有空白標籤。 問題已修正。
-* Zendesk#31727 - TVSDK 2.5隱藏式字幕字元遭到捨棄或拼錯字。
+   播放器在“正在准备”状态中卡住，因为响应xml具有空标记。 现已修复该问题。
+* Zendesk#31727 - TVSDK 2.5隐藏式字幕字符被丢弃或拼写错误。
 
-   問題已修正，且我們不會捨棄/拼錯任何字元。
-* Zendesk#31485 - DrmManager 2.5版
+   问题已修复，并且我们不会删除任何字符/拼写错误。
+* Zendesk#31485 - 2.5中的DrmManager
 
-   透過新的DrmManager（前後關聯前後關聯）建立DrmManager時發生一些問題。 實作DRMService類別，提供DRMManager。
-* Zendesk#32794 — 無法在Android上播放1080P解析度資料流
+   通过新的DrmManager（上下文上下文）创建DrmManager时存在一些问题。 实现了DRMService类，该类将提供DRMManager。
+* Zendesk#32794 — 在Android上未播放1080P分辨率流
 
-   我們變更了SizeAvailableEvent 2.5中的getHeight()和getWidth()方法，以傳回媒體格式傳回的影格高度和影格寬度。 現在，它會分別傳回解碼器傳回的輸出高度和輸出寬度。
-* Zendesk #19359Flash Player會因為#EXT-X-FAXS-CM屬性在設定層級資訊清單中的位置而當機。
+   在2.5中，我们更改了SizeAvailableEvent的SizeAvailableEvent和Previous、getHeight()和getWidth()方法，用于返回由媒体格式返回的帧高度和帧宽度。 它现在分别返回解码器返回的输出高度和输出宽度。
+* Zendesk #19359Flash Player由于属性在集级别清单中#EXT-X-FAXS-CM位置而崩溃。
 
-   在個別位元速率或區段出現於播放清單之前，#EXT-X-FAXS-CM標籤必須一律出現於最上層播放清單。
+   #EXT-X-FAXS-CM标记必须始终显示在顶部播放列表中，然后单个比特率或区段才会显示在播放列表中。
 
 **Android TVSDK 2.5.2**
 
-* Zendesk#17305具有非不透明背景的隱藏式字幕中的不自然感。
+* Zendesk#17305具有非不透明背景的隐藏式字幕中的伪像。
 
-   TextFormat中的setTreatSpaceAsAlphaNum屬性會公開。 依預設，屬性為False。 在使用者端中將屬性設定為True以解決深色空格問題。
+   TextFormat中的setTreatSpaceAsAlphaNum属性公开。 默认情况下，属性为False。 在客户端中将属性设置为True以解决深色空间问题。
 
-* Zendesk#25097 CC display具有CC設定的視覺成品。
+* Zendesk#25097 CC显示具有带有CC设置的视觉对象。
 
-   TextFormat中的setTreatSpaceAsAlphaNum屬性會公開。 依預設，屬性為False。 在使用者端中將屬性設定為True以解決深色空格問題。
+   TextFormat中的setTreatSpaceAsAlphaNum属性公开。 默认情况下，属性为False。 在客户端中将属性设置为True以解决深色空间问题。
 
-* 傳出TVSDK播放器的Zendesk #31620使用者代理字串被截斷。
+* 传出TVSDK播放器的Zendesk #31620用户代理字符串被截断。
 
-   128個字元後，使用者代理字串將不再被截斷。
+   用户代理字符串在128个字符后将不再被截断。
 
-   Adobe Primetime版本字串已新增至系統使用者代理。
+   Adobe Primetime版本字符串已添加到系统用户代理。
 
-* Zendesk #30809遺失SEEK_END事件會使應用程式無法轉換為播放狀態。
-* 與舊版Primetime TVSDK相比，Zendesk #30415隱藏式字幕的「青色」顏色現在為較暗的藍色（藍綠色）。
+* Zendesk #30809缺少SEEK_END事件可阻止应用程序转换为正在播放状态。
+* 与之前的Primetime TVSDK版本相比，Zendesk #30415隐藏式字幕的“青色”颜色现在显示为较深的蓝色（蓝绿色）。
 
-   顏色從深青色變更為青色。
+   颜色从深青色更改为青色。
 
-* 未下載/解析Zendesk #30727 VOD廣告。
+* 未下载/解析Zendesk #30727 VOD广告。
 
-   在VMAP XML中，如果存在沒有明確結尾標籤(&#39;的空VAST標籤&lt;/vast>&#39;)且後面沒有新行字元，則VMAP XML無法正確剖析，且可能無法播放廣告。
+   在VMAP XML中，如果存在没有显式结束标记(&#39;)的空VAST标记&lt;/vast>&#39;)且后面没有换行符，则VMAP XML无法正确解析，广告可能无法播放。
 
 **Android TVSDK 2.5.1**
 
-* 裝置特定(Samsung Galaxy Tab 4)當機；具有Auditude的VOD DRM LBA並按一下廣告。
-* VHL — 從位移開始內容時，傳送不正確的心率呼叫。
-* 播放VPAID廣告時，VHL心率會呼叫事件:type:播放廣告遺失。
-* 進入「完成」狀態後，播放器會針對後置廣告返回到「正在播放」狀態並顯示「略過adBreakPolicy」。
-* Cookie未附加至傳出廣告回呼。
-* 廣告提示點不可見。
-* 無法載入具有獨立EAC3 SAP磁軌的HLS。
-* 媒體播放器還原後，TVSDK收到Screen On意圖，導致播放器當機。
+* 设备特定(Samsung Galaxy Tab 4)崩溃；VOD DRM LBA with Auditude并单击广告。
+* VHL — 从偏移量开始内容时，会发送不正确的心率调用。
+* 播放VPAID广告时，VHL心率会呼叫事件:type:播放广告缺失。
+* 在进入“完成”状态后，对于后置广告，播放器将返回到“正在播放”状态并显示SKIP adBreakPolicy。
+* Cookie未附加到传出广告回调。
+* 广告提示点不可见。
+* 无法加载具有单独的EAC3 SAP跟踪的HLS。
+* 媒体播放器恢复后，TVSDK收到Screen On意图，播放器崩溃。
 
-## 已知問題和限制 {#known-issues-and-limitations}
+## 已知问题和限制 {#known-issues-and-limitations}
 
 **Android TVSDK 3.11**
 
-* 未新增任何新限制。
+* 未添加任何新限制。
 
-### 舊版中的已知問題和限制
+### 以前版本中的已知问题和限制
 
 **Android TVSDK 3.10**
 
-* 未新增任何新限制。
+* 未添加任何新限制。
 
 **Android TVSDK 3.8**
 
-* 未新增任何新限制。
+* 未添加任何新限制。
 
 **Android TVSDK 3.7**
 
-* 未新增任何新限制。
+* 未添加任何新限制。
 
 **Android TVSDK 3.6**
 
-* 未新增任何新限制。
+* 未添加任何新限制。
 
 **Android TVSDK 3.5**
 
-* 未新增任何新限制。
+* 未添加新的限制。
 
 **Android TVSDK 3.4**
 
-* 尚未驗證CMAF (CBC)資料流的ID3、隱藏式字幕、延遲繫結音訊支援。
-* 在某些裝置上，由於在CMAF串流上的特技播放期間，視訊扭曲可能會出現在最上方，因此存在可重複性低的問題。
+* 尚未验证CMAF (CBC)流是否支持ID3、隐藏式字幕、后期绑定音频。
+* 在某些设备上，由于在CMAF流上的特技播放期间视频失真可能出现在顶部，因此存在可再现性低的问题。
 
 **Android TVSDK 3.3**
 
-* CMAF資料流播放不支援clcp：c608字幕。
+* CMAF流播放不支持clcp：c608字幕。
 
 **Android TVSDK 3.2**
 
-* TVSDK 3.2不支援CMAF範例AES和AES128資料流播放。
-* HEVC CMAF資料流不支援隱藏式字幕播放。
-* 在非加密區段周圍執行搜尋時，WV Encrypted資料流會顯示綠色色彩。
-* CMAF資料流不支援ID3事件。
-* HLS資料流不支援TTML字幕格式。
+* TVSDK 3.2不支持CMAF示例AES和AES128流播放。
+* HEVC CMAF流不支持隐藏式字幕播放。
+* 在围绕非加密区段执行搜索时，WV加密流会显示绿色颜色。
+* CMAF流不支持ID3事件。
+* hls流不支持TTML字幕格式。
 
 **Android TVSDK 3.0**
 
-* 此版本中的HEVC支援有下列限制
+* 此版本中的HEVC支持具有以下限制
 
-   * 不支援DRM
-   * CC (CEA 608/708)支援未經驗證
-   * 尚未提供4K支援
-   * 未驗證ID3標籤支援
+   * 不支持DRM
+   * CC (CEA 608/708)支持未经验证
+   * 4K支持尚不存在
+   * 未验证ID3标记支持
 
-* 對於廣告進度事件，時間軸列可能無法反映100%正確的廣告播放時間。 作為因應措施，您可以使用 `adcompleteevent` 瞭解廣告播放完成並更新UI的各種用途，例如更新時間軸列、移除廣告相關UI等。
-* 從VMAP傳回的大量廣告呼叫不接受即時Lookahead位置。
+* 对于广告进度事件，时间轴栏可能无法反映100%准确的广告播放时间。 作为解决方法，我们可以使用 `adcompleteevent` 了解广告播放完成并更新UI，以达到各种目的，如更新时间线栏、删除广告相关UI等。
+* 从VMAP返回的大量广告调用不遵循即时Lookahead位置。
 
 **Android TVSDK 2.5.6**
 
-* 不支援同時有多個VMAP廣告插播。
+* 不支持同时使用多个VMAP广告时间。
 
 **Android TVSDK 2.5.3**
 
-此版本有以下問題：
+此版本具有以下问题：
 
-* 即時視訊播放在低端裝置或不良網路狀況下可能有音訊 — 視訊同步問題。
-* 對於FER資料流，virtualTime和localTime可能會有所不同。 此外，具有位移的FER也不起作用。
-* 搜尋延遲繫結音訊內容時，播放可能會卡住。
-* LIVE內容的webVTT字幕可能會間歇性地失去同步。
-* 在結束廣告插播後，可以間歇性地快速播放幾個畫面。
-* 有時候，即使播放了廣告，也會對Tripple Wrapper廣告插播擲回303錯誤。
+* 实时视频播放在低端设备上或网络条件较差时可能存在音频 — 视频同步问题。
+* 对于FER流，virtualTime和localTime可能不同。 此外，带有偏移的FER不起作用。
+* 对后期绑定音频内容进行搜寻时，播放可能会卡住。
+* 有时，LIVE内容的webVTT字幕可能会不同步。
+* 间歇性地，在结束广告时间后可以看到少量帧的快速播放。
+* 有时候，即使播放了广告，也会对三个包装器广告时间引发303错误。
 
 **Android TVSDK 2.5.2**
 
-此版本有以下問題：
+此版本具有以下问题：
 
-* 低端裝置上的即時視訊播放可能有音訊 — 視訊同步問題。
-* 搜尋至VOD媒體結尾時，播放可能會在某些時間停止。
-* 對於FER資料流，virtualTime和localTime可能會有所不同。 此外，具有位移的FER也不起作用。
+* 在低端设备上，实时视频播放可能存在音频 — 视频同步问题。
+* 在搜寻到VOD媒体结尾时，播放可能会在某些时候停止。
+* 对于FER流，virtualTime和localTime可能不同。 此外，带有偏移的FER不起作用。
 
 **Android TVSDK 2.5.1**
 
-此版本的TVSDK有下列問題：
+此版本的TVSDK存在以下问题：
 
-* 低端裝置上的即時視訊播放可能有音訊 — 視訊同步問題。
-* 對於FER資料流，virtualTime和localTime可能會有所不同。 此外，具有位移的FER也不起作用。
-* 在VMAP XML中，如果存在沒有明確結尾標籤的空白VAST標籤(&lt;/vast>)，且後面沒有新行，則VMAP XML無法正確剖析，且廣告可能無法播放。
-* 不支援VPAID後置滾動。
+* 在低端设备上，实时视频播放可能存在音频 — 视频同步问题。
+* 对于FER流，virtualTime和localTime可能不同。 此外，带有偏移的FER不起作用。
+* 在VMAP XML中，如果存在没有显式结束标记的空VAST标记(&lt;/vast>)，并且后面没有换行符，则VMAP XML无法正确解析，广告可能无法播放。
+* 不支持VPAID后置广告。
 
-## 實用資源 {#helpful-resources}
+## 有用资源 {#helpful-resources}
 
-* [系統需求](/help/programming/tvsdk-3x-android-prog/android-3x-introduction/android-3x-requirements.md)
-* [Android適用的TVSDK 3.10程式設計師指南](/help/programming/tvsdk-3x-android-prog/android-3x-introduction/overview-prod-audience-guide/android-3x-overview-prod-audience-guide.md)
-* [TVSDK Android Javadoc for API參考](https://help.adobe.com/en_US/primetime/api/psdk/javadoc3.5/index.html)
-* [TVSDK Android C++ API檔案](https://help.adobe.com/en_US/primetime/api/psdk/cpp_3.5/namespaces.html)  — 每個Java類別都有對應的C++類別，且C++檔案包含的說明資料比Javadocs更多，因此請參考C++檔案以深入瞭解Java API。
-* [TVSDK 1.4至2.5 for Android (Java)移轉指南](https://helpx.adobe.com/primetime/migration-guides/tvsdk-14-25-android.html)
-* 如需處理熒幕開啟/關閉的情況，請參閱 `Application_Changes_for_Screen_On_Off.pdf` 組建中包含的檔案。
-* 如需完整說明檔案，請前往 [Adobe Primetime學習與支援](https://helpx.adobe.com/support/primetime.html) 頁面。
+* [系统要求](/help/programming/tvsdk-3x-android-prog/android-3x-introduction/android-3x-requirements.md)
+* [《 TVSDK 3.10 for Android程序员指南》](/help/programming/tvsdk-3x-android-prog/android-3x-introduction/overview-prod-audience-guide/android-3x-overview-prod-audience-guide.md)
+* [TVSDK Android Javadoc for API参考](https://help.adobe.com/en_US/primetime/api/psdk/javadoc3.5/index.html)
+* [TVSDK Android C++ API文档](https://help.adobe.com/en_US/primetime/api/psdk/cpp_3.5/namespaces.html)  — 每个Java类都有一个相应的C++类，并且C++文档比Javadocs包含更多说明性材料，因此请参阅C++文档以更深入地了解Java API。
+* [适用于Android (Java)的TVSDK 1.4到2.5迁移指南](https://helpx.adobe.com/primetime/migration-guides/tvsdk-14-25-android.html)
+* 有关处理屏幕打开/关闭方案，请参阅 `Application_Changes_for_Screen_On_Off.pdf` 内部版本中包含的文件。
+* 请参阅完整的帮助文档，网址为 [Adobe Primetime学习与支持](https://helpx.adobe.com/support/primetime.html) 页面。

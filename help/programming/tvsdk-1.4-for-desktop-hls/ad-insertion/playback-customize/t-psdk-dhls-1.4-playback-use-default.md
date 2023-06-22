@@ -1,6 +1,6 @@
 ---
-description: 您可以選擇使用預設廣告行為。
-title: 使用預設播放行為
+description: 您可以选择使用默认广告行为。
+title: 使用默认播放行为
 exl-id: 8d25e076-4335-49c8-b6b8-f2694b1b9074
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,13 +9,13 @@ ht-degree: 0%
 
 ---
 
-# 使用預設播放行為{#use-the-default-playback-behavior}
+# 使用默认播放行为{#use-the-default-playback-behavior}
 
-您可以選擇使用預設廣告行為。
+您可以选择使用默认广告行为。
 
-若要使用預設行為：
+要使用默认行为，请执行以下操作：
 
-* 如果您實作自己的 `ContentFactory` 類別，傳回新的執行個體 `DefaultAdPolicySelector` 在您的實作中 `doRetrieveAdPolicySelector`.
+* 如果您实施自己的 `ContentFactory` 类，返回一个新实例 `DefaultAdPolicySelector` 在您的实施中 `doRetrieveAdPolicySelector`.
 
    ```
    public class CustomContentFactory extends ContentFactory { 
@@ -34,4 +34,4 @@ ht-degree: 0%
    }
    ```
 
-* 如果您沒有的自訂實作 `ContentFactory` 類別，TVSDK使用 `DefaultAdPolicySelector`.
+* 如果您没有的自定义实施 `ContentFactory` 类，TVSDK使用 `DefaultAdPolicySelector`.

@@ -1,6 +1,6 @@
 ---
-description: 這些類別會提供發生在時間軸內之廣告的相關資訊。
-title: 時間表廣告類別
+description: 这些类提供有关时间轴内发生的广告的信息。
+title: 时间轴广告类
 exl-id: fb31a235-6578-4da1-b732-713a2f9b24be
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,27 +9,27 @@ ht-degree: 0%
 
 ---
 
-# 時間表廣告類別{#timeline-advertising-classes}
+# 时间轴广告类{#timeline-advertising-classes}
 
-這些類別會提供發生在時間軸內之廣告的相關資訊。
+这些类提供有关时间轴内发生的广告的信息。
 
-封裝： [com.adobe.mediacore.timeline.advertising](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/package-summary.html)
+包： [com.adobe.mediacore.timeline.advertising](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/package-summary.html)
 
-封裝： [com.adobe.mediacore.timeline.advertising.auditude](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/auditude/package-summary.html)
+包： [com.adobe.mediacore.timeline.advertising.auditude](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/auditude/package-summary.html)
 
-| 名稱 | 說明 |
+| 名称 | 描述 |
 |--- |--- |
-| [廣告](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/Ad.html) | 定義廣告抽象並保留所有廣告資訊的類別。 它由唯一ID、持續時間和 `MediaResource`. 此 `MediaResource` 包含實際廣告內容所在的URL。 |
-| [AdAsset](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/AdAsset.html) | 代表要顯示之資產的類別。 代表廣告資產的類別。 |
-| [廣告插播](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/AdBreak.html) | 在播放期間某個時間點播放的數個廣告上提供統一檢視的類別。 |
-| [AdBreakPlacement](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/AdBreakPlacement.html) | 廣告插播位置作業類別。 |
-| [AdBreakPolicy](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/AdBreakPolicy.html) | 定義與搜尋時略過廣告的使用者相關之廣告播放原則的列舉。 |
-| [AdClick](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/AdClick.html) | 代表與資產相關聯之點選例項的類別。 此執行個體包含點進URL和標題的相關資訊，可用於向使用者提供其他資訊。 |
-| [AdPolicyInfo](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/AdPolicyInfo.html) | 定義AdPolicySelector API呼叫屬性的介面。 這些屬性提供強制實行每個廣告行為的內容。 |
-| [AdPolicySelector](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/AdPolicySelector.html) | 用於強制實施廣告行為的廣告原則選擇器介面。 應用程式可以透過實作所有必要的方法或擴充現有的預設原則選取器類別來自訂特定行為，來符合此介面。 |
-| `auditude.AuditudeAdProvider` | 已棄用。 使用AuditudeResolver。 |
-| [AuditudeResolver](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/auditude/AuditudeResolver.html) | 處理片語程式中的primetime和解析的類別。 |
-| [Auditudetracker](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/auditude/AuditudeTracker.html) | 實作ContentTracker介面並定義Primetime廣告追蹤事件的類別。 |
-| [ContentResolver](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/ContentResolver.html) | 處理片語處理中廣告解析部分的類別。 |
-| [ContentTracker](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/ContentTracker.html) | 定義您必須實作通訊協定的介面，用來建立與資料庫或自訂廣告追蹤器整合的廣告追蹤模組。 此介面需要您定義向遠端廣告追蹤系統報告廣告進度事件的方式。 |
-| [位置資訊](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/PlacementInformation.html) | 抽象位置資訊請求的類別。 每個已解析廣告都必須附加一個版位資訊。 位置資訊說明廣告在時間軸上的放置位置。 其中包含下列資訊： <ul><li>位置位置（以毫秒為單位） </li><li>位置型別（前段、中段或後段） </li><li>即將取代之主要內容區塊的持續時間</li></ul> |
+| [广告](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/Ad.html) | 定义广告抽象并保存所有广告信息的类。 它由唯一ID、持续时间和 `MediaResource`. 此 `MediaResource` 包含实际广告内容所在的URL。 |
+| [AdAsset](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/AdAsset.html) | 表示要显示的资源的类。 表示广告资源的类。 |
+| [广告时间](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/AdBreak.html) | 类可统一查看将在播放过程中的某个时间点播放的多个广告。 |
+| [AdBreakPlacement](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/AdBreakPlacement.html) | 广告时间放置操作类。 |
+| [AdBreakPolicy](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/AdBreakPolicy.html) | 定义与搜索时绕过广告的用户相关的广告播放策略的枚举。 |
+| [AdClick](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/AdClick.html) | 表示与资产关联的点击实例的类。 此实例包含有关点进URL和标题的信息，可用于向用户提供其他信息。 |
+| [AdPolicyInfo](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/AdPolicyInfo.html) | 定义AdPolicySelector API调用的属性的接口。 这些属性提供了用于实施每个广告行为的上下文。 |
+| [AdPolicySelector](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/AdPolicySelector.html) | 用于实施广告行为的广告策略选择器界面。 应用程序可以通过实现所有必需的方法或通过扩展现有的默认策略选择器类来自定义特定行为，来符合此接口。 |
+| `auditude.AuditudeAdProvider` | 已弃用。 使用AuditudeResolver。 |
+| [AuditudeResolver](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/auditude/AuditudeResolver.html) | 在短语处理中处理primetime和解析的类。 |
+| [Auditudetracker](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/auditude/AuditudeTracker.html) | 实现ContentTracker接口并定义Primetime广告跟踪事件的类。 |
+| [ContentResolver](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/ContentResolver.html) | 处理短语处理中的广告解析部分的类。 |
+| [ContentTracker](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/ContentTracker.html) | 定义在以下情况下必须实施的协议的接口：要创建旨在与库或自定义广告跟踪器集成的广告跟踪模块。 此界面要求您定义向远程广告跟踪系统报告广告进度事件的方式。 |
+| [投放位置信息](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/advertising/PlacementInformation.html) | 抽象放置信息请求的类。 每个已解析广告必须附加一个版面信息。 投放位置信息描述广告在时间轴上的放置位置。 它包含如下信息： <ul><li>投放位置（以毫秒为单位） </li><li>投放类型（前置、中置或后置） </li><li>即将替换的主内容块的持续时间</li></ul> |

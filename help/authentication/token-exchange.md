@@ -1,6 +1,6 @@
 ---
-title: 交換平台SSO權杖以取得Adobe權杖
-description: 交換平台SSO權杖以取得Adobe權杖
+title: 为Adobe令牌交换平台SSO令牌
+description: 为Adobe令牌交换平台SSO令牌
 exl-id: 5ab60268-8f97-4755-8281-be45e812ed7f
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,41 +9,41 @@ ht-degree: 2%
 
 ---
 
-# 交換平台SSO權杖以取得Adobe權杖 {#exchange-a-platform-sso-token-for-an-adobe-token}
+# 为Adobe令牌交换平台SSO令牌 {#exchange-a-platform-sso-token-for-an-adobe-token}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-## REST API端點 {#clientless-endpoints}
+## REST API端点 {#clientless-endpoints}
 
 &lt;reggie_fqdn>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 &lt;sp_fqdn>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
-## 說明 {#description}
+## 描述 {#description}
 
-允許將平台SSO設定檔「交換」為Adobe權杖。
+允许将平台SSO配置文件“交换”为Adobe令牌。
 
-| 端點 | 已呼叫  </br>作者： | 輸入   </br>引數 | HTTP  </br>方法 | 回應 | HTTP  </br>回應 |
+| 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/tokens/authn | 串流應用程式</br></br>或</br></br>程式設計師服務 | 1.請求者（必要）</br>    </br>2.  deviceId （必要）</br>    </br>3.  mvpd （必要）</br>    </br>4.  deviceType （必要）</br>    </br>5.  SAMLResponse （必要）</br>    </br>6.  deviceUser （已棄用）</br>    </br>7.  appId （已棄用） | POST | 成功的回應將是「204無內容」，這表示已成功建立權杖，且已準備好用於授權流程。 | 204 — 無內容   </br>400 — 錯誤請求 |
+| &lt;sp_fqdn>/api/v1/tokens/authn | 流应用程序</br></br>或</br></br>程序员服务 | 1.申请人（必填）</br>    </br>2.  deviceId（必需）</br>    </br>3.  mvpd（必需）</br>    </br>4.  deviceType（必需）</br>    </br>5.  SAMLResponse（必需）</br>    </br>6.  deviceUser（已弃用）</br>    </br>7.  appId（已弃用） | POST | 成功的响应将为“204无内容”，这表示已成功创建令牌，该令牌已准备好用于授权流。 | 204 — 无内容   </br>400 — 错误请求 |
 
 
-| 輸入引數 | 說明 |
+| 输入参数 | 描述 |
 | --- | --- |
-| 請求者 | 此作業有效的程式設計員requestorId。 |
-| deviceId | 裝置ID位元組。 |
-| mvpd | 此作業適用的MVPD ID。 |
-| deviceType | 我們嘗試為其取得設定檔請求的Apple平台。  兩者之一 **iOS** 或 **tvOS**. |
-| SAMLResponse | 平台SSO傳回的實際設定檔。 |
-| _deviceuser_ | 裝置使用者識別碼。 |
-| _appId_ | 應用程式id/名稱。 |
+| 请求者 | 此操作有效的程序员requestorId。 |
+| deviceId | 设备ID字节。 |
+| mvpd | 此操作对其有效的MVPD ID。 |
+| 设备类型 | 我们尝试为其获取配置文件请求的Apple平台。  可以 **iOS** 或 **tvOS**. |
+| SAMLResponse | Platform SSO返回的实际配置文件。 |
+| _设备用户_ | 设备用户标识符。 |
+| _appId_ | 应用程序id/名称。 |

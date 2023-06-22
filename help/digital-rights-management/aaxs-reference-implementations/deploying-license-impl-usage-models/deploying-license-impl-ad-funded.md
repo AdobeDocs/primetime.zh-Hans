@@ -1,6 +1,6 @@
 ---
-title: 廣告資助
-description: 廣告資助
+title: 广告融资
+description: 广告融资
 copied-description: true
 exl-id: ecb14487-0bd4-4cdd-b613-4bd4393b37b0
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,6 +10,6 @@ ht-degree: 0%
 
 ---
 
-# 廣告資助 {#ad-funded}
+# 广告融资 {#ad-funded}
 
-將廣告納入體驗即可將內容貨幣化。 透過此模型，無需使用者驗證即可發佈內容。
+通过将广告作为体验的一部分包含在内使内容货币化。 利用此模型，无需用户身份验证即可分发内容。

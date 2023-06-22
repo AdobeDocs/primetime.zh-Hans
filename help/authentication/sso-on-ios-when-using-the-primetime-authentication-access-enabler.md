@@ -1,6 +1,6 @@
 ---
-title: 使用Primetime Authentication Access Enabler時iOS上的SSO
-description: 使用Primetime Authentication Access Enabler時iOS上的SSO
+title: 使用Primetime Authentication Access Enabler时iOS上的SSO
+description: 使用Primetime Authentication Access Enabler时iOS上的SSO
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,82 +9,82 @@ ht-degree: 0%
 
 ---
 
-# 使用Primetime Authentication Access Enabler時iOS上的SSO {#sso-on-ios-when-using-the-primetime-authentication-access-enabler}
+# 使用Primetime Authentication Access Enabler时iOS上的SSO {#sso-on-ios-when-using-the-primetime-authentication-access-enabler}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
 </br>
 
-## 概觀
+## 概述
 
-Primetime驗證支援的應用程式之間的單一登入(SSO)會根據基礎作業系統以不同方式運作。
+Primetime身份验证支持的应用程序之间的单点登录(SSO)工作方式有所不同，具体取决于底层操作系统。
 
-本檔案地址 **iOS上的SSO**，使用Adobe Primetime驗證時 **存取啟用程式**.
+本文档地址 **iOS上的SSO**，使用Adobe Primetime身份验证时 **访问启用码**.
 
-**存取啟用程式** **1.10** 是Adobe Primetime驗證iOS原生SDK的最新版本。 Adobe強烈建議您改用此版本，不要再使用舊版。 如果您使用的是舊版Access Enabler，您可以下載最新版本 [此處](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library).
+**访问启用码** **1.10** 是Adobe Primetime身份验证iOS本机SDK的最新版本。 Adobe强烈建议您迁移到此版本，而不是使用旧版本。 如果您使用的是旧版Access Enabler，则可以下载最新版本 [此处](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library).
 
-iOS上的SSO受下列條件支配：
+iOS上的SSO受以下条件限制：
 
-- 應用程式必須使用相同的 **權杖儲存** （以Access Enabler建立的自訂作業範圍形式）。
-- 應用程式必須產生相同的 **裝置ID** (Access Enabler會根據MAC位址或IDFV （視作業系統版本而定）計算裝置ID。)
+- 应用程序必须使用相同的 **令牌存储** （以Access Enabler创建的自定义粘贴板的形式）。
+- 应用程序必须生成相同的 **设备ID** (Access Enabler根据MAC地址或IDFV（具体取决于操作系统版本）计算设备ID。)
 
-## 行為
+## 行为
 
-SSO行為如下：
+SSO行为如下：
 
-- **iOS 6及以下版本**：SSO可在相同團隊或不同團隊開發的應用程式之間自動運作。 裝置ID是根據MAC位址計算（所有應用程式中都會產生相同的值），而且儲存區域對所有應用程式都是通用的(自訂作業範圍可跨iOS 6及較低版本的應用程式共用)。
-   - **重要：** 請注意，iOS SDK 1.9.4版已 [將最低iOS部署目標提高至iOS 7。](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library) 
-- **iOS 7和更高版本**：SSO的運作條件如下：
+- **iOS 6及更低版本**：SSO在同一团队或不同团队开发的应用程序之间自动工作。 设备ID是根据MAC地址计算的（所有应用程序中都生成相同的值），并且存储区域对所有应用程序都是通用的(自定义粘贴板可跨iOS 6及更低版本上的应用程序共享)。
+   - **重要提示：** 请注意，iOS SDK 1.9.4版本具有 [将最低iOS部署目标提高到了iOS 7。](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library) 
+- **iOS 7及更高版本**：SSO将在以下条件下工作：
 
-1. 應用程式是使用相同的Apple發佈設定檔發佈，或是屬於相同團隊的設定檔發佈。 這是應用程式在iOS 7和更高版本上共用自訂剪貼簿的唯一方法。 在所有其他情況下，作業範圍會依應用程式而沙箱。 從 [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html)： \+\[UIPasteboard作業區域名稱:create:\]和+\[UIPasteboard作業範圍具有UniqueName\]現在會唯一指定名稱，僅允許相同應用程式群組中的應用程式存取作業範圍。 如果開發人員嘗試以已存在的名稱建立作業範圍，且不屬於相同應用程式套裝，將取得專屬的私人作業範圍。 請注意，這不會影響系統提供的剪貼簿、一般和尋找。
+1. 使用相同的Apple分发配置文件或属于同一团队的配置文件发布应用程序。 这是应用程序共享iOS 7和更高版本上的自定义粘贴板的唯一方法。 在所有其他情况下，粘贴板是按应用程序沙盒的。 起始日期 [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html)： \+\[UIPasteboard粘贴板WithName:create:\]和+\[UIPasteboard粘贴板WithUniqueName\]现在唯一给定名称，仅允许同一应用程序组中的应用程序访问粘贴板。 如果开发人员尝试使用已存在的名称创建粘贴板，并且这些名称不属于同一应用程序包，他们将获得自己的唯一专用粘贴板。 请注意，这不会影响系统提供的粘贴板、常规和查找。
 
-1. 應用程式具有相同的套件組合ID首碼（最後一個元件以外的所有元件）。 只有共用相同套件ID首碼的應用程式才會計算相同的IDFV。 從 [*https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice\_Class/index.html\#//apple\_ref/occ/instp/UIDevice/identifierForVendor*](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/identifierForVendor)：在IOS 7上，組合的所有元件（最後一個元件除外）都會用來產生廠商ID。 如果套件ID只有單一元件，則會使用整個套件ID。
+1. 应用程序具有相同的捆绑包ID前缀（除最后一个组件之外的所有组件）。 只有共享同一捆绑ID前缀的应用程序才能计算相同的IDFV。 起始日期 [*https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice\_Class/index.html\#//apple\_ref/occ/instp/UIDevice/identifierForVendor*](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/identifierForVendor)：在IOS 7上，捆绑包的所有组件（最后一个组件除外）都用于生成供应商ID。 如果捆绑ID只有一个组件，则使用整个捆绑ID。
 
-現在來著重於 **&#39;iOS 7和更高版本&#39;** 情境，因為這是實際使用者最常使用的情境：
+现在，我们来关注 **&#39;iOS 7及更高版本&#39;** 场景，因为它是实际用户最常访问的：
 
-兩個條件（共用來自相同開發團隊的設定檔並具有通用組合識別碼首碼）是SSO的必要條件。
+两个条件（共享来自同一开发团队的配置文件并具有公共捆绑标识符前缀）是SSO的必需条件。
 
-以下是可能的組合及其產生的結果：
+以下是可能的组合及其产生的结果：
 
-- **來自相同團隊和相同套件組合ID首碼的設定檔**：應用程式會共用相同的作業範圍儲存空間，且裝置識別碼(IDFV)相同。 使用者只需驗證一次（在使用的第一個應用程式中），且驗證狀態將在所有其他應用程式之間共用。 範例流程：
+- **来自同一团队和同一捆绑包ID前缀的配置文件**：应用程序将共享相同的粘贴板存储，并具有相同的设备ID (IDFV)。 用户只需要验证一次（在使用的第一个应用程序中），并且身份验证状态将在所有其他应用程序之间共享。 示例流程：
 
-1. 使用者開啟應用程式A （含套件編號） *com.x.y.AppA*)且已取消驗證
-1. 使用者在應用程式A中執行驗證
-1. 使用者開啟應用程式B （含套件組合ID） *com.x.y.AppB*)並透過共用應用程式A的權益資料來自動驗證（來自步驟2）
-1. 使用者開啟應用程式A且仍通過驗證（來自步驟2）
-
- 
-
-- **來自相同團隊但不同套件組合ID首碼的設定檔**：應用程式將共用相同的作業範圍儲存空間，但會有不同的裝置ID (IDFV)。 使用者需要針對每個應用程式驗證一次。 範例流程：
-
-1. 使用者開啟應用程式A （含套件編號） *com.x.y.AppA*)且已取消驗證
-1. 使用者在應用程式A中執行驗證
-1. 使用者開啟應用程式B （含套件組合ID） *com.z.AppB*)和Access Enabler會偵測到第一個應用程式取得的權杖（因為儲存空間已共用），但因為不同的裝置ID，所以不會嘗試透過SSO使用權杖
-1. 使用者在應用程式B中執行驗證
-1. 使用者開啟應用程式A且仍通過驗證（來自步驟2）
+1. 用户打开应用程序A（包含捆绑包ID） *com.x.y.AppA*)且未进行身份验证
+1. 用户在应用程序A中执行身份验证
+1. 用户打开应用程序B（带有捆绑包ID） *com.x.y.AppB*)，并通过共享来自应用程序A的权利数据来自动进行身份验证（步骤2）
+1. 用户打开应用程序A，并且仍然（从步骤2开始）经过身份验证
 
  
 
-- **來自不同團隊的設定檔（此情境中不會包含套件組合ID）**：應用程式會有不同的作業範圍儲存空間，而且兩者之間的SSO將會停用。 使用者需要為每個應用程式驗證一次，並且在應用程式之間切換時，驗證工作階段將持續存在。 範例流程：
+- **来自同一团队但包ID前缀不同的配置文件**：应用程序将共享相同的粘贴板存储，但具有不同的设备ID (IDFV)。 用户需要为每个应用程序验证一次。 示例流程：
+
+1. 用户打开应用程序A（包含捆绑包ID） *com.x.y.AppA*)且未进行身份验证
+1. 用户在应用程序A中执行身份验证
+1. 用户打开应用程序B（带有捆绑包ID） *com.z.AppB*)，并且Access Enabler会检测第一个应用程序获得的令牌（因为存储已共享），但由于设备ID不同，因此不会尝试通过SSO使用该令牌
+1. 用户在应用程序B中执行身份验证
+1. 用户打开应用程序A，并且仍然（从步骤2开始）经过身份验证
+
+ 
+
+- **来自不同团队的用户档案（在此场景中，捆绑ID无关）**：应用程序将具有不同的粘贴板存储，并且它们之间将禁用SSO。 用户需要为每个应用程序验证一次，并且在应用程序之间切换时，身份验证会话将保持持续性。 示例流程：
 
 
-1. 使用者開啟應用程式A且未驗證
-1. 使用者在應用程式A中執行驗證
-1. 使用者開啟應用程式B且未驗證
-1. 使用者在應用程式B中執行驗證
-1. 使用者開啟應用程式A並驗證（從步驟2）
-1. 使用者開啟應用程式B並驗證（從步驟4）
+1. 用户打开应用程序A且未进行身份验证
+1. 用户在应用程序A中执行身份验证
+1. 用户打开应用程序B且未进行身份验证
+1. 用户在应用程序B中执行身份验证
+1. 用户打开应用程序A并进行身份验证（步骤2）
+1. 用户打开应用程序B并进行身份验证（步骤4）
 
-**注意：** 請注意，上述的SSO條件適用於透過 **Apple App Store**. 如果應用程式部署在模擬器上（應用程式簽署不適用）、使用Xcode安裝或透過Ad Hoc設定檔發佈，您可能會獲得不同的結果。
+**注意：** 请注意，通过安装应用程序时，上述SSO条件适用 **Apple App Store**. 如果应用程序部署在模拟器上（应用程序签名不适用）、使用Xcode安装或通过Ad Hoc配置文件分发，您可能会获得不同的结果。
 
-**重要：** 附註(**關於AccessEnabler v1.8**)：上述第二個案例（來自相同團隊但不同套件ID首碼的設定檔）會為的使用者帶來非常不愉快的使用者體驗。 **AccessEnabler v1.8** 跨由同一團隊（媒體公司）開發的應用程式。 使用者在來自相同媒體公司的應用程式之間轉換時將自動登出，因此，應用程式開發人員在決定套件ID和發佈設定檔時，必須小心。 此案例的確切情況如下所示：
+**重要提示：** 注释(**关于AccessEnabler v1.8**)：上述第二种情况（来自同一团队但包ID前缀不同的用户档案）将会为的用户带来非常不愉快的用户体验。 **AccessEnabler v1.8** 跨由同一团队（媒体公司）开发的应用程序。 用户在来自同一媒体公司的应用程序之间过渡时将自动注销，因此，应用程序开发人员在决定捆绑包ID和分发配置文件时必须小心。 此案例中的确切情况如下所示：
 
-應用程式將共用相同的作業範圍儲存空間，但會有不同的裝置ID (IDFV)。 使用者需要針對每個應用程式驗證一次， **但是在應用程式之間切換時，將會清除驗證工作階段**. 範例流程：
+应用程序将共享相同的粘贴板存储，但具有不同的设备ID (IDFV)。 用户需要为每个应用程序验证一次， **但是在应用程序之间切换时，身份验证会话将被清除**. 示例流程：
 
-1. 使用者開啟應用程式A （含套件編號） *com.x.y.AppA*)且已取消驗證
-1. 使用者在應用程式A中執行驗證
-1. 使用者開啟應用程式B （含套件組合ID） *com.z.AppB*)，且應用程式A建立的權益資料會由Access Enabler自動清除（安全性機制，會偵測應用程式B中目前計算的裝置ID與應用程式A建立的權益代號中儲存的裝置ID之間是否有衝突）
-1. 使用者在應用程式B中執行驗證
-1. 使用者開啟應用程式A，應用程式B建立的權益資料會由Access Enabler自動清除（安全性機制，會偵測應用程式A中目前計算的裝置ID與應用程式B建立的權益代號中儲存的裝置ID之間的衝突）
+1. 用户打开应用程序A（包含捆绑包ID） *com.x.y.AppA*)且未进行身份验证
+1. 用户在应用程序A中执行身份验证
+1. 用户打开应用程序B（带有捆绑包ID） *com.z.AppB*)，并且应用程序A创建的权利数据会被Access Enabler(安全机制，可检测应用程序B中当前计算的设备ID与权利令牌（由应用程序A创建）中存储的设备ID之间的冲突)自动清除
+1. 用户在应用程序B中执行身份验证
+1. 用户打开应用程序A，应用程序B创建的权利数据会被Access Enabler自动清除（安全机制，可检测应用程序A中当前计算的设备ID与应用程序B创建的权利令牌中存储的设备ID之间的冲突）

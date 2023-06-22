@@ -1,6 +1,6 @@
 ---
-title: 帳戶IQ字彙表
-description: 產品術語辭彙表。
+title: Account IQ术语表
+description: 产品术语词汇表。
 exl-id: 2ee54442-9538-4c30-b999-265310b3935f
 source-git-commit: 4eb5ba53fb3e0a0c314695fcd30cf15c7242b53c
 workflow-type: tm+mt
@@ -9,114 +9,114 @@ ht-degree: 0%
 
 ---
 
-# 產品概念和字彙表 {#glossary}
+# 产品概念和术语表 {#glossary}
 
-請參閱下列產品術語及其定義。
+请参阅以下产品术语及其定义。
 
-## 帳戶共用機率 {#account-sharing-probability-def}
+## 帐户共享概率 {#account-sharing-probability-def}
 
-具有圖表的儀表板面板，可將目前共用分數的區段劃分為非常低、低、中、高和非常高的共用範圍類別。
+带有图表的仪表板面板，可将当前区段共享得分分为“非常低”、“低”、“中”、“高”和“非常高”等共享范围类别。
 
-## 動作 {#action-def}
+## 操作 {#action-def}
 
-與「 」相關聯的直接或間接事件 [作業](#operation-def) 這會影響相關作業區段（或同類群組）的特性（例如共用分數或使用中的裝置數）。
+与关联的直接或间接事件 [操作](#operation-def) ，这会影响相关操作区段（或同类群组）的特性（例如，共享分数或使用中的设备数量）。
 
-## 彙總的共用分數 {#sharing-probability-level-def}
+## 聚合共享分数 {#sharing-probability-level-def}
 
-控制面板面板，內含圖表，可將目前共用分數的區段分成非常低、低、中等、高和非常高的共用範圍類別，以及區段串流總量的每個類別百分比。
+带有图表的仪表板面板，可将当前共享得分的区段分为非常低、低、中、高和非常高的共享范围类别，以及每个类别占区段流处理总量的百分比。
 
-## AuthN {#authn-def}
+## 身份验证N {#authn-def}
 
-驗證，或驗證嘗試次數。 驗證嘗試是指將目前沒有有效驗證狀態的使用者重新導向至他們選擇的MVPD的程式，在那裡，他們向MVPD識別自己 — 通常使用使用者名稱和密碼。
+身份验证，或身份验证尝试的次数。 身份验证尝试是一个过程，没有当前有效身份验证状态的用户将被重定向到他们选择的MVPD，他们在其中向MVPD标识自己 — 通常使用用户名和密码。
 
-## 驗證正常 {#authn-ok-def}
+## 身份验证正常 {#authn-ok-def}
 
-成功驗證的次數。 當MVPD確認使用者身分識別，並導致將使用者重新導向回程式設計人員應用程式或網站時，就會發生成功的驗證。
+成功身份验证的次数。 当用户标识由MVPD确认并导致用户被重定向回程序员应用程序或站点时，就会发生成功的身份验证。
 
 ## AuthZ {#authz-def}
 
-授權，或授權要求的數目。 授權請求是程式設計師透過Adobe向MVPD請求許可權以開始串流使用者請求內容的程式。 MVPD通常會根據與使用者的MVPD訂閱相關聯的內容許可權（例如與內容相關聯的頻道是否位於使用者的訂閱中）來授與要求。 Adobe會快取部分授權要求回應，讓Adobe能夠立即回應，而不會將要求傳遞至MVPD。
+授权，或授权请求的数量。 授权请求是程序员通过Adobe从MVPD请求权限以开始流式传输用户请求内容的过程。 MVPD通常根据与用户的MVPD订阅相关联的内容权限来授予请求（例如，与内容相关联的频道是否在用户的订阅中）。 Adobe缓存了一些授权请求响应，这允许Adobe立即响应，而无需将请求传递给MVPD。
 
-## AuthZ確定 {#authz-ok-def}
+## AuthZ正常 {#authz-ok-def}
 
-成功的授權數目。
+成功的授权数量。
 
-## 頻道 {#channel-def}
+## 渠道 {#channel-def}
 
-Channel （也稱為Property）是視訊內容的主題相關來源。 傳統上，代表MVPD提供的不同、數字可定址連續視訊摘要。 此頻道直接對應到訂閱者透過其機上盒(STB)可用的可存取內容頻道。
+渠道（也称为属性）是视频内容的主题相关来源。 传统上，表示来自MVPD的不同、数字可寻址连续视频馈送。 该渠道直接映射到订阅者通过其机顶盒(STB)可用的内容的可访问渠道。
 
-## 叢集 {#cluster-def}
+## 集群 {#cluster-def}
 
-叢集是位置和裝置的集合。 叢集是透過尋找裝置之間的共同位置來建立。 在共同位置看到的裝置會視為屬於相同叢集。 兩個裝置可以在同一個叢集中，即使它們沒有共同的位置，但可以透過其他裝置的位置連線。
+群集是位置和设备的集合。 群集是通过查找设备之间的公共位置创建的。 在公共位置看到的设备将被视为属于同一群集。 两个设备可以位于同一群集中，即使它们没有公共位置，但可以通过其他设备的位置进行连接。
 
-### 行動叢集 {#mobile-cluster-def}
+### 移动集群 {#mobile-cluster-def}
 
-沒有靜態裝置的叢集。
+没有静态设备的群集。
 
-### 靜態叢集 {#static-cluster-def}
+### 静态群集 {#static-cluster-def}
 
-至少有一個靜態裝置的叢集。
+至少具有一个静态设备的群集。
 
-## 並行 {#consurrency-def}
+## 并发 {#consurrency-def}
 
-並行是由同時播放或時間非常接近的兩個（或多個）串流所定義，因此它們之間的間隔無法透過以正常速度旅行來對齊。
-同時使用率是使用2個不同叢集之間的最大速度（英里/小時）來計算。 如果使用者在距離小於124哩時具有大於124米/小時的速度，或在距離大於124哩時具有大於400米/小時的速度，則被視為同時使用。 會計算來自不同叢集的位置之間的距離。 相同叢集中允許同時使用。
+并发由两个（或多个）同时播放或时间非常接近的流定义，因此它们之间的间隔不能通过以正常速度旅行来调整。
+并行使用量是使用2个不同集群之间的最大速度（英里/小时）计算的。 如果用户在124英里以下的距离上速度大于124米/小时，或者如果用户在超过124英里的距离上速度大于400米/小时，则被视为同时使用。 计算来自不同簇的位置之间的距离。 同一群集中允许并发使用。
 
-## 裝置 {#device-def}
+## 设备 {#device-def}
 
-一種數位視訊硬體產品，可播放Adobe Pass支援的TV Everywhere內容。 例如，智慧型手機、筆記型電腦和桌上型電腦、遊戲機，以及智慧型電視。
+一种数字视频硬件产品，可播放TV Everywhere内容，并受Adobe Pass支持。 例如，智能手机、笔记本电脑和台式计算机、游戏机和智能电视。
 
-## 地理範圍 {#geographical-span-def}
+## 地理范围 {#geographical-span-def}
 
-一組位置中最遠點之間的距離。
+一组位置中最远点之间的距离。
 
-## 詳細程度 {#granularity-def}
+## 粒度 {#granularity-def}
 
-參照時間範圍，期間的大小；例如一週或一個月。
+对于时间范围，是指期间的大小；例如一周或一个月。
 
-## 產業平均指數 {#industry-avg-index-def}
+## 行业平均指数 {#industry-avg-index-def}
 
-在選取的時間範圍內，針對所有程式設計師和MVPD的每個「風險指數」（帳戶、使用狀況、整體）計算的值。
+在选定的时间范围内为所有程序员和MVPD的每个风险指数（帐户、使用情况、总体）计算的值。
 
 ## IP {#ip-def}
 
-網際網路服務提供者指派給裝置的網際網路通訊協定位址。 例如，纜線服務供應商和儲存格服務供應商。
+Internet服务提供商分配给设备的Internet协议地址。 例如，有线服务提供商和小区服务提供商。
 
-## 隔離模式 {#isolation-mode-def}
+## 隔离模式 {#isolation-mode-def}
 
-一種共用分析型別，帳戶評估僅限於在所選區段中直接發生在程式設計師的事件。  一般而言，會評估所有帳戶事件，而這會提供更準確的共用預估值。  某些MVPD資料的結構方式僅允許隔離模式分析。
+一种共享分析类型，其中帐户的评估仅限于在选定区段中直接发生在程序员身上的事件。  通常，会评估所有帐户事件，从而更准确地估计共享情况。  某些MVPD数据的结构方式仅允许隔离模式分析。
 
 ## 位置 {#location-def}
 
-地球上獨一無二的地方。 也稱為特定播放要求的地理位置，使用Pass資料偵測到，精確度為1000mx1000m （1平方公里）。
+地球上独一无二的地方。 此外，它也被称为特定播放请求的地理位置（使用Pass数据检测），精度为1000mx1000m（1平方公里）。
 
 <!-- ### Home location {#home-location-def}
 
 the precision is 0.01 ~ 2000mx2000m (4 square km) - at this moment the home location is detected using an ML algo, based on data provided by two mvpds. The probability is ~ 80%. We are not using the zip code for the majority of the users. Currently, this information is not used in assessing the sharing probability. -->
 
-## 媒體公司 {#media-company-def}
+## 媒体公司 {#media-company-def}
 
-Media Company是擁有一組媒體網路的公司。
+Media Company是一家拥有一组媒体网络的公司。
 
 ## 量度 {#metric}
 
-量度是訂閱者帳戶的屬性（例如，訂閱者的MVPD、程式設計師和串流內容的頻道、使用的裝置數）。
+量度是订阅者帐户的一个属性（例如，他们的MVPD、程序员和他们流传输内容的渠道、他们使用的设备数量）。
 
-## 行動裝置 {#mobile-device-def}
+## 移动设备 {#mobile-device-def}
 
-具有高行動性的裝置。 例如，行動電話和平板電腦。
+具有高移动性的设备。 例如，手机和平板电脑。
 
 ## MVPD {#mvpd-def}
 
-MVPD （也稱為Distributor）是Media Company視訊內容的彙總、經銷商和經銷商。
+MVPD也称为分发商，是媒体公司视频内容的汇总、转销商和分发商。
 
-## 作業 {#operation-def}
+## 操作 {#operation-def}
 
-Operation是為追蹤特定效果而建立的記錄 [動作](#action-def) 於相關區段上。 動作的範例可以是對節段所識別之科目所允許的並行資料流數量進行限制。
+操作是为跟踪特定操作效果而创建的记录 [操作](#action-def) 在关联的区段上。 例如，可以限制段标识的帐户允许的并发流数量。
 
-## 整體共用分數 {#overall-sharing-score}
+## 总体共享得分 {#overall-sharing-score}
 
-一個值，可協助使用者瞭解程式設計人員屬性或MVPD訂閱者共用密碼的程度，並讓他們有緊迫感採取相應的行動。
+一个值，可帮助用户了解在程序员资产上或MVPD订阅者共享密码的程度，并让他们有一种紧迫感，需要采取行动。
 
 <!--**Aggregated Risk Index**
 Also known as Risk Index and Sharing Risk Index, it is a value that helps users understand the magnitude of password sharing on Programmer properties or by MVPD subscribers and provides them a sense of urgency to act upon it.-->
@@ -124,72 +124,72 @@ Also known as Risk Index and Sharing Risk Index, it is a value that helps users 
 <!--**Risk Index - Overall**
 A value computed as an average of "Risk Index - Accounts" and the "Risk Index - Usage". Overall Sharing Risk Index-->
 
-## 播放要求 {#play-requests-def}
+## 播放请求 {#play-requests-def}
 
-使用者端應用程式或網站Adobe提出的要求，用於要求媒體權杖來記錄和保護資料流開始。
+客户端应用程序或站点发出的请求，用于Adobe请求用于记录和保护流开始的媒体令牌。
 
-## 程式設計師 {#programmer-def}
+## 程序员 {#programmer-def}
 
-Programmer （也稱為Network）是擁有和管理一個或多個管道的大型公司（公司）的子公司。
+Programmer，也称为Network，是拥有和管理一个或多个渠道的大公司（公司）的子公司。
 
-## 請求者ID {#requestorid-def}
+## 请求者ID {#requestorid-def}
 
-媒體公司用來識別自己或MVPD子公司的識別碼。  根據程式設計人員實施，這可能對應到媒體公司、程式設計人員或頻道。  媒體公司最常用來識別自己或MVPD子公司的身分ID。  根據程式設計人員實施，這可能對應到媒體公司、程式設計人員或頻道。  傳統上，這會對應至管道。  隨著MML (March Madness Live)等偽頻道的建立，以及技術驅動的行動以解決MVPD驅動的資料限制，requestorID開始與媒體公司建立更多關聯。
+媒体公司用于标识自己或MVPD子公司的ID。  根据程序员实施，这可以映射到媒体公司、程序员或渠道。  媒体公司用于标识自己或MVPD子公司的最常见ID。  根据程序员实施，这可以映射到媒体公司、程序员或渠道。  传统上，这会映射到渠道。  通过创建诸如MML（三月疯狂Live）之类的伪渠道以及进行技术性移动以解决MVPD驱动的数据限制，requestorID开始越来越与媒体公司建立关联。
 
-## resourceID {#resource-id-def}
+## 资源ID {#resource-id-def}
 
-一般使用者要求的內容。  傳統上，這已識別與使用者請求的內容相關聯的頻道。  系統增強功能可讓ID代表特定節目（例如具有特定分級），而ID會繼續識別相關聯頻道。
+最终用户请求的内容。  传统上，这已标识与用户请求的内容关联的渠道。  系统增强允许ID表示特定节目（例如具有特定评级），ID继续标识相关联频道。
 
-## 風險指數 — 使用狀況 {#risk-index-usage}
+## 风险指数 — 使用情况 {#risk-index-usage}
 
-此值也稱為「共用帳戶的使用量」，是根據每個帳戶發出的播放要求數量加上每個帳戶的共用機率來計算的。 也稱為「共用帳戶使用量風險指數」。
+也称为“共享帐户的使用情况”，它是一个根据每个帐户发出的播放请求数计算的值，这些播放请求由每个帐户的共享概率加权。 也称为使用共享帐户风险指数。
 
-## 區段 {#segmet-def}
+## 区段 {#segmet-def}
 
-「區段」是一組符合使用者定義條件的科目，由選取的量度指定（例如「曾經觀看管道X、Y或Z的MVPD A、B、C、D或E使用者」）。
+区段是一组符合由所选量度指定的用户定义条件的帐户（例如“已观看频道X、Y或Z的MVPD A、B、C、D或E的用户”）。
 
-## 共用層級 {#sharing-level-def}
+## 共享级别 {#sharing-level-def}
 
-風險指數 — 帳戶或共用帳戶風險指數也稱為，它是根據一組選定MVPD中每個帳戶計算出的平均共用機率計算出的值，該組選定MVPD在選定的時間範圍內從其中一個選定的程式設計人員管道串流。
+风险指数 — 帐户或共享帐户风险指数，该值是根据一组选定MVPD中每个帐户计算的平均共享概率而计算的，该组选定MVPD在选定的时间范围内从其中一个选定的程序员渠道进行流式处理。
 
-## 靜態裝置 {#static-device-def}
+## 静态设备 {#static-device-def}
 
-行動性極低的裝置。 例如，遊戲機、機上盒和電視機。
+移动性非常低的设备。 例如，游戏机、机顶盒和电视机。
 
-## 時間範圍 {#time-frame-def}
+## 期限 {#time-frame-def}
 
-也稱為Period或Time Slot，它是包含使用者介面和表格中顯示的播放要求活動的時間視窗。
+该时段也称为“时段”或“时隙”，它包含用户界面中显示的播放请求活动，以及从开始到结束的表格。
 
-## 區段中的熱門MVPD {#top-mvpds-def}
+## 区段中的热门MVPD {#top-mvpds-def}
 
-所選區段中的前MVPD （最多10個），以共用層次、共用帳戶的使用情況或整體共用分數來測量。
+所选区段中的排名最前的（最多10个）MVPD，可按共享级别、共享帐户的使用情况或总体共享分数进行衡量。
 
-## 趨勢 {#trend-def}
+## 趋势 {#trend-def}
 
-目前時段和上一個時段之間相關量度的百分比差異（例如，播放請求總數的百分比）。
+当前时段和上一时段之间关联量度的百分比差异（例如，总播放请求的百分比）。
 
-## 不重複訂閱者 {#unique-subscriber-def}
+## 独特订阅者 {#unique-subscriber-def}
 
-在指定期間內與程式設計人員TV Everywhere應用程式或涉及Adobe Pass的網站互動的指定期間內不重複MVPD帳戶數目。  該互動包括程式設計人員應用程式或網站上導致呼叫Adobe Pass服務的任何活動。 例如，檢查authN或authZ狀態、驗證和授權。 如果程式設計師使用AdobeTempPass （即免費預覽）是區段的一部分，不重複訂閱者的總數也將包含不重複裝置數量。
+在给定期间内与程序员TV Everywhere应用程序或涉及Adobe Pass的网站交互的给定期间的唯一MVPD帐户数。  该交互包括程序员应用程序或网站上导致调用Adobe Pass服务的任何活动。 例如，检查authN或authZ状态、身份验证和授权。 如果程序员使用AdobeTempPass（即免费预览）是区段的一部分，则独特订阅者的总数还将包括独特设备的数量。
 
-## 使用狀況 {#usage-defs}
+## 使用情况 {#usage-defs}
 
-### 狂熱使用者 {#avid-user-def}
+### 狂热用户 {#avid-user-def}
 
-每月超過37個播放請求。
+每月超过37个播放请求。
 
-### 不常見的使用者 {#infrequent-users-def}
+### 不常见用户 {#infrequent-users-def}
 
-每月少於9個播放請求。
+每月少于9个播放请求。
 
-### 一般使用者 {#regular-user-def}
+### 普通用户 {#regular-user-def}
 
-每月有9到37個播放請求。
+每月9到37个播放请求。
 
 ## 使用模式 {#usage-patern-def}
 
-套用至帳戶的有限類別標籤之一，在社交群組或行為（例如，小家庭、旅行者或通勤者、社交分享等）方面最能描述帳戶使用者。
+应用于帐户的一组有限类别标签之一，最能体现帐户用户在社交群体或行为方面的特征（例如，小家庭、旅行者或通勤者、社交分享等）。
 
-## 郵遞區號 {#zip-code-def}
+## 邮政编码 {#zip-code-def}
 
-美國境內與地點相關聯的美國郵遞區號。
+与境内位置关联的美国邮政编码

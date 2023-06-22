@@ -1,6 +1,6 @@
 ---
-description: 此表格提供收入最佳化通知的詳細資訊。
-title: 收入最佳化程式碼
+description: 此表提供有关Revenue Optimization通知的详细信息。
+title: 收入优化代码
 exl-id: 3657ba70-ec35-495b-ae7b-4198429bdf6a
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,35 +9,35 @@ ht-degree: 0%
 
 ---
 
-# 收入最佳化程式碼 {#revenue-optimization-code}
+# 收入优化代码 {#revenue-optimization-code}
 
-此表格提供REVENUE OPTIMIZATION通知的詳細資訊。
+此表提供有关REVENUE OPTIMIZATION通知的详细信息。
 
-## 啟用收入最佳化報表 {#enable-revenue-optimization-reporting}
+## 启用收入优化报表 {#enable-revenue-optimization-reporting}
 
-若要啟用此報表，請使用PTMediaPlayer api： `[mediaPlayersetRevenueOptimizationReportingLevel:PTNotificationTypeInfo]`.
+要启用此报表，请使用PTMediaPlayer api： `[mediaPlayersetRevenueOptimizationReportingLevel:PTNotificationTypeInfo]`.
 
 >[!NOTE]
 >
->大多數資訊通知包含相關中繼資料，例如無法下載的資源的URL。 某些通知包含中繼資料，用於指定問題發生在主要視訊內容、替代音訊內容還是廣告中。
+>大多数信息通知包含相关元数据，例如，无法下载的资源的URL。 某些通知包含元数据，用于指定问题出现在主视频内容、备用音频内容还是广告中。
 
-| 程式碼 | 名稱 | 內部通知 | 中繼資料索引鍵 | 註解 |
+| 代码 | 名称 | 内部通知 | 元数据键 | 评论 |
 |---|---|---|---|---|
-| 401001 | REVENUE_OPTIMIZATION_REPORTING | 無 | 請參閱下表，瞭解根據不同事件的中繼資料索引鍵。 | 無 |
+| 401001 | REVENUE_OPTIMIZATION_REPORTING | 无 | 有关基于不同事件的元数据键，请参阅下表。 | 无 |
 
-| 事件詳細資料 | ContextMetadata |
+| 事件详细信息 | 上下文元数据 |
 |---|---|
-| **CONTENT_RESOURCE_START** 呼叫MediaPlayer：：replaceCurrentResource時在TVSDK中傳送。 | clientTimestamp， fallbackOnInvalidCreative， showStaticBanners， hasPreroll， event， adSigningMode， resourceUrl， creativeRepackagingFormat， delayAdLoadingTolerance， zoneID， hasLivePreroll， adRequestTimeout， delayAdLoading， resourceType， creativeRepackagingEnabled， mediaId， clistampackingId |
-| **CONTENT_PLAYBACK_START** 當內容已進入準備狀態並準備好要播放時，在TVSDK中傳送。 此事件不會在每次資訊清單上傳時傳送 — 僅在初始載入時傳送。 | clientTimestamp， contentURL， contentType， event， isLive， clientID |
-| **AD_OPPORTUNITY_GENERATED** 產生機會時在TVSDK中傳送。 | clientTimestamp、event、opportunityId、placementDuration、clientId |
-| **AD_OPPORTUNITY_RESOLVE_START** 在機會開始解析時在TVSDK中傳送。 | clientTimestamp、event、opportunityId、placementDuration、clientId |
-| **AD_OPPORTUNITY_RESOLVE_FAILED** 當廣告解析程式呼叫MediaPlayerClient：：notifyFailed()時，會在TVSDK中傳送。 需要填寫資料 | opportunityId， notificationAD |
-| **AD_RESOURCE_LOAD** 當URL擷取任何廣告資源時傳送。 responseStartTime：要求首次啟動時的Unix時間戳記。 responseTotalTime：載入回應所花的總時間（以秒為單位）。 responseStatus：擷取資源時遇到的狀態代碼。 status：&quot;error&quot;或&quot;success&quot; referrerAdId：要求擷取此資源的反向連結廣告ID （如果存在）。 referrerUrl：要求擷取此資源的反向連結URL。 errorMessage：如果狀態為「error」，錯誤原因將位於此處。 | opportunityId， resourceType， responseTotalTime， responseStatus， responseStartTime， status， errorMessage， url， referrerURL， referrerAdId |
-| **AD_RESOURCE_LOAD_CRS** 當CRS套用至資產以及m3u8的回應時，在TVSDK中傳送。 resourceType：一律為&quot;crs&quot;。 responseStartTime：要求首次啟動時的Unix時間戳記。 responseTotalTime：載入回應所花的總時間（以秒為單位）。 responseStatus：擷取資源時遇到的狀態代碼。 status：&quot;error&quot;或&quot;success&quot;。 errorMessage：如果狀態為「error」，錯誤原因將位於此處。 mediaFileUrl：選取的原始媒體檔案url。 mediaFileBitrate：所選取媒體檔案的位元速率。 mediaFileMimeType：所選媒體檔案的mime型別。 url：最終資產url。 | opportunityId， resourceType， responseTotalTime， responseStatus， responseStartTime， status， errorMessage， url， mediaFileURL， mediaFileBitrate， mediaFileMimeType， url |
-| **AD_TIMELINE_PLACE** 在時間軸上放置adBreak後，於TVSDK中傳送。 此事件將在每個廣告插播發生一次。 proposedTime：要求放置廣告插播的時間。 actualTime：實際放置廣告插播的時間。 proposedDuration：要求插入的廣告插播持續時間。 如果是即時內容，這會是提示持續時間。 若是VOD內容，該值通常為–1。 actualDuration：插入廣告插播的實際持續時間。 計算為在原始串流時間軸中新增或取代的所有廣告的持續時間總和（由其各自的區段持續時間定義）。 proposedAds：建議的廣告插播中的廣告數量。 totalAds：成功置入的廣告數量。 廣告……n：成功插入的廣告將會插入此處。 可從AD_OPPORTUNITY_RESOLVE_PROCESS擷取整個廣告資訊清單資訊 | opportunityId， status， errorMessage， proposedTime， proposedDuration， actualTime， actualDuration， proposedAds， totalAds， ads_id， ads_type， ads_duration， ads_url |
-| **AD_PLAYBACK_START** 在廣告開始播放後於TVSDK中傳送。 | clientTimestamp，事件， id， url，持續時間，型別， opportunityId， clientId |
-| **AD_PLAYBACK_COMPLETE** 在廣告完成播放後於TVSDK中傳送。 | clientTimestamp，事件， id， url，持續時間，型別， opportunityId， clientId |
-| **ADBREAK_PLAYBACK_START** 當廣告插播開始播放時在TVSDK中傳送。 | clientTimestamp， event， opportunityId， duration， time， clientId |
-| **ADBREAK_PLAYBACK_COMPLETE** 當廣告完成播放時，在TVSDK中傳送。 | clientTimestamp、event、opportunityId、clientId |
-| **CONTENT_PLAYBACK_COMPLETE** 當任何內容完成時，會在TVSDK中傳送。如果資料流遭取代、播放器進入錯誤狀態、播放器遭重設或內容實際完成，就可能發生這種情況。 追蹤sessionId時需要此事件。 | clientTimestamp， event， clientId， url， status， errorMessage |
-| **AD_PLAYBACK_ERROR** 當廣告播放時發生錯誤（變體資料流錯誤）時，在TVSDK中傳送。 | 事件，錯誤，時間戳記， manifestUrl，時間，機會ID， URL |
+| **CONTENT_RESOURCE_START** 在调用MediaPlayer：：replaceCurrentResource时在TVSDK中调度。 | clientTimestamp， fallbackOnInvalidCreative， showStaticBanners， hasPreroll， event， adSigningMode， resourceUrl， creativeRepackagingFormat， delayAdLoadingTolerance， zoneID， hasLivePreroll， adRequestTimeout， delayAdLoading， resourceType， creativeRepackagingEnabled， mediaId， clistampackingId |
+| **CONTENT_PLAYBACK_START** 当内容进入准备状态并准备好播放时，在TVSDK中调度。 此事件不会在每次清单上传时调度 — 仅在初始加载时调度。 | clientTimestamp、contentURL、contentType、event、isLive、clientID |
+| **AD_OPPORTUNITY_GENERATED** 在生成机会时在TVSDK中调度。 | clientTimestamp、event、opportunityId、placementDuration、clientId |
+| **AD_OPPORTUNITY_RESOLVE_START** 当机会开始解析时在TVSDK中调度。 | clientTimestamp、event、opportunityId、placementDuration、clientId |
+| **AD_OPPORTUNITY_RESOLVE_FAILED** 当广告解析程序调用MediaPlayerClient：：notifyFailed()时，在TVSDK中调度。 需要填写数据 | opportunityId， notificationAD |
+| **AD_RESOURCE_LOAD** 当URL获取任何广告资源时调度。 responseStartTime：请求首次启动时间的Unix时间戳。 responseTotalTime：响应加载所花费的总时间（以秒为单位）。 responseStatus：获取资源时遇到的状态代码。 status：&quot;error&quot;或&quot;success&quot; referrerAdId：请求提取此资源的反向链接广告ID（如果存在）。 referrerUrl：请求获取此资源的引用URL。 errorMessage：如果状态为“error”，错误原因将位于此处。 | opportunityId， resourceType， responseTotalTime， responseStatus， responseStartTime， status， errorMessage， url， referrerURL， referrerAdId |
+| **AD_RESOURCE_LOAD_CRS** 将CRS应用于资产时在TVSDK中分发，以及m3u8的响应。 resourceType：始终为“crs”。 responseStartTime：请求首次启动时间的Unix时间戳。 responseTotalTime：响应加载所花费的总时间（以秒为单位）。 responseStatus：获取资源时遇到的状态代码。 status：&quot;error&quot;或&quot;success&quot;。 errorMessage：如果状态为“error”，错误原因将位于此处。 mediaFileUrl：所选的原始媒体文件URL。 mediaFileBitrate：所选媒体文件的比特率。 mediaFileMimeType：所选媒体文件的mime类型。 url：最终资源url。 | opportunityId， resourceType， responseTotalTime， responseStatus， responseStartTime， status， errorMessage， url， mediaFileURL， mediaFileBitrate， mediaFileMimeType， url |
+| **AD_TIMELINE_PLACE** 在时间轴上放置adBreak后，在TVSDK中调度。 此事件将在每个广告时间发生一次。 proposedTime：请求投放广告插播的时间。 actualTime：广告时间实际放置的时间。 proposedDuration：请求插入的广告时间的持续时间。 对于实时内容，这将是提示持续时间。 对于VOD内容，该值通常为–1。 actualDuration：插入的广告插播的实际持续时间。 计算为在原始流时间轴中添加或替换的所有广告的总持续时间，由其各自的区段持续时间定义。 proposedAds：建议的广告时间中的广告数量。 totalAds：成功投放的广告数。 广告……n：成功插入的广告将插入此处。 可以从AD_OPPORTUNITY_RESOLVE_PROCESS中检索整个广告清单信息 | opportunityId、status、errorMessage、proposedTime、proposedDuration、actualTime、actualDuration、proposedAds、totalAds、ads_id、ads_type、ads_duration、ads_url |
+| **AD_PLAYBACK_START** 在广告开始播放后在TVSDK中调度。 | clientTimestamp，事件， id， url，持续时间，类型， opportunityId， clientId |
+| **AD_PLAYBACK_COMPLETE** 在广告完成播放后在TVSDK中调度。 | clientTimestamp，事件， id， url，持续时间，类型， opportunityId， clientId |
+| **ADBREAK_PLAYBACK_START** 当广告开始播放时在TVSDK中调度。 | clientTimestamp， event， opportunityId， duration， time， clientId |
+| **ADBREAK_PLAYBACK_COMPLETE** 当广告完成播放时，在TVSDK中调度。 | clientTimestamp、event、opportunityId、clientId |
+| **CONTENT_PLAYBACK_COMPLETE** 完成任何内容后在TVSDK中分发。如果流被替换、播放器进入错误状态、播放器被重置或内容实际完成，则可能会发生这种情况。 跟踪sessionId时需要此事件。 | clientTimestamp，事件， clientId， url，状态， errorMessage |
+| **AD_PLAYBACK_ERROR** 当广告播放时出错（变量流错误）时，在TVSDK中调度。 | 事件，错误，时间戳， manifestUrl，时间， opportunityId， url |

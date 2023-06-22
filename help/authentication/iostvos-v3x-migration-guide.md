@@ -1,6 +1,6 @@
 ---
-title: iOS/tvOS v3.x移轉指南
-description: iOS/tvOS v3.x移轉指南
+title: iOS/tvOS v3.x迁移指南
+description: iOS/tvOS v3.x迁移指南
 exl-id: 4c43013c-40af-48b7-af26-0bd7f8df2bdb
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,49 +9,49 @@ ht-degree: 0%
 
 ---
 
-# iOS/tvOS v3.x移轉指南 {#iostvos-v3x-migration-guide}
+# iOS/tvOS v3.x迁移指南 {#iostvos-v3x-migration-guide}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
 >[!TIP]
 > 
-> **附註：**
+> **注释：**
 >
-> - 從iOS sdk 3.1版開始，實作者現在可以交換使用WKWebView或UIWebView。 由於UIWebView已過時，應用程式應移轉至WKWebView，以避免未來iOS版本發生問題。
-> - 請注意，移轉僅表示使用WKWebView切換UIWebView類別，無需針對Adobe的AccessEnabler執行任何特定工作。
+> - 从iOS sdk版本3.1开始，实施人员现在可以交替使用WKWebView或UIWebView。 由于UIWebView已被弃用，应用程序应迁移到WKWebView，以避免未来的iOS版本出现问题。
+> - 请注意，迁移仅意味着使用WKWebView切换UIWebView类，对于Adobe的AccessEnabler，没有具体工作要做。
 
 
 </br>
 
-## 更新建置設定 {#update}
+## 更新内部版本设置 {#update}
 
-此版本包含以SWIFT語言撰寫的功能。 如果您的應用程式完全是Objective-C，則需要將target建置設定中的「一律內嵌Swift標準資料庫」核取方塊設為「是」。 設定此選項後，Xcode會掃描應用程式中的套件架構，如果其中任何一項包含Swift程式碼，則會將相關程式庫複製到應用程式的套件中。 如果您未更新組建設定，您的應用程式可能會當機並出現錯誤，指出它無法載入AccessEnabler.framework或 `ibswift*` 程式庫。
+此版本包含以SWIFT语言编写的功能。 如果您的应用程序完全是Objective-C，则需要将target构建设置中的“始终嵌入Swift标准库”复选框设置为“是”。 设置此选项后，Xcode会扫描应用程序中的捆绑框架，如果其中任何包含Swift代码，则会将相关库复制到应用程序的捆绑包中。 如果不更新内部版本设置，应用程序可能会崩溃，并出现错误，指出它无法加载AccessEnabler.framework或 `ibswift*` 库。
 
 </br>
 
-## 新增您的軟體宣告 {#add}
+## 添加软件声明 {#add}
 
-> 如需如何取得軟體宣告的詳細資訊，請前往此
-> 頁面：
-> [應用程式註冊](/help/authentication/iostvos-application-registration.md)
+> 有关如何获取软件语句的信息，请转到此
+> 页面：
+> [应用程序注册](/help/authentication/iostvos-application-registration.md)
 
-取得軟體陳述式後，建議您將其託管於遠端伺服器上，如此一來，只要在App Store中部署新版本的應用程式，即可輕鬆撤銷或變更陳述式。 當應用程式啟動時，請從遠端位置取得您的軟體陳述式，並將其傳遞到AccessEnabler建構函式：
+一旦您拥有了软件语句，我们建议将它托管在远程服务器上，这样您就可以轻松地撤销或更改它，而不用在App Store中部署应用程序的新版本。 当应用程序启动时，从远程位置获取您的软件语句，并将其传递到AccessEnabler构造函数：
 
 ```swift
     accessEnabler = AccessEnabler("YOUR_SOFTWARE_STATEMENT_HERE");
 ```
 
-> API資訊在此： [iOS / tvOS API參考](/help/authentication/iostvos-sdk-api-reference.md)
+> 此处为API信息： [iOS / tvOS API参考](/help/authentication/iostvos-sdk-api-reference.md)
 
 </br>
 
-## 新增自訂URL配置 {#add-custom}
+## 添加自定义URL方案 {#add-custom}
 
-> 如需如何取得自訂URL配置的相關資訊，請前往本頁面： [取得客戶URL配置](/help/authentication/iostvos-application-registration.md)
+> 有关如何获取自定义URL方案的信息，请访问此页面： [获取客户URL方案](/help/authentication/iostvos-application-registration.md)
 
-取得自訂URL配置後，您需要將其新增到應用程式的info.plist檔案中。 自訂配置具有此格式： `adbe.u-XFXJeTSDuJiIQs0HVRAg://`. 將冒號和正斜線新增至檔案時，必須省略。 上述範例將變成 `adbe.u-XFXJeTSDuJiIQs0HVRAg`.
+获取自定义URL方案后，您需要将其添加到应用程序的info.plist文件中。 自定义方案具有以下格式： `adbe.u-XFXJeTSDuJiIQs0HVRAg://`. 将冒号和正斜线添加到文件时需要省略。 上述示例将变为 `adbe.u-XFXJeTSDuJiIQs0HVRAg`.
 
 ```plist
     <key>CFBundleURLTypes</key>
@@ -67,13 +67,13 @@ ht-degree: 0%
 
 </br>
 
-## 攔截自訂URL配置上的呼叫 {#intercept}
+## 拦截对自定义URL方案的调用 {#intercept}
 
-唯有您的應用程式先前曾透過啟用手動Safari檢視控制器(SVC)處理時，此設定才適用。 [setoptions(\[&quot;handleSVC&quot;：true&quot;\])](/help/authentication/iostvos-sdk-api-reference.md) 針對需要Safari檢視控制器(SVC)的特定MVPD呼叫和，因此需要由SFSafariViewController而非UIWebView/WKWebView控制器載入驗證和登出端點的URL。
+仅当您的应用程序之前启用了手动Safari视图控制器(SVC)处理，并且您通过 [setoptions(\[&quot;handleSVC&quot;：true&quot;\])](/help/authentication/iostvos-sdk-api-reference.md) 调用和适用于需要Safari视图控制器(SVC)的特定MVPD，因此需要由SFSafariViewController而不是UIWebView/WKWebView控制器加载身份验证和注销端点的URL。
 
-在驗證和登出流程期間，您的應用程式必須監控 `SFSafariViewController `控制器執行數個重新導向。 您的應用程式必須偵測載入由您定義的特定自訂URL的時刻。 `application's custom URL scheme` (例如：`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com)`. 當控制器載入這個特定的自訂URL時，您的應用程式必須關閉 `SFSafariViewController` 並呼叫AccessEnabler的 `handleExternalURL:url `api方法。
+在身份验证和注销流期间，您的应用程序必须监控 `SFSafariViewController `控制器进行多次重定向。 您的应用程序必须检测加载由您定义的特定自定义URL的时刻。 `application's custom URL scheme` (例如，`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com)`. 当控制器加载此特定自定义URL时，应用程序必须关闭 `SFSafariViewController` 并调用AccessEnabler的 `handleExternalURL:url `api方法。
 
-在您的 `AppDelegate` 新增下列方法：
+在您的 `AppDelegate` 添加以下方法：
 
 ```swift
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool {
@@ -84,23 +84,23 @@ ht-degree: 0%
         }
 ```
 
-> API資訊在此： [處理外部URL](/help/authentication/iostvos-sdk-api-reference.md)
+> 此处为API信息： [处理外部URL](/help/authentication/iostvos-sdk-api-reference.md)
 
 </br>
 
-## 更新setRequestor方法簽章 {#update-setreq}
+## 更新setRequestor方法签名 {#update-setreq}
 
-由於新SDK使用新的驗證機制，因此不需要signedRequestId引數或公開金鑰和密碼（適用於tvOS）。 此 `setRequestor` 方法已簡化，只需要requestorID。
+由于新SDK使用新的身份验证机制，因此不需要signedRequestId参数或公钥和密钥（对于tvOS）。 此 `setRequestor` 方法得到简化，只需要requestorID。
 
 ### iOS
 
-此程式碼：
+此代码：
 
 ```swift
     accessEnabler.setRequestor(requestorId, setSignedRequestorId: signedRequestorId)
 ```
 
-會變成：
+将变为：
 
 ```swift
     accessEnabler.setRequestor(requestorId)
@@ -110,37 +110,37 @@ ht-degree: 0%
 
 ### tvOS
 
-此程式碼：
+此代码：
 
 ```swift
     accessEnabler.setRequestor(requestorId, setSignedRequestorId: signedRequestorId,
                     secret: "secret", publicKey: "public_key")
 ```
 
-會變成：
+将变为：
 
 ```swift
     accessEnabler.setRequestor(requestorId)
 ```
 
-> API資訊在此： [設定請求者](/help/authentication/iostvos-sdk-api-reference.md)
+> 此处为API信息： [设置请求者](/help/authentication/iostvos-sdk-api-reference.md)
 
 </br>
 
-## 將getAuthenticationToken方法取代為handleExternalURL方法 {#replace}
+## 将getAuthenticationToken方法替换为句柄ExternalURL方法 {#replace}
 
-`getAuthentication` 過去使用方法來完成驗證流程。 由於名稱有誤導性，因此將重新命名為 `handleExternalURL` 和會以url作為引數。
+`getAuthentication` 以前使用方法完成身份验证流程。 由于名称具有误导性，因此将其重命名为 `handleExternalURL` 和将url作为参数。
 
-變更下列專案的所有具體值：
+更改以下内容的所有实例：
 
 ```swift
     accessEnabler.getAuthenticationToken()
 ```
 
-變更為這個：
+更改为以下内容：
 
 ```swift
     accessEnabler.handleExternalURL(request.url?.description);
 ```
 
-> API資訊在此： [處理外部URL](/help/authentication/iostvos-sdk-api-reference.md)
+> 此处为API信息： [处理外部URL](/help/authentication/iostvos-sdk-api-reference.md)

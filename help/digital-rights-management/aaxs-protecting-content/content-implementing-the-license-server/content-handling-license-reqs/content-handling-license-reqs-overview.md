@@ -1,6 +1,6 @@
 ---
-title: 概觀
-description: 概觀
+title: 概述
+description: 概述
 copied-description: true
 exl-id: f1a55d5c-c7df-4b8f-8c1e-875d30026069
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,18 +10,18 @@ ht-degree: 0%
 
 ---
 
-# 概觀{#overview}
+# 概述{#overview}
 
-若要請求授權，使用者端會在封裝期間傳送內嵌於內容中的中繼資料。 授權伺服器使用內容中繼資料中的資訊來產生授權。
+要请求许可证，客户端会在打包期间发送嵌入到内容中的元数据。 许可证服务器使用内容元数据中的信息来生成许可证。
 
-此 `LicenseHandler` 讀取授權要求並剖析要求。 `LicenseHandler`延伸 `BatchHandlerBase` 以容納批次授權請求，但Adobe存取使用者端目前不支援此功能。 此 `getRequests()` 方法將傳回 `LicenseRequestMessage` 物件。 呼叫者應透過 `LicenseRequestMessages`，並為每個請求產生授權或設定錯誤代碼(請參閱 `LicenseRequestMessage` API參考檔案)。 伺服器會針對每個授權要求，決定是否發行授權。 呼叫 `LicenseRequestMessage.getContentInfo()` 以取得從內容中繼資料擷取的資訊，包括內容ID、授權ID和原則。
+此 `LicenseHandler` 读取许可证请求并解析该请求。 `LicenseHandler`扩展 `BatchHandlerBase` 以容纳批量许可证请求，但Adobe访问客户端当前不支持此功能。 此 `getRequests()` 方法将返回以下列表： `LicenseRequestMessage` 对象。 调用方应通过 `LicenseRequestMessages`，并为每个请求生成许可证或设置错误代码(请参阅 `LicenseRequestMessage` API参考文档（了解详细信息）。 对于每个许可证请求，服务器确定它是否将颁发许可证。 调用 `LicenseRequestMessage.getContentInfo()` 获取从内容元数据提取的信息，包括内容ID、许可证ID和策略。
 
-* 要求處理常式類別為 `com.adobe.flashaccess.sdk.protocol.license.LicenseHandler`
-* 請求訊息類別為 `com.adobe.flashaccess.sdk.protocol.license.LicenseRequestMessage`
-* 如果使用者端和伺服器都支援通訊協定版本5，則請求URL是「中繼資料中的授權伺服器URL： + &quot;/flashaccess/license/v4」。 如果通訊協定版本3是使用者端或伺服器支援的最大版本，則Adobe存取使用者端會傳送驗證請求給「中繼資料中的授權伺服器URL」+ &quot;/flashaccess/license/v3&quot;。 否則，驗證請求會傳送到「中繼資料中的授權伺服器URL」+ &quot;/flashaccess/license/v1&quot;
+* 请求处理程序类为 `com.adobe.flashaccess.sdk.protocol.license.LicenseHandler`
+* 请求消息类为 `com.adobe.flashaccess.sdk.protocol.license.LicenseRequestMessage`
+* 如果客户端和服务器都支持协议版本5，则请求URL为“License Server URL in metadata： + &quot;/flashaccess/license/v4&quot;。 如果协议版本3是客户端或服务器支持的最大版本，则Adobe访问客户端将向“License Server URL in metadata”+ &quot;/flashaccess/license/v3&quot;发送身份验证请求。 否则，身份验证请求将发送到“元数据中的许可证服务器URL”+“/flashaccess/license/v1”
 
-如果剖析請求時發生錯誤， `HandlerParsingException` 擲回。 此例外狀況包含要傳回至使用者端的錯誤資訊。 若要擷取錯誤資訊，請呼叫 `HandlerParsingException.getErrorData()`. 如果由於不符合原則要求而產生授權時發生錯誤， `PolicyEvaluationException` 擲回。 此例外狀況還包括 `ErrorData` 要傳回給使用者端。 請參閱API檔案以瞭解 `LicenseRequestMessage.generateLicense()` 瞭解在授權產生期間如何評估原則的詳細資訊。
+如果解析请求时出错，则 `HandlerParsingException` 被抛出。 此异常包含要返回到客户端的错误信息。 要检索错误信息，请调用 `HandlerParsingException.getErrorData()`. 如果由于策略要求未得到满足而在生成许可证时发生错误， `PolicyEvaluationException` 被抛出。 此例外情况还包括 `ErrorData` 返回给客户端。 请参阅API文档，了解 `LicenseRequestMessage.generateLicense()` 以获取有关如何在许可证生成期间评估策略的详细信息。
 
-授權和錯誤會在以下情況下同時傳送： `LicenseHandler.close()` 稱為。
+许可证和错误会同时发送，当 `LicenseHandler.close()` 称为。
 
-一個裝置可能擁有多個相同內容的授權（相同的授權ID），但特定授權ID和原則ID只能有一個授權。 如果收到具有重複LicenseID/PolicyID的授權，則只有在新授權的發行日期晚於現有授權的發行日期時，新授權才會取代舊授權。 此邏輯用於處理內嵌於內容中的授權，因此，不建議在內容區塊中嵌入多個具有相同原則ID的授權。 相同的邏輯會套用至透過 `DRMManager.storeVoucher()` ActionScript3 API；如果使用者端已擁有日後發行日期的授權，則提供的授權可能會被忽略。
+一个设备可能具有多个用于相同内容（相同许可证ID）的许可证，但特定许可证ID和策略ID只能有一个许可证。 如果收到具有重复LicenseID/PolicyID的许可证，则只有在新许可证的颁发日期晚于现有许可证的颁发日期时，新许可证才会替换旧许可证。 此逻辑用于处理嵌入到内容中的许可证，因此，建议不要在一个内容块中嵌入多个具有同一策略ID的许可证。 相同的逻辑适用于通过 `DRMManager.storeVoucher()` ActionScript3 API；如果客户端已拥有许可证，且许可证的颁发日期较晚，则可以忽略所提供的许可证。

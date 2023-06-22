@@ -1,6 +1,6 @@
 ---
-description: 您可以從時間軸移除localTime中開始和結束之間的TimeRanges。
-title: 刪除範圍
+description: 您可以从时间线中移除localTime中开始和结束时间之间的TimeRanges。
+title: 删除范围
 exl-id: 1c0f7718-8a40-4fc8-b70b-f751d8ff40a4
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,15 +9,15 @@ ht-degree: 0%
 
 ---
 
-# 刪除範圍{#delete-ranges}
+# 删除范围{#delete-ranges}
 
-您可以從時間軸移除localTime中開始和結束之間的TimeRanges。
+您可以从时间线中移除localTime中开始和结束时间之间的TimeRanges。
 
 >[!NOTE]
 >
->如果您只想從內容中移除某些範圍，且必須使用廣告對應由廣告伺服器定義，請建立 `CustomRangeMetadata` 例項，並將型別指定為具有已定義自訂範圍的DELETE作業。
+>如果您只想从内容中删除某些范围，并且必须使用广告映射由广告服务器定义，请创建 `CustomRangeMetadata` 实例并将类型指定为具有定义的自定义范围的DELETE操作。
 
-刪除包含Adobe Primetime ad decisioning廣告的範圍。
+删除包含Adobe Primetime广告决策广告的范围。
 
 ```
 {   

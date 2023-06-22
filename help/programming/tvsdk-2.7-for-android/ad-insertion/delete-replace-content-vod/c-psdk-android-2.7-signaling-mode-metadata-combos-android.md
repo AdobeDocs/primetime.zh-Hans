@@ -1,6 +1,6 @@
 ---
-description: 您可以使用不同的廣告訊號模式和廣告中繼資料組合，標籤、刪除和取代VOD串流中的時間範圍。 訊號模式和中繼資料的不同組合會產生不同的行為。
-title: 對從廣告訊號模式和廣告中繼資料組合中插入和刪除廣告的影響
+description: 您可以使用不同的广告信令模式和广告元数据组合来标记、删除和替换VOD流中的时间范围。 信令模式和元数据的不同组合导致不同的行为。
+title: 对广告信令模式和广告元数据组合中的广告插入和删除的影响
 exl-id: 949ca84f-4aa9-4668-b91b-99fdf13f625c
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,29 +9,29 @@ ht-degree: 0%
 
 ---
 
-# 對從廣告訊號模式和廣告中繼資料組合中插入和刪除廣告的影響 {#effect-on-ad-insertion-and-deletion-from-ad-signaling-mode-and-ad-metadata-combinations}
+# 对广告信令模式和广告元数据组合中的广告插入和删除的影响 {#effect-on-ad-insertion-and-deletion-from-ad-signaling-mode-and-ad-metadata-combinations}
 
-您可以使用不同的廣告訊號模式和廣告中繼資料組合，標籤、刪除和取代VOD串流中的時間範圍。 訊號模式和中繼資料的不同組合會產生不同的行為。
+您可以使用不同的广告信令模式和广告元数据组合来标记、删除和替换VOD流中的时间范围。 信令模式和元数据的不同组合导致不同的行为。
 
 >[!TIP]
 >
->當時間範圍和廣告訊號模式之間發生衝突時，TVSDK會提供時間範圍優先順序。
+>当时间范围与广告信令模式存在冲突时，TVSDK给出时间范围的优先级。
 
-下表提供有關訊號模式和中繼資料組合行為的詳細資訊：
+下表提供有关信令模式和元数据组合行为的详细信息：
 
 <table id="table_6044AA1ACFA244FA814EA2D0766C6D12"> 
  <thead> 
   <tr> 
-   <th class="entry"> 廣告訊號模式 </th> 
-   <th class="entry"> 廣告中繼資料 </th> 
-   <th class="entry"> 解析器已建立 </th> 
-   <th class="entry"><span class="codeph"> PlacementInformations</span> 已建立 </th> 
-   <th class="entry"> 產生的行為 </th> 
+   <th class="entry"> 广告信令模式 </th> 
+   <th class="entry"> 广告元数据 </th> 
+   <th class="entry"> 已创建解析程序 </th> 
+   <th class="entry"><span class="codeph"> 投放位置信息</span> 已创建 </th> 
+   <th class="entry"> 结果行为 </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
-   <td colname="1"> <p><b>伺服器對應</b> </p> </td> 
+   <td colname="1"> <p><b>服务器映射</b> </p> </td> 
    <td colname="2"> </td> 
    <td colname="3"> </td> 
    <td colname="4"> </td> 
@@ -39,52 +39,52 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td> </td> 
-   <td> 刪除 </td> 
-   <td> 刪除 </td> 
+   <td> 删除 </td> 
+   <td> 删除 </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.DELETE)</span> </td> 
-   <td> 已刪除範圍 </td> 
+   <td> 已删除范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 刪除，稽核 </td> 
-   <td> 刪除，稽核 </td> 
+   <td> 删除，审核 </td> 
+   <td> 删除，审核 </td> 
    <td> 
     <ul id="ul_E0A2F885E93B4D23A486C37B305E17D8"> 
      <li id="li_D977B398D3904A44AFEC4B05AB0E3340"><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.DELETE)， </span> </li> 
      <li id="li_439886CB38AA46239C2E40352443888A"><span class="codeph"> PlacementInfo (Type.SERVER_MAP， Mode.INSERT)</span> </li> 
     </ul> </td> 
-   <td> 刪除範圍，插入廣告 </td> 
+   <td> 已删除范围，插入广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
    <td> Auditude </td> 
    <td> Auditude </td> 
    <td><span class="codeph"> PlacementInfo (Type.SERVER_MAP， Mode.INSERT)</span> </td> 
-   <td> 廣告已插入 </td> 
+   <td> 广告已插入 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 取代，稽核 </td> 
-   <td> 刪除，稽核 </td> 
+   <td> 替换，审计 </td> 
+   <td> 删除，审核 </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.REPLACE)、PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.REPLACE)DELETE</span> </td> 
-   <td> 範圍已取代 </td> 
+   <td> 已替换范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 標籤 </td> 
+   <td> 标记 </td> 
    <td> CustomAd </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
-   <td> 標示的範圍 </td> 
+   <td> 标记的范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 標籤，Auditude </td> 
+   <td> Mark， Auditude </td> 
    <td> CustomAd， Auditude </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
-   <td> 已標籤範圍，未插入廣告 </td> 
+   <td> 已标记范围，未插入广告 </td> 
   </tr> 
   <tr> 
-   <td colname="1"> <p><b>資訊清單提示</b> </p> </td> 
+   <td colname="1"> <p><b>清单提示</b> </p> </td> 
    <td colname="2"> </td> 
    <td colname="3"> </td> 
    <td colname="4"> </td> 
@@ -95,49 +95,49 @@ ht-degree: 0%
    <td> Auditude </td> 
    <td> Auditude </td> 
    <td><span class="codeph"> PlacementInfo (Type.PRE_ROLL， Mode.INSERT)</span> </td> 
-   <td> 廣告已插入 </td> 
+   <td> 广告已插入 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 刪除，稽核 </td> 
-   <td> 刪除，稽核 </td> 
+   <td> 删除，审核 </td> 
+   <td> 删除，审核 </td> 
    <td> 
     <ul id="ul_2DD298538E9344B9BAB882485BB57747"> 
      <li id="li_F39A69EFA7ED45C18978A2C462AF7641"><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.DELETE)</span> </li> 
      <li id="li_8CCDA3B1C63F4BC396F28F443D8C42F8"><span class="codeph"> PlacementInfo (Type.PRE_ROLL， Mode.INSERT)</span> </li> 
     </ul> </td> 
-   <td> 刪除範圍，插入廣告 </td> 
+   <td> 已删除范围，插入广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 標籤，Auditude </td> 
-   <td> 標籤，Auditude </td> 
+   <td> Mark， Auditude </td> 
+   <td> Mark， Auditude </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
-   <td> 已標籤範圍，未插入廣告 </td> 
+   <td> 已标记范围，未插入广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 刪除 </td> 
-   <td> 刪除 </td> 
+   <td> 删除 </td> 
+   <td> 删除 </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.DELETE)</span> </td> 
-   <td> 已刪除範圍 </td> 
+   <td> 已删除范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 標籤 </td> 
+   <td> 标记 </td> 
    <td> CustomAd </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
-   <td> 標示的範圍 </td> 
+   <td> 标记的范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 取代，稽核 </td> 
-   <td> 刪除，稽核 </td> 
+   <td> 替换，审计 </td> 
+   <td> 删除，审核 </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.REPLACE)、PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.REPLACE)DELETE</span> </td> 
-   <td> 範圍已取代 </td> 
+   <td> 已替换范围 </td> 
   </tr> 
   <tr> 
-   <td colname="1"> <p><b>自訂時間範圍</b> </p> </td> 
+   <td colname="1"> <p><b>自定义时间范围</b> </p> </td> 
    <td colname="2"> </td> 
    <td colname="3"> </td> 
    <td colname="4"> </td> 
@@ -145,48 +145,48 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td></td> 
-   <td> 刪除 </td> 
-   <td> 刪除 </td> 
+   <td> 删除 </td> 
+   <td> 删除 </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.DELETE)</span> </td> 
-   <td> 已刪除範圍 </td> 
+   <td> 已删除范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 刪除，稽核 </td> 
-   <td> 刪除，稽核 </td> 
+   <td> 删除，审核 </td> 
+   <td> 删除，审核 </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.DELETE)</span> </td> 
-   <td> 範圍已刪除，未插入廣告 </td> 
+   <td> 已删除范围，未插入广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
    <td> Auditude </td> 
    <td> Auditude </td> 
-   <td> 無 </td> 
-   <td> 未插入任何廣告 </td> 
+   <td> 无 </td> 
+   <td> 未插入广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 取代，稽核 </td> 
-   <td> 刪除，稽核 </td> 
+   <td> 替换，审计 </td> 
+   <td> 删除，审核 </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.REPLACE)、PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.REPLACE)DELETE</span> </td> 
-   <td> 範圍已取代為廣告 </td> 
+   <td> 范围已替换为广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 標籤 </td> 
+   <td> 标记 </td> 
    <td> CustomAd </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
-   <td> 標示的範圍 </td> 
+   <td> 标记的范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 標籤，Auditude </td> 
-   <td> 自訂廣告，Auditude </td> 
+   <td> Mark， Auditude </td> 
+   <td> 自定义广告、审核 </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
-   <td> 已標籤範圍，未插入廣告 </td> 
+   <td> 已标记范围，未插入广告 </td> 
   </tr> 
   <tr> 
-   <td colname="1"> <p><b>未設定（預設）</b> </p> </td> 
+   <td colname="1"> <p><b>未设置（默认）</b> </p> </td> 
    <td colname="2"> </td> 
    <td colname="3"> </td> 
    <td colname="4"> </td> 
@@ -194,45 +194,45 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td></td> 
-   <td> 刪除 </td> 
-   <td> 刪除 </td> 
+   <td> 删除 </td> 
+   <td> 删除 </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.DELETE)</span> </td> 
-   <td> 已刪除範圍 </td> 
+   <td> 已删除范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 刪除，稽核 </td> 
-   <td> 刪除，稽核 </td> 
+   <td> 删除，审核 </td> 
+   <td> 删除，审核 </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.INSERT)、PlacementInfo (Type.SERVER_MAP， Mode.INSERT)DELETE</span> </td> 
-   <td> 刪除範圍，插入廣告 </td> 
+   <td> 已删除范围，插入广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
    <td> Auditude </td> 
    <td> Auditude </td> 
    <td><span class="codeph"> PlacementInfo (Type.SERVER_MAP， Mode.INSERT)</span> </td> 
-   <td> 廣告已插入 </td> 
+   <td> 广告已插入 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 取代，稽核 </td> 
-   <td> 刪除，稽核 </td> 
+   <td> 替换，审计 </td> 
+   <td> 删除，审核 </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.REPLACE)、PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.REPLACE)DELETE</span> </td> 
-   <td> 範圍已取代為廣告 </td> 
+   <td> 范围已替换为广告 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 標籤 </td> 
+   <td> 标记 </td> 
    <td> CustomAd </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
-   <td> 標示的範圍 </td> 
+   <td> 标记的范围 </td> 
   </tr> 
   <tr> 
    <td></td> 
-   <td> 標籤，Auditude </td> 
+   <td> Mark， Auditude </td> 
    <td> CustomAd， Auditude </td> 
    <td><span class="codeph"> PlacementInfo (Type.CUSTOM_TIME_RANGE， Mode.MARK)</span> </td> 
-   <td> 標示的範圍 </td> 
+   <td> 标记的范围 </td> 
   </tr> 
  </tbody> 
 </table>

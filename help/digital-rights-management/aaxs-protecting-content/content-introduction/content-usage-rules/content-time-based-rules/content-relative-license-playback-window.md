@@ -1,6 +1,6 @@
 ---
-title: 播放視窗
-description: 播放視窗
+title: 播放窗口
+description: 播放窗口
 copied-description: true
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
@@ -10,8 +10,8 @@ ht-degree: 0%
 ---
 
 
-# 播放視窗{#playback-window}
+# 播放窗口{#playback-window}
 
-指定首次使用授權來播放受保護內容後，授權的有效期間。
+指定许可证首次用于播放受保护内容后的有效持续时间。
 
-使用案例範例：某些商業模型允許30天的租用期，但一旦開始播放，就必須在48小時內完成。 此許可證的48小時有效期定義為播放視窗。
+示例用例：某些业务模型允许30天的租赁期，但是，一旦播放开始，它必须在48小时内完成。 许可证的48小时有效期被定义为播放窗口。

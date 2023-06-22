@@ -1,6 +1,6 @@
 ---
-description: TVSDK提供處理中斷期間的API和範常式式碼。
-title: 實作中斷處理
+description: TVSDK提供了用于处理封锁期的API和示例代码。
+title: 实施封锁处理
 exl-id: c7252467-a075-4227-b7bc-db1112a96a2b
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,13 +9,13 @@ ht-degree: 0%
 
 ---
 
-# 實作中斷處理{#implement-blackout-handling}
+# 实施封锁处理{#implement-blackout-handling}
 
-TVSDK提供處理中斷期間的API和範常式式碼。
+TVSDK提供了用于处理封锁期的API和示例代码。
 
-若要實作中斷處理，包括在中斷期間提供替代內容：
+要实施封锁处理（包括在封锁期间提供替代内容），请执行以下操作：
 
-1. 設定您的應用程式以偵測即時資料流資訊清單中的中斷標籤。
+1. 设置应用程序以检测实时流清单中的封锁标记。
 
    ```
    private function startPlayback(resource:MediaResource):void { 
@@ -29,7 +29,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }
    ```
 
-1. 在前景和背景資料流中建立定時中繼資料事件的事件接聽程式。
+1. 为前台和后台流中的定时元数据事件创建事件侦听器。
 
    ```
    private function createMediaPlayer(context:MediaPlayerContext):void { 
@@ -41,9 +41,9 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }
    ```
 
-1. 對前景和背景資料流實作定時中繼資料事件處理常式。
+1. 为前台和后台流实施定时元数据事件处理程序。
 
-   前景：
+   前台：
 
    ```
    private function onTimedMetadata(event:TimedMetadataEvent):void { 
@@ -85,7 +85,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }
    ```
 
-1. 準備MediaPlayer中斷作業。
+1. 准备MediaPlayer以进行封锁。
 
    ```
    public function prepareBlackoutRanges(timedMetadata:Vector.<TimedMetadata>):void { 
@@ -123,7 +123,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }
    ```
 
-1. 針對播放點位置的每次更新設定TimedMetadataObjects清單的檢查。
+1. 为播放头位置的每次更新设置TimedMetadataObjects列表的检查。
 
    ```
    private function onTimeChange(event:TimeChangeEvent):void { 
@@ -156,7 +156,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }
    ```
 
-1. 建立用於在中斷期間開始和結束時切換內容的方法。
+1. 创建用于在封锁期开始和结束时切换内容的方法。
 
    ```
    public function initiate(event:TimerEvent=null):void { 

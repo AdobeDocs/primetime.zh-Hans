@@ -1,6 +1,6 @@
 ---
-title: 正在撤銷電腦認證
-description: 正在撤銷電腦認證
+title: 正在撤销计算机凭据
+description: 正在撤销计算机凭据
 copied-description: true
 exl-id: 6dffcb1f-3e9b-423c-800a-90075afe779b
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,21 +10,21 @@ ht-degree: 0%
 
 ---
 
-# 正在撤銷電腦認證{#revoking-machine-credentials}
+# 正在撤销计算机凭据{#revoking-machine-credentials}
 
-Adobe會維護一個CRL，用於撤銷已知已遭入侵的電腦認證。 SDK會自動強制執行此CRL。 如果有其他電腦不想讓授權伺服器發行授權，您可以建立電腦撤銷清單，並新增要排除之電腦權杖的發行者名稱和序號(使用 `MachineToken.getMachineTokenId()` 以擷取電腦憑證的簽發者名稱和序號)。
+Adobe维护一个CRL，用于撤销已知受到泄露的计算机凭据。 此CRL由SDK自动实施。 如果有其他计算机不希望许可证服务器向其颁发许可证，则可以创建一个计算机吊销列表，并添加要排除的计算机令牌的颁发者名称和序列号(使用 `MachineToken.getMachineTokenId()` 以检索计算机证书的颁发者名称和序列号)。
 
-撤銷電腦認證涉及使用 `RevocationListFactory` 物件。 若要建立撤銷清單、載入現有的撤銷清單，以及檢查機器權杖是否已使用Java API撤銷，請執行以下步驟：
+撤销计算机凭据涉及使用 `RevocationListFactory` 对象。 要创建吊销列表，请加载现有吊销列表，并检查计算机令牌是否已使用Java API吊销，请执行以下步骤：
 
-1. 設定您的開發環境，並包含中提到的所有JAR檔案 [設定開發環境](../../aaxs-protecting-content/content-setting-up-the-sdk/content-setting-up-the-dev-env.md) 在您的專案中。
-1. 建立 `ServerCredentialFactory` 執行個體以載入簽署所需的認證。 授權伺服器認證可用來簽署撤銷清單。
-1. 建立 `RevocationListFactory` 執行個體。
-1. 指定要撤銷的電腦權杖的簽發者和序號，請使用 `IssuerAndSerialNumber` 物件。 所有Adobe存取請求都包含電腦權杖。
-1. 建立 `RevocationList` 物件 `IssuerAndSerialNumber` 您剛建立的物件，並將其傳遞至以新增至撤銷清單 `RevocationListFactory.addRevocationEntry()`. 呼叫，產生新的撤銷清單 `RevocationListFactory.generateRevocationList()`.
-1. 若要儲存撤銷清單，您可以呼叫 `RevocationList.getBytes()`. 若要載入清單，請呼叫 `RevocationListFactory.loadRevocationList()` 並在序列化清單中傳遞。
-1. 透過呼叫，確認簽章有效且清單已由正確的授權伺服器簽署 `RevocationList.verifySignature()`.
-1. 若要檢查專案是否已撤銷，請傳遞 `IssuerAndSerialNumber` 物件進入 `RevocationList.isRevoked()`. 撤銷清單也可傳遞至 `HandlerConfiguration` ，讓SDK針對所有驗證和授權請求強制執行撤銷清單。
+1. 设置开发环境，并包含中提到的所有JAR文件 [设置开发环境](../../aaxs-protecting-content/content-setting-up-the-sdk/content-setting-up-the-dev-env.md) 在您的项目中。
+1. 创建 `ServerCredentialFactory` 用于加载签名所需的凭据的实例。 许可证服务器凭据用于对吊销列表进行签名。
+1. 创建 `RevocationListFactory` 实例。
+1. 使用指定要撤消的计算机令牌的颁发者和序列号 `IssuerAndSerialNumber` 对象。 所有Adobe访问请求都包含计算机令牌。
+1. 创建 `RevocationList` 对象使用 `IssuerAndSerialNumber` 您刚刚创建的对象，并通过将其传递到来将其添加到吊销列表 `RevocationListFactory.addRevocationEntry()`. 通过调用生成新的吊销列表 `RevocationListFactory.generateRevocationList()`.
+1. 要保存吊销列表，可以通过调用 `RevocationList.getBytes()`. 要加载列表，请调用 `RevocationListFactory.loadRevocationList()` 并在序列化列表中传递。
+1. 通过调用，验证签名是否有效，以及列表是否由正确的许可证服务器签名 `RevocationList.verifySignature()`.
+1. 要检查条目是否被撤销，请传递 `IssuerAndSerialNumber` 对象到 `RevocationList.isRevoked()`. 吊销列表还可以传递到 `HandlerConfiguration` 以使SDK对所有身份验证和许可证请求强制执行吊销列表。
 
-若要新增其他專案至現有專案，請執行下列步驟： `RevocationList`，載入現有的撤銷清單。 建立新的 `RevocationListFactory` 例項，並務必增加CRL編號。 呼叫 `RevocationListFactioryEntries.addRevocationEntries` 將舊清單中的所有專案新增至新清單。 呼叫 `RevocationListFactory.addRevocationEntry` 將任何新的撤銷專案新增至RevocationList。
+要向现有条目添加附加条目，请执行以下操作 `RevocationList`，加载现有的吊销列表。 新建 `RevocationListFactory` 实例中，并确保递增CRL编号。 调用 `RevocationListFactioryEntries.addRevocationEntries` 将旧列表中的所有条目添加到新列表。 调用 `RevocationListFactory.addRevocationEntry` 向RevocationList中添加任何新的吊销条目。
 
-如需示範如何建立撤銷清單的範常式式碼、載入現有的撤銷清單，以及檢查機器權杖是否已撤銷，請參閱 `com.adobe.flashaccess.samples.revocation.CreateRevocationList` 在「參考實作命令列工具」的「範例」目錄中。
+有关演示如何创建吊销列表、加载现有吊销列表以及检查计算机令牌是否已吊销的示例代码，请参阅 `com.adobe.flashaccess.samples.revocation.CreateRevocationList` 在参考实施命令行工具“samples”目录中。

@@ -1,6 +1,6 @@
 ---
-description: 事件處理常式可讓瀏覽器TVSDK回應事件。
-title: 實作事件接聽程式和回呼
+description: 事件处理程序允许浏览器TVSDK响应事件。
+title: 实施事件侦听器和回调
 exl-id: 2ab33c03-4df6-48e5-825c-95aeef8855d2
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,34 +9,34 @@ ht-degree: 0%
 
 ---
 
-# 實作事件接聽程式和回呼{#implement-event-listeners-and-callbacks}
+# 实施事件侦听器和回调{#implement-event-listeners-and-callbacks}
 
-事件處理常式可讓瀏覽器TVSDK回應事件。
+事件处理程序允许浏览器TVSDK响应事件。
 
-當事件發生時，瀏覽器TVSDK的事件機制會呼叫您註冊的事件處理常式，並將事件資訊傳遞至處理常式。
+发生事件时，浏览器TVSDK的事件机制会调用已注册的事件处理程序，并将事件信息传递给处理程序。
 
-您的應用程式必須為影響您應用程式的瀏覽器TVSDK事件實作事件接聽程式。
+应用程序必须为影响应用程序的浏览器TVSDK事件实施事件侦听器。
 
-1. 判斷應用程式必須監聽的事件。
+1. 确定应用程序必须侦听的事件。
 
-   * **必要事件**：接聽所有播放事件。
+   * **必需事件**：监听所有播放事件。
 
       >[!IMPORTANT]
       >
-      >播放事件 `STATUS_CHANGED` 提供播放器狀態，包括錯誤。 任何狀態都可能影響您的播放器的下一步。
+      >播放事件 `STATUS_CHANGED` 提供播放器状态，包括错误。 任何状态都可能影响播放器的下一步。
 
-   * **其他事件**：選擇性，視您的應用程式而定。
+   * **其他事件**：可选，具体取决于您的应用程序。
 
-      例如，如果您在播放中加入廣告，請聆聽所有內容 `AdBreakPlaybackEvent` 和 `AdPlaybackEvent` 事件。
+      例如，如果在播放中包含广告，则监听所有 `AdBreakPlaybackEvent` 和 `AdPlaybackEvent` 事件。
 
-1. 實作每個事件的事件接聽程式。
+1. 为每个事件实施事件侦听器。
 
-   瀏覽器TVSDK會傳回事件接聽程式回呼的引數值。 這些值會提供有關事件的相關資訊，您可在接聽程式中用來執行適當的動作。
+   浏览器TVSDK会向事件侦听器回调返回参数值。 这些值提供有关事件的相关信息，您可以在监听器中使用该信息执行相应的操作。
 
    例如：
 
-   * 事件型別： `AdobePSDK.PSDKEventType.STATUS_CHANGED`
-   * 事件屬性： `MediaPlayerStatus.<event>` 使用方式如下：
+   * 事件类型： `AdobePSDK.PSDKEventType.STATUS_CHANGED`
+   * 事件属性： `MediaPlayerStatus.<event>` 使用方式如下：
 
 ```js
 player.addEventListener( 
@@ -51,7 +51,7 @@ onStatusChange = function (event) {
             break;
 ```
 
-1. 向註冊回呼接聽程式 `MediaPlayer` 物件，使用 `MediaPlayer.addEventListener`.
+1. 使用注册回调侦听器 `MediaPlayer` 对象，使用 `MediaPlayer.addEventListener`.
 
    ```js
    player.addEventListener(AdobePSDK.PSDKEventType.STATUS_CHANGED,  

@@ -1,6 +1,6 @@
 ---
-description: TVSDK播放器會傳送事件以顯示自訂廣告載入狀態，或忽略載入時間過長或有錯誤的廣告。 這些事件是在events.CustomAdEvents中定義。
-title: 自訂廣告事件
+description: TVSDK播放器会调度事件以显示自定义广告加载状态，或忽略加载时间过长或有错误的广告。 这些事件在events.CustomAdEvents中定义。
+title: 自定义广告事件
 exl-id: 44f32584-7f6c-4071-82b6-9cc9584418ee
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,57 +9,57 @@ ht-degree: 0%
 
 ---
 
-# 自訂廣告事件{#custom-ad-events}
+# 自定义广告事件{#custom-ad-events}
 
-TVSDK播放器會傳送事件以顯示自訂廣告載入狀態，或忽略載入時間過長或有錯誤的廣告。 這些事件是在events.CustomAdEvents中定義。
+TVSDK播放器会调度事件以显示自定义广告加载状态，或忽略加载时间过长或有错误的广告。 这些事件在events.CustomAdEvents中定义。
 
 <table id="table_718700E0F0B042F882ED131F79E01D4E"> 
  <thead> 
   <tr> 
    <th colname="col1" class="entry"> 事件 </th> 
-   <th colname="col2" class="entry"> 定義 </th> 
+   <th colname="col2" class="entry"> 定义 </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
    <td colname="col1"> <span class="codeph"> AdClickThru </span> </td> 
-   <td colname="col2"> 檢視器點按自訂廣告的次數。 </td> 
+   <td colname="col2"> 查看器单击自定义广告的次数。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> AdError </span> </td> 
-   <td colname="col2"> 自訂廣告發生錯誤。 </td> 
+   <td colname="col2"> 自定义广告出错。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> AdLoaded </span> </td> 
-   <td colname="col2"> 自訂廣告已載入。  </td> 
+   <td colname="col1"> <span class="codeph"> AdLoad </span> </td> 
+   <td colname="col2"> 已加载自定义广告。  </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> AdLoading </span> </td> 
-   <td colname="col2"> 正在載入自訂廣告。 </td> 
+   <td colname="col2"> 正在加载自定义广告。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> AdPaused </span> </td> 
-   <td colname="col2"> 自訂廣告已暫停。 </td> 
+   <td colname="col2"> 自定义广告已暂停。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> AdResumed </span> </td> 
-   <td colname="col2"> 自訂廣告在暫停後繼續播放。 </td> 
+   <td colname="col2"> 自定义广告在暂停后继续播放。 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> AdPlaying </span> </td> 
-   <td colname="col2"> 正在播放自訂廣告。 </td> 
+   <td colname="col1"> <span class="codeph"> AdPlay </span> </td> 
+   <td colname="col2"> 正在播放自定义广告。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> AdProgress </span> </td> 
-   <td colname="col2"> <p>自訂廣告播放器會通知TVSDK播放器自訂廣告的進度。 &amp;nbsp； </p> <p>此 <span class="codeph"> currenttime </span> 和 <span class="codeph"> totalTime </span> 個事件（共個廣告）傳遞此事件。 </p> </td> 
+   <td colname="col2"> <p>自定义广告播放器会通知TVSDK播放器自定义广告的进度。 &amp;nbsp； </p> <p>此 <span class="codeph"> 当前时间 </span> 和 <span class="codeph"> totalTime </span> 的广告进行传递。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> AdStart </td> 
-   <td colname="col2"> 自訂廣告已開始播放，並向檢視器顯示。  </td> 
+   <td colname="col1"> 已启动 </td> 
+   <td colname="col2"> 自定义广告已开始播放，并向查看器显示。  </td> 
   </tr> 
   <tr> 
    <td colname="col1"> AdStopped </td> 
-   <td colname="col2"> 自訂廣告已播放完成。 </td> 
+   <td colname="col2"> 自定义广告已播放完毕。 </td> 
   </tr> 
  </tbody> 
 </table>

@@ -1,6 +1,6 @@
 ---
-description: TVSDK會在每次訂閱標籤物件出現在內容資訊清單中時，為這些物件準備TimedMetadata物件。
-title: 訂閱自訂標籤
+description: 每次在内容清单中遇到订阅标记的对象时，TVSDK都会为这些对象准备TimedMetadata对象。
+title: 订阅自定义标记
 exl-id: faefcefb-e52f-4e32-859a-7da4284ca52e
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,17 +9,17 @@ ht-degree: 0%
 
 ---
 
-# 訂閱自訂標籤 {#subscribe-to-custom-tags}
+# 订阅自定义标记 {#subscribe-to-custom-tags}
 
-TVSDK會在每次訂閱標籤物件出現在內容資訊清單中時，為這些物件準備TimedMetadata物件。
+每次在内容清单中遇到订阅标记的对象时，TVSDK都会为这些对象准备TimedMetadata对象。
 
-在播放開始之前，您必須訂閱標籤。 若要接收有關HLS資訊清單中自訂標籤的通知：
+在开始播放之前，您必须订阅标记。 要接收有关HLS清单中的自定义标记的通知，请执行以下操作：
 
-1. 將包含自訂標籤的陣列傳遞至，以全域設定自訂廣告標簽名稱 `setSubscribedTags` 在 `MediaPlayerItemConfig`.
+1. 通过将包含自定义标记的数组传递到，全局设置自定义广告标记名称 `setSubscribedTags` 在 `MediaPlayerItemConfig`.
 
    >[!IMPORTANT]
    >
-   >您必須包含 `#` 使用HLS資料流時的首碼。
+   >您必须包含 `#` 使用HLS流时的前缀。
 
    例如：
 

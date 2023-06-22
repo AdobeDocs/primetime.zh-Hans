@@ -1,6 +1,6 @@
 ---
-description: TimeRangeCollection公用程式類別會擷取TimeRange規格的有序集合的概念，並提供將自身轉譯為Metadata例項的服務。
-title: TimeRangeCollection類別
+description: TimeRangeCollection实用程序类抽象TimeRange规范有序集合的概念，并提供将自身转换为元数据实例的服务。
+title: TimeRangecollection类
 exl-id: 1af41267-c222-43ac-84ca-0bf37b6a59de
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,9 +9,9 @@ ht-degree: 0%
 
 ---
 
-# TimeRangeCollection類別{#timerangecollection-class}
+# TimeRangecollection类{#timerangecollection-class}
 
-TimeRangeCollection公用程式類別會擷取TimeRange規格的有序集合的概念，並提供將自身轉譯為Metadata例項的服務。
+TimeRangeCollection实用程序类抽象TimeRange规范有序集合的概念，并提供将自身转换为元数据实例的服务。
 
 <!--<a id="section_D87AA7BC628D458DAB12D5247AD34B41"></a>-->
 
@@ -31,4 +31,4 @@ public final class TimeRangeCollection {
 }
 ```
 
-此 `type` parameter是建構函式方法的簽章中的第一個位置引數，是 `TimeRangeCollection#Type` 分項清單。 這是 `TimeRangeCollection` 類別。 目前由此分項清單定義的值為 `MARK_RANGES`， `DELETE_RANGES`、和 `REPLACE_RANGES`. 您可以建立 `TimeRangeCollection` 物件。
+此 `type` parameter是构造函数方法的签名中的第一个位置参数，是 `TimeRangeCollection#Type` 明细列表。 这是 `TimeRangeCollection` 类。 此枚举当前定义的值为 `MARK_RANGES`， `DELETE_RANGES`、和 `REPLACE_RANGES`. 您可以创建 `TimeRangeCollection` 对象使用这三种类型。

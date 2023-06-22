@@ -1,7 +1,7 @@
 ---
-description: 優先順序規則會定義從VAST/VMAP回應中選取要播放的廣告創意的優先順序。
-keywords: 優先順序規則；創意選擇規則
-title: 優先順序規則
+description: 优先级规则定义将从VAST/VMAP响应中选择用于播放的广告创意的优先级顺序。
+keywords: 优先级规则；创意选择规则
+title: 优先级规则
 exl-id: 927815fc-1910-43cc-9e83-e57e9659dd23
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -10,65 +10,65 @@ ht-degree: 0%
 
 ---
 
-# 優先順序規則{#priority-rules}
+# 优先级规则{#priority-rules}
 
-優先順序規則會定義從VAST/VMAP回應中選取要播放的廣告創意的優先順序。
+优先级规则定义将从VAST/VMAP响应中选择用于播放的广告创意的优先级顺序。
 
-## 優先順序規則具有下列屬性和可能的值：
+## 优先级规则具有以下属性和可能值：
 
 <table id="table_ljp_tgx_hz">  
  <thead> 
   <tr> 
-   <th class="entry"> 金鑰</th> 
-   <th class="entry"> 型別</th> 
+   <th class="entry"> 键</th> 
+   <th class="entry"> 类型</th> 
    <th class="entry"> 值</th> 
-   <th class="entry"> 說明</th> 
+   <th class="entry"> 描述</th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
-   <td><span class="codeph"> 優先順序</span></td> 
-   <td><span class="codeph"> 陣列</span></td> 
+   <td><span class="codeph"> 优先级</span></td> 
+   <td><span class="codeph"> 数组</span></td> 
    <td></td> 
-   <td> 一個小寫MIME型別陣列，定義必須選取來源創意內容才能播放的優先順序。</td> 
+   <td> 一个小写mime类型数组，定义必须从中选择源创意内容才能播放的优先级。</td> 
   </tr> 
   <tr> 
-   <td><span class="codeph"> 個專案</span></td> 
-   <td><span class="codeph"> 字串</span></td> 
-   <td><span class="codeph"> 主機</span></td> 
-   <td>目前僅適用 <span class="codeph"> 主機</span> 支援。 此屬性必須存在於 <span class="codeph"> 符合</span> 和 <span class="codeph"> 值</span> 屬性已定義。</td> 
+   <td><span class="codeph"> 项目</span></td> 
+   <td><span class="codeph"> 字符串</span></td> 
+   <td><span class="codeph"> 主机</span></td> 
+   <td>当前仅限 <span class="codeph"> 主机</span> 受支持。 此属性必须存在于 <span class="codeph"> 匹配</span> 和 <span class="codeph"> 值</span> 属性已定义。</td> 
   </tr> 
   <tr> 
-   <td><span class="codeph"> 符合</span></td> 
-   <td><span class="codeph"> 字串</span></td> 
-   <td><span class="codeph"> 多個</span></td> 
+   <td><span class="codeph"> 匹配</span></td> 
+   <td><span class="codeph"> 字符串</span></td> 
+   <td><span class="codeph"> 多个</span></td> 
    <td>可能的值：
     <ul id="ul_tnf_2hx_hz"> 
-     <li><span class="codeph"> eq</span>  — 等於</li> 
-     <li><span class="codeph"> 新</span>  — 不等於</li> 
+     <li><span class="codeph"> eq</span>  — 等于</li> 
+     <li><span class="codeph"> ne</span>  — 不等于</li> 
      <li><span class="codeph"> co</span>  — 包含</li> 
      <li><span class="codeph"> nc</span>  — 不包含</li> 
-     <li><span class="codeph"> sw</span>  — 開頭為</li> 
-     <li><span class="codeph"> ew</span>  — 結尾為</li> 
+     <li><span class="codeph"> 软件</span>  — 开头为</li> 
+     <li><span class="codeph"> ew</span>  — 结束于</li> 
     </ul></td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> type</span></td> 
-   <td><span class="codeph"> 字串</span></td> 
-   <td><span class="codeph"> 優先順序</span></td> 
-   <td>值必須一律為 <span class="codeph"> 優先順序</span></td> 
+   <td><span class="codeph"> 字符串</span></td> 
+   <td><span class="codeph"> 优先级</span></td> 
+   <td>该值必须始终为 <span class="codeph"> 优先级</span></td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> 值</span></td> 
-   <td><span class="codeph"> 陣列</span></td> 
+   <td><span class="codeph"> 数组</span></td> 
    <td></td> 
-   <td> <p>TVSDK會使用 <span class="codeph"> 符合</span> 上的屬性 <span class="codeph"> 個專案</span> 和符合此陣列中定義的值</p> </td> 
+   <td> <p>TVSDK将使用 <span class="codeph"> 匹配</span> 上的属性 <span class="codeph"> 项目</span> ，并与此数组中定义的值进行匹配</p> </td> 
   </tr> 
   <tr> 
-   <td><span class="codeph"> 串流</span></td> 
-   <td><span class="codeph"> 字串</span></td> 
+   <td><span class="codeph"> 流</span></td> 
+   <td><span class="codeph"> 字符串</span></td> 
    <td></td> 
-   <td> <p>值可以是 <span class="codeph"> vod</span> 或 <span class="codeph"> live</span></p> </td> 
+   <td> <p>值可以是 <span class="codeph"> vod</span> 或 <span class="codeph"> 实时</span></p> </td> 
   </tr> 
  </tbody> 
 </table>

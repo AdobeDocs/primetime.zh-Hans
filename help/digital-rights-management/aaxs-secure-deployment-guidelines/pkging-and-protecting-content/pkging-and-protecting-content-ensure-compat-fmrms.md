@@ -1,6 +1,6 @@
 ---
-title: 確保與Flash MediaRights Management伺服器1.x相容
-description: 確保與Flash MediaRights Management伺服器1.x相容
+title: 确保与Flash MediaRights Management服务器1.x兼容
+description: 确保与Flash MediaRights Management服务器1.x兼容
 copied-description: true
 exl-id: 324ea561-c666-4cf9-871b-11f6b6b406f1
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,20 +10,20 @@ ht-degree: 0%
 
 ---
 
-# 確保與Flash MediaRights Management伺服器1.x相容{#ensure-compatibility-with-flash-media-rights-management-server-x}
+# 确保与Flash MediaRights Management服务器1.x兼容{#ensure-compatibility-with-flash-media-rights-management-server-x}
 
-Flash MediaRights Management伺服器1.x和Adobe存取使用不同的中繼資料來封裝內容和請求授權。 若要讓Adobe存取使用FMRMS 1.x版內容，必須轉換中繼資料。
+Flash媒体Rights Management服务器1.x和Adobe访问使用不同的元数据来打包内容和请求许可证。 要使Adobe访问使用FMRMS版本1.x内容，必须转换元数据。
 
-Adobe存取SDK支援兩種轉換中繼資料的選項：
+Adobe访问SDK支持两个用于转换元数据的选项：
 
-* 離線（建議）
+* 离线（推荐）
 
-   在離線程式中產生Adobe存取中繼資料，並將其儲存以供使用者端請求時使用。 Adobe建議使用此選項。 如果中繼資料是離線產生，授權伺服器就不需要存取1.x CEK或封裝程式認證。 此外，離線轉換可提供較佳的效能，因為授權伺服器不需要即時產生中繼資料。
+   在脱机进程中生成Adobe访问元数据，并将其存储以供客户端请求时使用。 Adobe建议使用此选项。 如果元数据是离线生成的，则许可证服务器不需要访问1.x CEK或打包程序凭据。 此外，离线转换可提供更好的性能，因为许可证服务器不需要实时生成元数据。
 
-* 隨選
+* On-demand
 
-   在使用者端要求時隨選產生Adobe存取中繼資料。 當Adobe存取使用者端下載版本1.x內容時，它會將DRM中繼資料（也稱為DRM標頭）傳送到Adobe存取SDK。 SDK會將DRM中繼資料轉換為目前格式。 SDK會將內容加密金鑰(CEK)加密並嵌入中繼資料，然後將內容傳回Adobe存取使用者端。 (Adobe存取1.x中繼資料不包含CEK。)
+   在客户端请求Adobe访问元数据时按需生成元数据。 当Adobe访问客户端下载版本1.x内容时，它会将DRM元数据（也称为DRM标头）发送到Adobe访问SDK。 SDK将DRM元数据转换为当前格式。 SDK将内容加密密钥(CEK)并嵌入到元数据中，然后将内容发送回Adobe访问客户端。 (Adobe访问1.x元数据不包含CEK。)
 
-   若要轉換中繼資料，Adobe存取需要存取Adobe存取1.x內容加密金鑰。 當您從Flash MediaRights Management伺服器1.x移轉時，您可以繼續將內容加密金鑰儲存在LiveCycleES資料庫中，也可以實作自訂解決方案，將內容加密金鑰安全地儲存在其他地方。 如果您選擇繼續將內容加密金鑰儲存在LiveCycleES資料庫中，請遵循以下的「保護對資料庫中敏感內容的存取」中概述的建議： *強化LiveCycleES的安全性*.
+   要转换元数据，Adobe访问需要访问Adobe访问1.x内容加密密钥。 从Flash媒体Rights Management服务器1.x迁移时，您可以继续将内容加密密钥存储在LiveCycleES数据库中，也可以实施自定义解决方案以将内容加密密钥安全地存储在其他位置。 如果选择继续将内容加密密钥存储在LiveCycleES数据库中，请按照以下内容中保护对数据库中敏感内容的访问中列出的建议操作： *LiveCycleES的强化和安全性*.
 
-如需確保與使用Flash MediaRights Management伺服器1.x封裝的內容相容的詳細資訊，請參閱 *Adobe存取API參考*.
+有关确保与使用Flash MediaRights Management服务器1.x打包的内容兼容的更多信息，请参阅 *Adobe访问API参考*.

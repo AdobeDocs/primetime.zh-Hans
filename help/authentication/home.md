@@ -1,6 +1,6 @@
 ---
-title: 歡迎使用Adobe&reg； Primetime驗證！
-description: 歡迎使用Adobe&reg； Primetime驗證概觀
+title: 欢迎使用Adobe&reg； Primetime身份验证！
+description: 欢迎使用Adobe&reg； Primetime身份验证概述
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,44 +9,44 @@ ht-degree: 0%
 
 ---
 
-# 歡迎使用Adobe® Primetime驗證 {#pt-auth-overview}
+# 欢迎使用Adobe®Primetime身份验证 {#pt-auth-overview}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-Adobe Primetime驗證是TV Everywhere的權利解決方案，提供模組化架構，用於判斷要求存取資源的人是否有權使用資源。 為了參與Primetime驗證軟體權利檔案解決方案，內容提供者（程式設計人員）和付費電視提供者(MVPD)將其權利檔案系統與Primetime驗證工作流程整合。 本檔案網站提供整合流程的詳細資訊，以及現有合作夥伴的秘訣。
+Adobe Primetime身份验证是TV Everywhere的权利解决方案，提供了一个模块化框架，用于确定请求访问资源的人是否有权使用它。 为了参与Primetime身份验证权利解决方案，内容提供商（程序员）和付费电视提供商(MVPD)将其权利系统与Primetime身份验证工作流集成。 此文档站点提供有关集成过程的详细信息，以及针对现有合作伙伴的提示。
 
-感謝您提供意見反應！
+感谢您提供反馈！
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-## 熱門說明和常見問答 {#help-faqs}
+## 常见帮助和常见问题解答 {#help-faqs}
 
-| **精選專案** | |-| | <ul><li>iOS的單一登入</li><li>[促銷臨時傳遞](/help/authentication/promotional-temp-pass.md)</li><li>[家庭式驗證(HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[HBA資訊圖表](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Primetime TVE儀表板使用手冊](/help/authentication/tve-dashboard-user-guide.md)</li></ul> |
+| **特色项目** | |-| | <ul><li>iOS单点登录</li><li>[促销临时传递](/help/authentication/promotional-temp-pass.md)</li><li>[基于家庭的身份验证(HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[HBA信息图](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Primetime TVE仪表板用户指南](/help/authentication/tve-dashboard-user-guide.md)</li></ul> |
 
-| **適用於程式設計師** | **針對MVPD** |
+| **面向程序员** | **对于MVPD** |
 |------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| <ul><li>[程式設計人員Kickstart指南](/help/authentication/programmer-kickstart-guide.md)</li><li>**MVPD選取器（「選取器」）**</li><li>[使用者中繼資料](/help/authentication/user-metadata.md)</li></ul> | <ul><li>[MVPD Kickstart指南](/help/authentication/mvpd-kickstart-guide.md)</li><li>[驗證](/help/authentication/authn-usecase.md)</li><li>[Authorization](/help/authentication/authz-usecase.md)</li><li>[登出](/help/authentication/usecase-mvpd-logout.md)</li></ul> |
-| **適用於原生應用程式使用者端** | **針對所有人** |
-| <ul><li>[iOS技術概覽](/help/authentication/iostvos-sdk-overview.md)</li><li>[Android技術概覽](/help/authentication/android-sdk-overview.md)</li></ul> | <ul><li>[技術檔案](/help/authentication/technical-paper.md)</li><li>[向上呈報程式](/help/authentication/escalation-procedures.md)</li><li>**支援的系統**</li><li>[字彙表](/help/authentication/glossary.md)</li></ul> |
-| **適用於智慧型裝置** |  |
-| <ul><li>[無使用者端技術概覽](/help/authentication/rest-api-overview.md)</li><li>[無使用者端API](/help/authentication/rest-api-reference.md)</li></ul> |  |
+| <ul><li>[程序员Kickstart指南](/help/authentication/programmer-kickstart-guide.md)</li><li>**MVPD选择器（“选取器”）**</li><li>[用户元数据](/help/authentication/user-metadata.md)</li></ul> | <ul><li>[MVPD快速入门指南](/help/authentication/mvpd-kickstart-guide.md)</li><li>[身份验证](/help/authentication/authn-usecase.md)</li><li>[授权](/help/authentication/authz-usecase.md)</li><li>[注销](/help/authentication/usecase-mvpd-logout.md)</li></ul> |
+| **对于本机应用程序客户端** | **适用于每个人** |
+| <ul><li>[iOS技术概述](/help/authentication/iostvos-sdk-overview.md)</li><li>[Android技术概述](/help/authentication/android-sdk-overview.md)</li></ul> | <ul><li>[技术文件](/help/authentication/technical-paper.md)</li><li>[上报程序](/help/authentication/escalation-procedures.md)</li><li>**支持的系统**</li><li>[术语表](/help/authentication/glossary.md)</li></ul> |
+| **对于智能设备** |  |
+| <ul><li>[无客户端技术概述](/help/authentication/rest-api-overview.md)</li><li>[无客户端API](/help/authentication/rest-api-reference.md)</li></ul> |  |
 
 >[!IMPORTANT]
 >
->如果您找不到答案， [**傳送電子郵件給我們**](mailto:tve-support@adobe.com).
+>如果你找不到答案， [**发送电子邮件给我们**](mailto:tve-support@adobe.com).
 >
->[傳送電子郵件給我們的支援團隊](mailto:tve-support@adobe.com) 也是任何問題或事件報告的第一步。
+>[发送电子邮件给我们的支持团队](mailto:tve-support@adobe.com) 也是任何问题或事件报告的第一步。
 >
->如果您擁有 [嚴重程度1已上線](/help/authentication/escalation-procedures.md) 問題且您已傳送電子郵件給我們，30分鐘過後（無回應），請檢視 [向上呈報程式](/help/authentication/escalation-procedures.md) 要撥打的電話號碼檔案。
+>如果您拥有 [严重级别1已启动](/help/authentication/escalation-procedures.md) 问题且您已发送电子邮件给我们，30分钟后未收到响应，请查看 [上报程序](/help/authentication/escalation-procedures.md) 要拨打的电话号码的文档。
 
 
-## 尋找您需要的內容 {#how-to-search}
+## 查找您需要的内容 {#how-to-search}
 
-* **搜尋** Primetime驗證服務檯上的任何位置，以取得包含本檔案的結果。
-* **瀏覽** 所有Primetime驗證檔案，透過左側導覽窗格中的資料夾階層。
-* **篩選** 在導覽窗格頂端的欄位中輸入字詞，即可使用資料夾階層。
-* **書籤** 使用您的網頁瀏覽器連至感興趣頁面的「深層連結」。
+* **搜索** Primetime身份验证帮助台上的任何位置，以获取包含此文档的结果。
+* **浏览** 所有Primetime身份验证文档（通过左侧导航窗格中的文件夹层次结构）。
+* **筛选条件** 通过在导航窗格顶部的字段中输入术语来定义文件夹层次结构。
+* **书签** 使用Web浏览器指向感兴趣页面的“深层链接”。

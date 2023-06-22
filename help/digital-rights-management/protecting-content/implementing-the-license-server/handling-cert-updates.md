@@ -1,6 +1,6 @@
 ---
-title: 在Adobe發行的憑證過期時處理憑證更新
-description: 在Adobe發行的憑證過期時處理憑證更新
+title: 处理Adobe颁发的证书过期时的证书更新
+description: 处理Adobe颁发的证书过期时的证书更新
 copied-description: true
 exl-id: 9051a647-87ed-4df6-8bbc-bb5c112383ee
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,21 +10,21 @@ ht-degree: 0%
 
 ---
 
-# 在Adobe發行的憑證過期時處理憑證更新{#handling-certificate-updates-when-adobe-issued-certificates-expire}
+# 处理Adobe颁发的证书过期时的证书更新{#handling-certificate-updates-when-adobe-issued-certificates-expire}
 
-您可能需要從Adobe取得新憑證。 例如，生產憑證會在評估憑證過期或您從評估切換至生產憑證時過期。 當憑證過期且您不想重新封裝使用舊憑證的內容時，您可以讓License Server知道舊憑證和新憑證。
+您可能需要从Adobe获取新证书。 例如，生产证书将在评估证书过期或您从评估证书切换到生产证书时过期。 每当证书过期并且您不想重新打包使用旧证书的内容时，您可以使License Server知道旧证书和新证书。
 
-若要使用新憑證更新伺服器：
+要使用新证书更新服务器，请执行以下操作：
 
-1. （選擇性）將新專案新增至現有DRM原則更新清單或撤銷清單時，您需要使用新憑證簽名，並使用舊憑證來驗證現有檔案上的簽名。
+1. （可选）将新条目添加到现有DRM策略更新列表或吊销列表时，您需要使用新凭据进行签名，并使用旧证书验证现有文件上的签名。
 
-   例如，您可以使用以下命令列將專案新增至已使用不同認證簽署的現有DRM原則更新清單：
+   例如，您可以使用以下命令行将条目添加到已使用其他凭据签名的现有DRM策略更新列表：
 
    ```
    java -jar AdobePolicyUpdateListManager.jar newList -f oldList oldSigningCert.cer -u pol 0 "" ""
    ```
 
-1. （可選）使用Java API以新的DRM原則更新清單或撤銷清單來更新授權伺服器：
+1. （可选）使用Java API使用新的DRM策略更新列表或吊销列表更新许可证服务器：
 
    ```
    HandlerConfiguration.setRevocationList() 
@@ -36,42 +36,42 @@ ht-degree: 0%
    HandlerConfiguration.setPolicyUpdateList()
    ```
 
-   在參考實作中，您使用的屬性為 `HandlerConfiguration.RevocationList` 和 `HandlerConfiguration.PolicyUpdateList`. 您也需要更新用來驗證簽章的憑證： `RevocationList.verifySignature.X509Certificate`.
+   在参考实施中，您使用的属性包括 `HandlerConfiguration.RevocationList` 和 `HandlerConfiguration.PolicyUpdateList`. 您还需要更新用于验证签名的证书： `RevocationList.verifySignature.X509Certificate`.
 
-1. 使用新憑證和舊憑證更新授權伺服器。
+1. 使用新证书和旧证书更新许可证服务器。
 
-   如果您想要使用已使用舊憑證封裝的內容，請確定授權伺服器有權存取舊和新的授權伺服器憑證以及傳輸憑證。
+   如果要使用使用使用旧证书打包的内容，请确保许可证服务器可以访问旧和新的许可证服务器凭据以及传输凭据。
 
-   對於授權伺服器認證：
+   对于许可证服务器凭据：
 
-   * 確保目前的認證已傳遞至 `LicenseHandler` 建構函式：
+   * 确保将当前凭据传递到 `LicenseHandler` 构造函数：
 
-      * 在參考實作中，將其設定為 `LicenseHandler.ServerCredential` 屬性。
-      * 在Adobe Primetime DRM Server for Protected Streaming中，目前的認證必須是 `LicenseServerCredential` flashaccess-tenant.xml檔案中的元素。
-   * 確保提供目前和舊認證給 `AsymmetricKeyRetrieval`
+      * 在参考实施中，使用 `LicenseHandler.ServerCredential` 属性。
+      * 在Adobe Primetime DRM Server for Protected Streaming中，当前凭据必须是中指定的第一个凭据。 `LicenseServerCredential` flashaccess-tenant.xml文件中的元素。
+   * 确保向提供当前和旧凭据 `AsymmetricKeyRetrieval`
 
-      * 在參考實作中，將其設定為 `LicenseHandler.ServerCredential` 和 `AsymmetricKeyRetrieval.ServerCredential. n` 屬性。
+      * 在参考实施中，使用 `LicenseHandler.ServerCredential` 和 `AsymmetricKeyRetrieval.ServerCredential. n` 属性。
 
-      * 在Primetime DRM Server for Protected Streaming中，舊認證是在 `LicenseServerCredential` flashaccess-tenant.xml檔案中的元素。
-   對於傳輸認證：
+      * 在Primetime DRM Server for Protected Streaming中，旧凭据在 `LicenseServerCredential` flashaccess-tenant.xml文件中的元素。
+   对于传输凭据：
 
-   * 確保目前的認證已傳遞至 `HandlerConfiguration.setServerTransportCredential()` 方法：
+   * 确保将当前凭据传递到 `HandlerConfiguration.setServerTransportCredential()` 方法：
 
-      * 在參考實作中，將其設定為 `HandlerConfiguration.ServerTransportCredential` 屬性。
-      * 在用於受保護串流的Primetime DRM伺服器中，目前的認證必須是中指定的第一個認證。 `TransportCredential` 中的元素 [!DNL flashaccess-tenant.xml] 檔案。
-   * 確保提供舊認證給 `HandlerConfiguration.setAdditionalServerTransportCredentials`()：
+      * 在参考实施中，使用 `HandlerConfiguration.ServerTransportCredential` 属性。
+      * 在用于受保护流的Primetime DRM服务器中，当前凭据必须是中指定的第一个凭据。 `TransportCredential` 中的元素 [!DNL flashaccess-tenant.xml] 文件。
+   * 确保将旧凭据提供给 `HandlerConfiguration.setAdditionalServerTransportCredentials`()：
 
-      * 在參考實作中，將其設定為 `HandlerConfiguration.AdditionalServerTransportCredential. n` 屬性。
-      * 在用於受保護串流的Primetime DRM伺服器中，這會在中的第一個認證之後指定 `TransportCredential` flashaccess-tenant.xml檔案中的元素。
-
-
+      * 在参考实施中，使用 `HandlerConfiguration.AdditionalServerTransportCredential. n` 属性。
+      * 在用于受保护流的Primetime DRM服务器中，将在中的第一个凭据之后指定 `TransportCredential` flashaccess-tenant.xml文件中的元素。
 
 
-1. 更新封裝工具，確保使用目前的認證來封裝內容。 確保封裝時使用最新的授權伺服器憑證、傳輸憑證和封裝程式認證。
-1. 更新金鑰伺服器的授權伺服器憑證，如下所示：
 
-   * 在flashaccess-keyserver-tenant.xml中同時包含舊金鑰伺服器認證和新的金鑰伺服器認證，以更新Adobe Primetime DRM Key Server租使用者設定檔案中的認證。
-   * 確保目前的憑證已傳遞至 `HandlerConfiguration.setKeyServerCertificate()` 方法。
 
-      * 在參考實作中，將其設定為 `HandlerConfiguration.KeyServerCertificate` 屬性。
-      * 在Primetime DRM Server for Protected Streaming中，透過Configuration/Tenant/Certificates/KeyServer元素在中指定金鑰伺服器的憑證。
+1. 更新打包工具以确保它们使用当前凭据打包内容。 确保使用最新的许可证服务器证书、传输证书和打包程序凭据进行打包。
+1. 按如下方式更新密钥服务器的许可证服务器证书：
+
+   * 通过在flashaccess-keyserver-tenant.xml中包含旧密钥服务器凭据和新的密钥服务器凭据，更新Adobe Primetime DRM Key Server租户配置文件中的凭据。
+   * 确保将当前证书传递到 `HandlerConfiguration.setKeyServerCertificate()` 方法。
+
+      * 在参考实施中，使用 `HandlerConfiguration.KeyServerCertificate` 属性。
+      * 在用于受保护流的Primetime DRM服务器中，通过Configuration/Tenant/Certificates/KeyServer元素在中指定密钥服务器的证书。

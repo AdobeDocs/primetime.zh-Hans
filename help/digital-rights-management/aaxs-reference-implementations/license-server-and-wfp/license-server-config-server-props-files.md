@@ -1,6 +1,6 @@
 ---
-title: 伺服器屬性檔案
-description: 伺服器屬性檔案
+title: 服务器属性文件
+description: 服务器属性文件
 copied-description: true
 exl-id: c42fde8f-e438-4497-bd15-ebd0f6e2eed7
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,18 +10,18 @@ ht-degree: 0%
 
 ---
 
-# 伺服器屬性檔案 {#server-properties-files}
+# 服务器属性文件 {#server-properties-files}
 
-伺服器需要兩個組態檔，一個用於授權伺服器，另一個用於封裝程式。 這兩個檔案都必須放置在類別路徑上。 屬性檔案包含Adobe所核發的認證的位置。 這些認證可指定為.pfx檔案和密碼，或為HSM上儲存的認證提供別名及密碼。
+服务器需要两个配置文件，一个用于许可证服务器，另一个用于打包程序。 这两个文件都必须放置在类路径上。 属性文件包含Adobe颁发的凭据的位置。 这些凭据可以指定为.pfx文件和密码，也可以通过为HSM上存储的凭据提供别名和密码来指定。
 
-請參考屬性檔案，以取得有關每個引數的特定值和用法的詳細資訊。 範例屬性檔案可在參考實作(Reference Implementation\Server\resources)的「resources」目錄中找到。
+有关每个参数的特定值和用法的详细信息，请参阅属性文件。 示例属性文件可在参考实施的“资源”目录（参考实施\服务器\资源）中找到。
 
-為確保認證密碼的安全性，系統提供工具(ScrambleUtil.class)，用於在密碼輸入flashaccess-refimpl.properties或flashaccess-refimpl-packager.properties檔案之前加密密碼。
+为确保凭据密码的安全性，提供了一个工具(ScrambleUtil.class)，用于在将密码输入flashaccess-refimpl.properties或flashaccess-refimpl-packager.properties文件之前对其进行加密。
 
-若要正確準備認證的密碼：
+要正确准备凭据的密码，请执行以下操作：
 
-1. 前往 [!DNL Reference Implementation\Server\refimpl\scrambler].
-1. 在命令提示字元中輸入命令：
+1. 转到 [!DNL Reference Implementation\Server\refimpl\scrambler].
+1. 在命令提示符下，输入以下命令：
 
    ```
    java -classpath  
@@ -36,6 +36,6 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->上一個範例使用分號(；)做為分隔字元。 對於Microsoft Windows以外的平台，請使用冒號(：)作為分隔字元。
+>上一个示例使用分号(；)作为分隔符。 对于Microsoft Windows以外的平台，请使用冒号(：)作为分隔符。
 
-公用程式會輸出加密的密碼，您必須將其複製到 [!DNL .properties] 檔案。
+该实用程序输出加密的密码，您必须将其复制到 [!DNL .properties] 文件。

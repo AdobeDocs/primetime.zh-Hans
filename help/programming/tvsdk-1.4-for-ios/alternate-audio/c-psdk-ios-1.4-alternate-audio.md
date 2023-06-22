@@ -1,6 +1,6 @@
 ---
-description: 替代或延遲繫結的音訊可讓您在視訊曲目的可用音訊曲目之間切換。 如此一來，使用者就能在播放視訊時選取語言追蹤。
-title: 替代音訊
+description: 备用或延迟绑定的音频允许您在视频曲目的可用音频曲目之间切换。 通过这种方式，用户可以在播放视频时选择语言跟踪。
+title: 备用音频
 exl-id: c8158888-2e2a-42a6-a948-dc6ba4ce7a9c
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,25 +9,25 @@ ht-degree: 0%
 
 ---
 
-# 概觀 {#alternate-audio-overview}
+# 概述 {#alternate-audio-overview}
 
-替代或延遲繫結的音訊可讓您在視訊曲目的可用音訊曲目之間切換。 如此一來，使用者就能在播放視訊時選取語言追蹤。
+备用或延迟绑定的音频允许您在视频曲目的可用音频曲目之间切换。 通过这种方式，用户可以在播放视频时选择语言跟踪。
 
 <!--<a id="section_E4F9DC28A2944BD08B4190A7F98A8365"></a>-->
 
-當TVSDK建立 `MediaPlayerItem` 目前視訊的執行個體，會建立 `AudioTrack` 每個可用音軌的專案。 專案包含 `name` 屬性，字串，通常包含使用者可辨識的該曲目語言描述。 此專案也包含預設是否要使用該曲目的相關資訊。
+当TVSDK创建 `MediaPlayerItem` 对于当前视频的实例，它会创建 `AudioTrack` 每个可用音频轨道的项目。 该项包含 `name` 属性，一个字符串，通常包含用户可识别的对曲目语言的描述。 该项目还包含有关默认情况下是否使用该轨道的信息。
 
-輪到播放視訊時，您可以要求一份可用音訊曲目清單，選擇性地讓使用者選擇其中一個曲目，並設定要以選取的曲目播放視訊。
+当播放视频时，您可以要求提供可用音轨的列表，可以选择让用户选择一个，然后将视频设置为使用所选音轨播放。
 
-雖然很罕見，但如果其他音軌在建立 `MediaPlayerItem`，TVSDK會觸發 `MediaPlayerItem.AUDIO_UPDATED` 事件。
+虽然很罕见，但如果附加音轨在创建 `MediaPlayerItem`，TVSDK触发 `MediaPlayerItem.AUDIO_UPDATED` 事件。
 
-## 新增API {#section_87C42C30BA8C4F58A2DAB7CE07FCD3DE}
+## 添加的API {#section_87C42C30BA8C4F58A2DAB7CE07FCD3DE}
 
-已新增下列API以支援替代音訊：
+已添加以下API以支持备用音频：
 
 `hasAlternateAudio`
 
-如果指定的媒體有預設音軌以外的替代音軌，此布林值函式會傳回 `true`. 如果沒有替代音軌，函式會傳回 `false`.
+如果指定的媒体有默认音轨以外的备用音轨，此布尔函数将返回 `true`. 如果没有替代音轨，则函数返回 `false`.
 
 ```
 bool MediaPlayerItemImpl::hasAlternateAudio() const 
@@ -38,7 +38,7 @@ bool MediaPlayerItemImpl::hasAlternateAudio() const
 
 ** `getAudioTracks`**
 
-此函式傳回指定媒體中所有目前可用音訊曲目的清單。
+此函数返回指定媒体中所有当前可用音轨的列表。
 
 ```
 virtual PSDKErrorCode getAudioTracks(PSDKImmutableArray<AudioTrack>*& out) const 
@@ -55,7 +55,7 @@ virtual PSDKErrorCode getAudioTracks(PSDKImmutableArray<AudioTrack>*& out) const
 
 `getSelectedAudioTrack`
 
-此函式傳回目前選取的替代音軌和屬性，例如語言。 也可以擷取自動選取軌跡。
+此函数返回当前选定的备用音频轨道和属性，例如语言。 也可提取轨迹的自动选择。
 
 ```
 PSDKErrorCode MediaPlayerItemImpl::getSelectedAudioTrack(AudioTrack &out) const 
@@ -67,7 +67,7 @@ PSDKErrorCode MediaPlayerItemImpl::getSelectedAudioTrack(AudioTrack &out) const
 
 `selectAudioTrack`
 
-此函式選取要播放的替代音軌。
+此函数选择要播放的替代音轨。
 
 ```
 PSDKErrorCode MediaPlayerItemImpl::selectAudioTrack(const AudioTrack &audioTrack) 

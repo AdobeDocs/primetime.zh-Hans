@@ -1,6 +1,6 @@
 ---
-description: 若要升級支援3.0版Reference Implementation License Server或Watched Folder Packager的伺服器，您必須以Adobe Primetime DRM Reference Implementation Server隨附的檔案，取代已部署在應用程式伺服器上的.war檔案。
-title: 升級現有部署
+description: 要升级支持3.0版Reference Implementation License Server或Watched Folder Packager的服务器，您需要将已部署在应用程序服务器上的.war文件替换为Adobe Primetime DRM Reference Implementation Server附带的文件。
+title: 升级现有部署
 exl-id: 83edaf0a-e527-470d-8b8d-23e5ba86b039
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,15 +9,15 @@ ht-degree: 0%
 
 ---
 
-# 概觀 {#upgrade-existing-deployments-overview}
+# 概述 {#upgrade-existing-deployments-overview}
 
-若要升級支援3.0版Reference Implementation License Server或Watched Folder Packager的伺服器，您必須以Adobe Primetime DRM Reference Implementation Server隨附的檔案，取代已部署在應用程式伺服器上的.war檔案。
+要升级支持3.0版Reference Implementation License Server或Watched Folder Packager的服务器，您需要将已部署在应用程序服务器上的.war文件替换为Adobe Primetime DRM Reference Implementation Server附带的文件。
 
-若要使用Reference Implementation License Server進行網域註冊，則需要幾個新的資料庫表格。 您需要重新建立整個參考實作資料庫並執行 `CreateSampleDB.sql`.
+要将域注册用于参考实施许可证服务器，需要几个新的数据库表。 您需要重新创建整个参考实施数据库并运行 `CreateSampleDB.sql`.
 
-若要保留資料庫記錄並新增表格：
+要保留数据库记录并添加新表，请执行以下操作：
 
-1. 開啟 `CreateSampleDB.sql` 並執行建立下清單格的命令：
+1. 打开 `CreateSampleDB.sql` 和运行创建以下表的命令：
 
    * `DomainServerInfo`
    * `DomainKeys`
@@ -25,7 +25,7 @@ ht-degree: 0%
    * `UserDomainMembership`
    * `UserDomainRefCount`
 
-1. 將下列屬性新增至 [!DNL flashaccess-refimpl.properties] 使用網域支援：
+1. 将以下属性添加到 [!DNL flashaccess-refimpl.properties] 要使用域支持，请执行以下操作：
 
    * `HandlerConfiguration.DomainCAs.n` 或 `RefImpl.HSM.HandlerConfiguration.DomainCAs.Alias.n`
 
@@ -33,6 +33,6 @@ ht-degree: 0%
 
    * `DomainRegistrationHandler.DomainServerUrl`
 
-1. 將下列屬性新增至 [!DNL flashaccess-refimpl.properties] 若要支援將遠端金鑰傳遞至iOS使用者端：
+1. 将以下属性添加到 [!DNL flashaccess-refimpl.properties] 要支持将远程密钥交付到iOS客户端，请执行以下操作：
 
    * `HandlerConfiguration.KeyServerCertificate` 或 `RefImpl.HSM.HandlerConfiguration.KeyServerCertificate.Alias`

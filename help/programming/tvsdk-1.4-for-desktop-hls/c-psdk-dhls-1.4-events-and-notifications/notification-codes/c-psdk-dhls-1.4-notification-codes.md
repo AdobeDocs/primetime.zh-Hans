@@ -1,6 +1,6 @@
 ---
-description: TVSDK通知系統會產生各種錯誤、警告和資訊性通知，提供診斷中繼資料。
-title: 通知代碼
+description: TVSDK通知系统生成各种错误、警告和信息性通知，以提供诊断元数据。
+title: 通知代码
 exl-id: 7ea079f1-658d-45ab-891d-044b7b4ff4ec
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,48 +9,48 @@ ht-degree: 0%
 
 ---
 
-# 概觀 {#notification-codes-overview}
+# 概述 {#notification-codes-overview}
 
-TVSDK通知系統會產生各種錯誤、警告和資訊性通知，提供診斷中繼資料。
+TVSDK通知系统生成各种错误、警告和信息性通知，以提供诊断元数据。
 
-通知物件提供與播放器狀態相關的資訊。 TVSDK提供依時間順序排序的通知物件清單，每個通知都包含以下中繼資料：
+通知对象提供与播放器状态相关的信息。 TVSDK提供了按时间顺序排序的通知对象列表，每个通知都包含以下元数据：
 
 <table frame="all" colsep="1" rowsep="1" id="table_DBA8CACF02DB4AF2B053E560850B49CE"> 
  <thead> 
   <tr rowsep="1"> 
    <th colname="1" class="entry"> 元素 </th> 
-   <th colname="2" class="entry"> 說明 </th> 
+   <th colname="2" class="entry"> 描述 </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr rowsep="1"> 
    <td colname="1"> type </td> 
-   <td colname="2"> 通知型別。 根據平台的不同，此屬性是指可能值為INFO、WARN或ERROR的列舉型別。 這是通知的頂層群組。 </td> 
+   <td colname="2"> 通知类型。 根据平台的不同，此属性是指可能值为INFO、WARN或ERROR的枚举类型。 这是通知的顶层分组。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> 程式碼 </td> 
-   <td colname="2">指定給通知的數字表示： 
+   <td colname="1"> 代码 </td> 
+   <td colname="2">分配给通知的数字表示： 
     <ul id="ul_31AB497C6FFA452496DD09B0D78687B9"> 
-     <li id="li_53E75022C50246E0982E315D04EFD8B3">錯誤通知事件，從100000到199999 </li> 
-     <li id="li_11AE91D1325E4F718228E662C9C55F9A">警告通知事件，從200000到299999 </li> 
-     <li id="li_6D3EA03845294DC2BAD1ACF507639E51">從300000到399999的資訊通知事件 </li> 
-    </ul> <p>每個頂層範圍（例如錯誤）會分成子範圍(例如從代表播放錯誤的101000到101999)。 </p>
+     <li id="li_53E75022C50246E0982E315D04EFD8B3">从100000到199999的错误通知事件 </li> 
+     <li id="li_11AE91D1325E4F718228E662C9C55F9A">警告通知事件，从200000到299999 </li> 
+     <li id="li_6D3EA03845294DC2BAD1ACF507639E51">信息通知事件，从300000到399999 </li> 
+    </ul> <p>每个顶级范围（例如错误）被划分为子范围(例如101000到101999表示播放错误)。 </p>
     <pre>
-     分項清單 
-     <span class="codeph"> mediacore.PSDKErrorCode</span> 列出可能的值。
+     明细列表 
+     <span class="codeph"> mediacore.PSDKErrorCode</span> 列出了可能的值。
     </pre> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> 名稱 </td> 
-   <td colname="2">字串，包含人類看得懂的程式碼說明，例如 <span class="codeph"> SEEK_ERROR</span>. </td> 
+   <td colname="1"> name </td> 
+   <td colname="2">一个字符串，其中包含易于用户识别的代码描述，例如 <span class="codeph"> SEEK_ERROR</span>. </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> 中繼資料 </td> 
-   <td colname="2">包含通知其他相關資訊的索引鍵/值組。 例如，名為的金鑰 <span class="codeph"> URL</span> 將與與通知相關的URL值（例如導致錯誤的無效URL）配對。 </td> 
+   <td colname="1"> 元数据 </td> 
+   <td colname="2">包含有关通知的其他相关信息的键/值对。 例如，一个名为的键 <span class="codeph"> URL</span> 与作为与通知相关的URL的值（例如导致错误的无效URL）配对。 </td> 
   </tr> 
   <tr rowsep="0"> 
    <td colname="1"> innerNotification </td> 
-   <td colname="2">對另一個的參照 <span class="codeph"> MediaPlayerNotification</span> 直接影響此通知的物件。 一個範例可能是直接對應時間線插入衝突的廣告插入失敗通知。 並非所有通知都會提供內部通知。 </td> 
+   <td colname="2">对另一个的引用 <span class="codeph"> MediaPlayerNotification</span> 直接影响此通知的对象。 例如，可能是一则与时间线插入冲突直接对应的广告插入失败通知。 并非所有通知都提供内部通知。 </td> 
   </tr> 
  </tbody> 
 </table>

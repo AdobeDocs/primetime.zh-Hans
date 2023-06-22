@@ -1,6 +1,6 @@
 ---
-title: 記錄目錄結構
-description: 記錄目錄結構
+title: 日志目录结构
+description: 日志目录结构
 copied-description: true
 exl-id: 8c52fd85-cc46-41da-b5a1-41b5d61da6ad
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,9 +10,9 @@ ht-degree: 0%
 
 ---
 
-# 記錄目錄結構{#log-directory-structure}
+# 日志目录结构{#log-directory-structure}
 
-記錄目錄具有下列結構：
+日志目录具有以下结构：
 
 ```
 <i class="+ topic ph hi-d="" i "="">

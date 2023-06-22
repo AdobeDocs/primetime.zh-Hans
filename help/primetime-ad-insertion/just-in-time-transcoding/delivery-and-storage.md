@@ -1,6 +1,6 @@
 ---
-title: 傳遞與儲存
-description: 傳遞與儲存
+title: 交付和存储
+description: 交付和存储
 copied-description: true
 exl-id: 84ccc140-02e6-4293-b087-13f87aee355b
 source-git-commit: e3ab3718add5ff1f31f8f72d8388a39a940f36a4
@@ -10,14 +10,14 @@ ht-degree: 0%
 
 ---
 
-# 傳遞與儲存 {#delivery-and-storage}
+# 交付和存储 {#delivery-and-storage}
 
-PrimetimeAd Insertion支援在客戶CDN或Adobe託管的CDN上儲存廣告創意。
+PrimetimeAd Insertion支持在客户CDN或Adobe托管的CDN上使用Ad Creative Storage。
 
-## 多CDN支援 {#multi-cdn-support}
+## 多CDN支持 {#multi-cdn-support}
 
-PrimetimeAd Insertion預設會提供來自Adobe託管CDN (Akamai)的轉碼廣告創意。  客戶可以選擇其他CDN位置來託管轉碼資產，或使用Adobe託管的CDN作為自己CDN的來源。  這兩種情況都允許從相同的CDN和/或主機名稱提供內容和廣告創意。
+默认情况下，PrimetimeAd Insertion会从Adobe托管的CDN (Akamai)提供转码广告创意。  客户可以选择其他CDN位置来托管转码资源，也可以使用Adobe托管的CDN作为自己的CDN的来源。  这两种情况都允许从同一CDN和/或主机名提供内容和广告创意。
 
-對於以PrimetimeAd Insertion作為CDN來源的多重CDN傳送，請參閱： [資訊清單重新寫入](../technical-reference/manifest-rewriting.md)
+对于使用PrimetimeAd Insertion作为CDN源的多个CDN交付，请参阅： [清单重写](../technical-reference/manifest-rewriting.md)
 
-若要啟用多CDN儲存/上傳，請聯絡您的技術客戶經理。
+要启用多CDN存储/上传，请联系您的技术客户经理。

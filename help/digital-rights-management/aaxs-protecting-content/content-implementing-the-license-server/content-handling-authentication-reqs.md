@@ -1,6 +1,6 @@
 ---
-title: 處理驗證請求
-description: 處理驗證請求
+title: 处理身份验证请求
+description: 处理身份验证请求
 copied-description: true
 exl-id: c1d46ec0-e053-4824-b3b1-20320e259fbe
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,14 +10,14 @@ ht-degree: 0%
 
 ---
 
-# 處理驗證請求{#handling-authentication-requests}
+# 处理身份验证请求{#handling-authentication-requests}
 
-此 `AuthenticationHandler` 類別用於處理驗證請求。 它僅用於使用者名稱/密碼驗證。
+此 `AuthenticationHandler` 类用于处理身份验证请求。 它仅用于用户名/密码身份验证。
 
-產生驗證Token時，必須指定Token到期日。 Token中也可能包含自訂屬性。 如果設定，在後續請求中傳送驗證Token時，伺服器將可看見這些屬性。 另請參閱 [處理授權請求](../../aaxs-protecting-content/content-implementing-the-license-server/content-handling-license-reqs/content-handling-license-reqs.md) 以取得有關處理自訂驗證Token的資訊。
+在生成身份验证令牌时，必须指定令牌过期日期。 自定义属性也可以包含在令牌中。 如果设置，则在后续请求中发送身份验证令牌时，服务器将看到这些属性。 参见 [处理许可证请求](../../aaxs-protecting-content/content-implementing-the-license-server/content-handling-license-reqs/content-handling-license-reqs.md) 以了解有关处理自定义身份验证令牌的信息。
 
-處理常式會讀取驗證要求，並剖析要求訊息，當 `parseRequest()` 稱為。 伺服器實作會檢查請求中的使用者認證，如果認證有效，則產生 `AuthenticationToken` 物件，透過呼叫 `getRequest().generateAuthToken()`. 若 `AuthenticationRequestMessage.generateAuthToken()` 之前未呼叫 `close()`，則會傳送驗證失敗錯誤代碼。
+该处理程序读取身份验证请求并解析请求消息，当时 `parseRequest()` 称为。 服务器实施会检查请求中的用户凭据，如果凭据有效，则生成 `AuthenticationToken` 对象（通过调用） `getRequest().generateAuthToken()`. 如果 `AuthenticationRequestMessage.generateAuthToken()` 之前未调用 `close()`，则会发送身份验证失败错误代码。
 
-* 要求處理常式類別為 `com.adobe.flashaccess.sdk.protocol.authentication.AuthenticationHandler`
-* 請求訊息類別為 `com.adobe.flashaccess.sdk.protocol.authentication.AuthenticationRequestMessage`
-* 如果使用者端和伺服器都支援通訊協定版本5，則請求URL是「中繼資料中的授權伺服器URL： + &quot;/flashaccess/authn/v4」。 如果通訊協定版本3是使用者端或伺服器支援的最大版本，則Adobe存取使用者端會傳送驗證請求給「中繼資料中的授權伺服器URL」+ &quot;/flashaccess/authn/v3&quot;。 否則，驗證請求會傳送到「中繼資料中的授權伺服器URL」+ &quot;/flashaccess/authn/v1&quot;
+* 请求处理程序类为 `com.adobe.flashaccess.sdk.protocol.authentication.AuthenticationHandler`
+* 请求消息类为 `com.adobe.flashaccess.sdk.protocol.authentication.AuthenticationRequestMessage`
+* 如果客户端和服务器都支持协议版本5，则请求URL为“License Server URL in metadata： + &quot;/flashaccess/authn/v4”。 如果协议版本3是客户端或服务器支持的最大版本，则Adobe访问客户端将向“License Server URL in metadata”+ &quot;/flashaccess/authn/v3&quot;发送身份验证请求。 否则，身份验证请求将发送到“元数据中的许可证服务器URL”+“/flashaccess/authn/v1”

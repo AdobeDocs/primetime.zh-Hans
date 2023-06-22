@@ -1,6 +1,6 @@
 ---
-description: AVE的視訊編碼器介面會在NATIVE_ERROR中繼資料物件中傳回這些視訊播放通知。
-title: NATIVE_ERROR視訊播放值
+description: AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频播放通知。
+title: NATIVE_ERROR视频播放值
 exl-id: 8e6ea6f8-bef2-4000-97a5-8d14c165079e
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,108 +9,108 @@ ht-degree: 6%
 
 ---
 
-# NATIVE_ERROR：視訊播放值{#native-error-video-playback-values}
+# NATIVE_ERROR：视频播放值{#native-error-video-playback-values}
 
-AVE的視訊編碼器介面會在NATIVE_ERROR中繼資料物件中傳回這些視訊播放通知。
+AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频播放通知。
 
 <table> 
  <thead> 
   <tr> 
-   <th colname="col1" class="entry"> RUNTIME_CODE中繼資料索引鍵的值 </th> 
-   <th colname="col2" class="entry"> RUNTIME_CODE_MESSAGE中繼資料索引鍵的值 </th> 
-   <th colname="col3" class="entry"> 說明 </th> 
+   <th colname="col1" class="entry"> RUNTIME_CODE元数据键的值 </th> 
+   <th colname="col2" class="entry"> RUNTIME_CODE_MESSAGE元数据键的值 </th> 
+   <th colname="col3" class="entry"> 描述 </th> 
   </tr>
  </thead>
  <tbody> 
   <tr> 
    <td colname="col1"> -1 </td> 
    <td colname="col2"><span class="codeph"> END_OF_PERIOD</span> </td> 
-   <td colname="col3"> 期間結束。 </td> 
+   <td colname="col3"> 期间结束。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 0 </td> 
    <td colname="col2"><span class="codeph"> 成功</span> </td> 
-   <td colname="col3"> 作業成功。 </td> 
+   <td colname="col3"> 操作成功。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 1 </td> 
    <td colname="col2"> <span class="codeph"> ASYNC_OPERATION_IN_PROGRESS</span> </td> 
-   <td colname="col3"> 非同步操作。 已提出操作要求。 成功/失敗資訊將於稍後提供。 </td> 
+   <td colname="col3"> 异步操作。 已发出操作请求。 成功/失败信息将在稍后提供。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 2 </td> 
    <td colname="col2"><span class="codeph"> EOF</span> </td> 
-   <td colname="col3"> 由於檔案結束(EOF)條件，無法執行作業。 </td> 
+   <td colname="col3"> 由于文件结束(EOF)条件，无法执行此操作。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 3 </td> 
-   <td colname="col2"><span class="codeph"> DECODER_FAILED</span> </td> 
-   <td colname="col3"> 解碼器在執行階段失敗。 </td> 
+   <td colname="col2"><span class="codeph"> 解码器失败</span> </td> 
+   <td colname="col3"> 解码器在运行时失败。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 4 </td> 
    <td colname="col2"><span class="codeph"> DEVICE_OPEN_ERROR</span> </td> 
-   <td colname="col3"> 無法開啟硬體解碼器。 </td> 
+   <td colname="col3"> 无法打开硬件解码器。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 5 </td> 
    <td colname="col2"><span class="codeph"> FILE_NOT_FOUND </span> </td> 
-   <td colname="col3"> 找不到資源。 </td> 
+   <td colname="col3"> 无法找到资源。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 6 </td> 
    <td colname="col2"><span class="codeph"> GENERIC_ERROR </span> </td> 
-   <td colname="col3"> 一般錯誤。 </td> 
+   <td colname="col3"> 一般错误。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 7 </td> 
    <td colname="col2"><span class="codeph"> IRRECOVERABLE_ERROR </span> </td> 
-   <td colname="col3"> 視訊引擎無法復原的錯誤狀況。 </td> 
+   <td colname="col3"> 视频引擎无法从中恢复的错误情况。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 8 </td> 
-   <td colname="col2"><span class="codeph"> LOST_CONNECTION_RECOVER </span> </td> 
-   <td colname="col3"> 網路錯誤，正在嘗試復原。 </td> 
+   <td colname="col2"><span class="codeph"> LOST_CONNECTION_RECOVERABLE </span> </td> 
+   <td colname="col3"> 网络错误，正在尝试恢复。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 9 </td> 
    <td colname="col2"><span class="codeph"> NO_FIXED_SIZE </span> </td> 
-   <td colname="col3"> 無法判斷資源的大小。 </td> 
+   <td colname="col3"> 无法确定资源的大小。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 10 </td> 
-   <td colname="col2"><span class="codeph"> 未實作 </span> </td> 
-   <td colname="col3"> 功能未實作。 </td> 
+   <td colname="col2"><span class="codeph"> 未实现 </span> </td> 
+   <td colname="col3"> 功能未实现。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 11 </td> 
-   <td colname="col2"><span class="codeph"> 記憶體不足 </span> </td> 
-   <td colname="col3"> 記憶體不足。 </td> 
+   <td colname="col2"><span class="codeph"> 内存不足 </span> </td> 
+   <td colname="col3"> 内存不足。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 12 </td> 
    <td colname="col2"><span class="codeph"> PARSE_ERROR </span> </td> 
-   <td colname="col3"> 剖析媒體檔案時發生錯誤。 </td> 
+   <td colname="col3"> 分析媒体文件时出错。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 13 </td> 
    <td colname="col2"><span class="codeph"> SIZE_UNKNOWN </span> </td> 
-   <td colname="col3"> 資源有大小，但未知。 </td> 
+   <td colname="col3"> 资源大小不一，但未知。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 14 </td> 
    <td colname="col2"><span class="codeph"> UNDER_FLOW </span> </td> 
-   <td colname="col3"> 底流條件。 </td> 
+   <td colname="col3"> 下溢条件。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 15 </td> 
    <td colname="col2"><span class="codeph"> UNSUPPORTED_CONFIG </span> </td> 
-   <td colname="col3"> 不支援設定。 </td> 
+   <td colname="col3"> 不支持配置。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 16 </td> 
-   <td colname="col2"><span class="codeph"> 不支援的操作 </span> </td> 
-   <td colname="col3"> 不支援操作。 </td> 
+   <td colname="col2"><span class="codeph"> 不受支持的操作 </span> </td> 
+   <td colname="col3"> 不支持此操作。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 17 </td> 
@@ -120,197 +120,197 @@ AVE的視訊編碼器介面會在NATIVE_ERROR中繼資料物件中傳回這些�
   <tr> 
    <td colname="col1"> 18 </td> 
    <td colname="col2"><span class="codeph"> INVALID_PARAMETER </span> </td> 
-   <td colname="col3"> 無效的引數。 </td> 
+   <td colname="col3"> 参数无效。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 19 </td> 
-   <td colname="col2"><span class="codeph"> INVALID_OPERATION</span> </td> 
-   <td colname="col3"> 不允許操作。 </td> 
+   <td colname="col2"><span class="codeph"> 无效操作</span> </td> 
+   <td colname="col3"> 不允许执行该操作。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 20 </td> 
    <td colname="col2"><span class="codeph"> OP_ONLY_ALLOWED_IN_PAUSED_STATE</span> </td> 
-   <td colname="col3"> 只有在暫停時才允許此操作。 </td> 
+   <td colname="col3"> 该操作仅在暂停时允许。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 21 </td> 
    <td colname="col2"><span class="codeph"> OP_INVALID_WITH_AUDIO_ONLY_FILE</span> </td> 
-   <td colname="col3"> 作業無法用於純音訊檔案。 </td> 
+   <td colname="col3"> 无法在仅音频文件上使用操作。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 22 </td> 
-   <td colname="col2"><span class="codeph"> 上一步搜尋進行中</span> </td> 
-   <td colname="col3"> 上一個搜尋作業仍在進行中。 </td> 
+   <td colname="col2"><span class="codeph"> 上一步_寻找_进行中</span> </td> 
+   <td colname="col3"> 上一个搜寻操作仍在进行中。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 23 </td> 
    <td colname="col2"><span class="codeph"> SOURCE_NOT_SPECIFIED </span> </td> 
-   <td colname="col3"> 未指定資源。 </td> 
+   <td colname="col3"> 未指定资源。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 24 </td> 
    <td colname="col2"><span class="codeph"> RANGE_ERROR</span> </td> 
-   <td colname="col3"> 指定的值超出範圍。 </td> 
+   <td colname="col3"> 指定的值超出范围。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 25 </td> 
-   <td colname="col2"><span class="codeph"> 無效的_SEEK_TIME</span> </td> 
-   <td colname="col3"> 無效的搜尋時間。 </td> 
+   <td colname="col2"><span class="codeph"> INVALID_SEEK_TIME</span> </td> 
+   <td colname="col3"> 搜寻时间无效。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 26 </td> 
    <td colname="col2"><span class="codeph"> FILE_STRUCTURE_INVALID</span> </td> 
-   <td colname="col3"> 指定的檔案不符合預期的語法。 </td> 
+   <td colname="col3"> 指定的文件不符合预期的语法。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 27 </td> 
    <td colname="col2"><span class="codeph"> COMPONENT_CREATION_FAIL</span> </td> 
-   <td colname="col3"> 無法建立基本元件。 </td> 
+   <td colname="col3"> 无法创建基本组件。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 28 </td> 
    <td colname="col2"><span class="codeph"> DRM_INIT_ERROR</span> </td> 
-   <td colname="col3"> 無法建立DRM內容。 </td> 
+   <td colname="col3"> 无法创建DRM上下文。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 29 </td> 
    <td colname="col2"><span class="codeph"> CONTAINER_NOT_SUPPORT </span> </td> 
-   <td colname="col3"> 不支援容器型別。 </td> 
+   <td colname="col3"> 不支持容器类型。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 30 </td> 
-   <td colname="col2"><span class="codeph"> 搜尋失敗</span> </td> 
-   <td colname="col3"> 搜尋失敗。 </td> 
+   <td colname="col2"><span class="codeph"> 搜寻失败</span> </td> 
+   <td colname="col3"> 搜寻失败。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 31 </td> 
    <td colname="col2"><span class="codeph"> CODEC_NOT_SUPPORT</span> </td> 
-   <td colname="col3"> 不支援的轉碼器。 </td> 
+   <td colname="col3"> 不支持的编解码器。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 32 </td> 
-   <td colname="col2"><span class="codeph"> 網路無法使用(_U)</span> </td> 
-   <td colname="col3"> 網路無法使用。 </td> 
+   <td colname="col2"><span class="codeph"> NETWORK_UNAVAILABLE</span> </td> 
+   <td colname="col3"> 网络不可用。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 33 </td> 
    <td colname="col2"><span class="codeph"> NETWORK_ERROR</span> </td> 
-   <td colname="col3"> 從網路取得資料時發生錯誤。 </td> 
+   <td colname="col3"> 从网络获取数据时出错。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 34 </td> 
-   <td colname="col2"><span class="codeph"> 溢位</span> </td> 
-   <td colname="col3"> 溢位。 </td> 
+   <td colname="col2"><span class="codeph"> 溢出</span> </td> 
+   <td colname="col3"> 溢出。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 35 </td> 
    <td colname="col2"><span class="codeph"> VIDEO_PROFILE_NOT_SUPPORT</span> </td> 
-   <td colname="col3"> 不支援的視訊設定檔。 </td> 
+   <td colname="col3"> 不支持的视频配置文件。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 36 </td> 
    <td colname="col2"><span class="codeph"> PERIOD_NOT_LOADED</span> </td> 
-   <td colname="col3"> 嘗試在HOLD期間或尚未載入的期間執行操作。 </td> 
+   <td colname="col3"> 在HOLD时段或尚未加载的时段上尝试了操作。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 37 </td> 
    <td colname="col2"><span class="codeph"> INVALID_REPLACE_DURATION</span> </td> 
-   <td colname="col3"> 指定的取代持續時間無效或延伸超過資料流結尾。 </td> 
+   <td colname="col3"> 指定的替换持续时间无效或超出流结尾。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 38 </td> 
    <td colname="col2"><span class="codeph"> CALLED_FROM_WRONG_THREAD</span> </td> 
-   <td colname="col3"> 無法從錯誤的執行緒呼叫API。 通常，只適用於應從主要執行緒呼叫的API元素。 </td> 
+   <td colname="col3"> 无法从错误的线程中调用API。 通常，适用于只应从主线程中调用的API元素。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 39 </td> 
    <td colname="col2"><span class="codeph"> FRAGMENT_READ_ERROR</span> </td> 
-   <td colname="col3"> 片段讀取錯誤。 沒有容錯移轉。 引擎將嘗試讀取下一個片段。 </td> 
+   <td colname="col3"> 片段读取错误。 不存在故障转移。 引擎将尝试读取下一个片段。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 40 </td> 
    <td colname="col2"><span class="codeph"> 已中止</span> </td> 
-   <td colname="col3"> 作業已因明確的Abort或Destroy呼叫而中止。 </td> 
+   <td colname="col3"> 该操作已被显式Abort或销毁调用中止。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 41 </td> 
-   <td colname="col2"><span class="codeph"> 不支援的_HLS_VERSION</span> </td> 
-   <td colname="col3"> 無法播放此版本的HLS媒體。 </td> 
+   <td colname="col2"><span class="codeph"> UNSUPPORTED_HLS_VERSION</span> </td> 
+   <td colname="col3"> 无法播放此版本的HLS媒体。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 42 </td> 
    <td colname="col2"><span class="codeph"> CANNOT_FAIL_OVER</span> </td> 
-   <td colname="col3"> 無法容錯移轉。 </td> 
+   <td colname="col3"> 无法故障转移。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 43 </td> 
    <td colname="col2"><span class="codeph"> HTTP_TIME_OUT</span> </td> 
-   <td colname="col3"> HTTP下載已逾時。 </td> 
+   <td colname="col3"> HTTP下载已超时。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 44 </td> 
-   <td colname="col2"><span class="codeph"> 網路關閉 </span> </td> 
-   <td colname="col3"> 使用者的網路連線已中斷。 播放可能會隨時停止，並在連線可用時繼續。 </td> 
+   <td colname="col2"><span class="codeph"> NETWORK_DOWN </span> </td> 
+   <td colname="col3"> 用户的网络连接已断开。 播放可能会随时停止，并将在连接可用时恢复。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 45 </td> 
    <td colname="col2"><span class="codeph"> NO_USABLE_BITRATE_PROFILE</span> </td> 
-   <td colname="col3"> 在資料流中找不到可用的位元速率設定檔。 </td> 
+   <td colname="col3"> 在流中未找到可用的比特率配置文件。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 46 </td> 
    <td colname="col2"><span class="codeph"> BAD_MANIFEST_SIGNATURE</span> </td> 
-   <td colname="col3"> 資訊清單的簽章錯誤。 資訊清單簽署測試失敗。 </td> 
+   <td colname="col3"> 清单的签名无效。 它未能通过清单签名测试。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 47 </td> 
    <td colname="col2"><span class="codeph"> CANNOT_LOAD_PLAYLIST</span> </td> 
-   <td colname="col3"> 無法載入播放清單。 </td> 
+   <td colname="col3"> 无法加载播放列表。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 48 </td> 
    <td colname="col2"><span class="codeph"> REPLACEMENT_FAILED</span> </td> 
-   <td colname="col3"> 插入API中指定的取代無法成功。 這表示插入成功但取代失敗。 如果要取代的資訊清單已從時間軸移除，取代可能會失敗。 </td> 
+   <td colname="col3"> 插入API中指定的替换无法成功。 这意味着插入成功，但替换失败。 如果要替换的清单已从时间线中移除，则替换可能会失败。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 49 </td> 
-   <td colname="col2"><span class="codeph"> SWITCH_TO_ASYMETRIC_PROFILE</span> </td> 
-   <td colname="col3"> DRM正在切換至非對稱設定檔。 所有設定檔預計都會在持續時間內對齊。 如果沒有，則會擲回此警告，而且播放中可能會有跳躍。 </td> 
+   <td colname="col2"><span class="codeph"> SWITCH_TO_ASYMMETRIC_PROFILE</span> </td> 
+   <td colname="col3"> DRM正在切换到非对称配置文件。 所有用户档案的持续时间应保持一致。 如果不存在，则会引发此警告，并且播放过程中可能会出现跳转。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 50 </td> 
    <td colname="col2"><span class="codeph"> LIVE_WINDOW_MOVED_BACKWARD</span> </td> 
-   <td colname="col3"> 即時視窗預期只會向前移動。 如果沒有，則會擲回此警告，且不會讀取視窗。 因此，播放中可能會出現跳躍（或停止/長時間暫停）。 </td> 
+   <td colname="col3"> 实时窗口应仅向前移动。 否则，将引发此警告，并且不会读取窗口。 因此，播放过程中可能会出现跳转（或停止/长时间暂停）。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 51 </td> 
    <td colname="col2"><span class="codeph"> CURRENT_PERIOD_EXPIRED</span> </td> 
-   <td colname="col3"> 即時視窗已移動超過目前時段。 </td> 
+   <td colname="col3"> 实时窗口移动到当前时段之外。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 52 </td> 
    <td colname="col2"><span class="codeph"> CONTENT_LENGTH_MISMATCH</span> </td> 
-   <td colname="col3"> HTTP伺服器報告的內容長度與實際媒體大小不符。 </td> 
+   <td colname="col3"> HTTP服务器报告的内容长度与实际媒体大小不匹配。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 53 </td> 
-   <td colname="col2"><span class="codeph"> PERIENCE_HOLD</span> </td> 
-   <td colname="col3"> 媒體讀取器無法進一步讀取，因為已達到設定的時間 <span class="codeph"> setHoldAt</span> API。 </td> 
+   <td colname="col2"><span class="codeph"> PERIOD_HOLD</span> </td> 
+   <td colname="col3"> 媒体读取器无法进一步读取，因为它已达到由设置的时间 <span class="codeph"> setHoldAt</span> API。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 54 </td> 
    <td colname="col2"><span class="codeph"> LIVE_HOLD </span> </td> 
-   <td colname="col3"> 媒體讀取器無法載入區段，因為它已經到達即時視窗的結尾。 伺服器向即時視窗新增媒體時，將會繼續載入區段。 達到此狀態通常發生於： 
+   <td colname="col3"> 媒体读取器无法加载区段，因为它已到达实时窗口的结尾。 当服务器向实时窗口添加新媒体时，将继续加载区段。 通常达到此状态的情况是： 
     <ul id="ul_FCFF658EDA4144E59970B317D6DEB624"> 
-     <li id="li_2F6EEEB782D54CD999BC7CC7C0B78B48">此 <span class="codeph"> bufferTime</span> 太高（等於或高於即時視窗持續時間）。 </li> 
-     <li id="li_25CE97115ED64E44AA89977FB5F0DCF7">一或多個插入/清除API的組合取代的媒體多於新增的媒體。 </li> 
-     <li id="li_1B14716B2157492AB1859306D1250523">下一個期間是即時期間，媒體取代專案尚未完成(由於 <span class="codeph"> 插入方式</span> API呼叫) </li> 
+     <li id="li_2F6EEEB782D54CD999BC7CC7C0B78B48">此 <span class="codeph"> bufferTime</span> 过高（等于或大于实时窗口持续时间）。 </li> 
+     <li id="li_25CE97115ED64E44AA89977FB5F0DCF7">插入/擦除API的一个或多个组合替换了比添加的多媒体。 </li> 
+     <li id="li_1B14716B2157492AB1859306D1250523">下一个时段是正在等待替换的介质(由于 <span class="codeph"> 插入方式</span> API调用) </li> 
     </ul> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 55 </td> 
    <td colname="col2"><span class="codeph"> BAD_MEDIA_INTERLEAVING </span> </td> 
-   <td colname="col3"> 媒體中的音訊和視訊交錯未正確執行。 這是封裝錯誤。 當差異超過兩秒時，就會傳送警告。 </td> 
+   <td colname="col3"> 媒体中的音频和视频交错处理不正确。 这是一个打包错误。 当差值超过两秒时，将调度警告。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 56 </td> 
@@ -320,172 +320,172 @@ AVE的視訊編碼器介面會在NATIVE_ERROR中繼資料物件中傳回這些�
   <tr> 
    <td colname="col1"> 57 </td> 
    <td colname="col2"><span class="codeph"> PLAYBACK_NOT_AUTHORIZED</span> </td> 
-   <td colname="col3"> 尚未在Flash Player中啟用HLS播放。 另請參閱 <span class="codeph"> AuthorizedFeatures.enableHLSPlayback</span>. </td> 
+   <td colname="col3"> 尚未在Flash Player中启用HLS播放。 参见 <span class="codeph"> AuthorizedFeatures.enableHLSPlayback</span>. </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 58 </td> 
    <td colname="col2"><span class="codeph"> BAD_MEDIA_SAMPLE_FOUND</span> </td> 
-   <td colname="col3"> 解碼器收到無法解碼的錯誤樣本。 這通常不是嚴重錯誤，但表示音訊/視訊可能有問題。 此錯誤的例項太多，表示編碼錯誤或檔案錯誤。 </td> 
+   <td colname="col3"> 解码器接收到无法解码的坏样本。 这通常不是致命错误，但表示音频/视频中可能有故障。 此错误的实例太多，表示编码错误或文件错误。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 59 </td> 
    <td colname="col2"><span class="codeph"> RANGE_SPANS_READ_HEAD</span> </td> 
-   <td colname="col3"> 開始播放後，插入/取代範圍不應包含讀取磁頭。 </td> 
+   <td colname="col3"> 开始播放后，“插入”/“替换”范围不应包含读取头。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 60 </td> 
    <td colname="col2"><span class="codeph"> POSTROLL_WITH_LIVE_NOT_ALLOWED</span> </td> 
-   <td colname="col3"> 即時媒體上不允許後置滾動插入。 不過，在伺服器將媒體標示為完成之後，才允許這些動作。 </td> 
+   <td colname="col3"> 不允许对实时媒体进行后置式插入。 但是，在服务器将媒体标记为完成之后，才允许设置这些值。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 61 </td> 
    <td colname="col2"><span class="codeph"> INTERNAL_ERROR</span> </td> 
-   <td colname="col3"> 這是一個絕不應該發生的問題。 </td> 
+   <td colname="col3"> 这是一个非常罕见的问题，绝不应该发生。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 62 </td> 
    <td colname="col2"><span class="codeph"> SPS_PPS_FOUND_OUTSIDE_AVCC</span> </td> 
-   <td colname="col3"> 串流不遵循總是將H264 SPS/PPS放入AVCC的封裝建議。 可能會出現搜尋/播放問題。 </td> 
+   <td colname="col3"> 流不遵循始终将H264 SPS/PPS放入AVCC中的打包建议。 可能会出现搜寻/播放问题。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 63 </td> 
    <td colname="col2"><span class="codeph"> PARTIAL_REPLACEMENT</span> </td> 
-   <td colname="col3"> 插入API中指定的取代僅部分完成。 當replaceDuration跨越時間線持續時間時會發生這種情況。 </td> 
+   <td colname="col3"> 插入API中指定的替换仅部分完成。 当replaceDuration跨越时间线持续时间时会发生这种情况。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 64 </td> 
    <td colname="col2"><span class="codeph"> RENDITION_M3U8_ERROR</span> </td> 
-   <td colname="col3"> 載入轉譯播放清單時發生錯誤。 這僅適用於AVE，不適用於FlashPlayer。 </td> 
+   <td colname="col3"> 加载演绎版播放列表时出错。 这仅适用于AVE，不适用于FlashPlayer。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 65 </td> 
-   <td colname="col2"><span class="codeph"> NULL_OPERATION</span> </td> 
-   <td colname="col3"> 操作不會執行任何動作。 </td> 
+   <td colname="col2"><span class="codeph"> NULL操作</span> </td> 
+   <td colname="col3"> 操作不执行任何操作。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 66 </td> 
    <td colname="col2"><span class="codeph"> SEGMENT_SKIPPED_ON_FAILED</span> </td> 
-   <td colname="col3"> 區段無法播放，失敗時會略過。 </td> 
+   <td colname="col3"> 无法播放区段，因失败而跳过。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 67 </td> 
    <td colname="col2"><span class="codeph"> INCOMPATIBLE_RENDER_MODE</span> </td> 
-   <td colname="col3"> 不相容的轉譯模式。 </td> 
+   <td colname="col3"> 渲染模式不兼容。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 68 </td> 
    <td colname="col2"><span class="codeph"> PROTOCOL_NOT_SUPPORT </span> </td> 
-   <td colname="col3"> 不支援URL中使用的Web通訊協定。 </td> 
+   <td colname="col3"> 不支持URL中使用的Web协议。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 69 </td> 
    <td colname="col2"><span class="codeph"> PARSE_ERROR_INCOMPATIBLE_VERSION</span> </td> 
-   <td colname="col3"> 剖析媒體檔案時發生錯誤。 </td> 
+   <td colname="col3"> 解析媒体文件时出错。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 70 </td> 
    <td colname="col2"><span class="codeph"> MANIFEST_FILE_UNEXPECTED_CHANGED</span> </td> 
-   <td colname="col3"> 資訊清單檔案以非預期的方式變更。 </td> 
+   <td colname="col3"> 清单文件以意外的方式更改。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 71 </td> 
    <td colname="col2"><span class="codeph"> CANNOT_SPLIT_TIMELINE</span> </td> 
-   <td colname="col3"> 無法在時間表上執行分割操作。 </td> 
+   <td colname="col3"> 无法对时间轴执行拆分操作。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 72 </td> 
    <td colname="col2"><span class="codeph"> CANNOT_ERASE_TIMELINE</span> </td> 
-   <td colname="col3"> 無法在時間軸上執行清除操作。 </td> 
+   <td colname="col3"> 无法对时间轴执行擦除操作。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 73 </td> 
    <td colname="col2"><span class="codeph"> DID_NOT_NEXT_GET</span> </td> 
-   <td colname="col3"> 未取得下一個片段。 </td> 
+   <td colname="col3"> 没有获得下一个片段。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 74 </td> 
    <td colname="col2"><span class="codeph"> NO_TIMELINE</span> </td> 
-   <td colname="col3"> 內部資料結構中不存在時間軸。 </td> 
+   <td colname="col3"> 内部数据结构中不存在时间轴。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 75 </td> 
    <td colname="col2"><span class="codeph"> LISTENER_NOT_FOUND</span> </td> 
-   <td colname="col3"> 在內部資料結構中找不到接聽程式。 </td> 
+   <td colname="col3"> 在内部数据结构中未找到侦听器。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 76 </td> 
    <td colname="col2"><span class="codeph"> AUDIO_START_ERROR</span> </td> 
-   <td colname="col3"> 無法啟動音訊。 </td> 
+   <td colname="col3"> 无法启动音频。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 77 </td> 
    <td colname="col2"><span class="codeph"> NO_AUDIO_SINK</span> </td> 
-   <td colname="col3"> 內部資料結構中不存在音訊接收器。 </td> 
+   <td colname="col3"> 内部数据结构中不存在音频接收器。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 78 </td> 
    <td colname="col2"><span class="codeph"> FILE_OPEN_ERROR</span> </td> 
-   <td colname="col3"> 無法開啟檔案。 </td> 
+   <td colname="col3"> 无法打开文件。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 79 </td> 
    <td colname="col2"><span class="codeph"> FILE_WRITE_ERROR</span> </td> 
-   <td colname="col3"> 無法寫入檔案。 </td> 
+   <td colname="col3"> 无法写入文件。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 80 </td> 
    <td colname="col2"><span class="codeph"> FILE_READ_ERROR</span> </td> 
-   <td colname="col3"> 無法從檔案讀取。 </td> 
+   <td colname="col3"> 无法从文件读取。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 81 </td> 
    <td colname="col2"><span class="codeph"> ID3PARSE_ERROR</span> </td> 
-   <td colname="col3"> 剖析ID3資料時發生錯誤。 </td> 
+   <td colname="col3"> 解析ID3数据时出错。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 82 </td> 
-   <td colname="col2"><span class="codeph"> 安全性_錯誤 </span> </td> 
-   <td colname="col3"> 由於安全性限制，載入內容失敗。 </td> 
+   <td colname="col2"><span class="codeph"> 安全性_错误 </span> </td> 
+   <td colname="col3"> 由于安全限制，加载内容失败。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 83 </td> 
-   <td colname="col2"><span class="codeph"> TIMELINE_TOO_SHORT</span> </td> 
-   <td colname="col3"> 時間表持續時間太短。 如果這是即時資料流，可能會發生頻繁的緩衝。 </td> 
+   <td colname="col2"><span class="codeph"> 时间轴_TOO_SHORT</span> </td> 
+   <td colname="col3"> 时间线持续时间太短。 如果这是实时流，则可能会发生频繁缓冲。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 84 </td> 
    <td colname="col2"><span class="codeph"> AUDIO_ONLY_STREAM_START</span> </td> 
-   <td colname="col3"> 資料流已切換為純音訊資料流。 </td> 
+   <td colname="col3"> 流已切换为纯音频流。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 85 </td> 
    <td colname="col2"><span class="codeph"> AUDIO_ONLY_STREAM_END</span> </td> 
-   <td colname="col3"> 串流已從純音訊切換為含有視訊的串流。 </td> 
+   <td colname="col3"> 流已从纯音频流切换为带有视频的流。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 87 </td> 
    <td colname="col2"><span class="codeph"> KEY_NOT_FOUND </span> </td> 
-   <td colname="col3"> 找不到金鑰。 </td> 
+   <td colname="col3"> 找不到键。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 88 </td> 
    <td colname="col2"><span class="codeph"> INVALID_KEY</span> </td> 
-   <td colname="col3"> 金鑰無效。 </td> 
+   <td colname="col3"> 密钥无效。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 89 </td> 
    <td colname="col2"> <span class="codeph"> KEY_SERVER_NOT_FOUND</span> </td> 
-   <td colname="col3"> 金鑰伺服器未傳回金鑰。 </td> 
+   <td colname="col3"> 密钥服务器未返回密钥。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 90 </td> 
    <td colname="col2"> <span class="codeph"> MAIN_MANIFEST_UPDATE_TO_BE_HANDLED</span> </td> 
-   <td colname="col3"> 無法處理主要資訊清單更新。 </td> 
+   <td colname="col3"> 无法处理主清单更新。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 91 </td> 
-   <td colname="col2"> <span class="codeph"> UNREPORTED_TIME_DISCONTINUITY_FOUND</span> </td> 
-   <td colname="col3"> 發現未報告的時間(PTS)中斷。 </td> 
+   <td colname="col2"> <span class="codeph"> 未报告的_TIME_DISCONTINUITY_FOUND</span> </td> 
+   <td colname="col3"> 发现未报告的时间(PTS)中断。 </td> 
   </tr> 
  </tbody> 
 </table>

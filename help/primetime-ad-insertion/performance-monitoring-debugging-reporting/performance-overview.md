@@ -1,6 +1,6 @@
 ---
-title: 監視、偵錯和報告
-description: 監視、偵錯和報告
+title: 监控、调试和报告
+description: 监控、调试和报告
 copied-description: true
 exl-id: 4ad8baa2-f112-4efc-956b-6557cbf079ae
 source-git-commit: 3e63c187f12d1bff53370bbcde4d6a77f58f3b4f
@@ -10,6 +10,6 @@ ht-degree: 0%
 
 ---
 
-# 監視、偵錯和報告 {#monitoring-debugging-and-reporting}
+# 监控、调试和报告 {#monitoring-debugging-and-reporting}
 
-PrimetimeAd Insertion提供主控台，其中功能板可監控廣告插入效能，以及多種工具可用來疑難排解和偵錯。 本節提供這些工具的概觀。
+PrimetimeAd Insertion提供了一个控制台，该控制台具有用于监控广告插入性能的功能板和用于故障排除和调试的多个工具。 本节概述这些工具。

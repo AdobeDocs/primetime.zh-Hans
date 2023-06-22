@@ -1,6 +1,6 @@
 ---
-description: 使用Adobe Primetime DRM Server for Protected Streaming，您可以透過組態檔指定伺服器上的所有使用規則。
-title: 關於使用規則
+description: 使用Adobe Primetime DRM Server for Protected Streaming，您可以指定服务器上的所有使用规则，以及配置文件。
+title: 关于使用规则
 exl-id: 55af3a18-8fdb-4285-bd9f-ca479475e34f
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,21 +9,21 @@ ht-degree: 0%
 
 ---
 
-# 關於使用規則{#about-usage-rules}
+# 关于使用规则{#about-usage-rules}
 
-使用Adobe Primetime DRM Server for Protected Streaming，您可以透過組態檔指定伺服器上的所有使用規則。
+使用Adobe Primetime DRM Server for Protected Streaming，您可以指定服务器上的所有使用规则，以及配置文件。
 
-受保護內容的DRM原則中指定的任何使用規則都會被覆寫。 因此，Adobe建議您在內容封裝期間使用簡單的匿名DRM原則。 您可以設定的任何使用規則都可以根據租使用者進行設定。
+在DRM策略中为受保护内容指定的任何使用规则将被覆盖。 因此，Adobe建议您在内容打包期间使用简单的匿名DRM策略。 您可以配置的任何使用规则都可以基于每个租户进行配置。
 
-Primetime DRM Server for Protected Streaming支援下列使用規則：
+Primetime DRM Server for Protected Streaming支持以下使用规则：
 
-* 輸出保護
-* Adobe® AIR®、SWF、iOS和Android應用程式限制
-* DRM和執行階段模組限制
-* 支援越獄偵測的Primetime DRM平台上的越獄偵測強制執行
-* 授權快取預設為停用。 您可以透過指定快取結束日期或允許快取的時間長度來啟用的授權快取；它會在發出授權時啟動。
-* 多重播放許可權可讓您指定輸出保護、應用程式限制和DRM/執行階段限制的不同組合。 例如，您可以使用具有輸出保護的DRM模組限制，為每個使用者端平台指定不同的輸出保護要求。
+* 输出保护
+* Adobe® AIR®、SWF、iOS和Android应用程序限制
+* DRM和运行时模块限制
+* 支持越狱检测的Primetime DRM平台上的越狱检测强制执行
+* 默认情况下，许可证缓存处于禁用状态。 可以通过指定缓存结束日期或允许缓存的时间量来启用的许可证缓存；它会在颁发许可证时启动。
+* 多个播放权限，可让您指定输出保护、应用程序限制和DRM/运行时限制的不同组合。 例如，可以使用带有输出保护的DRM模块限制为每个客户端平台指定不同的输出保护要求。
 
 >[!NOTE]
 >
->如果您想要支援將遠端金鑰傳送至iOS裝置，則套用於封裝時的DRM政策必須啟用遠端金鑰傳送。 無法透過伺服器上的租使用者設定修改此設定。
+>如果要支持将远程密钥交付到iOS设备，则打包时应用的DRM策略必须启用远程密钥交付。 无法通过服务器上的租户配置修改此设置。

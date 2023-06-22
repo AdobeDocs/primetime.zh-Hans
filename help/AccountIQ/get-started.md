@@ -1,6 +1,6 @@
 ---
-title: 如何上線並開始使用Account IQ
-description: 如何上線、必要條件，以及開始使用Account IQ。
+title: 如何入门和开始使用Account IQ
+description: 如何入门、先决条件和帐户IQ入门。
 exl-id: 840ab081-0073-492f-86b2-ba174ae93256
 source-git-commit: b83105b94dc1c78de84908f5676ade6a62486349
 workflow-type: tm+mt
@@ -9,47 +9,47 @@ ht-degree: 0%
 
 ---
 
-# 如何上線並開始使用Account IQ {#onboard}
+# 如何入门和开始使用Account IQ {#onboard}
 
-帳戶IQ是託管的Web應用程式。 若要開始將此分析工具用作D2C串流提供者、程式設計人員或散發者(MVPD)並緩解憑證共用，您需要讓您的組織加入Adobe Experience Cloud組織，並將組織使用者指派給 **Primetime帳戶IQ** 設定檔於 [Adobe Admin Console](https://adminconsole.adobe.com/). 請閱讀下文，瞭解入門的先決條件和詳細資訊。
+帐户IQ是托管的Web应用程序。 要开始将此分析工具用作D2C流提供商、程序员或分发商(MVPD)并缓解凭据共享，您需要将您的组织载入Adobe Experience Cloud组织并将组织用户分配给 **Primetime帐户IQ** 个人资料于 [Adobe Admin Console](https://adminconsole.adobe.com/). 请阅读并了解入门的先决条件和详细信息。
 
-## 瀏覽器必要條件 {#browser-prerequisites}
+## 浏览器先决条件 {#browser-prerequisites}
 
-帳戶IQ與下列瀏覽器的最新版本相容：
+帐户IQ与以下浏览器的最新版本兼容：
 
 * Google Chrome
 * Safari
 * Mozilla Firefox
 
-## 入門步驟 {#steps-to-onboard}
+## 载入步骤 {#steps-to-onboard}
 
-1. 若要讓您的組織註冊，請 **Adobe Experience Cloud** 組織聯絡人 **Adobe** 傳送電子郵件至tve-support@adobe.com。
+1. 要在中注册您的组织，请执行以下操作 **Adobe Experience Cloud** 组织联系人 **Adobe** 向tve-support@adobe.com发送电子邮件。
 
-1. 將組織使用者指派給 **TVE儀表板讀寫** 或 **TVE儀表板唯讀** 中的設定檔 [Adobe Admin Console](https://adminconsole.adobe.com/).
+1. 将组织用户分配给 **TVE仪表板读写** 或 **TVE仪表板只读** 中的配置文件 [Adobe Admin Console](https://adminconsole.adobe.com/).
 
-   您組織中的管理員使用者可以建立使用者，並授予他們帳戶IQ儀表板和報表的存取權。 若要授與組織使用者對帳戶IQ的存取權，組織管理員需要：
+   您组织中的管理员用户可以创建用户，并授予他们访问“帐户IQ”功能板和报表的权限。 要授予组织用户访问帐户IQ的权限，组织管理员需要：
 
-   1. 登入 [Adobe Admin Console](https://adminconsole.adobe.com/).
+   1. 登录 [Adobe Admin Console](https://adminconsole.adobe.com/).
 
 
       ![](assets/admin-console.png)
 
-   1. 選取 **Adobe Primetime** 從 **產品和服務**.
+   1. 选择 **Adobe Primetime** 起始日期 **产品和服务**.
 
-   1. 從 **產品設定檔**，選取 **TVE儀表板讀寫** 或 **TVE儀表板唯讀** 設定檔。
+   1. 起始日期 **产品配置文件**，选择 **TVE仪表板读写** 或 **TVE仪表板只读** 个人资料。
 
       ![](assets/product-profiles.png)
 
       >[!NOTE]
       >
-      >在不久的將來，Primetime帳戶IQ將從TVE儀表板中拆分。
+      >在不久的将来，Primetime帐户IQ将从TVE功能板中剥离。
 
-   1. 您可以在此處建立使用者群組，或選取要新增使用者的現有群組。
+   1. 在此处，您可以创建用户组，或选择要将用户添加到的现有组。
 
       ![](assets/add-users-2profile.png)
 
-   1. 選取 **新增使用者** 新增使用者的選項。
+   1. 选择 **添加用户** 用于添加用户的选项。
 
 >[!IMPORTANT]
 >
->如果您的使用者無法存取帳戶IQ儀表板，請聯絡Adobe支援，確認貴組織的ID已加入帳戶IQ的白名單。
+>如果您的用户无法访问帐户IQ仪表板，请联系Adobe支持，以确保贵组织的ID已列入帐户IQ白名单。

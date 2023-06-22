@@ -1,7 +1,7 @@
 ---
-description: 裝置熒幕關閉和開啟時，暫停及還原TVSDK MediaPlayer必須由應用程式處理。
-keywords: SurfaceView；暫停；還原；BroadcastReceiver
-title: 暫停和還原MediaPlayer
+description: 当设备屏幕关闭和打开时，必须由应用程序处理TVSDK MediaPlayer的暂停和恢复。
+keywords: SurfaceView；暂停；恢复；BroadcastReceiver
+title: 暂停和恢复MediaPlayer
 exl-id: 159f0f4f-2bb7-40a1-9747-be970dfbb04d
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -10,15 +10,15 @@ ht-degree: 0%
 
 ---
 
-# 暫停和還原MediaPlayer {#suspend-and-restore-mediaplayer}
+# 暂停和恢复MediaPlayer {#suspend-and-restore-mediaplayer}
 
-裝置熒幕關閉和開啟時，暫停及還原TVSDK MediaPlayer必須由應用程式處理。
+当设备屏幕关闭和打开时，必须由应用程序处理TVSDK MediaPlayer的暂停和恢复。
 
-您可以處理暫停和還原操作 `MediaPlayer` 在Android的廣播接收器內，用於開啟/關閉熒幕。
+您可以处理上的挂起和恢复操作 `MediaPlayer` 在Android的广播接收器内打开或关闭屏幕。
 
-TVSDK無法判斷片段（或活動）何時在背景或前景。 此外，Android `SurfaceView` 裝置畫面關閉時不會遭到破壞（但活動已暫停）。 不過， `SurfaceView` *會* 當裝置將您的應用程式置於背景時，就會遭到破壞。 TVSDK無法偵測到任何這些變更，因此必須由您的應用程式處理。
+TVSDK无法确定片段（或活动）何时在后台或前台。 此外，Android `SurfaceView` 当设备屏幕关闭时（但活动已暂停），不会遭到破坏。 但是， `SurfaceView` *是* 当设备将您的应用程序置于后台时遭到破坏。 TVSDK无法检测到任何此类更改，因此它们必须由应用程序处理。
 
-以下範常式式碼您的應用程式如何處理暫停和還原 `MediaPlayer` 在應用程式層級開啟和關閉裝置畫面時：
+以下示例代码说明应用程序如何处理暂停和恢复 `MediaPlayer` 在应用程序级别打开和关闭设备屏幕时：
 
 ```java
 // Track the state of a fragment to determine if it is PAUSED or RESUMED 

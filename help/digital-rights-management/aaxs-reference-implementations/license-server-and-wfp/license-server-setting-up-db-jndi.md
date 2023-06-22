@@ -1,6 +1,6 @@
 ---
-title: 設定資料庫和設定JNDI資料來源
-description: 設定資料庫和設定JNDI資料來源
+title: 设置数据库和配置JNDI数据源
+description: 设置数据库和配置JNDI数据源
 copied-description: true
 exl-id: ed22f095-924b-4792-8a10-e7548fab2c3b
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,59 +10,59 @@ ht-degree: 0%
 
 ---
 
-# 設定資料庫和設定JNDI資料來源 {#setting-up-the-database-and-configuring-the-jndi-datasource}
+# 设置数据库和配置JNDI数据源 {#setting-up-the-database-and-configuring-the-jndi-datasource}
 
-參考實作授權伺服器需要資料庫來支援下列功能：
+参考实施许可证服务器要求数据库支持以下功能：
 
-* 使用者驗證
-* 使用模式示範商業規則
-* 中繼資料轉換
-* 網域支援
+* 用户身份验证
+* 使用模型演示业务规则
+* 元数据转换
+* 域支持
 
-匿名授權贏取不需要執行資料庫。
-
->[!NOTE]
->
->本節中的指示適用於Microsoft Windows平台。 若為其他作業系統，請參閱作業系統的說明檔案，或參閱MySQL說明檔案。
-
-若要執行授權伺服器，您必須安裝並設定MySQL 5.1.34：
-
-1. 執行MySQL安裝程式(位於DVD上的第三個Party\MySQL\Installer\5.1資料夾)。
-1. 在安裝程式結束時，檢查 **[!UICONTROL Configure MySQL Server Now]** 以啟動設定精靈。 使用預設設定或選取測試用途的特定設定，但您必須在第5個畫面中選取的設定除外 **[!UICONTROL Online Transaction Processing (OLTP)]** 或 **[!UICONTROL Manual Setting]** 並輸入允許的最大連線數目。
-
-1. 記下root密碼。
-1. 如果您需要重新安裝MySQL，請依照下列步驟操作，以避免之後啟動伺服器時發生問題：
-
-   * 刪除資料夾 *系統磁碟機：* [!DNL \Documents and Settings\All Users\Application Data\MySQL].
-
-   * 刪除舊的MySQL安裝資料夾：例如， *系統磁碟機：* [!DNL \Program Files\MySQL\MySQL Server 5.1].
-
-接下來，您需要安裝MySQL JDBC驅動程式5.1.7。若要這麼做，請複製 [!DNL mysql-connector-java-5.1.7-bin.jar] (可在 [!DNL Third Party\MySQL\Installer\5.1] 資料夾)至Tomcat Server lib目錄： [!DNL ...\Tomcat6.0\lib].
+匿名许可证获取不需要运行数据库。
 
 >[!NOTE]
 >
->MySQL JDBC驅動程式5.1.7可搭配Tomcat 6.0使用。不支援舊版Tomcat。
+>本节中的说明适用于Microsoft Windows平台。 对于其他操作系统，请参阅适用于您的操作系统的文档或参阅MySQL文档。
 
-設定資料庫結構描述並將範例資料填入資料庫中，以設定範例資料庫。 要執行此操作，請執行下列步驟：
+要运行许可证服务器，您需要安装和配置MySQL 5.1.34：
 
-1. 前往  **[!UICONTROL Window's Start Menu]** > **[!UICONTROL MySQL]** > **[!UICONTROL MySQL Server 5.1]** > **[!UICONTROL MySQL Command Line Client]** .
-1. 輸入密碼後，執行下列SQL指令碼以新增使用者帳戶 `dbuser` 用於透過Web應用程式建立連線並建立資料庫架構(請確保結尾沒有「；」。 只要按Enter即可。)：
+1. 运行MySQL安装程序(位于DVD上的第三个Party\MySQL\Installer\5.1文件夹中)。
+1. 在安装过程结束时，检查 **[!UICONTROL Configure MySQL Server Now]** 以启动配置向导。 使用默认设置或选择特定设置进行测试，但您必须在第5个屏幕上选择的设置除外 **[!UICONTROL Online Transaction Processing (OLTP)]** 或 **[!UICONTROL Manual Setting]** 并输入允许的最大连接数。
+
+1. 记下root密码。
+1. 如果需要重新安装MySQL，请按照以下步骤操作，以避免在之后启动服务器时出现问题：
+
+   * 删除文件夹 *系统驱动器：* [!DNL \Documents and Settings\All Users\Application Data\MySQL].
+
+   * 删除旧的MySQL安装文件夹：例如， *系统驱动器：* [!DNL \Program Files\MySQL\MySQL Server 5.1].
+
+接下来，您需要安装MySQL JDBC驱动程序5.1.7。要执行此操作，请复制 [!DNL mysql-connector-java-5.1.7-bin.jar] (可在 [!DNL Third Party\MySQL\Installer\5.1] 文件夹)到Tomcat Server lib目录： [!DNL ...\Tomcat6.0\lib].
+
+>[!NOTE]
+>
+>MySQL JDBC驱动程序5.1.7适用于Tomcat 6.0。不支持旧版本的Tomcat。
+
+通过设置数据库模式并使用示例数据填充数据库来设置示例数据库。 为此，请执行以下步骤：
+
+1. 转到  **[!UICONTROL Window's Start Menu]** > **[!UICONTROL MySQL]** > **[!UICONTROL MySQL Server 5.1]** > **[!UICONTROL MySQL Command Line Client]** .
+1. 键入密码后，执行以下SQL脚本以添加用户帐户 `dbuser` 用于通过Web应用程序建立连接并创建数据库模式（确保末尾没有“；”）。 只需按Enter。)：
 
    ```
        mysql> source “Reference Implementation\Server\dbscript\createsampledb.sql”
    ```
 
-1. 編輯在表格中填入範例資料的指令碼，以包含用於測試的資料： [!DNL Reference Implementation\Server\dbscript\PopulateSampleDB.sql].
-1. 執行此指令碼以像在步驟2中一樣填入資料。
+1. 编辑在表中填充示例数据的脚本，以包含用于测试的数据： [!DNL Reference Implementation\Server\dbscript\PopulateSampleDB.sql].
+1. 执行此脚本以像在步骤2中一样填充数据。
 
 >[!NOTE]
 >
->第一次執行 [!DNL CreateSampleDB.sql] 指令碼：您會收到下列錯誤：
+>第一次运行 [!DNL CreateSampleDB.sql] 脚本您将收到以下错误：
 
-*錯誤1396 (HY000)： &#39;dbuser&#39;@&#39;localhost&#39;查詢正常的DROP USER作業失敗，0列受到影響（0.00秒）。*
+*错误1396 (HY000)：对“dbuser”@&#39;localhost&#39;查询正常，执行DROP USER操作失败，0行受到影响（0.00秒）。*
 
-您可以安全地忽略此錯誤。 這只會發生在您第一次執行此指令碼時。
+您可以安全地忽略此错误。 仅当您首次运行此脚本时，才会发生这种情况。
 
-此時您需要設定資料庫連線集區(DBCP)。 DBCP使用Jakarta-Commons資料庫連線集區。 JNDI資料來源TestDB已設定為使用此應用程式伺服器連線集區。 若要將資料庫連線變更為指向不在本機主機上的MySQL伺服器，請修改 [!DNL META-INF\context.xml] 檔案（指定授權伺服器資料庫的位置、使用者名稱和密碼），位於 [!DNL flashaccess.war]，或修改 [!DNL \Reference Implementation\Server\refimpl\WebContent\META-INF\context.xml] 並使用更新後的檔案重新建立WAR檔案。 若要變更這些引數，請編輯 [!DNL context.xml] 位在WebContent目錄中，並使用Ant指令碼重新建立WAR檔案。 若要調整資料庫，請變更此檔案中的JNDI資料來源設定值。
+此时，您需要配置数据库连接池(DBCP)。 DBCP使用Jakarta-Commons数据库连接池。 JNDI数据源TestDB配置为利用此应用程序服务器连接池。 要将数据库连接更改为指向不在本地主机上的MySQL服务器，请修改 [!DNL META-INF\context.xml] 文件（指定许可证服务器数据库的位置、用户名和密码） [!DNL flashaccess.war]，或进行修改 [!DNL \Reference Implementation\Server\refimpl\WebContent\META-INF\context.xml] 并使用更新的文件重新创建WAR文件。 要更改其中的任何参数，请编辑 [!DNL context.xml] ，并使用Ant脚本重新创建WAR文件。 要优化数据库，请更改此文件中的JNDI数据源设置。
 
-如果您在Eclipse中偵錯參考實作專案，您需要新增 `$CATALINA_HOME\lib\tomcat-dbcp.jar` 至您的執行/偵錯設定。 如果您執行 [!DNL flashaccess.war] 獨立Tomcat 6.0伺服器上的檔案。
+如果您在Eclipse中调试参考实施项目，则需要添加 `$CATALINA_HOME\lib\tomcat-dbcp.jar` 到您的运行/调试配置。 如果您运行 [!DNL flashaccess.war] 文件，该文件位于独立Tomcat 6.0服务器上。

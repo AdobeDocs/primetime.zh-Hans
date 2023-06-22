@@ -1,6 +1,6 @@
 ---
-description: 廣告插入會解析視訊點播(VOD) 、即時串流，以及使用廣告追蹤和廣告播放的線性串流的廣告。 TVSDK會向廣告伺服器提出所需請求、接收指定內容的廣告相關資訊，並分階段將廣告置於內容中。
-title: 插入廣告
+description: 广告插入可解析以下内容的广告：视频点播(VOD) 、实时流以及带有广告跟踪和广告播放的线性流。 TVSDK向广告服务器发出所需请求，接收有关指定内容的广告信息，并将广告分阶段放入内容中。
+title: 插入广告
 exl-id: 3a472435-2e37-46d6-8c08-dd6e953c7a7a
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,15 +9,15 @@ ht-degree: 0%
 
 ---
 
-# 概觀 {#inserting-ads-overview}
+# 概述 {#inserting-ads-overview}
 
-廣告插入會解析視訊點播(VOD) 、即時串流，以及使用廣告追蹤和廣告播放的線性串流的廣告。 TVSDK會向廣告伺服器提出所需請求、接收指定內容的廣告相關資訊，並分階段將廣告置於內容中。
+广告插入可解析以下内容的广告：视频点播(VOD) 、实时流以及带有广告跟踪和广告播放的线性流。 TVSDK向广告服务器发出所需请求，接收有关指定内容的广告信息，并将广告分阶段放入内容中。
 
-一個 *`ad break`* 包含一或多個依序播放的廣告。 TVSDK會將廣告插入主要內容，作為一或多個廣告插播的成員。
+An *`ad break`* 包含一个或多个按顺序播放的广告。 TVSDK将广告作为一个或多个广告时间的成员，插入主内容中。
 
-## 停用前段廣告 {#disable-preroll-ads}
+## 禁用前置广告 {#disable-preroll-ads}
 
-若要停用前置，請變更預設機會產生器，使其不進行前置通話。 預設機會產生器為：
+要禁用前置，请将默认机会生成器更改为不进行前置调用。 默认机会生成器是：
 
 ```
 @inheritDoc 
@@ -30,7 +30,7 @@ return result;
 }
 ```
 
-若要停用即時資料流上的前段播放，請變更上述設定，使其僅包含SpliceOutOpportunityGenerator：
+要在实时流上禁用前置滚动，请将以上内容更改为仅包含SpliceOutOpportunityGenerator：
 
 ```
 @inheritDoc 

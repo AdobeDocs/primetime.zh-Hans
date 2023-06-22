@@ -1,6 +1,6 @@
 ---
-description: 我們使用Bento4封裝程式和Adobe離線封裝程式來編寫加密的DASH內容。 Bento4會以未加密的mp4內容作為輸入。
-title: 使用Bento4封裝您的內容
+description: 我们使用Bento4打包程序和Adobe脱机打包程序来创作加密的DASH内容。 Bento4将输入未加密的mp4内容。
+title: 使用Bento4打包您的内容
 exl-id: c873eaf6-c738-4f95-a900-a8aecb03754d
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,17 +9,17 @@ ht-degree: 0%
 
 ---
 
-# 封裝Widevine和PlayReady的內容 {#package-for-widevine}
+# 为Widevine和PlayReady打包内容 {#package-for-widevine}
 
-我們使用Bento4封裝程式和Adobe離線封裝程式來編寫加密的DASH內容。 Bento4會以未加密的mp4內容作為輸入。
+我们使用Bento4打包程序和Adobe脱机打包程序来创作加密的DASH内容。 Bento4将输入未加密的mp4内容。
 
-## 使用Bento4封裝您的內容{#package-your-content-with-bento}
+## 使用Bento4打包您的内容{#package-your-content-with-bento}
 
-Bento4封裝程式預期輸入mp4會預先分割。 Bento4 Packager散發包含此功能的工具。
+Bento4打包器预期输入mp4将预先分段。 Bento4 Packager分发版包含用于此的工具。
 
-**正在撥打Bento4**
+**正在调用Bento4**
 
-典型的Bento4封裝程式呼叫如下所示：
+典型的Bento4打包程序调用如下所示：
 
 ```
 ./mp4dash
@@ -44,7 +44,7 @@ Bento4封裝程式預期輸入mp4會預先分割。 Bento4 Packager散發包含�
 --playready-header=\"LA_URL:http://pr.test.expressplay.com/playready/RightsManager.asmx\"
 ```
 
-以下範例結合了PlayReady和Widevine配置。 在此特定情況下，封裝程式會將Widevine內容保護和PlayReady內容保護初始化資料新增至輸出的DASH內容。
+下面的示例结合了PlayReady和Widevine方案。 在此特定情况下，打包程序会将Widevine内容保护和PlayReady内容保护初始化数据添加到输出的DASH内容中。
 
 ```
 /mp4dash
@@ -62,19 +62,19 @@ Bento4封裝程式預期輸入mp4會預先分割。 Bento4 Packager散發包含�
 
 位置
 
-的值 `--encryption-key` 旗標在表單中 `<base16 encoded key id>:<base16 encoded encryption key>`.
+的值 `--encryption-key` 标记在表单中 `<base16 encoded key id>:<base16 encoded encryption key>`.
 
-此 `--widevine-header=provider:intertrust#content_id:2a` flag會告訴封裝程式將pssh方塊納入資訊清單中，哪個TVSDK目前需要播放此方塊。
+此 `--widevine-header=provider:intertrust#content_id:2a` 标记可告知打包程序在清单中包含pssh框，目前TVSDK需要此框才能播放。
 
-的值 `-playready-header` 用於PlayReady授權贏取。
+的值 `-playready-header` 用于获取PlayReady许可证。
 
-## 使用Adobe離線封裝程式封裝您的內容 {#package-your-content-with-adobe-offline-packager}
+## 使用AdobeOffline Packager打包内容 {#package-your-content-with-adobe-offline-packager}
 
-AdobeOffline Packager會以未加密的mp4內容作為輸入。
+AdobeOffline Packager将用作输入未加密的mp4内容。
 
-**呼叫Adobe離線封裝程式**
+**调用Adobe脱机打包程序**
 
-典型的Adobe離線封裝程式呼叫看起來類似以下呼叫：
+典型的adobe offline packager调用类似于下面的调用：
 
 ```
 java -jar OfflinePackager.jar -conf_path Content_PR_WV.xml -in_path "Jaigo.mp4"
@@ -88,9 +88,9 @@ http://pr.test.expressplay.com/playready/RightsManager.asmx
 -content_id c595f214d84dc7ecf31a8ebf1b7ddda5
 ```
 
-在此特定情況下，離線封裝程式會將Widevine內容保護和PlayReady內容保護初始化資料新增至輸出DASH內容。 的值 `-key_file_path` 適用於base64編碼金鑰。 的值 `-playready_LA_URL` 用於PlayReady授權贏取。
+在此特定情况下，脱机打包程序会将Widevine内容保护和PlayReady内容保护初始化数据添加到输出DASH内容中。 的值 `-key_file_path` 用于base64编码的键。 的值 `-playready_LA_URL` 用于获取PlayReady许可证。
 
-conf_path引數指向包含下列內容的組態檔：
+conf_path参数指向包含以下内容的配置文件：
 
 ```
 <config>
@@ -100,4 +100,4 @@ conf_path引數指向包含下列內容的組態檔：
 </config>
 ```
 
-由於某些Android裝置(主要是Amazon Fire TV)不支援音訊解密，因此可選擇使用音訊加密。
+由于某些Android设备(主要是Amazon Fire TV)不支持音频解密，因此音频加密是可选的。

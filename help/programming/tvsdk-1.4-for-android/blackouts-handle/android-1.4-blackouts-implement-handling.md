@@ -1,6 +1,6 @@
 ---
-description: TVSDK提供處理中斷期間的API和範常式式碼。
-title: 實作中斷處理
+description: TVSDK提供了用于处理封锁期的API和示例代码。
+title: 实施封锁处理
 exl-id: 9b23674d-76d5-4879-b595-3a6e368c45cd
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,13 +9,13 @@ ht-degree: 0%
 
 ---
 
-# 實作中斷處理{#implement-blackout-handling}
+# 实施封锁处理{#implement-blackout-handling}
 
-TVSDK提供處理中斷期間的API和範常式式碼。
+TVSDK提供了用于处理封锁期的API和示例代码。
 
-若要實作中斷處理，包括在中斷期間提供替代內容：
+要实施封锁处理（包括在封锁期间提供替代内容），请执行以下操作：
 
-1. 設定您的應用程式以偵測即時資料流資訊清單中的中斷標籤。
+1. 设置应用程序以检测实时流清单中的封锁标记。
 
    ```java
    public void createMediaPlayer { 
@@ -26,7 +26,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }
    ```
 
-1. 在前景和背景資料流中建立定時中繼資料事件的事件接聽程式。
+1. 为前台和后台流中的定时元数据事件创建事件侦听器。
 
    ```java
    private MediaPlayer createMediaPlayer() { 
@@ -35,9 +35,9 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }
    ```
 
-1. 對前景和背景資料流實作定時中繼資料事件處理常式。
+1. 为前台和后台流实施定时元数据事件处理程序。
 
-   前景：
+   前台：
 
    ```java
    private final MediaPlayer.PlaybackEventListener _playbackEventListener =  
@@ -74,7 +74,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }; 
    ```
 
-1. 控制代碼 `TimedMetadata` 物件時間 `MediaPlayer` 時間執行。
+1. 句柄 `TimedMetadata` 对象时间 `MediaPlayer` 时间运行。
 
    ```java
    _playbackClockEventListener = new Clock.ClockEventListener() { 
@@ -97,7 +97,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    };
    ```
 
-1. 建立用於在中斷期間開始和結束時切換內容的方法。
+1. 创建用于在封锁期开始和结束时切换内容的方法。
 
    ```java
    private void handleTimedMetadataList(long currentTime) { 
@@ -149,7 +149,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }
    ```
 
-1. 如果播放資料流上的中斷範圍在DVR中，請更新不可搜尋的範圍。
+1. 如果播放流上的封锁期在DVR中，请更新不可搜索的范围。
 
    ```java
    // prepare and update blackout nonSeekable ranges 
@@ -182,7 +182,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
 
    >[!NOTE]
    >
-   >目前對於多位元速率即時資料流，有時可調整的位元速率(ABR)設定檔可能會不同步。 這會導致重複 `timedMetadata` 相同訂閱標籤的物件。 為了避免不正確的不可搜尋計算，強烈建議您在計算後檢查是否有重疊的不可搜尋範圍，例如以下範例中的：
+   >目前，对于多个比特率实时流，有时可调整比特率(ABR)配置文件可能会不同步。 这会导致重复 `timedMetadata` 相同订阅标记的对象。 为了避免不正确的不可搜索计算，强烈建议在计算后检查是否存在重叠的不可搜索范围，如以下示例中的：
 
    ```java
    List<TimeRange> rangesToRemove = new ArrayList<TimeRange>(); 

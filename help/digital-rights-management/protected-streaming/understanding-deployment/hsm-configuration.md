@@ -1,6 +1,6 @@
 ---
-description: 如果您選取HSM來儲存伺服器認證，則必須將私密金鑰和憑證載入HSM並建立pkcs11.cfg組態檔。
-title: HSM組態
+description: 如果选择HSM来存储服务器凭据，则必须将私钥和证书加载到HSM上并创建pkcs11.cfg配置文件。
+title: HSM配置
 exl-id: 4c4423ea-b7af-4a30-99ac-f5b74a1e1168
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,21 +9,21 @@ ht-degree: 0%
 
 ---
 
-# HSM組態{#hsm-configuration}
+# HSM配置{#hsm-configuration}
 
-如果您選取HSM來儲存伺服器認證，則必須將私密金鑰和憑證載入HSM並建立pkcs11.cfg組態檔。
+如果选择HSM来存储服务器凭据，则必须将私钥和证书加载到HSM上并创建pkcs11.cfg配置文件。
 
-您必須在以下位置找到組態檔： *LicenseServer.ConfigRoot* 目錄。
+您必须在以下位置找到配置文件 *LicenseServer.ConfigRoot* 目录。
 
-請參閱 [!DNL Adobe Primetime DRM Server for Protected Streaming/configs] Adobe Primetime DRM DVD上的目錄，例如PKCS11組態檔。
+请参阅 [!DNL Adobe Primetime DRM Server for Protected Streaming/configs] Adobe Primetime DRM DVD上的目录，例如PKCS11配置文件。
 
-請參閱Sun PKCS11提供者檔案，瞭解下列格式的相關資訊： [!DNL pkcs11.cfg] 檔案。
+有关格式的信息，请参见Sun PKCS11提供程序文档 [!DNL pkcs11.cfg] 文件。
 
-您可以在下列目錄中使用下列指令： [!DNL pkcs11.cfg] 檔案位於( [!DNL keytool] Java JRE和JDK一起安裝)，以驗證HSM和Sun PKCS11組態檔是否已正確設定：
+您可以从以下目录中使用以下命令： [!DNL pkcs11.cfg] 文件位于( [!DNL keytool] Java JRE和JDK一起安装)，以验证是否已正确配置HSM和Sun PKCS11配置文件：
 
 ```
 keytool -keystore NONE -storetype PKCS11 -providerClass sun.security.pkcs11.SunPKCS11 
   -providerArg pkcs11.cfg -list
 ```
 
-如果您可以在清單中檢視您的認證，則HSM已正確設定，且授權伺服器現在可以存取認證。
+如果您可以在列表中查看凭据，则HSM已正确配置，许可证服务器现在可以访问凭据。

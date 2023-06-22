@@ -1,6 +1,6 @@
 ---
-title: 跨網域DRM原則檔
-description: 跨網域DRM原則檔
+title: 跨域DRM策略文件
+description: 跨域DRM策略文件
 copied-description: true
 exl-id: b8f3300f-96c7-4451-bc62-09085caedb78
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,8 +10,8 @@ ht-degree: 0%
 
 ---
 
-# 跨網域DRM原則檔{#crossdomain-drm-policy-file}
+# 跨域DRM策略文件{#crossdomain-drm-policy-file}
 
-如果您希望Flash Runtime使用者端向License Server請求授權，則需要跨網域DRM原則檔案。
+如果您希望Flash运行时客户端向License Server请求许可证，则需要跨域DRM策略文件。
 
-另請參閱 *使用Adobe Primetime DRM SDK保護內容*.
+参见 *使用Adobe Primetime DRM SDK保护内容*.

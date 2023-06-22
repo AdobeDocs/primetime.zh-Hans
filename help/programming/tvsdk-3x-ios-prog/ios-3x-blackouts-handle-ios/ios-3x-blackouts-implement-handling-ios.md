@@ -1,6 +1,6 @@
 ---
-description: TVSDK提供處理中斷期間的API和範常式式碼。
-title: 實作中斷處理
+description: TVSDK提供了用于处理封锁期的API和示例代码。
+title: 实施封锁处理
 exl-id: 57823364-fdb3-41c3-8441-008e991f19a7
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,13 +9,13 @@ ht-degree: 0%
 
 ---
 
-# 實作中斷處理 {#implement-blackout-handling}
+# 实施封锁处理 {#implement-blackout-handling}
 
-TVSDK提供處理中斷期間的API和範常式式碼。
+TVSDK提供了用于处理封锁期的API和示例代码。
 
-若要實施中斷處理並在中斷期間提供替代內容：
+要实施封锁处理并在封锁期间提供替代内容，请执行以下操作：
 
-1. 設定您的應用程式以訂閱即時資料流資訊清單中的中斷標籤。
+1. 设置应用程序以订阅实时流清单中的封锁标记。
 
    ```
    - (void) createMediaPlayer:(PTMediaPlayerItem *)item 
@@ -26,7 +26,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }
    ```
 
-1. 新增通知接聽程式 `PTTimedMetadataChangedNotification`.
+1. 添加通知侦听器 `PTTimedMetadataChangedNotification`.
 
    ```
    - (void)addobservers 
@@ -36,7 +36,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }
    ```
 
-1. 實作接聽程式方法 `PTTimedMetadata` 前景中的物件。
+1. 实施侦听器方法 `PTTimedMetadata` 前景中的对象。
 
    例如：
 
@@ -60,7 +60,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }
    ```
 
-1. 控制代碼 `TimedMetadata` 在播放期間持續更新的物件。
+1. 句柄 `TimedMetadata` 播放期间不断更新的对象。
 
    ```
    - (void)onMediaPlayerTimeChange:(NSNotification *)notification 
@@ -81,7 +81,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }
    ```
 
-1. 新增 `PTTimedMetadata` 處理常式，可切換至替代內容並返回主要內容，如 `PTTimedMetadata` 物件及其播放時間。
+1. 添加 `PTTimedMetadata` 处理程序切换到替代内容并返回主内容，如 `PTTimedMetadata` 对象及其播放时间。
 
    ```
    - (void)handleCollectionAtTime:(int)currentTime 
@@ -196,7 +196,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }
    ```
 
-1. 實作接聽程式方法 `PTTimedMetadata` 背景中的物件。
+1. 实施侦听器方法 `PTTimedMetadata` 背景中的对象。
 
    ```
    - (void)onSubscribedTagInBackground:(NSNotification *)notification 
@@ -217,7 +217,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }
    ```
 
-1. 針對背景錯誤實作接聽程式方法。
+1. 为后台错误实施侦听器方法。
 
    ```
    - (void) onBackgroundManifestError:(NSNotification *)notification 
@@ -226,7 +226,7 @@ TVSDK提供處理中斷期間的API和範常式式碼。
    }
    ```
 
-1. 如果中斷範圍在播放資料流的DVR上，請更新不可搜尋的範圍。
+1. 如果封锁范围位于播放流中的DVR上，请更新不可搜索的范围。
 
    ```
    // This sample assumes that blackoutStartTimedMetadata is the PTTimedMetadata  

@@ -1,7 +1,7 @@
 ---
-description: 您可以使用現有的延遲廣告載入機制來啟用或停用延遲廣告解析功能（預設會啟用延遲廣告解析）。
-keywords: 延遲；廣告解決；廣告載入；delayLoading
-title: 啟用延遲廣告解析
+description: 您可以使用现有的延迟广告加载机制启用或禁用延迟广告解析功能（默认启用延迟广告解析）。
+keywords: 延迟；广告解析；广告加载；延迟加载
+title: 启用延迟广告解析
 exl-id: 4cd53ace-b0f5-4eef-93c3-644c2f48ce49
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -10,19 +10,19 @@ ht-degree: 0%
 
 ---
 
-# 啟用延遲廣告解析 {#enable-lazy-ad-resolving}
+# 启用延迟广告解析 {#enable-lazy-ad-resolving}
 
-您可以使用現有的延遲廣告載入機制來啟用或停用延遲廣告解析功能（預設會啟用延遲廣告解析）。
+您可以使用现有的延迟广告加载机制启用或禁用延迟广告解析功能（默认启用延迟广告解析）。
 
-您可以透過呼叫來啟用或停用延遲廣告解析 [AdvertisingMetadata.setDelayLoading](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_2.4/com/adobe/mediacore/metadata/AdvertisingMetadata.html#setDelayAdLoading-boolean-) 替換為 `true` 或 `false`.
+您可以通过调用来启用或禁用延迟广告解析 [AdvertisingMetadata.setDelayLoading](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_2.4/com/adobe/mediacore/metadata/AdvertisingMetadata.html#setDelayAdLoading-boolean-) 替换为 `true` 或 `false`.
 
-1. 使用布林值 `hasDelayAdLoading` 和 `setDelayAdLoading` 中的方法 `AdvertisingMetadata` 若要控制廣告解析的時間以及在時間軸上的廣告位置：
+1. 使用布尔值 `hasDelayAdLoading` 和 `setDelayAdLoading` 中的方法 `AdvertisingMetadata` 要控制广告解析时间和广告在时间轴上的放置，请执行以下操作：
 
-   * 若 `hasDelayAdLoading` 傳回false，TVSDK會等到所有廣告解析並置入後再轉換為PREPARED狀態。
-   * 若 `hasDelayAdLoading` 傳回true，TVSDK只會解析初始廣告和轉換到PREPARED狀態。 剩餘的廣告會在播放期間解析和置入。
-   * 時間 `hasPreroll` 或 `hasLivePreroll` return false，TVSDK會假設沒有前置廣告，並立即開始播放內容。 這些預設為true。
+   * 如果 `hasDelayAdLoading` 返回false，TVSDK将等到所有广告都解析并置入后才过渡到PREPARED状态。
+   * 如果 `hasDelayAdLoading` 返回true，TVSDK仅解析初始广告和过渡到“已准备”状态。 剩余的广告将在播放期间解析并置入。
+   * 时间 `hasPreroll` 或 `hasLivePreroll` return false， TVSDK假定没有前置广告，并立即开始播放内容。 这些参数默认为true。
 
-      與延遲廣告解析度相關的API：
+      与延迟广告解析相关的API：
 
       ```
       Class: 
@@ -39,11 +39,11 @@ ht-degree: 0%
       […]
       ```
 
-1. 若要將廣告準確地反映為拖曳列上的提示，請聆聽 `TimelineEvent` 事件，並在每次收到此事件時重繪清除列。
+1. 要在搓擦条上准确地将广告反映为提示，请聆听 `TimelineEvent` 事件，并在每次收到此事件时重绘搓擦栏。
 
-   為VOD資料流啟用延遲廣告解決時，當您的播放器進入「已準備」狀態時，並非所有廣告都會放在時間軸上，因此您的播放器必須明確重新繪製拖曳列。
+   为VOD流启用延迟广告解析后，当播放器进入“已准备”状态时，并非所有广告都会放在时间轴上，因此播放器必须明确重绘推式栏。
 
-   TVSDK會最佳化此事件的傳送，以將必須重繪拖曳列的次數減到最少；因此，時間軸事件的數量與要放置在時間軸上的廣告插播數量無關。 例如，如果您有5個廣告插播，您可能不會剛好收到5個事件。
+   TVSDK将优化此事件的分发，以最大限度地减少必须重绘推移栏的次数；因此，时间线事件的数量与要在时间线上放置的广告插播数量无关。 例如，如果您有5个广告时间，则可能不会正好收到5个事件。
 
    ```java
    mediaPlayer.addEventListener 
@@ -59,4 +59,4 @@ ht-degree: 0%
    } 
    ```
 
->若要確認是否啟用或停用延遲廣告解決功能，請呼叫 `AdvertisingMetadata.hasDelayAdLoading`. 傳回值 `true` 表示已啟用延遲廣告解析； `false` 表示此功能已停用。
+>要验证是启用还是禁用延迟广告解析功能，请调用 `AdvertisingMetadata.hasDelayAdLoading`. 返回值 `true` 表示已启用延迟广告解析； `false` 表示该功能已禁用。

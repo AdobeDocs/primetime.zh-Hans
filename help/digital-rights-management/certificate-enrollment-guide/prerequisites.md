@@ -1,6 +1,6 @@
 ---
-title: 必要條件
-description: 必要條件
+title: 先决条件
+description: 先决条件
 copied-description: true
 exl-id: 1550bade-5ee5-4af3-8529-31332c6d993b
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,11 +10,11 @@ ht-degree: 0%
 
 ---
 
-# 必要條件 {#prerequisites}
+# 先决条件 {#prerequisites}
 
-若要使用憑證註冊網站來要求憑證，您需要知道以下事項：
+要使用证书注册站点请求证书，您需要了解以下信息：
 
-* 公開金鑰基礎結構(PKI)如何運作
-* 如何產生金鑰組並保護您的私密金鑰
-* 如何產生憑證申請檔(CSR)
-* 如何將PKCS#7轉換為PKCS#12、PEM和DER檔案
+* 公钥基础设施(PKI)的工作原理
+* 如何生成密钥对并保护私钥
+* 如何生成证书签名请求(CSR)
+* 如何将PKCS#7转换为PKCS#12、PEM和DER文件

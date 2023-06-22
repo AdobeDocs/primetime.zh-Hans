@@ -1,6 +1,6 @@
 ---
-description: 您可以在播放視訊內容時顯示註解。
-title: 註解
+description: 您可以在播放视频内容时显示字幕。
+title: 字幕
 exl-id: 2144a6b2-0b9a-49ea-ad44-997adf36cbe6
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# 註解{#captions}
+# 字幕{#captions}
 
-您可以在播放視訊內容時顯示註解。
+您可以在播放视频内容时显示字幕。
 
-若要處理字幕，您必須新增 `AdobePSDK.PSDKEventType.CAPTIONS_UPDATED` 事件接聽程式：
+要处理字幕，您必须添加 `AdobePSDK.PSDKEventType.CAPTIONS_UPDATED` 事件侦听器：
 
 ```js
 ... 
@@ -33,7 +33,7 @@ function onCaptionsUpdateEvent (event) {
 </pre>
 ```
 
-UI架構提供預設註解行為實施，這些實施可以修改。 隱藏式字幕行為也可以透過延伸預設隱藏式字幕行為來修改。 例如：
+UI框架提供了一个默认字幕行为实施，该实施可以修改。 隐藏式字幕行为也可以通过扩展默认隐藏式字幕行为来修改。 例如：
 
 ```js
 // Using UI Framework 

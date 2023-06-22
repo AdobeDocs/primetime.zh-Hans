@@ -1,6 +1,6 @@
 ---
-title: 以身分為基礎的網域
-description: 以身分為基礎的網域
+title: 基于身份的域
+description: 基于身份的域
 copied-description: true
 exl-id: de7b6c8a-5227-4679-933a-3278921903d7
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,32 +10,32 @@ ht-degree: 0%
 
 ---
 
-# 以身分為基礎的網域 {#identity-based-domains}
+# 基于身份的域 {#identity-based-domains}
 
-在此使用案例中，每個已驗證身分的使用者都有自己的網域，並且允許特定數量的裝置加入網域。 若要將此型別的網域用於參考實作，需要建立指定網域註冊的原則。 為網域伺服器URL指定伺服器的主機和連線埠，並指定使用者名稱/密碼驗證為必要項。
+在此使用案例中，每个经过身份验证的用户都有自己的域，并且允许一定数量的设备加入该域。 若要将此类型的域用于引用实施，需要创建一个策略，指定域注册。 为域服务器URL指定服务器的主机和端口，并指定需要用户名/密码身份验证。
 
-參考實作會實作下列網域註冊的邏輯：
+参考实施为域注册实现了以下逻辑：
 
-1. 決定要指派給此使用者的網域名稱。 網域名稱將為* `namequalifier:username`*擷取自驗證Token。 如果沒有驗證Token，則傳回錯誤DOM_AUTHENTICATION_REQUIRED (503)。
-1. 在中查詢網域名稱 `DomainServerInfo` 表格。 如果找不到專案，請在表格中插入專案（預設值為需要驗證，最大網域成員資格=5）。
-1. 檢查裝置是否已向網域註冊：
+1. 确定要分配给此用户的域名。 域名将为* `namequalifier:username`*从身份验证令牌提取。 如果没有身份验证令牌，则返回错误DOM_AUTHENTICATION_REQUIRED (503)。
+1. 在中查找域名 `DomainServerInfo` 表格。 如果未找到某个条目，请在表中插入一个条目（默认值为需要身份验证，最大域成员资格=5）。
+1. 检查设备是否已向域注册：
 
-   1. 在中查詢網域名稱 `UserDomainMembership` 表格。 請針對找到的每個電腦ID，與請求中的電腦ID進行比較。 如果這是新電腦，請將專案新增至 `UserDomainMembership` 表格。 接下來，尋找符合的記錄，位於 `UserDomainRefCount` 表格。 如果此電腦GUID不存在專案，請新增記錄。
+   1. 在中查找域名 `UserDomainMembership` 表格。 对于找到的每个计算机ID，与请求中的计算机ID进行比较。 如果这是一台新计算机，请将一个条目添加到 `UserDomainMembership` 表格。 接下来，在中查找匹配的记录 `UserDomainRefCount` 表格。 如果此计算机GUID不存在条目，请添加记录。
 
-   1. 如果是新裝置，且已達到最大成員資格，則會傳回錯誤DOM_LIMIT_ACCEEDED (502)。
+   1. 如果这是新设备，并且已达到最大成员资格，则会返回错误DOM_LIMIT_ACCEEDED (502)。
 
-1. 在DomainKeys表格中查詢此網域的所有網域索引鍵。
+1. 在DomainKeys表中查找此域的所有域密钥。
 
-   1. 若 `DomainServerInfo` 表示需要捲動金鑰，產生新的金鑰組，並將其儲存在 `DomainKeys` 資料表（金鑰版本比現有金鑰的最高版本高1），並重設中的「需要金鑰變換」標幟 `DomainServerInfo`.
+   1. 如果 `DomainServerInfo` 表示需要翻转密钥，生成新的密钥对，并将其保存在 `DomainKeys` 表（键的版本比现有的最高键高1），并在表中重置“需要键变换”标志 `DomainServerInfo`.
 
-   1. 對於每個網域金鑰，產生網域認證。
+   1. 对于每个域密钥，生成域凭据。
 
-參考實作會實作下列網域解除註冊的邏輯：
+参考实现，为域注销实现了以下逻辑：
 
-1. 決定要指派給此使用者的網域名稱。 網域名稱將是 *名稱辨識符號：使用者名稱* 從驗證Token擷取。 如果沒有驗證Token，則傳回錯誤DOM_AUTHENTICATION_REQUIRED (503)。
-1. 在中查詢要求的網域名稱 `DomainServerInfo` 表格。
-1. 在中查詢網域名稱 `UserDomainMembership` 表格。 請針對找到的每個電腦ID，與請求中的電腦ID進行比較。 尋找中的對應專案 `UserDomainRefCount` 表格。 如果找不到相符的專案，則傳回錯誤DEREG_DENIED (401)。
+1. 确定要分配给此用户的域名。 域名将为 *namequalifier：username* 从身份验证令牌提取。 如果没有身份验证令牌，则返回错误DOM_AUTHENTICATION_REQUIRED (503)。
+1. 在中查找请求的域名 `DomainServerInfo` 表格。
+1. 在中查找域名 `UserDomainMembership` 表格。 对于找到的每个计算机ID，与请求中的计算机ID进行比较。 在中查找对应的条目 `UserDomainRefCount` 表格。 如果找不到匹配的条目，则返回错误DEREG_DENIED (401)。
 
-1. 如果這不是預覽請求，請從刪除專案 `UserDomainRefCount` 表格。 如果該電腦的表格中沒有其他專案，請從刪除專案 `UserDomainMembership` 並設定「需要金鑰變換」標幟 `DomainServerInfo`.
+1. 如果这不是预览请求，请从删除条目 `UserDomainRefCount` 表格。 如果该计算机表中没有其他条目，则从中删除该条目 `UserDomainMembership` 并在中设置“需要密钥变换”标记 `DomainServerInfo`.
 
-在此使用案例中，允許每位使用者註冊少量電腦，因此我們可以使用完整的電腦ID和 `matches()` 精確計算電腦數的方法。 不過，由於使用者可以在此電腦上註冊多次(透過多個AIR應用程式或不同瀏覽器中的播放器)，伺服器也需要維持參考計數，以便準確計算取消註冊次數。 除非交還電腦上的所有網域權杖，否則解除註冊無法被視為完成。
+在此使用案例中，允许每个用户注册少量计算机，因此我们可以使用完整的计算机ID和 `matches()` 精确计数机器的方法。 但是，由于用户可在此计算机上多次注册(通过多个AIR应用程序或不同浏览器中的播放器)，服务器还需要维护引用计数，以便准确计算注销次数。 除非移交计算机上的所有域令牌，否则不能将注销视为完成。

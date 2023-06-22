@@ -1,6 +1,6 @@
 ---
-title: REST API逐步指南（使用者端對伺服器）
-description: Rest API逐步指南使用者端至伺服器。
+title: REST API指南（客户端到服务器）
+description: Rest API指南客户端到服务器。
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,133 +9,133 @@ ht-degree: 0%
 
 ---
 
-# REST API逐步指南（使用者端對伺服器） {#rest-api-cookbook-client-to-server}
+# REST API指南（客户端到服务器） {#rest-api-cookbook-client-to-server}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
 
-## 概觀 {#overview}
+## 概述 {#overview}
 
-本檔案提供逐步指示，讓程式設計師的工程團隊整合「智慧型裝置」（遊戲機、智慧型電視應用程式、機上盒等） 使用REST API服務進行Adobe Primetime驗證。 此使用者端對伺服器方法使用REST API （而非使用者端SDK），可讓不同平台獲得更廣泛的支援，針對這些平台，開發大量獨特SDK並不可行。 如需無使用者端解決方案運作方式的廣泛技術概覽，請參閱 [無使用者端技術概覽](/help/authentication/rest-api-overview.md).
+本文档为程序员的工程团队提供了集成“智能设备”（游戏机、智能电视应用程序、机顶盒等）的分步说明 使用REST API服务进行Adobe Primetime身份验证。 这种客户端到服务器方法使用REST API而不是客户端SDK，允许更广泛地支持不同的平台，对于这些平台，开发大量独特SDK是不可行的。 有关无客户端解决方案的工作原理的广泛技术概述，请参阅 [无客户端技术概述](/help/authentication/rest-api-overview.md).
 
 
-此方法需要兩個元件（串流應用程式和AuthN應用程式）才能完成所需的流程：串流應用程式中的啟動、註冊、授權和檢視媒體流程，以及AuthN應用程式中的驗證流程。
+此方法需要两个组件（流应用程序和AuthN应用程序）来完成所需的流程：流应用程序中的启动、注册、授权和查看媒体流程，以及AuthN应用程序中的身份验证流程。
 
-## 元件 {#components}
+## 组件 {#components}
 
-在使用中的使用者端對伺服器解決方案中，涉及下列元件：
+在使用中的客户端到服务器解决方案中，涉及以下组件：
 
  
 
-| 型別 | 元件 | 說明 |
+| 类型 | 组件 | 描述 |
 | --- | --- | --- |
-| 串流裝置 | 串流應用程式 | 位在使用者串流裝置上並播放已驗證視訊的程式設計師應用程式。 |
-|  | \[可選\] AuthN模組 | 如果串流裝置有使用者代理程式（即網頁瀏覽器），則AuthN模組會負責在MVPD IdP上驗證使用者。 |
-| \[Optional\] AuthN裝置 | 驗證應用程式 | 如果串流裝置沒有使用者代理程式（亦即Web瀏覽器），則AuthN應用程式為程式設計師網頁應用程式，可使用網頁瀏覽器從個別使用者的裝置進行存取。  |
-| Adobe基礎結構 | Adobe Pass服務 | 與MVPD IdP和AuthZ服務整合，並提供驗證和授權決定的服務。 |
-| MVPD基礎結構 | MVPD IdP | MVPD端點，提供認證型驗證服務來驗證其使用者的身分。 |
-|  | MVPD AuthZ服務 | MVPD端點，根據使用者的訂閱、家長監護等提供授權決定。 |
+| 流设备 | 流应用程序 | 驻留在用户流设备上并播放经过身份验证的视频的程序员应用程序。 |
+|  | \[可选\]身份验证模块 | 如果流设备具有用户代理（即Web浏览器），则AuthN模块负责根据MVPD IdP对用户进行身份验证。 |
+| \[可选\]身份验证设备 | AuthN应用程序 | 如果流设备没有用户代理（即Web浏览器），则AuthN应用程序是使用Web浏览器从单独的用户设备访问的程序员Web应用程序。  |
+| Adobe基础架构 | Adobe Pass服务 | 与MVPD IdP和AuthZ服务集成并提供身份验证和授权决策的服务。 |
+| MVPD基础架构 | MVPD IdP | MVPD端点，提供基于凭据的身份验证服务以验证其用户的身份。 |
+|  | MVPD AuthZ服务 | MVPD端点，根据用户的订阅、家长控制等提供授权决策。 |
 
  
 
-此流程中使用的其他辭彙定義於 [字彙表](/help/authentication/glossary.md).
+流中使用的其他术语定义于 [术语表](/help/authentication/glossary.md).
 
-## 流程{#flows}
+## 流{#flows}
 
-### 動態使用者端註冊(DCR)
+### 动态客户端注册(DCR)
 
-Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe Pass服務之間的使用者端通訊。 DCR流程是獨立、相依和先決條件流程，可在以下網址找到： [動態使用者端註冊](/help/authentication/dynamic-client-registration.md)
+Adobe Pass使用DCR来保护程序员应用程序或服务器与Adobe Pass服务之间的客户端通信。 DCR流程是独立的、依赖的以及必备的流程，可以在 [动态客户端注册](/help/authentication/dynamic-client-registration.md)
 
 
-### 串流（智慧裝置）應用程式流程
+### 流（智能设备）应用程序流
 
 ![](assets/smart-device-app-flow.png)
 
-#### 啟動流程
+#### 启动流程
 
-1. 您的應用程式會啟動並載入其初始UI。
+1. 您的应用程序启动并加载其初始UI。
 
-2. 取得/產生裝置識別碼。
+2. 获取/生成设备ID。
 
-3. 發出Check-authentication呼叫以檢視裝置是否已驗證。  例如： [`<SP_FQDN>/api/v1/checkauthn [device ID]`](/help/authentication/check-authentication-token.md)
+3. 发出Check-authentication调用，以查看设备是否已验证。  例如： [`<SP_FQDN>/api/v1/checkauthn [device ID]`](/help/authentication/check-authentication-token.md)
 
-4. 如果 `checkauthn` 呼叫成功，從步驟2開始前往授權流程。  如果失敗，請啟動「註冊流程」。
-
- 
-
-#### 註冊流程
-
-1. 取得註冊碼和URL，讓您的使用者使用來存取您的第二熒幕登入應用程式，並將這些呈現給使用者：
-
-   a.傳送POST要求至Adobe註冊代碼服務，傳遞雜湊裝置ID和「註冊URL」。  例如： [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/registration-code-request.md)
-
-   b.向使用者呈現傳回的註冊代碼和URL。
-
-   c.指示使用者切換至支援網頁的裝置、導覽至URL，然後輸入註冊代碼。
+4. 如果 `checkauthn` 调用成功，从步骤2开始进入授权流程。  如果失败，则启动注册流。
 
  
 
-#### 授權流程
+#### 注册流程
 
-1. 使用者從第二熒幕應用程式返回，並按裝置上的「繼續」按鈕。 或者，您可以實作輪詢機制來檢查驗證狀態，但Adobe Primetime驗證建議使用繼續按鈕方法來取代輪詢。 <!--(For information on employing a "Continue" button versus polling the Adobe Primetime authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> 例如： [\&lt;sp _fqdn=&quot;&quot;>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md)
+1. 获取用户的注册码和URL以使用访问您的第二屏幕登录应用程序，并向用户展示这些内容：
 
-2. 傳送GET要求至Adobe Primetime驗證授權服務以啟動授權。 例如： `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
+   a.向Adobe注册代码服务发送POST请求，传递经过哈希处理的设备ID和“注册URL”。  例如： [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/registration-code-request.md)
+
+   b.向用户呈现返回的注册码和URL。
+
+   c.指示用户切换到支持Web的设备，导航到URL，然后输入注册码。
+
+ 
+
+#### 授权流程
+
+1. 用户从第二屏幕应用程序返回并按设备上的“继续”按钮。 或者，您可以实施轮询机制来检查身份验证状态，但Adobe Primetime身份验证建议使用继续按钮方法而不是轮询。 <!--(For information on employing a "Continue" button versus polling the Adobe Primetime authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> 例如： [\&lt;sp _fqdn=&quot;&quot;>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md)
+
+2. 向Adobe Primetime身份验证授权服务发送GET请求以启动授权。 例如： `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
 
 <!-- end list -->
 
-* 如果回應指出成功：使用者具有有效的AuthN權杖，且使用者有權觀看要求的媒體（此使用者具有有效的AuthZ權杖）。
+* 如果响应指示成功：用户具有有效的AuthN令牌，并且用户有权观看请求的媒体（此用户具有有效的AuthZ令牌）。
 
-* 如果回應指出失敗：請檢查擲回的例外狀況，以判斷其型別（AuthN、AuthZ或其他內容）：
+* 如果响应指示失败：检查引发的异常以确定其类型（AuthN、AuthZ或其他内容）：
 
-   * 如果是AuthN錯誤，請重新啟動註冊流程。
+   * 如果是AuthN错误，则重新启动注册流。
 
-   * 如果是AuthZ錯誤，則使用者無權觀看請求的媒體，並且應向使用者顯示某種錯誤訊息。
+   * 如果是AuthZ错误，则用户无权观看请求的媒体，应向用户显示某种错误消息。
 
-   * 如果發生其他錯誤（連線錯誤、網路錯誤等） 然後向使用者顯示適當的錯誤訊息。
+   * 是否存在其他错误（连接错误、网络错误等） 然后向用户显示相应的错误消息。
 
  
 
-#### 檢視媒體流程
+#### 查看媒体流
 
-1. 呈現媒體選擇。 使用者選擇要檢視的媒體。
+1. 显示介质选项。 用户选择要查看的媒体。
 
-2. 媒體是否受到保護？
+2. 媒体是否受保护？
 
-   a.您的應用程式會檢查媒體是否受到保護。
+   a.您的应用程序检查媒体是否受到保护。
 
-   b.如果媒體受到保護，您的應用程式會啟動上方的「授權(AuthZ)」流程。
+   b.如果媒体受到保护，您的应用程序将启动上面的授权(AuthZ)流程。
 
-   c.如果媒體未受到保護，則播放該使用者的媒體。
+   c.如果媒体未受保护，则为用户播放媒体。
 
-3. 播放媒體。
+3. 播放媒体。
 
 
-### AuthN （第2個畫面）應用程式流程
+### AuthN（第2个屏幕）应用程序流量
 
 ![](assets/secnd-screen-authn-flow.png)
 
-1. 取得此使用者的MVPD清單。 例如： [`<SP_FQDN>/api/v1/config/[requestorID]`](/help/authentication/provide-mvpd-list.md)
+1. 获取此用户的MVPD列表。 例如： [`<SP_FQDN>/api/v1/config/[requestorID]`](/help/authentication/provide-mvpd-list.md)
 
-1. 啟動驗證流程。  例如： [`<SP_FQDN>/api/v1/authenticate [requestorID, MVPD ID, Redirect URL, Domain name, Registration Code, "noflash=true"]`](/help/authentication/initiate-authentication.md)
+1. 启动身份验证流程。  例如： [`<SP_FQDN>/api/v1/authenticate [requestorID, MVPD ID, Redirect URL, Domain name, Registration Code, "noflash=true"]`](/help/authentication/initiate-authentication.md)
 
-1. 檢查驗證是否成功。 例如：[`<SP_FQDN>/api/v1/checkauthn/[registration code][requestor ID]`](/help/authentication/check-authentication-token.md)
+1. 检查身份验证是否成功。 例如：[`<SP_FQDN>/api/v1/checkauthn/[registration code][requestor ID]`](/help/authentication/check-authentication-token.md)
 
-1. 將使用者送回您的智慧裝置應用程式，以完成授權流程。
+1. 将用户发送回智能设备应用程序以完成授权流程。
 
 ## 平台SSO {#platform-sso}
 
-某些平台提供單一登入(SSO)的專屬支援。 您可以找到各個平台的實作詳細資料：
+某些平台提供单点登录(SSO)的专用支持。 可以找到每个相应平台的实施详细信息：
 
 * [APPLE SSO](/help/authentication/apple-sso-cookbook-rest-api.md)
 * AMAZON SSO
 
 ## REST API的TempPass和Promotional TempPass {#temppass}
 
-對於使用者不需要輸入認證的TempPass和Promotional TempPass實作，可以直接在串流應用程式中實作驗證。
+对于用户不需要输入凭据的TempPass和Promotional TempPass实施，可以直接在流应用程序中实施身份验证。
 
-**為了使用此API，串流應用程式需要確定裝置ID的唯一性，因為這是用於識別代號，以及選用的額外資料。**
+**要使用此API，流应用程序需要确保设备ID的唯一性，因为设备ID与可选的额外数据一起用于标识令牌。**
 
 
 ![](assets/temp-pass-promo-temppass.png)

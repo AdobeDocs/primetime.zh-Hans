@@ -1,6 +1,6 @@
 ---
-description: 透過直接例項化MediaResource並載入要播放的視訊內容來載入資源。
-title: 在MediaPlayer中載入媒體資源
+description: 通过直接实例化MediaResource并加载要播放的视频内容来加载资源。
+title: 在MediaPlayer中加载媒体资源
 exl-id: b775c33e-399c-4a03-a132-407944f07706
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,34 +9,34 @@ ht-degree: 0%
 
 ---
 
-# 在MediaPlayer中載入媒體資源 {#load-a-media-resource-in-the-mediaplayer}
+# 在MediaPlayer中加载媒体资源 {#load-a-media-resource-in-the-mediaplayer}
 
-透過直接例項化MediaResource並載入要播放的視訊內容來載入資源。
+通过直接实例化MediaResource并加载要播放的视频内容来加载资源。
 
-1. 設定您的 `MediaPlayer` 物件的可播放專案，以及要播放的新資源。
+1. 设置您的 `MediaPlayer` 包含要播放的新资源的对象可播放项目。
 
-   取代您現有的 `MediaPlayer` 物件目前可播放的專案，方法是呼叫 `replaceCurrentResource` 並傳遞現有 `MediaResource` 執行個體。
+   替换现有 `MediaPlayer` 通过调用对象的当前可播放项目 `replaceCurrentResource` 并传递现有 `MediaResource` 实例。
 
-1. 等待瀏覽器TVSDK派遣 `AdobePSDK.MediaPlayerStatusChangeEvent` 替換為 `event.status` 這等於下列任一專案：
+1. 等待浏览器TVSDK调度 `AdobePSDK.MediaPlayerStatusChangeEvent` 替换为 `event.status` 等于以下任意值：
 
    * `MediaPlayerStatus.INITIALIZED`
    * `MediaPlayerStatus.PREPARED`
    * `MediaPlayerStatus.ERROR`
 
-      透過這些事件，MediaPlayer物件會通知您的應用程式媒體資源是否已成功載入。
+      通过这些事件，MediaPlayer对象会通知您的应用程序媒体资源是否已成功加载。
 
-1. 當媒體播放器的狀態變更為 `MediaPlayerStatus.INITIALIZED`，您可以呼叫 `MediaPlayer.prepareToPlay`.
+1. 当媒体播放器的状态更改为 `MediaPlayerStatus.INITIALIZED`，您可以调用 `MediaPlayer.prepareToPlay`.
 
-   INITIALIZED狀態表示媒體已成功載入。 通話 `prepareToPlay` 開始廣告解析度和刊登版位程式（如果有的話）。
-1. 瀏覽器TVSDK傳送時 `MediaPlayerStatus.PREPARED` 媒體串流已成功載入的事件（已建立MediaPlayerItem）並準備播放。
+   INITIALIZED状态表示媒体已成功加载。 呼叫 `prepareToPlay` 启动广告解析和投放流程（如果有）。
+1. 当浏览器TVSDK调度 `MediaPlayerStatus.PREPARED` 媒体流已成功加载的事件（已创建MediaPlayerItem）并准备好进行播放。
 
-如果失敗， `MediaPlayer` 切換至 `MediaPlayerStatus.ERROR`.
+如果发生故障， `MediaPlayer` 切换到 `MediaPlayerStatus.ERROR`.
 
-此外，也會透過傳送電子郵件通知應用程式 `MediaPlayerStatus.ERROR` 事件。
+它还会通过调度 `MediaPlayerStatus.ERROR` 事件。
 
 ><!--<a id="example_3774607C6F08473282CF0CB7F3D82373"></a>-->
 
-下列簡化的範常式式碼說明載入媒體資源的程式：
+以下简化的示例代码说明了加载媒体资源的过程：
 
 ```js
 player.addEventListener(AdobePSDK.PSDKEventType.STATUS_CHANGED,  

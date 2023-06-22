@@ -1,6 +1,6 @@
 ---
-description: 您可以根據參考實作架構輕鬆建置自訂使用者介面。
-title: 建立自訂使用者介面
+description: 您可以基于参考实施框架轻松构建自定义用户界面。
+title: 构建自定义用户界面
 exl-id: 96008010-cd63-4fb1-a3fc-2fc94b624413
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,23 +9,23 @@ ht-degree: 0%
 
 ---
 
-# 建立自訂使用者介面 {#build-a-custom-user-interface}
+# 构建自定义用户界面 {#build-a-custom-user-interface}
 
-您可以根據參考實作架構來建置自訂使用者介面。
+您可以基于参考实施框架构建自定义用户界面。
 
-已整合下列功能的UI元件：
+已集成以下功能的UI组件：
 
-* 可點按的廣告
-* 廣告覆蓋圖
-* 延遲繫結音訊
-* 隱藏式字幕
-* 上述所有元件的監聽器
+* 可点击广告
+* 广告叠加图
+* 后期绑定音频
+* 隐藏字幕
+* 以上所有组件的监听器
 
-1. 編輯 [!DNL PlayerFragment.java] 檔案來初始化您要在播放器中使用的UI元件。
+1. 编辑 [!DNL PlayerFragment.java] 文件，用于初始化要在播放器中使用的UI组件。
 
-1. 編輯 [!DNL res/player/player_fragment.xml] 檔案來自訂使用者介面。
-1. 建立專案。
+1. 编辑 [!DNL res/player/player_fragment.xml] 文件，以自定义用户界面。
+1. 生成项目。
 
 >[!NOTE]
 >
->若要對搜尋列進行UI變更，您可以編輯MarkableSeekBar類別。 此 [MarkableSeekBar](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/ui/player/MarkableSeekBar.html) class會處理滑桿、滑桿縮圖、廣告標籤保留區、提示標籤、緩衝範圍和搜尋範圍背景。
+>要对搜寻栏进行UI更改，可以编辑MarkableSeekBar类。 此 [MarkableSeekBar](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/ui/player/MarkableSeekBar.html) 类处理滑块、滑块缩略图、广告标记载体、提示标记、缓冲范围和搜寻范围背景。

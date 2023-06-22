@@ -1,6 +1,6 @@
 ---
-description: 為了提供更流暢的檢視體驗，TVSDK有時會緩衝視訊資料流。 您可以設定播放器緩衝的方式。
-title: 設定緩衝時間
+description: 为了提供更流畅的观看体验，TVSDK有时会缓冲视频流。 您可以配置播放器的缓冲方式。
+title: 设置缓冲时间
 exl-id: 4542d10a-b6f8-430d-8b9a-5a358d1c0e9d
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,34 +9,34 @@ ht-degree: 0%
 
 ---
 
-# 緩衝 {#buffering}
+# 缓冲 {#buffering}
 
-為了提供更流暢的檢視體驗，TVSDK有時會緩衝視訊資料流。 您可以設定播放器緩衝的方式。
+为了提供更流畅的观看体验，TVSDK有时会缓冲视频流。 您可以配置播放器的缓冲方式。
 
-TVSDK定義播放緩衝長度至少為30秒，且此長度內的初始緩衝時間在媒體開始播放前至少為2秒。 應用程式呼叫之後 `play` 但在播放開始之前，TVSDK會緩衝媒體至初始時間，以便在媒體實際開始播放時提供順暢的開始。
+TVSDK定义的播放缓冲长度至少为30秒，并且在其内的初始缓冲时间在媒体开始播放之前至少为2秒。 在应用程序调用之后 `play` 但在播放开始之前，TVSDK会缓冲媒体直到初始时间，以便在媒体实际开始播放时提供平滑的开始时间。
 
-您可以定義新的緩衝原則來變更緩衝時間，也可以使用立即啟動來變更初始緩衝發生的時間。
+您可以通过定义新的缓冲策略来更改缓冲时间，还可以使用即时启动在初始缓冲发生时进行更改。
 
-## 設定緩衝時間 {#set-buffering-times}
+## 设置缓冲时间 {#set-buffering-times}
 
-此 `MediaPlayer` 提供設定和取得初始緩衝時間和播放緩衝時間的方法。
+此 `MediaPlayer` 提供了设置和获取初始缓冲时间和播放缓冲时间的方法。
 
 >[!TIP]
 >
->如果您在開始播放之前未設定緩衝控制引數，媒體播放器預設為初始緩衝時間為2秒，持續播放緩衝時間則為30秒。
+>如果在开始播放之前未设置缓冲控制参数，则媒体播放器默认为2秒作为初始缓冲时间，30秒作为持续播放缓冲时间。
 
-1. 設定 `BufferControlParameters` 物件，封裝初始緩衝時間和播放緩衝時間控制引數：
+1. 设置 `BufferControlParameters` 对象，封装了初始缓冲时间和播放缓冲时间控制参数：
 
-       此類別提供兩種原廠方法：
+       此类提供两种工厂方法：
    
-   * 若要將初始緩衝時間設定為等於播放緩衝時間：
+   * 要将初始缓冲时间设置为等于播放缓冲时间，请执行以下操作：
 
       ```java
       public static BufferControlParameters createSimple( 
           long bufferTime)
       ```
 
-   * 若要同時設定初始和播放緩衝時間：
+   * 要设置初始缓冲时间和播放缓冲时间，请执行以下操作：
 
       ```java
       public static BufferControlParameters createDual( 
@@ -44,31 +44,31 @@ TVSDK定義播放緩衝長度至少為30秒，且此長度內的初始緩衝時�
           long bufferTime)
       ```
 
-      這些方法會擲回 `IllegalArgumentException` 如果引數無效，例如：
+      这些方法会引发 `IllegalArgumentException` 如果参数无效，例如：
 
-   * 初始緩衝時間小於零。
-   * 初始緩衝時間大於緩衝時間。
+   * 初始缓冲时间小于零。
+   * 初始缓冲时间大于缓冲时间。
 
-1. 若要設定緩衝區引數值，請使用這個 `MediaPlayer` 方法：
+1. 要设置缓冲区参数值，请使用此 `MediaPlayer` 方法：
 
    ```java
    void setBufferControlParameters(BufferControlParameters params)
    ```
 
-1. 若要取得目前的緩衝區引數值，請使用這個 `MediaPlayer` 方法：
+1. 要获取当前缓冲区参数值，请使用此 `MediaPlayer` 方法：
 
    ```java
       BufferControlParameters getBufferControlParameters()  
    ```
 
-   如果AVE無法設定指定的值，媒體播放器會輸入 `ERROR` 含有錯誤碼的狀態 `SET_BUFFER_PARAMETERS_ERROR`.
+   如果AVE无法设置指定的值，媒体播放器将输入 `ERROR` 带有错误代码的状态 `SET_BUFFER_PARAMETERS_ERROR`.
 
 <!--<a id="example_B5C5004188574D8D8AB8525742767280"></a>-->
 
-例如，若要將初始緩衝設定為2秒，並將播放緩衝時間設定為30秒，請執行下列動作：
+例如，要将初始缓冲设置为2秒，将播放缓冲时间设置为30秒，请执行以下操作：
 
 ```java
 mediaPlayer.setBufferControlParameters(BufferControlParameters.createDual(2000, 30000));
 ```
 
-Primetime參考實作會示範此功能；使用應用程式的設定來設定緩衝值。
+Primetime参考实施演示了此功能；使用应用程序的设置设置缓冲区值。

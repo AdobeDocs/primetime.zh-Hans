@@ -5,9 +5,9 @@ contentOwner: asgupta
 products: SG_PRIMETIME
 topic-tags: release-notes
 exl-id: 5e227c99-acf6-4b16-a35a-68e2928fdbfd
-source-git-commit: 1bc2f6c230c262babf2958c32fee31afcad04c2f
+source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
-source-wordcount: '5194'
+source-wordcount: '5195'
 ht-degree: 0%
 
 ---
@@ -102,7 +102,7 @@ ht-degree: 0%
 
 * Zendesk #33777 - DHLS分发内部版本的Localhost令牌SWF已过期。
 
-  正在更新DHLS上PMP演示的localhost令牌。
+   正在更新DHLS上PMP演示的localhost令牌。
 
 ### 以前版本中已解决的问题 {#resolved-issues-previous}
 
@@ -110,11 +110,11 @@ ht-degree: 0%
 
 * Zendesk #30731 - TVSDK不会在AdBreak中播放多个VPAID广告。
 
-  修复了AdBreak中的多个VPAID广告播放。
+   修复了AdBreak中的多个VPAID广告播放。
 
 * Zendesk #29968 — 双告示牌。
 
-  当发生ABR切换时，视频播放器可以重复时段的最后一个区段。 因此，有时会重复最后一个预滚区段。 此问题已得到修复。
+   当发生ABR切换时，视频播放器可以重复时段的最后一个区段。 因此，有时会重复最后一个预滚区段。 此问题已得到修复。
 
 **版本1.4.35** (879)
 
@@ -124,31 +124,31 @@ ht-degree: 0%
 
 * Zendesk #21701 — 发送1401 CRS请求的原始创意URL，而不是规范化URL。
 
-  已根据CRS后端要求，修复了请求将已重新打包的URL进行转码的问题。
+   已根据CRS后端要求，修复了请求将已重新打包的URL进行转码的问题。
 * Zendesk #26197 — 未以所需的显示分辨率重播变形压缩。
 
-  **注释**：此问题需要Flash播放器24.0.0.194或更高版本。
+   **注释**：此问题需要Flash播放器24.0.0.194或更高版本。
 
-  修复了使用宽高比表中缺少的条目计算输出宽度的问题。
+   修复了使用宽高比表中缺少的条目计算输出宽度的问题。
 
 * Zendesk #26840 — 第二次尝试后，IE11 + Windows7上的HDCP检测失败。
 
-  **注释**：此问题需要Flash播放器24.0.0.218或更高版本。
+   **注释**：此问题需要Flash播放器24.0.0.218或更高版本。
 
-  通过修改AdobeCP的主消息队列处理以循环处理整个队列，而不是简单地阻止第一条消息，此问题得以解决。
+   通过修改AdobeCP的主消息队列处理以循环处理整个队列，而不是简单地阻止第一条消息，此问题得以解决。
 
 * Zendesk #27460 — 新的Akamai帐户无法处理POSTCDN请求。
 
-  新的CDN帐户无法处理POSTCDN请求。 通过更新代码以使cdn.auditude.com广告请求成为GET而不是POST，此问题得以解决。
+   新的CDN帐户无法处理POSTCDN请求。 通过更新代码以使cdn.auditude.com广告请求成为GET而不是POST，此问题得以解决。
 * Zendesk #27619 - Windows 10上的Flash崩溃
 
-  **注释**：此问题需要Flash播放器24.0.0.218或更高版本。
+   **注释**：此问题需要Flash播放器24.0.0.218或更高版本。
 
-  通过防止长URL导致错误，此问题得以解决。
+   通过防止长URL导致错误，此问题得以解决。
 
 * Zendesk #28218 — 在从恢复点回放时不会触发跟踪事件
 
-  此问题与Zendesk #26592中的问题相同。 修复了当媒体播放器处于VOD流的准备状态时允许进行搜寻操作的问题。
+   此问题与Zendesk #26592中的问题相同。 修复了当媒体播放器处于VOD流的准备状态时允许进行搜寻操作的问题。
 
 **版本1.4.32** (867)
 
@@ -380,9 +380,9 @@ Windows本机网络代码已修复，以确保连接不会关闭其他连接当�
 
 **注释**：此问题需要Flash播放器21.0.0.182或更高版本。
 
-在为广告请求创建广告单元时，Auditude请求会解析自定义参数的AuditudeSettings 。
+在为广告请求创建广告单元时，审核请求会解析自定义参数的AuditudeSettings 。
 
-此行为已更改为将来自Opportunity对象的自定义参数包含在请求中。 此外，不能将具有不同自定义参数的多个机会打包到一个Auditude请求中。
+此行为已更改为将来自Opportunity对象的自定义参数包含在请求中。 此外，无法将具有不同自定义参数的多个机会打包到一个Auditude请求中。
 
 * Zendesk #21227 - m3u8无法持续播放
 
@@ -695,7 +695,7 @@ HLS格式的MIME类型区分大小写，这不正确，已更改以便它们不�
 
 **版本1.4.6**
 
-* Zendesk #2652 — 桌面HLS的Auditude文档，阐明桌面HLS的Auditudemedia_id文档
+* Zendesk #2652 — 适用于桌面HLS的Auditude文档，阐明适用于桌面HLS的Auditude media_id文档
 
 **版本1.4.5**
 
@@ -754,7 +754,7 @@ _playbackManager.pause();
 
    * PTPLAY-1634 — 同一订阅标记在不同的实时窗口中具有不同的时间戳。 当Live Windows移动时，其中的同一标记应具有相同的时间戳。 但是，有时候，相同的标记具有不同的时间戳。
    * PTPLAY-28 - MediaPlayer时间轴不包含空分隔符。
-   * 需要跨域策略文件(crossdomain.xml)才能从其他域流式传输内容。 [为HTTP流设置crossdomain.xml文件](https://helpx.adobe.com/adobe-media-server/dev/configure-dynamic-streaming-live-streaming.html).
+   * 需要跨域策略文件(crossdomain.xml)才能从其他域流式传输内容。 [为HTTP流设置crossdomain.xml文件](https://www.adobe.com/devnet/adobe-media-server/articles/cross-domain-xml-for-streaming.html).
    * 错误#3694203 — 在DVR流中，从播放中置广告内部搜索另一个中置广告提示可能会导致浏览器冻结
    * 错误#3753725 — 如果观看了广告时间，则selectPolicyForSeekIntoAd不予以考虑
    * 错误#3754529 — 在实时DVR流中重新搜寻时，不会从流中删除前置广告

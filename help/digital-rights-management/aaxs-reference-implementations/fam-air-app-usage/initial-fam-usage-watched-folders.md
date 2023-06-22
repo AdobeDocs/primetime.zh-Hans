@@ -1,6 +1,6 @@
 ---
-title: Watched資料夾
-description: Watched資料夾
+title: Watched文件夹
+description: Watched文件夹
 copied-description: true
 exl-id: 94ee89e3-f59f-438b-ae6d-809e4a81dad9
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,14 +10,14 @@ ht-degree: 0%
 
 ---
 
-# Watched資料夾 {#watched-folders}
+# Watched文件夹 {#watched-folders}
 
-您可以使用Watched資料夾自動封裝某些資料夾中建立的內容。 每個Watched資料夾都可以設定不同的封裝選項。 若要在建立監看資料夾之前測試封裝選項，請使用[封裝媒體]索引標籤。
+您可以使用Watched Folders自动打包在特定文件夹中创建的内容。 每个Watched Folder都可以使用不同的打包选项进行配置。 要在创建Watched文件夹之前测试打包选项，请使用“Package Media”选项卡。
 
-若要建立Watched資料夾，請按一下 **[!UICONTROL Add New Watched Folder]** 並填寫封裝選項。 請參閱 [正在封裝媒體檔案](../../aaxs-protecting-content/content-packaging-media-files/content-packaging-media-files-overview.md) 區段，以瞭解每個選項的說明。 完成後，按一下 **[!UICONTROL Save Watched Folder Properties]**.
+要创建Watched文件夹，请单击 **[!UICONTROL Add New Watched Folder]** 并填写打包选项。 请参阅 [正在打包媒体文件](../../aaxs-protecting-content/content-packaging-media-files/content-packaging-media-files-overview.md) 部分，以了解每个选项的描述。 完成后，单击 **[!UICONTROL Save Watched Folder Properties]**.
 
-儲存Watched資料夾時，封裝選項會儲存至 *[輸入資料夾]* [!DNL \properties\watchfolder.properties]. 任何新增至輸入資料夾的內容，只要符合「輸入媒體檔案選擇」標準，就會自動封裝並放置在「輸出資料夾」中。 請參閱區段中的全域Watched資料夾偏好設定 [封裝程式喜好設定](../../aaxs-reference-implementations/fam-air-app-usage/initial-fam-setup-set-prefs/initial-fam-setup-pkg-prefs.md) 以設定其他Watched資料夾選項。
+保存Watched文件夹后，打包选项将保存到 *[输入文件夹]* [!DNL \properties\watchfolder.properties]. 任何添加到“输入文件夹”且符合“输入媒体文件选择”标准的内容将自动打包，并置于“输出文件夹”中。 请参阅部分中的全局Watched文件夹首选项 [Packager首选项](../../aaxs-reference-implementations/fam-air-app-usage/initial-fam-setup-set-prefs/initial-fam-setup-pkg-prefs.md) 配置其他Watched文件夹选项。
 
-若要修改Watched資料夾設定，請從熒幕頂端的清單中選取Watched資料夾輸入路徑。 修改設定並按一下 **[!UICONTROL Save Watched Folder Properties]**.
+要修改Watched Folder设置，请从屏幕顶部的列表中选择观察文件夹输入路径。 修改设置并单击 **[!UICONTROL Save Watched Folder Properties]**.
 
-若要刪除Watched資料夾，請從熒幕頂端的清單中選取Watched資料夾輸入路徑，然後按一下 **[!UICONTROL Delete Watched Folder Properties]**.
+要删除观察文件夹，请从屏幕顶部的列表中选择观察文件夹输入路径，然后单击 **[!UICONTROL Delete Watched Folder Properties]**.

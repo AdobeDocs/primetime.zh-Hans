@@ -1,6 +1,6 @@
 ---
-title: Adobe®Flash®播放器SWF的允許清單
-description: Adobe®Flash®播放器SWF的允許清單
+title: Adobe®Flash®播放器SWF的允许列表
+description: Adobe®Flash®播放器SWF的允许列表
 copied-description: true
 exl-id: 1bae06b6-dbac-4839-b1d3-b7f6379b521a
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,10 +10,10 @@ ht-degree: 0%
 
 ---
 
-# Adobe®Flash®播放器SWF的允許清單{#allowlist-for-adobe-flash-player-swfs}
+# Adobe®Flash®播放器SWF的允许列表{#allowlist-for-adobe-flash-player-swfs}
 
-此允許清單會指定允許播放內容的SWF檔案。
+此允许列表指定允许播放内容的SWF文件。
 
-指定具有SWFURL的SWF檔案，或使用SWF內容計算的SHA-256文摘。 如果您使用SHA-256摘要，此使用規則也會指定允許使用者端下載及驗證SWF的最長時間。
+指定包含SWFURL的SWF文件或使用SWF内容计算的SHA-256摘要。 如果使用SHA-256摘要，则此使用规则还指定允许客户端下载和验证SWF的最长时间。
 
-使用案例範例：在概念上等同於Flash Media Server案例中的SWF驗證，但在使用者端上強制執行，以限制哪些視訊播放器可以播放內容。 請注意，Primetime DRM在子項SWF與父項SWF的執行方式上有所不同。
+示例用例：在概念上等同于Flash Media Server中的SWF验证，但在客户端强制实施，以限制哪些视频播放器可以播放内容。 请注意，Primetime DRM在子SWF的强制实施方面的行为与父SWF不同。

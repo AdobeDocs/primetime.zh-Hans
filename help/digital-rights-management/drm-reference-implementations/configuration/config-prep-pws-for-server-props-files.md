@@ -1,6 +1,6 @@
 ---
-title: 為伺服器屬性檔案準備密碼
-description: 為伺服器屬性檔案準備密碼
+title: 为服务器属性文件准备密码
+description: 为服务器属性文件准备密码
 copied-description: true
 exl-id: b613d43d-17ec-44e9-bd14-81f9bb9a7f62
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,16 +10,16 @@ ht-degree: 0%
 
 ---
 
-# 為伺服器屬性檔案準備密碼{#prepare-passwords-for-the-server-properties-files}
+# 为服务器属性文件准备密码{#prepare-passwords-for-the-server-properties-files}
 
-參考實作提供 `ScrambleUtil.class`，確保認證密碼安全的類別。
+参考实施提供了 `ScrambleUtil.class`，确保凭据密码安全的类。
 
-在密碼加入之前，請使用此工具先加密密碼 [!DNL flashaccess-refimpl.properties] 檔案。
+使用此工具先加密密码，然后再将其包含到中 [!DNL flashaccess-refimpl.properties] 文件。
 
-若要執行工具，您可以使用Ant指令碼或Java。
+要运行该工具，可以使用Ant脚本或Java。
 
-公用程式會產生加密的密碼，您必須將密碼複製到 [!DNL flashaccess-refimpl.properties] 檔案。
+该实用程序会生成加密的密码，您必须将其复制到 [!DNL flashaccess-refimpl.properties] 文件。
 
 >[!NOTE]
 >
->密碼已使用 `ScrambleUtil.class` 參考實作中提供的資料無法搭配Primetime DRM伺服器使用，因此無法進行受保護的串流。
+>已使用进行编码的密码 `ScrambleUtil.class` 参考实施中提供的服务器不能用于Primetime DRM受保护流处理。

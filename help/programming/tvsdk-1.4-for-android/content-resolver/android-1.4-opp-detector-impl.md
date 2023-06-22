@@ -1,6 +1,6 @@
 ---
-description: 您可以實作介面PlacementOpportunityDetector來實作自己的機會偵測器。
-title: 實作自訂機會偵測器
+description: 通过实施PlacementOpportunityDetector接口，您可以实施自己的机会检测器。
+title: 实施自定义机会检测器
 exl-id: d78949a0-2c76-4976-9358-05f3db86781e
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# 實作自訂機會偵測器 {#implement-a-custom-opportunity-detector}
+# 实施自定义机会检测器 {#implement-a-custom-opportunity-detector}
 
-您可以實作介面PlacementOpportunityDetector來實作自己的機會偵測器。
+通过实施PlacementOpportunityDetector接口，您可以实施自己的机会检测器。
 
-1. 建立自訂 `AdvertisingFactory` 執行個體和覆寫 `createOpportunityDetector`. 例如：
+1. 创建自定义 `AdvertisingFactory` 实例和覆盖 `createOpportunityDetector`. 例如：
 
    ```java
    new AdvertisingFactory() { 
@@ -26,7 +26,7 @@ ht-degree: 0%
    }
    ```
 
-1. 將廣告使用者端工廠註冊至 `MediaPlayer`. 例如：
+1. 将广告客户端工厂注册到 `MediaPlayer`. 例如：
 
    ```java
    // register the custom advertising factory with media player 
@@ -34,16 +34,16 @@ ht-degree: 0%
    mediaPlayer.registerAdClientFactory(advertisingFactory);
    ```
 
-1. 建立可延伸的自訂機會偵測器類別 `PlacementOpportunityDetector` 類別。
-   1. 在自訂機會偵測器中，覆寫此函式：
+1. 创建一个自定义机会检测器类，以扩展 `PlacementOpportunityDetector` 类。
+   1. 在自定义机会检测器中，覆盖此函数：
 
       ```java
       public List<PlacementOpportunity> process(List<TimedMetadata> timedMetadataList, Metadata metadata)
       ```
 
-      此 `timedMetadataList` 包含可用清單 `TimedMetadata`，已排序。 中繼資料包含要傳送給廣告提供者的目標定位引數和自訂引數。
+      此 `timedMetadataList` 包含可用列表 `TimedMetadata`，进行排序。 元数据包含要发送到广告提供商的定位参数和自定义参数。
 
-   1. 針對每個 `TimedMetadata`，建立 `List<PlacementOpportunity>`. 清單可以是空的，但不可以是Null。 `PlacementOpportunity` 應該具有下列屬性：
+   1. 针对每个 `TimedMetadata`，创建 `List<PlacementOpportunity>`. 列表可以为空，但不能为null。 `PlacementOpportunity` 应具有以下属性：
 
       ```java
       PlacementOpportunity( 
@@ -53,9 +53,9 @@ ht-degree: 0%
       )
       ```
 
-   1. 為所有偵測到的定時中繼資料物件建立位置機會後，只要傳回 `PlacementOpportunity` 清單。
+   1. 在为所有检测到的定时元数据对象创建投放机会后，只需返回 `PlacementOpportunity` 列表。
 
-這是自訂位置機會偵測器的範例：
+这是一个自定义投放位置机会检测器示例：
 
 ```java
 public class CustomPlacementOpportunityDetector implements PlacementOpportunityDetector { 

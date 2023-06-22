@@ -1,6 +1,6 @@
 ---
-title: Proxy MVPD SAML整合
-description: Proxy MVPD SAML整合
+title: 代理MVPD SAML集成
+description: 代理MVPD SAML集成
 exl-id: 6c83e703-d8cd-476b-8514-05b8230902be
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,45 +9,45 @@ ht-degree: 1%
 
 ---
 
-# Proxy MVPD SAML整合
+# 代理MVPD SAML集成
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-## 概觀 {#overview-proxy-mvpd-saml-int}
+## 概述 {#overview-proxy-mvpd-saml-int}
 
-本檔案說明Proxy整合的SAML驗證流程。  這些流程取決於Adobe Primetime驗證伺服器設定中存在的Proxy設定資料。 Proxy MVPD會透過Adobe Primetime驗證Proxy Web服務，將其Proxy設定資料推送至Adobe Primetime驗證伺服器。
+本文档介绍了用于代理集成的SAML身份验证流程。  这些流依赖于Adobe Primetime身份验证服务器配置中存在的代理配置数据。 代理MVPD通过Adobe Primetime身份验证代理Web服务将其代理配置数据推送到Adobe Primetime身份验证服务器。
 
-## Proxy設定資料 {#proxy-config-data}
+## 代理配置数据 {#proxy-config-data}
 
-每個MVPD Proxy都會將其代理MVPD的Proxy設定資料提供給Adobe Primetime驗證Proxy Web服務。  Proxy Web服務檔案中會說明的詳細資訊。   為了讓SAML AuthN流程正常運作， Proxy設定資料必須包含下列屬性：
+每个MVPD代理都将其代理MVPD的代理配置数据提供给Adobe Primetime身份验证代理Web服务。  代理Web服务文档中介绍了的详细信息。   为了使SAML AuthN流正常工作，代理配置数据需要包含以下属性：
 
-| 屬性 | 說明 |
+| 属性 | 描述 |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| MVPD ID | 在Adobe Primetime驗證中表示內部代理MVPD的字串。  將由Adobe確認為Adobe Primetime驗證內容中的唯一。 |
-| MVPD預設標誌URL | 可在使用者的MVPD選擇器體驗中顯示的標誌URL。  應使用透明背景。 |
-| MVPD顯示名稱 | 可做為顯示名稱文字（可能作為替代文字）的字串，可連同標誌一起顯示。 |
+| MVPD ID | 在内部表示Adobe Primetime身份验证的代理MVPD的字符串。  将由Adobe确认在Adobe Primetime身份验证环境中是唯一的。 |
+| MVPD默认徽标URL | 可在用户的MVPD选择器体验中显示的徽标的URL。  应使用透明背景。 |
+| MVPD显示名称 | 用作显示名称文本（可能作为替换文本）的字符串，该文本可以与徽标一起显示。 |
 
 
 
-## SAML整合流程 {#saml-int-flows}
+## SAML集成流 {#saml-int-flows}
 
-當MVPD訂閱者造訪程式設計師的網站或應用程式時，Adobe Primetime驗證會以為該程式設計師啟用的MVPD清單來回應來自網站或應用程式的API呼叫。  整合可以是直接整合或代理整合；它們與程式設計師之間沒有區別。 如此一來，程式設計人員就可以使用任何他們認為合適的方式來呈現作用中MVPD清單。 訂戶選擇其MVPD，而Adobe Primetime驗證會將訂戶重新導向至MVPD的特定識別提供者。
+当MVPD订阅者访问程序员的网站或应用程序时，Adobe Primetime身份验证使用为该程序员激活的MVPD列表来响应来自网站或应用程序的API调用。  集成可以是直接集成或代理集成；它们与程序员之间没有区别。 这允许程序员以他们认为合适的任何方式呈现活动MVPD列表。 订户选择其MVPD，Adobe Primetime验证将订户重定向到MVPD的特定身份提供者。
 
-若是整合的MVPD Proxy，則會在Adobe Primetime驗證和MVPD Proxy之間完成整合。 Adobe Primetime驗證會將使用者驗證要求傳送至MVPD Proxy，而MVPD Proxy會處理重新導向。 為了讓MVPD Proxy知道將使用者驗證請求重新導向的位置，Adobe Primetime驗證會在SAML驗證請求中傳送MVPD識別碼。  此識別碼是Proxy提供者透過上述指定的Proxy Web服務所指定的MVPD ID。
+在集成的MVPD代理的情况下，将在Adobe Primetime身份验证和MVPD代理之间完成集成。 Adobe Primetime身份验证将用户身份验证请求发送到MVPD代理，而MVPD代理处理重定向。 为了让MVPD代理知道将用户身份验证请求重定向到的位置，Adobe Primetime身份验证在SAML身份验证请求中发送MVPD标识符。  此标识符是由代理提供程序通过上述代理Web服务指定的MVPD ID。
 
-### 驗證 {#authn-saml-int}
+### 身份验证 {#authn-saml-int}
 
-為了將Adobe Primetime驗證與Proxy MVPD整合，需要以下專案：
+要将Adobe Primetime身份验证与代理MVPD集成，需要满足以下条件：
 
-* Proxy MVPD提供的代理MVPD清單，推送至AdobeProxy Web服務
+* 代理MVPD提供了已代理MVPD的列表，已推送到Adobe代理Web服务
 
-* 上層MVPD Proxy的SAML中繼資料
+* 父MVPD代理的SAML元数据
 
-* （建議） - Proxy MVPD會處理其他重新導向至已代理MVPD的登入頁面URL
+* （推荐） — 代理MVPD处理对代理MVPD的登录页面URL的其他重定向
 
-* MVPD Proxy需要為下列IP開啟連線埠443和80：
+* MVPD代理需要为以下IP打开端口443和80：
    * 192.150.4.5
    * 192.150.10.200
    * 192.150.11.4
@@ -61,21 +61,21 @@ ht-degree: 1%
    * 66.235.139.168
 
 
-#### 驗證SAML請求和回應 {#authn-saml-req-resp}
+#### 身份验证SAML请求和响应 {#authn-saml-req-resp}
 
-在SAML AuthN要求中，Proxy整合包含下列需要由MVPD Proxy處理的其他屬性。  若要代表代理的MVPD正確處理請求者，並呈現正確的登入體驗，此屬性是必要的。 （此屬性會在以下範例要求中強調顯示。）
+在SAML AuthN请求中，代理集成包含以下需要由MVPD代理处理的附加属性。  要代表代理的MVPD正确处理请求者并呈现正确的登录体验，此属性是必需的。 （此属性在下面的示例请求中突出显示。）
 
-**範圍設定屬性**  — 包含包含包含特定MVPD_ID和MVPD名稱的IDPEntry專案。  這代表使用者實際從程式設計工具的選擇器中選取的MVPD，並符合Proxy Web服務中指定的MVPD_ID。
+**范围设定属性**  — 包含包含特定MVPD_ID和MVPD名称的IDPEntry项。  这表示用户实际从程序员的选取器中选择的MVPD，并且与在代理Web服务中指定的MVPD_ID匹配。
 
-RequestorID有額外的範圍設定屬性，可用於自訂程式設計師特定品牌的登入（如有需要）。 或者，也可僅用於請求來源地的分析。
+RequestorID还有一个作用域属性，可用于自定义程序员特定品牌的登录（如果需要）。 或者，它也可以仅用于分析请求的来源。
 
-在SAML AuthN回應中，Proxy MVPD應在下列屬性中將Proxied MVPD指定為IdP Entity：
+在SAML AuthN响应中，代理MVPD应在以下属性中将代理MVPD指定为IdP实体：
 
-* SAML簽發者
-* 名稱辨識符號
+* SAML颁发者
+* 名称限定符
 
 
-**範例驗證要求**
+**示例AuthN请求**
 
 ```XML
 <samlp:AuthnRequest
@@ -111,7 +111,7 @@ RequestorID有額外的範圍設定屬性，可用於自訂程式設計師特定
 ```
 
 
-**範例驗證回應**
+**示例AuthN响应**
 
 ```XML
 <samlp:Response Destination="https://sp.auth-staging.adobe.com/sp/saml/SAMLAssertionConsumer"
@@ -162,15 +162,15 @@ RequestorID有額外的範圍設定屬性，可用於自訂程式設計師特定
 </samlp:Response>
 ```
 
-### Authorization {#authz-proxy-mvpd-saml-int}
+### 授权 {#authz-proxy-mvpd-saml-int}
 
-對於授權部分，MVPD需要接受程式設計師指定的資源以進行授權。  在大多數情況下，這是頻道網路的字串識別碼，例如TBS或TNT。
+对于授权部分，MVPD需要接受由程序员指定的资源进行授权。  在大多数情况下，这是渠道网络的字符串标识符，例如TBS或TNT。
 
-#### 授權SAML請求和回應 {#authz-saml-req-resp}
+#### 授权SAML请求和响应 {#authz-saml-req-resp}
 
-在AuthZ回應中，ISSUER必須符合SAML回應中的ISSUER，它應該是Proxied MVPD識別碼。
+在AuthZ响应中，ISSUER必须匹配SAML响应中的ISSUER，它应该是Proxied MVPD标识符。
 
-**範例AuthZ XACML請求**
+**示例AuthZ XACML请求**
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -247,7 +247,7 @@ RequestorID有額外的範圍設定屬性，可用於自訂程式設計師特定
 </soap11:Envelope>
 ```
 
-**範例AuthZ XACML回應（已授與授權）**
+**示例AuthZ XACML响应（已授予授权）**
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -303,7 +303,7 @@ RequestorID有額外的範圍設定屬性，可用於自訂程式設計師特定
 </soap-env:Envelope>
 ```
 
-**範例AuthZ XACML回應（拒絕授權）**
+**示例AuthZ XACML响应（授权被拒绝）**
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

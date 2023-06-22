@@ -1,6 +1,6 @@
 ---
-description: 當使用者按一下廣告時，您的應用程式應暫停主要視訊內容的播放。
-title: 暫停並繼續播放
+description: 当用户单击广告时，应用程序应暂停播放主视频内容。
+title: 暂停并继续播放
 exl-id: 06922c80-b5c1-4e0c-872b-9400e07cf613
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# 暫停並繼續播放 {#pause-and-resume-playback}
+# 暂停并继续播放 {#pause-and-resume-playback}
 
-當使用者按一下廣告時，您的應用程式應暫停主要視訊內容的播放。
+当用户单击广告时，应用程序应暂停播放主视频内容。
 
-覆寫 `onPause` 和 `onResume` 從Android活動。
+覆盖 `onPause` 和 `onResume` （从Android活动）。
 
 ```java
 @Override 

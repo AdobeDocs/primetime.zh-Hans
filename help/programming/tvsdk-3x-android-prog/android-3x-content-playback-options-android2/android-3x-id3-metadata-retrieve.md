@@ -1,6 +1,6 @@
 ---
-description: ID3標籤提供音訊或視訊檔案的相關資訊，例如檔案標題或藝人姓名。 TVSDK會在HLS資料流的傳輸資料流(TS)區段層級偵測ID3標籤，並傳送事件。 應用程式可從標籤中擷取資料。
-title: ID3標籤
+description: ID3标记提供有关音频或视频文件的信息，例如文件标题或艺人姓名。 TVSDK在HLS流中的传输流(TS)区段级别检测ID3标记并调度事件。 应用程序可以从标记中提取数据。
+title: ID3标记
 exl-id: 7db9150d-bb1d-4e93-84c1-04a1f6605bdc
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,28 +9,28 @@ ht-degree: 0%
 
 ---
 
-# ID3標籤 {#id-tags}
+# ID3标记 {#id-tags}
 
-ID3標籤提供音訊或視訊檔案的相關資訊，例如檔案標題或藝人姓名。 TVSDK會在HLS資料流的傳輸資料流(TS)區段層級偵測ID3標籤，並傳送事件。 應用程式可從標籤中擷取資料。
+ID3标记提供有关音频或视频文件的信息，例如文件标题或艺人姓名。 TVSDK在HLS流中的传输流(TS)区段级别检测ID3标记并调度事件。 应用程序可以从标记中提取数据。
 
 >[!IMPORTANT]
 >
->TVSDK會將ID3中繼資料（2.3.0版或2.4.0版）的音訊(AAC)和視訊(H.264)串流辨識為任何可能的編碼（ASCII、UTF8、UTF16-BE或UTF16-LE）。 它會忽略不具任一認可版本或格式的ID3標籤。 未指定的編碼會視為UTF8。
+>TVSDK可将其音频(AAC)和视频(H.264)流中的ID3元数据（版本2.3.0或2.4.0）识别为任何可能的编码（ASCII、UTF8、UTF16-BE或UTF16-LE）。 它会忽略不属于可识别版本或格式之一的ID3标记。 未指定的编码将被视为UTF8。
 
-當TVSDK偵測ID3中繼資料時，會發出包含以下資料的通知：
+当TVSDK检测到ID3元数据时，它会发出包含以下数据的通知：
 
-* 型別= ID3
-* 名稱= ID3
+* 类型= ID3
+* 名称= ID3
 
-1. 實作事件接聽程式 `MediaPlayer.TimedMetadataEventListener#onTimedMetadata(TimeMetadata timeMetadata)` 並向 `MediaPlayer` 物件。
+1. 实施事件侦听器 `MediaPlayer.TimedMetadataEventListener#onTimedMetadata(TimeMetadata timeMetadata)` 并在 `MediaPlayer` 对象。
 
-   TVSDK在偵測到時呼叫此監聽器 `ID3` 中繼資料。
+   TVSDK在检测到以下内容时调用此侦听器： `ID3` 元数据。
 
    >[!TIP]
    >
-   >自訂廣告提示使用相同的 `onTimedMetadata` 表示偵測到新標籤的事件。 這不會造成任何混淆，因為在資訊清單層級偵測到自訂廣告提示，且ID3標籤內嵌在資料流中。 如需詳細資訊，請參閱 [自訂標籤](../../tvsdk-3x-android-prog/android-3x-advertising/ad-insertion/custom-tags-configure/android-3x-custom-tags-configure.md).
+   >自定义广告提示使用相同的 `onTimedMetadata` 指示检测到新标记的事件。 这不应导致任何混淆，因为在清单级别检测到自定义广告提示，并且ID3标记嵌入到流中。 有关更多信息，请参阅 [自定义标记](../../tvsdk-3x-android-prog/android-3x-advertising/ad-insertion/custom-tags-configure/android-3x-custom-tags-configure.md).
 
-1. 擷取中繼資料。
+1. 检索元数据。
 
    ```java
    @Override 

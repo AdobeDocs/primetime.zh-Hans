@@ -1,6 +1,6 @@
 ---
-description: 完成下列步驟，使用瀏覽器TVSDK建立基本播放器。
-title: 使用TVSDK建立基本播放器
+description: 完成以下步骤以使用浏览器TVSDK创建基本播放器。
+title: 使用TVSDK创建基本播放器
 exl-id: ea7485e0-5d15-469b-b8b6-f9604d283492
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,14 +9,14 @@ ht-degree: 0%
 
 ---
 
-# 使用TVSDK建立基本播放器{#create-a-basic-player-using-tvsdk}
+# 使用TVSDK创建基本播放器{#create-a-basic-player-using-tvsdk}
 
-完成下列步驟，使用瀏覽器TVSDK建立基本播放器。
+完成以下步骤以使用浏览器TVSDK创建基本播放器。
 
-1. 建立新目錄，您可在其中下載瀏覽器TVSDK的壓縮檔案。
-1. 從Zendesk下載瀏覽器TVSDK、解壓縮檔案，並將frameworks資料夾放在新目錄中。
-1. 使用為程式碼建立簡單的HTML樣板 `div` 在裡面。
-1. 將此樣板放入您在步驟1中建立之目錄的HTML檔案中。
+1. 创建一个新目录，您可以在其中下载浏览器TVSDK的压缩文件。
+1. 从Zendesk下载浏览器TVSDK，解压缩文件，并将frameworks文件夹放在新目录中。
+1. 使用为代码创建简单的HTML样板 `div` 在里面。
+1. 将此样板放入您在步骤1中创建的目录的HTML文件中。
 
    ```
    <!DOCTYPE html> 
@@ -32,7 +32,7 @@ ht-degree: 0%
    </html>
    ```
 
-1. 在head區段中新增瀏覽器TVSDK程式庫。
+1. 在head部分中添加浏览器TVSDK库。
 
    ```js
    <script src= "frameworks/player/dash.min.js"></script> 
@@ -41,16 +41,16 @@ ht-degree: 0%
    <script src= "frameworks/player/primetimeei.min.js"></script>
    ```
 
-1. 對於body標籤，新增 `onLoad` 區段。
+1. 对于body标记，添加 `onLoad` 部分。
 
    ```
    <body onload="startVideo()">
    ```
 
-1. 開始實作 `startVideo` 函式。
-1. 新增指令碼標籤並建立 `startVideo` 函式中。
+1. 开始实施 `startVideo` 函数。
+1. 添加脚本标记并创建 `startVideo` 函数中。
 
-   這應該位於頁面的head區段。
+   此内容应位于页面的head部分。
 
    ```js
    <script> 
@@ -59,17 +59,17 @@ ht-degree: 0%
    </script>
    ```
 
-1. 建立 `Adobe.MediaPlayer`.
+1. 创建 `Adobe.MediaPlayer`.
 
    ```js
    var player = new AdobePSDK.MediaPlayer();
    ```
 
-1. 建立 `MediaPlayerView`.
+1. 创建 `MediaPlayerView`.
 
    >[!TIP]
    >
-   >這就是 `div` 會使用您先前建立的專案。
+   >这就是 `div` 之前创建的变量一起使用。
 
    ```js
    var view = new AdobePSDK.MediaPlayerView( 
@@ -77,13 +77,13 @@ ht-degree: 0%
    player.view = view;
    ```
 
-1. 新增播放器事件監聽器。
+1. 添加播放器事件侦听器。
 
    ```js
    player.addEventListener(AdobePSDK.PSDKEventType.STATUS_CHANGED, onStatusChange);
    ```
 
-1. 實作事件處理常式，並將其放在新增事件接聽程式之前。
+1. 实施事件处理程序并将其放在添加事件侦听器之前。
 
    ```js
    var onStatusChange = function (event) { 
@@ -140,7 +140,7 @@ ht-degree: 0%
    }; 
    ```
 
-1. 建立 `MediaResource`，會傳遞M3U8連結（或mpd）。
+1. 创建 `MediaResource`，通过M3U8链接（或mpd）。
 
    ```js
    var resourceUrl = "https://example.com/a/yourUrl.m3u8"; 
@@ -148,7 +148,7 @@ ht-degree: 0%
    var mediaResource = new AdobePSDK.MediaResource(resourceUrl, resourceType, null, false);
    ```
 
-1. 建立空的設定並取代資源。
+1. 创建一个空配置并替换资源。
 
    ```js
    var config = new AdobePSDK.MediaPlayerItemConfig(); 
@@ -156,7 +156,7 @@ ht-degree: 0%
    player.replaceCurrentResource(mediaResource, config);
    ```
 
-1. 當播放器處於初始化狀態時，呼叫 `prepareToPlay`.
+1. 当播放器处于“已初始化”状态时，调用 `prepareToPlay`.
 
    ```js
    case INITIALIZED: 
@@ -164,7 +164,7 @@ ht-degree: 0%
     break;
    ```
 
-1. 在播放器處於「已準備」狀態後，呼叫 `play`.
+1. 在播放器处于PREPARED状态后，调用 `play`.
 
    ```js
    case PREPARED: 

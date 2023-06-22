@@ -1,6 +1,6 @@
 ---
-title: 命令列使用方式
-description: 命令列使用方式
+title: 命令行用法
+description: 命令行用法
 copied-description: true
 exl-id: b9e51bab-7bef-459f-bb4d-13ccc4add37a
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,9 +10,9 @@ ht-degree: 0%
 
 ---
 
-# 命令列使用方式 {#command-line-usage}
+# 命令行用法 {#command-line-usage}
 
-撤銷清單管理員位於DVD的\Reference Implementation\Command Line Tools目錄中。 若要執行此工具，請使用下列其中一種語法：
+吊销列表管理器位于DVD上的\Reference Implementation\Command Line Tools目录中。 要运行该工具，请使用以下语法之一：
 
 ```
     java -jar AdobeRevocationListManager.jar 
@@ -31,46 +31,46 @@ ht-degree: 0%
 </i class="+ topic>
 ```
 
-* `destfile` 指出撤銷清單的寫入位置。
-* `crlNumber` 是憑證撤銷清單(CRL)的非負數版本號碼。 每次更新CRL時，此數字都會增加。
+* `destfile` 指示将写入吊销列表的位置。
+* `crlNumber` 是证书吊销列表(CRL)的非负版本号。 每次更新CRL时，此数量都应增加。
 
-下表包含上述語法中所顯示的命令列選項說明：
+下表包含上述语法中所示的命令行选项说明：
 
 <table frame="all" colsep="1" rowsep="1" class="+ topic/table adobe-d/table " id="table_a3y_wqy_n4"> 
  <thead class="- topic/thead "> 
   <tr rowsep="1" class="- topic/row "> 
-   <th colname="1" class="- topic/entry entry"> 命令列選項 </th> 
-   <th colname="2" class="- topic/entry entry"> 說明 </th> 
+   <th colname="1" class="- topic/entry entry"> 命令行选项 </th> 
+   <th colname="2" class="- topic/entry entry"> 描述 </th> 
   </tr> 
  </thead>
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-c設定檔</span> </td> 
-   <td colname="2" class="- topic/entry ">指定組態檔的位置。 如果未使用此選項，「撤銷清單管理員」將會尋找 <span class="filepath"> flashaccesstools.properties</span> 於工作目錄中。 </td> 
+   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-c配置文件</span> </td> 
+   <td colname="2" class="- topic/entry ">指定配置文件的位置。 如果未使用此选项，吊销列表管理器将查找 <span class="filepath"> flashaccesstools.properties</span> 工作目录下。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-d檔案名稱</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">顯示撤銷清單的相關資訊。 </p> </td> 
+   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-d文件名</span> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">显示有关吊销列表的信息。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-e日期</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">（選用）撤銷清單的到期日。 使用格式 <span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd</span> 或 <span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd-h24:min:秒</span> (例如，2009-01-31-14:30:00代表1月31日下午2:30)。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">（可选）吊销列表的过期日期。 使用格式 <span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd</span> 或 <span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd-h24:min:秒</span> (例如，2009-01-31-14:30:00表示1月31日下午2:30)。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph">-f filename[certfile]</span> </td> 
-   <td colname="2" class="- topic/entry ">從現有的撤銷清單新增所有專案。 只能指定一個現有檔案。 <p class="- topic/p ">如果此現有清單使用與用於簽署新清單的憑證不同的憑證簽名，請接下來指定其憑證檔案，以便驗證其簽名。 </p> </td> 
+   <td colname="2" class="- topic/entry ">从现有吊销列表中添加所有条目。 只能指定一个现有文件。 <p class="- topic/p ">如果此现有列表使用与用于为新列表签名的凭据不同的凭据进行签名，请接下来指定其证书文件，以便可以验证其签名。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> -noprompt</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">不要詢問是否應該覆寫目的地檔案。 如果目的地檔案已存在且未設定 — o，則會傳回錯誤。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">不要询问是否应该覆盖目标文件。 如果目标文件已存在，但未设置 — o，则将返回错误。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> -o</span> </td> 
-   <td colname="2" class="- topic/entry "> 如果目的地檔案已經存在，請覆寫它而不提示。 </td> 
+   <td colname="2" class="- topic/entry "> 如果目标文件已存在，则无需提示即可将其覆盖。 </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="codeph">-r issuerName serialNumber撤銷日期</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">撤銷由下列識別出的憑證： <span class="codeph"> issuerName</span> 和 <span class="codeph"> 序號</span> 於指定日期。 此 <span class="codeph"> issuerName</span> 必須遵循509名稱格式(例如， <span class="codeph"> CN=12345，O=Adobe Systems Incorporated，C=US</span>)。 以十六進位格式指定序號。 將撤銷日期指定為 <span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd</span> 或 <span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd-h24:min:秒</span>，例如2008-12-1或2008-12-1-00:00:00 （2008年12月1日午夜）。 如果未指定撤銷日期，則會使用目前的日期。 </p> </td> 
+   <td colname="1" class="- topic/entry "><span class="codeph">-r issuerName serialNumber吊销日期</span> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">撤销由标识的证书 <span class="codeph"> issuerName</span> 和 <span class="codeph"> 序列号</span> 在给定的日期。 此 <span class="codeph"> issuerName</span> 必须遵循509名称格式(例如， <span class="codeph"> CN=12345，O=Adobe Systems Incorporated，C=US</span>)。 以十六进制格式指定序列号。 将吊销日期指定为 <span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd</span> 或 <span class="+ topic/ph pr-d/codeph codeph">yyyy-mm-dd-h24:min:秒</span>，例如2008-12-1或2008-12-1-00:00:2008年12月1日午夜00。 如果未指定吊销日期，则使用当前日期。 </p> </td> 
   </tr> 
  </tbody> 
 </table>

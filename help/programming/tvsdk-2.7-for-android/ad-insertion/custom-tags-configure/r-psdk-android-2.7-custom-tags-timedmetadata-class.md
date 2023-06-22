@@ -1,6 +1,6 @@
 ---
-description: 當TVSDK偵測到播放清單/資訊清單中有訂閱的標籤時，播放器會自動嘗試處理該標籤，並以TimedMetadata物件的形式將其公開。
-title: 定時中繼資料類別
+description: 当TVSDK检测到播放列表/清单中的订阅标记时，播放器会自动尝试处理该标记，并以TimedMetadata对象的形式公开该标记。
+title: 定时元数据类
 exl-id: 1d392a97-f3f4-4027-9515-32bec2008f37
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,48 +9,48 @@ ht-degree: 0%
 
 ---
 
-# 定時中繼資料類別 {#timed-metadata-class}
+# 定时元数据类 {#timed-metadata-class}
 
-當TVSDK偵測到播放清單/資訊清單中有訂閱的標籤時，播放器會自動嘗試處理該標籤，並以TimedMetadata物件的形式將其公開。
+当TVSDK检测到播放列表/清单中的订阅标记时，播放器会自动尝试处理该标记，并以TimedMetadata对象的形式公开该标记。
 
-類別提供下列元素：
+类提供了以下元素：
 
 <table id="table_FFC56AC5B1E04DA99C9309C0223ABA90"> 
  <thead> 
   <tr> 
-   <th colname="col1" class="entry"> 屬性 </th> 
-   <th colname="col02" class="entry"> 型別 </th> 
-   <th colname="col2" class="entry"> 說明 </th> 
+   <th colname="col1" class="entry"> 属性 </th> 
+   <th colname="col02" class="entry"> 类型 </th> 
+   <th colname="col2" class="entry"> 描述 </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
    <td colname="col1"> <span class="codeph"> id </span> </td> 
-   <td colname="col02"> long </td> 
-   <td colname="col2"> <p>計時中繼資料的唯一識別碼。 </p> <p>此值通常擷取自提示/標籤ID屬性。 否則，會提供唯一的隨機值。 使用 <span class="codeph"> getId </span>. </p> </td> 
+   <td colname="col02"> 长 </td> 
+   <td colname="col2"> <p>定时元数据的唯一标识符。 </p> <p>此值通常提取自提示/标记ID属性。 否则，将提供一个唯一的随机值。 使用 <span class="codeph"> getId </span>. </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 中繼資料 </span> </td> 
-   <td colname="col02"> 中繼資料 </td> 
-   <td colname="col2"> <p>從播放清單/資訊清單自訂標籤中處理/擷取的資訊。 使用 <span class="codeph"> getMetadata </span>. </p> </td> 
+   <td colname="col1"> <span class="codeph"> 元数据 </span> </td> 
+   <td colname="col02"> 元数据 </td> 
+   <td colname="col2"> <p>从播放列表/清单自定义标记中处理/提取的信息。 使用 <span class="codeph"> getMetadata </span>. </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 名稱 </span> </td> 
-   <td colname="col02"> 字串 </td> 
-   <td colname="col2"> <p>計時中繼資料的名稱。 如果型別是 <span class="codeph"> 標籤 </span>，值代表提示/標籤名稱。 如果型別是 <span class="codeph"> ID3 </span>，為null。 使用 <span class="codeph"> getName </span>. </p> </td> 
+   <td colname="col1"> <span class="codeph"> name </span> </td> 
+   <td colname="col02"> 字符串 </td> 
+   <td colname="col2"> <p>定时元数据的名称。 如果类型为 <span class="codeph"> 标记 </span>，值表示提示/标记名称。 如果类型为 <span class="codeph"> ID3 </span>，为空。 使用 <span class="codeph"> getName </span>. </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 時間 </span> </td> 
-   <td colname="col02"> long </td> 
-   <td colname="col2"> <p>相對於主要內容開始的時間位置（以毫秒為單位），此計時中繼資料會出現在資料流中。 使用 <span class="codeph"> getTime </span>. </p> </td> 
+   <td colname="col1"> <span class="codeph"> 时间 </span> </td> 
+   <td colname="col02"> 长 </td> 
+   <td colname="col2"> <p>相对于主内容的开始时间（该定时元数据存在于流中）的时间位置（以毫秒为单位）。 使用 <span class="codeph"> getTime </span>. </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> type </span> </td> 
-   <td colname="col02"> 型別 </td> 
-   <td colname="col2"> <p>計時中繼資料的型別。 使用 <span class="codeph"> getType </span>. 
+   <td colname="col02"> 类型 </td> 
+   <td colname="col2"> <p>定时元数据的类型。 使用 <span class="codeph"> getType </span>. 
      <ul id="ul_70FBFB33E9F846D8B38592560CCE9560"> 
-      <li id="li_739D30561BFB4D9B97DF212E4880BA2C">TAG — 表示計時中繼資料是從播放清單/資訊清單中的標籤建立的。 </li> 
-      <li id="li_E785E1DEF1CC4D9DBE7764E5D05EFAFC">ID3 — 表示計時中繼資料是從媒體資料流中的ID3標籤建立的。 </li> 
+      <li id="li_739D30561BFB4D9B97DF212E4880BA2C">标记 — 指示定时元数据是从播放列表/清单中的标记创建的。 </li> 
+      <li id="li_E785E1DEF1CC4D9DBE7764E5D05EFAFC">ID3 — 指示定时元数据是从媒体流中的ID3标记创建的。 </li> 
      </ul> </p> </td> 
   </tr> 
  </tbody> 
@@ -58,13 +58,13 @@ ht-degree: 0%
 
 <!--<a id="section_737CC47997F74F80A3C5C6171ADE120E"></a>-->
 
-請記住以下事項：
+请记住以下内容：
 
-* TVSDK會自動將屬性清單擷取到索引鍵/值組中，並將屬性儲存在中繼資料屬性中。
+* TVSDK会自动将属性列表提取到键值对中，并将属性存储在元数据属性中。
 
    >[!TIP]
    >
-   >資訊清單中自訂標籤內的複雜資料（例如具有特殊字元的字串）必須用引號括住。 例如：
+   >清单中的自定义标记中的复杂数据（例如具有特殊字符的字符串）必须用引号括起来。 例如：
    >
    >
    ```
@@ -72,43 +72,43 @@ ht-degree: 0%
    >"www.example.com:8090?parameter1=xyz&parameter2=abc"
    >```
 
-* 如果擷取因自訂標籤格式而失敗，中繼資料屬性將為空白，且您的應用程式必須擷取實際資訊。 在此情況下，不會擲回任何錯誤。
+* 如果提取由于自定义标记格式而失败，则元数据属性将为空，并且您的应用程序必须提取实际信息。 在这种情况下，不会引发任何错误。
 
 <table id="table_1BAE98BF23F641A3A5709EBE37B327F6"> 
  <thead> 
   <tr> 
    <th colname="col1" class="entry"> 元素 </th> 
-   <th colname="col2" class="entry"> 說明 </th> 
+   <th colname="col2" class="entry"> 描述 </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 公用列舉型別{TAG， ID3} </span> </td> 
-   <td colname="col2"> <p>計時中繼資料的可能型別。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 公共枚举类型{TAG， ID3} </span> </td> 
+   <td colname="col2"> <p>定时元数据的可能类型。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 公用TimedMetadata（型別型別、長時間、長ID、字串名稱、中繼資料）； </span> </td> 
-   <td colname="col2"> <p>預設建構函式（time是本機資料流時間）。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 公共TimedMetadata（类型类型、长时间、长ID、字符串名称、元数据元数据）； </span> </td> 
+   <td colname="col2"> <p>默认构造函数（time是本地流时间）。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> public long getTime()； </span> </td> 
-   <td colname="col2"> <p>相對於主要內容開頭的時間位置，此中繼資料插入資料流中的位置。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 公共long getTime()； </span> </td> 
+   <td colname="col2"> <p>相对于主内容开头的时间位置，此元数据插入到流中。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 公用中繼資料getMetadata()； </span> </td> 
-   <td colname="col2"> <p>插入串流的中繼資料。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 公共元数据getMetadata()； </span> </td> 
+   <td colname="col2"> <p>插入到流中的元数据。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 公用型別getType()； </span> </td> 
-   <td colname="col2"> <p>傳回計時中繼資料的型別。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 公共类型getType()； </span> </td> 
+   <td colname="col2"> <p>返回定时元数据的类型。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> public long getId()； </span> </td> 
-   <td colname="col2"> <p>傳回從提示/標籤屬性擷取的ID。 否則，會提供唯一的隨機值。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 公共long getId()； </span> </td> 
+   <td colname="col2"> <p>返回从提示/标记属性提取的ID。 否则，将提供一个唯一的随机值。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 公用字串getName()； </span> </td> 
-   <td colname="col2"> <p>傳回提示的名稱，通常是HLS標籤名稱。 </p> </td> 
+   <td colname="col1"> <span class="codeph"> 公共字符串getName()； </span> </td> 
+   <td colname="col2"> <p>返回提示的名称，通常为HLS标记名称。 </p> </td> 
   </tr> 
  </tbody> 
 </table>

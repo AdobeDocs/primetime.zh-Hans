@@ -1,6 +1,6 @@
 ---
-description: 當播放達到廣告插播、通過廣告插播或結束廣告插播時，TVSDK會為目前播放點的位置定義一些預設行為。
-title: 使用廣告自訂播放
+description: 当播放到达广告时间、经过广告时间或结束广告时间时，TVSDK会为当前播放头的位置定义一些默认行为。
+title: 使用广告自定义播放
 exl-id: 522f0b55-dcc4-4175-91ab-757b72bbad23
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,86 +9,86 @@ ht-degree: 0%
 
 ---
 
-# 使用廣告自訂播放 {#customize-playback-with-ads}
+# 使用广告自定义播放 {#customize-playback-with-ads}
 
-當播放達到廣告插播、通過廣告插播或結束廣告插播時，TVSDK會為目前播放點的位置定義一些預設行為。
+当播放到达广告时间、经过广告时间或结束广告时间时，TVSDK会为当前播放头的位置定义一些默认行为。
 
 >[!TIP]
 >
->您可以使用來覆寫預設行為 `PTAdPolicySelector` 類別。
+>您可以使用覆盖默认行为 `PTAdPolicySelector` 类。
 
-預設行為會有所不同，具體取決於使用者是在正常播放期間或透過在視訊中搜尋而經過廣告插播。
+默认行为会有所不同，具体取决于用户是在正常播放期间还是通过在视频中搜寻来传递广告时间。
 
-您可以透過下列方式自訂廣告播放行為：
+您可以通过以下方式自定义广告播放行为：
 
-* 儲存使用者停止觀看視訊的位置，並在未來工作階段的相同位置繼續播放。
-* 如果向使用者呈現廣告插播，在幾分鐘內不會顯示其他廣告，即使使用者尋求新位置。
-* 如果內容在幾分鐘後無法播放，請重新啟動串流或容錯移轉至相同內容的不同來源。
+* 保存用户停止观看视频的位置，并在未来会话的同一位置恢复播放。
+* 如果将广告时间呈现给用户，那么在几分钟内不显示任何其他广告，即使用户寻求新位置。
+* 如果内容在几分钟后无法播放，请重新启动流或故障转移到相同内容的其他源。
 
-   在容錯移轉播放工作階段上，若要允許使用者略過廣告並繼續前往上一個失敗位置，您可以停用前段和/或中段廣告。 TVSDK提供可讓您略過前段和中段廣告的方法。
+   在故障转移播放会话上，要允许用户跳过广告并继续到上一个失败位置，您可以禁用前置广告和/或中置广告。 TVSDK提供了启用跳过前置广告和中置广告的方法。
 
-## 廣告播放的API元素 {#section_296ADE00CFEA40CBA1B46142720D13A5}
+## 用于广告播放的API元素 {#section_296ADE00CFEA40CBA1B46142720D13A5}
 
-TVSDK提供類別和方法，讓您用來自訂包含廣告之內容的播放行為。
-下列API元素對於自訂播放很實用：
+TVSDK提供了可用于自定义包含广告的内容播放行为的类和方法。
+以下API元素对于自定义播放非常有用：
 
 <table id="table_B07E373B9D2B425AB36466B1D42411AD"> 
  <thead> 
   <tr> 
    <th colname="col1" class="entry"><b>API元素</b></th> 
-   <th colname="col2" class="entry"><b>支援廣告的內容</b></th> 
+   <th colname="col2" class="entry"><b>支持广告的内容</b></th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
    <td colname="col1"> <span class="codeph"> PTAdMetadata </span> </td> 
-   <td colname="col2"> 控制廣告插播是否應該標示為已被檢視者觀看，如果是，何時標示為。 使用設定並取得追蹤原則 <span class="codeph"> adBreakAsWatched </span> 屬性。 </td> 
+   <td colname="col2"> 控制是否应将广告时间标记为已观看者观看，如果是，则何时将其标记为已观看。 使用设置并获取受监视的策略 <span class="codeph"> adBreakAsWatched </span> 属性。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> ptadPolicySelector </span> </td> 
-   <td colname="col2"> 允許自訂TVSDK廣告行為的通訊協定。 </td> 
+   <td colname="col2"> 允许自定义TVSDK广告行为的协议。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> PTDefaultAdPolicySelector </span> </td> 
-   <td colname="col2"> 實作預設TVSDK行為的類別。 您的應用程式可以覆寫此類別來自訂預設行為，而無需實作完整的介面。 </td> 
+   <td colname="col2"> 实现默认TVSDK行为的类。 您的应用程序可以覆盖此类以自定义默认行为，而无需实现完整的接口。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> PTMediaPlayer </span> </td> 
    <td colname="col2"> 
     <ul id="ul_37700A741403448A8760FDDA68B099AA"> 
-     <li id="li_B465170D449E49489C5924572BEEB4A5"> <span class="codeph"> localTime </span>. <p>這是播放的當地時間，不包括置入的廣告插播。 </p> </li> 
-     <li id="li_D9D68CF428904BB2B84E1BCE828A90DC"> <span class="codeph"> seekToLocalTime </span> . <p>在此處，搜尋會相對於資料流中的當地時間進行。 </p> </li> 
-     <li id="li_9DBCA75537DC4824AA66B53A3FA28812"> <span class="codeph"> getTimeline.convertToLocalTime </span>. <p>時間軸上的虛擬位置會轉換為本機位置。 </p> </li> 
+     <li id="li_B465170D449E49489C5924572BEEB4A5"> <span class="codeph"> localTime </span>. <p>这是播放的本地时间，不包括置入的广告时间。 </p> </li> 
+     <li id="li_D9D68CF428904BB2B84E1BCE828A90DC"> <span class="codeph"> seekToLocalTime </span> . <p>在此处，搜寻相对于流中的本地时间进行。 </p> </li> 
+     <li id="li_9DBCA75537DC4824AA66B53A3FA28812"> <span class="codeph"> getTimeline.convertToLocalTime </span>. <p>时间轴上的虚拟位置被转换为本地位置。 </p> </li> 
     </ul> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> PTAdBreak </span> </td> 
-   <td colname="col2"> <span class="codeph"> iswatched </span> 屬性。 指出檢視器是否觀看過廣告。 </td> 
+   <td colname="col2"> <span class="codeph"> isWatched </span> 属性。 指示查看器是否观看了广告。 </td> 
   </tr> 
  </tbody> 
 </table>
 
-## 設定自訂播放 {#section_8209BAACC7814C9399988DC7DE9CF4CA}
+## 设置自定义播放 {#section_8209BAACC7814C9399988DC7DE9CF4CA}
 
-在您可以自訂或覆寫廣告行為之前，請先使用TVSDK註冊廣告原則執行個體。
+在自定义或覆盖广告行为之前，请使用TVSDK注册广告策略实例。
 
-若要自訂廣告行為，請執行下列任一項作業：
+要自定义广告行为，请执行以下操作之一：
 
-* 符合 `PTAdPolicySelector` 通訊協定，並實作所有必要的原則選取方法。
+* 符合 `PTAdPolicySelector` 协议和实现所有需要的策略选择方法。
 
-   如果您需要覆寫，建議使用此選項 **全部** 預設廣告行為。
+   如果需要覆盖，建议使用此选项 **所有** 默认广告行为。
 
-* 覆寫 `PTDefaultAdPolicySelector` 類別並提供僅用於需要自訂之行為的實作。
+* 覆盖 `PTDefaultAdPolicySelector` 类，并仅为那些需要自定义的行为提供实现。
 
-   如果您只需要覆寫，則建議使用此選項 **部分** 預設行為的ID。
+   如果您只需要覆盖，则建议使用此选项 **部分** 缺省行为的URL值。
 
-針對這兩個選項，請完成下列工作：
+对于这两个选项，请完成以下任务：
 
-1. 透過使用者端處理站註冊TVSDK要使用的原則執行個體。
+1. 通过客户端工厂注册TVSDK要使用的策略实例。
 
    >[!NOTE]
    >
-   >播放開始時註冊的自訂廣告原則會在以下情況下清除： `PTMediaPlayer` 執行個體已取消配置。 您的應用程式必須在每次建立新播放工作階段時註冊原則選擇器執行個體。
+   >在播放开始时注册的自定义广告策略在以下情况下被清除： `PTMediaPlayer` 实例已取消分配。 每次创建新播放会话时，您的应用程序都必须注册一个策略选择器实例。
 
    例如：
 
@@ -101,19 +101,19 @@ TVSDK提供類別和方法，讓您用來自訂包含廣告之內容的播放行
    [[PTDefaultMediaPlayerClientFactory defaultFactory] registerAdPolicySelector:adPolicySelector];
    ```
 
-1. 實作您的自訂。
+1. 实施您的自定义项。
 
-## 略過一段時間的廣告插播 {#section_99809BE4D9BB4DEEBBF596C746CA428A}
+## 跳过一段时间的广告时间 {#section_99809BE4D9BB4DEEBBF596C746CA428A}
 
-依預設，當使用者搜尋廣告插播時，TVSDK會強製播放廣告插播。 如果從前一個插播完成經過的時間是在特定分鐘數內，您可以自訂略過廣告插播的行為。
+默认情况下，当用户搜寻广告时间时，TVSDK会强制播放广告时间。 如果距上一个广告时间完成的时间在某个分钟数内，您可以自定义跳过广告时间的行为。
 
 >[!IMPORTANT]
 >
->當有要略過廣告的內部搜尋時，播放中可能會稍微暫停。
+>当存在跳过广告的内部搜寻时，播放中可能会稍微暂停。
 
-以下自訂廣告原則選擇器的範例會在使用者觀看廣告插播後5分鐘（牆上時鐘時間）內略過廣告。
+以下自定义广告策略选择器的示例在用户观看广告时间后五分钟（墙上时钟时间）内跳过广告。
 
-1. 透過使用者端處理站註冊TVSDK要使用的原則執行個體。
+1. 通过客户端工厂注册TVSDK要使用的策略实例。
 
    ```
    // Create an instance of the custom policy selector 
@@ -124,7 +124,7 @@ TVSDK提供類別和方法，讓您用來自訂包含廣告之內容的播放行
    [[PTDefaultMediaPlayerClientFactory defaultFactory] registerAdPolicySelector:adPolicySelector];
    ```
 
-1. 實作您的自訂。
+1. 实施您的自定义。
 
 **PTS5MinuteSkipBreakPolicySelector.h**
 
@@ -246,25 +246,25 @@ double MIN_BREAK_INTERVAL  = 60 * 5; // 5 minutes
 @end
 ```
 
-## 儲存視訊位置並稍後繼續 {#section_FAE252E38CED48D4BDD38BAA4A6A20A4}
+## 保存视频位置并稍后恢复 {#section_FAE252E38CED48D4BDD38BAA4A6A20A4}
 
-您可以將目前的播放位置儲存在視訊中，並在未來工作階段的相同位置繼續播放。
+您可以将当前播放位置保存在视频中，并在未来会话中恢复在同一位置播放。
 
-動態插入的廣告會因使用者工作階段而異，所以儲存位置 **替換為** 拼接廣告是指未來工作階段中的不同位置。 TVSDK提供在忽略拼接廣告時擷取播放位置的方法。
+动态插入的广告在用户会话之间有所不同，因此保存了位置 **替换为** 拼接广告是指将来会话中的不同位置。 TVSDK提供了在忽略拼接广告时检索播放位置的方法。
 
-1. 當使用者結束視訊時，您的應用程式會擷取並儲存視訊中的位置。
+1. 当用户退出视频时，您的应用程序将检索并保存视频中的位置。
 
    >[!TIP]
    >
-   >不包括廣告持續時間。
+   >不包括广告持续时间。
 
-   由於廣告模式、頻率上限等原因，每個工作階段的廣告插播可能會有所不同。 一個工作階段中視訊的目前時間，可能會與未來工作階段中的不同。 在視訊中儲存位置時，應用程式會擷取當地時間。 使用  `localTime` 屬性來讀取此位置，您可以將其儲存在裝置上或伺服器的資料庫中。
+   由于广告模式、频率上限等等，每个会话中的广告时间可能会有所不同。 一个会话中视频的当前时间可能会与将来会话中的不同。 在视频中保存位置时，应用程序检索本地时间。 使用  `localTime` 属性来读取此位置，您可以将其保存在设备上或服务器上的数据库中。
 
-   例如，如果使用者在影片的第20分鐘，而此位置包含五分鐘的廣告， `currentTime` 將會是1200秒，而 `localTime` 在此位置將為900秒。
+   例如，如果用户位于视频的第20分钟，并且此位置包含五分钟的广告， `currentTime` 为1200秒，而 `localTime` 在此位置将为900秒。
 
    >[!IMPORTANT]
    >
-   >即時/線性資料流的當地時間和目前時間相同。 在這種情況下， `convertToLocalTime` 沒有效果。 對於VOD，播放廣告時當地時間保持不變。
+   >对于实时/线性流，本地时间和当前时间相同。 在这个案例中， `convertToLocalTime` 没有效果。 对于VOD，播放广告时本地时间保持不变。
 
    ```
    - (void) onMediaPlayerTimeChange:(NSNotification *)notification { 
@@ -279,15 +279,15 @@ double MIN_BREAK_INTERVAL  = 60 * 5; // 5 minutes
    }
    ```
 
-1. 若要在儲存自上一個工作階段的相同位置恢復視訊，請使用 `seekToLocalTime`.
+1. 要在上一个会话中保存的相同位置恢复视频，请使用 `seekToLocalTime`.
 
    >[!TIP]
    >
-   >此方法只會以本機時間值呼叫。 如果使用目前時間結果呼叫方法，則會發生錯誤行為。
+   >仅使用本地时间值调用此方法。 如果使用当前时间结果调用方法，则会发生错误行为。
 
-   若要搜尋到目前時間，請使用 `seekToTime`.
+   要搜索到当前时间，请使用 `seekToTime`.
 
-1. 當您的應用程式收到 `PTMediaPlayerStatusReady` 狀態變更事件，搜尋已儲存的當地時間。
+1. 当您的应用程序收到 `PTMediaPlayerStatusReady` 状态更改事件，搜索到保存的本地时间。
 
    ```
    [self.player seekToLocalTime:CMTimeMake(900, 1) completionHandler:^(BOOL finished) { 
@@ -295,10 +295,10 @@ double MIN_BREAK_INTERVAL  = 60 * 5; // 5 minutes
    }];
    ```
 
-1. 提供廣告原則介面中指定的廣告插播。
-1. 擴充預設廣告原則選擇器，實作自訂廣告原則選擇器。
-1. 透過實作，提供必須呈現給使用者的廣告插播 `selectAdBreaksToPlay`
+1. 提供广告策略界面中指定的广告时间。
+1. 通过扩展默认的广告策略选择器，实施自定义广告策略选择器。
+1. 通过实施，提供必须呈现给用户的广告时间 `selectAdBreaksToPlay`
 
    >[!NOTE]
    >
-   >此方法包括前段廣告插播和當地時間位置之前的中段廣告插播。 您的應用程式可以決定播放前段廣告插播並繼續到指定的當地時間、播放中段廣告插播並繼續到指定的當地時間，或不播放任何廣告插播。
+   >此方法包括前置广告时间和中置广告时间位于本地时间位置之前。 您的应用程序可以决定播放前置广告时间并继续到指定的本地时间，播放中置广告时间并继续到指定的本地时间，或者不播放任何广告时间。

@@ -1,6 +1,6 @@
 ---
-description: 程式碼可以透過DRMManager要求金鑰。
-title: HTML5 TVSDK上的重要請求工作流程
+description: 代码可以通过DRMManager请求密钥。
+title: 关于HTML5 TVSDK的密钥请求工作流
 exl-id: 1f60aadc-4730-4f71-a221-1af3ae3cba93
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# HTML5 TVSDK上的重要請求工作流程{#key-request-workflow-on-html-tvsdk}
+# 关于HTML5 TVSDK的密钥请求工作流{#key-request-workflow-on-html-tvsdk}
 
-程式碼可以透過DRMManager要求金鑰。
+代码可以通过DRMManager请求密钥。
 
-瀏覽器TVSDK也會透過DRMManager物件公開setProtectionData API：
+浏览器TVSDK还通过DRMManager对象公开setProtectionData API：
 
 ```
 [  /** 
@@ -30,9 +30,9 @@ license acquisition. </p>
    setProtectionData: function(protectionData) 
 ```
 
-您的程式碼必須先呼叫此API，才能以正常方式開始播放內容。 MediaPlayer.vo.protection.ProtectionData的記錄在此處： [https://vm2.dashif.org/dash.js/docs/jsdocs/MediaPlayer.vo.protection.ProtectionData.html](https://vm2.dashif.org/dash.js/docs/jsdocs/MediaPlayer.vo.protection.ProtectionData.html)
+您的代码需要先调用此API，然后才能以正常方式开始播放内容。 MediaPlayer.vo.protection.ProtectionData记录在此处： [https://vm2.dashif.org/dash.js/docs/jsdocs/MediaPlayer.vo.protection.ProtectionData.html](https://vm2.dashif.org/dash.js/docs/jsdocs/MediaPlayer.vo.protection.ProtectionData.html)
 
-以下是PlayReady和Widevine的授權伺服器URL保護資料物件範例。
+以下是PlayReady和Widevine的许可证服务器URL的示例保护数据对象。
 
 ```
 var protectionData = { 
@@ -52,4 +52,4 @@ var protectionData = {
    };
 ```
 
-TVSDK不提供任何強制特定DRM系統的API，因為每個瀏覽器僅支援一個DRM系統。
+TVSDK不提供任何API来强制特定DRM系统，因为每个浏览器仅支持一个DRM系统。

@@ -1,6 +1,6 @@
 ---
-title: 在播放器中設定XSTS權杖
-description: 在播放器中設定XSTS權杖
+title: 在播放器中设置XSTS令牌
+description: 在播放器中设置XSTS令牌
 copied-description: true
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
@@ -10,13 +10,13 @@ ht-degree: 0%
 ---
 
 
-# 在播放器中設定XSTS權杖{#set-the-xsts-token-in-your-player}
+# 在播放器中设置XSTS令牌{#set-the-xsts-token-in-your-player}
 
-在Xbox360中，您會以非同步方式設定Token以回應 `MediaPlayer.RequestKeyAttribute` 事件。
+在Xbox360中，您异步设置令牌以响应 `MediaPlayer.RequestKeyAttribute` 事件。
 
-設定XSTS權杖。
+设置XSTS令牌。
 
-軟體隨附的範例應用程式會顯示如何在播放器中設定XSTS權杖。 以下是範例播放器中的相關程式碼片段：
+与您的软件捆绑在一起的示例应用程序说明了如何在播放器中设置XSTS令牌。 以下是示例播放器中的相关代码片段：
 
 ```
    MediaPlayer mMediaPlayer;  

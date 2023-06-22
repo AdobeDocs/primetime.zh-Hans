@@ -1,6 +1,6 @@
 ---
-description: 這些類別會說明有關錯誤、警告和某些活動的訊息，這些訊息會因記錄和偵錯目的而出現問題。
-title: 通知類別
+description: 这些类描述有关错误、警告以及某些活动的消息，这些消息指出在日志记录和调试方面存在问题。
+title: 通知类
 exl-id: d8af783f-1e80-4e50-89b8-97643ff6670b
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,16 +9,16 @@ ht-degree: 0%
 
 ---
 
-# 通知類別 {#notification-classes}
+# 通知类 {#notification-classes}
 
-這些類別會說明有關錯誤、警告和某些活動的訊息，這些訊息會因記錄和偵錯目的而出現問題。
+这些类描述有关错误、警告以及某些活动的消息，这些消息指出在日志记录和调试方面存在问题。
 
-封裝： [com.adobe.mediacore.notifications](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/package-detail.html)
+包： [com.adobe.mediacore.notifications](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/package-detail.html)
 
-| 類別名稱 | 說明 |
+| 类名 | 描述 |
 |---|---|
-| [通知](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/Notification.html) | 提供資訊性訊息、警告和錯誤的類別。 封裝中單一通知事件的物件表示 [Notificationhistory](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/NotificationHistory.html). |
-| [通知代碼](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/NotificationCode.html) | 傳回與提供的通知程式碼相關的說明，並提供通知物件的數值常數。 |
-| [Notificationhistory](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/NotificationHistory.html) | 儲存通知物件記錄的類別。 循環清單 [NotificationhistoryItem](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/NotificationHistoryItem.html) 提供通知事件歷史記錄清單存取權的物件。 也就是說，它會維護一個元素清單，每個元素都包含 [通知](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/Notification.html) 類別。 |
-| [NotificationhistoryItem](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/NotificationHistoryItem.html) | 定義中循環清單專案的類別 [Notificationhistory](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/NotificationHistory.html) 和會儲存通知及其時間戳記。 |
-| [通知型別](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/NotificationType.html) | 包含支援的通知型別的類別。 |
+| [通知](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/Notification.html) | 提供信息性消息、警告和错误的类。 在中封装单个通知事件的对象表示形式 [通知历史记录](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/NotificationHistory.html). |
+| [通知代码](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/NotificationCode.html) | 返回与提供的通知代码关联的说明，并为通知对象提供数值常量。 |
+| [通知历史记录](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/NotificationHistory.html) | 存储通知对象日志的类。 循环列表 [NotificationhistoryItem](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/NotificationHistoryItem.html) 提供对通知事件历史记录列表访问权限的对象。 也就是说，它维护一个元素列表，每个元素都包含 [通知](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/Notification.html) 类。 |
+| [NotificationhistoryItem](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/NotificationHistoryItem.html) | 在中定义循环列表中的条目的类 [通知历史记录](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/NotificationHistory.html) 并保存通知及其时间戳。 |
+| [通知类型](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/notifications/NotificationType.html) | 包含支持的通知类型的类。 |

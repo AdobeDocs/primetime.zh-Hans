@@ -1,6 +1,6 @@
 ---
-description: 這些類別會說明TVSDK為了記錄及偵錯目的而發出之錯誤、警告和一些活動的相關訊息。
-title: 通知類別
+description: 这些类描述有关TVSDK发布的错误、警告和一些活动的消息，以进行日志记录和调试。
+title: 通知类
 exl-id: 611a886b-a77a-4092-ab05-25e496fec8b1
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,14 +9,14 @@ ht-degree: 0%
 
 ---
 
-# 通知類別{#notification-classes}
+# 通知类{#notification-classes}
 
-這些類別會說明TVSDK為了記錄及偵錯目的而發出之錯誤、警告和一些活動的相關訊息。
+这些类描述有关TVSDK发布的错误、警告和一些活动的消息，以进行日志记录和调试。
 
-| 類別名稱 | 說明 |
+| 类名 | 描述 |
 |---|---|
-| [PTMediaError](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTMediaError.html) | 說明導致播放器停止播放的錯誤通知類別。 這是 [PTNotification](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotification.html) 通知型別ERROR的。 |
-| [PTMediaPlayerNotifications](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTMediaPlayerNotifications.html) | 列出Primetime播放器架構傳送的所有通知。 |
-| [PTNotification](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotification.html) | 提供資訊性訊息、警告和錯誤的類別。 封裝中單一通知事件的物件表示 [PTNotificationHistory](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotificationHistory.html). |
-| [PTNotificationHistory](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotificationHistory.html) | 儲存通知物件記錄的類別 [PTNotificationHistoryItem](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotificationHistoryItem.html) 提供通知事件歷史記錄清單存取權的物件。 也就是說，它會維護一個元素清單，每個元素都包含 [PTNotification](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotification.html) |
-| [PTNotificationHistoryItem](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotificationHistoryItem.html) | 定義中循環清單專案的類別 [PTNotificationHistory](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotificationHistory.html) 和會儲存通知及其時間戳記。 |
+| [PTMediaError](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTMediaError.html) | 描述导致播放器停止播放的错误通知的类。 这是 [PTN通知](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotification.html) 通知类型ERROR的。 |
+| [PTMediaPlayerNotifications](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTMediaPlayerNotifications.html) | 列出Primetime播放器框架调度的所有通知。 |
+| [PTN通知](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotification.html) | 提供信息性消息、警告和错误的类。 在中封装单个通知事件的对象表示形式 [PTNotificationHistory](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotificationHistory.html). |
+| [PTNotificationHistory](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotificationHistory.html) | 存储通知对象日志的类 [PTNotificationHistoryItem](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotificationHistoryItem.html) 提供对通知事件历史记录列表访问权限的对象。 也就是说，它维护一个元素列表，每个元素都包含 [PTN通知](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotification.html) |
+| [PTNotificationHistoryItem](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotificationHistoryItem.html) | 在中定义循环列表中的条目的类 [PTNotificationHistory](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTNotificationHistory.html) 并保存通知及其时间戳。 |

@@ -1,6 +1,6 @@
 ---
-title: 在預備中設定您的環境和測試
-description: 在預備中設定您的環境和測試
+title: 设置您的环境并测试预修课程
+description: 设置您的环境并测试预修课程
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,26 +9,26 @@ ht-degree: 0%
 
 ---
 
-# 在預備中設定您的環境和測試{#setting-up-your-environment-and-testing-in-prequal}
+# 设置您的环境并测试预修课程{#setting-up-your-environment-and-testing-in-prequal}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-本技術說明旨在協助我們的合作夥伴設定其環境，並開始測試部署在Adobe資格預審環境上的新組建。
+本技术说明旨在帮助我们的合作伙伴设置其环境，并开始测试在Adobe资格预审环境中部署的新内部版本。
 
-由於有兩種建置風格： ***生產*** 和 ***分段***，在本檔案中，我們將專注於生產設定，並提及測試的所有步驟相同，只有URL不同。
+因为有两种建置风格： ***生产*** 和 ***暂存***，在本文档中，我们将重点介绍生产设置，并提到暂存的所有步骤都是相同的，只有URL不同。
 
-步驟1和2是在其中一台測試機器上設定測試環境，步驟3是驗證基本流程，而步驟4和5呈現一些測試准則。
+步骤1和2是在其中一台测试计算机上设置测试环境，步骤3是对基本流程的验证，步骤4和5介绍了一些测试准则。
 
 >[!IMPORTANT]
 >
-> 每當您想要變更測試環境（從測試環境切換至生產設定檔或反之）時，請務必執行步驟1和2
+> 每次要更改测试环境（从暂存切换到生产配置文件或其他方式）时，执行步骤1和2非常重要
  
 
-## 步驟1. 正在將傳遞網域解析為IP {#resolving-pass-domain-to-an-ip}
+## 步骤1. 将传递域解析为IP {#resolving-pass-domain-to-an-ip}
 
-* 若要尋找可用於欺騙的負載平衡器IP，請執行以下命令：
+* 要查找可用于欺骗的负载平衡器IP，请运行以下命令：
 
 * **在Windows上**
 
@@ -56,43 +56,43 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->網域因不相關且可能因使用者而異，所以無法回答。
+>从应答中排除的域不相关，并且可能因用户而异。
 
 >[!IMPORTANT]
 >
-> 這些IP位址在未來可能會變更，而且對於不同地理區域的使用者而言，這些IP位址可能不同。
+> 这些IP地址在未来可能会发生更改，并且对于不同地理区域的用户来说，这些地址可能并不相同。
 
 
-## 步驟2.  將資格預審環境偽裝成生產環境 {#spoofing-the-prequalification-environment}
+## 步骤2.  将预认证环境欺骗为生产 {#spoofing-the-prequalification-environment}
 
-* 編輯 *c：\\windows\\System32\\drivers\\etc\\hosts* 檔案（在Windows中）或 */etc/hosts* 檔案（在Macintosh/Linux/Android上）並新增下列專案：
+* 编辑 *c：\\windows\\System32\\drivers\\etc\\hosts* 文件（在Windows中）或 */etc/hosts* 文件（在Macintosh/Linux/Android上）并添加以下内容：
 
-* 偽造生產設定檔
+* 伪造生产配置文件
    * 52.13.71.11 http://entitlement.auth.adobe.com， http://sp.auth.adobe.com， http://api.auth.adobe.com
 
-**在Android上欺騙：** 若要在Android上進行欺騙，您必須使用Android模擬器。
+**在Android上欺骗：** 为了在Android上进行欺骗，您必须使用Android模拟器。
 
-* 一旦設定好詐騙罪名，您就可以將一般URL用於生產和測試設定檔： (也就是說， `http://sp.auth-staging.adobe.com` 和 `http://entitlement.auth-staging.adobe.com` 而且您實際上會點選 *資格預審環境/生產* 新版本編號的。
-
-
-## 步驟3.  確認您指向正確的環境 {#Verify-you-are-pointing-to-the-right-environment}
-
-**這是一個簡單的步驟：**
-
-* 載入 [權利前置環境](https://entitlement-prequal.auth.adobe.com/environment.html) 和 [權利](https://entitlement.auth.adobe.com/environment.html). 他們應該會傳回相同的回應。
+* 设置好欺骗后，您只需将常规URL用于生产和暂存配置文件即可： (即， `http://sp.auth-staging.adobe.com` 和 `http://entitlement.auth-staging.adobe.com` 而你真的会撞到 *预鉴定环境/生产* 新版本编号。
 
 
-## 步驟4.  使用程式設計師的網站執行簡單的驗證/授權流程 {#peform-a-simple-auth-flow}
+## 步骤3.  验证您是否指向正确的环境 {#Verify-you-are-pointing-to-the-right-environment}
 
-* 此步驟需要程式設計師的網站位址和一些有效的MVPD認證（已驗證和授權的使用者）。
+**这是一个简单的步骤：**
 
-## 步驟5.  使用程式設計人員的網站執行案例測試 {#perform-scenario-testing-using-programmer-website}
-
-* 完成環境設定並確保基本驗證授權流程正常運作後，您可以繼續測試更複雜的情境。
+* 加载 [权利前置环境](https://entitlement-prequal.auth.adobe.com/environment.html) 和 [权利](https://entitlement.auth.adobe.com/environment.html). 它们应返回相同的响应。
 
 
-## 步驟6.  使用API測試網站執行測試 {#perform-testing-using-api-testing-site}
+## 步骤4.  使用程序员网站执行简单的身份验证/授权流程 {#peform-a-simple-auth-flow}
 
-* 如果您想更深入探究測試Adobe Primetime驗證，建議您使用 [API測試網站](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
+* 此步骤需要程序员的网站地址和某些有效的MVPD凭据（经过身份验证和授权的用户）。
 
-您可以在API測試網站找到更多詳細資料 [如何使用Adobe的API測試網站測試驗證和授權流程](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md).
+## 步骤5.  使用程序员的网站执行场景测试 {#perform-scenario-testing-using-programmer-website}
+
+* 完成环境设置并确保基本身份验证授权流程正常工作后，您可以继续测试更复杂的场景。
+
+
+## 步骤6.  使用API测试站点执行测试 {#perform-testing-using-api-testing-site}
+
+* 如果您想更深入地测试Adobe Primetime身份验证，我们建议您使用 [API测试站点](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
+
+有关API测试站点的更多详细信息，请访问 [如何使用Adobe的API测试站点测试身份验证和授权流](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md).

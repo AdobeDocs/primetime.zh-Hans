@@ -1,6 +1,6 @@
 ---
-description: 瀏覽器TVSDK支援許多DASH功能，您可以實作這些功能，以將功能新增至視訊應用程式。
-title: 支援的DASH功能
+description: 浏览器TVSDK支持许多DASH功能，您可以实施这些功能向视频应用程序添加功能。
+title: 支持的短划线功能
 exl-id: 29a5d1a3-e31e-459c-90b5-80227df46e4b
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,23 +9,23 @@ ht-degree: 0%
 
 ---
 
-# 支援的DASH功能{#supported-dash-features}
+# 支持的短划线功能{#supported-dash-features}
 
-瀏覽器TVSDK支援許多DASH功能，您可以實作這些功能，以將功能新增至視訊應用程式。
+浏览器TVSDK支持许多DASH功能，您可以实施这些功能向视频应用程序添加功能。
 
-* [虛線核心播放功能](#dash-core-playback)
-* [DASH進階播放功能](#dash-advanced-playback)
-* [DASH內容保護功能](#dash-content-protection)
-* [DASH Core廣告插入功能](#dash-core-ad-insertion)
-* [DASH進階廣告插入功能](#dash-advanced-insertion-features)
-* [DASH整合](#dash-integrations)
+* [DASH核心播放功能](#dash-core-playback)
+* [DASH高级回放功能](#dash-advanced-playback)
+* [DASH内容保护功能](#dash-content-protection)
+* [DASH Core广告插入功能](#dash-core-ad-insertion)
+* [DASH高级广告插入功能](#dash-advanced-insertion-features)
+* [DASH集成](#dash-integrations)
 
 >[!TIP]
 >
->在下方的功能矩陣表中，  ![](assets/supported15.png)
->表示目前版本支援此功能。
+>在下方的功能矩阵表中，  ![](assets/supported15.png)
+>表示当前版本支持该功能。
 
-支援下列功能：
+支持以下功能：
 
 <!-- 
 
@@ -78,110 +78,110 @@ ht-degree: 0%
 
  -->
 
-## DASH整合 {#dash-integrations}
+## DASH集成 {#dash-integrations}
 
-| 類別 | 內容型別 | 功能 | HTML5 FF、IE、Chrome、Android Chrome |
+| 类别 | 内容类型 | 功能 | HTML5 FF、IE、Chrome、Android Chrome |
 |---|---|---|---|
-| 整合 | VOD +即時 | Adobe Analytics VHL整合 | ![](assets/supported15.png) |
-| 整合 | VOD +即時 | 帳單 | ![](assets/supported15.png) |
-| 整合 | VOD +即時 | Browserify | ![](assets/supported15.png) |
+| 集成 | VOD +实时 | Adobe Analytics VHL集成 | ![](assets/supported15.png) |
+| 集成 | VOD +实时 | 计费 | ![](assets/supported15.png) |
+| 集成 | VOD +实时 | 浏览器化 | ![](assets/supported15.png) |
 
-## DASH進階廣告插入功能(CSAI) {#dash-advanced-insertion-features}
+## DASH高级广告插入功能(CSAI) {#dash-advanced-insertion-features}
 
-| 類別 | 內容型別 | 功能 | HTML5 FF、IE、Chrome、Android Chrome |
+| 类别 | 内容类型 | 功能 | HTML5 FF、IE、Chrome、Android Chrome |
 |---|---|---|---|
-| Ad Insertion | VOD | 僅限廣告 | 不支援 |
-| Ad Insertion | VOD | 目標定位引數 | 僅限VOD |
-| Ad Insertion | VOD | 自訂引數 | 僅限VOD |
-| Ad Insertion | VOD +即時 | 自訂廣告原則 | 不支援 |
-| Ad Insertion | VOD +即時 | 延遲廣告載入 | 不支援 |
-| Ad Insertion | VOD | 隨附廣告、橫幅廣告和可點按廣告 | 不支援 |
-| Ad Insertion | VOD | VPAID 2.0 | 不支援 |
+| Ad Insertion | VOD | 仅广告 | 不支持 |
+| Ad Insertion | VOD | 定位参数 | 仅限VOD |
+| Ad Insertion | VOD | 自定义参数 | 仅限VOD |
+| Ad Insertion | VOD +实时 | 自定义广告策略 | 不支持 |
+| Ad Insertion | VOD +实时 | 延迟广告加载 | 不支持 |
+| Ad Insertion | VOD | 伴随广告、横幅广告和可点击广告 | 不支持 |
+| Ad Insertion | VOD | VPAID 2.0 | 不支持 |
 
-## 虛線核心廣告插入功能(CSAI) {#dash-core-ad-insertion}
+## 虚芯广告插入功能(CSAI) {#dash-core-ad-insertion}
 
-| 類別 | 內容型別 | 功能 | HTML5 FF、IE、Chrome、Android Chrome |
+| 类别 | 内容类型 | 功能 | HTML5 FF、IE、Chrome、Android Chrome |
 |---|---|---|---|
-| Ad Insertion | VOD +即時 | 前置滾動 | 僅限VOD |
-| Ad Insertion | VOD +即時 | 中間滾動 | 僅限VOD |
-| Ad Insertion | VOD +即時 | 後置滾動 | 僅限VOD |
-| Ad Insertion | FER VOD | 廣告解析度和行為 | 不支援 |
-| Ad Insertion | VOD +即時 | 預設廣告原則 | 僅限VOD |
-| Ad Insertion | VOD +即時 | VAST 2.0/3.0 | 僅限VOD |
-| Ad Insertion | VOD +即時 | VMAP 1.0 | 僅限VOD |
-| Ad Insertion | VOD +即時 | CRS v3.1 | 僅限VOD |
+| Ad Insertion | VOD +实时 | 前置式广告 | 仅限VOD |
+| Ad Insertion | VOD +实时 | 中置 | 仅限VOD |
+| Ad Insertion | VOD +实时 | 后置广告 | 仅限VOD |
+| Ad Insertion | FER VOD | 广告分辨率和行为 | 不支持 |
+| Ad Insertion | VOD +实时 | 默认广告策略 | 仅限VOD |
+| Ad Insertion | VOD +实时 | VAST 2.0/3.0 | 仅限VOD |
+| Ad Insertion | VOD +实时 | VMAP 1.0 | 仅限VOD |
+| Ad Insertion | VOD +实时 | CRS v3.1 | 仅限VOD |
 
-## DASH內容保護功能 {#dash-content-protection}
+## DASH内容保护功能 {#dash-content-protection}
 
 <table id="table_hrb_p2g_xx">  
  <thead> 
   <tr> 
-   <th colname="col1" class="entry"> 類別 </th> 
-   <th colname="col2" class="entry"> 內容型別 </th> 
+   <th colname="col1" class="entry"> 类别 </th> 
+   <th colname="col2" class="entry"> 内容类型 </th> 
    <th colname="col3" class="entry"> 功能 </th> 
    <th colname="col6" class="entry"> HTML5 FF、IE、Chrome、Android Chrome</th>
   </tr> 
  </thead>
  <tbody> 
   <tr> 
-   <td colname="col1"> 內容保護 </td> 
-   <td colname="col2"> VOD +即時 </td> 
+   <td colname="col1"> 内容保护 </td> 
+   <td colname="col2"> VOD +实时 </td> 
    <td colname="col3"> AES-128 </td> 
-   <td colname="col6"> 不支援 </td>
+   <td colname="col6"> 不支持 </td>
   </tr> 
   <tr> 
-   <td colname="col1"> 內容保護 </td> 
-   <td colname="col2"> VOD +即時 </td> 
+   <td colname="col1"> 内容保护 </td> 
+   <td colname="col2"> VOD +实时 </td> 
    <td colname="col3"> Sample-AES </td> 
-   <td colname="col6"> 不支援 </td> 
+   <td colname="col6"> 不支持 </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 內容保護 </td> 
+   <td colname="col1"> 内容保护 </td> 
    <td colname="col2"> VOD </td> 
    <td colname="col3"> DRM </td> 
    <td colname="col6"> 
     <ul id="ul_irb_p2g_xx"> 
-     <li id="li_C4643F2978BC4C8ABDB3E6C72C75A468">Widevine開啟 
+     <li id="li_C4643F2978BC4C8ABDB3E6C72C75A468">Widevine on 
       <ul id="ul_7047EA49AA3F40FE8F90E0ED6C028D83"> 
-       <li id="li_B575735388D74D789D56BF373A470A6D">鉻黃 </li> 
+       <li id="li_B575735388D74D789D56BF373A470A6D">铬黄 </li> 
        <li id="li_855146E4AC3A48E69B65F0022E1C0156">Firefox 47+ </li> 
        <li id="li_BC06B0A6EAAC4FC991C713775A8BB4DA">Chromecast </li> 
       </ul> </li> 
      <li id="li_D48B51C2208F423CB85D08886C2E1C66">Windows 8.1和Edge上的Internet Explorer上的PlayReady </li> 
-     <li id="li_2786AC19387241A296E015EE6FD07F2D">Windows Firefox的Adobe存取（僅限影片） </li> 
+     <li id="li_2786AC19387241A296E015EE6FD07F2D">Windows Firefox的Adobe访问（仅限视频） </li> 
     </ul> </td> 
   </tr> 
  </tbody> 
 </table>
 
-## DASH進階播放功能 {#dash-advanced-playback}
+## DASH高级回放功能 {#dash-advanced-playback}
 
-| 類別 | 內容型別 | 功能 | HTML5、FF、IE、Chrome、Android Chrome |
+| 类别 | 内容类型 | 功能 | HTML5、FF、IE、Chrome、Android Chrome |
 |---|---|---|---|
-| 播放 | VOD | 在位移處播放 | ![](assets/supported15.png) |
-| 播放 | VOD | 純音訊播放 | ![](assets/supported15.png) |
-| 播放 | VOD | 特技播放 | ![](assets/supported15.png) |
-| 播放 | VOD | Smooth Trick Play | ![](assets/supported15.png) |
-| 播放 | VOD +即時 | ID3剖析 | 不支援 |
-| 播放 | VOD | 多期間支援 | 僅限VOD |
-| 播放 | VOD +即時 | 代碼化的串流 | 不支援 |
-| 播放 | VOD +即時 | 帳單 | ![](assets/supported15.png) |
-| 播放 | VOD +即時 | Browserify | ![](assets/supported15.png) |
+| 播放 | VOD | 在偏移处播放 | ![](assets/supported15.png) |
+| 播放 | VOD | 纯音频播放 | ![](assets/supported15.png) |
+| 播放 | VOD | 特技游戏 | ![](assets/supported15.png) |
+| 播放 | VOD | 流畅的戏法游戏 | ![](assets/supported15.png) |
+| 播放 | VOD +实时 | ID3解析 | 不支持 |
+| 播放 | VOD | 多期间支持 | 仅限VOD |
+| 播放 | VOD +实时 | 令牌化流 | 不支持 |
+| 播放 | VOD +实时 | 计费 | ![](assets/supported15.png) |
+| 播放 | VOD +实时 | 浏览器化 | ![](assets/supported15.png) |
 
 ## DASH核心播放功能 {#dash-core-playback}
 
-| 類別 | 內容型別 | 功能 | HTML5 FF、IE、Chrome、Android Chrome |
+| 类别 | 内容类型 | 功能 | HTML5 FF、IE、Chrome、Android Chrome |
 |---|---|---|---|
-| 播放 | VOD +即時 | 一般播放（播放、暫停、搜尋） | ![](assets/supported15.png) |
-| 播放 | FER VOD | 一般播放（播放、暫停、搜尋） | 不支援 |
-| 播放 | VOD +即時 | 最適化位元速率 | ![](assets/supported15.png) |
-| 播放 | VOD +即時 | 608/708字幕 | ![](assets/supported15.png) |
-| 播放 | VOD +即時 | WebVTT | 僅限VOD |
-| 播放 | VOD +即時 | 容錯移轉 | 僅限VOD |
-| 播放 | VOD +即時 | QoS和播放器通知 | ![](assets/supported15.png) |
-| 播放 | VOD +即時 | 支援Cookie標頭 | ![](assets/supported15.png) |
-| 播放 | VOD +即時 | 設定緩衝區控制引數 | ![](assets/supported15.png) |
-| 播放 | VOD +即時 | 設定最適化位元速率控制項 | ![](assets/supported15.png) |
-| 播放 | VOD +即時 | 自訂標籤(EventStream) | 僅限VOD （內嵌） |
-| 播放 | VOD +即時 | 延遲繫結音訊 | 僅限VOD |
-| 播放 | VOD +即時 | 302重新導向 | 僅限VOD |
+| 播放 | VOD +实时 | 常规播放（播放、暂停、搜寻） | ![](assets/supported15.png) |
+| 播放 | FER VOD | 常规播放（播放、暂停、搜寻） | 不支持 |
+| 播放 | VOD +实时 | 自适应比特率 | ![](assets/supported15.png) |
+| 播放 | VOD +实时 | 608/708字幕 | ![](assets/supported15.png) |
+| 播放 | VOD +实时 | WebVTT | 仅限VOD |
+| 播放 | VOD +实时 | 故障转移 | 仅限VOD |
+| 播放 | VOD +实时 | QoS和播放器通知 | ![](assets/supported15.png) |
+| 播放 | VOD +实时 | 支持Cookie标头 | ![](assets/supported15.png) |
+| 播放 | VOD +实时 | 设置缓冲区控制参数 | ![](assets/supported15.png) |
+| 播放 | VOD +实时 | 设置自适应比特率控制 | ![](assets/supported15.png) |
+| 播放 | VOD +实时 | 自定义标记(EventStream) | 仅限VOD（内联） |
+| 播放 | VOD +实时 | 后期绑定音频 | 仅限VOD |
+| 播放 | VOD +实时 | 302重定向 | 仅限VOD |

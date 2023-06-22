@@ -1,6 +1,6 @@
 ---
-title: 多個播放許可權
-description: 多個播放許可權
+title: 多个播放权限
+description: 多个播放权限
 copied-description: true
 exl-id: 24b01d54-79b0-4206-b4c0-d81535e4089e
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,8 +10,8 @@ ht-degree: 0%
 
 ---
 
-# 多個播放許可權{#multiple-play-rights}
+# 多个播放权限{#multiple-play-rights}
 
-允許為不同的平台或應用程式指定不同的使用規則。
+允许为不同的平台或应用程序指定不同的使用规则。
 
-使用案例範例：使用多個播放許可權，您可以建立原則來指定「輸出保護」在Microsoft® Windows®平台上為必要專案，在Apple® Macintosh®和Linux®平台上為選用專案。
+示例用例：使用多个播放权限，您可以创建一个策略来指定“输出保护”在Microsoft® Windows®平台上是必需的，在Apple® Macintosh®和Linux®平台上是可选的。

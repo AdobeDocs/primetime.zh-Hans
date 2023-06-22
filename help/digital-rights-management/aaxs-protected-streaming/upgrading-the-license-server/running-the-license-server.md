@@ -1,6 +1,6 @@
 ---
-description: 若要升級執行Adobe Access Server for Protected Streaming的伺服器，請將部署在應用程式伺服器上的flashaccessserver.war檔案，取代為包含最新Adobe存取權的檔案。 如果您想要使用上述新設定選項，請更新伺服器的flashaccess-tenant.xml。 您也需要將jsafe.dll或libjsafe.so更新為包含於最新Adobe存取中的版本。
-title: 執行適用於受保護串流的Adobe Access Server
+description: 要升级运行Adobe Access Server for Protected Streaming的服务器，请将应用程序服务器上部署的flashaccessserver.war文件替换为包含最新Adobe访问的文件。 如果要使用上述新配置选项，请更新服务器的flashaccess-tenant.xml。 您还需要将jsafe.dll或libjsafe.so更新到包含最新Adobe访问权限的版本。
+title: 运行适用于受保护流的Adobe Access Server
 exl-id: 02ba87c9-d4ec-4d39-926e-5d98b1858349
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,12 +9,12 @@ ht-degree: 0%
 
 ---
 
-# 執行適用於受保護串流的Adobe Access Server{#running-the-adobe-access-server-for-protected-streaming}
+# 运行适用于受保护流的Adobe Access Server{#running-the-adobe-access-server-for-protected-streaming}
 
-若要升級執行Adobe Access Server for Protected Streaming的伺服器，請將部署在應用程式伺服器上的flashaccessserver.war檔案，取代為包含最新Adobe存取權的檔案。 如果您想要使用上述新設定選項，請更新伺服器的flashaccess-tenant.xml。 您也需要將jsafe.dll或libjsafe.so更新為包含於最新Adobe存取中的版本。
+要升级运行Adobe Access Server for Protected Streaming的服务器，请将应用程序服务器上部署的flashaccessserver.war文件替换为包含最新Adobe访问的文件。 如果要使用上述新配置选项，请更新服务器的flashaccess-tenant.xml。 您还需要将jsafe.dll或libjsafe.so更新到包含最新Adobe访问权限的版本。
 
-在執行Adobe Access Server for Protected Streaming之前，Adobe建議您使用授權伺服器隨附的公用程式來驗證設定檔是否有效。 如需詳細資訊，請參閱「[設定驗證器](../../aaxs-protected-streaming/aaxs-protected-streaming-utilities/configuration-validator.md)「。
+在运行Adobe Access Server for Protected Streaming之前，Adobe建议您使用许可证服务器提供的实用程序来验证配置文件是否有效。 有关更多详细信息，请参阅“[配置验证器](../../aaxs-protected-streaming/aaxs-protected-streaming-utilities/configuration-validator.md)“。
 
-若要啟動Tomcat和授權伺服器，請從Tomcat的bin目錄執行「catalina.bat start」或「catalina.sh start」。
+要启动Tomcat和许可证服务器，请从Tomcat的bin目录运行“catalina.bat start”或“catalina.sh start”。
 
-伺服器啟動後，請開啟「 」，確認伺服器已正確設定 *https:// license-server-host：port/flashaccessserver/tenant-name/flashaccess/license/v1* 在瀏覽器視窗中。 如果租使用者設定已成功載入，則會顯示確認訊息。
+服务器启动后，通过打开 *https:// license-server-host：port/flashaccessserver/tenant-name/flashaccess/license/v1* 在浏览器窗口中。 如果已成功加载租户配置，则会显示确认消息。

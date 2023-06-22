@@ -1,6 +1,6 @@
 ---
-title: 帳戶IQ中的作業
-description: 帳戶IQ中的作業涉及對訂閱者帳戶執行自動化和大量作業並追蹤其影響的動作。
+title: 帐户IQ中的操作
+description: 帐户IQ中的操作涉及对订阅者帐户执行自动化和批量操作以及跟踪其影响的操作。
 exl-id: ba6bceca-221c-42db-b207-804e4b9f6d54
 source-git-commit: 5b34fbe26078ae761d61179975366505c5628c9c
 workflow-type: tm+mt
@@ -9,37 +9,37 @@ ht-degree: 0%
 
 ---
 
-# 作業 {#operations-tab-next-steps}
+# 操作 {#operations-tab-next-steps}
 
-瞭解訂閱者的使用模式，並為選取的區段找出密碼共用（使用Account IQ中的Reports &amp; Analytics）後，您就可以針對目標採取鎖定行動，減少密碼共用的情形。
+了解订阅者的使用模式并确定选定区段的密码共享后（使用帐户IQ中的Reports &amp; Analytics），您可以采取有针对性的操作以实现缓解密码共享的目标。
 
-帳戶IQ中的作業功能可透過稱為作業的重點程式，協助您有效處理及管理憑證共用。 它提供您為特定訂閱者帳號群組設計目標、量身打造目標動作（根據目標），以及在未來期間自動執行這些動作的選項。 透過「作業」功能，您不僅可以建立和執行作業，而且可以評估其影響。 因此，透過評估影響，您可以調整策略以最佳化影響，無論是轉換借款人還是緩解憑證共用。
+Account IQ中的操作功能可帮助您通过称为操作的专门过程有效地处理和管理凭据共享。 它为您提供了选项，用于为特定订阅者帐户组设计目标、定制定向操作（基于目标），并在未来持续时间自动执行这些操作。 通过“操作”功能，您不仅可以创建和执行操作，还可以衡量它们的影响。 因此，通过评估影响，您可以调整策略以优化影响，无论是转化借款人还是缓解凭据共享。
 
-檢視 **作業** 頁面選取 **作業** 下的選項 **動作** 帳戶IQ應用程式的左側導覽中。 「作業」頁面會列出「帳戶IQ」系統上現有的所有作業及其詳細資訊。
+查看 **操作** 页面选择 **操作** 下的选项 **操作** 帐户IQ应用程序的左侧导航区域中。 “操作”页面列出帐户IQ系统上已存在的所有操作及其详细信息。
 
 ![](assets/operations-page.png)
 
-*圖：帳戶IQ中現有作業的清單和詳細資訊*
+*图：帐户IQ中现有操作的列表和详细信息*
 
-您可以在「作業」頁面執行下列作業：
+在“操作”页面上，您可以：
 
-* 檢視帳戶IQ中已存在的作業清單
+* 查看帐户IQ中已存在的操作列表
 
-* 檢視作業詳細資料，例如：
+* 查看操作详细信息，例如：
 
-   * 狀態（已排程、執行中、已結束、錯誤或已停止）
+   * 状态（“已计划”、“正在运行”、“已结束”、“错误”或“已停止”）
 
-   * 進度（完成百分比）
+   * 进度（完成百分比）
 
-   * 目標對象（執行操作的區段）
+   * 目标受众（要运行操作的区段）
 
-   * 排程（作業的開始與結束日期）
+   * 计划（工序的起始日期和终止日期）
 
-   * 作業的建立與結束日期
+   * 操作的创建和结束日期
 
-* [建立新作業](/help/AccountIQ/operation-affecting-user-segment.md)
+* [创建新操作](/help/AccountIQ/operation-affecting-user-segment.md)
 
-* [檢視作業報告](#operation-reports)
+* [查看工序报表](#operation-reports)
 
 <!--* Search from the list of operations using Search field
 
@@ -49,36 +49,36 @@ ht-degree: 0%
 
 * [Configure columns of Operations details page](#configure-columns)-->
 
-## 檢視作業報告 {#operation-reports}
+## 查看工序报表 {#operation-reports}
 
-您可以檢視作業的報告，分析作業的影響。 若要檢視作業報表，請執行下列步驟：
+您可以通过查看操作报表来分析操作的影响。 要查看工序报表，请执行以下操作：
 
-1. 在主「作業」頁面上選取作業名稱。
+1. 在主“操作”页上选择操作名称。
 
-   報表會以棧疊欄圖表的形式顯示。
+   报表以栈叠柱状图的形式显示。
 
    ![](assets/operation-impact-report.png)
 
-   *圖：作業報告，用於檢視作業的影響*
+   *图：用于查看运营影响的运营报表*
 
-   X軸代表評估期間，而Y軸則描述作業的影響（以評估期間節段中的科目數目表示）。 每個長條都會分成三個部分。
+   X轴表示评估期，而Y轴描述操作的影响（根据评估期中区段中的帐户数）。 每条杆分为三个部分。
 
-   * 一部分代表仍符合作業節段條件的科目數目。
+   * 一部分表示仍满足工序段标准的帐户数。
 
-   * 另一個部分代表該期間的有效科目數目，這些科目最初位於區段中，但不再符合作業區段的條件。
+   * 另一部分表示该期间的活动帐户数，这些活动帐户最初位于区段中，但不再满足操作区段的标准。
 
-   * 第三部分代表該期間未啟用的帳戶。
+   * 第三部分代表该期间未启用的账户。
    >[!NOTE]
    >
-   >第一列代表評估期間開始時，符合作業節段條件的科目數目。
+   >第一栏表示在评估期开始时满足工序段条件的帐户数。
 
-   在一段時間內，圖表會透過指示帳戶數目來顯示您動作（透過作業）的效果，這些帳戶相對於原始條件已變更其行為（例如，共用機率超過90且使用5部以上的裝置），或已變為非作用中。
+   随着时间的推移，此图表通过指示帐户数量来显示您操作（通过操作）的效果，这些帐户的行为相对于原始标准发生了更改（例如，共享概率超过90且使用超过5台设备），或者已停用。
 
 <!--For example, in the above image the variable on the y-axis is number of accounts. Looking at the graph you can compare the number of accounts that are in the operations' segment versus the number of accounts that are outside the operations segment at a particular time (such as week 2nd of the operations evaluation period). Therefore, you can analyze how over the evaluation period do number of accounts vary within the operation segment and outside the segment.
 
 So, if your operation was to send out warning emails to suspecting accounts, and accounts in operations segment were those with sharing probability more than 90 and using more than 5 devices to stream content, then in the beginning of the evaluation period accounts in segment are more than 17 thousand. This number changes over the evaluation period as shown in the graph, thereby indicating the impact of operation. Based on the evaluation, you can take remedial measures on suspecting accounts, or continue with the operation, or adjust your strategy for better outcomes to curb credential sharing.-->
 
-1. 若要關閉報表並返回主要「作業」頁面，請選取「 」 **作業** 下的選項 **動作** 在左側導覽中。
+1. 要关闭报告并返回主“操作”页，请选择 **操作** 下的选项 **操作** 在左侧导航中。
 
 <!--
 

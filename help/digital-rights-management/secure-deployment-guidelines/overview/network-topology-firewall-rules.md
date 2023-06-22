@@ -1,6 +1,6 @@
 ---
-description: 在判斷防火牆規則時，請考慮下列URL型別
-title: 防火牆規則
+description: 在确定防火墙规则时，请考虑以下类型的URL
+title: 防火墙规则
 exl-id: 3f6f6d1a-5759-43b3-9f62-6feb02e0a5c5
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,15 +9,15 @@ ht-degree: 0%
 
 ---
 
-# 防火牆規則 {#firewall-rules}
+# 防火墙规则 {#firewall-rules}
 
-在決定防火牆規則時，請考慮下列URL型別：
+在确定防火墙规则时，请考虑以下类型的URL：
 
-## 傳入的URL {#section_F111526A9DB844CBBF21A3CAE5F50880}
+## 传入URL {#section_F111526A9DB844CBBF21A3CAE5F50880}
 
-您可以設定外部防火牆，使其僅公開您想要提供給使用者的應用程式功能的URL。
+您可以配置外部防火墙，使其仅公开要提供给最终用户的应用程序功能的URL。
 
-外部使用者可使用外部防火牆存取下列URL：
+外部用户可以使用外部防火墙访问以下URL：
 
 <table frame="all" colsep="1" rowsep="1" class="+ topic/table adobe-d/table " id="table_bqs_whz_n4"> 
  <thead class="- topic/thead "> 
@@ -29,7 +29,7 @@ ht-degree: 0%
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="filepath"> /flashaccess/getServerVersion/v3</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">決定伺服器版本。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">确定服务器版本。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 
@@ -40,7 +40,7 @@ ht-degree: 0%
      <li id="li_01B2E17BF4DB456383FD6E18E9DE28F5"><span class="filepath"> /flashaccess/authn/v5/*</span> </li> 
      <li id="li_096D349CCD7945B387CB80C3E99063C7"><span class="filepath"> /flashaccess/authn/v6/*</span> </li> 
     </ul> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">驗證使用者。 </p> <p>如果您使用Adobe Primetime DRM使用者端API進行使用者驗證，則必須可存取此URL。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">用于验证用户。 </p> <p>如果您使用Adobe Primetime DRM客户端API进行用户身份验证，则必须访问此URL。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 
@@ -51,7 +51,7 @@ ht-degree: 0%
      <li id="li_5112283BDCF1457099056733B633FAF1"><span class="filepath"> /flashaccess/license/v5/*</span> </li> 
      <li id="li_F73A570E2C1A45E1BBF21C1468B90D3A"><span class="filepath"> /flashaccess/license/v6/*</span> </li> 
     </ul> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">核發授權給一般使用者。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">向最终用户颁发许可证。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 
@@ -61,7 +61,7 @@ ht-degree: 0%
      <li id="li_2222D27F73D0421396A4F0E18140B3F9"><span class="filepath"> /flashaccess/sync/v5</span> </li> 
      <li id="li_18020B7CE36B4C209F65FF01A00B6737"><span class="filepath"> /flashaccess/sync/v6/*</span> </li> 
     </ul> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">同步處理請求。 </p> <p>如果您在授權中指定同步化需求，則必須可存取此URL。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">同步请求。 </p> <p>如果您在许可证中指定了同步要求，则必须能够访问此URL。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 
@@ -71,7 +71,7 @@ ht-degree: 0%
      <li id="li_CF7590FDAF694EDF9685434BE8EE10CA"><span class="filepath"> /flashaccess/domain/v5</span> </li> 
      <li id="li_CA73424FDFAA4BD8BBE2C1AD165D2C31"><span class="filepath"> /flashaccess/domain/v6/*</span> </li> 
     </ul> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">註冊網域。 </p> <p>如果您實作網域支援，則必須可存取此URL。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">注册域。 </p> <p>如果您实施域支持，则必须访问此URL。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 
@@ -81,15 +81,15 @@ ht-degree: 0%
      <li id="li_C761F14F3C97479CBA5C255739E01A28"><span class="filepath"> /flashaccess/dereg/v5</span> </li> 
      <li id="li_23A8AABE7499488EB61B7ED27CC65098"><span class="filepath"> /flashaccess/dereg/v6/*</span> </li> 
     </ul> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">若要取消註冊網域，請執行下列動作： </p> <p>如果您實作網域支援，則必須可存取此URL。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">注销域。 </p> <p>如果您实施域支持，则必须访问此URL。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="filepath"> /flashaccess/headerconversion/v1/*</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">允許使用者端將FMRMS 1.x DRM中繼資料轉換為Primetime DRM中繼資料。 </p> <p>注意：此URL必須使用SSL (HTTPS)。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">允许客户端将FMRMS 1.x DRM元数据转换为Primetime DRM元数据。 </p> <p>注意：此URL必须使用SSL (HTTPS)。 </p> </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="filepath"> /edcws/services/urn：EDCLicenseService/*</span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">Web服務URLLiveCycle Rights Management ES。 如果內容是使用舊版FMRMS發佈，則此URL可讓舊版使用者端連線至伺服器。 系統會提示這些使用者端升級至Adobe Primetime DRM。 </p> <p class="- topic/p ">注意：此URL必須使用SSL (HTTPS)。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">Web服务URLLiveCycle Rights Management ES。 如果内容是使用早期版本的FMRMS发布的，则此URL允许较旧的客户端连接到服务器。 系统会提示这些客户端升级到Adobe Primetime DRM。 </p> <p class="- topic/p ">注意：此URL必须使用SSL (HTTPS)。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="1" class="- topic/entry "> 
@@ -97,20 +97,20 @@ ht-degree: 0%
      <li id="li_24B4D42BECF8405281C73B782F8E7310"><span class="filepath"> /flashaccess/lreturn/v5</span> </li> 
      <li id="li_6B79563205D1421F89131E650D71E83B"><span class="filepath"> /flashaccess/lreturn/v6</span> </li> 
     </ul> </td> 
-   <td colname="2" class="- topic/entry "> <p>若要傳回授權。 </p> <p> 如果您實作授權傳回支援，則必須可存取URL。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>返回许可证。 </p> <p> 如果您实施许可证返回支持，则必须能够访问URL。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
 >[!NOTE]
 >
->內部防火牆應僅允許透過反向Proxy連線至Primetime DRM授權伺服器，且只能連線至表格中的URL。 若要改善擴充性，請針對反向Proxy與Primetime DRM之間的連線使用HTTP。
+>内部防火墙应仅允许通过反向代理连接到Primetime DRM许可证服务器，并且仅允许连接到表中的URL。 为了提高可扩展性，请使用HTTP来连接反向代理和Primetime DRM。
 
-## 傳出URL {#section_FFF9F7BB353149F4A27F8788E9934A48}
+## 传出URL {#section_FFF9F7BB353149F4A27F8788E9934A48}
 
-傳出URL可讓授權伺服器從Adobe下載CRL。
+传出URL允许许可证服务器从Adobe下载CRL。
 
-以下是您可以使用的傳出URL清單：
+以下是您可以使用的传出URL列表：
 
 * `https://crl2.adobe.com/Adobe/FlashAccessRootCA.crl`
 * `https://crl2.adobe.com/Adobe/FlashAccessIntermediateCA.crl`

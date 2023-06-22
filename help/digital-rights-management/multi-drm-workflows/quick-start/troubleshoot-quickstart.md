@@ -1,6 +1,6 @@
 ---
-description: 測試中的常見問題通常與您的ExpressPlay驗證者、傳輸通訊協定和必要的服務要求引數有關。
-title: 疑難排解您的快速入門
+description: 测试过程中的常见问题通常涉及您的ExpressPlay身份验证器、传输协议和所需的服务请求参数。
+title: 快速入门疑难解答
 exl-id: d8908f9c-98f4-4100-a003-d3b990105dee
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,32 +9,32 @@ ht-degree: 0%
 
 ---
 
-# 疑難排解您的快速入門{#troubleshooting-your-quick-start}
+# 快速入门疑难解答{#troubleshooting-your-quick-start}
 
-測試中的常見問題通常與您的ExpressPlay驗證者、傳輸通訊協定和必要的服務要求引數有關。
+测试过程中的常见问题通常涉及您的ExpressPlay身份验证器、传输协议和所需的服务请求参数。
 
-若您的 [!DNL curl] 對ExpressPlay產生Token的請求失敗，回應內文將包含說明失敗原因的錯誤訊息。
+如果您的 [!DNL curl] 对ExpressPlay生成令牌的请求失败，响应正文将包含一个错误消息，解释失败的原因。
 
-如果權杖產生成功，但內容仍然沒有播放，請檢查ExpressPlay權杖贖回記錄檔中是否有錯誤，例如「已到期的權杖」。
+如果令牌生成成功，但内容仍未播放，请检查ExpressPlay令牌赎回日志中是否存在“令牌已过期”等错误。
 
-如果代號產生成功，而且贖回沒有錯誤，但視訊仍然沒有播放，請檢查CEK是否符合內容，以及內容格式是否符合目標裝置的功能。
+如果令牌生成成功并且赎回没有错误，但视频仍然没有播放，请检查CEK是否与内容匹配，以及内容格式是否与目标设备的功能匹配。
 
 此外：
 
-* 檢查您是否在服務請求中使用正確的客戶驗證器。 當您想要使用測試驗證器時，很容易意外使用生產驗證器。 此外，請務必使用 *您的* 驗證者。 例如，在測試期間，您可能會借用他人的 `curl` 命令，而忘記在驗證器中交換他們的內容。
+* 检查您是否在服务请求中使用了正确的客户验证器。 当您想要使用测试验证器时，很容易意外使用生产验证器。 此外，请确保您使用的是 *您的* 验证者。 例如，在测试过程中，您可能会借用他人的 `curl` 命令，而忘记在验证器中替换他们的验证器。
 
-* 檢查您在請求或資訊清單中是否使用正確的傳輸通訊協定( `https://` 與 `https://`、或是在FairPlay的案例中， `skd://` 與 `https://` 與 `https://`.
+* 检查您的请求或清单中是否使用了正确的传输协议( `https://` 对比 `https://`或者公平竞争公司， `skd://` 对比 `https://` 对比 `https://`.
 
-* 請確定您已包含您所使用DRM解決方案的所有必要查詢引數。 例如，PlayReady和Widevine很容易混淆，因為它們都使用DASH，但所需的請求引數和封裝設定不同。
-* 確認您的ExpressPlay帳戶有足夠的代號積分，而且尚未用完。
-* 確認傳送至TVSDK的三重DRM資料正確：ExpressPlay權杖、授權伺服器URL及DRM型別。
-* 確認您所有的元件對於使用哪個ExpressPlay環境的假設與有兩個環境（測試和生產）的假設相同。
-* 請注意，不同的瀏覽器通常只支援一個DRM作為DASH內容。
-* 自TVSDK 2.4起，僅支援DASH-LIVE封裝設定檔。 （DASH-OnDemand支援正在規劃中。）
-* 由於裝置製造商的限制，AndroidTV PlayReady支援會斷斷續續。 舉例來說，
+* 确保包括您正在使用的DRM解决方案所需的所有查询参数。 例如，很容易混淆PlayReady和Widevine，因为它们都使用DASH，但所需的请求参数和封装配置不同。
+* 确认您的ExpressPlay帐户有足够的令牌积分，并且尚未用完。
+* 确认发送到TVSDK的三重DRM数据正确：ExpressPlay令牌、许可证服务器URL和DRM类型。
+* 确认所有组件对使用哪个ExpressPlay环境所做的假设与对测试环境和生产环境所做的假设相同。
+* 请注意，不同的浏览器通常仅支持一个DRM用于DASH内容。
+* 从TVSDK 2.4起，仅支持DASH-LIVE打包配置文件。 （DASH-OnDemand支持正在规划中。）
+* 由于设备制造商的限制，AndroidTV PlayReady支持会断断续续。 举个例子，
 
-   * Razer Forge裝置的PlayReady內容有問題
-   * Amazon FireTV無法使用已加密音訊曲目的破折號內容
+   * razer Forge设备出现PlayReady内容问题
+   * Amazon FireTV不能使用已加密音轨的DASH内容
 
-* 自TVSDK 2.4起，只有AndroidTV裝置通常同時支援PlayReady和Widevine DRM。 其他所有Android裝置通常僅支援Widevine。
-* 截至TVSDK 2.4，Android TVSDK目前要求PSSH方塊位於.mpd資訊清單中。 這與DASH標準相反，後者規定PSSH方塊可位於任何位置，例如內容本身，而不僅僅是.mpd。
+* 从TVSDK 2.4开始，只有AndroidTV设备通常同时支持PlayReady和Widevine DRM。 所有其他Android设备通常仅支持Widevine。
+* 截至TVSDK 2.4，Android TVSDK当前要求PSSH框位于.mpd清单中。 这与DASH标准相反，该标准规定PSSH框可以位于任何位置，如内容本身，而不仅仅是.mpd。

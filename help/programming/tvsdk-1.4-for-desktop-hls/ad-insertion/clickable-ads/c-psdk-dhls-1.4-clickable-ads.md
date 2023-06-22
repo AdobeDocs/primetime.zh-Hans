@@ -1,6 +1,6 @@
 ---
-description: TVSDK會提供您資訊，讓您在點進廣告上採取行動。 建立播放器UI時，您必須決定當使用者點按可點按廣告時如何回應。
-title: 可點按的廣告
+description: TVSDK为您提供信息，以便您对点进广告执行操作。 在创建播放器UI时，您必须确定在用户单击可点击广告时如何响应。
+title: 可点击广告
 exl-id: 50c74c82-c5d8-43f6-accf-8330a426a7bd
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,19 +9,19 @@ ht-degree: 0%
 
 ---
 
-# 可點按的廣告 {#clickable-ads}
+# 可点击广告 {#clickable-ads}
 
-TVSDK會提供您資訊，讓您在點進廣告上採取行動。 建立播放器UI時，您必須決定當使用者點按可點按廣告時如何回應。
+TVSDK为您提供信息，以便您对点进广告执行操作。 在创建播放器UI时，您必须确定在用户单击可点击广告时如何响应。
 
-對於Flash執行階段的TVSDK，只能點選線性廣告。
+对于TVSDK forFlash运行时，只能点击线性广告。
 
-## 回應廣告的點按 {#respond-to-clicks-on-ads}
+## 响应广告的点击次数 {#respond-to-clicks-on-ads}
 
-當使用者按一下廣告或相關按鈕時，您的應用程式將負責回應。 TVSDK會提供目的地URL的相關資訊。
+当用户单击广告或相关按钮时，您的应用程序负责响应。 TVSDK为您提供有关目标URL的信息。
 
-此範例顯示管理廣告點選的一種可能方式。
+此示例显示了一种管理广告点击的可能方法。
 
-1. 每次播放廣告時，都會在媒體播放器上方顯示一個按鈕。 按一下廣告的使用者會重新導向至廣告URL。 此按鈕是 [!DNL ClickableAdsOverlay.xml].
+1. 每次播放广告时，都会在媒体播放器顶部显示一个按钮。 单击广告的用户将被重定向到广告URL。 此按钮是 [!DNL ClickableAdsOverlay.xml].
 
    ```xml
       <?xml version="1.0"?> 
@@ -34,7 +34,7 @@ TVSDK會提供您資訊，讓您在點進廣告上採取行動。 建立播放�
    </s:VGroup>
    ```
 
-1. 將此覆蓋圖加入我們的媒體播放器範例、 [!DNL psdkdemo.xml].
+1. 将此叠加图包含到我们的媒体播放器示例中， [!DNL psdkdemo.xml].
 
    ```xml
       <psdk:ClickableAdsOverlay id="clickableAdsOverlay"  
@@ -44,7 +44,7 @@ TVSDK會提供您資訊，讓您在點進廣告上採取行動。 建立播放�
    </psdk:ClickableAdsOverlay
    ```
 
-1. 若要讓檢視只在廣告播放時可見，請聆聽 `onAdStart` 和 `onAdComplete` 由傳送的事件。
+1. 要使视图仅在播放广告时可见，请聆听 `onAdStart` 和 `onAdComplete` 由调度的事件。
 
    ```
    _player.addEventListener(AdPlaybackEvent.AD_STARTED, onAdStarted); 
@@ -63,7 +63,7 @@ TVSDK會提供您資訊，讓您在點進廣告上採取行動。 建立播放�
    }
    ```
 
-1. 監視使用者在可點按廣告上的互動。 當使用者觸控或點選廣告或按鈕時，通知TVSDK `notifyClick`.
+1. 监控用户对可点击广告的交互。 当用户触摸或单击广告或按钮时，通知TVSDK `notifyClick`.
 
    ```
    private function onAdsOverlayClicked():void {     
@@ -71,15 +71,15 @@ TVSDK會提供您資訊，讓您在點進廣告上採取行動。 建立播放�
    }
    ```
 
-1. 聆聽 `AdclickEvent.AD_CLICK` 事件。
+1. 聆听 `AdclickEvent.AD_CLICK` 事件。
 
-   如果廣告正在播放，TVSDK會傳送 `AdClickEvent.AD_CLICK` 事件，您可從中擷取點進URL和相關資訊。
+   如果广告正在播放，TVSDK会调度 `AdClickEvent.AD_CLICK` 事件，从中可检索点进URL和相关信息。
 
    ```
       _player.addEventListener(AdClickEvent.AD_CLICK, onAdClick);
    ```
 
-1. 將使用者導向廣告URL時暫停媒體播放器。
+1. 将用户定向到广告URL时暂停媒体播放器。
 
    ```
    private function onAdClick(event:AdClickEvent):void { 
@@ -90,15 +90,15 @@ TVSDK會提供您資訊，讓您在點進廣告上採取行動。 建立播放�
    }
    ```
 
-1. 顯示廣告點進URL和任何相關資訊。
+1. 显示广告点进URL和任何相关信息。
 
-       例如，您可以用下列其中一種方式來顯示它：
+       例如，您可以通过以下方式之一显示它：
    
-   * 在應用程式的瀏覽器中開啟點進URL。
+   * 在应用程序内的浏览器中打开点进URL。
 
-      在案頭平台上，視訊廣告播放區域通常用於在使用者點按時叫用點進URL。
-   * 將使用者重新導向至外部行動網頁瀏覽器。
+      在桌面平台上，视频广告播放区域通常用于在用户单击时调用点进URL。
+   * 将用户重定向到外部移动Web浏览器。
 
-      在行動裝置上，視訊廣告播放區域可用於其他功能，例如隱藏和顯示控制項、暫停播放、展開至全熒幕等。 因此，在行動裝置上，通常會向使用者顯示一個獨立的檢視（例如贊助者按鈕），作為啟動點進URL的方法。
+      在移动设备上，视频广告播放区域用于执行其他功能，例如隐藏和显示控件、暂停播放、展开到全屏等。 因此，在移动设备上，通常会向用户显示一个单独的视图（例如发起人按钮），作为启动点进URL的一种方式。
 
-1. 關閉顯示點進資訊的瀏覽器視窗，然後繼續播放視訊。
+1. 关闭显示点进信息的浏览器窗口，然后继续播放视频。

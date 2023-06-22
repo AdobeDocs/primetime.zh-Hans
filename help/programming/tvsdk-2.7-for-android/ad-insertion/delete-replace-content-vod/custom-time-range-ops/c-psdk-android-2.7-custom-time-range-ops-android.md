@@ -1,6 +1,6 @@
 ---
-description: CustomRangeMetadata類別會識別VOD資料流標籤、刪除和取代中不同型別的時間範圍。 對於每種自訂時間範圍型別，您可以執行對應的操作，包括刪除和取代廣告內容。
-title: 自訂時間範圍作業
+description: CustomRangeMetadata类标识VOD流标记、删除和替换中不同类型的时间范围。 对于每种自定义时间范围类型，您可以执行相应的操作，包括删除和替换广告内容。
+title: 自定义时间范围操作
 exl-id: 52d2bbf6-107d-4e38-93ea-a29c9dd8c81e
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,26 +9,26 @@ ht-degree: 0%
 
 ---
 
-# 概觀 {#custom-time-range-operations}
+# 概述 {#custom-time-range-operations}
 
-CustomRangeMetadata類別會識別VOD資料流中不同型別的時間範圍：標籤、刪除和取代。 對於每種自訂時間範圍型別，您可以執行對應的操作，包括刪除和取代廣告內容。
+CustomRangeMetadata类标识VOD流中不同类型的时间范围：标记、删除和替换。 对于每种自定义时间范围类型，您可以执行相应的操作，包括删除和替换广告内容。
 
 <!--<a id="section_1323C0BAC259424C85A6ACFB48FE77EC"></a>-->
 
-對於廣告刪除和取代，TVSDK會使用下列專案 *自訂時間範圍作業* 模式：
+对于广告删除和替换，TVSDK使用以下功能 *自定义时间范围操作* 模式：
 
-* **標籤** 此模式在舊版TVSDK中稱為自訂廣告標籤。 此模式會標籤已置入VOD資料流中之廣告的開始和結束時間。 當有型別的時間範圍標籤時 `MARK` 在串流中，初始位置為 `Mode.MARK` 產生者 `CustomMarkerOpportunityGenerator` 解決者 `CustomRangeResolver`. 未插入任何廣告。
+* **标记** 此模式在TVSDK的早期版本中称为自定义广告标记。 模式会标记已置于VOD流中的广告的开始和结束时间。 当存在类型为的时间范围标记时 `MARK` 在流中，初始投放位置为 `Mode.MARK` 生成者 `CustomMarkerOpportunityGenerator` 解决者 `CustomRangeResolver`. 未插入广告。
 
-* **DELETE** 對象 `DELETE` 時間範圍，初始 `placementInformation` 型別 `Mode.DELETE` 建立與解析者： `CustomRangeResolver`. `DeleteRangeTimelineOperation` 會定義要從時間軸移除的範圍，而TVSDK會使用 `removeByLocalTime` 從Adobe Video Engine (AVE) API完成此操作。 如果存在DELETE範圍和Adobe Primetime廣告決策中繼資料，則會先刪除範圍，然後 `AuditudeResolver` 使用典型的Adobe Primetime ad decisioning工作流程解析廣告。
+* **DELETE** 对象 `DELETE` 时间范围，初始 `placementInformation` 类型 `Mode.DELETE` 创建者和解决者 `CustomRangeResolver`. `DeleteRangeTimelineOperation` 定义要从时间轴中删除的范围，TVSDK将使用 `removeByLocalTime` 从Adobe视频引擎(AVE) API完成此操作。 如果存在DELETE范围和Adobe Primetime ad decisioning元数据，则首先删除这些范围，然后 `AuditudeResolver` 使用典型的Adobe Primetime广告决策工作流解析广告。
 
-* **REPLACE** 對象 `REPLACE` 時間範圍，兩個初始值 `placementInformations` 已建立，一個 `Mode.DELETE` 和一個 `Mode.REPLACE`. `CustomRangeResolver` 先刪除時間範圍，然後刪除 `AuditudeResolver` 插入指定的廣告 `replaceDuration` 放入時間軸中。 若否 `replaceDuration` 指定時，伺服器會決定要插入的內容。
+* **REPLACE** 对象 `REPLACE` 时间范围，两个初始值 `placementInformations` 已创建，一个 `Mode.DELETE` 和一个 `Mode.REPLACE`. `CustomRangeResolver` 先删除时间范围，然后 `AuditudeResolver` 插入指定内容的广告 `replaceDuration` 放入时间轴。 如果否 `replaceDuration` 指定时，服务器会确定要插入的内容。
 
-為了支援這些自訂時間範圍作業，TVSDK提供下列功能：
+为了支持这些自定义时间范围操作，TVSDK提供了以下功能：
 
-* 多個內容解析器
+* 多个内容解析器
 
-   一個串流可以有多個根據廣告訊號模式和廣告中繼資料的內容解析器。 此行為會隨著廣告訊號模式和廣告中繼資料的不同組合而改變。
-* 使用多個初始機會 `CustomMarkerOpportunityGenerator`.
-* 新的廣告訊號模式， `CUSTOM_RANGES`.
+   一个流可以具有多个基于广告信令模式和广告元数据的内容解析器。 该行为随广告信令模式和广告元数据的不同组合而变化。
+* 多个初始机会，使用 `CustomMarkerOpportunityGenerator`.
+* 新的广告信号模式， `CUSTOM_RANGES`.
 
-   廣告會根據來自外部來源的時間範圍資料放置，例如JSON檔案。
+   广告是根据来自外部源（如JSON文件）的时间范围数据投放的。

@@ -1,6 +1,6 @@
 ---
-description: 封裝內容時，您必須指定授權伺服器URL。
-title: 封裝內容
+description: 打包内容时，必须指定许可证服务器URL。
+title: 打包内容
 exl-id: f82385d5-cdb3-4c24-822e-3fc3c3a0793f
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,22 +9,22 @@ ht-degree: 0%
 
 ---
 
-# 封裝內容{#packaging-content}
+# 打包内容{#packaging-content}
 
-封裝內容時，您必須指定授權伺服器URL。
+打包内容时，必须指定许可证服务器URL。
 
-Adobe Primetime DRM伺服器URL會使用以下格式：
+Adobe Primetime DRM服务器URL使用以下格式：
 
 ```
 http(s)://<license-server-host:port>/flashaccessserver/<tenant-name>
 ```
 
-例如，對於授權伺服器主機名稱 `mylicenseserver.com` 接聽連線埠8080和名為的租使用者的伺服器 *`tenant1`*，您會針對封裝內容時指定的授權伺服器URL使用下列語法：
+例如，对于许可证服务器主机名 `mylicenseserver.com` 监听端口8080，还有一个叫的租户 *`tenant1`*，您会为打包内容时指定的许可证服务器URL使用以下语法：
 
 ```
 https://mylicenseserver.com:8080/flashaccessserver/tenant1
 ```
 
-如果每個租使用者使用不同的授權伺服器和傳輸認證，請務必在封裝程式中指定正確的租使用者憑證。
+如果每个租户使用不同的许可证服务器和传输凭据，请确保在打包程序中指定正确的租户证书。
 
-如果您想要確保伺服器僅向來自已知封裝者的內容發行授權，您需要將封裝者的憑證包含在封裝者允許租使用者設定檔案的清單中。
+如果要确保服务器仅向已知打包程序中的内容颁发许可证，您需要将打包程序的证书包含在租户配置文件的打包程序允许列表中。

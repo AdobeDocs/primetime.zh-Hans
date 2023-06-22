@@ -1,5 +1,5 @@
 ---
-description: TVSDK會傳送服務品質(QoS)事件，以通知您的應用程式有關可能影響QoS統計資料計算的事件，例如緩衝和搜尋事件。
+description: TVSDK调度服务质量(QoS)事件，以通知应用程序有关可能会影响QoS统计信息计算的事件，例如缓冲和搜寻事件。
 title: QoS事件
 exl-id: 283555cd-9ba9-45e9-a73e-76aba6993e8a
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -11,9 +11,9 @@ ht-degree: 0%
 
 # QoS事件{#qos-events}
 
-TVSDK會傳送服務品質(QoS)事件，以通知您的應用程式有關可能影響QoS統計資料計算的事件，例如緩衝和搜尋事件。
+TVSDK调度服务质量(QoS)事件，以通知应用程序有关可能会影响QoS统计信息计算的事件，例如缓冲和搜寻事件。
 
-下列範例顯示這些事件的典型進度：
+以下示例显示了这些事件的典型过程：
 
 ```
 // For buffering 

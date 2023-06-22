@@ -1,6 +1,6 @@
 ---
-description: 檢查串流和播放清單（資訊清單）的限制和需求，包括DRM加密金鑰。
-title: 內容和資訊清單需求
+description: 检查流和播放列表（清单）的限制和要求，包括DRM加密密钥。
+title: 内容和清单要求
 exl-id: 96b2b245-558b-4606-87c0-22140430c326
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# 內容和資訊清單需求 {#content-and-manifest-requirements}
+# 内容和清单要求 {#content-and-manifest-requirements}
 
-檢查串流和播放清單（資訊清單）的限制和需求，包括DRM加密金鑰。
+检查流和播放列表（清单）的限制和要求，包括DRM加密密钥。
 
-| 包含並設定 `RESOLUTION` 資訊清單檔案中每個ABR資料流的屬性。 您必須使用Flash Player14或更新版本。 |
+| 包含并设置 `RESOLUTION` 清单文件中每个ABR流的属性。 必须使用Flash Player14或更高版本。 |
 |---|
-| 如果受DRM保護的資料流是多位元速率(MBR)，則用於MBR的DRM加密金鑰應與所有位元速率資料流中使用的金鑰相同。 |
-| 必須與主要內容的轉譯具有相同位元速率轉譯。 |
+| 如果受DRM保护的流是多比特率(MBR)，则用于MBR的DRM加密密钥应与用于所有比特率流中的密钥相同。 |
+| 必须具有与主内容的演绎版相同的比特率演绎版。 |

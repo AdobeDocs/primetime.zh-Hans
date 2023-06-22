@@ -1,6 +1,6 @@
 ---
-description: 您必須確保安全地發行授權。 請考慮以下最佳實務來保護授權伺服器
-title: 保護授權伺服器
+description: 您必须确保安全地颁发许可证。 请考虑这些最佳做法以保护许可证服务器
+title: 保护许可证服务器
 exl-id: 88b8f44f-c140-4cbc-be0a-f67058548fc3
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,86 +9,86 @@ ht-degree: 0%
 
 ---
 
-# 保護授權伺服器 {#protecting-the-license-server}
+# 保护许可证服务器 {#protecting-the-license-server}
 
-您必須確保安全地發行授權。 請考慮以下最佳實務來保護授權伺服器：
+您必须确保安全地颁发许可证。 请考虑以下最佳实践来保护许可证服务器：
 
-## 使用本機產生的CRL {#consuming-locally-generated-crls}
+## 使用本地生成的CRL {#consuming-locally-generated-crls}
 
-若要使用本機產生的憑證撤銷清單(CRL)和原則更新清單，請使用Adobe Primetime DRM API來驗證簽名。
+要使用本地生成的证书吊销列表(CRL)和策略更新列表，请使用Adobe Primetime DRM API验证签名。
 
-下列API會確認清單未被竄改，而且清單是由正確的License Server簽署：
+以下API验证列表是否未被篡改，以及列表是否由正确的许可证服务器签名：
 
-* 呼叫 [RevocationList.verifySignature](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/revocation/RevocationList.html#verifySignature(java.security.cert.X509Certificate)) 以在您提供 [撤銷清單](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/revocation/RevocationList.html) 至任何API。
+* 调用 [RevocationList.verifySignature](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/revocation/RevocationList.html#verifySignature(java.security.cert.X509Certificate)) 以在提供 [吊销列表](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/revocation/RevocationList.html) 到任何API。
 
-   如需詳細資訊，請參閱 [RevocationListFactory](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/revocation/RevocationListFactory.html).
+   有关更多信息，请参阅 [RevocationListFactory](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/revocation/RevocationListFactory.html).
 
-* 呼叫 [PolicyUpdateList.verifySignature](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/policyupdate/PolicyUpdateList.html#verifySignature(java.security.cert.X509Certificate)) 以在提供 `PolicyUpdateList` 至任何API。
+* 调用 [PolicyUpdateList.verifySignature](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/policyupdate/PolicyUpdateList.html#verifySignature(java.security.cert.X509Certificate)) 以在提供 `PolicyUpdateList` 到任何API。
 
-   如需詳細資訊，請參閱 [PolicyUpdateList](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/policyupdate/PolicyUpdateList.html).
+   有关更多信息，请参阅 [PolicyUpdateList](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/policyupdate/PolicyUpdateList.html).
 
-## 使用Adobe發佈的CRL{#consuming-crls-published-by-adobe}
+## 使用Adobe发布的CRL{#consuming-crls-published-by-adobe}
 
-SDK會定期下載Adobe所發佈的CRL。 您必須確保不會封鎖對這些檔案的存取，或不會阻止這些CRL的強制執行。
+SDK定期下载Adobe发布的CRL。 您必须确保不阻止对这些文件的访问，或者不阻止实施这些CRL。
 
-SDK提供可在擷取AdobeCRL時忽略錯誤的設定選項，而且您只能在開發環境中套用此選項。 在生產環境中，授權伺服器必須從Adobe擷取CRL。 如果授權伺服器無法取得有效的CRL，則會發生錯誤。
+SDK提供了一个配置选项，用于在检索AdobeCRL时忽略错误，并且您只能在开发环境中应用此选项。 在生产环境中，许可证服务器必须从Adobe中检索CRL。 如果许可证服务器无法获取有效的CRL，则出现错误。
 
-## 產生CRL以補充Adobe所發佈的CRL{#generating-crls-to-supplement-those-published-by-adobe}
+## 生成CRL以补充Adobe发布的CRL{#generating-crls-to-supplement-those-published-by-adobe}
 
-您可以使用Adobe Primetime DRM來建立CRL，以補充Adobe所發佈的機器CRL。
+您可以使用Adobe Primetime DRM创建CRL，以补充Adobe发布的计算机CRL。
 
-Primetime DRM SDK會檢查並強制執行AdobeCRL。 不過，您可以建立CRL，將CRL傳遞至Primetime DRM SDK以撤銷其他電腦認證，藉此禁止使用其他使用者端電腦。 當您核發授權時，SDK會檢查AdobeCRL和您的CRL。
+Primetime DRM SDK会检查并强制执行AdobeCRL。 但是，您可以通过创建一个CRL来禁止其他客户端计算机，该CRL通过将CRL传递到Primetime DRM SDK来撤销其他计算机凭据。 当您颁发许可证时，SDK会检查AdobeCRL和您的CRL。
 
-若要產生CRL，請參閱 [RevocationListFactory](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/revocation/RevocationListFactory.html).
+要生成CRL，请参阅 [RevocationListFactory](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/revocation/RevocationListFactory.html).
 
-## 復原偵測 {#rollback-detection}
+## 回滚检测 {#rollback-detection}
 
-如果您的Adobe Primetime DRM實作使用要求使用者端維持狀態的商業規則（例如播放視窗間隔），Adobe建議伺服器追蹤倒回計數器，並使用AIR或SWF允許清單。
+如果您的Adobe Primetime DRM实施使用要求客户端保持状态的业务规则（例如，播放窗口间隔），Adobe建议服务器跟踪回滚计数器并使用AIR或SWF允许列表。
 
-在使用者端的大部分要求中，都會將回覆計數器傳送至伺服器。 如果您的Primetime DRM實作不需要倒回計數器，則可以忽略。 否則，Adobe建議伺服器儲存隨機機器ID，此ID是使用取得 [MachineToken.getUniqueId()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/cert/MachineId.html#getUniqueId())，以及資料庫中目前的計數器值。
+回滚计数器在来自客户端的大多数请求中发送到服务器。 如果您的Primetime DRM实施不需要回滚计数器，则可以忽略。 否则，Adobe建议服务器存储随机计算机ID，该ID是使用获取的 [MachineToken.getUniqueId()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/cert/MachineId.html#getUniqueId())，以及数据库中的当前计数器值。
 
-如需如何遞增及追蹤倒回計數器的詳細資訊，請參閱 [使用者端狀態](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/protocol/ClientState.html) 和復原偵測。
+有关如何递增和跟踪回滚计数器的详细信息，请参见 [客户端状态](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/protocol/ClientState.html) 和回滚检测。
 
-## 簽發授權時的電腦計數 {#machine-count-when-issuing-licenses}
+## 颁发许可证时的计算机计数 {#machine-count-when-issuing-licenses}
 
-如果商業規則要求追蹤使用者的電腦數目，則License Server或Domain Server必須儲存與使用者相關聯的電腦ID。
+如果业务规则要求跟踪用户的计算机数，则License Server或Domain Server必须存储与该用户关联的计算机ID。
 
-追蹤機器ID最有效的方法是儲存 [MachineId.getBytes()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/cert/MachineId.html#getBytes()) 方法。 收到新請求時，請使用將請求中的電腦ID與已知的電腦ID進行比較 [MachineId.matches()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/cert/MachineId.html#matches(com.adobe.flashaccess.sdk.cert.MachineId)).
+跟踪计算机ID的最可靠方法是存储 [MachineId.getBytes()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/cert/MachineId.html#getBytes()) 数据库中的方法。 收到新请求后，使用将请求中的计算机ID与已知的计算机ID进行比较 [MachineId.matches()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/cert/MachineId.html#matches(com.adobe.flashaccess.sdk.cert.MachineId)).
 
-[MachineId.matches()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/cert/MachineId.html#matches(com.adobe.flashaccess.sdk.cert.MachineId)) 會執行ID的比較，以判斷ID是否代表同一部電腦。 只有少數電腦ID時，此比較才切實可行。 例如，如果使用者在其網域中允許使用五台電腦，您可以在資料庫中搜尋與使用者使用者名稱相關聯的電腦ID，並取得一小部分資料集以進行比較。
+[MachineId.matches()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/cert/MachineId.html#matches(com.adobe.flashaccess.sdk.cert.MachineId)) 执行ID比较以确定ID是否代表同一计算机。 仅当机器ID数量较少时，这种比较才具有实用性。 例如，如果用户在其域中允许使用五台计算机，则您可以在数据库中搜索与用户用户名关联的计算机ID，并获取一小部分数据以进行比较。
 
-此比較不適用於允許匿名存取的部署。 在這種情況下， [MachineId.getUniqueID()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/cert/MachineId.html#getUniqueId()) 可使用。 但是，如果使用者從Flash和Adobe AIR®執行階段存取內容，則此ID不能相同。
+对于允许匿名访问的部署，这种比较并不实际。 在这个案例中， [MachineId.getUniqueID()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/cert/MachineId.html#getUniqueId()) 可以使用。 但是，如果用户从Flash和Adobe AIR®运行时访问内容，则此ID不能相同。
 
 >[!NOTE]
 >
->如果使用者重新格式化硬碟，該ID將無法存留。
+>如果用户重新格式化硬盘，则ID将无法存留。
 
-## 重播保護 {#replay-protection}
+## 重播保护 {#replay-protection}
 
-重播保護可防止攻擊者重播授權要求訊息，並可能對使用者端造成拒絕服務(DoS)攻擊。
+重播保护可防止攻击者重播许可证请求消息并可能导致对客户端的拒绝服务(DoS)攻击。
 
-DoS攻擊是攻擊者嘗試阻止服務的合法使用者使用該服務的行為。 例如，使用倒回計數器的重播攻擊可能用來「誘騙」License Server認為DRM使用者端已倒回其狀態，進而導致帳戶暫停。
+DoS攻击是攻击者试图阻止服务的合法用户使用该服务的一种尝试。 例如，使用回滚计数器的重播攻击可能用于“诱使”许可证服务器认为DRM客户端已回滚其状态，从而导致帐户挂起。
 
-若要進一步瞭解重播保護，請參閱 [ AbstractRequestMessage.getMessageId()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/protocol/AbstractRequestMessage.html#getMessageId()).
+要了解有关重播保护的更多信息，请参阅 [ AbstractRequestMessage.getMessageId()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/protocol/AbstractRequestMessage.html#getMessageId()).
 
-## 維護受信任內容封裝者的允許清單 {#maintain-a-allowlist-of-trusted-content-packagers}
+## 维护受信任内容打包程序的允许列表 {#maintain-a-allowlist-of-trusted-content-packagers}
 
-允許清單是受信任實體的清單。
+允许列表是受信任实体的列表。
 
-對於內容封裝者而言，實體是內容擁有者信任用來封裝（或加密）視訊檔案並建立受DRM保護內容的組織。 部署Adobe Primetime DRM時，您應保留受信任內容封裝器的允許清單。 您還必須先在受DRM保護的檔案的DRM中繼資料中驗證內容封裝者的身份，然後再簽發授權。
+对于内容打包员，实体是内容所有者信任的组织，用于打包（或加密）视频文件并创建受DRM保护的内容。 在部署Adobe Primetime DRM时，您应该维护一个受信任的内容打包程序的允许列表。 在颁发许可证之前，您还必须验证受DRM保护文件的DRM元数据中的内容打包器的身份。
 
-若要瞭解如何取得封裝內容的實體相關資訊，請參閱 [V2ContentMetaData.getPackagerInfo()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/media/drm/keys/v2/V2ContentMetaData.html#getPackagerInfo()).
+要了解如何获取有关打包内容的实体的信息，请参阅 [V2ContentMetaData.getPackagerInfo()](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/media/drm/keys/v2/V2ContentMetaData.html#getPackagerInfo()).
 
-## 驗證Token逾時{#timeout-for-authentication-tokens}
+## 身份验证令牌超时{#timeout-for-authentication-tokens}
 
-Adobe Primetime DRM SDK產生的所有驗證Token都有保護應用程式安全的逾時間隔。
+Adobe Primetime DRM SDK生成的所有身份验证令牌都有一个保护应用程序安全的超时间隔。
 
-處理驗證請求時，會使用Primetime DRM SDK指定驗證權杖的到期日。 到期後，權杖不再有效，使用者必須透過授權伺服器再次驗證。
+在处理身份验证请求时，使用Primetime DRM SDK指定身份验证令牌的过期时间。 令牌过期后不再有效，用户必须再次通过许可证服务器进行身份验证。
 
-若要進一步瞭解驗證請求，請參閱 [AuthenticationHandler](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/protocol/authentication/AuthenticationHandler.html).
+要了解有关身份验证请求的更多信息，请参阅 [AuthenticationHandler](https://help.adobe.com/en_US/primetime/api/drm-apis/server/javadocs-flashaccess-pro/com/adobe/flashaccess/sdk/protocol/authentication/AuthenticationHandler.html).
 
-## 覆寫原則選項 {#overriding-policy-options}
+## 正在覆盖策略选项 {#overriding-policy-options}
 
-當您發行授權時，授權伺服器可以覆寫原則中指定的使用規則。
+当您颁发许可证时，许可证服务器可以覆盖策略中指定的使用规则。
 
-如果原則指定開始日期，則不會在該開始日期之前產生授權。 不過，您可以在授權產生後，在授權中設定未來的開始日期。 應謹慎使用此選項，因為使用者端無法防止使用者將系統時間往前移動以規避開始日期。
+如果策略指定了开始日期，则不会在该开始日期之前生成许可证。 但是，您可以在生成许可证后，在许可证中设置未来的开始日期。 应谨慎使用此选项，因为客户端无法阻止用户向前移动系统时间以规避开始日期。

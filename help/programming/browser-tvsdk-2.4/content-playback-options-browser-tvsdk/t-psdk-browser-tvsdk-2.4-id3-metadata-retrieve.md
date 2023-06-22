@@ -1,6 +1,6 @@
 ---
-description: ID3標籤提供音訊或視訊檔案的相關資訊，例如檔案標題或藝人姓名。 瀏覽器TVSDK會在HLS資料流的傳輸資料流(TS)區段層級偵測ID3標籤，並傳送事件。 應用程式可從標籤中擷取資料。
-title: ID3標籤
+description: ID3标记提供有关音频或视频文件的信息，例如文件标题或艺人姓名。 浏览器TVSDK在HLS流中的传输流(TS)区段级别检测ID3标记并调度事件。 应用程序可以从标记中提取数据。
+title: ID3标记
 exl-id: 33510821-9de4-41fc-b404-bcf0b6ba86ff
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,54 +9,54 @@ ht-degree: 0%
 
 ---
 
-# ID3標籤{#id-tags}
+# ID3标记{#id-tags}
 
-ID3標籤提供音訊或視訊檔案的相關資訊，例如檔案標題或藝人姓名。 瀏覽器TVSDK會在HLS資料流的傳輸資料流(TS)區段層級偵測ID3標籤，並傳送事件。 應用程式可從標籤中擷取資料。
+ID3标记提供有关音频或视频文件的信息，例如文件标题或艺人姓名。 浏览器TVSDK在HLS流中的传输流(TS)区段级别检测ID3标记并调度事件。 应用程序可以从标记中提取数据。
 
-在基礎HLS資料流中找到新的ID3中繼資料時，瀏覽器TVSDK會觸發 `AdobePSDK.TimedMetadataEvent` 事件。
+在基础HLS流中找到新的ID3元数据时，浏览器TVSDK会触发 `AdobePSDK.TimedMetadataEvent` 事件。
 
-此 `TimedMetadata` ID3的物件具有下列屬性：
+此 `TimedMetadata` ID3的对象具有以下属性：
 
 <table id="table_6C61886187FB44B4B9821E4B00200018"> 
  <thead> 
   <tr> 
-   <th colname="col1" class="entry"> 屬性名稱 </th> 
-   <th colname="col2" class="entry"> 詳細資料 </th> 
+   <th colname="col1" class="entry"> 属性名称 </th> 
+   <th colname="col2" class="entry"> 详细信息 </th> 
   </tr> 
  </thead>
  <tbody> 
   <tr> 
    <td colname="col1"> <p> <span class="codeph"> type </span> </p> </td> 
-   <td colname="col2"> <p>一種型別 <span class="codeph"> TimedMetadata </span> 物件。 </p> <p>對於ID3中繼資料，值為 <span class="codeph"> AdobePSDK.TimedMetadataType.ID3 </span>. </p> </td> 
+   <td colname="col2"> <p>一种类型 <span class="codeph"> Timedatadata </span> 对象。 </p> <p>对于ID3元数据，值为 <span class="codeph"> AdobePSDK.TimedMetadataType.ID3 </span>. </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <p> <span class="codeph"> 時間 </span> </p> </td> 
-   <td colname="col2"> <p> 偵測到此計時中繼資料的播放器時間。 </p> </td> 
+   <td colname="col1"> <p> <span class="codeph"> 时间 </span> </p> </td> 
+   <td colname="col2"> <p> 检测到此定时元数据的播放器时间。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p> <span class="codeph"> id </span> </p> </td> 
-   <td colname="col2"> <p>ID <span class="codeph"> TimedMetadata </span> 物件。 </p> </td> 
+   <td colname="col2"> <p>ID <span class="codeph"> Timedatadata </span> 对象。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <p> <span class="codeph"> 名稱 </span> </p> </td> 
-   <td colname="col2"> <p>名稱： <span class="codeph"> TimedMetadata </span> 物件。 若為ID3中繼資料，值為「ID3」。 </p> </td> 
+   <td colname="col1"> <p> <span class="codeph"> name </span> </p> </td> 
+   <td colname="col2"> <p>名称 <span class="codeph"> Timedatadata </span> 对象。 对于ID3元数据，值为“ID3”。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <p> <span class="codeph"> 內容 </span> </p> </td> 
-   <td colname="col2"> <p>定時中繼資料內容。 對於ID3標籤，此值代表序列化的位元組陣列。 </p> </td> 
+   <td colname="col1"> <p> <span class="codeph"> 内容 </span> </p> </td> 
+   <td colname="col2"> <p>定时元数据内容。 对于ID3标记，此值表示序列化的字节数组。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <p> <span class="codeph"> 中繼資料 </span> </p> </td> 
-   <td colname="col2"> <p> <span class="codeph"> TimedMetadata </span> 已處理的資訊，此資訊是 <span class="codeph"> AdobePSDK.Metadata </span> 儲存ID3影格的位置。 </p> <p> <p>注意：適用於Safari <span class="codeph"> 視訊 </span> 標籤，ID3標籤的特定框架資料會透過 <span class="codeph"> AdobePSDK.Metadata </span> 物件，而對於其他瀏覽器，ID3標籤的框架資料會透過以位元組陣列的形式公開 <span class="codeph"> AdobePSDK.Metadata </span> 物件。 </p> </p> </td> 
+   <td colname="col1"> <p> <span class="codeph"> 元数据 </span> </p> </td> 
+   <td colname="col2"> <p> <span class="codeph"> Timedatadata </span> 已处理的信息，它是 <span class="codeph"> AdobePSDK.Metadata </span> 存储ID3帧的位置。 </p> <p> <p>注意：对于Safari <span class="codeph"> 视频 </span> 标签中，ID3标签的特定帧数据通过 <span class="codeph"> AdobePSDK.Metadata </span> 对象，而对于其他浏览器，ID3标记的帧数据将通过以字节数组的形式显示 <span class="codeph"> AdobePSDK.Metadata </span> 对象。 </p> </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
 &#x200B;
 
-儲存於中的各種ID3標籤 `TimedMetadata` 應用程式可透過下列兩種方式來擷取：
+存储在中的各种ID3标记 `TimedMetadata` 应用程序可以通过以下两种方式检索：
 
-* 在AdobePSDK.PSDKEventType.TIMED_METADATA_AVAILABLE事件監聽器中。
+* 在AdobePSDK.PSDKEventType.TIMED_METADATA_AVAILABLE事件侦听器中。
 
    ```
    var isSafari = function () { 
@@ -113,7 +113,7 @@ ID3標籤提供音訊或視訊檔案的相關資訊，例如檔案標題或藝�
    }); 
    ```
 
-* 使用 `MediaPlayerItem`的 `timedMetadata` 屬性。
+* 使用 `MediaPlayerItem`的 `timedMetadata` 属性。
 
    ```
    var isSafari = function () { 

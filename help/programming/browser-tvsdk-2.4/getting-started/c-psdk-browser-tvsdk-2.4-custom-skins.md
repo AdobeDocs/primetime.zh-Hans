@@ -1,6 +1,6 @@
 ---
-description: 若要使用自訂外觀元素，您必須撰寫類似於default-video-controls.css的自訂專案，並在播放器中參照此新自訂專案。
-title: 自訂外觀元素
+description: 要使用自定义外观，您必须编写与default-video-controls.css类似的自定义设置，并在播放器中引用此新自定义设置。
+title: 自定义外观
 exl-id: 4d627545-942d-4883-a010-afddcffb8dd5
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,38 +9,38 @@ ht-degree: 0%
 
 ---
 
-# 自訂外觀元素{#custom-skins}
+# 自定义外观{#custom-skins}
 
-若要使用自訂外觀元素，您必須撰寫類似於default-video-controls.css的自訂專案，並在播放器中參照此新自訂專案。
+要使用自定义外观，您必须编写与default-video-controls.css类似的自定义设置，并在播放器中引用此新自定义设置。
 
-例如，您可以使用下列其中一個選項：
+例如，您可以使用以下选项之一：
 
 * `<link rel="stylesheet" href="css/common_style.css">`
 * `<link rel="stylesheet" href="css/custom-video-controls1.css">`
 
-您可以進行下列型別的變更：
+您可以进行以下类型的更改：
 
-* 按鈕和文字的前景色彩
+* 按钮和文本的前景色
 
-   所有具有前景的控制項都使用 `vid-skin-fgcolor` 類別。 若要變更所有控制項的前台，請使用 `vid-skin-fgcolor` 類別並指定所要的顏色。
-* 按鈕和文字的背景色彩
+   所有具有前景的控件都使用 `vid-skin-fgcolor` 类。 要更改所有控件的前景，请使用 `vid-skin-fgcolor` 类并指定所需的颜色。
+* 按钮和文本的背景颜色
 
-   所有具有前景的控制項都使用 `vid-skin-bgcolor` 類別。 若要變更所有控制項的前台，請透過以下方式逐一檢視所有元素 `vid-skin-bgcolor` 類別並指定所要的顏色。
-* 播放點形狀
+   所有具有前景的控件都使用 `vid-skin-bgcolor` 类。 要更改所有控件的前景，请使用以下代码循环遍历所有元素 `vid-skin-bgcolor` 类并指定所需的颜色。
+* 播放头形状
 
-   播放磁頭可以是方形或圓形。 若要變更播放點，請新增 `square` 或 `round` 類別至 `playhead` 元素。
-* 緩衝迴轉器的樣式
+   播放头可以是方形或圆形。 要更改播放头，请添加 `square` 或 `round` 分类至 `playhead` 元素。
+* 缓冲旋转器的样式
 
-   參考播放器提供下列的迴轉器樣式，可在播放器緩衝內容時顯示：
+   引用播放器提供了可在播放器缓冲内容时显示的旋转器的以下样式：
 
-   * 覆蓋文字( `overlay-text`)
-   * 矩形旋轉圖示( `spinner`)
-   * 訊號( `signal`)
-   * 垂直條( `vertical`)
+   * 叠加文本( `overlay-text`)
+   * 矩形回旋( `spinner`)
+   * 信号( `signal`)
+   * 垂直条( `vertical`)
 
       >[!TIP]
       >
-      >若要使用任何緩衝迴轉器，您必須在buffering-overlay元素中新增類別。 例如，若要使用 `overlay-text`，在中新增下列行 `BufferOverlay.js` 檔案：
+      >要使用任何缓冲旋转器，必须在buffering-overlay元素中添加类。 例如，要使用 `overlay-text`中，将以下行添加到 `BufferOverlay.js` 文件：
       >
       >
       ```js

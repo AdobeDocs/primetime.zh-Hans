@@ -1,6 +1,6 @@
 ---
-description: 在Adobe Primetime ad decisioning中，您可以在索引鍵值配對上鎖定廣告。
-title: 目標定位資訊
+description: 在Adobe Primetime ad decisioning中，您可以在键值对上定位广告。
+title: 定位信息
 exl-id: 25610f7d-6b14-4ed1-b61c-9e6bf13ba8e6
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# 目標定位資訊{#targeting-information}
+# 定位信息{#targeting-information}
 
-在Adobe Primetime ad decisioning中，您可以在索引鍵值配對上鎖定廣告。
+在Adobe Primetime ad decisioning中，您可以在键值对上定位广告。
 
-若要將這些機碼值組傳遞至瀏覽器TVSDK：
+要将这些键值对传递到浏览器TVSDK，请执行以下操作：
 
 ```js
 var auditudeSettings = new AdobePSDK.AuditudeSettings(); 

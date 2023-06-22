@@ -1,6 +1,6 @@
 ---
-title: 如何使用Adobe的API測試網站測試驗證和授權流程
-description: 如何使用Adobe的API測試網站測試驗證和授權流程
+title: 如何使用Adobe的API测试站点测试身份验证和授权流
+description: 如何使用Adobe的API测试站点测试身份验证和授权流
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,36 +9,36 @@ ht-degree: 0%
 
 ---
 
-# 如何使用Adobe的API測試網站測試驗證和授權流程 {#How-to-test-auth-flows}
+# 如何使用Adobe的API测试站点测试身份验证和授权流 {#How-to-test-auth-flows}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-為了測試AuthN和AuthZ流程，我們準備了 **API測試網站** 隨時待命。 我們的支援團隊很樂意為您提供認證。 您可以聯絡我們： **support@tve.zendesk.com**.
+为了测试AuthN和AuthZ流，我们准备了一个 **API测试站点** 你可以随意选择。 我们的支持团队将很乐意为您提供凭据。 您可以通过联系我们： **support@tve.zendesk.com**.
 
 
 ## 第一部分 {#part-I}
 
-如需針對發行版環境進行測試，請直接跳至第二部分。  若要在資格預審環境中進行測試，請參閱 [在預備中設定您的環境和測試](/help/authentication/setting-up-your-environment-and-testing-in-prequal.md).
+要针对版本环境进行测试，请直接跳至第二部分。  要在资格预审环境中进行测试，请参阅 [设置您的环境并测试预修课程](/help/authentication/setting-up-your-environment-and-testing-in-prequal.md).
 
 ## 第二部分
 
-完成第一部分後，請執行下列步驟：
+完成第一部分后，请执行以下步骤：
 
 
-1. 開啟網頁： [測試API測試](https://sp.auth-staging.adobe.com/apitest/api.html).
-1. 從下列URL載入存取啟用碼：
-   * [用於中繼的Access Enabler JavaScript](https://entitlement.auth-staging.adobe.com/entitlement/js/AccessEnabler.js).
+1. 打开网页： [暂存API测试](https://sp.auth-staging.adobe.com/apitest/api.html).
+1. 从以下URL加载访问启用码：
+   * [用于暂存的Access Enabler JavaScript](https://entitlement.auth-staging.adobe.com/entitlement/js/AccessEnabler.js).
    * 或
-   * [生產環境的Access Enabler javascript](https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js).
-   * 然後按一下「**載入存取啟用碼**」按鈕。
-1. 現在將請求者ID值設為&quot;**請求者ID**」並按一下「setRequestor」按鈕。
-1. 之後，按下「getAuthentication」按鈕，並等待顯示選擇器顯示。
-1. 選取&quot;**MVPD**」從選取器。
-1. 在「」輸入您的認證&#x200B;**MVPD**&quot;登入頁面。
-1. 重新導向回系統後，請重做步驟1至3
-1. 在「setAuthenticationStatus」上重新執行步驟3後，您應該會看到值「1」。 如果驗證無法運作，則會顯示MVPD對話方塊。
-1. 若要測試授權，請在資源輸入欄位中輸入&quot;**請求者ID**」並按一下「getAuthorization」按鈕。
-1. 因此，在「setToken」 — \>「resource id」文字方塊中將顯示資源，並在「setToken」 — \>「token」文字方塊中顯示shortAuthorizationToken，表示authZ成功。
-1. 現在您可以按一下「登出」按鈕以刪除權杖。
+   * [用于生产的Access Enabler javascript](https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js).
+   * 然后单击“**加载访问启用码**”按钮。
+1. 现在，将请求者ID值设置为&quot;**请求者ID**”并单击“setRequestor”按钮。
+1. 之后，按“getAuthentication”按钮，等待显示选择器显示。
+1. 选择&quot;**MVPD**”来自选取器。
+1. 在“”中输入您的凭据&#x200B;**MVPD**”登录页面。
+1. 重定向回之后，重做步骤1至3
+1. 在“setAuthenticationStatus”上重做步骤3后，您应该会看到值“1”。 如果身份验证不起作用，将显示MVPD对话框。
+1. 要测试授权，请在资源输入字段中输入&quot;**请求者ID**”并单击“getAuthorization”按钮。
+1. 因此，在“setToken” — \>“resource id”文本框中，将显示资源，在“setToken” — \>“token”文本框中，将显示shortAuthorizationToken，表示authZ成功。
+1. 现在，您可以单击“注销”按钮以删除令牌。

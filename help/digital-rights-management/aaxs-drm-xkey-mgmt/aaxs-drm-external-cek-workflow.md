@@ -1,6 +1,6 @@
 ---
-title: aaxs DRM外部CEK工作流程
-description: 此工作流程與大部分現有DRM系統不同，因為它不需要使用任何中央存放庫或內容金鑰管理系統(CKMS)
+title: AAXS DRM外部CEK工作流
+description: 此工作流与大多数现有DRM系统不同，因为它不需要使用任何中央存储库或内容密钥管理系统(CKMS)
 exl-id: f084aa57-8bef-40a0-b52d-4d23dfdf36c4
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,16 +9,16 @@ ht-degree: 0%
 
 ---
 
-# aaxs DRM外部CEK工作流程{#aaxs-drm-external-cek-workflow}
+# AAXS DRM外部CEK工作流{#aaxs-drm-external-cek-workflow}
 
-此工作流程與大部分現有DRM系統不同，因為它不需要使用任何中央存放庫或內容金鑰管理系統(CKMS)。 然而，對於希望AAXS能搭配其現有CKMS使用的客戶，AAXS提供了「外部CEK」功能，其中CEK是在封裝和授權發行時從外部提供。
+此工作流与大多数现有DRM系统不同，因为它不需要使用任何中央存储库或内容密钥管理系统(CKMS)。 但是，对于希望AAXS与其现有CKMS结合使用的客户，AAXS提供了一个称为“外部CEK”的功能，其中CEK在打包和许可证颁发时从外部提供。
 
 ![](assets/ECEK_Workflow.PNG)
 
-1. （套件） AAXS Java SDK提供CEK和CEK ID。
-1. （封裝） CEK用於加密內容。
-1. （封裝） CEK ID會插入內容的DRM中繼資料中。
-1. 裝置會向AAXS伺服器請求授權，以嘗試播放內容。
-1. （授權） AAXS伺服器會從內容中繼資料中擷取CEK ID。
-1. AAXS伺服器會從CKMS擷取CEK。
-1. （授權） AAXS伺服器會向裝置發行包含CEK的授權。
+1. （包）为AAXS Java SDK提供CEK和CEK ID。
+1. （包） CEK用于加密内容。
+1. （包）CEK ID会插入到内容的DRM元数据中。
+1. 该设备尝试通过向AAXS服务器请求许可证来播放内容。
+1. （许可） AAXS服务器从内容元数据中提取CEK ID。
+1. AAXS服务器从CKMS检索CEK。
+1. （许可） AAXS服务器向设备颁发包含CEK的许可证。

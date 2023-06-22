@@ -1,6 +1,6 @@
 ---
-title: 通知代碼
-description: 通知代碼
+title: 通知代码
+description: 通知代码
 copied-description: true
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
@@ -10,4 +10,4 @@ ht-degree: 0%
 ---
 
 
-# 通知代碼 {#notification-codes}
+# 通知代码 {#notification-codes}

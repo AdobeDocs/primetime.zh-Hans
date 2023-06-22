@@ -2,9 +2,9 @@
 title: 附录B “调试提示”
 description: 附录B “调试提示”
 exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
-source-git-commit: 1bc2f6c230c262babf2958c32fee31afcad04c2f
+source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '173'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Adobe Primetime身份验证存储临时数据，例如浏览器缓存、LSO缓�
 
 - [清除浏览器缓存和Cookie](#clearing-the-browser-cache-and-cookies)
 - [正在清除LSO缓存](#clearing-lsos-cache)\
-   
+    
 
 ## 清除浏览器缓存和Cookie {#clearing-the-browser-cache-and-cookies}
 
@@ -41,7 +41,8 @@ Adobe Primetime身份验证存储临时数据，例如浏览器缓存、LSO缓�
 Adobe Primetime身份验证工程师使用以下调试工具：
 
 - Firebug - <http://www.getfirebug.com/>
-- Flashbug （适用于flash player的调试版本）
+- Flashbug （适用于flash player的调试版本） <https://addons.mozilla.org/en-US/firefox/addon/14465/>
+- Live http标头 —  <https://addons.mozilla.org/en-US/firefox/addon/3829/>
 - 费德勒 —  <http://www.fiddler2.com/fiddler2/>
 - 查尔斯 —  <http://www.charlesproxy.com/>
 - Wireshark - <http://www.wireshark.org/>

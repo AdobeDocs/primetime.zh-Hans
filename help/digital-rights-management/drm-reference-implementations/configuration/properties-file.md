@@ -1,6 +1,6 @@
 ---
-title: 授權伺服器屬性檔案
-description: 授權伺服器屬性檔案
+title: 许可证服务器属性文件
+description: 许可证服务器属性文件
 copied-description: true
 exl-id: 07cd9866-c29b-476e-a63f-9c5272ccd678
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,10 +10,10 @@ ht-degree: 0%
 
 ---
 
-# 授權伺服器屬性檔案{#license-server-properties-file}
+# 许可证服务器属性文件{#license-server-properties-file}
 
-授權伺服器會參照在中設定的屬性。 [!DNL flashaccess-refimpl.properties] 檔案。 您可以直接參照該檔案，以取得有關特定值的詳細資訊，以及每個屬性的使用資訊。 完整功能範例提供於 [!DNL resources] 參考實作目錄( `([DRM SDK DVD]\Reference Implementation\Server\Reference Implementation Server\resources/).`)。
+许可证服务器引用在中设置的属性 [!DNL flashaccess-refimpl.properties] 文件。 您可以直接引用该文件，以获取有关特定值的详细信息以及有关每个属性的使用信息。 功能齐全的示例请参见 [!DNL resources] 参考实施目录( `([DRM SDK DVD]\Reference Implementation\Server\Reference Implementation Server\resources/).`)。
 
-**認證**  — 屬性檔案包含Adobe發給您的認證位置的設定。 您可以在下列位置指定這些認證： [!DNL .pfx] 使用密碼的檔案，或為HSM中儲存的認證提供別名與密碼。 您至少需要設定與傳輸認證和授權伺服器認證相關的屬性。 指定認證檔案相對於您在中指定的目錄的位置 `config.resourcesDirectory` 屬性。
+**凭据**  — 属性文件中包含Adobe发给您的凭据位置的设置。 您可以在以下位置指定这些凭据 [!DNL .pfx] 文件，或者为存储在HSM上的凭据提供别名和密码。 您至少需要配置与传输凭据和许可证服务器凭据相关的属性。 指定相对于您在 `config.resourcesDirectory` 属性。
 
-**Flash媒體Rights Management伺服器** - `flashaccess-refimpl.properties` 檔案也包含數個與封裝內容相關的屬性。 這些屬性僅用於Flash媒體Rights Management伺服器1.x中繼資料轉換。 修改此屬性檔案中的值後，要使變更生效，請重新啟動許可證伺服器。
+**Flash媒体Rights Management服务器** - `flashaccess-refimpl.properties` 文件还包括多个与打包内容相关的属性。 这些属性仅用于Flash媒体Rights Management服务器1.x元数据转换。 修改此属性文件中的值后，要使更改生效，请重新启动许可证服务器。

@@ -1,6 +1,6 @@
 ---
-description: PTMediaPlayer介面會封裝媒體播放器物件的功能和行為。
-title: 設定PTMediaPlayer
+description: PTMediaPlayer界面封装媒体播放器对象的功能和行为。
+title: 设置PTMediaPlayer
 exl-id: 6d16bfd2-8d1d-4261-b343-c2e999c4d28b
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,52 +9,52 @@ ht-degree: 0%
 
 ---
 
-# 設定PTMediaPlayer {#set-up-the-ptmediaplayer}
+# 设置PTMediaPlayer {#set-up-the-ptmediaplayer}
 
-TVSDK提供建立進階視訊播放器應用程式（您的Primetime播放器）的工具，您可以將其與其他Primetime元件整合。
+TVSDK提供了用于创建高级视频播放器应用程序（您的Primetime播放器）的工具，您可以将其与其他Primetime组件集成。
 
-使用平台的工具來建立播放器，並將其連線至TVSDK中的媒體播放器檢視，該檢視具有播放和管理視訊的方法。 例如，TVSDK提供播放和暫停方法。 您可以在平台上建立使用者介面按鈕，並設定呼叫這些TVSDK方法的按鈕。
+使用您平台的工具来创建播放器，并将其连接到TVSDK中的媒体播放器视图，该视图提供了播放和管理视频的方法。 例如，TVSDK提供播放和暂停方法。 您可以在平台上创建用户界面按钮，并设置这些按钮以调用这些TVSDK方法。
 
-PTMediaPlayer介面會封裝媒體播放器物件的功能和行為。
+PTMediaPlayer界面封装媒体播放器对象的功能和行为。
 
-若要設定您的 `PTMediaPlayer`：
+要设置您的 `PTMediaPlayer`：
 
-1. 從您的使用者介面擷取媒體的URL，例如，在文字欄位中。
+1. 从用户界面获取媒体的URL，例如，在文本字段中。
 
    ```
    NSURL *url = [NSURL URLWithString:textFieldURL.text];
    ```
 
-1. 建立 `PTMetadata`.
+1. 创建 `PTMetadata`.
 
-   假設您的方法 `createMetada` 準備中繼資料(請參閱 [廣告](../../ios-3x-advertising/ios-3x-advertising-requirements.md))。
+   假定您的方法 `createMetada` 准备元数据(请参阅 [广告](../../ios-3x-advertising/ios-3x-advertising-requirements.md))。
 
    ```
    PTMetadata *metadata = [self createMetadata]
    ```
 
-1. 建立 `PTMediaPlayerItem` 透過使用您的 `PTMetadata` 執行個體。
+1. 创建 `PTMediaPlayerItem` 通过使用 `PTMetadata` 实例。
 
    ```
    PTMediaPlayerItem *item = [[[PTMediaPlayerItem alloc] 
           initWithUrl:url mediaId:yourMediaID metadata:metadata] autorelease];
    ```
 
-1. 將觀察者新增至TVSDK傳送的通知。
+1. 将观察者添加到TVSDK调度的通知。
 
    ```
    [self addObservers]
    ```
 
-1. 建立 `PTMediaPlayer` 使用您的新的 `PTMediaPlayerItem`.
+1. 创建 `PTMediaPlayer` 使用新的 `PTMediaPlayerItem`.
 
    ```
    PTMediaPlayer *player = [PTMediaPlayer playerWithMediaPlayerItem:item];
    ```
 
-1. 在播放器上設定屬性。
+1. 在播放器上设置属性。
 
-   以下是一些可用的 `PTMediaPlayer` 屬性：
+   以下是一些可用的 `PTMediaPlayer` 属性：
 
    ```
    player.autoPlay                    = YES;  
@@ -63,7 +63,7 @@ PTMediaPlayer介面會封裝媒體播放器物件的功能和行為。
    player.allowsAirPlayVideo          = YES;
    ```
 
-1. 設定播放器的檢視屬性。
+1. 设置播放器的视图属性。
 
    ```
    CGRect playerRect = self.adPlayerView.frame;  
@@ -76,14 +76,14 @@ PTMediaPlayer介面會封裝媒體播放器物件的功能和行為。
          ( UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight )];
    ```
 
-1. 在目前檢視的子檢視中新增播放器的檢視。
+1. 在当前视图的子视图中添加播放器视图。
 
    ```
    [self.adPlayerView  setAutoresizesSubviews:YES];  
    [self.adPlayerView addSubview:(UIView *)player.view];
    ```
 
-1. 呼叫 `play` 以開始媒體播放。
+1. 调用 `play` 以开始媒体播放。
 
    ```
    [player play];

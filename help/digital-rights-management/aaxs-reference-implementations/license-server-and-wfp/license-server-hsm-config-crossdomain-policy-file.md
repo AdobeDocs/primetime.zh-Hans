@@ -1,6 +1,6 @@
 ---
-title: 跨網域原則檔案
-description: 跨網域原則檔案
+title: 跨域策略文件
+description: 跨域策略文件
 copied-description: true
 exl-id: 93785cbb-f381-4568-a588-74235595cbe2
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,6 +10,6 @@ ht-degree: 0%
 
 ---
 
-# 跨網域原則檔案 {#crossdomain-policy-file}
+# 跨域策略文件 {#crossdomain-policy-file}
 
-為了讓Flash執行階段使用者端向授權伺服器請求授權，需要跨網域原則檔案。 另請參閱 *使用Adobe存取SDK保護內容* 以取得更多詳細資料。
+为了使Flash运行时客户端向License Server请求许可证，需要跨域策略文件。 参见 *使用Adobe访问SDK保护内容* 了解更多详细信息。

@@ -1,6 +1,6 @@
 ---
-description: TVSDK支援搜尋串流為滑動視窗播放清單的特定位置（時間），包括隨選視訊(VOD)和即時串流中。
-title: 顯示搜尋拖曳列與目前播放位置
+description: TVSDK支持在视频点播(VOD)和实时流中搜索流是滑动窗口播放列表的特定位置（时间）。
+title: 显示具有当前播放位置的搜寻清理栏
 exl-id: 8076521b-579d-491f-97de-c7b57daa9b2e
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,43 +9,43 @@ ht-degree: 0%
 
 ---
 
-# 顯示搜尋拖曳列與目前播放位置 {#display-a-seek-scrub-bar-with-the-current-playback-position}
+# 显示具有当前播放位置的搜寻清理栏 {#display-a-seek-scrub-bar-with-the-current-playback-position}
 
-TVSDK支援搜尋串流為滑動視窗播放清單的特定位置（時間），包括隨選視訊(VOD)和即時串流中。
+TVSDK支持在视频点播(VOD)和实时流中搜索流是滑动窗口播放列表的特定位置（时间）。
 
 >[!IMPORTANT]
 >
->只有DVR才允許搜尋即時資料流。
+>只有DVR才允许在实时流中进行搜寻。
 
-1. 設定搜尋的回呼。
+1. 设置用于搜寻的回调。
 
-       搜尋為非同步，因此TVSDK會傳送以下搜尋相關事件：
+       搜索是异步执行的，因此TVSDK会调度以下与搜索相关的事件：
    
-   * `QOSEventListener.onSeekStart`  — 搜尋開始。
-   * `QOSEventListener.onSeekComplete`  — 搜尋成功。
-   * `QOSEventListener.onOperationFailed`  — 搜尋失敗。
+   * `QOSEventListener.onSeekStart`  — 搜寻开始。
+   * `QOSEventListener.onSeekComplete`  — 搜寻成功。
+   * `QOSEventListener.onOperationFailed`  — 搜寻失败。
 
-1. 等候播放器處於有效的搜尋狀態。
+1. 等待播放器处于有效的状态以进行搜寻。
 
-   有效狀態為「已準備」、「完成」、「已暫停」和「正在播放」。
+   有效状态为“已准备”、“完成”、“已暂停”和“正在播放”。
 
-1. 使用原始搜尋列來設定 `OnSeekBarChangeListener` 以檢視使用者何時拖曳。
-1. 聆聽 `QOSEventListener.onOperationFailed` 並採取適當的動作。
+1. 使用本机SeekBar设置 `OnSeekBarChangeListener` 以查看用户何时进行清理。
+1. 聆听 `QOSEventListener.onOperationFailed` 并采取适当的措施。
 
-   此事件會傳遞適當的警告。 您的應用程式會決定如何繼續，例如，再次嘗試搜尋或從上一個位置繼續播放。
+   此事件传递相应的警告。 您的应用程序决定如何继续，例如，通过再次尝试搜寻或从上一个位置继续播放。
 
-1. 等待TVSDK呼叫 `QOSEventListener.onSeekComplete` callback。
-1. 使用回呼的位置引數來擷取最終調整後的播放位置。
+1. 等待TVSDK调用 `QOSEventListener.onSeekComplete` 回调。
+1. 使用回调的位置参数检索最终调整的播放位置。
 
-   這很重要，因為搜尋後的實際開始位置可能與要求的位置不同。 如果搜尋或其他重新定位在廣告插播中途結束，或略過廣告插播，播放行為可能會受到影響。
+   这很重要，因为搜寻后的实际开始位置可能与请求位置不同。 如果搜寻或其他重新定位在广告时间中间结束或跳过广告时间，则播放行为可能会受到影响。
 
-1. 顯示搜尋清除列時，請使用位置資訊。
+1. 显示搜寻拖移栏时使用位置信息。
 
 <!--<a id="example_9657AA855B6A4355B0E7D854596FFB54"></a>-->
 
-**搜尋範例**
+**搜索示例**
 
-在此範例中，使用者會清除搜尋列，以搜尋至所需的位置。
+在此示例中，用户擦除搜寻栏以搜寻到所需的位置。
 
 ```java
 // Use the native SeekBar to set OnSeekBarChangeListener to  

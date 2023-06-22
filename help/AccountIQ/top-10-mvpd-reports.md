@@ -1,6 +1,6 @@
 ---
-title: 如何依程式設計人員角色檢視前10名MVPD的報告。
-description: 檢視前10個MVPD的報告。
+title: 如何按程序员角色查看前10个MVPD的报告。
+description: 查看前10个MVPD的报告。
 exl-id: 76fd1af8-dd96-426b-b9c8-a356b53b491d
 source-git-commit: 5963c55d87385fbd92646bfc45a3650fb568bca5
 workflow-type: tm+mt
@@ -9,70 +9,70 @@ ht-degree: 0%
 
 ---
 
-# 檢視前10個MVPD的帳戶共用報表 <!--and Programmers--> {#view-top-10-mvpd-reports}
+# 查看前10个MVPD的帐户共享报告 <!--and Programmers--> {#view-top-10-mvpd-reports}
 
-帳戶IQ的功能可協助您檢視和分析前10個MVPD的帳戶共用統計資料(在定義的 [區段](/help/AccountIQ/product-concepts.md#segmet-def))具有：
+帐户IQ具有一些功能，可以帮助您查看和分析MVPD中前10个的帐户共享统计信息(在定义的 [区段](/help/AccountIQ/product-concepts.md#segmet-def))拥有：
 
-* 共用帳戶的訂閱者百分比最高
+* 共享帐户的订阅者的最高百分比
 
-* 共用帳戶中具有最大使用量的訂閱者
+* 共享帐户中具有最大使用量的订阅者
 
-* 密碼共用量度（整體共用分數）最高的訂閱者
-
->[!NOTE]
->
->計算的基礎是整個視訊串流產業的資料，而不只是特定程式設計師的MVPD，以便從區段取得熱門MVPD清單。
+* 密码共享量级（总体共享分数）最高的订阅者
 
 >[!NOTE]
 >
->只有至少擁有50,000個使用中訂閱者帳號的MVPD才會被視為取得這些報告。
+>计算的基础是整个视频流行业的数据，而不是某个特定程序员的MVPD，以便从一个区段获取顶级MVPD列表。
 
-對於登入的程式設計人員使用者，可以使用以下三個預設選項（以檢視前10個MVPD的報表）：
+>[!NOTE]
+>
+>只有至少拥有50,000个活跃订户帐户的MVPD才被视为获取这些报告。
 
-* [分享分數排名前10的MVPD](#top-10mvpds-sharingscore)
+对于已登录的程序员用户，以下三个默认选项（查看前10个MVPD的报表）可用：
 
-* [使用量前10大MVPD](#top-10mvpds-usage)
+* [前10个MVPD（按共享得分）](#top-10mvpds-sharingscore)
 
-* [前10個MVPD （依帳戶）](#top-10mvpds-accounts)
+* [按使用量列出的10大MVPD](#top-10mvpds-usage)
 
-## 分享分數排名前10的MVPD {#top-10mvpds-sharingscore}
+* [按帐户划分的前10个MVPD](#top-10mvpds-accounts)
 
-當您使用選取範圍時 **分享分數排名前10的MVPD** 若要定義您的區段，Account IQ系統會識別整個產業的10個MVPD，並依照其遞減順序列出最多10個MVPD （連同其對應的量度） [整體共用分數](/help/AccountIQ/product-concepts.md#overall-sharing-score)
+## 前10个MVPD（按共享得分） {#top-10mvpds-sharingscore}
 
-若要透過共用您管道的分數來檢視前10個MVPD的清單和報表：
+当您使用选定内容时 **按得分划分的前10个MVPD** 为了定义您的区段，Account IQ系统识别了行业中的10个MVPD，按照它们的降序顺序列出最多十个MVPD（及其相应的量度） [总体共享分数](/help/AccountIQ/product-concepts.md#overall-sharing-score)
 
-1. 使用 [區段和時間範圍面板](/help/AccountIQ/segments-timeframe.md)，依下列步驟定義區段： [如何定義區段並選取時間範圍](/help/AccountIQ/howto-select-segment-timeframe.md) 以進行評估。 對於此評估，請選取 **分享分數排名前10的MVPD** MVPD清單中的選項。
+要通过共享您的渠道的分数来查看前10个MVPD的列表和报告，请执行以下操作：
 
-1. 從以下任一項中選取報表頁面： [一般使用](/help/AccountIQ/general-usage-reports.md)， [共用帳戶](/help/AccountIQ/shared-acc-reports.md)， [使用模式](/help/AccountIQ/usage-patterns.md)，或 [儀表板](/help/AccountIQ/dashboard.md) （控制面板可讓您從不同的報表頁面中一覽選取的圖形）。
+1. 使用 [区段和时间范围面板](/help/AccountIQ/segments-timeframe.md)，按照中的步骤定义区段 [如何定义区段并选择时间范围](/help/AccountIQ/howto-select-segment-timeframe.md) 以进行评估。 对于此评估，选择 **按得分划分的前10个MVPD** MVPD列表中的选项。
 
-這些頁面中的每一個都會反映此活動。
+1. 从以下任一位置选择报告页面 [常规用法](/help/AccountIQ/general-usage-reports.md)， [共享帐户](/help/AccountIQ/shared-acc-reports.md)， [使用模式](/help/AccountIQ/usage-patterns.md)，或 [仪表板](/help/AccountIQ/dashboard.md) （仪表板可让您从不同的报表页面中一览选定的图表）。
+
+每个页面都将反映该活动。
 
 ![](assets/top-ten-mvpds-overallscore.png)
 
-## 使用量前10大MVPD {#top-10mvpds-usage}
+## 按使用量列出的10大MVPD {#top-10mvpds-usage}
 
-當您使用選取範圍時 **依使用狀況區分的前10個MVPD** 若要定義您的區段，Account IQ系統會識別整個產業的10個MVPD，並依照其遞減順序列出最多10個MVPD （連同其對應的量度） [共用帳戶的使用情況](/help/AccountIQ/product-concepts.md)
+当您使用选定内容时 **按使用情况列出的10大MVPD** 为了定义您的区段，Account IQ系统识别了行业中的10个MVPD，按照它们的降序顺序列出最多十个MVPD（及其相应的量度） [共享帐户的使用情况](/help/AccountIQ/product-concepts.md)
 
-若要透過共用您管道的分數來檢視前10個MVPD的清單和報表：
+要通过共享您的渠道的分数来查看前10个MVPD的列表和报告，请执行以下操作：
 
-1. 使用 [區段和時間範圍面板](/help/AccountIQ/segments-timeframe.md)，依下列步驟定義區段： [如何定義區段並選取時間範圍](/help/AccountIQ/howto-select-segment-timeframe.md) 以進行評估。 對於此評估，請選取 **依使用狀況區分的前10個MVPD** MVPD清單中的選項。
+1. 使用 [区段和时间范围面板](/help/AccountIQ/segments-timeframe.md)，按照中的步骤定义区段 [如何定义区段并选择时间范围](/help/AccountIQ/howto-select-segment-timeframe.md) 以进行评估。 对于此评估，选择 **按使用情况列出的10大MVPD** MVPD列表中的选项。
 
-1. 從以下任一項中選取報表頁面： [一般使用](/help/AccountIQ/general-usage-reports.md)， [共用帳戶](/help/AccountIQ/shared-acc-reports.md)， [使用模式](/help/AccountIQ/usage-patterns.md)，或 [儀表板](/help/AccountIQ/dashboard.md) （控制面板可讓您從不同的報表頁面中一覽選取的圖形）。
+1. 从以下任一位置选择报告页面 [常规用法](/help/AccountIQ/general-usage-reports.md)， [共享帐户](/help/AccountIQ/shared-acc-reports.md)， [使用模式](/help/AccountIQ/usage-patterns.md)，或 [仪表板](/help/AccountIQ/dashboard.md) （仪表板可让您从不同的报表页面中一览选定的图表）。
 
-這些頁面中的每一個都會反映此活動。
+每个页面都将反映该活动。
 
 ![](assets/top-ten-mvpds-usage.png)
 
-## 前10個MVPD （依帳戶） {#top-10mvpds-accounts}
+## 按帐户划分的前10个MVPD {#top-10mvpds-accounts}
 
-當您使用選取範圍時 **依帳戶列出的10大MVPD** 若要定義您的區段，Account IQ系統會依其遞減順序，從整個產業識別最多10個MVPD的10個MVPD （連同其對應量度） [共用層級](/help/AccountIQ/product-concepts.md)
+当您使用选定内容时 **按帐户列出的10大MVPD** 为了定义您的区段，Account IQ系统按照行业中的降序顺序，向一个最多包含10个MVPD（及其相应指标）的列表标识了10个MVPD [共享级别](/help/AccountIQ/product-concepts.md)
 
-若要檢視前10個MVPD的清單和報表（依您管道共用的帳戶數而定），請執行下列動作：
+要查看按帐户数划分的前10个MVPD的列表和报告，这些帐户是为您的渠道共享的：
 
-1. 使用 [區段和時間範圍面板](/help/AccountIQ/segments-timeframe.md)，依下列步驟定義區段： [如何定義區段並選取時間範圍](/help/AccountIQ/howto-select-segment-timeframe.md) 以進行評估。 對於此評估，請選取 **前10名MVPD （依帳戶）** MVPD清單中的選項。
+1. 使用 [区段和时间范围面板](/help/AccountIQ/segments-timeframe.md)，按照中的步骤定义区段 [如何定义区段并选择时间范围](/help/AccountIQ/howto-select-segment-timeframe.md) 以进行评估。 对于此评估，选择 **按帐户列出的10大MVPD** MVPD列表中的选项。
 
-1. 從以下任一項中選取報表頁面： [一般使用](/help/AccountIQ/general-usage-reports.md)， [共用帳戶](/help/AccountIQ/shared-acc-reports.md)， [使用模式](/help/AccountIQ/usage-patterns.md)，或 [儀表板](/help/AccountIQ/dashboard.md) （控制面板可讓您從不同的報表頁面中一覽選取的圖形）。
+1. 从以下任一位置选择报告页面 [常规用法](/help/AccountIQ/general-usage-reports.md)， [共享帐户](/help/AccountIQ/shared-acc-reports.md)， [使用模式](/help/AccountIQ/usage-patterns.md)，或 [仪表板](/help/AccountIQ/dashboard.md) （仪表板可让您从不同的报表页面中一览选定的图表）。
 
-這些頁面中的每一個都會反映此活動。
+每个页面都将反映该活动。
 
 ![](assets/top-ten-mvpds-accounts.png)

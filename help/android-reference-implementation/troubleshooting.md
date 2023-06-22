@@ -1,6 +1,6 @@
 ---
-title: 疑難排除
-description: 疑難排除
+title: 疑难解答
+description: 疑难解答
 copied-description: true
 exl-id: 618b1e19-d25d-435d-b118-b43455bde974
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,13 +10,13 @@ ht-degree: 0%
 
 ---
 
-# 疑難排除{#troubleshooting}
+# 疑难解答{#troubleshooting}
 
-* 對於某些執行API層級10或更舊層級的舊裝置，由於許可權問題，logcat無法開啟記錄裝置。 會出現下列例外： `java.lang.Exception: logcat returns error: Unable to open log device '/dev/log/main': Permission denied` **因應措施：**
+* 对于某些运行API级别10或更低级别的旧设备， logcat无法打开日志设备，因为存在权限问题。 出现以下异常： `java.lang.Exception: logcat returns error: Unable to open log device '/dev/log/main': Permission denied` **解决方法：**
 
-   1. 開啟 [!DNL AndroidManifest.xml] 在 [!DNL CatalogActivity] 專案。
+   1. 打开 [!DNL AndroidManifest.xml] 在 [!DNL CatalogActivity] 项目。
 
-   1. 將下列許可權新增至 [!DNL `AndroidManfest.xml`] 檔案：
+   1. 将以下权限添加到 [!DNL `AndroidManfest.xml`] 文件：
 
       ```
       android.permission.READ_LOGS

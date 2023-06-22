@@ -1,6 +1,6 @@
 ---
-description: 自訂廣告標籤可讓您將代表時間表區段的一組TimeRange規格傳遞給TVSDK。
-title: TimeRange類別
+description: 通过自定义广告标记，可将表示时间线区段的一组TimeRange规范传递到TVSDK。
+title: TimeRange类
 exl-id: 9dc2abe1-189a-4ef4-9918-37835014bf1b
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,21 +9,21 @@ ht-degree: 0%
 
 ---
 
-# TimeRange類別{#timerange-class}
+# TimeRange类{#timerange-class}
 
-自訂廣告標籤可讓您將代表時間表區段的一組TimeRange規格傳遞給TVSDK。
+通过自定义广告标记，可将表示时间线区段的一组TimeRange规范传递到TVSDK。
 
 <!--<a id="section_42EB6D62627A424ABA250E3246EFEFC3"></a>-->
 
-每個 `TimeRange` 集合中的規格代表TVSDK內部維護之播放時間表上的區段，且必須適當地標示為廣告相關時段。
+每个 `TimeRange` 集中的规范表示播放时间轴上由TVSDK内部维护的区段，该区段必须正确标记为广告相关时段。
 
-此 `TimeRange` class是簡單的資料結構，可顯示時間軸上的開始位置和結束位置。 這兩個唯讀屬性抽象化了播放時間軸中時間範圍的概念。
+此 `TimeRange` 类是一种简单的数据结构，它公开时间轴上的开始位置和结束位置。 这两个只读属性抽象了播放时间轴中时间范围的概念。
 
 >[!TIP]
 >
->這兩個值都以毫秒為單位表示。
+>这两个值均以毫秒为单位。
 
-以下是TimeRange類別的摘要：
+以下是TimeRange类的摘要：
 
 ```
 public final class TimeRange {

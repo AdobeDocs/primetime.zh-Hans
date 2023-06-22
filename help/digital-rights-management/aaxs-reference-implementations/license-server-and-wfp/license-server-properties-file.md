@@ -1,6 +1,6 @@
 ---
-title: 授權伺服器屬性檔案
-description: 授權伺服器屬性檔案
+title: 许可证服务器属性文件
+description: 许可证服务器属性文件
 copied-description: true
 exl-id: ac105ea6-b5a4-4416-bf17-f619abcf7cd5
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,29 +10,29 @@ ht-degree: 0%
 
 ---
 
-# 授權伺服器屬性檔案 {#license-server-properties-file}
+# 许可证服务器属性文件 {#license-server-properties-file}
 
-使用 [!DNL flashaccess-refimpl.properties] 檔案來設定參照實作的License Server元件。 至少請務必設定與傳輸認證和授權伺服器認證相關的屬性。 必須相對於指定的目錄指定認證檔案的位置 `config.resourcesDirectory` 屬性。 此檔案也包含數個與封裝內容相關的屬性：這些屬性僅用於Flash MediaRights Management伺服器1.x中繼資料轉換。 如果您修改此屬性檔案中的任何值，則需要重新啟動許可證伺服器，變更才會生效。
+使用 [!DNL flashaccess-refimpl.properties] 文件，用于配置参考实施的许可证服务器组件。 至少应确保配置与传输凭据和许可证服务器凭据相关的属性。 必须相对于指定的目录指定凭据文件的位置 `config.resourcesDirectory` 属性。 此文件还包含与打包内容相关的几个属性：这些属性仅用于Flash媒体Rights Management服务器1.x元数据转换。 如果修改此属性文件中的任何值，则需要重新启动许可证服务器以使更改生效。
 
-若要支援在Adobe存取中產生傳送至iOS使用者端的遠端金鑰授權，必須在下列位置指定金鑰伺服器憑證： [!DNL flashaccess-refimpl.properties].
+要支持在Adobe访问中生成向iOS客户端交付远程密钥的许可证，必须在中指定密钥服务器证书 [!DNL flashaccess-refimpl.properties].
 
-下列屬性已新增至Adobe存取：
+Adobe访问中添加了以下属性：
 
 <table frame="all" colsep="1" rowsep="1" class="+ topic/table adobe-d/table " id="table_xz2_lwy_n4"> 
  <thead class="- topic/thead "> 
   <tr rowsep="1" class="- topic/row "> 
-   <th colname="1" class="- topic/entry entry"> <p class="- topic/p ">屬性 </p> </th> 
-   <th colname="2" class="- topic/entry entry"> <p class="- topic/p ">說明 </p> </th> 
+   <th colname="1" class="- topic/entry entry"> <p class="- topic/p ">属性 </p> </th> 
+   <th colname="2" class="- topic/entry entry"> <p class="- topic/p ">描述 </p> </th> 
   </tr> 
  </thead>
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> HandlerConfiguration.KeyServerCertificate</span> </td> 
-   <td colname="2" class="- topic/entry "> 金鑰伺服器的授權伺服器憑證，由Adobe簽發。 當中繼資料指出需要金鑰伺服器時，此憑證可用來產生iOS裝置的授權。 </td> 
+   <td colname="2" class="- topic/entry "> Key Server的License Server证书，由Adobe颁发。 当元数据指示需要密钥服务器时，此证书用于为iOS设备生成许可证。 </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="codeph"> RefImpl.HSM.HandlerConfiguration。\ KeyServerCertificate.Alias</span> </td> 
-   <td colname="2" class="- topic/entry ">Key Server儲存在HSM上的Adobe核發的License Server憑證別名。 啟用HSM時，請使用此屬性而非 <span class="codeph"> HandlerConfiguration.KeyServerCertificate</span>. </td> 
+   <td colname="1" class="- topic/entry "><span class="codeph"> RefImpl.HSM.HandlerConfiguration.\ KeyServerCertificate.Alias</span> </td> 
+   <td colname="2" class="- topic/entry ">密钥服务器Adobe颁发的License Server证书的别名存储在HSM上。 启用HSM后，请使用此属性而不是 <span class="codeph"> HandlerConfiguration.KeyServerCertificate</span>. </td> 
   </tr> 
  </tbody> 
 </table>

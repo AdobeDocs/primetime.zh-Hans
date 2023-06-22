@@ -1,6 +1,6 @@
 ---
-title: 要求憑證
-description: 要求憑證
+title: 请求证书
+description: 请求证书
 copied-description: true
 exl-id: f1777a9f-d709-47d9-bcf3-ecb9b0e93eb1
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,10 +10,10 @@ ht-degree: 0%
 
 ---
 
-# 要求憑證{#requesting-certificates}
+# 请求证书{#requesting-certificates}
 
-註冊是向Adobe要求憑證的程式。 您可以產生金鑰並建立傳送給Adobe的請求。 然後Adobe會產生憑證並將其傳送給您。 Adobe不知道私密金鑰的內容。 因此，您必須備份金鑰，以便在任何硬體故障時加以復原。
+注册是向Adobe请求证书的过程。 您可以生成密钥并创建发送到Adobe的请求。 然后，Adobe会生成证书并将其发送给您。 Adobe不知道私钥的内容。 因此，如果任何硬件出现故障，则必须备份密钥以恢复密钥。
 
-與License Server、Packager或Transport憑證不同，Adobe不會核發網域CA憑證。 您可以從憑證授權單位取得此憑證，也可以產生自我簽署憑證。
+与License Server、Packager或Transport证书不同，Adobe不颁发域CA证书。 您可以从证书颁发机构获取此证书，也可以生成自签名证书。
 
-請參閱* Primetime DRM憑證註冊指南*，瞭解如何取得Primetime DRM憑證。
+有关如何获取Primetime DRM凭据的信息，请参阅* Primetime DRM证书注册指南*。

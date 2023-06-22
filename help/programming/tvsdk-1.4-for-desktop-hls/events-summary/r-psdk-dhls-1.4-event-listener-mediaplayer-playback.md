@@ -1,5 +1,5 @@
 ---
-description: 您的應用程式可監聽TVSDK傳送的事件，以監控播放器中的活動和播放器的變更狀態。
+description: 您的应用程序可以通过侦听由TVSDK调度的事件来监控播放器中的活动和播放器的更改状态。
 title: 播放事件
 exl-id: 9fb77b57-be6c-4dab-b779-d8c606938e46
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -11,15 +11,15 @@ ht-degree: 0%
 
 # 播放事件 {#playback-events}
 
-您的應用程式可監聽TVSDK傳送的事件，以監控播放器中的活動和播放器的變更狀態。
+您的应用程序可以通过侦听由TVSDK调度的事件来监控播放器中的活动和播放器的更改状态。
 
-TVSDK會在媒體播放作業發生時（例如視訊開始播放）傳送播放事件。 若要收到有關所有播放相關事件的通知，請使用 `MediaPlayer` 物件。
+TVSDK会在媒体播放操作（例如开始播放的视频）发生时调度播放事件。 要收到有关所有播放相关事件的通知，请将监听器注册到 `MediaPlayer` 对象。
 
 <table frame="all" colsep="1" rowsep="1" id="table_922EEA3DE0BD47BA982E11F890CA0A6B"> 
  <thead> 
   <tr rowsep="1"> 
    <th colname="1" class="entry"> 事件 </th> 
-   <th colname="2" class="entry"> 含義 </th> 
+   <th colname="2" class="entry"> 含义 </th> 
   </tr> 
  </thead>
  <tbody> 
@@ -29,59 +29,59 @@ TVSDK會在媒體播放作業發生時（例如視訊開始播放）傳送播放
   </tr> 
   <tr rowsep="1"> 
    <td colname="1">PlaybackRateEvent。<a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/events/PlaybackRateEvent.html#RATE_SELECTED" format="html" scope="external"> RATE_SELECTED</a> </td> 
-   <td colname="2"> 使用者或TVSDK已選取新的播放速率，例如快進、倒帶或以正常速度繼續播放。 </td> 
+   <td colname="2"> 用户或TVSDK已选择新的播放速率，例如快进、倒带或以正常速度继续播放。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1">PlaybackRateEvent。<a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/events/PlaybackRateEvent.html#RATE_PLAYING" format="html" scope="external"> RATE_PLAYING</a> </td> 
-   <td colname="2"> 畫面上會顯示新的播放速率。 </td> 
+   <td colname="2"> 屏幕上将显示新的播放速率。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> TimeChangeEvent。<a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/events/TimeChangeEvent.html#TIME_CHANGED" format="html" scope="external"> TIME_CHANGED</a> </td> 
-   <td colname="2"> 媒體目前的播放點位置已變更。 當目前時間變更時，會定期傳送，每250毫秒或更久一次。 </td> 
+   <td colname="2"> 媒体的当前播放头位置已更改。 当当前时间发生变化时，定期发送，每250毫秒或更长时间。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>媒體播放器</b> </td> 
+   <td colname="1"><b>媒体播放器</b> </td> 
    <td colname="2"> </td>
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1">MediaPlayerStatus ChangeEvent。<a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/events/MediaPlayerStatusChangeEvent.html#STATUS_CHANGED" format="html" scope="external"> STATUS_CHANGE</a> </td> 
-   <td colname="2"> 媒體播放器的狀態已變更。 您的應用程式應處理此事件回撥中的錯誤。 </td> 
+   <td colname="1">MediaPlayerStatus ChangeEvent。<a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/events/MediaPlayerStatusChangeEvent.html#STATUS_CHANGED" format="html" scope="external"> STATUS_CHANGED</a> </td> 
+   <td colname="2"> 媒体播放器的状态已更改。 您的应用程序应处理此事件回调中的错误。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1">ProfileEvent。<a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/events/ProfileEvent.html#PROFILE_CHANGED" format="html" scope="external"> PROFILE_CHANGE</a> </td> 
-   <td colname="2">媒體播放器目前的設定檔已變更。 使用 <span class="codeph"> ProfileEvent.profile</span> 屬性來取得正在播放的新設定檔。 使用 <span class="codeph"> 時間</span> 屬性以取得此事件發生的時間。 </td> 
+   <td colname="1">ProfileEvent。<a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/events/ProfileEvent.html#PROFILE_CHANGED" format="html" scope="external"> 配置文件已更改</a> </td> 
+   <td colname="2">媒体播放器的当前配置文件已更改。 使用 <span class="codeph"> ProfileEvent.profile</span> 属性以获取正在播放的新配置文件。 使用 <span class="codeph"> 时间</span> 属性，用于获取此事件发生时的时间。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><b>MediaplayerItem</b> </td> 
    <td colname="2"> </td>
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1">MediaPlayerItem事件。<a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/events/MediaPlayerItemEvent.html#ITEM_CREATED" format="html" scope="external"> ITEM_CREATED</a> </td> 
-   <td colname="2">A <span class="codeph"> MediaPlayerItem</span> 「 」已建立。 </td> 
+   <td colname="1">MediaPlayerItem事件。<a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/events/MediaPlayerItemEvent.html#ITEM_CREATED" format="html" scope="external"> ITEM_CREATE</a> </td> 
+   <td colname="2">A <span class="codeph"> MediaPlayerItem</span> 已创建。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1">MediaPlayerItem事件。<a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/events/MediaPlayerItemEvent.html#ITEM_UPDATED" format="html" scope="external"> 專案已更新</a> </td> 
-   <td colname="2">在下列任一情況下，媒體播放器都已成功更新媒體： 
+   <td colname="1">MediaPlayerItem事件。<a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/events/MediaPlayerItemEvent.html#ITEM_UPDATED" format="html" scope="external"> 已更新项目</a> </td> 
+   <td colname="2">在以下任一情况下，媒体播放器已成功更新媒体： 
     <ul id="ul_E4D1A1D468544C3B9F8046E9B68A956D"> 
-     <li id="li_35A2A417BF924E039D9CB36CFBCDFEB6">當即時資產發生資訊清單重新整理時。 </li> 
-     <li id="li_E7AB380C212B4011B07C3B313282681C">當VOD或即時資產具有隱藏式字幕，且首次探索隱藏式字幕追蹤的活動時。 </li> 
+     <li id="li_35A2A417BF924E039D9CB36CFBCDFEB6">当实时资产发生清单刷新时。 </li> 
+     <li id="li_E7AB380C212B4011B07C3B313282681C">当VOD或实时资产具有隐藏式字幕并且首次发现隐藏式字幕跟踪的活动时。 </li> 
     </ul> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>註解與音訊</b> </td> 
+   <td colname="1"><b>字幕和音频</b> </td> 
    <td colname="2"> </td>
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> MediaPlayerItem事件。<a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/events/MediaPlayerItemEvent.html#CAPTION_UPDATED" format="html" scope="external"> 註解_已更新</a> </td> 
-   <td colname="2">在媒體串流中偵測到新的隱藏式字幕追蹤，並且 <span class="codeph"> closedCaptionsTracks</span> 已更新集合。 </td> 
+   <td colname="1"> MediaPlayerItem事件。<a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/events/MediaPlayerItemEvent.html#CAPTION_UPDATED" format="html" scope="external"> 题注已更新</a> </td> 
+   <td colname="2">在媒体流中检测到新的隐藏式字幕轨道，并且 <span class="codeph"> closedCaptionsTracks</span> 已更新收藏集。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>資訊清單和時間表</b> </td> 
+   <td colname="1"><b>清单和时间线</b> </td> 
    <td colname="2"> </td>
   </tr> 
   <tr rowsep="0"> 
-   <td colname="1">時間軸事件。<a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/events/TimelineEvent.html#TIMELINE_UPDATED" format="html" scope="external"> 時間表_已更新</a> </td> 
-   <td colname="2">媒體播放器已新增或移除廣告，因此具有更新的時間軸。 <p>已針對即時資產重新整理資訊清單，並從時間軸移除舊廣告插播，或發現新的廣告機會（提示點）。 媒體播放器會嘗試解析新廣告，並將其放在時間軸上。 </p> <p> 使用此事件來檢查時間軸是否有任何更新（播放期間VOD不會變更）。 然後，您可以使用擷取時間軸 <a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/MediaPlayer.html#timeline" format="html" scope="external"> MediaPlayer.timeline</a>. </p> </td> 
+   <td colname="1">时间线事件。<a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/events/TimelineEvent.html#TIMELINE_UPDATED" format="html" scope="external"> 时间线已更新</a> </td> 
+   <td colname="2">媒体播放器已添加或删除广告，因此它拥有更新的时间轴。 <p>为实时资源刷新的清单并从时间轴中删除了旧的广告时间或发现了新的广告机会（提示点）。 媒体播放器会尝试解析任何新广告，并将其放在时间轴上。 </p> <p> 使用此事件检查时间线是否有任何更新（播放期间VOD不会更改）。 然后，您可以使用检索时间轴 <a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/MediaPlayer.html#timeline" format="html" scope="external"> MediaPlayer.timeline</a>. </p> </td> 
   </tr> 
  </tbody> 
 </table>

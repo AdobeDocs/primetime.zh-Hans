@@ -1,6 +1,6 @@
 ---
-description: 此版本包含播放器並支援多種瀏覽器。
-title: 需求
+description: 此版本包括播放器并支持各种浏览器。
+title: 要求
 exl-id: 3157a86b-bf93-41d9-be82-0b702d69c69e
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,23 +9,23 @@ ht-degree: 0%
 
 ---
 
-# 概觀 {#requirements-overview}
+# 概述 {#requirements-overview}
 
-瀏覽器TVSDK需要媒體內容、資訊清單內容和軟體版本的特定屬性。
+浏览器TVSDK需要媒体内容、清单内容和软件版本的特定属性。
 
-瀏覽器TVSDK版本包含下列播放器：
+浏览器TVSDK版本包含以下播放器：
 
-* `Primetime.js` 適用於桌上型電腦和行動裝置上的HLS
+* `Primetime.js` 适用于桌面和移动设备上的HLS
 
-播放器包含下列參考API：
+播放器包括以下参考API：
 
-* `Primetime.js` 瀏覽器TVSDK
-* 適用於核心播放的JavaScript API
-* 參考示範播放程式
+* `Primetime.js` 浏览器TVSDK
+* 用于核心播放的JavaScript API
+* 参考演示播放器
 
-**認證平台：**
+**认证平台：**
 
-* **桌上型電腦設定**
+* **台式机配置**
 
    * Microsoft Windows 7：
 
@@ -49,15 +49,15 @@ ht-degree: 0%
 
 
 
-* **行動網站設定**
+* **移动Web配置**
 
    * Android 4.4
 
-      * 原生瀏覽器
+      * 本机浏览器
       * Chrome 33+
    * Android 5.0
 
-      * 原生瀏覽器
+      * 本机浏览器
       * Chrome 33+
    * Android 6.0
 

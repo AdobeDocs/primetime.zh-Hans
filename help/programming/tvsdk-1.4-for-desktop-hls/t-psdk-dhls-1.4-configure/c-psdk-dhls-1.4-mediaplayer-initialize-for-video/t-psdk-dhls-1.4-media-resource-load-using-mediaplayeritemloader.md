@@ -1,6 +1,6 @@
 ---
-description: 解析媒體資源的另一種方式是使用MediaPlayerItemLoader。 如果您想要取得特定媒體資料流的相關資訊，但不具現化MediaPlayer執行個體，這個功能會很有用。
-title: 使用MediaPlayerItemLoader載入媒體資源
+description: 解析媒体资源的另一种方法是使用MediaPlayerItemLoader。 当您希望获取有关特定媒体流的信息而不实例化MediaPlayer实例时，这将很有用。
+title: 使用MediaPlayerItemLoader加载媒体资源
 exl-id: 08379bd8-1602-4013-a6fb-b1aa6ba539aa
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,22 +9,22 @@ ht-degree: 0%
 
 ---
 
-# 使用MediaPlayerItemLoader載入媒體資源{#load-a-media-resource-using-mediaplayeritemloader}
+# 使用MediaPlayerItemLoader加载媒体资源{#load-a-media-resource-using-mediaplayeritemloader}
 
-解析媒體資源的另一種方式是使用MediaPlayerItemLoader。 如果您想要取得特定媒體資料流的相關資訊，但不具現化MediaPlayer執行個體，這個功能會很有用。
+解析媒体资源的另一种方法是使用MediaPlayerItemLoader。 当您希望获取有关特定媒体流的信息而不实例化MediaPlayer实例时，这将很有用。
 
-透過 `MediaPlayerItemLoader` 類別時，您可以交換媒體資源以取得對應的 `MediaPlayerItem` 而不將檢視附加至 `MediaPlayer` 執行個體，這會配置視訊解碼硬體資源。 取得「 」的程式 `MediaPlayerItem` 執行個體為非同步。
+通过 `MediaPlayerItemLoader` 类中，可以交换相应类的媒体资源 `MediaPlayerItem` 而不将视图附加到 `MediaPlayer` 实例计算，这会导致视频解码硬件资源的分配。 获取 `MediaPlayerItem` 实例是异步的。
 
-1. 實作這些專案的事件接聽程式 `MediaPlayerItemLoader` 事件：
+1. 为以下对象实施事件侦听器 `MediaPlayerItemLoader` 事件：
 
    * `MediaPlayerItemLoaderEvent.ERROR` 事件
 
-      TVSDK會使用此功能，通知您的應用程式已發生錯誤。 TVSDK提供的錯誤屬性包含診斷資訊。
+      TVSDK将使用此项来通知您的应用程序发生了错误。 TVSDK提供了一个包含诊断信息的错误属性。
 
-1. 將此執行個體註冊至 `MediaPlayerItemLoader`.
-1. 呼叫 `DefaultMediaPlayerItemLoader.load`，傳遞例項 `MediaResource` 物件。
+1. 将此实例注册到 `MediaPlayerItemLoader`.
+1. 调用 `DefaultMediaPlayerItemLoader.load`，传递 `MediaResource` 对象。
 
-   的URL `MediaResource` 物件必須指向您要取得資訊的資料流。 例如：
+   的URL `MediaResource` 对象必须指向要获取其信息的流。 例如：
 
    ```
    private function onLoadError(event:MediaPlayerItemLoaderEvent):void { 

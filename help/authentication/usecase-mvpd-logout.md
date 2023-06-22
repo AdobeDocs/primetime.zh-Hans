@@ -1,6 +1,6 @@
 ---
-title: mvpd登出
-description: mvpd登出
+title: MVPD注销
+description: MVPD注销
 exl-id: a2b57d02-9688-48e3-beff-1012cd361d0c
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,15 +9,15 @@ ht-degree: 0%
 
 ---
 
-# mvpd登出
+# MVPD注销
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-登出使用案例可透過傳送至IdP的SAML登出請求或透過呼叫的自訂登出端點來實作。  以下請求和回應範例提供SAML登出實作的範例。
+注销用例可以通过发送到IdP的SAML注销请求或通过调用的自定义注销端点来实施。  下面的请求和响应示例提供了SAML注销实施的示例。
 
-## 登出請求範例 {#sample-logout-request}
+## 示例注销请求 {#sample-logout-request}
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -37,7 +37,7 @@ ht-degree: 0%
 </samlp:LogoutRequest>
 ```
 
-## 登出回應範例 {#sample-logout-response}
+## 示例注销响应 {#sample-logout-response}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

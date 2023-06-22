@@ -1,6 +1,6 @@
 ---
-description: 您可以在應用程式中設定一個位置，以執行錯誤處理以回應ERROR狀態。
-title: 設定錯誤處理
+description: 您可以在应用程序中设置一个位置，以响应ERROR状态执行错误处理。
+title: 设置错误处理
 exl-id: c0ce1d80-85d5-4344-9ab0-bd56906421cb
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# 設定錯誤處理{#set-up-error-handling}
+# 设置错误处理{#set-up-error-handling}
 
-您可以在應用程式中設定一個位置，以執行錯誤處理以回應ERROR狀態。
+您可以在应用程序中设置一个位置，以响应ERROR状态执行错误处理。
 
-1. 新增事件接聽程式 `AdobePSDK.MediaPlayerStatusChangeEvent`.
+1. 添加事件侦听器 `AdobePSDK.MediaPlayerStatusChangeEvent`.
 
    例如：
 
@@ -22,13 +22,13 @@ ht-degree: 0%
                            onStatusChange);
    ```
 
-1. 在您的事件監聽器中，當 `event.status` 是 `AdobePSDK.MediaPlayerStatus.ERROR`，提供處理所有錯誤的邏輯。
-1. 處理錯誤後，重設 `MediaPlayer` 物件或載入新媒體資源。
+1. 在事件侦听器中，当 `event.status` 是 `AdobePSDK.MediaPlayerStatus.ERROR`，提供逻辑以处理所有错误。
+1. 处理错误后，重置 `MediaPlayer` 对象或加载新媒体资源。
 
-       當MediaPlayer物件處於ERROR狀態時，您必須完成下列其中一項工作，才能結束此狀態：
+       当MediaPlayer对象处于ERROR状态时，只有在完成以下任务之一之后，它才能退出此状态：
    
-   * 使用重設MediaPlayer物件 `MediaPlayer.reset` 方法。
-   * 使用載入新媒體資源 `MediaPlayer.replaceCurrentResource` 方法。
+   * 使用重置MediaPlayer对象 `MediaPlayer.reset` 方法。
+   * 使用加载新的媒体资源 `MediaPlayer.replaceCurrentResource` 方法。
 
 <!--<a id="example_342CA5A8CD7C45BD88233C5BDBB17220"></a>-->
 

@@ -1,6 +1,6 @@
 ---
-title: 檢查驗證Token
-description: 檢查驗證Token
+title: 检查身份验证令牌
+description: 检查身份验证令牌
 exl-id: 9020f261-44d8-4bd5-b85b-a8667679f563
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,50 +9,50 @@ ht-degree: 0%
 
 ---
 
-# 檢查驗證Token {#check-authentication-token}
+# 检查身份验证令牌 {#check-authentication-token}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-## REST API端點 {#clientless-endpoints}
+## REST API端点 {#clientless-endpoints}
 
 &lt;reggie_fqdn>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 &lt;sp_fqdn>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
-## 說明 {#description}
+## 描述 {#description}
 
-指出裝置是否有未過期的驗證Token。
+指示设备是否有未过期的身份验证令牌。
 
-| 端點 | 已呼叫  </br>作者： | 輸入   </br>引數 | HTTP  </br>方法 | 回應 | HTTP  </br>回應 |
+| 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/checkauthn | 串流應用程式</br></br>或</br></br>程式設計師服務 | 1.請求者（必要）</br>2.  deviceId （必要）</br>3.  device_info/X-Device-Info （必要）</br>4.  _deviceType_ </br>5.  _deviceuser_ （已棄用）</br>6.  _appId_ （已棄用） | GET | XML或JSON包含失敗時的錯誤詳細資料。 | 200 — 成功   </br>403 — 無成功 |
+| &lt;sp_fqdn>/api/v1/checkauthn | 流应用程序</br></br>或</br></br>程序员服务 | 1.申请人（必填）</br>2.  deviceId（必需）</br>3.  device_info/X-Device-Info（必需）</br>4.  _设备类型_ </br>5.  _设备用户_ （已弃用）</br>6.  _appId_ （已弃用） | GET | 如果失败，则包含错误详细信息的XML或JSON。 | 200 — 成功   </br>403 — 未成功 |
 
 {style="table-layout:auto"}
 
 
-| 輸入引數 | 說明 |
+| 输入参数 | 描述 |
 | --- | --- |
-| 請求者 | 此作業有效的程式設計員requestorId。 |
-| deviceId | 裝置ID位元組。 |
-| device_info/</br></br>X-Device-Info | 串流裝置資訊。</br></br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數潛在的大小和GETURL的長度限制，它應該在http標頭中作為X-Device-Info傳遞。 </br></br><!--See the full details in [Passing Device and Connection Information](http://tve.helpdocsonline.com/passing-device-information)(/help/authentication/passing-client-information-device-connection-and-application.md)-->. |
-| _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>如果此引數設定正確，ESM會提供 [依裝置型別劃分](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) 使用Clienless時，因此可針對Roku、AppleTV、Xbox等執行不同型別的分析。</br></br>如需詳細資訊，請參閱 [在Primetime驗證量度中使用無使用者端deviceType引數的好處&#x200B;](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**注意**：device_info會取代此引數。 |
-| _deviceuser_ | 裝置使用者識別碼。 |
-| _appId_ | 應用程式id/名稱。</br>**注意**：device_info會取代此引數。 |
+| 请求者 | 此操作有效的程序员requestorId。 |
+| deviceId | 设备ID字节。 |
+| device_info/</br></br>X-Device-Info | 流设备信息。</br></br>**注释**：可以将此device_info作为URL参数传递，但由于此参数可能的大小以及GETURL的长度限制，它应该作为X-Device-Info传递到http标头。 </br></br><!--See the full details in [Passing Device and Connection Information](http://tve.helpdocsonline.com/passing-device-information)(/help/authentication/passing-client-information-device-connection-and-application.md)-->. |
+| _设备类型_ | 设备类型（例如Roku、PC）。</br></br>如果此参数设置正确，则ESM提供的量度可以 [按设备类型划分](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) 使用无客户端时，以便可以对Roku、AppleTV、Xbox等执行不同类型的分析。</br></br>有关详细信息，请参阅 [在Primetime身份验证量度中使用无客户端deviceType参数的好处&#x200B;](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**注释**：device_info将替换此参数。 |
+| _设备用户_ | 设备用户标识符。 |
+| _appId_ | 应用程序id/名称。</br>**注释**：device_info将替换此参数。 |
 
 {style="table-layout:auto"}
 
 
-## 回應（若不成功） {#response}
+## 响应（如果不成功） {#response}
 
 ```JSON
     <error>
@@ -61,4 +61,4 @@ ht-degree: 0%
     </error>
 ```
 
-### [返回REST API參考](/help/authentication/rest-api-reference.md)
+### [返回REST API参考](/help/authentication/rest-api-reference.md)

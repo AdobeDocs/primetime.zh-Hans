@@ -1,6 +1,6 @@
 ---
-description: 您可以實作OpportunityGenerator類別來實作自己的機會產生器。
-title: 實作自訂機會產生器
+description: 您可以通过实施OpportunityGenerator类来实施自己的机会生成器。
+title: 实施自定义机会生成器
 exl-id: 8fa97515-692c-4e34-9afb-17a5409228db
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# 實作自訂機會產生器 {#implement-a-custom-opportunity-generator}
+# 实施自定义机会生成器 {#implement-a-custom-opportunity-generator}
 
-您可以實作OpportunityGenerator類別來實作自己的機會產生器。
+您可以通过实施OpportunityGenerator类来实施自己的机会生成器。
 
-1. 實作您的自訂 `ContentFactory` 實作 `ContentFactory` 介面和覆寫 `retrieveGenerators`.
+1. 实施您的自定义 `ContentFactory` 通过实施 `ContentFactory` 界面和覆盖 `retrieveGenerators`.
 
    例如：
 
@@ -29,7 +29,7 @@ ht-degree: 0%
    }
    ```
 
-1. 註冊 `ContentFactory` 至 `MediaPlayer`.
+1. 注册 `ContentFactory` 到 `MediaPlayer`.
 
    例如：
 
@@ -46,14 +46,14 @@ ht-degree: 0%
    itemLoader.load(resource, id, config);
    ```
 
-1. 建立實作的自訂機會產生器類別 `OpportunityGenerator` 類別。
+1. 创建实现 `OpportunityGenerator` 类。
 
    ```java
    public class CustomOpportunityGenerator implements OpportunityGenerator  
    {...}
    ```
 
-   1. 在自訂機會產生器中，覆寫 `doConfigure`， `doUpdate` 和 `doCleanup`：
+   1. 在自定义机会生成器中，覆盖 `doConfigure`， `doUpdate` 和 `doCleanup`：
 
       ```java
       @Override 
@@ -68,13 +68,13 @@ ht-degree: 0%
       }
       ```
 
-      若要取得定時中繼資料：
+      获取定时元数据：
 
       ```java
       List<TimedMetadata> tList = getItem().getTimedMetadata(); 
       ```
 
-   1. 針對每個 `TimedMetadata` 或群組 `TimedMetadata`，使用下列屬性建立機會：
+   1. 针对每个 `TimedMetadata` 或组 `TimedMetadata`，请使用以下属性创建一个机会：
 
       ```java
       Opportunity( 
@@ -85,11 +85,11 @@ ht-degree: 0%
       ); 
       ```
 
-   1. 針對每個建立的商機，呼叫 `resolve` 於 `OpportunityGeneratorClient:getClient().resolve(opportunity);`.
+   1. 对于创建的每个机会，调用 `resolve` 在 `OpportunityGeneratorClient:getClient().resolve(opportunity);`.
 
 <!--<a id="example_7A46377EBE79458E87423EB95D0568D4"></a>-->
 
-這是自訂位置機會偵測器的範例：
+这是一个自定义投放位置机会检测器示例：
 
 ```java
 public class MyOpportunityGenerator implements OpportunityGenerator {

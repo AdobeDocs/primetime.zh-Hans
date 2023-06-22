@@ -1,6 +1,6 @@
 ---
-description: TVSDK會以下列方式套用創意選取規則
-title: 套用創意選取規則
+description: TVSDK通过以下方式应用创意选择规则
+title: 应用创意选择规则
 exl-id: 44cb3905-fea9-47b2-9a8f-06a2a8695848
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,16 +9,16 @@ ht-degree: 0%
 
 ---
 
-# 套用創意選取規則{#applying-creative-selection-rules}
+# 应用创意选择规则{#applying-creative-selection-rules}
 
-TVSDK會以下列方式套用創意選取規則：
+TVSDK通过以下方式应用创意选择规则：
 
-* TVSDK適用於所有 `default` 規則優先，然後是區域特定規則。
-* TVSDK會忽略任何未針對目前區域ID定義的規則。
-* 一旦TVSDK套用預設規則，區域特定規則即可根據 `host` （網域）相符的內容出自以下使用者選取的創意： `default` 規則。
+* TVSDK适用于所有 `default` 规则优先，区域特定的规则优先。
+* TVSDK会忽略任何未为当前区域ID定义的规则。
+* 一旦TVSDK应用默认规则，区域特定的规则即可根据 `host` （域）匹配由选定的创意内容 `default` 规则。
 
-* 在隨附的範例規則檔案中，一旦TVSDK套用 `default` 規則(如果M3U8創意網域不包含 [!DNL my.domain.com] 或 [!DNL a.bcd.com] 廣告區域為 `1234`，會重新排序創意，並先播放FlashVPAID創意（如果可用）。 否則會播放MP4廣告，依此類推，一直到JavaScript。
+* 在包含其他区域规则的示例规则文件中，一旦TVSDK应用 `default` 规则(如果M3U8创意域不包含 [!DNL my.domain.com] 或 [!DNL a.bcd.com] 广告区域为 `1234`，会对创意内容重新排序，并首先播放FlashVPAID创意内容（如果可用）。 否则，将播放MP4广告，依此类推，一直到JavaScript。
 
-* 如果選取廣告創意，TVSDK無法原生播放( [!DNL .mp4]， [!DNL .flv]等)，TVSDK會發出重新封裝要求。
+* 如果选择了广告创意，则TVSDK无法本机播放( [!DNL .mp4]， [!DNL .flv]，等等)，TVSDK会发出重新打包请求。
 
-請注意，可由TVSDK處理的廣告型別仍需透過以下方式定義： `validMimeTypes` 設定於 `AuditudeSettings`.
+请注意，可由TVSDK处理的广告类型仍通过 `validMimeTypes` 在中设置 `AuditudeSettings`.

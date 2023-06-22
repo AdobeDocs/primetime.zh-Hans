@@ -1,6 +1,6 @@
 ---
-description: SDK會定期下載Adobe所發佈的CRL。 您必須確保不會封鎖對這些檔案的存取，或不會阻止這些CRL的強制執行。
-title: 使用Adobe發佈的CRL
+description: SDK定期下载Adobe发布的CRL。 您必须确保不阻止对这些文件的访问，或者不阻止实施这些CRL。
+title: 使用Adobe发布的CRL
 source-git-commit: 89bdda1d4bd5c126f19ba75a819942df901183d1
 workflow-type: tm+mt
 source-wordcount: '118'
@@ -9,8 +9,8 @@ ht-degree: 0%
 ---
 
 
-# 使用Adobe發佈的CRL{#consuming-crls-published-by-adobe}
+# 使用Adobe发布的CRL{#consuming-crls-published-by-adobe}
 
-SDK會定期下載Adobe所發佈的CRL。 您必須確保不會封鎖對這些檔案的存取，或不會阻止這些CRL的強制執行。
+SDK定期下载Adobe发布的CRL。 您必须确保不阻止对这些文件的访问，或者不阻止实施这些CRL。
 
-SDK提供可在擷取AdobeCRL時忽略錯誤的設定選項，而且您只能在開發環境中套用此選項。 在生產環境中，授權伺服器必須從Adobe擷取CRL。 如果授權伺服器無法取得有效的CRL，則會發生錯誤。
+SDK提供了一个配置选项，用于在检索AdobeCRL时忽略错误，并且您只能在开发环境中应用此选项。 在生产环境中，许可证服务器必须从Adobe中检索CRL。 如果许可证服务器无法获取有效的CRL，则出现错误。

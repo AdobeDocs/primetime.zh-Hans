@@ -12,20 +12,20 @@ ht-degree: 0%
 
 # BEES概述{#bees-overview}
 
-您可以實作後端權益服務(BEES)，為您的Primetime Cloud DRM操作提供自訂權益。
+您可以实施后端授权服务(BEES)，为Primetime Cloud DRM操作提供自定义授权。
 
-Primetime Cloud DRM預設使用匿名授權傳遞。 這表示傳送至Primetime Cloud DRM的所有授權要求都將傳回有效的授權，而不執行任何其他驗證/授權檢查(除非您已套用原則限制，要求使用Adobe Primetime驗證)。
+默认情况下，Primetime Cloud DRM使用匿名许可证交付。 这意味着发送到Primetime Cloud DRM的所有许可证请求都将返回有效的许可证，而不执行任何额外的身份验证/授权检查(除非您应用了策略约束，要求使用Adobe Primetime身份验证)。
 
-授權要求包含內容封裝/加密期間所使用的DRM原則。 DRM政策用於產生傳回給使用者端的DRM授權。 在預設情況下，您必須在內容封裝時做出所有DRM政策決定。 想要更精細地控制這些工作流程的客戶有以下選項：
+许可证请求包含在内容打包/加密期间使用的DRM策略。 DRM策略用于生成返回到客户端的DRM许可证。 在默认方案中，您必须在内容打包时作出所有DRM策略决策。 希望更好地控制这些工作流的客户具有以下选项：
 
-1. 整合Primetime驗證，以在播放前新增額外的權益檢查。
-1. 建立內部部署軟體權利服務，Primetime Cloud DRM在允許任何裝置播放您已封裝的內容之前會查詢此服務。
+1. 集成Primetime身份验证以在播放之前添加额外的权利检查。
+1. 创建一个本地授权服务，Primetime Cloud DRM在允许任何设备播放您已打包的内容之前将查询该服务。
 
-您的內部部署軟體權利檔案服務必須提供對Primetime Cloud DRM的回應，包括以下兩個資料片段：
+您的内部部署授权服务必须提供对Primetime Cloud DRM的响应，包括以下两个数据：
 
 * `isAllowed`
 * `drmPolicyToUse`
 
-這些選項決定裝置是否允許播放內容，以及使用哪個DRM原則來產生DRM授權(如果 `isAllowed` 為true)。
+这些选项确定设备是否允许播放内容，以及使用哪个DRM策略来生成DRM许可证(如果 `isAllowed` 为true)。
 
-本檔案說明完成上述選項2所需執行的操作：實作您自己的內部部署外部權利服務，並使其可供Primetime Cloud DRM使用您已封裝的內容。
+本文档介绍了完成上述选项2：实施您自己的内部部署外部权利服务并向Primetime Cloud DRM提供您已打包的内容。

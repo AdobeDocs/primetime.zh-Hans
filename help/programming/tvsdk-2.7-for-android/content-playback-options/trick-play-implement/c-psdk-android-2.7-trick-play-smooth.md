@@ -1,6 +1,6 @@
 ---
-description: 如果您的系統可存取硬體輔助解碼，則使用iFrame格式即可比使用純軟體TVSDK實作更流暢地玩特技。
-title: 更流暢的戲法操作
+description: 如果您的系统能够使用硬件辅助解码，则使用iFrame格式即可获得比纯软件TVSDK实施更流畅的特技播放。
+title: 更顺畅的戏法操作
 exl-id: 2dcc8ee2-78a1-4ec8-b876-e06e5ec1e398
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,16 +9,16 @@ ht-degree: 0%
 
 ---
 
-# 更流暢的戲法操作 {#smoother-trick-play-operations}
+# 更顺畅的戏法操作 {#smoother-trick-play-operations}
 
-如果您的系統可存取硬體輔助解碼，則使用iFrame格式即可比使用純軟體TVSDK實作更流暢地玩特技。
+如果您的系统能够使用硬件辅助解码，则使用iFrame格式即可获得比纯软件TVSDK实施更流畅的特技播放。
 
 <!--<a id="section_3DBFD7A3D1C7453096D3D3885E786263"></a>-->
 
-使用iFrame格式會導致特技播放操作不平滑。 更流暢的特技播放操作使用一般（非iFrame）設定檔、硬體解碼支援以及增加的影格速率。 不同的硬體輔助解碼裝置有不同的功能。 雙倍速度需要每秒60個畫面(FPS)，四倍速度需要120 FPS。
+使用iFrame格式会导致特技播放操作不平滑。 更平滑的特技播放操作使用标准（非iFrame）配置文件、硬件解码支持和增加的帧速率。 不同的硬件辅助解码设备具有不同的功能。 双速需要60帧/秒(FPS)，四速需要120 FPS。
 
 >[!IMPORTANT]
 >
->Adobe建議您將較新Android裝置的播放速度限製為兩倍，不要在較舊Android裝置上使用功能。
+>Adobe建议您将较新Android设备的播放速度限制为两倍，而不要在较旧Android设备上使用功能。
 
-若要獲得更流暢的戲法播放，請設定 `ABRControlParameters.maxPlayoutRate` 至所需的正常速度倍數（例如，雙倍速度為2.0）。 如果後續呼叫 `MediaPlayer.setRate()` 引數小於或等於您設定的值 `maxPlayoutRate`，TVSDK會使用一般設定檔來達到更流暢的戲法播放。 否則，它會使用iFrame設定檔來執行點進作業。
+为了达到更流畅的戏法播放，请设置 `ABRControlParameters.maxPlayoutRate` 正常速度的所需倍数（例如，双倍速度为2.0）。 如果对的后续调用 `MediaPlayer.setRate()` 有一个参数小于或等于您设置的值 `maxPlayoutRate`， TVSDK使用普通配置文件实现更平滑的戏法播放。 否则，它使用iFrame配置文件进行点击播放操作。

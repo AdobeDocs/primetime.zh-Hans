@@ -1,6 +1,6 @@
 ---
-description: 如果您使用預設設定，則您無需執行任何其他操作即可啟用或設定帳單。 如果您從「Adobe啟用」代表取得不同的設定引數，請在初始化媒體播放器之前使用BillingMetricsConfiguration類別設定這些引數。
-title: 設定計費量度
+description: 如果您使用默认配置，则无需执行其他操作即可启用或配置计费。 如果您从Adobe启用代表处获取了不同的配置参数，请在初始化媒体播放器之前使用BillingMetricsConfiguration类设置这些参数。
+title: 配置计费量度
 exl-id: b49b64eb-682b-420f-9681-6e77cdb02c23
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,21 +9,21 @@ ht-degree: 0%
 
 ---
 
-# 設定計費量度 {#configure-billing-metrics}
+# 配置计费量度 {#configure-billing-metrics}
 
-如果您使用預設設定，則您無需執行任何其他操作即可啟用或設定帳單。 如果您從「Adobe啟用」代表取得不同的設定引數，請在初始化媒體播放器之前使用BillingMetricsConfiguration類別設定這些引數。
+如果您使用默认配置，则无需执行其他操作即可启用或配置计费。 如果您从Adobe启用代表处获取了不同的配置参数，请在初始化媒体播放器之前使用BillingMetricsConfiguration类设置这些参数。
 
 >[!TIP]
 >
->大部分客戶應使用預設設定。
+>大多数客户应使用默认配置。
 
 >[!IMPORTANT]
 >
->您設定的設定會在媒體播放器的一生中維持有效。 初始化媒體播放器後，便無法變更設定。
+>您设置的配置将在媒体播放器的生命周期内保持有效。 初始化媒体播放器后，无法更改配置。
 
-若要設定計費量度：
+要配置计费指标，请执行以下操作：
 
-1. 輸入下列程式碼範例。
+1. 输入以下代码示例。
 
    ```java
    MediaPlayerItemConfig config = new MediaPlayerItemConfig(); 

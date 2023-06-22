@@ -1,6 +1,6 @@
 ---
-title: Android SDK API參考
-description: Android SDK API參考
+title: Android SDK API参考
+description: Android SDK API参考
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
 source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
 workflow-type: tm+mt
@@ -9,23 +9,23 @@ ht-degree: 0%
 
 ---
 
-# Android SDK API參考 {#android-sdk-api-reference}
+# Android SDK API参考 {#android-sdk-api-reference}
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考之用。 使用此API需要來自Adobe的目前授權。 不允許未經授權的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
 
-## 簡介 {#intro}
+## 介绍 {#intro}
 
-本檔案詳細說明Android SDK針對Adobe Primetime驗證公開的方法和回呼，Adobe Primetime驗證1.7版及更新版本均支援這些方法和回呼。 此處說明的方法和回呼函式在AccessEnabler.h和EntitlementDelegate.h標頭檔案中定義。
+本文档详细介绍Android SDK为Adobe Primetime身份验证公开的方法和回调，Adobe Primetime身份验证版本1.7及更高版本支持这些方法和回调。 此处介绍的方法和回调函数在AccessEnabler.h和EntitlementDelegate.h头文件中定义。
 
-請參閱 [https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library) 以取得最新的Android AccessEnabler SDK。 
+请参阅 [https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library) 获取最新的Android AccessEnabler SDK。 
 
 
-**注意：** Adobe Primetime驗證團隊鼓勵您僅使用Adobe Primetime驗證 *公共* API：
+**注意：** Adobe Primetime身份验证团队建议您仅使用Adobe Primetime身份验证 *公共* API：
 
-- 公用API可供使用 *經過完整測試* 在所有支援的使用者端型別上。 對於任何公用功能，我們確定每個使用者端型別都有相關方法的對應版本。</span>
-- 公開API必須儘可能穩定，以支援回溯相容性，並確保合作夥伴整合不會中斷。 但是，對於 *非* — 公用API，我們保留在未來任何時候變更其簽名的權利。 如果您遇到無法透過目前公用Adobe Primetime驗證API呼叫的組合支援的特定流程，最好的方法就是讓我們知道。 根據您的需求，我們可以修改公用API，並提供未來穩定的解決方案。
+- 公共API可用 *经过充分测试* 在所有支持的客户端类型上。 对于任何公共功能，我们确保每个客户端类型都拥有相应版本的关联方法。</span>
+- 公共API需要尽可能稳定，以支持向后兼容性并确保合作伙伴集成不会中断。 但是，对于 *非* — 公共API，我们保留在未来任何时候更改其签名的权利。 如果您遇到无法通过当前公共Adobe Primetime身份验证API调用的组合支持的特定流程，最好的方法是告知我们。 根据您的需求，我们可以修改公共API，并为您提供稳定的解决方案。
 
 ## Android API {#api}
 
@@ -36,17 +36,17 @@ ht-degree: 0%
 - [checkAuthentication](#checkAuthN)
 - [getAuthentication](#getAuthN)
 - [displayProviderDialog](#displayProviderDialog)
-- [setselectedProvider](#setSelectedProvider)
+- [setSelectedProvider](#setSelectedProvider)
 - [navigateToUrl](#navigagteToUrl)
 - [getAuthenticationToken](#getAuthNToken)
 - [setAuthenticationStatus](#setAuthNStatus)
-- 預先授權
+- 预授权
 - [checkAuthorization](#checkAuthZ)
 - [getAuthorization](#getAuthZ)
 - [setToken](#setToken)
 - [tokenRequestFailed](#tokenRequestFailed)
-- [登出](#logout)
-- [getselectedprovider](#getSelectedProvider)
+- [注销](#logout)
+- [getSelectedProvider](#getSelectedProvider)
 - [selectedprovider](#selectedProvider)
 - [getMetadata](#getMetadata)
 - [setmetadataStatus](#setMetadaStatus)
@@ -54,20 +54,20 @@ ht-degree: 0%
 
 ### Factory.getInstance {#getInstance}
 
-**說明：** 具現化Access Enabler物件。 每個應用程式執行個體應有一個存取啟用程式執行個體。
+**描述：** 实例化访问启用程序对象。 每个应用程序实例应有一个访问启用程序实例。
 
-| API呼叫：建構函式 |
+| API调用：构造函数 |
 | --- |
-| **公用靜態** AccessEnabler **getInstance**（內容appContext、String softwareStatement、String redirectUrl）<br>        **擲回** AccessEnablerException <br><br>**公用靜態** AccessEnabler getInstance(Context appContext、String env_url、String softwareStatement、String redirectUrl)<br>**擲回** AccessEnablerException |
+| **公共静态** AccessEnabler **getInstance**（上下文appContext、字符串softwareStatement、字符串redirectUrl）<br>        **丢弃** AccessEnablerException <br><br>**公共静态** AccessEnabler getInstance(Context appContext、String env_url、String softwareStatement、String redirectUrl)<br>**丢弃** AccessEnablerException |
 
 **可用性：** v3.1.2+
 
-**引數：**
+**参数：**
 
-- *appContext*：Android應用程式內容。
-- env\_url：若要使用Adobe測試環境進行測試，env\_url可設為&quot;sp.auth-staging.adobe.com&quot;
+- *appContext*：Android应用程序上下文。
+- env\_url：对于使用Adobe暂存环境进行测试，可以将env\_url设置为“sp.auth-staging.adobe.com”
 
-**已棄用：**
+**已弃用：**
 
 ```
     public static AccessEnabler getInstance(Context appContext)
@@ -78,552 +78,552 @@ ht-degree: 0%
 
 ### setRequestor {#setRequestor}
 
-**說明：** 建立程式設計師的身分。 每位程式設計師在為Adobe Primetime驗證系統註冊Adobe後，都會獲得一個唯一的ID。 處理SSO和遠端Token時，驗證狀態會在應用程式於背景時變更，當應用程式進入前景時可再次呼叫setRequestor，以便與系統狀態同步（如果SSO已啟用，請擷取遠端Token，如果同時發生登出，請刪除本機Token）。
+**描述：** 确定程序员的身份。 在为Adobe Primetime身份验证系统注册Adobe时，每个程序员都会分配一个唯一的ID。 在处理SSO和远程令牌时，身份验证状态会在应用程序处于后台时更改，当应用程序进入前台时，可以再次调用setRequestor以便与系统状态同步（如果启用了SSO，则获取远程令牌，如果同时发生注销，则删除本地令牌）。
 
-伺服器回應包含MVPD清單，以及附加至程式設計師身分的某些設定資訊。 伺服器回應由Access Enabler程式碼在內部使用。 只有作業的狀態（即SUCCESS/FAIL）會透過setRequestorComplete()回呼顯示給您的應用程式。
+服务器响应包含MVPD列表以及附加到程序员标识的一些配置信息。 服务器响应由访问启用码在内部使用。 通过setRequestorComplete()回调只向应用程序显示操作的状态（即SUCCESS/FAIL）。
 
-如果 *url* 不會使用引數，因此產生的網路呼叫會鎖定預設服務提供者URL：Adobe版本/生產環境。
+如果 *url* 未使用参数，生成的网络调用将定位默认服务提供商URL：Adobe版本/生产环境。
 
-如果提供的值用於 *url* 引數，則所產生的網路呼叫會鎖定中提供的所有URL *url* 引數。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD，「存取啟用程式」會記住相關服務提供者的URL。 所有後續的軟體權利檔案要求都會導向至與設定階段期間與目標MVPD配對的服務提供者相關聯的URL。
+如果为提供了值 *url* 参数，则生成的网络调用将定向于 *url* 参数。 所有配置请求都在单独的线程中同时触发。 在编译MVPD列表时，优先使用第一个响应程序。 对于列表中的每个MVPD， Access Enabler记住关联服务提供商的URL。 所有后续授权请求都定向到与服务提供程序关联的URL，该URL在配置阶段与目标MVPD配对。
 
-| API呼叫：要求者設定 |
+| API调用：请求者配置 |
 | --- |
 | ```public void setRequestor(String requestorId)``` |
 
 **可用性：** v3.0+
 
-| API呼叫：要求者設定 |
+| API调用：请求者配置 |
 | --- |
 | ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
 **可用性：** v3.0+
 
 
-**引數：**
+**参数：**
 
-- *請求者ID*：與程式設計師相關聯的唯一ID。 當您首次向Adobe Primetime驗證服務註冊時，請將Adobe指派的唯一ID傳遞至您的網站。
+- *请求者ID*：与程序员关联的唯一ID。 首次向Adobe Primetime身份验证服务注册时，将Adobe分配的唯一ID传递到您的网站。
 
-- *signedRequestorID*：以私密金鑰數位簽署的請求者ID復本。 <!--For more details. see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
+- *signedRequestorID*：使用您的私钥进行数字签名的请求者ID的副本。 <!--For more details. see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
 
-- *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可用於偵錯）。 您可以使用此選項來指定多個Adobe Primetime驗證服務提供者執行個體。 如此一來，MVPD清單就會由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯，也就是首先回應並支援該MVPD的提供者。
+- *url*：可选参数；默认情况下，使用Adobe服务提供程序(http://sp.auth.adobe.com/)。 此阵列允许您为Adobe提供的身份验证和授权服务指定端点（其他实例可能用于调试目的）。 您可以使用此选项指定多个Adobe Primetime身份验证服务提供程序实例。 在执行此操作时，MVPD列表由来自所有服务提供商的端点组成。 每个MVPD都与最快的服务提供程序相关联；即首先响应并支持该MVPD的服务提供程序。
 
-**觸發的回呼：** `setRequestorComplete()`
+**触发的回调：** `setRequestorComplete()`
 
-已棄用：
+已弃用：
 
-    公用void setRequestor(String requestorId， String signedRequestorId)
+    公共void setRequestor(String requestorId， String signedRequestorId)
     
-    公用void setRequestor (String requestorId， String signedRequestorId， ArrayList&lt;string> url)
+    公共void setRequestor (String requestorId， String signedRequestorId， ArrayList&lt;string> url)
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 ### setRequestorComplete {#setRequestorComplete}
 
-**說明：** 由Access Enabler觸發的回呼，通知您的應用程式設定階段已完成。 這是應用程式可以開始發出權益要求的訊號。 在設定階段完成之前，應用程式無法發出任何權益請求。
+**描述：** 由Access Enabler触发的回调，通知应用程序配置阶段已完成。 这是一个信号，表明应用程序可以开始发出授权请求。 在配置阶段完成之前，应用程序无法发出任何授权请求。
 
-| 回呼：要求者設定完成 |
+| 回调：请求者配置完成 |
 | --- |
 | java public void setRequestorComplete(int status) |
 
 **可用性：** v1.0+
 
-**引數：**
+**参数：**
 
-- *狀態*：可以取下列其中一個值：
+- *状态*：可以采用以下值之一：
    - SDK \>= 3.4.0
-      - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS`  — 設定階段已成功完成
-      - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_ERROR`  — 設定階段失敗
+      - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS`  — 配置阶段已成功完成
+      - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_ERROR`  — 配置阶段失败
    - SDK \&lt; 3.4
-      - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS`  — 設定階段已成功完成
-      - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR`  — 設定階段失敗
+      - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS`  — 配置阶段已成功完成
+      - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR`  — 配置阶段失败
 
-**觸發者：** `setRequestor()`
+**触发者：** `setRequestor()`
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 ### setOptions {#setOptions}
 
-**說明：** 設定全域SDK選項。 它接受 **對應\&lt;string string=&quot;&quot;>** 作為引數。 對應中的值會連同SDK發出的每個網路呼叫一起傳遞至伺服器。
+**描述：** 配置全局SDK选项。 它接受 **映射\&lt;string string=&quot;&quot;>** 作为论据。 映射中的值将与SDK发出的每个网络调用一起传递到服务器。
 
-這些值將會傳遞至伺服器，不受目前流量（驗證/授權）影響。 如果您想要變更值，可以隨時呼叫此方法。
+这些值将传递到服务器，与当前流（身份验证/授权）无关。 如果要更改值，可以随时调用此方法。
 
-| API呼叫： setOptions |
+| API调用： setOptions |
 | --- |
-| 公開void setOptions(HashMap&lt;string string=&quot;&quot;> options) |
+| 公共void setOptions(HashMap&lt;string string=&quot;&quot;> options) |
 
 **可用性：** v1.9.2+
 
-**引數：**
+**参数：**
 
-- *選項*：地圖&lt;string string=&quot;&quot;> 包含全域SDK選項。 目前提供下列選項：
-   - **applicationProfile**  — 可用於根據此值進行伺服器設定。
-   - **ap_vi** - visitorIDMarketing Cloud。 此值稍後可用於進階分析報表。
-   - **ap_ai**  — 廣告ID
-   - **device_info**  — 使用者端資訊，如下所述： [傳遞使用者端資訊裝置連線和應用程式](/help/authentication/passing-client-information-device-connection-and-application.md).
+- *options*：地图&lt;string string=&quot;&quot;> 包含全局SDK选项。 目前，以下选项可用：
+   - **applicationProfile**  — 可用于根据此值进行服务器配置。
+   - **ap_vi** - visitorIDMarketing Cloud。 此值以后可用于高级分析报表。
+   - **ap_ai**  — 广告ID
+   - **device_info**  — 客户端信息，如下所述： [传递客户端信息设备连接和应用程序](/help/authentication/passing-client-information-device-connection-and-application.md).
 
-[返回頁首……](#apis)
+[返回页首……](#apis)
 
 
 ### checkAuthentication {#checkAuthN}
 
-**說明：** 檢查驗證狀態。 其做法是在本機權杖儲存空間中搜尋有效的驗證權杖。 呼叫此方法不會執行任何網路呼叫。 應用程式會使用它來查詢使用者的驗證狀態並相應地更新UI （即更新登入/登出UI）。 驗證狀態會透過 [*setAuthenticationStatus()*](#setAuthNStatus) callback。
+**描述：** 检查身份验证状态。 它通过在本地令牌存储空间中搜索有效的身份验证令牌来完成此操作。 调用此方法不会执行任何网络调用。 应用程序使用它来查询用户的身份验证状态并相应地更新UI（即更新登录/注销UI）。 身份验证状态通过 [*setAuthenticationStatus()*](#setAuthNStatus) 回调。
 
-如果MVPD支援「每位請求者的驗證」功能，則多個驗證Token可以儲存在裝置上。  如需有關此功能的詳細資訊，請參閱 [快取准則](#$caching) 部分（在Android技術總覽中）。
+如果MVPD支持“每个请求者的身份验证”功能，则可以在设备上存储多个身份验证令牌。  有关此功能的详细信息，请参阅 [缓存准则](#$caching) 部分（在Android技术概述中）。
 
-| API呼叫：檢查驗證狀態 |
+| API调用：检查身份验证状态 |
 | --- |
 | public void checkAuthentication() |
 
 **可用性：** v1.0+
 
-**引數：** 無
+**参数：** 无
 
-**觸發的回呼：** `setAuthenticationStatus()`
+**触发的回调：** `setAuthenticationStatus()`
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 
 ### getAuthentication {#getAuthN}
 
-**說明：** 啟動完整驗證工作流程。 首先檢查驗證狀態。 如果尚未驗證，則會啟動驗證流程狀態機器：
+**描述：** 启动完整的身份验证工作流。 首先检查身份验证状态。 如果尚未经过身份验证，则身份验证流状态计算机将启动：
 
-- 如果上次驗證嘗試成功，則會略過MVPD選取階段，而且 [*navigateToUrl()*](#navigagteToUrl) 已觸發回呼。 應用程式會使用此回呼來例項化WebView控制項，該控制項會向使用者顯示MVPD的登入頁面。
-- 如果上次驗證嘗試不成功，或使用者明確登出， [*displayProviderDialog()*](#displayProviderDialog) 已觸發回呼。 您的應用程式使用此回呼來顯示MVPD選擇UI。 此外，您的應用程式也需要透過以下方式向Access Enabler程式庫通知使用者的MVPD選擇，以繼續驗證流程： [setSelectedProvider()](#setSelectedProvider) 方法。
+- 如果上次身份验证尝试成功，则会跳过MVPD选择阶段，并且 [*navigateToUrl()*](#navigagteToUrl) 已触发回调。 应用程序使用此回调实例化向用户显示MVPD登录页的WebView控件。
+- 如果上次身份验证尝试不成功，或者用户明确注销，则 [*displayProviderDialog()*](#displayProviderDialog) 已触发回调。 您的应用程序使用此回调来显示MVPD选择UI。 此外，您的应用程序需要通过通知Access Enabler库有关用户的MVPD选择，来恢复身份验证流程。 [setSelectedProvider()](#setSelectedProvider) 方法。
 
-在MVPD登入頁面上驗證使用者的認證時，您的應用程式必須監督使用者在MVPD登入頁面上驗證時發生的多個重新導向操作。 輸入正確的認證時，WebView控制項會重新導向至由定義的自訂URL。 *AccessEnabler.ADOBEPASS\_REDIRECT\_URL* 常數。 此URL不打算由WebView載入。 應用程式必須攔截此URL，並將此事件解譯為登入階段完成的訊號。 然後，它應該將控制權移交給Access Enabler，以完成驗證流程(透過呼叫 *getAuthenticationToken()* 方法)。
+由于用户的凭据在MVPD登录页面上验证，因此您的应用程序需要监视用户在MVPD的登录页面上验证时发生的多个重定向操作。 输入正确的凭据后，WebView控件将被重定向到由定义的自定义URL。 *AccessEnabler.ADOBEPASS\_REDIRECT\_URL* 常量。 此URL不打算由WebView加载。 应用程序必须拦截此URL并将此事件解释为登录阶段已完成的信号。 然后，它应该将控制权移交给Access Enabler以完成身份验证流程(通过调用 *getAuthenticationToken()* 方法)。
 
-如果MVPD支援「每位請求者的驗證」功能，則多個驗證Token可以儲存在裝置上（每位程式設計師一個）。  如需有關此功能的詳細資訊，請參閱 [快取准則](#$caching) 部分（在Android技術總覽中）。
+如果MVPD支持“每个请求者的身份验证”功能，则可以在设备上存储多个身份验证令牌（每个程序员一个）。  有关此功能的详细信息，请参阅 [缓存准则](#$caching) 部分（在Android技术概述中）。
 
-最後，驗證狀態會透過 *setAuthenticationStatus()* callback。
+最后，认证状态通过 *setAuthenticationStatus()* 回调。
 
 
 
-| API呼叫：起始驗證流程 |
+| API调用：启动身份验证流程 |
 | --- |
-| 公開void getAuthentication() |
+| 公共void getAuthentication() |
 
 **可用性：** v1.0+
 
-| API呼叫：起始驗證流程 |
+| API调用：启动身份验证流程 |
 | --- |
-| 公開void getAuthentication(boolean forceAuthN， Map&lt;string object=&quot;&quot;> genericData) |
+| 公共void getAuthentication(boolean forceAuthN， Map&lt;string object=&quot;&quot;> genericData) |
 
 **可用性：** v1.8+
 
-**引數：**
+**参数：**
 
-- *forceAuthn*：指定是否應啟動驗證流程的旗標，無論使用者是否已驗證。
-- *資料*：包含要傳送至Pay-TV Pass服務的機碼值組的對應。 Adobe可使用此資料來啟用未來的功能，而不需變更SDK。
+- *forceAuthn*：指定是否应启动身份验证流程的标志，无论用户是否已进行身份验证。
+- *数据*：由要发送到Pay-TV pass服务的键值对组成的映射。 Adobe可以使用此数据启用未来的功能，而无需更改SDK。
 
-**觸發的回呼：** `setAuthenticationStatus(), displayProviderDialog(), navigateToUrl(), sendTrackingData()`
+**触发的回调：** `setAuthenticationStatus(), displayProviderDialog(), navigateToUrl(), sendTrackingData()`
 
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 ### displayProviderDialog {#displayProviderDialog}
 
-**說明** 由Access Enabler觸發的回呼，通知應用程式需要具現化適當的UI元素，以允許使用者選取所需的MVPD。 回呼會提供MVPD物件清單，內含其他資訊，可協助您正確建立選取專案UI面板（例如指向MVPD標誌的URL、好記的顯示名稱等）
+**描述** 由Access Enabler触发的回调，用于通知应用程序需要实例化适当的UI元素，以允许用户选择所需的MVPD。 回调提供了MVPD对象的列表以及其他有助于正确构建选择UI面板的信息（例如指向MVPD徽标的URL、友好显示名称等）
 
-一旦使用者選取了所需的MVPD，上層應用程式就需呼叫，以恢複驗證流程 *setSelectedProvider()* ，並向其傳遞與使用者選取專案相對應的MVPD ID。\
+用户选择所需的MVPD后，上层应用程序需要通过调用恢复身份验证流程 *setSelectedProvider()* 并向其传递与用户选择相对应的MVPD的ID。\
  
 >[!NOTE]
 >
-> 中止驗證流程
+> 中止身份验证流程
 > </br></br>
-> 請注意，這是使用者能夠按下「上一步」按鈕的時刻，這等同於中止驗證流程。 在這種情況下，您的應用程式必須呼叫 `setSelectedProvider()` 方法，傳遞 *null* 做為引數，讓Access Enabler有機會重設其驗證狀態機器。
+> 请注意，此时用户能够按下“上一步”按钮，这相当于中止身份验证流程。 在这种情况下，您的应用程序需要调用 `setSelectedProvider()` 方法，通过 *null* 作为参数，为Access Enabler提供重置其身份验证状态机的机会。
 
-| 回呼：顯示MVPD選擇UI |
+| 回调：显示MVPD选择UI |
 | --- |
 | `public void displayProviderDialog(ArrayList<Mvpd> mvpds)` |
 
 **可用性：** v1.0+
 
-**引數**：
+**参数**：
 
-- *mvpds*：包含MVPD相關資訊的MVPD物件清單，應用程式可將其用於建立MVPD選取UI元素。
+- *mvpds*：MVPD对象列表，其中包含应用程序可用于构建MVPD选择UI元素的MVPD相关信息。
 
-**觸發者：** `getAuthentication(), getAuthorization()`
+**触发者：** `getAuthentication(), getAuthorization()`
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 
-### setselectedProvider {#setSelectedProvider}
+### setSelectedProvider {#setSelectedProvider}
 
-**說明：** 您的應用程式會呼叫此方法，通知Access Enabler使用者的MVPD選擇。 應用程式可以使用此方法來選取或變更用於驗證的服務提供者。
+**描述：** 您的应用程序调用此方法以告知访问启用程序用户的MVPD选择。 应用程序可以使用此方法选择或更改用于身份验证的服务提供程序。
 
-如果選取的MVPD是TempPass MVPD，它會自動透過該MVPD進行驗證，之後不需要呼叫getAuthentication()。
+如果选定的MVPD是TempPass MVPD，它会自动通过该MVPD进行身份验证，而无需随后调用getAuthentication()。
 
-請注意，這不適用於促銷臨時傳遞，因為getAuthentication()方法會提供額外的引數。
+请注意，这不适用于提升临时传递，因为getAuthentication()方法提供了额外的参数。
 
-傳遞時 *null* 作為引數， Access Enabler假設使用者已取消驗證流程（即按下「上一步」按鈕），並透過重設驗證狀態機器和呼叫 *setAuthenticationStatus()* 回撥使用 `AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR` 錯誤代碼。
+传递时 *null* 作为一个参数，Access Enabler假定用户已取消身份验证流程（即按下“后退”按钮），并通过重置身份验证状态计算机和调用 *setAuthenticationStatus()* 使用进行回调 `AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR` 错误代码。
 
-| API呼叫：設定目前選取的提供者 |
+| API调用：设置当前选定的提供程序 |
 | --- |
-| 公用void setSelectedProvider(String mvpdId) |
+| 公共void setSelectedProvider(String mvpdId) |
 
 **可用性：** v1.0+
 
-**引數：** 無
+**参数：** 无
 
-**觸發的回呼：** `setAuthenticationStatus(), sendTrackingData(), navigateToUrl()`
+**触发的回调：** `setAuthenticationStatus(), sendTrackingData(), navigateToUrl()`
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 
 ### navigateToUrl {#navigagteToUrl}
 
-**已棄用：** 從Android SDK 3.0開始，只有在裝置上沒有Chrome自訂分頁的情況下才使用navigateToUrl
+**已弃用：** 从Android SDK 3.0开始，仅当设备上不存在Chrome自定义选项卡时才使用navigateToUrl
 
-**說明：** Access Enabler所觸發的回呼，會通知應用程式，使用者需要顯示MVPD登入頁面才能輸入其認證。 Access Enabler會以引數形式傳遞MVPD登入頁面的URL。 您的應用程式必須將WebView控制項例項化，並將其導向此URL。 此外，應用程式也需要監視WebView控制項載入的URL，並攔截以自訂URL為目標的重新導向操作。 `AccessEnabler.ADOBEPASS_REDIRECT_URL (deprecated)` 常數。 發生此事件時，應用程式必須關閉或隱藏WebView控制項，並呼叫 *getAuthenticationToken()* 方法。 Access Enabler會從後端伺服器擷取驗證Token，並將其儲存在本機的Token儲存體中，以完成驗證流程。  
+**描述：** 由Access Enabler触发的回调，通知应用程序用户需要显示MVPD登录页才能输入其凭据。 Access Enabler将MVPD登录页面的URL作为参数传递。 您的应用程序需要实例化WebView控件并将其指向此URL。 此外，应用程序还需要监控WebView控件加载的URL，并拦截针对由定义的自定义URL的重定向操作。 `AccessEnabler.ADOBEPASS_REDIRECT_URL (deprecated)` 常量。 发生此事件时，应用程序需要关闭或隐藏WebView控件，并通过调用 *getAuthenticationToken()* 方法。 Access Enabler通过从后端服务器检索身份验证令牌并将其本地存储在令牌存储中来完成身份验证流程。  
 
 >[!WARNING]
 >
-> **中止驗證流程**  <br>請注意，這是使用者能夠按下「上一步」按鈕的時刻，這等同於中止驗證流程。 在這種情況下，您的應用程式必須呼叫 _setSelectedProvider()_ 方法傳遞 _null_ 做為引數，並授予Access Enabler重設其驗證狀態機器的機會。
+> **中止身份验证流程**  <br>请注意，此时用户能够按下“上一步”按钮，这相当于中止身份验证流程。 在这种情况下，您的应用程序需要调用 _setSelectedProvider()_ 方法传递 _null_ 作为参数，并为Access Enabler提供重置其身份验证状态机的机会。
 
-| 回呼：顯示MVPD登入頁面 |
+| “回调：显示MVPD登录”页 |
 | --- |
-| 公開void navigateToUrl（字串url） |
+| 公共void navigateToUrl(String url) |
 
 **可用性：** v1.0+
 
-**引數：**
+**参数：**
 
-- *url*：指向MVPD登入頁面的URL
+- *url*：指向MVPD登录页面的URL
 
-**觸發者：** `getAuthentication(), setSelectedProvider()`
+**触发者：** `getAuthentication(), setSelectedProvider()`
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 
 ### getAuthenticationToken {#getAuthNToken}
 
-**已棄用：** 從Android SDK 3.0版開始，由於Chrome自訂標籤用於驗證，因此應用程式不再使用此方法。
+**已弃用：** 从Android SDK 3.0开始，由于Chrome自定义选项卡用于身份验证，因此应用程序中不再使用此方法。
 
-**說明：** 從後端伺服器要求驗證Token，以完成驗證流程。 只有當WebView控制項裝載MVPD登入頁面時，將重新導向至自訂URL時，您的應用程式才會呼叫此方法。 `AccessEnabler.ADOBEPASS_REDIRECT_URL` 常數。
+**描述：** 通过从后端服务器请求身份验证令牌来完成身份验证流程。 仅当发生以下情况时，应用程序才应调用此方法：托管MVPD登录页面的WebView控件被重定向到由定义的自定义URL `AccessEnabler.ADOBEPASS_REDIRECT_URL` 常量。
 
-| API呼叫：擷取驗證Token |
+| API调用：检索身份验证令牌 |
 | --- |
-| 公開void getAuthenticationToken() |
+| 公共void getAuthenticationToken() |
 
 **可用性：** v1.0+
 
-**引數：**
+**参数：**
 
-- *Cookie*：在目標網域上設定的Cookie （請參閱SDK中的示範應用程式以瞭解參考實作）。
+- *Cookie*：在Target域中设置的Cookie（请参阅SDK中的演示应用程序以了解参考实施）。
 
-**觸發的回呼：** `setAuthenticationStatus()`， `sendTrackingData()`
+**触发的回调：** `setAuthenticationStatus()`， `sendTrackingData()`
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 
 ### setAuthenticationStatus {#setAuthNStatus}
 
-**說明：** 由Access Enabler觸發的回呼，通知應用程式驗證流程的狀態。 在許多地方，此流程可能會因為使用者的互動或其他未預見的情況（例如網路連線問題等）而失敗。 此回呼會通知應用程式驗證流程的成功/失敗狀態，同時在需要時提供有關失敗原因的其他資訊。
+**描述：** 由Access Enabler触发的回调，通知应用程序身份验证流的状态。 在很多地方，由于用户交互或其他不可预见的情况（如网络连接问题等），此流量可能会失败。 此回调会通知应用程序身份验证流的成功/失败状态，同时在需要时提供有关失败原因的其他信息。
 
-| 回呼：報告驗證流程的狀態 |
+| 回调：报告身份验证流的状态 |
 | --- |
-| 公開void setAuthenticationStatus(int status， String errorCode) |
+| 公共void setAuthenticationStatus(int status， String errorCode) |
 
 **可用性：** v1.0+
 
-**引數：**
+**参数：**
 
-- *狀態*：可以取下列其中一個值：
-   - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS`  — 驗證流程已成功完成
-   - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_ERROR`  — 驗證流程失敗
-- *程式碼*：失敗原因。 若 *狀態* 是 `AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS`，則 *程式碼* 為空字串(即由 `AccessEnablerConstants.USER_AUTHENTICATED` 常數)。 如果失敗，此引數可採用下列其中一個值：
-   - `AccessEnablerConstants.USER_NOT_AUTHENTICATED_ERROR`  — 未驗證使用者。 回應 *checkAuthentication()* 當本機權杖快取中沒有有效的驗證權杖時，方法呼叫。
-   - `AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler在上層應用程式通過後，已重設驗證狀態機器 *null* 至 `setSelectedProvider()` 以中止驗證流程。  使用者可能已取消驗證流程（即按下「上一步」按鈕）。
-   - `AccessEnablerConstants.GENERIC_AUTHENTICATION_ERROR`  — 驗證流程因網路無法使用或使用者明確取消驗證流程等原因而失敗。
+- *状态*：可以采用以下值之一：
+   - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS`  — 身份验证流程已成功完成
+   - `AccessEnablerConstants.ACCESS_ENABLER_STATUS_ERROR`  — 身份验证流失败
+- *代码*：失败原因。 如果 *状态* 是 `AccessEnablerConstants.ACCESS_ENABLER_STATUS_SUCCESS`，则 *代码* 是一个空字符串(即由 `AccessEnablerConstants.USER_AUTHENTICATED` 常量)。 如果失败，此参数可以采用以下值之一：
+   - `AccessEnablerConstants.USER_NOT_AUTHENTICATED_ERROR`  — 用户未经过身份验证。 响应 *checkAuthentication()* 当本地令牌缓存中没有有效的身份验证令牌时，方法调用。
+   - `AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler在上层应用程序通过后重置了身份验证状态计算机 *null* 到 `setSelectedProvider()` 中止身份验证流程。  用户可能已取消身份验证流程（例如，按下“后退”按钮）。
+   - `AccessEnablerConstants.GENERIC_AUTHENTICATION_ERROR`  — 由于网络不可用或用户明确取消身份验证流等原因，身份验证流失败。
 
-**觸發者：** `checkAuthentication(), getAuthentication(), checkAuthorization()`
+**触发者：** `checkAuthentication(), getAuthentication(), checkAuthorization()`
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 
 ### checkPreauthorizedResources {#checkPreauth}
 
->**已棄用：** 從Android SDK 3.6開始，預先授權API正在取代checkPreauthorizedResources，提供擴充的錯誤代碼。 
+>**已弃用：** 从Android SDK 3.6开始，预授权API将取代checkPreauthorizedResources，并提供扩展的错误代码。 
 
-**說明：** 應用程式會使用此方法來判斷使用者是否已獲授權檢視特定的受保護資源。 此方法的主要用途是擷取資訊以用於裝飾UI （例如，使用鎖定和解鎖圖示來指示存取狀態）。
+**描述：** 应用程序使用此方法来确定用户是否已获得查看特定受保护资源的授权。 此方法的主要目的是检索用于装饰UI的信息（例如，使用锁定和解锁图标指示访问状态）。
 
-| API呼叫：設定目前選取的提供者 |
+| API调用：设置当前选定的提供程序 |
 | --- |
 | `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
 **可用性：** v1.3+
 
-**引數：** 此 `resources` parameter是應檢查其授權的資源陣列。 清單中的每個元素都應是代表資源ID的字串。 資源ID的限制與 `getAuthorization()` 呼叫，也就是說，它應該是程式設計師和MVPD或媒體RSS片段之間建立的議定值。
+**参数：** 此 `resources` parameter是应检查其授权的资源数组。 列表中的每个元素都应该是一个表示资源ID的字符串。 资源ID的限制与 `getAuthorization()` 调用，即它应该是程序员与MVPD或媒体RSS片段之间建立的商定值。
 
-**已觸發回呼：** `preauthorizedResources()`
+**已触发回调：** `preauthorizedResources()`
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 
 ### checkPreauthorizedResources {#checkPreauth2}
 
-**已棄用：** 從Android SDK 3.6開始，預先授權API正在取代checkPreauthorizedResources，提供擴充的錯誤代碼。 
+**已弃用：** 从Android SDK 3.6开始，预授权API将取代checkPreauthorizedResources，并提供扩展的错误代码。 
 
-**說明：** 應用程式會使用此方法來判斷使用者是否已獲授權檢視特定的受保護資源。 此方法的主要用途是擷取資訊以用於裝飾UI （例如，使用鎖定和解鎖圖示來指示存取狀態）。
+**描述：** 应用程序使用此方法来确定用户是否已获得查看特定受保护资源的授权。 此方法的主要目的是检索用于装饰UI的信息（例如，使用锁定和解锁图标指示访问状态）。
 
-| API呼叫：設定目前選取的提供者 |
+| API调用：设置当前选定的提供程序 |
 | --- |
 | `public void checkPreauthorizedResources(ArrayList<String> resources, boolean cache)` |
 
 **可用性：** v3.1+
 
-**引數：** 此 `resources` parameter是應檢查其授權的資源陣列。 清單中的每個元素都應是代表資源ID的字串。 資源ID的限制與 `getAuthorization()` 呼叫，也就是說，它應該是程式設計師和MVPD或媒體RSS片段之間建立的議定值。
+**参数：** 此 `resources` parameter是应检查其授权的资源数组。 列表中的每个元素都应该是一个表示资源ID的字符串。 资源ID的限制与 `getAuthorization()` 调用，即它应该是程序员与MVPD或媒体RSS片段之间建立的商定值。
 
-此 `cache` 引數會指定是否可以使用快取預先授權回應。 根據預設，快取為true，SDK會傳回先前快取的回應（若有）。
+此 `cache` 参数指定是否可以使用缓存的预授权响应。 默认情况下，缓存为true，SDK将返回之前缓存的响应（如果可用）。
 
-**已觸發回呼：** `preauthorizedResources()`
+**已触发回调：** `preauthorizedResources()`
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 ### preauthorizedResources {#preauthResources}
 
-**已棄用：** 從Android SDK 3.6開始，預先授權API正在取代checkPreauthorizedResources，提供擴充的錯誤代碼。 將不會在新API上呼叫preauthorizedResources callback。
+**已弃用：** 从Android SDK 3.6开始，预授权API将取代checkPreauthorizedResources，并提供扩展的错误代码。 将不会在新API上调用preauthorizedResources回调。
 
 
-**說明：** checkPreauthorizedResources()觸發的回呼。 提供使用者已獲授權檢視的資源清單。
+**描述：** 由checkPreauthorizedResources()触发的回调。 提供用户已被授权查看的资源列表。
 
-| API呼叫：設定目前選取的提供者 |
+| API调用：设置当前选定的提供程序 |
 | --- |
 | `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
 **可用性：** v1.3+
 
-**引數：** 此 `resources` parameter是使用者已被授權檢視的資源陣列。
+**参数：** 此 `resources` parameter是用户已被授权查看的资源数组。
 
-**觸發者：** `checkPreauthorizedResources()`
+**触发者：** `checkPreauthorizedResources()`
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 ### <span id="checkAuthZ"></span>checkAuthorization
 
-**說明：** 應用程式使用此方法來檢查授權狀態。 首先檢查驗證狀態。 如果未驗證， *setTokenRequestFailed()* 會觸發callback，而方法會結束。 如果使用者已通過驗證，它也會觸發授權流程。 欲知詳情，請參閱 *getAuthorization()* 方法。
+**描述：** 应用程序使用此方法来检查授权状态。 首先检查身份验证状态。 如果未经过身份验证， *setTokenRequestFailed()* 将触发回调，并且方法将退出。 如果用户通过了身份验证，它还会触发授权流。 欲知详情，请参阅 *getAuthorization()* 方法。
 
-| API呼叫：檢查授權狀態 |
+| API调用：检查授权状态 |
 | --- |
 | public void checkAuthorization(String resourceId) |
 
 **可用性：** v1.0+
 
-| API呼叫：檢查授權狀態 |
+| API调用：检查授权状态 |
 | --- |
 | public void checkAuthorization(String resourceId， Map&lt;string object=&quot;&quot;> genericData) |
 
 **可用性：** v1.8+
 
-**引數：**
+**参数：**
 
-- *resourceId*：使用者要求授權的資源ID。
-- *資料*：包含要傳送至Pay-TV Pass服務的機碼值組的對應。 Adobe可使用此資料來啟用未來的功能，而不需變更SDK。
+- *resourceId*：用户请求授权的资源的ID。
+- *数据*：由要发送到Pay-TV pass服务的键值对组成的映射。 Adobe可以使用此数据启用未来的功能，而无需更改SDK。
 
-**觸發的回呼：** `tokenRequestFailed(), setToken(),sendTrackingData(), setAuthenticationStatus()`
+**触发的回调：** `tokenRequestFailed(), setToken(),sendTrackingData(), setAuthenticationStatus()`
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 
 ### <span id="getAuthZ"></span>getAuthorization
 
-**說明：** 應用程式會使用此方法來起始授權流程。 如果使用者尚未驗證，它也會啟動驗證流程。 如果使用者通過驗證，Access Enabler會繼續發出授權權杖（如果本機權杖快取中不存在有效的授權權杖）和短期媒體權杖的請求。 取得短媒體權杖後，授權流程即視為完成。 此 *setToken()* 系統會觸發callback，並將簡短媒體權杖作為引數傳送至應用程式。 如果由於任何原因，授權失敗， *tokenRequestFailed()* 會觸發回呼，並提供錯誤碼和詳細資料。
+**描述：** 应用程序使用此方法来启动授权流。 如果用户尚未进行身份验证，它还会启动身份验证流程。 如果用户通过了身份验证，则Access Enabler会继续发出对授权令牌（如果本地令牌缓存中不存在有效的授权令牌）和短期媒体令牌的请求。 一旦获得短媒体令牌，授权流程就被视为完成。 此 *setToken()* 会触发callback，并将短媒体令牌作为参数提供给应用程序。 如果由于任何原因，授权失败， *tokenRequestFailed()* 会触发回调，并提供错误代码和详细信息。
 
-| API呼叫：起始授權流程 |
+| API调用：启动授权流 |
 | --- |
-| 公開void getAuthorization(String resourceId) |
+| 公共void getAuthorization(String resourceId) |
 
 **可用性：** v1.0+
 
-| API呼叫：起始授權流程 |
+| API调用：启动授权流 |
 | --- |
-| 公開void getAuthorization(String resourceId， Map&lt;string object=&quot;&quot;> genericData) |
+| 公共void getAuthorization(String resourceId， Map&lt;string object=&quot;&quot;> genericData) |
 
 **可用性：** v1.8+
 
-**引數：**
+**参数：**
 
-- *resourceId*：使用者要求授權的資源ID。
-- *資料*：包含要傳送至Pay-TV Pass服務的機碼值組的對應。 Adobe可使用此資料來啟用未來的功能，而不需變更SDK。 
+- *resourceId*：用户请求授权的资源的ID。
+- *数据*：由要发送到Pay-TV pass服务的键值对组成的映射。 Adobe可以使用此数据启用未来的功能，而无需更改SDK。 
 
-**觸發的回呼：** `tokenRequestFailed(), setToken(), sendTrackingData()`
+**触发的回调：** `tokenRequestFailed(), setToken(), sendTrackingData()`
 
 >[!WARNING]
 >
-> **已觸發其他回呼**  <br> 此方法也可以觸發下列回呼（如果同時啟動驗證流程）： *setAuthenticationStatus()*， *displayProviderDialog()*， *navigateToUrl()*
+> **触发了其他回调**  <br> 此方法还可以触发以下回调（如果还启动了身份验证流程）： *setAuthenticationStatus()*， *displayProviderDialog()*， *navigateToUrl()*
 
-**注意：請儘可能使用checkAuthorization()而非getAuthorization()。 getAuthorization()方法將啟動完整的驗證流程（如果使用者未驗證），這可能會導致程式設計人員方面的複雜實施。**
+**注意：请尽量使用checkAuthorization()而不是getAuthorization()。 getAuthorization()方法将启动一个完整的身份验证流程（如果用户未经过身份验证），这可能会导致程序员端的复杂实施。**
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 
 ### setToken {#setToken}
 
-**說明：** 由Access Enabler觸發的回呼，通知您的應用程式授權流程已成功完成。 短期媒體代號也會作為引數傳遞。
+**描述：** 由Access Enabler触发的回调，通知应用程序授权流已成功完成。 短期媒体令牌也作为参数提供。
 
-| 回呼：授權流程已成功完成 |
+| 回调：授权流已成功完成 |
 | --- |
-| 公用void setToken(String token， String resourceId) |
+| 公共void setToken(String token， String resourceId) |
 
 **可用性：** v1.0+
 
-**引數：**
+**参数：**
 
-- *token*：短期媒體權杖
-- *resourceId*：取得授權的資源
+- *令牌*：短期媒体令牌
+- *resourceId*：获得授权的资源
 
-**觸發者：** `checkAuthorization()`， `getAuthorization()`
+**触发者：** `checkAuthorization()`， `getAuthorization()`
 
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 ### tokenRequestFailed {#tokenRequestFailed}
 
-**說明：** 由Access Enabler觸發的回呼，通知上層應用程式授權流程失敗。
+**描述：** 由Access Enabler触发的回调，通知上层应用程序授权流失败。
 
-| 回呼：授權流程失敗 |
+| 回调：授权流失败 |
 | --- |
-| 公用void tokenRequestFailed(String resourceId， <br>        字串errorCode， String errorDescription) |
+| 公共void tokenRequestFailed(String resourceId， <br>        String errorCode， String errorDescription) |
 
 **可用性：** v1.0+
 
-**引數：**
+**参数：**
 
-- *resourceId*：取得授權的資源
-- *errorCode*：與失敗案例相關聯的錯誤代碼。 可能的值：
-   - `AccessEnablerConstants.USER_NOT_AUTHORIZED_ERROR`  — 使用者無法授權指定的資源
-- *errorDescription*：有關失敗情況的其他詳細資訊。 如果此描述性字串因任何原因而無法使用，Adobe Primetime驗證會傳送空白字串 **(「」)**.
+- *resourceId*：获得授权的资源
+- *错误代码*：与失败方案关联的错误代码。 可能的值：
+   - `AccessEnablerConstants.USER_NOT_AUTHORIZED_ERROR`  — 用户无法授权给定资源
+- *errorDescription*：有关失败场景的其他详细信息。 如果此描述性字符串由于任何原因不可用，Adobe Primetime身份验证将发送一个空字符串 **(“”)**.
 
-   MVPD可使用此字串來傳遞自訂錯誤訊息或銷售相關訊息。 例如，如果拒絕訂閱者對資源的授權，MVPD會傳送訊息，例如：「您目前無法在封裝中存取此通道。 如果您想要升級套件，請按這裡。」 Adobe Primetime驗證會透過此回呼將訊息傳遞給程式設計師，程式設計師可以選擇顯示或忽略訊息。 Adobe Primetime驗證也可以使用此引數來提供可能導致錯誤的狀況通知。 例如，「與提供者的授權服務通訊時發生網路錯誤。」
+   MVPD可使用此字符串传递自定义错误消息或销售相关消息。 例如，如果订阅者被拒绝对资源的授权，则MVPD会发送消息，例如：“您当前无权访问包中的此渠道。 如果要升级包，请单击此处。” 消息由Adobe Primetime身份验证通过此回调传递给程序员，程序员可以选择显示或忽略该消息。 Adobe Primetime身份验证还可以使用此参数来提供可能导致错误的状况的通知。 例如，“与提供商的授权服务通信时出现网络错误。”
 
-**觸發者：** `checkAuthorization(), getAuthorization()`
+**触发者：** `checkAuthorization(), getAuthorization()`
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
-### 登出 {#logout}
+### 注销 {#logout}
 
-**說明：** 使用此方法可起始登出流程。 登出是一系列HTTP重新導向作業的結果，因為使用者需要同時從Adobe Primetime驗證伺服器和MVPD的伺服器登出。 因此，使用Access Enabler程式庫發出的簡單HTTP要求無法完成此流程。 SDK會使用Chrome自訂分頁來執行HTTP重新導向操作。 此流程將對使用者可見，並在完成後關閉
+**描述：** 使用此方法可启动注销流程。 注销操作是一系列HTTP重定向操作的结果，这是因为用户需要同时从Adobe Primetime身份验证服务器和MVPD服务器注销。 因此，使用Access Enabler库发出的简单HTTP请求无法完成此流程。 SDK使用Chrome自定义选项卡执行HTTP重定向操作。 此流程将对用户可见，并在完成后关闭
 
-| API呼叫：起始登出流程 |
+| API调用：启动注销流程 |
 | --- |
 | public void logout() |
 
 **可用性：** v1.0+
 
-**引數：** 無
+**参数：** 无
 
-**觸發的回呼：**
+**触发的回调：**
 
-- `navigateToUrl()` 適用於3.0之前的SDK版本
-- `setAuthenticationStatus()` 適用於SDK版本> 3.0
-
-
-[返回Android API...](#api)
+- `navigateToUrl()` 适用于3.0之前的SDK版本
+- `setAuthenticationStatus()` 适用于SDK版本> 3.0的
 
 
-### getselectedprovider {#getSelectedProvider}
+[返回到Android API...](#api)
 
-**說明：** 使用此方法可判斷目前選取的提供者。
 
-| API呼叫：判斷目前選取的MVPD |
+### getSelectedProvider {#getSelectedProvider}
+
+**描述：** 使用此方法可确定当前选定的提供程序。
+
+| API调用：确定当前选定的MVPD |
 | --- |
-| 公開void getSelectedProvider() |
+| 公共void getSelectedProvider() |
 
 **可用性：** v1.0+
 
-**引數：** 無
+**参数：** 无
 
-**觸發的回呼：** `selectedProvider()`
+**触发的回调：** `selectedProvider()`
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 
 ### <span id="selectedProvider"></span>selectedprovider
 
-**說明：** 由Access Enabler觸發的回呼，將目前所選MVPD的相關資訊傳送給應用程式。
+**描述：** 由Access Enabler触发的回调，它将有关当前所选MVPD的信息传递给应用程序。
 
-| 回呼：目前所選MVPD的相關資訊 |
+| 回调：有关当前所选MVPD的信息 |
 | --- |
-| public void selectedProvider(Mvpd mvpd) |
+| 公共void selectedProvider(Mvpd mvpd) |
 
 
 **可用性：** v1.0+
 
-**引數：**
+**参数：**
 
-- *mvpd*：包含目前所選MVPD相關資訊的物件
+- *mvpd*：包含有关当前所选MVPD信息的对象
 
-**觸發者：** `getSelectedProvider()`
+**触发者：** `getSelectedProvider()`
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 
 ### getMetadata {#getMetadata}
 
-**說明：** 使用此方法可擷取Access Enabler程式庫公開為中繼資料的資訊。 應用程式可提供複合MetadataKey物件，以存取此資訊。
+**描述：** 使用此方法可检索由Access Enabler库公开为元数据的信息。 应用程序可以通过提供复合MetadataKey对象来访问此信息。
 
-| API呼叫：查詢AccessEnabler以取得中繼資料 |
+| API调用：查询AccessEnabler以获取元数据 |
 | --- |
 | `public void getMetadata(MetadataKey metadataKey)` |
 
 **可用性：** v1.0+
 
-程式設計師可以使用兩種中繼資料型別：
+有两种类型的元数据可供程序员使用：
 
-- 靜態中繼資料（驗證權杖TTL、授權權杖TTL和裝置ID） 
-- 使用者中繼資料（使用者特定資訊，例如使用者ID和郵遞區號；在驗證和/或授權流程期間，從MVPD傳遞至使用者的裝置）
+- 静态元数据（身份验证令牌TTL、授权令牌TTL和设备ID） 
+- 用户元数据（用户特定的信息，例如用户ID和邮政编码；在身份验证和/或授权流期间，从MVPD传递到用户设备）
 
-**引數：**
+**参数：**
 
-- *metadataKey*：封裝索引鍵和args變數的資料結構，其含義如下：
-   - 如果索引鍵為 `METADATA_KEY_USER_META` 和引數包含名稱為=的SerializableNameValuePair物件 `METADATA_ARG_USER_META` 和值= `[metadata_name]`，則會針對使用者中繼資料進行查詢。 目前可用的使用者中繼資料型別清單：
-      - `zip`  — 郵遞區號
+- *元数据键*：封装键和args变量的数据结构，其含义如下：
+   - 如果键为 `METADATA_KEY_USER_META` 和参数包含名为=的SerializableNameValuePair对象 `METADATA_ARG_USER_META` 和值= `[metadata_name]`，则查询用户元数据。 可用用户元数据类型的当前列表：
+      - `zip`  — 邮政编码
 
-      - `householdID`  — 家庭識別碼。 如果MVPD不支援附屬帳戶，這將會與 `userID`.
+      - `householdID`  — 家庭标识符。 如果MVPD不支持子帐户，则它与 `userID`.
 
-      - `maxRating`  — 使用者的父母最高分級
+      - `maxRating`  — 用户的最大家长评级
 
-      - `userID`  — 使用者識別碼。 如果MVPD支援附屬帳戶，且使用者不是主要帳戶， `userID` 將不同於 `householdID`.
+      - `userID`  — 用户标识符。 如果MVPD支持子帐户，并且用户不是主帐户， `userID` 将不同 `householdID`.
 
-      - `channelID`  — 使用者有權檢視的管道清單
-   - 如果索引鍵為 `METADATA_KEY_DEVICE_ID` 接著會進行查詢以取得目前的裝置id。 請注意，此功能預設為停用，程式設計師應聯絡Adobe以取得有關啟用和費用的資訊。
-   - 如果索引鍵為 `METADATA_KEY_TTL_AUTHZ` 和引數包含名稱為=的SerializableNameValuePair物件 `METADATA_ARG_RESOURCE_ID` 和值= `[resource_id]`，則會執行查詢以獲取與指定資源相關聯的授權權杖的到期時間。
-   - 如果索引鍵為 `METADATA_KEY_TTL_AUTHN` 然後進行查詢以取得驗證權杖到期時間。 
+      - `channelID`  — 用户有权查看的渠道列表
+   - 如果键为 `METADATA_KEY_DEVICE_ID` 然后进行查询以获取当前设备id。 请注意，此功能默认处于禁用状态，程序员应联系Adobe以获取有关启用和费用的信息。
+   - 如果键为 `METADATA_KEY_TTL_AUTHZ` 和参数包含名为=的SerializableNameValuePair对象 `METADATA_ARG_RESOURCE_ID` 和值= `[resource_id]`，然后进行查询以获取与指定资源关联的授权令牌的过期时间。
+   - 如果键为 `METADATA_KEY_TTL_AUTHN` 然后进行查询以获取身份验证令牌的过期时间。 
 
  
 
 >[!NOTE]
 >
->若為SDK 3.4.0，則為常數： `METADATA_KEY_USER_META, METADATA_KEY_DEVICE_ID, METADATA_KEY_TTL_AUTHZ, METADATA_KEY_TTL_AUTHN` 可從com.adobe.adobepass.accessenabler.api.profile.UserProfileService取得。
+>对于SDK 3.4.0，常量： `METADATA_KEY_USER_META, METADATA_KEY_DEVICE_ID, METADATA_KEY_TTL_AUTHZ, METADATA_KEY_TTL_AUTHN` 可从com.adobe.adobepass.accessenabler.api.profile.UserProfileService获得。
 
 
 
 >[!NOTE]
 >
->程式設計師可用的實際使用者中繼資料取決於MVPD提供的內容。  此清單將隨著新的中繼資料可用並新增至Adobe Primetime驗證系統而進一步擴充。
+>程序员可用的实际用户元数据取决于MVPD提供的内容。  此列表将随着提供新元数据并将其添加到Adobe Primetime身份验证系统中而进一步扩展。
 
-**觸發的回呼：** [`setMetadataStatus()`](#setMetadaStatus)
+**触发的回调：** [`setMetadataStatus()`](#setMetadaStatus)
 
-**更多資訊：** [使用者中繼資料](/help/authentication/user-metadata-feature.md)
+**更多信息：** [用户元数据](/help/authentication/user-metadata-feature.md)
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 ### setmetadataStatus {#setMetadaStatus}
 
-**說明：** 由Access Enabler觸發的回呼，透過傳遞請求的中繼資料 *getMetadata()* 呼叫。
+**描述：** 由Access Enabler触发的回调，用于提供通过 *getMetadata()* 呼叫。
 
-| 回撥：中繼資料擷取請求的結果 |
+| Callback：元数据检索请求的结果 |
 | --- |
 | ```public void setMetadataStatus(MetadataKey key, MetadataStatus result)``` |
 
 **可用性：** v1.0+
 
-**引數：**
+**参数：**
 
-- *金鑰*：此MetadataKey物件包含要求中繼資料值的索引鍵和相關聯的引數（如需參考實作，請參閱示範應用程式）。
-- *結果*：包含請求中繼資料的複合物件。 物件有以下欄位：
-   - *simpleResult*：代表要求驗證TTL、授權TTL或裝置ID時中繼資料值的字串。 如果對使用者中繼資料提出要求，則此值為null。
+- *键*：MetadataKey对象，其中包含为其请求元数据值的键和相关参数（请参阅演示应用程序以了解参考实施）。
+- *结果*：包含所请求元数据的复合对象。 该对象具有以下字段：
+   - *simpleResult*：一个字符串，表示在请求身份验证TTL、授权TTL或设备ID时的元数据值。 如果为用户元数据发出请求，则此值为null。
 
-   - *userMetadataResult*：一個物件，包含JSON使用者中繼資料裝載的Java表示法。\
+   - *userMetadataResult*：一个对象，它包含JSON用户元数据有效负载的Java表示形式。\
       例如：
 
 ```json
@@ -633,13 +633,13 @@ ht-degree: 0%
           }'
 ```
 
-會翻譯成Java，如下所示： 
+将转换为Java，如下所示： 
 
 ```java
           Map("street" -> "Main Avenue", "buildings" -> List("150", "320")))
 ```
 
-**使用者中繼資料物件的實際結構類似於以下內容：**
+**用户元数据对象的实际结构类似于以下内容：**
 
 ```json
           {
@@ -659,46 +659,46 @@ ht-degree: 0%
           }
 ```
 
-請求簡單中繼資料（驗證TTL、授權TTL或裝置ID）時，此值為空。
+请求简单元数据（身份验证TTL、授权TTL或设备ID）时，该值为空。
 
-- *已加密*：指定是否加密擷取的中繼資料的布林值。 此引數僅對使用者中繼資料請求有意義，對始終未加密接收的靜態中繼資料（例如：驗證TTL）沒有意義。 如果此引數設為True，則由程式設計師決定是否使用白名單私密金鑰（在中用於簽署請求者ID的相同私密金鑰）執行RSA解密，以取得未加密的使用者中繼資料值。 [`setRequestor`](#setRequestor) 呼叫)。
+- *已加密*：指定是否对检索到的元数据进行加密的布尔值。 此参数仅对用户元数据请求有意义，对于始终未加密接收的静态元数据（例如：身份验证TTL）没有意义。 如果此参数设置为True，则程序员需要通过使用列入白名单的私钥（用于对请求者ID签名的同一私钥）执行RSA解密来获取未加密的用户元数据值。 [`setRequestor`](#setRequestor) 调用)。
 
-**觸發者：** [`getMetadata()`](#getMetadata)
+**触发者：** [`getMetadata()`](#getMetadata)
 
-**更多資訊：** [使用者中繼資料](/help/authentication/user-metadata-feature.md)
+**更多信息：** [用户元数据](/help/authentication/user-metadata-feature.md)
 
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 
 ### getVersion {#getVersion}
 
-**說明：** 此方法可用來擷取AccessEnabler程式庫的版本。
+**描述：** 此方法可用于检索AccessEnabler库的版本。
 
-| API呼叫：取得AccessEnabler版本 |
+| API调用：获取AccessEnabler版本 |
 | --- |
 | ```public static String getVersion()``` |
 
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 </br>
 
-## 追蹤事件 {#tracking}
+## 跟踪事件 {#tracking}
 
-Access Enabler會觸發其他回呼，而此回呼不一定與權益流程相關。 實作事件追蹤回呼函式命名為 *sendTrackingData()* 是選用專案，但此專案可讓應用程式追蹤特定事件並編譯統計資料，例如成功/失敗的驗證/授權嘗試次數。 以下是 *sendTrackingData()* 回撥：\
+Access Enabler触发一个附加回调，该回调不一定与权利文件流相关。 实现名为的事件跟踪回调函数 *sendTrackingData()* 是可选的，但它使应用程序能够跟踪特定事件并编译统计信息，如成功/失败的身份验证/授权尝试次数。 以下是 *sendTrackingData()* 回调：\
  
 
 ### sendTrackingData {#sendTrackingData}
 
-**說明：** Access Enabler所觸發的回呼，會向應用程式發出各種事件的發生訊號，例如驗證/授權流程完成/失敗。 sendTrackingData()也會報告裝置型別、Access Enabler使用者端型別和作業系統。
+**描述：** 由Access Enabler触发的回调，向应用程序发出各种事件的信号，例如身份验证/授权流的完成/失败。 sendTrackingData()还会报告设备类型、Access Enabler客户端类型和操作系统。
 
 >[!WARNING]
 >
-> 裝置型別和作業系統衍生自使用公用Java程式庫([http://java.net/projects/user-agent-utils](http://java.net/projects/user-agent-utils))和使用者代理字串。 請注意，此資訊僅以粗略的方式提供，以將運作量度劃分為裝置類別，但該Adobe對錯誤結果概不負責。 請據以使用新功能。
+> 设备类型和操作系统是通过使用公共Java库([http://java.net/projects/user-agent-utils](http://java.net/projects/user-agent-utils))和用户代理字符串。 请注意，此信息仅以粗略的方式提供，用于划分设备类别的操作量度，但该Adobe对错误结果不承担任何责任。 请相应地使用新功能。
 
 
-- 裝置型別的可能值：
+- 设备类型的可能值：
    - `computer`
    - `tablet`
    - `mobile`
@@ -706,7 +706,7 @@ Access Enabler會觸發其他回呼，而此回呼不一定與權益流程相關
    - `unknown`
 
 
-- Access Enabler使用者端型別的可能值：
+- Access Enabler客户端类型的可能值：
    - `flash`
    - `html5`
    - `ios`
@@ -714,52 +714,52 @@ Access Enabler會觸發其他回呼，而此回呼不一定與權益流程相關
 
 </br>
 
-| 回撥：追蹤事件 |
+| 回调：跟踪事件 |
 | --- |
 | ```public void sendTrackingData(Event event, ArrayList<String> data)``` |
 
 **可用性：** v1.0+
 
-**引數：**
+**参数：**
 
-- *事件*：正在追蹤的事件。 追蹤事件型別共有三種：
-   - **authorizationDetection：** 每當授權權杖請求傳回時(事件型別為 `EVENT_AUTHZ_DETECTION`)
-   - **authenticationdetection：** 每當驗證檢查發生時(事件型別為 `EVENT_AUTHN_DETECTION`)
-   - **mvpdSelection：** 當使用者在MVPD選擇表單中選取MVPD時(事件型別為 `EVENT_MVPD_SELECTION`)
-- *資料*：與已報告事件相關聯的其他資料。 此資料會以值清單的形式呈現。
+- *事件*：正在跟踪的事件。 有三种可能的跟踪事件类型：
+   - **授权检测：** 每当返回授权令牌请求时(事件类型为 `EVENT_AUTHZ_DETECTION`)
+   - **身份验证检测：** 每当进行身份验证检查时(事件类型为 `EVENT_AUTHN_DETECTION`)
+   - **mvpdSelection：** 当用户在MVPD选择表单中选择MVPD时(事件类型为 `EVENT_MVPD_SELECTION`)
+- *数据*：与报告事件关联的其他数据。 此数据以值列表的形式提供。
 
-以下為解譯「 」中值的指示 *資料*
-陣列：
+以下说明用于解释 *数据*
+数组：
 
-- 對於事件型別 *`EVENT_AUTHN_DETECTION`：*
-   - **0**  — 權杖要求是否成功(true/false)，如果上述為true：
-   - **1** - MVPD ID字串
-   - **2** - GUID （md5雜湊）
-   - **3**  — 權杖已存在於快取中(true/false)
-   - **4**  — 裝置型別
-   - **5**  — 存取啟用程式使用者端型別
-   - **6**  — 作業系統型別
+- 对于事件类型 *`EVENT_AUTHN_DETECTION`：*
+   - **0**  — 令牌请求是否成功(true/false)，如果以上为true：
+   - **1** - MVPD ID字符串
+   - **2** - GUID （md5哈希处理）
+   - **3**  — 令牌已在缓存中(true/false)
+   - **4**  — 设备类型
+   - **5** - Access Enabler客户端类型
+   - **6**  — 操作系统类型
 
-- 對於事件型別 `EVENT_AUTHZ_DETECTION`
-   - **0**  — 權杖要求是否成功(true/false)，如果成功：
+- 对于事件类型 `EVENT_AUTHZ_DETECTION`
+   - **0**  — 令牌请求是否成功(true/false)，如果成功：
    - **1** - MVPD ID
-   - **2** - GUID （md5雜湊）
-   - **3**  — 權杖已存在於快取中(true/false)
-   - **4**  — 錯誤
-   - **5**  — 詳細資料
-   - **6**  — 裝置型別
-   - **7**  — 存取啟用程式使用者端型別
-   - **8**  — 作業系統型別
+   - **2** - GUID （md5哈希处理）
+   - **3**  — 令牌已在缓存中(true/false)
+   - **4**  — 错误
+   - **5**  — 详细信息
+   - **6**  — 设备类型
+   - **7** - Access Enabler客户端类型
+   - **8**  — 操作系统类型
 
-- 對於事件型別 `EVENT_MVPD_SELECTION`
-   - **0**  — 目前所選MVPD的ID
-   - **1**  — 裝置型別
-   - **2**  — 存取啟用程式使用者端型別
-   - **3**  — 作業系統型別
+- 对于事件类型 `EVENT_MVPD_SELECTION`
+   - **0**  — 当前所选MVPD的ID
+   - **1**  — 设备类型
+   - **2** - Access Enabler客户端类型
+   - **3**  — 操作系统类型
 
-**觸發者：** `checkAuthentication()`， `getAuthentication()`， `checkAuthorization()`， `getAuthorization()`， `setSelectedProvider()`
+**触发者：** `checkAuthentication()`， `getAuthentication()`， `checkAuthorization()`， `getAuthorization()`， `setSelectedProvider()`
 
-[返回Android API...](#api)
+[返回到Android API...](#api)
 
 
 <!--

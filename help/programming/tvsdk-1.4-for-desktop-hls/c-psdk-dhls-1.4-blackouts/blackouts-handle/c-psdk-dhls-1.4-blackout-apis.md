@@ -1,6 +1,6 @@
 ---
-description: TVSDK提供API元素，這些元素在實施中斷時很有用，包括方法、中繼資料和通知。
-title: 中斷API元素
+description: TVSDK提供了在实施封锁时有用的API元素，包括方法、元数据和通知。
+title: 封锁API元素
 exl-id: 9dae236b-0bd8-4fce-9163-628d4ed94f02
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,33 +9,33 @@ ht-degree: 0%
 
 ---
 
-# 中斷API元素{#blackout-api-elements}
+# 封锁API元素{#blackout-api-elements}
 
-TVSDK提供API元素，這些元素在實施中斷時很有用，包括方法、中繼資料和通知。
+TVSDK提供了在实施封锁时有用的API元素，包括方法、元数据和通知。
 
-在播放器中實作中斷解決方案時，您可以使用下列專案。
+在播放器中实施封锁解决方案时，您可以使用以下内容。
 
 * **MediaPlayer**
 
-   * `registerCurrentItemAsBackgroundItem` 將目前載入的資源儲存為背景資源。 若 `replaceCurrentResource` 此方法之後呼叫，TVSDK會繼續下載背景專案的資訊清單，直到您呼叫 `unregisterCurrentBackgroundItem`.
+   * `registerCurrentItemAsBackgroundItem` 将当前加载的资源另存为后台资源。 如果 `replaceCurrentResource` 在此方法之后调用，TVSDK将继续下载后台项目的清单，直到您调用 `unregisterCurrentBackgroundItem`.
 
-   * `unregisterCurrentBackgroundItem`  清除目前設定的背景資源，並停止擷取和分析背景資訊清單。
+   * `unregisterCurrentBackgroundItem`  清除当前设置的后台资源，并停止提取和分析后台清单。
 
-* **BlackoutMetadata** 特定於中斷的中繼資料型別。
+* **BlackoutMetadata** 特定于封锁的元数据类型。
 
-   這可讓您設定無法搜尋的範圍(額外的 `TimeRange` 已呼叫屬性 `nonseekableRange`)。 TVSDK會檢查這些範圍(所需的搜尋位置是否落在 `nonseekableRange`)時。 如果已設定，且使用者搜尋到無法搜尋的範圍，TVSDK會強制檢視器到結尾時間 `seekableRange`.
+   这允许您设置不可搜索的范围(附加 `TimeRange` 已调用属性 `nonseekableRange`)。 TVSDK会检查这些范围(无论所需的搜寻位置是否位于 `nonseekableRange`)。 如果设置了该选项且用户试图进入不可搜索范围，TVSDK会强制查看器到达 `seekableRange`.
 
-* **從這裡開始（下一步）** **DefaultMetadataKey** 透過設定在即時資料流上啟用或停用前置滾動 `ENABLE_LIVE_PREROLL` 為true或false。 若為false，TVSDK不會在內容播放前對前段廣告發出明確廣告伺服器呼叫，因此不會播放前段廣告。 這對中間卷沒有影響。 預設值為true。
+* **从此处开始（下一步）** **DefaultMetadataKey** 通过设置对实时流启用或禁用preroll `ENABLE_LIVE_PREROLL` 为true或false。 如果为false，则TVSDK不会在内容播放之前对前置广告进行显式广告服务器调用，因此不会播放前置广告。 这对中端市场没有影响。 默认值为true。
 
 * **TimedMetadataEvent**
 
-   * `TIMED_METADATA_IN_BACKGROUND_AVAILABLE` 事件子型別 — 當TVSDK在背景資訊清單中偵測到訂閱的標籤時傳送。
+   * `TIMED_METADATA_IN_BACKGROUND_AVAILABLE` 事件子类型 — 当TVSDK检测到后台清单中的订阅标记时调度。
 
 * **通知**
 
    * `BACKGROUND_MANIFEST_WARNING`
 
-      * 代碼： 204000
-      * 型別：警告
-      * 背景資訊清單下載發生錯誤。
-   * `SeekEvent.SEEK_POSITION_ADJUSTED` 在無法搜尋的範圍內嘗試搜尋時傳送。
+      * 代码： 204000
+      * 类型：警告
+      * 后台清单下载出错。
+   * `SeekEvent.SEEK_POSITION_ADJUSTED` 在不可搜索范围内尝试搜寻时调度。

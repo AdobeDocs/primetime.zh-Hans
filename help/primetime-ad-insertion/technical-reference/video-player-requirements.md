@@ -1,6 +1,6 @@
 ---
-description: 所有影片播放器都必須提供資訊清單伺服器所依賴的功能，才能插入廣告及啟用廣告追蹤。
-title: 視訊播放器需求
+description: 所有视频播放器都必须提供清单服务器所依赖的功能，才能插入广告并启用广告跟踪。
+title: 视频播放器要求
 exl-id: 23134e4c-6902-4b97-bf15-4524f47850e7
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,20 +9,20 @@ ht-degree: 0%
 
 ---
 
-# 視訊播放器需求 {#video-player-requirements}
+# 视频播放器要求 {#video-player-requirements}
 
-所有影片播放器都必須提供資訊清單伺服器所依賴的功能，才能插入廣告及啟用廣告追蹤。
+所有视频播放器都必须提供清单服务器所依赖的功能，才能插入广告并启用广告跟踪。
 
-若要使用Primetime廣告插入API，視訊播放器必須滿足以下條件：
+要使用Primetime广告插入API，视频播放器必须满足以下条件：
 
-* 可在播放內容時追蹤播放點位置。
-* 可以在指定的時間要求追蹤URL。
-* 在支援HLS v3或更新版本的裝置平台上執行，包括：
+* 可以在播放内容时跟踪播放头位置。
+* 可以在指定的时间请求跟踪URL。
+* 在支持HLS v3或更高版本的设备平台上运行，包括：
 
-   * PTS不連續性，標籤方式為 `EXT-X-DISCONTINUITY` 標籤
+   * 以下标记的PTS间断 `EXT-X-DISCONTINUITY` 标记
    * `EXT-X-DISCONTINUITY-SEQUENCE`
    * `EXT-X-PROGRAM-DATE-TIME`
    * `EXT-X-START`
 
-* 在支援HTTP重新導向和剖析JSON的平台上執行。
-* 網頁型播放器必須在支援CORS的平台上執行。
+* 在支持HTTP重定向和解析JSON的平台上运行。
+* 基于Web的播放器必须在支持CORS的平台上运行。

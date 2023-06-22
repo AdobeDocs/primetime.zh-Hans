@@ -1,6 +1,6 @@
 ---
-title: 授權伺服器部署選項
-description: 授權伺服器部署選項
+title: 许可证服务器部署选项
+description: 许可证服务器部署选项
 copied-description: true
 exl-id: e06d59c0-517d-4483-9132-ceb37efada31
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,12 +10,12 @@ ht-degree: 0%
 
 ---
 
-# 授權伺服器部署選項{#license-server-deployment-options}
+# 许可证服务器部署选项{#license-server-deployment-options}
 
-您可以使用下列其中一個選項來部署License Server：
+您可以使用以下选项之一来部署License Server：
 
-* 適用於受保護串流的Adobe Primetime DRM伺服器 — 此授權伺服器已針對串流最佳化。 例如，您可以設定伺服器以使用Primetime DRM進行AdobeHTTP Dynamic Streaming。 此伺服器可輕鬆部署，幾乎不需要任何設定，並支援多個租使用者。 它可達到高水準的擴充性。 由於此實作已針對串流最佳化，因此不支援完整的Primetime DRM功能。 例如，不支援使用者名稱/密碼驗證、網域和授權鏈結。 此伺服器所核發的授權中的使用規則，是由伺服器設定檔所控制，該設定檔會覆寫封裝時所使用的原則。
+* 适用于受保护流的Adobe Primetime DRM服务器 — 此许可证服务器针对流进行了优化。 例如，您可以设置服务器以便使用Primetime DRMHTTP Dynamic StreamingAdobe。 此服务器部署简单，只需要很少的配置，并且支持多个租户。 它能够实现高水平的可扩展性。 由于此实施针对流进行了优化，因此不支持完整的Primetime DRM功能。 例如，不支持用户名/密码身份验证、域和许可证链接。 此服务器颁发的许可证中的使用规则通过服务器配置文件进行控制，该文件会覆盖打包时使用的策略。
 
-   請參閱 *Adobe Primetime DRM Server for Protected Streaming指南* 瞭解授權伺服器支援的使用規則詳細資訊。
-* Reference Implementation License Server — 您可以使用此設定來自訂伺服器實作。 這是授權伺服器實作的範例，包括原始程式碼，示範如何使用Primetime DRM SDK中的API來管理所有型別的請求，以及如何實作資料庫支援的自訂商業邏輯。 此伺服器所核發的授權中的使用規則，是由封裝時與內容相關的原則所控制。
-* 自訂伺服器實作 — 您也可以使用SDK實作自己的授權伺服器。 此資訊說明如何使用API來實作授權伺服器。
+   请参阅 *适用于受保护流的Adobe Primetime DRM Server指南* 有关许可证服务器支持的使用规则的更多详细信息。
+* 参考实施许可证服务器 — 您可以使用此设置来自定义您的服务器实施。 这是一个许可证服务器实施（包括源代码）示例，该示例演示了如何使用Primetime DRM SDK中的API管理所有类型的请求，以及如何实施由数据库支持的自定义业务逻辑。 此服务器颁发的许可证中的使用规则通过打包时与内容关联的策略进行控制。
+* 自定义服务器实施 — 您还可以使用SDK实施自己的授权服务器。 此信息介绍了如何使用API实施许可证服务器。

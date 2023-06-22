@@ -1,6 +1,6 @@
 ---
-description: 您可以顯示目前作用中內容的持續時間。
-title: 顯示視訊的持續時間
+description: 您可以显示当前活动内容的持续时间。
+title: 显示视频的持续时间
 exl-id: 4e31d784-4d16-470b-8317-11be32a55c2f
 source-git-commit: 0019a95fa9ca6d21249533d559ce844897ab67cf
 workflow-type: tm+mt
@@ -9,18 +9,18 @@ ht-degree: 0%
 
 ---
 
-# 顯示視訊的持續時間 {#display-the-duration-of-the-video}
+# 显示视频的持续时间 {#display-the-duration-of-the-video}
 
-您可以顯示目前作用中內容的持續時間。
+您可以显示当前活动内容的持续时间。
 
-使用下列範常式式碼實作視訊持續時間顯示：
+使用以下示例代码实施视频持续时间显示：
 
-此 `PTMediaPlayer` 屬性， [seekableRange](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTMediaPlayer.html#//api/name/seekableRange)，包含目前可搜尋的視窗範圍：
+此 `PTMediaPlayer` 属性， [seekableRange](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTMediaPlayer.html#//api/name/seekableRange)，包含当前可搜索窗口范围：
 
-* 對於VOD，此範圍是整個VOD內容範圍，包括廣告。
-* 若為即時/線性，此範圍代表可搜尋視窗。
+* 对于VOD，此范围是整个VOD内容范围，包括广告。
+* 对于实时/线性，此范围表示可搜索窗口。
 
-如需API的詳細資訊，請參閱 [iOS API適用的TVSDK 1.4參考](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/index.html)
+有关API的更多信息，请参阅 [适用于iOS API的TVSDK 1.4参考](https://help.adobe.com/en_US/primetime/api/psdk/appledoc/index.html)
 
 <!--<a id="example_A153BE3AC03F43C6BF3A156316A08CD3"></a>-->
 

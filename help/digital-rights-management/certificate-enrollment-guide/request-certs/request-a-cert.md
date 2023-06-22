@@ -1,6 +1,6 @@
 ---
-title: 要求憑證（要求者）
-description: 要求憑證（要求者）
+title: 请求证书（请求者）
+description: 请求证书（请求者）
 copied-description: true
 exl-id: 290231ec-1146-4bfb-a449-b8ff85704197
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,27 +10,27 @@ ht-degree: 0%
 
 ---
 
-# 要求憑證（要求者）{#request-a-certificate-requester}
+# 请求证书（请求者）{#request-a-certificate-requester}
 
-1. 登入憑證註冊網站。
+1. 登录到证书注册网站。
 
-   要求憑證的使用者必須是要求者。
+   请求证书的用户必须是请求者。
 
-1. 在「要求」標籤上，選取憑證型別（授權伺服器、封裝程式或傳輸）。
+1. 在“请求”选项卡上，选择证书类型（许可证服务器、Packager或传输）。
 
    >[!NOTE]
    >
-   >評估版和試用版SDK未顯示此選項。 這些SDK版本使用一個憑證。
+   >评估版和试用版SDK未显示此选项。 这些SDK版本使用一个证书。
 
-1. 執行下列任一項作業：
+1. 执行以下操作之一：
 
-   * 上傳CSR檔案。
-   * 複製CSR中的CSR資訊，並將其貼到表單中。
+   * 上传CSR文件。
+   * 复制CSR中的CSR信息并将其粘贴到表单中。
 
       >[!NOTE]
       >
-      >若要複製CSR資訊，請選取開頭標籤之間（不包括）的文字 `(-----BEGIN CERTIFICATE REQUEST-----)` 和結束標籤 `(-----END CERTIFICATE REQUEST-----)`.
+      >要复制CSR信息，请选择起始标记之间（不包括起始标记）的文本 `(-----BEGIN CERTIFICATE REQUEST-----)` 和结束标记 `(-----END CERTIFICATE REQUEST-----)`.
 
-1. 按一下 **[!UICONTROL Submit Request]** 按鈕。
+1. 单击 **[!UICONTROL Submit Request]** 按钮。
 
-   系統會傳送電子郵件給帳戶和次要管理員，以供其檢閱。 請求者已提交。
+   电子邮件将发送给帐户管理员和辅助管理员进行审核。 请求者是副本。

@@ -1,6 +1,6 @@
 ---
-title: 匿名網域
-description: 匿名網域
+title: 匿名域
+description: 匿名域
 copied-description: true
 exl-id: a9358582-ad25-4016-94d2-cd82b4c00573
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
@@ -10,37 +10,37 @@ ht-degree: 0%
 
 ---
 
-# 匿名網域 {#anonymous-domains}
+# 匿名域 {#anonymous-domains}
 
-在此使用案例中，大量裝置屬於單一網域，且可能不需要驗證。 若要將此型別的網域用於參考實作，請建立指定需要網域註冊的原則。 將網域伺服器URL指定為 `https:// host:port/flashaccess/domainserver/domainname/` 和指定匿名驗證。
+在此使用案例中，大量设备属于单个域，并且可能不需要身份验证。 若要将此类型的域用于引用实施，请创建策略，指定域注册是必需的。 将域服务器URL指定为 `https:// host:port/flashaccess/domainserver/domainname/` 和指定匿名身份验证。
 
-參考實作會實作下列網域註冊的邏輯：
+参考实施为域注册实现了以下逻辑：
 
-1. 從請求URL剖析網域名稱。
-1. 在中查詢網域名稱 `DomainServerInfo` 表格。 如果找不到專案，請在表格中插入專案（預設值：不需要驗證，也沒有成員資格上限）。
-1. 如果要求的網域需要驗證，請確定請求中包含有效的驗證權杖，並比對驗證名稱空間（如果在資料庫中指定）。
+1. 从请求URL中解析域名。
+1. 在中查找域名 `DomainServerInfo` 表格。 如果未找到某个条目，则在表中插入一个条目（默认值：无需验证，并且没有成员资格上限）。
+1. 如果请求的域需要身份验证，请确保请求中包含有效的身份验证令牌，并匹配身份验证命名空间（如果在数据库中指定）。
 
-   1. 如果需要驗證，但未提供有效的驗證權杖，則會傳回錯誤 `DOM_AUTHENTICATION_REQUIRED (503)`.
+   1. 如果需要身份验证，但未提供有效的身份验证令牌，则返回错误 `DOM_AUTHENTICATION_REQUIRED (503)`.
 
-1. 檢查裝置是否已向網域註冊：
+1. 检查设备是否已向域注册：
 
-   1. 在中查詢網域名稱 `DomainMembership` 表格。 針對找到的每個電腦GUID，請和請求中的電腦GUID進行比較。 如果這是新電腦，請將專案新增至 `DomainMembership` 表格。
+   1. 在中查找域名 `DomainMembership` 表格。 对于找到的每个计算机GUID，请与请求中的计算机GUID进行比较。 如果这是一台新计算机，请将一个条目添加到 `DomainMembership` 表格。
 
-   1. 如果是新裝置，且已達到最大成員資格，則會傳回錯誤 `DOM_LIMIT_REACHED (502)`.
+   1. 如果这是新设备，并且已达到最大成员资格，则会返回错误 `DOM_LIMIT_REACHED (502)`.
 
-1. 在「 」中查詢此網域的所有網域金鑰 `DomainKeys` 表格。
+1. 在中查找此域的所有域密钥 `DomainKeys` 表格。
 
-   1. 若 `DomainServerInfo` 表示需要捲動金鑰，產生新的金鑰組，並將其儲存在 `DomainKeys` 表格（金鑰版本比現有最高金鑰版本高一），並重設 `Key Rollover Required` 標幟於 `DomainServerInfo`.
+   1. 如果 `DomainServerInfo` 指示需要滚动的键，生成新的键对，并将其保存在 `DomainKeys` 表（键版本比最高的现有键版本高一），并重置 `Key Rollover Required` 标记位置 `DomainServerInfo`.
 
-   1. 對於每個網域金鑰，產生網域認證。
+   1. 对于每个域密钥，生成域凭据。
 
-參考實作會實作下列網域解除註冊的邏輯：
+参考实施为域注销实现了以下逻辑：
 
-1. 從請求URL剖析網域名稱。
-1. 在中查詢要求的網域名稱 `DomainServerInfo` 表格。
-1. 如果要求的網域需要驗證，請確定請求中包含有效的驗證權杖，並比對驗證名稱空間（如果在資料庫中指定）。
-1. 在中查詢網域名稱和電腦GUID `DomainMembership` 表格。 如果找不到相符的專案，則傳回錯誤 `DEREG_DENIED (401)`.
+1. 从请求URL中解析域名。
+1. 在中查找请求的域名 `DomainServerInfo` 表格。
+1. 如果请求的域需要身份验证，请确保请求中包含有效的身份验证令牌，并匹配身份验证命名空间（如果在数据库中指定）。
+1. 在中查找域名和计算机GUID `DomainMembership` 表格。 如果找不到匹配的条目，则返回错误 `DEREG_DENIED (401)`.
 
-1. 如果這不是預覽請求，請從刪除專案 `DomainMembership` 並設定 `Key Rollover Required` 標幟於 `DomainServerInfo`.
+1. 如果这不是预览请求，请从删除条目 `DomainMembership` 并设置 `Key Rollover Required` 标记位置 `DomainServerInfo`.
 
-在此使用案例中，由於大量電腦可以加入網域，因此不可能完全符合電腦ID。 而是使用在個人化期間指派給機器的隨機機器GUID。
+在此使用案例中，由于大量计算机可以加入域，因此不可能完全匹配计算机ID。 而是使用在个性化期间分配给计算机的随机计算机GUID。

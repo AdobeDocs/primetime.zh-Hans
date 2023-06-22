@@ -1,6 +1,6 @@
 ---
-description: flashaccess-global.xml組態檔包含套用至授權伺服器所有租使用者的設定。
-title: 全域設定檔
+description: flashaccess-global.xml配置文件包含适用于许可证服务器所有租户的设置。
+title: 全局配置文件
 exl-id: 3e74bce6-1634-469f-9d02-1121e9d50687
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,20 +9,20 @@ ht-degree: 0%
 
 ---
 
-# 全域設定檔{#global-configuration-file}
+# 全局配置文件{#global-configuration-file}
 
-flashaccess-global.xml組態檔包含套用至授權伺服器所有租使用者的設定。
+flashaccess-global.xml配置文件包含适用于许可证服务器所有租户的设置。
 
-您必須將設定檔案放入 [!DNL LicenseServer.ConfigRoot] 目錄。
+必须将配置文件放入 [!DNL LicenseServer.ConfigRoot] 目录。
 
-請參閱 [!DNL configs] 目錄，以取得全域組態檔的範例。
+请参阅 [!DNL configs] 目录作为全局配置文件的示例。
 
-全域組態檔包含：
+全局配置文件包括：
 
-* 快取 — 控制記憶體中組態檔案的快取。
+* 高速缓存 — 控制内存中配置文件的高速缓存。
 
-   另請參閱 *更新組態檔* 以取得快取設定的相關資訊。
-* 記錄 — 指定記錄層級以及記錄檔的捲動頻率。
-* HSM密碼 — 只有在使用HSM儲存伺服器憑證時才需要。
+   参见 *更新配置文件* 有关缓存设置的信息。
+* 事件记录 — 指定事件记录级别和日志文件的滚动频率。
+* HSM密码 — 仅当使用HSM存储服务器凭据时才需要。
 
-請參閱位於Primetime DRM中的範例全域組態檔案中的註解 `<DVD>`\Adobe Primetime DRM Server for Protected Streaming\configs以取得詳細資訊。
+请参阅位于Primetime DRM中的示例全局配置文件中的注释 `<DVD>`\Adobe Primetime DRM Server for Protected Streaming\configs ，以了解更多详细信息。

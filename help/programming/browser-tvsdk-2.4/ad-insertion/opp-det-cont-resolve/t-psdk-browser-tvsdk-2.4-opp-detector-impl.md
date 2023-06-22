@@ -1,6 +1,6 @@
 ---
-description: 您可以延伸OpportunityGenerator介面，實作自己的機會產生器。
-title: 實作自訂機會產生器
+description: 您可以通过扩展OpportunityGenerator接口来实施自己的机会生成器。
+title: 实施自定义机会生成器
 exl-id: 45f9ed89-94c4-4e74-b20a-4789a25bd9b3
 source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
 workflow-type: tm+mt
@@ -9,11 +9,11 @@ ht-degree: 0%
 
 ---
 
-# 實作自訂機會產生器{#implement-a-custom-opportunity-generator}
+# 实施自定义机会生成器{#implement-a-custom-opportunity-generator}
 
-您可以延伸OpportunityGenerator介面，實作自己的機會產生器。
+您可以通过扩展OpportunityGenerator接口来实施自己的机会生成器。
 
-1. 建立自訂機會產生器。
+1. 创建自定义机会生成器。
 
    例如：
 
@@ -43,7 +43,7 @@ ht-degree: 0%
    }; 
    ```
 
-1. 建立使用自訂機會產生器的自訂內容工廠。
+1. 创建使用自定义机会生成器的自定义内容工厂。
 
    例如：
 
@@ -65,9 +65,9 @@ ht-degree: 0%
    }; 
    ```
 
-1. 註冊自訂內容處理站，以便播放媒體資料流。
+1. 为要播放的媒体流注册自定义内容工厂。
 
-   在UI Framework播放器中，您可以指定自訂內容工廠，如下所示：
+   在UI Framework播放器中，您可以按如下方式指定自定义内容工厂：
 
    ```js
    var advertisingFactory = new CustomContentFactory(); 
