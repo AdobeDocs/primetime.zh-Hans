@@ -3,9 +3,9 @@ title: NATIVE_ERROR通知的详细信息
 description: NATIVE_ERROR通知的详细信息
 copied-description: true
 exl-id: 08121879-d5a6-4224-b08d-9e66fe4d185a
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 1bc2f6c230c262babf2958c32fee31afcad04c2f
 workflow-type: tm+mt
-source-wordcount: '6888'
+source-wordcount: '6868'
 ht-degree: 2%
 
 ---
@@ -349,7 +349,7 @@ Adobe视频引擎的视频编码器界面会在以下位置返回这些DRM通知
    <td colname="col2"><span class="codeph"> AAXS_I15n失败 </span> </td> 
    <td colname="col3"> <p>使用密钥设置客户端的过程失败。 subErrorId包含特定于客户端、特定于服务器或行错误。 </p> 
     <ul id="ul_98D919B9060A441AACB6106F6D8E8DA7"> 
-     <li id="li_DCAB00A8AC4A426CBBD377374B3F71AE">分发服务器的软件应至少重试一次该操作。 <p>如果您在Windows上使用Google Chrome，请解释如何允许不在沙盒中的插件访问。 有关详细信息，请参阅 <a href="https://helpx.adobe.com/adobe-access/kb/error-3321.html" format="html" scope="external"> Google Chrome的非沙盒访问被拒绝</a>. </p> </li> 
+     <li id="li_DCAB00A8AC4A426CBBD377374B3F71AE">分发服务器的软件应至少重试一次该操作。 <p>如果您在Windows上使用Google Chrome，请解释如何允许不在沙盒中的插件访问。 Google Chrome的非沙盒访问被拒绝</a>. </p> </li> 
      <li id="li_7FB7681FE32D444BB1BDBA3E5953A2C3">分发服务器应完成以下任务之一： 
       <ul id="ul_486B64F187C44AE3B4775953A6142836"> 
        <li id="li_095B1D4CD051427CB2BFA7082B454056">如果错误在各个平台之间保持一致，则应通过Adobe使问题升级。 </li> 
@@ -682,7 +682,7 @@ Adobe视频引擎的视频编码器界面会在以下位置返回这些DRM通知
   <tr> 
    <td colname="col1"> 3368 </td> 
    <td colname="col2"><span class="codeph"> AAXS_UserSettingsNoAccess</span> </td> 
-   <td colname="col3"> <p>用户已取消该操作，或已输入不允许访问系统的设置。 </p> <p>仅当SWF版本为19或更高版本时才会引发此错误。 为了向后兼容，当SWF的版本为18或更低版本时，会引发3321。 </p> <p>分发商的软件应引导用户说明如何允许无沙盒插件访问。 有关更多信息，请参阅 <a href="https://helpx.adobe.com/adobe-access/kb/error-3321.html" format="html" scope="external"> Google Chrome的非沙盒访问被拒绝</a> 和 <a href="https://forums.adobe.com/message/5520902" format="https" scope="external"> Chrome中的DRM错误3322/3346/3368（信息栏问题）</a>. </p> </td> 
+   <td colname="col3"> <p>用户已取消该操作，或已输入不允许访问系统的设置。 </p> <p>仅当SWF版本为19或更高版本时才会引发此错误。 为了向后兼容，当SWF的版本为18或更低版本时，会引发3321。 </p> <p>分发商的软件应引导用户说明如何允许无沙盒插件访问。 Google Chrome的非沙盒访问被拒绝</a> 和 <a href="https://forums.adobe.com/message/5520902" format="https" scope="external"> Chrome中的DRM错误3322/3346/3368（信息栏问题）</a>. </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 3369 </td> 

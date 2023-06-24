@@ -2,9 +2,9 @@
 description: DRM客户端错误是TVSDK客户端错误的一个子集。
 title: DRM客户端错误消息参考
 exl-id: 3d74cb92-c0a7-4eab-91b8-7e60a9c33df4
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 1bc2f6c230c262babf2958c32fee31afcad04c2f
 workflow-type: tm+mt
-source-wordcount: '5185'
+source-wordcount: '5173'
 ht-degree: 1%
 
 ---
@@ -82,7 +82,7 @@ DRM客户端错误是TVSDK客户端错误的一个子集，与DRM相关的错误
 | 3365 | IncognitomodeNotAllowed | 此浏览器/平台组合不允许在无痕模式下播放受DRM保护的内容。<br>分发服务器的软件应建议用户退出无痕模式或使用其他浏览器。 有关更多信息，请参阅 [DRM错误3365原因和解决方法](https://forums.adobe.com/thread/1266622). |
 | 3366 | Badparameter | 主机运行时使用错误的参数调用了Primetime DRM库。 |
 | 3367 | BadSignal | M3U8清单签名失败。<br>**注意：** 此错误代码仅由iOS DRMNative Framework或AVE返回。 |
-| 3368 | UserSettingsNoAccess | 用户已取消该操作，或已输入不允许访问系统的设置。<br>此错误仅在SWF版本19或更高版本中引发。 为了向后兼容，对于SWF版本18或更低版本，会引发错误代码3321。<br>分发商的软件应引导用户说明如何允许无沙盒插件访问。 有关更多信息，请参阅 [Google Chrome的非沙盒访问被拒绝](https://helpx.adobe.com/adobe-access/kb/error-3321.html) 和 [Chrome中的DRM错误3322/3346/3368（信息栏问题）](https://forums.adobe.com/message/5520902). |
+| 3368 | UserSettingsNoAccess | 用户已取消该操作，或已输入不允许访问系统的设置。<br>此错误仅在SWF版本19或更高版本中引发。 为了向后兼容，对于SWF版本18或更低版本，会引发错误代码3321。<br>分发商的软件应引导用户说明如何允许无沙盒插件访问。 有关更多信息，请参阅 [Chrome中的DRM错误3322/3346/3368（信息栏问题）](https://forums.adobe.com/message/5520902). |
 | 3369 | InterfaceNotAvailable | 所需的浏览器界面不可用。 此问题仅在Pepper上出现。 Flash插件与浏览器版本之间可能存在不匹配。<br>分发商的软件应指导用户确保他们安装了最新版本的浏览器。<br>如果此错误的发生次数增加，并且这些错误对应于已发布的浏览器更新，则将提升到Adobe。 |
 | 3370 | ContentIdSettingsNoAccess | 用户已禁用 **允许受保护内容设置的标识符。**<br>**注意：** Pepper版本13.0.0.x或更高版本中出现此错误。<br>分发商的软件和/或操作团队应指导用户启用 **允许受保护内容的标识符** 设置。<br>有关更多信息，请参阅 [https://forums.adobe.com/message/6518323#6518323](https://forums.adobe.com/message/6518323#6518323). |
 | 3371 | NoOPConstraintInPixelConstraints | 基于许可证中的输出保护约束的解析格式不正确。<br>分发服务器的软件应显示一条错误消息。 要求用户使用内容标题将问题报告给分发服务器。<br>分发服务器应使用有效策略重新打包内容。 |
