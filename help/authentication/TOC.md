@@ -2,7 +2,7 @@
 product: adobe primetime
 audience: end-user
 user-guide-title: Primetime身份验证
-user-guide-description: Primetime身份验证是TV Everywhere的权利解决方案，提供了一个模块化的框架，用于确定请求访问资源的人是否有权获得该资源。
+user-guide-description: Primetime身份验证是TV Everywhere的授权解决方案，提供了一个模块化框架，用于确定请求访问资源的人是否有权访问资源。
 source-git-commit: 5e649f1c0937882c9a05809af8916229f6a95e73
 workflow-type: tm+mt
 source-wordcount: '739'
@@ -42,12 +42,12 @@ ht-degree: 0%
          + [启动授权](initiate-authorization.md)
          + [检索授权令牌](retrieve-authorization-token.md)
          + [获取短媒体令牌](obtain-short-media-token.md)
-         + [按第二屏幕Web应用程序检查身份验证流程](check-authentication-flow-by-second-screen-web-app.md)
+         + [通过第二屏幕Web应用程序检查身份验证流程](check-authentication-flow-by-second-screen-web-app.md)
          + [检索预授权资源的列表](retrieve-list-of-preauthorized-resources.md)
-         + [按第二屏Web应用程序检索预授权资源的列表](retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md)
+         + [按第二屏Web应用程序检索预授权资源列表](retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md)
          + [启动注销](initiate-logout.md)
          + [用户元数据](user-metadata.md)
-         + [检索配置文件请求](retrieve-profilerequest.md)
+         + [Retrieve profile-request](retrieve-profilerequest.md)
          + [令牌交换](token-exchange.md)
          + [临时通行证和促销临时通行证的免费预览](free-preview-for-temp-pass-and-promotional-temp-pass.md)
    + AccessEnabler SDK {#accessenabler-sdk}
@@ -85,7 +85,7 @@ ht-degree: 0%
          + [Amazon FireOS集成指南](amazon-fireos-integration-cookbook.md)
          + [Amazon FireOS API参考](amazon-fireos-native-client-api-reference.md)
          + [Amazon FireOS应用程序注册](amazon-fireos-application-registration.md)
-         + [具有动态客户端注册功能的FireOS SDK](fireos-sdk-with-dynamic-client-registration.md)
+         + [带有动态客户端注册的FireOS SDK](fireos-sdk-with-dynamic-client-registration.md)
    + 平台SSO {#platform-sso}
       + APPLE SSO {#apple-sso}
          + [Apple SSO概述](apple-sso-overview.md)
@@ -95,7 +95,7 @@ ht-degree: 0%
          + [Roku SSO](roku-sso-overview.md)
    + 内容元数据 {#content-metadata}
       + [标识受保护的资源](identify-protected-resources.md)
-   + 内容服务器集成 {#content-serv-int}
+   + Content server集成 {#content-serv-int}
       + [如何集成媒体令牌验证器](media-token-verifier-int.md)
    + 附录 {#appendices}
       + [调试提示](appendix-b-debugging-tips.md)
@@ -104,7 +104,7 @@ ht-degree: 0%
    + [身份验证](authn-usecase.md)
    + [使用OAuth 2.0协议进行身份验证](authn-oauth2-protocol.md)
    + [授权](authz-usecase.md)
-   + [预检授权](mvpd-preflight-authz.md)
+   + [印前检查授权](mvpd-preflight-authz.md)
    + [MVPD注销](usecase-mvpd-logout.md)
    + [内容元数据交换](mvpd-content-metadata-exchange.md)
    + [用户元数据交换](mvpd-user-metadata-exchng.md)
@@ -120,18 +120,18 @@ ht-degree: 0%
       + [授权服务监控概述](entitlement-service-monitoring-overview.md)
       + [授权服务监控API](entitlement-service-monitoring-api.md)
       + [服务器端量度](understanding-serverside-metrics.md)
-   + 临时通过 {#temp-pass}
-      + [临时通过](temp-pass.md)
-      + [促销临时传递](promotional-temp-pass.md)
+   + 临时传递 {#temp-pass}
+      + [临时传递](temp-pass.md)
+      + [促销临时通票](promotional-temp-pass.md)
    + 单点登录 {#sso}
       + [单点登录支持](sso-support.md)
       + [通过被动身份验证的SSO](sso-passive-authn.md)
-   + 基于主页的身份验证 {#home-based-auth}
-      + [适用于所有地方的电视的基于家庭的身份验证](home-based-authn-tve.md)
+   + 基于主目录的身份验证 {#home-based-auth}
+      + [适用于所有地区的电视的家庭身份验证](home-based-authn-tve.md)
       + [MVPD的HBA状态](hba-status-mvpds.md)
    + 用户元数据 {#user-metadat}
       + [用户元数据](user-metadata-feature.md)
-   + [预检授权](preflight-authz.md)
+   + [印前检查授权](preflight-authz.md)
    + 错误报告 {#error-reportn}
       + [错误报告](error-reporting.md)
       + [增强的错误代码](enhanced-error-codes.md)
@@ -139,14 +139,14 @@ ht-degree: 0%
       + [动态客户端注册](dynamic-client-registration.md)
       + [动态客户端注册API](dynamic-client-registration-api.md)
       + [动态客户端注册管理](dynamic-client-registration-management.md)
-   + 降级服务 {#degrn-service}
+   + 降解服务 {#degrn-service}
       + [降级API概述](degradation-api-overview.md)
    + 隐私就绪 {#privacy-readiness}
       + [隐私支持概述](privacy-supp-overview.md)
       + [如何提出隐私请求](make-privacy-req.md)
 + 提示和疑难解答 {#tips-troubleshoot}
    + [在选择对话框中允许MVPD](allow-mvpd-selectn-dialog.md)
-   + [防止MVPD显示“选择”对话框](prevent-mvpd-selectn-dialog.md)
+   + [阻止MVPD显示“选择”对话框](prevent-mvpd-selectn-dialog.md)
 + 支持 {#support}
    + [上报程序](escalation-procedures.md)
    + [监控PrimetimeAdobePayTV Pass](monitoring-adobe-pay-tv-pass.md)
@@ -159,8 +159,8 @@ ht-degree: 0%
    + [Primetime Authentication 2.64发行说明](auth-rn-264.md)
    + [Primetime Authentication 2.63发行说明](auth-rn-263.md)
    + [Primetime Authentication 2.62.1发行说明](auth-rn-2621.md)
-   + [Primetime Authentication iOS / tvOS 3.7.0发行说明](authn-rn-ios-tvos-370.md)
-   + [Primetime Authentication iOS / tvOS 3.8.1发行说明](authn-rn-ios-tvos-381.md)
+   + [Primetime身份验证iOS / tvOS 3.7.0发行说明](authn-rn-ios-tvos-370.md)
+   + [Primetime身份验证iOS / tvOS 3.8.1发行说明](authn-rn-ios-tvos-381.md)
 + 技术说明 {#tech-notes}
    + Primetime身份验证SDK {#primetime-authentication-sdks}
       + [证书常见问题解答](certificates-qa.md)
@@ -168,7 +168,7 @@ ht-degree: 0%
          + [适用于Safari浏览器的JS SDK限制](js-sdk-limitations-for-safari-browser.md)
          + [Cookie更新 — SameSite和Secure标记](cookies-updates--samesite-and-secure-flags.md)
       + Android SDK {#android}
-         + [Access Enabler Android 10应用程序上的Android SDK单点登录(SSO)](access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
+         + [Android 10应用程序上的Access Enabler Android SDK单点登录(SSO)](access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
          + [Adobe Primetime身份验证和Android 6“Marshmallow”新权限模型](adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
       + iOS/tvOS SDK {#iostvos}
          + [iOS SDK 3.1+上的WKWebView支持](wkwebview-support-on-ios-sdk-31.md)
@@ -180,20 +180,20 @@ ht-degree: 0%
          + [AccessEnabler iOS/tvOS 3.7.0升级路径](accessenabler-iostvos-370-upgrade-path.md)
    + Primetime身份验证环境 {#primetime-authentication-environments}
       + [了解Adobe环境](understanding-the-adobe-environments.md)
-      + [设置您的环境并测试预修课程](setting-up-your-environment-and-testing-in-prequal.md)
+      + [在资格预审中设置环境和测试](setting-up-your-environment-and-testing-in-prequal.md)
       + [如何使用AdobeAPI测试站点测试身份验证和授权流](test-authn-authz-flows-using-adobes-api-test-site.md)
    + 无客户端API {#clientless-api}
-      + [无客户端API实施 — 错误代码/消息及可能的原因/原因](clientless-api-implementation-error-codes--messages-with-probable-reason--cause.md)
+      + [无客户端API实施 — 错误代码/包含可能原因/原因的消息](clientless-api-implementation-error-codes--messages-with-probable-reason--cause.md)
       + [缺少设备ID时的无客户端API流](clientless-api-flow-in-the-absence-of-device-id.md)
-      + [无客户端：避免在/authenticate请求中使用“&amp;”reg_code](clientless-avoid-using-reg-code-in-authenticate-request.md)
+      + [无客户端：避免在/authenticate请求中使用&#39;&amp;&#39;reg_code](clientless-avoid-using-reg-code-in-authenticate-request.md)
       + [为Xbox 360和XboxOne无客户端程序员启用Primetime授权服务](enabling-primetime-entitlement-services-for-a-programmer-on-xbox-360-and-xboxone-clientless-solution.md)
       + [无客户端设备类型和量度](benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)
    + 用户体验 {#user-exp}
       + [如何将MVPD登录页面从iFrame迁移到弹出窗口](migr-mvpd-login-iframe-popup.md)
-      + [预检功能：如何启用、排除故障或确定问题](preflight-feature.md)
+      + [印前检查功能：如何启用、排除故障或确定问题](preflight-feature.md)
    + 工具和实用程序 {#tools-and-utilities}
       + [使用Charles代理](using-charles-proxy.md)
    + 概念 {#concepts}
       + [了解用户ID](understanding-user-ids.md)
-+ [TVE功能板用户指南](tve-dashboard-user-guide.md)
++ [TVE仪表板用户指南](tve-dashboard-user-guide.md)
 + [术语表](glossary.md)
