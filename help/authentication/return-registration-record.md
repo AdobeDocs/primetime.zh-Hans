@@ -2,7 +2,7 @@
 title: 返回注册记录
 description: 返回注册记录
 exl-id: 7b9e63a2-59b6-4123-a19b-ee1f021219ea
-source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
+source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
 workflow-type: tm+mt
 source-wordcount: '253'
 ht-degree: 0%
@@ -13,36 +13,36 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 
 ## REST API端点 {#clientless-endpoints}
 
 &lt;reggie_fqdn>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 &lt;sp_fqdn>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
- </br>
- 
+</br>
+
 
 ## 描述 {#description}
 
-返回包含注册码UUID、注册码和经过哈希处理的设备ID的注册码记录。 
+返回包含注册码UUID、注册码和经过哈希处理的设备ID的注册码记录。
 
- 
+
 
 <div>
 
 
-| 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
+| 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;reggie_fqdn>；/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>例如：</br></br>&lt;reggie_fqdn>/reggie/v1/sampleRequestorId/regcode/TJCFK？format=xml | 流应用程序</br></br>或</br></br>程序员服务 | 1.请求人  </br>    （路径组件）</br>2.  注册码  </br>    （路径组件） | GET | 包含注册代码和信息的XML或JSON。 请参阅下面的架构和示例。 | 200 |
+| &lt;reggie_fqdn>；/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>例如：</br></br>&lt;reggie_fqdn>/reggie/v1/sampleRequestorId/regcode/TJJCFK？format=xml | 流应用程序</br></br>或</br></br>程序员服务 | 1.请求人  </br>    （路径组件）</br>2.  注册码  </br>    （路径组件） | GET | 包含注册代码和信息的XML或JSON。 请参阅下面的架构和示例。 | 200 |
 
 {style="table-layout:auto"}
 
@@ -51,7 +51,7 @@ ht-degree: 0%
 | 输入参数 | 描述 |
 | --- | --- |
 | 请求者 | 此操作有效的程序员requestorId。 |
-| 注册码 | 将在流设备上显示的注册码值（要输入到身份验证流程中）。 |
+| 注册码 | 将在流设备上显示的注册代码值（将输入到身份验证流程中）。 |
 
 </br>
 
@@ -101,7 +101,7 @@ ht-degree: 0%
 | 过期 | 注册代码过期的时间戳（以自1970年1月1日GMT以来的毫秒为单位） |
 | deviceId | 唯一设备ID（或XSTS令牌） |
 | 设备类型 | 设备类型 |
-| 设备用户 | 用户登录到设备 |
+| 设备用户 | 用户已登录到设备 |
 | appId | 应用程序ID |
 | appVersion | 应用程序版本 |
 | 注册URL | 要向最终用户显示的登录Web应用程序的URL |

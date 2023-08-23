@@ -2,7 +2,7 @@
 title: 使用无客户端API指南的Amazon FireOS SSO
 description: 使用无客户端API指南的Amazon FireOS SSO
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
-source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
+source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
 workflow-type: tm+mt
 source-wordcount: '761'
 ht-degree: 0%
@@ -13,13 +13,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 </br>
 
 ## 介绍 {#Introduction}
 
-本文档提供了使用无客户端API实施Amazon SSO版本的Adobe Primetime身份验证流的说明。 本文档的第一部分侧重于架构的Amazon版本的特性，适用于许多已经熟悉并熟悉其实施的合作伙伴。
+本文档提供了使用无客户端API实施Amazon SSO版本的Adobe Primetime身份验证流的说明。 本文档的第一部分侧重于架构的Amazon版本的特性，适用于许多已经熟悉并熟悉其实施的合作伙伴。
 
 本文档的第二部分介绍了实施Adobe Primetime身份验证无客户端API的主要步骤。
 
@@ -29,51 +29,51 @@ ht-degree: 0%
 
 ### 高级体系结构 {#High-Level-Arch}
 
-Amazon无客户端SSO实施非常简单，并且大多与常规Adobe Primetime身份验证无客户端API相同。
+Amazon无客户端SSO实施非常简单，并且大体上与常规的Adobe Primetime身份验证无客户端API相同。
 
 您将需要使用Amazon SDK检索个性化有效负载，并在调用Adobe无客户端API时使用它。
 
-如果有效负载被识别并且对应于经过身份验证的会话，则无客户端API将立即使用会话的令牌返回。
+如果有效负载已识别并且对应于经过身份验证的会话，则无客户端API将随会话的令牌立即返回。
 
 ### 如何构建应用程序以使用Amazon SDK {#Build-entries}
 
-* 下载并复制最新版本 [Amazon桩模块SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar) 移入/SSOEnabler文件夹，与app目录平行
+* 下载并复制最新版本 [Amazon桩模块SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar) 移入/SSOEnabler文件夹，与app目录平行
 * 更新manifest/gradle文件以使用库：
 
-   **将以下行添加到清单文件：**
+  **将以下行添加到清单文件：**
 
-   ```Java
-   <uses-library android:name="com.amazon.ottssotokenlib" android:required="false"/\>
-   ```
+  ```Java
+  <uses-library android:name="com.amazon.ottssotokenlib" android:required="false"/\>
+  ```
 
-   **Gradle文件条目：**
+  **Gradle文件条目：**
 
-   在存储库下：
+  在存储库下：
 
-   ```java
-   flatDir {
-        dirs '../SSOEnabler'
-   }
-   ```
+  ```java
+  flatDir {
+       dirs '../SSOEnabler'
+  }
+  ```
 
-   在依赖项下，添加：
+  在依赖项下，添加：
 
-   ```Java
-   provided fileTree(include: \['ottSSOTokenStub.jar'\], dir: '../SSOEnabler')
-   ```
+  ```Java
+  provided fileTree(include: \['ottSSOTokenStub.jar'\], dir: '../SSOEnabler')
+  ```
 
 
 * 处理Amazon配套应用程序缺失的问题：
 
-   虽然不太可能，但如果该随附程序不存在于应用程序正在运行的Amazon设备上，则您应在运行时遇到以下类的ClassNotFoundException： `com.amazon.ottssotokenlib.SSOEnabler`.
+  虽然不太可能，但如果您的应用程序正在运行的Amazon设备上不存在该伴侣，则您在运行时应该遇到以下类的ClassNotFoundException： `com.amazon.ottssotokenlib.SSOEnabler`.
 
-   如果发生这种情况，您只需跳过有效负载步骤并回退常规PrimeTime流。 将不会启用SSO，但常规身份验证流程将正常进行。
+  如果发生这种情况，您只需跳过有效负载步骤并回退到常规PrimeTime流。 将不会启用SSO，但常规身份验证流程将正常进行。
 
 </br>
 
-### 如何使用Amazon SDK获取Amazon SSO有效负载 {#UseAmazonSSO}
+### 如何使用Amazon SDK获取Amazon SSO有效负荷 {#UseAmazonSSO}
 
-在应用程序初始化过程中，获取SSOEnabler的实例。 根据您的应用程序体系结构，您应该决定是同步实施还是异步实施。
+在应用程序初始化过程中，获取SSOEnabler的实例。 根据您的应用程序体系结构，您应该决定是采用同步实施还是异步实施。
 
 如果由于任何原因，API调用未返回有效负载，请使用常规非SSO流程并联系您的Amazon和Adobe合作伙伴进行调查。
 
@@ -81,25 +81,25 @@ Amazon无客户端SSO实施非常简单，并且大多与常规Adobe Primetime�
 
 * 获取SSO启用程序实例：
 
-   ```Java
-   ssoEnabler = SSOEnabler.getInstance(context);
-   SSOEnablerCallback ssoEnablerCallback = new SSOEnablerCallbackImpl();
-   ssoEnabler.setSSOTokenCallback(ssoEnablerCallback);
-   ```
+  ```Java
+  ssoEnabler = SSOEnabler.getInstance(context);
+  SSOEnablerCallback ssoEnablerCallback = new SSOEnablerCallbackImpl();
+  ssoEnabler.setSSOTokenCallback(ssoEnablerCallback);
+  ```
 
 
-* 设置回调 
+* 设置回调
 
-   ```java
-   public static abstract class SSOEnablerCallback
-   {
-           public abstract void getSSOTokenSuccess(Bundle result);
-           public abstract void getSSOTokenFailure(Bundle result);
-   }
-   ```
+  ```java
+  public static abstract class SSOEnablerCallback
+  {
+          public abstract void getSSOTokenSuccess(Bundle result);
+          public abstract void getSSOTokenFailure(Bundle result);
+  }
+  ```
 
    * 成功响应包将包含：
-      * SSO令牌作为带密钥“SSOToken”的字符串
+      * SSO令牌作为带有键“SSOToken”的字符串
    * 故障响应包将包含：
       * 错误代码作为int和键“ErrorCode”
       * 错误描述作为带有键“ErrorDescription”的字符串
@@ -107,56 +107,55 @@ Amazon无客户端SSO实施非常简单，并且大多与常规Adobe Primetime�
 
 * 获取SSO令牌
 
-   ```JAVA
-   Bundle getSSOTokenAsync(Void);
-   ```
+  ```JAVA
+  Bundle getSSOTokenAsync(Void);
+  ```
 
-* 此API将通过在初始化期间设置的回调提供响应。
+* 此API将通过初始化期间设置的回调提供响应。
 
-   **例如**. 使用在初始化期间创建的单一实例调用：
+  **例如**. 使用在初始化期间创建的单个实例调用：
 
-   ```JAVA
-   ssoEnabler.getSSOTokenAsync().
-   ```
+  ```JAVA
+  ssoEnabler.getSSOTokenAsync().
+  ```
 
 
 **同步API**
 
-* 获取SSO Enabler实例并设置回调
+* 获取SSO启用程序实例并设置回调
 
-   ```JAVA
-   ssoEnabler = SSOEnabler.getInstance(context);</span>
-   ```
+  ```JAVA
+  ssoEnabler = SSOEnabler.getInstance(context);</span>
+  ```
 
 * 获取SSO令牌
 
-   ```JAVA
-   Bundle getSSOTokenSync(Void);
-   ```
+  ```JAVA
+  Bundle getSSOTokenSync(Void);
+  ```
 
-   * 此API将阻止调用方线程并使用结果包进行响应。 由于这是同步调用，请确保不要在主线程中使用它。
+   * 此API将阻止调用方线程并使用结果包做出响应。 由于这是同步调用，请确保不要在主线程中使用它。
 
-   ```JAVA
-   void setSSOTokenTimeout(long);
-   ```
+  ```JAVA
+  void setSSOTokenTimeout(long);
+  ```
 
    * 值（以毫秒为单位）。 如果设置，则覆盖同步API的默认超时值1分钟。
-
 
 
 ### 更新了Adobe Primetime无客户端API以使用动态客户端注册 {#clientlessdcr}
 
 如果这是您的第一个实施，请参阅 **无客户端技术概述** 并在您需要支持时联系Adobe。
 
-Adobe无客户端API要求应用程序使用Dynamic Client Registration来调用Adobe服务器。
+Adobe无客户端API要求应用程序使用动态客户端注册来调用Adobe服务器。
 
-* 要在应用程序中使用Dynamic Client Registration，请按照 [ 用于注册应用程序的动态客户端注册管理](/help/authentication/dynamic-client-registration-management.md).
+* 要在应用程序中使用Dynamic Client Registration，请按照 [用于注册应用程序的动态客户端注册管理](/help/authentication/dynamic-client-registration-management.md).
 
-* 要实施Dynamic Client Registration API以对Adobe Primetime服务器执行身份验证和授权请求，请按照 [动态客户端注册API](/help/authentication/dynamic-client-registration-api.md) .
+* 要实施动态客户端注册API以对Adobe Primetime服务器执行身份验证和授权请求，请按照 [动态客户端注册API](/help/authentication/dynamic-client-registration-api.md) .
 
 ### 更新了Adobe Primetime无客户端API以使用Amazon SSO {#clientlesssso}
 
-向Amazon身份验证端点发出的请求需要存在从Amazon SDK获取的Adobe Primetime SSO有效负载：
+在向Amazon身份验证端点发出的请求中，需要存在从Amazon SDK获取的Adobe Primetime SSO有效负载：
 
 ```
       /adobe-services/*
@@ -165,16 +164,16 @@ Adobe无客户端API要求应用程序使用Dynamic Client Registration来调用
 ```
 
 
-所有Primetime身份验证端点都支持以下方法来接收设备范围标识符或平台范围标识符(存在于Amazon SSO有效负载中)：
+所有Primetime身份验证端点都支持以下方法来接收设备范围的标识符或平台范围的标识符(存在于Amazon SSO有效负载中)：
 
 * 作为标头：&quot;Adobe-Subject-Token&quot;
 * 作为查询参数：&quot;ast&quot;
-* 作为post参数：&quot;ast&quot;
+* 作为post参数： &quot;ast&quot;
 
 
 >[!NOTE]
 >
->如果设备范围标识符或平台范围标识符作为查询/帖子参数发送，则在生成请求签名时必须包含该标识符。
+>如果设备范围标识符或平台范围标识符作为查询/发布参数发送，则在生成请求签名时必须包含该标识符。
 
 >[!NOTE]
 >
@@ -213,4 +212,4 @@ boundary=---- WebKitFormBoundary7MA4YWxkTrZu0gW
 
 >[!NOTE]
 >
->如果Amazon SSO不存在或无效，Adobe Primetime身份验证将忽略该属性，并像SSO不存在一样执行调用。
+>如果Amazon SSO不存在或无效，则Adobe Primetime身份验证将忽略属性，并像SSO不存在一样执行调用。

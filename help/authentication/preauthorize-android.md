@@ -1,34 +1,34 @@
 ---
-title: 预授权Android
-description: 预授权Android
+title: 预先授权Android
+description: 预先授权Android
 exl-id: b5337595-135f-4981-a578-2da432f125d6
-source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
+source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
 workflow-type: tm+mt
 source-wordcount: '195'
 ht-degree: 0%
 
 ---
 
-# 预授权 {#preuthorize-android}
+# 预授权 {#preuthorize-android}
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 </br>
 
 
-应用程序需要使用预授权API方法以获得一个或多个资源的预授权决定。 应使用预授权API请求进行UI提示和/或内容筛选。 在授予用户访问指定资源的权限之前，必须发出实际的授权API请求。
+应用程序需要使用预授权API方法以获得一个或多个资源的预授权决定。 应使用Preauthorize API请求进行UI提示和/或内容筛选。 在授予用户访问指定资源的权限之前，必须发出实际的授权API请求。
 
 
 
 在出现意外错误（例如，网络问题、MVPD授权端点不可用等）时 在Adobe Primetime身份验证服务处理预授权API请求时发生，作为预授权API响应结果的一部分，受影响资源将包含一个或多个分隔的错误信息。
 
 
-## `public void preauthorize(PreauthorizeRequest request, AccessEnablerCallback<PreauthorizeResponse> callback);`
+## `public void preauthorize(PreauthorizeRequest request, AccessEnablerCallback<PreauthorizeResponse> callback);`
 
 
-**描述：** 
+**描述：**
 
 **可用性：** v3.6.0+
 
@@ -41,8 +41,7 @@ ht-degree: 0%
 
 ### 公共类PreauthorizeRequest {#androidpreauthorizerequest}
 
-**类PreauthorizeRequest.Builder**\
- 
+**类PreauthorizeRequest.Builder**
 
 ```java
     ///
@@ -129,18 +128,18 @@ ht-degree: 0%
 ### `abstract class AccessEnablerCallback<PreauthorizeResponse> {#accessenablercallback}`
 
 ```java
-    /// Response callback called by the SDK when the preauthorize API request was fulfilled. The result is either a successful or an error result containing a status.
+    /// Response callback called by the SDK when the preauthorize API request was fulfilled. The result is either a successful or an error result containing a status.
 
 **public void onResponse(PreauthorizeResponse result)**
 
- 
+ 
 
-    /// Failure callback called by the SDK when the preauthorize API request could not be serviced. The result is a failure result containing a status. 
+    /// Failure callback called by the SDK when the preauthorize API request could not be serviced. The result is a failure result containing a status. 
 
 **public void onFailure(PreauthorizeResponse result)**
 ```
 
- 
+
 
 ### 类PreauthorizeResponse {#preauthorizeresponse}
 
@@ -150,16 +149,16 @@ ht-degree: 0%
     ///   Might hold a `null` value.
     ///
 
-**public [Status](#status) getStatus()**
+**public [Status](#status) getStatus()**
 
- 
+ 
 
     ///
     /// - Returns: The list of preauthorization decisions. One decision for each resource.
     ///            The list might be empty in case of failure.
     ///
 
-**public List\<[Decision](#status)\> getDecisions()**
+**public List\<[Decision](#status)\> getDecisions()**
 ```
 
 
@@ -172,7 +171,7 @@ ht-degree: 0%
 
 ///
 
-**public int getStatus()**
+**public int getStatus()**
 
     ///
     /// - Returns: The standard Adobe Primetime Authentication services error code.
@@ -227,7 +226,7 @@ ht-degree: 0%
 
 </br>
 
->**分类决策** {#decision}
+>**类别决策** {#decision}
 
 ```
     ///
@@ -236,9 +235,9 @@ ht-degree: 0%
     /// - Returns: The resource id for which the decision was obtained.
     ///
 
-    public Status getId()
+    public Status getId()
 
- 
+ 
 
     ///
     /// This is a getter function.
@@ -246,9 +245,9 @@ ht-degree: 0%
     /// - Returns: The value of the flag indicating if the decision is successful or not.
     ///
 
-**public boolean isAuthorized()**
+**public boolean isAuthorized()**
 
- 
+ 
 
     ///
     /// This is a getter function.
@@ -257,14 +256,14 @@ ht-degree: 0%
     ///            Might hold a `null` value.
     ///
 
-**public Status getError()**
+**public Status getError()**
 ```
 
 </br>
 
 
 
-示例： 
+示例：
 
 
 ```java

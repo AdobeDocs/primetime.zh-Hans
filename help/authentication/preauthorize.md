@@ -2,7 +2,7 @@
 title: iOS/tvOS API预授权
 description: iOS/tvOS API预授权
 exl-id: 79c596a4-0e38-4b6c-bb85-f97c6af45ed8
-source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
+source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
 workflow-type: tm+mt
 source-wordcount: '391'
 ht-degree: 0%
@@ -13,25 +13,25 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-预授权API可用于获取一个或多个资源的预授权决定，这样应用程序可以实现UI提示和/或内容过滤。
-
->[!IMPORTANT]
->
->授权API **必须** 在授予用户对指定资源的访问权限之前使用。
-
-如果Preauthorize API响应结果包含一个或多个具有被拒绝的预授权决定的资源，则可以包含其他错误信息 **（参见下面的注释）** 每个受影响的资源。
+预授权API可用于获取一个或多个资源的预授权决策，这样应用程序就可以实现UI提示和/或内容过滤。
 
 >[!IMPORTANT]
 >
->增强的错误报告功能可根据请求为被拒绝的预授权决策添加其他错误信息，因为必须在Adobe Primetime身份验证配置端启用该功能。
+>授权API **必须** 在授予用户对指定资源的访问权限之前使用。
 
-如果由于Adobe Primetime Authentication SDK错误或Adobe Primetime Authentication Services错误而无法提供预授权API请求，则会在预授权API响应结果中包含其他错误信息（无论上述配置如何）和任何资源。
+如果预授权API响应结果包含一个或多个具有被拒绝的预授权决定的资源，则可以包含额外的错误信息 **（参见下面的注释）** 每个受影响的资源。
+
+>[!IMPORTANT]
+>
+>增强的错误报告功能（为被拒绝的预授权决策添加其他错误信息）在请求时可用，因为它必须在Adobe Primetime身份验证配置端启用。
+
+如果由于Adobe Primetime Authentication SDK错误或Adobe Primetime Authentication Services错误而无法服务预授权API请求，则其他错误信息（无论上述配置如何）和任何资源都不会作为预授权API响应结果的一部分包含在内。
 
 </br>
 
-## `- (void) preauthorize:(nonnull PreauthorizeRequest *)request didCompleteWith:(nonnull AccessEnablerCallback<PreauthorizeResponse *> *)callback;`
+## `- (void) preauthorize:(nonnull PreauthorizeRequest *)request didCompleteWith:(nonnull AccessEnablerCallback<PreauthorizeResponse *> *)callback;`
 
 
 **可用性：** v3.6.0+
@@ -42,10 +42,10 @@ ht-degree: 0%
 - AccessEnablerCallback：用于返回API响应的回调对象；
 - PreauthorizeResponse：用于返回API响应内容的响应对象；
 
- 
+
 </br>
 
-## `class PreauthorizeRequest`{#androidpreauthorizerequest}
+## `class PreauthorizeRequest`{#androidpreauthorizerequest}
 
 ### **类PreauthorizeRequest.Builder**
 
@@ -69,7 +69,7 @@ ht-degree: 0%
     ///
     public func setResources(resources: [String]) -> PreauthorizeRequest.Builder
 
- 
+ 
 
     ///
     /// Sets the features which you want to have them disabled when obtaining preauthorization decisions.
@@ -88,9 +88,9 @@ ht-degree: 0%
     ///
     /// - Returns: The reference to the same `Builder` object instance which is the receiver of the function call. It does this in order to allow the creation of function chaining.
     ///
-    public func disableFeatures(features: Set<PreauthorizeRequest.Feature>) -> PreauthorizeRequest.Builder
+    public func disableFeatures(features: Set<PreauthorizeRequest.Feature>) -> PreauthorizeRequest.Builder
 
- 
+ 
 
     ///
     /// Creates and retrieves the reference of a new `PreauthorizeRequest` object instance.
@@ -107,9 +107,9 @@ ht-degree: 0%
     ///
     /// - Returns: The reference to a new `PreauthorizeRequest` object instance.
     ///
-    public func build() -> PreauthorizeRequest
+    public func build() -> PreauthorizeRequest
 ```
- 
+
 
 ## **枚举PreauthorizeRequest.Feature**
 
@@ -132,11 +132,11 @@ ht-degree: 0%
 ## `interface AccessEnablerCallback<PreauthorizeResponse>` {#accessenablercallback}
 
 ```
-    /// Response callback called by the SDK when the preauthorize API request was fulfilled. The result is either a successful or an error result containing a status.
+    /// Response callback called by the SDK when the preauthorize API request was fulfilled. The result is either a successful or an error result containing a status.
     public func onResponse(result: PreauthorizeResponse)
 
 
-    /// Failure callback called by the SDK when the preauthorize API request could not be serviced. The result is a failure result containing a status. 
+    /// Failure callback called by the SDK when the preauthorize API request could not be serviced. The result is a failure result containing a status. 
     public func onFailure(result: PreauthorizeResponse)
 ```
 
@@ -150,13 +150,13 @@ ht-degree: 0%
     /// - Returns: Additional status (state) information in case of error or failure.
     ///   Might hold a `nil` value.
     ///
-    public Status getStatus()
+    public Status getStatus()
 
     ///
     /// - Returns: The list of preauthorization decisions. One decision for each resource.
     ///            The list might be empty in case of error or failure.
     ///
-    public List<Decision> getDecisions()
+    public List<Decision> getDecisions()
 ```
 
 ### 示例：
@@ -169,11 +169,11 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->通过增强错误报告功能的介质检索到的可能其他错误列表记录在中 [高级错误报告](/help/authentication/enhanced-error-codes.md).
+>有关通过增强错误报告功能介质检索到的可能其他错误的列表，请参阅 [高级错误报告](/help/authentication/enhanced-error-codes.md).
 
 #### 成功
 
-所有请求的资源都有一个积极的预批准决定
+所有请求的资源都有一个积极的预授权决定
 
 ```JSON
     {
@@ -193,7 +193,7 @@ ht-degree: 0%
         ]
     }
 ```
- 
+
 
 一个或多个资源具有被拒绝的预授权决定，并且未在Adobe Primetime身份验证配置中启用增强的错误报告功能
 
@@ -216,9 +216,9 @@ ht-degree: 0%
         ]
     }
 ```
- 
 
-一个或多个资源具有被拒绝的预授权决定，并且在Adobe Primetime身份验证配置中启用了增强的错误报告功能
+
+一个或多个资源具有被拒绝的预授权决定，并在Adobe Primetime身份验证配置中启用了增强的错误报告功能
 
 ```JSON
     {
@@ -247,33 +247,33 @@ ht-degree: 0%
         ]
     }
 ```
- 
+
 
 #### 错误
 
- 
 
-Adobe Primetime身份验证服务在为Preauthorize API请求提供服务时遇到了错误
+
+Adobe Primetime身份验证服务在为Preauthorize API请求提供服务时遇到错误
 
 ```JSON
     {
-        "resources": [],
-        "status": {
-            "status": 400,
-            "code" : "bad_request",
-            "message": "Missing required parameter : deviceId",
-            "details": "",
-            "helpUrl" : "https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/error-reportn/enhanced-error-codes.html",
-            "trace" : "9f115e1c-0158-4a41-8805-9f68923f3646",
-            "action" : "none"
-        }
+        "resources": [],
+        "status": {
+            "status": 400,
+            "code" : "bad_request",
+            "message": "Missing required parameter : deviceId",
+            "details": "",
+            "helpUrl" : "https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+            "trace" : "9f115e1c-0158-4a41-8805-9f68923f3646",
+            "action" : "none"
+        }
     }
 ```
- 
+
 
 #### 失败
 
-为预授权API请求提供服务时，Adobe Primetime身份验证SDK命中错误
+Adobe Primetime身份验证SDK在为Preauthorize API请求提供服务时命中错误
 
 ```JSON
     {
@@ -377,7 +377,7 @@ Adobe Primetime身份验证服务在为Preauthorize API请求提供服务时遇�
 
 <br>
 
-## **分类决策** {#decision}
+## **类别决策** {#decision}
 
 ```
     ///
@@ -385,14 +385,14 @@ Adobe Primetime身份验证服务在为Preauthorize API请求提供服务时遇�
     ///
     /// - Returns: The resource id for which the decision was obtained.
     ///
-    public Status getId()
+    public Status getId()
 
     ///
     /// This is a getter function.
     ///
     /// - Returns: The value of the flag indicating if the decision is successful or not.
     ///
-    public boolean isAuthorized()
+    public boolean isAuthorized()
 
     ///
     /// This is a getter function.
@@ -400,7 +400,7 @@ Adobe Primetime身份验证服务在为Preauthorize API请求提供服务时遇�
     /// - Returns: Additional status (state) information in case some error has occurred.
     ///            Might hold a `nil` value.
     ///
-    public Status getError()
+    public Status getError()
 ```
 
 </br>
@@ -417,15 +417,15 @@ let disabledFeatures: Set<PreauthorizationRequest.Feature> = [PreauthorizationRe
 
 let request: PreauthorizationRequest = PreauthorizationRequest.Builder()
 
-                  .setResources(resources: resources)
+                  .setResources(resources: resources)
 
 
-                  .disableFeatures(features: disabledFeatures)  // It is **optional** to disable features. If not used all features are enabled by default.
+                  .disableFeatures(features: disabledFeatures)  // It is **optional** to disable features. If not used all features are enabled by default.
 
-                  .build();
+                  .build();
 
 // Build the AccessEnablerCallback by providing the constructor two callbacks for onResponse and onFailure handling  
-func onResponseCallback(result: PreauthorizeResponse) -> Void {  //
+func onResponseCallback(result: PreauthorizeResponse) -> Void {  //
 TODO };
 
 func onFailureCallback(result: PreauthorizeResponse) -> Void {

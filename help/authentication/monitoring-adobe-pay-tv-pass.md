@@ -2,7 +2,7 @@
 title: 监控Adobe Primetime身份验证
 description: 监控Adobe Primetime身份验证
 exl-id: fb000e9d-b5aa-45b1-a914-9e419ec8a4d9
-source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
+source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
 workflow-type: tm+mt
 source-wordcount: '188'
 ht-degree: 0%
@@ -13,30 +13,30 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 ## 介绍 {#intro}
 
-客户可以使用 [纳吉奥斯](http://www.nagios.org) 或其他工具来检查Adobe Primetime身份验证是处于启动状态还是关闭状态。 
+客户可以使用 [纳吉奥斯](http://www.nagios.org) 或其他工具来检查Adobe Primetime身份验证是启动还是关闭。
 
 ## 监控端点 {#monitoring-endpoints}
 
 ### 可监视的端点 {#endpoints-to-monitor}
 
-* 所有平台的配置端点： `https://sp.auth.adobe.com/adobe-services/config/[your-config-ID]` — 通过HTTP或HTTPS提供（具体取决于内容提供商的开发人员所做的选择）。 如果此端点缺失，则意味着您的内容将不可用于所有平台和所有MVPD。 对于无客户端REST API，我们还具有以下端点：  `https://api.auth.adobe.com/adobe-services/config your-config-ID]`.
+* 所有平台的配置端点： `https://sp.auth.adobe.com/adobe-services/config/[your-config-ID]` — 通过HTTP或HTTPS提供（取决于内容提供商的开发人员所做的选择）。 如果缺少此端点，则意味着您的内容将不可用于所有平台和所有MVPD。 对于无客户端REST API，我们还具有以下端点：  `https://api.auth.adobe.com/adobe-services/config your-config-ID]`.
 
-* 以下端点是Adobe Primetime身份验证Web SDK的一部分。  如果缺少此参数，则意味着所有程序员和所有Web资产的pay-TVpass都会关闭：
+* 以下端点是Adobe Primetime身份验证Web SDK的一部分。  如果缺少该参数，则意味着所有程序员和所有Web属性的pay-TVpass都将关闭：
 
    * `https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js`
    * `https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js`
 
- 
+
 ### 不应监视的端点 {#endpoints-not-monitor}
 
 * `https://sp.auth.adobe.com/sp/saml/SAMLAssertionConsumer`
 
-   您始终会收到503错误，因为此端点需要一个MVPD SAML响应。
+  您始终会收到503错误，因为此端点需要一个MVPD SAML响应。
 
 * 其他权利端点 —  `adobe-services/1.0/authenticate/`， `adobe-services/1.0/deviceShortAuthorize`， `adobe-services/1.0/authorize`
 
-您无法监测这些端点，因为它们需要有效负荷才能进行相关回复。
+您无法监测这些端点，因为它们需要相关回复的有效负荷。

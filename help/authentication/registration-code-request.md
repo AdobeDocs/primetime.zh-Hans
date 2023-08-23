@@ -2,7 +2,7 @@
 title: 注册页面
 description: 注册页面
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
+source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
 workflow-type: tm+mt
 source-wordcount: '486'
 ht-degree: 0%
@@ -15,27 +15,27 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 &lt;reggie_fqdn>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 &lt;sp_fqdn>：
 
-* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
- </br>
+</br>
 
 ## 描述 {#create-reg-code-svc}
 
 返回随机生成的注册代码和登录页面URI。
 
-| 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
+| 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;reggie_fqdn>/reggie/v1/{requestor}/regcode</br>例如：</br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | 流应用程序</br>或</br>程序员服务 | 1.请求人  </br>    （路径组件）</br>2.  deviceId (Hashed)   </br>    （必需）</br>3.  device_info/X-Device-Info（必需）</br>4.  mvpd（可选）</br>5.  ttl（可选）</br>6.  _设备类型_</br> 7.  _设备用户_ （已弃用）</br>8.  _appId_ （已弃用） | POST | 包含注册码和信息的XML或JSON，如果失败，则显示错误详细信息。 请参阅下面的架构和示例。 | 201 |
+| &lt;reggie_fqdn>/reggie/v1/{requestor}/regcode</br>例如：</br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | 流应用程序</br>或</br>程序员服务 | 1.请求人  </br>    （路径组件）</br>2.  deviceId (Hashed)   </br>    （必需）</br>3.  device_info/X-Device-Info（必需）</br>4.  mvpd（可选）</br>5.  ttl（可选）</br>6.  _设备类型_</br> 7.  _设备用户_ （已弃用）</br>8.  _appId_ （已弃用） | POST | 包含注册码和信息的XML或JSON，如果失败，则显示错误详细信息。 请参阅下面的架构和示例。 | 201 |
 
 {style="table-layout:auto"}
 
@@ -43,12 +43,12 @@ ht-degree: 0%
 | --- | --- |
 | 请求者 | 此操作有效的程序员requestorId。 |
 | deviceId | 设备ID字节。 |
-| device_info/</br>X-Device-Info | 流设备信息。</br>**注释**：可以将此device_info作为URL参数传递，但由于此参数可能的大小以及GETURL的长度限制，它应该作为X-Device-Info传递到http标头。 </br>有关完整详细信息，请参阅 [传递设备和连接信息](/help/authentication/passing-client-information-device-connection-and-application.md). |
-| mvpd | 此操作对其有效的MVPD ID。 |
-| ttl | 此正则代码应在秒内保持多长时间。</br>**注释**： ttl允许的最大值为36000秒（10小时）。 较高的值会导致400 HTTP响应（错误请求）。 如果 `ttl` 留空，则Primetime身份验证会将默认值设置为30分钟。 |
-| _设备类型_ | 设备类型（例如Roku、PC）。</br>如果此参数设置正确，则ESM提供的量度可以 [按设备类型划分](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) 使用无客户端时，以便执行不同类型的分析，例如Roku、AppleTV和Xbox。</br>参见， [在通过的量度中使用无客户端设备类型参数的好处&#x200B;](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**注释**：device_info将替换此参数。 |
+| device_info/</br>X-Device-Info | 流设备信息。</br>**注意**：可以将此device_info作为URL参数进行传递，但由于此参数的潜在大小以及GETURL长度的限制，它应当作为X-Device-Info在http标头中传递。 </br>欲知详情，请参阅 [传递设备和连接信息](/help/authentication/passing-client-information-device-connection-and-application.md). |
+| mvpd | 此操作有效的MVPD ID。 |
+| ttl | 此正则码应在秒内保持多长时间。</br>**注意**：允许用于ttl的最大值为36000秒（10小时）。 较高的值会导致400 HTTP响应（错误请求）。 如果 `ttl` 留空，Primetime身份验证将默认值为30分钟。 |
+| _设备类型_ | 设备类型（例如Roku、PC）。</br>如果此参数设置正确，则ESM提供的量度 [按设备类型细分](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) 使用无客户端时，以便可以执行不同类型的分析，例如Roku、AppleTV和Xbox。</br>看， [在通过的量度中使用无客户端设备类型参数的好处&#x200B;](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**注意**：device_info将替换此参数。 |
 | _设备用户_ | 设备用户标识符。 |
-| _appId_ | 应用程序id/名称。 </br>**注释**：device_info将替换此参数。 |
+| _appId_ | 应用程序id/名称。 </br>**注意**：device_info将替换此参数。 |
 
 {style="table-layout:auto"}
 
@@ -57,22 +57,21 @@ ht-degree: 0%
 >
 >**流设备IP地址**
 ></br>
->对于客户端到服务器实施，流设备IP地址将随此调用隐式发送。  对于服务器到服务器实施，其中 **regcode** 调用是程序员服务而不是流设备，以下标头是传递流设备IP地址所必需的：
+>对于客户端到服务器实施，流设备IP地址将随此调用隐式发送。  对于服务器到服务器实施，其中 **regcode** 调用是程序员服务而不是流设备，以下标头需要传递流设备IP地址：
 >
 >
->
-```
+>```
 >X-Forwarded-For : <streaming_device_ip> 
 >```
 >
->位置 `<streaming\_device\_ip>` 是流媒体设备的公共IP地址。
+>位置 `<streaming\_device\_ip>` 是流设备公共IP地址。
 ></br></br>
 >示例：</br>
 >
->
-```
+>```
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1</br>X-Forwarded-For:203.45.101.20
 >```
+>
 </br>
 
 ### 响应XML架构 {#xml-schema}
@@ -112,7 +111,7 @@ ht-degree: 0%
     </xs:schema>
 ```
 
- </br>
+</br>
 
 | 元素名称 | 描述 |
 | --------------- | ------------------------------------------------------------------------------------ |
@@ -124,15 +123,15 @@ ht-degree: 0%
 | 过期 | 注册代码过期的时间戳（以自1970年1月1日GMT以来的毫秒为单位） |
 | deviceId | 唯一设备ID（或XSTS令牌） |
 | 设备类型 | 设备类型 |
-| 设备用户 | 用户登录到设备 |
+| 设备用户 | 用户已登录到设备 |
 | appId | 应用程序ID |
 | appVersion | 应用程序版本 |
 | 注册URL | 要向最终用户显示的登录Web应用程序的URL |
 
 {style="table-layout:auto"}
- </br>
+</br>
 
- 
+
 
 ### 错误消息XSD  {#error-message}
 
@@ -153,7 +152,7 @@ ht-degree: 0%
         </xs:element>
     </xs:schema>
 ```
- 
+
 
 ### 示例响应 {#sample-response}
 
@@ -178,7 +177,7 @@ ht-degree: 0%
         </info>
     </ns2:regcode>
 ```
- 
+
 **JSON：**
 
 ```JSON

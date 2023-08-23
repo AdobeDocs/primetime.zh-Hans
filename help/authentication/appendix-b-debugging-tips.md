@@ -2,7 +2,7 @@
 title: 附录B “调试提示”
 description: 附录B “调试提示”
 exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
-source-git-commit: 1bc2f6c230c262babf2958c32fee31afcad04c2f
+source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
 workflow-type: tm+mt
 source-wordcount: '170'
 ht-degree: 0%
@@ -13,36 +13,36 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 
 ## 清除临时数据 {#clearing-temporary-data}
 
-Adobe Primetime身份验证存储临时数据，例如浏览器缓存、LSO缓存和Cookie。 清除临时数据非常重要，这可确保您在测试时一切顺利。
+Adobe Primetime身份验证存储临时数据，例如浏览器缓存、LSO缓存和Cookie。 清除临时数据非常重要，这可确保您在测试时操作简单明了。
 
 - [清除浏览器缓存和Cookie](#clearing-the-browser-cache-and-cookies)
-- [正在清除LSO缓存](#clearing-lsos-cache)\
-   
+- [正在清除LSO缓存](#clearing-lsos-cache)
+
 
 ## 清除浏览器缓存和Cookie {#clearing-the-browser-cache-and-cookies}
 
-虽然浏览器可靠，但在Firefox中：“工具” — \>“清除最近的历史记录……” — \>在“清除的时间范围：”上选择“所有内容”；在“详细信息”上选择“Cookie”和“缓存” — \>单击“立即清除”。\
- 
+虽然浏览器可靠，但在Firefox中：“工具” — \>“清除最近历史记录……” — \>在“清除的时间范围：”上选择“所有内容”；在“详细信息”上选中“Cookie”和“缓存” — \>单击“立即清除”。
+
 
 ## 正在清除LSO缓存 {#clearing-lsos-cache}
 
 访问 [Flash Player帮助](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
 
-选择 ```entitlement.\*``` （取决于测试的内容），然后单击“删除网站”。\
- 
+选择 ```entitlement.\*``` （具体取决于测试的内容）并单击“删除网站”。
+
 
 ## 调试工具 {#tools}
 
 Adobe Primetime身份验证工程师使用以下调试工具：
 
 - Firebug - <http://www.getfirebug.com/>
-- Flashbug （适用于flash player的调试版本）
-- 费德勒 —  <http://www.fiddler2.com/fiddler2/>
+- Flashbug（与Flash Player的调试版本配合使用）
+- 菲德勒 —  <http://www.fiddler2.com/fiddler2/>
 - 查尔斯 —  <http://www.charlesproxy.com/>
 - Wireshark - <http://www.wireshark.org/>
 

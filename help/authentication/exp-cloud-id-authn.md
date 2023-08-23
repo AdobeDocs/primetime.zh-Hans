@@ -2,9 +2,9 @@
 title: 在Primetime身份验证中使用Experience CloudID
 description: 在Primetime身份验证中使用Experience CloudID
 exl-id: 03354c01-5aad-4d81-beee-1c3834599134
-source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
+source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
 workflow-type: tm+mt
-source-wordcount: '399'
+source-wordcount: '391'
 ht-degree: 0%
 
 ---
@@ -13,19 +13,15 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 ## 什么是Experience CloudID以及如何获取它？ {#what-exp-cloud-id-obtain}
 
-Experience CloudID（简称ECID）是Adobe Experience Cloud为您的应用程序/网站中的每个用户生成的唯一ID。 ECID在用于链接多个应用程序/网站中特定Experience Cloud相关信息的所有用户报表中大量使用。
+Experience CloudID（简称ECID）是Adobe Experience Cloud为您应用程序/网站中的每个用户生成的唯一ID。 ECID在用于链接多个应用程序/网站中特定Experience Cloud信息的所有用户报表中大量使用。
 
-如果您已经有一个提供访客ID的系统，则应该对本文档的范围使用同一ID。
+如果您已具有提供访客ID的系统，则应该对此文档的范围使用同一ID。
 
-获取ECID的一种方法是使用Experience CloudID服务。 您可以基于TDM、JS库、服务器端、直接集成或移动设备平台的本机库，使用首选的实施类型。 有关可用服务、库、SDK和实施指南的完整视图，请参阅：https://marketing.adobe.com/resources/help/en_US/mcvid/mcvid-implementation-guides.html
-
-
-
-
+获取ECID的一种方法是使用Experience CloudID服务。 您可以使用基于TDM、JS库、服务器端、直接集成或移动设备平台本机库的首选实施类型。 有关可用服务、库、SDK和实施指南的完整视图，请参阅： <https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html>
 
 ## 在Primetime身份验证中使用Experience CloudID有何好处？ {#benefit-ex-cloud-id}
 
@@ -33,7 +29,7 @@ Experience CloudID（简称ECID）是Adobe Experience Cloud为您的应用程序
 
 ## 如何在Primetime身份验证中使用Experience CloudID？ {#how-to-ex-cloud-id-authn}
 
-在获得ECID（如上所述）后，您需要将此信息传递到我们的SDK和无客户端REST API。 此信息稍后将在SDK发出的每次网络调用中传递到我们的服务器。 每个SDK的配置过程各不相同，如下所示：
+在获得ECID（如上所述）后，您需要将这些信息传递到我们的SDK和无客户端REST API。 此信息稍后将在SDK进行的每次网络调用中传递到我们的服务器。 每个SDK的配置过程各不相同，如下所示：
 
 ### JS SDK {#js-sdk}
 
@@ -80,7 +76,7 @@ accessEnabler.setOptions(options);
 
 ### 无客户端API {#clientless-api}
 
-通过REST API使用Adobe Primetime时， **ECID** 应发送值 **在所有API上** 作为名为的参数 **&#39;ap_vi&#39;**.
+通过它的REST API使用Adobe Primetime时， **ECID** 应发送值 **在所有API上** 作为参数，名为 **&#39;ap_vi&#39;**.
 
 **使用示例：**
 
