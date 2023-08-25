@@ -2,7 +2,7 @@
 title: Amazon FireOS集成指南
 description: Amazon FireOS集成指南
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
+source-git-commit: e5e42763fecae437cfc34bae98a5d2bd5adc4643
 workflow-type: tm+mt
 source-wordcount: '1433'
 ht-degree: 0%
@@ -198,7 +198,6 @@ AccessEnabler的网络活动发生在不同的线程中，因此从不阻止UI�
 
 ### F.注销流程 {#logout_flow}
 
-1. 调用 [`logout()`](#$logout) 以注销用户。\
-   AccessEnabler会清除用户为当前MVPD获取的所有缓存值和令牌，这些值和令牌位于共享登录的所有请求者上。 清除缓存后，AccessEnabler会进行服务器调用以清除服务器端会话。  请注意，由于服务器调用可能会导致到IdP的SAML重定向（这允许IdP端的会话清理），因此此调用必须遵循所有重定向。 因此，此调用将在WebView控件中处理，对用户不可见。
+1. 调用 [`logout()`](#$logout) 以注销用户。 AccessEnabler会清除用户为当前MVPD获取的所有缓存值和令牌，这些值和令牌位于共享登录的所有请求者上。 清除缓存后，AccessEnabler会进行服务器调用以清除服务器端会话。  请注意，由于服务器调用可能会导致到IdP的SAML重定向（这允许IdP端的会话清理），因此此调用必须遵循所有重定向。 因此，此调用将在WebView控件中处理，对用户不可见。
 
    **注意：** 注销流与身份验证流的不同之处在于，用户不需要以任何方式与WebView交互。 因此，可以（并且建议）在注销过程中使WebView控件不可见（即：隐藏）。
