@@ -2,7 +2,7 @@
 title: Android SDK概述
 description: Android SDK概述
 exl-id: a1d98325-32a1-4881-8635-9a3c38169422
-source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
+source-git-commit: 4b858a06080ec221c60548e2a2a0f3b6010ede15
 workflow-type: tm+mt
 source-wordcount: '2707'
 ht-degree: 0%
@@ -113,7 +113,7 @@ Primetime身份验证授权解决方案围绕生成特定数据段（令牌）�
 
 #### 身份验证令牌
 
-- **AccessEnabler 1.6及更早版本** - ****身份验证令牌在设备上缓存的方式取决于&quot;**每个请求者的身份验证”** 与当前MVPD关联的标志：
+- **AccessEnabler 1.6及更早版本**  — 身份验证令牌在设备上缓存的方式取决于&quot;**每个请求者的身份验证”** 与当前MVPD关联的标志：
 
 
 1. 如果“每个请求者的身份验证”功能为 *已禁用*，则单个身份验证令牌将本地存储在全局粘贴板中。 此令牌将在与当前MVPD集成的所有应用程序之间共享。
