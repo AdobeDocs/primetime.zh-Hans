@@ -2,9 +2,9 @@
 title: iOS/tvOS API参考
 description: iOS/tvOS API参考
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
+source-git-commit: d4fd2590ec0e7388c1d4df6c2c1313141659ed9e
 workflow-type: tm+mt
-source-wordcount: '7000'
+source-wordcount: '6990'
 ht-degree: 0%
 
 ---
@@ -1554,10 +1554,3 @@ AccessEnabler会触发一个附加回调，该回调不一定与权利文件流�
    * **3**  — 操作系统类型
 
 </br>
-
-## 相关信息 {#related}
-
-* [iOS集成指南](/help/authentication/iostvos-sdk-cookbook.md)
-* [iOS技术概述](/help/authentication/iostvos-sdk-overview.md)
-* [权利流](/help/authentication/entitlement-flow.md)
-  <!--* [Tracking Data in Primetime authentication](https://tve.helpdocsonline.com/tracking-data-in-adobe-pass)-->
