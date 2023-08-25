@@ -2,7 +2,7 @@
 title: Amazon FireOS技术概述
 description: Amazon FireOS技术概述
 exl-id: 939683ee-0dd9-42ab-9fde-8686d2dc0cd0
-source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
+source-git-commit: 4691e769e1fee51507550c8e1fbecdcdff7e44eb
 workflow-type: tm+mt
 source-wordcount: '2142'
 ht-degree: 0%
@@ -80,7 +80,7 @@ Primetime身份验证授权解决方案围绕生成特定数据段（令牌）�
 
 #### 身份验证令牌
 
-- **AccessEnabler 1.10.1 for FireOS **基于AccessEnabler for Android 1.9.1 — 此SDK引入了一种新的令牌存储方法，可启用多个程序员 — MVPD存储桶，因此还可启用多个身份验证令牌。
+- **适用于FireOS的AccessEnabler 1.10.1** 基于AccessEnabler for Android 1.9.1 — 此SDK引入了一种新的令牌存储方法，可启用多个程序员 — MVPD存储桶，因此可启用多个身份验证令牌。
 
 #### 授权令牌
 
