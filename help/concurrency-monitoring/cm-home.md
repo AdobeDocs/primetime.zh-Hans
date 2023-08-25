@@ -1,7 +1,7 @@
 ---
 title: 并发监控简介
 description: 并发监控简介
-source-git-commit: ac0c15b951f305e29bb8fa0bd45aa2c53de6ad15
+source-git-commit: 9bc4298edb22d72131156bf92717284866728ec5
 workflow-type: tm+mt
 source-wordcount: '138'
 ht-degree: 0%
@@ -15,9 +15,9 @@ ht-degree: 0%
 
 并发监控允许身份和内容提供商（MVPD和程序员）定义并强制实施对多个应用程序（可能由多个合作伙伴拥有）的并发使用限制。
 
-**并发监控API托管在以下位置：
+**并发监控API托管在以下位置：**
 
-* V2.0： [并发监控API](http://docs.adobeptime.io/cm-api-v2/)**
+* **V2.0： [并发监控API](http://docs.adobeptime.io/cm-api-v2/)**
 
 要注册我们的并发监控服务，请联系我们的 [支持团队](mailto:tve-support@adobe.com). 指定以下信息，我们的团队将很乐意为您提供帮助：
 
