@@ -2,7 +2,7 @@
 title: 用户元数据
 description: 用户元数据
 exl-id: 3d7b6429-972f-4ccb-80fd-a99870a02f65
-source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
+source-git-commit: 6779e20e37f1396402f36564e2c85d48d8c581a3
 workflow-type: tm+mt
 source-wordcount: '491'
 ht-degree: 0%
@@ -33,8 +33,6 @@ ht-degree: 0%
 
 检索MVPD共享的有关经过身份验证的用户的元数据。
 
-<div>
-
 
 | 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
 | --- | --- | --- | --- | --- | --- |
@@ -54,7 +52,8 @@ ht-degree: 0%
 > 
 >用户元数据信息应在身份验证流程完成后可用，但可以在授权流程上更新，具体取决于MVPD和元数据类型。
 
-</br>
+
+
 
 ## 示例响应 {#sample-response}
 
@@ -87,6 +86,6 @@ ht-degree: 0%
 
 如果出现错误，服务器将返回指定详细错误消息的XML或JSON对象。
 
-有关更多信息，请参阅 [用户元数据](/help/authentication/user-metadata.md).
+有关更多信息，请参阅 [用户元数据](/help/authentication/user-metadata-feature.md).
 
 ### [返回REST API参考](/help/authentication/rest-api-reference.md).
