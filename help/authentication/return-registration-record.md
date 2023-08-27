@@ -2,9 +2,9 @@
 title: 返回注册记录
 description: 返回注册记录
 exl-id: 7b9e63a2-59b6-4123-a19b-ee1f021219ea
-source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
+source-git-commit: 622767e06f3b25222286a09a41e6a0cecff1967a
 workflow-type: tm+mt
-source-wordcount: '253'
+source-wordcount: '243'
 ht-degree: 0%
 
 ---
@@ -18,12 +18,12 @@ ht-degree: 0%
 
 ## REST API端点 {#clientless-endpoints}
 
-&lt;reggie_fqdn>：
+`<REGGIE_FQDN>`:
 
 * 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
 * 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>：
+`<SP_FQDN>`:
 
 * 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
 * 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -42,7 +42,7 @@ ht-degree: 0%
 
 | 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;reggie_fqdn>；/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>例如：</br></br>&lt;reggie_fqdn>/reggie/v1/sampleRequestorId/regcode/TJJCFK？format=xml | 流应用程序</br></br>或</br></br>程序员服务 | 1.请求人  </br>    （路径组件）</br>2.  注册码  </br>    （路径组件） | GET | 包含注册代码和信息的XML或JSON。 请参阅下面的架构和示例。 | 200 |
+| `<REGGIE_FQDN>`；/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>例如：<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJJCFK？format=xml | 流应用程序</br></br>或</br></br>程序员服务 | 1.请求人  </br>    （路径组件）</br>2.  注册码  </br>    （路径组件） | GET | 包含注册代码和信息的XML或JSON。 请参阅下面的架构和示例。 | 200 |
 
 {style="table-layout:auto"}
 
