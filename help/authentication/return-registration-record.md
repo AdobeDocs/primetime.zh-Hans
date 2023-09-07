@@ -2,7 +2,7 @@
 title: 返回注册记录
 description: 返回注册记录
 exl-id: 7b9e63a2-59b6-4123-a19b-ee1f021219ea
-source-git-commit: 622767e06f3b25222286a09a41e6a0cecff1967a
+source-git-commit: 9e1d178e00c49cab7bcf9693c3b16234cb29ba4c
 workflow-type: tm+mt
 source-wordcount: '243'
 ht-degree: 0%
@@ -28,7 +28,7 @@ ht-degree: 0%
 * 生产 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
 * 暂存 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-</br>
+
 
 
 ## 描述 {#description}
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 
 
-<div>
+
 
 
 | 端点 | 已调用  </br>按 | 输入   </br>参数 | HTTP  </br>方法 | 响应 | HTTP  </br>响应 |
@@ -46,14 +46,16 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-</br>
+
+
 
 | 输入参数 | 描述 |
 | --- | --- |
 | 请求者 | 此操作有效的程序员requestorId。 |
 | 注册码 | 将在流设备上显示的注册代码值（将输入到身份验证流程中）。 |
 
-</br>
+
+
 
 ## 响应XML架构 {#response-xml-schema}
 
