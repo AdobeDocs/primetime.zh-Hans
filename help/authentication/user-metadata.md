@@ -2,7 +2,7 @@
 title: 用户元数据
 description: 用户元数据
 exl-id: 3d7b6429-972f-4ccb-80fd-a99870a02f65
-source-git-commit: 4479df7985da16e8632a538f1042de05109f2392
+source-git-commit: 895438e2b915f8745d685dfc76340b18eccd48bc
 workflow-type: tm+mt
 source-wordcount: '485'
 ht-degree: 0%
@@ -43,10 +43,10 @@ ht-degree: 0%
 | --- | --- |
 | 请求者 | 此操作有效的程序员requestorId。 |
 | deviceId | 设备ID字节。 |
-| device_info/<p>X-Device-Info | 流设备信息。<p>**注意**：可以将此device_info作为URL参数进行传递，但由于此参数的潜在大小以及GETURL长度的限制，它应当作为X-Device-Info在http标头中传递。 </br></br>欲知详情，请参阅 **传递设备和连接信息** <!--http://tve.helpdocsonline.com/passing-device-information-->. |
-| _设备类型_ | 设备类型（例如Roku、PC）。<p>如果此参数设置正确，则ESM提供的量度 [按设备类型细分](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) 使用无客户端应用程序时，以便可以对Roku、AppleTV、Xbox等执行不同类型的分析。<p>请参阅 [在Pass量度中使用无客户端设备类型参数的好处](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)<p>**注意：** 此 `device_info` 替换此参数。 |
-| _设备用户_ | 设备用户标识符。</br></br>**注意：**如果使用， `deviceUser` 应具有与中的相同的值 [创建注册码](/help/authentication/registration-code-request.md) 请求。 |
-| _appId_ | 应用程序id/名称。 <p>**注意：**此 `device_info` 替换此参数。 如果使用， `appId` 应具有与中的相同的值 **创建注册码** 请求。 |
+| device_info/<p>X-Device-Info | 流设备信息。</br></br> **注意：** 此URL可以作为URL参数传递，但由于此参数可能的大小以及GETURL的长度限制，它应该作为X-Device-Info传递到http标头。 </br></br> 欲知详情，请参阅 [传递设备和连接信息](/help/authentication/passing-client-information-device-connection-and-application.md). |
+| _设备类型_ | 设备类型（例如Roku、PC）。</br></br> 如果此参数设置正确，则ESM提供的量度 [按设备类型细分](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) 使用无客户端应用程序时，以便可以对Roku、AppleTV、Xbox等执行不同类型的分析。</br></br> 请参阅 [在Pass量度中使用无客户端设备类型参数的好处](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md) </br></br> **注意：** 此 `device_info` 替换此参数。 |
+| _设备用户_ | 设备用户标识符。</br></br> **注意：** 如果使用， `deviceUser` 应具有与中的相同的值 [创建注册码](/help/authentication/registration-code-request.md) 请求。 |
+| _appId_ | 应用程序id/名称。 </br></br> **注意：** 此 `device_info` 替换此参数。 如果使用， `appId` 应具有与中的相同的值 [创建注册码](/help/authentication/registration-code-request.md) 请求。 |
 
 >[!NOTE]
 > 
@@ -80,9 +80,9 @@ ht-degree: 0%
 
 在对象的根目录下将有三个节点：
 
-* **已更新**：指定一个UNIX时间戳，该时间戳表示上次更新元数据的时间。 此属性最初将由服务器在验证阶段生成元数据时设置。 后续调用（在元数据更新后）将导致时间戳递增。
-* **数据**：包含实际的元数据值。
-* **已加密**：列出加密属性的数组。 要解密特定的元数据值，程序员必须对元数据执行Base64解码，然后使用它自己的私钥(Adobe使用程序员的公共证书加密服务器上的元数据)对结果值应用RSA解密。
+* *已更新*：指定一个UNIX时间戳，该时间戳表示上次更新元数据的时间。 此属性最初将由服务器在验证阶段生成元数据时设置。 后续调用（在元数据更新后）将导致时间戳递增。
+* *数据*：包含实际的元数据值。
+* *已加密*：列出加密属性的数组。 要解密特定的元数据值，程序员必须对元数据执行Base64解码，然后使用它自己的私钥(Adobe使用程序员的公共证书加密服务器上的元数据)对结果值应用RSA解密。
 
 如果出现错误，服务器将返回指定详细错误消息的XML或JSON对象。
 
