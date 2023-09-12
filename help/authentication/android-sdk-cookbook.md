@@ -2,9 +2,9 @@
 title: Android SDK指南
 description: Android SDK指南
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
+source-git-commit: 9fcbb5285ffa85306c0e18337da9564ac862a6eb
 workflow-type: tm+mt
-source-wordcount: '1693'
+source-wordcount: '1685'
 ht-degree: 0%
 
 ---
@@ -155,7 +155,7 @@ AccessEnabler的网络活动发生在不同的线程中，因此从不阻止UI�
 
    **注意：** 此时，用户可以取消身份验证流程。 如果发生这种情况，您的UI层负责通过调用，向AccessEnabler通知此事件 `setSelectedProvider()` 替换为 `null` 作为参数。 这允许AccessEnabler清理其内部状态并重置身份验证流程。
 
-1. 用户成功登录后，应用程序层会检测“自定义重定向URL”的加载(即： [http://adobepass.android.app](http://adobepass.android.app/))。 此自定义URL实际上是一个无效URL，不适用于WebView加载。 它是身份验证流程已完成，并且需要关闭WebView的信号。
+1. 用户成功登录后，应用程序层会检测“自定义重定向URL”的加载(即： `http://adobepass.android.app`)。 此自定义URL实际上是一个无效URL，不适用于WebView加载。 它是身份验证流程已完成，并且需要关闭WebView的信号。
 
 1. 关闭WebView控件并调用 `getAuthenticationToken()`，它会指示AccessEnabler从后端服务器中检索身份验证令牌。
 
@@ -207,7 +207,7 @@ AccessEnabler的网络活动发生在不同的线程中，因此从不阻止UI�
 
    a.遵循与身份验证工作流相同的模式，AccessEnabler域向UI应用程序层发出请求(通过`navigateToUrl()` 回调)，以创建WebView控件并指示该控件在后端服务器上加载注销端点的URL。
 
-   b.同样，UI必须监控WebView控件的活动，并检测控件在经历多次重定向时加载应用程序的自定义URL(即： [http://adobepass.android.app/](http://adobepass.android.app/))。 发生此事件后，UI应用程序层会关闭WebView并完成注销过程。
+   b.同样，UI必须监控WebView控件的活动，并检测控件在经历多次重定向时加载应用程序的自定义URL(即： `http://adobepass.android.app/`)。 发生此事件后，UI应用程序层会关闭WebView并完成注销过程。
 
    **注意：** 注销流与身份验证流的不同之处在于，用户不需要以任何方式与WebView交互。 UI应用程序层使用WebView来确保遵循所有重定向。 因此，可以（并且建议）在注销过程中使WebView控件不可见（即隐藏）。
 

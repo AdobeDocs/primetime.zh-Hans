@@ -3,9 +3,9 @@ title: Primetime发行说明
 description: Primetime发行说明
 copied-description: true
 exl-id: 29087a3e-f16e-4510-8d3a-ed2229700899
-source-git-commit: 1782a6b1d5f1c56d39648d73616bdefddd8a51bc
+source-git-commit: 8d7a4f69a6400b0c3242d4cb0c5daac81f27db3a
 workflow-type: tm+mt
-source-wordcount: '309'
+source-wordcount: '301'
 ht-degree: 0%
 
 ---
@@ -22,27 +22,27 @@ ht-degree: 0%
 
 ## TVSDK 3.15 Android中的修复
 
-此版本修复了以下问题：当缺少创意标记或以下情况时，应用程序崩溃 [!UICONTROL url CDATA] 在中为空 [!UICONTROL VAST] 响应。
+此版本修复了以下问题：缺少创意标记或以下情况下应用程序崩溃 [!UICONTROL url CDATA] 在中为空 [!UICONTROL VAST] 响应。
 
-有关其他修复和详细信息，请参阅 [Android版TVSDK发行说明](/help/release-notes/tvsdk-3x-android.md)
+有关其他修复和详细信息，请参阅 [适用于Android的TVSDK发行说明](/help/release-notes/tvsdk-3x-android.md)
 
 ## TVSDK 3.13 iOS中的增强功能和修复
 
-此发行版本引入了对LIVE、VOD和FER流的“HLS/CMAF”（前置、中置和后置）广告的支持。
+此发行版本引入了对LIVE、VOD和FER流的“HLS/CMAF”（preroll、midroll和postroll）广告的取消支持。
 
-有关其他修复和详细信息，请参阅 [《适用于iOS的TVSDK发行说明》](../release-notes/tvsdk-3x-ios.md).
+有关其他修复和详细信息，请参阅 [适用于iOS的TVSDK发行说明](../release-notes/tvsdk-3x-ios.md).
 
 ## 另请参阅
 
 | 用户指南 | 描述 |
 |--- |--- |
 | [Primetime编程帮助](/help/programming/home.md) | 允许您学习在Android设备上使用Java以及在iOS设备上使用Objective-C开发应用程序和视频播放器。 |
-| [Primetime迁移和转换帮助](/help/migration-guides/home.md) | 介绍从现有Primetime TVSDK包到下一代包的转换和迁移过程。 |
+| [Primetime迁移和转换帮助](/help/migration-guides/home.md) | 介绍从现有Primetime TVSDK套件到下一代套件的转换和迁移过程。 |
 | [参考实施](/help/android-reference-implementation/home.md) | 帮助了解TVSDK并修改功能管理器以自定义您的个人播放器。 |
 | [Primetime API引用](/help/reference/api-references.md) | 提供有关TVSDK函数、数据结构和其他编程结构的详细信息。 |
 | [Digital Rights Management](/help/digital-rights-management/home.md) | 帮助您进一步了解Digital Rights Management(DRM)中的各种用户场景 |
-| [PrimetimeAd Insertion帮助](/help/primetime-ad-insertion/home.md) | 介绍如何通过在服务器上插入面向用户的动态广告来从内容获利，以及如何通过个性化广告吸引受众。 |
-| [归档](https://helpx.adobe.com/primetime/archives.html) | 下载已存档文档的PDF。 |
+| [PrimetimeAd Insertion帮助](/help/primetime-ad-insertion/home.md) | 阐述如何通过在服务器上插入面向用户的动态广告来从内容获利，以及如何通过个性化广告吸引受众。 |
+| [存档](https://helpx.adobe.com/primetime/archives.html) | 下载已存档文档的PDF。 |
 
 ## 有用资源
 
@@ -54,4 +54,3 @@ ht-degree: 0%
 
 * [Adobe Primetime DRM论坛](https://forums.adobe.com/community/adobe_access)
 
-* [Adobe Primetime开发人员资源](https://www.adobe.com/devnet/primetime.html)
