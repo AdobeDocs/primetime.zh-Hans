@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Primetime身份验证
 user-guide-description: Primetime身份验证是TV Everywhere的授权解决方案，提供了一个模块化框架，用于确定请求访问资源的人是否有权访问资源。
-source-git-commit: 90d6c78791f2fd1bf80979b105d42e019686aacd
+source-git-commit: fbc0e710d205532d268213ca0bdc81449e9c9835
 workflow-type: tm+mt
-source-wordcount: '744'
+source-wordcount: '749'
 ht-degree: 0%
 
 ---
@@ -163,6 +163,7 @@ ht-degree: 0%
    + [Primetime Authentication 2.62.1发行说明](auth-rn-2621.md)
    + [Primetime身份验证iOS / tvOS 3.7.0发行说明](authn-rn-ios-tvos-370.md)
    + [Primetime身份验证iOS / tvOS 3.8.1发行说明](authn-rn-ios-tvos-381.md)
+   + [Primetime Authentication Android 3.7.3发行说明](authn-rn-android-373.md)
 + 技术说明 {#tech-notes}
    + Primetime身份验证SDK {#primetime-authentication-sdks}
       + [证书常见问题解答](certificates-qa.md)
