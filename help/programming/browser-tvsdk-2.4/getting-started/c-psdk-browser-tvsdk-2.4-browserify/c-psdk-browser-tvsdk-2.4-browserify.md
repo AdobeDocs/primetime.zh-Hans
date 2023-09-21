@@ -1,8 +1,7 @@
 ---
 description: 您可以使用浏览器TVSDK提供的JS文件创建与浏览器兼容的播放器。
 title: 浏览器兼容的播放器
-exl-id: 3e9751d8-7a7e-465b-8d46-d07e4ccb1f5b
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '133'
 ht-degree: 0%
@@ -13,9 +12,9 @@ ht-degree: 0%
 
 您可以使用浏览器TVSDK提供的JS文件创建与浏览器兼容的播放器。
 
-浏览器TVSDK提供两个与浏览器兼容的JS文件。 一个用于AdobePSDK模块；这用于开发没有UI-Framework的应用程序。 另一个用于UI-Framework模块；它返回使用UI-Framework编写应用程序时使用的PTP命名空间。
+浏览器TVSDK提供两个与浏览器兼容的JS文件。 一种是用于AdobePSDK模块；这用于开发没有UI-Framework的应用程序。 另一个用于UI-Framework模块；它返回使用UI-Framework编写应用程序时使用的PTP命名空间。
 
-要开始使用Browserify，请运行以下设置命令以创建 [!DNL final.js] 文件（您的浏览器包文件） [!DNL example] 目录在 [!DNL samples/browerify/reference] 和 [!DNL samples/browerify/ui-framework]：
+要开始使用Browserify，请运行以下设置命令以创建 [!DNL final.js] 文件（您的Browserify包文件） [!DNL example] 目录在 [!DNL samples/browerify/reference] 和 [!DNL samples/browerify/ui-framework]：
 
 1. 导航到 [!DNL samples/browserify/reference/build].
 1. 运行以下命令：

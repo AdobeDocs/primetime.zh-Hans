@@ -1,8 +1,7 @@
 ---
-description: 可以使用支持HSM的Sun PKCS#11提供程序配置参考实施。 虽然不要求使用HSM，但建议使用HSM。
+description: 可以使用支持HSM的Sun PKCS#11提供程序配置参考实现。 虽然不要求使用HSM，但建议使用HSM。
 title: HSM配置
-exl-id: 87a7d242-8202-4749-91a6-e6697be6a61d
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '183'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # HSM配置{#hsm-configuration}
 
-可以使用支持HSM的Sun PKCS#11提供程序配置参考实施。 虽然不要求使用HSM，但建议使用HSM。
+可以使用支持HSM的Sun PKCS#11提供程序配置参考实现。 虽然不要求使用HSM，但建议使用HSM。
 
 要在HSM上使用凭据，必须为Sun PKCS#11提供程序创建配置文件。 欲了解更多信息，请参见 [Java PCKS#11参考指南](https://docs.oracle.com/javase/1.5.0/docs/guide/security/p11guide.html).
 
@@ -22,7 +21,7 @@ keytool -keystore NONE -storetype PKCS11 -providerClass sun.security.pkcs11.SunP
   -providerArg pkcs11.cfg -list
 ```
 
-如果您可以在列表中查看凭据，则表明已正确配置HSM。
+如果您可以在列表中查看您的凭据，则表明您已正确配置HSM。
 
 >[!NOTE]
 >

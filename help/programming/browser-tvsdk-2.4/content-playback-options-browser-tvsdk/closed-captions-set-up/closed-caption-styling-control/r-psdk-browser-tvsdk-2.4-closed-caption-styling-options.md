@@ -1,8 +1,7 @@
 ---
-description: 您可以指定多个字幕样式选项，这些选项将覆盖原始字幕中的样式选项。
+description: 您可以指定多个标题样式选项，这些选项将覆盖原始标题中的样式选项。
 title: 隐藏式字幕样式选项
-exl-id: df5377c2-741b-4239-b345-145753896c6b
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '349'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 隐藏式字幕样式选项{#closed-caption-styling-options}
 
-您可以指定多个字幕样式选项，这些选项将覆盖原始字幕中的样式选项。
+您可以指定多个标题样式选项，这些选项将覆盖原始标题中的样式选项。
 
 ```js
 new TextFormat( 
@@ -43,7 +42,7 @@ new TextFormat(
  <tbody> 
   <tr rowsep="1"> 
    <td colname="1"> 字体 </td> 
-   <td colname="2"> <p>字体类型。 </p> <p>只能设置为由定义的值 <span class="codeph"> TextFormat.Font </span> 枚举并表示，例如，带或不带衬线的等宽。 </p> <p>提示：设备上可用的实际字体可能有所不同，必要时会使用替换。 带有衬线的等宽通常用作替换，尽管此替换可以是系统特定的。 </p> </td> 
+   <td colname="2"> <p>字体类型。 </p> <p>只能设置为由定义的值 <span class="codeph"> TextFormat.Font </span> 枚举并表示，例如，带衬线或不带衬线的等宽值。 </p> <p>提示：设备上可用的实际字体可能有所不同，必要时会使用替换。 通常使用带衬线的等宽作为替代，尽管此替代可以特定于系统。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 大小 </td> 
@@ -57,7 +56,7 @@ new TextFormat(
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 字体颜色 </td> 
-   <td colname="2"> <p>字体颜色。 </p> <p>只能设置为由 <span class="codeph"> 文本格式。颜色 </span> 明细列表。 </p> </td> 
+   <td colname="2"> <p>字体颜色。 </p> <p>只能设置为由 <span class="codeph"> TextFormat.Color </span> 明细列表。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 背景颜色 </td> 
@@ -65,15 +64,15 @@ new TextFormat(
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 字体不透明度 </td> 
-   <td colname="2"> <p>文本的不透明度。 </p> <p>以0（完全透明）到100（完全不透明）的百分比表示。 <span class="codeph"> DEFAULT_OPACITY </span> 对于，字体为100。 </p> </td> 
+   <td colname="2"> <p>文本的不透明度。 </p> <p>以0（完全透明）到100（完全不透明）的百分比表示。 <span class="codeph"> DEFAULT_OPACITY </span> 字体为100。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> 下内凹 </td> 
-   <td colname="2"> <p>要避免的字幕与字幕窗口底部的垂直距离。 </p> <p>以字幕窗口高度的百分比（例如“20%”）或像素数（例如“20”）表示。 </p> </td> 
+   <td colname="1"> 下内缩 </td> 
+   <td colname="2"> <p>要避免的字幕与字幕窗口底部的垂直距离。 </p> <p>以题注窗口高度的百分比（例如，“20%”）或像素数（例如，“20”）表示。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 安全区域 </td> 
-   <td colname="2"> <p>屏幕边缘附近0%到25%之间不显示字幕的区域。 </p> <p>默认情况下，608/708的安全区域为12%，WebVTT的安全区域为0%。 此设置允许您的应用程序覆盖该默认值。 如果提供了两个值，例如，字符串“10%，20%”，则第一个值是水平安全区域，第二个值是垂直安全区域。 如果提供一个值（例如，字符串“15%”），则垂直轴和水平轴都会使用指定的安全区域。 </p> </td> 
+   <td colname="2"> <p>屏幕边缘附近0%到25%之间不显示字幕的区域。 </p> <p>默认情况下，608/708的安全区域为12%，WebVTT的安全区域为0%。 此设置允许您的应用程序覆盖该默认值。 如果提供了两个值，例如字符串“10%，20%”，则第一个值是水平安全区域，第二个值是垂直安全区域。 如果提供一个值（例如，字符串“15%”），则垂直轴和水平轴都会使用指定的安全区域。 </p> </td> 
   </tr> 
  </tbody> 
 </table>

@@ -1,8 +1,7 @@
 ---
 description: ReplaceTimeRange实用程序类是与CustomRangeMetadata一起使用的TimeRange类的扩展。
 title: ReplaceTimeRange类
-exl-id: 8d4e9263-bcc0-4300-86ac-6aa7afe5914b
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '36'
 ht-degree: 0%

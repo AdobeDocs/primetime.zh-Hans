@@ -1,8 +1,7 @@
 ---
 description: 这些类提供的信息可帮助您确定播放器的运行情况。
 title: QoS类
-exl-id: 7d8b2bb2-491d-4c36-a6b3-8f91cf2304aa
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '432'
 ht-degree: 0%
@@ -24,15 +23,15 @@ ht-degree: 0%
  </thead>
  <tbody> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/qos/metrics/BufferingMetrics.html" format="html" scope="external"> BufferingMetrics</a></span> </td> 
-   <td colname="2"> 提供有关播放器在缓冲时花费的时间以及发生缓冲事件的频率的信息。 </td> 
+   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/qos/metrics/BufferingMetrics.html" format="html" scope="external"> 缓冲量度</a></span> </td> 
+   <td colname="2"> 提供有关播放器缓冲所花费的时间以及发生缓冲事件的频率的信息。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/qos/DeviceInformation.html" format="html" scope="external"> 设备信息</a></span> </td> 
    <td colname="2">提供有关TVSDK运行的平台和操作系统的信息： 
     <ul id="ul_0DE69F3B38E84964AB98DCCD11E5E123"> 
      <li id="li_19B2D1889FCA4B0F8FCB0EE8F87353B2">平台操作系统的版本 </li> 
-     <li id="li_CA35F4A48FD34555AC7D7832D5997AD4">TVSDK库的版本号 </li> 
+     <li id="li_CA35F4A48FD34555AC7D7832D5997AD4">tvsdk库的版本号 </li> 
      <li id="li_30D38320C2A3440E92C0A477FFFBF9A0">设备的型号名称 </li> 
      <li id="li_2D15164B987E405685B96A900EBF041D">设备制造商名称 </li> 
      <li id="li_B78485CB9580444DB9694404706BA191">设备UUID </li> 
@@ -41,19 +40,19 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/qos/LoadInformation.html" format="html" scope="external"> Loadinformation</a></span> </td> 
-   <td colname="2"> 包含有关加载各种资源（文件、清单或播放列表、片段/区段、曲目等）的各种QoS信息。 </td> 
+   <td colname="2"> 包含有关加载各种资源（文件、清单或播放列表、片段/区段、磁道等）的各种QoS信息。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/qos/LoadInformationType.html" format="html" scope="external"> LoadInformationtype</a></span> </td> 
-   <td colname="2"> 列出LoadInformation对象的type属性的可能值的枚举类。 </td> 
+   <td colname="2"> 列出了LoadInformation对象的type属性的可能值的枚举类。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/qos/PlaybackInformation.html" format="html" scope="external"> 播放信息</a></span> </td> 
-   <td colname="2"> 提供有关播放效果的信息。 这包括帧速率、配置文件比特率、缓冲所花费的总时间、缓冲尝试次数、从第一个视频片段获取第一个字节所需的时间、渲染第一个帧所需的时间、当前缓冲的长度以及缓冲时间。 </td> 
+   <td colname="2"> 提供有关播放如何执行的信息。 这包括帧速率、配置文件比特率、缓冲所花费的总时间、缓冲尝试的次数、从第一个视频片段获取第一个字节所需的时间、渲染第一个帧所需的时间、当前缓冲的长度以及缓冲时间。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/qos/metrics/PlaybackLoadMetrics.html" format="html" scope="external"> PlaybackLoadMetrics</a></span> </td> 
-   <td colname="2"> 提供有关加载媒体花费了多少时间、播放器渲染第一帧或在发生错误时失败花费了多少时间的信息。 </td> 
+   <td colname="2"> 提供有关加载媒体花费了多少时间、播放器渲染第一帧或在出错时失败花费了多少时间的信息。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/qos/metrics/PlaybackMetrics.html" format="html" scope="external"> PlaybackMetrics</a></span> </td> 
@@ -61,7 +60,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/qos/metrics/PlaybackSessionMetrics.html" format="html" scope="external"> PlaybackSessionMetrics</a></span> </td> 
-   <td colname="2"> 提供有关播放器实际播放时花费的秒数以及视频实际在屏幕上显示的时间的信息。 </td> 
+   <td colname="2"> 提供有关播放器实际播放了多少秒以及视频实际在屏幕上显示的时间的信息。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/qos/QOSProvider.html" format="html" scope="external"> QOSProviser</a></span> </td> 

@@ -1,8 +1,7 @@
 ---
-description: TVSDK可以设置多个初始投放位置信息。
+description: TVSDK可以设置多个初始放置信息。
 title: 多个初始投放信息
-exl-id: 104e981e-7246-4e4a-9c14-dac6ee2624f6
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '20'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 多个初始投放信息{#multiple-initial-placementinformations}
 
-TVSDK可以设置多个初始投放位置信息。
+TVSDK可以设置多个初始放置信息。
 
 ```java
 ArrayList<PlacementInformation> placementInformations = new ArrayList<PlacementInformation>(); 

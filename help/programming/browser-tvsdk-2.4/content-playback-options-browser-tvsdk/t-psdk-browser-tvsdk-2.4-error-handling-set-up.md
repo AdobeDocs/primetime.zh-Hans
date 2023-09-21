@@ -1,8 +1,7 @@
 ---
 description: 您可以在应用程序中设置一个位置，以响应ERROR状态执行错误处理。
 title: 设置错误处理
-exl-id: c0ce1d80-85d5-4344-9ab0-bd56906421cb
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '122'
 ht-degree: 0%
@@ -23,9 +22,9 @@ ht-degree: 0%
    ```
 
 1. 在事件侦听器中，当 `event.status` 是 `AdobePSDK.MediaPlayerStatus.ERROR`，提供逻辑以处理所有错误。
-1. 处理错误后，重置 `MediaPlayer` 对象或加载新媒体资源。
+1. 处理错误后，重置 `MediaPlayer` 对象或加载新的媒体资源。
 
-       当MediaPlayer对象处于ERROR状态时，只有在完成以下任务之一之后，它才能退出此状态：
+       当MediaPlayer对象处于ERROR状态时，在完成以下任务之一之前，它无法退出此状态：
    
    * 使用重置MediaPlayer对象 `MediaPlayer.reset` 方法。
    * 使用加载新的媒体资源 `MediaPlayer.replaceCurrentResource` 方法。

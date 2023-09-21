@@ -1,8 +1,7 @@
 ---
 title: 下载并配置必备软件
-description: 安装过程简单明了。 如果您的系统上已安装了JDK，则可以跳过此步骤，但请注意，您的JDK、Eclipse IDE和操作系统需要兼容。
-exl-id: c2884a55-4f5e-4da8-807d-633625d7fef9
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+description: 安装过程简单明了。 如果您的系统上已安装JDK，则可以跳过此步骤，但请注意，您的JDK、Eclipse IDE和操作系统需要兼容。
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '354'
 ht-degree: 0%
@@ -11,17 +10,17 @@ ht-degree: 0%
 
 # 下载并配置必备软件 {#download-and-configure-prerequisite-software}
 
-1. 从下载JDK [https://www.oracle.com/technetwork/java/javase/downloads/](https://www.oracle.com/technetwork/java/javase/downloads/).
+1. 下载JDK，从 [https://www.oracle.com/technetwork/java/javase/downloads/](https://www.oracle.com/technetwork/java/javase/downloads/).
 
-   安装过程简单明了。 如果您的系统上已安装了JDK，则可以跳过此步骤，但请注意，您的JDK、Eclipse IDE和操作系统需要兼容。
+   安装过程简单明了。 如果您的系统上已安装JDK，则可以跳过此步骤，但请注意，您的JDK、Eclipse IDE和操作系统需要兼容。
 1. 从下载适用于Java开发人员的Eclipse IDE [https://www.eclipse.org/downloads](https://www.eclipse.org/downloads).
 
    解压缩包后，您可以直接运行Eclipse。 没有安装程序。
-1. 从下载Android SDK ADT包 [https://developer.android.com/sdk/index.html](https://developer.android.com/sdk/index.html).
+1. 从下载Android SDK管理员包 [https://developer.android.com/sdk/index.html](https://developer.android.com/sdk/index.html).
 
    此捆绑包中包含Eclipse。 如果您的系统上已安装Eclipse，则可以从以下网站下载适用于您的平台的SDK工具： [!UICONTROL Use An Existing IDE] 部分。
 
-   打开包装并安装到您将会记住的位置。 您需要在后续步骤中引用此内容。
+   解压缩并安装到您将记住的位置。 在后续步骤中，您将需要引用此内容。
 1. 配置Android SDK。
    1. 打开终端(在Mac OS X中)或命令提示符（在Windows中）。
    1. 导航到下载/解压缩Android SDK的目录。
@@ -30,18 +29,18 @@ ht-degree: 0%
 
       * 对于Mac OS X/Unix：
 
-         ```
-         chmod +x android 
-         android update sdk --no-ui
-         ```
+        ```
+        chmod +x android 
+        android update sdk --no-ui
+        ```
 
       * 对于Windows：
 
-         ```
-         android update sdk --no-ui
-         ```
+        ```
+        android update sdk --no-ui
+        ```
 
-         此过程需要花费一些时间。
+        此过程需要花费一些时间。
 
 1. 配置Eclipse。
    1. 启动Eclipse。

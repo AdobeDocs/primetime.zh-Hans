@@ -2,8 +2,7 @@
 title: 越狱执行(需要Adobe Primetime DRM)
 description: 越狱执行(需要Adobe Primetime DRM)
 copied-description: true
-exl-id: ae255709-7b2f-4cab-b249-a6918bef28f4
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '90'
 ht-degree: 0%

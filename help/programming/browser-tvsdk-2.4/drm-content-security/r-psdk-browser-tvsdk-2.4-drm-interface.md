@@ -1,8 +1,7 @@
 ---
-description: 浏览器TVSDK提供了一个DRM界面，您可以使用它来播放受不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
+description: 浏览器TVSDK提供了一个DRM界面，您可以使用它播放受不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
 title: DRM界面概述
-exl-id: aa13f042-4472-4fc3-b7ba-61746b8e024a
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '264'
 ht-degree: 0%
@@ -11,24 +10,24 @@ ht-degree: 0%
 
 # DRM界面概述{#drm-interface-overview}
 
-浏览器TVSDK提供了一个DRM界面，您可以使用它来播放受不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
+浏览器TVSDK提供了一个DRM界面，您可以使用它播放受不同DRM解决方案（包括FairPlay、PlayReady和Widevine）保护的内容。
 
 <!--<a id="section_59994F2059B245E996E0776214804A0A"></a>-->
 
 >[!IMPORTANT]
 >
->DRM支持适用于受Microsoft PlayReady（在Windows 8.1和Edge上的Internet Explorer上）和Widevine(在Google Chrome上) DRM系统保护的MPEG-Dash流。 DRM支持适用于受FairPlay保护的Safari上的HLS流。
+>DRM支持适用于受Microsoft PlayReady（在Windows 8.1和Edge上的Internet Explorer上）和Widevine(在Google Chrome上)DRM系统保护的MPEG-Dash流。 DRM支持适用于Safari上受FairPlay保护的HLS流。
 
-DRM工作流的关键界面是 `DRMManager`. 对的引用 `DRMManager` 可通过MediaPlayer实例获取实例：
+DRM工作流程的关键界面是 `DRMManager`. 对的引用 `DRMManager` 可通过MediaPlayer实例获取实例：
 
 * `var mediaPlayer = new AdobePSDK.MediaPlayer();`
 * `var drmManager = mediaPlayer.drmManager;`
 
 <!--<a id="section_B7E8AD9A4D4F4BD9BA2A67ABC135D6F9"></a>-->
 
-以下是受DRM保护内容的播放的高级工作流：
+以下是播放受DRM保护内容的高级工作流：
 
-1. 要附加浏览器TVSDK将在受保护流的许可证获取过程中使用的DRM系统特定数据，请在调用之前进行以下调用 `mediaPlayer.replaceCurrentResource`：
+1. 要附加浏览器TVSDK将在受保护流的许可证获取流程中使用的DRM系统特定数据，请在调用之前进行以下调用 `mediaPlayer.replaceCurrentResource`：
 
    ```js
    var protectionData = { 
@@ -91,7 +90,7 @@ DRM工作流的关键界面是 `DRMManager`. 对的引用 `DRMManager` 可通过
    drmManager.setProtectionData(protectionData);
    ```
 
-1. 如果未设置保护数据，则会从DRM系统的PSSH框中检索必要信息（如许可证URL）（如果适用）。
+1. 如果未设置保护数据，则会从DRM系统的PSSH框中检索必要信息（如许可证URL）。
 
    >[!TIP]
    >
@@ -106,7 +105,7 @@ DRM工作流的关键界面是 `DRMManager`. 对的引用 `DRMManager` 可通过
     drmManager.setEMESessionType(“<YOUR_SESSION_TYPE>”); 
    ```
 
-1. 当 `sessionType` 已使用 `persistent-license` 或 `persistent`，可以通过调用 `DRMManager.returnLicense`.
+1. 当 `sessionType` 已使用 `persistent-license` 或 `persistent`，可以通过调用DRM许可证返回 `DRMManager.returnLicense`.
 
    ```js
    var onLicenseReturnFunc = function () { 

@@ -1,8 +1,7 @@
 ---
 description: 您可以设置用户界面控件来调整视频的音量。
 title: 提供音量控制
-exl-id: 0daa87e2-51aa-4459-9a67-135dc54d09c7
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '98'
 ht-degree: 0%
@@ -17,7 +16,7 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   >除RELEASED以外的任何状态均有效。
+   >除RELEASED之外的任何状态均有效。
 
 1. 调用 `setVolume` 设置音频音量。
 
@@ -27,4 +26,4 @@ ht-degree: 0%
    void setVolume(int volume) throws MediaPlayerException;
    ```
 
-   卷的值表示请求的卷，以最大卷的比例表示，其中 `0` 是静音的 `1` 是最大卷。
+   卷的值表示请求的卷，以最大卷的比例表示，其中 `0` 安静且 `1` 是最大卷。

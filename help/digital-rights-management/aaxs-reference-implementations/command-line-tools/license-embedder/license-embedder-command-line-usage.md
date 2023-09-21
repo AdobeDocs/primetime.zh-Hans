@@ -2,8 +2,7 @@
 title: 命令行用法
 description: 命令行用法
 copied-description: true
-exl-id: 51b11ef8-438e-4747-be3e-e1774dc9f31a
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '167'
 ht-degree: 0%
@@ -35,8 +34,8 @@ ht-degree: 0%
  </thead>
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -l license-filename </span> </td> 
-   <td colname="2" class="- topic/entry "> 包含要嵌入的许可证的文件名称。 多个 <span class="codeph"> -l </span> 可以指定嵌入多个许可证的选项。 </td> 
+   <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -l许可证文件名 </span> </td> 
+   <td colname="2" class="- topic/entry "> 包含要嵌入的许可证的文件名称。 多个 <span class="codeph"> -l </span> 可以指定选项以嵌入多个许可证。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -m metadata-filename </span> </td> 
@@ -44,11 +43,11 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="codeph"> -noprompt </span> </td> 
-   <td colname="2" class="- topic/entry "> 不要询问是否应该覆盖目标文件。 如果目标文件已存在，并且 <span class="codeph"> -o </span> 未设置，将返回错误。 </td> 
+   <td colname="2" class="- topic/entry "> 不要询问是否应覆盖目标文件。 如果目标文件已存在，并且 <span class="codeph"> -o </span> 未设置，将返回错误。 </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="codeph"> -o </span> </td> 
-   <td colname="2" class="- topic/entry "> 如果目标文件已存在，则无需提示即可将其覆盖。 </td> 
+   <td colname="2" class="- topic/entry "> 如果目标文件已存在，则在不提示的情况下将其覆盖。 </td> 
   </tr> 
  </tbody> 
 </table>

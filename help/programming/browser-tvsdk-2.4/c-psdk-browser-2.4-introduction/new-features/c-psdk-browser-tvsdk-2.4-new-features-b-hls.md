@@ -1,8 +1,7 @@
 ---
 description: 浏览器TVSDK支持许多HLS功能，您可以实施这些功能向视频应用程序添加功能。
 title: 支持的HLS功能
-exl-id: 111a6683-fb5c-4f0a-8665-5b1aab77056c
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '736'
 ht-degree: 0%
@@ -14,7 +13,7 @@ ht-degree: 0%
 浏览器TVSDK支持许多HLS功能，您可以实施这些功能向视频应用程序添加功能。
 
 * [HLS核心播放](#hls-core-playback)
-* [HLS高级播放功能](#hls-advanced-playback)
+* [HLS高级回放功能](#hls-advanced-playback)
 * [HLS内容保护功能](#hls-content-protection)
 * [HLS核心广告插入功能](#hls-core-ad-insertion)
 * [HLS高级广告插入功能](#hls-advanced-ad-insertion)
@@ -26,7 +25,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->在Safari列中，“平台限制”表示不支持该用例，因为该平台不允许实施对其的支持。 在插入的情况下，请使用SSAI。 如果存在对您来说很重要的播放限制，请强制在Safari上回退到Flash，直到平台支持广告插入用例。
+>在Safari列中，“平台限制”表示不支持该用例，因为该平台不允许实施对其的支持。 在插入的情况下，使用SSAI。 如果存在对您而言很重要的播放限制，请强制在Safari上Flash回退，直到平台支持广告插入用例为止。
 
 <!--<a id="section_9FB9193D5763448CB228B96164661738"></a>-->
 
@@ -103,7 +102,7 @@ Removed Nielsen row
 |--- |--- |--- |--- |--- |--- |
 | Ad Insertion | VOD +实时 | 前置式广告 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
 | Ad Insertion | VOD +实时 | 中置 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
-| Ad Insertion | VOD +实时 | 后置广告 | 仅限VOD | 仅限VOD | 仅限VOD |
+| Ad Insertion | VOD +实时 | 后置式广告 | 仅限VOD | 仅限VOD | 仅限VOD |
 | Ad Insertion | FER VOD | 广告分辨率和行为 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
 | Ad Insertion | VOD +实时 | 默认广告策略 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
 | Ad Insertion | VOD +实时 | VAST 2.0/3.0 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
@@ -116,9 +115,9 @@ Removed Nielsen row
 |--- |--- |--- |--- |--- |--- |
 | 内容保护 | VOD +实时 | AES-128 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
 | 内容保护 | VOD +实时 | Sample-AES | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
-| 内容保护 | VOD | DRM | Adobe访问 | 不支持 | 公平竞争 |
+| 内容保护 | VOD | DRM | Adobe访问 | 不支持 | 公平游戏 |
 
-## HLS高级播放功能 {#hls-advanced-playback}
+## HLS高级回放功能 {#hls-advanced-playback}
 
 | 类别 | 内容类型 | 功能 | Flash | HTML5：FF、IE、Chrome、Android Chrome | HTML5：Safari、iOS Safari |
 |--- |--- |--- |--- |--- |--- |
@@ -127,8 +126,8 @@ Removed Nielsen row
 | 播放 | VOD | 特技游戏 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
 | 播放 | VOD | 流畅的戏法游戏 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
 | 播放 | VOD +实时 | ID3解析 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 不支持 |
-| 播放 | VOD +实时 | 间断标记支持 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
-| 播放 | VOD +实时 | 令牌化流 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
+| 播放 | VOD +实时 | 支持中断标记 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| 播放 | VOD +实时 | 标记化的流 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
 | 播放 | VOD +实时 | 计费 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
 | 播放 | VOD +实时 | 浏览器化 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
 
@@ -148,5 +147,5 @@ Removed Nielsen row
 | 播放 | VOD +实时 | 设置缓冲区控制参数 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
 | 播放 | VOD +实时 | 设置自适应比特率控制 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
 | 播放 | VOD +实时 | 自定义标记 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
-| 播放 | VOD +实时 | 后期绑定音频 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
+| 播放 | VOD +实时 | 后期捆绑音频 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |
 | 播放 | VOD +实时 | 302重定向 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) | 平台限制 |

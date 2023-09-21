@@ -1,8 +1,7 @@
 ---
 description: 您可以实施自己的日志记录系统。
 title: 了解自定义日志记录
-exl-id: 8b6a916e-783e-40e1-8a3d-706b57a6ff63
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '287'
 ht-degree: 0%
@@ -13,11 +12,11 @@ ht-degree: 0%
 
 您可以实施自己的日志记录系统。
 
-除了使用预定义通知进行日志记录之外，您还可以实施一个日志记录系统，该系统使用TVSDK生成的日志消息和消息。 有关预定义通知的更多信息，请参阅 [通知系统](https://help.adobe.com/en_US/primetime/psdk/ios/index.html#PSDKs-concept-The_Notification_System). 您可以使用这些日志对播放器应用程序进行故障排除，并更好地了解播放和广告工作流。
+除了使用预定义通知进行日志记录之外，您还可以实施一个日志记录系统，该系统使用您的日志消息和TVSDK生成的消息。 有关预定义通知的详细信息，请参阅 [通知系统](https://help.adobe.com/en_US/primetime/psdk/ios/index.html#PSDKs-concept-The_Notification_System). 您可以使用这些日志对播放器应用程序进行故障排除，并更好地了解播放和广告工作流。
 
-自定义日志记录使用共享的 `PSDKPTLogFactory`，提供将消息记录到多个记录器的机制。 您可以定义一个或多个记录器并将其添加（注册）到 `PTLogFactory`. 这允许您使用自定义实施定义多个记录器，例如控制台记录器、Web记录器或控制台历史记录记录器。
+自定义日志记录使用 `PSDKPTLogFactory`，提供将消息记录到多个记录器的机制。 您可以定义一个或多个记录器，并将其添加（注册）到 `PTLogFactory`. 这允许您使用自定义实施定义多个记录器，例如控制台记录器、网络记录器或控制台历史记录记录器。
 
-TVSDK会为其许多活动生成日志消息，其中 `PTLogFactory` 转发到所有已注册的记录器。 您的应用程序还可以生成自定义日志消息，这些消息将转发到所有注册的日志程序。 每个日志记录器都可以过滤消息并采取适当的措施。
+TVSDK会为其许多活动生成日志消息， `PTLogFactory` 转发到所有已注册的记录器。 您的应用程序还可以生成自定义日志消息，这些消息将转发到所有注册的日志程序。 每个日志记录器都可以过滤消息并采取适当措施。
 
 有两种实施 `PTLogFactory`：
 
@@ -90,7 +89,7 @@ TVSDK会为其许多活动生成日志消息，其中 `PTLogFactory` 转发到�
 
 ## 添加新日志消息 {#add-new-log-messages}
 
-要注册以监听日志，请执行以下操作：
+注册以侦听日志：
 
 新建 `PTLogEntry` 并将其添加到 `thePTLogFactory`：
 

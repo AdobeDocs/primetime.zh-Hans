@@ -2,8 +2,7 @@
 title: 配置路径和类路径
 description: 配置路径和类路径
 copied-description: true
-exl-id: e6e9f837-4e3d-43e1-971d-3fa0ccaeff39
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '149'
 ht-degree: 0%
@@ -12,14 +11,15 @@ ht-degree: 0%
 
 # 配置路径和类路径{#configure-the-path-and-classpath}
 
-此 [!DNL flashaccess.war] 包含 [!DNL jsafeWithNative.jar]，即Crypto-J库。 后者需要额外的本机库来执行加密操作。
+此 [!DNL flashaccess.war] 包含 [!DNL jsafeWithNative.jar]，即加密J库。 后者需要额外的本机库来执行加密操作。
 
 1. 添加本机 [!DNL jsafe] 库到您的路径。
 
    * **Linux / [!DNL libjsafe.so] -** 包含的目录 [!DNL libjsafe.so] 必须位于路径上（本机加密J库也可用于其他平台）。 例如，设置 [!DNL libjsafe.so] 日期 `LD_LIBRARY_PATH`.
 
-   * **Windows / [!DNL jsafe.dll] -** Windows上的对应项 [!DNL libjsafe.so] 是否合适 [!DNL jsafe.dll].
-   您可以在以下位置使用这些库： [!DNL thirdparty] 库文件夹。
+   * **Windows / [!DNL jsafe.dll] -** Windows上的对应项 [!DNL libjsafe.so] 是适当的 [!DNL jsafe.dll].
+
+   您可在以下位置使用这些库： [!DNL thirdparty] 库文件夹。
 1. 放一个 [!DNL adobe-flashaccess-certs] 类路径上的jar文件。
 
        此JAR文件未包含在WAR文件中；必须将其显式添加到类路径中。

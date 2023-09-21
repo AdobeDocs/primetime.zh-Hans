@@ -1,8 +1,7 @@
 ---
 description: 浏览器TVSDK支持许多MP3和MP4功能，您可以实施这些功能向应用程序添加功能。
 title: 支持的MP3和MP4功能
-exl-id: 742d9d52-0dc7-44f9-8d42-d2738057a0ee
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '195'
 ht-degree: 0%
@@ -38,9 +37,9 @@ ht-degree: 0%
 
 ## MP4视频功能 {#section_1A8CBC5AA4FA4477813FD9EFF26AC104}
 
-### 核心广告插入
+### Core Ad insertion
 
 | 类别 | 内容类型 | 功能 | Flash | HTML5：FF、IE、Chrome、Android Chrome | HTML5：Safari、iOS Safari |
 |--- |--- |--- |--- |--- |--- |
 | Ad Insertion | MP4 VOD | 前置式广告 | 不支持 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
-| Ad Insertion | MP4 VOD | 后置广告 | 不支持 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |
+| Ad Insertion | MP4 VOD | 后置式广告 | 不支持 | ![支持的图标](assets/supported15.png) | ![支持的图标](assets/supported15.png) |

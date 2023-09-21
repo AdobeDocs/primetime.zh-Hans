@@ -1,8 +1,7 @@
 ---
 title: 授权资源ID的JSON对象
-description: 以下代码块提供了权利资源ID为简单文本字符串时的JSON对象示例。
-exl-id: 396c43e7-404a-40f5-8113-a720e2c834e7
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+description: 以下代码块提供了授权资源ID为简单文本字符串时的JSON对象示例。
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '95'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 授权资源ID的JSON对象 {#json-object-for-entitlement-resource-id}
 
-以下代码块提供了权利资源ID为简单文本字符串时的JSON对象示例。 在这种情况下，资源ID是字符串“resource”。
+以下代码块提供了授权资源ID为简单文本字符串时的JSON对象示例。 在本例中，资源ID是字符串“resource”。
 
 ```
 "metadata" : { 

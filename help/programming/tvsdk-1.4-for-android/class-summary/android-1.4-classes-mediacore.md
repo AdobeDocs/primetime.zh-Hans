@@ -1,8 +1,7 @@
 ---
 description: 您可以使用Primetime播放器API自定义播放器的行为。
 title: Mediacore类
-exl-id: fdbe9cd3-a5ca-4935-b9b3-8a6c04aed9ab
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '635'
 ht-degree: 0%
@@ -32,14 +31,14 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/AdClientFactory.html" format="html" scope="external"> AdClientFactory</a> </span> </td> 
-   <td colname="2"> 用于创建机会检测器的界面。 </td> 
+   <td colname="2"> 用于创建机会检测器的接口。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/AdvertisingFactory.html" format="html" scope="external"> AdvertisingFactor</a> </span> </td> 
+   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/AdvertisingFactory.html" format="html" scope="external"> Advertisingfactory</a> </span> </td> 
    <td colname="2"> 允许自定义广告决策过程的工厂类。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/BufferControlParameters.html" format="html" scope="external"> BufferControlParameters</a> </span> </td> 
+   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/BufferControlParameters.html" format="html" scope="external"> buffercontrolparameters</a> </span> </td> 
    <td colname="2"> 封装所有缓冲区控制参数的类。 </td> 
   </tr> 
   <tr rowsep="1"> 
@@ -68,7 +67,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.PlaybackEventListener.html" format="html" scope="external"> MediaPlayer.PlaybackEventListener</a> </span> </td>
-   <td colname="2"> 在播放期间调用的一组回调的接口定义。 </td> 
+   <td colname="2"> 播放期间调用的一组回调的接口定义。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayer.QOSEventListener.html" format="html" scope="external"> MediaPlayer.QOSEventListener</a> </span> </td> 
@@ -80,7 +79,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayerItemLoader.html" format="html" scope="external"> MediaPlayerItemLoader</a> </span> </td> 
-   <td colname="2"> 加载媒体播放器资源并创建相应的MediaPlayerItem对象的类。 </td> 
+   <td colname="2"> 类，用于加载媒体播放器资源并创建相应的MediaPlayerItem对象。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayerItemLoader.LoaderListener.html" format="html" scope="external"> MediaPlayerItemLoader.LoaderListener</a> </span> </td> 
@@ -88,10 +87,10 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaPlayerView.html" format="html" scope="external"> MediaPlayerView</a> </span> </td> 
-   <td colname="2"> MediaPlayer将用于视频渲染的视图的类。 </td> 
+   <td colname="2"> MediaPlayer将用于视频渲染的视图类。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaResource.html" format="html" scope="external"> 媒体资源</a> </span> </td> 
+   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/MediaResource.html" format="html" scope="external"> MediaResource</a> </span> </td> 
    <td colname="2"> 包装有关媒体资源的所有信息的类。 包括媒体资源类型的枚举。 </td> 
   </tr> 
   <tr rowsep="1"> 
@@ -100,7 +99,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/PSDKConfig.html" format="html" scope="external"> PSDKConfig</a> </span> </td> 
-   <td colname="2"> 除了默认提示标记外，还封装了媒体播放器在执行广告投放时使用的自定义标记的类。 其中还包括应用程序希望获得相关通知的标记名称。 </td> 
+   <td colname="2"> 类，除了默认提示标记外，还封装了媒体播放器在执行广告投放时使用的自定义标记。 其中还包括应用程序希望收到相关通知的标记名称。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/TextFormat.html" format="html" scope="external"> 文本格式</a> </span> </td> 

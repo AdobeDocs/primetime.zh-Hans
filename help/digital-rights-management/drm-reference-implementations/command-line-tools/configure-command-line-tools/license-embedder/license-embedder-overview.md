@@ -2,8 +2,7 @@
 title: 概述
 description: 概述
 copied-description: true
-exl-id: 9aebdbd0-a6f0-4c9d-be2f-a8789cadf287
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '180'
 ht-degree: 0%
@@ -21,9 +20,9 @@ java -jar AdobeLicenseEmbedder.jar sourcefile destfile [options]
 ```
 
 * `sourcefile` 表示加密文件。
-* `destfile` 指定保存带有嵌入式许可证的加密内容的文件的名称。
+* `destfile` 指定保存带有嵌入许可证的加密内容的文件的名称。
 
-   如果指定目录，则文件将保存在目标目录中。 源文件的名称还将成为保存在目标目录中的文件的名称。
+  如果指定目录，文件将保存在目标目录中。 源文件的名称也会变成保存在目标目录中的文件的名称。
 
 下表描述了您可以指定的命令行选项：
 
@@ -38,16 +37,16 @@ java -jar AdobeLicenseEmbedder.jar sourcefile destfile [options]
  </thead>
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -l license-filename </span> </td> 
-   <td colname="2" class="- topic/entry "> 包含要嵌入的许可证的文件名称。 您可以指定多个 <span class="codeph"> -l </span> 用于嵌入多个许可证的选项。 </td> 
+   <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -l许可证文件名 </span> </td> 
+   <td colname="2" class="- topic/entry "> 包含要嵌入的许可证的文件名称。 您可以指定多个 <span class="codeph"> -l </span> 嵌入多个许可证的选项。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -m metadata-filename </span> </td> 
-   <td colname="2" class="- topic/entry "> 指定可为其生成许可证的内容元数据。 需要使用此选项来生成许可证。 </td> 
+   <td colname="2" class="- topic/entry "> 指定可为其生成许可证的内容元数据。 要生成许可证，必须提供此选项。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="codeph"> -noprompt </span> </td> 
-   <td colname="2" class="- topic/entry "> 不要询问是否应该覆盖目标文件。 如果目标文件已存在，并且 <span class="codeph"> -o </span> 尚未应用，发生错误。 </td> 
+   <td colname="2" class="- topic/entry "> 不要询问是否应覆盖目标文件。 如果目标文件已存在，并且 <span class="codeph"> -o </span> 尚未应用，发生错误。 </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="codeph"> -o </span> </td> 

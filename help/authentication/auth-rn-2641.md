@@ -1,8 +1,7 @@
 ---
 title: Adobe Primetime authentication 2.64.1发行说明
 description: Adobe Primetime authentication 2.64.1发行说明
-exl-id: b0edbd90-ebb5-40a7-9034-1699dccfadb5
-source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '130'
 ht-degree: 0%
@@ -13,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 本页介绍了此版本的新增功能、更改和已知问题：
 

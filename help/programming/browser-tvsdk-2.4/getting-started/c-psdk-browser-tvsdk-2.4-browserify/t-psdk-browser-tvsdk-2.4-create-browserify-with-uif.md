@@ -1,8 +1,7 @@
 ---
-description: 使用应用程序中浏览器TVSDK提供的浏览器库文件，通过UI-Framework创建与浏览器兼容的播放器。
+description: 使用应用程序中的浏览器TVSDK提供的浏览器库文件，通过UI-Framework创建与浏览器兼容的播放器。
 title: 使用UI-Framework创建与浏览器兼容的播放器
-exl-id: cd72cae1-f67e-4192-9a7e-1c1492d88922
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '125'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 使用UI-Framework创建与浏览器兼容的播放器 {#create-a-browserify-compatible-player-using-the-ui-framework}
 
-使用应用程序中浏览器TVSDK提供的浏览器库文件，通过UI-Framework创建与浏览器兼容的播放器。
+使用应用程序中的浏览器TVSDK提供的浏览器库文件，通过UI-Framework创建与浏览器兼容的播放器。
 
 TVSDK中包含的示例浏览器文件：
 

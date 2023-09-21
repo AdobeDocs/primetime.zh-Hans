@@ -1,8 +1,7 @@
 ---
-description: 您可以从当前可用的隐藏式字幕字幕字幕的列表中选择一个字幕。 这将成为当前轨道，当可见性打开时将显示该轨道。 某些跟踪最初可能不可用，因此请监听指示有更多跟踪可用的事件。
+description: 您可以从当前可用的隐藏式字幕轨道列表中选择一个轨道。 这将成为当前轨道，当可见性打开时将显示当前轨道。 某些跟踪最初可能不可用，因此请监听表示有更多跟踪可用的事件。
 title: 从可用字幕轨道中选择当前字幕轨道
-exl-id: d604dedc-f3c3-4c97-9b0f-84da326c0678
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '198'
 ht-degree: 0%
@@ -11,14 +10,14 @@ ht-degree: 0%
 
 # 从可用字幕轨道中选择当前字幕轨道 {#select-a-current-caption-track-from-among-available-tracks}
 
-您可以从当前可用的隐藏式字幕字幕字幕的列表中选择一个字幕。 这将成为当前轨道，当可见性打开时将显示该轨道。 某些跟踪最初可能不可用，因此请监听指示有更多跟踪可用的事件。
+您可以从当前可用的隐藏式字幕轨道列表中选择一个轨道。 这将成为当前轨道，当可见性打开时将显示当前轨道。 某些跟踪最初可能不可用，因此请监听表示有更多跟踪可用的事件。
 
 1. 等待媒体播放器至少处于 `PREPARED` 状态。
 1. 收听以下事件：
 
-   * `MediaPlayerEvent.STATUS_CHANGED` 状态 `MediaPlayerStatus.INITIALIZED`：提供了隐藏式字幕字幕跟踪的初始列表。
+   * `MediaPlayerEvent.STATUS_CHANGED` 状态 `MediaPlayerStatus.INITIALIZED`：提供了隐藏式字幕跟踪的初始列表。
 
-1. 获取所有当前可用的隐藏式字幕字幕的列表。
+1. 获取所有当前可用的隐藏式字幕字幕轨道的列表。
 
    例如：
 
@@ -27,7 +26,7 @@ ht-degree: 0%
      mediaPlayer.getCurrentItem().getClosedCaptionsTracks();
    ```
 
-1. 选择一个可用的曲目作为当前曲目。
+1. 选择一个可用轨道作为当前轨道。
 
    例如：
 

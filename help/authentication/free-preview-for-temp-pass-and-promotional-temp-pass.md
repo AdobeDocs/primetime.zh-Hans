@@ -1,8 +1,7 @@
 ---
 title: 临时通行证和促销临时通行证的免费预览
 description: 临时通行证和促销临时通行证的免费预览
-exl-id: c584bf0c-15c4-4a4d-b6a2-8d15ee786fe3
-source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '406'
 ht-degree: 1%

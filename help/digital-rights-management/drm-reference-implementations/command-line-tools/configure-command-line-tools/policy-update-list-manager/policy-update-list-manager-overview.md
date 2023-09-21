@@ -2,8 +2,7 @@
 title: 概述
 description: 概述
 copied-description: true
-exl-id: 1e06bead-4b45-4bf0-8bcf-1ea376af6bd8
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '520'
 ht-degree: 0%
@@ -12,7 +11,7 @@ ht-degree: 0%
 
 # DRM策略更新列表管理器 {#policy-update-list-manager}
 
-使用Primetime DRM策略更新列表管理器命令行工具( [!DNL AdobePolicyUpdateListManager.jar])，以创建和管理DRM策略更新列表，并检查策略是否已更新或撤消。
+使用Primetime DRM策略更新列表管理器命令行工具( [!DNL AdobePolicyUpdateListManager.jar])，以创建和管理DRM策略更新列表，并检查是否已更新或撤消策略。
 
 运行Policy Update List Manager命令行工具之前，必须在 *策略更新列表管理器和吊销列表管理器属性* 部分。
 
@@ -75,23 +74,23 @@ java -jar AdobePolicyUpdateListManager.jar -d
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -noprompt </span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">不要询问是否应该覆盖目标文件。 如果目标文件已存在，并且 <span class="codeph"> -o </span> 未设置，发生错误。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">不要询问是否应覆盖目标文件。 如果目标文件已存在，并且 <span class="codeph"> -o </span> 未设置，则会发生错误。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="codeph"> -o </span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">如果目标文件已存在，则无需提示即可将其覆盖。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">如果目标文件已存在，则在不提示的情况下将其覆盖。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -r policyID </span> <span class="+ topic/ph pr-d/codeph codeph"> 日期 </span> ” <span class="+ topic/ph pr-d/codeph codeph"> 原因代码 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> 原因文本 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> reasonURL </span>” </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">（可选）在指定的日期撤消DRM策略ID。 您可以提供可选的原因代码、原因文本和原因URL。 您需要指定空字符串“”，以指示未为可选参数提供值。 您可以指定以下日期中的日期 <span class="+ topic/ph pr-d/codeph codeph"> yyyy-mm-dd </span> 或 <span class="+ topic/ph pr-d/codeph codeph"> yyyy-mm-dd-h24:min:秒 </span> 格式进行转换。 例如，2008-12-1或2008-12-1-00:00:00代表2008年12月1日午夜)。 如果不指定日期，则会自动应用当前日期。 因此，原因代码必须大于或等于0。 您还可以指定多个 — r选项。 </p> </td> 
+   <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -r policyID </span> <span class="+ topic/ph pr-d/codeph codeph"> 日期 </span> " <span class="+ topic/ph pr-d/codeph codeph"> 原因代码 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> 原因文本 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> reasonURL </span>" </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">（可选）在指定日期撤消DRM策略ID。 您可以提供可选的原因代码、原因文本和原因URL。 您需要指定一个空字符串“”，以指示没有为可选参数提供值。 您可以指定以下位置的日期： <span class="+ topic/ph pr-d/codeph codeph"> yyyy-mm-dd </span> 或 <span class="+ topic/ph pr-d/codeph codeph"> yyyy-mm-dd-h24:min:秒 </span> 格式进行转换。 例如，2008-12-1或2008-12-1-00:00:00表示2008年12月1日的午夜)。 如果不指定日期，则会自动应用当前日期。 因此，原因代码必须大于或等于0。 您还可以指定多个 — r选项。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <p class="- topic/p ">-rf <span class="+ topic/ph pr-d/codeph codeph"> policyFilename </span> <span class="+ topic/ph pr-d/codeph codeph"> 日期 </span> ” <span class="+ topic/ph pr-d/codeph codeph"> 原因代码 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> 原因文本 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> reasonURL </span>” </p> </td> 
+   <td colname="1" class="- topic/entry "> <p class="- topic/p ">-rf <span class="+ topic/ph pr-d/codeph codeph"> policyFilename </span> <span class="+ topic/ph pr-d/codeph codeph"> 日期 </span> " <span class="+ topic/ph pr-d/codeph codeph"> 原因代码 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> 原因文本 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> reasonURL </span>" </p> </td> 
    <td colname="2" class="- topic/entry "> <p class="- topic/p ">执行与相同的操作 <span class="codeph"> -r </span> 选项。 但是，它从指定的文件中提取DRM策略标识符。 </p> </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="codeph"> -u policyFilename " reasonCode" " reasonText" " reasonURL" </span> </td> 
-   <td colname="2" class="- topic/entry "> <p>使用给定的原因代码（可选）、原因文本（可选）和原因URL（可选）将许可证请求中的任何匹配DRM策略替换为此DRM策略。 </p> <p>空字符串“”表示您尚未为可选参数提供任何值。 </p> <p>原因代码必须大于或等于 <span class="codeph"> 0 </span>. 您可以指定多个 <span class="codeph"> -u </span> 选项。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>使用给定原因代码（可选）、原因文本（可选）和原因URL（可选）将许可证请求中的任何匹配DRM策略替换为此DRM策略。 </p> <p>空字符串“”表示您尚未为可选参数提供任何值。 </p> <p>原因代码必须大于或等于 <span class="codeph"> 0 </span>. 您可以指定多个 <span class="codeph"> -u </span> 选项。 </p> </td> 
   </tr> 
  </tbody> 
 </table>

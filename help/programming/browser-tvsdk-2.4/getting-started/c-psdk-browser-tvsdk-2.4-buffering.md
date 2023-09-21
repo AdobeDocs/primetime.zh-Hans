@@ -1,8 +1,7 @@
 ---
 description: 您可以配置可视化图表，以通知用户内容正在缓冲。
 title: 缓冲
-exl-id: 1b2f32b4-1839-4256-82d6-b262569aa751
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '56'
 ht-degree: 0%
@@ -13,7 +12,7 @@ ht-degree: 0%
 
 您可以配置可视化图表，以通知用户内容正在缓冲。
 
-聆听 `AdobePSDK.PSDKEventType.BUFFERING_BEGIN` 和 `AdobePSDK.PSDKEventType.BUFFERING_END` 事件。 例如：
+收听 `AdobePSDK.PSDKEventType.BUFFERING_BEGIN` 和 `AdobePSDK.PSDKEventType.BUFFERING_END` 事件。 例如：
 
 ```js
 player.addEventListener(AdobePSDK.PSDKEventType.BUFFERING_BEGIN,  
@@ -48,7 +47,7 @@ var playerWrapper = ptp.videoPlayer('.videoDiv', {
 }); 
 ```
 
-以下是结果DOM的外观：
+结果是，DOM如下所示：
 
 ```
 <div id=" videoDiv" class="ptp-root-element"> 

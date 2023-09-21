@@ -1,8 +1,7 @@
 ---
-description: 在某些Analytics实施中，客户端应用程序可能希望提供一个与浏览器TVSDK localTime值报告的位置不同的播放头位置。
+description: 在一些Analytics实施中，客户端应用程序可能希望提供与浏览器TVSDK localTime值报告的位置不同的播放头位置。
 title: 实施自定义时间更新
-exl-id: 4d045c4d-298a-42ae-af61-0463a76bc872
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '119'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 实施自定义时间更新{#implement-custom-time-updates}
 
-在某些Analytics实施中，客户端应用程序可能希望提供一个与浏览器TVSDK localTime值报告的位置不同的播放头位置。
+在一些Analytics实施中，客户端应用程序可能希望提供与浏览器TVSDK localTime值报告的位置不同的播放头位置。
 
 例如，在线性流播放期间，每个节目的播放头可相对于其开始时间提供。
 

@@ -1,8 +1,7 @@
 ---
 description: MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表示的内容流的信息。
 title: 用于访问MediaResource信息的MediaPlayer方法
-exl-id: 8849411a-e94b-43a9-9fa1-143725264304
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '405'
 ht-degree: 0%
@@ -49,24 +48,24 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
    <td colname="3"> <p>列出清单中发现的所有DRM元数据对象。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> <b>隐藏字幕</b> </td> 
+   <td colname="1"> <b>隐藏式字幕</b> </td> 
    <td colname="3"> </td>
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 布尔型hasClosedCaptions()； </span> </td> 
-   <td colname="3"> <p>如果隐藏式字幕跟踪可用，则为True。 </p> </td> 
+   <td colname="2"> <span class="codeph"> boolean hasClosedCaptions()； </span> </td> 
+   <td colname="3"> <p>如果隐藏式字幕轨道可用，则为True。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> 列表&lt;closedcaptionstrack&gt; getClosedCationsTracks()； </span> </td> 
-   <td colname="3"> <p>提供可用隐藏式字幕字幕的列表。 </p> </td> 
+   <td colname="3"> <p>提供可用隐藏式字幕跟踪的列表。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> ClosedCaptionsTrack get SelectedClosedCaptionsTrack()； </span> </td> 
-   <td colname="3"> <p>检索当前选定的隐藏式字幕跟踪 <span class="codeph"> SelectClosedCaptionsTrack </span>. </p> </td> 
+   <td colname="3"> <p>检索当前的隐藏式字幕跟踪，选定为 <span class="codeph"> SelectClosedCaptionsTrack </span>. </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> selectClosedCaptionsTrack ( ClosedCaptionsTrack closedCaptionsTrack) </span> </td> 
-   <td colname="3"> <p>将隐藏式字幕轨迹设置为当前的隐藏式字幕轨迹。 </p> </td> 
+   <td colname="3"> <p>将隐藏式字幕轨道设置为当前的隐藏式字幕轨道。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> <b>备用音轨</b> </td> 
@@ -74,30 +73,30 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> 布尔值hasAlternateAudio()； </span> </td> 
-   <td colname="3"> <p>如果流具有备用音轨，则为True。 </p> <p>提示：主（默认）音轨也是备用音轨列表的一部分。 </p> <p>适用于Android的TVSDK将主音频轨道视为备用音频轨道列表中的项目之一。 正因为如此，只有这样 <span class="codeph"> MediaPlayerItem.hasAlternateAudio </span> 如果流完全没有音频，则返回false。 如果内容只有一个音轨，则此方法返回true，并且 <span class="codeph"> MediaPlayerItem.getAudioTracks </span> 返回带有单个元素（默认音轨）的列表。 </p> </td> 
+   <td colname="3"> <p>如果流具有备用音轨，则为True。 </p> <p>提示：主（默认）音轨也是备用音轨列表的一部分。 </p> <p>TVSDK for Android将主音频轨道视为备用音频轨道列表中的项目之一。 正因如此，唯一 <span class="codeph"> MediaPlayerItem.hasAlternateAudio </span> 返回false表示流完全没有音频。 如果内容只有一个音轨，则此方法返回true，并且 <span class="codeph"> MediaPlayerItem.getAudioTracks </span> 返回包含单个元素（默认音轨）的列表。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> 列表&lt;audiotrack&gt; getAudioTracks()； </span> </td> 
-   <td colname="3"> 提供可用备用音轨的列表。 </td> 
+   <td colname="3"> 提供可用备用音频轨道的列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> 列表&lt;audiotrack&gt; getAudioTracks()； </span> </td> 
-   <td colname="3"> <p>提供可用备用音轨的列表。 </p> </td> 
+   <td colname="3"> <p>提供可用备用音频轨道的列表。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> AudioTrack getSelectedAudioTrack()； </span> </td> 
-   <td colname="3"> <p>检索选择的音轨，并显示 <span class="codeph"> selectAudioTrack </span>. </p> </td> 
+   <td colname="3"> <p>检索与一起选择的音轨 <span class="codeph"> selectAudioTrack </span>. </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> selectAudioTrack ( AudioTrack audioTrack ) </span> </td> 
-   <td colname="3"> <p>选择一个音轨作为当前音轨。 </p> </td> 
+   <td colname="3"> <p>选择一个要作为当前音轨的音轨。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> <b>定时元数据</b> </td> 
    <td colname="3"> </td>
   </tr> 
   <tr rowsep="1"> 
-   <td colname="2"> <span class="codeph"> 布尔型hasTimedMetadata()； </span> </td> 
+   <td colname="2"> <span class="codeph"> boolean hasTimedMetadata()； </span> </td> 
    <td colname="3"> <p>如果流具有关联的定时元数据，则为True。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 

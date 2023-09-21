@@ -1,8 +1,7 @@
 ---
-description: 此多DRM工作流将引导您完成使用Widevine和PlayReady加密的DASH内容的设置、打包、许可和播放。
+description: 此多DRM工作流程将引导您完成使用Widevine和PlayReady加密的DASH内容的设置、打包、许可和回放。
 title: 用于Widevine和PlayReady的多DRM工作流
-exl-id: 97adfa69-52ef-470b-903a-eff1f075b7be
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '354'
 ht-degree: 0%
@@ -11,17 +10,17 @@ ht-degree: 0%
 
 # 用于Widevine和PlayReady的多DRM工作流 {#multi-drm-workflow-for-widevine-and-playready}
 
-此多DRM工作流将引导您完成使用Widevine和PlayReady加密的DASH内容的设置、打包、许可和播放。
+此多DRM工作流程将引导您完成使用Widevine和PlayReady加密的DASH内容的设置、打包、许可和回放。
 
-Primetime TVSDK仅在TVSDK版本2.X中支持在HTML5和Android上播放Widevine加密或PlayReady加密的DASH内容。DASH内容加密由“通用加密”规范定义，其完整详细信息不在本文档的涵盖范围内。 本节提供DASH格式和加密规范的相关详细信息，以及有关可用于生成受支持内容的某些工具的信息。
+Primetime TVSDK仅在TVSDK版本2.X中支持在HTML5和Android上播放Widevine加密或PlayReady加密的DASH内容。DASH内容加密由“通用加密”规范定义，其完整详细信息不在本文档的范围之内。 本节提供DASH格式和加密规范的相关详细信息，以及有关可用于生成受支持内容的某些工具的信息。
 
 >[!NOTE]
 >
->尚未制定任何计划来回溯到Android TVSDK 1.X以播放Widevine加密的DASH内容。
+>尚未计划将Widevine加密的DASH内容的播放回退到Android TVSDK 1.X。
 
 ## DASH内容和常用加密概览 {#section_33A881158F724835B4B89AAE97302B17}
 
-短划线内容由以xml编写的主清单组成，该清单指向要播放的视频和音频文件。 在以下示例中，DASH清单指向相对于清单URL的视频URL video/1080_30.mp4和音频URL audio/1080_30.mp4。
+短划线内容由以xml编写的主清单组成，它指向要播放的视频和音频文件。 在下面的示例中，DASH清单指向相对于清单的URL的视频URL video/1080_30.mp4和音频URL audio/1080_30.mp4。
 
 ```
 <MPD xmlns="urn:mpeg:DASH:schema:MPD:2011" xmlns:cenc="urn:mpeg:cenc:2013" xmlns:scte35="urn:scte:scte35:2013" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"mediaPresentationDuration="PT30S" minBufferTime="PT8S" profiles="urn:mpeg:dash:profile:isoff-on-demand:2011" type="static" xsi:schemaLocation="urn:mpeg:DASH:schema:MPD:2011 DASH-MPD.xsd">
@@ -120,7 +119,7 @@ Primetime TVSDK仅在TVSDK版本2.X中支持在HTML5和Android上播放Widevine�
 </MPD>
 ```
 
-请注意，上述第一个示例仅引用每个流的一个文件，而第二个示例引用一系列小内容片段。 您还可以定义片段模板，而不是显式引用片段，例如：
+请注意，上述第一个示例对于每个流仅引用一个文件，而第二个示例引用一系列小内容片段。 您还可以定义片段模板，而不是显式引用片段，例如：
 
 ```
 <Representation bandwidth="348000" codecs="avc1.42c01e" height="360" id="1" width="640">
@@ -136,4 +135,4 @@ Primetime TVSDK仅在TVSDK版本2.X中支持在HTML5和Android上播放Widevine�
 </Representation>
 ```
 
-在这种情况下，内容解析器(TVSDK)应在Jaigo0.m4s、Jaigo1.m4s、Jaigo2.m4s等位置查找视频内容。 这主要用于实时流，并且有利于，它不会不时地要求客户端重新下载清单。
+在本例中，内容解析器(TVSDK)希望在Jaigo0.m4s、Jaigo1.m4s、Jaigo2.m4s等位置查找视频内容。 它主要用于实时流式传输，具有不需要客户端不时地重新下载清单的优点。

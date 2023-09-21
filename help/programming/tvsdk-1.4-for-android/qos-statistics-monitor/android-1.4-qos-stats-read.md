@@ -1,8 +1,7 @@
 ---
 description: 您可以从QOSProvider类中读取播放、缓冲和设备统计信息。
 title: 读取QOS播放、缓冲和设备统计信息
-exl-id: 1b79c254-4135-4d77-8b24-473f214021a1
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '138'
 ht-degree: 0%
@@ -13,9 +12,9 @@ ht-degree: 0%
 
 您可以从QOSProvider类中读取播放、缓冲和设备统计信息。
 
-此 `QOSProvider` 类提供了各种统计信息，包括有关缓冲、比特率、帧率、时间数据等的信息。
+此 `QOSProvider` 类提供了各种统计信息，包括有关缓冲、比特率、帧速率、时间数据等的信息。
 
-它还提供有关设备的信息，例如制造商、型号、操作系统、SDK版本、制造商的设备ID和屏幕大小/密度。
+它还提供有关设备的信息，如制造商、型号、操作系统、SDK版本、制造商的设备ID和屏幕大小/密度。
 
 1. 实例化媒体播放器。
 1. 创建 `QOSProvider` 对象并将其附加到媒体播放器。
@@ -30,7 +29,7 @@ ht-degree: 0%
 
 1. （可选）读取播放统计数据。
 
-   读取播放统计数据的一种解决方案是设置一个计时器，该计时器定期从以下位置提取新的QoS值： `QOSProvider`. 例如：
+   读取播放统计数据的一种解决方案是设置一个计时器，该计时器定期从以下位置获取新的QoS值： `QOSProvider`. 例如：
 
    ```java
    _playbackClock = new Clock(PLAYBACK_CLOCK, 1000); // every 1 second 

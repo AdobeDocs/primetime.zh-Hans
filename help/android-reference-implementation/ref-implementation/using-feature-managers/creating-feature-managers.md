@@ -1,8 +1,7 @@
 ---
 description: TVSDK功能由配置驱动，并通过MediaPlayer实现。
 title: 通过将配置信息传递到MediaPlayer来创建功能管理器
-exl-id: 47377ceb-ed3e-4dca-9b55-82e4fe6b0194
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '230'
 ht-degree: 0%
@@ -13,19 +12,19 @@ ht-degree: 0%
 
 TVSDK功能由配置驱动，并通过MediaPlayer实现。
 
-* Configuration是该功能的特定设置列表，例如ABR控制的初始比特率和默认隐藏式字幕可见性。
+* 配置是功能的特定设置列表，如ABR控制的初始比特率和默认隐藏式字幕可见性。
 
-   功能管理器需要获取配置以确定功能行为。
+  功能管理器需要获取配置以确定功能行为。
 
-   在Primetime参考实施中，配置存储在共享首选项中，但您可以按照对您的环境有帮助的任何方式存储配置。
+  在Primetime参考实施中，配置存储在共享首选项中，但您可以按照对环境有意义的任何方式存储配置。
 
 * `MediaPlayer` 是包含视频资源的TVSDK媒体播放器对象。
 
-   功能管理器将TVSDK事件侦听器注册到此播放器对象，从播放会话检索数据并触发TVSDK功能到播放会话。
+  功能管理器将TVSDK事件侦听器注册到此播放器对象，从播放会话检索数据并触发播放会话的TVSDK功能。
 
-每个功能都有一个相应的配置界面。 例如， `CCManager` 用途 `ICCConfig` 以检索配置。 `ICCConfig` 包含仅获取与隐藏式字幕相关的配置信息的方法。
+每个功能都有一个相应的配置界面。 例如， `CCManager` 用途 `ICCConfig` 以检索配置。 `ICCConfig` 包含仅获取与隐藏式字幕相关配置信息的方法。
 
-以下示例显示了 [!DNL ICCConfig.java] 文件，配置为接收有关隐藏式字幕可见性、字体样式和字体边缘的信息 `MediaPlayer`：
+以下示例显示了 [!DNL ICCConfig.java] 文件，配置为从接收有关隐藏式字幕可见性、字体样式和字体边缘的信息 `MediaPlayer`：
 
 ```java
 // Constructor of CCManager 

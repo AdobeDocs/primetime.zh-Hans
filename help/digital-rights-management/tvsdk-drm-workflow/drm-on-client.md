@@ -2,8 +2,7 @@
 title: 客户端上的Primetime DRM
 description: 客户端上的Primetime DRM
 copied-description: true
-exl-id: 157d558f-3014-4d05-bba1-e73134cedc23
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '86'
 ht-degree: 0%

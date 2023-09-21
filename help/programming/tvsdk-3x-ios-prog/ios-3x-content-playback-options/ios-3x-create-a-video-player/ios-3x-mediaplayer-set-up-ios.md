@@ -1,8 +1,7 @@
 ---
 description: PTMediaPlayer界面封装媒体播放器对象的功能和行为。
 title: 设置PTMediaPlayer
-exl-id: 6d16bfd2-8d1d-4261-b343-c2e999c4d28b
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '181'
 ht-degree: 0%
@@ -13,11 +12,11 @@ ht-degree: 0%
 
 TVSDK提供了用于创建高级视频播放器应用程序（您的Primetime播放器）的工具，您可以将其与其他Primetime组件集成。
 
-使用您平台的工具来创建播放器，并将其连接到TVSDK中的媒体播放器视图，该视图提供了播放和管理视频的方法。 例如，TVSDK提供播放和暂停方法。 您可以在平台上创建用户界面按钮，并设置这些按钮以调用这些TVSDK方法。
+使用您平台的工具来创建播放器，并将其连接到TVSDK中的媒体播放器视图，该视图提供了多种播放和管理视频的方法。 例如，TVSDK提供播放和暂停方法。 您可以在平台上创建用户界面按钮，并设置这些按钮以调用这些TVSDK方法。
 
 PTMediaPlayer界面封装媒体播放器对象的功能和行为。
 
-要设置您的 `PTMediaPlayer`：
+设置您的 `PTMediaPlayer`：
 
 1. 从用户界面获取媒体的URL，例如，在文本字段中。
 
@@ -46,7 +45,7 @@ PTMediaPlayer界面封装媒体播放器对象的功能和行为。
    [self addObservers]
    ```
 
-1. 创建 `PTMediaPlayer` 使用新的 `PTMediaPlayerItem`.
+1. 创建 `PTMediaPlayer` 使用您的新的 `PTMediaPlayerItem`.
 
    ```
    PTMediaPlayer *player = [PTMediaPlayer playerWithMediaPlayerItem:item];
@@ -76,7 +75,7 @@ PTMediaPlayer界面封装媒体播放器对象的功能和行为。
          ( UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight )];
    ```
 
-1. 在当前视图的子视图中添加播放器视图。
+1. 在当前视图的子视图中添加播放器的视图。
 
    ```
    [self.adPlayerView  setAutoresizesSubviews:YES];  

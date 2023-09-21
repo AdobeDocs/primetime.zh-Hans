@@ -2,8 +2,7 @@
 title: 创建身份验证UI
 description: 创建身份验证UI
 copied-description: true
-exl-id: 54853dcf-2241-44e6-9565-7eca94cc84cc
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '188'
 ht-degree: 0%
@@ -14,7 +13,7 @@ ht-degree: 0%
 
 1. 创建用户界面以检索用户的身份验证凭据。
 
-   以下是用于检索用户凭据的简单用户界面的Flex示例。 它由包含两个面板对象的面板对象组成 `TextInput` 对象，每个用户名称和口令身份证明各一个。 该面板还包含一个按钮，用于启动 `credentials()` 方法。
+   以下是用于检索用户凭据的简单用户界面的Flex示例。 它由包含两个面板对象的面板对象组成 `TextInput` 对象，每个用户名称和密码凭据对应一个对象。 该面板还包含一个按钮，可启动 `credentials()` 方法。
 
    ```xml
    <mx:Panel x="236.5"  
@@ -58,7 +57,7 @@ ht-degree: 0%
    </mx:Script> 
    ```
 
-   实现这种类型简单接口的一种方法是将面板包含为新状态的一部分。 新状态源自于 `DRMAuthenticateEvent` 对象被引发。 以下示例包含 `VideoDisplay` 具有源属性的对象，指向受保护的视频文件。 在本例中， `credentials()` 方法已修改，以便它还可以将应用程序返回到基本状态。 此方法会在传递用户凭据并重置TextInput对象值后执行此操作。
+   实现这种类型简单接口的一种方法是，将面板作为新状态的一部分包含在内。 新状态源自 `DRMAuthenticateEvent` 对象被引发。 以下示例包含 `VideoDisplay` 具有指向受保护视频文件的源属性的对象。 在本例中， `credentials()` 方法已修改，因此它还会将应用程序返回到基本状态。 此方法在传递用户凭据并重置TextInput对象值后执行此操作。
 
    ```xml
    <?xml version="1.0" encoding="utf-8"?> 

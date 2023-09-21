@@ -2,8 +2,7 @@
 title: 日志目录结构
 description: 日志目录结构
 copied-description: true
-exl-id: 8c52fd85-cc46-41da-b5a1-41b5d61da6ad
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '16'
 ht-degree: 0%

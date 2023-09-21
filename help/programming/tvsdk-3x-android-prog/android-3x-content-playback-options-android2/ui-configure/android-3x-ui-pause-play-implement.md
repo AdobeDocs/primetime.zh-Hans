@@ -1,8 +1,7 @@
 ---
 description: 您可以添加暂停和播放按钮以暂停或播放视频。
 title: 播放和暂停视频
-exl-id: 7084ef55-4da6-48af-9951-5360bad7bfa9
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '105'
 ht-degree: 0%
@@ -29,4 +28,4 @@ ht-degree: 0%
 
 1. 使用状态更改事件回调检查错误或执行其他相应操作。
 
-   TVSDK为调用此回调 `pause()` 或 `play()` 和传递有关状态更改的信息，包括新状态，如暂停或播放。
+   TVSDK为调用此回调 `pause()` 或 `play()` 和会传递有关状态更改的信息，包括新状态，如暂停或播放。

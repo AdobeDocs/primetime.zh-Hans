@@ -1,8 +1,7 @@
 ---
 description: TVSDK通知系统生成各种错误、警告和信息性通知，以提供诊断元数据。
 title: 通知代码
-exl-id: 6cbc85d7-c197-448b-aa90-554c70af6557
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '224'
 ht-degree: 0%
@@ -25,9 +24,9 @@ TVSDK通知系统生成各种错误、警告和信息性通知，以提供诊断
  <tbody> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> type</span></td> 
-   <td colname="2">通知类型。 根据平台，此属性是指可能值为的枚举类型 
+   <td colname="2">通知类型。 根据平台的不同，此属性引用一个枚举类型，可能的值为 
     <pre>
-      信息、警告或错误。 这是通知的顶层分组。
+      信息、警告或错误。 这是通知的顶级分组。
     </pre> </td> 
   </tr> 
   <tr rowsep="1"> 
@@ -36,20 +35,20 @@ TVSDK通知系统生成各种错误、警告和信息性通知，以提供诊断
     <ul id="ul_31AB497C6FFA452496DD09B0D78687B9"> 
      <li id="li_53E75022C50246E0982E315D04EFD8B3">从100000到199999的错误通知事件 </li> 
      <li id="li_11AE91D1325E4F718228E662C9C55F9A">警告通知事件，从200000到299999 </li> 
-     <li id="li_6D3EA03845294DC2BAD1ACF507639E51">信息通知事件，从300000到399999 </li> 
+     <li id="li_6D3EA03845294DC2BAD1ACF507639E51">从300000到399999的信息通知事件 </li> 
     </ul> <p>每个顶级范围（例如错误）被划分为子范围(例如101000到101999表示播放错误)。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> name</span></td> 
-   <td colname="2">一个字符串，其中包含易于用户识别的代码描述，例如 <span class="codeph"> SEEK_ERROR</span>. </td> 
+   <td colname="2">一个字符串，其中包含人类可读的代码描述，例如 <span class="codeph"> SEEK_ERROR</span>. </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 元数据</span> </td> 
-   <td colname="2">包含有关通知的其他相关信息的键/值对。 例如，一个名为的键 <span class="codeph"> URL</span> 与作为与通知相关的URL的值（例如导致错误的无效URL）配对。 </td> 
+   <td colname="2">包含有关通知的其他相关信息的键/值对。 例如，名为的键 <span class="codeph"> URL</span> 与作为与通知相关的URL的值（例如导致错误的无效URL）配对。 </td> 
   </tr> 
   <tr rowsep="0"> 
    <td colname="1"><span class="codeph"> innerNotification</span></td> 
-   <td colname="2">对另一个的引用 <span class="codeph"> PTN通知</span> 直接影响此通知的对象。 例如，可能是一则与时间线插入冲突直接对应的广告插入失败通知。 并非所有通知都提供内部通知。 </td> 
+   <td colname="2">对另一个的引用 <span class="codeph"> PTNotification</span> 直接影响此通知的对象。 一个示例可能是直接对应于时间线插入冲突的关于广告插入失败的通知。 并非所有通知都提供内部通知。 </td> 
   </tr> 
  </tbody> 
 </table>

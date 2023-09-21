@@ -2,8 +2,7 @@
 title: 命令行工具要求
 description: 命令行工具要求
 copied-description: true
-exl-id: b19512d0-0865-4c24-a6d8-1f26cd3f210c
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '79'
 ht-degree: 0%
@@ -15,7 +14,7 @@ ht-degree: 0%
 * Java 1.5或更高版本。
 * Adobe颁发的打包程序、传输和许可证服务器凭据（证书和密码）。
 
-   这些凭据用于加密和签署视频文件、签署策略更新和吊销列表以及预生成许可证。
+  这些凭据用于加密和签署视频文件、签署策略更新和吊销列表以及预生成许可证。
 
 >[!NOTE]
 >

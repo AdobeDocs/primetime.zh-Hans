@@ -2,8 +2,7 @@
 title: 命令行用法
 description: 命令行用法
 copied-description: true
-exl-id: 67056085-beb5-4f54-8962-369bc32d7907
-source-git-commit: 79cab347d0daa01549fbf8a9b37bf0a91c14648e
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '75'
 ht-degree: 0%
@@ -29,8 +28,8 @@ java -jar AdobePublisherIDUtility.jar
 
 * `signaturefile` 指定位于AIR应用程序中的signatures.xml文件的路径 [!DNL META-INF] 目录
 
-* `signingcert` 指定用于对AIR应用程序进行签名的证书
+* `signingcert` 指定用于签署AIR应用程序的证书
 
 >[!NOTE]
 >
->要确定iOS应用程序的发布者ID，请使用 `-s` 选项并指定用于签署iOS应用程序的证书。 ***需要Adobe Primetime才能构建可播放受访问保护内容的iOS应用程序***.
+>要确定iOS应用程序的发布者ID，请使用 `-s` 选项并指定用于对iOS应用程序进行签名的证书。 ***需要Adobe Primetime才能构建可播放受访问保护内容的iOS应用程序***.

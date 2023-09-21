@@ -1,8 +1,7 @@
 ---
 description: 对于视频点播(VOD)内容，TVSDK通过在主内容中拼接广告来插入广告时间，以便增加时间轴持续时间。
 title: VOD广告解析和插入
-exl-id: 6f02c7fc-028d-442f-92d4-9efa671b7f02
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '195'
 ht-degree: 0%
@@ -13,24 +12,24 @@ ht-degree: 0%
 
 对于视频点播(VOD)内容，TVSDK通过在主内容中拼接广告来插入广告时间，以便增加时间轴持续时间。
 
-在播放之前，TVSDK会解析已知广告，按照TVSDK返回的时间线所描述在主内容中插入广告插播，并在必要时重新计算虚拟时间线。
+在播放之前，TVSDK会解析已知广告，按照TVSDK返回的时间轴的说明，在主内容中插入广告时间，并在必要时重新计算虚拟时间轴。
 
 TVSDK通过以下方式插入广告：
 
 * **前置式广告**，在内容之前。
 * **中置**，即位于内容中。
-* **后置广告**，在内容之后。
+* **后置式广告**，在内容之后。
 
 >[!IMPORTANT]
 >
->实施自定义时 `AdPolicySelector`，可以为每种类型指定不同的策略 `AdBreakTimelineItem` （前置式广告、中置式广告或后置式广告） `AdPolicyInfo`，基于 `AdBreakTimelineItem`. 例如，您可以在播放中置内容后保留该内容，但在播放前置内容后将其删除。
+>实施自定义时 `AdPolicySelector`，可以为每种类型提供不同的策略 `AdBreakTimelineItem` （前置式广告、中置式广告或后置式广告） `AdPolicyInfo`，基于 `AdBreakTimelineItem`. 例如，您可以在播放中置内容后保留该内容，但在播放前置内容后将其删除。
 
 开始播放后，内容不会发生其他更改。 广告不能为：
 
 * 已插入
 * 已删除
 
-   例如，您无法从内容中删除内置广告以提供无广告体验。
+  例如，您无法从内容中删除内置广告以提供无广告体验。
 * 已替换
 
-   例如，您不能将内置广告替换为目标广告。
+  例如，您不能将内置广告替换为目标广告。

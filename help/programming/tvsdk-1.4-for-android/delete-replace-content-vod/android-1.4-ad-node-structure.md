@@ -1,16 +1,15 @@
 ---
-title: 具有时间范围的广告节点结构
-description: 具有时间范围的广告节点结构
+title: 带有时间范围的广告节点结构
+description: 带有时间范围的广告节点结构
 copied-description: true
-exl-id: f7d8992c-cfcc-4bb0-babf-63fd8f73a67c
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '15'
 ht-degree: 0%
 
 ---
 
-# 具有时间范围的广告节点结构{#advertising-node-structure-with-timeranges}
+# 带有时间范围的广告节点结构{#advertising-node-structure-with-timeranges}
 
 <!--<a id="fig_CD71214FBF8945729FC34CD2F0047EF8"></a>-->
 

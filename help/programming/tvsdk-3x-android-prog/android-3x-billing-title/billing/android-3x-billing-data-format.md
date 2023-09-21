@@ -1,8 +1,7 @@
 ---
-description: TVSDK以XML格式将计费指标发送到Adobe。
+description: TVSDK以XML格式将计费指标发送给Adobe。
 title: 传输计费指标
-exl-id: 55009ce6-a814-4a20-bfa5-e8cf2d7ba923
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '58'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 传输计费指标 {#transmit-billing-metrics}
 
-TVSDK以XML格式将计费指标发送到Adobe。
+TVSDK以XML格式将计费指标发送给Adobe。
 
 <!--<a id="example_13ABDB1CC0B549968A534765378DA3A0"></a>-->
 
@@ -39,4 +38,4 @@ TVSDK以XML格式将计费指标发送到Adobe。
 </request>
 ```
 
-布尔属性 `drmProtected`， `adsEnabled`、和 `midrollEnabled` 仅在为真时显示。
+布尔值属性 `drmProtected`， `adsEnabled`、和 `midrollEnabled` 仅当它们为true时才显示。

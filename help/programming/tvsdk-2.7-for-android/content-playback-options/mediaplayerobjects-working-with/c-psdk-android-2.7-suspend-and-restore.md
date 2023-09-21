@@ -2,8 +2,7 @@
 description: 当设备屏幕关闭和打开时，必须由应用程序处理TVSDK MediaPlayer的暂停和恢复。
 keywords: SurfaceView；暂停；恢复；BroadcastReceiver
 title: 暂停和恢复MediaPlayer
-exl-id: 159f0f4f-2bb7-40a1-9747-be970dfbb04d
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '159'
 ht-degree: 0%
@@ -14,9 +13,9 @@ ht-degree: 0%
 
 当设备屏幕关闭和打开时，必须由应用程序处理TVSDK MediaPlayer的暂停和恢复。
 
-您可以处理上的挂起和恢复操作 `MediaPlayer` 在Android的广播接收器内打开或关闭屏幕。
+可以在以下位置处理挂起和恢复操作： `MediaPlayer` Android的屏幕打开/关闭广播接收器内部。
 
-TVSDK无法确定片段（或活动）何时在后台或前台。 此外，Android `SurfaceView` 当设备屏幕关闭时（但活动已暂停），不会遭到破坏。 但是， `SurfaceView` *是* 当设备将您的应用程序置于后台时遭到破坏。 TVSDK无法检测到任何此类更改，因此它们必须由应用程序处理。
+TVSDK无法确定片段（或活动）何时处于后台或前台。 此外，Android `SurfaceView` 当设备屏幕关闭时（但活动已暂停），不会销毁。 但是， `SurfaceView` *是* 当设备将您的应用程序置于后台时销毁。 TVSDK无法检测到任何此类更改，因此它们必须由应用程序处理。
 
 以下示例代码说明应用程序如何处理暂停和恢复 `MediaPlayer` 在应用程序级别打开和关闭设备屏幕时：
 

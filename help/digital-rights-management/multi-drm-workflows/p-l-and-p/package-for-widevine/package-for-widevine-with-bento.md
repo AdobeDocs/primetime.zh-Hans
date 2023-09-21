@@ -1,8 +1,7 @@
 ---
 description: 我们使用Bento4打包程序和Adobe脱机打包程序来创作加密的DASH内容。 Bento4将输入未加密的mp4内容。
 title: 使用Bento4打包您的内容
-exl-id: c873eaf6-c738-4f95-a900-a8aecb03754d
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '264'
 ht-degree: 0%
@@ -15,9 +14,9 @@ ht-degree: 0%
 
 ## 使用Bento4打包您的内容{#package-your-content-with-bento}
 
-Bento4打包器预期输入mp4将预先分段。 Bento4 Packager分发版包含用于此的工具。
+Bento4打包器希望对输入mp4进行预分段。 Bento4 Packager分发版包含用于此功能的工具。
 
-**正在调用Bento4**
+**致电本托4**
 
 典型的Bento4打包程序调用如下所示：
 
@@ -64,17 +63,17 @@ Bento4打包器预期输入mp4将预先分段。 Bento4 Packager分发版包含�
 
 的值 `--encryption-key` 标记在表单中 `<base16 encoded key id>:<base16 encoded encryption key>`.
 
-此 `--widevine-header=provider:intertrust#content_id:2a` 标记可告知打包程序在清单中包含pssh框，目前TVSDK需要此框才能播放。
+此 `--widevine-header=provider:intertrust#content_id:2a` 标记可告知打包程序在清单中包含pssh框，目前TVSDK需要该框才能播放。
 
 的值 `-playready-header` 用于获取PlayReady许可证。
 
-## 使用AdobeOffline Packager打包内容 {#package-your-content-with-adobe-offline-packager}
+## 使用Adobe脱机打包程序打包您的内容 {#package-your-content-with-adobe-offline-packager}
 
-AdobeOffline Packager将用作输入未加密的mp4内容。
+AdobeOffline Packager将输入未加密的mp4内容。
 
-**调用Adobe脱机打包程序**
+**正在调用Adobe脱机打包程序**
 
-典型的adobe offline packager调用类似于下面的调用：
+典型的adobe离线打包程序调用类似于以下调用：
 
 ```
 java -jar OfflinePackager.jar -conf_path Content_PR_WV.xml -in_path "Jaigo.mp4"
@@ -88,7 +87,7 @@ http://pr.test.expressplay.com/playready/RightsManager.asmx
 -content_id c595f214d84dc7ecf31a8ebf1b7ddda5
 ```
 
-在此特定情况下，脱机打包程序会将Widevine内容保护和PlayReady内容保护初始化数据添加到输出DASH内容中。 的值 `-key_file_path` 用于base64编码的键。 的值 `-playready_LA_URL` 用于获取PlayReady许可证。
+在此特定情况下，脱机打包程序会将Widevine内容保护和PlayReady内容保护初始化数据添加到输出DASH内容中。 的值 `-key_file_path` 用于base64编码的密钥。 的值 `-playready_LA_URL` 用于获取PlayReady许可证。
 
 conf_path参数指向包含以下内容的配置文件：
 

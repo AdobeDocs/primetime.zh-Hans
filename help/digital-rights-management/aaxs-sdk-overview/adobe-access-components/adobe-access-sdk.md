@@ -1,8 +1,7 @@
 ---
 description: Adobe访问的主要组件包括Java SDK、Flash Player和Adobe AIR客户端运行时环境。
 title: Java SDK、Flash Player和Adobe AIR客户端
-exl-id: 2df4da13-8df9-442b-8638-317c41d62fbe
-source-git-commit: 8d7a4f69a6400b0c3242d4cb0c5daac81f27db3a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '910'
 ht-degree: 0%

@@ -2,8 +2,7 @@
 title: 典型工作流程
 description: 典型工作流程
 copied-description: true
-exl-id: c2020b48-7e97-4df5-a453-7b76e2e1d458
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '96'
 ht-degree: 0%
@@ -20,4 +19,4 @@ ht-degree: 0%
 1. 将视频播放器上传到Web服务器。
 1. 使用上传的视频播放器获取许可证并播放加密的内容。
 
-由于此典型工作流同时使用命令行工具和许可证服务器，因此您需要在继续操作之前安装和配置这两个组件。
+由于此典型工作流同时使用命令行工具和许可证服务器，因此您需要在继续之前安装和配置这两个组件。

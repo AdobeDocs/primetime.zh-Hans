@@ -1,8 +1,7 @@
 ---
 title: MVPD注销
 description: MVPD注销
-exl-id: a2b57d02-9688-48e3-beff-1012cd361d0c
-source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '75'
 ht-degree: 0%
@@ -13,9 +12,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
-注销用例可以通过发送到IdP的SAML注销请求或通过调用的自定义注销端点来实施。  下面的请求和响应示例提供了SAML注销实施的示例。
+注销用例可以通过发送到IdP的SAML注销请求或者通过调用的自定义注销端点来实施。  下面的请求和响应示例提供了SAML注销实施的示例。
 
 ## 示例注销请求 {#sample-logout-request}
 

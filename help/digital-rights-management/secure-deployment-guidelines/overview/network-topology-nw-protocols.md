@@ -1,8 +1,7 @@
 ---
-description: 配置安全网络体系结构时，Adobe Primetime DRM与企业网络中的其他系统之间的交互需要网络协议。
+description: 在配置安全网络体系结构时，Adobe Primetime DRM和企业网络中的其他系统之间需要网络协议。
 title: Adobe Primetime DRM网络协议
-exl-id: d5720ef4-6845-4a62-940a-9d8ba9b43b13
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '226'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # Adobe Primetime DRM网络协议 {#adobe-primetime-drm-network-protocols}
 
-配置安全网络体系结构时，Adobe Primetime DRM与企业网络中的其他系统之间的交互需要网络协议。
+在配置安全网络体系结构时，Adobe Primetime DRM和企业网络中的其他系统之间需要网络协议。
 
 配置安全网络体系结构时，此交互需要以下网络协议：
 
@@ -29,7 +28,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <p class="- topic/p ">HTTPS（可选） </p> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">Flash Player、Adobe AIR和Adobe Primetime客户端可以使用HTTPS与Primetime DRM通信；除非您支持FMRMS 1.x客户端，否则不需要HTTPS (SSL)。 有关更多信息，请参阅 <a href="../../secure-deployment-guidelines/overview/network-topology-firewall-rules.md" format="dita" scope="local"> 传入URL </a> 和配置SSL。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">Flash Player、Adobe AIR和Adobe Primetime客户端可以使用HTTPS与Primetime DRM进行通信；除非您支持FMRMS 1.x客户端，否则不需要HTTPS (SSL)。 有关更多信息，请参阅 <a href="../../secure-deployment-guidelines/overview/network-topology-firewall-rules.md" format="dita" scope="local"> 传入URL </a> 和配置SSL。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -42,6 +41,6 @@ ht-degree: 0%
 
 ## 配置SSL {#configuring-ssl}
 
-只有在需要支持Flash媒体Rights Management服务器1.x客户端时，才需要安全套接字层(SSL)。
+只有在需要支持FlashRights Management Media Media Server 1.x客户端时，才需要安全套接字层(SSL)。
 
 Adobe Primetime DRM Key Server需要客户端身份验证的SSL。 有关更多信息，请参阅 [使用Adobe Primetime DRM Key Server](../../using-the-drm-key-server/requirements.md).

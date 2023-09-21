@@ -2,8 +2,7 @@
 title: 关于命令行工具配置文件
 description: 关于命令行工具配置文件
 copied-description: true
-exl-id: 0ec4917e-7c70-4b84-86ac-c34c8a522018
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '144'
 ht-degree: 0%
@@ -16,9 +15,9 @@ ht-degree: 0%
 
 命令行工具配置文件使用 *Java属性文件* 格式，适用于以下规则：
 
-* 使用其他反斜杠转义反斜杠。
+* 使用额外的反斜杠转义反斜杠。
 
-   例如，在Windows计算机上，指定 [!DNL C:\credentials.pfx] 文件，您需要输入它为 [!DNL C:\\credentials.pfx] 或 `C:/credentials.pfx`. 若要在Windows网络服务器上指定文件，您需要输入 `\\\\server\\folder\\filename.pfx`
+  例如，在Windows计算机上，指定 [!DNL C:\credentials.pfx] 文件，您需要输入它为 [!DNL C:\\credentials.pfx] 或 `C:/credentials.pfx`. 要在Windows网络服务器上指定文件，需要输入 `\\\\server\\folder\\filename.pfx`
 * 仅包括 *Latin-1* 个字符。
 
-   要使用非&#x200B;*Latin-1* 字符，则需要使用相应的Unicode转义序列。 您可以选择应用 [!DNL native2ascii] 工具（随Java提供）添加到配置文件条目中。
+  要使用非&#x200B;*Latin-1* 字符之间，您需要使用相应的Unicode转义序列。 您可以选择应用 [!DNL native2ascii] 工具（随Java提供）添加到配置文件条目。

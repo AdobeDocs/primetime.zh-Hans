@@ -1,8 +1,7 @@
 ---
-description: MediaResource类表示由MediaPlayer实例加载的内容。
+description: MediaResource类表示要由MediaPlayer实例加载的内容。
 title: 创建媒体资源
-exl-id: d9693ee5-c192-4ac5-925a-d64e629920b4
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '299'
 ht-degree: 0%
@@ -13,7 +12,7 @@ ht-degree: 0%
 
 对于每个新视频内容，使用有关视频内容的信息初始化MediaResource实例并加载媒体资源。
 
-MediaResource类表示由MediaPlayer实例加载的内容。
+MediaResource类表示要由MediaPlayer实例加载的内容。
 
 1. 创建 `MediaResource` 将介质的相关信息传递给 `MediaResource` 构造函数。
 
@@ -37,19 +36,19 @@ MediaResource类表示由MediaPlayer实例加载的内容。
       <ul id="ul_C286ED3C31364B858A1C9AF3356E9282"> 
       <li id="li_25B24EF76D8849DE8764539F25E435FA"> <span class="codeph"> HLS </span> - M3U8 </li> 
       <li id="li_1344A41B434D49229E392F1AAF9ECA81"> <span class="codeph"> ISOBMFF </span> - ISO基本媒体文件格式(MP4) </li> 
-      <li id="li_92392073B7334916B06B16570C51AC91"> <span class="codeph"> 短划线 </span> - MPEG-DASH媒体演示描述(MPD) </li> 
+      <li id="li_92392073B7334916B06B16570C51AC91"> <span class="codeph"> 短划线 </span> - MPEG-DASH媒体演示文稿描述(MPD) </li> 
       </ul> </td> 
    </tr> 
    <tr> 
       <td colname="col1"> <span class="codeph"> 元数据 </span> </td> 
-      <td colname="col2"> 的实例 <span class="codeph"> 元数据 </span> 类（类似字典的结构），可能包含有关即将加载的内容的附加信息，例如要放置在主内容中的替换内容或广告内容。 如果使用广告，请设置 <span class="codeph"> Auditudesettings </span> 使用此构造函数之前 <a href="/help/programming/tvsdk-3x-android-prog/android-3x-advertising/ad-insertion/ad-insertion-metadata/android-3x-ad-insertion-metadata.md"> 广告插入元数据 </a>. </td> 
+      <td colname="col2"> 的实例 <span class="codeph"> 元数据 </span> 类（类似字典的结构），可能包含有关即将加载的内容的其他信息，例如要放置在主内容中的替换内容或广告内容。 如果使用广告，请设置 <span class="codeph"> Auditudesettings </span> 使用此构造函数之前 <a href="/help/programming/tvsdk-3x-android-prog/android-3x-advertising/ad-insertion/ad-insertion-metadata/android-3x-ad-insertion-metadata.md"> 广告插入元数据 </a>. </td> 
    </tr> 
    </tbody> 
    </table>
 
    >[!IMPORTANT]
    >
-   >TVSDK仅支持播放特定类型的内容。 如果您尝试加载任何其他类型的内容，TVSDK会调度一个错误事件。
+   >TVSDK仅支持特定内容类型的播放。 如果您尝试加载任何其他类型的内容，TVSDK会调度错误事件。
    >
    >对于MP4视频点播(VOD)内容，TVSDK不支持特技播放、自适应比特率(ABR)流、广告插入、隐藏式字幕或DRM。
 

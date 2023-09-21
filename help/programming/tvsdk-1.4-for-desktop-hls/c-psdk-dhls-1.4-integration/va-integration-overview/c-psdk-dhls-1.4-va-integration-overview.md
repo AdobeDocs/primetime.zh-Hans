@@ -1,8 +1,7 @@
 ---
-description: 通过将TVSDK与Adobe Analytics集成，您可以跟踪视频使用情况。
+description: 您可以通过将TVSDK与Adobe Analytics集成来跟踪视频使用情况。
 title: 视频分析
-exl-id: 02303511-2713-4974-ada7-6f50fc500325
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '235'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 视频分析{#video-analytics}
 
-通过将TVSDK与Adobe Analytics集成，您可以跟踪视频使用情况。
+您可以通过将TVSDK与Adobe Analytics集成来跟踪视频使用情况。
 
 TVSDK中的视频跟踪使用 **Adobe Analytics Video Essentials** 服务，用于提供视频参与量度，例如视频查看次数、视频完成次数、广告展示次数、视频逗留时间等。 有关此服务的更多信息，请与您的Adobe代表联系。
 
@@ -19,16 +18,17 @@ TVSDK中的视频跟踪使用 **Adobe Analytics Video Essentials** 服务，用�
 
 1. 初始化和/或配置以下视频跟踪组件：
 
-   * **AppMeasurement库**  — 包含低级数据收集核心逻辑。 这是通过网络累计和发送视频心率数据的位置。
+   * **AppMeasurement库**  — 包含低级数据收集核心逻辑。 这是累积视频心率数据并通过网络发送的位置。
    * **视频心率库**  — 包含视频心率数据收集核心逻辑。 视频心率库访问 `AppMeasurement` 库API。
 
-      >[!TIP]
-      >
-      >您的应用程序不会直接与视频心率代码交互。 相反，该应用程序使用TVSDK API来配置播放器的视频跟踪功能。
+     >[!TIP]
+     >
+     >您的应用程序不会直接与视频心率代码交互。 该应用程序而是使用TVSDK API来配置播放器的视频跟踪功能。
 
-   * **VisitorID库**  — 唯一标识托管视频播放器的网页的访客。
+   * **VisitorID库**  — 唯一标识承载视频播放器的网页的访客。
+
    >[!IMPORTANT]
    >
-   >TVSDK内置的视频跟踪功能取决于是否正确配置 `AppMeasurement` 实例。 跟踪元素假定 `AppMeasurement` 在配置和激活视频跟踪之前，库已实例化和配置。 TVSDK视频跟踪功能取决于 `AppMeasurement` 库。
+   >TVSDK内置的视频跟踪功能取决于是否正确配置了 `AppMeasurement` 实例。 跟踪元素假定 `AppMeasurement` 在配置和激活视频跟踪之前，库已实例化和配置。 TVSDK视频跟踪功能取决于 `AppMeasurement` 库。
 
 1. 使用Adobe Analytics管理工具在服务器端设置视频分析报表。

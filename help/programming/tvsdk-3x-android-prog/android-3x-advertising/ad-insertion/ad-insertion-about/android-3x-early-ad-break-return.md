@@ -1,8 +1,7 @@
 ---
-description: 对于实时流广告插入，您可能需要先退出广告时间，然后再播放广告时间中的所有广告直至结束。
+description: 对于实时流广告插入，您可能需要先从广告时间退出，然后才会播放广告时间中的所有广告直至结束。
 title: 实施提前返回广告时间
-exl-id: 07246e31-c2a2-4646-9e59-6294f0ce8838
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '178'
 ht-degree: 0%
@@ -11,14 +10,14 @@ ht-degree: 0%
 
 # 实施提前返回广告时间 {#implement-an-early-ad-break-return}
 
-对于实时流广告插入，您可能需要先退出广告时间，然后再播放广告时间中的所有广告直至结束。
+对于实时流广告插入，您可能需要先从广告时间退出，然后才会播放广告时间中的所有广告直至结束。
 
-例如，某些体育赛事中的广告插播的持续时间可能在插播开始之前未知。 TVSDK提供了默认持续时间，但如果游戏在休息时间结束前恢复，则必须退出广告时间。 另一个示例是在实时流中的广告时间期间的紧急信号。
+例如，某些体育赛事中的广告插播时长可能在插播开始之前未知。 TVSDK提供了默认持续时间，但如果游戏在休息时间结束前恢复，则必须退出广告时间。 另一个示例是在实时流中的广告时间期间的紧急信号。
 
 1. 订阅 `#EXT-X-CUE-OUT`， `#EXT-X-CUE-IN`、和 `#EXT-X-CUE`，即标记中的剪切/剪切。
-有关如何拼接/插入广告标记的详细信息，请参阅 [机会生成器和内容解析器](../../ad-insertion/content-resolver/android-3x-content-resolver.md).
+有关如何拆分/插入广告标记的详细信息，请参阅 [机会生成器和内容解析器](../../ad-insertion/content-resolver/android-3x-content-resolver.md).
 1. 使用自定义 `ContentFactory`.
-1. In `retrieveGenerators`，使用 `SpliceInPlacementOpportunityGenerator`.
+1. 在 `retrieveGenerators`，使用 `SpliceInPlacementOpportunityGenerator`.
 
    例如：
 

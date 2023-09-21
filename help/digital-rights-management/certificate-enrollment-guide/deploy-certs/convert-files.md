@@ -2,8 +2,7 @@
 title: 转换文件
 description: 转换文件
 copied-description: true
-exl-id: 7344ca2f-5307-403b-a6fc-cbbea7c2829f
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '173'
 ht-degree: 0%
@@ -12,7 +11,7 @@ ht-degree: 0%
 
 # 转换文件{#convert-files}
 
-通过使用诸如OpenSSL和私钥之类的实用程序，请求者通过从命令窗口中输入以下命令来生成PKCS#12 (pfx)和PEM/DER文件：
+请求者使用OpenSSL和私钥等实用程序通过从命令窗口中输入以下命令来生成PKCS#12 (pfx)和PEM/DER文件：
 
 1. 将PKCS#7文件转换为临时PEM文件。
 

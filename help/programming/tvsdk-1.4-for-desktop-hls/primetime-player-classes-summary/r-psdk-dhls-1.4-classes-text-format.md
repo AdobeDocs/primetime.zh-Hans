@@ -1,8 +1,7 @@
 ---
 description: 这些类指定文本的格式。
 title: 文本格式类
-exl-id: 885de6f1-6c1a-4862-ab57-3854a3d5ebaf
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '133'
 ht-degree: 0%

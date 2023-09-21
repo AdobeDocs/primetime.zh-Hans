@@ -1,8 +1,7 @@
 ---
 description: 您可以在播放视频内容时显示字幕。
 title: 字幕
-exl-id: 2144a6b2-0b9a-49ea-ad44-997adf36cbe6
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '55'
 ht-degree: 0%
@@ -33,7 +32,7 @@ function onCaptionsUpdateEvent (event) {
 </pre>
 ```
 
-UI框架提供了一个默认字幕行为实施，该实施可以修改。 隐藏式字幕行为也可以通过扩展默认隐藏式字幕行为来修改。 例如：
+UI框架提供了一个默认的字幕行为实施，可以对该实施进行修改。 通过扩展默认的隐藏字幕行为，也可以修改隐藏字幕行为。 例如：
 
 ```js
 // Using UI Framework 

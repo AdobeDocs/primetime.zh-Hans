@@ -1,8 +1,7 @@
 ---
 description: 这些类提供有关特定媒体的时间轴的信息，包括广告的投放。
 title: 时间线类
-exl-id: 8382fff2-0f10-4a8c-9c0c-66d26fe18938
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '376'
 ht-degree: 0%
@@ -25,15 +24,15 @@ ht-degree: 0%
  <tbody> 
   <tr rowsep="1"> 
    <td colname="1"> <span class="codeph"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/timeline/ContentTracker.html" format="html" scope="external"> ContentTracker </a> </span> </td> 
-   <td colname="2"> 定义如果要创建旨在与TVSDK库集成的内容跟踪模块，则必须实施的协议的接口。 <p>此界面要求您定义向远程跟踪系统报告进度事件的方式。 </p> </td> 
+   <td colname="2"> 接口，定义如果要创建旨在与TVSDK库集成的内容跟踪模块，则必须实施的协议。 <p>此界面要求您定义向远程跟踪系统报告进度事件的方式。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> <span class="codeph"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/timeline/Opportunity.html" format="html" scope="external"> 机会 </a> </span> </td> 
-   <td colname="2"> 所有机会类的基类。 机会类表示时间线上的“有趣”点。 </td> 
+   <td colname="2"> 所有机会类的基类。 机会类表示时间线上的“有趣的”点。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> <span class="codeph"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/timeline/Placement.html" format="html" scope="external"> 投放 </a> </span> </td> 
-   <td colname="2"> 打包与时间轴放置相关的信息的类。 </td> 
+   <td colname="2"> 类，打包与时间轴放置相关的信息。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> <span class="codeph"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/timeline/PlacementMode.html" format="html" scope="external"> 放置模式 </a> </span> </td> 
@@ -41,11 +40,11 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> <span class="codeph"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/timeline/PlacementType.html" format="html" scope="external"> PlacementType </a> </span> </td> 
-   <td colname="2"> 表示在时间轴中放置位置的放置类型的枚举；例如PRE_ROLL。 </td> 
+   <td colname="2"> 指示在时间轴中放置位置的放置类型的枚举；例如PRE_ROLL。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> <span class="codeph"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/timeline/Reservation.html" format="html" scope="external"> 预订 </a> </span> </td> 
-   <td colname="2"> 预订用于限制或防止对时间线上特定时间范围的进一步处理。 </td> 
+   <td colname="2"> 预订用于限制或防止在时间线上对特定时间范围的进一步处理。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> <span class="codeph"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/timeline/Timeline.html" format="html" scope="external"> 时间线 </a> </span> </td> 
@@ -56,8 +55,8 @@ ht-degree: 0%
    <td colname="2"> 班级。 时间线项目的通用不可变表示形式。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> <span class="codeph"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/timeline/TimelineMarker.html" format="html" scope="external"> 时间轴标记 </a> </span> </td> 
-   <td colname="2"> 表示时间轴上标记的类。 这标记了实际时间轴上的关注区域。 目前，感兴趣的区域是广告，例如，您可能希望在推移栏UI上使用不同的颜色标记这些广告。 每个标记均由位置和持续时间（以毫秒为单位）定义。 </td> 
+   <td colname="1"> <span class="codeph"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/timeline/TimelineMarker.html" format="html" scope="external"> 时间线标记 </a> </span> </td> 
+   <td colname="2"> 表示时间轴上标记的类。 这会在实际时间线上标记感兴趣的区域。 目前，感兴趣的区域是广告，例如，您可能需要在搓擦条UI上使用不同的颜色标记这些广告。 每个标记由位置和持续时间（均以毫秒表示）定义。 </td> 
   </tr> 
  </tbody> 
 </table>

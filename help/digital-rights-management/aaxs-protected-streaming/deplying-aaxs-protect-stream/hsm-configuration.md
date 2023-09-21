@@ -2,8 +2,7 @@
 title: HSM配置
 description: HSM配置
 copied-description: true
-exl-id: a3e5759e-1419-4519-bcd7-de83364a48f8
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '142'
 ht-degree: 0%
@@ -12,9 +11,9 @@ ht-degree: 0%
 
 # HSM配置 {#hsm-configuration}
 
-如果选择使用HSM存储服务器凭据，则必须将私钥和证书加载到HSM上并创建 [!DNL pkcs11.cfg] 配置文件。 该文件必须位于 *LicenseServer.ConfigRoot* 目录。 请参阅 [!DNL Adobe Access Server for Protected Streaming/configs] Adobe访问DVD上的目录，例如PKCS11配置文件。 有关格式的信息 [!DNL pkcs11.cfg]请参见Sun PKCS11提供程序文档。
+如果您选择使用HSM来存储您的服务器凭据，则必须将私钥和证书加载到HSM上并创建 [!DNL pkcs11.cfg] 配置文件。 该文件必须位于 *LicenseServer.ConfigRoot* 目录。 请参阅 [!DNL Adobe Access Server for Protected Streaming/configs] Adobe访问DVD上的目录，例如PKCS11配置文件。 有关格式的信息 [!DNL pkcs11.cfg]，请参见Sun PKCS11提供程序文档。
 
-要验证是否已正确配置HSM和Sun PKCS11配置文件，可以使用以下目录中的命令： [!DNL pkcs11.cfg] 文件位于( [!DNL keytool] 随Java JRE和JDK一起安装)：
+要验证HSM和Sun PKCS11配置文件是否正确配置，可以使用以下目录中的命令： [!DNL pkcs11.cfg] 文件位于( [!DNL keytool] 随Java JRE和JDK一起安装)：
 
 ```
 keytool -keystore NONE -storetype PKCS11 -providerClass sun.security.pkcs11.SunPKCS11 

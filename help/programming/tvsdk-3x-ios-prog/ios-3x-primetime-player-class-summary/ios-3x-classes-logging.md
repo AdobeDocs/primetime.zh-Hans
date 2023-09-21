@@ -1,8 +1,7 @@
 ---
-description: 这些类使您能够自定义日志记录。
+description: 利用这些类，可以自定义日志记录。
 title: 日志记录类
-exl-id: 214c3744-dea8-448d-9d7e-68a18e02dd3b
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '83'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 日志记录类 {#logging-classes}
 
-这些类使您能够自定义日志记录。
+利用这些类，可以自定义日志记录。
 
 <table frame="all" colsep="1" rowsep="1" id="table_389797D3CEF14EA2862E0B20C6E6CC41"> 
  <thead> 
@@ -23,10 +22,10 @@ ht-degree: 0%
  <tbody> 
   <tr rowsep="1"> 
    <td colname="1" rowsep="0"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTLogEntry.html" format="html" scope="external"> PTLogEntry</a> </td> 
-   <td colname="2" rowsep="0"> 定义条目日志并保存有关日志消息信息的类。 </td> 
+   <td colname="2" rowsep="0"> 定义登录日志并保存有关日志消息信息的类。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTLogFactory.html" format="html" scope="external"> PTLogFactory</a> </td> 
+   <td colname="1"> <a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTLogFactory.html" format="html" scope="external"> PTLogFactor</a> </td> 
    <td colname="2"> 启用自定义日志记录的类。</td> 
   </tr> 
   <tr rowsep="1"> 

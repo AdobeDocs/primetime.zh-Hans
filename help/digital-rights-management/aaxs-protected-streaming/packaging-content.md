@@ -2,8 +2,7 @@
 title: 打包内容
 description: 打包内容
 copied-description: true
-exl-id: 85950028-d58d-45b3-9337-9fcabe7cc4c0
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '98'
 ht-degree: 0%
@@ -18,7 +17,7 @@ ht-degree: 0%
 http(s):// license-server-host:port/flashaccessserver/tenant-name
 ```
 
-例如，对于在端口8080上侦听的许可证服务器主机名“mylicenseserver.com”和名为“tenant1”的租户，在打包时要指定的许可证服务器URL是：
+例如，对于在端口8080上侦听的许可证服务器主机名“mylicenseserver.com”和名为“tenant1”的租户，在打包时要指定的许可证服务器URL为：
 
 ```
 https://mylicenseserver.com:8080/flashaccessserver/tenant1

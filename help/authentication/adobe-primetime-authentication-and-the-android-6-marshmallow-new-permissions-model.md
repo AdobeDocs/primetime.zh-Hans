@@ -1,8 +1,7 @@
 ---
 title: Adobe Primetime身份验证和Android 6“Marshmallow”新权限模型
 description: Adobe Primetime身份验证和Android 6“Marshmallow”新权限模型
-exl-id: 3c96769e-b25b-48ab-bb74-40f13d4e5a84
-source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '480'
 ht-degree: 0%

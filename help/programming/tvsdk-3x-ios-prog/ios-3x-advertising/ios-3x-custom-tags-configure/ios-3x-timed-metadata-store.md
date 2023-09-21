@@ -1,8 +1,7 @@
 ---
 description: 您的应用程序必须在适当的时间使用适当的PTTimedMetadata对象。
 title: 在调度定时元数据对象时存储这些对象
-exl-id: 8b859e8d-eb4c-48f9-a95e-1bcc35a2a520
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '199'
 ht-degree: 0%
@@ -13,20 +12,20 @@ ht-degree: 0%
 
 您的应用程序必须在适当的时间使用适当的PTTimedMetadata对象。
 
-在播放之前进行的内容解析期间，TVSDK会识别订阅的标记并通知您的应用程序这些标记。 与每个报表包关联的 `PTTimedMetadata` 是播放时间轴上的绝对时间。
+在播放之前进行的内容解析期间，TVSDK会识别订阅的标记并通知您的应用程序这些标记。 与每个报表关联的时间 `PTTimedMetadata` 是播放时间轴上的绝对时间。
 
 您的应用程序必须完成以下任务：
 
 1. 跟踪当前播放时间。
 1. 将当前播放时间与调度的播放时间相匹配 `PTTimedMetadata` 对象。
 
-1. 使用 `PTTimedMetadata` 其中，开始时间等于当前播放时间。
+1. 使用 `PTTimedMetadata` 其中开始时间等于当前播放时间。
 
    >[!NOTE]
    >
-   >以下代码假定只有一个 `PTTimedMetadata` 每次实例。 如果有多个实例，应用程序必须将其适当保存到词典中。 一种方法是在给定的时间创建一个数组，然后存储该数组中的所有实例。
+   >以下代码假定只有一个 `PTTimedMetadata` 每次执行个体。 如果有多个实例，应用程序必须将它们适当地保存在词典中。 一种方法是在给定时间创建一个数组，并将所有实例存储在该数组中。
 
-   以下示例说明如何保存 `PTTimedMetadata` 中的对象 `NSMutableDictionary (timedMetadataCollection)` 按每个的开始时间键值 `timedMetadata`.
+   以下示例显示如何保存 `PTTimedMetadata` 中的对象 `NSMutableDictionary (timedMetadataCollection)` 按每个的开始时间键值 `timedMetadata`.
 
    ```
    NSMutableDictionary *timedMetadataCollection; 
@@ -66,7 +65,7 @@ Unknown macro: { PTMetadata *metadata = (PTMetadata *)timedMetadata; NSString * 
 }
 ```
 
-解析ID3标记后，使用以下内容提取特定于Nielsen的元数据：
+解析ID3标记后，使用以下内容提取Nielsen特定的元数据：
 
 ```
     (NSString *)parseNielsenUrlFromID3Tag:(NSString *)str 

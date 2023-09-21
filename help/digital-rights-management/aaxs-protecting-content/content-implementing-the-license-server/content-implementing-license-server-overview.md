@@ -2,8 +2,7 @@
 title: 概述
 description: 概述
 copied-description: true
-exl-id: 7327386b-e796-4fa5-bda4-cacc612a9d1f
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '128'
 ht-degree: 0%
@@ -21,6 +20,6 @@ ht-degree: 0%
 * 处理域注销请求 — 仅在实施域服务器时需要。
 * 进程同步 — 仅当许可证指定同步要求时才需要。
 
-此外，服务器需要提供业务逻辑来验证用户，确定用户是否有权查看内容，以及选择性地跟踪许可证使用情况。
+此外，服务器需要提供用于验证用户、确定用户是否有权查看内容以及可选地跟踪许可证使用的业务逻辑。
 
 有关本章讨论的Java API的详细信息，请参阅 *Adobe访问API参考*.

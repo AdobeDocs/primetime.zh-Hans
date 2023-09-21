@@ -2,8 +2,7 @@
 title: 同步要求
 description: 同步要求
 copied-description: true
-exl-id: 0368e363-893f-4b51-a317-00791d0ab54f
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '161'
 ht-degree: 0%
@@ -16,9 +15,9 @@ ht-degree: 0%
 
 使用以下参数定义同步行为：
 
-* **开始时间间隔**  — 指定在上次成功同步后等待多长时间才能启动另一个同步请求。
+* **开始时间间隔**  — 指定在上次成功同步后等待多长时间以启动另一个同步请求。
 * **硬停止间隔**  — （可选）。 如果在指定的时间内未成功进行同步，则不允许播放。
-* **强制同步概率**  — （可选）。 客户端在下一次启动间隔之前发送同步消息的概率。
+* **强制同步概率**  — （可选）。 客户端在下一个开始间隔之前应发送同步消息的概率。
 
 >[!NOTE]
 >

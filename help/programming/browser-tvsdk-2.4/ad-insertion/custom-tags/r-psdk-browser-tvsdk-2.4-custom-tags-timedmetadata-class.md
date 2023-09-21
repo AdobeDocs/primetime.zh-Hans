@@ -1,8 +1,7 @@
 ---
 description: 当浏览器TVSDK检测到播放列表/清单中的订阅标记时，播放器会自动尝试处理该标记并将其公开为TimedMetadata对象。
 title: 定时元数据类
-exl-id: 893879b5-03ed-4c11-80a6-b57b7d54a95c
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '228'
 ht-degree: 0%
@@ -26,7 +25,7 @@ ht-degree: 0%
  <tbody> 
   <tr> 
    <td colname="col1"> <p>type </p> </td> 
-   <td colname="col02"> <p><span class="codeph"> TimedMetadataType</span> </p> </td> 
+   <td colname="col02"> <p><span class="codeph"> Timedatadetype</span> </p> </td> 
    <td colname="col2"> <p>以下是定时元数据类型： 
      <ul id="ul_E79C375A54C64BF09A927EE8983E98E3"> 
       <li id="li_F1907521CDBE47E282A87AF0A7A1477A">标记 — 定时元数据是从播放列表/清单中的标记创建的。 </li> 
@@ -36,7 +35,7 @@ ht-degree: 0%
   <tr> 
    <td colname="col1"> <p>时间 </p> </td> 
    <td colname="col02"> <p>数字 </p> </td> 
-   <td colname="col2"> <p>相对于主内容开始位置的本地时间位置（毫秒），该定时元数据存在于流中。 </p> </td> 
+   <td colname="col2"> <p>相对于主内容开始位置的本地时间位置（毫秒），流中存在此定时元数据。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>id </p> </td> 
@@ -46,12 +45,12 @@ ht-degree: 0%
   <tr> 
    <td colname="col1"> <p>name </p> </td> 
    <td colname="col02"> <p>数字 </p> </td> 
-   <td colname="col2"> <p>定时元数据的名称。 </p> <p>如果类型为TAG，则值表示提示/标记名称。 如果类型为ID3，则值为null。 </p> </td> 
+   <td colname="col2"> <p>定时元数据的名称。 </p> <p>如果类型为TAG，则该值表示提示/标记名称。 如果类型为ID3，则值为null。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>内容 </p> </td> 
    <td colname="col02"> <p>字符串 </p> </td> 
-   <td colname="col2"> <p>定时元数据的原始内容。 </p> <p>如果类型为TAG，则该值表示提示/标记的整个属性列表。 如果类型ID 3，则值为null。 </p> </td> 
+   <td colname="col2"> <p>定时元数据的原始内容。 </p> <p>如果类型为TAG，则该值表示提示/标记的整个属性列表。 如果类型ID 3为null，则值为null。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>元数据 </p> </td> 

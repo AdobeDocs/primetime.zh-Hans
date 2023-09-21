@@ -1,8 +1,7 @@
 ---
-description: TVSDK为您提供信息，以便您对点进广告执行操作。 在创建播放器UI时，您必须确定在用户单击可点击广告时如何响应。
+description: TVSDK为您提供信息，以便您对点进广告执行操作。 在创建播放器UI时，您必须决定当用户单击可点击广告时如何响应。
 title: 可点击广告
-exl-id: 50c74c82-c5d8-43f6-accf-8330a426a7bd
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '362'
 ht-degree: 0%
@@ -11,17 +10,17 @@ ht-degree: 0%
 
 # 可点击广告 {#clickable-ads}
 
-TVSDK为您提供信息，以便您对点进广告执行操作。 在创建播放器UI时，您必须确定在用户单击可点击广告时如何响应。
+TVSDK为您提供信息，以便您对点进广告执行操作。 在创建播放器UI时，您必须决定当用户单击可点击广告时如何响应。
 
-对于TVSDK forFlash运行时，只能点击线性广告。
+对于Flash运行时的TVSDK，只能单击线性广告。
 
-## 响应广告的点击次数 {#respond-to-clicks-on-ads}
+## 响应广告点击次数 {#respond-to-clicks-on-ads}
 
 当用户单击广告或相关按钮时，您的应用程序负责响应。 TVSDK为您提供有关目标URL的信息。
 
-此示例显示了一种管理广告点击的可能方法。
+此示例显示了一种管理广告点击量的可能方式。
 
-1. 每次播放广告时，都会在媒体播放器顶部显示一个按钮。 单击广告的用户将被重定向到广告URL。 此按钮是 [!DNL ClickableAdsOverlay.xml].
+1. 每次播放广告时，在媒体播放器顶部显示一个按钮。 单击广告的用户将被重定向到广告URL。 此按钮是 [!DNL ClickableAdsOverlay.xml].
 
    ```xml
       <?xml version="1.0"?> 
@@ -79,7 +78,7 @@ TVSDK为您提供信息，以便您对点进广告执行操作。 在创建播�
       _player.addEventListener(AdClickEvent.AD_CLICK, onAdClick);
    ```
 
-1. 将用户定向到广告URL时暂停媒体播放器。
+1. 在将用户定向到广告URL时暂停媒体播放器。
 
    ```
    private function onAdClick(event:AdClickEvent):void { 
@@ -96,9 +95,9 @@ TVSDK为您提供信息，以便您对点进广告执行操作。 在创建播�
    
    * 在应用程序内的浏览器中打开点进URL。
 
-      在桌面平台上，视频广告播放区域通常用于在用户单击时调用点进URL。
+     在桌面平台上，视频广告播放区域通常用于在用户单击时调用点进URL。
    * 将用户重定向到外部移动Web浏览器。
 
-      在移动设备上，视频广告播放区域用于执行其他功能，例如隐藏和显示控件、暂停播放、展开到全屏等。 因此，在移动设备上，通常会向用户显示一个单独的视图（例如发起人按钮），作为启动点进URL的一种方式。
+     在移动设备上，视频广告播放区域用于执行其他功能，例如隐藏和显示控件、暂停播放、展开到全屏等等。 因此，在移动设备上，通常会向用户显示一个单独的视图（例如发起人按钮），作为启动点进URL的一种方式。
 
 1. 关闭显示点进信息的浏览器窗口，然后继续播放视频。

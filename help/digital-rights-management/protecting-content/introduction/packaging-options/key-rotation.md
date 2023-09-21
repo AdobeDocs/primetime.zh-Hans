@@ -1,8 +1,7 @@
 ---
-description: 在创建包时，可以选择以下加密选项。 但是，在许可证获取期间，您无法修改加密选项
+description: 在创建包时，可以选择以下加密选项。 但是，在获取许可证期间不能修改加密选项
 title: 密钥轮替
-exl-id: 1b439b5f-7a63-4fe2-ae15-c18cda0b31cd
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '182'
 ht-degree: 0%
@@ -17,7 +16,7 @@ ht-degree: 0%
 
 启用密钥轮换时，轮换密钥用于加密内容，并且可以更改密钥，以便每个轮换密钥仅用于加密部分内容。 使用内容加密密钥保护轮换密钥，并且客户端仍然获得包含CEK的单个许可证以使用内容。
 
-打包程序实现可以控制使用的内容加密密钥和轮换密钥，以及轮换密钥的更改频率。
+打包器实现可以控制使用的内容加密密钥和旋转密钥，以及旋转密钥的更改频率。
 
 >[!NOTE]
 >

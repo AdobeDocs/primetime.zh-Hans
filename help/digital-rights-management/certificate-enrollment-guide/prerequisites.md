@@ -2,8 +2,7 @@
 title: 先决条件
 description: 先决条件
 copied-description: true
-exl-id: 1550bade-5ee5-4af3-8529-31332c6d993b
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '52'
 ht-degree: 0%
@@ -12,7 +11,7 @@ ht-degree: 0%
 
 # 先决条件 {#prerequisites}
 
-要使用证书注册站点请求证书，您需要了解以下信息：
+要使用证书注册站点请求证书，您需要知道以下信息：
 
 * 公钥基础设施(PKI)的工作原理
 * 如何生成密钥对并保护私钥

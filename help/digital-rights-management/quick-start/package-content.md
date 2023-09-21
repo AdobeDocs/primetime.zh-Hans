@@ -1,19 +1,18 @@
 ---
-title: 将加密内容打包
-description: 将加密内容打包
+title: 打包加密内容
+description: 打包加密内容
 copied-description: true
-exl-id: e5792917-8172-48b0-8792-7a7e942596c5
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '227'
 ht-degree: 0%
 
 ---
 
-# 将加密内容打包{#package-encrypted-content}
+# 打包加密内容{#package-encrypted-content}
 
 1. 复制 `<Primetime DRM DVD>\Reference Implementation\Command Line Tools\` 目录到您的本地文件系统。
-1. 在您的本地 `Command Line Tools\` 文件夹，请更新 `flashaccesstools.properties` 使用服务器的文件。
+1. 在您的本地 `Command Line Tools\` 文件夹，更新 `flashaccesstools.properties` 文件以与您的服务器配合使用。
 
    您必须至少修改以下属性：
 
@@ -26,13 +25,14 @@ ht-degree: 0%
    * `encrypt.sign.certfile=[packager-credentials.pfx]`：Packager证书的路径(以 [!DNL .pfx])。
 
    * `encrypt.sign.certpass=[password]`：Packager证书的密码。
+
    >[!NOTE]
    >
    >确保密码不打乱。
 
 1. 创建策略。
 
-   在您的本地 `Command Line Tools\` 文件夹，运行以下命令：
+   在您的本地 `Command Line Tools\` 文件夹，请运行以下命令：
 
    ```
    java -jar libs/AdobePolicyManager.jar new examplepolicy.pol -n examplepolicy -x
@@ -42,7 +42,7 @@ ht-degree: 0%
 1. 将要加密的MP4、FLV或F4V视频文件复制到本地 `Command Line Tools\` 文件夹。
 1. 打包您的内容。
 
-   假设您的源视频文件为 [!DNL sample.mp4]. 在您的本地 `Command Line Tools\` 文件夹，运行以下命令：
+   假设您的源视频文件为 [!DNL sample.mp4]. 在您的本地 `Command Line Tools\` 文件夹，请运行以下命令：
 
    ```
    java -jar libs/AdobePackager.jar sample.mp4 sample_encrypted.mp4 -p examplepolicy.pol
@@ -50,11 +50,11 @@ ht-degree: 0%
 
    >[!NOTE]
    >
-   >如果要打包HLS、HDS或DASH内容，则必须使用其他打包工具，例如 [Adobe Primetime Offline Packager](https://helpx.adobe.com/content/dam/help/en/primetime/guides/offline_packager_getting_started.pdf).
+   >如果要打包HLS、HDS或DASH内容，必须使用其他打包工具，例如 [Adobe Primetime Offline Packager](https://helpx.adobe.com/content/dam/help/en/primetime/guides/offline_packager_getting_started.pdf).
 
-1. 复制加密文件工件（在本例中） [!DNL sample_encrypted.mp4] 和 [!DNL sample_encrypted.mp4.metadata])至 `<Your Content Server - Tomcat Install Dir>\webapps\ROOT`.
+1. 复制加密的文件工件（在本例中） [!DNL sample_encrypted.mp4] 和 [!DNL sample_encrypted.mp4.metadata])到 `<Your Content Server - Tomcat Install Dir>\webapps\ROOT`.
 
-此时，您已完成了此过程的打包阶段。
+此时，您已完成了流程的打包阶段。
 
 >[!NOTE]
 >

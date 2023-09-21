@@ -2,8 +2,7 @@
 title: 服务器属性文件
 description: 服务器属性文件
 copied-description: true
-exl-id: c42fde8f-e438-4497-bd15-ebd0f6e2eed7
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '182'
 ht-degree: 0%
@@ -14,7 +13,7 @@ ht-degree: 0%
 
 服务器需要两个配置文件，一个用于许可证服务器，另一个用于打包程序。 这两个文件都必须放置在类路径上。 属性文件包含Adobe颁发的凭据的位置。 这些凭据可以指定为.pfx文件和密码，也可以通过为HSM上存储的凭据提供别名和密码来指定。
 
-有关每个参数的特定值和用法的详细信息，请参阅属性文件。 示例属性文件可在参考实施的“资源”目录（参考实施\服务器\资源）中找到。
+有关每个参数的特定值和用法的详细信息，请参阅属性文件。 示例属性文件可在参考实施的“resources”目录(Reference Implementation\Server\resources)中找到。
 
 为确保凭据密码的安全性，提供了一个工具(ScrambleUtil.class)，用于在将密码输入flashaccess-refimpl.properties或flashaccess-refimpl-packager.properties文件之前对其进行加密。
 

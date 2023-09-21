@@ -1,8 +1,7 @@
 ---
-description: 您的应用程序可以通过侦听由TVSDK调度的事件，监控播放器中的活动以及播放器状态的变化。
+description: 您的应用程序可以通过侦听由TVSDK调度的事件，监控播放器中的活动和播放器状态的变化。
 title: Primetime播放器事件摘要
-exl-id: 3912f140-1600-41fb-9dc4-306646b7cd85
-source-git-commit: 59f7f8aa82be59c4012ee80648032600590bc4e1
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '567'
 ht-degree: 0%
@@ -11,11 +10,11 @@ ht-degree: 0%
 
 # Primetime播放器事件摘要 {#primetime-player-events-summary}
 
-您的应用程序可以通过侦听由TVSDK调度的事件，监控播放器中的活动以及播放器状态的变化。
+您的应用程序可以通过侦听由TVSDK调度的事件，监控播放器中的活动和播放器状态的变化。
 
-## 事件 {#events}
+## 活动 {#events}
 
-TVSDK会在应用程序必须响应的事件发生时通知您。 每个事件都对应一个监听程序类，并具有必须实现的回调方法。
+TVSDK会在发生应用程序必须响应的事件时通知您。 每个事件都对应一个监听程序类，其中包含必须实现的回调方法。
 
 >[!TIP]
 >
@@ -110,7 +109,7 @@ TVSDK会在应用程序必须响应的事件发生时通知您。 每个事件�
 
 `BufferPreparedEventListener`
 
-* **含义** 缓冲器已准备好。
+* **含义** 已准备缓冲区。
 
 * **要实施的回调** `onBufferPrepared()`
 
@@ -118,7 +117,7 @@ TVSDK会在应用程序必须响应的事件发生时通知您。 每个事件�
 
 `CaptionsUpdatedEventListener`
 
-* **含义** 已检测到新的字幕跟踪。
+* **含义** 已检测到新的描述跟踪。
 
 * **要实施的回调** `onCaptionsUpdated(MediaPlayerItemEvent event)`
 
@@ -174,7 +173,7 @@ TVSDK会在应用程序必须响应的事件发生时通知您。 每个事件�
 
 `PlaybackRangeUpdatedEventListener`
 
-* **含义** 播放范围已更新。
+* **含义** 已更新播放范围。
 
 * **要实施的回调** `onPlaybackRangeUpdated(MediaPlayerItemEvent event)`
 
@@ -182,7 +181,7 @@ TVSDK会在应用程序必须响应的事件发生时通知您。 每个事件�
 
 `PlaybackRatePlayingEventListener`
 
-* **含义** 屏幕上将显示新的播放速率。
+* **含义** 屏幕上会显示新的播放速率。
 
 * **要实施的回调** `onRatePlaying(PlaybackRateEvent event)`
 
@@ -198,7 +197,7 @@ TVSDK会在应用程序必须响应的事件发生时通知您。 每个事件�
 
 `PlayStartEventListener`
 
-* **含义** 播放已开始。
+* **含义** 已开始播放。
 
 * **要实施的回调** `onPlayStart()`
 
@@ -214,7 +213,7 @@ TVSDK会在应用程序必须响应的事件发生时通知您。 每个事件�
 
 `ReservationReachedEventListener`
 
-* **含义** 播放已达到时间线预订。
+* **含义** 播放已达到时间线保留。
 
 * **要实施的回调** `onReservationReached(ReservationEvent event)`
 
@@ -222,7 +221,7 @@ TVSDK会在应用程序必须响应的事件发生时通知您。 每个事件�
 
 `SeekBeginEventListener`
 
-* **含义** 搜寻操作已启动。
+* **含义** 搜寻操作已开始。
 
 * **要实施的回调** `onSeekBegin(SeekEvent event)`
 
@@ -270,7 +269,7 @@ TVSDK会在应用程序必须响应的事件发生时通知您。 每个事件�
 
 `TimedEventEventListener`
 
-* **含义** 该操作已完成，且已花费该操作所需的时间。
+* **含义** 操作已完成，且操作所用的时间也已完成。
 
 * **要实施的回调** `onTimedEvent(TimedEventEvent event)`
 
@@ -278,7 +277,7 @@ TVSDK会在应用程序必须响应的事件发生时通知您。 每个事件�
 
 `TimelineMetadataAddedInBackgroundEventListener`
 
-* **含义** 已将新的定时元数据添加到后台项目。
+* **含义** 新的定时元数据已添加到后台项目。
 
 * **要实施的回调** `onTimedMetadata(TimedMetadataEvent event)`
 
@@ -294,7 +293,7 @@ TVSDK会在应用程序必须响应的事件发生时通知您。 每个事件�
 
 `TimelineUpdatedEventListener`
 
-* **含义** 时间轴已修改。 广告可能已添加到时间轴或从时间轴中删除。
+* **含义** 时间线已修改。 广告可能已添加到时间轴或从时间轴中删除。
 
 * **要实施的回调** `onTimelineUpdated(TimelineEvent event)`
 

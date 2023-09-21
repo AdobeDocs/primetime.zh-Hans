@@ -1,8 +1,7 @@
 ---
 description: 您的应用程序必须在适当的时间使用适当的TimedMetadata对象。
 title: 在调度定时元数据对象时存储这些对象
-exl-id: da7ee636-f3ac-4aac-9ca0-7075b8c910f0
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '120'
 ht-degree: 0%
@@ -17,16 +16,16 @@ ht-degree: 0%
 
 >[!TIP]
 >
->与每个报表包关联的 `TimedMetadata` 是播放时间轴上的本地时间。
+>与每个报表关联的时间 `TimedMetadata` 是播放时间轴上的本地时间。
 
 要在调度定时元数据对象时存储这些对象，请执行以下操作：
 
 1. 跟踪当前播放时间。
 1. 将当前播放时间与调度的播放时间相匹配 `TimedMetadata` 对象。
 
-1. 使用 `TimedMetadata` 其中，开始时间等于当前本地播放时间。
+1. 使用 `TimedMetadata` 其中开始时间等于当前本地播放时间。
 
-   以下示例说明如何保存 `TimedMetadata` 中的对象 `ArrayList`.
+   以下示例显示如何保存 `TimedMetadata` 中的对象 `ArrayList`.
 
    ```java
    private List<TimedMetadata> _timedMetadataList =  

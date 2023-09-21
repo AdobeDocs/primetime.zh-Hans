@@ -1,8 +1,7 @@
 ---
 description: 此表证明有关WARN类型通知的详细信息。
 title: 警告通知代码
-exl-id: 15f99d89-6f68-476e-a5d3-09c579486920
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '366'
 ht-degree: 4%
@@ -24,7 +23,7 @@ ht-degree: 4%
    <th colname="2" class="entry"> 名称 </th> 
    <th colname="3" class="entry"> InnerNotification </th> 
    <th colname="4" class="entry"> 元数据键 </th> 
-   <th colname="5" class="entry"> 注释 </th> 
+   <th colname="5" class="entry"> 评论 </th> 
   </tr> 
  </thead>
  <tbody> 
@@ -44,10 +43,10 @@ ht-degree: 4%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 201003</span> </td> 
-   <td colname="2"><span class="codeph"> AD_RESOLVER_返回_NO_ADS</span> </td> 
+   <td colname="2"><span class="codeph"> AD_RESOLVER_返回的_NO_ADS</span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"><span class="codeph"> INTERNAL_ERROR， AD_ID，描述</span> </td> 
-   <td colname="5"> <p>广告解析失败，因为VAST URL无效，或者因为VAST包装中未返回任何广告。 </p> </td> 
+   <td colname="5"> <p>广告解析失败，因为VAST URL无效或因为VAST包装器未返回任何广告。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><b>背景清单</b> </td> 
@@ -61,7 +60,7 @@ ht-degree: 4%
    <td colname="2"><span class="codeph"> BACKGROUND_MANIFEST_警告</span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"><span class="codeph"> BACKGROUND_MANIFEST_WARNING_ERROR</span> <span class="codeph"> BACKGROUND_MANIFEST_WARNING_NAME</span> <span class="codeph"> 描述</span> </td> 
-   <td colname="5"> <p> 后台清单下载出错。 更新后台清单时出现的任何问题都会作为TVSDK警告调度，而不会导致播放停止。 </p> </td> 
+   <td colname="5"> <p> 后台清单下载时出错。 更新后台清单时出现的任何问题都会作为TVSDK警告分发，而不会导致播放停止。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 204001 </span> </td> 
@@ -71,7 +70,7 @@ ht-degree: 4%
    <td colname="5"> <p></p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>时间范围集合</b> </td> 
+   <td colname="1"><b>TimeRangeCollection</b> </td> 
    <td colname="2"> </td>
    <td colname="3"> </td>
    <td colname="4"> </td>
@@ -89,7 +88,7 @@ ht-degree: 4%
    <td colname="2"><span class="codeph"> INVALID_TIME_范围 </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"><span class="codeph"> 描述 </span> </td> 
-   <td colname="5"> <p> 一个或多个时间范围无效，将被忽略或修改。 </p> <p> DESCRIPTION是包含无效范围说明的字符串。 </p> </td> 
+   <td colname="5"> <p> 一个或多个时间范围无效，将被忽略或修改。 </p> <p> DESCRIPTION是一个包含无效范围说明的字符串。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><b>特定于iOS</b> </td> 
@@ -100,7 +99,7 @@ ht-degree: 4%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 270000 </span> </td> 
-   <td colname="2"><span class="codeph"> 播放器_NOT_READY </span> </td> 
+   <td colname="2"><span class="codeph"> 播放器未就绪 </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"><span class="codeph"> 描述 </span> </td> 
    <td colname="5"> </td> 
@@ -110,7 +109,7 @@ ht-degree: 4%
    <td colname="2"><span class="codeph"> AD_NOT_INSERTED </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"> <p>无 </p> </td> 
-   <td colname="5"> <p>未在流上插入AD。 </p> </td> 
+   <td colname="5"> <p>未在流中插入AD。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 270002 </span> </td> 
@@ -159,7 +158,7 @@ ht-degree: 4%
    <td colname="2"><span class="codeph"> AD_HLS_MATCHING_BITRATE_MISSING</span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"><span class="codeph"> AD_ASSET</span> </td> 
-   <td colname="5"> <p>缺少匹配比特率。 </p> <p>  </p>
+   <td colname="5"> <p>缺少匹配的比特率。 </p> <p>  </p>
     <!-- workaround for PDF having too much negative kerning in column 2 --> </td> 
   </tr> 
  </tbody> 
@@ -167,4 +166,4 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->adID和源(URL)可以通过通知元数据中的PTAdAsset进行检索，并使用 `AD_ASSET` 键。
+>通过通知元数据中的PTAdAsset，可以检索adID和源(URL)，并使用 `AD_ASSET` 键。

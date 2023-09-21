@@ -1,8 +1,7 @@
 ---
-title: 如何将MVPD登录页从iFrame迁移到弹出窗口
-description: 如何将MVPD登录页从iFrame迁移到弹出窗口
-exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
-source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
+title: 如何将MVPD登录页面从iFrame迁移到弹出窗口
+description: 如何将MVPD登录页面从iFrame迁移到弹出窗口
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '689'
 ht-degree: 0%
@@ -13,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 ## 弹出窗口与iFrame {#popup-vs-iframe}
 
@@ -23,11 +22,11 @@ ht-degree: 0%
 * [Adobe Primetime authentication and Safari login issues](https://tve.helpdocsonline.com/adobe-pass)
 * [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)-->
 
-Adobe Primetime身份验证团队 **建议实施弹出窗口/新窗口登录页面** 而不是Firefox和Safari上的iFrame版本。  但是，如果您要实施Internet Explorer的登录页面，则可能会遇到弹出窗口实施问题。 IE问题是由以下事实造成的：用户使用弹出窗口中的MVPD进行身份验证后，Adobe Primetime身份验证会强制实施父页面重定向，而Internet Explorer会将父页面重定向视为弹出窗口阻止程序。 Adobe Primetime身份验证团队 **建议为Internet Explorer实施iFrame登录**.
+Adobe Primetime身份验证团队 **建议实施弹出窗口/新窗口登录页面** 而不是Firefox和Safari上的iFrame版本。  但是，如果您实施的是Internet Explorer的登录页面，则可能会遇到弹出窗口实施问题。 IE问题是由以下事实造成的：用户在弹出窗口中使用MVPD进行身份验证后，Adobe Primetime身份验证会强制实施父页面重定向，而Internet Explorer会将该重定向视为弹出窗口阻止程序。 Adobe Primetime身份验证团队 **建议为Internet Explorer实施iFrame登录**.
 
-本技术说明中提供的示例代码使用iFrame和弹出窗口的混合实现 — 在Internet Explorer上打开iFrame，并在其他浏览器上打开弹出窗口。
+本技术说明中提供的示例代码使用iFrame和弹出窗口的混合实现 — 在Internet Explorer上打开iFrame，在其他浏览器上打开弹出窗口。
 
-考虑到iFrame实施已存在，技术说明的第一部分将介绍iFrame实施的代码，第二部分将介绍所做的更改，以适应将弹出窗口实施作为默认设置的情况。
+考虑到iFrame实施已存在，技术说明的第一部分将介绍iFrame实施的代码，第二部分将介绍所做的更改以适应将弹出窗口实施作为默认设置的情况。
 
 
 ## iFrame中具有登录页面的MVPD选取器 {#mvpd-pickr-iframe}
@@ -105,7 +104,7 @@ function setSelectedProvider(providerID) {
 
 ## 在弹出窗口中具有登录页面的MVPD选取器 {#mvpd-pickr-popup}
 
-因为我们不会使用 **iFrame** HTML代码将不再包含iFrame或用于关闭iFrame的按钮。 之前包含iFrame的div - **mvpddiv**  — 将保留并用于以下情况：
+因为我们不会使用 **iFrame** HTML代码将不再包含iFrame或用于关闭iFrame的按钮。 之前包含iFrame的div - **mvpddiv**  — 将保留并用于以下内容：
 
 * 通知用户如果失去弹出窗口焦点，MVPD登录页已经打开
 * 提供链接以重新获得对弹出窗口的关注
@@ -136,7 +135,7 @@ function setSelectedProvider(providerID) {
 
 MVPD列表将显示在名为的div中 **选取器** 作为选择 **-mvpdList**.
 
-将使用新的API回调 —  **setConfig(configXML)**. 调用setRequestor(requestorID)函数后会触发回调。 此回调将返回与之前设置的requestorID集成的MVPD列表。 在回调方法中，将解析传入的XML，并缓存MVPD列表。 也会创建MVPD选取器，但不显示。
+将使用新的API回调 —  **setConfig(configXML)**. 调用setRequestor(requestorID)函数后会触发回调。 此回调将返回与先前设置的requestorID集成的MVPD列表。 在回调方法中，将解析传入的XML，并缓存MVPD列表。 也会创建MVPD选取器，但不显示。
 
 ```JavaScript
 var mvpdList;  // The list of cached MVPDs
@@ -168,7 +167,7 @@ function setConfig(configXML) {
 }
 ```
 
-调用getAuthentication()或getAuthorization()函数后，将触发displayProviderDialog()回调。 通常，在此回调中，将生成并显示MVPD列表。 由于已构建MVPD选取器，因此唯一要做的就是向用户显示它。
+调用getAuthentication()或getAuthorization()函数后，将触发displayProviderDialog()回调。 通常，在此回调中，将生成并显示MVPD列表。 由于MVPD选取器已构建，因此只需向用户显示即可。
 
 ```JavaScript
 /*
@@ -179,9 +178,9 @@ function displayProviderDialog(providers) {
 }
 ```
 
-用户从选取器中选择MVPD后，需要创建弹出窗口。 如果使用about：blank或使用其他域上的页面创建弹出窗口，则某些浏览器可能会阻止弹出窗口，因此建议使用加载AccessEnabler的主机名打开该弹出窗口。
+用户从选取器中选择MVPD后，需要创建弹出窗口。 如果使用about：blank或使用其他域上的页面创建弹出窗口，则某些浏览器可能会阻止弹出窗口，因此建议使用加载AccessEnabler的主机名打开弹出窗口。
 
-在iFrame实施中，重置身份验证流程由btnCloseIframe按钮和JavaScript函数closeIframeAction()完成，但现在无法再修饰iFrame。 因此，通过观察弹出窗口何时关闭（用户关闭或完成身份验证流程）可以获得相同的行为。 已添加一个代码片段，在用户失去弹出窗口焦点的情况下也会有帮助：
+在iFrame实施中，重置身份验证流由btnCloseIframe按钮和JavaScript函数closeIframeAction()完成，但现在无法再修饰iFrame。 因此，通过观察何时关闭弹出窗口（用户关闭或完成验证流程）可以获得相同的行为。 已添加一个代码片段，在用户失去弹出窗口的焦点时也会有帮助：
 
 ```HTML
 "<a href="javascript:mvpdWindow.focus();">Click here to open it.</a>".
@@ -228,8 +227,7 @@ function checkClosed() {
 
 >[!IMPORTANT]
 >
->* 该示例代码包含一个用于所用requestorID - &#39;REF&#39;的硬编码变量，该变量应被替换为真正的程序员请求者ID。
->* 示例代码只能从与所用请求者ID关联的已列入白名单的域中正确运行。
->* 由于整个代码均可下载，因此此技术说明中显示的代码已被截断。 有关完整示例，请参阅 **JS iFrame与弹出窗口示例**.
+>* 该示例代码包含一个用于所用requestorID - &#39;REF&#39;的硬编码变量，该变量应当被替换为真正的程序员请求者ID。
+>* 此示例代码只能从与所用请求者ID关联的已列入白名单的域中正确运行。
+>* 由于整个代码均可供下载，因此本技术说明中介绍的代码已被截断。 有关完整的示例，请参见 **JS iFrame与弹出窗口示例**.
 >* 外部JavaScript库链接自 [Google托管服务](https://developers.google.com/speed/libraries/).
-

@@ -1,8 +1,7 @@
 ---
-description: 这些课程有助于在时间表中检测广告机会。
+description: 这些类有助于在时间表中检测广告机会。
 title: 时间线检测器类
-exl-id: c6a39ac5-53bb-4a5b-802b-eeb18ca6a7bc
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '101'
 ht-degree: 0%
@@ -11,9 +10,9 @@ ht-degree: 0%
 
 # 时间线检测器类{#timeline-detectors-classes}
 
-这些课程有助于在时间表中检测广告机会。
+这些类有助于在时间表中检测广告机会。
 
-包： [com.adobe.mediacore.timeline.detailers](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/timeline/detectors/package-detail.html)
+包： [com.adobe.mediacore.timeline.detectors](https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/timeline/detectors/package-detail.html)
 
 | 名称 | 描述 |
 |---|---|

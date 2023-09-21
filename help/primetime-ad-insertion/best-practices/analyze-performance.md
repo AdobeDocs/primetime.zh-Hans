@@ -2,8 +2,7 @@
 title: 分析性能
 description: 分析性能
 copied-description: true
-exl-id: bef14bc2-30dc-44e5-bdfe-8b79f3af2cec
-source-git-commit: 3e63c187f12d1bff53370bbcde4d6a77f58f3b4f
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '64'
 ht-degree: 0%
@@ -16,4 +15,4 @@ PrimetimeAd Insertion控制台提供功能板，用于分析单个会话或流�
 
 ## 分析请求的各个时间安排 {#analyze-timings}
 
-可以使用随每个请求一起发送的标头检查CDN和广告分辨率的计时。  有关更多信息，请参阅 [调试标头](/help/primetime-ad-insertion/performance-monitoring-debugging-reporting/debugging-headers.md).
+可以使用随每个请求发送的标头检查CDN和广告分辨率的时间安排。  有关更多信息，请参阅 [调试标头](/help/primetime-ad-insertion/performance-monitoring-debugging-reporting/debugging-headers.md).

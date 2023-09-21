@@ -1,8 +1,7 @@
 ---
-description: 您可以使用回调函数提供有关内容、广告和章节跟踪调用的自定义元数据。
+description: 您可以使用回调函数提供关于内容、广告和章节跟踪调用的自定义元数据。
 title: 实施自定义元数据支持
-exl-id: c7478578-7f49-4fd0-b381-c558888401aa
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '74'
 ht-degree: 0%
@@ -11,11 +10,11 @@ ht-degree: 0%
 
 # 实施自定义元数据支持{#implement-custom-metadata-support}
 
-您可以使用回调函数提供有关内容、广告和章节跟踪调用的自定义元数据。
+您可以使用回调函数提供关于内容、广告和章节跟踪调用的自定义元数据。
 
-回调函数会在进行跟踪调用之前调用，因此您的应用程序可以附加特定于广告或章节的元数据。
+回调函数是在进行跟踪调用之前调用的，因此您的应用程序可以附加特定于广告或章节的元数据。
 
-为内容、广告和章节调用回调函数。
+调用内容、广告和章节的回调函数。
 
 ```
 // Video Metadata Block 

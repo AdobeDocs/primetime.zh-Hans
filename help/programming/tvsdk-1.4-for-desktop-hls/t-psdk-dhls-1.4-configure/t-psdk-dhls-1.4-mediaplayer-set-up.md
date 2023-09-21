@@ -1,8 +1,7 @@
 ---
 description: MediaPlayer界面封装媒体播放器的功能和行为。
 title: 设置MediaPlay
-exl-id: eec51f3e-4779-4fb5-b735-d5be412de64e
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '202'
 ht-degree: 0%
@@ -13,9 +12,9 @@ ht-degree: 0%
 
 TVSDK提供了用于创建高级视频播放器应用程序（您的Primetime播放器）的工具，您可以将其与其他Primetime组件集成。
 
-使用您平台的工具来创建播放器，并将其连接到TVSDK中的媒体播放器视图，该视图提供了播放和管理视频的方法。 例如，TVSDK提供播放和暂停方法。 您可以在平台上创建用户界面按钮，并设置这些按钮以调用这些TVSDK方法。MediaPlayer界面封装了媒体播放器的功能和行为。
+使用您平台的工具来创建播放器，并将其连接到TVSDK中的媒体播放器视图，该视图提供了多种播放和管理视频的方法。 例如，TVSDK提供播放和暂停方法。 您可以在平台上创建用户界面按钮，并设置这些按钮以调用这些TVSDK方法。MediaPlayer界面封装了媒体播放器的功能和行为。
 
-TVSDK提供以下功能的单个实施： `MediaPlayer` 接口： DefaultMediaPlayer类。 当您需要视频播放功能时，实例化 `DefaultMediaPlayer`.
+TVSDK可提供 `MediaPlayer` 接口： DefaultMediaPlayer类。 当您需要视频播放功能时，实例化 `DefaultMediaPlayer`.
 
 >[!NOTE]
 >
@@ -34,7 +33,7 @@ TVSDK提供以下功能的单个实施： `MediaPlayer` 接口： DefaultMediaPl
    public static function create(context:Context):MediaPlayer
    ```
 
-   这将返回一个通用 `MediaPlayer` 界面。 1.实例化 `MediaPlayerView` 并指定要使用的StageVideo实例：
+   这将返回一个通用 `MediaPlayer` 界面。 1.实例化a `MediaPlayerView` 并指定要使用的StageVideo实例：
 
    ```
    var view:MediaPlayerView =  

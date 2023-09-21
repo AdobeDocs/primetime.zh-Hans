@@ -1,9 +1,8 @@
 ---
-description: 您可以使用现有的延迟广告加载机制启用或禁用延迟广告解析功能（默认禁用延迟广告解析）。
+description: 您可以使用现有的延迟广告加载机制启用或禁用延迟广告解析功能（默认情况下禁用延迟广告解析）。
 keywords: 延迟；广告解析；广告加载；延迟加载
 title: 启用延迟广告解析
-exl-id: a52a1f9a-3bf6-4193-8347-1ef248ba8884
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '298'
 ht-degree: 0%
@@ -12,18 +11,18 @@ ht-degree: 0%
 
 # 启用延迟广告解析 {#enable-lazy-ad-resolving}
 
-您可以使用现有的延迟广告加载机制启用或禁用延迟广告解析功能（默认禁用延迟广告解析）。
+您可以使用现有的延迟广告加载机制启用或禁用延迟广告解析功能（默认情况下禁用延迟广告解析）。
 
 您可以通过调用来启用或禁用延迟广告解析 [AdvertisingMetadata.setDelayLoading](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_2.4/com/adobe/mediacore/metadata/AdvertisingMetadata.html#setDelayAdLoading-boolean-) 为true或false。
 
 * 使用布尔值 *hasDelayAdLoading* 和 *setDelayAdLoading* AdvertisingMetadata中用于控制广告解析时间和广告在时间轴上的投放的方法：
 
-   * 如果 *hasDelayAdLoading* 返回false，TVSDK将等到所有广告都解析并置入后才过渡到PREPARED状态。
+   * 如果 *hasDelayAdLoading* 返回false，TVSDK将等待所有广告解析并放置之后再过渡到“已准备”状态。
    * 如果 *hasDelayAdLoading* 返回true，TVSDK仅解析初始广告和过渡到“已准备”状态。
 
       * 剩余的广告将在播放期间解析并置入。
-   * 当*hasPreroll *或 *hasLivePreroll* return false， TVSDK假定没有前置广告，并立即开始播放内容。 这些参数默认设置为true。
 
+   * 当*hasPreroll *或 *hasLivePreroll* return false， TVSDK假定没有前置广告，并立即开始播放内容。 这些参数默认设置为true。
 
 **与延迟广告解析相关的API：**
 
@@ -45,11 +44,11 @@ Methods:
     public Placement.Type getPlacementType() // Returns whether
 ```
 
-要在搓擦条上准确地将广告反映为提示，请聆听 `TimelineEvent`事件，并在每次收到此事件时重绘搓擦栏。
+要在搓擦条上准确地将广告反映为提示，请聆听 `TimelineEvent`事件，并在每次收到此事件时重绘搓擦条。
 
-为VOD流启用延迟广告解析后，所有广告时间都会放在时间轴上，但是，许多广告时间尚未解析。 应用程序可以通过检查 `TimelineMarker::getDuration()`. 如果该值大于零，则表示广告时间内的广告已被解析。
+为VOD流启用延迟广告解析后，所有广告时间都会放在时间轴上，但是，许多广告时间尚未解析。 应用程序可以通过检查 `TimelineMarker::getDuration()`. 如果该值大于零，则表示已解析广告时间内的广告。
 
-TVSDK会在广告时间解析后以及播放器转换为“已准备”状态时调度此事件。
+TVSDK会在广告时间解决后，以及在播放器过渡到“已准备”状态时调度此事件。
 
 ```
 mediaPlayer.addEventListener(MediaPlayerEvent.TIMELINE_UPDATED, timelineUpdatedEventListener); 

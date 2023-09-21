@@ -1,8 +1,7 @@
 ---
 description: TimeRangeCollection实用程序类抽象TimeRange规范有序集合的概念，并提供将自身转换为元数据实例的服务。
 title: TimeRangecollection类
-exl-id: 2e5160b0-2254-4a40-8c32-fe3e05b9fc30
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '70'
 ht-degree: 0%
@@ -25,4 +24,4 @@ public final class TimeRangeCollection {
 }
 ```
 
-集合类型的定义值为 `MARK_RANGES`， `DELETE_RANGES`、和 `REPLACE_RANGES`. 您可以创建 `TimeRangeCollection`使用这三种类型。
+集合类型的已定义值为 `MARK_RANGES`， `DELETE_RANGES`、和 `REPLACE_RANGES`. 您可以创建 `TimeRangeCollection`使用这三种类型。

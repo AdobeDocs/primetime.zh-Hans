@@ -1,17 +1,16 @@
 ---
-description: 从时间线中移除localTime中开始和结束时间之间的TimeRanges。
-title: 删除包含Primetime广告决策广告的范围
-exl-id: e097f92e-b4ce-4e33-9a71-213cf19188fb
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+description: 从时间线中移除在localTime中开始和结束之间的TimeRanges。
+title: 删除包含Primetime ad decisioning广告的范围
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '42'
 ht-degree: 0%
 
 ---
 
-# 删除包含Primetime广告决策广告的范围{#delete-ranges-with-primetime-ad-decisioning-ad}
+# 删除包含Primetime ad decisioning广告的范围{#delete-ranges-with-primetime-ad-decisioning-ad}
 
-从时间线中移除localTime中开始和结束时间之间的TimeRanges。
+从时间线中移除在localTime中开始和结束之间的TimeRanges。
 
 删除包含短语广告的范围。
 

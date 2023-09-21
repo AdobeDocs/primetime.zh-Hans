@@ -1,8 +1,7 @@
 ---
 description: 这些类描述您的媒体播放器及其资源。
 title: 媒体播放器类
-exl-id: de7f7488-2026-43b4-b74d-feff67bdc69a
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '420'
 ht-degree: 0%
@@ -22,7 +21,7 @@ ht-degree: 0%
    <td colname="2"><b>描述</b> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTABRControlParameters.html" format="html" scope="external"> PTABRControlParameters</a></span> </td> 
+   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTABRControlParameters.html" format="html" scope="external"> Ptabrcontrolparameters</a></span> </td> 
    <td colname="2">封装所有自适应比特率控制参数。 支持的参数包括： 
     <ul id="ul_pnh_hm2_2m"> 
      <li id="li_46572FE1EB514AFF8C9F731E44DAF30B"><span class="codeph"> minBitRate</span> </li> 
@@ -32,15 +31,15 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTDefaultMediaPlayerClientFactory.html" format="html" scope="external"> PTDefaultMediaPlayerClientFactory</a></span> </td> 
-   <td colname="2"> 的默认实施 <span class="codeph"> PTMediaPlayerClientFactory</span> 在TVSDK中。 它提供了可用的 <span class="codeph"> PTOpportunityResolver</span>， <span class="codeph"> PTContentResolver</span>、和 <span class="codeph"> ptadPolicySelector</span> 实例。 </td> 
+   <td colname="2"> 默认实施 <span class="codeph"> PTMediaPlayerClientFactory</span> 在TVSDK中。 它提供了可用的 <span class="codeph"> PTOpportunityResolver</span>， <span class="codeph"> PTContentResolver</span>、和 <span class="codeph"> ptadPolicySelector</span> 实例。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTMediaPlayer.html" format="html" scope="external"> PTMediaPlayer</a></span> </td> 
-   <td colname="2">定义Primetime播放器框架的根组件。 <p>应用程序创建此类的实例以回放媒体。 此组件会发送通知，让您的应用程序随时了解播放器的状态。 </p> </td> 
+   <td colname="2">定义Primetime播放器框架的根组件。 <p>应用程序创建此类的实例以播放媒体。 此组件会发送通知，让您的应用程序在任何给定时间知道播放器的状态。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Protocols/PTMediaPlayerClientFactory.html" format="html" scope="external"> PTMediaPlayerClientFactory</a></span> </td> 
-   <td colname="2"> 描述自定义媒体播放器客户端工厂应实施以提供可用的 <span class="codeph"> PTOpportunityResolver</span> ， <span class="codeph"> PTContentResolver</span> 和 <span class="codeph"> ptadPolicySelector</span> 实例。 </td> 
+   <td colname="2"> 描述自定义媒体播放器客户端工厂应实施以提供可用播放器的方法的协议 <span class="codeph"> PTOpportunityResolver</span> ， <span class="codeph"> PTContentResolver</span> 和 <span class="codeph"> ptadPolicySelector</span> 实例。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTMediaPlayerItem.html" format="html" scope="external"> PTMediaPlayerItem</a></span> </td> 
@@ -56,7 +55,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTMediaSelectionOption.html" format="html" scope="external"> PTMediaSelectionOption</a></span> </td> 
-   <td colname="2">表示用于满足不同语言首选项、辅助功能要求或自定义应用程序配置的视听媒体资源。 有效的选项类型： 
+   <td colname="2">表示一个视听媒体资源，可用于满足不同的语言首选项、辅助功能要求或自定义应用程序配置。 有效的选项类型： 
     <ul id="ul_p2q_gn2_2m"> 
      <li id="li_46BE5AE49732481FB6D336FFF896E5AD">字幕(<span class="codeph"> PTMediaSelectionOptionTypeSubtitle</span>) </li> 
      <li id="li_6CEADCA12D4A48B7AE4A539985F32119">备用音频(<span class="codeph"> PTMediaSelectionOptionTypeAudio</span>) </li> 
@@ -69,7 +68,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Protocols/PTOpportunityResolverDelegate.html" format="html" scope="external"> PTOpportunityResolverDelegate</a></span> </td> 
-   <td colname="2"> 描述自定义机会解析器( <span class="codeph"> PTOpportunityResolver</span> )应将商机的解析状态传达给代理人。 </td> 
+   <td colname="2"> 描述自定义机会解析器( <span class="codeph"> PTOpportunityResolver</span> )应将商机的解析状态传达给代表。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTSDK.html" format="html" scope="external"> PTSDK</a></span> </td> 
@@ -81,7 +80,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/appledoc/Classes/PTTextStyleRule.html" format="html" scope="external"> PTTextStyleRule</a></span> </td> 
-   <td colname="2"> 定义代表构成规则字典的文本样式属性键的常量。 </td> 
+   <td colname="2"> 定义表示构成规则字典的文本样式属性键的常量。 </td> 
   </tr> 
  </tbody> 
 </table>

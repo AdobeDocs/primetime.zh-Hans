@@ -1,8 +1,7 @@
 ---
 description: 您可以使用ClosedCaptionStyles类为隐藏式字幕轨道提供样式信息。 这会设置播放器显示的任何隐藏式字幕的样式。
 title: 控制隐藏式字幕样式
-exl-id: fd94a851-1e8f-4406-a3bb-ca115b4e60f8
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '565'
 ht-degree: 0%
@@ -22,12 +21,12 @@ ht-degree: 0%
 1. 等待MediaPlayer至少具有“已准备”状态(请参阅 [等待有效的状态](../../../tvsdk-1.4-for-desktop-hls/t-psdk-dhls-1.4-configure/c-psdk-dhls-1.4-ui-configure/t-psdk-dhls-1.4-ui-state-prepared-wait-for.md))。
 1. 要更改样式设置，请执行下列操作之一：
 
-   * 使用 `ClosedCaptionStylesBuilder` 帮助程序类(运行于 `ClosedCaptionStyles` 幕后)。
-   * 使用 `ClosedCaptionStyles` 直接分类。
+   * 使用 `ClosedCaptionStylesBuilder` 帮助程序类(运行于 `ClosedCaptionStyles` （在幕后）。
+   * 使用 `ClosedCaptionStyles` 直接类。
 
 >[!NOTE]
 >
->设置隐藏式字幕样式是一种异步操作，因此可能需要几秒钟才能将更改显示在屏幕上。
+>设置隐藏式字幕样式是一种异步操作，因此可能需要几秒钟才能在屏幕上显示更改。
 
 ## 隐藏式字幕样式选项 {#section_D28F50B98C0D48CF89C4FB6DC81C5185}
 
@@ -73,7 +72,7 @@ public function TextFormat(
       &nbsp;AVCaptionStyle.CURSIVE, 
       &nbsp;AVCaptionStyle.SMALL_CAPITALS 
       &nbsp;]; 
-     </code> </p> <p>提示：设备上可用的实际字体可能有所不同，必要时会使用替换。 带有衬线的等宽通常用作替换，尽管此替换可以是系统特定的。 </p> </td> 
+     </code> </p> <p>提示：设备上可用的实际字体可能有所不同，必要时会使用替换。 通常使用带衬线的等宽作为替代，尽管此替代可以特定于系统。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 大小 </td> 
@@ -83,7 +82,7 @@ public function TextFormat(
       <li id="li_4F8CEDE54965430EB707DD3D5B2E3F87"> <span class="codeph"> 大 </span>  — 比中型大约30% </li> 
       <li id="li_D78D823883F54D869118BAB58257E377"> <span class="codeph"> 小 </span>  — 比中型小约30% </li> 
       <li id="li_9299C13408584A38835F8D91BD048083"> <span class="codeph"> 默认 </span>  — 字幕的默认大小；与“中”相同 </li> 
-     </ul> </p> <p>提示：您可以通过更改WebVTT字幕的大小参数来更改 <span class="codeph"> DefaultMediaPlayer.ccStyles setter </span> 函数。 </p> </td> 
+     </ul> </p> <p>提示：您可以通过更改WebVTT字幕的大小参数来更改WebVTT字幕的字体大小 <span class="codeph"> DefaultMediaPlayer.ccStyles设置器 </span> 函数。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 字体边缘 </td> 
@@ -132,7 +131,7 @@ public function TextFormat(
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 边缘颜色 </td> 
-   <td colname="2"> <p>边缘效果的颜色。 </p> <p>可以设置为字体颜色可用的任何值。 </p> </td> 
+   <td colname="2"> <p>边缘效果的颜色。 </p> <p>可设置为字体颜色可用的任何值。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 背景颜色 </td> 
@@ -140,11 +139,11 @@ public function TextFormat(
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 填充颜色 </td> 
-   <td colname="2"> <p>文本所在窗口背景的颜色。 </p> <p>可以设置为字体颜色可用的任何值。 </p> <p>重要信息：此功能不适用于WebVTT字幕，因为WebVTT不使用此功能。 </p> </td> 
+   <td colname="2"> <p>文本所在窗口的背景颜色。 </p> <p>可设置为字体颜色可用的任何值。 </p> <p>重要信息：此功能不适用于WebVTT字幕，因为WebVTT不使用此功能。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 字体不透明度 </td> 
-   <td colname="2"> <p>文本的不透明度。 </p> <p>以0（完全透明）到100（完全不透明）的百分比表示。 <span class="codeph"> DEFAULT_OPACITY </span> 对于，字体为100。 </p> </td> 
+   <td colname="2"> <p>文本的不透明度。 </p> <p>以0（完全透明）到100（完全不透明）的百分比表示。 <span class="codeph"> DEFAULT_OPACITY </span> 字体为100。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 背景不透明度 </td> 
@@ -152,12 +151,12 @@ public function TextFormat(
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> 填充不透明度 </td> 
-   <td colname="2"> <p>字幕窗口背景的不透明度。 </p> <p>以0（完全透明）到100（完全不透明）的百分比表示。 <span class="codeph"> DEFAULT_OPACITY </span> 表示填充为0。 </p> </td> 
+   <td colname="2"> <p>题注窗口背景的不透明度。 </p> <p>以0（完全透明）到100（完全不透明）的百分比表示。 <span class="codeph"> DEFAULT_OPACITY </span> 填充为0。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
-## 示例：字幕格式 {#section_63E33840B7A14D26990046E2ACF2ECA1}
+## 示例：题注格式 {#section_63E33840B7A14D26990046E2ACF2ECA1}
 
 您可以指定隐藏式字幕格式。
 

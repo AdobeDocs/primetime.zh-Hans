@@ -2,8 +2,7 @@
 title: Adobe Primetime DRM凭据
 description: Adobe Primetime DRM凭据
 copied-description: true
-exl-id: 4614ed31-d9e7-4076-b77b-e8b5b17b279f
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '86'
 ht-degree: 0%

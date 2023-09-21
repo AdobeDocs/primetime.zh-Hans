@@ -1,8 +1,7 @@
 ---
 title: 在资格预审中设置环境和测试
 description: 在资格预审中设置环境和测试
-exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '473'
 ht-degree: 0%

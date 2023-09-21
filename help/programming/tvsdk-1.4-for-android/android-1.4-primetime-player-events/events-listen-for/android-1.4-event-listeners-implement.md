@@ -1,8 +1,7 @@
 ---
 description: 事件处理程序允许TVSDK响应事件。
 title: 实施事件侦听器和回调
-exl-id: eda5cd4e-4ee8-4b37-a179-242e8697f61f
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '572'
 ht-degree: 0%
@@ -19,23 +18,23 @@ TVSDK将侦听器定义为中的公共内部接口 `MediaPlayer` 界面。
 
 应用程序必须为影响应用程序的TVSDK事件实施事件侦听器。
 
-有关视频分析的事件完整列表，请参阅跟踪核心视频播放。
+有关视频分析的完整事件列表，请参阅跟踪核心视频播放。
 
 1. 确定应用程序必须侦听的事件。
 
    * **必需事件**：监听所有播放事件。
 
-      >[!IMPORTANT]
-      >
-      >播放事件 `onStateChanged` 提供播放器状态，包括错误。 任何状态都可能影响播放器的下一步
+     >[!IMPORTANT]
+     >
+     >播放事件 `onStateChanged` 提供播放器状态，包括错误。 任何状态都可能影响播放器的下一步
 
    * **其他事件**：可选，具体取决于您的应用程序。
 
-      例如，如果在播放中合并广告，则实施AdPlaybackEventListener回调。
+     例如，如果在播放中合并广告，则实施AdPlaybackEventListener回调。
 
 1. 为每个事件实施事件侦听器。
 
-   TVSDK会向事件侦听器回调返回参数值。 这些值提供有关事件的相关信息，您可以在监听器中使用该信息执行相应的操作。
+   TVSDK会向事件侦听器回调返回参数值。 这些值提供有关事件的相关信息，您可以在监听器中使用该信息来执行相应的操作。
 
    `MediaPlayer.EventListener` 列出了所有回调接口。 每个界面都会显示针对每个事件返回的回调名称和参数。
 
@@ -46,7 +45,7 @@ TVSDK将侦听器定义为中的公共内部接口 `MediaPlayer` 界面。
     MediaPlayer.PlayerState state, MediaPlayerNotification notification)
    ```
 
-1. 使用注册回调侦听器 `MediaPlayer` 对象，使用 `MediaPlayer.addEventListener`.
+1. 在注册回调侦听器 `MediaPlayer` 对象，使用 `MediaPlayer.addEventListener`.
 
    ```
    mediaPlayer.addEventListener(MediaPlayer.Event.PLAYBACK, 
@@ -60,11 +59,11 @@ TVSDK将侦听器定义为中的公共内部接口 `MediaPlayer` 界面。
 
 ## 播放事件的顺序 {#section_6D412C33ACE54E9D90DB1DAA9AA30272}
 
-TVSDK按通常预期的序列调度事件/通知。 您的播放器可以按照预期顺序基于事件实施操作。
+TVSDK按照通常预期的序列调度事件/通知。 您的播放器可以按照预期顺序实施基于事件的操作。
 
 以下示例显示了一些包括播放事件的事件的顺序。
 
-* 通过成功加载媒体资源时 `MediaPlayer.replaceCurrentResource`，事件的顺序为：
+* 通过成功加载媒体资源时 `MediaPlayer.replaceCurrentResource`，则事件的顺序为：
 
 1. `MediaPlayer.PlaybackEventListener.onStateChanged` 带有状态 `MediaPlayer.PlayerState.INITIALIZING`
 
@@ -72,16 +71,16 @@ TVSDK按通常预期的序列调度事件/通知。 您的播放器可以按照�
 
 >[!TIP]
 >
->在主线程上加载媒体资源。 如果在后台线程中加载媒体资源，则此操作或后续TVSDK操作（或两者）可能会引发错误(例如， `IllegalStateException`)并退出。
+>在主线程上加载媒体资源。 如果在后台线程中加载媒体资源，则此操作或后续TVSDK操作（或同时执行两者）可能会引发错误(例如， `IllegalStateException`)并退出。
 
-* 通过准备播放时 `MediaPlayer.prepareToPlay`，事件的顺序为：
+* 在准备通过播放时 `MediaPlayer.prepareToPlay`，则事件的顺序为：
 
 1. `MediaPlayer.PlaybackEventListener.onStateChanged` 带有状态 `MediaPlayerStatus.PREPARING`
 
 1. `MediaPlayer.PlaybackEventListener.onTimelineUpdated` 是否插入了广告。
 1. `MediaPlayer.PlaybackEventListener.onStateChanged` 带有状态 `MediaPlayerStatus.PREPARED`
 
-* 对于实时/线性流，在播放期间，当播放窗口前进并解决其他机会时，事件的顺序为：
+* 对于实时/线性流，在播放期间随着播放窗口前进并解决其他机会时，事件的顺序为：
 
 1. `MediaPlayer.PlaybackEventListener.onUpdated`
 1. `MediaPlayer.PlaybackEventListener.onTimelineUpdated` 如果插入了广告
@@ -111,20 +110,20 @@ mediaPlayer.addEventListener(MediaPlayer.Event.PLAYBACK,
 
 ## 广告事件的顺序 {#section_7B3BE3BD3B6F4CF69D81F9CFAC24CAD5}
 
-当您的播放包含广告时，TVSDK会按通常预期的序列发送事件/通知。 您的播放器可以按照预期顺序基于事件实施操作。
+当您的播放包含广告时，TVSDK会按照通常预期的顺序发送事件/通知。 您的播放器可以按照预期顺序实施基于事件的操作。
 
 在播放广告时，事件的顺序为：
 
 * `AdPlaybackEventListener.onAdBreakStart`
-* 将为广告时间中的每个广告调度以下内容：
+* 为广告时间中的每个广告调度以下内容：
 
    * `AdPlaybackEventListener.onAdStart`
    * `AdPlaybackEventListener.onAdProgress` （在广告播放期间多次）
-   * `AdPlaybackEventListener.onAdClick` （对于每次点击）
+   * `AdPlaybackEventListener.onAdClick` （每次点击）
    * `AdPlaybackEventListener.onAdStart`
    * `AdPlaybackEventListener.onAdBreakComplete`
 
-以下示例显示了广告播放事件的典型进度：
+以下示例显示了广告播放事件的典型进展：
 
 ```java
 mediaPlayer.addEventListener(MediaPlayer.Event.AD_PLAYBACK,  
@@ -147,16 +146,16 @@ mediaPlayer.addEventListener(MediaPlayer.Event.AD_PLAYBACK,
 在播放广告时，事件的顺序为：
 
 * `AdPlaybackEventListener.onAdBreakStart`
-* 将为广告时间中的每个广告调度以下内容：
+* 为广告时间中的每个广告调度以下内容：
 
    * `AdPlaybackEventListener.onAdStart`
    * `AdPlaybackEventListener.onAdProgress` （在广告播放期间多次）
-   * `AdPlaybackEventListener.onAdClick` （对于每次点击）
+   * `AdPlaybackEventListener.onAdClick` （每次点击）
    * `AdPlaybackEventListener.onAdStart`
 
 * `AdPlaybackEventListener.onAdBreakComplete`
 
-以下示例显示了广告播放事件的典型进度：
+以下示例显示了广告播放事件的典型进展：
 
 ```java
 mediaPlayer.addEventListener(MediaPlayer.Event.AD_PLAYBACK,  
@@ -178,9 +177,9 @@ mediaPlayer.addEventListener(MediaPlayer.Event.AD_PLAYBACK,
 
 ## QoS事件 {#section_9BFF3CD7AA1C4BD6960ACF6B9C0B25CC}
 
-TVSDK调度服务质量(QoS)事件，以通知应用程序有关可能会影响QoS统计信息计算的事件，例如缓冲和搜寻事件。
+TVSDK调度服务质量(QoS)事件，以通知应用程序存在可能会影响QoS统计信息计算的事件，例如缓冲和搜寻事件。
 
-以下示例显示了这些事件的典型过程：
+以下示例显示了这些事件的典型进展：
 
 ```java
 mediaPlayer.addEventListener(MediaPlayer.Event.QOS,  
@@ -206,7 +205,7 @@ mediaPlayer.addEventListener(MediaPlayer.Event.QOS,
 
 ## DRM事件 {#section_3FECBF127B3E4EFEAB5AE87E89CCDE7C}
 
-TVSDK调度数字版权管理(DRM)事件以响应DRM相关操作，例如当新的DRM元数据可用时。 您的播放器可以实施操作来响应这些事件。
+TVSDK调度数字权限管理(DRM)事件以响应DRM相关操作，例如当新的DRM元数据可用时。 您的播放器可以实施操作来响应这些事件。
 
 要接收有关所有DRM相关事件的通知，请侦听 `onDRMMetadata(DRMMetadataInfo drmMetadataInfo)`. TVSDK通过 `DRMManager` 类。
 

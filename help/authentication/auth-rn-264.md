@@ -1,8 +1,7 @@
 ---
 title: Adobe Primetime authentication 2.64发行说明
 description: Adobe Primetime authentication 2.64发行说明
-exl-id: 4db21026-a0c2-4e33-b01f-4ccae824a110
-source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '132'
 ht-degree: 0%
@@ -13,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 本页介绍了此版本的新增功能、更改和已知问题：
 
@@ -32,9 +31,9 @@ Adobe Primetime身份验证： adobe-pass-**2.64**
 
 ### 新增功能 {#new-featres-264}
 
-* 基础架构更新，旨在缩短服务器响应时间，提高系统的整体性能。
-* 对新的平台识别机制进行了改进。
-* 能够阻止来自SAML断言中缺少“in_response_to”参数的MVPD的未经请求的身份验证响应。
+* 基础架构更新，旨在缩短服务器响应时间，提高系统整体性能。
+* 改进了新的平台识别机制。
+* 能够阻止来自MVPD的未经请求的身份验证响应，其中SAML断言中缺少“in_response_to”参数。
 
 ### 错误修复 {#bug-fixes-264}
 

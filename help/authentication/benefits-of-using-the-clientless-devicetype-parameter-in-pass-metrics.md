@@ -1,8 +1,7 @@
 ---
 title: 在Primetime身份验证量度中使用无客户端deviceType参数的好处
 description: 在Primetime身份验证量度中使用无客户端deviceType参数的好处
-exl-id: a5004887-d5fa-468e-971b-10806519175b
-source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '342'
 ht-degree: 0%

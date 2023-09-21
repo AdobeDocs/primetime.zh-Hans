@@ -2,8 +2,7 @@
 title: 基于身份的域注册逻辑
 description: 基于身份的域注册逻辑
 copied-description: true
-exl-id: 6e391fce-00b4-45cf-b785-3b0ec734a11e
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '406'
 ht-degree: 0%
@@ -28,16 +27,16 @@ ht-degree: 0%
 
    .
 
-1. 验证设备是否已向域注册：
+1. 要验证设备是否已向域注册，请执行以下操作：
 
    1. 查找 `domainname` 在 `UserDomainMembership` 表：
 
       1. 对于找到的每个计算机ID，将该ID与请求中的计算机ID进行比较。
-      1. 如果这是一台新计算机，请将一个条目添加到 `UserDomainMembership` 表格。
+      1. 如果这是新计算机，请将条目添加到 `UserDomainMembership` 表格。
       1. 在中搜索匹配记录 `UserDomainRefCount` 表格。
       1. 如果此计算机GUID不存在条目，请添加记录。
-   1. 如果是新设备，并且 `Max Membership` 已达到值，返回错误。
 
+   1. 如果是新设备，并且 `Max Membership` 已达到值，返回错误。
 
 1. 在中查找此域的所有域密钥 `DomainKeys` 表：
 
@@ -49,7 +48,7 @@ ht-degree: 0%
 
 ## 域注销逻辑 {#section_78AFA63D8F744BE6BCA10A51B4FCBA22}
 
-参考实施将以下逻辑应用于基于身份的域注销：
+参考实现将以下逻辑应用于基于身份的域注销：
 
 1. 确定要分配给此用户的域名。
 
@@ -57,15 +56,15 @@ ht-degree: 0%
 1. 在中查找请求的域名 `DomainServerInfo` 表格。
 1. 在中查找域名 `UserDomainMembership` 表格。
 1. 将找到的每个计算机ID与请求中的计算机ID进行比较。
-1. 在中找到相应的条目 `UserDomainRefCount` 表格。
+1. 在中查找相应的条目 `UserDomainRefCount` 表格。
 
    如果找不到匹配的条目，则返回错误。
 
 1. 如果这不是预览请求，请从以下位置删除该条目： `UserDomainRefCount` 表格。
-1. 如果该表中没有其他计算机条目，则从中删除该条目 `UserDomainMembership` 并设置 [!DNL Key Rollover Required] 中的标志 `DomainServerInfo` 属性。
+1. 如果该计算机表中没有其他条目，请从中删除该条目 `UserDomainMembership` 并设置 [!DNL Key Rollover Required] 中的标志 `DomainServerInfo` 属性。
 
-每个用户可以注册少量计算机，因此您可以使用完整的计算机ID和 `matches()` 计数计算机的方法。 由于用户可以通过多个AIR应用程序或不同浏览器中的播放器多次注册，因此服务器需要保持引用计数，以便注销也可以计数。
+每个用户可以注册少量计算机，因此您可以使用完整的计算机ID和 `matches()` 计数计算机的方法。 由于用户可以多次注册，因此服务器需要保持引用计数，以便注销也可以计数，这可以通过多个AIR应用程序或不同浏览器中的播放器来实现。
 
 >[!NOTE]
 >
->在移交计算机上的所有域令牌之前，注销不会完成。
+>除非移交计算机上的所有域令牌，否则注销不会完成。

@@ -1,8 +1,7 @@
 ---
-description: 此过程是如何创建允许用户选择隐藏式字幕跟踪的按钮的示例。
+description: 此过程是如何创建按钮以允许用户选择隐藏式字幕跟踪的示例。
 title: 允许用户更改字幕跟踪
-exl-id: b8c058ef-384c-4ad4-a289-dfd6bf3dfbdb
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '113'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 允许用户更改字幕跟踪 {#allow-users-to-change-the-caption-track}
 
-此过程是如何创建允许用户选择隐藏式字幕跟踪的按钮的示例。
+此过程是如何创建按钮以允许用户选择隐藏式字幕跟踪的示例。
 
 1. 创建按钮以更改隐藏式字幕跟踪。
 
@@ -27,9 +26,9 @@ ht-degree: 0%
      android:text="CC" /> 
    ```
 
-1. 将可用隐藏式字幕字幕的列表转换为字符串数组。
+1. 将可用隐藏式字幕字幕轨道列表转换为字符串数组。
 
-   隐藏式字幕跟踪具有活动（即TVSDK已为其发现数据的渠道），并相应地进行标记。
+   对于具有活动（即TVSDK已为其发现数据的渠道）的隐藏式字幕进行相应标记。
 
    ```java
    /** 
@@ -57,7 +56,7 @@ ht-degree: 0%
    } 
    ```
 
-1. 用户单击按钮时，会显示一个对话框，其中列出了所有默认的隐藏式字幕字幕。
+1. 用户单击按钮时，会显示一个对话框，其中列出了所有默认的隐藏式字幕轨道。
 
    ```java
    public void selectClosedCaptioningClick(View view) { 

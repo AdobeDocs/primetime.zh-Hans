@@ -1,8 +1,7 @@
 ---
 description: 您可以将Adobe Primetime DRM许可证服务器配置为使用任何网络端口。
 title: 应用程序服务器的端口
-exl-id: a482c54a-5f26-43c0-8fd7-c517ab296924
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '69'
 ht-degree: 0%

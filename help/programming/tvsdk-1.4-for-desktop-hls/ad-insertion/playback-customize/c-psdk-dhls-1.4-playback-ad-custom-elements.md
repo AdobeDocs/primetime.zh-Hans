@@ -1,17 +1,16 @@
 ---
-description: TVSDK提供了可用于自定义包含广告的内容播放行为的类和方法。
-title: 用于广告播放的API元素
-exl-id: 459995c2-1d6f-4414-94a6-2c0b24098c14
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+description: TVSDK提供了一些类和方法，您可以使用它们自定义包含广告的内容的播放行为。
+title: 广告播放的API元素
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '236'
 ht-degree: 0%
 
 ---
 
-# 用于广告播放的API元素{#api-elements-for-ad-playback}
+# 广告播放的API元素{#api-elements-for-ad-playback}
 
-TVSDK提供了可用于自定义包含广告的内容播放行为的类和方法。
+TVSDK提供了一些类和方法，您可以使用它们自定义包含广告的内容的播放行为。
 
 以下API元素对于自定义播放非常有用：
 
@@ -25,9 +24,9 @@ TVSDK提供了可用于自定义包含广告的内容播放行为的类和方法
  <tbody> 
   <tr> 
    <td colname="col1"><span class="codeph"> AdvertisingMetadata</span> </td> 
-   <td colname="col2">控制是否应将广告时间标记为已观看者观看，如果是，则何时将其标记为已观看。 使用设置并获取受监视的策略 
+   <td colname="col2">控制是否应将广告时间标记为已被观看者观看，如果是，何时将其标记为已观看。 使用设置和获取受监视的策略 
     <pre>
-     此 
+     该 
      <span class="codeph"> adBreakAsWatched</span> 属性。
     </pre> </td> 
   </tr> 
@@ -60,7 +59,7 @@ TVSDK提供了可用于自定义包含广告的内容播放行为的类和方法
    <td colname="col1"> <span class="codeph"> 时间线项目</span> </td> 
    <td colname="col2"> 
     <ul id="ul_99AD34F823DB4F10937EE39DAD0C0B72"> 
-     <li id="li_87E2DA15ECE74CFE9C9FBBE8F4B62440"><span class="codeph"> 已观看</span>. <p>指示查看器是否观看了广告。 </p> </li> 
+     <li id="li_87E2DA15ECE74CFE9C9FBBE8F4B62440"><span class="codeph"> 已观看</span>. <p>指示查看器是否已观看广告。 </p> </li> 
      <li id="li_A9E5A9CF701C48BC94C93F28C114778D"><span class="codeph"> localRange</span>. <p>相对于原始内容的广告时间或广告的开始位置和持续时间。 </p> </li> 
      <li id="li_070BDA0BF4184863AF44652BD5A0CCEC"><span class="codeph"> virtualrange</span>. <p>在考虑所有置入的广告时间后，虚拟时间轴上广告时间或广告的开始位置和持续时间。 </p> </li> 
     </ul> </td> 

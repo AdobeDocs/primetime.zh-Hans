@@ -2,8 +2,7 @@
 title: 实施章节支持
 description: 实施章节支持
 copied-description: true
-exl-id: 4d1b3488-88c9-49ff-9e54-f78aacdabf6e
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '60'
 ht-degree: 0%

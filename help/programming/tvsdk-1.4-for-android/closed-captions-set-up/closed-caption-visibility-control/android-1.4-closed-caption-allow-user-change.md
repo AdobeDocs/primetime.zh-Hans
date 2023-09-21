@@ -1,8 +1,7 @@
 ---
 description: 以下示例介绍了如何创建允许用户选择隐藏式字幕跟踪的按钮。
 title: 示例允许用户更改字幕跟踪
-exl-id: d7ba19ac-cbfa-4fb4-a92d-21a3d0f7c23f
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '107'
 ht-degree: 0%
@@ -27,7 +26,7 @@ ht-degree: 0%
      android:text="CC" /> 
    ```
 
-1. 将可用隐藏式字幕字幕的列表转换为字符串数组。 隐藏式字幕跟踪具有活动（即TVSDK已发现其数据的渠道），并相应地标记：
+1. 将可用隐藏式字幕字幕轨道列表转换为字符串数组。 隐藏式字幕跟踪具有活动（即TVSDK已为其发现数据的渠道），并相应地进行标记：
 
    ```java
    /** 

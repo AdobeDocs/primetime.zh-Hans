@@ -1,8 +1,7 @@
 ---
 description: 重置MediaPlayer实例时，该实例将返回到MediaPlayerState中定义的未初始化的IDLE状态。
 title: 重置或重用MediaPlayer实例
-exl-id: db8264f7-2f33-4441-86db-bb985edf7c3c
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '276'
 ht-degree: 0%
@@ -19,15 +18,15 @@ ht-degree: 0%
 
 * 您希望重用 `MediaPlayer` 实例，但需要加载新的 `MediaResource` （视频内容）并替换上一个实例。
 
-   通过重置，您可以重复使用 `MediaPlayer` 实例无需释放资源，重新创建 `MediaPlayer`，并重新分配资源。
+  重置允许您重复使用 `MediaPlayer` 实例没有释放资源的开销，重新创建 `MediaPlayer`以及重新分配资源。
 
 * 当 `MediaPlayer` 处于错误状态，需要清除。
 
-   >[!IMPORTANT]
-   >
-   >这是从ERROR状态恢复的唯一方法。
+  >[!IMPORTANT]
+  >
+  >这是从ERROR状态恢复的唯一方法。
 
-1. 调用 `reset` 以返回 `MediaPlayer` 实例恢复到其未初始化状态：
+1. 调用 `reset` 以返回 `MediaPlayer` 实例处于未初始化状态：
 
    ```java
    void reset() throws IllegalStateException; 
@@ -39,7 +38,7 @@ ht-degree: 0%
    >
    >要清除错误，请加载相同的 `MediaResource`.
 
-1. 当您收到 `STATUS_CHANGED` PREPARED状态的事件回调，开始播放。
+1. 当您收到 `STATUS_CHANGED` 事件回调处于“准备就绪”状态，请开始播放。
 
 ## 发布MediaPlayer实例和资源{#release-a-mediaplayer-instance-and-resources}
 
@@ -49,9 +48,9 @@ ht-degree: 0%
 
 以下是发布MediaPlayer的一些原因：
 
-* 持有不必要的资源可能会影响性能。
-* 保留不必要的 `MediaPlayer` 对象会导致移动设备持续消耗电池。
-* 如果同一设备不支持同一视频编解码器的多个实例，则其他应用程序可能会发生播放失败。
+* 保留不必要的资源可能会影响性能。
+* 留下不必要的 `MediaPlayer` 目标会导致移动设备持续消耗电池。
+* 如果某个设备上不支持同一视频编解码器的多个实例，则其他应用程序可能会发生播放失败。
 
 1. 发布 `MediaPlayer`.
 
@@ -59,4 +58,4 @@ ht-degree: 0%
    void release() throws IllegalStateException;
    ```
 
-在 `MediaPlayer` 实例已发布，您无法再使用它。 如果使用的任何方法 `MediaPlayer` 界面在发布后调用，即 `IllegalStateException` 被抛出。
+在 `MediaPlayer` 实例已发布，您无法再使用它。 如果使用的任何 `MediaPlayer` 在发布界面后调用，其中 `IllegalStateException` 被抛出。

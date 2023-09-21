@@ -1,8 +1,7 @@
 ---
 description: 您可以使用PrimetimeDigital Rights Management(DRM)系统的功能来提供对视频内容的安全访问。 或者，您可以使用第三方DRM解决方案作为Adobe的集成Primetime DRM解决方案的替代方案。
 title: 支持的DRM系统
-exl-id: cc1ef9a9-f8a7-4ad3-802c-b572521d112b
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '97'
 ht-degree: 0%

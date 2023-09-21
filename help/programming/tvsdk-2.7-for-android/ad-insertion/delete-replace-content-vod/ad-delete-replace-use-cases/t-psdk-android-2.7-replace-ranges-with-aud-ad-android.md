@@ -1,19 +1,18 @@
 ---
-description: 您可以将广告插入VOD内容。
-title: 用广告替换时间范围
-exl-id: f6675108-07a7-4d30-8a95-6029afe06ac5
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+description: 您可以将广告插入到VOD内容中。
+title: 将时间范围替换为广告
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '89'
 ht-degree: 0%
 
 ---
 
-# 用广告替换时间范围 {#replace-time-ranges-with-an-ad}
+# 将时间范围替换为广告 {#replace-time-ranges-with-an-ad}
 
-您可以将广告插入VOD内容。
+您可以将广告插入到VOD内容中。
 
-此 `TimeRanges` 介于 `begin` 和 `end` 在 `localTime` 将从时间轴中删除。 这些范围将替换为 `AdBreak` 之 `begin` 到 `begin+replaceDuration`. 如果 `replacement-duration` 不存在作为参数，服务器将对返回的进行确定 `Adbreak`.
+此 `TimeRanges` 介于 `begin` 和 `end` 在 `localTime` 将从时间轴中删除。 这些范围将替换为 `AdBreak` 之 `begin` 到 `begin+replaceDuration`. 如果 `replacement-duration` 不存在，服务器对返回的进行确定 `Adbreak`.
 
 >[!TIP]
 >

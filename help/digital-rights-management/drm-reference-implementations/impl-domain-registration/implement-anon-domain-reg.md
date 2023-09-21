@@ -2,8 +2,7 @@
 title: 实施匿名域注册
 description: 实施匿名域注册
 copied-description: true
-exl-id: 304cfe6f-0917-42ef-a49a-e6c4bc9c10d0
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '37'
 ht-degree: 0%
@@ -12,7 +11,7 @@ ht-degree: 0%
 
 # 实施匿名域注册{#implement-anonymous-domain-registration}
 
-1. 创建一个DRM策略，该策略指定域注册是必需的。
+1. 创建指定需要域注册的DRM策略。
 1. 将域服务器URL指定为：
 
    ```

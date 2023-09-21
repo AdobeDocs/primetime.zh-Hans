@@ -1,8 +1,7 @@
 ---
 title: PSDK错误代码
 description: 有关各种错误代码、警告和本机错误代码的信息。
-exl-id: 90d66c13-c40c-4602-83da-186c2b623375
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '1897'
 ht-degree: 6%
@@ -15,7 +14,7 @@ ht-degree: 6%
 
 ## 错误
 
-下表提供了有关ERROR类型通知的详细信息。 大多数错误包含相关元数据；例如，无法下载的资源的URL。 某些通知包含元数据，用于指定问题出现在主视频内容、备用音频内容还是广告中。
+下表提供了有关ERROR类型通知的详细信息。 大多数错误都包含相关元数据；例如，无法下载的资源的URL。 某些通知包含元数据，用于指定问题出现在主视频内容、备用音频内容还是广告中。
 
 <table frame="all" colsep="1" rowsep="1">
   <tr> 
@@ -36,10 +35,10 @@ ht-degree: 6%
   <tr>
     <td>空指针</td>
     <td>2</td>
-    <td>传入的一个参数为NULL，或者其中一个内部成员未初始化。</td>
+    <td>传入的一个参数为NULL，或者未初始化其中一个内部成员。</td>
   </tr>
   <tr>
-    <td>ILLEGAL_STATE</td>
+    <td>非法状态</td>
     <td>3</td>
     <td>当前播放器状态不支持该操作。</td>
   </tr>
@@ -49,7 +48,7 @@ ht-degree: 6%
     <td>当所请求的接口不是由此实现/继承时，interfaceCast方法会引发此错误。</td>
   </tr>
   <tr>  
-    <td>CREATION_FAILED</td>
+    <td>创建失败</td>
     <td>5</td>
     <td>创建其中一个内部资源失败。</td>
   </tr>
@@ -69,7 +68,7 @@ ht-degree: 6%
     <td>执行搜寻操作时出错。</td>
   </tr>
   <tr>
-    <td>UNSUPPORTED_FEATURE</td>
+    <td>不支持的功能</td>
     <td>9</td>
     <td>不支持此功能。</td>
   </tr>
@@ -96,10 +95,10 @@ ht-degree: 6%
   <tr>
     <td>GENERIC_ERROR</td>
     <td>14</td>
-    <td>一般错误事件。 不是由TVSDK实际发布的。 这只是一个标记，用于指示与TVSDK错误事件对应的数字代码范围的结尾。</td>
+    <td>一般错误事件。 不是由TVSDK实际颁发的。 这只是一个标记，表示与TVSDK错误事件对应的数字代码范围的结尾。</td>
   </tr>
   <tr>
-    <td>INVALID_SEEK_TIME</td>
+    <td>无效的SEEK_TIME</td>
     <td>15</td>
     <td>提供的搜寻时间无效。</td>
   </tr>
@@ -111,7 +110,7 @@ ht-degree: 6%
   <tr>
     <td>ACCESS_FROM_DIFFERENT_THREAD</td>
     <td>17</td>
-    <td>PSDK API是从与PSDK初始化的线程不同的线程调用的。</td>
+    <td>PSDK API是从不同线程调用的，而不是从初始化PSDK的线程调用的。</td>
   </tr>
   <tr>
     <td>ELEMENT_NOT_FOUND</td>
@@ -131,12 +130,12 @@ ht-degree: 6%
   <tr>
     <td>PLAYBACK_NOT_AUTHORIZED</td>
     <td>57</td>
-    <td>尚未在Flash Player中启用HLS播放。 请参阅AuthorizedFeatures.enableMediaPlayerHLSPlayback()。</td>
+    <td>Flash Player中未启用HLS播放。 请参阅AuthorizedFeatures.enableMediaPlayerHLSPlayback()。</td>
   </tr>
   <tr>
     <td>NETWORK_TIMEOUT</td>
     <td>58</td>
-    <td>获取资源/连接服务器时网络超时。</td>
+    <td>网络在获取资源/连接服务器时超时。</td>
   </tr>
 </table>
 
@@ -154,7 +153,7 @@ ht-degree: 6%
   <tr>
     <td>PLAYBACK_OPERATION_FAILED</td>
     <td>200</td>
-    <td>播放操作过程中出错。 与播放相关的操作失败</td>
+    <td>播放操作期间出错。 与播放相关的操作失败</td>
   </tr>
   <tr>  
     <td>NATIVE_WARNING</td>
@@ -174,7 +173,7 @@ ht-degree: 6%
   <tr>
     <td>AD_RESOLUTION_IN_PROGRESS</td>
     <td>204</td>
-    <td>解析广告的操作正在进行中。</td>
+    <td>正在执行广告解析操作。</td>
   </tr>
   </table>
 
@@ -189,13 +188,13 @@ ht-degree: 6%
   <tr>
     <td>REVENUE_OPTIMIZATION_REPORTING</td>
     <td>300</td>
-    <td>TVSDK详细通知，以供进一步报告和分析。</td>
+    <td>TVSDK详细通知以供进一步报告和分析。</td>
   </tr>
  </table>
 
 ## 本机错误代码
 
-AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频播放通知。
+AVE的视频编码器接口在NATIVE_ERROR元数据对象中返回这些视频播放通知。
 
 <table frame="all" colsep="1" rowsep="1">
   <tr>
@@ -214,14 +213,14 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>操作成功。</td>
   </tr>
   <tr>
-    <td>ASYNC_OPERATION_IN_PROGRESS</td>
+    <td>异步操作进行中</td>
     <td>1</td>
     <td>异步操作。 已发出操作请求。 成功/失败信息将在稍后提供。</td>
   </tr>
   <tr>
     <td>EOF</td>
     <td>2</td>
-    <td>由于文件结束(EOF)条件，无法执行此操作。</td>
+    <td>由于文件结束(EOF)条件，操作无法执行。</td>
   </tr>
   <tr>
     <td>解码器失败</td>
@@ -271,12 +270,12 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>
     <td>PARSE_ERROR</td>
     <td>12</td>
-    <td>分析媒体文件时出错。</td>
+    <td>解析媒体文件时出错。</td>
   </tr>
   <tr>  
     <td>SIZE_UNKNOWN</td>
     <td>13</td>
-    <td>资源大小不一，但未知。</td>
+    <td>资源的大小未知。</td>
   </tr>
   <tr>  
     <td>UNDER_FLOW</td>
@@ -284,7 +283,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>下溢条件。</td>
   </tr>
   <tr> 
-    <td>UNSUPPORTED_CONFIG</td>
+    <td>不支持的配置</td>
     <td>15</td>
     <td>不支持配置。</td>
   </tr>
@@ -319,7 +318,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>无法在仅音频文件上使用操作。</td>
   </tr>
   <tr>
-    <td>上一步_寻找_进行中</td>
+    <td>上一步_搜寻_进行中</td>
     <td>22</td>
     <td>上一个搜寻操作仍在进行中。</td>
   </tr>
@@ -334,7 +333,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>指定的值超出范围。</td>
   </tr>
   <tr>
-    <td>INVALID_SEEK_TIME</td>
+    <td>无效的SEEK_TIME</td>
     <td>25</td>
     <td>搜寻时间无效。</td>
   </tr>
@@ -344,7 +343,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>指定的文件不符合预期的语法。</td>
   </tr>
   <tr>
-    <td>COMPONENT_CREATION_FAIL</td>
+    <td>COMPONENT_CREATION_FAILED</td>
     <td>27</td>
     <td>无法创建基本组件。</td>
   </tr>
@@ -411,17 +410,17 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>
     <td>已中止</td>
     <td>40</td>
-    <td>该操作已被显式Abort或销毁调用中止。</td>
+    <td>操作被显式的Abort或Destroy调用中止。</td>
   </tr>
   <tr>
-    <td>UNSUPPORTED_HLS_VERSION</td>
+    <td>不受支持的HLS_VERSION</td>
     <td>41</td>
     <td>无法播放此版本的HLS媒体。</td>
   </tr>
   <tr>
     <td>CANNOT_FAIL_OVER</td>
     <td>42</td>
-    <td>无法故障转移。</td>
+    <td>无法进行故障转移。</td>
   </tr>
   <tr> 
     <td>HTTP_TIME_OUT</td>
@@ -431,7 +430,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>
     <td>NETWORK_DOWN</td>
     <td>44</td>
-    <td>用户的网络连接已断开。 播放可能会随时停止，并将在连接可用时恢复。</td>
+    <td>用户的网络连接已断开。 播放可能会随时停止，并且将在连接可用时恢复。</td>
   </tr>
   <tr>
     <td>NO_USABLE_BITRATE_PROFILE</td>
@@ -451,12 +450,12 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>
     <td>REPLACEMENT_FAILED</td>
     <td>48</td>
-    <td>插入API中指定的替换无法成功。 这意味着插入成功，但替换失败。 如果要替换的清单已从时间线中移除，则替换可能会失败。</td>
+    <td>插入API中指定的替换无法成功。 这意味着插入成功，但替换失败。 如果要替换的清单已从时间线中删除，则替换可能会失败。</td>
   </tr>
   <tr>
     <td>SWITCH_TO_ASYMMETRIC_PROFILE</td>
     <td>49</td>
-    <td>DRM正在切换到非对称配置文件。 所有用户档案的持续时间应保持一致。 如果不存在，则会引发此警告，并且播放过程中可能会出现跳转。</td>
+    <td>DRM正在切换到非对称配置文件。 所有配置文件预计都会在持续时间内保持一致。 如果没有，则会引发此警告，并且播放过程中可能会出现跳转。</td>
   </tr>
   <tr>
     <td>LIVE_WINDOW_MOVED_BACKWARD</td>
@@ -481,12 +480,12 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>  
     <td>LIVE_HOLD</td>
     <td>54</td>
-    <td>媒体读取器无法加载区段，因为它已到达实时窗口的结尾。 当服务器向实时窗口添加新媒体时，将继续加载区段。 通常达到此状态的情况是：<ul><li>bufferTime太高（等于或高于实时窗口持续时间）。</li><li>插入/擦除API的一个或多个组合替换了比添加的多媒体。</li><li>下一个时段是具有挂起的媒体替换的实时时段（由于InsertBy API调用）</li></ul></td>
+    <td>媒体读取器无法加载区段，因为它已到达实时窗口的结尾。 当服务器向实时窗口添加新媒体时，将恢复区段加载。 达到此状态通常满足以下条件：<ul><li>bufferTime太高（等于或高于实时窗口持续时间）。</li><li>插入/擦除API的一个或多个组合替换了比它添加的更多的介质。</li><li>下一个时段是具有待处理媒体替换的实时时段（由于InsertBy API调用）</li></ul></td>
   </tr>
   <tr>
     <td>BAD_MEDIA_INTERLEAVING</td>
     <td>55</td>
-    <td>媒体中的音频和视频交错处理不正确。 这是一个打包错误。 当差值超过两秒时，将调度警告。</td>
+    <td>媒体中的音频和视频交错处理不正确。 这是一个打包错误。 当差异超过两秒时，将调度警告。</td>
   </tr>
   <tr>
     <td>DRM_NOT_AVAILABLE</td>
@@ -496,12 +495,12 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>  
     <td>PLAYBACK_NOT_AUTHORIZED</td>
     <td>57</td>
-    <td>尚未在Flash Player中启用HLS播放。 请参阅AuthorizedFeatures.enableHLSPlayback。</td>
+    <td>Flash Player中未启用HLS播放。 请参阅AuthorizedFeatures.enableHLSPlayback。</td>
   </tr>
   <tr>
     <td>BAD_MEDIA_SAMPLE_FOUND</td>
     <td>58</td>
-    <td>解码器接收到无法解码的坏样本。 这通常不是致命错误，但表示音频/视频中可能有故障。 此错误的实例太多，表示编码错误或文件错误。</td>
+    <td>解码器接收到无法解码的坏样本。 这通常不是致命错误，但表明音频/视频中可能有故障。 此错误的实例过多，表明编码错误或文件错误。</td>
   </tr>
   <tr>
     <td>RANGE_SPANS_READ_HEAD</td>
@@ -511,7 +510,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr> 
     <td>POSTROLL_WITH_LIVE_NOT_ALLOWED</td>
     <td>60</td>
-    <td>不允许对实时媒体进行后置式插入。 但是，在服务器将媒体标记为完成之后，才允许设置这些值。</td>
+    <td>不允许对实时媒体进行后置式插入。 但是，在服务器将媒体标记为完成之后，才允许设置这些权限。</td>
   </tr>
   <tr>
     <td>INTERNAL_ERROR</td>
@@ -539,14 +538,14 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>操作不执行任何操作。</td>
   </tr>
   <tr>
-    <td>SEGMENT_SKIPPED_ON_FAILED</td>
+    <td>SEGMENT_SKIPPED_ON_FAILURE</td>
     <td>66</td>
-    <td>无法播放区段，因失败而跳过。</td>
+    <td>无法播放区段，因失败已跳过该区段。</td>
   </tr>
   <tr>
     <td>INCOMPATIBLE_RENDER_MODE</td>
     <td>67</td>
-    <td>渲染模式不兼容。</td>
+    <td>不兼容的渲染模式。</td>
   </tr>
   <tr>
     <td>PROTOCOL_NOT_SUPPORT</td>
@@ -574,7 +573,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>无法对时间轴执行擦除操作。</td>
   </tr>
   <tr>
-    <td>DID_NOT_NEXT_GET</td>
+    <td>DID_NOT_GET_下一个片段</td>
     <td>73</td>
     <td>没有获得下一个片段。</td>
   </tr>
@@ -611,7 +610,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>
     <td>FILE_READ_ERROR</td>
     <td>80</td>
-    <td>无法从文件读取。</td>
+    <td>无法从文件中读取。</td>
   </tr>
   <tr>
     <td>ID3PARSE_ERROR</td>
@@ -619,24 +618,24 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>解析ID3数据时出错。</td>
   </tr>
   <tr>
-    <td>安全性_错误</td>
+    <td>安全错误</td>
     <td>82</td>
     <td>由于安全限制，加载内容失败。</td>
   </tr>
   <tr>
     <td>时间轴_TOO_SHORT</td>
     <td>83</td>
-    <td>时间线持续时间太短。 如果这是实时流，则可能会发生频繁缓冲。</td>
+    <td>时间线持续时间太短。 如果这是实时流，可能会发生频繁缓冲。</td>
   </tr>
   <tr>
     <td>AUDIO_ONLY_STREAM_START</td>
     <td>84</td>
-    <td>流已切换为纯音频流。</td>
+    <td>该流已切换为纯音频流。</td>
   </tr>
   <tr>  
     <td>AUDIO_ONLY_STREAM_END</td>
     <td>85</td>
-    <td>流已从纯音频流切换为带有视频的流。</td>
+    <td>流已从纯音频流切换为带视频的流。</td>
   </tr>
   <tr>
     <td>KEY_NOT_FOUND</td>
@@ -659,7 +658,7 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
     <td>无法处理主清单更新。</td>
   </tr>
   <tr>
-    <td>未报告的_TIME_DISCONTINUITY_FOUND</td>
+    <td>未报告的TIME_DISCONTINUITY_FOUND</td>
     <td>91</td>
     <td>发现未报告的时间(PTS)中断。</td>
   </tr>
@@ -671,11 +670,11 @@ AVE的视频编码器界面在NATIVE_ERROR元数据对象中返回这些视频�
   <tr>
     <td>TRICKPLAY_ENDED_DUE_TO_ERROR</td>
     <td>93</td>
-    <td>在特技播放模式下播放媒体时出错。 结束特技播放模式并暂停流。 调用Play()以正常模式播放媒体。</td>
+    <td>在特技播放模式下播放媒体时出错。 特技播放模式结束，流暂停。 调用Play()以正常模式播放媒体。</td>
   </tr>
   <tr>
     <td>LIVE_WINDOW_MOVED_AHEAD</td>
     <td>95</td>
-    <td>播放器超出实时窗口，必须向前搜寻才能赶上进度。</td>
+    <td>播放器超出实时窗口，必须向前搜寻才能赶上。</td>
   </tr>
 </table>

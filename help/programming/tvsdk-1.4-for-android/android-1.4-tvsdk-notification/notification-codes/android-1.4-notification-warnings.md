@@ -1,8 +1,7 @@
 ---
 description: 此表证明有关WARN类型通知的详细信息。
 title: 警告通知代码
-exl-id: e787fad5-fbdc-416d-b03d-8c84f4884c5a
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '407'
 ht-degree: 2%
@@ -24,7 +23,7 @@ ht-degree: 2%
    <th colname="2" class="entry"> 名称 </th> 
    <th colname="3" class="entry"> InnerNotification </th> 
    <th colname="4" class="entry"> 元数据键 </th> 
-   <th colname="5" class="entry"> 注释 </th> 
+   <th colname="5" class="entry"> 评论 </th> 
   </tr> 
  </thead>
  <tbody> 
@@ -37,7 +36,7 @@ ht-degree: 2%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 200000 </span> </td> 
-   <td colname="2"><span class="codeph"> PLAYBACK_OPERATION_FAIL </span> </td> 
+   <td colname="2"><span class="codeph"> 回放操作失败(_F) </span> </td> 
    <td colname="3"><span class="codeph"> AUDIO_TRACK_ERROR </span><span class="codeph"> SEEK_ERROR </span> </td> 
    <td colname="4"><span class="codeph"> 描述 </span> </td> 
    <td colname="5"> <p>与播放相关的操作失败，但播放可能会继续。 </p> </td> 
@@ -54,7 +53,7 @@ ht-degree: 2%
    <td colname="2"><span class="codeph"> AD_RESOLVER_FAIL </span> </td> 
    <td colname="3"><span class="codeph"> AD_RESOLVER_RESOLVE_FAIL </span><span class="codeph"> RESOURCE_PLACEMENT_失败 </span><span class="codeph"> AD_RESOLVER_ METADATA_INVALID </span> </td> 
    <td colname="4"> <p>无 </p> </td> 
-   <td colname="5"> <p>广告解析程序无法解析/插入广告内容。 可以继续播放。 </p> </td> 
+   <td colname="5"> <p>广告解析程序无法解析/插入广告内容。 可继续播放。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 201002</span> </td> 
@@ -65,10 +64,10 @@ ht-degree: 2%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 201003</span> </td> 
-   <td colname="2"><span class="codeph"> AD_RESOLVER_返回_NO_ADS</span> </td> 
+   <td colname="2"><span class="codeph"> AD_RESOLVER_返回的_NO_ADS</span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"><span class="codeph"> INTERNAL_ERROR， AD_ID，描述</span> </td> 
-   <td colname="5"> <p>广告解析失败，因为VAST URL无效，或者因为VAST包装中未返回任何广告。 </p> </td> 
+   <td colname="5"> <p>广告解析失败，因为VAST URL无效或因为VAST包装器未返回任何广告。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><b>背景清单</b> </td> 
@@ -82,7 +81,7 @@ ht-degree: 2%
    <td colname="2"><span class="codeph"> BACKGROUND_MANIFEST_警告</span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"><span class="codeph"> BACKGROUND_MANIFEST_WARNING_ERROR</span> <span class="codeph"> BACKGROUND_MANIFEST_WARNING_NAME</span> <span class="codeph"> 描述</span> </td> 
-   <td colname="5"> <p> 后台清单下载出错。 更新后台清单时出现的任何问题都会作为TVSDK警告调度，而不会导致播放停止。 </p> </td> 
+   <td colname="5"> <p> 后台清单下载时出错。 更新后台清单时出现的任何问题都会作为TVSDK警告分发，而不会导致播放停止。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 204001 </span> </td> 
@@ -92,7 +91,7 @@ ht-degree: 2%
    <td colname="5"> <p> </p> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>本机</b> </td> 
+   <td colname="1"><b>原生</b> </td> 
    <td colname="2"> </td> 
    <td colname="3"> </td> 
    <td colname="4"> </td> 
@@ -102,15 +101,15 @@ ht-degree: 2%
    <td colname="1" morerows="1"><span class="codeph"> 209100 </span> </td> 
    <td colname="2" morerows="1"><span class="codeph"> NATIVE_WARNING </span> </td> 
    <td colname="3" morerows="1"> <p>无 </p> </td> 
-   <td colname="4"><b>AVE</b> <p><span class="codeph"> NATIVE_ERROR_CODE </span><span class="codeph"> NATIVE_ERROR_NAME </span><span class="codeph"> 描述 </span> </p> </td> 
-   <td colname="5"> <p>低级AVE库发出错误。 </p> <p>参见 <a href="../../../tvsdk-1.4-for-android/android-1.4-tvsdk-notification/notification-codes/native-error-summary/android-1.4-native-error-summary.md" format="html" scope="external"> NATIVE_ERROR通知的详细信息</a> 以了解有关这些元数据字段值的详细信息。 </p> </td> 
+   <td colname="4"><b>AVE</b> <p><span class="codeph"> NATIVE_ERROR_Code </span><span class="codeph"> 本机错误名称 </span><span class="codeph"> 描述 </span> </p> </td> 
+   <td colname="5"> <p>低级AVE库发出错误。 </p> <p>请参阅 <a href="../../../tvsdk-1.4-for-android/android-1.4-tvsdk-notification/notification-codes/native-error-summary/android-1.4-native-error-summary.md" format="html" scope="external"> NATIVE_ERROR通知的详细信息</a> 以了解有关这些元数据字段值的详细信息。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="4"><b>DRM</b> <p><span class="codeph"> NATIVE_SUBERROR_CODE</span> <span class="codeph"> DRM_ERROR_STRING</span> </p> </td> 
-   <td colname="5"> DRM次要错误代码和DRM服务器错误字符串。 参见 <a href="../../../tvsdk-1.4-for-android/android-1.4-tvsdk-notification/notification-codes/native-error-summary/android-1.4-native-error-summary.md" format="html" scope="external"> NATIVE_ERROR通知的详细信息</a> 以了解有关这些元数据字段值的详细信息。</td> 
+   <td colname="5"> DRM次要错误代码和DRM服务器错误字符串。 请参阅 <a href="../../../tvsdk-1.4-for-android/android-1.4-tvsdk-notification/notification-codes/native-error-summary/android-1.4-native-error-summary.md" format="html" scope="external"> NATIVE_ERROR通知的详细信息</a> 以了解有关这些元数据字段值的详细信息。</td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>时间范围集合</b> </td> 
+   <td colname="1"><b>TimeRangeCollection</b> </td> 
    <td colname="2"> </td> 
    <td colname="3"> </td> 
    <td colname="4"> </td> 
@@ -128,7 +127,7 @@ ht-degree: 2%
    <td colname="2"><span class="codeph"> INVALID_TIME_范围 </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"><span class="codeph"> 描述 </span> </td> 
-   <td colname="5"> <p> 一个或多个时间范围无效，将被忽略或修改。 </p> <p> DESCRIPTION是包含无效范围说明的字符串。 </p> </td> 
+   <td colname="5"> <p> 一个或多个时间范围无效，将被忽略或修改。 </p> <p> DESCRIPTION是一个包含无效范围说明的字符串。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><b>特技模式</b> </td> 
@@ -139,7 +138,7 @@ ht-degree: 2%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 280000 </span> </td> 
-   <td colname="2"><span class="codeph"> TRICKPLAY_RATE_CHANGE_FAIL</span> </td> 
+   <td colname="2"><span class="codeph"> TRICKPLAY_RATE_更改_失败</span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"><span class="codeph"> 描述</span> </td> 
    <td colname="5"> <p> 速率更改失败。 </p> </td> 
@@ -156,9 +155,9 @@ ht-degree: 2%
    <td colname="2"><span class="codeph"> GENERIC_WARNING </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"> <p>无 </p> </td> 
-   <td colname="5"> <p>标记一般警告事件。 不是由TVSDK实际发布的。 它只是对应于警告事件的数字代码范围的结束标记。 </p> </td> 
+   <td colname="5"> <p>标记一般警告事件。 不是由TVSDK实际颁发的。 它只是对应于警告事件的数字代码范围的结束标记。 </p> </td> 
   </tr> 
  </tbody> 
 </table>
 
->[注意！] adID和源(URL)可以通过通知元数据中的PTAdAsset进行检索，并使用 `AD_ASSET` 键。
+>[注意！] 通过通知元数据中的PTAdAsset，可以检索adID和源(URL)，并使用 `AD_ASSET` 键。

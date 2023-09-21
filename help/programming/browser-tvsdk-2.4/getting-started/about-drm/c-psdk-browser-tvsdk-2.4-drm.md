@@ -1,8 +1,7 @@
 ---
 description: 您可以完成特定于Digital Rights Management(DRM)的工作流。
 title: Digital Rights Management
-exl-id: 5a40252b-2917-4341-bc64-8642432ddda9
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '102'
 ht-degree: 0%
@@ -13,7 +12,7 @@ ht-degree: 0%
 
 您可以完成特定于Digital Rights Management(DRM)的工作流。
 
-你可以听到 `AdobePSDK.DRMMetadataInfoEvent` 用于处理DRM工作流的事件：
+您可以收听 `AdobePSDK.DRMMetadataInfoEvent` 处理DRM工作流的事件：
 
 ```js
 ... 

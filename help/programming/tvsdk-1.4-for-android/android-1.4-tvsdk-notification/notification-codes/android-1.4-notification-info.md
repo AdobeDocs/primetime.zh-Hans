@@ -1,8 +1,7 @@
 ---
 description: 此表提供有关INFO的详细信息。 键入通知。
 title: INFO通知代码
-exl-id: 65cd0a63-c765-4624-9028-d46cb8fbec3a
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '490'
 ht-degree: 4%
@@ -15,7 +14,7 @@ ht-degree: 4%
 
 <!--<a id="section_ED4302E363AE48CBA2C3E0B71AE612D8"></a>-->
 
-大多数信息通知包含相关元数据，例如，下载失败的资源的URL。 某些通知包含元数据，用于指定问题出现在主视频内容、备用音频内容还是广告中。
+大多数信息性通知包含相关元数据，例如，下载失败的资源的URL。 某些通知包含元数据，用于指定问题出现在主视频内容、备用音频内容还是广告中。
 
 <table frame="all" colsep="1" rowsep="1" id="table_503463046E764A87B10EB5D8B294EB23"> 
  <thead> 
@@ -24,7 +23,7 @@ ht-degree: 4%
    <th colname="2" class="entry"> 名称 </th> 
    <th colname="3" class="entry"> 内部通知 </th> 
    <th colname="4" class="entry"> 元数据键 </th> 
-   <th colname="5" class="entry"> 注释 </th> 
+   <th colname="5" class="entry"> 评论 </th> 
   </tr> 
  </thead>
  <tbody> 
@@ -51,7 +50,7 @@ ht-degree: 4%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 300002 </span> </td> 
-   <td colname="2"><span class="codeph"> SEEK_Start </span> </td> 
+   <td colname="2"><span class="codeph"> SEEK_START </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"><span class="codeph"> 搜寻时间</span> </td> 
    <td colname="5"> 已启动搜寻操作。 </td> 
@@ -65,10 +64,10 @@ ht-degree: 4%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 300004 </span> </td> 
-   <td colname="2"><span class="codeph"> CONTENT_变更 </span> </td> 
+   <td colname="2"><span class="codeph"> CONTENT_CHANGE </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> <span class="codeph"> CONTENT_ID</span> <span class="codeph"> CURRENT_MEDIA_TIME</span> </td> 
-   <td colname="5"> 当前播放时间已超过主内容和替代内容之间的边框。 </td> 
+   <td colname="5"> 当前播放时间已超过主内容和替代内容之间的边界。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 300005 </span> </td> 
@@ -88,7 +87,7 @@ ht-degree: 4%
    <td colname="1"><span class="codeph"> 300100 </span> </td> 
    <td colname="2"><span class="codeph"> LOAD_INFO_AVAILABLE </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
-   <td colname="4"> <span class="codeph"> FRAGMENT_URL</span> <span class="codeph"> FRAGMENT_SIZE</span> <span class="codeph"> FRAGMENT_DOWN_DURATION</span> <span class="codeph"> PERIOD_INDEX</span> </td> 
+   <td colname="4"> <span class="codeph"> FRAGMENT_URL</span> <span class="codeph"> FRAGMENT_SIZE</span> <span class="codeph"> FRAGMENT_DOWNLOAD_DURATION</span> <span class="codeph"> PERIOD_INDEX</span> </td> 
    <td colname="5"> 提供与视频区段下载方式相关的信息。 </td> 
   </tr> 
   <tr rowsep="1"> 
@@ -131,7 +130,7 @@ ht-degree: 4%
    <td colname="2"><span class="codeph"> AD_BREAK_PLACEMENT_COMPLETE </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"> <span class="codeph"> PROPOSED_AD_BREAK</span> <span class="codeph"> ACCEPTED_AD_BREAK</span> </td> 
-   <td colname="5"> 建议的广告时间已被接受 <code>primetime-sdk-name</code> 并将其完全或部分放置在播放时间轴上。 </td> 
+   <td colname="5"> 提议的广告时间已被接受 <code>primetime-sdk-name</code> 并将其完全或部分放置在播放时间轴上。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 303002 </span> </td> 
@@ -190,7 +189,7 @@ ht-degree: 4%
    <td colname="5"> 已跳过广告时间。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname=""><b>后期绑定音频(LBA)</b> </td> 
+   <td colname=""><b>延迟绑定音频(LBA)</b> </td> 
    <td colname="2"> </td> 
    <td colname="3"> </td> 
    <td colname="4"> </td> 
@@ -229,7 +228,7 @@ ht-degree: 4%
    <td colname="2"><span class="codeph"> GENER_INFO </span> </td> 
    <td colname="3"> <p>无 </p> </td> 
    <td colname="4"> <p>无 </p> </td> 
-   <td colname="5"> <p>标记一般信息事件。 不是由TVSDK实际发布的。 它只是对应于TVSDK信息事件的数字代码范围的结束标记。 </p> </td> 
+   <td colname="5"> <p>标记一般信息事件。 不是由TVSDK实际颁发的。 它只是对应于TVSDK信息事件的数值代码范围的结束标记。 </p> </td> 
   </tr> 
  </tbody> 
 </table>

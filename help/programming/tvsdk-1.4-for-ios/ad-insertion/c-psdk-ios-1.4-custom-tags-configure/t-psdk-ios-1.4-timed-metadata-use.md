@@ -1,8 +1,7 @@
 ---
-description: 当当前播放时间与开始时间匹配时，可以使用TimedMetadata。
+description: 在当前播放时间与开始时间匹配时，可以使用TimedMetadata。
 title: 使用定时元数据
-exl-id: 19375158-3647-4d6e-a2fb-6b06a2fd23c5
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '100'
 ht-degree: 0%
@@ -11,9 +10,9 @@ ht-degree: 0%
 
 # 使用定时元数据{#use-timed-metadata}
 
-当当前播放时间与开始时间匹配时，可以使用TimedMetadata。
+在当前播放时间与开始时间匹配时，可以使用TimedMetadata。
 
-要使用这些已保存的内容，请执行以下操作 `PTTimedMetadata` 对象，使用保存的词典 [在调度定时元数据对象时存储这些对象](../../../tvsdk-1.4-for-ios/ad-insertion/c-psdk-ios-1.4-custom-tags-configure/t-psdk-ios-1.4-timed-metadata-store.md).
+要使用这些已保存的 `PTTimedMetadata` 对象，使用保存的词典 [在调度定时元数据对象时存储这些对象](../../../tvsdk-1.4-for-ios/ad-insertion/c-psdk-ios-1.4-custom-tags-configure/t-psdk-ios-1.4-timed-metadata-store.md).
 
 1. 提取并更新此通知的当前播放时间，并查找所有 `PTTimedMetadata` 开始时间与当前播放时间匹配的对象。
 
@@ -56,4 +55,4 @@ ht-degree: 0%
    }
    ```
 
-1. 定期刷新陈旧 `PTTimedMetadata` 防止内存持续增长的实例。
+1. 定期刷新过时 `PTTimedMetadata` 从列表中删除实例，以防止内存持续增长。

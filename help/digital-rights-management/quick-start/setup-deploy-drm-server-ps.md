@@ -2,8 +2,7 @@
 title: 设置和部署用于受保护流处理的服务器
 description: 设置和部署用于受保护流处理的服务器
 copied-description: true
-exl-id: de1488e6-ccee-49e6-999e-6c6762dd55be
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '172'
 ht-degree: 0%
@@ -17,8 +16,8 @@ ht-degree: 0%
    `\Adobe Access Server for Protected Streaming\configs\`
 1. 复制示例 `configs` 文件夹到您的 `<Tomcat_installation_dir>` 并将复制的文件夹重命名为 `licenseserver`.
 
-   配置文件夹的路径现在应为 `<Tomcat_install_dir>\licenseserver\`.
-1. 运行 `Scrambler.bat` 获取Primetime DRM中传输和许可证服务器PFX文件的加密密码 `<DVD>` `\Adobe Access Server for Protected Streaming\` 目录：
+   configs文件夹的路径现在应为 `<Tomcat_install_dir>\licenseserver\`.
+1. 运行 `Scrambler.bat` 在Primetime DRM中获取传输和许可证服务器PFX文件的加密密码 `<DVD>` `\Adobe Access Server for Protected Streaming\` 目录：
 
    * `Scrambler.bat <Adobe-provided transport credential password>`
    * `Scrambler.bat <Adobe-provided license server credential password>`
@@ -33,14 +32,14 @@ ht-degree: 0%
    Configuration|Tenant|Credentials|LicenseServerCredential|File|password=<scrambled-license-servercredential-password>
    ```
 
-1. 运行 `Validator.bat` 用于验证配置是否有效的实用程序：
+1. 运行 `Validator.bat` 用于验证配置的实用程序有效：
 
    ```
    Validator.bat -g -r <absolute-path-to TomcatInstallDir\licenseserver>
    ```
 
 1. 复制 `flashaccessserver.war` 文件从CD到 `<TomcatInstallDir>\webapps\` 目录。
-1. 如果Tomcat正在运行，请按停止正在运行的Tomcat实例 `<CTRL-C>` （如果是从命令窗口启动）。 如果Tomcat安装为Windows服务，您还可以从Windows服务应用程序停止服务器。
+1. 如果Tomcat正在运行，请按停止正在运行的Tomcat实例 `<CTRL-C>` （如果是从命令窗口启动的）。 如果Tomcat是作为Windows服务安装的，您还可以从Windows服务应用程序中停止服务器。
 1. 要启动Tomcat，请输入以下命令：
 
    ```

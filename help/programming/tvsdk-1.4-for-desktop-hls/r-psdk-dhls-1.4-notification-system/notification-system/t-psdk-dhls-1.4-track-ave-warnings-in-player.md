@@ -1,19 +1,18 @@
 ---
 description: 使用NotificationEvent，您可以跟踪从Adobe视频引擎(AVE)传递的警告。
-title: 在播放器中跟踪AVE警告
-exl-id: 49118d7f-ed79-4d22-ba91-8929f97c7256
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+title: 跟踪播放器中的AVE警告
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '165'
 ht-degree: 0%
 
 ---
 
-# 在播放器中跟踪AVE警告{#track-ave-warnings-in-your-player}
+# 跟踪播放器中的AVE警告{#track-ave-warnings-in-your-player}
 
 使用NotificationEvent，您可以跟踪从Adobe视频引擎(AVE)传递的警告。
 
-您的播放器应用程序可以跟踪AVE生成的播放警告和错误，例如故障转移或网络中断事件，这些事件不会暂停播放且无需应用程序执行任何操作。 虽然TVSDK可以处理一些AVE错误， `NotificationEvent` 用作应用层的AVE警告的常规传递机制。 收到AVE警告后，您可以选择采取一些操作，例如主动停止播放、激活应急计划、记录消息等。
+您的播放器应用程序可以跟踪AVE生成的播放警告和错误，例如故障转移或网络停机事件，这些事件不会暂停播放且无需应用程序执行任何操作。 虽然TVSDK会处理一些AVE错误， `NotificationEvent` 用作应用层的AVE警告的一般传递机制。 收到AVE警告后，您可以选择采取某些措施，例如主动停止播放、激活应急计划、记录消息等。
 
 使用以下API元素跟踪播放器中的AVE警告：
 

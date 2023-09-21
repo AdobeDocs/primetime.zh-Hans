@@ -2,8 +2,7 @@
 title: 命令行用法
 description: 命令行用法
 copied-description: true
-exl-id: 4c772010-b7b6-4655-98ee-b52e8022d4af
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '390'
 ht-degree: 0%
@@ -47,7 +46,7 @@ ht-degree: 0%
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -c配置文件 </span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">指定配置文件的位置。 如果未使用此选项，则策略更新列表管理器将查找 <span class="filepath"> flashaccesstools.properties </span> 工作目录下。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">指定配置文件的位置。 如果未使用此选项，则策略更新列表管理器将查找 <span class="filepath"> flashaccesstools.properties </span> 在工作目录中。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <p class="- topic/p "> <span class="+ topic/ph pr-d/codeph codeph"> -d文件名 </span> </p> </td> 
@@ -63,23 +62,23 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -noprompt </span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">不要询问是否应该覆盖目标文件。 如果目标文件已存在，并且 <span class="codeph"> -o </span> 未设置，将返回错误。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">不要询问是否应覆盖目标文件。 如果目标文件已存在，并且 <span class="codeph"> -o </span> 未设置，将返回错误。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="codeph"> -o </span> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">如果目标文件已存在，则无需提示即可将其覆盖。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">如果目标文件已存在，则在不提示的情况下将其覆盖。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -r policyID </span> <span class="+ topic/ph pr-d/codeph codeph"> 日期 </span> ” <span class="+ topic/ph pr-d/codeph codeph"> 原因代码 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> 原因文本 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> reasonURL </span>” </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">（可选）在指定的日期撤销策略ID。 还可以提供可选原因代码、原因文本和原因URL。 指定空字符串“”以指示未提供可选参数的值。 指定日期为 <span class="+ topic/ph pr-d/codeph codeph"> yyyy-mm-dd </span> 或 <span class="+ topic/ph pr-d/codeph codeph"> yyyy-mm-dd-h24:min:秒 </span> (例如2008-12-1或2008-12-1-00:00:2008年12月1日午夜00)。 如果未指定日期，则使用当前日期。 原因代码必须大于或等于0。 可以指定多个 — r选项。 </p> </td> 
+   <td colname="1" class="- topic/entry "> <span class="+ topic/ph pr-d/codeph codeph"> -r policyID </span> <span class="+ topic/ph pr-d/codeph codeph"> 日期 </span> " <span class="+ topic/ph pr-d/codeph codeph"> 原因代码 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> 原因文本 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> reasonURL </span>" </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">（可选）在指定日期撤销策略ID。 可能还会提供可选的原因代码、原因文本和原因URL。 指定空字符串“”以指示没有为可选参数提供值。 指定日期为 <span class="+ topic/ph pr-d/codeph codeph"> yyyy-mm-dd </span> 或 <span class="+ topic/ph pr-d/codeph codeph"> yyyy-mm-dd-h24:min:秒 </span> (例如2008-12-1或2008-12-1-00:00:2008年12月1日午夜)。 如果未指定日期，则使用当前日期。 原因代码必须大于或等于0。 可以指定多个 — r选项。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "> <p class="- topic/p ">-rf <span class="+ topic/ph pr-d/codeph codeph"> policyFilename </span> <span class="+ topic/ph pr-d/codeph codeph"> 日期 </span> ” <span class="+ topic/ph pr-d/codeph codeph"> 原因代码 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> 原因文本 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> reasonURL </span>” </p> </td> 
+   <td colname="1" class="- topic/entry "> <p class="- topic/p ">-rf <span class="+ topic/ph pr-d/codeph codeph"> policyFilename </span> <span class="+ topic/ph pr-d/codeph codeph"> 日期 </span> " <span class="+ topic/ph pr-d/codeph codeph"> 原因代码 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> 原因文本 </span>“ ” <span class="+ topic/ph pr-d/codeph codeph"> reasonURL </span>" </p> </td> 
    <td colname="2" class="- topic/entry "> <p class="- topic/p ">执行与 — r标志相同的操作，但会从给定文件中提取策略标识符。 </p> </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <span class="codeph"> -u policyFilename " reasonCode" " reasonText" " reasonURL" </span> </td> 
-   <td colname="2" class="- topic/entry "> <p>使用给定的原因代码（可选）、原因文本（可选）和原因URL（可选）将许可证请求中的任何匹配策略替换为此策略。 </p> <p>指定空字符串“”以指示未提供可选参数的值。 </p> <p>原因代码必须大于或等于 <span class="codeph"> 0 </span>. 多个 <span class="codeph"> -u </span> 可以指定选项。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>使用给定原因代码（可选）、原因文本（可选）和原因URL（可选）将许可证请求中的任何匹配策略替换为此策略。 </p> <p>指定空字符串“”以指示没有为可选参数提供值。 </p> <p>原因代码必须大于或等于 <span class="codeph"> 0 </span>. 多个 <span class="codeph"> -u </span> 可以指定选项。 </p> </td> 
   </tr> 
  </tbody> 
 </table>

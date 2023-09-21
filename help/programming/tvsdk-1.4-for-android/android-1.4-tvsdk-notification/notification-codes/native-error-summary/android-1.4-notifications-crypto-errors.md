@@ -1,8 +1,7 @@
 ---
 description: Adobe视频引擎的加密模块在NATIVE_ERROR元数据对象中返回这些通知。
 title: NATIVE_ERROR加密值
-exl-id: 9f34d893-d5b1-4bfe-a590-27deccb6d08d
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '84'
 ht-degree: 8%
@@ -18,7 +17,7 @@ Adobe视频引擎的加密模块在NATIVE_ERROR元数据对象中返回这些通
 | 300 | `CRYPTO_ALGORITHM_NOT_SUPPORTED` | 不支持正在使用的算法。 |
 | 301 | `CRYPTO_ERROR_CORRUPTED_DATA` | 数据已损坏。 |
 | 302 | `CRYPTO_ERROR_BUFFER_TOO_SMALL` | 缓冲区太小。 |
-| 303 | `CRYPTO_ERROR_BAD_CERTIFICATE` | 证书无效。 |
+| 303 | `CRYPTO_ERROR_BAD_CERTIFICATE` | 证书错误。 |
 | 304 | `CRYPTO_ERROR_DIGEST_UPDATE` | 摘要更新。 |
-| 305 | `CRYPTO_ERROR_DIGEST_FINISH` | 摘要结束。 |
+| 305 | `CRYPTO_ERROR_DIGEST_FINISH` | 摘要完成。 |
 | 306 | `CRYPTO_ERROR_BAD_PARAMETER` | 参数错误。 |

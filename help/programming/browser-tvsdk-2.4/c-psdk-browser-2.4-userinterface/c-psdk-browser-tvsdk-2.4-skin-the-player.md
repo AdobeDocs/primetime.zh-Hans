@@ -1,8 +1,7 @@
 ---
 description: 您可以使用以下信息来构建播放器的外观。 对于每个可视化结构，默认行为中会提及相应的行为。
 title: 为播放器蒙皮
-exl-id: 4ad50f96-d174-401f-a731-21e5fbfdbe31
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '1422'
 ht-degree: 0%
@@ -15,7 +14,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->本文档中的外观设计详细信息适用于由UI框架创建的默认UI元素。 如果您的播放器修改了这些元素，则还需要更改外观元素。
+>本文档中的外观设计详细信息适用于由UI框架创建的默认UI元素。 如果播放器修改了这些元素，则还需要更改外观元素。
 
 ## 容器div {#section_99B0D598219D4150B57E97D5381B118F}
 
@@ -23,7 +22,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->这些div列于 `common-styles.css` 文件。
+>这些div列在 `common-styles.css` 文件。
 
 以下是主div的样式：
 
@@ -61,7 +60,7 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> .view-as-main-video</span> </td> 
-   <td colname="col2"> <p>应用于初始PIP时，已交换并显示为主视频。 </p> </td> 
+   <td colname="col2"> <p>应用于初始PIP（已交换并显示为主视频）。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p><b>多视频视图</b> </p> </td> 
@@ -112,14 +111,14 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-vertical-list-menu-item</span> </td> 
-   <td colname="col2"> <p>垂直样式下的菜单列表 </p> </td> 
+   <td colname="col2"> <p>垂直样式菜单列表 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-fill-spacer</span> </td> 
    <td colname="col2"> <p>控件栏上的空格 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"><span class="codeph"> ptp-hr-separator</span> </td> 
+   <td colname="col1"><span class="codeph"> ptp-hr — 分隔符</span> </td> 
    <td colname="col2"> <p>水平标尺分隔符 </p> </td> 
   </tr> 
   <tr> 
@@ -143,7 +142,7 @@ ht-degree: 0%
 
 ## 控制栏 {#section_B683B51EC746484B9AA90CB481D637BD}
 
-以下是控制栏的样式：
+以下是控件栏的样式：
 
 <table id="table_681E13F264674F849FAA2523EB65F094"> 
  <thead> 
@@ -155,7 +154,7 @@ ht-degree: 0%
  <tbody> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-control-bar</span> （默认行为）</td>
-   <td colname="col2"> <p>适用于控制栏 </p> </td> 
+   <td colname="col2"> <p>适用于控件栏 </p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -178,7 +177,7 @@ ht-degree: 0%
  <tbody> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-scrub-bar</span> </td> 
-   <td colname="col2"> <p>控制栏上的推移栏 </p> </td> 
+   <td colname="col2"> <p>控件栏上的推移栏 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-scrub-bar .ptp-buffer-progress-bar</span> </td> 
@@ -186,7 +185,7 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-scrub-bar .ptp-seek-to-bar</span> </td> 
-   <td colname="col2"> <p>用户在其上搜寻时清理栏的状态 </p> </td> 
+   <td colname="col2"> <p>用户在其上搜索时清理栏的状态 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-scrub-bar .ptp-playback-progress-bar</span> </td> 
@@ -194,7 +193,7 @@ ht-degree: 0%
   </tr>
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-scrub-bar .ptp-progress-bar-play-head</span> </td>
-   <td colname="col2"> <p>播放时在搓擦条上播放头 </p> </td>
+   <td colname="col2"> <p>播放时在搓擦条上播放磁头 </p> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> ptp-scrub-bar .ptp-ad-marker-bar</span> </td>
@@ -207,7 +206,7 @@ ht-degree: 0%
  </tbody>
 </table>
 
-默认行为是：
+缺省行为是：
 
 * `scrubBarBehavior`
 * `bufferProgressBarBehavior`
@@ -229,7 +228,7 @@ ht-degree: 0%
  <tbody>
   <tr>
    <td colname="col1"><span class="codeph"> ptp-btn-playpause</span> </td>
-   <td colname="col2"> <p>在控制栏上播放暂停按钮。 </p> </td>
+   <td colname="col2"> <p>在控件栏上播放暂停按钮。 </p> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> ptp-btn-playpause.pause-state</span> </td>
@@ -246,7 +245,7 @@ ht-degree: 0%
 
 ## 音量 {#section_23E17BD2343948F8A2CEE1C8BEE2F874}
 
-以下是配置卷按钮的样式：
+以下是配置“卷”按钮的样式：
 
 <table id="table_8F9831F36A4D427CA31C9FFA4173170D">
  <thead>
@@ -283,7 +282,7 @@ ht-degree: 0%
  </tbody>
 </table>
 
-默认行为是 `volumeBehavior` 和 `muteButtonBehavior`.
+缺省行为为 `volumeBehavior` 和 `muteButtonBehavior`.
 
 以下是音量滑块的样式：
 
@@ -300,8 +299,8 @@ ht-degree: 0%
    <td colname="col2"> <p>音量滑块。 </p> </td>
   </tr>
   <tr>
-   <td colname="col1"><span class="codeph"> .ptp-volume-hide</span> </td>
-   <td colname="col2"> <p>音量滑块处于隐藏状态。 </p> </td>
+   <td colname="col1"><span class="codeph"> .ptp-volume-hidden</span> </td>
+   <td colname="col2"> <p>处于隐藏状态的音量滑块。 </p> </td>
   </tr>
  </tbody>
 </table>
@@ -310,7 +309,7 @@ ht-degree: 0%
 
 ## 倒带 {#section_06EE608FC54A4CF5B5DF9DC743CFC740}
 
-下面是倒带按钮的样式：
+以下是倒带按钮的样式：
 
 <table id="table_0ACB116582D54B188E9F5B5C03D3A615">
  <thead>
@@ -322,7 +321,7 @@ ht-degree: 0%
  <tbody>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-btn-fastrewind</span> </td>
-   <td colname="col2"> <p>控制栏上的倒退按钮。 </p> </td>
+   <td colname="col2"> <p>控制栏上的倒带按钮。 </p> </td>
   </tr>
  </tbody>
 </table>
@@ -373,7 +372,7 @@ ht-degree: 0%
 
 ## 慢倒带 {#section_38A22BB8681B430F8C6808C3BD21FB4E}
 
-下面是慢速倒带按钮的样式：
+以下是慢速倒带按钮的样式：
 
 <table id="table_E623C374622A497C91E22333D77AF8F6">
  <thead>
@@ -452,7 +451,7 @@ ht-degree: 0%
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-btn-audio-track</span> </td>
-   <td colname="col2"> <p>控制栏上的音轨按钮。 </p> </td>
+   <td colname="col2"> <p>控件栏上的音轨按钮。 </p> </td>
   </tr>
   <tr>
    <td colname="col1">默认行为是 <span class="codeph"> audioTrackButtonBehavior</span>. </td>
@@ -507,7 +506,7 @@ ht-degree: 0%
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-btn-share-video</span> </td> 
-   <td colname="col2"> <p>将打开的控制栏上的社交媒体共享按钮 <span class="codeph"> ptp-share-video-panel</span>. </p> </td>
+   <td colname="col2"> <p>控制栏上将打开的社交媒体共享按钮 <span class="codeph"> ptp-share-video-panel</span>. </p> </td>
   </tr>
   <tr>
    <td colname="col1">默认行为是 <span class="codeph"> shareVideoButtonBehavior</span>. </td>
@@ -533,12 +532,12 @@ ht-degree: 0%
    <td colname="col2"> <p>的标题 <span class="codeph"> ptp-audio-track-selection-panel</span>. </p> </td>
   </tr>
   <tr>
-   <td colname="col1"><span class="codeph"> .share-video-panel-menu</span> </td>
-   <td colname="col2"> <p>中的菜单 <span class="codeph"> ptp-share-video-panel</span> 那个显示在社交媒体上共享内容的所有选项。 </p> </td>
+   <td colname="col1"><span class="codeph"> .share-video-panel — 菜单</span> </td>
+   <td colname="col2"> <p>中的菜单 <span class="codeph"> ptp-share-video-panel</span> 那个显示在社交媒体上分享内容的所有选项。 </p> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-share-video-panel-menu-item</span> </td>
-   <td colname="col2"> <p>中的菜单项 <span class="codeph"> 共享 — 视频 — 面板 — 菜单</span>. </p> </td>
+   <td colname="col2"> <p>中的菜单项 <span class="codeph"> 共享视频面板菜单</span>. </p> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-btn-share-video-facebook</span> </td>
@@ -559,7 +558,7 @@ ht-degree: 0%
  </tbody>
 </table>
 
-## 隐藏字幕 {#section_A01BA68218564DA0B7D6BF51F045D7AB}
+## 隐藏式字幕 {#section_A01BA68218564DA0B7D6BF51F045D7AB}
 
 以下是配置隐藏式字幕的样式：
 
@@ -577,7 +576,7 @@ ht-degree: 0%
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-btn-closed-caption</span> </td>
-   <td colname="col2"> <p>此 <span class="uicontrol"> 隐藏字幕</span> 按钮进行修改。 </p> </td>
+   <td colname="col2"> <p>此 <span class="uicontrol"> 隐藏式字幕</span> 按钮进行更改。 </p> </td>
   </tr>
   <tr>
    <td colname="col1">默认行为是 <span class="codeph"> closedCaptionButtonBehavior</span>. </td>
@@ -617,7 +616,7 @@ ht-degree: 0%
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-closed-caption-options-btn</span> </td>
-   <td colname="col2"> <p>此 <span class="uicontrol"> 选项</span> 隐藏式字幕选项面板中的按钮。 </p> </td>
+   <td colname="col2"> <p>此 <span class="uicontrol"> 选项</span> “隐藏式字幕选项”面板中的按钮。 </p> </td>
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-closed-caption-options-panel</span> </td>
@@ -633,11 +632,11 @@ ht-degree: 0%
   </tr>
   <tr>
    <td colname="col1"><span class="codeph"> .ptp-closed-caption-done-btn</span> </td> 
-   <td colname="col2"> <p>此 <span class="uicontrol"> 完成</span> 隐藏式字幕选项面板标题中的按钮。 </p> </td> 
+   <td colname="col2"> <p>此 <span class="uicontrol"> 完成</span> “隐藏式字幕选项”面板标题中的按钮。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ptp-closed-caption-options-menu</span> </td> 
-   <td colname="col2"> <p>隐藏式字幕中的选项菜单。 </p> </td> 
+   <td colname="col2"> <p>隐藏式字幕中的“选项”菜单。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> ptp-closed-caption-options-main-menu</span> </td> 
@@ -699,7 +698,7 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ptp-btn-more-options.ptp-control-bar-btn</span> </td> 
-   <td colname="col2"> <p>此 <span class="codeph"> ptp-btn-more-options</span> 控件栏中使用的属性。 </p> </td> 
+   <td colname="col2"> <p>此 <span class="codeph"> ptp-btn-more-options</span> 在控件栏中使用的属性。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ptp-more-options-control-panel</span> </td> 
@@ -707,7 +706,7 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ptp-more-options-control-panel-menu</span> </td> 
-   <td colname="col2"> <p>更多选项控制面板菜单。 </p> </td> 
+   <td colname="col2"> <p>“更多选项”控制面板菜单。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ptp-more-options-control-panel-menu-item</span> </td> 
@@ -732,7 +731,7 @@ ht-degree: 0%
  <tbody> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ptp-btn-pip</span> </td> 
-   <td colname="col2"> <p>PIP按钮。 </p> </td> 
+   <td colname="col2"> <p>控制栏上的PIP按钮。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1">默认行为是 <span class="codeph"> pipButtonBehavior</span>. </td> 
@@ -762,7 +761,7 @@ ht-degree: 0%
 
 默认行为是 `fullScreenButtonBehavior`.
 
-## 戏法游戏(Y) {#section_AE6F83BB7EE2497FB13CD94A8316192D}
+## 特技游戏(Y) {#section_AE6F83BB7EE2497FB13CD94A8316192D}
 
 以下是配置特技播放的样式：
 
@@ -797,7 +796,7 @@ ht-degree: 0%
  <tbody> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ptp-btn-multiview</span> </td> 
-   <td colname="col2"> <p>此 <span class="uicontrol"> 多视图</span> 按钮以及初始状态 <span class="uicontrol"> 多视图</span> 按钮。 </p> </td> 
+   <td colname="col2"> <p>此 <span class="uicontrol"> 多视图</span> 按钮，以及初始状态 <span class="uicontrol"> 多视图</span> 按钮。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1">默认行为是 <span class="codeph"> multiViewButtonBehavior</span>. </td> 
@@ -891,7 +890,7 @@ ht-degree: 0%
  <tbody> 
   <tr> 
    <td colname="col1"><span class="codeph"> .ad-break</span> </td> 
-   <td colname="col2"> <p>播放广告时控制面板的状态。 </p> <p>适用于以下各项： 
+   <td colname="col2"> <p>播放广告时控制面板的状态。 </p> <p>适用于以下内容： 
      <ul id="ul_D5076303DCD94D968682289823D1A9F2"> 
       <li id="li_4290C4B2D48546E3AD023BED6CAAE395"><span class="codeph"> .ptp-btn-fastforward</span> </li> 
       <li id="li_72A3D3E916E44A55BA170407EAB0527D"><span class="codeph"> .ptp-btn-fastrewind</span> </li> 
@@ -911,7 +910,7 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> .多视图</span> </td> 
-   <td colname="col2"> <p>处于多视图时控件的状态。 </p> <p>适用于以下各项： 
+   <td colname="col2"> <p>处于多视图时控件的状态。 </p> <p>适用于以下内容： 
      <ul id="ul_A8AC653C30814AC49041F3B58A2106F4"> 
       <li id="li_0407167DA21647A8A6960DFE55A33F42"><span class="codeph"> .ptp-btn-fastforward</span> </li> 
       <li id="li_EA71CAF41CDC41DE859A85CE482BE97C"><span class="codeph"> .ptp-btn-share-video</span> </li> 
@@ -921,7 +920,7 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td colname="col1"><span class="codeph"> .fullscreen-state</span> </td> 
-   <td colname="col2"> <p>播放器处于全屏模式。 </p> <p>适用于以下各项： 
+   <td colname="col2"> <p>播放器处于全屏模式。 </p> <p>适用于以下内容： 
      <ul id="ul_B235C1D339F64B2FAC6BC72F03807616"> 
       <li id="li_6E050EE74C604FDAB4C9C0447F547A9D"><span class="codeph"> .ptp-control-bar </span> </li> 
       <li id="li_67D54B1A41764B2DA544479CDA1C901C"><span class="codeph"> .ptp-btn-fullscreen</span> </li> 

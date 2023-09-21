@@ -1,8 +1,7 @@
 ---
-description: 每次在内容清单中遇到订阅标记的对象时，TVSDK都会为这些对象准备TimedMetadata对象。
+description: 每次在内容清单中遇到订阅的标记时，TVSDK都会为这些对象准备TimedMetadata。
 title: 订阅自定义标记
-exl-id: 7a3021cc-d2ba-4a70-9c1f-59766b848a62
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '266'
 ht-degree: 0%
@@ -11,12 +10,12 @@ ht-degree: 0%
 
 # 订阅自定义标记{#subscribe-to-custom-tags}
 
-每次在内容清单中遇到订阅标记的对象时，TVSDK都会为这些对象准备TimedMetadata对象。
+每次在内容清单中遇到订阅的标记时，TVSDK都会为这些对象准备TimedMetadata。
 
-在开始播放之前，您必须订阅标记。
+在开始播放之前，必须订阅标记。
 要订阅标记，请将包含自定义标记名称的矢量分配给 `subscribedTags` 属性。 如果您还需要更改默认机会生成器使用的广告标记，请将包含自定义广告标记名称的矢量分配给 `adTags` 属性。
 
-要接收有关HLS清单中的自定义标记的通知，请执行以下操作：
+要接收有关HLS清单中自定义标记的通知，请执行以下操作：
 
 1. 通过将包含自定义标记的矢量分配给，全局设置自定义广告标记名称 `subscribeTags` 在 `MediaPlayerItemConfig`.
 
@@ -47,7 +46,7 @@ ht-degree: 0%
    player.replaceCurrentResource(mediaResource);
    ```
 
-1. 为流设置订阅的标记名称（如果需要）：
+1. 要设置流的订阅标记名称，请执行以下操作（如果需要）：
    1. 创建媒体播放器项目配置。
 
       >[!TIP]

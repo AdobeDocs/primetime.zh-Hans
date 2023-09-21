@@ -1,8 +1,7 @@
 ---
 title: 设置广告跟踪
 description: 设置广告跟踪
-exl-id: b5ebad0f-4e20-456a-892d-4c981ab26e51
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '280'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 设置广告跟踪 {#ser-up-ad-tracking}
 
-大多数广告商需要有关查看其广告的时间、时间和成功程度的信息。 PrimetimeAd Insertion支持客户端、服务器端和混合广告跟踪，以便能够灵活地收集此信息。
+大多数广告商需要了解他们的广告被查看的时间、时间和成功程度。 PrimetimeAd Insertion支持客户端、服务器端和混合广告跟踪，以便能够灵活地收集此信息。
 
 ## 使用VMAP/JSON进行客户端广告跟踪 {#client-side-ad-tracking-vmap-json}
 
@@ -34,13 +33,13 @@ More information about `pttrackingmode`, `pttrackingversion` formats, can be fou
 
 ## 服务器端广告跟踪 {#server-side-ad-tracking}
 
-使用此方法，广告跟踪数据完全在服务器端计算。 当更新客户端应用程序不可行时，这很有用。 但是，服务器端广告跟踪可能与客户端播放活动不匹配。 例如，服务器会考虑在投放区段后播放广告，即使最终用户未查看整个广告也是如此。
+使用此方法，广告跟踪数据完全在服务器端进行计算。 当更新客户端应用程序不可行时，这很有用。 但是，服务器端广告跟踪可能与客户端播放活动不匹配。 例如，服务器会考虑在投放区段后播放广告，即使最终用户未查看整个广告也是如此。
 
 要启用服务器端广告跟踪，请在 [BOOTSTRAPAPI](/help/primetime-ad-insertion/technical-reference/bootstrap-api.md).
 
 `pttrackingmode=sstm`
 
-参见 `pttrackingmode` 部分 [BOOTSTRAPAPI](/help/primetime-ad-insertion/technical-reference/bootstrap-api.md).
+请参阅 `pttrackingmode` 部分 [BOOTSTRAPAPI](/help/primetime-ad-insertion/technical-reference/bootstrap-api.md).
 
 所有广告跟踪信标均随以下HTTP请求标头一起发送：
 
@@ -52,5 +51,5 @@ More information about `pttrackingmode`, `pttrackingversion` formats, can be fou
 
 ## 混合广告跟踪 {#hybrid-ad-tracking}
 
-此方法与服务器端跟踪类似，但客户端应用程序也从PrimetimeAd Insertion中请求附属项以获取详细的跟踪信息。 混合广告跟踪可以向客户端应用程序投放非线性广告（例如叠加和伴随），同时仍依赖于PrimetimeAd Insertion发送单个广告跟踪URL。
+此方法与服务器端跟踪类似，但客户端应用程序也从PrimetimeAd Insertion中请求辅助对象以获取详细的跟踪信息。 混合广告跟踪可以向客户端应用程序投放非线性广告，例如叠加和伴随，同时仍依赖于PrimetimeAd Insertion发送单个广告跟踪URL。
 要启用混合广告跟踪，请参阅 `pttrackingmode` 中的参数 [BOOTSTRAPAPI](/help/primetime-ad-insertion/technical-reference/bootstrap-api.md).

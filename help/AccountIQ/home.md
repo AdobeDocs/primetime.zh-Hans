@@ -1,8 +1,7 @@
 ---
 title: 帐户IQ概述
-description: 客户IQ可帮助MVPD和程序员了解其收入和业务运营面临的风险，并确定应采取的最有效的行动来减轻凭据欺诈的影响。
-exl-id: c0d85fc8-b5ab-4284-802e-82f52eff401f
-source-git-commit: 4475faca828510153a7ec3e505704ee8d8b044d0
+description: 客户IQ可帮助MVPD和程序员了解其收入和业务运营面临的风险，并确定应采取的最有效操作来减轻凭据欺诈的影响。
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '403'
 ht-degree: 0%
@@ -11,24 +10,24 @@ ht-degree: 0%
 
 # Account IQ概述 {#account-iq-overview}
 
-流媒体服务用户的凭据共享是行业面临的一个重大且日益严重的问题。 此外，了解、识别凭据共享并对凭据共享执行操作是一个复杂的过程。 了解订阅者的使用行为并形成其活动的整体视图涉及到复杂性 — 例如，区分同一家庭内外成员之间的共享。 由于此挑战，流服务提供商可能会禁止采取行动来阻止凭据共享。
+流媒体服务用户共享凭据是行业面临的一个重大且日益严重的问题。 此外，了解、识别凭据共享并对凭据共享执行操作是一个复杂的过程。 理解订阅者的使用行为和全面了解其活动涉及到复杂性 — 例如，区分同一家庭内外成员之间的共享。 由于此挑战，流服务提供商可能会禁止采取行动来阻止凭据共享。
 
 
 <div class "preview">
-通常，视频流服务提供商了解共享其业务的风险和成本，但补救措施有限，例如阻止共享者或提供优惠。 但是，建议采用一种知情且有针对性的方法 — 这种方法使服务能够准确理解共享，并采用奖励良好观看行为并同时以业务增长为目标的策略。 </span>
+通常，视频流服务提供商了解共享业务的风险和成本，但补救措施有限，例如阻止共享者或提供选件。 但是，我们建议采取一种知情且有针对性的做法，使服务部门能够准确了解共享情况，并采用奖励良好观看行为并同时以业务增长为目标的策略。 </span>
 
 ![帐户IQ流程图](assets/aiq-intro.png)
 
 *图：帐户IQ信息流*
 
-Adobe Primetime帐户IQ使视频流服务能够了解订阅者使用模式并确定凭据共享。 通过利用Adobe专有的多层机器学习模型，深入分析每个用户留下的长期数据痕迹，流媒体服务可以更好地理解使用行为并识别证书共享。 此外，它允许通过与其他系统集成来采取行动，例如限制并发流或自定义优惠，并验证这些行动的影响 — 无论是鼓励合法观看行为还是增加订阅者和收入。
+Adobe Primetime帐户IQ使视频流服务能够了解订阅者使用模式并确定凭据共享。 通过使用Adobe专有的多层机器学习模型，深入分析每个用户留下的长期数据痕迹，流式服务可以更肯定地了解使用行为并识别凭据共享。 此外，它可以通过与其他系统的集成来采取行动，例如限制并发流或自定义优惠，并验证这些行动的影响 — 无论是鼓励合法观看行为还是增加订阅者和收入。
 
-Account IQ提供了一些工具和功能，可用于衡量、管理和从凭据共享中获利。 通过报表、分析和功能板，可以探索数据以识别模式。 通过导出以及与Adobe和第三方系统（如营销活动管理、货币限制或订阅者注册）的集成来支持直接操作。 专门跟踪工具可衡量这些操作是否成功，以便对其进行更新或扩展。
+Account IQ提供了一些工具和功能来衡量、管理和实现凭据共享并从中盈利。 通过报表、分析和功能板，可以探索数据以识别模式。 通过导出以及与Adobe和第三方系统（如营销活动管理、货币限制或订阅者注册）的集成，支持直接操作。 而且，专用的跟踪工具会衡量这些操作是否成功，以便对其进行更新或扩展。
 
 以下几节将介绍帐户IQ应用程序工具和功能：
 
 * [仪表板](/help/AccountIQ/dashboard.md)
-* [“常规使用情况”报表](/help/AccountIQ/general-usage-reports.md)
+* [一般使用情况报表](/help/AccountIQ/general-usage-reports.md)
 * [共享帐户报表](/help/AccountIQ/shared-acc-reports.md)
 * [使用模式](/help/AccountIQ/usage-patterns.md)
 * [操作](/help/AccountIQ/operations.md)
@@ -44,7 +43,6 @@ Account IQ提供了一些工具和功能，可用于衡量、管理和从凭据�
 >* [使用模式](/help/AccountIQ/usage-patterns.md)
 >* [产品术语词汇表](/help/AccountIQ/product-concepts.md)
 >* [Account IQ白皮书](https://www.adobe.com/content/dam/dx/us/en/products/primetime/resources/primetime-account-iq-whitepaper.pdf)
-
 
 <!-- Credential sharing is rampant and prevalent among subscribers in the video streaming industry. To add to it, understanding, identifying, and acting on password sharing is a complex process. There is complexity involved in understanding the subscriber usage behavior and developing a holistic view of viewer activity—for example, distinguishing sharing among members within the same household and outside. Due to this challenge, streaming service providers have inhibitions in acting against password sharing.
 

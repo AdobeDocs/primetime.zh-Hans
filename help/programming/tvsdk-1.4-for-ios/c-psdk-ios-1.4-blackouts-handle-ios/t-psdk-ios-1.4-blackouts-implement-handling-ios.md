@@ -1,8 +1,7 @@
 ---
 description: TVSDK提供了用于处理封锁期的API和示例代码。
 title: 实施封锁处理
-exl-id: 31e4a016-ecba-47cc-b574-553db85ece53
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '129'
 ht-degree: 0%
@@ -36,7 +35,7 @@ TVSDK提供了用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 实施侦听器方法 `PTTimedMetadata` 前景中的对象。
+1. 实施侦听程序方法 `PTTimedMetadata` 前景中的对象。
 
    例如：
 
@@ -196,7 +195,7 @@ TVSDK提供了用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 实施侦听器方法 `PTTimedMetadata` 背景中的对象。
+1. 实施侦听程序方法 `PTTimedMetadata` 背景中的对象。
 
    ```
    - (void)onSubscribedTagInBackground:(NSNotification *)notification 
@@ -217,7 +216,7 @@ TVSDK提供了用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 为后台错误实施侦听器方法。
+1. 为后台错误实施侦听程序方法。
 
    ```
    - (void) onBackgroundManifestError:(NSNotification *)notification 
@@ -226,7 +225,7 @@ TVSDK提供了用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 如果封锁范围位于播放流中的DVR上，请更新不可搜索的范围。
+1. 如果封锁范围位于播放流的DVR上，请更新不可搜索的范围。
 
    ```
    // This sample assumes that blackoutStartTimedMetadata is the PTTimedMetadata  

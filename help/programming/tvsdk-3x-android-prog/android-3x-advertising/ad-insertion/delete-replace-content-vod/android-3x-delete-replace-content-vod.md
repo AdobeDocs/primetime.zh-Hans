@@ -1,8 +1,7 @@
 ---
 description: TVSDK支持以编程方式删除和替换VOD流中的广告内容。
 title: 删除和替换VOD流中的广告
-exl-id: cef546e6-0cf5-4730-be5c-b2bb6ac5ab1b
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '73'
 ht-degree: 0%
@@ -13,4 +12,4 @@ ht-degree: 0%
 
 TVSDK支持以编程方式删除和替换VOD流中的广告内容。
 
-删除和替换功能会扩展自定义广告标记功能。 自定义广告标记将主要内容的部分标记为与广告相关的内容时段。 除了标记这些时间范围之外，您还可以删除和替换时间范围。
+删除和替换功能可进一步扩展自定义广告标记功能。 自定义广告标记将主内容的各个部分标记为与广告相关的内容时段。 除了标记这些时间范围之外，您还可以删除和替换时间范围。

@@ -2,8 +2,7 @@
 title: 选择音轨
 description: 选择音轨
 copied-description: true
-exl-id: d4a7260a-82dd-4b57-8037-b91815d9b954
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '136'
 ht-degree: 0%
@@ -12,15 +11,15 @@ ht-degree: 0%
 
 # 选择音轨{#select-the-audio-tracks}
 
-要为后期捆绑音频选择音频曲目，请实施 [IAAConfig](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/config/IAAConfig.html).
+要为后期捆绑音频选择音频轨道，请实施 [IAAConfig](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/config/IAAConfig.html).
 
 | 收件人…… | 呼叫…… |
 |---|---|
-| 获取可用AA跟踪的列表 | [getAudioTracks()](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/AAManager.html#getAudioTracks()) |
+| 获取可用AA轨道的列表 | [getAudioTracks()](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/AAManager.html#getAudioTracks()) |
 | 获取当前选定的曲目 | [getSelectedAudioTrack()](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/AAManager.html#getSelectedAudioTrack()) |
-| 选择AA曲目 | [selectAlternateAudioTrack()](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/AAManager.html#selectAlternateAudioTrack(int)) |
+| 选择AA跟踪 | [selectAlternateAudioTrack()](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/AAManager.html#selectAlternateAudioTrack(int)) |
 
-以下代码示例说明了参考实施如何从TVSDK获取音频曲目并将选定的曲目分配给关联的媒体项目：
+以下代码示例说明了参考实施如何从TVSDK获取音频轨道，并将所选的轨道分配给关联的媒体项目：
 
 ```java
 /** 

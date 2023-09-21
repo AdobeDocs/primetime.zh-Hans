@@ -1,8 +1,7 @@
 ---
 description: 您可以监听通知，也可以将您自己的通知添加到通知历史记录中。
 title: 设置通知系统
-exl-id: da6cec2d-8488-4f61-881b-72999ece650c
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 0%
@@ -13,13 +12,13 @@ ht-degree: 0%
 
 您可以监听通知，也可以将您自己的通知添加到通知历史记录中。
 
-Primetime播放器通知系统的核心是Notification类，它表示一个独立的通知。
+Primetime播放器通知系统的核心是Notification类，它表示独立通知。
 
-NotificationHistory类提供了用于收集通知的机制。 它存储通知日志( `NotificationHistoryItem`)对象，表示通知集合。
+NotificationHistory类提供了用于累积通知的机制。 它存储通知日志( `NotificationHistoryItem`)对象，表示通知集合。
 
 要接收通知，请执行以下操作：
 
-* 监听通知
+* 收听通知
 * 将通知添加到通知历史记录
 
 1. 监听状态更改。

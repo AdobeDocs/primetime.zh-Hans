@@ -2,8 +2,7 @@
 title: 标记范围
 description: 标记范围
 copied-description: true
-exl-id: 173769cd-6580-4461-9dbc-5bb2fed346d2
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '24'
 ht-degree: 0%
@@ -12,7 +11,7 @@ ht-degree: 0%
 
 # 标记范围{#mark-ranges}
 
-标记 `TimeRanges` 介于 `begin` 和 `end` 在 `localTime` 作为 `AdBreak` 从时间线。 其他广告设置将被忽略。
+标记 `TimeRanges` 介于 `begin` 和 `end` 在 `localTime` 作为 `AdBreak` 从时间线中。 其他广告设置将被忽略。
 
 1. 标记时间范围。
 

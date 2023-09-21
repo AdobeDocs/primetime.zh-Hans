@@ -1,8 +1,7 @@
 ---
-description: 在支持GPU（硬件）加速的设备上，您可以使用flash.media.StageVideo对象直接在设备硬件上处理视频。
+description: 在支持GPU（硬件）加速的设备上，可以使用flash.media.StageVideo对象直接在设备硬件上处理视频。
 title: StageVideo最低要求
-exl-id: f401682d-c47d-4284-8832-293515a76581
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '248'
 ht-degree: 0%
@@ -11,16 +10,16 @@ ht-degree: 0%
 
 # StageVideo最低要求{#stagevideo-minimum-requirements}
 
-在支持GPU（硬件）加速的设备上，您可以使用flash.media.StageVideo对象直接在设备硬件上处理视频。
+在支持GPU（硬件）加速的设备上，可以使用flash.media.StageVideo对象直接在设备硬件上处理视频。
 
 <!--<a id="section_64DDAA8DB215493E8A7CA6636819D350"></a>-->
 
-不同因素的组合决定了何时以及如何使用 `StageVideo`. 下表概述了与使用StageVideo相关的一些要求和限制。 这些要求和限制可能会有变化。
+不同的因素组合决定了何时以及如何使用 `StageVideo`. 下表概述了与使用StageVideo相关的一些要求和限制。 这些要求和限制可能会发生变化。
 
 <table id="table_882F4462A5AE47E28A60A39D112164A7"> 
  <thead> 
   <tr> 
-   <th colname="col1" class="entry"> Platform </th> 
+   <th colname="col1" class="entry"> 平台 </th> 
    <th colname="col2" class="entry"> Windows和Mac操作系统 </th> 
   </tr>
  </thead>
@@ -30,12 +29,12 @@ ht-degree: 0%
    <td colname="col2"> 
     <ul id="ul_s42_lm2_jp"> 
      <li id="li_308FA9EC206B437A9EE04C29F9480B73">至少Flash10.1或更高版本 </li> 
-     <li id="li_5898EDB0D12A43389076BCC7F4A27A0A">对于回退到软件功能，Flash15及更高版本 </li> 
+     <li id="li_5898EDB0D12A43389076BCC7F4A27A0A">对于回退到软件功能，请使用Flash15及更高版本 </li> 
     </ul> </td> 
   </tr> 
   <tr> 
    <td colname="col1">浏览器和 <span class="codeph"> wmode</span> 设置 </td> 
-   <td colname="col2"> <p><b>在Flash15</b>，设置 <span class="codeph"> wmode=opaque</span> 以便使用HTML叠加图。 </p> <p>以下浏览器当前不支持硬件加速： 
+   <td colname="col2"> <p><b>在Flash15</b>，设置 <span class="codeph"> wmode=opaque</span> 以便使用HTML叠加。 </p> <p>以下浏览器当前不支持硬件加速： 
      <ul id="ul_frv_ykf_jp"> 
       <li id="li_3D407A61FEE042A9B85A6EFACA6D7719">Microsoft Windows上的Mozilla Firefox </li> 
       <li id="li_39B85AC352564DA8B86EA826638F1F4B">26之前的Google Chrome以及Windows XP和Vista上的任何版本Chrome </li> 

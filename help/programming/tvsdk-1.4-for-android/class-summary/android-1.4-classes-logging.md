@@ -1,8 +1,7 @@
 ---
-description: 这些类使您能够自定义日志记录。
+description: 利用这些类，可以自定义日志记录。
 title: 日志记录类
-exl-id: e420f557-eb4f-4adf-9b87-1cffc6b36d53
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '126'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 日志记录类{#logging-classes}
 
-这些类使您能够自定义日志记录。
+利用这些类，可以自定义日志记录。
 
 包： [com.adobe.mediacore.logging](https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/logging/package-summary.html)
 
@@ -32,7 +31,7 @@ ht-degree: 0%
    <td colname="2" rowsep="0"> 班级。 定义条目日志并保存有关日志消息的信息。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/logging/LogFactory.html" format="html" scope="external"> LogFactory</a> </span></td> 
+   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/logging/LogFactory.html" format="html" scope="external"> logfactory</a> </span></td> 
    <td colname="2"> 界面。 启用自定义日志记录。 </td> 
   </tr> 
   <tr rowsep="1"> 

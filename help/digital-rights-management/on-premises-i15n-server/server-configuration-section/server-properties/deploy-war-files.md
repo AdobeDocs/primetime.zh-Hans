@@ -2,8 +2,7 @@
 title: 部署WAR文件
 description: 部署WAR文件
 copied-description: true
-exl-id: 9f491596-2a02-4a55-9baa-86407e389d20
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '64'
 ht-degree: 0%
@@ -12,7 +11,7 @@ ht-degree: 0%
 
 # 部署WAR文件{#deploy-the-war-files}
 
-1. 将WAR文件复制到Tomcat的 [!DNL webapps] 目录。
+1. 将WAR文件复制到Tomcat [!DNL webapps] 目录。
 
    * 个性化服务器： [!DNL flashaccess.war]
    * 密钥生成服务器： [!DNL flashaccess-kgs.war]

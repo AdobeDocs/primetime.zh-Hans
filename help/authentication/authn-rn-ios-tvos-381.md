@@ -1,7 +1,7 @@
 ---
 title: Authentication iOS / tvOS 3.8.1发行说明
 description: Authentication iOS / tvOS 3.8.1发行说明
-source-git-commit: 6a32450d99b84835d820b54679a73ffe5dc61636
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '89'
 ht-degree: 0%
@@ -12,13 +12,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 本页介绍了此版本的新增功能、更改和已知问题：
 
 ## 内部版本号 {#build-no-ios-tvos-sdk-381}
 
-Adobe Primetime身份验证：iOS / tvOS 3.8.1
+Adobe Primetime身份验证： iOS / tvOS 3.8.1
 
 发行日期： 2023年5月26日
 

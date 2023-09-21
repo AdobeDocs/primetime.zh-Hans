@@ -1,8 +1,7 @@
 ---
 description: FairPlay许可证令牌界面提供生产和测试服务。
 title: FairPlay许可证令牌请求/响应
-exl-id: 7073a74b-d907-4d45-8550-4305655c33f5
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '814'
 ht-degree: 4%
@@ -13,7 +12,7 @@ ht-degree: 4%
 
 FairPlay许可证令牌界面提供生产和测试服务。 此请求返回可兑换为FairPlay许可证的令牌。
 
-**方法：GET、POST** （使用www-url编码的主体，其中包含这两种方法的参数）
+**方法：GET、POST** （具有以www-url编码的正文，其中包含这两种方法的参数）
 
 **URL：**
 
@@ -38,9 +37,9 @@ FairPlay许可证令牌界面提供生产和测试服务。 此请求返回可�
 
 * **示例响应：**
 
-   ```
-   https://fp.service.expressplay.com:80/hms/fp/rights/?ExpressPlayToken=<base64-encoded ExpressPlay token>
-   ```
+  ```
+  https://fp.service.expressplay.com:80/hms/fp/rights/?ExpressPlayToken=<base64-encoded ExpressPlay token>
+  ```
 
 **请求查询参数**
 
@@ -48,21 +47,21 @@ FairPlay许可证令牌界面提供生产和测试服务。 此请求返回可�
 
 | 查询参数 | 描述 | 必需？ |
 |--- |--- |--- |
-| customerAuthenticator作为查询参数的客户验证器customerAuthenticator FairPlay | 这是您的客户API密钥，每个密钥分别用于生产和测试环境。 您可以在“ExpressPlay管理功能板”选项卡上找到它。 | 是 |
-| 错误格式 | html或json。 如果html（默认）在响应的实体正文中提供了任何错误的HTML表示形式。 如果指定了json，则会返回JSON格式的结构化响应。 参见 [JSON错误](https://www.expressplay.com/developer/restapi/#json-errors) 了解详细信息。 响应的mime类型是text/uri-list （成功）、text/html (HTML错误格式)或application/json （JSON错误格式）。 | 否 |
+| customerAuthenticator作为查询参数的客户验证器customerAuthenticator FairPlay | 这是您的客户API密钥，每个密钥分别用于生产和测试环境。 您可以在ExpressPlay的“Admin Dashboard（管理功能板）”选项卡上找到此标记。 | 是 |
+| errorFormat | html或json。 如果html（默认）在响应的实体主体中提供任何错误的HTML表示形式。 如果指定了json，则会返回JSON格式的结构化响应。 请参阅 [JSON错误](https://www.expressplay.com/developer/restapi/#json-errors) 以了解详细信息。 响应的mime类型是：成功时为text/uri-list；HTML错误格式时为text/html；JSON错误格式时为application/json。 | 否 |
 
 **表4：许可证查询参数**
 
 | **查询参数** | **描述** | **必需？** |
 |---|---|---|
 | `generalFlags` | 表示许可证标记的4字节十六进制字符串。 “0000”是唯一允许的值。 | 否 |
-| `kek` | 密钥加密密钥(KEK)。 密钥是使用密钥封装算法(AES Key Wrap，RFC3394)通过KEK加密存储的。 如果 `kek` 是以下任一选项提供的： `kid` 或 `ek` 需要提供参数， *但不是两者都有*. | 否 |
-| `kid` | 内容加密密钥或字符串的16字节十六进制字符串表示形式 `'^somestring'`. 字符串的长度，后跟 `'^'` 不能大于64个字符。 | 否 |
-| `ek` | 加密内容密钥的十六进制字符串表示形式。 | 否 |
-| `contentKey` | 内容加密密钥的16字节十六进制字符串表示形式 | 是，除非 `kek` 和 `ek` 或 `kid` 提供了。 |
+| `kek` | 密钥加密密钥(KEK)。 密钥是使用密钥封装算法(AES Key Wrap，RFC3394)使用KEK加密存储的。 如果 `kek` 提供的任何一个 `kid` 或 `ek` 需要提供参数， *但不是两者都有*. | 否 |
+| `kid` | 内容加密密钥或字符串的16字节十六进制字符串表示形式 `'^somestring'`. 字符串的长度，后跟 `'^'` 不能超过64个字符。 | 否 |
+| `ek` | 已加密内容密钥的十六进制字符串表示形式。 | 否 |
+| `contentKey` | 内容加密密钥的16字节十六进制字符串表示形式 | 是，除非 `kek` 和 `ek` 或 `kid` 提供。 |
 | `iv` | 内容加密IV的16字节十六进制字符串表示形式 | 是 |
 | `rentalDuration` | 租用的持续时间（以秒为单位，默认值 — 0） | 否 |
-| `fpExtension` | 简短表单包装 `extensionType` 和 `extensionPayload`，以逗号分隔的字符串。 例如： [...] `&fpExtension=wudo,AAAAAA==&`[...] | 否，可使用任何数字 |
+| `fpExtension` | 简短表单包装 `extensionType` 和 `extensionPayload`，以逗号分隔的字符串。 例如： [...] `&fpExtension=wudo,AAAAAA==&`[...] | 否，可使用任意数字 |
 
 **表5：令牌限制查询参数**
 
@@ -76,8 +75,8 @@ FairPlay许可证令牌界面提供生产和测试服务。 此请求返回可�
  </thead>
  <tbody> 
   <tr> 
-   <td> <span class="codeph"> expirationTime </span> </td> 
-   <td> 此令牌的过期时间。 此值必须是中的字符串 <a href="https://www.ietf.org/rfc/rfc3339.txt" format="html" scope="external"> RFC 3339 </a> “Z”区域指示符中的日期/时间格式（“Zulu时间”），或以“+”符号开头的整数。 RFC 3339日期/时间的示例为 <span class="codeph"> 2006-04-14T12:01:10Z </span>. <p>如果值是中的字符串 <a href="https://www.ietf.org/rfc/rfc3339.txt" format="html" scope="external"> RFC 3339 </a> 日期/时间格式，则它表示令牌的绝对到期日期/时间。 如果值是带有“+”号的整数，则从颁发开始，它将解释为令牌有效的相对秒数。 </p> 例如， <span class="codeph"> +60 </span> 指定一分钟。 最长和默认（如果未指定）令牌生命周期为30天。 </td> 
+   <td> <span class="codeph"> 过期时间 </span> </td> 
+   <td> 此令牌的过期时间。 此值必须是中的字符串 <a href="https://www.ietf.org/rfc/rfc3339.txt" format="html" scope="external"> RFC 3339 </a> 'Z'区域指示符中的日期/时间格式（"Zulu时间"），或以“+”符号开头的整数。 RFC 3339日期/时间的示例为 <span class="codeph"> 2006-04-14T12:01:10Z </span>. <p>如果值是中的字符串 <a href="https://www.ietf.org/rfc/rfc3339.txt" format="html" scope="external"> RFC 3339 </a> 日期/时间格式，则它表示令牌的绝对过期日期/时间。 如果该值是以“+”符号开头的整数，则从颁发时起，该令牌将被解释为有效的相对秒数。 </p> 例如， <span class="codeph"> +60 </span> 指定一分钟。 最长和默认（如果未指定）令牌生命周期为30天。 </td> 
    <td> 否 </td> 
   </tr> 
  </tbody> 
@@ -93,7 +92,7 @@ FairPlay许可证令牌界面提供生产和测试服务。 此请求返回可�
 
 **表7： HTTP响应**
 
-| **HTTP状态代码** | **描述** | **内容类型** | **实体正文包含** |
+| **HTTP状态代码** | **描述** | **Content-Type** | **实体正文包含** |
 |---|---|---|---|
 | `200 OK` | 没有错误。 | `text/uri-list` | 许可证客户获取URL +令牌 |
 | `400 Bad Request` | 参数无效 | `text/html` 或 `application/json` | 错误描述 |
@@ -133,7 +132,7 @@ FairPlay许可证令牌界面提供生产和测试服务。 此请求返回可�
   </tr> 
   <tr> 
    <td> -2018 </td> 
-   <td> 身份验证令牌无效： &lt;details&gt; <p>注意：如果验证器错误或在访问测试API时，可能会发生这种情况 <span class="filepath"> *.test.expressplay.com </span> 使用生产验证器，反之亦然。 </p> <p importance="high">注意：测试SDK和高级测试工具(ATT)仅适用于 <span class="filepath"> *.test.expressplay.com </span>，而生产设备必须使用 <span class="filepath"> *.service.expressplay.com </span>. </p> </td> 
+   <td> 身份验证令牌无效： &lt;details&gt; <p>注意：如果验证器错误或在访问测试API时，可能会发生这种情况 <span class="filepath"> *.test.expressplay.com </span> 使用生产身份验证器，反之亦然。 </p> <p importance="high">注意：测试SDK和高级测试工具(ATT)仅适用于 <span class="filepath"> *.test.expressplay.com </span>，而生产设备必须使用 <span class="filepath"> *.service.expressplay.com </span>. </p> </td> 
   </tr> 
   <tr> 
    <td> -2019 </td> 
@@ -201,7 +200,7 @@ FairPlay许可证令牌界面提供生产和测试服务。 此请求返回可�
   </tr> 
   <tr> 
    <td> -4001 </td> 
-   <td> 无法验证设备 </td> 
+   <td> 无法对设备进行身份验证 </td> 
   </tr> 
   <tr> 
    <td> -4010 </td> 
@@ -221,7 +220,7 @@ FairPlay许可证令牌界面提供生产和测试服务。 此请求返回可�
   </tr> 
   <tr> 
    <td> -4021 </td> 
-   <td> <span class="codeph"> 小孩 </span> ^后必须为64个字符 </td> 
+   <td> <span class="codeph"> 小孩 </span> ^后面必须为64个字符 </td> 
   </tr> 
   <tr> 
    <td> -4022 </td> 
@@ -245,7 +244,7 @@ FairPlay许可证令牌界面提供生产和测试服务。 此请求返回可�
   </tr> 
   <tr> 
    <td> -6003 </td> 
-   <td> 无效 <span class="codeph"> 四 </span> 指定的参数 </td> 
+   <td> 无效 <span class="codeph"> 四 </span> 指定参数 </td> 
   </tr> 
   <tr> 
    <td> -6004 </td> 
@@ -257,7 +256,7 @@ FairPlay许可证令牌界面提供生产和测试服务。 此请求返回可�
   </tr> 
   <tr> 
    <td> -6006 </td> 
-   <td> 服务未获得FairPlay支持的授权 </td> 
+   <td> 服务未获得支持FairPlay的授权 </td> 
   </tr> 
   <tr> 
    <td> -6007 </td> 
@@ -269,7 +268,7 @@ FairPlay许可证令牌界面提供生产和测试服务。 此请求返回可�
   </tr> 
   <tr> 
    <td> -6009 </td> 
-   <td> FairPlay选项已禁用 </td> 
+   <td> 已禁用FairPlay选项 </td> 
   </tr> 
  </tbody> 
 </table>

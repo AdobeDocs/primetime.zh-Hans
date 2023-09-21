@@ -1,8 +1,7 @@
 ---
 description: 此表提供有关ERROR类型通知的详细信息。
 title: 错误通知代码
-exl-id: dc65670e-4764-4d68-aee1-87b2d27b09b6
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '434'
 ht-degree: 5%
@@ -15,7 +14,7 @@ ht-degree: 5%
 
 <!--<a id="section_D29404228F5E4B818642CBA6A0D39546"></a>-->
 
-大多数错误包含相关元数据，例如，无法下载的资源的URL。 某些通知包含元数据，用于指定问题出现在主视频内容、备用音频内容还是广告中。
+大多数错误都包含相关元数据，例如，无法下载的资源的URL。 某些通知包含元数据，用于指定问题出现在主视频内容、备用音频内容还是广告中。
 
 <table frame="all" colsep="1" rowsep="1" id="table_8B61210A406A45ACBE37FC29729DDE22"> 
  <thead> 
@@ -24,7 +23,7 @@ ht-degree: 5%
    <th colname="2" class="entry"> 名称 </th> 
    <th colname="3" class="entry"> InnerNotification </th> 
    <th colname="4" class="entry"> 元数据键 </th> 
-   <th colname="5" class="entry"> 注释 </th> 
+   <th colname="5" class="entry"> 评论 </th> 
   </tr> 
  </thead>
  <tbody> 
@@ -80,7 +79,7 @@ ht-degree: 5%
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 101101 </span> </td> 
    <td colname="2"><span class="codeph"> AUDIO_TRACK_CHANGE_FAIL </span> </td> 
-   <td colname="3"><span class="codeph"> 播放器_NOT_READY </span> </td> 
+   <td colname="3"><span class="codeph"> 播放器未就绪 </span> </td> 
    <td colname="4"> 无 </td> 
    <td colname="5"> <p>  </p> <p>  </p>
     <!-- workaround for PDF having too much negative kerning in column 2 --> </td> 
@@ -128,7 +127,7 @@ ht-degree: 5%
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>本机</b> </td> 
+   <td colname="1"><b>原生</b> </td> 
    <td colname="2"> </td> 
    <td colname="3"> </td> 
    <td colname="4"> </td> 
@@ -178,7 +177,7 @@ ht-degree: 5%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 170001 </span> </td> 
-   <td colname="2"><span class="codeph"> ARGUMENT_ERROR </span> </td> 
+   <td colname="2"><span class="codeph"> 参数错误 </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> 无 </td> 
    <td colname="5"> <p>参数错误 </p> </td> 
@@ -195,7 +194,7 @@ ht-degree: 5%
    <td colname="2"><span class="codeph"> WEBVTT_PARSER_ERROR </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> 无 </td> 
-   <td colname="5"> <p>无法分析Webvtt。 </p> </td> 
+   <td colname="5"> <p>无法解析Webvtt。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 170004 </span> </td> 
@@ -209,7 +208,7 @@ ht-degree: 5%
    <td colname="2"><span class="codeph"> MBR_MEDIASEQUENCE_OFFSYNC </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> 无 </td> 
-   <td colname="5"> <p>此MBR的所有HLS流上的媒体序列号未同步。 </p> </td> 
+   <td colname="5"> <p>此MBR的所有HLS流上的媒体序列号都未同步。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 170006 </span> </td> 
@@ -235,9 +234,9 @@ ht-degree: 5%
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 170009 </span> </td> 
    <td colname="2"><span class="codeph"> SUBTITLES_TRACK_CHANGE_FAIL </span> </td> 
-   <td colname="3"><span class="codeph"> 播放器_NOT_READY </span> </td> 
+   <td colname="3"><span class="codeph"> 播放器未就绪 </span> </td> 
    <td colname="4"> 无 </td> 
-   <td colname="5"> <p>更改字幕跟踪时出错。 </p> </td> 
+   <td colname="5"> <p>更改字幕轨道时出错。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 170010 </span> </td> 
@@ -258,4 +257,4 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->adID和源(URL)可以通过以下网址进行检索： `PTAdAsset` 在通知元数据中使用 `AD_ASSET` 键。
+>adID和源(URL)可通过以下方式检索： `PTAdAsset` 在通知元数据中使用 `AD_ASSET` 键。

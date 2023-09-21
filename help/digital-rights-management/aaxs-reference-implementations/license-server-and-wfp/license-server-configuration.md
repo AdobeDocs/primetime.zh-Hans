@@ -2,8 +2,7 @@
 title: 配置
 description: 配置
 copied-description: true
-exl-id: 5a047586-96a1-449d-b3f5-911d734ef12f
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '23'
 ht-degree: 0%
@@ -12,4 +11,4 @@ ht-degree: 0%
 
 # 配置 {#configuration}
 
-您需要配置服务器属性文件、监视文件夹属性、设置数据库并配置HSM。
+您需要配置服务器属性文件、观察文件夹属性、设置数据库并配置HSM。

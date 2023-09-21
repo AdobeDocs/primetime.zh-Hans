@@ -1,8 +1,7 @@
 ---
 description: 您可以实施自己的机会检测器。
 title: 实施自定义机会检测器
-exl-id: a3f6d6b3-4d5e-49bc-b8de-a1196305bbb4
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '160'
 ht-degree: 0%
@@ -22,7 +21,7 @@ ht-degree: 0%
        如果您的自定义机会生成器基于“TimedMetadata”对象，请扩展“TimedMetadataOpportunityGenerator”并覆盖以下方法：
    
    * `doConfigure`  — 在创建媒体播放器项目后调用此方法，并提供机会生成器以根据需要创建初始机会集
-   * `doProcess`  — 每次新建时都调用此方法 `TimedMetadata` 检测（例如，对于实时/线性流，每次播放列表/清单刷新时）
+   * `doProcess`  — 每次新建时均调用此方法 `TimedMetadata` 检测（例如，对于实时/线性流，每次播放列表/清单刷新时）
 
    ```
    public class CustomOpportunityGenerator extends TimedMetadataOpportunityGenerator { 
@@ -64,7 +63,7 @@ ht-degree: 0%
    }
    ```
 
-1. 为要播放的媒体流注册自定义内容工厂。
+1. 注册要播放的媒体流的自定义内容工厂。
 
    ```
    var mediaPlayerItemConfig:MediaPlayerItemConfig = new DefaultMediaPlayerItemConfig(); 

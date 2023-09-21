@@ -1,8 +1,7 @@
 ---
-description: 通过TVSDK，您可以控制实时和视频点播(VOD)的基本播放体验。 TVSDK提供了播放器实例上的方法和属性，您可以使用这些方法和属性来配置播放器用户界面，而不是为您配置播放器。
+description: 通过TVSDK，您可以控制实时和视频点播(VOD)的基本播放体验。 TVSDK不为您配置播放器，而是在播放器实例上提供方法和属性，您可以使用这些方法和属性来配置播放器用户界面。
 title: 配置播放器用户界面
-exl-id: 23324d92-8ae9-4f44-a1a5-0157bd1fc316
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '92'
 ht-degree: 0%
@@ -11,4 +10,4 @@ ht-degree: 0%
 
 # 概述 {#configure-the-player-user-interface-overview}
 
-通过TVSDK，您可以控制实时和视频点播(VOD)的基本播放体验。 TVSDK提供了播放器实例上的方法和属性，您可以使用这些方法和属性来配置播放器用户界面，而不是为您配置播放器。
+通过TVSDK，您可以控制实时和视频点播(VOD)的基本播放体验。 TVSDK不为您配置播放器，而是在播放器实例上提供方法和属性，您可以使用这些方法和属性来配置播放器用户界面。

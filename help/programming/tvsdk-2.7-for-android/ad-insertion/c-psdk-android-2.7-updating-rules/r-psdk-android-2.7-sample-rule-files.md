@@ -1,8 +1,7 @@
 ---
 description: 在AdobeTVSDKConfig.json中，您可以为特定区域指定默认规则和规则。
 title: 创意选择规则示例
-exl-id: 3298695a-2409-498f-bd86-56ab4892e4c7
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '85'
 ht-degree: 0%
@@ -63,9 +62,9 @@ ht-degree: 0%
 }
 ```
 
-## 带有其他区域规则的默认规则示例 {#section_ocv_3fx_hz}
+## 带其他区域规则的默认规则示例 {#section_ocv_3fx_hz}
 
-以下是 [!DNL AdobeTVSDKConfig.json] 文件，用于定义默认规则，外加针对特定区域ID的其他规则（在本例中为“区域”） **《1234》**)：
+以下是 [!DNL AdobeTVSDKConfig.json] 文件，用于定义默认规则以及特定区域ID（在本例中为“区域”）的其他规则 **“1234”**)：
 
 ```
 {

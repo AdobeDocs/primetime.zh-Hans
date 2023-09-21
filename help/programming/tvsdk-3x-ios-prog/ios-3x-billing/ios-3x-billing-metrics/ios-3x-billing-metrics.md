@@ -1,8 +1,7 @@
 ---
-description: 为了适应那些只想按客户所使用内容支付而不是按固定费率支付而不想实际使用的客户，Adobe会收集使用情况量度，并使用这些量度来确定向客户收取多少费用。
+description: 为了适应那些只想按客户所使用内容支付而不是不管实际使用情况都按固定费率支付的客户，Adobe会收集使用情况量度，并使用这些量度来确定向客户收取多少费用。
 title: 计费使用情况量度
-exl-id: 8b76d8ea-c8d6-427b-886a-4ae8764bd47a
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '355'
 ht-degree: 0%
@@ -11,9 +10,9 @@ ht-degree: 0%
 
 # 计费量度 {#billing-metrics}
 
-为了适应那些只想按客户所使用内容支付而不是按固定费率支付而不想实际使用的客户，Adobe会收集使用情况量度，并使用这些量度来确定向客户收取多少费用。
+为了适应那些只想按客户所使用内容支付而不是不管实际使用情况都按固定费率支付的客户，Adobe会收集使用情况量度，并使用这些量度来确定向客户收取多少费用。
 
-每次播放器生成流启动事件时，TVSDK就会开始定期向Adobe计费系统发送HTTP消息。 该时段（称为可计费持续时间）对于标准VOD、专业VOD（启用了中置广告）和实时内容可能不同。 每种内容类型的默认持续时间为30分钟，但实际值由您的Adobe合同确定。
+每次播放器生成流启动事件时，TVSDK就会开始定期向Adobe计费系统发送HTTP消息。 该时段（称为可计费持续时间）对于标准VOD、专业VOD（启用中置广告）和实时内容可能不同。 每种内容类型的默认持续时间为30分钟，但实际值由您的Adobe合同确定。
 
 这些消息包含以下信息：
 
@@ -24,19 +23,19 @@ ht-degree: 0%
 * 流是否受DRM保护
 * TVSDK版本和平台
 
-Adobe会预配置此安排，但如果要更改该安排，请与您的Adobe启用代表合作。
+Adobe会预配置此安排，但如果要更改安排，请与您的Adobe启用代表合作。
 
-要监控TVSDK发送到Adobe的统计数据，请从Adobe启用代表获取URL，然后使用网络捕获工具（例如Charles）查看数据。
+要监控TVSDK发送到Adobe的统计信息，请从Adobe启用代表处获取URL，然后使用网络捕获工具（例如Charles）查看数据。
 
 ## 配置计费量度 {#configure-billing-metrics}
 
-如果您使用默认配置，则无需执行其他操作即可启用或配置计费。 如果您从“Adobe启用”代表处获取了不同的配置参数，请在初始化媒体播放器之前使用PTBillingMetricsConfiguration类设置这些参数。
+如果您使用默认配置，则无需执行任何其他操作即可启用或配置计费。 如果您从“Adobe启用”代表处获取了不同的配置参数，请在初始化媒体播放器之前使用PTBillingMetricsConfiguration类设置这些参数。
 
 大多数客户应使用默认配置。
 
 >[!IMPORTANT]
 >
->您设置的配置将在媒体播放器的生命周期内保持有效。 初始化媒体播放器后，无法更改配置。
+>您设置的配置将在媒体播放器的生命周期内保持有效。 初始化媒体播放器后，便无法更改配置。
 
 要配置计费指标，请执行以下操作：
 
@@ -55,7 +54,7 @@ billingConfig.liveBillableDurationMinutes = 15.0;
 
 ## 传输计费指标 {#transmit-billing-metrics}
 
-TVSDK以XML格式将计费指标发送到Adobe。
+TVSDK以XML格式将计费指标发送给Adobe。
 
 <!--<a id="example_13ABDB1CC0B549968A534765378DA3A0"></a>-->
 
@@ -85,4 +84,4 @@ TVSDK以XML格式将计费指标发送到Adobe。
 </request>
 ```
 
-布尔属性 `drmProtected`， `adsEnabled`、和 `midrollEnabled` 仅在为真时显示。
+布尔值属性 `drmProtected`， `adsEnabled`、和 `midrollEnabled` 仅当它们为true时才显示。

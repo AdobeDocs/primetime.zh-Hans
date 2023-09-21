@@ -1,8 +1,7 @@
 ---
 description: 您可以基于默认解析器实施自己的内容解析器。
 title: 实施自定义内容解析程序
-exl-id: 04eff874-8a18-42f0-adb2-5b563e5c6a31
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '209'
 ht-degree: 0%
@@ -13,7 +12,7 @@ ht-degree: 0%
 
 您可以基于默认解析器实施自己的内容解析器。
 
-当TVSDK生成新的机会时，它会通过注册的内容解析器来反复查找，以寻找能够解析该机会的机会。 第一个返回 `true` 已选中以解决该机会。 如果没有内容解析程序可用，则会跳过该机会。 由于内容解析过程通常是异步的，因此内容解析程序负责在过程完成后通知TVSDK。
+当TVSDK生成新的机会时，它通过注册的内容解析器不断寻找能够解析该机会的机会。 第一个返回 `true` 已选中以解决商机。 如果没有任何内容解析程序能够解析内容，则会跳过该机会。 由于内容解析过程通常是异步的，因此内容解析程序负责在过程完成后通知TVSDK。
 
 1. 实施您自己的自定义 `ContentFactory`，通过扩展 `ContentFactory` 界面和覆盖 `retrieveResolvers`.
 
@@ -90,7 +89,7 @@ ht-degree: 0%
       void doCleanup();
       ```
 
-      你得到你的 `advertisingMetadata` 从传入的项 `doConfigure`：
+      你得到你的 `advertisingMetadata` 来自传入的项目 `doConfigure`：
 
       ```java
       MediaPlayerItemConfig itemConfig = item.getConfig(); 
@@ -101,7 +100,7 @@ ht-degree: 0%
 
    1. 对于每个投放机会，创建 `List<TimelineOperation>`.
 
-      此示例 `TimelineOperation` 提供结构 `AdBreakPlacement`：
+      此示例 `TimelineOperation` 为以下对象提供结构 `AdBreakPlacement`：
 
       ```java
       AdBreakPlacement( 
@@ -112,26 +111,26 @@ ht-degree: 0%
       ); 
       ```
 
-   1. 解析广告后，调用以下函数之一：
+   1. 解决广告后，调用以下函数之一：
 
       * 如果广告解析成功，请调用 `process(List<TimelineOperation> proposals)` 和 `notifyCompleted(Opportunity opportunity)` 在 `ContentResolverClient`
 
-         ```java
-         _client.process(timelineOperations); 
-         _client.notifyCompleted(opportunity); 
-         ```
+        ```java
+        _client.process(timelineOperations); 
+        _client.notifyCompleted(opportunity); 
+        ```
 
       * 如果广告解析失败，请调用 `notifyResolveError` 在 `ContentResolverClient`
 
-         ```java
-         _client.notifyFailed(Opportunity opportunity, PSDKErrorCode error);
-         ```
+        ```java
+        _client.notifyFailed(Opportunity opportunity, PSDKErrorCode error);
+        ```
 
-         例如：
+        例如：
 
-         ```java
-         _client.notifyFailed(opportunity, UNSUPPORTED_OPERATION);
-         ```
+        ```java
+        _client.notifyFailed(opportunity, UNSUPPORTED_OPERATION);
+        ```
 
 <!--<a id="example_463B718749504A978F0B887786844C39"></a>-->
 

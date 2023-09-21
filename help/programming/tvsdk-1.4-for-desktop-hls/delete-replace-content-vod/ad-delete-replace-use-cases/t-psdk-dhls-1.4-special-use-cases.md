@@ -2,8 +2,7 @@
 title: 特殊用例
 description: 特殊用例
 copied-description: true
-exl-id: 33aad8cc-5939-4890-bc89-32d6bbf1fa4c
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '86'
 ht-degree: 0%
@@ -16,7 +15,7 @@ TVSDK支持自定义范围设置，而不支持标准广告设置。 例如，�
 
 1. `ReplaceRange` 无替换持续时间
 
-   如果缺少更换持续时间，则实际更换持续时间由服务器确定。 在此投放的广告数 `AdBreak` 也由服务器决定。
+   如果缺少更换持续时间，则实际更换持续时间由服务器决定。 在此投放的广告数 `AdBreak` 也由服务器决定。
 
    ```
    {
@@ -60,6 +59,6 @@ TVSDK支持自定义范围设置，而不支持标准广告设置。 例如，�
    }
    ```
 
-1. 用替换持续时间标记和DELETE范围
+1. 标记和DELETE包含替换持续时间的范围
 
    会忽略额外的替换持续时间。

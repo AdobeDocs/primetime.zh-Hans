@@ -1,8 +1,7 @@
 ---
 description: MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表示的内容流的信息。
 title: 用于访问MediaResource信息的MediaPlayer属性
-exl-id: 183a2992-06f2-4b1d-84c3-a6c2a7223e32
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '210'
 ht-degree: 0%
@@ -28,17 +27,17 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
    <td colname="3"> 如果流是实时的，则为true；如果是VOD，则为false。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1" morerows="2"> 隐藏字幕 </td> 
+   <td colname="1" morerows="2"> 隐藏式字幕 </td> 
    <td colname="2"> <span class="codeph"> hasClosedCaptions </span> </td> 
-   <td colname="3"> 如果隐藏式字幕跟踪可用，则为True。 </td> 
+   <td colname="3"> 如果隐藏式字幕轨道可用，则为True。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> closedCaptionsTracks </span> </td> 
-   <td colname="3"> 提供可用隐藏式字幕字幕的列表。 </td> 
+   <td colname="3"> 提供可用隐藏式字幕跟踪的列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> selectedClosedCaptionsTrack </span> </td> 
-   <td colname="3"> 检索选定的隐藏式字幕跟踪 <span class="codeph"> selectClosedCaptionsTrack </span>. </td> 
+   <td colname="3"> 检索与一起选择的隐藏式字幕轨道 <span class="codeph"> selectClosedCaptionsTrack </span>. </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1" morerows="2"> 备用音频 </td> 
@@ -47,13 +46,13 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> audioTracks </span> </td> 
-   <td colname="3"> 提供可用备用音轨的列表。 </td> 
+   <td colname="3"> 提供可用备用音频轨道的列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> selectedAudioTrack </span> </td> 
    <td colname="3"> 
     <pre>
-      检索当前选择的音轨，该音轨选择有 
+      检索当前选择的音轨，该音轨用于 
      <span class="codeph"> selectAudioTrack </span>. 
     </pre> </td> 
   </tr> 
@@ -64,7 +63,7 @@ MediaPlayerItem类中的方法允许您获取有关由加载的MediaResource表�
   </tr> 
   <tr rowsep="1"> 
    <td colname="2"> <span class="codeph"> timedMetadata </span> </td> 
-   <td colname="3"> 提供与流关联的定时元数据对象列表。 </td> 
+   <td colname="3"> 提供与该流关联的定时元数据对象的列表。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1" morerows="1"> 多个配置文件（比特率） </td> 

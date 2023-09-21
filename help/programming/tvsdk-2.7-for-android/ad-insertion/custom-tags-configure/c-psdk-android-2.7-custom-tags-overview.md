@@ -2,8 +2,7 @@
 title: 自定义VOD资源示例
 description: 自定义VOD资源示例
 copied-description: true
-exl-id: cf37c551-fb94-425e-ae11-d6a421e60566
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '72'
 ht-degree: 0%
@@ -43,4 +42,4 @@ seg5.ts
 您的应用程序可以设置以下方案：
 
 * 通知时间 `#EXT-X-ASSET` 标记或您订阅的任何其他自定义标记名称集都存在于文件中。
-* 插入广告时 `#EXT-X-AD` 标记或任何其他自定义标记名称。
+* 插入广告条件 `#EXT-X-AD` 标记或任何其他自定义标记名称。

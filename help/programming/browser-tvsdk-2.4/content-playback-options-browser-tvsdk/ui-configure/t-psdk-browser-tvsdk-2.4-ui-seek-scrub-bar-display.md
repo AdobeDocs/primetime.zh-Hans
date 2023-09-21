@@ -1,8 +1,7 @@
 ---
 description: 在浏览器TVSDK中，您可以搜索流中的特定位置（时间）。 流可以是滑动窗口播放列表或视频点播(VOD)内容。
 title: 使用搜寻栏时处理搜寻
-exl-id: 4c09b218-917a-4318-82b0-c221d450a2c1
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '329'
 ht-degree: 0%
@@ -15,7 +14,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->只有DVR才允许在实时流中进行搜寻。
+>仅允许在DVR中进行实时流搜寻。
 
 1. 等待浏览器TVSDK处于有效的状态以进行搜寻。
 
@@ -44,10 +43,10 @@ ht-degree: 0%
    }
    ```
 
-   这很重要，因为搜寻后的实际开始位置可能与请求的位置不同。 以下某些规则可能适用：
+   这很重要，因为搜寻之后的实际开始位置可能与请求的位置不同。 以下某些规则可能适用：
 
    * 如果搜寻或其他重新定位在广告时间中间终止或跳过广告时间，则播放行为会受到影响。
-   * 您只能在资产的可搜索持续时间内查找。 对于VOD，该值介于0和资产持续时间之间。
+   * 您只能按资产的可搜索持续时间进行搜寻。 对于VOD，该值介于0和资产持续时间之间。
 
 1. 对于上面示例中创建的搜索栏，侦听 `setPositionChangeListener()` 要查看用户何时进行清理，请执行以下操作：
 
@@ -65,10 +64,10 @@ ht-degree: 0%
                }); 
    ```
 
-1. 设置事件侦听器回调，以跟踪用户搜寻活动中的更改。
+1. 设置事件侦听器回调以查找用户搜寻活动中的更改。
 
        搜寻操作是异步执行的，因此浏览器TVSDK会调度这些与搜寻相关的事件：
    
-   * `AdobePSDK.PSDKEventType.SEEK_BEGIN` 表示搜寻正在启动。
+   * `AdobePSDK.PSDKEventType.SEEK_BEGIN` 表示搜寻正在开始。
    * `AdobePSDK.PSDKEventType.SEEK_END` 表示搜寻成功。
    * `AdobePSDK.PSDKEventType.SEEK_POSITION_ADJUSTED` 指示媒体播放器已重新调整用户提供的搜寻位置。

@@ -1,8 +1,7 @@
 ---
 description: 您可以通过扩展OpportunityGenerator接口来实施自己的机会生成器。
 title: 实施自定义机会生成器
-exl-id: 45f9ed89-94c4-4e74-b20a-4789a25bd9b3
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '78'
 ht-degree: 0%
@@ -65,7 +64,7 @@ ht-degree: 0%
    }; 
    ```
 
-1. 为要播放的媒体流注册自定义内容工厂。
+1. 注册要播放的媒体流的自定义内容工厂。
 
    在UI Framework播放器中，您可以按如下方式指定自定义内容工厂：
 

@@ -1,39 +1,38 @@
 ---
 description: 当用户单击广告或相关按钮时，您的应用程序必须做出响应。 TVSDK为您提供有关单击的目标URL的信息。
-title: 响应广告的点击次数
-exl-id: 14716265-747d-4472-801e-2b97c7df2425
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+title: 响应广告点击次数
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '328'
 ht-degree: 0%
 
 ---
 
-# 响应广告的点击次数 {#respond-to-clicks-on-ads}
+# 响应广告点击次数 {#respond-to-clicks-on-ads}
 
-TVSDK为您提供信息，以便您对点进广告执行操作。 在创建播放器UI时，您必须确定在用户单击可点击广告时如何响应。
+TVSDK为您提供信息，以便您对点进广告执行操作。 在创建播放器UI时，您必须决定当用户单击可点击广告时如何响应。
 
-对于Android版TVSDK，只能点击线性广告。
+对于适用于Android的TVSDK，只能点击线性广告。
 当用户单击广告或相关按钮时，您的应用程序必须做出响应。 TVSDK为您提供有关单击的目标URL的信息。
 
 1. 要为TVSDK设置事件侦听器并提供点进信息，请注册 `AdClickedEventListener.onAdClicked`.
 
-   当用户点击广告或相关按钮时，TVSDK会调度此通知，包括有关点击目标的信息。
+   当用户单击广告或相关按钮时，TVSDK会调度此通知，包括有关点击目标的信息。
 1. 监控用户对可点击广告的交互。
 1. 当用户触摸或单击广告或按钮时，要通知TVSDK，请调用 `notifyClick` 在 `MediaPlayerView`.
 1. 聆听 `onAdClick(AdClickEvent event)` 事件。
 1. 要检索点进URL和相关信息，请使用 `AdClickEvent` 实例。
 1. 暂停视频。
 
-   有关暂停视频的更多信息，请参阅  [暂停并继续播放](../../ad-insertion/clickable-ads/android-3x-pausing-resuming-playback.md).
+   有关暂停视频的更多信息，请参阅  [暂停和恢复播放](../../ad-insertion/clickable-ads/android-3x-pausing-resuming-playback.md).
 1. 使用点进信息显示广告点进URL和相关信息。 例如，您可以通过以下方式之一显示信息：
 
-   * 在应用程序中，通过在浏览器中打开点进URL。
+   * 在应用程序中，通过在浏览器中打开点进URL来实现。
 
-      在桌面平台上，视频广告播放区域用于在用户点击时调用点进URL。
+     在桌面平台上，视频广告播放区域用于在用户点击时调用点进URL。
    * 将用户重定向到他们的外部移动Web浏览器。
 
-      在移动设备上，视频广告播放区域用于执行其他功能，例如隐藏和显示控件、暂停播放、展开到全屏等。 在这些设备上，使用单独的视图（如发起人按钮）来启动点进URL。
+     在移动设备上，视频广告播放区域用于执行其他功能，例如隐藏和显示控件、暂停播放、展开到全屏等等。 在这些设备上，使用单独的视图（如发起人按钮）来启动点进URL。
 
 1. 关闭显示点进信息的浏览器窗口，然后继续播放视频。
 

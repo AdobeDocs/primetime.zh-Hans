@@ -1,8 +1,7 @@
 ---
-description: 可以设置隐藏式字幕文本的格式，如字体、大小、颜色、边缘和不透明度。
+description: 您可以设置隐藏式字幕文本的格式，如字体、大小、颜色、边缘和不透明度。
 title: 设置隐藏式字幕样式
-exl-id: 7ece68ce-0dc5-4899-9834-39940bbd0332
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '159'
 ht-degree: 0%
@@ -11,14 +10,14 @@ ht-degree: 0%
 
 # 设置隐藏式字幕样式{#set-closed-caption-styles}
 
-可以设置隐藏式字幕文本的格式，如字体、大小、颜色、边缘和不透明度。
+您可以设置隐藏式字幕文本的格式，如字体、大小、颜色、边缘和不透明度。
 
-1. 等待 `MediaPlayer` 至少处于“已准备”状态。
+1. 等待 `MediaPlayer` 至少处于“预准备”状态。
 
    有关状态的更多信息，请参阅 [等待有效的状态](../../../content-playback-options-browser-tvsdk/ui-configure/t-psdk-browser-tvsdk-2.4-ui-state-prepared-wait-for.md).
 1. 创建 `TextFormat` 实例。
 
-   您可以现在提供所有隐藏式字幕样式参数，也可以稍后设置它们。
+   您可以立即提供所有隐藏式字幕样式参数，也可以稍后设置它们。
 
    ```js
    new TextFormat( 
@@ -40,7 +39,7 @@ ht-degree: 0%
 
    返回值是 `TextFormat` 界面。
 
-   如果以前未设置任何样式，则它会返回一个TextFormat对象，并为每个属性设置默认值：
+   如果以前未设置任何样式，则它会返回一个TextFormat对象，其中包含每个属性的默认值：
 
    ```js
    ccStyle :AdobePSDK.TextFormat
@@ -56,4 +55,4 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   >隐藏式字幕样式的设置是异步的，因此更改可能需要几秒钟才能显示在屏幕上。
+   >设置隐藏式字幕样式是异步的，因此可能需要几秒钟才能在屏幕上显示更改。

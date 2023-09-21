@@ -2,8 +2,7 @@
 title: 命令行用法
 description: 命令行用法
 copied-description: true
-exl-id: 241849bb-e818-420e-98b4-c12e306b17b2
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '280'
 ht-degree: 0%
@@ -24,7 +23,7 @@ ht-degree: 0%
 </i class="+ topic>
 ```
 
-`metadata` 是一个包含Adobe访问DRM元数据的.metadata文件。 可使用从受保护内容中获取此文件 `-d -m` 选项。
+`metadata` 是一个.metadata文件，其中包含Adobe访问DRM元数据。 可使用以下方式从受保护内容中获取此文件 `-d -m` 选项。
 
 要显示以前生成的许可证，请使用以下语法：
 
@@ -49,7 +48,7 @@ ht-degree: 0%
  <tbody class="- topic/tbody "> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-c配置文件</span> </td> 
-   <td colname="2" class="- topic/entry "> 指定配置文件的位置。 如果不使用此选项，许可证生成器将在工作目录中查找flashaccesstools.properties。 在命令行中指定的选项优先于配置文件中的选项。 </td> 
+   <td colname="2" class="- topic/entry "> 指定配置文件的位置。 如果未使用此选项，许可证生成器将在工作目录中查找flashaccesstools.properties。 命令行中指定的选项优先于配置文件中的选项。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> <p class="- topic/p ">-d <i class="+ topic/ph hi-d/i "><span class="+ topic/ph pr-d/codeph codeph"> licensefile</span></i> </p> </td> 
@@ -57,7 +56,7 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-leaf叶文件名</span> </td> 
-   <td colname="2" class="- topic/entry "> 生成叶许可证并将输出写入指定的文件。 </td> 
+   <td colname="2" class="- topic/entry "> 生成Leaf许可证并将输出写入指定的文件。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-m metadata-filename</span> </td> 
@@ -65,14 +64,14 @@ ht-degree: 0%
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> -noprompt</span> </td> 
-   <td colname="2" class="- topic/entry ">不要询问是否应该覆盖目标文件。 如果目标文件已存在，并且 <span class="codeph"> -o</span> 未设置，将返回错误。 </td> 
+   <td colname="2" class="- topic/entry ">不要询问是否应覆盖目标文件。 如果目标文件已存在，并且 <span class="codeph"> -o</span> 未设置，将返回错误。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> -o</span> </td> 
-   <td colname="2" class="- topic/entry "> 如果目标文件已存在，则无需提示即可将其覆盖。 </td> 
+   <td colname="2" class="- topic/entry "> 如果目标文件已存在，则在不提示的情况下将其覆盖。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-policy policy policy-num</span> </td> 
+   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-policy policy-num</span> </td> 
    <td colname="2" class="- topic/entry "> 如果元数据包含多个策略，请指定要用于生成许可证的策略的编号（从1开始）。 如果未指定，则使用第一个策略。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
@@ -80,7 +79,7 @@ ht-degree: 0%
    <td colname="2" class="- topic/entry ">为指定的收件人生成许可证。 可以使用设备或域证书。 多个 <span class="+ topic/ph pr-d/codeph codeph"> -r </span>可以指定选项来为多个收件人创建许可证。 </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-root-filename</span> </td> 
+   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-root root-filename</span> </td> 
    <td colname="2" class="- topic/entry "> 生成根许可证并将输出写入指定的文件。 </td> 
   </tr> 
  </tbody> 

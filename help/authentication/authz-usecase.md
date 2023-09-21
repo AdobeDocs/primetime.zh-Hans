@@ -1,8 +1,7 @@
 ---
 title: MVPD授权
 description: MVPD授权
-exl-id: 215780e4-12b6-4ba6-8377-4d21b63b6975
-source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '579'
 ht-degree: 0%
@@ -13,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 ## 概述 {#mvpd-authz-overview}
 
@@ -23,9 +22,9 @@ ht-degree: 0%
 
 * **Uid**. 从身份验证步骤收到的用户ID。
 
-* **资源ID**. 标识给定内容资源的字符串。 此资源ID由程序员指定，并且MVPD必须增强这些资源的业务规则（例如，通过检查用户是否订阅了某个渠道）。
+* **资源ID**. 标识给定内容资源的字符串。 此资源ID由程序员指定，并且MVPD必须增强这些资源的业务规则（例如，通过检查用户是否订阅了特定渠道）。
 
-除了确定用户是否获得授权外，响应还必须包括此授权的生存时间(TTL)，即授权过期时。 如果未设置TTL，则AuthZ请求将失败。  出于这个原因， **TTL是Adobe Primetime身份验证端的强制配置设置**，以涵盖MVPD在其请求中不包含TTL的情况。
+除了确定用户是否获得授权之外，响应还必须包括此授权的生存时间(TTL)，即授权过期的时间。 如果未设置TTL，则AuthZ请求将失败。  因此， **TTL是Adobe Primetime身份验证端的强制配置设置**，以涵盖MVPD在其请求中不包含TTL的情况。
 
 ## 授权请求 {#authz-req}
 
@@ -40,7 +39,7 @@ AuthZ请求必须包括代表其发出请求的主题、主题尝试访问的资
 
 
 
-此时，SP必须准备XACML Authorization DecisionQuery并(通过HTTPPOST)将其发送到（之前商定的）策略决策点(PDP)，以获取IdP。 以下是简单XACML请求的示例（请参阅XACML核心规范）：
+此时，SP必须准备一个XACML Authorization DecisionQuery并(通过HTTPPOST)将其发送到（之前商定的）Policy Decision Point (PDP)以获取IdP。 以下是简单XACML请求的示例（请参阅XACML核心规范）：
 
 ```XML
 POST https://authz.site.com/XACML_endpoint
@@ -80,11 +79,11 @@ http://docs.oasis-open.org/xacml/access_control-xacml-2.0-context-schema-os.xsd"
 ```
 
 
-在收到AuthZ请求后，MVPD的PDP评估该请求并确定是否应允许主体对资源执行请求的操作。 然后，MVPD会返回一个包含决策、状态代码和消息的响应，如下面的授权响应中所述。
+在收到AuthZ请求后，MVPD的PDP将评估该请求并确定是否应允许主体对资源执行所请求的操作。 然后，MVPD会返回一个包含决策、状态代码和消息的响应，如下面的授权响应中所述。
 
 ## 授权响应 {#authz-response}
 
-对AuthZ请求的响应是在MVPD评估该请求并应用所请求的业务规则以确定是否允许主体对资源执行所请求的操作之后做出的。 返回的对Adobe Primetime身份验证的响应在XACML核心规范之后再次表示，其中包含决策、状态代码、消息以及SP作为策略实施点(PEP)的义务。 以下是示例响应：
+对AuthZ请求的响应在MVPD评估请求并应用所请求的业务规则以确定是否允许主体对资源执行所请求的操作之后发出。 返回的对Adobe Primetime身份验证的响应将再次按照XACML核心规范表示，其中包含SP作为策略实施点(PEP)的“决定”、“状态代码”、“消息”和“义务”。 以下是示例响应：
 
 ```XML
 <Response xmlns="urn:oasis:names:tc:xacml:2.0:context:schema:os">
@@ -112,9 +111,9 @@ http://docs.oasis-open.org/xacml/access_control-xacml-2.0-context-schema-os.xsd"
 
 Adobe Primetime身份验证支持以下内容 **允许** 并使程序员能够履行这些义务：
 
-* **urn:cablelabs:olca：1.0:obligations:log** - Adobe Pass会记录交易，并可通过商定的报告机制提供。
+* **urn:cablelabs:olca：1.0:obligations:日志** - Adobe Pass会记录交易，并可通过商定的报告机制提供。
 
-* **urn:cablelabs:olca：1.0:obligations:重新授权** - Adobe Primetime身份验证在n秒内再次刷新授权（通过XACML AttributeAssignment指定为义务的参数 — 请参阅XACML核心规范，第5.46节）。
+* **urn:cablelabs:olca：1.0:obligations:重新授权** - Adobe Primetime身份验证在n秒内再次刷新授权（通过XACML AttributeAssignment指定为责任的参数 — 请参阅XACML核心规范，第5.46节）。
 
 <!--
 >![RelatedInformation]

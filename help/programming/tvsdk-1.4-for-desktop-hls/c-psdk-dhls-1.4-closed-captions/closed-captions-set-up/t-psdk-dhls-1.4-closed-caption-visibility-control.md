@@ -1,40 +1,39 @@
 ---
 description: 您可以控制隐藏式字幕的可见性。 当可见性打开时，将显示当前选定的轨道。 如果更改当前跟踪，可视性设置将保持不变。
-title: 控制隐藏式字幕可见性
-exl-id: fac24d97-b83e-4bc4-a824-8a1692509519
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+title: 控制隐藏式字幕的可见性
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '209'
 ht-degree: 0%
 
 ---
 
-# 控制隐藏式字幕可见性{#control-closed-caption-visibility}
+# 控制隐藏式字幕的可见性{#control-closed-caption-visibility}
 
-您可以控制隐藏式字幕的可见性。 当可见性打开时，将显示当前选定的轨道。 如果更改哪个轨道为当前轨道，可见性设置将保持不变。
+您可以控制隐藏式字幕的可见性。 当可见性打开时，将显示当前选定的轨道。 如果更改当前跟踪，可视性设置将保持不变。
 
 >[!TIP]
 >
->如果在播放器进入搜寻模式时显示隐藏式字幕文本，则搜寻完成后不再显示文本。 相反，几秒钟后，TVSDK会在视频中在结束搜寻位置后显示下一个隐藏式字幕文本。
+>如果在播放器进入搜寻模式时显示隐藏式字幕文本，则搜寻完成后不再显示文本。 相反，几秒后，TVSDK会在视频中在结束搜寻位置后显示下一个隐藏式字幕文本。
 
 >[!NOTE]
 >
 >隐藏式字幕的可见性值在中定义 `ClosedCaptionsVisibility`.
 >
->
-```
+>```
 >public static const HIDDEN:String = hidden; 
 >public static const VISIBLE:String = visible;
 >```
+>
 
 1. 等待 `MediaPlayer` 至少具有PREPARED状态(请参阅 [等待有效的状态](../../t-psdk-dhls-1.4-configure/c-psdk-dhls-1.4-ui-configure/t-psdk-dhls-1.4-ui-state-prepared-wait-for.md))。
-1. 要获取隐藏式字幕的当前可见性设置，请在中使用getter方法 `MediaPlayer`，返回可见性值。
+1. 要获取隐藏式字幕的当前可见性设置，请使用中的getter方法 `MediaPlayer`，返回可见性值。
 
    ```
    public function get ccVisibility():String
    ```
 
-1. 要更改隐藏式字幕的可见性，请使用setter方法，从传递可见性值 `ClosedCaptionsVisibility`.
+1. 要更改隐藏式字幕的可见性，请使用setter方法，从中传递可见性值 `ClosedCaptionsVisibility`.
 
    例如：
 
@@ -51,7 +50,7 @@ ht-degree: 0%
                    prompt="CC"/>
    ```
 
-1. 定义隐藏式字幕磁道的可绑定数组。
+1. 定义隐藏式字幕轨道的可绑定数组。
 
    ```
    [Bindable] private var _ccTracks:ArrayCollection =  
@@ -65,7 +64,7 @@ ht-degree: 0%
    player.addEventListener(MediaPlayerItemEvent.CAPTIONS_UPDATED, onCaptionUpdated);
    ```
 
-   要从销毁代码中删除监听器，请执行以下操作：
+   要从销毁代码中删除侦听器，请执行以下操作：
 
    ```
    player.removeEventListener(MediaPlayerItemEvent.ITEM_CREATED, onItemCreated); 

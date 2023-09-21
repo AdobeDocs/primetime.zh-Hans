@@ -2,8 +2,7 @@
 title: 添加广告
 description: 添加广告
 copied-description: true
-exl-id: 72f875ea-80ae-482b-94be-41116fff3614
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '49'
 ht-degree: 0%
@@ -37,7 +36,7 @@ ht-degree: 0%
    ```
 
 1. 添加 `ExtCueOutContentFactory` 到库部分。
-1. 下载 `ExtCueOutContentFactory.js` 从“库”部分将其放置到工作文件夹中。
+1. 下载 `ExtCueOutContentFactory.js` 将其放置在工作文件夹中。
 
    ```js
    <script src= "frameworks/player/dash.min.js"></script> 

@@ -1,8 +1,7 @@
 ---
 description: 这些类有助于解析要放置在时间轴上的内容（例如广告）。
 title: 时间线解析器类
-exl-id: 8135214b-5c0c-48ac-b1a4-21825e10f293
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '99'
 ht-degree: 0%

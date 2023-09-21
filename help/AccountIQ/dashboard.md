@@ -1,8 +1,7 @@
 ---
 title: Account IQ仪表板
-description: 仪表板通过分析大量订阅者数据，帮助查明密码共享的实例。
-exl-id: 616da2a5-c9fe-40ea-90cf-f565bc13e764
-source-git-commit: a2181a8fd7334f19b8387a31c71527d4f689ab9d
+description: 仪表板通过分析大量订阅者数据来帮助查明密码共享实例。
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '600'
 ht-degree: 0%
@@ -11,12 +10,12 @@ ht-degree: 0%
 
 # 仪表板 {#dashboard}
 
-仪表板汇总和汇总一组图表和报告中的数据，这些图表和报告旨在从较高层面概述帐户共享的范围和影响。 它提供一个页面，其中包含来自Account IQ的主要报表和量度。
+仪表板汇总和汇总一组图表和报表中的数据，这些图表和报告旨在全面概述帐户共享的范围和影响。 它提供一个页面，其中包含来自帐户IQ的主要报表和量度。
 
 
 +++程序员 — 仪表板
 
-![面向程序员用户的Account IQ功能板](assets/dashboard-programr.png)
+![程序员用户的Account IQ仪表板](assets/dashboard-programr.png)
 
 
 图：程序员用户的仪表板
@@ -27,7 +26,7 @@ ht-degree: 0%
 
 MVPD用户的仪表板与程序员用户的仪表板略有不同。
 
-![面向程序员用户的Account IQ功能板](assets/dashboard-mvpd.png)
+![程序员用户的Account IQ仪表板](assets/dashboard-mvpd.png)
 
 图：MVPD用户的仪表板
 
@@ -35,22 +34,22 @@ MVPD用户的仪表板与程序员用户的仪表板略有不同。
 
 ## 平均共享分数 — 针对当前区段汇总 {#aggregated-sharing}
 
-“聚合共享分数”面板提供顶行读数，总结从帐户和流数量方面共享的数量和影响。
+“汇总共享分数”面板提供顶行读数，以总结帐户和流数量方面的共享数量和影响。
 
 这些值可帮助您了解订阅者共享凭据的规模，从而提供对其采取操作的必要性度量。
 
 ![](assets/aggregate-sharing-score.png)
 
 
-*图：平均共享得分面板 — 为当前区段汇总*
+*图：平均共享得分面板 — 针对当前区段汇总*
 
 以下三个指标是平均共享分数的组成部分。
 
 ### 共享级别 {#sharing-level}
 
-共享级别量规显示选定时间范围内共享的所有订户帐户（在定义的区段中）的百分比。
+共享级别量规显示所选时间范围内共享的所有订阅者帐户（在定义的区段中）的百分比。
 
-根据在所选时间帧期间从所选编程器信道之一流化的所选MVPD集合中的每个帐户计算的平均共享概率计算出的值。
+根据所选MVPD集合中每个帐户计算的平均共享概率计算出的值，该组所选MVPD在所选时间帧期间从所选程序员信道之一进行流式处理。
 
 ![](assets/sharing-level.png)
 
@@ -72,9 +71,9 @@ MVPD用户的仪表板与程序员用户的仪表板略有不同。
 
 ### 总体共享得分 {#overall-sharing-score}
 
-总体共享分数是共享分数的组合，包括“共享级别”和“来自共享帐户的z使用情况”。
+总体共享得分由共享得分组成，包括“共享级别”和“来自共享帐户的z使用情况”。
 
-它提供了一个值，旨在反映共享与行业相比所产生的相对影响。 其目的类似于信用评分，用单个数字总结情况。 但在本例中，数字越大，潜在危害就越大。
+它提供的价值旨在反映共享相对于行业的影响。 其目的类似于信用评分，用单个数字汇总情况。 但在本例中，数字越大，潜在危害就越大。
 
 ![](assets/overall-sharing-score.png)
 
@@ -89,20 +88,20 @@ It is a table of risk indices and accounts totals for the top MVPDs ranked by ov
 
 ## 全行业的MVPD总体共享分数 {#top-mvpds}
 
-下表提供该区段中MVPD的不同合并共享分数的比较视图。
+此表提供了有关该区段中MVPD的不同汇总共享分数的比较视图。
 
 >[!NOTE]
 >
->下表使用整体行业数据作比较用途，而非该分部之该MVPD代表之数据。
+>下表使用整体行业数据作比较用途，而非该分部之该等MVPD代表之数据。
 
 ![](assets/top-mvpds.png)
 
 
-*图：按总分列出的区段中的排名靠前的MVPD*
+*图：按总体分数划分的区段中的排名靠前的MVPD*
 
 ## 按渠道和MVPD共享得分 {#sharin-score-by-channels-and-mvpds}
 
-此表提供当前区段中MVPD的所选渠道的共享分数的比较视图。
+此表提供当前区段中MVPD的所选通道共享分数的比较视图。
 
 ![](assets/sharing-scores-by-channels-mvpds.png)
 
@@ -123,9 +122,9 @@ It is a table of risk indices and accounts totals for the top MVPDs ranked by ov
 
 *图：不同共享概率范围内的订户帐户的数量和百分比*
 
-## 通过共享概率级别进行的帐户数量和使用情况 {#number-of-accounts-usage-sharing-probability}
+## 通过共享概率级别进行的帐户数和使用情况 {#number-of-accounts-usage-sharing-probability}
 
-此面板提供以表格形式显示的帐户视图，这些帐户划分成从非常低(0-20%)到非常高(80-100%)的概率五分位数的范围，每个百分位数的关联使用情况来自共享帐户。
+此面板提供表格形式的帐户视图，这些帐户按从极低(0-20%)到极高(80-100%)的概率五分位数分成不同的范围，每个百分位数与共享帐户中的关联使用情况相同。
 
 ![](assets/no-acc-usage-prob-level.png)
 

@@ -1,8 +1,7 @@
 ---
 description: 广告信令模式指定视频流应在何处获取广告信息。
 title: 广告信令模式
-exl-id: 5653ef11-9af5-46c7-bc33-aceff0c15b2f
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '121'
 ht-degree: 0%
@@ -15,7 +14,7 @@ ht-degree: 0%
 
 有效值为 `PTAdSignalingModeDefault`， `PTAdSignalingModeManifestCues`、和 `PTAdSignalingModeServerMap`.
 
-下表描述了以下各项的影响： `AdSignalingMode` 各种HLS流类型的值：
+下表描述了以下各项的影响 `AdSignalingMode` 各种HLS流类型的值：
 
 <table frame="all" colsep="1" rowsep="1" id="table_AdSignalingMode"> 
  <thead> 
@@ -23,7 +22,7 @@ ht-degree: 0%
    <th colname="1" class="entry"> </th> 
    <th colname="2" class="entry"> 默认 </th> 
    <th colname="3" class="entry"> 清单提示 </th> 
-   <th colname="4" class="entry"> 广告服务器映射 </th> 
+   <th colname="4" class="entry"> 广告服务器地图 </th> 
   </tr> 
  </thead>
  <tbody> 
@@ -36,8 +35,8 @@ ht-degree: 0%
     </ul> </td> 
    <td colname="3"> 
     <ul id="ul_D462C76717D94DE09915BDF6E9B3FB68"> 
-     <li id="li_FB46108F4AD9457D99D2618ABEF7DBD1"> <p>使用流中的提示进行投放位置检测 </p> </li> 
-     <li id="li_C3F7FBB98F524CEF97D17318C292E9EA"> <p>前置式广告插入主流 </p> </li> 
+     <li id="li_FB46108F4AD9457D99D2618ABEF7DBD1"> <p>使用流内提示进行投放检测 </p> </li> 
+     <li id="li_C3F7FBB98F524CEF97D17318C292E9EA"> <p>前置广告插入主流 </p> </li> 
      <li id="li_A56E1545F84840DFA6D065DA60E98C31"> <p>中置广告取代了主流 </p> </li> 
     </ul> </td> 
    <td colname="4"> 
@@ -50,12 +49,12 @@ ht-degree: 0%
    <td colname="1"> 实时/线性 </td> 
    <td colname="2"> 
     <ul id="ul_82AAC9EE056F49E999F809536A96C2F8"> 
-     <li id="li_73BAD2BAA95F4592808B77F8DA436237"> <p>使用清单提示进行投放位置检测 </p> </li> 
+     <li id="li_73BAD2BAA95F4592808B77F8DA436237"> <p>使用清单提示进行放置检测 </p> </li> 
      <li id="li_A97B6F61078D4149A984B2412021E103"> <p>广告替换主流 </p> </li> 
     </ul> </td> 
    <td colname="3"> 
     <ul id="ul_CAED2D4F46334D76AE025482881BF843"> 
-     <li id="li_A8023845A037482DBFDEF7EF247FECFD"> <p>使用流中的提示进行投放位置检测 </p> </li> 
+     <li id="li_A8023845A037482DBFDEF7EF247FECFD"> <p>使用流内提示进行投放检测 </p> </li> 
      <li id="li_62A3CDAD249344EB89043B2AE0F4D7FF"> <p>广告替换主流 </p> </li> 
     </ul> </td> 
    <td colname="4"> 不支持 </td> 

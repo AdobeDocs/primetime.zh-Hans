@@ -1,21 +1,20 @@
 ---
-description: AdobeOffline Packager将用作输入未加密的mp4内容。
-title: 使用AdobeOffline Packager打包内容
-exl-id: 4433d76a-57c0-41e6-b358-5408b0fe87e7
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+description: AdobeOffline Packager将输入未加密的mp4内容。
+title: 使用Adobe脱机打包程序打包您的内容
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '201'
 ht-degree: 0%
 
 ---
 
-# 使用AdobeOffline Packager打包内容{#package-your-content-with-adobe-offline-packager}
+# 使用Adobe脱机打包程序打包您的内容{#package-your-content-with-adobe-offline-packager}
 
-AdobeOffline Packager将用作输入未加密的mp4内容。
+AdobeOffline Packager将输入未加密的mp4内容。
 
-**调用Adobe脱机打包程序**
+**正在调用Adobe脱机打包程序**
 
-典型的adobe offline packager调用类似于下面的调用：
+典型的adobe离线打包程序调用类似于以下调用：
 
     java -jar OfflinePackager.jar -conf_path Content_PR_WV.xml -in_path &quot;Jaigo.mp4&quot;
     -out_path &quot;Jaigo_DASH&quot;
@@ -27,7 +26,7 @@ AdobeOffline Packager将用作输入未加密的mp4内容。
     -playready_keyid c595f214d84dc7ecf31a8ebf1b7ddda5
     -content_id c595f214d84dc7ecf31a8ebf1b7ddda5
 
-在此特定情况下，脱机打包程序会将Widevine内容保护和PlayReady内容保护初始化数据添加到输出DASH内容中。 的值 `-key_file_path` 用于base64编码的键。 的值 `-playready_LA_URL` 用于获取PlayReady许可证。
+在此特定情况下，脱机打包程序会将Widevine内容保护和PlayReady内容保护初始化数据添加到输出DASH内容中。 的值 `-key_file_path` 用于base64编码的密钥。 的值 `-playready_LA_URL` 用于获取PlayReady许可证。
 
 conf_path参数指向包含以下内容的配置文件：
 

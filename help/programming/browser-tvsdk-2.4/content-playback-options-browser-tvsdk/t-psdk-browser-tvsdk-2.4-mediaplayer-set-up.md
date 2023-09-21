@@ -1,8 +1,7 @@
 ---
 description: MediaPlayer对象封装媒体播放器的行为和功能。
 title: 设置MediaPlay
-exl-id: f492b2bb-3280-4306-ac4b-8b8d0fd68409
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '91'
 ht-degree: 0%
@@ -55,7 +54,7 @@ MediaPlayer对象封装媒体播放器的行为和功能。
    player.view = view;
    ```
 
-1. 附加自定义控件 `div` 元素。
+1. 附加自定义控件 `div` 元素到MediaPlayer实例。
 
    例如，在HTML中：
 

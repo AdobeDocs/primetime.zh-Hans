@@ -1,8 +1,7 @@
 ---
 title: Adobe PrimetimeAd Insertion入门
 description: Adobe PrimetimeAd Insertion快速入门
-exl-id: 629ea2a5-1b50-4451-a478-95d02f192145
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '312'
 ht-degree: 0%
@@ -21,11 +20,11 @@ PrimetimeAd Insertion通过重写视频清单来与视频交付客户端应用�
 
 1. PrimetimeAd Insertion将通过将内容清单从发布者的CDN发送回客户端应用程序来进行响应。
 
-1. 客户端应用程序在生成的清单中选择合适的流进行播放，并向PrimetimeAd Insertion发出请求。
+1. 客户端应用程序在生成的清单中选择要播放的合适流，并向PrimetimeAd Insertion发出请求。
 
 1. PrimetimeAd Insertion从内容CDN获取请求的流，解析/读取任何提示信息，调用广告服务器并根据需要替换广告时间。
 
-1. PrimetimeAd Insertion通过重写资源URL并检测广告创意是否需要转码来标准化清单，请参见 [Just-in-time Ad Transcoding](/help/primetime-ad-insertion/just-in-time-transcoding/jit-transcoding-overview.md).
+1. PrimetimeAd Insertion通过重写资源URL并检测广告创意是否需要转码来标准化清单，请参阅 [Just-in-time Ad Transcoding](/help/primetime-ad-insertion/just-in-time-transcoding/jit-transcoding-overview.md).
 
 1. PrimetimeAd Insertion会获取所需的广告创意，并将相应的片段插入到清单中。
 

@@ -2,8 +2,7 @@
 title: 启用使用模型演示
 description: 启用使用模型演示
 copied-description: true
-exl-id: 5d546f1a-ebf6-4c93-9a73-fa812cd71086
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '62'
 ht-degree: 0%
@@ -22,4 +21,4 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->如果您未在打包时激活可选演示模式，则许可证服务器会根据它处理的第一个有效DRM策略颁发许可证。
+>如果您在打包时未激活可选演示模式，则许可证服务器会根据它处理的第一个有效DRM策略颁发许可证。

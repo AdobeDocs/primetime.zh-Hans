@@ -1,8 +1,7 @@
 ---
-description: TVSDK通过合并或替换适当的时间范围来响应错误的时间范围规范。
+description: TVSDK通过根据需要合并或替换时间范围来响应错误的时间范围规范。
 title: 时间范围错误示例
-exl-id: bf634623-8770-4090-96d7-8facdf4cfc42
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '116'
 ht-degree: 0%
@@ -11,11 +10,11 @@ ht-degree: 0%
 
 # 时间范围错误示例 {#time-range-error-examples}
 
-TVSDK通过合并或替换适当的时间范围来响应错误的时间范围规范。
+TVSDK通过根据需要合并或替换时间范围来响应错误的时间范围规范。
 
 **DELETE时间范围**
 
-在以下示例中，定义了四个相交的DELETE时间范围。 TVSDK将四个时间范围合并为一个，以便实际删除范围是0到50秒。
+在以下示例中，定义了四个交叉的DELETE时间范围。 TVSDK将四个时间范围合并为一个，以便实际删除范围是0到50秒。
 
 ```
 "time-ranges": {
@@ -41,9 +40,9 @@ TVSDK通过合并或替换适当的时间范围来响应错误的时间范围规
 }
 ```
 
-**REPLACE时间范围**
+**替换时间范围**
 
-在以下示例中，四个REPLACE时间范围定义为具有冲突的时间范围。 在这种情况下，TVSDK会将0-50替换为25个广告。 它随排序顺序中的第一个替换持续时间一起出现，因为后续范围中存在冲突。
+在下面的示例中，四个REPLACE时间范围被定义为具有冲突的时间范围。 在这种情况下，TVSDK会将0-50替换为25个广告。 它适用于按排序顺序排列的第一个替换持续时间，因为后续范围中存在冲突。
 
 ```
 "time-ranges": {

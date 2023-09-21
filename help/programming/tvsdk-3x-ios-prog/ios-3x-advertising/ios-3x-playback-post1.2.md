@@ -1,8 +1,7 @@
 ---
 description: 媒体播放行为受搜寻、暂停和包含广告的影响。
 title: 默认和自定义的广告播放行为
-exl-id: f4b2f317-c580-45a9-ad79-0cfa6c21848b
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '471'
 ht-degree: 0%
@@ -17,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->对于VOD和实时/线性流，无法修订时间线调整。 这意味着播发在播放后无法从时间轴中删除。 如果用户回头搜索，则即使正常策略是删除同一广告，也会再次播放该广告。
+>对于VOD和实时/线性流，无法修订时间线调整。 这意味着播发在播放后无法从时间轴中删除。 如果用户再次搜寻，则即使正常策略本应删除同一广告，也会再次播放该广告。
 
 >[!IMPORTANT]
 >
@@ -40,14 +39,14 @@ ht-degree: 0%
    <td colname="col3">使用以下方式为广告时间指定其他策略 <span class="codeph"> selectPolicyForAdBreak</span>. </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 您的应用程序在广告时间上向前搜索以进入主内容。 </td> 
+   <td colname="col1"> 您的应用程序在广告时间中向前寻求进入主内容。 </td> 
    <td colname="col2"> 播放上一个跳过且未被观看的广告时间，并在广告时间播放完成后在所需的搜寻位置恢复播放。 </td> 
-   <td colname="col3">使用以下方式选择要播放的跳过的断点 <span class="codeph"> selectAdBreaksToPlay</span>. </td> 
+   <td colname="col3">使用以下方式选择要播放的跳过的休息时间 <span class="codeph"> selectAdBreaksToPlay</span>. </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 您的应用程序向后搜索广告插播，以进入主内容。 </td> 
-   <td colname="col2"> 跳至所需的搜寻位置而不播放广告时间。 </td> 
-   <td colname="col3">使用以下方式选择要播放的跳过的断点 <span class="codeph"> selectAdBreaksToPlay</span>.                      </td> 
+   <td colname="col1"> 您的应用程序向后搜索广告时间，以将其转换为主内容。 </td> 
+   <td colname="col2"> 跳到所需的搜寻位置而不播放广告时间。 </td> 
+   <td colname="col3">使用以下方式选择要播放的跳过的休息时间 <span class="codeph"> selectAdBreaksToPlay</span>.                      </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 您的应用程序将尝试进入广告时间。 </td> 
@@ -57,20 +56,20 @@ ht-degree: 0%
   <tr> 
    <td colname="col1"> 您的应用程序向后搜索进入广告时间。 </td> 
    <td colname="col2"> 从搜寻结束的广告开始播放。 </td> 
-   <td colname="col3">为广告时间指定其他广告策略，并为使用结束搜寻的特定广告指定其他广告策略 <span class="codeph"> selectPolicyForSeekIntoAd</span>. </td> 
+   <td colname="col3">为广告时间以及搜寻结束的特定广告指定不同的广告策略 <span class="codeph"> selectPolicyForSeekIntoAd</span>. </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 您的应用程序在观看广告时间后向前或向后搜索主内容。 </td> 
    <td colname="col2"> 如果跳过的最后一个广告时间已被观看，则会跳至用户选择的搜寻位置。 </td> 
-   <td colname="col3">选择要播放的跳过的断点 <span class="codeph"> selectAdBreaksToPlay</span> 并确定已使用观察了哪些中断 <span class="codeph"> ptadBreak.isWatched</span>. <p> <p>重要信息：默认情况下，TVSDK在广告时间中输入第一个广告后，会立即将广告时间标记为已观看。 </p> </p> </td> 
+   <td colname="col3">选择要播放的跳过的断点 <span class="codeph"> selectAdBreaksToPlay</span> 并使用确定已查看的断点 <span class="codeph"> ptadBreak.isWatched</span>. <p> <p>重要信息：默认情况下，TVSDK在广告时间输入第一个广告后，会立即将广告时间标记为已观看。 </p> </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> 您的应用程序在一个或多个广告时间上向前或向后搜索，然后进入观看的广告时间。 </td> 
-   <td colname="col2"> 跳过广告时间，并搜索紧跟广告时间之后的位置。 </td> 
+   <td colname="col2"> 跳过广告时间，并搜索广告时间后紧跟的位置。 </td> 
    <td colname="col3">为广告时间（观看状态设置为true）和搜寻结束的特定广告指定不同的广告策略 <span class="codeph"> selectPolicyForSeekIntoAd</span>. </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> 您的应用程序会向前搜索使用自定义广告标记插入的广告。 </td> 
+   <td colname="col1"> 您的应用程序向前搜寻使用自定义广告标记插入的广告。 </td> 
    <td colname="col2"> 跳至用户选择的搜寻位置。 </td> 
    <td colname="col3"></td> 
   </tr> 

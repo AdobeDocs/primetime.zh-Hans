@@ -1,8 +1,7 @@
 ---
 description: 此表提供有关INFO类型通知的详细信息。
 title: INFO通知代码
-exl-id: 162c73c2-c077-4b50-b340-76938b15783a
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '180'
 ht-degree: 4%
@@ -13,7 +12,7 @@ ht-degree: 4%
 
 此表提供有关INFO类型通知的详细信息。
 
-大多数信息通知包含相关元数据，例如，无法下载的资源的URL。 某些通知包含元数据，用于指定问题出现在主视频内容、备用音频内容还是广告中。
+大多数信息性通知包含相关元数据，例如，下载失败的资源的URL。 某些通知包含元数据，用于指定问题出现在主视频内容、备用音频内容还是广告中。
 
 <table frame="all" colsep="1" rowsep="1" id="table_503463046E764A87B10EB5D8B294EB23"> 
  <thead> 
@@ -22,7 +21,7 @@ ht-degree: 4%
    <th colname="2" class="entry"> 名称 </th> 
    <th colname="3" class="entry"> 内部通知 </th> 
    <th colname="4" class="entry"> 元数据键 </th> 
-   <th colname="5" class="entry"> 注释 </th> 
+   <th colname="5" class="entry"> 评论 </th> 
   </tr> 
  </thead>
  <tbody> 
@@ -49,7 +48,7 @@ ht-degree: 4%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 300002 </span> </td> 
-   <td colname="2"><span class="codeph"> SEEK_Start </span> </td> 
+   <td colname="2"><span class="codeph"> SEEK_START </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> <p> 无 </p> </td> 
    <td colname="5"> 已启动搜寻操作。 </td> 
@@ -83,7 +82,7 @@ ht-degree: 4%
    <td colname="5"> 视频的比特率已更改。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>后期绑定音频(LBA)</b> </td> 
+   <td colname="1"><b>延迟绑定音频(LBA)</b> </td> 
    <td colname="2"> </td>
    <td colname="3"> </td>
    <td colname="4"> </td>

@@ -2,8 +2,7 @@
 title: 设置域服务器
 description: 设置域服务器
 copied-description: true
-exl-id: eeb0d39d-58a4-4414-9123-2cf1b27b73de
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '93'
 ht-degree: 0%
@@ -17,7 +16,7 @@ ht-degree: 0%
 1. 在 [!DNL tomcat/lib] 目录，打开 [!DNL flashaccess-refimpl.properties] 文件。
 1. 在 `Domain CA certificate` 选项，完成域CA证书。
 
-   然后，此证书用于接受域令牌。
+   然后，使用此证书来接受域令牌。
 1. 在 `Domain CA credential` 选项，填写 `Domain CA credential certificate (PFX)` 详细信息。
 
    然后，此证书用于签名域证书和令牌。

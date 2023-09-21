@@ -1,15 +1,14 @@
 ---
 description: 您可以指定隐藏式字幕格式。
 title: 示例题注格式
-exl-id: 946530a1-c7d7-4582-81b8-71b2980561cb
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '33'
 ht-degree: 0%
 
 ---
 
-# 示例：字幕格式{#examples-caption-formatting}
+# 示例：题注格式{#examples-caption-formatting}
 
 您可以指定隐藏式字幕格式。
 

@@ -1,8 +1,7 @@
 ---
 description: 您可以使用PrimetimeDigital Rights Management(DRM)系统的功能来提供对视频内容的安全访问。 或者，您可以使用第三方DRM解决方案作为Adobe集成解决方案的替代方案。
 title: Widevine DRM
-exl-id: 44ab032e-e665-4b63-a08b-54e862894987
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '288'
 ht-degree: 0%
@@ -21,7 +20,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> Widevine CENC CTR方案要求最低Android版本4.4（API级别19）。
+> Widevine CENC CTR Scheme要求Android的最低版本为4.4（API级别19）。
 >
 > Widevine CBCS方案要求最低Android版本7.1（API级别25）。
 
@@ -38,13 +37,13 @@ Map<String, String> requestProperties)
 
 ### 参数 {#arguments-license-server}
 
-* `drm` - `"com.widevine.alpha"` 为维德温。
+* `drm` - `"com.widevine.alpha"` 为维德维恩干杯。
 
 * `licenseServerURL`  — 接收许可证请求的Widevine许可证服务器的URL。
 
 * `requestProperties`  — 包含要包含在传出许可证请求中的额外标头。
 
-例如，在使用为Expressplay DRM打包的内容时，在播放之前使用以下代码：
+例如，当使用为Expressplay DRM打包的内容时，在播放之前使用以下代码：
 
 ```java
 DRMManager.setProtectionData(
@@ -79,8 +78,8 @@ public static byte[] getPSSH()
 
 API返回与加载的Widevine媒体资源关联的Protection System特定的标头框。
 
-有效框持续时间较短（在DRM实例创建和加载密钥之间）。 `MediaDrmCallback callback executeKeyRequest()` 可以使用它来自定义获取许可证密钥。
+有效框持续时间较短（在DRM实例创建和密钥加载之间）。 `MediaDrmCallback callback executeKeyRequest()` 可以使用它来自定义获取许可证密钥。
 
 >[!NOTE]
 >
-> `getPSSH()` 仅单个播放器实例支持API。 多个播放器或“即时开启”功能应串行初始化，以接收正确的框。
+> `getPSSH()` 仅单个播放器实例支持API。 多个播放器或“即时打开”功能应串行初始化，以接收正确的框。

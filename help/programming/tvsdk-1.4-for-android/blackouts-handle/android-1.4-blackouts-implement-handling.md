@@ -1,8 +1,7 @@
 ---
 description: TVSDK提供了用于处理封锁期的API和示例代码。
 title: 实施封锁处理
-exl-id: 9b23674d-76d5-4879-b595-3a6e368c45cd
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '158'
 ht-degree: 0%
@@ -13,7 +12,7 @@ ht-degree: 0%
 
 TVSDK提供了用于处理封锁期的API和示例代码。
 
-要实施封锁处理（包括在封锁期间提供替代内容），请执行以下操作：
+要实施封锁期处理，包括在封锁期提供替代内容，请执行以下操作：
 
 1. 设置应用程序以检测实时流清单中的封锁标记。
 
@@ -26,7 +25,7 @@ TVSDK提供了用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 为前台和后台流中的定时元数据事件创建事件侦听器。
+1. 在前台流和后台流中为定时元数据事件创建事件侦听器。
 
    ```java
    private MediaPlayer createMediaPlayer() { 
@@ -37,7 +36,7 @@ TVSDK提供了用于处理封锁期的API和示例代码。
 
 1. 为前台和后台流实施定时元数据事件处理程序。
 
-   前台：
+   前景：
 
    ```java
    private final MediaPlayer.PlaybackEventListener _playbackEventListener =  
@@ -149,7 +148,7 @@ TVSDK提供了用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 如果播放流上的封锁期在DVR中，请更新不可搜索的范围。
+1. 如果播放流上的封锁期范围在DVR中，请更新不可搜索的范围。
 
    ```java
    // prepare and update blackout nonSeekable ranges 
@@ -182,7 +181,7 @@ TVSDK提供了用于处理封锁期的API和示例代码。
 
    >[!NOTE]
    >
-   >目前，对于多个比特率实时流，有时可调整比特率(ABR)配置文件可能会不同步。 这会导致重复 `timedMetadata` 相同订阅标记的对象。 为了避免不正确的不可搜索计算，强烈建议在计算后检查是否存在重叠的不可搜索范围，如以下示例中的：
+   >目前，对于多个比特率实时流，有时可调整比特率(ABR)配置文件可能会不同步。 这会导致重复 `timedMetadata` 相同订阅标记的对象。 为避免不可搜索的计算不正确，强烈建议在计算之后检查不可搜索范围的重叠，如以下示例所示：
 
    ```java
    List<TimeRange> rangesToRemove = new ArrayList<TimeRange>(); 

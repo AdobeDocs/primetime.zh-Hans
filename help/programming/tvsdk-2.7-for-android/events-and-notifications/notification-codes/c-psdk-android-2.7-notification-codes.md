@@ -1,8 +1,7 @@
 ---
 description: TVSDK通知系统生成各种错误、警告和信息性通知，以提供诊断元数据。
 title: 通知代码
-exl-id: 7bf016c6-8651-413b-a478-ac2d24f9453c
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '223'
 ht-degree: 0%
@@ -25,28 +24,28 @@ TVSDK通知系统生成各种错误、警告和信息性通知，以提供诊断
  <tbody> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> type</span> </td> 
-   <td colname="2"> <p>通知类型。 </p> <p>根据平台，此属性是一个枚举类型，可能的值为INFO、WARN和ERROR。 这是通知的顶层分组。 </p> </td> 
+   <td colname="2"> <p>通知类型。 </p> <p>根据平台的不同，此属性是一个枚举类型，可能值为INFO、WARN和ERROR。 这是通知的顶级分组。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"> <span class="codeph"> 代码</span> </td> 
-   <td colname="2"> <p>为通知指定以下数字表示： 
+   <td colname="2"> <p>为通知分配了以下数字表示： 
      <ul id="ul_A86BF89D6B3B410E81FAD718D3C4A9F0"> 
       <li id="li_8180972D704C40098723734DD4B45643">从100000到199999的错误通知事件 </li> 
       <li id="li_0EC29EA5F0034E5EBFEF8E68A6498D39">警告通知事件，从200000到299999 </li> 
-      <li id="li_189A53D3D7EF4960A521AB04D00DCF70">信息通知事件，从300000到399999 </li> 
+      <li id="li_189A53D3D7EF4960A521AB04D00DCF70">从300000到399999的信息通知事件 </li> 
      </ul> </p> <p>每个顶级范围（例如错误）被划分为子范围(例如101000到101999表示播放错误)。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> name</span> </td> 
-   <td colname="2">一个字符串，其中包含易于用户识别的通知事件描述，例如 <span class="codeph"> SEEK_ERROR</span>. </td> 
+   <td colname="2">一个字符串，其中包含人类可读的通知事件描述，例如 <span class="codeph"> SEEK_ERROR</span>. </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 元数据</span> </td> 
-   <td colname="2"> <p>包含有关通知的其他相关信息的键/值对。 </p> <p>例如，一个名为的键 <span class="codeph"> URL</span> 将提供一个值，该值是与通知相关的URL，例如导致错误的无效URL。 </p> </td> 
+   <td colname="2"> <p>包含有关通知的其他相关信息的键/值对。 </p> <p>例如，名为的键 <span class="codeph"> URL</span> 将提供一个与通知相关的URL值，例如导致错误的无效URL。 </p> </td> 
   </tr> 
   <tr rowsep="0"> 
    <td colname="1"><span class="codeph"> innerNotification</span> </td> 
-   <td colname="2"> <p>对另一个的引用 <span class="codeph"> MediaPlayerNotification</span> 直接影响此通知的对象。 </p> <p>例如，可能是一则与时间线插入冲突直接对应的广告插入失败通知。 并非所有通知都提供内部通知。 </p> </td> 
+   <td colname="2"> <p>对另一个的引用 <span class="codeph"> MediaPlayerNotification</span> 直接影响此通知的对象。 </p> <p>一个示例可能是直接对应于时间线插入冲突的关于广告插入失败的通知。 并非所有通知都提供内部通知。 </p> </td> 
   </tr> 
  </tbody> 
 </table>

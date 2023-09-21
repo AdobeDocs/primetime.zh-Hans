@@ -1,8 +1,7 @@
 ---
 description: 您可以选择使用默认广告行为。
 title: 使用默认播放行为
-exl-id: eb4ce0b4-9dfd-4de8-8cbf-8aba093a5ddd
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '201'
 ht-degree: 0%
@@ -17,7 +16,7 @@ ht-degree: 0%
 
    * 如果您实施自己的 `AdvertisingFactory` 类，返回null `createAdPolicySelector`.
 
-   * 如果您没有的自定义实施 `AdvertisingFactory` 类，TVSDK使用默认广告策略选择器。
+   * 如果您没有针对的自定义实施 `AdvertisingFactory` 类，TVSDK使用默认的ad策略选择器。
 
 ## 设置自定义播放 {#set-up-customized-playback}
 
@@ -27,11 +26,11 @@ ht-degree: 0%
 
 * 实施 `AdPolicySelector` 接口及其所有方法。
 
-   如果需要覆盖，建议使用此选项 **所有** 默认广告行为。
+  如果需要覆盖，则建议使用此选项 **所有** 默认广告行为。
 
 * 扩展 `DefaultAdPolicySelector` 类，并仅为那些需要自定义的行为提供实现。
 
-   如果您只需要覆盖，则建议使用此选项 **部分** 缺省行为的URL值。
+  如果您只需要覆盖，则建议使用此选项 **部分** 缺省行为的URL值。
 
 要自定义广告行为，请执行以下操作：
 
@@ -40,7 +39,7 @@ ht-degree: 0%
 
    >[!NOTE]
    >
-   >在播放开始时注册的自定义广告策略在以下情况下被清除： `MediaPlayer` 实例已取消分配。 每次创建新播放会话时，您的应用程序都必须注册一个策略选择器实例。
+   >在播放开始时注册的自定义广告策略在以下情况下清除： `MediaPlayer` 实例已取消分配。 每次创建新播放会话时，您的应用程序都必须注册一个策略选择器实例。
 
    例如：
 

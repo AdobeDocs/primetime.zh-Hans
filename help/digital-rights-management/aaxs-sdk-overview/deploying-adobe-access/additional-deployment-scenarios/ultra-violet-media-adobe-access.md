@@ -1,8 +1,7 @@
 ---
 description: Adobe访问可与其他第三方内容流解决方案一起使用，以建立一个完整且安全的基于DRM的媒体分发生态系统。
 title: UltraViolet介质和Adobe访问
-exl-id: cca476a4-1961-46d8-aad4-bc7c996d7b02
-source-git-commit: 8d7a4f69a6400b0c3242d4cb0c5daac81f27db3a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '486'
 ht-degree: 0%

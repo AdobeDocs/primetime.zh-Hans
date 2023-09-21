@@ -1,8 +1,7 @@
 ---
 description: 您可以通过向相应的Expressplay令牌服务器发送令牌请求，为其加密内容生成Expressplay令牌。
 title: Expressplay令牌
-exl-id: 38faba06-6737-4dec-ac97-27db3124b993
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '131'
 ht-degree: 0%
@@ -24,7 +23,7 @@ token?customerAuthenticator=<your expressplay customer authenticator>
 &hdcpOutputControl=0
 ```
 
-为提供的内容加密密钥存储ID或CEKSID `kid` 参数和为提供的内容加密密钥或CEK `contentKey` 参数必须与用于打包的内容加密密钥存储ID和内容加密密钥匹配。 以下文本是令牌服务器响应的示例：
+为提供的内容加密密钥存储ID或CEKSID `kid` 参数和给用户的内容加密密钥或CEK `contentKey` 参数必须与用于打包的内容加密密钥存储ID和内容加密密钥匹配。 以下文本是令牌服务器响应的示例：
 
 ```
 https://wv.service.expressplay.com/hms/wv/rights/
@@ -36,4 +35,4 @@ https://wv.service.expressplay.com/hms/wv/rights/
 然后，您可以
 
 * 使用返回的URL和查询作为许可证服务器URL，或者
-* 从URL中取出查询，并将其作为HTTPPOST标头单独传递到ExpressPlayToken
+* 从URL中提取查询，并将其作为HTTPPOST标头单独传递到ExpressPlayToken

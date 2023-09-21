@@ -2,8 +2,7 @@
 title: 请求证书概述
 description: 请求证书概述
 copied-description: true
-exl-id: 4ecdc3be-7db3-494c-af9e-fd4d57b988e4
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '82'
 ht-degree: 0%
@@ -12,7 +11,7 @@ ht-degree: 0%
 
 # 概述 {#request-certificates-overview}
 
-要使用Adobe Primetime DRM Production SDK，请重复以下步骤以请求每个证书（License Server、Packager和Transport）。 Evaluation SDK和Trial SDK使用单个证书。
+要使用Adobe Primetime DRM生产SDK，请重复以下步骤以请求每个证书（许可证服务器、打包和传输）。 评估SDK和试用SDK使用单个证书。
 
 >[!NOTE]
 >

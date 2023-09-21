@@ -1,8 +1,7 @@
 ---
 description: PlayReady许可证令牌界面提供生产和测试服务。
 title: PlayReady许可证令牌请求/响应
-exl-id: 12f925f7-336b-42b2-95a9-e806801bab8c
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '898'
 ht-degree: 4%
@@ -13,9 +12,9 @@ ht-degree: 4%
 
 PlayReady许可证令牌界面提供生产和测试服务。
 
-此HTTP请求返回可为PlayReady许可证兑换的令牌。
+此HTTP请求返回可赎回PlayReady许可证的令牌。
 
-**方法：GET、POST** （使用www-url编码的主体，其中包含这两种方法的参数）
+**方法：GET、POST** （具有以www-url编码的正文，其中包含这两种方法的参数）
 
 **URL：**
 
@@ -25,27 +24,27 @@ PlayReady许可证令牌界面提供生产和测试服务。
 
 * **示例请求：**
 
-   ```
-   <xref href="https: pr-gen.test.expressplay.com="" hms="" pr="" token?customerAuthenticator="201722,1ad8eed133edf43cbcc185f0236828ae&kid=b366360da82e9c6e0b0984002a362cf2&contentKey=b366360da82e9c6e0b0984002a362cf2&rightsType=BuyToOwn&analogVideoOPL=0&compressedDigitalAudioOPL=0&compressedDigitalVideoOPL=0&uncompressedDigitalAudioOPL=0&uncompressedDigitalVideoOPL=0&quot; format=&quot;html&quot; scope=&quot;external&quot;">
-   https://pr-gen.test.expressplay.com/hms/pr/token?customerAuthenticator=
-    <ExpressPlay customer authenticator identifier>
-    &kid=<CEKSID>
-    &contentKey=<CEK>
-    &rightsType=BuyToOwn
-    &analogVideoOPL=0
-    &compressedDigitalAudioOPL=0
-    &compressedDigitalVideoOPL=0
-    &uncompressedDigitalAudioOPL=0
-    &uncompressedDigitalVideoOPL=0
-   </xref href="https:>
-   ```
+  ```
+  <xref href="https: pr-gen.test.expressplay.com="" hms="" pr="" token?customerAuthenticator="201722,1ad8eed133edf43cbcc185f0236828ae&kid=b366360da82e9c6e0b0984002a362cf2&contentKey=b366360da82e9c6e0b0984002a362cf2&rightsType=BuyToOwn&analogVideoOPL=0&compressedDigitalAudioOPL=0&compressedDigitalVideoOPL=0&uncompressedDigitalAudioOPL=0&uncompressedDigitalVideoOPL=0&quot; format=&quot;html&quot; scope=&quot;external&quot;">
+  https://pr-gen.test.expressplay.com/hms/pr/token?customerAuthenticator=
+   <ExpressPlay customer authenticator identifier>
+   &kid=<CEKSID>
+   &contentKey=<CEK>
+   &rightsType=BuyToOwn
+   &analogVideoOPL=0
+   &compressedDigitalAudioOPL=0
+   &compressedDigitalVideoOPL=0
+   &uncompressedDigitalAudioOPL=0
+   &uncompressedDigitalVideoOPL=0
+  </xref href="https:>
+  ```
 
 * **示例响应：**
 
-   ```
-   {"licenseAcquisitionUrl":"https://expressplay-licensing.axprod.net/LicensingService.ashx",
-               "token":"<base64-encoded ExpressPlay token>"}
-   ```
+  ```
+  {"licenseAcquisitionUrl":"https://expressplay-licensing.axprod.net/LicensingService.ashx",
+              "token":"<base64-encoded ExpressPlay token>"}
+  ```
 
 ## 请求查询参数 {#section_26F8856641A64A46A3290DBE61ACFAD2}
 
@@ -62,12 +61,12 @@ PlayReady许可证令牌界面提供生产和测试服务。
  <tbody> 
   <tr> 
    <td><span class="codeph"> customerAuthenticator</span> </td> 
-   <td> <p>这是您的客户API密钥，每个密钥分别用于生产和测试环境。 您可以在“ExpressPlay管理功能板”选项卡上找到它。 </p> </td> 
+   <td> <p>这是您的客户API密钥，每个密钥分别用于生产和测试环境。 您可以在ExpressPlay的“Admin Dashboard（管理功能板）”选项卡上找到此标记。 </p> </td> 
    <td> 是 </td> 
   </tr> 
   <tr> 
-   <td><span class="codeph"> 错误格式</span> </td> 
-   <td>可以 <span class="codeph"> html</span> 或 <span class="codeph"> json</span>. 如果 <span class="codeph"> html</span> （缺省）在响应的图元主体中提供任何错误的HTML表示形式。 <p>如果 <span class="codeph"> json</span> 指定，则会返回JSON格式的结构化响应。 参见 <a href="https://www.expressplay.com/developer/restapi/#json-errors" format="html" scope="external"> JSON错误</a> 了解详细信息。 </p> <p>响应的MIME类型为 <span class="codeph"> text/uri-list</span> 成功时， <span class="codeph"> text/html</span> (对于HTML错误格式)，或 <span class="codeph"> application/json</span> （对于JSON错误格式）。 </p> </td> 
+   <td><span class="codeph"> errorFormat</span> </td> 
+   <td>或者 <span class="codeph"> html</span> 或 <span class="codeph"> json</span>. 如果 <span class="codeph"> html</span> （缺省）在响应的图元主体中提供任何错误的HTML表示。 <p>如果 <span class="codeph"> json</span> 指定时，将返回JSON格式的结构化响应。 请参阅 <a href="https://www.expressplay.com/developer/restapi/#json-errors" format="html" scope="external"> JSON错误</a> 以了解详细信息。 </p> <p>响应的mime类型是 <span class="codeph"> text/uri-list</span> 成功时， <span class="codeph"> text/html</span> (对于HTML错误格式)，或 <span class="codeph"> application/json</span> （对于JSON错误格式）。 </p> </td> 
    <td> 否 </td> 
   </tr> 
  </tbody> 
@@ -91,7 +90,7 @@ PlayReady许可证令牌界面提供生产和测试服务。
   </tr> 
   <tr> 
    <td><span class="codeph"> kek</span> </td> 
-   <td> 密钥加密密钥(KEK)。 密钥是使用密钥封装算法(AES Key Wrap，RFC3394)通过KEK加密存储的。 </td> 
+   <td> 密钥加密密钥(KEK)。 密钥是使用密钥封装算法(AES Key Wrap，RFC3394)使用KEK加密存储的。 </td> 
    <td> 否 </td> 
   </tr> 
   <tr> 
@@ -101,7 +100,7 @@ PlayReady许可证令牌界面提供生产和测试服务。
   </tr> 
   <tr> 
    <td><span class="codeph"> ek</span> </td> 
-   <td> 加密内容密钥的十六进制字符串表示形式。 </td> 
+   <td> 已加密内容密钥的十六进制字符串表示形式。 </td> 
    <td> 否 </td> 
   </tr> 
   <tr> 
@@ -111,42 +110,42 @@ PlayReady许可证令牌界面提供生产和测试服务。
   </tr> 
   <tr> 
    <td><span class="codeph"> righttype</span> </td> 
-   <td>指定权限的种类。 必须是 <span class="codeph"> BuyTown</span> 或 <span class="codeph"> 租金</span>. </td> 
+   <td>指定权限的种类。 必须是 <span class="codeph"> BuyToOwn</span> 或 <span class="codeph"> 租赁</span>. </td> 
    <td> 是 </td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> rental.periodEndTime</span> </td> 
-   <td>租赁结束日期。 此值必须采用“RFC 3339”的“Z”区域指示符（“Zulu时间”）格式的日期/时间格式，或采用“+”符号前面的整数。 <p>如果值是 <a href="https://www.ietf.org/rfc/rfc3339.txt" format="html" scope="external"> RFC 3339</a> 日期/时间格式，则它表示许可证的绝对到期日期/时间。 RFC 3339日期/时间的示例为2006-04-14T12:01:10Z。 </p> <p> 如果该值是带有“+”号的整数，则会将其视为从颁发令牌开始算起的相对秒数。 内容在此时间后无法播放。 仅在以下情况下有效 <span class="codeph"> righttype</span> 是 <span class="codeph"> 租金</span>. </p> </td> 
-   <td>是，当 <span class="codeph"> righttype</span> 是 <span class="codeph"> 租金</span>. </td> 
+   <td>租赁结束日期。 此值必须采用“RFC 3339”的“Z”区域指示符（“Zulu时间”）格式的_日期/时间格式，或采用“+”符号前面的整数。 <p>如果值为 <a href="https://www.ietf.org/rfc/rfc3339.txt" format="html" scope="external"> RFC 3339</a> 日期/时间格式，则它表示许可证的绝对到期日期/时间。 RFC 3339日期/时间的示例为2006-04-14T12:01:10Z。 </p> <p> 如果该值是以“+”号开头的整数，则会将其视为从颁发令牌开始的相对秒数。 在此时间之后，无法播放该内容。 仅在以下情况下有效： <span class="codeph"> righttype</span> 是 <span class="codeph"> 租赁</span>. </p> </td> 
+   <td>是，当 <span class="codeph"> righttype</span> 是 <span class="codeph"> 租赁</span>. </td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> rental.playDuration</span> </td> 
-   <td>开始播放后可以播放内容的时间（以秒为单位）。 仅在以下情况下有效 <span class="codeph"> righttype</span> 是租赁。 </td> 
+   <td>开始播放后可以播放内容的时间（以秒为单位）。 仅在以下情况下有效： <span class="codeph"> righttype</span> 是租赁。 </td> 
    <td> 否 </td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> analogVideoOPL</span> </td> 
-   <td> 表示模拟视频的输出保护级别的整数值。 有效范围为0-999。 </td> 
+   <td> 表示模拟视频的输出保护级别的整数值。 有效范围为0至999。 </td> 
    <td> 是 </td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> compressedDigitalAudioOPL</span> </td> 
-   <td> 表示压缩数字音频的输出保护级别的整数值。 有效范围为0-999。 </td> 
+   <td> 表示压缩数字音频的输出保护级别的整数值。 有效范围为0至999。 </td> 
    <td> 是 </td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> compressedDigitalVideoOPL</span> </td> 
-   <td> 表示压缩数字视频的输出保护级别的整数值。 有效范围为0-999。 </td> 
+   <td> 表示压缩数字视频的输出保护级别的整数值。 有效范围为0至999。 </td> 
    <td> 是 </td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> 未压缩的DigitalAudioOPL</span> </td> 
-   <td> 表示未压缩数字音频的输出保护级别的整数值。 有效范围为0-999。 </td> 
+   <td> 表示未压缩数字音频的输出保护级别的整数值。 有效范围为0至999。 </td> 
    <td> 是 </td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> 未压缩的DigitalVideoOPL</span> </td> 
-   <td> 表示未压缩数字视频的输出保护级别的整数值。 有效范围为0-999。 </td> 
+   <td> 表示未压缩数字视频的输出保护级别的整数值。 有效范围为0至999。 </td> 
    <td> 是 </td> 
   </tr> 
   <tr> 
@@ -176,7 +175,7 @@ PlayReady许可证令牌界面提供生产和测试服务。
 
 **表11： HTTP响应**
 
-| **HTTP状态代码** | **描述** | **内容类型** | **实体正文包含** |
+| **HTTP状态代码** | **描述** | **Content-Type** | **实体正文包含** |
 |---|---|---|---|
 | `200 OK` | 没有错误。 | `text/uri-list` | 许可证客户获取url和令牌 |
 | `400 Bad Request` | 参数无效 | `text/html` 或 `application/json` | 错误描述 |
@@ -284,7 +283,7 @@ PlayReady许可证令牌界面提供生产和测试服务。
   </tr> 
   <tr> 
    <td> -4001 </td> 
-   <td> 无法验证设备 </td> 
+   <td> 无法对设备进行身份验证 </td> 
   </tr> 
   <tr> 
    <td> -4018 </td> 
@@ -300,7 +299,7 @@ PlayReady许可证令牌界面提供生产和测试服务。
   </tr> 
   <tr> 
    <td> -4021 </td> 
-   <td><span class="codeph"> 小孩</span> ^后必须为64个字符 </td> 
+   <td><span class="codeph"> 小孩</span> ^后面必须为64个字符 </td> 
   </tr> 
   <tr> 
    <td> -4022 </td> 

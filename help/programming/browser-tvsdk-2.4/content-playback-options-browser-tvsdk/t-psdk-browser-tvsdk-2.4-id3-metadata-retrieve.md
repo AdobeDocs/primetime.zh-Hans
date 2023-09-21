@@ -1,8 +1,7 @@
 ---
-description: ID3标记提供有关音频或视频文件的信息，例如文件标题或艺人姓名。 浏览器TVSDK在HLS流中的传输流(TS)区段级别检测ID3标记并调度事件。 应用程序可以从标记中提取数据。
+description: ID3标记提供有关音频或视频文件的信息，例如文件标题或艺术家姓名。 浏览器TVSDK在HLS流中的传输流(TS)区段级别检测ID3标记并调度事件。 应用程序可以从标记中提取数据。
 title: ID3标记
-exl-id: 33510821-9de4-41fc-b404-bcf0b6ba86ff
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '274'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # ID3标记{#id-tags}
 
-ID3标记提供有关音频或视频文件的信息，例如文件标题或艺人姓名。 浏览器TVSDK在HLS流中的传输流(TS)区段级别检测ID3标记并调度事件。 应用程序可以从标记中提取数据。
+ID3标记提供有关音频或视频文件的信息，例如文件标题或艺术家姓名。 浏览器TVSDK在HLS流中的传输流(TS)区段级别检测ID3标记并调度事件。 应用程序可以从标记中提取数据。
 
 在基础HLS流中找到新的ID3元数据时，浏览器TVSDK会触发 `AdobePSDK.TimedMetadataEvent` 事件。
 
@@ -47,7 +46,7 @@ ID3标记提供有关音频或视频文件的信息，例如文件标题或艺�
   </tr> 
   <tr> 
    <td colname="col1"> <p> <span class="codeph"> 元数据 </span> </p> </td> 
-   <td colname="col2"> <p> <span class="codeph"> Timedatadata </span> 已处理的信息，它是 <span class="codeph"> AdobePSDK.Metadata </span> 存储ID3帧的位置。 </p> <p> <p>注意：对于Safari <span class="codeph"> 视频 </span> 标签中，ID3标签的特定帧数据通过 <span class="codeph"> AdobePSDK.Metadata </span> 对象，而对于其他浏览器，ID3标记的帧数据将通过以字节数组的形式显示 <span class="codeph"> AdobePSDK.Metadata </span> 对象。 </p> </p> </td> 
+   <td colname="col2"> <p> <span class="codeph"> Timedatadata </span> 已处理的信息，它是 <span class="codeph"> AdobePSDK.Metadata </span> 存储ID3帧的位置。 </p> <p> <p>注意：对于Safari <span class="codeph"> 视频 </span> 标签中，ID3标签的特定帧数据通过 <span class="codeph"> AdobePSDK.Metadata </span> 对象，而对于其他浏览器，ID3标记的帧数据将以字节数组的形式显示，通过 <span class="codeph"> AdobePSDK.Metadata </span> 对象。 </p> </p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -58,114 +57,114 @@ ID3标记提供有关音频或视频文件的信息，例如文件标题或艺�
 
 * 在AdobePSDK.PSDKEventType.TIMED_METADATA_AVAILABLE事件侦听器中。
 
-   ```
-   var isSafari = function () { 
-       var nAgt = navigator.userAgent; 
-       var appName = navigator.appName; 
-       if ((nAgt.indexOf('MSIE') === -1) && //is not MS IE 
-           (appName !== 'Netscape' || nAgt.indexOf('Trident/') === -1) && //is not MS IE11 
-           (appName !== 'Netscape' || nAgt.indexOf('Edge') === -1) && // is not edge 
-           (nAgt.indexOf('Chrome') === -1) && // is not chrome 
-           (nAgt.indexOf('Safari') !== -1) //is Safari 
-       ){ 
-           return true; 
-       } 
-       return false; 
-   }; 
-   var hex2a = function (hex, offset, max) { 
-       var str = ''; 
-       if (!hex) 
-           return str; 
-       for (var i = offset; i < hex.length && i < offset + max; i++) 
-           str += String.fromCharCode(hex[i]); 
-       return str; 
-   }; 
-   var mediaPlayer = new AdobePSDK.MediaPlayer(); 
-   mediaPlayer.addEventListener( AdobePSDK.PSDKEventType.TIMED_METADATA_AVAILABLE ,function(event){ 
-       var td = event.timedMetadata; 
-       if(td.type == AdobePSDK.TimedMetadataType.ID3){ 
-           var md = td.metadata; 
-           var keySet = md.keySet; 
-           var onSafari = isSafari(); 
-           if(keySet && keySet.length){ 
-               var msg = ''; 
-               for(var j = 0; j < keySet.length; j++){ 
-                   var idTag = keySet[j]; 
-                   msg += idTag; 
-                   if(idTag.indexOf("T") == 0){ 
-                       /* text frame*/ 
-                       if(onSafari){ 
-                           /* text frame data is exposed in object format 
-                            * where corresponding text data is exposed through 
-                            * data key of text frame data object 
-                            * */ 
-                           var frameDataObject = md.getObject(idTag); 
-                           msg += " : " + frameDataObject.data; 
-                       } else { 
-                           var buff = md.getByteArray(idTag); 
-                           msg += " : " + hex2a(buff, 0, buff.length - 1); 
-                       } 
-                   } 
-                   msg += " ; "; 
-               } 
-           } 
-       } 
-   }); 
-   ```
+  ```
+  var isSafari = function () { 
+      var nAgt = navigator.userAgent; 
+      var appName = navigator.appName; 
+      if ((nAgt.indexOf('MSIE') === -1) && //is not MS IE 
+          (appName !== 'Netscape' || nAgt.indexOf('Trident/') === -1) && //is not MS IE11 
+          (appName !== 'Netscape' || nAgt.indexOf('Edge') === -1) && // is not edge 
+          (nAgt.indexOf('Chrome') === -1) && // is not chrome 
+          (nAgt.indexOf('Safari') !== -1) //is Safari 
+      ){ 
+          return true; 
+      } 
+      return false; 
+  }; 
+  var hex2a = function (hex, offset, max) { 
+      var str = ''; 
+      if (!hex) 
+          return str; 
+      for (var i = offset; i < hex.length && i < offset + max; i++) 
+          str += String.fromCharCode(hex[i]); 
+      return str; 
+  }; 
+  var mediaPlayer = new AdobePSDK.MediaPlayer(); 
+  mediaPlayer.addEventListener( AdobePSDK.PSDKEventType.TIMED_METADATA_AVAILABLE ,function(event){ 
+      var td = event.timedMetadata; 
+      if(td.type == AdobePSDK.TimedMetadataType.ID3){ 
+          var md = td.metadata; 
+          var keySet = md.keySet; 
+          var onSafari = isSafari(); 
+          if(keySet && keySet.length){ 
+              var msg = ''; 
+              for(var j = 0; j < keySet.length; j++){ 
+                  var idTag = keySet[j]; 
+                  msg += idTag; 
+                  if(idTag.indexOf("T") == 0){ 
+                      /* text frame*/ 
+                      if(onSafari){ 
+                          /* text frame data is exposed in object format 
+                           * where corresponding text data is exposed through 
+                           * data key of text frame data object 
+                           * */ 
+                          var frameDataObject = md.getObject(idTag); 
+                          msg += " : " + frameDataObject.data; 
+                      } else { 
+                          var buff = md.getByteArray(idTag); 
+                          msg += " : " + hex2a(buff, 0, buff.length - 1); 
+                      } 
+                  } 
+                  msg += " ; "; 
+              } 
+          } 
+      } 
+  }); 
+  ```
 
 * 使用 `MediaPlayerItem`的 `timedMetadata` 属性。
 
-   ```
-   var isSafari = function () { 
-       var nAgt = navigator.userAgent; 
-       var appName = navigator.appName; 
-       if ((nAgt.indexOf('MSIE') === -1) && //is not MS IE 
-           (appName !== 'Netscape' || nAgt.indexOf('Trident/') === -1) && //is not MS IE11 
-           (appName !== 'Netscape' || nAgt.indexOf('Edge') === -1) && // is not edge 
-           (nAgt.indexOf('Chrome') === -1) && // is not chrome 
-           (nAgt.indexOf('Safari') !== -1) //is Safari 
-       ){ 
-           return true; 
-       } 
-       return false; 
-   }; 
-   var hex2a = function (hex, offset, max) { 
-       var str = ''; 
-       if (!hex) 
-           return str; 
-       for (var i = offset; i < hex.length && i < offset + max; i++) 
-           str += String.fromCharCode(hex[i]); 
-       return str; 
-   }; 
-   var timedMetadataList = player.currentItem.timedMetadata; 
-   for(var i = 0; i < timedMetadataList.length; i++){ 
-       var td = timedMetadataList[i]; 
-       if(td.type == AdobePSDK.TimedMetadataType.ID3){ 
-           var md = td.metadata; 
-           var keySet = md.keySet; 
-           var onSafari = isSafari(); 
-           if(keySet && keySet.length){ 
-               var msg = ''; 
-               for(var j = 0; j < keySet.length; j++){ 
-                   var idTag = keySet[j]; 
-                   msg += idTag; 
-                   if(idTag.indexOf("T") == 0){ 
-                       /* text frame*/ 
-                       if(onSafari){ 
-                           /* text frame data is exposed in object format 
-                            * where corresponding text data is exposed through 
-                            * data key of text frame data object 
-                            * */ 
-                           var frameDataObject = md.getObject(idTag); 
-                           msg += " : " + frameDataObject.data; 
-                       } else { 
-                           var buff = md.getByteArray(idTag); 
-                           msg += " : " + hex2a(buff, 0, buff.length - 1); 
-                       } 
-                   } 
-                   msg += " ; "; 
-               } 
-           } 
-       } 
-   } 
-   ```
+  ```
+  var isSafari = function () { 
+      var nAgt = navigator.userAgent; 
+      var appName = navigator.appName; 
+      if ((nAgt.indexOf('MSIE') === -1) && //is not MS IE 
+          (appName !== 'Netscape' || nAgt.indexOf('Trident/') === -1) && //is not MS IE11 
+          (appName !== 'Netscape' || nAgt.indexOf('Edge') === -1) && // is not edge 
+          (nAgt.indexOf('Chrome') === -1) && // is not chrome 
+          (nAgt.indexOf('Safari') !== -1) //is Safari 
+      ){ 
+          return true; 
+      } 
+      return false; 
+  }; 
+  var hex2a = function (hex, offset, max) { 
+      var str = ''; 
+      if (!hex) 
+          return str; 
+      for (var i = offset; i < hex.length && i < offset + max; i++) 
+          str += String.fromCharCode(hex[i]); 
+      return str; 
+  }; 
+  var timedMetadataList = player.currentItem.timedMetadata; 
+  for(var i = 0; i < timedMetadataList.length; i++){ 
+      var td = timedMetadataList[i]; 
+      if(td.type == AdobePSDK.TimedMetadataType.ID3){ 
+          var md = td.metadata; 
+          var keySet = md.keySet; 
+          var onSafari = isSafari(); 
+          if(keySet && keySet.length){ 
+              var msg = ''; 
+              for(var j = 0; j < keySet.length; j++){ 
+                  var idTag = keySet[j]; 
+                  msg += idTag; 
+                  if(idTag.indexOf("T") == 0){ 
+                      /* text frame*/ 
+                      if(onSafari){ 
+                          /* text frame data is exposed in object format 
+                           * where corresponding text data is exposed through 
+                           * data key of text frame data object 
+                           * */ 
+                          var frameDataObject = md.getObject(idTag); 
+                          msg += " : " + frameDataObject.data; 
+                      } else { 
+                          var buff = md.getByteArray(idTag); 
+                          msg += " : " + hex2a(buff, 0, buff.length - 1); 
+                      } 
+                  } 
+                  msg += " ; "; 
+              } 
+          } 
+      } 
+  } 
+  ```

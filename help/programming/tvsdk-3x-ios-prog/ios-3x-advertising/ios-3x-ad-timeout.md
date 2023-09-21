@@ -1,8 +1,7 @@
 ---
 description: 您可以使用Adobe Primetime广告决策界面在VOD和实时/线性内容中插入广告。
 title: 广告要求
-exl-id: b162e5b0-9f6c-46de-85de-97cec009a9b7
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '123'
 ht-degree: 0%
@@ -28,7 +27,7 @@ ht-degree: 0%
 @property (notatomic, assign) double adResolutionTimeout;
 ```
 
-在设置广告元数据时，您可以通过设置PTAdMetadata：：adResolutionTimeout来设置adResolutionTimeout。
+可以通过在设置广告元数据时设置PTAdMetadata：：adResolutionTimeout来设置adResolutionTimeout。
 
 ```
 // Create an instance of PTAuditudeMetadata and set its property
@@ -36,7 +35,7 @@ PTAuditudeMetadata *adMetadata = [[[PTAuditudeMetadata alloc] init]autorelease];
 adMetadata.adResolutionTimeout = 15 seconds
 ```
 
-随后在本节中讲述： [Primetime广告服务器元数据](/help/programming/tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-primetime-ad-serving-metadata/ios-3x-primetime-ad-serving-metadata.md).
+此后，请遵循以下章节： [Primetime广告服务器元数据](/help/programming/tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-primetime-ad-serving-metadata/ios-3x-primetime-ad-serving-metadata.md).
 
 **与AdManifest超时相关的API**
 
@@ -49,7 +48,7 @@ adMetadata.adResolutionTimeout = 15 seconds
  @property (notatomic, assign) double adManifestTimeout; 
 ```
 
-在设置广告元数据时，您可以通过设置PTAdMetadata：：adManifestTimeout来设置adManifestTimeout。
+可以通过在设置广告元数据时设置PTAdMetadata：：adManifestTimeout来设置adManifestTimeout。
 
 
 ```
@@ -58,4 +57,4 @@ PTAuditudeMetadata *adMetadata = [[[PTAuditudeMetadata alloc] init]autorelease];
 adMetadata.adManifestTimeout = 5 seconds
 ```
 
-随后在本节中讲述： [Primetime广告服务器元数据](/help/programming/tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-primetime-ad-serving-metadata/ios-3x-primetime-ad-serving-metadata.md).
+此后，请遵循以下章节： [Primetime广告服务器元数据](/help/programming/tvsdk-3x-ios-prog/ios-3x-advertising/ios-3x-primetime-ad-serving-metadata/ios-3x-primetime-ad-serving-metadata.md).

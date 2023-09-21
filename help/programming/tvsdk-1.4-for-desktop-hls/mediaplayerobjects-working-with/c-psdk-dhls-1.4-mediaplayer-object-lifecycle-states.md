@@ -1,8 +1,7 @@
 ---
-description: 从创建MediaPlayer实例的那一刻到终止（重用或删除）该实例的那一刻，此实例会完成一系列状态之间的过渡。
+description: 从创建MediaPlayer实例的那一刻到终止（重用或删除）该实例的那一刻，此实例会完成状态之间的一系列转换。
 title: MediaPlayer对象生命周期
-exl-id: 0f2f3699-b745-4b14-8b7e-68696960ccab
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '434'
 ht-degree: 0%
@@ -11,19 +10,19 @@ ht-degree: 0%
 
 # MediaPlayer对象生命周期{#mediaplayer-object-lifecycle}
 
-从创建MediaPlayer实例的那一刻到终止（重用或删除）该实例的那一刻，此实例会完成一系列状态之间的过渡。
+从创建MediaPlayer实例的那一刻到终止（重用或删除）该实例的那一刻，此实例会完成状态之间的一系列转换。
 
 仅当播放器处于特定状态时，才允许执行某些操作。 例如，调用 `play` 不允许在IDLE中。 只有在播放器达到“已准备”状态后，才能调用此状态。
 
-要使用状态，请执行以下操作：
+要处理状态，请执行以下操作：
 
-* 您可以检索的当前 `MediaPlayer` 对象 `MediaPlayer.status` 属性。
+* 您可以检索 `MediaPlayer` 对象 `MediaPlayer.status` 属性。
 
-   ```
-   function get status():String;
-   ```
+  ```
+  function get status():String;
+  ```
 
-* 状态列表定义于 `MediaPlayer.PlayerStatus`.
+* 状态列表在中定义 `MediaPlayer.PlayerStatus`.
 
 生命周期的状态转换图 `MediaPlayer` 实例：
 <!--<a id="fig_1C55DE3F186F4B36AFFDCDE90379534C"></a>-->
@@ -42,10 +41,10 @@ ht-degree: 0%
  <tbody> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 空闲 </span> </td> 
-   <td colname="col2"> <p> 您的应用程序通过实例化请求了一个新媒体播放器 <span class="codeph"> MediaPlayer </span>. 新创建的播放器正在等待您指定媒体播放器项目。 </p> </td> 
+   <td colname="col2"> <p> 您的应用程序通过实例化请求了新的媒体播放器 <span class="codeph"> MediaPlayer </span>. 新创建的播放器正在等待您指定媒体播放器项目。 </p> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> 正在初始化 </span> </td> 
+   <td colname="col1"> <span class="codeph"> 初始化 </span> </td> 
    <td colname="col2"> <p>您的应用程序调用了 <span class="codeph"> MediaPlayer.replaceCurrentResource </span>，并且媒体播放器正在加载。 </p> </td> 
   </tr> 
   <tr> 
@@ -54,31 +53,31 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 正在准备 </span> </td> 
-   <td colname="col2"> <p>您的应用程序调用了 <span class="codeph"> MediaPlayer.prepareToPlay </span>. 媒体播放器正在加载媒体播放器项目和相关资源。 </p> <p>提示：可能会出现主媒体的某种缓冲。 </p> <p>TVSDK正在准备媒体流并尝试执行广告解析和广告插入（如果已启用）。 </p> <p>提示：要将开始时间设置为非零值，请调用 <span class="codeph"> prepareToPlay(startTime) </span> 以毫秒为单位。 </p> </td> 
+   <td colname="col2"> <p>您的应用程序调用了 <span class="codeph"> MediaPlayer.prepareToPlay </span>. 媒体播放器正在加载媒体播放器项目和相关资源。 </p> <p>提示：可能会出现主媒体的某种缓冲。 </p> <p>TVSDK正在准备媒体流并尝试执行广告解析和广告插入（如果已启用）。 </p> <p>提示：要将开始时间设置为非零值，请调用 <span class="codeph"> prepareToPlay(startTime) </span> 以毫秒为单位的时间。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 已准备 </span> </td> 
-   <td colname="col2"> <p>内容已准备好，并且已在时间轴中插入广告，或者广告过程失败。 可以开始缓冲或播放。 </p> </td> 
+   <td colname="col2"> <p>内容已准备并且已在时间轴中插入广告，或者广告过程失败。 可以开始缓冲或播放。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 正在播放 </span> </td> 
-   <td colname="col2"> <p>您的应用程序已调用 <span class="codeph"> play </span>，因此TVSDK尝试播放视频。 某些缓冲可能会发生在视频实际播放之前。 </p> </td> 
+   <td colname="col2"> <p>您的应用程序已调用 <span class="codeph"> play </span>因此，TVSDK将尝试播放视频。 在实际播放视频之前，可能会发生一些缓冲。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 已暂停 </span> </td> 
-   <td colname="col2"> <p>当应用程序播放和暂停媒体时，媒体播放器会在此状态和“正在播放”之间移动。 </p> </td> 
+   <td colname="col2"> <p>当应用程序播放和暂停媒体时，媒体播放器会在此状态和“正在播放”之间切换。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 搜寻 </span> </td> 
-   <td colname="col2"> <p>媒体播放器在暂停或播放时正在查找正确的位置。 要确定搜寻何时开始或结束，请监听 <span class="codeph"> SeekEvent.SEEK_BEGIN </span> 和 <span class="codeph"> SeekEvent.SEEK_END </span> 事件。 </p> </td> 
+   <td colname="col2"> <p>媒体播放器在暂停或播放时正在寻找正确的位置。 要确定搜寻何时开始或结束，请侦听 <span class="codeph"> SeekEvent.SEEK_BEGIN </span> 和 <span class="codeph"> SeekEvent.SEEK_END </span> 事件。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 已完成 </span> </td> 
-   <td colname="col2"> <p>播放器到达流结尾，并且播放已停止。 </p> </td> 
+   <td colname="col2"> <p>播放器到达流结尾，播放已停止。 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 已发布 </span> </td> 
-   <td colname="col2"> <p>您的应用程序已发布媒体播放器，该播放器还会发布任何关联的资源。 您无法再使用此实例 </p> </td> 
+   <td colname="col2"> <p>您的应用程序已发布媒体播放器，该媒体播放器还会发布任何关联的资源。 您无法再使用此实例 </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 错误 </span> </td> 
@@ -89,4 +88,4 @@ ht-degree: 0%
 
 >[!TIP]
 >
->您可以使用状态提供对进程的反馈（例如，在等待下一个状态更改时进行微调），或者执行播放媒体的下一个步骤，例如，在调用下一个方法之前等待适当的状态。
+>您可以使用状态提供对进程的反馈（例如，在等待下一个状态更改时进行微调），或者执行播放媒体的下一个步骤，例如在调用下一个方法之前等待相应的状态。

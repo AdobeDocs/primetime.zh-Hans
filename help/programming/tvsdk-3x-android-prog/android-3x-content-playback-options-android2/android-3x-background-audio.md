@@ -2,8 +2,7 @@
 title: 启用背景音频
 description: 启用背景音频
 copied-description: true
-exl-id: 5bb72233-27d0-4968-b32c-c8d5ac5ac8c8
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '63'
 ht-degree: 0%
@@ -12,13 +11,13 @@ ht-degree: 0%
 
 # 启用背景音频 {#enable-background-audio}
 
-要在应用程序处于后台时启用音频播放，应用程序应调用 `enableAudioPlaybackInBackground` 当播放器处于“已准备”状态时，将true作为参数的MediaPlayer API。
+要在应用程序处于后台时启用音频播放，应用程序应调用 `enableAudioPlaybackInBackground` 当播放器处于“已准备”状态时，将true作为参数的MediaPlayer的API。
 
 ```
 _mediaPlayer.enableAudioPlaybackInBackground(true);
 ```
 
-当应用程序在响应电话等事件期间失去对音频焦点的保持时，应暂停播放。 以下代码段演示了如何实施 `OnAudioFocusChangeListener`：
+当应用程序在响应电话等事件期间失去对音频焦点的保持时，它应暂停播放。 以下代码片段演示了如何实施 `OnAudioFocusChangeListener`：
 
 ```
 /** 

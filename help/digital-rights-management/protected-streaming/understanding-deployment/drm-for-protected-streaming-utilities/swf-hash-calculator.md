@@ -1,8 +1,7 @@
 ---
-description: SWF哈希计算器实用程序计算位于文件中的SWF应用程序的摘要。
+description: SWF散列计算器实用程序计算位于文件中的SWF应用程序的摘要。
 title: SWF哈希计算器
-exl-id: 245254fe-2fcb-41e8-94bd-0cbc8b39b2b5
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '65'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # SWF哈希计算器{#swf-hash-calculator}
 
-SWF哈希计算器实用程序计算位于文件中的SWF应用程序的摘要。
+SWF散列计算器实用程序计算位于文件中的SWF应用程序的摘要。
 
 要运行哈希程序，请键入：
 
@@ -40,4 +39,4 @@ SWF Hash:
 </i class="+ topic>
 ```
 
-您可以使用此值来指定SWF摘要，位于 [!DNL flashaccess-tenant.xml].
+您可以使用此值在中指定SWF摘要 [!DNL flashaccess-tenant.xml].

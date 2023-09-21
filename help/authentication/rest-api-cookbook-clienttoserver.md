@@ -1,8 +1,7 @@
 ---
 title: REST API指南（客户端到服务器）
 description: Rest API指南客户端到服务器。
-exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 84a16ce775a0aab96ad954997c008b5265e69283
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '855'
 ht-degree: 0%

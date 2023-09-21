@@ -2,8 +2,7 @@
 title: 概述
 description: 概述
 copied-description: true
-exl-id: ba6e8fab-b199-4969-b372-06fa6d7a1e4a
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '672'
 ht-degree: 0%
@@ -30,7 +29,7 @@ java -jar AdobeLicenseGenerator.jar -m
 
 * `metadata`  — 包含Adobe Primetime DRM元数据。
 
-   您可以使用从受保护内容中检索此文件 `-d -m` 选项。
+  您可以使用从受保护的内容检索此文件 `-d -m` 选项。
 
 **显示以前生成的许可证：**
 
@@ -67,26 +66,26 @@ java -jar AdobeLicenseGenerator.jar -d
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-m metadata-filename</span> </td> 
-   <td colname="2" class="- topic/entry "> 指定需要为其生成许可证的内容元数据。 需要使用此选项来生成许可证。 </td> 
+   <td colname="2" class="- topic/entry "> 指定需要为其生成许可证的内容元数据。 要生成许可证，必须提供此选项。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> -noprompt</span> </td> 
-   <td colname="2" class="- topic/entry ">不要询问是否应该覆盖目标文件。 如果目标文件已存在，并且 <span class="codeph"> -o</span> 尚未设置，发生错误。 </td> 
+   <td colname="2" class="- topic/entry ">不要询问是否应覆盖目标文件。 如果目标文件已存在，并且 <span class="codeph"> -o</span> 尚未设置，发生错误。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="codeph"> -o</span> </td> 
    <td colname="2" class="- topic/entry "> 如果目标文件已存在，则无需提示即可将其覆盖。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-policy policy policy-num</span> </td> 
-   <td colname="2" class="- topic/entry "> <p>如果元数据包括多个DRM策略，则可以指定可用于生成许可证的DRM策略数量。 </p> <p>如果不指定DRM策略的数目，则自动应用第一个DRM策略。 </p> </td> 
+   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-policy policy-num</span> </td> 
+   <td colname="2" class="- topic/entry "> <p>如果元数据包括多个DRM策略，则可以指定可用于生成许可证的DRM策略数。 </p> <p>如果不指定DRM策略的数目，将自动应用第一个DRM策略。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-r recipient-cer</span> </td> 
-   <td colname="2" class="- topic/entry ">为指定的收件人生成许可证。 您可以使用设备或域证书，并且可以指定多个 <span class="+ topic/ph pr-d/codeph codeph"> -r </span>选项来为多个收件人创建许可证。 </td> 
+   <td colname="2" class="- topic/entry ">为指定的收件人生成许可证。 您可以使用设备或域证书，也可以指定多个 <span class="+ topic/ph pr-d/codeph codeph"> -r </span>选项来为多个收件人创建许可证。 </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
-   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-root-filename</span> </td> 
+   <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">-root root-filename</span> </td> 
    <td colname="2" class="- topic/entry "> 生成根许可证并将输出保存到指定的文件中。 </td> 
   </tr> 
  </tbody> 
@@ -94,7 +93,7 @@ java -jar AdobeLicenseGenerator.jar -d
 
 ## 配置文件属性 {#configuration-file-properties}
 
-在运行许可证生成器之前，需要为配置文件中的许可证生成器属性指定值。
+运行许可证生成器之前，需要为配置文件中的许可证生成器属性指定值。
 
 >[!NOTE]
 >
@@ -114,31 +113,31 @@ java -jar AdobeLicenseGenerator.jar -d
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph"> licensegen.keyServerCert</span> </td> 
-   <td colname="2" class="- topic/entry "> Key Server证书，这是Key Server使用的Adobe颁发的License Server证书。 仅当元数据/DRM策略指示需要密钥服务器才能将密钥交付到iOS设备时，才应用此证书。 </td> 
+   <td colname="2" class="- topic/entry "> Key Server证书，这是Key Server使用的Adobe颁发的License Server证书。 仅当元数据/DRM策略指示需要密钥服务器才能将密钥交付到iOS设备时，才会应用此证书。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph"> licensegen.sign.certfile</span> </td> 
-   <td colname="2" class="- topic/entry "> 包含用于签署许可证的许可证服务器凭据的PKCS12文件。 此属性需要引用包含证书和私钥的.pfx文件。 </td> 
+   <td colname="2" class="- topic/entry "> 包含用于签名许可证的许可证服务器凭据的PKCS12文件。 此属性需要引用包含证书和私钥的.pfx文件。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph"> licensegen.sign.certpass</span> </td> 
-   <td colname="2" class="- topic/entry ">用于保护指定文件的密码 <span class="+ topic/ph pr-d/codeph codeph"> licensegen.sign.certfile</span> 选项。 </td> 
+   <td colname="2" class="- topic/entry ">用于保护您指定的文件的密码 <span class="+ topic/ph pr-d/codeph codeph"> licensegen.sign.certfile</span> 选项。 </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="+ topic/ph pr-d/codeph codeph">licensegen.domainca.n</span> </td> 
-   <td colname="2" class="- topic/entry "> <p>如果您生成绑定域的许可证，则必须指定一个或多个域CA证书，以指示许可证颁发者可以信任的域颁发机构。 </p> <p>如果许可证收件人是由指定的域CA之一颁发的域证书，则无法生成许可证。 此属性指定 <span class="filepath"> .cer</span> 包含PEM或DER格式证书的文件。 <span class="codeph">n</span> 必须从1开始单调增加。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>如果您生成绑定域的许可证，则必须指定一个或多个域CA证书以指示许可证颁发者可以信任的域颁发机构。 </p> <p>如果许可证收件人是由指定的域CA之一颁发的域证书，则无法生成许可证。 此属性指定 <span class="filepath"> .cer</span> 包含PEM或DER格式的证书的文件。 <span class="codeph">n</span> 必须从1开始单调增加。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 
     <code>licensegen.keys.asymmetric. licenseServerCredential.n</code>
    </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">可选的PKCS12文件，该文件包含用于解密元数据和DRM策略中的CEK的附加许可证服务器凭据。 如果内容先前已打包有许可证服务器证书，而不是那些已指定的凭据，则可以配置其他凭据 <span class="codeph"> licensegen.sign.certfile</span>. 此属性需要引用 <span class="filepath"> .pfx</span> 包含证书和私钥的文件。 <span class="codeph">n</span> 必须从1开始单调增加。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">可选的PKCS12文件，该文件包含用于解密元数据和DRM策略中的CEK的附加许可证服务器凭据。 如果内容先前已打包有许可证服务器证书，而并非那些已使用指定的凭据，则可以配置其他凭据 <span class="codeph"> licensegen.sign.certfile</span>. 此属性需要引用 <span class="filepath"> .pfx</span> 包含证书和私钥的文件。 <span class="codeph">n</span> 必须从1开始单调增加。 </p> </td> 
   </tr> 
   <tr rowsep="0" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 
     <code>licensegen.keys.asymmetric. licenseServerCredential.n.password</code>
    </td> 
-   <td colname="2" class="- topic/entry "> <p>应用密码以保护您使用指定的文件<span class="+ topic/ph pr-d/codeph codeph"> licensegen.keys.asymmetric.licenseServerCredential.n</span> 属性。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p>应用密码是为了保护您使用<span class="+ topic/ph pr-d/codeph codeph"> licensegen.keys.asymmetric.licenseServerCredential.n</span> 属性。 </p> </td> 
   </tr> 
  </tbody> 
 </table>

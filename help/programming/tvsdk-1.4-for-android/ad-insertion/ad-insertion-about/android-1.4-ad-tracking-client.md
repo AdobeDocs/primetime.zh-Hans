@@ -1,8 +1,7 @@
 ---
 description: TVSDK会自动跟踪VOD和实时/线性流播放的广告。
 title: 客户端广告跟踪
-exl-id: eebe576c-3854-4718-9bff-341f660dd0b7
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '48'
 ht-degree: 0%

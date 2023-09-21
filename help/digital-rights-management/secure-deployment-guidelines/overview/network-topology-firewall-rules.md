@@ -1,8 +1,7 @@
 ---
 description: 在确定防火墙规则时，请考虑以下类型的URL
 title: 防火墙规则
-exl-id: 3f6f6d1a-5759-43b3-9f62-6feb02e0a5c5
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '370'
 ht-degree: 0%
@@ -40,7 +39,7 @@ ht-degree: 0%
      <li id="li_01B2E17BF4DB456383FD6E18E9DE28F5"><span class="filepath"> /flashaccess/authn/v5/*</span> </li> 
      <li id="li_096D349CCD7945B387CB80C3E99063C7"><span class="filepath"> /flashaccess/authn/v6/*</span> </li> 
     </ul> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">用于验证用户。 </p> <p>如果您使用Adobe Primetime DRM客户端API进行用户身份验证，则必须访问此URL。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">用于验证用户。 </p> <p>如果您使用Adobe Primetime DRM客户端API进行用户身份验证，则必须可访问此URL。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 
@@ -71,7 +70,7 @@ ht-degree: 0%
      <li id="li_CF7590FDAF694EDF9685434BE8EE10CA"><span class="filepath"> /flashaccess/domain/v5</span> </li> 
      <li id="li_CA73424FDFAA4BD8BBE2C1AD165D2C31"><span class="filepath"> /flashaccess/domain/v6/*</span> </li> 
     </ul> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">注册域。 </p> <p>如果您实施域支持，则必须访问此URL。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">注册域。 </p> <p>如果您实施域支持，则必须能够访问此URL。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "> 
@@ -81,7 +80,7 @@ ht-degree: 0%
      <li id="li_C761F14F3C97479CBA5C255739E01A28"><span class="filepath"> /flashaccess/dereg/v5</span> </li> 
      <li id="li_23A8AABE7499488EB61B7ED27CC65098"><span class="filepath"> /flashaccess/dereg/v6/*</span> </li> 
     </ul> </td> 
-   <td colname="2" class="- topic/entry "> <p class="- topic/p ">注销域。 </p> <p>如果您实施域支持，则必须访问此URL。 </p> </td> 
+   <td colname="2" class="- topic/entry "> <p class="- topic/p ">注销域。 </p> <p>如果您实施域支持，则必须能够访问此URL。 </p> </td> 
   </tr> 
   <tr rowsep="1" class="- topic/row "> 
    <td colname="1" class="- topic/entry "><span class="filepath"> /flashaccess/headerconversion/v1/*</span> </td> 

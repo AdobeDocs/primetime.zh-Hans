@@ -1,8 +1,7 @@
 ---
 title: 如何提出隐私请求
 description: 如何提出隐私请求
-exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
-source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '586'
 ht-degree: 0%
@@ -13,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 ## 标识符和命名空间 {#identifier-namespace}
 
@@ -21,10 +20,10 @@ ht-degree: 0%
 
 * **mvpdID** - MVPD的唯一标识符。
 * **userID**  — 唯一标识程序员应用程序的用户，但源自MVPD。 请参阅程序员概述中的了解用户ID 。
-* **IMSOrgID** - Adobe Experience Cloud Identity Management服务组织ID，用于在Adobe Experience Cloud中唯一标识客户
+* **Imsrogid** - Adobe Experience Cloud Identity Management服务组织ID，用于在Adobe Experience Cloud中唯一标识客户
 
 
-请检查以下示例：
+请检查下面的示例：
 
 ```JSON
 "userIDs": [{
@@ -52,7 +51,7 @@ Primetime身份验证支持访问和删除请求。
 
 **请求示例**
 
-您必须上载包含要为其提交数据访问请求的Primetime身份验证标识符的JSON。 要了解格式正确的JSON是什么样的，请参阅以下示例：
+您必须上载包含要为其提交数据访问请求的Primetime身份验证标识符的JSON。 要查看格式正确的JSON的外观，请参阅以下示例：
 
 ```JSON
 {
@@ -132,7 +131,7 @@ Primetime身份验证支持访问和删除请求。
 
 ### 删除 {#delete-req}
 
-您必须上载包含要为其提交数据删除请求的Primetime身份验证标识符的JSON。 要了解格式正确的JSON是什么样的，请参阅以下示例：
+您必须上载包含要为其提交数据删除请求的Primetime身份验证标识符的JSON。 要查看格式正确的JSON的外观，请参阅以下示例：
 
 **请求示例**
 
@@ -164,7 +163,7 @@ Primetime身份验证支持访问和删除请求。
 
 对于Delete请求：
 
-* 我们只分享已删除数据的收据，而不是包含已删除所有数据的汇总文件。
+* 我们只分享已删除数据的回执，而不是包含所有已删除数据的汇总文件。
 * 响应中包含的收据包含为该数据主体找到的身份验证和授权令牌总数的摘要。
 
 ```JSON
@@ -219,24 +218,24 @@ Primetime身份验证支持访问和删除请求。
 
 ## 如何触发请求 {#trigger-req}
 
-客户可通过以下两个选项将隐私请求发送到Adobe：
+客户可以使用2个选项将隐私请求发送到Adobe：
 
 * **手动**  — 通过使用 [Privacy Service用户界面](#privacy-service-ui)
-* **自动**  — 通过使用 [PRIVACY SERVICEAPI ](#privacy-service-api)
+* **自动**  — 通过使用 [PRIVACY SERVICEAPI](#privacy-service-api)
 
-### 使用Privacy ServiceUI {#privacy-service-ui}
+### 通过使用Privacy ServiceUI {#privacy-service-ui}
 
-A [完成教程](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) 有关如何访问和使用Privacy Service用户界面的信息，可通过Adobe I/O服务在线获得。 此外，客户可以使用此链接访问有关隐私法规的视频和文章库。 单击Adobe Experience Cloud和GDPR菜单。 该操作将打开多个视频 — “GDPR UI操作说明”介绍了其使用方法。
+A [完成教程](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) 有关如何访问和使用Privacy Service用户界面的信息，可通过Adobe I/O服务在线获取。 此外，客户可以使用此链接访问有关隐私法规的视频和文章库。 单击Adobe Experience Cloud和GDPR菜单。 该操作将打开多个视频 — “GDPR UI操作说明”将介绍其使用方法。
 
 在UI中，客户需要加载他们自己的IMSOrgID和包含每个产品的GDPR请求详细信息的JSON。
 
-### 使用Privacy ServiceAPI {#privacy-service-api}
+### 通过使用Privacy ServiceAPI {#privacy-service-api}
 
-Adobe Experience Platform Privacy Service为访问/删除请求和选择退出销售私人数据请求提供通用的、集中化的便利。
+Adobe Experience Platform Privacy Service为访问/删除请求和私人数据的选择退出销售请求提供了通用的、集中的简化操作。
 
 此 **Privacy ServiceAPI文档** 深入介绍了Adobe客户如何与AdobeAPI集成。
 
-**使用Postman（一种免费的第三方软件）可视化API调用：**
+**使用Postman（免费的第三方软件）可视化API调用：**
 
 * [GitHub上的Privacy ServiceAPI Postman收藏集](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
 * [有关创建Postman环境的视频指南](https://video.tv.adobe.com/v/28832)
@@ -253,7 +252,7 @@ Adobe Experience Platform Privacy Service为访问/删除请求和选择退出�
 **必需的标头：**
 
 * 所有调用都需要标头 `Authorization`， `x-gw-ims-org-id`、和 `x-api-key`. 有关如何获取这些值的更多信息，请参见 **身份验证教程**.
-* 请求正文中具有有效负载的所有请求(例如POST、PUT和PATCH调用)必须包含标头 `Content-Type` 具有值 `application/json`.
+* 所有在请求正文中具有有效负载的请求(例如POST、PUT和PATCH调用)都必须包含标头 `Content-Type` 值为 `application/json`.
 
 <!--
 

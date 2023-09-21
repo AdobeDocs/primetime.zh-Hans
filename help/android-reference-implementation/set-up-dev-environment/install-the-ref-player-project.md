@@ -1,8 +1,7 @@
 ---
 description: TVSDK Primetime参考是一个围绕TVSDK和AVE框架构建的Android应用程序。
 title: 构建Primetime引用实施
-exl-id: d2950f2b-06d7-4fc8-a031-5f058ce47545
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '216'
 ht-degree: 0%
@@ -13,7 +12,7 @@ ht-degree: 0%
 
 TVSDK Primetime参考是一个围绕TVSDK和AVE框架构建的Android应用程序。
 
-要在Eclipse中设置并构建Primetime引用项目，请执行以下操作：
+要在Eclipse中设置和构建Primetime参考项目，请执行以下操作：
 
 1. 下载TVSDK Android zip文件，并将其解压缩到您会记住的某个位置的目录中。
 1. 启动Eclipse。
@@ -26,12 +25,12 @@ TVSDK Primetime参考是一个围绕TVSDK和AVE框架构建的Android应用程�
 1. 选择  **[!UICONTROL Project]** > **[!UICONTROL Build Project]** 以构建项目。
 
    如果项目设置为自动生成，则不需要执行此步骤。
-1. 如果要将测试项目包含在工作区中，请将测试项目与PrimetimeReference项目关联：
+1. 如果要在工作区中包含测试项目，请将测试项目与PrimetimeReference项目关联：
    1. 重复步骤3。 到6。
    1. 选择要导入的以下项目： `PrimetimeReference\tests`.
    1. 单击 **[!UICONTROL Finish]**.
 
-      测试项目依赖于CatalogActivity项目，因此您需要将测试项目与CatalogActivity项目关联。
+      测试项目与CatalogActivity项目存在依赖关系，因此您需要将测试项目与CatalogActivity项目关联。
    1. 右键单击 **[!UICONTROL tests]** 并选择 **[!UICONTROL Properties]**.
    1. 选择 **[!UICONTROL Projects]** 选项卡。
    1. 单击 **[!UICONTROL Add...]**

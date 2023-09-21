@@ -1,15 +1,14 @@
 ---
 description: 您可以显示正在播放的内容的当前时间和剩余时间。
-title: 显示具有当前播放时间位置的搜寻清理栏
-exl-id: a8b34cf4-4dfd-4799-9408-87c4d60eff4c
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+title: 显示具有当前播放时间位置的搜寻拖移栏
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '62'
 ht-degree: 0%
 
 ---
 
-# 显示具有当前播放时间位置的搜寻清理栏 {#display-a-seek-scrub-bar-with-the-current-playback-time-position}
+# 显示具有当前播放时间位置的搜寻拖移栏 {#display-a-seek-scrub-bar-with-the-current-playback-time-position}
 
 您可以显示正在播放的内容的当前时间和剩余时间。
 

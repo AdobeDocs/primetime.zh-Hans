@@ -2,8 +2,7 @@
 title: 许可证嵌入程序概述
 description: 许可证嵌入程序概述
 copied-description: true
-exl-id: 8a58fbc2-179b-4b2e-83a9-fcbdbfb44a63
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '27'
 ht-degree: 0%
@@ -12,4 +11,4 @@ ht-degree: 0%
 
 # 许可证嵌入程序概述 {#license-embedder-overview}
 
-使用License Embedder命令行工具，您可以将预生成的许可证嵌入到使用Media Packager保护的内容中。
+使用许可证嵌入器命令行工具，您可以将预生成的许可证嵌入到使用Media Packager保护的内容中。

@@ -1,8 +1,7 @@
 ---
 description: 通过直接实例化MediaResource并加载要播放的视频内容来加载资源。 这是加载媒体资源的方法之一。
 title: 在MediaPlayer中加载媒体资源
-exl-id: 8258c45e-f8bf-434d-9621-88c189e1530d
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '244'
 ht-degree: 0%
@@ -23,20 +22,20 @@ ht-degree: 0%
    * 已准备
    * 错误
 
-      通过这些事件， `MediaPlayer` 成功加载媒体资源时，对象可以通知您的应用程序。
+     通过这些事件， `MediaPlayer` 当媒体资源成功加载时，对象可以通知您的应用程序。
 
 1. 当媒体播放器的状态变为“已初始化”时，您可以调用 `MediaPlayer.prepareToPlay`
 
-   INITIALIZED状态表示媒体已成功加载。 呼叫 `prepareToPlay` 启动广告解析和投放流程（如果有）。
+   INITIALIZED状态表示媒体已成功加载。 呼叫 `prepareToPlay` 开始广告解析和投放流程（如果有）。
 
 1. 当媒体播放器状态变为“已准备”时，媒体流已成功加载并准备播放。
 
    加载媒体流时， `MediaPlayerItem` 创建。
 
-如果发生故障，MediaPlayer将切换到ERROR状态。 它还会通过调度 `STATUS_CHANGED` 事件 `MediaPlayerStatusChangeEvent` 回调。
+如果发生故障，MediaPlayer将切换到ERROR状态。 它还会通过发送 `STATUS_CHANGED` 事件 `MediaPlayerStatusChangeEvent` 回调。
 
-这会传递多个参数：
-* A `type` 字符串类型的参数，其值为 `ERROR`.
+这传递了多个参数：
+* A `type` 字符串类型的参数值 `ERROR`.
 
 * A `MediaError` 用于获取包含有关错误事件的诊断信息的通知的参数。
 

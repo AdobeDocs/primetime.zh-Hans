@@ -1,8 +1,7 @@
 ---
 description: 您可以基于默认解析器实施自己的内容解析器。
 title: 实施自定义内容解析程序
-exl-id: 96468f6d-80ad-4721-8ed3-4dbfa2a64b9e
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '241'
 ht-degree: 0%
@@ -13,7 +12,7 @@ ht-degree: 0%
 
 您可以基于默认解析器实施自己的内容解析器。
 
-当TVSDK检测到新的机会时，它会遍历已注册的内容解析器，以查找能够解析该机会的机会。 选择返回true的第一个来解析机会。 如果没有任何内容解析程序能够运行，则会跳过该机会。 由于内容解析过程通常是异步的，因此内容解析器负责在过程完成时进行通知。
+当TVSDK检测到新的机会时，它会遍历已注册的内容解析器，以查找能够解析该机会的机会。 选择第一个返回true的用于解析商机。 如果没有任何内容解析程序能够解析内容，则会跳过该机会。 由于内容解析过程通常是异步的，因此内容解析器负责在过程完成时进行通知。
 
 1. 创建自定义 `AdvertisingFactory` 实例和覆盖 `createContentResolver`.
 
@@ -63,7 +62,7 @@ ht-degree: 0%
    ```
 
 1. 创建一个自定义广告解析程序类，以扩展 `ContentResolver` 类。
-   1. 在自定义广告解析程序中，覆盖此受保护的函数：
+   1. 在自定义广告解析程序中，覆盖此受保护函数：
 
       ```java
       void doResolveAds(Metadata metadata,  
@@ -76,7 +75,7 @@ ht-degree: 0%
 
       矢量可以为空，但不能为null。
 
-      此示例 `TimelineOperation` 提供结构 `AdBreakPlacement`：
+      此示例 `TimelineOperation` 为以下对象提供结构 `AdBreakPlacement`：
 
       ```java
       AdBreakPlacement(AdBreak.createAdBreak( 
@@ -89,7 +88,7 @@ ht-degree: 0%
       )
       ```
 
-   1. 解析广告后，调用以下函数之一：
+   1. 解决广告后，调用以下函数之一：
 
       * 如果广告解析成功： `notifyResolveComplete(Vector<TimelineOperation> proposals)`
       * 如果广告解析失败： `notifyResolveError(Error error)`
@@ -101,7 +100,6 @@ ht-degree: 0%
       metadata.setValue("NATIVE_ERROR_CODE", exception.getCause().toString()); 
       error.setMetadata(metadata);
       ```
-
 
 <!--<a id="example_4F0D7692A92E480A835D6FDBEDBE75E7"></a>-->
 
@@ -161,7 +159,7 @@ public class CustomAdResolver extends ContentResolver {
 } 
 ```
 
-vod的JSON广告服务器响应示例：
+VOD的JSON广告服务器响应示例：
 
 ```
 {     

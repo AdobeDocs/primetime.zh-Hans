@@ -1,8 +1,7 @@
 ---
 description: TVSDK调度媒体播放器项目事件以响应加载媒体项目。
 title: 加载器事件
-exl-id: ee5be2d4-5c77-4af4-b8fe-8cef18d7c0d9
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '122'
 ht-degree: 0%
@@ -13,9 +12,9 @@ ht-degree: 0%
 
 TVSDK调度媒体播放器项目事件以响应加载媒体项目。
 
-这些事件提供了一个替代工作流。 创建 `MediaPlayer`. 当您希望使用 `MediaPlayerItemLoader`.
+这些事件提供了替代工作流。 创建时，无需实施此接口 `MediaPlayer`. 当您想要拥有 `MediaPlayerItemLoader`.
 
-要收到与加载媒体播放器资源相关的事件的通知，请使用 `MediaPlayerItemLoader` 对象。
+要收到与加载媒体播放器资源相关的事件通知，请在注册以下事件的侦听器 `MediaPlayerItemLoader` 对象。
 
 | 事件 | 含义 |
 |---|---|

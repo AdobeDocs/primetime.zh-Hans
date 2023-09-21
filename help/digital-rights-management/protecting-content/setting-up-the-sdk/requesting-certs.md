@@ -2,8 +2,7 @@
 title: 请求证书
 description: 请求证书
 copied-description: true
-exl-id: f1777a9f-d709-47d9-bcf3-ecb9b0e93eb1
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '111'
 ht-degree: 0%

@@ -1,8 +1,7 @@
 ---
 description: 某些第三方广告（或创意）无法拼合到HTTP实时流(HLS)内容流中，因为其视频格式与HLS不兼容。 Primetime广告插入和TVSDK可以选择尝试将不兼容的广告重新打包到兼容的M3U8视频中。
 title: 使用AdobeCreative Repackaging Service重新打包不兼容的广告
-exl-id: 8c3e5baf-1941-4330-a4b7-61ed623dfd5e
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '467'
 ht-degree: 0%
@@ -13,7 +12,7 @@ ht-degree: 0%
 
 某些第三方广告（或创意）无法拼合到HTTP实时流(HLS)内容流中，因为其视频格式与HLS不兼容。 Primetime广告插入和TVSDK可以选择尝试将不兼容的广告重新打包到兼容的M3U8视频中。
 
-由不同的第三方提供的广告，例如代理广告服务器、库存合作伙伴或广告网络，通常以不兼容的格式投放，例如渐进式下载MP4。
+由不同第三方提供的广告，例如代理广告服务器、库存合作伙伴或广告网络，通常以不兼容的格式投放，例如渐进式下载MP4。
 
 当TVSDK首次遇到不兼容的广告时，播放器会忽略该广告并向创意重新打包服务(CRS)（Primetime广告插入后端的一部分）发出请求，以将广告重新打包为兼容格式。 CRS会尝试生成广告的多比特率M3U8演绎版，并将这些演绎版存储在Primetime内容交付网络(CDN)上。 下次TVSDK收到指向该广告的广告响应时，播放器将使用来自CDN的HLS兼容M3U8版本。
 
@@ -27,18 +26,18 @@ ht-degree: 0%
 
 由于以下原因，您可以使用多个CDN：
 
-* 需要针对大型查看事件进行扩展。
+* 对于大型查看事件的扩展要求。
 * 将CRS资产的CDN源与主内容的CDN源进行匹配的要求。
 
 您可以使用TVSDK URL转换器API转换CRS提供的默认URL。
 
 以下是TVSDK中的API添加内容：
 
-* `URLTransformer` 一个接口，用于描述转换TVSDK所请求的CRS和URL所需的方法。 应用程序可以实施此接口，并提供所需方法的实现。
+* `URLTransformer` 一个接口，用于描述转换TVSDK请求的CRS和URL所需的方法。 应用程序可以实施此接口，并提供所需方法的实现。
 
-* `DefaultURLTransformer` 在TVSDK中创建并实施的默认URL转换器实例 `URLTransformer` 界面。 应用程序可以覆盖此类或添加后置URL转换处理程序。 当应用程序希望在应用默认转换后对URL请求进行更改时，此处理程序很有用。
+* `DefaultURLTransformer` 在TVSDK中创建并实施 `URLTransformer` 界面。 应用程序可以覆盖此类或添加后置URL转换处理程序。 当应用程序希望在应用默认转换后对URL请求进行更改时，此处理程序很有用。
 
-* `NetworkConfiguration.setURLTransformer` Setter方法提供在 `NetworkConfiguration` 元数据实例，以设置 `URLTransformer` 实现。
+* `NetworkConfiguration.setURLTransformer` Setter方法提供在 `NetworkConfiguration` 元数据实例来设置 `URLTransformer` 实现。
 
 >[!IMPORTANT]
 >

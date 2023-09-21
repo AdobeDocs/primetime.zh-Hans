@@ -2,8 +2,7 @@
 title: 使用Media Packager
 description: 使用Media Packager
 copied-description: true
-exl-id: 910d7c46-341f-4331-981a-afbcba1dd8e4
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '48'
 ht-degree: 0%

@@ -1,8 +1,7 @@
 ---
-description: 事件和通知可帮助您管理视频应用程序的异步方面。
+description: 事件和通知帮助您管理视频应用程序的异步方面。
 title: 播放器状态、活动、错误和日志记录的通知和事件
-exl-id: 39149c41-920b-4016-9f31-83e772f41cab
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '480'
 ht-degree: 0%
@@ -11,9 +10,9 @@ ht-degree: 0%
 
 # 播放器状态、活动、错误和日志记录的通知和事件 {#notifications-and-events-for-player-status-activity-errors-and-logging}
 
-事件和通知可帮助您管理视频应用程序的异步方面。
+事件和通知帮助您管理视频应用程序的异步方面。
 
-`MediaPlayerStatus` 对象提供有关播放器状态更改的信息。 `Notification` 对象提供有关警告和错误的信息。 停止播放视频的错误也会导致播放器状态发生变化。 您可以实施事件侦听器来捕获和响应事件( `MediaPlayerEvent` 对象)。
+`MediaPlayerStatus` 对象提供有关播放器状态更改的信息。 `Notification` 对象提供有关警告和错误的信息。 停止播放视频的错误也会导致播放器的状态发生变化。 您可以实施事件侦听器来捕获和响应事件( `MediaPlayerEvent` 对象)。
 
 您的应用程序可以检索通知和状态信息。 使用此信息，您还可以创建用于诊断和验证的日志记录系统。
 
@@ -21,34 +20,34 @@ ht-degree: 0%
 
 `MediaPlayerNotification` 提供与播放器状态相关的信息。
 
-TVSDK提供了按时间顺序排列的 `MediaPlayerNotification` 通知，每个通知都包含以下信息：
+TVSDK按时间顺序列出了以下列表： `MediaPlayerNotification` 通知，每个通知都包含以下信息：
 
 * 时间戳
-* 包含以下元素的诊断元数据：
+* 诊断元数据包含以下元素：
 
    * `type`：信息、警告或错误。
    * `code`：通知的数值表示形式。
    * `name`：人类可读的通知描述，如SEEK_ERROR
-   * `metadata`：包含有关通知的相关信息的键/值对。 例如，一个名为的键 `URL` 提供一个值，该值为与通知相关的URL。
+   * `metadata`：包含有关通知的信息的键/值对。 例如，名为的键 `URL` 提供一个值，该值为与通知相关的URL。
 
    * `innerNotification`：对另一个的引用 `MediaPlayerNotification` 直接影响此通知的对象。
 
-您可以将此信息存储在本地，以供以后分析使用，也可以将其发送到远程服务器以进行日志记录和图形显示。
+您可以将此信息存储在本地，以供以后分析使用，也可以将其发送到远程服务器以供日志记录和图形显示。
 
 ## 设置通知系统 {#section_9E37C09ECFA54B3DA8D3AA9ED1BAFC17}
 
-您可以监听通知。
+您可以收听通知。
 
 Primetime播放器通知系统的核心是 `Notification` 类，表示独立通知。
 
-要接收通知，请监听如下通知：
+要接收通知，请按如下方式收听通知：
 
 1. 实施 `NotificationEventListener.onNotification()` 回调。
-1. TVSDK传递 `NotificationEvent` 对象。
+1. TVSDK传递 `NotificationEvent` 回调的对象。
 
    >[!NOTE]
    >
-   >通知类型列于 `Notification.Type` 枚举：
+   >通知类型列在 `Notification.Type` 枚举：
 
    * `ERROR`
    * `INFO`
@@ -58,7 +57,7 @@ Primetime播放器通知系统的核心是 `Notification` 类，表示独立通�
 
 您可以使用通知在视频应用程序中实施实时日志记录。
 
-通知系统允许您收集日志记录和调试信息以进行诊断和验证，而不会给系统带来压力。
+通知系统允许您收集用于诊断和验证的日志记录和调试信息，而不用加重系统压力。
 
 >[!IMPORTANT]
 >
@@ -66,7 +65,7 @@ Primetime播放器通知系统的核心是 `Notification` 类，表示独立通�
 
 以下是如何检索通知的示例：
 
-1. 为您的视频应用程序创建一个基于计时器的执行线程，定期查询TVSDK通知系统收集的数据。
+1. 为视频应用程序创建一个基于计时器的执行线程，定期查询TVSDK通知系统收集的数据。
 1. 如果计时器的间隔太大，而事件列表的大小太小，则通知事件列表将溢出。
 
    >[!NOTE]
@@ -77,11 +76,10 @@ Primetime播放器通知系统的核心是 `Notification` 类，表示独立通�
    >
    >1. 增加通知列表的大小。
 
-
 1. 以JSON格式序列化最新的通知事件条目，并将这些条目发送到远程服务器进行后处理。
 
    >[!NOTE]
    >
-   >远程服务器可以实时地以图形方式显示提供的数据。
+   >远程服务器可以实时地以图形方式显示所提供的数据。
 
 1. 要检测通知事件丢失，请查找事件索引值序列中的间隔。

@@ -2,8 +2,7 @@
 title: 加密内容
 description: 加密内容
 copied-description: true
-exl-id: c6b5d8c7-eda4-40c0-a609-0ebfeba90c04
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '223'
 ht-degree: 0%
@@ -18,12 +17,12 @@ ht-degree: 0%
 
 1. 设置开发环境，并包含中提到的所有JAR文件 *设置开发环境* 在您的项目中。
 1. 创建 `ServerCredential` 用于加载签名所需的凭据的实例。
-1. 创建 `MediaEncrypter` 实例。 使用 `MediaEncryperFactory` 如果您不知道您拥有的文件类型。
+1. 创建 `MediaEncrypter` 实例。 使用 `MediaEncryperFactory` 如果您不知道您拥有的文件类型，
 
-1. 通过使用 `DRMParameters` 对象。
+1. 使用 `DRMParameters` 对象。
 1. 使用设置签名选项 `SignatureParameters` 对象并传递 `ServerCredential` 实例到其 `setServerCredentials` 方法。
 
-1. 使用设置密钥和许可证信息 `V2KeyParameters` 对象。 使用设置DRM策略 `setPolicies` 方法。 通过调用 `setLicenseServerUrl` 和 `setLicenseServerTransportCertificate` 方法。 使用设置CEK加密选项 `setKeyProtectionOptions` 方法，及其自定义属性 `setCustomProperties` 方法。 最后，根据使用的加密类型，强制转换 `DRMKeyParameters` 对象到相应的类型( `VideoDRMParameters`， `AudioDRMParameters`)，并设置加密选项。
+1. 使用设置密钥和许可证信息 `V2KeyParameters` 对象。 使用设置DRM策略 `setPolicies` 方法。 通过调用 `setLicenseServerUrl` 和 `setLicenseServerTransportCertificate` 方法。 使用设置CEK加密选项 `setKeyProtectionOptions` 方法，以及使用 `setCustomProperties` 方法。 最后，根据使用的加密类型，强制转换 `DRMKeyParameters` 对象到相应的类型( `VideoDRMParameters`， `AudioDRMParameters`)，并设置加密选项。
 
 1. 通过将输入和输出文件以及加密选项传递到 `MediaEncrypter.encryptContent` 方法。
 

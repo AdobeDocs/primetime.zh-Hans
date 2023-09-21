@@ -2,8 +2,7 @@
 title: 概述
 description: 概述
 copied-description: true
-exl-id: 07f2ef0b-c6aa-4574-a3ae-18685a090cf2
-source-git-commit: a1fc67b708f3d5821532d3827639adbadf15f6b4
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '203'
 ht-degree: 0%
@@ -12,13 +11,13 @@ ht-degree: 0%
 
 # AIR发布者ID实用程序 {#air-publisher-id-utility}
 
-在构建AIR文件时，AIR开发人员工具(ADT)会自动生成发布者ID。 AIR发布者ID实用程序( [!DNL AdobePublisherIDUtility.jar])计算AIR应用程序的发布者ID。
+当您构建AIR文件时，AIR Developer Tool (ADT)会自动生成发布者ID。 AIR发布者ID实用程序( [!DNL AdobePublisherIDUtility.jar])计算AIR应用程序的发布者ID。
 
-发布者ID对于您用于构建AIR文件的证书是唯一的。 如果您对多个AIR应用程序重用同一证书，则所有AIR应用程序都具有相同的发布者ID。 在版本1.5.2之后的AIR版本不会将生成的发布者ID添加到文件中。 因此，如果您计划使用AIR应用程序允许列表，请使用此工具确定发布者ID。
+发布者ID对于您用于构建AIR文件的证书是唯一的。 如果您为多个AIR应用程序重用同一证书，则所有AIR应用程序都具有相同的发布者ID。 在版本1.5.2之后发行的AIR版本不会将生成的发布者ID添加到文件中。 因此，如果您计划使用AIR应用程序允许列表，请使用此工具确定发布者ID。
 
 >[!NOTE]
 >
->用于AIR允许列表实施的发布者ID与应用程序发布者在应用程序的 [!DNL application.xml] 文件。
+>用于实施AIR允许列表的发布者ID与应用程序发布者在应用程序的 [!DNL application.xml] 文件。
 
 ## AIR发布者ID实用程序命令行用法 {#air-publisher-id-utility-command-line-usage}
 
@@ -35,7 +34,7 @@ java -jar AdobePublisherIDUtility.jar
 </i class="+ topic>
 ```
 
-* `signaturefile` 指定AIR应用程序的路径 [!DNL signatures.xml] 文件，位于应用程序 [!DNL META-INF] 目录
+* `signaturefile` 指定AIR应用程序的 [!DNL signatures.xml] 文件，位于应用程序 [!DNL META-INF] 目录
 
 * `signingcert` 指定用于签署AIR应用程序的证书
 

@@ -1,8 +1,7 @@
 ---
 description: Video Analytics报表被路由到Adobe Analytics报表平台。
 title: 访问视频分析报表
-exl-id: bded0b5c-8b87-42ed-8a14-412aedce299d
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '60'
 ht-degree: 0%
@@ -14,6 +13,6 @@ ht-degree: 0%
 Video Analytics报表被路由到Adobe Analytics报表平台。
 
 有关Adobe Analytics设置的更多信息，请参阅 [Adobe Analytics](https://microsite.omniture.com/t2/help/en_US/reference/) 文档。
-1. 选择启用视频跟踪的RSID。
+1. 选择已启用视频跟踪的RSID。
 1. 单击 **[!UICONTROL Video]** > **[!UICONTROL Video Engagement]** > **[!UICONTROL Video Overview]**.
 1. 选择视频剪辑。

@@ -1,8 +1,7 @@
 ---
-description: 要接收有关时间线更新的通知，请注册适当的事件侦听器。
+description: 要接收有关时间线更新的通知，请注册相应的事件侦听器。
 title: 为TimelineUpdatedEvent添加侦听器
-exl-id: 7b55beb5-fd84-4144-8d02-bbd998f99e3a
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '47'
 ht-degree: 0%
@@ -11,10 +10,10 @@ ht-degree: 0%
 
 # 为TimelineUpdatedEvent添加侦听器{#add-listeners-for-timelineupdatedevent}
 
-要接收有关时间线更新的通知，请注册适当的事件侦听器。
+要接收有关时间线更新的通知，请注册相应的事件侦听器。
 
 每次更新时间线时， `MediaPlayer` 调度 `AdobePSDK.TimelineEvent` 带有类型 `AdobePSDK.PSDKEventType.TIMELINE_UPDATED`.
-1. 实施相应的侦听器。
+1. 实施相应的监听程序。
 
    ```js
    function onTimelineUpdatedEvent(event) { 

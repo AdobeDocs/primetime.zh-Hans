@@ -1,8 +1,7 @@
 ---
-description: 浏览器TVSDK以XML格式向Adobe发送计费量度。
+description: 浏览器TVSDK以XML格式向Adobe发送计费指标。
 title: 传输计费指标
-exl-id: f6ed72be-a5a8-48f2-b518-76c710300ea7
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '61'
 ht-degree: 0%
@@ -11,11 +10,11 @@ ht-degree: 0%
 
 # 传输计费指标{#transmit-billing-metrics}
 
-浏览器TVSDK以XML格式向Adobe发送计费量度。
+浏览器TVSDK以XML格式向Adobe发送计费指标。
 
 <!--<a id="example_13ABDB1CC0B549968A534765378DA3A0"></a>-->
 
-如果您使用网络捕获工具来监视Browser TVSDK传输到Adobe的统计信息，您应该会看到以下单位：
+如果您使用网络捕获工具来监视Browser TVSDK传输到Adobe的统计信息，您应该会看到以下单元：
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -39,4 +38,4 @@ ht-degree: 0%
 </request>
 ```
 
-布尔属性 `drmProtected`， `adsEnabled`、和 `midrollEnabled` 仅在为真时显示。
+布尔值属性 `drmProtected`， `adsEnabled`、和 `midrollEnabled` 仅当它们为true时才显示。

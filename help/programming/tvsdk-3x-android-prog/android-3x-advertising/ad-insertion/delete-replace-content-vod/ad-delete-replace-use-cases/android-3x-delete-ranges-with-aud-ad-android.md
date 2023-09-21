@@ -1,8 +1,7 @@
 ---
-description: 您可以从时间线中移除localTime中开始和结束时间之间的TimeRanges。
+description: 您可以从时间线中移除在localTime中开始和结束之间的TimeRanges。
 title: 删除范围
-exl-id: afa2f520-144f-47b4-b271-50c8e4d138d8
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '71'
 ht-degree: 0%
@@ -11,15 +10,15 @@ ht-degree: 0%
 
 # 删除范围 {#delete-ranges}
 
-您可以删除 `TimeRanges` 介于 `begin` 和 `end` 在 `localTime` 从时间线。
+您可以删除 `TimeRanges` 介于 `begin` 和 `end` 在 `localTime` 从时间线中。
 
 >[!TIP]
 >
->要仅从内容中删除某些范围，请创建 `CustomRangeMetadata` 实例并将类型指定为 `DELETE` 使用定义的自定义范围执行操作。
+>要仅从内容中删除某些范围，请创建 `CustomRangeMetadata` 实例并将类型指定为 `DELETE` 操作中所定义的自定义范围。
 
-广告映射的使用方式必须如广告服务器所定义。
+必须按照广告服务器的定义使用广告映射。
 
-1. 要删除包含Adobe Primetime ad decisioning广告的范围：
+1. 要删除包含Adobe Primetime ad decisioning广告的范围，请执行以下操作：
 
    ```
    {   

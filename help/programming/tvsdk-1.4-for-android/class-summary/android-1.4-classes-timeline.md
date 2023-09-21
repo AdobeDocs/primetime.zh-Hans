@@ -1,8 +1,7 @@
 ---
 description: 这些类提供有关特定媒体的时间轴的信息，包括广告的投放。
 title: 时间线类
-exl-id: bb879592-aef2-4adb-acbc-c927133a5cc5
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '226'
 ht-degree: 0%
@@ -25,7 +24,7 @@ ht-degree: 0%
  <tbody> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/PlacementOpportunity.html" format="html" scope="external"> PlacementOpportunity</a></span> </td> 
-   <td colname="2"> 机会类表示时间线上的兴趣点。 </td> 
+   <td colname="2"> 机会类表示时间线上的目标点。 </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/Timeline.html" format="html" scope="external"> 时间线</a> </td> 
@@ -36,8 +35,8 @@ ht-degree: 0%
    <td colname="2"> 班级。 时间线项目的通用不可变表示形式。 </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/TimelineMarker.html" format="html" scope="external"> 时间轴标记</a> </span> </td> 
-   <td colname="2"> 表示时间轴上标记的界面。 这标记了实际时间轴上的关注区域。 目前，感兴趣的区域是广告，例如，您可能希望在推移栏UI上使用不同的颜色标记这些广告。 每个标记均由位置和持续时间（以毫秒为单位）定义。 </td> 
+   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/TimelineMarker.html" format="html" scope="external"> 时间线标记</a> </span> </td> 
+   <td colname="2"> 表示时间轴上的标记的界面。 这会在实际时间线上标记感兴趣的区域。 目前，感兴趣的区域是广告，例如，您可能需要在搓擦条UI上使用不同的颜色标记这些广告。 每个标记由位置和持续时间（均以毫秒表示）定义。 </td> 
   </tr> 
   <tr rowsep="0"> 
    <td colname="1"><a href="https://help.adobe.com/en_US/primetime/api/psdk/javadoc_1.4/com/adobe/mediacore/timeline/TimelineOperation.html" format="html" scope="external"> 时间线操作</a> </td> 

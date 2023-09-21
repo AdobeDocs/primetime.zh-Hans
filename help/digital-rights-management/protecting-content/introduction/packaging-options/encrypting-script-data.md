@@ -2,8 +2,7 @@
 title: 加密脚本数据
 description: 加密脚本数据
 copied-description: true
-exl-id: aa5c43e0-400f-45a9-aecf-1ea421fe44e4
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '67'
 ht-degree: 0%
@@ -18,4 +17,4 @@ ht-degree: 0%
 >
 >此规则仅适用于FLV文件格式。 对于其他格式的文件，脚本数据始终保留在清除中。
 
-示例用例：使用此选项可保持脚本数据未加密，从而允许元数据聚合工具读取受保护内容的元数据。
+示例用例：使用此选项可保持脚本数据未加密，这样元数据聚合工具就可以读取受保护内容的元数据。

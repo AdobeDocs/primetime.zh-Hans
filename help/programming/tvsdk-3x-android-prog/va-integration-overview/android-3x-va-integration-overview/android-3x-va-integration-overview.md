@@ -1,8 +1,7 @@
 ---
-description: 通过将TVSDK与Adobe Analytics集成，您可以跟踪视频使用情况。
+description: 您可以通过将TVSDK与Adobe Analytics集成来跟踪视频使用情况。
 title: 将TVSDK与Adobe Analytics集成
-exl-id: d6e235ad-dffb-4503-bf6f-f7a780523791
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '128'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 将TVSDK与Adobe Analytics集成 {#integrating-tvsdk-with-adobe-analytics}
 
-通过将TVSDK与Adobe Analytics集成，您可以跟踪视频使用情况。
+您可以通过将TVSDK与Adobe Analytics集成来跟踪视频使用情况。
 
 TVSDK中的视频跟踪使用 **Adobe Analytics Video Essentials** 服务，用于提供视频参与量度，例如视频查看次数、视频完成次数、广告展示次数、视频逗留时间等。 有关此服务的更多信息，请与您的Adobe代表联系。
 

@@ -1,8 +1,7 @@
 ---
 title: PTAI 19.11.1发行说明
-description: PTAI 19.11.1发行说明介绍了2019年PrimetimeAd Insertion的新增或更改内容、已解决的问题和已知问题。
-exl-id: 0cc9067c-cd46-48f4-afa4-de8b15193723
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+description: PTAI 19.11.1发行说明介绍了2019年PrimetimeAd Insertion中的新增或更改内容、已解决问题和已知问题。
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '1971'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # PrimetimeAd Insertion19.11.1发行说明
 
-PrimetimeAd Insertion19.11.1发行说明介绍了2019年PrimetimeAd Insertion的新增或更改内容、已解决的问题和已知问题。
+PrimetimeAd Insertion19.11.1发行说明介绍了2019年PrimetimeAd Insertion中的新增或更改内容、已解决问题和已知问题。
 
 ## PTAI 19.11.1的新增功能
 
@@ -35,13 +34,13 @@ PrimetimeAd Insertion19.11.1发行说明介绍了2019年PrimetimeAd Insertion的
 
 ### 版本19.9.1
 
-**时间：** 2019年9月10日，星期二，东部时间半夜12点30分至2点00分
+**时间：** 东部时间2019年9月10日星期二半夜12点30分至2点00分
 
 安全更新
 
 ### 版本19.8.3
 
-**时间：** 2019年8月28日，星期三，半夜12:30 — 东部时间半夜01:30
+**时间：** 2019年8月28日，星期三半夜12:30 — 东部时间半夜01:30
 
 修复了以下错误：当广告区段转出DVR窗口时，Chromecast播放器意外退出播放。
 
@@ -62,7 +61,8 @@ PrimetimeAd Insertion19.11.1发行说明介绍了2019年PrimetimeAd Insertion的
       * 广告请求/响应
       * 插入的广告
       * 触发的信标（仅限服务器端跟踪）
-   * 您最多可以在进行SSAI会话后的30天内查找特定会话ID的活动
+
+   * 您可以在SSAI会话发生后的30天内查找特定会话ID的活动
    * 您可以导出事件
 * 数据库：安全更新
 
@@ -70,9 +70,9 @@ PrimetimeAd Insertion19.11.1发行说明介绍了2019年PrimetimeAd Insertion的
 
 **时间：** 7月10日，星期三
 
-* SSAI：对于在实时流中支持EXT-X-CUE-OUT广告时间信号的ptcueformat值，添加了通用宏以从EXT-X-ASSET标记中的属性传递数据#EXT-X-CUE-OUT示例：随附于SSAI标记的标记： #EXT-X-ASSET：CAID=75BCD15，GENRE=News，Program=NewsAt10宏： #可用于将新闻（从GENRE属性）传递到广告调用URL #可用于传递NewsAt10（从节目属性）到广告调用URL异常：为了向后兼容，#和#具有相同的功能。 在将值从十六进制转换为长整型后，两个宏都可用于传递CAID属性的值。在上例中，十六进制值75BCD15的long值是123456789。 这两个宏都可用来将123456789传递到广告调用URL。宏始终以#开头。 宏区分大小写，但EXT-X-ASSET标记中的属性不区分大小写。 即，EXT-X-ASSET标记中允许同时使用项目和项目
+* SSAI：对于在实时流中支持EXT-X-CUE-OUT广告时间信令的ptcueformat值，添加了通用宏以从EXT-X-ASSET标记中的属性传递数据。示例：随#EXT-X-CUE-OUT标记一起出现的标记： #EXT-X-ASSET：CAID=75BCD15，GENRE=News，Program=NewsAt10宏： #可用于将新闻（从GENRE属性）传递到广告调用URL #可用于传递NewsAt10（从节目属性）到广告调用URL异常：为了向后兼容，#和#具有相同的功能。 在将值从十六进制转换为长整型后，两个宏都可用于传递CAID属性的值。在上例中，十六进制值75BCD15的长整型值是123456789。 这两个宏都用于将123456789传递到广告调用URL。宏始终以#开头。 宏区分大小写，但EXT-X-ASSET标记中的属性不区分大小写。 即，EXT-X-ASSET标记中允许同时使用项目和项目
 * SSAI：特定客户的以下配置更改：
-   * 4分钟的滑动窗口（实时播放列表）长度
+   * 四分钟的滑动窗口（实时播放列表）长度
    * 如果清单服务器获取源内容时引发套接字超时异常，则清单服务器将返回HTTP响应代码(404)而不是500
 * 安全更新
 
@@ -86,11 +86,10 @@ PrimetimeAd Insertion19.11.1发行说明介绍了2019年PrimetimeAd Insertion的
 * CRS：来自Innovid的创意内容的标准化规则
    * 添加了由SSAI使用的Innovid的创意URL标准化规则
    * CRS使用的标准化规则已添加到以前的版本中
-   * TVSDK：要在CRS规则JSON中添加的标准化规则是在以前的版本之后提供的，但为了安全起见，请与您的技术客户经理联系以查看您已有的所有标准化规则。
-
-      >[!NOTE]
-      >
-      >大多数无创意的创意URL都将转码并成功拼合，而无需使用标准化规则。 但是，偶尔会遇到具有动态参数的无痕创意URL。 需要规范化规则来处理这些实例。
+   * TVSDK：要添加到CRS规则JSON中的标准化规则是在以前的版本之后提供的，但为安全起见，请与技术客户经理联系以查看您已有的所有标准化规则。
+     >[!NOTE]
+     >
+     >如果没有标准化规则，大多数没有创意的创意URL将成功转码和拼合。 但是，偶尔会遇到包含动态参数的无恶意创意URL。 需要规范化规则来处理这些实例。
 
 ### 版本19.5.2
 
@@ -98,13 +97,13 @@ PrimetimeAd Insertion19.11.1发行说明介绍了2019年PrimetimeAd Insertion的
 
 * 添加了对CMAF（HLS/fMP4内容）的支持
    * SSAI：处理CMAF清单
-   * SSAI：启动转码请求并根据内容格式（HLS/ts和HLS/fMP4）检索CRS资产
+   * SSAI：启动转码请求并根据内容格式（HLS/ts和HLS/fMP4）检索CRS资源
    * CRS：添加了工作流以将广告重新打包为CMAF格式(HLS/fMP4)
-* SSAI：修复了当内容和广告都没有纯音频流时，阻止未设为静音的广告插入到未设为静音的内容中的问题(EXT-X-STREAM-INF)
+* SSAI：修复了在内容和广告都不具有纯音频流时，阻止未设为静音的广告插入未设为静音的内容的问题(EXT-X-STREAM-INF)
 * SSAI：增加了对内容区段的Limelight (LLNW) CDN身份验证令牌的支持
-   * 时间 `pttoken=limelight` 或 `pttoken=llnw` ，我们在检索源主控播放列表时将添加一个密钥标头，然后将查询参数从LLNW的X-context-Sig标头附加到Adobe区段
-* SSAI：已添加另一个pttoken值(`pttoken=centurylink`)以支持2018年7月30日发布的CenturyLink CDN身份验证令牌
-   * `pttoken=centurylink` 具有与相同的行为 `pttoken=level3`，并且这两个值都有效
+   * 时间 `pttoken=limelight` 或 `pttoken=llnw` 之后，我们在检索源主播放列表时将添加一个机密标头，然后将查询参数从LLNW的X-content-Sig标头附加到Adobe段
+* SSAI：已添加另一个pttoken值(`pttoken=centurylink`)，以支持2018年7月30日发布的CenturyLink CDN身份验证令牌
+   * `pttoken=centurylink` 具有与相同的行为 `pttoken=level3`，并且两个值均有效
 
 ### 版本19.5.1
 
@@ -122,22 +121,22 @@ PrimetimeAd Insertion19.11.1发行说明介绍了2019年PrimetimeAd Insertion的
 * CRS： CRS重新打包API将不再支持HTTPPOST命令。 CRS重新打包API会自动将(301) HTTPPOST命令重定向到HTTPS
    * 从5月20日开始，将关闭HTTPPOST命令的HTTP->HTTPS重定向
    * 如果您使用CRS重新打包API提前重新打包POST，请在5月20日之前将广告命令切换为HTTPS
-* CRS：重新设计了将CRS资产上传到客户的CDN来源的架构和工作流
+* CRS：重新设计了用于将CRS资产上传到客户的CDN来源的架构和工作流
    * 每个CDN源的作业进程是分开的，因此一个CDN源的上传瓶颈不会影响到其他CDN源的上传
-   * 其他优势：CRS作业处理时间以及向客户CDN源的上传率得到了改进
-* SSAI：已将视频广告的ClickThrough和ClickTracking URL添加到侧栏JSON v2格式
+   * 其他优势：CRS作业处理时间以及向客户CDN来源的上传率得到了改进
+* SSAI：已将视频广告的点进和点击跟踪URL添加到侧栏JSON v2格式
    * 新的JSON数组属性“videoClicks”将遵循“trackingURLs”属性
    * “event”值名称将为“clickThrough”和“clickTracking”，并且它们不具有startTime值
-* SSAI：对于CRS资产，添加了将CRS资产的查找记录过期时间在每次插入时延长30天的功能
-   * 以前的行为： CRS资源查找记录存储在每个面板的memcache中。 CRS资产查找记录在添加到memcache后30天自动删除。 要将创意从memcache中移除后重新填充到面板中的CRS资产查找记录，需要在该面板中遇到该创意内容三次
-   * 新行为：当面板访问CRS资产查找记录以插入CRS资产时，CRS资产查找记录的过期时间将在该面板中延长30天。 因此，直到最近使用面板的memcache 30天后，才会从面板的memcache中删除经常使用的CRS资产
+* SSAI：对于CRS资产，添加了将CRS资产的查找记录过期时间延长的功能（无论何时插入）
+   * 以前的行为： CRS资源查找记录存储在每个面板的memcache中。 CRS资产查找记录在添加到memcache后30天将自动删除。 要在将创意从memcache中移除后在面板中重新填充该创意的CRS资产查找记录，需要在该面板中遇到该创意三次
+   * 新行为：当面板访问CRS资产查找记录以插入CRS资产时，CRS资产查找记录的过期时间将在该面板中延长30天。 因此，直到最近使用面板的CRS资源的30天后，才会将其从面板的memcache中删除
    * 新行为在系统范围内有效，如果检测到性能下降，可以将其切换
 * SSAI：更新了仅用于实时流的WebVTT清单操作行为
    * 上一个行为：仅在WebVTT清单中，删除将在每个插入的广告之前和插入的广告时间的最后一个区段之后插入的EXT-X-DISCONTINUITY标记
    * 新行为：向SSAI引导URL添加了一个新参数vttdisc，其接受值为true和false
-      * vttdisc=true： EXT-X-DISCONTINUITY标记将插入到WebVTT清单中，在每个插入的广告之前和插入的广告时间的最后一个区段之后，与音频/视频和纯音频清单的行为匹配
-      * vttdisc=false（与上一个行为相同）：仅在WebVTT清单中，删除将在每个插入的广告之前和插入的广告时间的最后一个区段之后插入的EXT-X-DISCONTINUITY标记
-      * 如果省略vttdisc参数或其值不是true/false，则vttdisc将默认为true
+      * vttdisc=true： EXT-X-DISCONTINUITY标记将插入到WebVTT清单中，每个插入的广告之前和插入的广告时间的最后一个区段之后，以匹配音频/视频和纯音频清单的行为
+      * vttdisc=false（与以前的行为相同）：仅在WebVTT清单中，删除将在每个插入的广告之前和插入的广告时间的最后一个区段之后插入的EXT-X-DISCONTINUITY标记
+      * 如果vttdisc参数被忽略或具有true/false以外的值，则vttdisc将默认为true
 * SSAI：安全更新和软件版本更新
    * Java：更新了Java版本，以支持通过TLS 1.2 (HTTPS)触发的广告调用使用其他密码套件
 
@@ -145,59 +144,59 @@ PrimetimeAd Insertion19.11.1发行说明介绍了2019年PrimetimeAd Insertion的
 
 **时间：** 2019年2月20日，星期三上午1:30东部时间至2019年2月20日，星期三上午3:30东部时间
 
-* SSAI：已将视频广告的ClickThrough和ClickTracking URL添加到侧栏JSON v2格式
+* SSAI：已将视频广告的点进和点击跟踪URL添加到侧栏JSON v2格式
    * 在“trackingURLs”属性下，其“event”值名称将为“clickthrough”和“clickTracking”
-   * 它们的startTime值将是广告的开头
-* SSAI：对于CRS资产，添加了将CRS资产的查找记录过期时间在每次插入时延长30天的功能
-   * 以前的行为： CRS资源查找记录存储在每个面板的memcache中。 CRS资产查找记录在添加到memcache后30天自动删除。 要将创意从memcache中移除后重新填充到面板中的CRS资产查找记录，需要在该面板中遇到该创意内容三次
-   * 新行为：当面板访问CRS资产查找记录以插入CRS资产时，CRS资产查找记录的过期时间将在该面板中延长30天。 因此，直到最近使用面板的memcache 30天后，才会从面板的memcache中删除经常使用的CRS资产
+   * 它们的startTime值将是广告的开始
+* SSAI：对于CRS资产，添加了将CRS资产的查找记录过期时间延长的功能（无论何时插入）
+   * 以前的行为： CRS资源查找记录存储在每个面板的memcache中。 CRS资产查找记录在添加到memcache后30天将自动删除。 要在将创意从memcache中移除后在面板中重新填充该创意的CRS资产查找记录，需要在该面板中遇到该创意三次
+   * 新行为：当面板访问CRS资产查找记录以插入CRS资产时，CRS资产查找记录的过期时间将在该面板中延长30天。 因此，直到最近使用面板的CRS资源的30天后，才会将其从面板的memcache中删除
    * 新行为在系统范围内有效，如果检测到性能下降，可以将其切换
 
 * SSAI：NGINX和Kafka的软件版本更新
    * NGINX和Kafka用于触发广告跟踪URL服务器端，并将数据推送到SSAI和CRS仪表板
-* CRS：对CRS功能板的性能改进
+* CRS：改进了CRS功能板的性能
 
 ### Web UI版本
 
-**时间：** 2月13日，星期三，凌晨4:00 — 太平洋时间凌晨4:30
+**时间：** 2月13日，星期三凌晨4:00 — 太平洋时间凌晨4:30
 
 **内容：** Primetime ad Decisioning Web UI组件
 
-* 修复了日历UI问题，该问题导致用户无法在贩运活动或提取报告时从日历组件选择超过2018年12月31日的日期。
+* 修复了以下日历UI问题：用户在贩运活动或提取报告时，无法从日历组件选择2018年12月31日之后的日期。
 
 ### 版本19.1.2
 
 **时间：** 2019年1月30日，星期三上午1:30东部时间至1月30日星期三凌晨3:30东部时间
 
-* SSAI：更新了SSAI用于存储和检索CRS资产的查找键结构，以便处理广告提供商具有同一广告的动态广告ID或创作ID的情况
-   * 新的查找键结构：区域、创作URL和格式参数（目标持续时间、输出格式、目标CDN）
-   * 旧的查找密钥结构：区域、广告系统、广告ID、创作ID、创作URL和格式参数（目标持续时间、输出格式、目标CDN）
-   * 在生产版本之前，将更新现有CRS资产的查找键以匹配新结构，但请注意，可能会丢失在查找键更新和生产版本之间转码的新资产。 如果是，则他们将在发布后下次遇到新的CRS请求时启动
+* SSAI：更新SSAI用于存储和检索CRS资产的查找键结构，以便处理广告提供商具有同一广告的动态广告ID或创意ID的情况
+   * 新的查找键结构：区域、创意URL和格式参数（目标持续时间、输出格式、目标CDN）
+   * 旧的查找键结构：区域、广告系统、广告ID、创作ID、创作URL和格式参数（目标持续时间、输出格式、目标CDN）
+   * 在生产版本之前，将更新现有CRS资源的查找键以匹配新结构，但请注意，可能会缺少在查找键更新和生产版本之间转码的新资源。 如果是这样，则他们将在发布后下次遇到新的CRS请求时发出新的CRS请求
 
-* CRS：添加了从特定广告系统、广告ID、创作ID、创作URL和/或创意格式阻止列表/允许列表CRS请求的功能
+* CRS：增加了从特定广告系统、广告ID、创作ID、创作URL和/或创意格式阻止列表/允许列表CRS请求的功能
 
-   >注释
-   >
-   >当找到同一广告的具有动态值（例如，URL中的动态参数）的广告提供商时，Adobe将添加阻止列表规则。 在提供程序或通过规范化规则解析动态组件后，将禁用此类阻止列表规则。
+  >注意
+  >
+  >当找到同一广告的具有动态值（例如，URL中的动态参数）的广告提供程序时，Adobe将添加阻止列表规则。 在提供程序或通过规范化规则解析动态组件后，将禁用此类阻止列表规则。
 
-   * 如果要为区域添加阻止列表或允许列表规则，请与您的技术客户经理联系以获得帮助。
+   * 如果要为区域添加阻止列表或允许列表规则，请与技术客户经理联系以获得帮助。
 
 ### 版本19.1.1
 
-**时间：** 2019年1月9日（星期三）东部时间半夜1:30至1月9日（星期三）东部时间凌晨3:30
+**时间：** 2019年1月9日，星期三上午1:30东部时间至1月9日，星期三上午3:30东部时间
 
-* 修复了在验证total-stream.net上托管的入站创意资产时，对HTTP keep-alive标头的错误解释可能会导致错误的问题。
+* 修复了错误解释HTTP keep-alive标头可能会导致在验证total-stream.net上托管的入站创意资产时出错。
 * 修复了重新打包请求的Ad ID、Creative ID和其他字段中的单引号(&#39;)和双引号(&#39;&#39;)导致重新打包请求失败的问题。
-* 已切换到Java long（数据类型），以解决在代码转换作业ID值中达到Java int限制2,147,483,647会导致所有重新打包请求失败的问题。
+* 转为使用Java long（数据类型）以解决在转码作业ID值中达到Java int限制2,147,483,647会导致所有重新打包请求失败的问题。
 * 数据库优化。
 
 ## 已解决的问题
 
-如果解决方法与报告的问题相关联，则会显示Zendesk引用。 例如ZD#xxxxx。
+如果解决方案与报告的问题相关，则会显示Zendesk引用。 例如ZD#xxxxx。
 
 **PTAI 19.7.1**
 
-ZD#37503 — 缓存了CRS规则的Json响应，以避免重复请求。
+ZD#37503 — 将缓存CRS规则的Json响应，以避免重复请求。
 
 ## 已知问题和限制
 

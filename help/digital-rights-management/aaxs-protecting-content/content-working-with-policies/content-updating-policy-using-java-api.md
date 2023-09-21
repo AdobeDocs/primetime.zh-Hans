@@ -2,8 +2,7 @@
 title: 使用Java API更新策略
 description: 使用Java API更新策略
 copied-description: true
-exl-id: 1b03f033-0d29-46cc-ae14-d6fef96fe970
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '113'
 ht-degree: 0%
@@ -21,7 +20,7 @@ ht-degree: 0%
    Policy policy = new Policy(policyBytes);
    ```
 
-1. 更新 `Policy` 对象，方法是设置其属性，如其名称和使用规则。
+1. 更新 `Policy` 对象的方法是设置其属性，如其名称和使用规则。
 
    ```java
      // Change the policy name.  

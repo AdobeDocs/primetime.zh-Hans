@@ -1,8 +1,7 @@
 ---
 description: 您可以显示当前活动内容的持续时间。
 title: 显示视频的持续时间
-exl-id: 4e31d784-4d16-470b-8317-11be32a55c2f
-source-git-commit: 0019a95fa9ca6d21249533d559ce844897ab67cf
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '105'
 ht-degree: 0%

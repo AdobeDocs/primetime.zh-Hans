@@ -1,8 +1,7 @@
 ---
 description: 通过实施PlacementOpportunityDetector接口，您可以实施自己的机会检测器。
 title: 实施自定义机会检测器
-exl-id: d78949a0-2c76-4976-9358-05f3db86781e
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '135'
 ht-degree: 0%
@@ -41,9 +40,9 @@ ht-degree: 0%
       public List<PlacementOpportunity> process(List<TimedMetadata> timedMetadataList, Metadata metadata)
       ```
 
-      此 `timedMetadataList` 包含可用列表 `TimedMetadata`，进行排序。 元数据包含要发送到广告提供商的定位参数和自定义参数。
+      此 `timedMetadataList` 包含可用列表 `TimedMetadata`，进行排序。 元数据包含定位参数和要发送到广告提供商的自定义参数。
 
-   1. 针对每个 `TimedMetadata`，创建 `List<PlacementOpportunity>`. 列表可以为空，但不能为null。 `PlacementOpportunity` 应具有以下属性：
+   1. 对于每个 `TimedMetadata`，创建 `List<PlacementOpportunity>`. 列表可以为空，但不能为null。 `PlacementOpportunity` 应具有以下属性：
 
       ```java
       PlacementOpportunity( 

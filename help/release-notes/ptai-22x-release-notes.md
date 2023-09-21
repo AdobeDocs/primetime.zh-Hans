@@ -1,8 +1,7 @@
 ---
 title: PTAI 22.9.2发行说明
 description: PTAI发行说明介绍了2022年PrimetimeAd Insertion中的新增或更改内容、已解决问题和已知问题。
-exl-id: 58b254b8-18b9-48ba-bd4e-378785e56af5
-source-git-commit: 1782a6b1d5f1c56d39648d73616bdefddd8a51bc
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '368'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # PrimetimeAd Insertion22.9.2发行说明
 
-PrimetimeAd Insertion22.xx.x发行说明介绍了2022年PrimetimeAd Insertion的新增或更改内容、已解决的问题和已知问题。
+PrimetimeAd Insertion22.xx.x发行说明介绍了2022年PrimetimeAd Insertion中的新增或更改内容、已解决问题和已知问题。
 
 ## PTAI 22.9.2的新增功能
 
@@ -19,7 +18,7 @@ PrimetimeAd Insertion22.xx.x发行说明介绍了2022年PrimetimeAd Insertion的
 
 * 增强了PrimetimeAd Insertion中的广告性能遥测数据，以包含其他广告调用和可用性日志记录数据。
 
-## 先前版本中的增强功能和修复
+## 以前版本中的增强功能和修复
 
 ### 版本PTAI 22.9.1
 
@@ -47,7 +46,7 @@ PrimetimeAd Insertion22.xx.x发行说明介绍了2022年PrimetimeAd Insertion的
 
 **更改**
 
-* 增强了广告性能日志记录，提供了有关可用性损失的更多详细信息。
+* 增强了广告性能日志记录，其中提供了有关可用性损失的更多详细信息。
 
 * CRS的其他网络存储源。
 
@@ -60,7 +59,7 @@ PrimetimeAd Insertion22.xx.x发行说明介绍了2022年PrimetimeAd Insertion的
 * 支持多周期DASH VOD/FER
 * 适用于HLS的DASH Mime类型修复
 * 统一UI中的集成旧版控制台
-* 新展示维度值正在传递给服务
+* 新展示维度值正在传递到服务
 
 ### 版本22.5.2
 
@@ -72,7 +71,7 @@ PrimetimeAd Insertion22.xx.x发行说明介绍了2022年PrimetimeAd Insertion的
 
 ### 版本22.4.4
 
-**时间：** 2022年4月20日，星期三，东部时间凌晨3点至6点
+**时间：** 2022年4月20日，星期三东部时间凌晨3点至6点
 
 **更改**
 
@@ -82,7 +81,7 @@ PrimetimeAd Insertion22.xx.x发行说明介绍了2022年PrimetimeAd Insertion的
 
 ### 版本22.3.2
 
-**时间：** 2022年3月8日，星期二东部时间半夜1:30至凌晨4:30
+**时间：** 2022年3月08日，星期二东部时间半夜1:30至4:30
 
 **更改**
 
@@ -94,10 +93,10 @@ PrimetimeAd Insertion22.xx.x发行说明介绍了2022年PrimetimeAd Insertion的
 
 ### 版本22.2.2
 
-**时间：** 2022年3月2日，星期三东部时间半夜1:30至凌晨4:30
+**时间：** 2022年3月2日，星期三东部时间半夜1点30分至4点30分
 
 **更改**
 
-* 捕获了新广告效果事件，包括广告创意调用、广告服务器调用和可用解决事件。
+* 捕获了新广告效果事件，包括广告创意调用、广告服务器调用和可用性解析事件。
 
-* 在即将发布的版本中，这些事件将通过新的PrimetimeAd Insertion图形用户界面公开。
+* 在即将发布的版本中，这些事件将通过新的PrimetimeAd Insertion图形用户界面进行公开。

@@ -1,31 +1,30 @@
 ---
-title: 导出共享分数较高的帐户的信息
-description: 导出共享分数较高的帐户的信息。
-exl-id: df41ddd2-fde3-4861-abd4-6e32f0be9ea5
-source-git-commit: 326f97d058646795cab5d062fa5b980235f7da37
+title: 导出共享得分较高的帐户的信息
+description: 导出共享得分较高的帐户的信息。
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '728'
 ht-degree: 1%
 
 ---
 
-# 导出共享分数较高的帐户的信息 {#export-account-info-high-score}
+# 导出共享得分较高的帐户的信息 {#export-account-info-high-score}
 
-Account IQ为您提供了选项，以根据前1000个订阅者帐户的帐户共享详细信息导出这些帐户共享详细信息 [共享概率](/help/AccountIQ/product-concepts.md#account-sharing-probability-def). 导出的CSV文件中的数据按订阅者帐户的共享概率递减顺序排序，这些共享概率是指 [区段](/help/AccountIQ/product-concepts.md#segment-def)，表示 [指定的时间范围](/help/AccountIQ/product-concepts.md#time-frame-def).
+帐户IQ为您提供了选项，以根据前1000个订阅者帐户的帐户共享详细信息 [共享概率](/help/AccountIQ/product-concepts.md#account-sharing-probability-def). 导出的CSV文件中的数据按订阅者帐户的共享概率递减的顺序排序，这些共享概率是 [区段](/help/AccountIQ/product-concepts.md#segment-def)，表示 [指定的时间范围](/help/AccountIQ/product-concepts.md#time-frame-def).
 
 导出帐户共享信息的选项位于 [一般使用情况报表](/help/AccountIQ/general-usage-reports.md) 和 [共享帐户报表](/help/AccountIQ/shared-acc-reports.md) 页数。
 
 >[!NOTE]
 >
->对于“常规使用情况”和“共享帐户”报表页面，下载的CSV文件中的数字不同。 这是因为“常规使用情况报表”页面为程序员提供了额外的过滤器，让他们为设备数量、IP和邮政编码选择阈值。 因此，从“常规使用情况”报表导出的数据基于应用的附加阈值过滤器。
+>对于“常规使用”和“共享帐户”报表页面，下载的CSV文件中的数字不同。 这是因为，常规使用情况报表页面具有额外的过滤器，可供程序员为设备数、IP和邮政编码选择阈值。 因此，从常规使用情况报表导出的数据基于应用的附加阈值过滤器。
 
-![一般用法中的导出选项](assets/export.png)
+![导出选项（一般用法）](assets/export.png)
 
 导出订阅者的帐户共享信息：
 
 1. 按照中的步骤定义所需的区段 [如何定义区段并选择时间范围](/help/AccountIQ/howto-select-segment-timeframe.md) 评估来源 [区段和时间范围](/help/AccountIQ/segments-timeframe.md) 面板。
 
-1. 选择 **导出前1000个帐户** 用于导出1000个订阅者的帐户信息（共享概率最高）的选项。
+1. 选择 **导出前1000个帐户** 用于导出1000个订阅者的帐户信息且共享概率最高的选项。
 
 使用导出选项时，具有最高共享概率（在定义的时间范围内）的1000个帐户的统计信息将下载到本地计算机的Downloads文件夹中。
 
@@ -37,7 +36,7 @@ Account IQ为您提供了选项，以根据前1000个订阅者帐户的帐户共
 
 *图：以CSV格式导出的共享帐户数据*
 
-## 导出报告中的列 {#columns-in-export}
+## 导出的报告中的列 {#columns-in-export}
 
 **周/月**
 
@@ -45,7 +44,7 @@ Account IQ为您提供了选项，以根据前1000个订阅者帐户的帐户共
 
 **MVPD**
 
-如果您是程序员用户，则该列会显示订户帐户属于哪个MVPD。
+如果您是程序员用户，列会显示订阅者帐户属于哪个MVPD。
 
 **订阅者ID**
 
@@ -59,7 +58,7 @@ Account IQ为您提供了选项，以根据前1000个订阅者帐户的帐户共
 >
 >设备（流内容）的实际数量肯定大于为特定帐户指定的设备最小数量。
 
-**人员最小数量**
+**最小人员数**
 
 使用这些设备激活流媒体内容的绝对最小人数。
 
@@ -69,23 +68,23 @@ Account IQ为您提供了选项，以根据前1000个订阅者帐户的帐户共
 
 **IP数量**
 
-从中流式传输内容的IP地址数。
+从中对内容进行流式处理的IP地址数。
 
 **位置数**
 
 从中流式传输内容的位置的数量（基于邮政编码）。
 
-**城市数量**
+**城市数**
 
-已进行流的城市数量。
+进行流化的城市数量。
 
-**国家/地区数量**
+**状态数**
 
-已进行流的州数。
+已进行流处理的州数。
 
 **群集数**
 
-非重复数 [集群](/help/AccountIQ/product-concepts.md#cluster-def) 播放流播放的位置。
+非重复的数量 [集群](/help/AccountIQ/product-concepts.md#cluster-def) 播放流播放的位置。
 
 **地理范围（英里）**
 
@@ -93,29 +92,29 @@ Account IQ为您提供了选项，以根据前1000个订阅者帐户的帐户共
 
 **#身份验证正常**
 
-用户在该时段使用该帐户登录的次数。
+用户在该时段内使用该帐户登录的次数。
 
-**#验证Z确定**
+**#AuthZ确定**
 
-MVPD授权流或授予访问（内容）该帐户的次数。
+MVPD授权流或授予该帐户访问（内容）权的次数。
 
 >[!NOTE]
 >
->此 **#验证Z确定** 与 **播放请求数**；它小于 **播放请求数** 因为Adobe通常会在24小时内缓存针对MVPD生成的授权。
+>此 **#AuthZ确定** 与 **播放请求数**；它小于 **播放请求数** 因为Adobe通常会在24小时内缓存针对MVPD产生的授权。
 
 **播放请求数**
 
-该时段内的实际流数量。
+时段内的实际流数量。
 
 **渠道数**
 
-帐户在相应时段内已观看的不同渠道总数。
+帐户在时段内已观看的不同渠道的总数。
 
 >[!NOTE]
 >
 >**渠道数** 包括不一定属于登录程序员的渠道。
 >
->该帐户的此号码显示是因为该帐户查看了您的频道，但在该时间段内还访问了其他频道。
+>该帐户的此号码显示是因为该帐户观看了您的频道，但在该时间段内还访问了其他频道。
 
 **使用模式**
 
@@ -135,4 +134,4 @@ MVPD授权流或授予访问（内容）该帐户的次数。
 
 >[!NOTE]
 >
-> 所有账户（在选定区段中）的均分概率用于计算 [共享级别](/help/AccountIQ/dashboard.md#sharing-level) 的 [聚合共享分数](/help/AccountIQ/dashboard.md#aggregated-sharing).
+> 所有帐户（在所选区段中）的共享概率的平均值用于计算 [共享级别](/help/AccountIQ/dashboard.md#sharing-level) 的 [聚合共享分数](/help/AccountIQ/dashboard.md#aggregated-sharing).

@@ -1,8 +1,7 @@
 ---
 description: 在使用大多数浏览器TVSDK播放器方法之前，播放器必须处于有效状态。
 title: 等待有效的状态
-exl-id: 14f6a5db-4f81-448b-b291-487569a7bc4e
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '130'
 ht-degree: 0%
@@ -17,9 +16,9 @@ ht-degree: 0%
 
 所需的状态通常为PREPARED。
 
-1. 要确认状态为“已准备”，请执行以下操作：
+1. 要确认状态已准备就绪，请执行以下操作：
 
-   当播放器初始化时，等待浏览器TVSDK调度 `AdobePSDK.MediaPlayerStatusChangeEvent` 具有的事件 `event.status` 之 `MediaPlayerStatus.PREPARED`.
+   当播放器初始化时，请等待浏览器TVSDK调度 `AdobePSDK.MediaPlayerStatusChangeEvent` 事件包含 `event.status` 之 `MediaPlayerStatus.PREPARED`.
 
    检查MediaPlayer对象的当前状态是否至少为PREPARED。
 

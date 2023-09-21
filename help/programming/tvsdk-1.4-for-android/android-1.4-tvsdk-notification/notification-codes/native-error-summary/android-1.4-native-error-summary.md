@@ -2,8 +2,7 @@
 title: NATIVE_ERROR通知的详细信息
 description: NATIVE_ERROR通知的详细信息
 copied-description: true
-exl-id: 3819b932-47a2-4adb-830b-0a95a5fec70b
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '212'
 ht-degree: 0%
@@ -12,7 +11,7 @@ ht-degree: 0%
 
 # NATIVE_ERROR通知的详细信息 {#details-for-the-native-error-notification}
 
-当TVSDK处理本机错误时，它会设置以下部分或全部元数据键值。
+TVSDK处理本机错误时，会设置以下部分或全部元数据键值。
 
 <table id="table_86A21619515B435DBB65DC4DFBB64B29"> 
  <thead> 
@@ -23,19 +22,19 @@ ht-degree: 0%
  </thead>
  <tbody> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> NATIVE_ERROR_CODE </span> </td> 
+   <td colname="col1"> <span class="codeph"> NATIVE_ERROR_Code </span> </td> 
    <td colname="col2"> 
     <pre>
-      AVE中的本机错误代码。 
+      来自AVE的本机错误代码。 
     </pre> 这些代码表示以下内容： 
     <ul id="ul_330C626DE27B45A09E8851CC24768A07"> 
-     <li id="li_0845A9BBB55545BDB49BD4F4802C0E54">DRM错误（代码3300至3367）。 这些值与等效的Flash Player错误代码相同。 </li> 
+     <li id="li_0845A9BBB55545BDB49BD4F4802C0E54">DRM错误（代码3300至3367）。 这些与等效的Flash Player错误代码相同。 </li> 
      <li id="li_98A571480C154CF0AE1DC101FF0834C4">视频播放错误（–1到89）。 </li> 
      <li id="li_D7C19955DEF94DA88B822C8C57D6D2F4">加密错误（300到307）。 </li> 
     </ul> </td> 
   </tr> 
   <tr> 
-   <td colname="col1"> <span class="codeph"> NATIVE_ERROR_NAME </span> </td> 
+   <td colname="col1"> <span class="codeph"> 本机错误名称 </span> </td> 
    <td colname="col2"> 包含错误名称的字符串；例如， <span class="codeph"> AAXS_InvalidVoucher </span> 或 <span class="codeph"> 解码器失败 </span>. </td> 
   </tr> 
   <tr> 
@@ -44,7 +43,7 @@ ht-degree: 0%
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> DRM_ERROR_STRING </span> </td> 
-   <td colname="col2"> 对于DRM，这是DRM服务器部署中的自定义错误字符串（如果定义了）。 向Adobe报告错误时也包含此项。 </td> 
+   <td colname="col2"> 对于DRM，这是DRM服务器部署中的自定义错误字符串（如果定义了任何字符串）。 向Adobe报告错误时也包含此项。 </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <span class="codeph"> 描述 </span> </td> 

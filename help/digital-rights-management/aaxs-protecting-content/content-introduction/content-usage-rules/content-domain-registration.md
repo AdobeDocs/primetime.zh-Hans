@@ -2,8 +2,7 @@
 title: 设备组域注册
 description: 设备组域注册
 copied-description: true
-exl-id: 1f3e9d26-c185-4d12-accf-aa74a313f890
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '179'
 ht-degree: 0%

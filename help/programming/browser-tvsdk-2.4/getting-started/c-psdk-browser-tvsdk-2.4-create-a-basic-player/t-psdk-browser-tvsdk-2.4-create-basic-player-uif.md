@@ -2,8 +2,7 @@
 title: 使用UI框架创建基本播放器
 description: 使用UI框架创建基本播放器
 copied-description: true
-exl-id: 78629042-fd87-406b-af42-229e34d48162
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '134'
 ht-degree: 0%
@@ -43,7 +42,7 @@ ht-degree: 0%
 
 1. 添加UI控件。
 
-   例如，添加一个控制栏，当鼠标悬停在播放器上时，该栏会显示：
+   例如，添加一个控制栏，当鼠标悬停在播放器上时，该控制栏会出现：
 
    ```js
    <script> 
@@ -70,7 +69,7 @@ ht-degree: 0%
    </div>
    ```
 
-调用时返回的对象 `ptp.videoPlayer()` 提供包装TVSDK媒体播放器API的行为，并允许以编程方式控制播放。 在媒体播放器实例上调用时，用户界面会根据媒体播放器触发的事件自行更新：
+调用时返回的对象 `ptp.videoPlayer()` 提供封装TVSDK媒体播放器API的行为，并允许以编程方式控制播放。 在媒体播放器实例上调用时，用户界面会根据媒体播放器触发的事件自行更新：
 
 ```js
 <script> 

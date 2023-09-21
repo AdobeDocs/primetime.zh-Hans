@@ -1,8 +1,7 @@
 ---
 description: 通过TVSDK，您可以控制实时和视频点播(VOD)的基本播放体验。 TVSDK提供了播放器实例上的方法和属性，您可以使用这些方法和属性来配置播放器用户界面。
 title: 等待有效的状态
-exl-id: ab9da066-429f-44ca-b2e7-2bde9e5c0f90
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '143'
 ht-degree: 0%

@@ -1,8 +1,7 @@
 ---
-description: 您可以通过实施OpportunityGenerator类来实施自己的机会生成器。
+description: 通过实施OpportunityGenerator类，您可以实施自己的机会生成器。
 title: 实施自定义机会生成器
-exl-id: 8fa97515-692c-4e34-9afb-17a5409228db
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '100'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 实施自定义机会生成器 {#implement-a-custom-opportunity-generator}
 
-您可以通过实施OpportunityGenerator类来实施自己的机会生成器。
+通过实施OpportunityGenerator类，您可以实施自己的机会生成器。
 
 1. 实施您的自定义 `ContentFactory` 通过实施 `ContentFactory` 界面和覆盖 `retrieveGenerators`.
 
@@ -74,7 +73,7 @@ ht-degree: 0%
       List<TimedMetadata> tList = getItem().getTimedMetadata(); 
       ```
 
-   1. 针对每个 `TimedMetadata` 或组 `TimedMetadata`，请使用以下属性创建一个机会：
+   1. 对于每个 `TimedMetadata` 或组 `TimedMetadata`，创建具有以下属性的opportunity ：
 
       ```java
       Opportunity( 

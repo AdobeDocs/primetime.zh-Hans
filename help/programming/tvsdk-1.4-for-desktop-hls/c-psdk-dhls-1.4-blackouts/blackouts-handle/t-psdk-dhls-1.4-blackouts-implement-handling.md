@@ -1,8 +1,7 @@
 ---
 description: TVSDK提供了用于处理封锁期的API和示例代码。
 title: 实施封锁处理
-exl-id: c7252467-a075-4227-b7bc-db1112a96a2b
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '113'
 ht-degree: 0%
@@ -13,7 +12,7 @@ ht-degree: 0%
 
 TVSDK提供了用于处理封锁期的API和示例代码。
 
-要实施封锁处理（包括在封锁期间提供替代内容），请执行以下操作：
+要实施封锁期处理，包括在封锁期提供替代内容，请执行以下操作：
 
 1. 设置应用程序以检测实时流清单中的封锁标记。
 
@@ -29,7 +28,7 @@ TVSDK提供了用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 为前台和后台流中的定时元数据事件创建事件侦听器。
+1. 在前台流和后台流中为定时元数据事件创建事件侦听器。
 
    ```
    private function createMediaPlayer(context:MediaPlayerContext):void { 
@@ -43,7 +42,7 @@ TVSDK提供了用于处理封锁期的API和示例代码。
 
 1. 为前台和后台流实施定时元数据事件处理程序。
 
-   前台：
+   前景：
 
    ```
    private function onTimedMetadata(event:TimedMetadataEvent):void { 
@@ -85,7 +84,7 @@ TVSDK提供了用于处理封锁期的API和示例代码。
    }
    ```
 
-1. 准备MediaPlayer以进行封锁。
+1. 为MediaPlayer准备封锁。
 
    ```
    public function prepareBlackoutRanges(timedMetadata:Vector.<TimedMetadata>):void { 

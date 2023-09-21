@@ -1,9 +1,8 @@
 ---
-description: 标准化规则定义一个URL转换，应用于从VAST/VMAP响应获得的源创意URL。
+description: 标准化规则定义URL转换，以应用于从VAST/VMAP响应获得的源创意URL。
 keywords: 标准化规则；创意选择规则
 title: 标准化规则
-exl-id: dcfc0c3c-0f9e-4068-9a47-8e09a1b4fa7a
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '167'
 ht-degree: 0%
@@ -12,9 +11,9 @@ ht-degree: 0%
 
 # 标准化规则{#normalize-rules}
 
-标准化规则定义一个URL转换，应用于从VAST/VMAP响应获得的源创意URL。
+标准化规则定义URL转换，以应用于从VAST/VMAP响应获得的源创意URL。
 
-## 标准化规则具有以下属性和可能值：
+## 标准化规则具有以下属性和可能的值：
 
 <table id="table_ljp_tgx_hz">  
  <thead> 
@@ -49,7 +48,7 @@ ht-degree: 0%
      <li><span class="codeph"> co</span>  — 包含</li> 
      <li><span class="codeph"> nc</span>  — 不包含</li> 
      <li><span class="codeph"> 软件</span>  — 开头为</li> 
-     <li><span class="codeph"> ew</span>  — 结束于</li> 
+     <li><span class="codeph"> 新建</span>  — 结尾为</li> 
     </ul></td> 
   </tr> 
   <tr> 
@@ -62,13 +61,13 @@ ht-degree: 0%
    <td><span class="codeph"> 查找</span></td> 
    <td><span class="codeph"> 正则表达式</span></td> 
    <td></td> 
-   <td> 要应用于源创作URL以匹配的正则表达式。</td> 
+   <td> 应用于要匹配的源创意URL的正则表达式。</td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> replace</span></td> 
    <td><span class="codeph"> 正则表达式</span></td> 
    <td></td> 
-   <td> 要基于匹配项应用于要替换的源创意URL的正则表达式。</td> 
+   <td> 根据匹配项应用于要替换的源创意URL的正则表达式。</td> 
   </tr> 
  </tbody> 
 </table>

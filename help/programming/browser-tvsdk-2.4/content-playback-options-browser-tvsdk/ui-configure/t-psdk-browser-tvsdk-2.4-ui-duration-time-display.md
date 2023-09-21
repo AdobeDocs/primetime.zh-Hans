@@ -1,8 +1,7 @@
 ---
 description: 您可以使用浏览器TVSDK检索有关可在搜寻栏上显示的媒体的信息。
 title: 显示视频的持续时间、当前时间和剩余时间
-exl-id: f2aa3c42-9c47-4a55-aed6-7dc5a8d0662b
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '289'
 ht-degree: 0%
@@ -16,7 +15,7 @@ ht-degree: 0%
 1. 等待您的播放器至少处于“已准备”状态。
 1. 使用检索当前播放头时间 `MediaPlayer.currentTime` 属性。
 
-   此属性返回虚拟时间轴上的当前播放头位置（以毫秒为单位）。 计算的时间相对于已解析的流（可能包含替代内容的多个实例，例如拼接到主流的多个广告或广告插播）。 对于实时/线性流，返回的时间始终在播放窗口范围内。
+   此属性返回虚拟时间轴上的当前播放头位置（以毫秒为单位）。 所计算的时间相对于解析流而言可能包含替代内容的多个实例，例如连接到主流的多个广告或广告时间。 对于实时/线性流，返回的时间始终在播放窗口范围内。
 
    ```js
    MediaPlayer.currentTime
@@ -25,17 +24,17 @@ ht-degree: 0%
 1. 检索流的播放范围并确定持续时间。
    1. 使用  `mediaPlayer.playbackRange` 属性以获取虚拟时间线时间范围。
 
-   1. 要确定持续时间，请从范围的末尾减去起始值。
+   1. 要确定持续时间，请从范围的末尾减去开始时间。
 
       这包括插入到流（广告）中的附加内容的持续时间。
 
-      对于VOD，范围始终以零开头，并且结束值等于主内容持续时间和插入到流（广告）中的其他内容持续时间的总和。
+      对于VOD，范围始终从零开始，并且结束值等于主内容持续时间与插入到流（广告）中的其他内容的持续时间之和。
 
-      对于线性/实时资源，范围表示播放窗口范围，并且此范围在播放期间会更改。
+      对于线性/实时资源，范围表示播放窗口范围，此范围在播放期间会更改。
 
-1. 使用MediaPlayer和浏览器TVSDK元素上可用的方法设置搜寻栏参数。
+1. 使用MediaPlayer和Browser TVSDK元素上可用的方法设置搜寻栏参数。
 
-   例如，下面是一个可能的布局，该布局可在HTML中显示搜寻栏。
+   例如，下面是一个在HTML中显示搜寻栏的可能布局。
 
    ```
    <div class="seekbar" id="seekbar"> 
@@ -147,7 +146,7 @@ ht-degree: 0%
    } 
    ```
 
-1. 聆听 `AdobePSDK.TimeChangeEvent` 并相应地更新搜索栏。
+1. 收听 `AdobePSDK.TimeChangeEvent` 并相应地更新搜索栏。
 
    ```js
    player.addEventListener(AdobePSDK.PSDKEventType.TIME_CHANGED, onTimeChange); 
@@ -171,7 +170,7 @@ ht-degree: 0%
        } 
    ```
 
-   此示例创建一个seekbar对象来更新搜索栏：
+   此示例创建一个seekbar对象来更新seekbar：
 
    ```js
    /** 

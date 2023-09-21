@@ -1,8 +1,7 @@
 ---
 description: TVSDK会下载广告区段并在设备屏幕上呈现它们。
 title: 广告播放阶段
-exl-id: c12dcf84-0daa-4bc2-8e17-fdf47a760296
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '184'
 ht-degree: 0%
@@ -27,6 +26,6 @@ TVSDK会下载广告区段并在设备屏幕上呈现它们。
 * 由于故障转移算法而更改配置文件时的通知事件。
 * 当考虑了所有故障转移选项且无法自动执行其他操作时触发的通知事件。
 
-   您的应用程序需要采取相应的操作。
+  您的应用程序需要采取相应的操作。
 
-无论是否出现错误，TVSDK都会为每个调用onAdBreakComplete `onAdBreakStart` 和 `onAdComplete` 表示每 `onAdStart`. 但是，如果无法下载区段，则时间轴可能存在间隙。 当间隙足够大时，播放头位置和报告的广告进度中的值可能会显示不连续。
+无论是否发生错误，TVSDK都会针对每个调用onAdBreakComplete `onAdBreakStart` 和 `onAdComplete` 每隔 `onAdStart`. 但是，如果无法下载区段，则时间轴可能存在间隙。 当间隙足够大时，播放头位置和报告的广告进度中的值可能会显示不连续。

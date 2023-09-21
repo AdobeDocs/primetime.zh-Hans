@@ -1,8 +1,7 @@
 ---
 title: Adobe Primetime authentication 2.63发行说明
 description: Adobe Primetime authentication 2.63发行说明
-exl-id: 40987328-6d41-4948-aa4a-bab31f98a18a
-source-git-commit: bfc3ba55c99daba561255760baf273b6538a3c6e
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '296'
 ht-degree: 0%
@@ -13,7 +12,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权的使用。
+>此页面上的内容仅供参考。 使用此API需要来自Adobe的当前许可证。 不允许未经授权使用。
 
 本页介绍了此版本的新增功能、更改和已知问题：
 
@@ -33,26 +32,26 @@ Adobe Primetime身份验证： adobe-pass-**2.63**
 
 * 从此版本开始，我们改进了用于识别设备的机制，不再依赖于客户端实施。 在平台级别应用业务规则时，这将提供更准确的粒度，并更好地了解ESM报表中的流量值。
 
-* 随后将发布新的ESM版本，其中包含公开平台相关字段的经过改进的新报表。
+* 随后将发布新的ESM版本，其中新增和改进的报告将展示与平台相关的字段。
 
-* 有关计划的更改的更多详细信息，请联系您的TAM。
+* 有关计划变更的更多详细信息，请联系您的TAM。
 
 #### MVPD自降解 {#mvpd-self-degradation}
 
-此功能使MVPD能够在高流量情况下临时绕过自己的身份验证和授权端点（当这些端点的负载变得过高时）。
+此功能使MVPD能够在高流量情况下临时绕过自己的身份验证和授权端点，前提是这些端点各自的负载过高。
 
 
-#### 在授权调用的标头中添加代理ID {#add-proxied-id}
+#### 在授权调用的标头中添加代理的ID {#add-proxied-id}
 
-此功能在授权调用的标头中添加Synacor代理MVPD的ID。 这使得Synacor能够为每个代理的个人(例如 路由到不同的域（根据代理的MVPD）。
+此功能在授权调用的标头中添加Synacor代理的MVPD的ID。 这使Synacor能够为每个代理的个人(例如 路由到不同的域（根据代理的MVPD）。
 
 
-#### TVE仪表板 {#tve-dashboard}
+#### 动态仪表板 {#tve-dashboard}
 
 在此版本中，我们修复了配置报告中未正确计算在MVPD级别设置的authN或authZ TTL的问题。
 
 
 #### JavaScript SDK 4.6.0 {#js-sdk}
 
-* 删除了的使用 `eval` 函数，从而使SDK符合内容安全策略。
-* 修复了合作伙伴应用程序明确清除浏览器的本地存储时，身份验证流程无法成功完成的问题。
+* 删除了 `eval` 函数，从而使SDK符合内容安全策略。
+* 修复了合作伙伴应用程序明确清除浏览器的本地存储时，身份验证流无法成功完成的问题。

@@ -1,8 +1,7 @@
 ---
-description: 此版本包括播放器并支持各种浏览器。
+description: 此版本包含播放器，并支持各种浏览器。
 title: 要求
-exl-id: 3157a86b-bf93-41d9-be82-0b702d69c69e
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '102'
 ht-degree: 0%
@@ -32,22 +31,22 @@ ht-degree: 0%
       * Internet Explorer 11+
       * Chrome 33+
       * Firefox 38+
+
    * Microsoft Windows 8.1
 
       * Internet Explorer 11+
       * Chrome 33+
       * Firefox 38+
+
    * Microsoft Windows 10
 
       * Edge+
+
    * APPLE OS X
 
       * Safari 8+
       * Chrome 33+
       * Firefox 38+
-
-
-
 
 * **移动Web配置**
 
@@ -55,17 +54,21 @@ ht-degree: 0%
 
       * 本机浏览器
       * Chrome 33+
+
    * Android 5.0
 
       * 本机浏览器
       * Chrome 33+
+
    * Android 6.0
 
       * Chrome 33+
+
    * APPLE IOS 8
 
       * Safari 8+
       * Chrome 33+
+
    * APPLE IOS 9
 
       * Safari 8+

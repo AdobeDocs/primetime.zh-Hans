@@ -2,8 +2,7 @@
 description: 优先级规则定义将从VAST/VMAP响应中选择用于播放的广告创意的优先级顺序。
 keywords: 优先级规则；创意选择规则
 title: 优先级规则
-exl-id: 7684a40a-9562-4600-a9c8-bbaa0205cbc2
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '170'
 ht-degree: 0%
@@ -14,7 +13,7 @@ ht-degree: 0%
 
 优先级规则定义将从VAST/VMAP响应中选择用于播放的广告创意的优先级顺序。
 
-**表1：“优先级”规则具有以下属性和可能值：**
+**表1：“优先级”规则具有以下属性和可能的值：**
 
 <table id="table_ljp_tgx_hz">  
  <thead> 
@@ -30,7 +29,7 @@ ht-degree: 0%
    <td><span class="codeph"> 优先级</span></td> 
    <td><span class="codeph"> 数组</span></td> 
    <td></td> 
-   <td> 一个小写mime类型数组，定义必须从中选择源创意内容才能播放的优先级。</td> 
+   <td> 一个小写mime类型数组，定义必须选择源创意内容进行播放的优先级。</td> 
   </tr> 
   <tr> 
    <td><span class="codeph"> 项目</span></td> 
@@ -49,7 +48,7 @@ ht-degree: 0%
      <li><span class="codeph"> co</span>  — 包含</li> 
      <li><span class="codeph"> nc</span>  — 不包含</li> 
      <li><span class="codeph"> 软件</span>  — 开头为</li> 
-     <li><span class="codeph"> ew</span>  — 结束于</li> 
+     <li><span class="codeph"> 新建</span>  — 结尾为</li> 
     </ul></td> 
   </tr> 
   <tr> 

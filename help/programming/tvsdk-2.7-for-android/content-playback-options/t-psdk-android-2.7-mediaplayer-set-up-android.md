@@ -1,8 +1,7 @@
 ---
 description: 实例化MediaPlayer并将其视图放入框架布局中。
 title: 设置MediaPlay
-exl-id: e8fb6527-154b-4f7e-a128-525b5a3b3474
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '116'
 ht-degree: 0%
@@ -15,7 +14,7 @@ TVSDK提供了用于创建高级视频播放器应用程序（您的Primetime播
 
 实例化MediaPlayer并将其视图放入框架布局中。
 
-1. 实例化 `MediaPlayer`，传递 `android.content.Context` 对象：
+1. 实例化 `MediaPlayer`，传递 `android.content.Context` 构造函数的对象：
 
    ```java
    MediaPlayer mediaPlayer = new MediaPlayer(context);
@@ -27,7 +26,7 @@ TVSDK提供了用于创建高级视频播放器应用程序（您的Primetime播
    FrameLayout playerFrame = (FrameLayout) _viewGroup.findViewById(R.id.playerFrame);
    ```
 
-   下面是要创建的代码片段 `_viewGroup`.
+   以下是要创建的代码片段 `_viewGroup`.
 
    ```
    @Override 

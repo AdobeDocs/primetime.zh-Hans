@@ -1,8 +1,7 @@
 ---
 description: TVSDK提供了用于创建高级视频播放器应用程序（您的Primetime播放器）的工具，您可以将其与其他Primetime组件集成。 它还提供了许多旨在最大化视频播放质量的功能。
 title: 设置媒体播放器
-exl-id: 99fdc4c1-0c67-4de5-87a5-b42d76f43ae9
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '140'
 ht-degree: 0%
@@ -17,7 +16,7 @@ TVSDK提供了用于创建高级视频播放器应用程序（您的Primetime播
 
 实例化 `MediaPlayer` 并将其视图放入框架布局中。
 
-1. 实例化 `MediaPlayer`，传递 `android.content.Context` 对象：
+1. 实例化 `MediaPlayer`，传递 `android.content.Context` 构造函数的对象：
 
    ```java
    MediaPlayer mediaPlayer = new MediaPlayer(context);
@@ -31,7 +30,7 @@ TVSDK提供了用于创建高级视频播放器应用程序（您的Primetime播
 
    >[!NOTE]
    >
-   >下面是要创建的代码片段 `_viewGroup`.
+   >以下是要创建的代码片段 `_viewGroup`.
 
    ```
    @Override 

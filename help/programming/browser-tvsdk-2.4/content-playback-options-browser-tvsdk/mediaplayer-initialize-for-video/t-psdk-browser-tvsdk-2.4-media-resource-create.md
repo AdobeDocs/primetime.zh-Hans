@@ -1,8 +1,7 @@
 ---
-description: MediaResource类表示由MediaPlayer实例加载的内容。
+description: MediaResource类表示要由MediaPlayer实例加载的内容。
 title: 创建媒体资源
-exl-id: ab66255d-7848-479a-a8cd-c6113cdd7749
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '250'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 创建媒体资源 {#create-a-media-resource}
 
-MediaResource类表示由MediaPlayer实例加载的内容。
+MediaResource类表示要由MediaPlayer实例加载的内容。
 
 1. 创建 `MediaResource` 将介质的相关信息传递给 `MediaResource` 构造函数。
 
@@ -38,14 +37,14 @@ MediaResource类表示由MediaPlayer实例加载的内容。
     </tr> 
     <tr> 
     <td colname="col1"> <p>元数据 </p> </td> 
-    <td colname="col2"> <p>的实例 <span class="codeph"> 元数据 </span> 类，其中可能包含有关要加载的内容的自定义信息。 内容示例为要放置在主内容中的替换内容或广告内容。 如果使用广告，请设置 <span class="codeph"> Auditudesettings </span> 然后使用此构造函数。 有关更多信息，请参阅 <a href="../../ad-insertion/ad-insertion-metadata/c-psdk-browser-tvsdk-2.4-ad-insertion-metadata.md">广告插入元数据</a>. </p> <p>Flash提示：如有必要，您可以使用 <span class="codeph"> forceFlash </span> 创建媒体资源时的参数。 这可能很有用，因为浏览器TVSDK当前并非所有功能（例如，实时广告工作流）都受支持。 Flash回退用于播放视频内容。 </p> </td> 
+    <td colname="col2"> <p>的实例 <span class="codeph"> 元数据 </span> 类，其中可能包含有关要加载的内容的自定义信息。 内容示例包括要置于主内容中的替换内容或广告内容。 如果使用广告，请设置 <span class="codeph"> Auditudesettings </span> 然后使用此构造函数。 有关更多信息，请参阅 <a href="../../ad-insertion/ad-insertion-metadata/c-psdk-browser-tvsdk-2.4-ad-insertion-metadata.md">广告插入元数据</a>. </p> <p>Flash提示：如有必要，您可以使用 <span class="codeph"> forceFlash </span> 创建媒体资源时的参数。 这可能很有用，因为浏览器TVSDK当前并非所有功能（例如实时广告工作流）都受支持。 Flash回退用于播放视频内容。 </p> </td> 
     </tr> 
     </tbody> 
    </table>
 
    >[!IMPORTANT]
    >
-   >浏览器TVSDK仅支持播放特定类型的内容。 如果您尝试加载任何其他类型的内容，浏览器TVSDK会调度一个错误事件。
+   >浏览器TVSDK仅支持播放特定类型的内容。 如果您尝试加载任何其他类型的内容，浏览器TVSDK会调度错误事件。
 
    以下代码创建 `MediaResource` 实例：
 

@@ -1,8 +1,7 @@
 ---
 description: 以下新API允许您定义DRM回调。
 title: 实施DRM回调
-exl-id: 3aaa502d-9273-4320-a022-642fee75dafd
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '168'
 ht-degree: 0%
@@ -15,7 +14,7 @@ ht-degree: 0%
 
 <!--<a id="section_1090BFDB2C1D4EA4AAC9F9A6EC9DCD51"></a>-->
 
-您可以定义回调函数(例如， `parseContentIdCallback`)，以解析内容ID并将其设置为 `drmManager` 通过使用 `setParseContentIdCallback` API。
+您可以定义回调函数(例如， `parseContentIdCallback`)，以分析内容ID并将其设置为 `drmManager` 通过使用 `setParseContentIdCallback` API。
 
 ```js
 var arrayToString = function (array) { 
@@ -38,7 +37,7 @@ drmManager.setParseContentIdCallback(parseContentIdCallback);
 
 <!--<a id="section_1E082B428EA74D9CA11C052158A83947"></a>-->
 
-您可以定义回调函数(例如， `onCertificateResponseCallback`)以处理文本证书响应并将函数设置为 `drmManager` 通过使用 `setCertificateResponseCallback` API。 您可以设置 `setCertificateResponseCallback` 覆盖默认行为。 例如，如果您拥有 `certificateResponseType` 不是 `ArrayBuffer`，您可以使用此回调将证书响应转换为 `ArrayBuffer` 类型。
+您可以定义回调函数(例如， `onCertificateResponseCallback`)以处理文本证书响应，并将函数设置为 `drmManager` 通过使用 `setCertificateResponseCallback` API。 您可以设置 `setCertificateResponseCallback` 覆盖默认行为。 例如，如果您拥有 `certificateResponseType` 不是 `ArrayBuffer`，您可以使用此回调将证书响应转换为 `ArrayBuffer` 类型。
 
 ```js
 var base64DecodeUint8Array = function (input) { 

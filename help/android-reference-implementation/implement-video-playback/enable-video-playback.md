@@ -1,8 +1,7 @@
 ---
-description: 创建可处理HLS流设置和播放操作的PlaybackManager。 无需其他配置。
+description: 创建处理HLS流设置和播放操作的PlaybackManager。 无需其他配置。
 title: 启用视频播放
-exl-id: b53f602b-5752-4471-9905-2e4351dfc8d3
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '165'
 ht-degree: 0%
@@ -11,9 +10,9 @@ ht-degree: 0%
 
 # 启用视频播放 {#enable-video-playback}
 
-创建可处理HLS流设置和播放操作的PlaybackManager。 无需其他配置。
+创建处理HLS流设置和播放操作的PlaybackManager。 无需其他配置。
 
-1. 创建媒体播放器对象，确保中存在以下代码 [!DNL PlayerFragment.java]：
+1. 创建媒体播放器对象，方法是确保中存在以下代码 [!DNL PlayerFragment.java]：
 
    ```java
    private MediaPlayer createMediaPlayer() { 
@@ -29,7 +28,7 @@ ht-degree: 0%
    playbackManager = ManagerFactory.getPlaybackManager(config, mediaPlayer);
    ```
 
-1. 实施 `PlaybackManagerEventListener` 在 `PlayerFragment` 要处理播放事件：
+1. 实施 `PlaybackManagerEventListener` 在 `PlayerFragment` 处理播放事件：
 
    ```java
    private final PlaybackManagerEventListener playbackManagerEventListener =  
@@ -58,7 +57,7 @@ ht-degree: 0%
 
 ## 相关API文档 {#related-api-documentation}
 
-* [类播放管理器](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/PlaybackManager.html)
+* [类PlaybackManager](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/PlaybackManager.html)
 * [PlaybackManagerEventListener](https://help.adobe.com/en_US/primetime/api/reference_implementation/android/javadoc/com/adobe/primetime/reference/manager/PlaybackManager.PlaybackManagerEventListener.html)
 * [mediacore.utils.TimeRange](https://help.adobe.com/en_US/primetime/api/psdk/javadoc/com/adobe/mediacore/utils/TimeRange.html)
 * [mediacore.BufferControlParameters](https://help.adobe.com/en_US/primetime/api/psdk/javadoc/com/adobe/mediacore/BufferControlParameters.html)

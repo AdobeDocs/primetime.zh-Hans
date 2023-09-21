@@ -1,8 +1,7 @@
 ---
 description: 只能使用ABRControlParameters设置ABR控制值，但可以随时构造新的控制值。
 title: 使用ABRControlParameters配置自适应比特率
-exl-id: 1f8a4a97-0341-43e7-afdf-801275bc8c94
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '116'
 ht-degree: 0%
@@ -13,11 +12,11 @@ ht-degree: 0%
 
 只能使用ABRControlParameters设置ABR控制值，但可以随时构造新的控制值。
 
-以下条件适用于 `ABRControlParameters`：
+下列条件适用于 `ABRControlParameters`：
 
 * 在构建时，必须提供所有参数的值。
 * 构造后，不能更改单个值。
-* 如果指定的参数超出允许的范围，则 `ArgumentError` 被抛出。
+* 如果指定的参数在允许的范围之外，则 `ArgumentError` 被抛出。
 
 1. 确定初始、最小和最大比特率。
 1. 确定ABR策略：

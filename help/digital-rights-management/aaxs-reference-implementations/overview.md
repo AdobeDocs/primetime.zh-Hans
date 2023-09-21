@@ -2,8 +2,7 @@
 title: 概述 — 使用参考实施
 description: 概述 — 使用参考实施
 copied-description: true
-exl-id: 2a5075f4-3e7b-4e4c-b69d-c044b064e282
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '61'
 ht-degree: 0%
@@ -12,7 +11,7 @@ ht-degree: 0%
 
 # 概述 — 使用参考实施 {#overview-using-the-reference-implementations}
 
-Adobe访问产品附带一个参考实施，用于以下组件：
+Adobe访问产品附带了适用于以下组件的参考实施：
 
 * 命令行工具
 * 许可证服务器和观察文件夹打包程序

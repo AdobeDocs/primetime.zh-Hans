@@ -1,17 +1,16 @@
 ---
-description: 使用自定义广告标记时，您可以覆盖TVSDK搜寻广告的默认行为。
-title: 控制对自定义广告标记进行搜寻的播放行为
-exl-id: 83faa5a4-4416-499e-8cf2-d016cd9a379d
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+description: 您可以覆盖以下默认行为：使用自定义广告标记时，TVSDK搜寻广告的方式。
+title: 控制对自定义广告标记进行搜索的播放行为
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '155'
 ht-degree: 0%
 
 ---
 
-# 控制对自定义广告标记进行搜寻的播放行为{#control-playback-behavior-for-seeking-over-custom-ad-markers}
+# 控制对自定义广告标记进行搜索的播放行为{#control-playback-behavior-for-seeking-over-custom-ad-markers}
 
-使用自定义广告标记时，您可以覆盖TVSDK搜寻广告的默认行为。
+您可以覆盖以下默认行为：使用自定义广告标记时，TVSDK搜寻广告的方式。
 
 默认情况下，当用户搜寻或浏览因放置自定义广告标记而生成的广告部分时，TVSDK会跳过广告。 这可能与标准广告时间的当前播放行为不同。
 

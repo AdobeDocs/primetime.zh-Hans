@@ -2,8 +2,7 @@
 title: 使用Java API创建DRM策略
 description: 使用Java API创建DRM策略
 copied-description: true
-exl-id: fcae76c3-4e51-449d-b6d5-2138bf1c583e
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '102'
 ht-degree: 0%
@@ -14,7 +13,7 @@ ht-degree: 0%
 
 要使用Java API创建DRM策略，请执行以下操作：
 
-1. 设置开发环境，并将中列出的所有JAR文件包含在您的项目中 [设置开发环境。](../../protecting-content/setting-up-the-sdk/setup-dev-env.md).
+1. 设置开发环境，并将中列出的所有JAR文件包含在项目中 [设置开发环境。](../../protecting-content/setting-up-the-sdk/setup-dev-env.md).
 1. 创建 `com.adobe.flashaccess.sdk.policy.Policy` 对象并指定其属性，包括权限、许可证缓存持续时间和DRM策略结束日期。
 
    ```java
@@ -64,4 +63,4 @@ ht-degree: 0%
    out.close(); 
    ```
 
-参见 [!DNL com.adobe.flashaccess.samples.policy.CreatePolicy] 在参考实施命令行工具中 [!DNL samples] 目录，以获取此示例代码的完整源。
+请参阅 [!DNL com.adobe.flashaccess.samples.policy.CreatePolicy] 在参考实施命令行工具中 [!DNL samples] 目录，以了解此示例代码的完整源。

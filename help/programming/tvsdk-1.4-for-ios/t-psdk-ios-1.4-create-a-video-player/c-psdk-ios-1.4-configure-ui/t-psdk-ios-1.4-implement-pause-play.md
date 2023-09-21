@@ -1,8 +1,7 @@
 ---
-description: 您可以设置调用TVSDK方法的按钮以暂停和播放媒体。
+description: 您可以设置调用TVSDK方法以暂停和播放媒体的按钮。
 title: 实施播放/暂停按钮
-exl-id: 72b90a67-d5a3-4575-a67e-58a0f0d0acf1
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '52'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 实施播放/暂停按钮{#implement-a-play-pause-button}
 
-您可以设置调用TVSDK方法的按钮以暂停和播放媒体。
+您可以设置调用TVSDK方法以暂停和播放媒体的按钮。
 
 使用以下示例代码实施播放或暂停按钮：
 

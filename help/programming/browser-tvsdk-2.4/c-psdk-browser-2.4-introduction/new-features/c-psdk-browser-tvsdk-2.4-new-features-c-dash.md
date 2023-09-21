@@ -1,8 +1,7 @@
 ---
 description: 浏览器TVSDK支持许多DASH功能，您可以实施这些功能向视频应用程序添加功能。
 title: 支持的短划线功能
-exl-id: 29a5d1a3-e31e-459c-90b5-80227df46e4b
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '484'
 ht-degree: 0%
@@ -13,8 +12,8 @@ ht-degree: 0%
 
 浏览器TVSDK支持许多DASH功能，您可以实施这些功能向视频应用程序添加功能。
 
-* [DASH核心播放功能](#dash-core-playback)
-* [DASH高级回放功能](#dash-advanced-playback)
+* [虚线核心播放功能](#dash-core-playback)
+* [DASH高级播放功能](#dash-advanced-playback)
 * [DASH内容保护功能](#dash-content-protection)
 * [DASH Core广告插入功能](#dash-core-ad-insertion)
 * [DASH高级广告插入功能](#dash-advanced-insertion-features)
@@ -98,13 +97,13 @@ ht-degree: 0%
 | Ad Insertion | VOD | 伴随广告、横幅广告和可点击广告 | 不支持 |
 | Ad Insertion | VOD | VPAID 2.0 | 不支持 |
 
-## 虚芯广告插入功能(CSAI) {#dash-core-ad-insertion}
+## DASH核心广告插入功能(CSAI) {#dash-core-ad-insertion}
 
 | 类别 | 内容类型 | 功能 | HTML5 FF、IE、Chrome、Android Chrome |
 |---|---|---|---|
 | Ad Insertion | VOD +实时 | 前置式广告 | 仅限VOD |
 | Ad Insertion | VOD +实时 | 中置 | 仅限VOD |
-| Ad Insertion | VOD +实时 | 后置广告 | 仅限VOD |
+| Ad Insertion | VOD +实时 | 后置式广告 | 仅限VOD |
 | Ad Insertion | FER VOD | 广告分辨率和行为 | 不支持 |
 | Ad Insertion | VOD +实时 | 默认广告策略 | 仅限VOD |
 | Ad Insertion | VOD +实时 | VAST 2.0/3.0 | 仅限VOD |
@@ -148,23 +147,23 @@ ht-degree: 0%
        <li id="li_BC06B0A6EAAC4FC991C713775A8BB4DA">Chromecast </li> 
       </ul> </li> 
      <li id="li_D48B51C2208F423CB85D08886C2E1C66">Windows 8.1和Edge上的Internet Explorer上的PlayReady </li> 
-     <li id="li_2786AC19387241A296E015EE6FD07F2D">Windows Firefox的Adobe访问（仅限视频） </li> 
+     <li id="li_2786AC19387241A296E015EE6FD07F2D">Adobe访问Windows Firefox（仅限视频） </li> 
     </ul> </td> 
   </tr> 
  </tbody> 
 </table>
 
-## DASH高级回放功能 {#dash-advanced-playback}
+## 短划线高级回放功能 {#dash-advanced-playback}
 
 | 类别 | 内容类型 | 功能 | HTML5、FF、IE、Chrome、Android Chrome |
 |---|---|---|---|
 | 播放 | VOD | 在偏移处播放 | ![](assets/supported15.png) |
 | 播放 | VOD | 纯音频播放 | ![](assets/supported15.png) |
 | 播放 | VOD | 特技游戏 | ![](assets/supported15.png) |
-| 播放 | VOD | 流畅的戏法游戏 | ![](assets/supported15.png) |
+| 播放 | VOD | 流畅的戏法 | ![](assets/supported15.png) |
 | 播放 | VOD +实时 | ID3解析 | 不支持 |
-| 播放 | VOD | 多期间支持 | 仅限VOD |
-| 播放 | VOD +实时 | 令牌化流 | 不支持 |
+| 播放 | VOD | 多时段支持 | 仅限VOD |
+| 播放 | VOD +实时 | 标记化的流 | 不支持 |
 | 播放 | VOD +实时 | 计费 | ![](assets/supported15.png) |
 | 播放 | VOD +实时 | 浏览器化 | ![](assets/supported15.png) |
 
@@ -183,5 +182,5 @@ ht-degree: 0%
 | 播放 | VOD +实时 | 设置缓冲区控制参数 | ![](assets/supported15.png) |
 | 播放 | VOD +实时 | 设置自适应比特率控制 | ![](assets/supported15.png) |
 | 播放 | VOD +实时 | 自定义标记(EventStream) | 仅限VOD（内联） |
-| 播放 | VOD +实时 | 后期绑定音频 | 仅限VOD |
+| 播放 | VOD +实时 | 后期捆绑音频 | 仅限VOD |
 | 播放 | VOD +实时 | 302重定向 | 仅限VOD |

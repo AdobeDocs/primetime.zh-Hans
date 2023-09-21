@@ -1,8 +1,7 @@
 ---
 description: 这些类提供有关介质的信息。
 title: 信息类
-exl-id: af09c81f-07f4-423b-af97-53bc2274cddc
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '224'
 ht-degree: 0%
@@ -48,8 +47,8 @@ ht-degree: 0%
    <td colname="2"> 包含媒体配置文件信息（如高度、宽度和比特率）的类。 </td> 
   </tr> 
   <tr rowsep="0"> 
-   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/info/Track.html" format="html" scope="external"> Track</a></span></td> 
-   <td colname="2">定义要在定义中使用的跟踪抽象的类 <span class="codeph"> Audiotrack</span> 和 <span class="codeph"> ClosedCaptionsTrack</span>. </td> 
+   <td colname="1"><span class="codeph"><a href="https://help.adobe.com/en_US/primetime/api/psdk/asdoc-dhls_1.4/com/adobe/mediacore/info/Track.html" format="html" scope="external"> 曲目</a></span></td> 
+   <td colname="2">定义要在定义中使用的轨道抽象的类 <span class="codeph"> Audiotrack</span> 和 <span class="codeph"> ClosedCaptionsTrack</span>. </td> 
   </tr> 
  </tbody> 
 </table>

@@ -1,8 +1,7 @@
 ---
 description: MediaPlayer提供了一些方法来设置和获取初始缓冲时间和播放缓冲时间。
 title: 设置缓冲时间
-exl-id: d2fbae05-2190-4acc-ae63-561db030608a
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '191'
 ht-degree: 0%
@@ -15,25 +14,25 @@ MediaPlayer提供了一些方法来设置和获取初始缓冲时间和播放缓
 
 >[!TIP]
 >
->如果在开始播放之前未设置缓冲控制参数，则媒体播放器默认为2秒作为初始缓冲时间，30秒作为持续播放缓冲时间。
+>如果在开始播放之前未设置缓冲控制参数，则媒体播放器将默认使用2秒作为初始缓冲时间，30秒作为持续播放缓冲时间。
 
 1. 设置 `BufferControlParameters` 对象，封装了初始缓冲时间和播放缓冲时间控制参数：
 
-       此类提供以下工厂方法：
+       此类提供了以下工厂方法：
    
    * 要将初始缓冲时间设置为等于播放缓冲时间，请执行以下操作：
 
-      ```
-      createSimple(bufferTime:uint):BufferControlParameters
-      ```
+     ```
+     createSimple(bufferTime:uint):BufferControlParameters
+     ```
 
    * 要设置初始缓冲时间和播放缓冲时间，请执行以下操作：
 
-      ```
-      createDual(initialBufferTime:uint, playbackBufferTime:uint):BufferControlParameters 
-      ```
+     ```
+     createDual(initialBufferTime:uint, playbackBufferTime:uint):BufferControlParameters 
+     ```
 
-      这些方法会引发 `IllegalArgumentException` 如果参数无效，例如：
+     这些方法会引发 `IllegalArgumentException` 如果参数无效，例如：
 
    * 初始缓冲时间小于零。
    * 初始缓冲时间大于缓冲时间。
@@ -52,7 +51,7 @@ MediaPlayer提供了一些方法来设置和获取初始缓冲时间和播放缓
 
 <!--<a id="example_B5C5004188574D8D8AB8525742767280"></a>-->
 
-例如，要将初始缓冲设置为2秒，将播放缓冲时间设置为30秒，请执行以下操作：
+例如，将初始缓冲设置为2秒，将播放缓冲时间设置为30秒：
 
 ```
 mediaPlayer.bufferControlParameters = BufferControlParameters.createDual(2000, 30000); 

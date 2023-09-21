@@ -1,8 +1,7 @@
 ---
 description: 完成以下步骤以使用浏览器TVSDK创建基本播放器。
 title: 使用TVSDK创建基本播放器
-exl-id: ea7485e0-5d15-469b-b8b6-f9604d283492
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '206'
 ht-degree: 0%
@@ -32,7 +31,7 @@ ht-degree: 0%
    </html>
    ```
 
-1. 在head部分中添加浏览器TVSDK库。
+1. 在标题部分中添加浏览器TVSDK库。
 
    ```js
    <script src= "frameworks/player/dash.min.js"></script> 
@@ -83,7 +82,7 @@ ht-degree: 0%
    player.addEventListener(AdobePSDK.PSDKEventType.STATUS_CHANGED, onStatusChange);
    ```
 
-1. 实施事件处理程序并将其放在添加事件侦听器之前。
+1. 实施事件处理程序，并将其放在添加事件侦听器之前。
 
    ```js
    var onStatusChange = function (event) { 
@@ -140,7 +139,7 @@ ht-degree: 0%
    }; 
    ```
 
-1. 创建 `MediaResource`，通过M3U8链接（或mpd）。
+1. 创建 `MediaResource`，用于传递M3U8链接（或mpd）。
 
    ```js
    var resourceUrl = "https://example.com/a/yourUrl.m3u8"; 
@@ -164,7 +163,7 @@ ht-degree: 0%
     break;
    ```
 
-1. 在播放器处于PREPARED状态后，调用 `play`.
+1. 在播放器处于“已准备”状态后，调用 `play`.
 
    ```js
    case PREPARED: 

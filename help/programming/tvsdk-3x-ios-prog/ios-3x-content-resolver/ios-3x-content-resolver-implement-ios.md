@@ -1,8 +1,7 @@
 ---
-description: 您可以基于默认解析器实施解析器。
+description: 您可以实施基于默认解析器的解析器。
 title: 实施自定义机会/内容解析程序
-exl-id: a73f62e1-7e6e-4b16-9bf8-118ec0381c41
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '328'
 ht-degree: 0%
@@ -11,7 +10,7 @@ ht-degree: 0%
 
 # 实施自定义机会/内容解析程序 {#implement-a-custom-opportunity-content-resolver}
 
-您可以基于默认解析器实施解析器。
+您可以实施基于默认解析器的解析器。
 
 <!--<a id="fig_CC41E2A66BDB4115821F33737B46A09B"></a>-->
 
@@ -19,11 +18,11 @@ ht-degree: 0%
 
 1. 通过扩展 `PTContentResolver` 抽象类。
 
-   `PTContentResolver` 是一个必须由内容解析程序类实现的接口。 也可以使用具有相同名称的抽象类，并自动处理配置（获取委托）。
+   `PTContentResolver` 是一个必须由内容解析程序类实现的接口。 具有相同名称的抽象类也可用，并自动处理配置（获取委派）。
 
    >[!TIP]
    >
-   >`PTContentResolver` 是通过 `PTDefaultMediaPlayerClientFactory` 类。 客户端可以通过扩展 `PTContentResolver` 抽象类。 默认情况下，除非特别删除， `PTDefaultAdContentResolver` 在中注册 `PTDefaultMediaPlayerClientFactory`.
+   >`PTContentResolver` 是通过 `PTDefaultMediaPlayerClientFactory` 类。 客户端可以通过扩展 `PTContentResolver` 抽象类。 默认情况下，除非特别移除， `PTDefaultAdContentResolver` 在中注册 `PTDefaultMediaPlayerClientFactory`.
 
    ```
    @protocol PTContentResolver <NSObject> 
@@ -51,27 +50,28 @@ ht-degree: 0%
    @end
    ```
 
-1. 实施 `shouldResolveOpportunity` 并返回 `YES` 如果它应处理收到的 `PTPlacementOpportunity`.
+1. 实施 `shouldResolveOpportunity` 并返回 `YES` 如果它应处理接收的 `PTPlacementOpportunity`.
 1. 实施 `resolvePlacementOpportunity`，开始加载替代内容或广告。
 1. 加载广告后，准备 `PTTimeline` 包含有关要插入的内容的信息。
 
-       以下是关于时间线的有用信息：
+       以下是有关时间线的几个有用信息：
    
-   * 可以有多个 `PTAdBreak`前置、中置和后置类型的数量。
+   * 可以有多个 `PTAdBreak`前置式、中置式和后置式类型的。
 
       * A `PTAdBreak` 具有以下属性：
 
          * A `CMTimeRange` 以及休息时间的开始时间和持续时间。
 
-            这被设置为 `PTAdBreak`.
+           这被设置为 `PTAdBreak`.
 
          * `NSArray` 之 `PTAd`s.
 
-            将此项设置为的广告属性 `PTAdBreak`.
-   * A `PTAd` 表示广告，并且每个 `PTAd` 具有以下属性：
+           将此项设置为的广告属性 `PTAdBreak`.
+
+   * A `PTAd` 表示广告，每个 `PTAd` 具有以下属性：
 
       * A `PTAdHLSAsset` 设置为广告的主要资源属性。
-      * 可能有多个 `PTAdAsset` 实例作为可点击广告或横幅广告。
+      * 可能有多个 `PTAdAsset` 作为可点击广告或横幅广告的实例。
 
    例如：
 
@@ -103,7 +103,7 @@ ht-degree: 0%
    ```
 
 1. 调用 `didFinishResolvingPlacementOpportunity`，它提供 `PTTimeline`.
-1. 通过调用，将自定义内容/广告解析器注册到默认的媒体播放器工厂 `registerContentResolver`.
+1. 通过调用将自定义内容/广告解析程序注册到默认的媒体播放器工厂 `registerContentResolver`.
 
    ```
    //Remove default content/ad resolver 
@@ -134,7 +134,7 @@ ht-degree: 0%
               registerOpportunityResolver:[opportunityResolver autorelease]];
    ```
 
-当播放器加载内容并确定VOD或LIVE类型时，会发生以下情况之一：
+当播放器加载内容，并确定其类型为VOD或LIVE时，会发生以下情况之一：
 
-* 如果内容为VOD，则使用自定义内容解析器获取整个视频的广告时间轴。
-* 如果内容为“实时”内容，则每次在内容中检测到置入机会（提示点）时都会调用自定义内容解析器。
+* 如果内容是VOD，则自定义内容解析器用于获取整个视频的广告时间轴。
+* 如果内容为“实时”内容，则每次在内容中检测到置入机会（提示点）时都会调用自定义内容解析程序。

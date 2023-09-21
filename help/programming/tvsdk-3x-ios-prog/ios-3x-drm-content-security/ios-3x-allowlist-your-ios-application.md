@@ -1,8 +1,7 @@
 ---
 description: 您可以使用Adobe的machotools工具允许列表您的iOS应用程序。
 title: 允许列表iOS应用程序
-exl-id: 3af75d9a-3b38-4d3c-9890-513a4abc1809
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 0%
@@ -19,19 +18,19 @@ ht-degree: 0%
 >
 >您还可以使用这些工具创建DRM策略并加密内容。
 
-将您的应用程序添加到允许列表可确保只能在视频播放器中播放受保护的内容。 但是，要将iOS应用程序添加到允许列表，您需要完成与Apple的应用程序提交策略配合使用的特殊过程。
+将您的应用程序添加到允许列表可确保只能在视频播放器中播放受保护的内容。 但是，要将iOS应用程序添加到允许列表，您需要完成与Apple的应用程序提交策略一起使用的特殊过程。
 
 在提交iOS应用程序之前，您需要对其进行签名并将其发布到Apple。
 
 >[!NOTE]
 >
->Apple会删除开发人员的签名，并使用他们自己的证书重新签署应用程序。
+>Apple会删除您的开发人员签名，并使用他们自己的证书重新签名应用程序。
 
 由于重新签名，您在提交到Apple App Store之前生成的允许列表信息不可用。
 
-为了使用此提交策略，Adobe已创建一个 `machotools` 用于对您的iOS应用程序进行指纹识别以创建一个摘要值、对此值进行签名，并将该值注入您的iOS应用程序中的工具。 对iOS应用程序进行指纹识别后，您可以将应用程序提交到Apple App Store。 当用户从App Store运行应用程序时，Primetime DRM会执行应用程序指纹的运行时计算，并使用之前在应用程序中插入的摘要值来确认它。 如果指纹匹配，则确认应用程序允许列出，并允许播放受保护的内容。
+为了使用此提交策略，Adobe已创建一个 `machotools` 该工具将为您的iOS应用程序设置指纹以创建摘要值，签署此值，并将此值注入您的iOS应用程序。 对iOS应用程序进行指纹识别后，可将应用程序提交到Apple App Store。 当用户从App Store运行您的应用程序时，Primetime DRM会执行应用程序指纹的运行时计算，并使用之前插入应用程序中的摘要值确认它。 如果指纹匹配，则确认应用程序允许列出，并允许播放受保护的内容。
 
-Adobe `machotools` 该工具包含在[！DNL]的iOS TVSDK SDK中 [...]/tools/DRM]文件夹。
+Adobe `machotools` 该工具包含在[！DNL]的iOS TVSDK中 [...]/tools/DRM]文件夹。
 
 使用 `machotools`：
 
@@ -43,9 +42,9 @@ Adobe `machotools` 该工具包含在[！DNL]的iOS TVSDK SDK中 [...]/tools/DRM
    openssl genrsa -des3 -out selfsigncert-ios.key 1024
    ```
 
-1. 出现提示时，输入密码以保护私钥。
+1. 出现提示时，请输入密码以保护私钥。
 
-   密码应至少包含12个字符，字符应混合使用大写和小写ASCII字符和数字。
+   密码应至少包含12个字符，字符应包含大写和小写ASCII字符和数字的组合。
 1. 要使用OpenSSL为您生成强密码，请打开命令窗口并输入以下内容：
 
    ```shell
@@ -60,9 +59,9 @@ Adobe `machotools` 该工具包含在[！DNL]的iOS TVSDK SDK中 [...]/tools/DRM
    openssl req -new -key selfsigncert-ios.key -out selfsigncert-ios.csr -batch
    ```
 
-1. 自行签署证书并输入任意持续时间。
+1. 自签名证书并输入任意持续时间。
 
-   以下示例显示了20年的有效期：
+   以下示例给出的有效期为20年：
 
    ```shell
    openssl x509 -req -days 7300 -in selfsigncert-ios.csr  
@@ -89,17 +88,17 @@ Adobe `machotools` 该工具包含在[！DNL]的iOS TVSDK SDK中 [...]/tools/DRM
      -pass PASSWORD
    ```
 
-1. 执行 [!DNL machotools] 以生成应用程序发布者ID哈希值。
+1. 执行 [!DNL machotools] 生成应用程序发布者ID哈希值。
 
    ```shell
    ./machotools dumpMachoSignature -in ${PROJECT_DIR}/generatedRes/AAXSAppDigest.digest
    ```
 
 1. 创建新的DRM策略或更新现有策略以包含返回的发布者ID哈希值。
-1. 使用 [!DNL AdobePolicyManager.jar]，创建一个新的DRM策略（更新您现有的策略），将返回的发布者ID哈希值、一个可选的应用程序ID以及最小和最大版本属性包含在内 [!DNL flashaccess-tools.properties] 文件。
+1. 使用 [!DNL AdobePolicyManager.jar]，创建一个新的DRM策略（更新您现有的策略），将返回的发布者ID哈希值、可选的应用程序ID以及最小和最大版本属性包含在内 [!DNL flashaccess-tools.properties] 文件。
 
    ```shell
    java -jar libs/AdobePolicyManager.jar new app_allowlist.pol
    ```
 
-1. 使用新的DRM策略将内容打包，并确认在iOS应用程序中播放允许列出的内容。
+1. 使用新的DRM策略对内容进行打包，并确认在iOS应用程序中播放允许列出的内容。

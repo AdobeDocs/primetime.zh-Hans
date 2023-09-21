@@ -1,8 +1,7 @@
 ---
 description: 此表提供有关ERROR类型通知的详细信息。
 title: 错误通知代码
-exl-id: 4f8882b5-2c2b-4f17-a9c9-834816265e1f
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '514'
 ht-degree: 4%
@@ -15,7 +14,7 @@ ht-degree: 4%
 
 <!--<a id="section_D29404228F5E4B818642CBA6A0D39546"></a>-->
 
-大多数错误包含相关元数据，例如，无法下载的资源的URL。 某些通知包含元数据，用于指定问题出现在主视频内容、备用音频内容还是广告中。
+大多数错误都包含相关元数据，例如，无法下载的资源的URL。 某些通知包含元数据，用于指定问题出现在主视频内容、备用音频内容还是广告中。
 
 <table frame="all" colsep="1" rowsep="1" id="table_8B61210A406A45ACBE37FC29729DDE22"> 
  <thead> 
@@ -24,7 +23,7 @@ ht-degree: 4%
    <th colname="2" class="entry"> 名称 </th> 
    <th colname="3" class="entry"> InnerNotification </th> 
    <th colname="4" class="entry"> 元数据键 </th> 
-   <th colname="5" class="entry"> 注释 </th> 
+   <th colname="5" class="entry"> 评论 </th> 
   </tr> 
  </thead>
  <tbody> 
@@ -67,7 +66,7 @@ ht-degree: 4%
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 101006 </span> </td> 
-   <td colname="2"><span class="codeph"> 安全性_错误 </span> </td> 
+   <td colname="2"><span class="codeph"> 安全错误 </span> </td> 
    <td colname="3"> </td> 
    <td colname="4"><span class="codeph"> URL </span> </td> 
    <td colname="5"> </td> 
@@ -83,7 +82,7 @@ ht-degree: 4%
    <td colname="1"><span class="codeph"> 101009 </span> </td> 
    <td colname="2"><span class="codeph"> SEEK_ERROR </span> </td> 
    <td colname="3"> 无 </td> 
-   <td colname="4"><span class="codeph"> NATIVE_ERROR_CODE </span><span class="codeph"> DESIRED_SEEK_POSITION </span><span class="codeph"> DESIRED_SEEK_PERIOD </span> </td> 
+   <td colname="4"><span class="codeph"> NATIVE_ERROR_Code </span><span class="codeph"> DESIRED_SEEK_POSITION </span><span class="codeph"> DESIRED_SEEK_PERIOD </span> </td> 
    <td colname="5"> <p>执行搜寻操作时出错。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
@@ -133,7 +132,7 @@ ht-degree: 4%
    <td colname="2"><span class="codeph"> RESOURCE_PLACEMENT_失败 </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"><span class="codeph"> CONTENT_ID </span> </td> 
-   <td colname="5"> <p>在播放时间轴上放置资源时出错。 </p> </td> 
+   <td colname="5"> <p>将资源放在播放时间轴上时出错。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><b>广告处理 </b> </td> 
@@ -160,7 +159,7 @@ ht-degree: 4%
    <td colname="1"><span class="codeph"> 104003 </span> </td> 
    <td colname="2"><span class="codeph"> AD_RESOLVER_RESOLVE_失败 </span> </td> 
    <td colname="3"> 无 </td> 
-   <td colname="4"><span class="codeph"> NATIVE_ERROR_CODE </span> </td> 
+   <td colname="4"><span class="codeph"> NATIVE_ERROR_Code </span> </td> 
    <td colname="5"> <p>广告插件未能解析广告。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
@@ -178,7 +177,7 @@ ht-degree: 4%
    <td colname="5"> </td> 
   </tr> 
   <tr rowsep="1"> 
-   <td colname="1"><b>本机</b> </td> 
+   <td colname="1"><b>原生</b> </td> 
    <td colname="2"> </td> 
    <td colname="3"> </td> 
    <td colname="4"> </td> 
@@ -189,7 +188,7 @@ ht-degree: 4%
    <td colname="2"><span class="codeph"> NATIVE_ERROR </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"><span class="codeph"> RUNTIME_CODE</span> <span class="codeph"> RUNTIME_CODE_MESSAGE</span> <span class="codeph"> RESOURCE_URL</span> <span class="codeph"> 资源类型</span> <span class="codeph"> RESOURCE_ID</span> <p><b>DRM详细信息：</b> </p> <span class="codeph"> DRM_ERROR_STRING</span> <span class="codeph"> RUNTIME_SUBERROR_CODE</span> </td> 
-   <td colname="5"> <p>低级AVE库发出错误。 </p> <p>参见 <a href="../../c-psdk-dhls-1.4-events-and-notifications/notification-codes/c-psdk-dhls-1.4-native-error-summary.md" format="html" scope="external"> NATIVE_ERROR通知的详细信息</a> 以了解有关这些元数据键值的信息。 </p> </td> 
+   <td colname="5"> <p>低级AVE库发出错误。 </p> <p>请参阅 <a href="../../c-psdk-dhls-1.4-events-and-notifications/notification-codes/c-psdk-dhls-1.4-native-error-summary.md" format="html" scope="external"> NATIVE_ERROR通知的详细信息</a> 以了解有关这些元数据键值的信息。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 106001 </span> </td> 
@@ -203,7 +202,7 @@ ht-degree: 4%
    <td colname="2"><span class="codeph"> ENGINE_RELEASE_错误 </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"><span class="codeph"> 描述 </span> </td> 
-   <td colname="5"> <p>释放AVE低级库时出错。 </p> </td> 
+   <td colname="5"> <p>发布AVE低级库时出错。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
    <td colname="1"><span class="codeph"> 106003 </span> </td> 
@@ -237,7 +236,7 @@ ht-degree: 4%
    <td colname="1"><span class="codeph"> 109000 </span> </td> 
    <td colname="2"><span class="codeph"> AUDIO_TRACK_ERROR </span> </td> 
    <td colname="3"><span class="codeph"> DOWNLOAD_ERROR </span> </td> 
-   <td colname="4"><span class="codeph"> AUDIO_TRACK_名称 </span><span class="codeph"> AUDIO_TRACK_LANGUAGE </span> </td> 
+   <td colname="4"><span class="codeph"> AUDIO_TRACK名称 </span><span class="codeph"> AUDIO_TRACK_LANGUAGE </span> </td> 
    <td colname="5"> <p>发生与音轨相关的错误。 </p> </td> 
   </tr> 
   <tr rowsep="1"> 
@@ -252,7 +251,7 @@ ht-degree: 4%
    <td colname="2"><span class="codeph"> GENERIC_ERROR </span> </td> 
    <td colname="3"> 无 </td> 
    <td colname="4"> 无 </td> 
-   <td colname="5"> <p>标记一般错误事件。 不是由TVSDK实际发布的。 它只是对应于TVSDK错误事件的数值代码范围的结束标记。 </p> </td> 
+   <td colname="5"> <p>标记一般错误事件。 不是由TVSDK实际颁发的。 它只是对应于TVSDK错误事件的数值代码范围的结束标记。 </p> </td> 
   </tr> 
  </tbody> 
 </table>

@@ -2,8 +2,7 @@
 title: 标记范围
 description: 标记范围
 copied-description: true
-exl-id: b3314ee5-bb30-4b25-beff-ff810eff06b2
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '203'
 ht-degree: 0%
@@ -73,11 +72,11 @@ ht-degree: 0%
 
 ## 替换范围 {#replace-ranges}
 
-要实施 `PTTimeRangeCollection` 并删除内容范围作为广告：
+要实施 `PTTimeRangeCollection` 并删除一系列内容作为广告：
 1. 准备 `PTTimeRangeCollection`.
 1. 设置类型 `PTTimeRangeCollection` 到 `PTTimeRangeCollectionTypeReplaceRanges`.
 
-   此步骤会通知TVSDK提供的范围需要替换为替代内容（广告）。
+   此步骤会通知TVSDK所提供的范围需要替换为替代内容（广告）。
 
    ```
    #define PSDK_TIMESCALE 100000 
@@ -141,7 +140,7 @@ ht-degree: 0%
 
 ## 删除范围 {#delete-ranges}
 
-要实施 `PTTimeRangeCollection` 并删除内容范围作为广告：
+要实施 `PTTimeRangeCollection` 并删除一系列内容作为广告：
 1. 准备 `PTTimeRangeCollection`.
 1. 设置类型 `PTTimeRangeCollection` 到 `PTTimeRangeCollectionTypeDeleteRanges`，通知TVSDK需要删除提供的范围。
 
@@ -184,7 +183,7 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   >广告插入发生在删除自定义范围之后，该自定义范围基于 `PTAdMetadata` 和当前 `PTAdSignalingMode`.
+   >在删除自定义范围后，根据 `PTAdMetadata` 和当前 `PTAdSignalingMode`.
 
 1. 创建播放器并开始播放。
 

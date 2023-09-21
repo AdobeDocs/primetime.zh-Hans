@@ -1,16 +1,15 @@
 ---
-title: 实施基于身份的域注册
-description: 实施基于身份的域注册
+title: 实施基于标识的域注册
+description: 实施基于标识的域注册
 copied-description: true
-exl-id: e2f826a8-eea5-4d5f-ac4d-401d7a6c5373
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '47'
 ht-degree: 0%
 
 ---
 
-# 实施基于身份的域注册{#implement-identity-based-domain-registration}
+# 实施基于标识的域注册{#implement-identity-based-domain-registration}
 
 1. 创建具有强制域注册的DRM策略。
 1. 为域服务器URL指定服务器的主机和端口。

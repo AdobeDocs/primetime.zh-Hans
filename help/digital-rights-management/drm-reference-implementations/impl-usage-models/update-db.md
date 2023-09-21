@@ -1,26 +1,25 @@
 ---
-title: 更新引用实施DB
-description: 更新引用实施DB
+title: 更新引用实现DB
+description: 更新引用实现DB
 copied-description: true
-exl-id: b337bf9c-7add-47b8-9576-db7fa067c51d
-source-git-commit: be43bbbd1051886c8979ff590a3197b2a7249b6a
+source-git-commit: 02ebc3548a254b2a6554f1ab34afbb3ea5f09bb8
 workflow-type: tm+mt
 source-wordcount: '122'
 ht-degree: 0%
 
 ---
 
-# 更新引用实施DB{#update-the-reference-implementation-db}
+# 更新引用实现DB{#update-the-reference-implementation-db}
 
-要控制向指定用户颁发许可证的使用模式，请将条目添加到参考实现数据库。
+要控制向指定用户颁发许可证的使用模型，请将条目添加到参考实现数据库中。
 
 1. 将条目添加到 `Customer` 表格。
 
-   此 `Customer` 表包含用于验证用户身份的用户名和口令。 它还指示用户是否具有订阅(根据 *订阅* 使用模式)。
+   此 `Customer` 该表包含用于验证用户的用户名和口令。 它还指示用户是否具有订阅(根据 *订阅* 使用模式)。
 
-1. 根据“下载到拥有”或“视频点播”使用模型，授予用户访问权限。
+1. 根据“下载到拥有”或“视频点播”使用模型授予用户访问权限。
 
-       向“CustomerAuthorization”表添加条目以指定：
+       将条目添加到“CustomerAuthorization”表以指定：
    
    * 使用模式
    * 用户可以访问的每个内容区段
