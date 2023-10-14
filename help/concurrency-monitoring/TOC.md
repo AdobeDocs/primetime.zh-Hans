@@ -2,17 +2,17 @@
 product: adobe primetime
 feature: Concurrency Monitoring
 audience: end-user
-user-guide-title: Primetime并发监控
-user-guide-description: 了解如何定义并强制实施对多个应用程序的并发使用限制。
+user-guide-title: 黄金时段并发监控
+user-guide-description: 了解如何定义并在多个应用程序上施加并发使用限制。
 source-git-commit: 11ca161ebaaeca08b6bdc84f9bd719dfc8509d09
 workflow-type: tm+mt
 source-wordcount: '145'
-ht-degree: 0%
+ht-degree: 15%
 
 ---
 
 
-# Primetime并发监控帮助 {#cm}
+# 黄金时段并发监控 帮助 {#cm}
 
 + [并发监控简介](cm-home.md)
 + [并发监控术语表](cm-glossary.md)
