@@ -2,17 +2,17 @@
 product: adobe primetime
 audience: end-user
 feature: Authentication
-user-guide-title: Primetime身份验证
-user-guide-description: Primetime身份验证是TV Everywhere的授权解决方案，提供了一个模块化框架，用于确定请求访问资源的人是否有权访问资源。
+user-guide-title: Primetime 身份验证
+user-guide-description: Primetime 身份验证是一个适用于 TV Everywhere 的授权解决方案，它提供一个模块化框架来确定请求访问资源的人是否有权访问。
 source-git-commit: a294b5628ec7184491cf8b67a60fd6cf9410c431
 workflow-type: tm+mt
 source-wordcount: '750'
-ht-degree: 0%
+ht-degree: 4%
 
 ---
 
 
-# Primetime身份验证帮助 {#authentication}
+# Primetime 身份验证 帮助 {#authentication}
 
 + [Primetime身份验证概述](home.md)
 + Primetime身份验证概念 {#authentication-concepts}

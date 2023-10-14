@@ -1,16 +1,16 @@
 ---
 product: adobe primetime
 audience: end-user
-user-guide-title: PrimetimeAd Insertion帮助
+user-guide-title: Primetime Ad Insertion 帮助
 source-git-commit: 2b8aa2d4d20dac0f6f8467043dd2e55a88e9e9f1
 workflow-type: tm+mt
 source-wordcount: '176'
-ht-degree: 0%
+ht-degree: 7%
 
 ---
 
 
-# PrimetimeAd Insertion帮助 {#ad-insertion}
+# Primetime Ad Insertion 帮助 {#ad-insertion}
 
 + [Adobe PrimetimeAd Insertion](home.md)
 + PrimetimeAd Insertion公告{#announcements}
@@ -22,9 +22,9 @@ ht-degree: 0%
    + [集成您的广告服务器](getting-started/integrate-ad-server.md)
    + [集成您的CDN](getting-started/integrate-cdn.md)
    + [在实时/线性流中使用广告插入](getting-started/ad-insertion-live-linear-stream.md)
-   + [使用广告插入进行VOD](getting-started/ad-insertion-vod.md)
+   + [将广告插入用于VOD](getting-started/ad-insertion-vod.md)
    + [设置广告跟踪](getting-started/set-up-ad-tracking.md)
-+ 实时转码{#just-in-time-transcoding}
++ Just-in-Time Transcoding{#just-in-time-transcoding}
    + [概述](just-in-time-transcoding/jit-transcoding-overview.md)
    + [转码和标准化](just-in-time-transcoding/transcoding-and-normalization.md)
    + [交付和存储](https://experienceleague.adobe.com/docs/primetime/ad-insertion/technical-reference/delivery-and-storage.html)
@@ -58,8 +58,8 @@ ht-degree: 0%
    + [支持的CDN](technical-reference/supported-cdns.md)
    + [清单重写](technical-reference/manifest-rewriting.md)
    + [详细日志记录](performance-monitoring-debugging-reporting/verbose-logging.md)
-   + [详细标头(X-ADBE-AI-X1)](performance-monitoring-debugging-reporting/debugging-headers.md)
+   + [详细标题(X-ADBE-AI-X1)](performance-monitoring-debugging-reporting/debugging-headers.md)
    + [交付和存储](/help/primetime-ad-insertion/just-in-time-transcoding/delivery-and-storage.md)
    + [促进HLS播放器切换到故障切换/备份流](technical-reference/hls-switching-to-failover.md)
-   + [Cookie](technical-reference/cookies.md)
+   + [Cookies](technical-reference/cookies.md)
    + [视频播放器要求](technical-reference/video-player-requirements.md)

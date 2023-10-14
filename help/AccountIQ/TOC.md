@@ -2,11 +2,11 @@
 product: adobe primetime
 audience: end-user
 feature: Account IQ
-user-guide-description: Primetime帐户IQ帮助提供有关帐户IQ组件的信息，并引导您了解使用各种组件的用户历程。
+user-guide-description: Primetime 帐户 IQ 帮助提供有关帐户 IQ 组件的信息，并引导您了解使用各种组件的用户旅程。
 source-git-commit: 11ca161ebaaeca08b6bdc84f9bd719dfc8509d09
 workflow-type: tm+mt
 source-wordcount: '141'
-ht-degree: 0%
+ht-degree: 16%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 0%
 + Account IQ组件 {#account-iq-components}
    + [区段和时间范围](/help/AccountIQ/segments-timeframe.md)
    + [仪表板](/help/AccountIQ/dashboard.md)
-   + 报表 {#reports-account-iq}
+   + 报告 {#reports-account-iq}
    + [一般使用情况报表](/help/AccountIQ/general-usage-reports.md)
    + [共享帐户报表](/help/AccountIQ/shared-acc-reports.md)
    + 共享组件 {#sharing-components}
